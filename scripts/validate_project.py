@@ -164,7 +164,8 @@ def validate_metadata_evidence(catalog, batches, sources, evidence):
                 assert item['supports']
         pron = e['pronunciation_evidence']
         assert pron['source_id'] == 'S06' and pron['result'] == 'matched'
-        assert pron['pdf_page'] in {31,34,42,44,47,51,53,73,83,92}\n        assert pron['pdf_page'] - pron['printed_page'] == 6
+        assert pron['pdf_page'] in {31,34,42,44,47,51,53,73,83,92}
+        assert pron['pdf_page'] - pron['printed_page'] == 6
         assert pron['adopted_pinyin'] == e['adopted_pinyin']
         assert pron['application'] in ('direct','morpheme_first')
         if pron['application'] == 'morpheme_first':
