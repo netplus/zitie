@@ -40,8 +40,11 @@
   },
   "metadata_review": "fine_names_mapped_pronunciation_completion_pending",
   "artwork_review": {
-    "status": "pending",
-    "reviewer": null
+    "status": "sequence_matched_terminal_shape_pending",
+    "reviewer": "ChatGPT",
+    "date": "2026-09-29",
+    "record": "reviews/v0.2-layout.md",
+    "notes": "42笔的累积顺序与已核原件相符；日、目、田的横折末端存在容易被理解为钩的楷体回锋，正式用稿前需单独解决。"
   },
   "layout_review": {
     "status": "pending",
@@ -50,10 +53,10 @@
   "release_eligible": false,
   "remaining_gates": [
     "读音逐项证据",
-    "GF0011—2022全文及目标版主项身份核验",
-    "本版图形与页面检查"
+    "日、目、田的横折收笔形态",
+    "GF0011—2022全文及目标版主项身份核验"
   ],
-  "draft_label": "编写稿｜两部规范笔顺图已核；读音等字段仍待复核。",
+  "draft_label": "编写稿｜笔顺原件已核；读音与部分收笔字形仍待复核。",
   "entries": [
     {
       "character": "水",

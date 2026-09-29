@@ -16,7 +16,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.colors import HexColor
 from reportlab.lib.styles import ParagraphStyle
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, KeepTogether
 from pypdf import PdfReader, PdfWriter
 from validate_project import load, validate
 
@@ -137,7 +137,8 @@ def frontmatter(path):
         elif block.startswith('> '): style=note; block=block[2:]
         elif block.startswith('依据说明') or block.startswith('详细入口'): style=note
         block=re.sub(r'`([^`]+)`',r'\1',block)
-        story.append(Paragraph(html.escape(block).replace('\n','<br/>'),style))
+        paragraph=Paragraph(html.escape(block).replace('\n','<br/>'),style)
+        story.append(KeepTogether([paragraph]) if block.startswith('本字帖采用A4') else paragraph)
     def page(c,doc):
         text(c,42,H-29,'循序渐进汉字部首字帖 · 前言初稿',9,color='muted')
         text(c,42,29,'编写中 v0.2｜201主项为全书目标，不代表正文已全部审定。',8,color='muted')
