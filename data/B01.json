@@ -50,9 +50,12 @@
     "limits": "本轮图形匹配；不代替权威交叉来源。"
   },
   "layout_review": {
-    "status": "pending",
-    "reviewer": null,
-    "note": "脚注和前言改变，等待v0.2逐页检查。"
+    "status": "passed",
+    "reviewer": "ChatGPT",
+    "date": "2026-09-29",
+    "record": "reviews/v0.2-layout.md",
+    "scope": "阶段性版式检查；不代替字形及内容审定",
+    "artifact_id": 11011472530
   },
   "release_eligible": false,
   "entries": [

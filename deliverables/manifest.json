@@ -42,6 +42,62 @@
       "artifact_id": 11009843293,
       "review_record": "reviews/B01-layout.md",
       "release_eligible": false
+    },
+    {
+      "path": "deliverables/drafts/v0.2.0/preface_v0.2.pdf",
+      "title": "前言v0.2",
+      "version": "0.2.0",
+      "status": "draft",
+      "batch": "front-matter",
+      "pages": 3,
+      "bytes": 222554,
+      "sha256": "8a8895c216153e519263853fff120a93486bad03584ced3c189088433c5c5c74",
+      "source_commit": "564c2ccafbdcf8d91d855699480edf2ad3b92237",
+      "artifact_id": 11011472530,
+      "review_record": "reviews/v0.2-layout.md",
+      "release_eligible": false
+    },
+    {
+      "path": "deliverables/drafts/v0.2.0/B01_draft_A4.pdf",
+      "title": "第一批10项编写稿",
+      "version": "0.2.0",
+      "status": "draft",
+      "batch": "B01",
+      "pages": 10,
+      "bytes": 134999,
+      "sha256": "f7ec7175f59f1875c12b7313c1502ec6d6042c3e10dceb578b7d1dc0ff204991",
+      "source_commit": "564c2ccafbdcf8d91d855699480edf2ad3b92237",
+      "artifact_id": 11011472530,
+      "review_record": "reviews/v0.2-layout.md",
+      "release_eligible": false
+    },
+    {
+      "path": "deliverables/drafts/v0.2.0/B02_draft_A4.pdf",
+      "title": "第二批10项编写稿",
+      "version": "0.2.0",
+      "status": "draft",
+      "batch": "B02",
+      "pages": 10,
+      "bytes": 142030,
+      "sha256": "816c0aaee961df1b024647698b0b805492221e737251d475d14f06d29d803c61",
+      "source_commit": "564c2ccafbdcf8d91d855699480edf2ad3b92237",
+      "artifact_id": 11011472530,
+      "review_record": "reviews/v0.2-layout.md",
+      "release_eligible": false
+    },
+    {
+      "path": "deliverables/drafts/v0.2.0/B01-B02_with_preface_draft_A4.pdf",
+      "title": "前言与前两批20项编写稿",
+      "version": "0.2.0",
+      "status": "draft",
+      "batch": "B01-B02",
+      "pages": 23,
+      "bytes": 497060,
+      "sha256": "7f87f2bb852079a7da6f1d4cb79aeee906fe8a12beab65354a3a62848a513d5c",
+      "source_commit": "564c2ccafbdcf8d91d855699480edf2ad3b92237",
+      "artifact_id": 11011472530,
+      "review_record": "reviews/v0.2-layout.md",
+      "release_eligible": false
     }
   ]
 }

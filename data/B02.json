@@ -47,8 +47,12 @@
     "notes": "42笔的累积顺序与已核原件相符；日、目、田的横折末端存在容易被理解为钩的楷体回锋，正式用稿前需单独解决。"
   },
   "layout_review": {
-    "status": "pending",
-    "reviewer": null
+    "status": "passed",
+    "reviewer": "ChatGPT",
+    "date": "2026-09-29",
+    "record": "reviews/v0.2-layout.md",
+    "scope": "阶段性版式检查；不代替字形及内容审定",
+    "artifact_id": 11011472530
   },
   "release_eligible": false,
   "remaining_gates": [
