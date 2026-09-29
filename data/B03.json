@@ -1,0 +1,741 @@
+{
+  "batch_id": "B03",
+  "version": "0.3.0-draft",
+  "status": "content_cross_checked_scope_pending_artwork_pending",
+  "scope_source": "S01-2009",
+  "primary_source": "S02",
+  "primary_review": {
+    "reviewer": "ChatGPT",
+    "date": "2026-09-29",
+    "method": "实际查看GF0023—2020目标字条并二次并排复看；详见reviews/B03-primary-cross.md",
+    "pdf_pages": [
+      9,
+      10,
+      11,
+      12,
+      19,
+      21,
+      23
+    ],
+    "printed_pages": [
+      3,
+      4,
+      5,
+      6,
+      13,
+      15,
+      17
+    ],
+    "sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0"
+  },
+  "cross_review": {
+    "status": "passed",
+    "source_id": "S04",
+    "publication_id": "1997-STROKE-ORDER",
+    "reviewer": "ChatGPT",
+    "date": "2026-09-29",
+    "fields": [
+      "stroke_count",
+      "stroke_order"
+    ],
+    "pdf_pages": [
+      6,
+      7,
+      8,
+      9,
+      10,
+      18,
+      22,
+      23
+    ],
+    "printed_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      13,
+      17,
+      18
+    ],
+    "method": "实际查看1997版目标字条并与2020版逐笔图交叉；两版有继承关系。",
+    "limits": "不是独立规范体系或独立专家审定。"
+  },
+  "metadata_review": "passed",
+  "component_name_review": {
+    "status": "passed",
+    "source_id": "S03",
+    "reviewer": "ChatGPT",
+    "date": "2026-09-29",
+    "fields": [
+      "component_name"
+    ],
+    "pdf_pages": [
+      10,
+      11,
+      15,
+      17,
+      18,
+      20,
+      22,
+      23
+    ],
+    "printed_pages": [
+      7,
+      8,
+      12,
+      14,
+      15,
+      17,
+      19,
+      20
+    ],
+    "method": "实际渲染GF0014—2009《现代常用字部件表》并逐条查看十个目标部件名称。",
+    "record": "reviews/B03-content.md",
+    "limits": "支持本批独体主形部件名称；不外推位置变体或2022版主附关系。"
+  },
+  "teaching_text_review": {
+    "status": "passed",
+    "reviewer": "ChatGPT",
+    "date": "2026-09-29",
+    "record": "reviews/B03-content.md",
+    "basis": [
+      "data/evidence/B03-stroke-order.json",
+      "data/evidence/B03-metadata.json",
+      "S03目标部件条目",
+      "S07独体结构字段"
+    ],
+    "limits": "提示仅复述已核笔顺、细笔名及已观察到的笔画关系；位置变体保持pending。"
+  },
+  "artwork_review": {
+    "status": "pending"
+  },
+  "layout_review": {
+    "status": "not_built"
+  },
+  "release_eligible": false,
+  "remaining_gates": [
+    "GF0011—2022全文及目标版主项身份核验",
+    "B03逐笔矢量匹配与白第3笔收笔定点复核",
+    "B03试排PDF逐页视觉检查与第二遍复核"
+  ],
+  "draft_label": "编写稿｜本批内容字段已核；矢量、版式及2022版主表范围仍待核。",
+  "entries": [
+    {
+      "character": "刀",
+      "main_id": 22,
+      "pinyin": "dāo",
+      "component_name": "刀",
+      "stroke_names": [
+        "横折钩",
+        "撇"
+      ],
+      "order_code": "53",
+      "primary_pdf_page": 9,
+      "primary_printed_page": 3,
+      "tips": [
+        "先写横折钩，再写撇。",
+        "和“力”虽然笔顺类别相同，但两字轮廓不能互套。"
+      ],
+      "check": "第一笔一笔写完，第二笔再写撇。",
+      "migration_boundary": "刂等位置变体另行回到整字核查，本页只练独体“刀”。",
+      "cross_evidence": {
+        "source_id": "S04",
+        "pdf_page": 6,
+        "printed_page": 1,
+        "fields": [
+          "stroke_count",
+          "stroke_order"
+        ],
+        "result": "matched"
+      },
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 34,
+        "printed_page": 28,
+        "entry_number": "一级315",
+        "entry_pinyin": "dāo",
+        "adopted_pinyin": "dāo",
+        "usage": "独立词条",
+        "application": "direct",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      },
+      "structure_evidence": {
+        "source_id": "S07",
+        "pdf_page": 5,
+        "printed_page": 2,
+        "table": "现代常用独体字表",
+        "result": "listed"
+      },
+      "component_name_evidence": {
+        "source_id": "S03",
+        "pdf_page": 11,
+        "printed_page": 8,
+        "table": "现代常用字部件表",
+        "serial": 69,
+        "group": 60,
+        "printed_name": "刀（dāo）",
+        "adopted_name": "刀",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "力",
+      "main_id": 23,
+      "pinyin": "lì",
+      "component_name": "力",
+      "stroke_names": [
+        "横折钩",
+        "撇"
+      ],
+      "order_code": "53",
+      "primary_pdf_page": 9,
+      "primary_printed_page": 3,
+      "tips": [
+        "先写横折钩，再写撇。",
+        "第二笔撇与第一笔相交，注意不要写成“刀”的轮廓。"
+      ],
+      "check": "共两笔：横折钩在前，撇在后。",
+      "migration_boundary": "本页只练独体“力”，不从相似字形推导其他部件。",
+      "cross_evidence": {
+        "source_id": "S04",
+        "pdf_page": 7,
+        "printed_page": 2,
+        "fields": [
+          "stroke_count",
+          "stroke_order"
+        ],
+        "result": "matched"
+      },
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 42,
+        "printed_page": 36,
+        "entry_number": "一级1019",
+        "entry_pinyin": "lì",
+        "adopted_pinyin": "lì",
+        "usage": "独立词条",
+        "application": "direct",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      },
+      "structure_evidence": {
+        "source_id": "S07",
+        "pdf_page": 5,
+        "printed_page": 2,
+        "table": "现代常用独体字表",
+        "result": "listed"
+      },
+      "component_name_evidence": {
+        "source_id": "S03",
+        "pdf_page": 15,
+        "printed_page": 12,
+        "table": "现代常用字部件表",
+        "serial": 208,
+        "group": 179,
+        "printed_name": "力（lì）",
+        "adopted_name": "力",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "又",
+      "main_id": 24,
+      "pinyin": "yòu",
+      "component_name": "又",
+      "stroke_names": [
+        "横撇",
+        "捺"
+      ],
+      "order_code": "54",
+      "primary_pdf_page": 9,
+      "primary_printed_page": 3,
+      "tips": [
+        "先横撇，再写捺。",
+        "横撇是一笔连续转折，不拆成横和撇两笔。"
+      ],
+      "check": "共两笔，第一笔是横撇。",
+      "migration_boundary": "本页只练独体“又”，组合字中的位置写法另核。",
+      "cross_evidence": {
+        "source_id": "S04",
+        "pdf_page": 7,
+        "printed_page": 2,
+        "fields": [
+          "stroke_count",
+          "stroke_order"
+        ],
+        "result": "matched"
+      },
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 53,
+        "printed_page": 47,
+        "entry_number": "一级1989",
+        "entry_pinyin": "yòu",
+        "adopted_pinyin": "yòu",
+        "usage": "独立词条",
+        "application": "direct",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      },
+      "structure_evidence": {
+        "source_id": "S07",
+        "pdf_page": 5,
+        "printed_page": 2,
+        "table": "现代常用独体字表",
+        "result": "listed"
+      },
+      "component_name_evidence": {
+        "source_id": "S03",
+        "pdf_page": 22,
+        "printed_page": 19,
+        "table": "现代常用字部件表",
+        "serial": 460,
+        "group": 399,
+        "printed_name": "又（yòu）",
+        "adopted_name": "又",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "子",
+      "main_id": 54,
+      "pinyin": "zǐ",
+      "component_name": "子",
+      "stroke_names": [
+        "横撇",
+        "弯钩",
+        "横"
+      ],
+      "order_code": "521",
+      "primary_pdf_page": 11,
+      "primary_printed_page": 5,
+      "tips": [
+        "先横撇，再弯钩，最后写横。",
+        "第2笔是弯钩，不写成竖钩。"
+      ],
+      "check": "最后一横收尾，共三笔。",
+      "migration_boundary": "本页只练独体“子”；其他位置形态和相近字另核。",
+      "cross_evidence": {
+        "source_id": "S04",
+        "pdf_page": 9,
+        "printed_page": 4,
+        "fields": [
+          "stroke_count",
+          "stroke_order"
+        ],
+        "result": "matched"
+      },
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 92,
+        "printed_page": 86,
+        "entry_number": "二级3154",
+        "entry_pinyin": "zǐdàn",
+        "adopted_pinyin": "zǐ",
+        "usage": "取首语素；不冒充独立字条",
+        "application": "morpheme_first",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      },
+      "structure_evidence": {
+        "source_id": "S07",
+        "pdf_page": 5,
+        "printed_page": 2,
+        "table": "现代常用独体字表",
+        "result": "listed"
+      },
+      "component_name_evidence": {
+        "source_id": "S03",
+        "pdf_page": 23,
+        "printed_page": 20,
+        "table": "现代常用字部件表",
+        "serial": 510,
+        "group": 437,
+        "printed_name": "子（zǐ）",
+        "adopted_name": "子",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "女",
+      "main_id": 56,
+      "pinyin": "nǚ",
+      "component_name": "女",
+      "stroke_names": [
+        "撇点",
+        "撇",
+        "横"
+      ],
+      "order_code": "531",
+      "primary_pdf_page": 11,
+      "primary_printed_page": 5,
+      "tips": [
+        "先写撇点，再撇，最后写横。",
+        "首笔撇点是一笔连续写完。"
+      ],
+      "check": "共三笔，最后一笔是横。",
+      "migration_boundary": "女作左旁时的写法另行在整字中核查，本页不外推。",
+      "cross_evidence": {
+        "source_id": "S04",
+        "pdf_page": 9,
+        "printed_page": 4,
+        "fields": [
+          "stroke_count",
+          "stroke_order"
+        ],
+        "result": "matched"
+      },
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 44,
+        "printed_page": 38,
+        "entry_number": "一级1199",
+        "entry_pinyin": "nǚ",
+        "adopted_pinyin": "nǚ",
+        "usage": "独立词条",
+        "application": "direct",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      },
+      "structure_evidence": {
+        "source_id": "S07",
+        "pdf_page": 5,
+        "printed_page": 2,
+        "table": "现代常用独体字表",
+        "result": "listed"
+      },
+      "component_name_evidence": {
+        "source_id": "S03",
+        "pdf_page": 17,
+        "printed_page": 14,
+        "table": "现代常用字部件表",
+        "serial": 263,
+        "group": 229,
+        "printed_name": "女（nǚ）",
+        "adopted_name": "女",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "小",
+      "main_id": 36,
+      "pinyin": "xiǎo",
+      "component_name": "小",
+      "stroke_names": [
+        "竖钩",
+        "撇",
+        "点"
+      ],
+      "order_code": "234",
+      "primary_pdf_page": 10,
+      "primary_printed_page": 4,
+      "tips": [
+        "先写中间竖钩，再左撇，最后右点。",
+        "第2笔是撇，不是点。"
+      ],
+      "check": "顺序是竖钩、撇、点。",
+      "migration_boundary": "⺌等位置变体另行核查，本页只练独体“小”。",
+      "cross_evidence": {
+        "source_id": "S04",
+        "pdf_page": 8,
+        "printed_page": 3,
+        "fields": [
+          "stroke_count",
+          "stroke_order"
+        ],
+        "result": "matched"
+      },
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 51,
+        "printed_page": 45,
+        "entry_number": "一级1793",
+        "entry_pinyin": "xiǎo",
+        "adopted_pinyin": "xiǎo",
+        "usage": "独立词条",
+        "application": "direct",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      },
+      "structure_evidence": {
+        "source_id": "S07",
+        "pdf_page": 5,
+        "printed_page": 2,
+        "table": "现代常用独体字表",
+        "result": "listed"
+      },
+      "component_name_evidence": {
+        "source_id": "S03",
+        "pdf_page": 20,
+        "printed_page": 17,
+        "table": "现代常用字部件表",
+        "serial": 403,
+        "group": 351,
+        "printed_name": "小（xiǎo）",
+        "adopted_name": "小",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "王",
+      "main_id": 61,
+      "pinyin": "wáng",
+      "component_name": "王",
+      "stroke_names": [
+        "横",
+        "横",
+        "竖",
+        "横"
+      ],
+      "order_code": "1121",
+      "primary_pdf_page": 12,
+      "primary_printed_page": 6,
+      "tips": [
+        "先写上面两横，再写竖，最后写下横。",
+        "竖是第3笔，不要提前写。"
+      ],
+      "check": "四笔顺序是横、横、竖、横。",
+      "migration_boundary": "王作左旁时的写法和名称另核，本页不外推。",
+      "cross_evidence": {
+        "source_id": "S04",
+        "pdf_page": 10,
+        "printed_page": 5,
+        "fields": [
+          "stroke_count",
+          "stroke_order"
+        ],
+        "result": "matched"
+      },
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 83,
+        "printed_page": 77,
+        "entry_number": "二级2376",
+        "entry_pinyin": "wáng",
+        "adopted_pinyin": "wáng",
+        "usage": "独立词条",
+        "application": "direct",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      },
+      "structure_evidence": {
+        "source_id": "S07",
+        "pdf_page": 5,
+        "printed_page": 2,
+        "table": "现代常用独体字表",
+        "result": "listed"
+      },
+      "component_name_evidence": {
+        "source_id": "S03",
+        "pdf_page": 20,
+        "printed_page": 17,
+        "table": "现代常用字部件表",
+        "serial": 375,
+        "group": 325,
+        "printed_name": "王（wáng）",
+        "adopted_name": "王",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "石",
+      "main_id": 102,
+      "pinyin": "shí",
+      "component_name": "石",
+      "stroke_names": [
+        "横",
+        "撇",
+        "竖",
+        "横折",
+        "横"
+      ],
+      "order_code": "13251",
+      "primary_pdf_page": 19,
+      "primary_printed_page": 13,
+      "tips": [
+        "先横、撇，再写竖和横折，最后一横封口。",
+        "第4笔横折一笔写完。"
+      ],
+      "check": "共五笔，最后一横封住“口”形。",
+      "migration_boundary": "本页只练独体“石”；石字旁等位置写法另核。",
+      "cross_evidence": {
+        "source_id": "S04",
+        "pdf_page": 18,
+        "printed_page": 13,
+        "fields": [
+          "stroke_count",
+          "stroke_order"
+        ],
+        "result": "matched"
+      },
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 47,
+        "printed_page": 41,
+        "entry_number": "一级1448",
+        "entry_pinyin": "shítou",
+        "adopted_pinyin": "shí",
+        "usage": "取首语素；不冒充独立字条",
+        "application": "morpheme_first",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      },
+      "structure_evidence": {
+        "source_id": "S07",
+        "pdf_page": 6,
+        "printed_page": 3,
+        "table": "现代常用独体字表",
+        "result": "listed"
+      },
+      "component_name_evidence": {
+        "source_id": "S03",
+        "pdf_page": 18,
+        "printed_page": 15,
+        "table": "现代常用字部件表",
+        "serial": 320,
+        "group": 278,
+        "printed_name": "石（shí）",
+        "adopted_name": "石",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "白",
+      "main_id": 112,
+      "pinyin": "bái",
+      "component_name": "白",
+      "stroke_names": [
+        "撇",
+        "竖",
+        "横折",
+        "横",
+        "横"
+      ],
+      "order_code": "32511",
+      "primary_pdf_page": 21,
+      "primary_printed_page": 15,
+      "tips": [
+        "先撇，再竖、横折，接着写里面一横，最后一横封口。",
+        "第3笔是横折；具体收笔轮廓在矢量阶段定点复核。"
+      ],
+      "check": "共五笔，里面一横先写，最后再封口。",
+      "migration_boundary": "本页只练独体“白”；组合字中的位置变化另核。",
+      "cross_evidence": {
+        "source_id": "S04",
+        "pdf_page": 22,
+        "printed_page": 17,
+        "fields": [
+          "stroke_count",
+          "stroke_order"
+        ],
+        "result": "matched"
+      },
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 31,
+        "printed_page": 25,
+        "entry_number": "一级19",
+        "entry_pinyin": "bái",
+        "adopted_pinyin": "bái",
+        "usage": "独立词条；采用形容词条读音",
+        "application": "direct",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      },
+      "structure_evidence": {
+        "source_id": "S07",
+        "pdf_page": 6,
+        "printed_page": 3,
+        "table": "现代常用独体字表",
+        "result": "listed"
+      },
+      "component_name_evidence": {
+        "source_id": "S03",
+        "pdf_page": 10,
+        "printed_page": 7,
+        "table": "现代常用字部件表",
+        "serial": 9,
+        "group": 8,
+        "printed_name": "白（bái）",
+        "adopted_name": "白",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "立",
+      "main_id": 116,
+      "pinyin": "lì",
+      "component_name": "立",
+      "stroke_names": [
+        "点",
+        "横",
+        "点",
+        "撇",
+        "横"
+      ],
+      "order_code": "41431",
+      "primary_pdf_page": 23,
+      "primary_printed_page": 17,
+      "tips": [
+        "先点、横，再写点和撇，最后写横。",
+        "第3笔是点，第4笔是撇，不能合并。"
+      ],
+      "check": "五笔写完，最后一横托住上部。",
+      "migration_boundary": "本页只练独体“立”；立字旁、立字头等位置写法另核。",
+      "cross_evidence": {
+        "source_id": "S04",
+        "pdf_page": 23,
+        "printed_page": 18,
+        "fields": [
+          "stroke_count",
+          "stroke_order"
+        ],
+        "result": "matched"
+      },
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 73,
+        "printed_page": 67,
+        "entry_number": "二级1456",
+        "entry_pinyin": "lì",
+        "adopted_pinyin": "lì",
+        "usage": "独立词条",
+        "application": "direct",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      },
+      "structure_evidence": {
+        "source_id": "S07",
+        "pdf_page": 6,
+        "printed_page": 3,
+        "table": "现代常用独体字表",
+        "result": "listed"
+      },
+      "component_name_evidence": {
+        "source_id": "S03",
+        "pdf_page": 15,
+        "printed_page": 12,
+        "table": "现代常用字部件表",
+        "serial": 209,
+        "group": 180,
+        "printed_name": "立（lì）",
+        "adopted_name": "立",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    }
+  ],
+  "metadata_review_record": "reviews/B03-metadata.md",
+  "content_review_record": "reviews/B03-content.md"
+}
