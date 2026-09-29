@@ -1,0 +1,12 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-09-29",
+  "sources": [
+    {"id":"S01","publication_id":"GF0011-2022","title":"汉字部首表（2022年修订）","publisher":"教育部、国家语言文字工作委员会","edition":"GF0011—2022","role":["主部首范围","主附关系","部分名称"],"url":"https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202211/t20221118_995332.html","status":"notice_located_fulltext_pending","limits":"发布说明确认保持201主部首；不能替代2022正文逐项核验。"},
+    {"id":"S01-2009","publication_id":"GF0011-2009","title":"汉字部首表（2009）","publisher":"教育部、国家语言文字工作委员会","edition":"GF0011—2009","role":["主表中间索引"],"url":"https://archive.org/download/GF0011-2009/GF0011-2009%20%E6%B1%89%E5%AD%97%E9%83%A8%E9%A6%96%E8%A1%A8.pdf","status":"acquisition_started","limits":"公共存档副本，须查看封面/主表；不得冒充2022修订版。"},
+    {"id":"S02","publication_id":"GF0023-2020","title":"通用规范汉字笔顺规范","publisher":"教育部、国家语言文字工作委员会","edition":"GF0023—2020","role":["笔顺","笔数","字形关系"],"url":"https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/202103/W020210318300204215237.pdf","mirror_url":"https://www.htu.edu.cn/_upload/article/files/5b/4f/535eed164dc2b6303182b1ad5654/356ee878-cf3c-4752-b53e-7e0975ed7776.pdf","status":"acquisition_started","limits":"河南师范大学转载为同一出版物；与原发布站不构成两份独立证据。"},
+    {"id":"S03","publication_id":"GF0014-2009","title":"现代常用字部件及部件名称规范","publisher":"教育部、国家语言文字工作委员会","edition":"GF0014—2009","role":["部件名称","部件关系"],"url":"https://wgy.qhnu.edu.cn/info/1057/1991.htm","status":"index_located_fulltext_pending","limits":"目前仅定位大学附件目录；未宣称已查看对应部件原件。"},
+    {"id":"S04","publication_id":"textbook-cross-check-to-be-selected","title":"大陆正式教材或出版社规范笔顺内页","publisher":null,"edition":null,"role":["字段级交叉复核"],"url":null,"status":"pending_selection","limits":"选定后必须登记具体版本与实际页码；出版社宣传页不能替代内页。"},
+    {"id":"D01","publication_id":"hanzi-writer-data","title":"Hanzi Writer / Make Me a Hanzi笔画数据","publisher":"chanind / skishore","edition":"68d10a4b21150cae5e1ebbd223eed289cf32d90c","role":["绘图矢量"],"url":"https://github.com/chanind/hanzi-writer-data","status":"revision_resolved","limits":"不是语言文字规范；每项需逐笔匹配。字体文件不分发，笔画素材沿用其适用许可。"}
+  ]
+}
