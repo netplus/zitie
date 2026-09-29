@@ -1,11 +1,219 @@
 {
- "schema_version":1,"as_of":"2026-09-29",
- "sources":[
-  {"id":"S01","publication_id":"GF0011-2022","title":"汉字部首表（2022年修订）","publisher":"教育部、国家语言文字工作委员会","edition":"GF0011—2022","role":["主部首范围","主附关系","部分名称"],"url":"https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202211/t20221118_995332.html","status":"notice_located_fulltext_pending","limits":"发布说明确认保持201主部首；不替代2022正文逐项核验。"},
-  {"id":"S01-2009","publication_id":"GF0011-2009","title":"汉字部首表（2009）","publisher":"教育部、国家语言文字工作委员会","edition":"GF0011—2009","role":["主表中间索引"],"url":"https://archive.org/download/GF0011-2009/GF0011-2009%20%E6%B1%89%E5%AD%97%E9%83%A8%E9%A6%96%E8%A1%A8.pdf","status":"acquired_main_table_pages_reviewed","sha256":"c8ccfcc51400bb04eddab256017a67ed20def41ee29f8c06e2c54ddbb76b1f48","pdf_pages_reviewed":[6,7,8],"printed_pages_reviewed":[3,4,5],"limits":"公共存档的2009原出版物副本，不冒充2022修订版。"},
-  {"id":"S02","publication_id":"GF0023-2020","title":"通用规范汉字笔顺规范","publisher":"教育部、国家语言文字工作委员会","edition":"GF0023—2020","role":["笔顺","笔数","字形关系"],"url":"https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/202103/W020210318300204215237.pdf","mirror_url":"https://www.htu.edu.cn/_upload/article/files/5b/4f/535eed164dc2b6303182b1ad5654/356ee878-cf3c-4752-b53e-7e0975ed7776.pdf","status":"acquired_B01_pages_reviewed","sha256":"0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0","pdf_page_count":581,"pdf_pages_reviewed":[9,10],"printed_pages_reviewed":[3,4],"limits":"河南师范大学转载为同一出版物，与原发布站不构成两份独立证据；未宣称全部581页审读。"},
-  {"id":"S03","publication_id":"GF0014-2009","title":"现代常用字部件及部件名称规范","publisher":"教育部、国家语言文字工作委员会","edition":"GF0014—2009","role":["部件名称","部件关系"],"url":"https://wgy.qhnu.edu.cn/info/1057/1991.htm","status":"index_located_fulltext_pending","limits":"仅定位附件目录，未取得可核对应条目的原件。另发现的commonPart.PDF为征求意见稿，不作为正式规范依据。"},
-  {"id":"S04","publication_id":"textbook-cross-check-to-be-selected","title":"大陆正式教材或出版社规范笔顺内页","publisher":null,"edition":null,"role":["字段级交叉复核"],"url":null,"status":"pending_selection","limits":"须登记具体版本与实际页码；宣传介绍不能替代内页。"},
-  {"id":"D01","publication_id":"hanzi-writer-data","title":"Hanzi Writer / Make Me a Hanzi笔画数据","publisher":"chanind / skishore","edition":"68d10a4b21150cae5e1ebbd223eed289cf32d90c","role":["绘图矢量"],"url":"https://github.com/chanind/hanzi-writer-data","status":"B01_acquired_and_order_matched","limits":"不是语言文字规范。实际文件SHA256由generation.json记录；仅笔画轮廓，不分发字体文件。"}
- ]
+  "schema_version": 1,
+  "as_of": "2026-09-29",
+  "sources": [
+    {
+      "id": "S01",
+      "publication_id": "GF0011-2022",
+      "title": "汉字部首表（2022年修订）",
+      "publisher": "教育部、国家语言文字工作委员会",
+      "edition": "GF0011—2022",
+      "role": [
+        "主部首范围",
+        "主附关系",
+        "部分名称"
+      ],
+      "url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202211/t20221118_995332.html",
+      "status": "notice_located_fulltext_pending",
+      "limits": "发布说明确认保持201主部首；不替代2022正文逐项核验。"
+    },
+    {
+      "id": "S01-2009",
+      "publication_id": "GF0011-2009",
+      "title": "汉字部首表（2009）",
+      "publisher": "教育部、国家语言文字工作委员会",
+      "edition": "GF0011—2009",
+      "role": [
+        "主表中间索引"
+      ],
+      "url": "https://archive.org/download/GF0011-2009/GF0011-2009%20%E6%B1%89%E5%AD%97%E9%83%A8%E9%A6%96%E8%A1%A8.pdf",
+      "status": "acquired_main_table_pages_reviewed",
+      "sha256": "c8ccfcc51400bb04eddab256017a67ed20def41ee29f8c06e2c54ddbb76b1f48",
+      "pdf_pages_reviewed": [
+        6,
+        7,
+        8
+      ],
+      "printed_pages_reviewed": [
+        3,
+        4,
+        5
+      ],
+      "limits": "公共存档的2009原出版物副本，不冒充2022修订版。"
+    },
+    {
+      "id": "S02",
+      "publication_id": "GF0023-2020",
+      "title": "通用规范汉字笔顺规范",
+      "publisher": "教育部、国家语言文字工作委员会",
+      "edition": "GF0023—2020",
+      "role": [
+        "笔顺",
+        "笔数",
+        "字形关系"
+      ],
+      "url": "https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/202103/W020210318300204215237.pdf",
+      "mirror_url": "https://www.htu.edu.cn/_upload/article/files/5b/4f/535eed164dc2b6303182b1ad5654/356ee878-cf3c-4752-b53e-7e0975ed7776.pdf",
+      "status": "acquired_B01_pages_reviewed",
+      "sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
+      "pdf_page_count": 581,
+      "pdf_pages_reviewed": [
+        9,
+        10
+      ],
+      "printed_pages_reviewed": [
+        3,
+        4
+      ],
+      "limits": "河南师范大学转载为同一出版物，与原发布站不构成两份独立证据；未宣称全部581页审读。"
+    },
+    {
+      "id": "D01",
+      "publication_id": "hanzi-writer-data",
+      "title": "Hanzi Writer / Make Me a Hanzi笔画数据",
+      "publisher": "chanind / skishore",
+      "edition": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+      "role": [
+        "绘图矢量"
+      ],
+      "url": "https://github.com/chanind/hanzi-writer-data",
+      "status": "B01_acquired_and_order_matched",
+      "limits": "不是语言文字规范。实际文件SHA256由generation.json记录；仅笔画轮廓，不分发字体文件。"
+    },
+    {
+      "id": "S04",
+      "title": "现代汉语通用字笔顺规范",
+      "publication_id": "1997-STROKE-ORDER",
+      "publisher": "国家语言文字工作委员会标准化工作委员会编；语文出版社，1997年8月第1版",
+      "status": "formal_scan_acquired_selected_pages_reviewed",
+      "urls": [
+        "https://api.github.com/repos/zispace/hanzi-docs/git/blobs/9996a58e3f515d307bf35e104cf624a84f876d5e"
+      ],
+      "sha256": "ca8a0139744cf8105cb7e4ae7464ebc68cb76310b5a29e7cf004b2489a35ae65",
+      "git_blob_sha": "9996a58e3f515d307bf35e104cf624a84f876d5e",
+      "pdf_pages": 458,
+      "reviewed_pdf_pages": [
+        1,
+        2,
+        4,
+        5,
+        6,
+        7,
+        8,
+        10,
+        12,
+        14,
+        15,
+        19,
+        20
+      ],
+      "checked_at": "2026-09-29",
+      "provenance": "原出版物扫描件由zispace/hanzi-docs托管；版本身份据实际原件核查，平台不是规范发布者。",
+      "limits": "2020版明确继承1997版；按不同出版物交叉检查，不按独立证据体系计数。说明第2页与正文第2页须区分。",
+      "isbn": "7-80126-201-8"
+    },
+    {
+      "id": "S05",
+      "title": "GB13000.1字符集汉字折笔规范",
+      "publication_id": "GF2001—2001",
+      "publisher": "教育部、国家语委",
+      "status": "formal_scan_acquired_selected_pages_reviewed",
+      "urls": [
+        "https://api.github.com/repos/zispace/hanzi-docs/git/blobs/d9802042adae66ec106a7b977d019341a0492aa6"
+      ],
+      "sha256": "68a1420580a7eedde79eeb55b91b6b2ff10ef9155d98633ccc712838f04e9b14",
+      "git_blob_sha": "d9802042adae66ec106a7b977d019341a0492aa6",
+      "pdf_pages": 9,
+      "reviewed_pdf_pages": [
+        1,
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "checked_at": "2026-09-29",
+      "provenance": "原出版物扫描件由zispace/hanzi-docs托管；版本身份据实际原件核查，平台不是规范发布者。",
+      "limits": "仅支持实际审读的页面与字段，不声明独立编制或独立双人审稿。"
+    },
+    {
+      "id": "S06",
+      "title": "汉语国际教育用音节汉字词汇等级划分",
+      "publication_id": "GF0015—2010",
+      "publisher": "教育部、国家语委",
+      "status": "formal_scan_acquired_selected_pages_reviewed",
+      "urls": [
+        "https://api.github.com/repos/zispace/hanzi-docs/git/blobs/13c76ed4c0dd835d356dd2c4c0504e050a576061"
+      ],
+      "sha256": "0d647e1378847480364e2603030fe6aa6102d99320c42cac631b2fb3155d18ce",
+      "git_blob_sha": "13c76ed4c0dd835d356dd2c4c0504e050a576061",
+      "pdf_pages": 157,
+      "reviewed_pdf_pages": [
+        1,
+        3,
+        7,
+        31,
+        34,
+        37,
+        42,
+        43,
+        46,
+        47,
+        49,
+        52,
+        74
+      ],
+      "checked_at": "2026-09-29",
+      "provenance": "原出版物扫描件由zispace/hanzi-docs托管；版本身份据实际原件核查，平台不是规范发布者。",
+      "limits": "仅引用词条读音，不采用旧版词汇等级作为当前教学分级。工、巾取工人、毛巾的语素读音，并非独立字条。"
+    },
+    {
+      "id": "S07",
+      "title": "现代常用独体字规范",
+      "publication_id": "GF0013—2009",
+      "publisher": "教育部、国家语委",
+      "status": "formal_scan_acquired_selected_pages_reviewed",
+      "urls": [
+        "https://api.github.com/repos/zispace/hanzi-docs/git/blobs/0487d736363e6102faac0a1ed3c7f422f323f1ad"
+      ],
+      "sha256": "eeedf11ca7e0e38c2a79283c5b9e200fbec011c87c1fa24536045518ab94e5a7",
+      "git_blob_sha": "0487d736363e6102faac0a1ed3c7f422f323f1ad",
+      "pdf_pages": 7,
+      "reviewed_pdf_pages": [
+        1,
+        5,
+        6
+      ],
+      "checked_at": "2026-09-29",
+      "provenance": "原出版物扫描件由zispace/hanzi-docs托管；版本身份据实际原件核查，平台不是规范发布者。",
+      "limits": "仅支持实际审读的页面与字段，不声明独立编制或独立双人审稿。"
+    },
+    {
+      "id": "S03",
+      "title": "现代常用字部件及部件名称规范",
+      "publication_id": "GF0014—2009",
+      "publisher": "教育部、国家语委",
+      "status": "formal_scan_acquired_selected_pages_reviewed",
+      "urls": [
+        "https://api.github.com/repos/zispace/hanzi-docs/git/blobs/bb3923a5cab4c344217418b0ee4bebb548271bc6"
+      ],
+      "sha256": "bb554d91ac39dc10470e3186555ca1140c150b678190f63624ecf6f2298dffc6",
+      "git_blob_sha": "bb3923a5cab4c344217418b0ee4bebb548271bc6",
+      "pdf_pages": 41,
+      "reviewed_pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        9
+      ],
+      "checked_at": "2026-09-29",
+      "provenance": "原出版物扫描件由zispace/hanzi-docs托管；版本身份据实际原件核查，平台不是规范发布者。",
+      "limits": "仅支持实际审读的页面与字段，不声明独立编制或独立双人审稿。"
+    }
+  ]
 }

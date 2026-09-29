@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 """Acquire immutable public stroke outlines, not font files or review approvals."""
+import argparse
 import hashlib
 import json
 from pathlib import Path
@@ -14,7 +15,9 @@ def retrieve(url):
         return r.read(1024*1024)
 
 def main():
-    entries=json.loads((ROOT/'data/B01.json').read_text(encoding='utf-8'))['entries']
+    p=argparse.ArgumentParser();p.add_argument('--batches',nargs='+',choices=['B01','B02'],default=['B01']);args=p.parse_args()
+    entries=[]
+    for bid in args.batches: entries.extend(json.loads((ROOT/f'data/{bid}.json').read_text(encoding='utf-8'))['entries'])
     dest=ROOT/'build/vectors';dest.mkdir(parents=True,exist_ok=True)
     # Preserve the complete upstream license alongside downloaded outlines.
     license_bytes=retrieve(BASE+'/ARPHICPL.TXT')
