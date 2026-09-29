@@ -54,30 +54,38 @@
       ],
       "url": "https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/202103/W020210318300204215237.pdf",
       "mirror_url": "https://www.htu.edu.cn/_upload/article/files/5b/4f/535eed164dc2b6303182b1ad5654/356ee878-cf3c-4752-b53e-7e0975ed7776.pdf",
-      "status": "acquired_B01_B02_selected_rows_reviewed",
+      "status": "acquired_B01_B02_B03_selected_rows_reviewed",
       "sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
       "pdf_page_count": 581,
       "pdf_pages_reviewed": [
+        8,
         9,
         10,
+        11,
         12,
         13,
         14,
         15,
         16,
         19,
-        20
+        20,
+        21,
+        23
       ],
       "printed_pages_reviewed": [
+        2,
         3,
         4,
+        5,
         6,
         7,
         8,
         9,
         10,
         13,
-        14
+        14,
+        15,
+        17
       ],
       "limits": "河南师范大学转载为同一出版物，与原发布站不构成两份独立证据；未宣称全部581页审读。",
       "B03_locator": {
@@ -187,7 +195,46 @@
         ],
         "total_strokes": 35,
         "record": "reviews/B03-stroke-order-locator.md",
-        "limits": "Do not add locator pages to reviewed_pdf_pages until actual rendered-page inspection is completed."
+        "limits": "保留首次定位阶段的原始状态；当前十项原页与交叉复核结果以superseded_by及B03_original_page_review为准。 首次locator总数35是合计错误；原逐字笔数无误，本轮重算为34笔。",
+        "historical_snapshot": true,
+        "superseded_by": "reviews/B03-primary-cross.md"
+      },
+      "B03_original_page_review": {
+        "date": "2026-09-29",
+        "pdf_pages": [
+          9,
+          10,
+          11,
+          12,
+          19,
+          21,
+          23
+        ],
+        "printed_pages": [
+          3,
+          4,
+          5,
+          6,
+          13,
+          15,
+          17
+        ],
+        "characters": "刀力又子女小王石白立",
+        "strokes": 34,
+        "record": "reviews/B03-primary-cross.md",
+        "evidence": "data/evidence/B03-stroke-order.json",
+        "method": "local_original_page_render_and_paired_row_second_pass",
+        "limits": "只审读本批目标字条；不授予细笔名、读音、矢量、2022部首身份或变体通过。",
+        "additional_context_pages": [
+          {
+            "pdf_page": 8,
+            "printed_page": 2,
+            "sections": [
+              "4.1",
+              "5"
+            ]
+          }
+        ]
       }
     },
     {
@@ -223,17 +270,50 @@
         6,
         7,
         8,
+        9,
         10,
         12,
         14,
         15,
+        18,
         19,
-        20
+        20,
+        22,
+        23
       ],
       "checked_at": "2026-09-29",
       "provenance": "原出版物扫描件由zispace/hanzi-docs托管；版本身份据实际原件核查，平台不是规范发布者。",
       "limits": "2020版明确继承1997版；按不同出版物交叉检查，不按独立证据体系计数。说明第2页与正文第2页须区分。",
-      "isbn": "7-80126-201-8"
+      "isbn": "7-80126-201-8",
+      "B03_original_page_review": {
+        "date": "2026-09-29",
+        "pdf_pages": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          18,
+          22,
+          23
+        ],
+        "printed_pages": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          13,
+          17,
+          18
+        ],
+        "characters": "刀力又子女小王石白立",
+        "strokes": 34,
+        "record": "reviews/B03-primary-cross.md",
+        "evidence": "data/evidence/B03-stroke-order.json",
+        "method": "local_original_page_render_and_paired_row_second_pass",
+        "limits": "只审读本批目标字条；不授予细笔名、读音、矢量、2022部首身份或变体通过。"
+      }
     },
     {
       "id": "S05",

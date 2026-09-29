@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import copy
 import unittest
-from validate_project import load, validate
+from validate_project import load, validate, validate_evidence
 
 class ValidationTests(unittest.TestCase):
     def setUp(self):
@@ -34,5 +34,38 @@ class ValidationTests(unittest.TestCase):
         self.reject(lambda d:d[3]['entries'][0].update(order_code='11'))
     def test_false_approval(self):
         self.reject(lambda d:d[3].update(release_eligible=True))
+
+
+class EvidenceTests(unittest.TestCase):
+    def setUp(self):
+        self.data = [load(n) for n in ['data/coverage.json','data/batches.json','sources/catalog.json','data/evidence/B03-stroke-order.json']]
+    def reject(self, change):
+        data = copy.deepcopy(self.data)
+        change(data)
+        with self.assertRaises(AssertionError): validate_evidence(*data)
+    def test_source_checkpoint_only(self):
+        result = validate_evidence(*self.data)
+        self.assertEqual((result['source_cross_checked_entries'],result['source_cross_checked_strokes']), (10,34))
+        self.assertEqual((result['generated_entries'],result['formal_release_entries']), (0,0))
+    def test_reviewed_sequence_fixture(self):
+        actual = {e['character']:e['order_code'] for e in self.data[3]['entries']}
+        self.assertEqual(actual,dict(zip('刀力又子女小王石白立',['53','53','54','521','531','234','1121','13251','32511','41431'])))
+    def test_actual_page_fixture(self):
+        actual = [(e['S02']['pdf_page'],e['S04']['pdf_page']) for e in self.data[3]['entries']]
+        self.assertEqual(actual,[(9,6),(9,7),(9,7),(11,9),(11,9),(10,8),(12,10),(19,18),(21,22),(23,23)])
+    def test_cannot_promote_field_review(self):
+        self.reject(lambda d:d[3].update(release_eligible=True))
+    def test_no_inferred_visual_check(self):
+        self.reject(lambda d:d[3]['entries'][3].update(first_pass='pagination_inferred'))
+    def test_wrong_source_hash(self):
+        self.reject(lambda d:d[3]['source_files']['S04'].update(sha256='0'*64))
+    def test_main_identity_drift(self):
+        self.reject(lambda d:d[3]['entries'][0].update(main_id=23))
+    def test_unviewed_page(self):
+        self.reject(lambda d:d[3]['entries'][0]['S04'].update(pdf_page=100,printed_page=95))
+    def test_stroke_total_drift(self):
+        self.reject(lambda d:d[3].update(total_strokes=36))
+    def test_cannot_count_as_generated(self):
+        self.reject(lambda d:d[0]['field_review_checkpoints']['B03'].update(generated_main_count=10))
 
 if __name__ == '__main__': unittest.main()

@@ -57,6 +57,61 @@ def validate(catalog, batches, variants, batch):
             'formal_release_entries':10 if batch['release_eligible'] else 0,
             'note':'Structural checks only; no automatic semantic approval.'}
 
+def validate_evidence(catalog, batches, sources, evidence):
+    """Check field-review bookkeeping, not the truth of the source or its images."""
+    assert evidence['schema_version'] == 1
+    assert evidence['record_kind'] == 'field_review_checkpoint'
+    assert evidence['release_eligible'] is False, 'A field checkpoint is not a release'
+    assert evidence['status'] == 'stroke_order_original_pages_cross_checked'
+    assert evidence['review_method'] == 'original_page_render_then_paired_row_second_pass'
+    assert evidence['reviewer'] and evidence['review_date']
+    assert evidence['independent_reviewers'] is False, 'This record describes same-agent rechecking'
+    assert evidence['source_relationship'], 'Disclose source inheritance'
+    assert set(evidence['supported_fields']) == {'stroke_count','stroke_order','source_glyph_relations'}
+    assert {'fine_stroke_names','pronunciation','vector_matching','layout','target_edition_identity','variants'} <= set(evidence['pending_fields'])
+    declared = next(b for b in batches['frozen_batches'] if b['id'] == evidence['batch_id'])
+    entries = evidence['entries']
+    assert ''.join(e['character'] for e in entries) == declared['main_glyphs'], 'Evidence must match frozen teaching order'
+    assert len(entries) == evidence['total_entries']
+    assert sum(e['strokes'] for e in entries) == evidence['total_strokes']
+    ids = {r['glyph']:r for r in expand(catalog)}
+    publications = {s['id']:s for s in sources['sources']}
+    assert set(evidence['source_files']) == {'S02','S04'}, 'Use the two reviewed publications, not two mirrors'
+    for sid, file in evidence['source_files'].items():
+        source = publications[sid]
+        assert file['publication_id'] == source['publication_id']
+        assert file['sha256'] == source['sha256'], 'Source file hash drift'
+        assert len(file['sha256']) == 64 and set(file['sha256']) <= set('0123456789abcdef')
+        assert file['pages'] == source.get('pdf_page_count', source.get('pdf_pages'))
+        assert file['bytes'] > 0
+        assert file['recovery_repository'] == 'netplus/zitie'
+    assert publications['S02']['publication_id'] != publications['S04']['publication_id']
+    checkpoint = catalog['field_review_checkpoints'][evidence['batch_id']]
+    assert checkpoint['main_ids'] == [e['main_id'] for e in entries]
+    assert checkpoint['evidence'] == declared['stroke_order_evidence']
+    assert checkpoint['generated_main_count'] == 0 and checkpoint['release_eligible'] is False
+    for e in entries:
+        assert ids[e['character']]['main_id'] == e['main_id']
+        assert ids[e['character']]['strokes'] == e['strokes'] == len(e['order_code'])
+        assert set(e['order_code']) <= set('12345')
+        assert e['ucs'] == format(ord(e['character']), '05X')
+        assert len(e['table_no']) == 4 and e['table_no'].isdigit()
+        assert e['first_pass'] == 'original_page_viewed' and e['second_pass'] == 'paired_rows_viewed'
+        assert e['result'] == 'count_order_match' and e['observation']
+        for sid, offset, max_rows in [('S02',6,13), ('S04',5,10)]:
+            loc = e[sid]
+            source = publications[sid]
+            reviewed = source.get('pdf_pages_reviewed', source.get('reviewed_pdf_pages', []))
+            assert loc['pdf_page'] in reviewed, 'Page is not recorded as actually viewed'
+            assert loc['pdf_page'] - loc['printed_page'] == offset
+            assert 1 <= loc['pdf_page'] <= evidence['source_files'][sid]['pages']
+            assert loc['column'] in ('L','R') and 1 <= loc['row'] <= max_rows
+            box = loc['clip_pdf_points']
+            assert len(box) == 4 and 0 <= box[0] < box[2] and 0 <= box[1] < box[3]
+    return {'batch_id':evidence['batch_id'], 'source_cross_checked_entries':len(entries),
+            'source_cross_checked_strokes':evidence['total_strokes'], 'generated_entries':0,
+            'formal_release_entries':0, 'note':'Field evidence consistency only; not semantic approval.'}
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--release', action='store_true')
@@ -64,6 +119,9 @@ def main():
     args = p.parse_args()
     c,b,v,x = (load(n) for n in ['data/coverage.json','data/batches.json','data/variants.json',f'data/{args.batch}.json'])
     result = validate(c,b,v,x)
+    sources = load("sources/catalog.json")
+    result["field_checkpoints"] = [validate_evidence(c,b,sources,load(item["stroke_order_evidence"]))
+                                   for item in b["frozen_batches"] if item.get("stroke_order_evidence")]
     if args.release and not x['release_eligible']:
         raise SystemExit('Release blocked: authoritative cross-review and/or other gates remain pending.')
     print(json.dumps(result, ensure_ascii=False, indent=2))

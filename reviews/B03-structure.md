@@ -12,3 +12,5 @@ Actual scan pages viewed:
 Result: all ten B03 selections are directly supported as modern common undecomposable characters. This result supports only the structure/undecomposable-character teaching prerequisite. It does not prove stroke order, pronunciation, radical parent/subordinate relations, positional variants, or target-edition radical identity.
 
 Next gate: locate each B03 character in GF0023-2020 and record physical page, printed page, stroke count, and stroke sequence; then cross-check the 1997 stroke-order publication. Do not build a B03 deliverable PDF before those source checks are complete.
+
+Follow-up (2026-09-29): the ten-character S02/S04 original-page stroke-order cross-check is now recorded in B03-primary-cross.md. Fine stroke names, pronunciation, artwork and target-edition identity remain separate pending fields.
