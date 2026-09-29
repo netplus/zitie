@@ -1,39 +1,45 @@
-name: Book integrity checks
+name: Prepare v0.2 editorial source and build review PDFs
 on:
   push:
-  pull_request:
+    branches: [feat/pdf-archive-b01-review]
+    paths: [.github/workflows/stage-v02.yml]
 permissions:
   contents: read
 jobs:
-  validate:
+  stage:
     runs-on: ubuntu-latest
     timeout-minutes: 12
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          ref: feat/pdf-archive-b01-review
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Install rendering dependencies
+      - name: Apply only the recorded pre-publication layout corrections
+        run: |
+          python maintenance/finalize_v02.py
+          python -m compileall -q scripts maintenance
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/B02.json scripts/build_batch.py book/front-matter/preface.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'fix: keep preface guidance together and flag B02 stroke-terminal review'
+            git push origin HEAD:feat/pdf-archive-b01-review
+          fi
+      - name: Install build dependencies
         run: |
           python -m pip install -r requirements.txt
           sudo apt-get update -qq
           sudo apt-get install -y fonts-arphic-gkai00mp fonts-dejavu-core fontconfig
-      - name: Structural tests and tracked PDF checks
-        env:
-          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+      - name: Build drafts without upgrading editorial status
         run: |
           for BATCH in B01 B02; do python scripts/validate_project.py --batch "$BATCH"; done
           python scripts/test_validation.py
+          python scripts/verify_deliverables.py
           python scripts/test_deliverables.py
-          if [ -n "$BASE_SHA" ]; then
-            python scripts/verify_deliverables.py --base-ref "$BASE_SHA"
-          else
-            python scripts/verify_deliverables.py
-          fi
-      - name: Build explicitly labelled research output
-        run: |
           python scripts/acquire_vectors.py --batches B01 B02
           FONT="$(fc-match -f '%{file}' 'AR PL KaitiM GB')"
           LATIN="$(fc-match -f '%{file}' 'DejaVu Sans')"
@@ -43,20 +49,10 @@ jobs:
           done
           python scripts/build_collection.py
           git rev-parse HEAD > build/SOURCE_COMMIT.txt
-      - name: Check formal publication separately
-        run: |
-          for BATCH in B01 B02; do
-            if python scripts/validate_project.py --batch "$BATCH" --release; then
-              echo "$BATCH release gates passed."
-            else
-              echo "$BATCH remains a research draft; no formal publication."
-            fi
-          done
-      - name: Export editable project source without font files
-        run: git archive --format=zip HEAD -o build/zitie-source.zip
+          git archive --format=zip HEAD -o build/zitie-source.zip
       - uses: actions/upload-artifact@v4
         with:
-          name: zitie-B01-B02-research
+          name: zitie-v02-layout-review
           path: build/
           retention-days: 14
           if-no-files-found: error

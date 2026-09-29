@@ -1,0 +1,69 @@
+name: Archive visually reviewed v0.2 draft PDFs
+on:
+  push:
+    branches: [feat/pdf-archive-b01-review]
+    paths: [.github/workflows/archive-v02.yml]
+permissions:
+  contents: read
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/pdf-archive-b01-review
+      - name: Retrieve only the reviewed build and preserve exact PDF bytes
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api repos/netplus/zitie/actions/artifacts/11011472530/zip > "$RUNNER_TEMP/reviewed.zip"
+          python - <<'PY'
+          import hashlib,json,os,pathlib,zipfile
+          source='564c2ccafbdcf8d91d855699480edf2ad3b92237'
+          expected={
+            'preface_v0.2.pdf':('8a8895c216153e519263853fff120a93486bad03584ced3c189088433c5c5c74',222554,3,'前言v0.2','front-matter'),
+            'B01_draft_A4.pdf':('f7ec7175f59f1875c12b7313c1502ec6d6042c3e10dceb578b7d1dc0ff204991',134999,10,'第一批10项编写稿','B01'),
+            'B02_draft_A4.pdf':('816c0aaee961df1b024647698b0b805492221e737251d475d14f06d29d803c61',142030,10,'第二批10项编写稿','B02'),
+            'B01-B02_with_preface_draft_A4.pdf':('7f87f2bb852079a7da6f1d4cb79aeee906fe8a12beab65354a3a62848a513d5c',497060,23,'前言与前两批20项编写稿','B01-B02')}
+          folder=pathlib.Path('deliverables/drafts/v0.2.0');folder.mkdir(parents=True,exist_ok=True)
+          manifest_path=pathlib.Path('deliverables/manifest.json');manifest=json.loads(manifest_path.read_text())
+          with zipfile.ZipFile(pathlib.Path(os.environ['RUNNER_TEMP'])/'reviewed.zip') as z:
+            assert z.read('SOURCE_COMMIT.txt').decode().strip()==source,'Wrong build source'
+            for name,(sha,size,pages,title,batch) in expected.items():
+              assert z.getinfo(name).file_size==size
+              raw=z.read(name);assert raw.startswith(b'%PDF-') and hashlib.sha256(raw).hexdigest()==sha
+              dst=folder/name
+              if dst.exists():assert dst.read_bytes()==raw,'Refusing historical overwrite'
+              else:dst.write_bytes(raw)
+              item={'path':dst.as_posix(),'title':title,'version':'0.2.0','status':'draft','batch':batch,'pages':pages,'bytes':size,'sha256':sha,'source_commit':source,'artifact_id':11011472530,'review_record':'reviews/v0.2-layout.md','release_eligible':False}
+              previous=next((a for a in manifest['artifacts'] if a['path']==item['path']),None)
+              if previous:assert previous==item,'Refusing metadata overwrite'
+              else:manifest['artifacts'].append(item)
+          manifest_path.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          # This records the named review decision already documented in reviews/v0.2-layout.md;
+          # it is not a conclusion inferred from successful machine tests.
+          for bid in ('B01','B02'):
+            p=pathlib.Path('data',bid+'.json');b=json.loads(p.read_text())
+            b['layout_review']={'status':'passed','reviewer':'ChatGPT','date':'2026-09-29','record':'reviews/v0.2-layout.md','scope':'阶段性版式检查；不代替字形及内容审定','artifact_id':11011472530}
+            assert b['release_eligible'] is False
+            if bid=='B02':assert b['artwork_review']['status']=='sequence_matched_terminal_shape_pending'
+            p.write_text(json.dumps(b,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          PY
+      - name: Check archive before committing
+        run: |
+          python -m pip install pypdf==5.9.0
+          python scripts/verify_deliverables.py
+          python scripts/test_deliverables.py
+          python scripts/validate_project.py --batch B01
+          python scripts/validate_project.py --batch B02
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add deliverables/drafts/v0.2.0/*.pdf deliverables/manifest.json data/B01.json data/B02.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'docs: archive reviewed v0.2 PDFs and record layout decisions without release promotion'
+            git push origin HEAD:feat/pdf-archive-b01-review
+          fi

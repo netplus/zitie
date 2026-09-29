@@ -38,7 +38,9 @@ def validate(catalog, batches, variants, batch):
     vs = variants['items']
     assert len({v['id'] for v in vs}) == len(vs), 'Duplicate variant ID'
     assert all(v['parent'] in ids for v in vs), 'Unknown parent for variant'
-    assert ''.join(e['character'] for e in batch['entries']) == batches['frozen_batches'][0]['main_glyphs']
+    declared = next((b for b in batches['frozen_batches'] if b['id'] == batch['batch_id']), None)
+    assert declared is not None, 'Unknown batch ID'
+    assert ''.join(e['character'] for e in batch['entries']) == declared['main_glyphs']
     for e in batch['entries']:
         assert len(e['stroke_names']) == len(e['order_code']), e['character'] + ': stroke count mismatch'
         assert set(e['order_code']) <= set('12345'), 'Invalid stroke category code'
@@ -50,16 +52,17 @@ def validate(catalog, batches, variants, batch):
         assert batch['artwork_review']['status'] == 'passed' and batch['artwork_review']['reviewer']
         assert batch['layout_review']['status'] == 'passed' and batch['layout_review']['reviewer']
     return {'main_index_count':len(rows), 'frozen_batch_count':len(batches['frozen_batches']),
-            'variant_candidates':len(vs), 'B01_primary_checked':len(batch['entries']),
-            'B01_cross_checked':10 if batch['cross_review']['status']=='passed' else 0,
+            'variant_candidates':len(vs), batch['batch_id']+'_primary_checked':len(batch['entries']),
+            batch['batch_id']+'_cross_checked':len(batch['entries']) if batch['cross_review']['status']=='passed' else 0,
             'formal_release_entries':10 if batch['release_eligible'] else 0,
             'note':'Structural checks only; no automatic semantic approval.'}
 
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--release', action='store_true')
+    p.add_argument('--batch', choices=['B01','B02'], default='B01')
     args = p.parse_args()
-    c,b,v,x = (load(n) for n in ['data/coverage.json','data/batches.json','data/variants.json','data/B01.json'])
+    c,b,v,x = (load(n) for n in ['data/coverage.json','data/batches.json','data/variants.json',f'data/{args.batch}.json'])
     result = validate(c,b,v,x)
     if args.release and not x['release_eligible']:
         raise SystemExit('Release blocked: authoritative cross-review and/or other gates remain pending.')

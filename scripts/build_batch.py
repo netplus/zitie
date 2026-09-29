@@ -16,7 +16,7 @@ from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.colors import HexColor
 from reportlab.lib.styles import ParagraphStyle
-from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer
+from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, KeepTogether
 from pypdf import PdfReader, PdfWriter
 from validate_project import load, validate
 
@@ -77,11 +77,11 @@ def glyph(c,data,x,y,size,color='red',step=None):
         c.setFillColor(HexColor(COL[paint])); path=c.beginPath(); parse_path(s,Pen(path)); c.drawPath(path,stroke=0,fill=1)
     c.restoreState()
 
-def make_page(c,e,data,page_number,draft):
+def make_page(c,e,data,page_number,draft,batch):
     n=len(e['stroke_names'])
     if n>6: raise ValueError('This initial renderer supports <=6 strokes; extend by pagination, never shrink.')
     text(c,LEFT,H-49,e['character']+'｜笔顺练字帖',25)
-    text(c,RIGHT-120,H-46,'B01 / A4 / 田字格',10,color='muted',font='CJK')
+    text(c,RIGHT-120,H-46,batch['batch_id']+' / A4 / 田字格',10,color='muted',font='CJK')
     text(c,LEFT,H-80,'姓名：________________',11,color='muted')
     text(c,RIGHT-200,H-80,'日期：______年____月____日',11,color='muted')
     c.setStrokeColor(HexColor(COL['red'])); c.setLineWidth(1.1); c.line(LEFT,H-94,RIGHT,H-94)
@@ -114,11 +114,11 @@ def make_page(c,e,data,page_number,draft):
             if row<2 or col==0: glyph(c,data,x,y,cell,['trace','pale','ink','ink'][row])
     text(c,LEFT,89,'写完检查：'+e['check'],10,color='muted',width=RIGHT-LEFT)
     c.setStrokeColor(HexColor(COL['guide'])); c.line(LEFT,74,RIGHT,74)
-    label='编写稿｜规范笔顺图已核；第二权威来源、细笔名及拼音仍待交叉复核。' if draft else '已通过本工程发布门槛。'
+    label=batch['draft_label'] if draft else '已通过本工程发布门槛。'
     text(c,LEFT,58,label,8,color='red' if draft else 'muted')
     text(c,LEFT,43,'依据：GF0023—2020，第'+str(e['primary_printed_page'])+'页；矢量：Hanzi Writer / Arphic PL。',8,color='muted')
     text(c,LEFT,29,'打印：A4纵向，实际大小 / 100%；建议彩色。',8,color='muted')
-    text(c,RIGHT-40,29,f'B01 / {page_number:02}',8,color='muted',font='Latin')
+    text(c,RIGHT-40,29,f"{batch['batch_id']} / {page_number:02}",8,color='muted',font='Latin')
     c.showPage()
 
 def frontmatter(path):
@@ -137,37 +137,39 @@ def frontmatter(path):
         elif block.startswith('> '): style=note; block=block[2:]
         elif block.startswith('依据说明') or block.startswith('详细入口'): style=note
         block=re.sub(r'`([^`]+)`',r'\1',block)
-        story.append(Paragraph(html.escape(block).replace('\n','<br/>'),style))
+        paragraph=Paragraph(html.escape(block).replace('\n','<br/>'),style)
+        story.append(KeepTogether([paragraph]) if block.startswith('本字帖采用A4') else paragraph)
     def page(c,doc):
         text(c,42,H-29,'循序渐进汉字部首字帖 · 前言初稿',9,color='muted')
-        text(c,42,29,'编写中 v0.1｜201主项为全书目标，不代表正文已全部审定。',8,color='muted')
+        text(c,42,29,'编写中 v0.2｜201主项为全书目标，不代表正文已全部审定。',8,color='muted')
         text(c,W-68,29,str(doc.page),9,color='muted',font='Latin')
     SimpleDocTemplate(str(path),pagesize=A4,leftMargin=42,rightMargin=42,topMargin=57,bottomMargin=55).build(story,onFirstPage=page,onLaterPages=page)
 
 def main():
     p=argparse.ArgumentParser(); p.add_argument('--draft',action='store_true')
+    p.add_argument('--batch',choices=['B01','B02'],default='B01')
     p.add_argument('--font',default='/usr/share/fonts/truetype/arphic-gkai00mp/gkai00mp.ttf')
     p.add_argument('--latin-font',default='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf')
     args=p.parse_args()
-    cat,batches,variants,batch=(load(n) for n in ['data/coverage.json','data/batches.json','data/variants.json','data/B01.json'])
+    cat,batches,variants,batch=(load(n) for n in ['data/coverage.json','data/batches.json','data/variants.json',f'data/{args.batch}.json'])
     validate(cat,batches,variants,batch)
     if not args.draft and not batch['release_eligible']: raise SystemExit('Formal publication blocked; use --draft for explicit research output.')
     setup_fonts(args.font,args.latin_font)
     out=ROOT/'build'; out.mkdir(exist_ok=True)
     mode='draft' if args.draft else 'release'
-    pdf=out/f'B01_{mode}_A4.pdf'; c=canvas.Canvas(str(pdf),pagesize=A4,pageCompression=1,invariant=1)
-    c.setTitle('B01首批10项笔顺练字帖'+('（编写稿）' if args.draft else ''))
+    pdf=out/f'{args.batch}_{mode}_A4.pdf'; c=canvas.Canvas(str(pdf),pagesize=A4,pageCompression=1,invariant=1)
+    c.setTitle(args.batch+'笔顺练字帖'+('（编写稿）' if args.draft else ''))
     checks=[]
     for i,e in enumerate(batch['entries'],1):
         fp=out/'vectors'/f'{ord(e["character"]):04X}.json'; raw=fp.read_bytes()
-        d=prepare(json.loads(raw),len(e['stroke_names'])); make_page(c,e,d,i,args.draft)
+        d=prepare(json.loads(raw),len(e['stroke_names'])); make_page(c,e,d,i,args.draft,batch)
         checks.append({'character':e['character'],'stroke_count':len(d[0]),'sha256':hashlib.sha256(raw).hexdigest(),'practice_cells':32})
-    c.save(); pre=out/'preface_v0.1.pdf'; frontmatter(pre)
+    c.save(); pre=out/'preface_v0.2.pdf'; frontmatter(pre)
     writer=PdfWriter()
     for file in [pre,pdf]: writer.append(str(file))
-    combined=out/f'B01_with_preface_{mode}_A4.pdf'
+    combined=out/f'{args.batch}_with_preface_{mode}_A4.pdf'
     with combined.open('wb') as stream: writer.write(stream)
-    (out/'generation.json').write_text(json.dumps({'draft':args.draft,'entries':checks,'practice_pages':10,'preface_pages':len(PdfReader(str(pre)).pages),'visual_review':'pending'},ensure_ascii=False,indent=2),encoding='utf-8')
+    (out/f'generation_{args.batch}.json').write_text(json.dumps({'draft':args.draft,'entries':checks,'practice_pages':10,'preface_pages':len(PdfReader(str(pre)).pages),'visual_review':'pending'},ensure_ascii=False,indent=2),encoding='utf-8')
     print(combined)
 
 if __name__=='__main__':main()
