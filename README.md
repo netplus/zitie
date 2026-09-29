@@ -19,6 +19,7 @@
 | 主索引 | 201项中间索引 | 2022版全文及附形范围核验 |
 | B01基础起步 | 10项笔顺原件对照及笔名、结构、采用读音证据 | 全书2022版范围门槛 |
 | B02常见独体形 | 10项笔顺、读音及收笔整理复核完成 | 全书2022版范围门槛 |
+| B03简单独体 | 10项34笔完成两版原件逐字对照、两遍查看 | 细笔名、读音、正文、矢量与版面等仍待完成 |
 | 前言与版面 | 前言3页＋练习20页，已检查及修订 | 不把版式通过算作字形全部审定 |
 | 正式发布 | 0 | 达到全部相应门槛后再发布 |
 
@@ -28,7 +29,7 @@
 
 [当前状态](docs/STATUS.md) · [编写计划](docs/EDITORIAL_PLAN.md) · [前言源稿](book/front-matter/preface.md) · [201项索引](data/coverage.json) · [附形候选](data/variants.json) · [来源台账](sources/catalog.json) · [质量门槛](docs/QUALITY_GATES.md) · [总控Issue](https://github.com/netplus/zitie/issues/1)
 
-[首批交叉复核](reviews/B01-cross.md) · [第二批笔顺原件核对](reviews/B02-primary-cross.md) · [第二批收尾复核](reviews/B02-completion.md) · [本轮版式回归](reviews/v0.2.1-layout.md)
+[第三批笔顺原件核对](reviews/B03-primary-cross.md) · [首批交叉复核](reviews/B01-cross.md) · [第二批笔顺原件核对](reviews/B02-primary-cross.md) · [第二批收尾复核](reviews/B02-completion.md) · [本轮版式回归](reviews/v0.2.1-layout.md)
 
 ## 重建与检查
 

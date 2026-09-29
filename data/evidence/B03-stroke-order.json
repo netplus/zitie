@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "record_kind": "field_review_checkpoint",
+  "batch_id": "B03",
+  "based_on_commit": "977f3adad447a64bf801cfaeccf797845c4a8332",
+  "review_date": "2026-09-29",
+  "reviewer": "ChatGPT",
+  "review_method": "original_page_render_then_paired_row_second_pass",
+  "independent_reviewers": false,
+  "source_relationship": "GF0023—2020继承1997版；两部出版物交叉检查，不算独立规范体系。",
+  "status": "stroke_order_original_pages_cross_checked",
+  "supported_fields": [
+    "stroke_count",
+    "stroke_order",
+    "source_glyph_relations"
+  ],
+  "pending_fields": [
+    "fine_stroke_names",
+    "pronunciation",
+    "component_names",
+    "teaching_text",
+    "vector_matching",
+    "layout",
+    "target_edition_identity",
+    "variants"
+  ],
+  "release_eligible": false,
+  "total_entries": 10,
+  "total_strokes": 34,
+  "source_files": {
+    "S02": {
+      "publication_id": "GF0023-2020",
+      "filename": "gf0023-2020.pdf",
+      "sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
+      "bytes": 51412684,
+      "pages": 581,
+      "recovery_run": 36511612769,
+      "recovery_artifact": 11009044445,
+      "recovery_repository": "netplus/zitie",
+      "content_scope": "仅目标字条；不是全文审读。"
+    },
+    "S04": {
+      "publication_id": "1997-STROKE-ORDER",
+      "filename": "stroke-order-1997.pdf",
+      "sha256": "ca8a0139744cf8105cb7e4ae7464ebc68cb76310b5a29e7cf004b2489a35ae65",
+      "bytes": 13214987,
+      "pages": 458,
+      "recovery_run": 36514754022,
+      "recovery_artifact": 11010600883,
+      "recovery_repository": "netplus/zitie",
+      "content_scope": "仅目标字条；不是全文审读。"
+    }
+  },
+  "review_record": "reviews/B03-primary-cross.md",
+  "entries": [
+    {"character": "刀", "main_id": 22, "strokes": 2, "order_code": "53", "table_no": "0018", "ucs": "05200", "S02": {"pdf_page": 9, "printed_page": 3, "column": "R", "row": 6, "clip_pdf_points": [303.5, 366.905, 506.0, 411.693]}, "S04": {"pdf_page": 6, "printed_page": 1, "column": "R", "row": 10, "clip_pdf_points": [265.556, 614.056, 477.222, 673.889]}, "first_pass": "original_page_viewed", "second_pass": "paired_rows_viewed", "result": "count_order_match", "observation": "两笔均核；先写带钩的折笔，再写撇。与力的代码相同不等于轮廓相同。"},
+    {"character": "力", "main_id": 23, "strokes": 2, "order_code": "53", "table_no": "0019", "ucs": "0529B", "S02": {"pdf_page": 9, "printed_page": 3, "column": "R", "row": 7, "clip_pdf_points": [303.5, 411.693, 506.0, 456.48]}, "S04": {"pdf_page": 7, "printed_page": 2, "column": "L", "row": 1, "clip_pdf_points": [43.333, 75.556, 250.556, 135.389]}, "first_pass": "original_page_viewed", "second_pass": "paired_rows_viewed", "result": "count_order_match", "observation": "两笔均核；第2笔撇穿过首笔横段，不能套用刀的轮廓。"},
+    {"character": "又", "main_id": 24, "strokes": 2, "order_code": "54", "table_no": "0021", "ucs": "053C8", "S02": {"pdf_page": 9, "printed_page": 3, "column": "R", "row": 9, "clip_pdf_points": [303.5, 501.267, 506.0, 546.055]}, "S04": {"pdf_page": 7, "printed_page": 2, "column": "L", "row": 2, "clip_pdf_points": [43.333, 135.389, 250.556, 195.222]}, "first_pass": "original_page_viewed", "second_pass": "paired_rows_viewed", "result": "count_order_match", "observation": "两笔均核；第1笔为折类5，第2笔为捺，归点类4；折类数字不替代细笔名。"},
+    {"character": "子", "main_id": 54, "strokes": 3, "order_code": "521", "table_no": "0064", "ucs": "05B50", "S02": {"pdf_page": 11, "printed_page": 5, "column": "R", "row": 6, "clip_pdf_points": [303.5, 366.391, 506.0, 411.179]}, "S04": {"pdf_page": 9, "printed_page": 4, "column": "R", "row": 1, "clip_pdf_points": [265.556, 75.556, 477.222, 135.389]}, "first_pass": "original_page_viewed", "second_pass": "paired_rows_viewed", "result": "count_order_match", "observation": "三笔均核；末笔横。S02原印5/PDF11已实际确认，不再依赖分页推定。"},
+    {"character": "女", "main_id": 56, "strokes": 3, "order_code": "531", "table_no": "0067", "ucs": "05973", "S02": {"pdf_page": 11, "printed_page": 5, "column": "R", "row": 11, "clip_pdf_points": [303.5, 590.328, 506.0, 635.116]}, "S04": {"pdf_page": 9, "printed_page": 4, "column": "R", "row": 5, "clip_pdf_points": [265.556, 314.889, 477.222, 374.722]}, "first_pass": "original_page_viewed", "second_pass": "paired_rows_viewed", "result": "count_order_match", "observation": "三笔均核；末笔横。S02原印5/PDF11已实际确认；仅独体女，不外推女左旁。"},
+    {"character": "小", "main_id": 36, "strokes": 3, "order_code": "234", "table_no": "0037", "ucs": "05C0F", "S02": {"pdf_page": 10, "printed_page": 4, "column": "R", "row": 4, "clip_pdf_points": [303.5, 276.816, 506.0, 321.604]}, "S04": {"pdf_page": 8, "printed_page": 3, "column": "L", "row": 2, "clip_pdf_points": [43.333, 135.389, 250.556, 195.222]}, "first_pass": "original_page_viewed", "second_pass": "paired_rows_viewed", "result": "count_order_match", "observation": "三笔均核；中间竖钩、左撇、右点。第2笔归撇类3，不是点类4；修正范围稿的“两侧点”。"},
+    {"character": "王", "main_id": 61, "strokes": 4, "order_code": "1121", "table_no": "0075", "ucs": "0738B", "S02": {"pdf_page": 12, "printed_page": 6, "column": "L", "row": 7, "clip_pdf_points": [89.0, 411.179, 291.5, 455.966]}, "S04": {"pdf_page": 10, "printed_page": 5, "column": "L", "row": 4, "clip_pdf_points": [43.333, 255.056, 250.556, 314.889]}, "first_pass": "original_page_viewed", "second_pass": "paired_rows_viewed", "result": "count_order_match", "observation": "四笔均核；上横、中横、竖、下横，竖为第3笔。"},
+    {"character": "石", "main_id": 102, "strokes": 5, "order_code": "13251", "table_no": "0216", "ucs": "077F3", "S02": {"pdf_page": 19, "printed_page": 13, "column": "L", "row": 1, "clip_pdf_points": [89.0, 142.454, 291.5, 187.241]}, "S04": {"pdf_page": 18, "printed_page": 13, "column": "R", "row": 4, "clip_pdf_points": [265.556, 255.056, 477.222, 314.889]}, "first_pass": "original_page_viewed", "second_pass": "paired_rows_viewed", "result": "count_order_match", "observation": "五笔均核；横、撇之后写口形部分，底横最后封口；只记录整字顺序。"},
+    {"character": "白", "main_id": 112, "strokes": 5, "order_code": "32511", "table_no": "0275", "ucs": "0767D", "S02": {"pdf_page": 21, "printed_page": 15, "column": "R", "row": 7, "clip_pdf_points": [303.5, 411.179, 506.0, 455.966]}, "S04": {"pdf_page": 22, "printed_page": 17, "column": "L", "row": 5, "clip_pdf_points": [43.333, 314.889, 250.556, 374.722]}, "first_pass": "original_page_viewed", "second_pass": "paired_rows_viewed", "result": "count_order_match", "observation": "五笔均核；首撇，竖后为折笔，再内横、底横；第3笔末端待矢量阶段定点核查。"},
+    {"character": "立", "main_id": 116, "strokes": 5, "order_code": "41431", "table_no": "0302", "ucs": "07ACB", "S02": {"pdf_page": 23, "printed_page": 17, "column": "L", "row": 3, "clip_pdf_points": [89.0, 232.029, 291.5, 276.816]}, "S04": {"pdf_page": 23, "printed_page": 18, "column": "R", "row": 9, "clip_pdf_points": [265.556, 554.222, 477.222, 614.056]}, "first_pass": "original_page_viewed", "second_pass": "paired_rows_viewed", "result": "count_order_match", "observation": "五笔均核；点、横、点、撇、横；第3和第4笔不可都写成点。"}
+  ]
+}
