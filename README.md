@@ -2,42 +2,49 @@
 
 201个主部首＋常用附形与位置变体；A4田字格；逐笔示范与分层练习。
 
-**当前为编写工程，不是201项全部审定的正式字帖。**
+**当前是分批编写与复核工程，不是201项全部完成的正式字帖。**
 
-## 当前成果（2026-09-29）
+## PDF下载
 
-| 项目 | 已完成 | 尚待完成 |
+**[最新合集：前言＋前两批20项，23页](deliverables/drafts/v0.2.0/B01-B02_with_preface_draft_A4.pdf)**
+
+[第二批10页](deliverables/drafts/v0.2.0/B02_draft_A4.pdf) · [第一批10页](deliverables/drafts/v0.2.0/B01_draft_A4.pdf) · [前言3页](deliverables/drafts/v0.2.0/preface_v0.2.pdf) · [全部版本与校验清单](deliverables/README.md)
+
+阶段性和最终PDF均直接保存到本仓库，旧版本不覆盖。Actions附件不替代永久归档。
+
+## 当前状态（2026-09-29）
+
+| 内容 | 已完成 | 未决 |
 |---|---|---|
-| 主索引 | 201项，依据2009主表实际页面整理 | 2022全文、附形、名称与编码核验 |
-| 前言 | v0.1初稿，说明依据、差异处理、组织及使用 | 随全书范围与证据完善 |
-| B01首批 | 一、十、人、八、大、工、土、口、山、巾；规范原件笔顺图已核10项 | 第二权威来源和细笔名、拼音交叉核对 |
-| 初稿图形与版面 | 本轮已逐页检查3页前言＋10页练习 | 交叉复核后再次验收正式稿 |
-| 正式发布 | 0项；正式构建保持阻断 | 全部门槛满足后逐批发布 |
+| 主索引 | 201项中间索引 | 2022版全文及附形范围核验 |
+| B01基础起步 | 10项笔顺原件对照及笔名、结构、采用读音证据 | 全书2022版范围门槛 |
+| B02常见独体形 | 10项笔顺原件对照、10页编写稿 | 读音证据；日、目、田的横折末端字形 |
+| 前言与版面 | 前言3页＋练习20页，已检查及修订 | 不把版式通过算作字形全部审定 |
+| 正式发布 | 0 | 达到全部相应门槛后再发布 |
 
-## 从这里开始
+笔顺对照采用2020版及语文出版社1997版实际原图；两者有继承关系，不作为相互独立的证据体系，也不称独立专家审定。
 
-- [当前状态与接续任务](docs/STATUS.md)
-- [编写计划](docs/EDITORIAL_PLAN.md)
-- [前言初稿](book/front-matter/preface.md)
-- [全书目录蓝本](book/outline.md)
-- [201主部首中间索引](data/coverage.json)
-- [32项附形／位置变体候选](data/variants.json)（未冻结，不能当作2022正式附形表）
-- [B01原件核对记录](reviews/B01-primary.md)
-- [质量门槛](docs/QUALITY_GATES.md)
-- [总控Issue](https://github.com/netplus/zitie/issues/1)
+## 项目入口
 
-## 本地结构检查
+[当前状态](docs/STATUS.md) · [编写计划](docs/EDITORIAL_PLAN.md) · [前言源稿](book/front-matter/preface.md) · [201项索引](data/coverage.json) · [附形候选](data/variants.json) · [来源台账](sources/catalog.json) · [质量门槛](docs/QUALITY_GATES.md) · [总控Issue](https://github.com/netplus/zitie/issues/1)
+
+[首批交叉复核](reviews/B01-cross.md) · [第二批笔顺原件核对](reviews/B02-primary-cross.md) · [本轮版式与字形问题记录](reviews/v0.2-layout.md)
+
+## 重建与检查
 
 ```sh
-python scripts/validate_project.py
+python -m pip install -r requirements.txt
+python scripts/validate_project.py --batch B01
+python scripts/validate_project.py --batch B02
 python scripts/test_validation.py
-python scripts/validate_project.py --release
+python scripts/test_deliverables.py
+python scripts/verify_deliverables.py
+python scripts/acquire_vectors.py --batches B01 B02
+python scripts/build_batch.py --draft --batch B01
+python scripts/build_batch.py --draft --batch B02
+python scripts/build_collection.py
 ```
 
-最后一条在证据未齐时应返回非零退出码，这是发布保护，不是生成故障。机器检查不替代逐笔审读、图形匹配或逐页视觉验收。
+字体由使用者在自己的系统安装，用`--font`和`--latin-font`指定；本仓库不提供字体文件。正式构建不加`--draft`，证据或字形门槛未齐时必须拒绝。
 
-## 工作原则
-
-每批10个主项，最后一批1项，共21批；附形及复习项不重复计数。B01先完成权威交叉核对；B02拟为水、火、木、日、月、田、目、手、牛、毛。其余181项已进入主索引，教学分批仍须按前置关系逐批冻结，不冒称全部课程编排已经完成。
-
-保留历史，分支＋PR交付。公开仓库不上传私人会话、环境字体或许可不明的商业出版物全文。工作流产物只是可下载的编写中间结果；正式出版状态以逐项复核台账为准。
+每批10个主项，最后1项，共21批；附形和复习不重复计数。分支＋PR合入，保留历史，不公开私人会话或第三方商业出版物全文。
