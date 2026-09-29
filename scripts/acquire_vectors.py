@@ -1,32 +1,32 @@
 #!/usr/bin/env python3
-"""Acquire immutable, public stroke outlines. Acquisition is NOT content review."""
+"""Acquire immutable public stroke outlines, not font files or review approvals."""
 import hashlib
 import json
 from pathlib import Path
 from urllib.parse import quote
 from urllib.request import urlopen, Request
+ROOT=Path(__file__).resolve().parents[1]
+REV='68d10a4b21150cae5e1ebbd223eed289cf32d90c'
+BASE='https://raw.githubusercontent.com/chanind/hanzi-writer-data/'+REV
 
-ROOT = Path(__file__).resolve().parents[1]
-REV = '68d10a4b21150cae5e1ebbd223eed289cf32d90c'
-BASE = 'https://raw.githubusercontent.com/chanind/hanzi-writer-data/' + REV
+def retrieve(url):
+    with urlopen(Request(url,headers={'User-Agent':'zitie-reference-acquisition/0.1'}),timeout=45) as r:
+        return r.read(1024*1024)
 
 def main():
-    entries = json.loads((ROOT/'data/B01.json').read_text(encoding='utf-8'))['entries']
-    dest = ROOT/'build/vectors'
-    dest.mkdir(parents=True,exist_ok=True)
+    entries=json.loads((ROOT/'data/B01.json').read_text(encoding='utf-8'))['entries']
+    dest=ROOT/'build/vectors';dest.mkdir(parents=True,exist_ok=True)
+    # Preserve the complete upstream license alongside downloaded outlines.
+    license_bytes=retrieve(BASE+'/ARPHICPL.TXT')
+    if b'ARPHIC PUBLIC LICENSE' not in license_bytes: raise ValueError('Unexpected license response')
+    (dest/'ARPHICPL.TXT').write_bytes(license_bytes)
     ledger=[]
     for e in entries:
-        ch=e['character']; url=BASE+'/data/'+quote(ch)+'.json'
-        with urlopen(Request(url,headers={'User-Agent':'zitie-reference-acquisition/0.1'}), timeout=45) as r:
-            raw=r.read(1024*1024)
-        obj=json.loads(raw)
-        if len(obj.get('strokes',[])) != len(e['stroke_names']):
-            raise ValueError(ch+': vector count differs from reviewed primary-source count')
-        name=f'{ord(ch):04X}.json'
-        (dest/name).write_bytes(raw)
-        ledger.append({'character':ch,'file':name,'url':url,'sha256':hashlib.sha256(raw).hexdigest(),'status':'acquired_not_reviewed'})
+        ch=e['character'];url=BASE+'/data/'+quote(ch)+'.json';raw=retrieve(url);obj=json.loads(raw)
+        if len(obj.get('strokes',[]))!=len(e['stroke_names']): raise ValueError(ch+': vector count mismatch')
+        name=f'{ord(ch):04X}.json';(dest/name).write_bytes(raw)
+        ledger.append({'character':ch,'file':name,'url':url,'sha256':hashlib.sha256(raw).hexdigest(),'status':'acquired_not_reviewed_by_script'})
     (dest/'manifest.json').write_text(json.dumps(ledger,ensure_ascii=False,indent=2),encoding='utf-8')
-    # A reference to the applicable upstream license, not a font-file download.
-    (dest/'NOTICE.txt').write_text('Stroke outlines: Hanzi Writer / Make Me a Hanzi. Applicable Arphic Public License. No font files included.\nhttps://github.com/chanind/hanzi-writer-data\nhttps://github.com/skishore/makemeahanzi\n',encoding='utf-8')
+    (dest/'NOTICE.txt').write_text('Outlines: Hanzi Writer / Make Me a Hanzi, from immutable revision '+REV+'.\nOutline files are unmodified. See ARPHICPL.TXT. No font files included.\nhttps://github.com/chanind/hanzi-writer-data\n',encoding='utf-8')
 
 if __name__=='__main__':main()
