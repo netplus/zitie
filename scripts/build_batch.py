@@ -19,8 +19,10 @@ from reportlab.lib.styles import ParagraphStyle
 from reportlab.platypus import SimpleDocTemplate, Paragraph, Spacer, KeepTogether
 from pypdf import PdfReader, PdfWriter
 from validate_project import load, validate
+from apply_artwork import apply_artwork
 
 ROOT = Path(__file__).resolve().parents[1]
+BOOK = load('data/book-config.json')
 W,H = A4
 LEFT,RIGHT = 36,W-36
 COL = {'red':'#BB3D42','previous':'#5F6264','ink':'#282B2D',
@@ -116,7 +118,8 @@ def make_page(c,e,data,page_number,draft,batch):
     c.setStrokeColor(HexColor(COL['guide'])); c.line(LEFT,74,RIGHT,74)
     label=batch['draft_label'] if draft else '已通过本工程发布门槛。'
     text(c,LEFT,58,label,8,color='red' if draft else 'muted')
-    text(c,LEFT,43,'依据：GF0023—2020，第'+str(e['primary_printed_page'])+'页；矢量：Hanzi Writer / Arphic PL。',8,color='muted')
+    artnote='；横折收笔已整理。' if e.get('artwork_override') else '。'
+    text(c,LEFT,43,'依据：GF0023—2020，第'+str(e['primary_printed_page'])+'页；矢量：Hanzi Writer / Arphic PL'+artnote,8,color='muted',width=RIGHT-LEFT)
     text(c,LEFT,29,'打印：A4纵向，实际大小 / 100%；建议彩色。',8,color='muted')
     text(c,RIGHT-40,29,f"{batch['batch_id']} / {page_number:02}",8,color='muted',font='Latin')
     c.showPage()
@@ -141,7 +144,7 @@ def frontmatter(path):
         story.append(KeepTogether([paragraph]) if block.startswith('本字帖采用A4') else paragraph)
     def page(c,doc):
         text(c,42,H-29,'循序渐进汉字部首字帖 · 前言初稿',9,color='muted')
-        text(c,42,29,'编写中 v0.2｜201主项为全书目标，不代表正文已全部审定。',8,color='muted')
+        text(c,42,29,'编写中 v'+BOOK['version']+'｜201主项为全书目标，不代表正文已全部审定。',8,color='muted')
         text(c,W-68,29,str(doc.page),9,color='muted',font='Latin')
     SimpleDocTemplate(str(path),pagesize=A4,leftMargin=42,rightMargin=42,topMargin=57,bottomMargin=55).build(story,onFirstPage=page,onLaterPages=page)
 
@@ -162,9 +165,10 @@ def main():
     checks=[]
     for i,e in enumerate(batch['entries'],1):
         fp=out/'vectors'/f'{ord(e["character"]):04X}.json'; raw=fp.read_bytes()
-        d=prepare(json.loads(raw),len(e['stroke_names'])); make_page(c,e,d,i,args.draft,batch)
-        checks.append({'character':e['character'],'stroke_count':len(d[0]),'sha256':hashlib.sha256(raw).hexdigest(),'practice_cells':32})
-    c.save(); pre=out/'preface_v0.2.pdf'; frontmatter(pre)
+        artwork,audit=apply_artwork(e['character'],raw)
+        d=prepare(artwork,len(e['stroke_names'])); make_page(c,e,d,i,args.draft,batch)
+        checks.append({'character':e['character'],'stroke_count':len(d[0]),'sha256':hashlib.sha256(raw).hexdigest(),'artwork_audit':audit,'practice_cells':32})
+    c.save(); pre=out/BOOK['preface_file']; frontmatter(pre)
     writer=PdfWriter()
     for file in [pre,pdf]: writer.append(str(file))
     combined=out/f'{args.batch}_with_preface_{mode}_A4.pdf'

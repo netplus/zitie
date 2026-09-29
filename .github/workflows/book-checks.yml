@@ -35,6 +35,7 @@ jobs:
       - name: Build explicitly labelled research output
         run: |
           python scripts/acquire_vectors.py --batches B01 B02
+          python scripts/test_artwork.py
           FONT="$(fc-match -f '%{file}' 'AR PL KaitiM GB')"
           LATIN="$(fc-match -f '%{file}' 'DejaVu Sans')"
           for BATCH in B01 B02; do
