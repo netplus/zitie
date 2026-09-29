@@ -1,0 +1,93 @@
+name: Archive B01 draft PDFs and acquire review references
+on:
+  push:
+    branches: [feat/pdf-archive-b01-review]
+    paths: [.github/workflows/archive-bootstrap.yml]
+permissions:
+  contents: read
+jobs:
+  archive:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: feat/pdf-archive-b01-review
+      - name: Recover exact delivered PDFs from the recorded build artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api repos/netplus/zitie/actions/artifacts/11009843293/zip > "$RUNNER_TEMP/b01.zip"
+          python - <<'PY'
+          import hashlib,json,os,pathlib,zipfile
+          root=pathlib.Path('deliverables/drafts/v0.1.0');root.mkdir(parents=True,exist_ok=True)
+          expected={
+            'preface_v0.1.pdf':('4079ef0cfae45f5335bdd01c3a0515c334691c77a75ca81c11683fe94125940c',3,'前言初稿'),
+            'B01_draft_A4.pdf':('f4f6ceb05e977c0064a222650027c59143cc6571823fe595f17325608f212cf9',10,'首批10项练习编写稿'),
+            'B01_with_preface_draft_A4.pdf':('e6923e89c65e7b1df25337f18fa768a456465f0b1e2867549704912373f9c019',13,'前言与首批10项编写稿')}
+          items=[]
+          with zipfile.ZipFile(pathlib.Path(os.environ['RUNNER_TEMP'])/'b01.zip') as z:
+            for name,(sha,pages,title) in expected.items():
+              data=z.read(name)
+              assert data.startswith(b'%PDF-') and hashlib.sha256(data).hexdigest()==sha,name
+              dst=root/name
+              if dst.exists():assert dst.read_bytes()==data,'Refusing to overwrite historical PDF'
+              else:dst.write_bytes(data)
+              items.append({'path':str(dst),'title':title,'version':'0.1.0','status':'draft','batch':'B01','pages':pages,'bytes':len(data),'sha256':sha,'source_commit':'dfa25ce81f0ba2660d8d4e25781ff3365120af5c','artifact_id':11009843293,'review_record':'reviews/B01-layout.md','release_eligible':False})
+          manifest=pathlib.Path('deliverables/manifest.json')
+          if not manifest.exists():manifest.write_text(json.dumps({'schema_version':1,'artifacts':items},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          else:
+            current=json.loads(manifest.read_text())
+            for item in items:assert any(a['path']==item['path'] and a['sha256']==item['sha256'] for a in current['artifacts'])
+          PY
+      - name: Commit PDF bytes only to the authorized feature branch
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add deliverables/drafts/v0.1.0/*.pdf deliverables/manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m 'docs: preserve exact v0.1.0 preface and B01 PDFs with SHA256 manifest'
+            git push origin HEAD:feat/pdf-archive-b01-review
+          fi
+  acquire-references:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: read
+    steps:
+      - name: Download original-publication scans without changing editorial verdicts
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          mkdir -p references
+          python - <<'PY'
+          import base64,hashlib,json,os,pathlib,urllib.request
+          refs={
+            'stroke-order-1997.pdf':'9996a58e3f515d307bf35e104cf624a84f876d5e',
+            'gf0013-2009.pdf':'0487d736363e6102faac0a1ed3c7f422f323f1ad',
+            'gf0014-2009.pdf':'bb3923a5cab4c344217418b0ee4bebb548271bc6',
+            'gf2001-2001.pdf':'d9802042adae66ec106a7b977d019341a0492aa6',
+            'gf0015-2010.pdf':'13c76ed4c0dd835d356dd2c4c0504e050a576061',
+            'gf3002-1999.pdf':'4500a72bce326385b08003197edb91c04f40c2d8'}
+          records=[]
+          for name,blob in refs.items():
+            url='https://api.github.com/repos/zispace/hanzi-docs/git/blobs/'+blob
+            req=urllib.request.Request(url,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','User-Agent':'zitie-source-review'})
+            with urllib.request.urlopen(req,timeout=120) as r: obj=json.load(r)
+            assert obj['encoding']=='base64'
+            data=base64.b64decode(obj['content'])
+            assert hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()==blob
+            assert data.startswith(b'%PDF-')
+            pathlib.Path('references',name).write_bytes(data)
+            records.append({'file':name,'url':url,'git_blob_sha':blob,'sha256':hashlib.sha256(data).hexdigest(),'bytes':len(data),'status':'acquired_not_reviewed','provenance':'Publication scan hosted by zispace/hanzi-docs; inspect title and content before use.'})
+          pathlib.Path('references/acquisition.json').write_text(json.dumps(records,ensure_ascii=False,indent=2)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zitie-reference-review-round2
+          path: references/
+          retention-days: 7
+          if-no-files-found: error
