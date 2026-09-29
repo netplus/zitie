@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""One-time transfer of actually reviewed B02 evidence and tested renderer edits."""
+"""Transfer reviewed B02 evidence; workflow definitions are maintained separately."""
 from pathlib import Path
 import json
 import shutil
@@ -63,7 +63,8 @@ def main():
     replace_once(p,'编写中 v0.2。','编写中 v0.2.1。')
     replace_once(p,'已完成两部规范的笔顺图对照，读音与部分收笔字形仍待复核。两批按各自复核状态标识，不能把第一批的结论自动套给第二批。','已补齐本页读音出处，并完成日、目、田三个横折收笔的教学整理；月的横折钩保持不变。两批均保留逐项记录，不能将本批结论推广到尚未编写的条目。')
     replace_once(p,'正式制图前，还要把每条笔画路径与所采用的顺序逐一对照。','正式制图前，还要把每条笔画路径与所采用的顺序逐一对照。需整理字体回锋时，保留原始文件及修改记录，明确标注教学字形整理，不冒充规范发布机构的原图。')
-    replace_once('.github/workflows/book-checks.yml','python scripts/acquire_vectors.py --batches B01 B02','python scripts/acquire_vectors.py --batches B01 B02\n          python scripts/test_artwork.py')
+    # Workflow definitions are updated through the authorized maintainer connection,
+    # not a contents-only Actions token. This migration never edits workflows.
     p=ROOT/'README.md';t=p.read_text(encoding='utf-8')
     t=t.replace('v0.2.0/','v0.2.1/').replace('preface_v0.2.pdf','preface_v0.2.1.pdf')
     t=t.replace('| B02常见独体形 | 10项笔顺原件对照、10页编写稿 | 读音证据；日、目、田的横折末端字形 |','| B02常见独体形 | 10项笔顺、读音及收笔整理复核完成 | 全书2022版范围门槛 |')
