@@ -79,7 +79,116 @@
         13,
         14
       ],
-      "limits": "河南师范大学转载为同一出版物，与原发布站不构成两份独立证据；未宣称全部581页审读。"
+      "limits": "河南师范大学转载为同一出版物，与原发布站不构成两份独立证据；未宣称全部581页审读。",
+      "B03_locator": {
+        "date": "2026-09-29",
+        "method": "search-indexed text from the same GF0023-2020 PDF; locator only, not visual page review",
+        "entries": [
+          {
+            "character": "刀",
+            "strokes": 2,
+            "order_code": "53",
+            "table_no": "0018",
+            "ucs": "05200",
+            "printed_page": 3,
+            "pdf_page": 9,
+            "page_status": "locator_pending_visual"
+          },
+          {
+            "character": "力",
+            "strokes": 2,
+            "order_code": "53",
+            "table_no": "0019",
+            "ucs": "0529B",
+            "printed_page": 3,
+            "pdf_page": 9,
+            "page_status": "locator_pending_visual"
+          },
+          {
+            "character": "又",
+            "strokes": 2,
+            "order_code": "54",
+            "table_no": "0021",
+            "ucs": "053C8",
+            "printed_page": 3,
+            "pdf_page": 9,
+            "page_status": "locator_pending_visual"
+          },
+          {
+            "character": "小",
+            "strokes": 3,
+            "order_code": "234",
+            "table_no": "0037",
+            "ucs": "05C0F",
+            "printed_page": 4,
+            "pdf_page": 10,
+            "page_status": "locator_pending_visual"
+          },
+          {
+            "character": "子",
+            "strokes": 3,
+            "order_code": "521",
+            "table_no": "0064",
+            "ucs": "05B50",
+            "printed_page": 5,
+            "pdf_page": 11,
+            "page_status": "pagination_inferred_pending_visual"
+          },
+          {
+            "character": "女",
+            "strokes": 3,
+            "order_code": "531",
+            "table_no": "0067",
+            "ucs": "05973",
+            "printed_page": 5,
+            "pdf_page": 11,
+            "page_status": "pagination_inferred_pending_visual"
+          },
+          {
+            "character": "王",
+            "strokes": 4,
+            "order_code": "1121",
+            "table_no": "0075",
+            "ucs": "0738B",
+            "printed_page": 6,
+            "pdf_page": 12,
+            "page_status": "locator_pending_visual"
+          },
+          {
+            "character": "石",
+            "strokes": 5,
+            "order_code": "13251",
+            "table_no": "0216",
+            "ucs": "077F3",
+            "printed_page": 13,
+            "pdf_page": 19,
+            "page_status": "locator_pending_visual"
+          },
+          {
+            "character": "白",
+            "strokes": 5,
+            "order_code": "32511",
+            "table_no": "0275",
+            "ucs": "0767D",
+            "printed_page": 15,
+            "pdf_page": 21,
+            "page_status": "locator_pending_visual"
+          },
+          {
+            "character": "立",
+            "strokes": 5,
+            "order_code": "41431",
+            "table_no": "0302",
+            "ucs": "07ACB",
+            "printed_page": 17,
+            "pdf_page": 23,
+            "page_status": "locator_pending_visual"
+          }
+        ],
+        "total_strokes": 35,
+        "record": "reviews/B03-stroke-order-locator.md",
+        "limits": "Do not add locator pages to reviewed_pdf_pages until actual rendered-page inspection is completed."
+      }
     },
     {
       "id": "D01",
