@@ -1,0 +1,45 @@
+{
+  "version": "0.2.1",
+  "source_commit": "00d521c0aec3ff1f29bf4c241a216cac351e38df",
+  "run_id": 36531067871,
+  "artifact_id": 11016642724,
+  "artifact_name": "zitie-v021-layout-review",
+  "files": [
+    {
+      "name": "B01_draft_A4.pdf",
+      "title": "第一批10项编写稿",
+      "batch": "B01",
+      "pages": 10,
+      "bytes": 134999,
+      "sha256": "f7ec7175f59f1875c12b7313c1502ec6d6042c3e10dceb578b7d1dc0ff204991",
+      "review_record": "reviews/v0.2.1-ci.md"
+    },
+    {
+      "name": "B02_draft_A4.pdf",
+      "title": "第二批10项内容复核修订稿",
+      "batch": "B02",
+      "pages": 10,
+      "bytes": 144388,
+      "sha256": "3b785254ea2c49f3ff19a3ec99f3a4568535207d1fb7e606142d83a4c35b211f",
+      "review_record": "reviews/v0.2.1-ci.md"
+    },
+    {
+      "name": "preface_v0.2.1.pdf",
+      "title": "前言v0.2.1",
+      "batch": "front-matter",
+      "pages": 3,
+      "bytes": 224636,
+      "sha256": "767f05def279396f24edb1432ec124b68c845737c7a90d096b26403615517005",
+      "review_record": "reviews/v0.2.1-ci.md"
+    },
+    {
+      "name": "B01-B02_with_preface_draft_A4.pdf",
+      "title": "前言与前20项内容复核修订稿",
+      "batch": "B01-B02",
+      "pages": 23,
+      "bytes": 501500,
+      "sha256": "22767bb4a74aa3f21a7af864cb0f422cd6e5a63b46ce5390efff232aba02d41a",
+      "review_record": "reviews/v0.2.1-ci.md"
+    }
+  ]
+}
