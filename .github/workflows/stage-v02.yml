@@ -18,16 +18,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Record reviewed fields and migrate renderer exactly once
+      - name: Apply only the recorded pre-publication layout corrections
         run: |
-          python maintenance/record_round2.py
-          python maintenance/prepare_v02.py
+          python maintenance/finalize_v02.py
           python -m compileall -q scripts maintenance
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add data/B01.json data/B02.json data/batches.json sources/catalog.json scripts/validate_project.py scripts/acquire_vectors.py scripts/build_batch.py scripts/verify_pdf.py book/front-matter/preface.md
-          git commit -m 'feat: record B01 cross-review and prepare B02 two-source draft'
-          git push origin HEAD:feat/pdf-archive-b01-review
+          git add data/B02.json scripts/build_batch.py book/front-matter/preface.md
+          if ! git diff --cached --quiet; then
+            git commit -m 'fix: keep preface guidance together and flag B02 stroke-terminal review'
+            git push origin HEAD:feat/pdf-archive-b01-review
+          fi
       - name: Install build dependencies
         run: |
           python -m pip install -r requirements.txt
@@ -35,8 +36,7 @@ jobs:
           sudo apt-get install -y fonts-arphic-gkai00mp fonts-dejavu-core fontconfig
       - name: Build drafts without upgrading editorial status
         run: |
-          python scripts/validate_project.py --batch B01
-          python scripts/validate_project.py --batch B02
+          for BATCH in B01 B02; do python scripts/validate_project.py --batch "$BATCH"; done
           python scripts/test_validation.py
           python scripts/verify_deliverables.py
           python scripts/test_deliverables.py

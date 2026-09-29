@@ -7,40 +7,56 @@ permissions:
 jobs:
   validate:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
-      - name: Structural and negative tests
-        run: |
-          python scripts/validate_project.py
-          python scripts/test_validation.py
       - name: Install rendering dependencies
         run: |
           python -m pip install -r requirements.txt
           sudo apt-get update -qq
           sudo apt-get install -y fonts-arphic-gkai00mp fonts-dejavu-core fontconfig
+      - name: Structural tests and tracked PDF checks
+        env:
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+        run: |
+          for BATCH in B01 B02; do python scripts/validate_project.py --batch "$BATCH"; done
+          python scripts/test_validation.py
+          python scripts/test_deliverables.py
+          if [ -n "$BASE_SHA" ]; then
+            python scripts/verify_deliverables.py --base-ref "$BASE_SHA"
+          else
+            python scripts/verify_deliverables.py
+          fi
       - name: Build explicitly labelled research output
         run: |
-          python scripts/acquire_vectors.py
+          python scripts/acquire_vectors.py --batches B01 B02
           FONT="$(fc-match -f '%{file}' 'AR PL KaitiM GB')"
           LATIN="$(fc-match -f '%{file}' 'DejaVu Sans')"
-          python scripts/build_batch.py --draft --font "$FONT" --latin-font "$LATIN"
-          python scripts/verify_pdf.py
+          for BATCH in B01 B02; do
+            python scripts/build_batch.py --draft --batch "$BATCH" --font "$FONT" --latin-font "$LATIN"
+            python scripts/verify_pdf.py --batch "$BATCH"
+          done
+          python scripts/build_collection.py
+          git rev-parse HEAD > build/SOURCE_COMMIT.txt
       - name: Check formal publication separately
         run: |
-          if python scripts/validate_project.py --release; then
-            echo 'Release gates passed.'
-          else
-            echo 'Research state only. No formal pages released.'
-          fi
+          for BATCH in B01 B02; do
+            if python scripts/validate_project.py --batch "$BATCH" --release; then
+              echo "$BATCH release gates passed."
+            else
+              echo "$BATCH remains a research draft; no formal publication."
+            fi
+          done
       - name: Export editable project source without font files
         run: git archive --format=zip HEAD -o build/zitie-source.zip
       - uses: actions/upload-artifact@v4
         with:
-          name: zitie-B01-research
+          name: zitie-B01-B02-research
           path: build/
           retention-days: 14
           if-no-files-found: error
