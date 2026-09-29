@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "batch_id": "B03",
+  "review_date": "2026-09-29",
+  "purpose": "细笔名与采用读音逐字段原件复核的来源台账补充；主catalog保持出版物级身份记录。",
+  "sources": {
+    "S04": {
+      "publication_id": "1997-STROKE-ORDER",
+      "sha256": "ca8a0139744cf8105cb7e4ae7464ebc68cb76310b5a29e7cf004b2489a35ae65",
+      "pdf_pages_reviewed": [
+        5
+      ],
+      "supports": [
+        "基本笔形",
+        "类别关系"
+      ]
+    },
+    "S05": {
+      "publication_id": "GF2001—2001",
+      "sha256": "68a1420580a7eedde79eeb55b91b6b2ff10ef9155d98633ccc712838f04e9b14",
+      "pdf_pages_reviewed": [
+        8,
+        9
+      ],
+      "printed_pages_reviewed": [
+        6,
+        7
+      ],
+      "table_rows": [
+        "5.1",
+        "5.2",
+        "5.8",
+        "5.9",
+        "5.15"
+      ],
+      "supports": [
+        "横折",
+        "横撇",
+        "撇点",
+        "弯钩",
+        "横折钩"
+      ]
+    },
+    "S06": {
+      "publication_id": "GF0015—2010",
+      "sha256": "0d647e1378847480364e2603030fe6aa6102d99320c42cac631b2fb3155d18ce",
+      "pdf_pages_reviewed": [
+        31,
+        34,
+        42,
+        44,
+        47,
+        51,
+        53,
+        73,
+        83,
+        92
+      ],
+      "printed_pages_reviewed": [
+        25,
+        28,
+        36,
+        38,
+        41,
+        45,
+        47,
+        67,
+        77,
+        86
+      ],
+      "entry_numbers": [
+        "一级19",
+        "一级315",
+        "一级1019",
+        "一级1199",
+        "一级1448",
+        "一级1793",
+        "一级1989",
+        "二级1456",
+        "二级2376",
+        "二级3154"
+      ],
+      "supports": [
+        "B03十项采用读音"
+      ],
+      "limits": "8项独立词条；2项仅采用词条首语素，证据范围见data/evidence/B03-metadata.json。旧版等级不作为当前教学分级。"
+    }
+  },
+  "review_record": "reviews/B03-metadata.md",
+  "evidence": "data/evidence/B03-metadata.json",
+  "limits": "仅记录本批实际查看页与支持字段；不表示整部出版物全文审读。"
+}
