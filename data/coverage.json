@@ -1,0 +1,28 @@
+{
+  "schema_version":1,
+  "expected_main_count":201,
+  "target_edition":"GF0011—2022",
+  "target_edition_status":"fulltext_pending",
+  "baseline_publication":"GF0011—2009",
+  "baseline_review":{"source_id":"S01-2009","pdf_pages":[6,7,8],"printed_pages":[3,4,5],"method":"actual_page_render_visual_comparison","date":"2026-09-29","reviewer":"ChatGPT","status":"main_table_transcribed","limits":"按2009主表图形及固定序号建立中间索引；非成字部首的Unicode表示和2022附形、名称、编码仍需新版原件核验。"},
+  "encoding_note":"glyph是检索用Unicode代表，不替代规范原字形；尤其非成字部首须另行校准描写图。",
+  "groups":[
+    {"strokes":1,"glyphs":"一丨丿丶乛"},
+    {"strokes":2,"glyphs":"十厂匚卜冂八人勹儿匕几亠冫冖凵卩刀力又厶廴"},
+    {"strokes":3,"glyphs":"干工土艹寸廾大尢弋小口囗山巾彳彡夕夂丬广门宀辶彐尸己弓子屮女飞马幺巛"},
+    {"strokes":4,"glyphs":"王无韦木支犬歹车牙戈比瓦止攴日贝水见牛手气毛长片斤爪父月氏欠风殳文方火斗户心毋"},
+    {"strokes":5,"glyphs":"示甘石龙业目田罒皿生矢禾白瓜鸟疒立穴疋皮癶矛"},
+    {"strokes":6,"glyphs":"耒老耳臣覀而页至虍虫肉缶舌竹臼自血舟色齐衣羊米聿艮羽糸"},
+    {"strokes":7,"glyphs":"麦走赤豆酉辰豕卤里足邑身釆谷豸龟角言辛"},
+    {"strokes":8,"glyphs":"青龺雨非齿黾隹阜金鱼隶"},
+    {"strokes":9,"glyphs":"革面韭骨香鬼食音首"},
+    {"strokes":10,"glyphs":"髟鬲鬥高"},
+    {"strokes":11,"glyphs":"黄麻鹿"},
+    {"strokes":12,"glyphs":"鼎黑黍"},
+    {"strokes":13,"glyphs":"鼓鼠"},
+    {"strokes":14,"glyphs":"鼻"},
+    {"strokes":17,"glyphs":"龠"}
+  ],
+  "default_status":{"content":"pending","artwork":"missing","layout":"not_built","release":"draft"},
+  "progress_rule":"主ID按groups顺序从1到201展开；完成数只能来自逐项复核记录，不能以清单数量或PDF页数替代。"
+}

@@ -1,0 +1,36 @@
+name: Book integrity checks
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Structural and negative tests
+        run: |
+          python scripts/validate_project.py
+          python scripts/test_validation.py
+      - name: Confirm formal publication remains blocked
+        run: |
+          if python scripts/validate_project.py --release; then
+            echo 'Release gates passed.'
+          else
+            echo 'Research state only. No formal pages released.'
+          fi
+      - name: Acquire B01 outlines and export editable source
+        run: |
+          python scripts/acquire_vectors.py
+          git archive --format=zip HEAD -o build/zitie-source.zip
+      - uses: actions/upload-artifact@v4
+        with:
+          name: zitie-editorial-source
+          path: build/
+          retention-days: 14
+          if-no-files-found: error
