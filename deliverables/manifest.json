@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "artifacts": [
+    {
+      "path": "deliverables/drafts/v0.1.0/preface_v0.1.pdf",
+      "title": "前言初稿",
+      "version": "0.1.0",
+      "status": "draft",
+      "batch": "B01",
+      "pages": 3,
+      "bytes": 216717,
+      "sha256": "4079ef0cfae45f5335bdd01c3a0515c334691c77a75ca81c11683fe94125940c",
+      "source_commit": "dfa25ce81f0ba2660d8d4e25781ff3365120af5c",
+      "artifact_id": 11009843293,
+      "review_record": "reviews/B01-layout.md",
+      "release_eligible": false
+    },
+    {
+      "path": "deliverables/drafts/v0.1.0/B01_draft_A4.pdf",
+      "title": "首批10项练习编写稿",
+      "version": "0.1.0",
+      "status": "draft",
+      "batch": "B01",
+      "pages": 10,
+      "bytes": 137590,
+      "sha256": "f4f6ceb05e977c0064a222650027c59143cc6571823fe595f17325608f212cf9",
+      "source_commit": "dfa25ce81f0ba2660d8d4e25781ff3365120af5c",
+      "artifact_id": 11009843293,
+      "review_record": "reviews/B01-layout.md",
+      "release_eligible": false
+    },
+    {
+      "path": "deliverables/drafts/v0.1.0/B01_with_preface_draft_A4.pdf",
+      "title": "前言与首批10项编写稿",
+      "version": "0.1.0",
+      "status": "draft",
+      "batch": "B01",
+      "pages": 13,
+      "bytes": 352714,
+      "sha256": "e6923e89c65e7b1df25337f18fa768a456465f0b1e2867549704912373f9c019",
+      "source_commit": "dfa25ce81f0ba2660d8d4e25781ff3365120af5c",
+      "artifact_id": 11009843293,
+      "review_record": "reviews/B01-layout.md",
+      "release_eligible": false
+    }
+  ]
+}
