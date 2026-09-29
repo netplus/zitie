@@ -1,7 +1,7 @@
 {
   "batch_id": "B02",
-  "version": "0.2.0-draft",
-  "status": "stroke_order_cross_checked_metadata_pending",
+  "version": "0.2.1-draft",
+  "status": "content_cross_checked_scope_pending",
   "scope_source": "S01-2009",
   "primary_source": "S02",
   "primary_review": {
@@ -38,29 +38,26 @@
     ],
     "limits": "与S02属于同一规范沿革，不作为独立统计证据。"
   },
-  "metadata_review": "fine_names_mapped_pronunciation_completion_pending",
+  "metadata_review": "passed",
   "artwork_review": {
-    "status": "sequence_matched_terminal_shape_pending",
+    "status": "passed",
     "reviewer": "ChatGPT",
     "date": "2026-09-29",
-    "record": "reviews/v0.2-layout.md",
-    "notes": "42笔的累积顺序与已核原件相符；日、目、田的横折末端存在容易被理解为钩的楷体回锋，正式用稿前需单独解决。"
+    "record": "reviews/B02-completion.md",
+    "notes": "3个指定横折的末端已定点整理；其余笔画和月字全部原始路径保持不变。"
   },
   "layout_review": {
     "status": "passed",
     "reviewer": "ChatGPT",
     "date": "2026-09-29",
-    "record": "reviews/v0.2-layout.md",
-    "scope": "阶段性版式检查；不代替字形及内容审定",
-    "artifact_id": 11011472530
+    "record": "reviews/v0.2.1-layout.md",
+    "scope": "已查看前言3页及B02全部10页；B01逐页像素不变。CI产物须与本地已看稿匹配后归档。"
   },
   "release_eligible": false,
   "remaining_gates": [
-    "读音逐项证据",
-    "日、目、田的横折收笔形态",
     "GF0011—2022全文及目标版主项身份核验"
   ],
-  "draft_label": "编写稿｜笔顺原件已核；读音与部分收笔字形仍待复核。",
+  "draft_label": "编写稿｜本批内容已复核；2022版部首表范围核验仍待完成。",
   "entries": [
     {
       "character": "水",
@@ -94,7 +91,19 @@
         "先中间，再左边，最后写右边。",
         "第2笔横撇一笔写完，不拆成两笔。"
       ],
-      "check": "竖钩居中；右边的撇和捺分两笔写。"
+      "check": "竖钩居中；右边的撇和捺分两笔写。",
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 48,
+        "printed_page": 42,
+        "entry_number": "一级1527",
+        "entry": "水",
+        "entry_pinyin": "shuǐ",
+        "adopted_pinyin": "shuǐ",
+        "usage": "独立词条",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
     },
     {
       "character": "火",
@@ -128,7 +137,19 @@
         "先左点，再右上短撇，再写长撇。",
         "第2笔是撇，不是再写一个点。"
       ],
-      "check": "两撇先后分清，最后一捺舒展。"
+      "check": "两撇先后分清，最后一捺舒展。",
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 39,
+        "printed_page": 33,
+        "entry_number": "一级719",
+        "entry": "火",
+        "entry_pinyin": "huǒ",
+        "adopted_pinyin": "huǒ",
+        "usage": "独立词条",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
     },
     {
       "character": "木",
@@ -162,7 +183,19 @@
         "先横后竖，再写撇和捺。",
         "这一页练独体木，末笔是捺。"
       ],
-      "check": "横竖相交；撇捺向两边伸展。"
+      "check": "横竖相交；撇捺向两边伸展。",
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 75,
+        "printed_page": 69,
+        "entry_number": "二级1634",
+        "entry": "木",
+        "entry_pinyin": "mù",
+        "adopted_pinyin": "mù",
+        "usage": "独立词条",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
     },
     {
       "character": "日",
@@ -196,7 +229,21 @@
         "先左竖、横折，再写两横。",
         "里面的横先写，最下面的横最后写。"
       ],
-      "check": "共4笔；横折不拆笔，最后封口。"
+      "check": "共4笔；横折不拆笔，最后封口。",
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 46,
+        "printed_page": 40,
+        "entry_number": "一级1371",
+        "entry": "日",
+        "entry_pinyin": "rì",
+        "adopted_pinyin": "rì",
+        "usage": "独立词条",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      },
+      "artwork_override": "data/artwork/terminal-overrides-v1.json",
+      "artwork_notice": "横折收笔按已核笔形作教学整理；不是规范原图。"
     },
     {
       "character": "月",
@@ -230,7 +277,19 @@
         "先撇、横折钩，再写里面两横。",
         "这里练独体月，不照搬日的起笔。"
       ],
-      "check": "第1笔是撇，第2笔的钩不遗漏。"
+      "check": "第1笔是撇，第2笔的钩不遗漏。",
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 53,
+        "printed_page": 47,
+        "entry_number": "一级2012",
+        "entry": "月",
+        "entry_pinyin": "yuè",
+        "adopted_pinyin": "yuè",
+        "usage": "独立词条",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
     },
     {
       "character": "田",
@@ -265,7 +324,21 @@
         "先搭外框，再写里面的横和竖。",
         "第5笔才写底横，不能先封口。"
       ],
-      "check": "中间先横后竖；最后写底横。"
+      "check": "中间先横后竖；最后写底横。",
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 82,
+        "printed_page": 76,
+        "entry_number": "二级2277",
+        "entry": "田",
+        "entry_pinyin": "tián",
+        "adopted_pinyin": "tián",
+        "usage": "独立词条",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      },
+      "artwork_override": "data/artwork/terminal-overrides-v1.json",
+      "artwork_notice": "横折收笔按已核笔形作教学整理；不是规范原图。"
     },
     {
       "character": "目",
@@ -300,7 +373,21 @@
         "先左竖、横折，再写三横。",
         "里面两横先写，最后一横封口。"
       ],
-      "check": "共5笔；里面两横不漏写。"
+      "check": "共5笔；里面两横不漏写。",
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 75,
+        "printed_page": 69,
+        "entry_number": "二级1635",
+        "entry": "目光",
+        "entry_pinyin": "mùguāng",
+        "adopted_pinyin": "mù",
+        "usage": "取首语素；不冒充独立目字条",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      },
+      "artwork_override": "data/artwork/terminal-overrides-v1.json",
+      "artwork_notice": "横折收笔按已核笔形作教学整理；不是规范原图。"
     },
     {
       "character": "手",
@@ -334,7 +421,19 @@
         "先短撇，再写两横，最后竖钩。",
         "第1笔是撇，不是横。"
       ],
-      "check": "末笔竖钩居中；两横先后不颠倒。"
+      "check": "末笔竖钩居中；两横先后不颠倒。",
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 48,
+        "printed_page": 42,
+        "entry_number": "一级1499",
+        "entry": "手",
+        "entry_pinyin": "shǒu",
+        "adopted_pinyin": "shǒu",
+        "usage": "独立词条",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
     },
     {
       "character": "牛",
@@ -368,7 +467,19 @@
         "先撇、两横，再写中间的竖。",
         "独体牛最后写竖；牛字旁另页学。"
       ],
-      "check": "第3笔是横，第4笔才是竖。"
+      "check": "第3笔是横，第4笔才是竖。",
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 44,
+        "printed_page": 38,
+        "entry_number": "一级1192",
+        "entry": "牛（名）",
+        "entry_pinyin": "niú",
+        "adopted_pinyin": "niú",
+        "usage": "采用名词读音",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
     },
     {
       "character": "毛",
@@ -402,7 +513,20 @@
         "先撇、两横，最后竖弯钩。",
         "末笔从竖到弯、到钩，连续写完。"
       ],
-      "check": "两横写完再落末笔，不把弯钩拆开。"
+      "check": "两横写完再落末笔，不把弯钩拆开。",
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 74,
+        "printed_page": 68,
+        "entry_number": "二级1549",
+        "entry": "毛",
+        "entry_pinyin": "máo",
+        "adopted_pinyin": "máo",
+        "usage": "独立词条",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
     }
-  ]
+  ],
+  "metadata_review_record": "reviews/B02-completion.md"
 }

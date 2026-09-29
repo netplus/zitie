@@ -1,3 +1,11 @@
+# PDF版本归档
+
+## v0.2.1：第二批收尾修订
+
+[前言＋前20项，23页](drafts/v0.2.1/B01-B02_with_preface_draft_A4.pdf) · [B02十页](drafts/v0.2.1/B02_draft_A4.pdf) · [前言三页](drafts/v0.2.1/preface_v0.2.1.pdf)
+
+本版补齐B02采用读音，整理日、目、田横折末端；没有新增主项，仍为编写稿。旧版不替换，实际字节以manifest登记为准。
+
 # PDF交付物
 
 阶段性和最终PDF均直接保存在本Git仓库。Actions附件仅用于构建传输，不代替永久归档。
