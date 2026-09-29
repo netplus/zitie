@@ -1,0 +1,25 @@
+{
+  "batch_id":"B01",
+  "version":"0.1.0-research",
+  "status":"primary_checked_cross_review_pending",
+  "scope_source":"S01-2009",
+  "primary_source":"S02",
+  "primary_review":{"reviewer":"ChatGPT","date":"2026-09-29","method":"opened rendered original-publication pages; checked cumulative figures and category codes","pdf_pages":[9,10],"printed_pages":[3,4],"sha256":"0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0"},
+  "cross_review":{"status":"pending","source_id":null,"limits":"尚未取得第二权威出版物的本批全部对应逐笔内页。不能将2009部首表或同一笔顺规范的镜像算作第二份笔顺证据。"},
+  "metadata_review":"pinyin_and_fine_stroke_names_cross_review_pending",
+  "artwork_review":{"status":"passed","reviewer":"ChatGPT","date":"2026-09-29","record":"reviews/B01-layout.md","limits":"本轮图形匹配；不代替权威交叉来源。"},
+  "layout_review":{"status":"passed","reviewer":"ChatGPT","date":"2026-09-29","record":"reviews/B01-layout.md","limits":"13页编写稿的视觉验收；不是独立专家审定。"},
+  "release_eligible":false,
+  "entries":[
+    {"character":"一","pinyin":"yī","stroke_names":["横"],"order_code":"1","primary_pdf_page":9,"primary_printed_page":3,"tips":["一笔写完，横画放在格子中部。","从左向右写，注意起笔与收笔。"],"check":"只有一笔，横画平稳。"},
+    {"character":"十","pinyin":"shí","stroke_names":["横","竖"],"order_code":"12","primary_pdf_page":9,"primary_printed_page":3,"tips":["先横后竖，交点放在中部。","竖画上下伸展，不偏向一边。"],"check":"先横后竖，交点位置合适。"},
+    {"character":"人","pinyin":"rén","stroke_names":["撇","捺"],"order_code":"34","primary_pdf_page":9,"primary_printed_page":3,"tips":["先撇后捺，两笔相互照应。","撇向左下，捺向右下舒展。"],"check":"先撇后捺，两脚舒展。"},
+    {"character":"八","pinyin":"bā","stroke_names":["撇","捺"],"order_code":"34","primary_pdf_page":9,"primary_printed_page":3,"tips":["先撇后捺，两笔之间要留空。","与“人”比较：上部不要接在一起。"],"check":"两笔分开，不写成人。"},
+    {"character":"大","pinyin":"dà","stroke_names":["横","撇","捺"],"order_code":"134","primary_pdf_page":10,"primary_printed_page":4,"tips":["先横，再写撇和捺。","撇捺向两侧伸展，撑稳字形。"],"check":"横先写，撇捺不挤在一起。"},
+    {"character":"工","pinyin":"gōng","stroke_names":["横","竖","横"],"order_code":"121","primary_pdf_page":10,"primary_printed_page":4,"tips":["先上横，再中竖，最后写下横。","中竖连接两横，不向上伸出。"],"check":"中竖连接两横，下横舒展。"},
+    {"character":"土","pinyin":"tǔ","stroke_names":["横","竖","横"],"order_code":"121","primary_pdf_page":10,"primary_printed_page":4,"tips":["先短横，再竖，最后写长横。","中竖要伸出上横，与“工”分清。"],"check":"上横短，下横长，中竖向上伸出。"},
+    {"character":"口","pinyin":"kǒu","stroke_names":["竖","横折","横"],"order_code":"251","primary_pdf_page":10,"primary_printed_page":4,"tips":["先左竖，再横折，最后一横。","第二笔横折一笔写完，不拆开。"],"check":"共三笔，第二笔连续转折。"},
+    {"character":"山","pinyin":"shān","stroke_names":["竖","竖折","竖"],"order_code":"252","primary_pdf_page":10,"primary_printed_page":4,"tips":["先中竖，再竖折，最后右竖。","左竖和底横连写，合为第二笔。"],"check":"中竖先写，竖折不拆成两笔。"},
+    {"character":"巾","pinyin":"jīn","stroke_names":["竖","横折钩","竖"],"order_code":"252","primary_pdf_page":10,"primary_printed_page":4,"tips":["先左竖，再横折钩，最后中竖。","中竖最后写，与“山”的顺序分清。"],"check":"中竖最后写，第二笔有钩。"}
+  ]
+}
