@@ -1,0 +1,38 @@
+name: Reference acquisition
+on:
+  push:
+    paths:
+      - '.github/workflows/source-probe.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - name: Fetch public references without changing editorial status
+        shell: bash
+        run: |
+          set -u
+          mkdir -p references
+          fetch() {
+            name="$1"; url="$2"
+            if curl --fail --location --retry 1 --max-time 100 "$url" -o "references/$name"; then
+              sha256sum "references/$name" >> references/SHA256SUMS.txt
+              printf 'OK\t%s\t%s\n' "$name" "$url" >> references/retrieval.tsv
+            else
+              rm -f "references/$name"
+              printf 'FAILED\t%s\t%s\n' "$name" "$url" >> references/retrieval.tsv
+            fi
+          }
+          fetch gf0023-2020.pdf 'https://www.htu.edu.cn/_upload/article/files/5b/4f/535eed164dc2b6303182b1ad5654/356ee878-cf3c-4752-b53e-7e0975ed7776.pdf'
+          fetch gf0011-2009.pdf 'https://archive.org/download/GF0011-2009/GF0011-2009%20%E6%B1%89%E5%AD%97%E9%83%A8%E9%A6%96%E8%A1%A8.pdf'
+          printf '%s\n' 'Reference acquisition only. No source has been declared reviewed by this workflow. Do not redistribute third-party source PDFs as book deliverables.' > references/README.txt
+      - name: Store temporary reference bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: reference-acquisition
+          path: references/
+          retention-days: 7
+          if-no-files-found: error
