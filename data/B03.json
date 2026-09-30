@@ -1,7 +1,7 @@
 {
   "batch_id": "B03",
   "version": "0.3.0-draft",
-  "status": "content_cross_checked_scope_pending_artwork_pending",
+  "status": "content_cross_checked_artwork_checked_layout_checked_scope_pending_archive_pending",
   "scope_source": "S01-2009",
   "primary_source": "S02",
   "primary_review": {
@@ -108,18 +108,31 @@
     "limits": "提示仅复述已核笔顺、细笔名及已观察到的笔画关系；位置变体保持pending。"
   },
   "artwork_review": {
-    "status": "pending"
+    "status": "passed",
+    "reviewer": "ChatGPT",
+    "date": "2026-09-30",
+    "record": "reviews/B03-artwork.md",
+    "evidence": "data/evidence/B03-artwork.json",
+    "method": "immutable_vector_fetch_then_cumulative_render_compared_with_reviewed_S02_S04_step_diagrams",
+    "independent_reviewers": false,
+    "limits": "Hanzi Writer仅作绘图材料；通过表示与已审规范图的笔数、笔序、笔形关系和本批轮廓边界未发现冲突，不把绘图源当规范依据。"
   },
   "layout_review": {
-    "status": "not_built"
+    "status": "passed_local_candidate_not_archived",
+    "reviewer": "ChatGPT",
+    "date": "2026-09-30",
+    "record": "reviews/B03-layout.md",
+    "pages": 10,
+    "method": "render_all_pages_160dpi_then_contact_sheet_and_target_page_visual_inspection",
+    "limits": "本轮PDF仅为本地候选稿，尚未存入deliverables/drafts并同步manifest，因此不计仓库已归档阶段PDF。"
   },
   "release_eligible": false,
   "remaining_gates": [
     "GF0011—2022全文及目标版主项身份核验",
-    "B03逐笔矢量匹配与白第3笔收笔定点复核",
-    "B03试排PDF逐页视觉检查与第二遍复核"
+    "将B03候选PDF按新版本归档至deliverables/drafts并同步manifest真实source_commit、页数、字节数、SHA256和复核记录",
+    "目标HEAD必要CI通过后完成PR审查与合入"
   ],
-  "draft_label": "编写稿｜本批内容字段已核；矢量、版式及2022版主表范围仍待核。",
+  "draft_label": "编写稿｜本批内容、矢量与本地版式已核；仓库归档及2022版主表范围仍待核。",
   "entries": [
     {
       "character": "刀",
@@ -626,7 +639,7 @@
       "primary_printed_page": 15,
       "tips": [
         "先撇，再竖、横折，接着写里面一横，最后一横封口。",
-        "第3笔是横折；具体收笔轮廓在矢量阶段定点复核。"
+        "第3笔是横折：横向转折后向下收笔，不写成横折钩。"
       ],
       "check": "共五笔，里面一横先写，最后再封口。",
       "migration_boundary": "本页只练独体“白”；组合字中的位置变化另核。",
@@ -670,7 +683,8 @@
         "adopted_name": "白",
         "result": "matched",
         "reviewed_at": "2026-09-29"
-      }
+      },
+      "artwork_note": "S02 PDF21与S04 PDF22的第3步均显示横折向下、无钩；Hanzi Writer固定revision第3矢量同样无钩。"
     },
     {
       "character": "立",
