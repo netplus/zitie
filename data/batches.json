@@ -234,6 +234,62 @@
         "B15_content_scope"
       ],
       "note": "人工阶段1内容复核稿已入库；data/B16.json创建被安全检查拒绝，当前为review-only in_progress，后续需补canonical data与evidence。"
+    },
+    {
+      "id": "B17",
+      "title": "七八画常用部件与迁移",
+      "main_glyphs": "釆谷豸龟角言辛青龺雨",
+      "note": "baseline机器evidence已入库；canonical data与人工review写入被安全检查拒绝，当前为evidence-only in_progress。",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B16_content_scope"
+      ]
+    },
+    {
+      "id": "B18",
+      "title": "八九画常用部件与迁移",
+      "main_glyphs": "非齿黾隹阜金鱼隶革面",
+      "note": "阶段1正式内容稿、人工review与baseline机器evidence已入库；其它字段继续逐项待核。",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B17_content_scope"
+      ]
+    },
+    {
+      "id": "B19",
+      "title": "九十画常用部件与复杂形过渡",
+      "main_glyphs": "韭骨香鬼食音首髟鬲鬥",
+      "note": "baseline机器evidence已入库；canonical data与人工review本轮写入被安全检查拒绝，当前为evidence-only in_progress。",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B18_content_scope"
+      ]
+    },
+    {
+      "id": "B20",
+      "title": "十至十四画复杂主部首",
+      "main_glyphs": "高黄麻鹿鼎黑黍鼓鼠鼻",
+      "note": "阶段1内容已实际编写，但evidence/data/review写入均被安全检查拒绝，当前仅保留为未入库工作成果，不升级reviewed。",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B19_content_scope"
+      ]
     }
   ],
   "remaining_plan": {
