@@ -84,6 +84,8 @@
   ],
   "remaining_plan": {
     "batch_ids": [
+      "B04",
+      "B05",
       "B06",
       "B07",
       "B08",
@@ -101,9 +103,9 @@
       "B20",
       "B21"
     ],
-    "status": "phase1_content_assignment_continues_from_B06",
-    "main_count": 151,
-    "rule": "按少笔画与常用性、位置变形、易混对照、包围时序、复杂扩展的前置关系分配。阶段1只要求内容范围和字段证据推进，不要求前一批PDF/manifest完成后才开始下一批内容。"
+    "status": "legacy_remaining_scope_includes_phase1_active_B04_B05",
+    "main_count": 171,
+    "rule": "兼容现有validator：remaining_plan继续表示尚未进入frozen_batches的全部171个主项，因此包含已进入阶段1内容编写的B04/B05。phase1_content_batches单独表示当前内容工作集，两者允许重叠；正式冻结后再从remaining_plan移除。"
   },
   "run_target_main_count": 20,
   "run_target_rule": "阶段1每次持续推进20个不同主部首的内容与证据链；内部仍为10项一批。不得用附形、复习、字段数或重复检查充数。artwork/layout/publication状态不作为继续下一批内容的常规阻塞条件。",
