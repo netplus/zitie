@@ -52,7 +52,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "本轮只保留“釆”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -103,7 +103,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "本轮只保留“谷”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -154,7 +154,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "本轮只保留“豸”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -205,7 +205,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "本轮只保留“龟”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -256,7 +256,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "本轮只保留“角”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -307,7 +307,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "本轮只保留“言”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -358,7 +358,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "本轮只保留“辛”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -409,7 +409,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "本轮只保留“青”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -460,7 +460,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "本轮只保留“龺”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -511,7 +511,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "本轮只保留“雨”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -524,5 +524,6 @@
       ]
     }
   ],
-  "phase1_rule": "baseline字段已有机器evidence；教学文字为阶段1人工稿，其余权威字段继续pending。"
+  "phase1_rule": "baseline字段已有机器evidence；教学文字、检查句、整字语境和迁移边界已完成阶段1编辑一致性复核并记录于data/evidence/B17-teaching-review.json；其它权威字段继续pending。",
+  "teaching_review_record": "data/evidence/B17-teaching-review.json"
 }
