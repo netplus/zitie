@@ -1,29 +1,181 @@
 {
-  "schema_version":1,
-  "expected_main_count":201,
-  "target_edition":"GF0011—2022",
-  "target_edition_status":"fulltext_pending",
-  "baseline_publication":"GF0011—2009",
-  "baseline_review":{"source_id":"S01-2009","pdf_pages":[6,7,8],"printed_pages":[3,4,5],"method":"actual_page_render_visual_comparison","date":"2026-09-29","reviewer":"ChatGPT","status":"main_table_transcribed","limits":"按2009主表图形及固定序号建立中间索引；非成字部首的Unicode表示和2022附形、名称、编码仍需新版原件核验。"},
-  "encoding_note":"glyph是检索用Unicode代表，不替代规范原字形；尤其非成字部首须另行校准描写图。",
-  "groups":[
-    {"strokes":1,"glyphs":"一丨丿丶乛"},
-    {"strokes":2,"glyphs":"十厂匚卜冂八人勹儿匕几亠冫冖凵卩刀力又厶廴"},
-    {"strokes":3,"glyphs":"干工土艹寸廾大尢弋小口囗山巾彳彡夕夂丬广门宀辶彐尸己弓子屮女飞马幺巛"},
-    {"strokes":4,"glyphs":"王无韦木支犬歹车牙戈比瓦止攴日贝水见牛手气毛长片斤爪父月氏欠风殳文方火斗户心毋"},
-    {"strokes":5,"glyphs":"示甘石龙业目田罒皿生矢禾白瓜鸟疒立穴疋皮癶矛"},
-    {"strokes":6,"glyphs":"耒老耳臣覀而页至虍虫肉缶舌竹臼自血舟色齐衣羊米聿艮羽糸"},
-    {"strokes":7,"glyphs":"麦走赤豆酉辰豕卤里足邑身釆谷豸龟角言辛"},
-    {"strokes":8,"glyphs":"青龺雨非齿黾隹阜金鱼隶"},
-    {"strokes":9,"glyphs":"革面韭骨香鬼食音首"},
-    {"strokes":10,"glyphs":"髟鬲鬥高"},
-    {"strokes":11,"glyphs":"黄麻鹿"},
-    {"strokes":12,"glyphs":"鼎黑黍"},
-    {"strokes":13,"glyphs":"鼓鼠"},
-    {"strokes":14,"glyphs":"鼻"},
-    {"strokes":17,"glyphs":"龠"}
+  "schema_version": 1,
+  "expected_main_count": 201,
+  "target_edition": "GF0011—2022",
+  "target_edition_status": "fulltext_pending",
+  "baseline_publication": "GF0011—2009",
+  "baseline_review": {
+    "source_id": "S01-2009",
+    "pdf_pages": [
+      6,
+      7,
+      8
+    ],
+    "printed_pages": [
+      3,
+      4,
+      5
+    ],
+    "method": "actual_page_render_visual_comparison",
+    "date": "2026-09-29",
+    "reviewer": "ChatGPT",
+    "status": "main_table_transcribed",
+    "limits": "按2009主表图形及固定序号建立中间索引；非成字部首的Unicode表示和2022附形、名称、编码仍需新版原件核验。"
+  },
+  "encoding_note": "glyph是检索用Unicode代表，不替代规范原字形；尤其非成字部首须另行校准描写图。",
+  "groups": [
+    {
+      "strokes": 1,
+      "glyphs": "一丨丿丶乛"
+    },
+    {
+      "strokes": 2,
+      "glyphs": "十厂匚卜冂八人勹儿匕几亠冫冖凵卩刀力又厶廴"
+    },
+    {
+      "strokes": 3,
+      "glyphs": "干工土艹寸廾大尢弋小口囗山巾彳彡夕夂丬广门宀辶彐尸己弓子屮女飞马幺巛"
+    },
+    {
+      "strokes": 4,
+      "glyphs": "王无韦木支犬歹车牙戈比瓦止攴日贝水见牛手气毛长片斤爪父月氏欠风殳文方火斗户心毋"
+    },
+    {
+      "strokes": 5,
+      "glyphs": "示甘石龙业目田罒皿生矢禾白瓜鸟疒立穴疋皮癶矛"
+    },
+    {
+      "strokes": 6,
+      "glyphs": "耒老耳臣覀而页至虍虫肉缶舌竹臼自血舟色齐衣羊米聿艮羽糸"
+    },
+    {
+      "strokes": 7,
+      "glyphs": "麦走赤豆酉辰豕卤里足邑身釆谷豸龟角言辛"
+    },
+    {
+      "strokes": 8,
+      "glyphs": "青龺雨非齿黾隹阜金鱼隶"
+    },
+    {
+      "strokes": 9,
+      "glyphs": "革面韭骨香鬼食音首"
+    },
+    {
+      "strokes": 10,
+      "glyphs": "髟鬲鬥高"
+    },
+    {
+      "strokes": 11,
+      "glyphs": "黄麻鹿"
+    },
+    {
+      "strokes": 12,
+      "glyphs": "鼎黑黍"
+    },
+    {
+      "strokes": 13,
+      "glyphs": "鼓鼠"
+    },
+    {
+      "strokes": 14,
+      "glyphs": "鼻"
+    },
+    {
+      "strokes": 17,
+      "glyphs": "龠"
+    }
   ],
-  "field_review_checkpoints":{"B03":{"main_ids":[22,23,24,54,56,36,61,102,112,116],"stroke_order_evidence":"data/evidence/B03-stroke-order.json","metadata_evidence":"data/evidence/B03-metadata.json","reviewed_fields":["stroke_count","stroke_order","source_glyph_relations","fine_stroke_names","pronunciation","structure_prerequisite"],"generated_main_count":0,"release_eligible":false,"limits":"B03笔顺、结构前提、细笔名和采用读音已逐字段核；不等于正文、矢量、版式、2022身份或变体通过。"}},
-  "default_status":{"content":"pending","artwork":"missing","layout":"not_built","release":"draft"},
-  "progress_rule":"主ID按groups顺序从1到201展开；完成数只能来自逐项复核记录，不能以清单数量或PDF页数替代。"
+  "field_review_checkpoints": {
+    "B03": {
+      "main_ids": [
+        22,
+        23,
+        24,
+        54,
+        56,
+        36,
+        61,
+        102,
+        112,
+        116
+      ],
+      "stroke_order_evidence": "data/evidence/B03-stroke-order.json",
+      "metadata_evidence": "data/evidence/B03-metadata.json",
+      "reviewed_fields": [
+        "stroke_count",
+        "stroke_order",
+        "source_glyph_relations",
+        "fine_stroke_names",
+        "pronunciation",
+        "structure_prerequisite"
+      ],
+      "generated_main_count": 0,
+      "release_eligible": false,
+      "limits": "B03笔顺、结构前提、细笔名和采用读音已逐字段核；不等于正文、矢量、版式、2022身份或变体通过。"
+    },
+    "B04": {
+      "main_ids": [
+        27,
+        31,
+        43,
+        46,
+        47,
+        51,
+        52,
+        53,
+        57,
+        58
+      ],
+      "content_record": "data/B04.json",
+      "review_record": "reviews/B04-content.md",
+      "content_status": "in_progress",
+      "generated_main_count": 0,
+      "release_eligible": false,
+      "limits": "阶段1内容稿；专用机器evidence尚待迁入，GF0011—2022精确字段继续pending。"
+    },
+    "B05": {
+      "main_ids": [
+        62,
+        66,
+        67,
+        68,
+        69,
+        70,
+        72,
+        73,
+        76,
+        78
+      ],
+      "content_record": "data/B05.json",
+      "review_record": "reviews/B05-content.md",
+      "content_status": "in_progress",
+      "generated_main_count": 0,
+      "release_eligible": false,
+      "limits": "阶段1内容稿；牙第2笔存在权威材料冲突，专用机器evidence尚待迁入，GF0011—2022精确字段继续pending。"
+    }
+  },
+  "default_status": {
+    "content": "pending",
+    "artwork": "missing",
+    "layout": "not_built",
+    "release": "draft"
+  },
+  "progress_rule": "主ID按groups顺序从1到201展开；阶段1分别统计内容范围、content_ready和content_in_progress。主项内容推进不要求前一批PDF/manifest完成；正式发布仍按独立门槛计数。",
+  "workflow_mode": "phase1_content_first",
+  "phase1_content_progress": {
+    "scoped_main_count": 50,
+    "content_ready_main_count": 30,
+    "content_in_progress_main_count": 20,
+    "batches_content_ready": [
+      "B01",
+      "B02",
+      "B03"
+    ],
+    "batches_content_in_progress": [
+      "B04",
+      "B05"
+    ],
+    "next_assignment_starts_at": "B06",
+    "note": "阶段1按内容与证据链推进；artwork、PDF、manifest和release不作为继续下一批内容的常规阻塞条件。"
+  }
 }
