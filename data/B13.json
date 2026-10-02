@@ -49,7 +49,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_or_not_applicable",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "“柔”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
@@ -95,7 +95,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_or_not_applicable",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "“耕”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
@@ -141,7 +141,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_or_not_applicable",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "“老”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
@@ -187,7 +187,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_or_not_applicable",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "“聪”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
@@ -233,7 +233,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_or_not_applicable",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "“卧”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
@@ -279,7 +279,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_or_not_applicable",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "“要”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
@@ -325,7 +325,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_or_not_applicable",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "“耐”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
@@ -371,7 +371,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_or_not_applicable",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "“题”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
@@ -417,7 +417,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_or_not_applicable",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "“到”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
@@ -463,7 +463,7 @@
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_or_not_applicable",
         "component_name": "pending_S03_target_row",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "“虎”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
@@ -474,5 +474,6 @@
       ]
     }
   ],
-  "phase1_rule": "本批先关闭S01-2009基线身份和笔画分组，教学文稿入库；笔顺、细笔名、部件名称、读音和2022精确身份待原页证据后逐字段升级。"
+  "phase1_rule": "baseline机器evidence已入库；教学提示、自查句、整字语境和迁移边界已由reviews/B13-content.md中的人工内容复核覆盖，记为非权威编辑复核通过；笔顺、细笔名、部件名称、读音、结构、位置迁移和GF0011—2022精确身份继续逐字段pending。",
+  "teaching_review_record": "reviews/B13-content.md"
 }
