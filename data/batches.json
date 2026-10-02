@@ -80,6 +80,34 @@
         "B04_content_scope"
       ],
       "note": "第一阶段只推进内容和证据链；牙第2笔等冲突继续fail-closed，不因批次推进而强行裁决。"
+    },
+    {
+      "id": "B06",
+      "title": "二画基础部件与框形",
+      "main_glyphs": "厂匚卜冂勹儿匕几亠冫",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B05_content_scope"
+      ],
+      "note": "阶段1已建立正式内容稿；候选笔顺/细笔名/名称仍需目标原页逐项核验。"
+    },
+    {
+      "id": "B07",
+      "title": "二三画常用偏旁与包围迁移",
+      "main_glyphs": "冖凵卩厶廴艹廾宀辶彐",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B06_content_scope"
+      ],
+      "note": "阶段1已建立正式内容稿；包围时序必须回整字核验，候选字段未升级为reviewed。"
     }
   ],
   "remaining_plan": {
@@ -103,9 +131,9 @@
       "B20",
       "B21"
     ],
-    "status": "legacy_remaining_scope_includes_phase1_active_B04_B05",
+    "status": "legacy_remaining_scope_includes_phase1_active_B04_B07",
     "main_count": 171,
-    "rule": "兼容现有validator：remaining_plan继续表示尚未进入frozen_batches的全部171个主项，因此包含已进入阶段1内容编写的B04/B05。phase1_content_batches单独表示当前内容工作集，两者允许重叠；正式冻结后再从remaining_plan移除。"
+    "rule": "兼容现有validator：remaining_plan继续表示尚未进入frozen_batches的全部171个主项，因此包含已进入阶段1内容编写的B04—B07。phase1_content_batches单独表示当前内容工作集，两者允许重叠；正式冻结后再从remaining_plan移除。"
   },
   "run_target_main_count": 20,
   "run_target_rule": "阶段1每次持续推进20个不同主部首的内容与证据链；内部仍为10项一批。不得用附形、复习、字段数或重复检查充数。artwork/layout/publication状态不作为继续下一批内容的常规阻塞条件。",
