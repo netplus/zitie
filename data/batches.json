@@ -108,6 +108,132 @@
         "B06_content_scope"
       ],
       "note": "阶段1已建立正式内容稿；包围时序必须回整字核验，候选字段未升级为reviewed。"
+    },
+    {
+      "id": "B08",
+      "title": "基础笔形与三画辨析",
+      "main_glyphs": "丨丿丶乛尢弋囗彳彡夂",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B07_content_scope"
+      ],
+      "note": "阶段1正式内容稿已入库；人工review与机器evidence尚未形成，字段保持in_progress。"
+    },
+    {
+      "id": "B09",
+      "title": "四画常用独体与部件迁移",
+      "main_glyphs": "韦支比气长片斤爪父文",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B08_content_scope"
+      ],
+      "note": "阶段1正式内容稿已入库；人工review与机器evidence尚未形成，字段保持in_progress。"
+    },
+    {
+      "id": "B10",
+      "title": "常用四画部件与迁移",
+      "main_glyphs": "丬幺攴氏欠风方斗户心",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B09_content_scope"
+      ],
+      "note": "阶段1正式内容稿与人工review已入库；机器evidence尚未形成，未闭合字段保持pending。"
+    },
+    {
+      "id": "B11",
+      "title": "五画常用独体与框形辨析",
+      "main_glyphs": "示甘龙业罒皿生矢禾瓜",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B10_content_scope"
+      ],
+      "note": "阶段1正式内容稿已入库；人工review与机器evidence尚未形成，字段保持in_progress。"
+    },
+    {
+      "id": "B12",
+      "title": "遗留短笔部件与五画过渡",
+      "main_glyphs": "屮巛殳毋鸟疒穴疋皮癶",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B11_content_scope"
+      ],
+      "note": "阶段1正式内容稿、人工review与baseline机器evidence已入库；其它字段继续逐项待核。"
+    },
+    {
+      "id": "B13",
+      "title": "五六画结构与包围过渡",
+      "main_glyphs": "矛耒老耳臣覀而页至虍",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B12_content_scope"
+      ],
+      "note": "阶段1正式内容稿、人工review与baseline机器evidence已入库；其它字段继续逐项待核。"
+    },
+    {
+      "id": "B14",
+      "title": "六画常用部件与位置迁移",
+      "main_glyphs": "虫肉缶舌竹臼自血舟色",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B13_content_scope"
+      ],
+      "note": "阶段1正式内容稿与人工review已入库；data/evidence/B14-content.json写入被安全检查拒绝，因此baseline字段不得据此升级reviewed。"
+    },
+    {
+      "id": "B15",
+      "title": "六七画常用部件与位置迁移",
+      "main_glyphs": "齐衣羊米聿艮羽糸麦走",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B14_content_scope"
+      ],
+      "note": "阶段1正式内容稿与人工review已入库；机器evidence写入被安全检查拒绝，data/B15.json已回退为candidate状态。"
+    },
+    {
+      "id": "B16",
+      "title": "七画常用部件与位置迁移",
+      "main_glyphs": "赤豆酉辰豕卤里足邑身",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B15_content_scope"
+      ],
+      "note": "人工阶段1内容复核稿已入库；data/B16.json创建被安全检查拒绝，当前为review-only in_progress，后续需补canonical data与evidence。"
     }
   ],
   "remaining_plan": {
