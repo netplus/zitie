@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "batch_id": "B18",
+  "reviewed_at": "2026-10-02",
+  "reviewer": "ChatGPT",
+  "review_kind": "editorial_teaching_text_consistency",
+  "authority_scope": "non_authoritative_editorial_review",
+  "source_record": "data/B18.json",
+  "review_record": "reviews/B18-content.md",
+  "reviewed_fields": [
+    "tips",
+    "check",
+    "whole_character_context",
+    "migration_boundary"
+  ],
+  "limits": "本证据只确认阶段1教学文稿的完整性、内部一致性和fail-closed边界；不支持GF0011—2022精确身份、正式结构、逐笔笔顺、细笔名、部件名称、采用读音、正式附形或位置变体。",
+  "entries": [
+    {
+      "character": "非",
+      "main_id": 171,
+      "tips_count": 2,
+      "check_present": true,
+      "context_example": "悲",
+      "context_position": "top",
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency"
+    },
+    {
+      "character": "齿",
+      "main_id": 172,
+      "tips_count": 2,
+      "check_present": true,
+      "context_example": "龄",
+      "context_position": "left",
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency"
+    },
+    {
+      "character": "黾",
+      "main_id": 173,
+      "tips_count": 2,
+      "check_present": true,
+      "context_example": "绳",
+      "context_position": "right",
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency"
+    },
+    {
+      "character": "隹",
+      "main_id": 174,
+      "tips_count": 2,
+      "check_present": true,
+      "context_example": "谁",
+      "context_position": "right",
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency"
+    },
+    {
+      "character": "阜",
+      "main_id": 175,
+      "tips_count": 2,
+      "check_present": true,
+      "context_example": "阜",
+      "context_position": "self",
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency"
+    },
+    {
+      "character": "金",
+      "main_id": 176,
+      "tips_count": 2,
+      "check_present": true,
+      "context_example": "鉴",
+      "context_position": "bottom",
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency"
+    },
+    {
+      "character": "鱼",
+      "main_id": 177,
+      "tips_count": 2,
+      "check_present": true,
+      "context_example": "鲜",
+      "context_position": "left",
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency"
+    },
+    {
+      "character": "隶",
+      "main_id": 178,
+      "tips_count": 2,
+      "check_present": true,
+      "context_example": "隶",
+      "context_position": "self",
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency"
+    },
+    {
+      "character": "革",
+      "main_id": 179,
+      "tips_count": 2,
+      "check_present": true,
+      "context_example": "鞋",
+      "context_position": "left",
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency"
+    },
+    {
+      "character": "面",
+      "main_id": 180,
+      "tips_count": 2,
+      "check_present": true,
+      "context_example": "面",
+      "context_position": "self",
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency"
+    }
+  ]
+}
