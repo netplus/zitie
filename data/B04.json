@@ -1,0 +1,407 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_content_draft",
+  "batch_id": "B04",
+  "version": "content-draft-2026-10-02",
+  "content_status": "in_progress",
+  "artwork_status": "deferred",
+  "publication_status": "deferred",
+  "scope_frozen_for_content": true,
+  "release_eligible": false,
+  "target_edition": "GF0011—2022",
+  "target_edition_status": "exact_fields_pending",
+  "evidence_migration_status": "local_checkpoints_exist_repo_review_evidence_pending",
+  "entries": [
+    {
+      "character": "干",
+      "main_id": 27,
+      "pinyin": "gān",
+      "component_name": "干",
+      "stroke_count": 3,
+      "order_code": "112",
+      "stroke_names": [
+        "横",
+        "横",
+        "竖"
+      ],
+      "tips": [
+        "先写两横，最后写竖。",
+        "竖是第3笔，不要提前。"
+      ],
+      "check": "共三笔：横、横、竖。",
+      "migration_boundary": "本页只练独体“干”；位置变体或组合写法另核。",
+      "whole_character_context": {
+        "example": "刊",
+        "position": "left",
+        "structure_class": "left_right",
+        "formal_variant_promoted": false
+      },
+      "field_status": {
+        "target_identity": "pending_GF0011_2022_exact_fields",
+        "structure": "candidate_reviewed_local_evidence_to_migrate",
+        "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
+        "component_name": "candidate_reviewed_local_evidence_to_migrate",
+        "teaching_text": "draft_reviewed",
+        "whole_character_context": "context_selected_not_variant_promotion"
+      },
+      "unresolved": [
+        "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
+        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+      ]
+    },
+    {
+      "character": "寸",
+      "main_id": 31,
+      "pinyin": "cùn",
+      "component_name": "寸",
+      "stroke_count": 3,
+      "order_code": "124",
+      "stroke_names": [
+        "横",
+        "竖钩",
+        "点"
+      ],
+      "tips": [
+        "先写横，再写竖钩，最后补点。",
+        "竖钩是一整笔，不能拆开。"
+      ],
+      "check": "点是最后一笔。",
+      "migration_boundary": "本页只练独体“寸”；位置变体或组合写法另核。",
+      "whole_character_context": {
+        "example": "村",
+        "position": "right",
+        "structure_class": "left_right",
+        "formal_variant_promoted": false
+      },
+      "field_status": {
+        "target_identity": "pending_GF0011_2022_exact_fields",
+        "structure": "candidate_reviewed_local_evidence_to_migrate",
+        "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
+        "component_name": "candidate_reviewed_local_evidence_to_migrate",
+        "teaching_text": "draft_reviewed",
+        "whole_character_context": "context_selected_not_variant_promotion"
+      },
+      "unresolved": [
+        "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
+        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+      ]
+    },
+    {
+      "character": "夕",
+      "main_id": 43,
+      "pinyin": "xī",
+      "component_name": "夕",
+      "stroke_count": 3,
+      "order_code": "354",
+      "stroke_names": [
+        "撇",
+        "横撇",
+        "点"
+      ],
+      "tips": [
+        "先写撇，再写横撇，最后写点。",
+        "第2笔横撇要一笔完成，不拆成横和撇。"
+      ],
+      "check": "顺序是撇、横撇、点。",
+      "migration_boundary": "本页只练独体“夕”；位置变体或组合写法另核。",
+      "whole_character_context": {
+        "example": "外",
+        "position": "left",
+        "structure_class": "left_right",
+        "formal_variant_promoted": false
+      },
+      "field_status": {
+        "target_identity": "pending_GF0011_2022_exact_fields",
+        "structure": "candidate_reviewed_local_evidence_to_migrate",
+        "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
+        "component_name": "candidate_reviewed_local_evidence_to_migrate",
+        "teaching_text": "draft_reviewed",
+        "whole_character_context": "context_selected_not_variant_promotion"
+      },
+      "unresolved": [
+        "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
+        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+      ]
+    },
+    {
+      "character": "广",
+      "main_id": 46,
+      "pinyin": "guǎng",
+      "component_name": "广",
+      "stroke_count": 3,
+      "order_code": "413",
+      "stroke_names": [
+        "点",
+        "横",
+        "撇"
+      ],
+      "tips": [
+        "先写点，再写横，最后写撇。",
+        "第一笔是点，不要从横起笔。"
+      ],
+      "check": "共三笔：点、横、撇。",
+      "migration_boundary": "本页只练独体“广”；位置变体或组合写法另核。",
+      "whole_character_context": {
+        "example": "扩",
+        "position": "right",
+        "structure_class": "left_right",
+        "formal_variant_promoted": false
+      },
+      "field_status": {
+        "target_identity": "pending_GF0011_2022_exact_fields",
+        "structure": "candidate_reviewed_local_evidence_to_migrate",
+        "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
+        "component_name": "candidate_reviewed_local_evidence_to_migrate",
+        "teaching_text": "draft_reviewed",
+        "whole_character_context": "context_selected_not_variant_promotion"
+      },
+      "unresolved": [
+        "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
+        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+      ]
+    },
+    {
+      "character": "门",
+      "main_id": 47,
+      "pinyin": "mén",
+      "component_name": "门",
+      "stroke_count": 3,
+      "order_code": "425",
+      "stroke_names": [
+        "点",
+        "竖",
+        "横折钩"
+      ],
+      "tips": [
+        "先点，再竖，最后写横折钩。",
+        "第3笔横折钩是一笔连续转折，不能拆笔。"
+      ],
+      "check": "横折钩是第3笔。",
+      "migration_boundary": "本页只练独体“门”；位置变体或组合写法另核。",
+      "whole_character_context": {
+        "example": "们",
+        "position": "right",
+        "structure_class": "left_right",
+        "formal_variant_promoted": false
+      },
+      "field_status": {
+        "target_identity": "pending_GF0011_2022_exact_fields",
+        "structure": "candidate_reviewed_local_evidence_to_migrate",
+        "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
+        "component_name": "candidate_reviewed_local_evidence_to_migrate",
+        "teaching_text": "draft_reviewed",
+        "whole_character_context": "context_selected_not_variant_promotion"
+      },
+      "unresolved": [
+        "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
+        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+      ]
+    },
+    {
+      "character": "尸",
+      "main_id": 51,
+      "pinyin": "shī",
+      "component_name": "尸",
+      "stroke_count": 3,
+      "order_code": "513",
+      "stroke_names": [
+        "横折",
+        "横",
+        "撇"
+      ],
+      "tips": [
+        "首笔横折一笔完成，再写第2笔横，最后写撇。",
+        "横折不能拆成横、竖两笔。"
+      ],
+      "check": "顺序是横折、横、撇。",
+      "migration_boundary": "本页只练独体“尸”；位置变体或组合写法另核。",
+      "whole_character_context": {
+        "example": "居",
+        "position": "upper_left_enclosing",
+        "structure_class": "semi_enclosing",
+        "formal_variant_promoted": false
+      },
+      "field_status": {
+        "target_identity": "pending_GF0011_2022_exact_fields",
+        "structure": "candidate_reviewed_local_evidence_to_migrate",
+        "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
+        "component_name": "candidate_reviewed_local_evidence_to_migrate",
+        "teaching_text": "draft_reviewed",
+        "whole_character_context": "context_selected_not_variant_promotion"
+      },
+      "unresolved": [
+        "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
+        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+      ]
+    },
+    {
+      "character": "己",
+      "main_id": 52,
+      "pinyin": "jǐ",
+      "component_name": "己",
+      "stroke_count": 3,
+      "order_code": "515",
+      "stroke_names": [
+        "横折",
+        "横",
+        "竖弯钩"
+      ],
+      "tips": [
+        "先横折，再横，最后写竖弯钩。",
+        "第3笔竖弯钩要一笔写完。"
+      ],
+      "check": "竖弯钩是第3笔。",
+      "migration_boundary": "本页只练独体“己”；位置变体或组合写法另核。",
+      "whole_character_context": {
+        "example": "记",
+        "position": "right",
+        "structure_class": "left_right",
+        "formal_variant_promoted": false
+      },
+      "field_status": {
+        "target_identity": "pending_GF0011_2022_exact_fields",
+        "structure": "candidate_reviewed_local_evidence_to_migrate",
+        "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
+        "component_name": "candidate_reviewed_local_evidence_to_migrate",
+        "teaching_text": "draft_reviewed",
+        "whole_character_context": "context_selected_not_variant_promotion"
+      },
+      "unresolved": [
+        "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
+        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+      ]
+    },
+    {
+      "character": "弓",
+      "main_id": 53,
+      "pinyin": "gōng",
+      "component_name": "弓",
+      "stroke_count": 3,
+      "order_code": "515",
+      "stroke_names": [
+        "横折",
+        "横",
+        "竖折折钩"
+      ],
+      "tips": [
+        "先写横折、横，最后写竖折折钩。",
+        "第3笔连续转折并带钩，整笔不能拆开。"
+      ],
+      "check": "共三笔，最后一笔是竖折折钩。",
+      "migration_boundary": "本页只练独体“弓”；位置变体或组合写法另核。",
+      "whole_character_context": {
+        "example": "引",
+        "position": "left",
+        "structure_class": "left_right",
+        "formal_variant_promoted": false
+      },
+      "field_status": {
+        "target_identity": "pending_GF0011_2022_exact_fields",
+        "structure": "candidate_reviewed_local_evidence_to_migrate",
+        "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
+        "component_name": "candidate_reviewed_local_evidence_to_migrate",
+        "teaching_text": "draft_reviewed",
+        "whole_character_context": "context_selected_not_variant_promotion"
+      },
+      "unresolved": [
+        "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
+        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+      ]
+    },
+    {
+      "character": "飞",
+      "main_id": 57,
+      "pinyin": "fēi",
+      "component_name": "飞",
+      "stroke_count": 3,
+      "order_code": "534",
+      "stroke_names": [
+        "横斜钩",
+        "撇",
+        "点"
+      ],
+      "tips": [
+        "第1笔先写横斜钩，再写撇，最后写点。",
+        "横斜钩是一整笔。"
+      ],
+      "check": "横斜钩在前，撇和点在后。",
+      "migration_boundary": "本页只练独体“飞”；位置变体或组合写法另核。",
+      "whole_character_context": {
+        "example": "飞",
+        "position": "self",
+        "structure_class": "undecomposable",
+        "formal_variant_promoted": false
+      },
+      "field_status": {
+        "target_identity": "pending_GF0011_2022_exact_fields",
+        "structure": "candidate_reviewed_local_evidence_to_migrate",
+        "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
+        "component_name": "candidate_reviewed_local_evidence_to_migrate",
+        "teaching_text": "draft_reviewed",
+        "whole_character_context": "context_selected_not_variant_promotion"
+      },
+      "unresolved": [
+        "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
+        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+      ]
+    },
+    {
+      "character": "马",
+      "main_id": 58,
+      "pinyin": "mǎ",
+      "component_name": "马",
+      "stroke_count": 3,
+      "order_code": "551",
+      "stroke_names": [
+        "横折",
+        "竖折折钩",
+        "横"
+      ],
+      "tips": [
+        "先写横折，再写竖折折钩，最后写横。",
+        "第2笔连续转折并带钩，不能拆笔。"
+      ],
+      "check": "最后一笔才是横。",
+      "migration_boundary": "本页只练独体“马”；位置变体或组合写法另核。",
+      "whole_character_context": {
+        "example": "驴",
+        "position": "left",
+        "structure_class": "left_right",
+        "formal_variant_promoted": false
+      },
+      "field_status": {
+        "target_identity": "pending_GF0011_2022_exact_fields",
+        "structure": "candidate_reviewed_local_evidence_to_migrate",
+        "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
+        "component_name": "candidate_reviewed_local_evidence_to_migrate",
+        "teaching_text": "draft_reviewed",
+        "whole_character_context": "context_selected_not_variant_promotion"
+      },
+      "unresolved": [
+        "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
+        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+      ]
+    }
+  ],
+  "phase1_rule": "第一阶段允许先维护内容稿并继续后续批次；字段只有在对应review/evidence真实入库后才升级为reviewed/content_ready。artwork/PDF/manifest不阻塞内容推进。"
+}
