@@ -1,0 +1,549 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_content_draft",
+  "batch_id": "B10",
+  "version": "content-draft-2026-10-02",
+  "title": "常用四画部件与迁移",
+  "content_status": "in_progress",
+  "artwork_status": "deferred",
+  "publication_status": "deferred",
+  "scope_frozen_for_content": true,
+  "release_eligible": false,
+  "target_edition": "GF0011—2022",
+  "target_edition_status": "exact_fields_pending",
+  "scope_basis": "从data/coverage.json的201主项中选择尚未覆盖、教学迁移频率较高且可与前九批衔接的主部首；不与B01—B09重复。",
+  "entries": [
+    {
+      "character": "丬",
+      "main_id": 45,
+      "stroke_count": 3,
+      "order_code_candidate": "412",
+      "stroke_names_candidate": [
+        "点",
+        "提",
+        "竖"
+      ],
+      "tips": [
+        "候选顺序为点、提、竖。",
+        "作为左旁时要回完整整字核对位置与时序。"
+      ],
+      "check": "候选三笔：点、提、竖。",
+      "context": {
+        "example": "壮",
+        "position": "left",
+        "structure_class": "left_right"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "component_name_status": "pending_S03_target_row",
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "stroke_count": "candidate_pending_target_row",
+        "stroke_order": "candidate_pending_target_row",
+        "fine_stroke_names": "candidate_pending_target_row",
+        "pronunciation": "pending_or_not_applicable",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_for_later_whole_character_verification"
+      },
+      "migration_boundary": "“壮”只作整字迁移语境；丬的规范名称和位置形态待S03/GF0011原页核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
+      ]
+    },
+    {
+      "character": "幺",
+      "main_id": 59,
+      "stroke_count": 3,
+      "order_code_candidate": "554",
+      "stroke_names_candidate": [
+        "撇折",
+        "撇折",
+        "点"
+      ],
+      "tips": [
+        "候选连续写两个撇折，最后写点。",
+        "两个撇折都是独立笔画，不能连成一笔。"
+      ],
+      "check": "候选三笔，末笔为点。",
+      "context": {
+        "example": "幼",
+        "position": "left",
+        "structure_class": "left_right"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "component_name_status": "pending_S03_target_row",
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "stroke_count": "candidate_pending_target_row",
+        "stroke_order": "candidate_pending_target_row",
+        "fine_stroke_names": "candidate_pending_target_row",
+        "pronunciation": "pending_or_not_applicable",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_for_later_whole_character_verification"
+      },
+      "migration_boundary": "“幼”只作左部语境；幺在整字中的压缩比例另核。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
+      ]
+    },
+    {
+      "character": "攴",
+      "main_id": 74,
+      "stroke_count": 4,
+      "order_code_candidate": "2154",
+      "stroke_names_candidate": [
+        "竖",
+        "横",
+        "横撇",
+        "捺"
+      ],
+      "tips": [
+        "候选先竖、横，再横撇、捺。",
+        "攴与常见位置形态攵必须分开核验，不自动互推。"
+      ],
+      "check": "候选四笔，后两笔为横撇、捺。",
+      "context": {
+        "example": "敲",
+        "position": "right",
+        "structure_class": "left_right"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "component_name_status": "pending_S03_target_row",
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "stroke_count": "candidate_pending_target_row",
+        "stroke_order": "candidate_pending_target_row",
+        "fine_stroke_names": "candidate_pending_target_row",
+        "pronunciation": "pending_or_not_applicable",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_for_later_whole_character_verification"
+      },
+      "migration_boundary": "“敲”用于观察攴作右部；攵属于位置变形线索，另行逐字核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "攴与攵的主/附关系不得仅凭字形相近确定"
+      ]
+    },
+    {
+      "character": "氏",
+      "main_id": 89,
+      "stroke_count": 4,
+      "order_code_candidate": "3515",
+      "stroke_names_candidate": [
+        "撇",
+        "竖提",
+        "横",
+        "斜钩"
+      ],
+      "tips": [
+        "候选先撇、竖提，再横、斜钩。",
+        "第2笔和末笔都属于复合笔形，不能拆写。"
+      ],
+      "check": "候选四笔，斜钩收尾。",
+      "context": {
+        "example": "纸",
+        "position": "right",
+        "structure_class": "left_right"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "component_name_status": "pending_S03_target_row",
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "stroke_count": "candidate_pending_target_row",
+        "stroke_order": "candidate_pending_target_row",
+        "fine_stroke_names": "candidate_pending_target_row",
+        "pronunciation": "pending_or_not_applicable",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_for_later_whole_character_verification"
+      },
+      "migration_boundary": "“纸”只作右部语境；氏在整字中的形态和空间压缩另核。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
+      ]
+    },
+    {
+      "character": "欠",
+      "main_id": 90,
+      "stroke_count": 4,
+      "order_code_candidate": "3534",
+      "stroke_names_candidate": [
+        "撇",
+        "横撇/横钩（待原页定名）",
+        "撇",
+        "捺"
+      ],
+      "tips": [
+        "候选先撇，再写第2笔折笔，最后撇、捺。",
+        "第2笔细名必须回规范原页定名，不在内容稿中提前裁决。"
+      ],
+      "check": "候选四笔；第2笔细名待核。",
+      "context": {
+        "example": "吹",
+        "position": "right",
+        "structure_class": "left_right"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "component_name_status": "pending_S03_target_row",
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "stroke_count": "candidate_pending_target_row",
+        "stroke_order": "candidate_pending_target_row",
+        "fine_stroke_names": "candidate_pending_target_row",
+        "pronunciation": "pending_or_not_applicable",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_for_later_whole_character_verification"
+      },
+      "migration_boundary": "“吹”只作右部语境；欠的第2笔细名保持pending。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "欠第2笔候选名称需以目标原页为准"
+      ]
+    },
+    {
+      "character": "风",
+      "main_id": 91,
+      "stroke_count": 4,
+      "order_code_candidate": "3534",
+      "stroke_names_candidate": [
+        "撇",
+        "横折弯钩",
+        "撇",
+        "点"
+      ],
+      "tips": [
+        "候选先撇，再横折弯钩，内部撇、点后写。",
+        "外框复合笔必须一笔完成，内部笔画次序需原页确认。"
+      ],
+      "check": "候选四笔，外框第2笔不拆。",
+      "context": {
+        "example": "风",
+        "position": "self",
+        "structure_class": "undecomposable"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "component_name_status": "pending_S03_target_row",
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "stroke_count": "candidate_pending_target_row",
+        "stroke_order": "candidate_pending_target_row",
+        "fine_stroke_names": "candidate_pending_target_row",
+        "pronunciation": "pending_or_not_applicable",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_for_later_whole_character_verification"
+      },
+      "migration_boundary": "独体“风”为主练习形；作部件时的压缩和附形另核。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
+      ]
+    },
+    {
+      "character": "方",
+      "main_id": 94,
+      "stroke_count": 4,
+      "order_code_candidate": "4153",
+      "stroke_names_candidate": [
+        "点",
+        "横",
+        "横折钩",
+        "撇"
+      ],
+      "tips": [
+        "候选先点、横，再横折钩，最后撇。",
+        "第3笔横折钩一笔完成。"
+      ],
+      "check": "候选四笔，撇最后写。",
+      "context": {
+        "example": "房",
+        "position": "lower",
+        "structure_class": "top_bottom"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "component_name_status": "pending_S03_target_row",
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "stroke_count": "candidate_pending_target_row",
+        "stroke_order": "candidate_pending_target_row",
+        "fine_stroke_names": "candidate_pending_target_row",
+        "pronunciation": "pending_or_not_applicable",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_for_later_whole_character_verification"
+      },
+      "migration_boundary": "“房”用于观察方在下部语境；整字结构和比例另核。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
+      ]
+    },
+    {
+      "character": "斗",
+      "main_id": 96,
+      "stroke_count": 4,
+      "order_code_candidate": "4412",
+      "stroke_names_candidate": [
+        "点",
+        "点",
+        "横",
+        "竖"
+      ],
+      "tips": [
+        "候选先写两点，再横、竖。",
+        "前两点分开书写，末笔竖贯穿横。"
+      ],
+      "check": "候选四笔：点、点、横、竖。",
+      "context": {
+        "example": "料",
+        "position": "right",
+        "structure_class": "left_right"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "component_name_status": "pending_S03_target_row",
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "stroke_count": "candidate_pending_target_row",
+        "stroke_order": "candidate_pending_target_row",
+        "fine_stroke_names": "candidate_pending_target_row",
+        "pronunciation": "pending_or_not_applicable",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_for_later_whole_character_verification"
+      },
+      "migration_boundary": "“料”只作右部语境；斗的偏旁比例另核。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
+      ]
+    },
+    {
+      "character": "户",
+      "main_id": 97,
+      "stroke_count": 4,
+      "order_code_candidate": "4513",
+      "stroke_names_candidate": [
+        "点",
+        "横折",
+        "横",
+        "撇"
+      ],
+      "tips": [
+        "候选先点，再横折、横、撇。",
+        "第2笔横折不能拆成两笔。"
+      ],
+      "check": "候选四笔，撇最后写。",
+      "context": {
+        "example": "房",
+        "position": "top",
+        "structure_class": "semi_enclosing"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "component_name_status": "pending_S03_target_row",
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "stroke_count": "candidate_pending_target_row",
+        "stroke_order": "candidate_pending_target_row",
+        "fine_stroke_names": "candidate_pending_target_row",
+        "pronunciation": "pending_or_not_applicable",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_for_later_whole_character_verification"
+      },
+      "migration_boundary": "“房”用于观察户作上部；包围关系及后续内部书写时序另核。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
+      ]
+    },
+    {
+      "character": "心",
+      "main_id": 98,
+      "stroke_count": 4,
+      "order_code_candidate": "4544",
+      "stroke_names_candidate": [
+        "点",
+        "斜钩",
+        "点",
+        "点"
+      ],
+      "tips": [
+        "候选先点、斜钩，再写后两点。",
+        "斜钩是一整笔；心与忄、⺗等位置形态必须分开核验。"
+      ],
+      "check": "候选四笔，斜钩为第2笔。",
+      "context": {
+        "example": "思",
+        "position": "bottom",
+        "structure_class": "top_bottom"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "component_name_status": "pending_S03_target_row",
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "stroke_count": "candidate_pending_target_row",
+        "stroke_order": "candidate_pending_target_row",
+        "fine_stroke_names": "candidate_pending_target_row",
+        "pronunciation": "pending_or_not_applicable",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_for_later_whole_character_verification"
+      },
+      "migration_boundary": "“思”只作心字底语境；忄等位置变体不得由独体心自动外推。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "心→忄/⺗的附形或教学变体关系待GF0011—2022及整字证据核验"
+      ]
+    }
+  ],
+  "phase1_rule": "当前只建立可追溯内容稿。候选笔顺/细笔名不得因写入data文件而视为reviewed；必须在对应原页和机器证据真实入库后逐字段升级。"
+}
