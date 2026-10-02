@@ -1,0 +1,548 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_content_draft",
+  "batch_id": "B15",
+  "version": "content-draft-2026-10-02",
+  "title": "六七画常用部件与位置迁移",
+  "content_status": "in_progress",
+  "artwork_status": "deferred",
+  "publication_status": "deferred",
+  "scope_frozen_for_content": true,
+  "release_eligible": false,
+  "target_edition": "GF0011—2022",
+  "target_edition_status": "exact_fields_pending",
+  "scope_basis": "承接B14，继续按2009基线索引覆盖齐、衣、羊、米、聿、艮、羽、糸、麦、走；不与B01—B14重复。阶段1先建立字段级内容和未决边界。",
+  "entries": [
+    {
+      "character": "齐",
+      "main_id": 141,
+      "stroke_count": 6,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先把齐作为六画基线主项识别；具体逐笔顺序和细笔名待目标规范行确认。",
+        "在“剂”等整字左部只观察位置压缩，不把静态字体变化直接写成正式附形。"
+      ],
+      "check": "基线笔数为6画；逐笔顺序、细笔名、采用读音和结构分类未核前不凭候选稿记忆。",
+      "context": {
+        "example": "剂",
+        "position": "left",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“剂”仅作整字迁移语境；齐在左部的真实形态、主/附关系和完整时序须回规范原页与整字核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "衣",
+      "main_id": 142,
+      "stroke_count": 6,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先识别衣的六画基线主形；撇捺及内部点画的逐笔关系待目标行复核。",
+        "在“装”等整字下部观察宽度变化，不能把整字中的位置写法直接当作独体衣。"
+      ],
+      "check": "基线笔数为6画；逐笔顺序、细笔名、采用读音和结构分类未核前不凭候选稿记忆。",
+      "context": {
+        "example": "装",
+        "position": "bottom",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“装”仅作整字迁移语境；底部衣的形态与时序须回完整整字和规范原页核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "羊",
+      "main_id": 143,
+      "stroke_count": 6,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先识别羊的六画基线轮廓；横画与竖画的真实先后待目标行关闭。",
+        "在“群”等整字右部观察比例变化，位置形态与独体主形分开记录。"
+      ],
+      "check": "基线笔数为6画；逐笔顺序、细笔名、采用读音和结构分类未核前不凭候选稿记忆。",
+      "context": {
+        "example": "群",
+        "position": "right",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“群”仅作整字迁移语境；右部羊的比例、主/附关系和时序待整字证据确认。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "米",
+      "main_id": 144,
+      "stroke_count": 6,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先识别米的六画基线结构；点、撇与十字骨架的逐笔顺序待原页确认。",
+        "在“粉”等整字左部观察收窄，不凭视觉压缩推断减笔或合笔。"
+      ],
+      "check": "基线笔数为6画；逐笔顺序、细笔名、采用读音和结构分类未核前不凭候选稿记忆。",
+      "context": {
+        "example": "粉",
+        "position": "left",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“粉”仅作整字迁移语境；左部米的形态和真实时序必须回整字与规范原页核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "聿",
+      "main_id": 145,
+      "stroke_count": 6,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先把聿作为六画基线主项识别；横竖交叉的逐笔次序待目标行复核。",
+        "在“律”等整字右部观察纵向比例，不从字体字形直接推断笔顺。"
+      ],
+      "check": "基线笔数为6画；逐笔顺序、细笔名、采用读音和结构分类未核前不凭候选稿记忆。",
+      "context": {
+        "example": "律",
+        "position": "right",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“律”仅作整字迁移语境；右部聿的形态、部件身份和完整时序待权威材料确认。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "艮",
+      "main_id": 146,
+      "stroke_count": 6,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先识别艮的六画基线主形；折笔、撇捺关系的细笔名待原页核验。",
+        "在“很”等整字右部观察收窄，独体与位置形态分开记录。"
+      ],
+      "check": "基线笔数为6画；逐笔顺序、细笔名、采用读音和结构分类未核前不凭候选稿记忆。",
+      "context": {
+        "example": "很",
+        "position": "right",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“很”仅作整字迁移语境；右部艮的真实写法及主/附关系不得从独体形自动外推。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "羽",
+      "main_id": 147,
+      "stroke_count": 6,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先识别羽的六画双翼基线结构；重复笔组的具体顺序与细名待目标行确认。",
+        "在“翔”等整字右部观察上下与左右比例，不把字体连写感误判为合笔。"
+      ],
+      "check": "基线笔数为6画；逐笔顺序、细笔名、采用读音和结构分类未核前不凭候选稿记忆。",
+      "context": {
+        "example": "翔",
+        "position": "right",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“翔”仅作整字迁移语境；右部羽的真实形态和时序必须回完整整字核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "糸",
+      "main_id": 148,
+      "stroke_count": 6,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先把糸作为六画基线主项识别；折点类细笔名和逐笔次序待规范原页确认。",
+        "在“累”等整字下部只作迁移线索，不用相近的现代字体形态替代规范主形。"
+      ],
+      "check": "基线笔数为6画；逐笔顺序、细笔名、采用读音和结构分类未核前不凭候选稿记忆。",
+      "context": {
+        "example": "累",
+        "position": "bottom",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“累”仅作整字迁移语境；糸在下部的形态、编码对应和真实时序仍待目标规范与整字证据。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "麦",
+      "main_id": 149,
+      "stroke_count": 7,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先识别麦的七画基线主形；上部横画与下部笔组的顺序待目标行复核。",
+        "在“麸”等整字左部观察压缩，位置写法不得直接视为独体麦的等价替代。"
+      ],
+      "check": "基线笔数为7画；逐笔顺序、细笔名、采用读音和结构分类未核前不凭候选稿记忆。",
+      "context": {
+        "example": "麸",
+        "position": "left",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“麸”仅作整字迁移语境；左部麦的形态、主/附关系和完整时序须回规范原页核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "走",
+      "main_id": 150,
+      "stroke_count": 7,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先识别走的七画基线主形；上部土形与下部捺向结构的逐笔顺序待目标行确认。",
+        "在“超”等整字左下部观察包托关系，必须保留整字中的真实穿插时序。"
+      ],
+      "check": "基线笔数为7画；逐笔顺序、细笔名、采用读音和结构分类未核前不凭候选稿记忆。",
+      "context": {
+        "example": "超",
+        "position": "lower_left",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "drafted",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“超”仅作整字迁移语境；走作左下部件时的形态和包托时序必须回完整整字核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    }
+  ],
+  "phase1_rule": "本批先关闭S01-2009基线身份和笔画分组并完成教学中间文稿；结构、笔顺、细笔名、部件名称、读音、位置变体和2022精确身份待相应原页证据后逐字段升级。"
+}
