@@ -1,13 +1,18 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "batch_capacity": 10,
   "expected_batch_count": 21,
+  "active_mode": "phase1_content_first",
+  "phase1_goal": "优先完成201个主部首的字段级内容与证据链；artwork、layout、PDF、manifest和release转入后续阶段，不阻塞下一批内容。",
   "frozen_batches": [
     {
       "id": "B01",
       "title": "基础起步",
       "main_glyphs": "一十人八大工土口山巾",
       "status": "content_cross_checked_scope_pending",
+      "content_status": "content_ready",
+      "artwork_status": "artwork_ready",
+      "publication_status": "draft_archived",
       "prerequisites": []
     },
     {
@@ -15,6 +20,9 @@
       "title": "常见独体形与迁移准备",
       "main_glyphs": "水火木日月田目手牛毛",
       "status": "content_cross_checked_scope_pending",
+      "content_status": "content_ready",
+      "artwork_status": "artwork_ready",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B01"
       ]
@@ -24,6 +32,9 @@
       "title": "简单独体与首次位置迁移",
       "main_glyphs": "刀力又子女小王石白立",
       "status": "scope_frozen_structure_checked_stroke_order_cross_checked_metadata_checked_content_checked_artwork_checked_layout_checked_archive_pending",
+      "content_status": "content_ready",
+      "artwork_status": "artwork_ready_local_candidate",
+      "publication_status": "archive_pending",
       "prerequisites": [
         "B01",
         "B02"
@@ -41,10 +52,38 @@
       "layout_review_record": "reviews/B03-layout.md"
     }
   ],
+  "phase1_content_batches": [
+    {
+      "id": "B04",
+      "title": "三画独体与位置迁移",
+      "main_glyphs": "干寸夕广门尸己弓飞马",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B03_content_ready"
+      ],
+      "note": "第一阶段只推进内容和证据链；GF0011—2022精确字段可保留pending，不阻塞其它字段完成。"
+    },
+    {
+      "id": "B05",
+      "title": "四画独体与迁移辨析",
+      "main_glyphs": "无犬歹车牙戈瓦止贝见",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B04_content_scope"
+      ],
+      "note": "第一阶段只推进内容和证据链；牙第2笔等冲突继续fail-closed，不因批次推进而强行裁决。"
+    }
+  ],
   "remaining_plan": {
     "batch_ids": [
-      "B04",
-      "B05",
       "B06",
       "B07",
       "B08",
@@ -62,10 +101,11 @@
       "B20",
       "B21"
     ],
-    "status": "B03_frozen_B04_plus_pedagogical_assignment_pending",
-    "main_count": 171,
-    "rule": "按少笔画与常用性、位置变形、易混对照、包围时序、复杂扩展的前置关系分配；B04—B20各10项，B21为1项。冻结下一批时更新明细，不能自动以规范序号替代教学顺序。"
+    "status": "phase1_content_assignment_continues_from_B06",
+    "main_count": 151,
+    "rule": "按少笔画与常用性、位置变形、易混对照、包围时序、复杂扩展的前置关系分配。阶段1只要求内容范围和字段证据推进，不要求前一批PDF/manifest完成后才开始下一批内容。"
   },
   "run_target_main_count": 20,
-  "run_target_rule": "每次持续推进以20个不同主部首为目标；内部批次仍为10项，先完成当前批次门槛再进入下一批，不以附形、复习或重复检查充数。"
+  "run_target_rule": "阶段1每次持续推进20个不同主部首的内容与证据链；内部仍为10项一批。不得用附形、复习、字段数或重复检查充数。artwork/layout/publication状态不作为继续下一批内容的常规阻塞条件。",
+  "phase_boundary_rule": "content_ready仅表示可进入阶段2，不等于artwork_ready、draft_archived或release_eligible。"
 }
