@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_editorial_field_review",
+  "batch_id": "B17",
+  "reviewed_at": "2026-10-02",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source_record": "data/B17.json",
+  "reviewed_fields": [
+    "teaching_text",
+    "self_check_text",
+    "whole_character_context",
+    "migration_boundary"
+  ],
+  "method": "逐项核对canonical记录中两条教学提示、自查句、整字语境与迁移边界是否齐全且不越过当前权威证据；不授予笔顺、细笔名、读音、名称、结构或GF0011—2022精确身份结论。",
+  "entries": [
+    {
+      "character": "釆",
+      "main_id": 161,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "谷",
+      "main_id": 162,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "豸",
+      "main_id": 163,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "龟",
+      "main_id": 164,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "角",
+      "main_id": 165,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "言",
+      "main_id": 166,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "辛",
+      "main_id": 167,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "青",
+      "main_id": 168,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "龺",
+      "main_id": 169,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "雨",
+      "main_id": 170,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    }
+  ]
+}
