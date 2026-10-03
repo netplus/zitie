@@ -18,17 +18,21 @@
 
 ## 最新阶段1检查点
 
-本轮主吞吐为B07+B13，共20个不同主部首。
+本轮主吞吐为B06+B07，共20个不同主部首。
+
+### B06：厂、匚、卜、冂、勹、儿、匕、几、亠、冫
+
+重新对照`data/B06.json`与`data/coverage.json`的S01-2009中间索引，十项main_id与baseline笔画分组全部一致；既有`data/evidence/B06-content.json`继续支持2009 baseline身份、main_id和2画baseline分组。
+
+本轮同时逐项检查两条教学提示、自查句、整字迁移语境和迁移边界，十项均保持候选／待核边界。尝试新增`data/evidence/B06-teaching-review.json`和`reviews/B06-content.md`时，连接器均返回`This tool call was blocked by OpenAI's safety checks. Please double check what you are sending.`，因此教学字段本轮不升级reviewed，canonical旧标签保持不变。
 
 ### B07：冖、凵、卩、厶、廴、艹、廾、宀、辶、彐
 
-新增`data/evidence/B07-teaching-review.json`。十项的两条教学提示、自查句、整字语境和迁移边界已完成非权威编辑一致性复核。尝试新增`data/evidence/B07-content.json`、`reviews/B07-content.md`及同步canonical教学状态时均被连接器安全检查拒绝，因此B07的baseline机器evidence仍未入库，canonical旧标签也未据此改写。
+本轮逐项将canonical main_id与笔画数对照S01-2009中间索引，十项全部一致：冖、凵、卩、厶、廴为2画；艹、廾、宀、辶、彐为3画。既有`data/evidence/B07-teaching-review.json`继续支持两条教学提示、自查句、整字语境和迁移边界的非权威编辑一致性。
 
-### B13：矛、耒、老、耳、臣、覀、而、页、至、虍
+尝试新增`data/evidence/B07-content.json`和`reviews/B07-content.md`时遭遇同一连接器安全检查，因此baseline_identity、main_id和baseline笔画分组本轮不据此升级reviewed；只保留本次实际交叉检查记录。
 
-新增`data/evidence/B13-teaching-review.json`，为十项已有教学字段补齐独立机器可读编辑复核记录。既有`data/evidence/B13-content.json`与`reviews/B13-content.md`继续支持2009 baseline身份、main_id和笔画分组；其它权威字段继续pending。
-
-本轮未新增content_ready批次；B01—B03仍为30项content_ready，B04—B21共171项content_in_progress。未推进artwork、PDF、manifest、CI或release。
+本轮没有新增content_ready批次；B01—B03仍为30项content_ready，B04—B21共171项content_in_progress。未推进artwork、PDF、manifest、CI或release。
 
 ## 已知内容层缺口
 
