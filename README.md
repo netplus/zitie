@@ -21,17 +21,16 @@
 
 ## 当前内容状态
 
-| 批次 | 主项 | 内容状态 | 图形状态 | 发布状态 |
-|---|---|---|---|---|
-| B01 | 一十人八大工土口山巾 | content_ready | artwork_ready | draft_archived |
-| B02 | 水火木日月田目手牛毛 | content_ready | artwork_ready | draft_archived |
-| B03 | 刀力又子女小王石白立 | content_ready | artwork_ready_local_candidate | archive_pending |
-| B04 | 干寸夕广门尸己弓飞马 | in_progress | deferred | deferred |
-| B05 | 无犬歹车牙戈瓦止贝见 | in_progress | deferred | deferred |
+| 范围 | 内容状态 | 图形/发布状态 |
+|---|---|---|
+| B01—B03（30项） | content_ready | 分批进入阶段2/3；B03归档尾项独立处理 |
+| B04—B21（171项） | content_in_progress | deferred，不阻塞内容推进 |
 
-当前已经确定内容范围**50项**；其中B01—B03共30项达到content_ready，B04+B05共20项进入阶段1内容编写。
+201个主部首现已**201/201完成批次范围分配**。当前content_ready仍为30项；其余171项已经进入字段级内容与证据闭合流程，各批闭合程度不同，不等同于171项全部完成。
 
-GF0011—2022逐项全文、附形、名称和编码仍是全书级待核项，但不会阻止其它独立字段以及B06以后批次的阶段1内容工作。
+最新阶段1检查点见[当前状态](docs/STATUS.md)：B19 canonical内容稿、人工review和baseline evidence已在库；B20 canonical内容稿、baseline evidence、人工review和教学字段编辑evidence已在库。
+
+GF0011—2022逐项全文、附形、名称和编码仍是全书级待核项，但不会阻止其它可独立核验字段继续推进。
 
 ## 项目入口
 
