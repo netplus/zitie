@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_editorial_review_evidence",
+  "batch_id": "B04",
+  "created_at": "2026-10-03",
+  "review_scope": [
+    "tips",
+    "self_check",
+    "whole_character_context",
+    "migration_boundary"
+  ],
+  "review_kind": "manual_editorial_consistency_non_authoritative",
+  "entries": [
+    {
+      "character": "干",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    },
+    {
+      "character": "寸",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    },
+    {
+      "character": "夕",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    },
+    {
+      "character": "广",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    },
+    {
+      "character": "门",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    },
+    {
+      "character": "尸",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    },
+    {
+      "character": "己",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    },
+    {
+      "character": "弓",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    },
+    {
+      "character": "飞",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    },
+    {
+      "character": "马",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    }
+  ],
+  "limits": [
+    "教学提示、自查句、整字语境和迁移边界完成内容编辑一致性复核；这不是规范原页证据。",
+    "若教学文字依赖的笔顺/细笔名候选后续被权威原页纠正，教学文字必须同步回写。",
+    "位置语境不等于正式附形或位置变体通过。"
+  ]
+}
