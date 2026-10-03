@@ -1,0 +1,97 @@
+{
+  "schema_version": 1,
+  "batch_id": "B11",
+  "reviewed_at": "2026-10-03",
+  "reviewer": "ChatGPT",
+  "review_kind": "machine_crosscheck_against_reviewed_S01_2009_baseline_index",
+  "source_id": "S01-2009",
+  "source_pdf_pages": [
+    6,
+    7,
+    8
+  ],
+  "source_printed_pages": [
+    3,
+    4,
+    5
+  ],
+  "method": "Cross-checked canonical batch entries against data/coverage.json, whose S01-2009 main-table transcription was produced from actual review of PDF pages 6–8 / printed pages 3–5. This run does not claim a new reread of the source PDF.",
+  "reviewed_fields": [
+    "baseline_identity",
+    "main_id",
+    "baseline_stroke_group"
+  ],
+  "entries": [
+    {
+      "character": "示",
+      "main_id": 100,
+      "stroke_count": 5,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "甘",
+      "main_id": 101,
+      "stroke_count": 5,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "龙",
+      "main_id": 103,
+      "stroke_count": 5,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "业",
+      "main_id": 104,
+      "stroke_count": 5,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "罒",
+      "main_id": 107,
+      "stroke_count": 5,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "皿",
+      "main_id": 108,
+      "stroke_count": 5,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "生",
+      "main_id": 109,
+      "stroke_count": 5,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "矢",
+      "main_id": 110,
+      "stroke_count": 5,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "禾",
+      "main_id": 111,
+      "stroke_count": 5,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "瓜",
+      "main_id": 113,
+      "stroke_count": 5,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    }
+  ],
+  "limits": "本证据复核既有S01-2009中间索引的一致性，不替代GF0011—2022原文逐项核验，也不把候选笔顺、细笔名或位置迁移升级为reviewed。"
+}
