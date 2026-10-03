@@ -18,28 +18,19 @@
 
 ## 最新阶段1检查点
 
-本轮覆盖B19+B20共20个不同主部首。
+本轮主吞吐按20个不同主部首计为B12+B16；另补入B06 baseline evidence，不把附带补录重复计入20项吞吐。
 
-### B19：韭、骨、香、鬼、食、音、首、髟、鬲、鬥
+### B12：屮、巛、殳、毋、鸟、疒、穴、疋、皮、癶
 
-当前已真实入库：
-- `data/evidence/B19-content.json`：S01-2009 baseline身份、main_id 181—190、9/10画分组；
-- `reviews/B19-content.md`：人工阶段1内容复核；
-- `data/B19.json`：canonical阶段1内容稿。
+新增`data/evidence/B12-teaching-review.json`。十项的两条教学提示、自查句、整字语境和迁移边界已完成非权威编辑一致性复核；该证据不支持GF0011—2022精确身份、正式结构、逐笔笔顺、细笔名、采用读音、S03名称或正式位置变体。canonical `data/B12.json`中的`teaching_text`状态尚未同步，仍以evidence的范围为准。
 
-已reviewed范围：baseline身份、main_id、baseline笔画分组，以及教学提示／自查句／整字语境／迁移边界的非权威人工编辑复核。
+### B16：赤、豆、酉、辰、豕、卤、里、足、邑、身
 
-仍pending：GF0011—2022精确身份、正式结构、逐笔笔顺、细笔名、采用读音、S03部件名称、正式附形和整字位置迁移证据。
+既有`data/evidence/B16-content.json`和`data/evidence/B16-teaching-review.json`继续作为证据；本轮已将`data/B16.json`十项的`teaching_text`同步为`reviewed_editorial_non_authoritative`。人工`reviews/B16-content.md`仍含旧的“evidence尚未入库”描述，更新该review文件的写入被连接器安全检查拒绝，因此该文本滞后不反向否定已在库evidence。
 
-### B20：高、黄、麻、鹿、鼎、黑、黍、鼓、鼠、鼻
+### 附带补录：B06
 
-当前已真实入库：
-- `data/evidence/B20-content.json`：S01-2009 baseline身份、main_id 191—200、10—14画分组；
-- `reviews/B20-content.md`：人工阶段1内容复核；
-- `data/evidence/B20-teaching-review.json`：教学字段编辑一致性evidence；
-- `data/B20.json`：canonical阶段1内容稿，`teaching_text`已同步为`reviewed_editorial_non_authoritative`。
-
-仍pending的权威字段与B19相同，不因编辑复核而提前升级。
+新增`data/evidence/B06-content.json`，确认厂、匚、卜、冂、勹、儿、匕、几、亠、冫与已审S01-2009中间索引的main_id及二画baseline分组一致。B06教学review及B07 baseline evidence写入均被连接器安全检查拒绝，未升级相应字段。
 
 ## 已知内容层缺口
 
