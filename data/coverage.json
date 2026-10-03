@@ -163,9 +163,9 @@
   "progress_rule": "主ID按groups顺序从1到201展开；阶段1分别统计内容范围、content_ready和content_in_progress。主项内容推进不要求前一批PDF/manifest完成；正式发布仍按独立门槛计数。",
   "workflow_mode": "phase1_content_first",
   "phase1_content_progress": {
-    "scoped_main_count": 50,
+    "scoped_main_count": 201,
     "content_ready_main_count": 30,
-    "content_in_progress_main_count": 20,
+    "content_in_progress_main_count": 171,
     "batches_content_ready": [
       "B01",
       "B02",
@@ -173,9 +173,26 @@
     ],
     "batches_content_in_progress": [
       "B04",
-      "B05"
+      "B05",
+      "B06",
+      "B07",
+      "B08",
+      "B09",
+      "B10",
+      "B11",
+      "B12",
+      "B13",
+      "B14",
+      "B15",
+      "B16",
+      "B17",
+      "B18",
+      "B19",
+      "B20",
+      "B21"
     ],
-    "next_assignment_starts_at": "B06",
-    "note": "阶段1按内容与证据链推进；artwork、PDF、manifest和release不作为继续下一批内容的常规阻塞条件。"
+    "next_assignment_starts_at": null,
+    "next_work": "existing_batch_field_closure",
+    "note": "201个主部首范围已全部分配至B01—B21；当前吞吐重点转为既有批次字段级证据闭合。B19 canonical+人工review已入库；B20 baseline evidence+人工review+教学编辑evidence已入库。content_ready仍仅B01—B03。"
   }
 }
