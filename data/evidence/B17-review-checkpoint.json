@@ -1,0 +1,240 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_content_review_checkpoint",
+  "batch_id": "B17",
+  "reviewed_at": "2026-10-03",
+  "reviewer": "ChatGPT",
+  "evidence_inputs": [
+    "data/evidence/B17-content.json",
+    "data/evidence/B17-teaching-review.json",
+    "data/B17.json"
+  ],
+  "entries": [
+    {
+      "character": "釆",
+      "main_id": 161,
+      "reviewed": {
+        "baseline_identity": true,
+        "main_id": true,
+        "stroke_count": true,
+        "teaching_text": true,
+        "self_check": true,
+        "whole_character_context": true,
+        "migration_boundary": true
+      },
+      "pending": [
+        "target_2022_exact_identity",
+        "structure",
+        "stroke_order",
+        "fine_stroke_names",
+        "pronunciation",
+        "component_name",
+        "formal_positional_variant"
+      ]
+    },
+    {
+      "character": "谷",
+      "main_id": 162,
+      "reviewed": {
+        "baseline_identity": true,
+        "main_id": true,
+        "stroke_count": true,
+        "teaching_text": true,
+        "self_check": true,
+        "whole_character_context": true,
+        "migration_boundary": true
+      },
+      "pending": [
+        "target_2022_exact_identity",
+        "structure",
+        "stroke_order",
+        "fine_stroke_names",
+        "pronunciation",
+        "component_name",
+        "formal_positional_variant"
+      ]
+    },
+    {
+      "character": "豸",
+      "main_id": 163,
+      "reviewed": {
+        "baseline_identity": true,
+        "main_id": true,
+        "stroke_count": true,
+        "teaching_text": true,
+        "self_check": true,
+        "whole_character_context": true,
+        "migration_boundary": true
+      },
+      "pending": [
+        "target_2022_exact_identity",
+        "structure",
+        "stroke_order",
+        "fine_stroke_names",
+        "pronunciation",
+        "component_name",
+        "formal_positional_variant"
+      ]
+    },
+    {
+      "character": "龟",
+      "main_id": 164,
+      "reviewed": {
+        "baseline_identity": true,
+        "main_id": true,
+        "stroke_count": true,
+        "teaching_text": true,
+        "self_check": true,
+        "whole_character_context": true,
+        "migration_boundary": true
+      },
+      "pending": [
+        "target_2022_exact_identity",
+        "structure",
+        "stroke_order",
+        "fine_stroke_names",
+        "pronunciation",
+        "component_name",
+        "formal_positional_variant"
+      ]
+    },
+    {
+      "character": "角",
+      "main_id": 165,
+      "reviewed": {
+        "baseline_identity": true,
+        "main_id": true,
+        "stroke_count": true,
+        "teaching_text": true,
+        "self_check": true,
+        "whole_character_context": true,
+        "migration_boundary": true
+      },
+      "pending": [
+        "target_2022_exact_identity",
+        "structure",
+        "stroke_order",
+        "fine_stroke_names",
+        "pronunciation",
+        "component_name",
+        "formal_positional_variant"
+      ]
+    },
+    {
+      "character": "言",
+      "main_id": 166,
+      "reviewed": {
+        "baseline_identity": true,
+        "main_id": true,
+        "stroke_count": true,
+        "teaching_text": true,
+        "self_check": true,
+        "whole_character_context": true,
+        "migration_boundary": true
+      },
+      "pending": [
+        "target_2022_exact_identity",
+        "structure",
+        "stroke_order",
+        "fine_stroke_names",
+        "pronunciation",
+        "component_name",
+        "formal_positional_variant"
+      ]
+    },
+    {
+      "character": "辛",
+      "main_id": 167,
+      "reviewed": {
+        "baseline_identity": true,
+        "main_id": true,
+        "stroke_count": true,
+        "teaching_text": true,
+        "self_check": true,
+        "whole_character_context": true,
+        "migration_boundary": true
+      },
+      "pending": [
+        "target_2022_exact_identity",
+        "structure",
+        "stroke_order",
+        "fine_stroke_names",
+        "pronunciation",
+        "component_name",
+        "formal_positional_variant"
+      ]
+    },
+    {
+      "character": "青",
+      "main_id": 168,
+      "reviewed": {
+        "baseline_identity": true,
+        "main_id": true,
+        "stroke_count": true,
+        "teaching_text": true,
+        "self_check": true,
+        "whole_character_context": true,
+        "migration_boundary": true
+      },
+      "pending": [
+        "target_2022_exact_identity",
+        "structure",
+        "stroke_order",
+        "fine_stroke_names",
+        "pronunciation",
+        "component_name",
+        "formal_positional_variant"
+      ]
+    },
+    {
+      "character": "龺",
+      "main_id": 169,
+      "reviewed": {
+        "baseline_identity": true,
+        "main_id": true,
+        "stroke_count": true,
+        "teaching_text": true,
+        "self_check": true,
+        "whole_character_context": true,
+        "migration_boundary": true
+      },
+      "pending": [
+        "target_2022_exact_identity",
+        "structure",
+        "stroke_order",
+        "fine_stroke_names",
+        "pronunciation",
+        "component_name",
+        "formal_positional_variant"
+      ]
+    },
+    {
+      "character": "雨",
+      "main_id": 170,
+      "reviewed": {
+        "baseline_identity": true,
+        "main_id": true,
+        "stroke_count": true,
+        "teaching_text": true,
+        "self_check": true,
+        "whole_character_context": true,
+        "migration_boundary": true
+      },
+      "pending": [
+        "target_2022_exact_identity",
+        "structure",
+        "stroke_order",
+        "fine_stroke_names",
+        "pronunciation",
+        "component_name",
+        "formal_positional_variant"
+      ]
+    }
+  ],
+  "result": "reviewed_scoped_fields_only_content_ready_false",
+  "limits": [
+    "未重新审读S01原PDF；baseline结论仅复用仓库已有实际页证据。",
+    "权威未决字段继续pending，不因本checkpoint升级。",
+    "content_ready=false；artwork/layout/publication均不在本记录范围。"
+  ]
+}
