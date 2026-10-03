@@ -47,7 +47,7 @@
 - B14：baseline machine evidence仍缺；
 - B16：canonical data和baseline evidence已在库，人工review文字仍有旧状态描述待同步；
 - B17：canonical data、baseline evidence与教学evidence已在库，人工content review仍缺；
-- B21：baseline evidence已在库，canonical `data/B21.json`和人工review仍缺；
+- B21：baseline evidence、canonical `data/B21.json`与人工review均已入库；教学字段已完成人工非权威编辑复核；
 - 更早B04—B13仍需继续逐项关闭名称、笔顺／细笔名、采用读音、结构与位置迁移等字段。
 
 ## B03阶段2/3尾项
@@ -64,8 +64,7 @@ B03内容层视为`content_ready`。artwork/layout人工记录已存在；PDF归
 
 ## 下一内容工作
 
-1. 优先补B21 canonical data与人工review，闭合201号主项的阶段1主记录；
-2. 补B17人工content review和B16 review文字同步；
-3. 补B14 baseline machine evidence；
-4. 以20个不同主部首为一轮，批量关闭S03名称、笔顺／细笔名、采用读音、结构和位置迁移字段；
-5. GF0011—2022逐项精确字段继续由Issue #4并行追踪。
+1. 补B17人工content review和B16 review文字同步；
+2. 补B14 baseline machine evidence；
+3. 以20个不同主部首为一轮，批量关闭S03名称、笔顺／细笔名、采用读音、结构和位置迁移字段；
+4. GF0011—2022逐项精确字段继续由Issue #4并行追踪。
