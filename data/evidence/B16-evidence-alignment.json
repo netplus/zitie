@@ -1,0 +1,58 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_evidence_alignment_check",
+  "batch_id": "B16",
+  "checked_at": "2026-10-04",
+  "reviewer": "ChatGPT",
+  "entries": [
+    {
+      "character": "赤",
+      "main_id": 151
+    },
+    {
+      "character": "豆",
+      "main_id": 152
+    },
+    {
+      "character": "酉",
+      "main_id": 153
+    },
+    {
+      "character": "辰",
+      "main_id": 154
+    },
+    {
+      "character": "豕",
+      "main_id": 155
+    },
+    {
+      "character": "卤",
+      "main_id": 156
+    },
+    {
+      "character": "里",
+      "main_id": 157
+    },
+    {
+      "character": "足",
+      "main_id": 158
+    },
+    {
+      "character": "邑",
+      "main_id": 159
+    },
+    {
+      "character": "身",
+      "main_id": 160
+    }
+  ],
+  "checks": {
+    "baseline_evidence": "data/evidence/B16-content.json",
+    "teaching_evidence": "data/evidence/B16-teaching-review.json",
+    "canonical": "data/B16.json",
+    "baseline_status": "aligned",
+    "teaching_status": "aligned",
+    "stale_review_record": "reviews/B16-content.md"
+  },
+  "limits": "本记录只确认既有baseline evidence、teaching evidence与canonical当前状态的一致性；reviews/B16-content.md仍含旧描述，待后续写路径可用时同步。"
+}
