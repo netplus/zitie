@@ -18,24 +18,22 @@
 
 ## 最新阶段1检查点
 
-本轮主吞吐按20个不同主部首计为B12+B16；另补入B06 baseline evidence，不把附带补录重复计入20项吞吐。
+本轮主吞吐为B07+B13，共20个不同主部首。
 
-### B12：屮、巛、殳、毋、鸟、疒、穴、疋、皮、癶
+### B07：冖、凵、卩、厶、廴、艹、廾、宀、辶、彐
 
-新增`data/evidence/B12-teaching-review.json`。十项的两条教学提示、自查句、整字语境和迁移边界已完成非权威编辑一致性复核；该证据不支持GF0011—2022精确身份、正式结构、逐笔笔顺、细笔名、采用读音、S03名称或正式位置变体。canonical `data/B12.json`中的`teaching_text`状态尚未同步，仍以evidence的范围为准。
+新增`data/evidence/B07-teaching-review.json`。十项的两条教学提示、自查句、整字语境和迁移边界已完成非权威编辑一致性复核。尝试新增`data/evidence/B07-content.json`、`reviews/B07-content.md`及同步canonical教学状态时均被连接器安全检查拒绝，因此B07的baseline机器evidence仍未入库，canonical旧标签也未据此改写。
 
-### B16：赤、豆、酉、辰、豕、卤、里、足、邑、身
+### B13：矛、耒、老、耳、臣、覀、而、页、至、虍
 
-既有`data/evidence/B16-content.json`和`data/evidence/B16-teaching-review.json`继续作为证据；本轮已将`data/B16.json`十项的`teaching_text`同步为`reviewed_editorial_non_authoritative`。人工`reviews/B16-content.md`仍含旧的“evidence尚未入库”描述，更新该review文件的写入被连接器安全检查拒绝，因此该文本滞后不反向否定已在库evidence。
+新增`data/evidence/B13-teaching-review.json`，为十项已有教学字段补齐独立机器可读编辑复核记录。既有`data/evidence/B13-content.json`与`reviews/B13-content.md`继续支持2009 baseline身份、main_id和笔画分组；其它权威字段继续pending。
 
-### 附带补录：B06
-
-新增`data/evidence/B06-content.json`，确认厂、匚、卜、冂、勹、儿、匕、几、亠、冫与已审S01-2009中间索引的main_id及二画baseline分组一致。B06教学review及B07 baseline evidence写入均被连接器安全检查拒绝，未升级相应字段。
+本轮未新增content_ready批次；B01—B03仍为30项content_ready，B04—B21共171项content_in_progress。未推进artwork、PDF、manifest、CI或release。
 
 ## 已知内容层缺口
 
 按实时批次记录继续收口：
-- B14：baseline machine evidence仍缺；
+- B14：`data/evidence/B14-content.json`已实际存在；此前“baseline machine evidence仍缺”描述已过时，后续不重复补证据。
 - B16：canonical data和baseline evidence已在库，人工review文字仍有旧状态描述待同步；
 - B17：canonical data、baseline evidence与教学evidence已在库，人工content review仍缺；
 - B21：baseline evidence、canonical `data/B21.json`与人工review均已入库；教学字段已完成人工非权威编辑复核；
