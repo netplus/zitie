@@ -1,0 +1,99 @@
+{
+  "schema_version": 1,
+  "batch_id": "B10",
+  "reviewed_at": "2026-10-03",
+  "reviewer": "ChatGPT",
+  "source_id": "S01-2009",
+  "source_pdf_pages": [
+    6,
+    7,
+    8
+  ],
+  "source_printed_pages": [
+    3,
+    4,
+    5
+  ],
+  "review_method": "crosscheck_canonical_against_existing_reviewed_coverage_index",
+  "reviewed_fields": [
+    "baseline_identity",
+    "main_id",
+    "baseline_stroke_group"
+  ],
+  "entries": [
+    {
+      "character": "丬",
+      "main_id": 45,
+      "stroke_count": 3,
+      "result": "matched_reviewed_coverage_index_and_stroke_group",
+      "limits": "复用仓库已实际审读的S01-2009主表索引；不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "幺",
+      "main_id": 59,
+      "stroke_count": 3,
+      "result": "matched_reviewed_coverage_index_and_stroke_group",
+      "limits": "复用仓库已实际审读的S01-2009主表索引；不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "攴",
+      "main_id": 74,
+      "stroke_count": 4,
+      "result": "matched_reviewed_coverage_index_and_stroke_group",
+      "limits": "复用仓库已实际审读的S01-2009主表索引；不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "氏",
+      "main_id": 89,
+      "stroke_count": 4,
+      "result": "matched_reviewed_coverage_index_and_stroke_group",
+      "limits": "复用仓库已实际审读的S01-2009主表索引；不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "欠",
+      "main_id": 90,
+      "stroke_count": 4,
+      "result": "matched_reviewed_coverage_index_and_stroke_group",
+      "limits": "复用仓库已实际审读的S01-2009主表索引；不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "风",
+      "main_id": 91,
+      "stroke_count": 4,
+      "result": "matched_reviewed_coverage_index_and_stroke_group",
+      "limits": "复用仓库已实际审读的S01-2009主表索引；不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "方",
+      "main_id": 94,
+      "stroke_count": 4,
+      "result": "matched_reviewed_coverage_index_and_stroke_group",
+      "limits": "复用仓库已实际审读的S01-2009主表索引；不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "斗",
+      "main_id": 96,
+      "stroke_count": 4,
+      "result": "matched_reviewed_coverage_index_and_stroke_group",
+      "limits": "复用仓库已实际审读的S01-2009主表索引；不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "户",
+      "main_id": 97,
+      "stroke_count": 4,
+      "result": "matched_reviewed_coverage_index_and_stroke_group",
+      "limits": "复用仓库已实际审读的S01-2009主表索引；不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "心",
+      "main_id": 98,
+      "stroke_count": 4,
+      "result": "matched_reviewed_coverage_index_and_stroke_group",
+      "limits": "复用仓库已实际审读的S01-2009主表索引；不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    }
+  ],
+  "limits": [
+    "本轮未重新审读S01原PDF，baseline结论复用data/coverage.json已登记的实际页审读结果。",
+    "候选笔顺和细笔名不因baseline笔画分组通过而升级。"
+  ]
+}
