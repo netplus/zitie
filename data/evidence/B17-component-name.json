@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_component_name_review",
+  "batch_id": "B17",
+  "reviewed_at": "2026-10-04",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source_id": "S03",
+  "source_title": "现代常用字部件及部件名称规范",
+  "source_publication_id": "GF0014—2009",
+  "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+  "byte_identity_to_catalog_copy": "not_checked_this_run",
+  "reviewed_field": "component_name",
+  "method": "逐页查看GF0014—2009现代常用字部件表原印7—20页；仅精确命中目标部件字形时关闭component_name。相近字形、同组部件和位置变体不替代目标主形。",
+  "entries": [
+    {
+      "character": "釆",
+      "main_id": 161,
+      "result": "no_exact_standalone_S03_row",
+      "nearest_note": "表中有采（序号23/组21，原印7页），不等同于釆；不据此关闭名称字段。"
+    },
+    {
+      "character": "谷",
+      "main_id": 162,
+      "result": "matched_exact_S03_row",
+      "component_name": "谷（gǔ）",
+      "sequence_no": 124,
+      "group_no": 108,
+      "printed_page": 10,
+      "pdf_page": 13
+    },
+    {
+      "character": "豸",
+      "main_id": 163,
+      "result": "matched_exact_S03_row",
+      "component_name": "豸（zhì）/豹（bào）字旁",
+      "sequence_no": 494,
+      "group_no": 424,
+      "printed_page": 20,
+      "pdf_page": 23
+    },
+    {
+      "character": "龟",
+      "main_id": 164,
+      "result": "matched_exact_S03_row",
+      "component_name": "龟（guī）",
+      "sequence_no": 129,
+      "group_no": 113,
+      "printed_page": 10,
+      "pdf_page": 13
+    },
+    {
+      "character": "角",
+      "main_id": 165,
+      "result": "matched_exact_S03_row",
+      "component_name": "角（jiǎo）",
+      "sequence_no": 173,
+      "group_no": 148,
+      "printed_page": 11,
+      "pdf_page": 14
+    },
+    {
+      "character": "言",
+      "main_id": 166,
+      "result": "matched_exact_S03_row",
+      "component_name": "言（yán）",
+      "sequence_no": 426,
+      "group_no": 370,
+      "printed_page": 18,
+      "pdf_page": 21
+    },
+    {
+      "character": "辛",
+      "main_id": 167,
+      "result": "matched_exact_S03_row",
+      "component_name": "辛（xīn）",
+      "sequence_no": 409,
+      "group_no": 354,
+      "printed_page": 18,
+      "pdf_page": 21
+    },
+    {
+      "character": "青",
+      "main_id": 168,
+      "result": "no_exact_standalone_S03_row",
+      "nearest_note": "表中有青（qīng）字底（序号473/组409，原印19页），不是独立整形青；不据此关闭名称字段。"
+    },
+    {
+      "character": "龺",
+      "main_id": 169,
+      "result": "no_exact_standalone_S03_row",
+      "nearest_note": "本轮逐页核验原印7—20页未见龺独立整形条目。"
+    },
+    {
+      "character": "雨",
+      "main_id": 170,
+      "result": "matched_exact_S03_row",
+      "component_name": "雨（yǔ）",
+      "sequence_no": 466,
+      "group_no": 405,
+      "printed_page": 19,
+      "pdf_page": 22
+    }
+  ],
+  "limits": "只支持GF0014—2009部件名称及S03是否存在精确独立整形条目；不支持GF0011—2022主附身份、结构、笔顺、细笔名、采用读音或正式位置变体。"
+}
