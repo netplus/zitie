@@ -1,0 +1,130 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_component_name_review",
+  "batch_id": "B11",
+  "reviewed_at": "2026-10-04",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source_id": "S03",
+  "source_title": "现代常用字部件及部件名称规范",
+  "source_publication_id": "GF0014—2009",
+  "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+  "byte_identity_to_catalog_copy": "not_checked_this_run",
+  "reviewed_field": "component_name",
+  "method": "本轮实际查看GF0014—2009《现代常用字部件表》目标原页；仅精确命中目标部件字形时关闭component_name。",
+  "reviewed_pdf_pages": [
+    13,
+    16,
+    18,
+    21
+  ],
+  "reviewed_printed_pages": [
+    10,
+    13,
+    15,
+    18
+  ],
+  "entries": [
+    {
+      "character": "示",
+      "main_id": 100,
+      "result": "matched_exact_S03_row",
+      "component_name": "示（shì）",
+      "sequence_no": 329,
+      "group_no": 285,
+      "printed_page": 15,
+      "pdf_page": 18
+    },
+    {
+      "character": "甘",
+      "main_id": 101,
+      "result": "matched_exact_S03_row",
+      "component_name": "甘（gān）",
+      "sequence_no": 113,
+      "group_no": 97,
+      "printed_page": 10,
+      "pdf_page": 13
+    },
+    {
+      "character": "龙",
+      "main_id": 103,
+      "result": "matched_exact_S03_row",
+      "component_name": "龙（lóng）",
+      "sequence_no": 222,
+      "group_no": 192,
+      "printed_page": 13,
+      "pdf_page": 16
+    },
+    {
+      "character": "业",
+      "main_id": 104,
+      "result": "matched_exact_S03_row",
+      "component_name": "业（yè）",
+      "sequence_no": 422,
+      "group_no": 366,
+      "printed_page": 18,
+      "pdf_page": 21
+    },
+    {
+      "character": "罒",
+      "main_id": 107,
+      "result": "matched_exact_S03_row",
+      "component_name": "罗（luó）字头",
+      "sequence_no": 229,
+      "group_no": 199,
+      "printed_page": 13,
+      "pdf_page": 16
+    },
+    {
+      "character": "皿",
+      "main_id": 108,
+      "result": "matched_exact_S03_row",
+      "component_name": "皿（mǐn）",
+      "sequence_no": 243,
+      "group_no": 212,
+      "printed_page": 13,
+      "pdf_page": 16
+    },
+    {
+      "character": "生",
+      "main_id": 109,
+      "result": "matched_exact_S03_row",
+      "component_name": "生（shēng）",
+      "sequence_no": 316,
+      "group_no": 274,
+      "printed_page": 15,
+      "pdf_page": 18
+    },
+    {
+      "character": "矢",
+      "main_id": 110,
+      "result": "matched_exact_S03_row",
+      "component_name": "矢（shǐ）",
+      "sequence_no": 318,
+      "group_no": 276,
+      "printed_page": 15,
+      "pdf_page": 18
+    },
+    {
+      "character": "禾",
+      "main_id": 111,
+      "result": "matched_exact_S03_row",
+      "component_name": "禾（hé）",
+      "sequence_no": 135,
+      "group_no": 119,
+      "printed_page": 10,
+      "pdf_page": 13
+    },
+    {
+      "character": "瓜",
+      "main_id": 113,
+      "result": "matched_exact_S03_row",
+      "component_name": "瓜（guā）",
+      "sequence_no": 125,
+      "group_no": 109,
+      "printed_page": 10,
+      "pdf_page": 13
+    }
+  ],
+  "limits": "只支持GF0014—2009部件名称及精确目标行；不支持GF0011—2022主附身份、结构、笔顺、细笔名、采用读音或正式位置变体。"
+}
