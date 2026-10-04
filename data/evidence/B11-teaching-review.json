@@ -1,0 +1,137 @@
+{
+  "schema_version": 1,
+  "batch_id": "B11",
+  "reviewed_at": "2026-10-03",
+  "reviewer": "ChatGPT",
+  "review_kind": "manual_editorial_consistency_non_authoritative",
+  "source_record": "data/B11.json",
+  "reviewed_fields": [
+    "teaching_tips",
+    "self_check",
+    "whole_character_context_editorial_consistency",
+    "migration_boundary_editorial_consistency"
+  ],
+  "entries": [
+    {
+      "character": "示",
+      "main_id": 100,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "票",
+        "migration_boundary_present": true
+      },
+      "limits": "只确认阶段1教学文本内部一致且保留未决边界；不授予正式结构、位置变体、笔顺、细笔名、读音、部件名称或GF0011—2022身份结论。"
+    },
+    {
+      "character": "甘",
+      "main_id": 101,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "甜",
+        "migration_boundary_present": true
+      },
+      "limits": "只确认阶段1教学文本内部一致且保留未决边界；不授予正式结构、位置变体、笔顺、细笔名、读音、部件名称或GF0011—2022身份结论。"
+    },
+    {
+      "character": "龙",
+      "main_id": 103,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "笼",
+        "migration_boundary_present": true
+      },
+      "limits": "只确认阶段1教学文本内部一致且保留未决边界；不授予正式结构、位置变体、笔顺、细笔名、读音、部件名称或GF0011—2022身份结论。"
+    },
+    {
+      "character": "业",
+      "main_id": 104,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "显",
+        "migration_boundary_present": true
+      },
+      "limits": "只确认阶段1教学文本内部一致且保留未决边界；不授予正式结构、位置变体、笔顺、细笔名、读音、部件名称或GF0011—2022身份结论。"
+    },
+    {
+      "character": "罒",
+      "main_id": 107,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "罗",
+        "migration_boundary_present": true
+      },
+      "limits": "只确认阶段1教学文本内部一致且保留未决边界；不授予正式结构、位置变体、笔顺、细笔名、读音、部件名称或GF0011—2022身份结论。"
+    },
+    {
+      "character": "皿",
+      "main_id": 108,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "盆",
+        "migration_boundary_present": true
+      },
+      "limits": "只确认阶段1教学文本内部一致且保留未决边界；不授予正式结构、位置变体、笔顺、细笔名、读音、部件名称或GF0011—2022身份结论。"
+    },
+    {
+      "character": "生",
+      "main_id": 109,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "牲",
+        "migration_boundary_present": true
+      },
+      "limits": "只确认阶段1教学文本内部一致且保留未决边界；不授予正式结构、位置变体、笔顺、细笔名、读音、部件名称或GF0011—2022身份结论。"
+    },
+    {
+      "character": "矢",
+      "main_id": 110,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "知",
+        "migration_boundary_present": true
+      },
+      "limits": "只确认阶段1教学文本内部一致且保留未决边界；不授予正式结构、位置变体、笔顺、细笔名、读音、部件名称或GF0011—2022身份结论。"
+    },
+    {
+      "character": "禾",
+      "main_id": 111,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "和",
+        "migration_boundary_present": true
+      },
+      "limits": "只确认阶段1教学文本内部一致且保留未决边界；不授予正式结构、位置变体、笔顺、细笔名、读音、部件名称或GF0011—2022身份结论。"
+    },
+    {
+      "character": "瓜",
+      "main_id": 113,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "瓢",
+        "migration_boundary_present": true
+      },
+      "limits": "只确认阶段1教学文本内部一致且保留未决边界；不授予正式结构、位置变体、笔顺、细笔名、读音、部件名称或GF0011—2022身份结论。"
+    }
+  ],
+  "limits": "非权威教学编辑复核。整字例字仅作迁移语境，正式位置形态与时序仍须回完整整字和规范原页核验。"
+}

@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_component_name_review",
+  "batch_id": "B14",
+  "reviewed_at": "2026-10-04",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source_id": "S03",
+  "source_title": "现代常用字部件及部件名称规范",
+  "source_publication_id": "GF0014—2009",
+  "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+  "byte_identity_to_catalog_copy": "not_checked_this_run",
+  "reviewed_field": "component_name",
+  "method": "逐页查看GF0014—2009《现代常用字部件表》原印7—20页；仅精确命中目标部件字形时关闭component_name，相近字形、同组部件和位置变体不替代目标主形。",
+  "entries": [
+    {
+      "character": "虫",
+      "main_id": 131,
+      "result": "matched_exact_S03_row",
+      "component_name": "虫（chóng）",
+      "sequence_no": 50,
+      "group_no": 44,
+      "printed_page": 8,
+      "pdf_page": 11
+    },
+    {
+      "character": "肉",
+      "main_id": 132,
+      "result": "matched_exact_S03_row",
+      "component_name": "肉（ròu）",
+      "sequence_no": 472,
+      "group_no": 409,
+      "printed_page": 19,
+      "pdf_page": 22
+    },
+    {
+      "character": "缶",
+      "main_id": 133,
+      "result": "matched_exact_S03_row",
+      "component_name": "缶（fǒu）",
+      "sequence_no": 104,
+      "group_no": 88,
+      "printed_page": 9,
+      "pdf_page": 12
+    },
+    {
+      "character": "舌",
+      "main_id": 134,
+      "result": "matched_exact_S03_row",
+      "component_name": "舌（shé）",
+      "sequence_no": 312,
+      "group_no": 270,
+      "printed_page": 15,
+      "pdf_page": 18
+    },
+    {
+      "character": "竹",
+      "main_id": 135,
+      "result": "matched_exact_S03_row",
+      "component_name": "竹（zhú）",
+      "sequence_no": 501,
+      "group_no": 431,
+      "printed_page": 20,
+      "pdf_page": 23
+    },
+    {
+      "character": "臼",
+      "main_id": 136,
+      "result": "matched_exact_S03_row",
+      "component_name": "臼（jiù）",
+      "sequence_no": 193,
+      "group_no": 165,
+      "printed_page": 12,
+      "pdf_page": 15
+    },
+    {
+      "character": "自",
+      "main_id": 137,
+      "result": "matched_exact_S03_row",
+      "component_name": "自（zì）",
+      "sequence_no": 512,
+      "group_no": 439,
+      "printed_page": 20,
+      "pdf_page": 23
+    },
+    {
+      "character": "血",
+      "main_id": 138,
+      "result": "matched_exact_S03_row",
+      "component_name": "血（xuè）",
+      "sequence_no": 417,
+      "group_no": 361,
+      "printed_page": 18,
+      "pdf_page": 21
+    },
+    {
+      "character": "舟",
+      "main_id": 139,
+      "result": "matched_exact_S03_row",
+      "component_name": "舟（zhōu）",
+      "sequence_no": 498,
+      "group_no": 428,
+      "printed_page": 20,
+      "pdf_page": 23
+    },
+    {
+      "character": "色",
+      "main_id": 140,
+      "result": "matched_exact_S03_row",
+      "component_name": "色（sè）",
+      "sequence_no": 305,
+      "group_no": 263,
+      "printed_page": 15,
+      "pdf_page": 18
+    }
+  ],
+  "limits": "只支持GF0014—2009部件名称；不支持GF0011—2022主附身份、结构、笔顺、细笔名、采用读音或正式位置变体。"
+}

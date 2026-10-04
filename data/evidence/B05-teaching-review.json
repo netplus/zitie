@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_editorial_review_evidence",
+  "batch_id": "B05",
+  "created_at": "2026-10-03",
+  "review_scope": [
+    "tips",
+    "self_check",
+    "whole_character_context",
+    "migration_boundary"
+  ],
+  "review_kind": "manual_editorial_consistency_non_authoritative",
+  "entries": [
+    {
+      "character": "无",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    },
+    {
+      "character": "犬",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    },
+    {
+      "character": "歹",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    },
+    {
+      "character": "车",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    },
+    {
+      "character": "牙",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields",
+      "conflict_preserved": "stroke2_撇折_vs_竖折_conflict_fail_closed"
+    },
+    {
+      "character": "戈",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    },
+    {
+      "character": "瓦",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    },
+    {
+      "character": "止",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    },
+    {
+      "character": "贝",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    },
+    {
+      "character": "见",
+      "tips_count": 2,
+      "tips_consistent_with_current_candidate_fields": true,
+      "self_check_present": true,
+      "context_present": true,
+      "formal_variant_promoted": false,
+      "migration_boundary_present": true,
+      "authority_boundary": "editorial_only_does_not_upgrade_underlying_candidate_fields"
+    }
+  ],
+  "limits": [
+    "教学提示、自查句、整字语境和迁移边界完成内容编辑一致性复核；这不是规范原页证据。",
+    "若教学文字依赖的笔顺/细笔名候选后续被权威原页纠正，教学文字必须同步回写。",
+    "位置语境不等于正式附形或位置变体通过；牙第2笔冲突继续fail-closed。"
+  ]
+}

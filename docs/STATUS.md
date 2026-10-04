@@ -1,44 +1,63 @@
 # 当前编写状态
 
-更新：2026-09-29，B03规范原件交叉检查。目标：201个主部首＋常用附形与位置变体。
+更新：2026-10-03。工程处于“阶段1：内容覆盖优先”。
 
-## 本轮实质进展
+## 当前阶段
 
-接续`feat/b03-scope-freeze-v3`及起始HEAD `977f3adad447a64bf801cfaeccf797845c4a8332`，已建立PR #8。B03（刀、力、又、子、女、小、王、石、白、立）十项34笔完成GF0023—2020与1997版《现代汉语通用字笔顺规范》实际原图交叉检查。S02七个目标页、S04八个目标页均实际查看，十组字条又从原PDF放大并排复看；两版有继承关系，同一Agent复看不称独立双人审定。
+阶段1目标是先完成201个主部首的字段级内容和证据链；artwork、PDF、manifest和CI尾项不再阻塞后续内容字段推进。阶段2统一处理图形与版式，阶段3处理归档与发布。阶段1的`content_ready`不等于`artwork_ready`或`release_eligible`。
 
-本轮一致性测试发现此前B03总笔数35为合计错误：实际为2＋2＋2＋3＋3＋3＋4＋5＋5＋5＝34；单字笔数、编码不变，累计交叉检查据此为101笔。
+## 范围与计数
 
-子、女的S02原印5/PDF11页码由推定升级为原页确认。修正范围稿“小”的“两侧点”为“左撇、右点”，依据两版234及实际规范图。刀／力同码不同轮廓、王第3笔竖、石／白底横最后、立第3点与第4撇分别保存观察记录。没有把尚未取得的矢量或细笔名标为通过。
+- 主部首范围：**201/201已分配**，B01—B20各10项，B21为龠1项。
+- `content_ready`：**30项**，B01—B03。
+- `content_in_progress`：**171项**，B04—B21。
+- 已形成练习页：20项（B01+B02）。
+- Git内阶段PDF：11份draft。
+- 正式release：0。
+- GF0011—2022逐项精确字形、附形、名称和编码继续作为全书级pending；不阻塞其它独立字段。
 
-原件通过本仓库既有Actions资料包恢复，字节数、页数和SHA256与来源台账一致；不因网页大PDF打不开而重复停留在locator阶段。只把实际查看的目标页加入台账，首次locator记录作为历史保留并指向本次结果。源书全文、字体和临时截图未入库。
+## 最新阶段1检查点
 
-机器记录：`data/evidence/B03-stroke-order.json`；内容复核：`reviews/B03-primary-cross.md`。本地22项数据／证据测试、11项归档测试、10项绘图整理测试通过；历史11份PDF及manifest与起始快照逐文件字节一致，两批正式发布检查仍按预期拒绝。新增检查复用现有CI入口；CI及合入状态以PR #8最终HEAD的实际结果为准。
+本轮主吞吐为B06+B07，共20个不同主部首。
 
-## 分别计数
+### B06：厂、匚、卜、冂、勹、儿、匕、几、亠、冫
 
-| 指标 | 数量 | 含义 |
-|---|---:|---|
-| 主索引 | 201 | 2009版中间索引；2022全文比较未完 |
-| 已冻结教学主项 | 30 | B01—B03，B03未完成整批内容 |
-| 已形成练习页 | 20 | B01+B02；本轮新增0 |
-| 两部规范笔顺图对照 | 30项、101笔 | 本轮新增B03十项34笔；不等于独立专家审定 |
-| 全部相关内容字段补齐 | 20 | B01+B02；B03细笔名、读音等仍待核 |
-| B03独体身份／结构前提 | 10 | S07原印2—3/PDF5—6的既有字段复核 |
-| B03笔数／笔顺原件交叉检查 | 10项、34笔 | S02与S04实际原图，两遍查看完成 |
-| 已归档阶段PDF | 11份 | v0.1.0三份、v0.2.0四份、v0.2.1四份；本轮新增0 |
-| 附形／位置变体 | 32项候选 | 未冻结、未全部审读，另计 |
-| 正式发布 | 0 | 全书2022版范围等门槛未满足 |
+重新对照`data/B06.json`与`data/coverage.json`的S01-2009中间索引，十项main_id与baseline笔画分组全部一致；既有`data/evidence/B06-content.json`继续支持2009 baseline身份、main_id和2画baseline分组。
 
-## 既有B02结果与PDF
+本轮同时逐项检查两条教学提示、自查句、整字迁移语境和迁移边界，十项均保持候选／待核边界。尝试新增`data/evidence/B06-teaching-review.json`和`reviews/B06-content.md`时，连接器均返回`This tool call was blocked by OpenAI's safety checks. Please double check what you are sending.`，因此教学字段本轮不升级reviewed，canonical旧标签保持不变。
 
-B02读音与日、目、田横折收笔的内容级问题已随PR #7结案，Issue #6保持已完成。月的真正横折钩未修改，既有绘图整理、来源哈希和许可保留。详细记录见`reviews/B02-completion.md`、`reviews/v0.2.1-layout.md`、`reviews/v0.2.1-ci.md`。
+### B07：冖、凵、卩、厶、廴、艹、廾、宀、辶、彐
 
-最新合集仍为`deliverables/drafts/v0.2.1/B01-B02_with_preface_draft_A4.pdf`，3页前言＋20页练习＝23页。各PDF及manifest完全保留，本轮没有新增练习或修改页面，因此不重新生成PDF，也不把历史视觉复核冒充本轮重看。实际字节归档信息以`deliverables/manifest.json`为准。
+本轮逐项将canonical main_id与笔画数对照S01-2009中间索引，十项全部一致：冖、凵、卩、厶、廴为2画；艹、廾、宀、辶、彐为3画。既有`data/evidence/B07-teaching-review.json`继续支持两条教学提示、自查句、整字语境和迁移边界的非权威编辑一致性。
 
-## 接续
+尝试新增`data/evidence/B07-content.json`和`reviews/B07-content.md`时遭遇同一连接器安全检查，因此baseline_identity、main_id和baseline笔画分组本轮不据此升级reviewed；只保留本次实际交叉检查记录。
 
-先完成B03细笔名与采用读音的原件逐字段定位，再进入中间文稿、矢量逐笔匹配、PDF和逐页视觉检查。重点核对子弯钩类名称、女首笔、小第二笔、刀／力折笔；白第3笔的收笔在取得实际矢量后定点复核，不全局去钩。刀→刂、小→⺌、女左旁、王左旁都仍为迁移线索，不能直接制成可描写变体页。
+本轮没有新增content_ready批次；B01—B03仍为30项content_ready，B04—B21共171项content_in_progress。未推进artwork、PDF、manifest、CI或release。
 
-Issue #4的GF0011—2022完整原件、主附关系、名称和编码仍未解决；GF0014—2009正式文本已取得，但不代表全部条目已审读。剩余171个未分配主项和本批10个尚未制页主项继续按原计划推进，不重选B03范围、不重复统计B01/B02、不越过B03正式编写B04。
+## 已知内容层缺口
 
-新PDF真实字节按新版本存入deliverables并登记页数、字节数、哈希和真实生成source_commit，旧版不覆盖；完成证据检查不自动升级正式发布。
+按实时批次记录继续收口：
+- B14：`data/evidence/B14-content.json`已实际存在；此前“baseline machine evidence仍缺”描述已过时，后续不重复补证据。
+- B16：canonical data和baseline evidence已在库，人工review文字仍有旧状态描述待同步；
+- B17：canonical data、baseline evidence与教学evidence已在库，人工content review仍缺；
+- B21：baseline evidence、canonical `data/B21.json`与人工review均已入库；教学字段已完成人工非权威编辑复核；
+- 更早B04—B13仍需继续逐项关闭名称、笔顺／细笔名、采用读音、结构与位置迁移等字段。
+
+## B03阶段2/3尾项
+
+B03内容层视为`content_ready`。artwork/layout人工记录已存在；PDF归档、manifest、通用hard-gate和最终PR收尾属于独立工程尾项，不阻塞阶段1内容吞吐。
+
+## PDF状态
+
+最新仓库合集仍为：
+
+`deliverables/drafts/v0.2.1/B01-B02_with_preface_draft_A4.pdf`
+
+23页；当前阶段1没有新增或修改PDF。
+
+## 下一内容工作
+
+1. 补B17人工content review和B16 review文字同步；
+2. 补B14 baseline machine evidence；
+3. 以20个不同主部首为一轮，批量关闭S03名称、笔顺／细笔名、采用读音、结构和位置迁移字段；
+4. GF0011—2022逐项精确字段继续由Issue #4并行追踪。

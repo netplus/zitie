@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "batch_id": "B19",
+  "reviewed_at": "2026-10-04",
+  "reviewer": "ChatGPT",
+  "review_kind": "manual_editorial_consistency_non_authoritative",
+  "source_record": "data/B19.json",
+  "review_record": "reviews/B19-content.md",
+  "reviewed_fields": [
+    "teaching_tips",
+    "self_check",
+    "whole_character_context_editorial_consistency",
+    "migration_boundary_editorial_consistency"
+  ],
+  "entries": [
+    {
+      "character": "韭",
+      "main_id": 181,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "韭",
+        "migration_boundary_present": true
+      },
+      "limits": "仅确认阶段1教学文本内部一致并保留待核边界；正式结构、位置形态、笔顺、细笔名、读音、部件名称和2022版身份仍需对应权威证据。"
+    },
+    {
+      "character": "骨",
+      "main_id": 182,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "骼",
+        "migration_boundary_present": true
+      },
+      "limits": "仅确认阶段1教学文本内部一致并保留待核边界；正式结构、位置形态、笔顺、细笔名、读音、部件名称和2022版身份仍需对应权威证据。"
+    },
+    {
+      "character": "香",
+      "main_id": 183,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "香",
+        "migration_boundary_present": true
+      },
+      "limits": "仅确认阶段1教学文本内部一致并保留待核边界；正式结构、位置形态、笔顺、细笔名、读音、部件名称和2022版身份仍需对应权威证据。"
+    },
+    {
+      "character": "鬼",
+      "main_id": 184,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "鬼",
+        "migration_boundary_present": true
+      },
+      "limits": "仅确认阶段1教学文本内部一致并保留待核边界；正式结构、位置形态、笔顺、细笔名、读音、部件名称和2022版身份仍需对应权威证据。"
+    },
+    {
+      "character": "食",
+      "main_id": 185,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "食",
+        "migration_boundary_present": true
+      },
+      "limits": "仅确认阶段1教学文本内部一致并保留待核边界；正式结构、位置形态、笔顺、细笔名、读音、部件名称和2022版身份仍需对应权威证据。"
+    },
+    {
+      "character": "音",
+      "main_id": 186,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "意",
+        "migration_boundary_present": true
+      },
+      "limits": "仅确认阶段1教学文本内部一致并保留待核边界；正式结构、位置形态、笔顺、细笔名、读音、部件名称和2022版身份仍需对应权威证据。"
+    },
+    {
+      "character": "首",
+      "main_id": 187,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "首",
+        "migration_boundary_present": true
+      },
+      "limits": "仅确认阶段1教学文本内部一致并保留待核边界；正式结构、位置形态、笔顺、细笔名、读音、部件名称和2022版身份仍需对应权威证据。"
+    },
+    {
+      "character": "髟",
+      "main_id": 188,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "髦",
+        "migration_boundary_present": true
+      },
+      "limits": "仅确认阶段1教学文本内部一致并保留待核边界；正式结构、位置形态、笔顺、细笔名、读音、部件名称和2022版身份仍需对应权威证据。"
+    },
+    {
+      "character": "鬲",
+      "main_id": 189,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "隔",
+        "migration_boundary_present": true
+      },
+      "limits": "仅确认阶段1教学文本内部一致并保留待核边界；正式结构、位置形态、笔顺、细笔名、读音、部件名称和2022版身份仍需对应权威证据。"
+    },
+    {
+      "character": "鬥",
+      "main_id": 190,
+      "result": "editorial_consistency_pass",
+      "checks": {
+        "two_tips": true,
+        "self_check_present": true,
+        "whole_character_example": "鬥",
+        "migration_boundary_present": true
+      },
+      "limits": "仅确认阶段1教学文本内部一致并保留待核边界；正式结构、位置形态、笔顺、细笔名、读音、部件名称和2022版身份仍需对应权威证据。"
+    }
+  ],
+  "limits": "非权威教学编辑复核；整字例字仅用于迁移语境，正式位置形态和书写时序仍须回完整整字及规范原页核验。"
+}

@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_component_name_review",
+  "batch_id": "B16",
+  "reviewed_at": "2026-10-04",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source_id": "S03",
+  "source_title": "现代常用字部件及部件名称规范",
+  "source_publication_id": "GF0014—2009",
+  "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+  "byte_identity_to_catalog_copy": "not_checked_this_run",
+  "reviewed_field": "component_name",
+  "method": "逐页查看GF0014—2009《现代常用字部件表》原印7—20页；仅精确命中目标部件字形时关闭component_name，相近字形、同组部件和位置变体不替代目标主形。",
+  "entries": [
+    {
+      "character": "赤",
+      "main_id": 151,
+      "result": "matched_exact_S03_row",
+      "component_name": "赤（chì）",
+      "sequence_no": 49,
+      "group_no": 43,
+      "printed_page": 8,
+      "pdf_page": 11
+    },
+    {
+      "character": "豆",
+      "main_id": 152,
+      "result": "matched_exact_S03_row",
+      "component_name": "豆（dòu）",
+      "sequence_no": 86,
+      "group_no": 73,
+      "printed_page": 9,
+      "pdf_page": 12
+    },
+    {
+      "character": "酉",
+      "main_id": 153,
+      "result": "matched_exact_S03_row",
+      "component_name": "酉（yǒu）",
+      "sequence_no": 459,
+      "group_no": 398,
+      "printed_page": 19,
+      "pdf_page": 22
+    },
+    {
+      "character": "辰",
+      "main_id": 154,
+      "result": "matched_exact_S03_row",
+      "component_name": "辰（chén）",
+      "sequence_no": 44,
+      "group_no": 38,
+      "printed_page": 8,
+      "pdf_page": 11
+    },
+    {
+      "character": "豕",
+      "main_id": 155,
+      "result": "matched_exact_S03_row",
+      "component_name": "豕（shǐ）",
+      "sequence_no": 325,
+      "group_no": 282,
+      "printed_page": 15,
+      "pdf_page": 18
+    },
+    {
+      "character": "卤",
+      "main_id": 156,
+      "result": "matched_exact_S03_row",
+      "component_name": "卤（lǔ）",
+      "sequence_no": 223,
+      "group_no": 193,
+      "printed_page": 13,
+      "pdf_page": 16
+    },
+    {
+      "character": "里",
+      "main_id": 157,
+      "result": "matched_exact_S03_row",
+      "component_name": "里（lǐ）",
+      "sequence_no": 207,
+      "group_no": 178,
+      "printed_page": 12,
+      "pdf_page": 15
+    },
+    {
+      "character": "足",
+      "main_id": 158,
+      "result": "no_exact_standalone_S03_row",
+      "nearest_note": "逐页核验原印7—20页未见足的独立整形条目。"
+    },
+    {
+      "character": "邑",
+      "main_id": 159,
+      "result": "no_exact_standalone_S03_row",
+      "nearest_note": "逐页核验原印7—20页未见邑的独立整形条目；不以阝等位置形态替代主形。"
+    },
+    {
+      "character": "身",
+      "main_id": 160,
+      "result": "matched_exact_S03_row",
+      "component_name": "身（shēn）",
+      "sequence_no": 314,
+      "group_no": 272,
+      "printed_page": 15,
+      "pdf_page": 18
+    }
+  ],
+  "limits": "只支持GF0014—2009部件名称及S03是否存在精确独立整形条目；不支持GF0011—2022主附身份、结构、笔顺、细笔名、采用读音或正式位置变体。"
+}

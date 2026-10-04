@@ -1,0 +1,529 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_content_draft",
+  "batch_id": "B18",
+  "version": "content-draft-2026-10-02",
+  "title": "八九画常用部件与迁移",
+  "content_status": "in_progress",
+  "artwork_status": "deferred",
+  "publication_status": "deferred",
+  "scope_frozen_for_content": true,
+  "release_eligible": false,
+  "target_edition": "GF0011—2022",
+  "target_edition_status": "exact_fields_pending",
+  "scope_basis": "承接B17，按2009基线索引覆盖非、齿、黾、隹、阜、金、鱼、隶、革、面；阶段1先关闭可独立核验的基线身份和笔画分组。",
+  "entries": [
+    {
+      "character": "非",
+      "main_id": 171,
+      "stroke_count": 8,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先识别非的八画基线主形；内部横竖的真实次序待目标行核验。",
+        "在“悲”顶部只记录整字语境，位置形态和时序另核。"
+      ],
+      "check": "基线笔数为8画；逐笔顺序、细笔名、采用读音和结构未核前不凭候选稿记忆。",
+      "context": {
+        "example": "悲",
+        "position": "top",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ]
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“悲”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "齿",
+      "main_id": 172,
+      "stroke_count": 8,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先识别齿的八画主形；框内笔组的真实先后待权威原页关闭。",
+        "“龄”左部只作迁移语境，不把位置写法直接等同独体主形。"
+      ],
+      "check": "基线笔数为8画；逐笔顺序、细笔名、采用读音和结构未核前不凭候选稿记忆。",
+      "context": {
+        "example": "龄",
+        "position": "left",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ]
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“龄”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "黾",
+      "main_id": 173,
+      "stroke_count": 8,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先识别黾的八画基线主形；折笔和内部笔组细名待原页裁决。",
+        "“绳”右部只作语境线索，简化字中的对应关系须回整字核验。"
+      ],
+      "check": "基线笔数为8画；逐笔顺序、细笔名、采用读音和结构未核前不凭候选稿记忆。",
+      "context": {
+        "example": "绳",
+        "position": "right",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ]
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“绳”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "隹",
+      "main_id": 174,
+      "stroke_count": 8,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先识别隹的八画主形；横画组与末笔关系待目标行确认。",
+        "在“谁”右部核对比例，不从字体压缩推定减笔。"
+      ],
+      "check": "基线笔数为8画；逐笔顺序、细笔名、采用读音和结构未核前不凭候选稿记忆。",
+      "context": {
+        "example": "谁",
+        "position": "right",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ]
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“谁”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "阜",
+      "main_id": 175,
+      "stroke_count": 8,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "本轮先识别阜的八画独立主形；逐笔顺序和细笔名待目标行确认。",
+        "常见左阝只作后续迁移线索，主附关系必须回GF0011—2022裁决。"
+      ],
+      "check": "基线笔数为8画；逐笔顺序、细笔名、采用读音和结构未核前不凭候选稿记忆。",
+      "context": {
+        "example": "阜",
+        "position": "self",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ]
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“阜”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "金",
+      "main_id": 176,
+      "stroke_count": 8,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先识别金的八画主形；内部点撇与横竖次序待权威原页关闭。",
+        "在“鉴”下部只观察整字位置，不把钅等形态未经证据并入。"
+      ],
+      "check": "基线笔数为8画；逐笔顺序、细笔名、采用读音和结构未核前不凭候选稿记忆。",
+      "context": {
+        "example": "鉴",
+        "position": "bottom",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ]
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“鉴”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "鱼",
+      "main_id": 177,
+      "stroke_count": 8,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先识别鱼的八画主形；尾横和内部笔组的真实顺序待目标行核验。",
+        "在“鲜”左部核对收窄，不凭静态字体推定减笔或附形。"
+      ],
+      "check": "基线笔数为8画；逐笔顺序、细笔名、采用读音和结构未核前不凭候选稿记忆。",
+      "context": {
+        "example": "鲜",
+        "position": "left",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ]
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“鲜”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "隶",
+      "main_id": 178,
+      "stroke_count": 8,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先识别隶的八画基线主形；中部折笔和左右点撇关系待原页确认。",
+        "本轮只保留独立字语境，位置迁移后续另证。"
+      ],
+      "check": "基线笔数为8画；逐笔顺序、细笔名、采用读音和结构未核前不凭候选稿记忆。",
+      "context": {
+        "example": "隶",
+        "position": "self",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ]
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“隶”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "革",
+      "main_id": 179,
+      "stroke_count": 9,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先识别革的九画主形；内部口形与横竖笔组的真实先后待目标行确认。",
+        "在“鞋”左部核对比例和完整时序。"
+      ],
+      "check": "基线笔数为9画；逐笔顺序、细笔名、采用读音和结构未核前不凭候选稿记忆。",
+      "context": {
+        "example": "鞋",
+        "position": "left",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ]
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“鞋”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    },
+    {
+      "character": "面",
+      "main_id": 180,
+      "stroke_count": 9,
+      "stroke_count_status": "reviewed_S01_2009_stroke_group",
+      "order_code_candidate": null,
+      "stroke_names_candidate": null,
+      "tips": [
+        "先识别面的九画基线主形；框内笔组和收框顺序待原页核验。",
+        "本轮只保留独立字语境，不从字体样式推导位置变体。"
+      ],
+      "check": "基线笔数为9画；逐笔顺序、细笔名、采用读音和结构未核前不凭候选稿记忆。",
+      "context": {
+        "example": "面",
+        "position": "self",
+        "structure_class": "pending_whole_character_verification"
+      },
+      "structure": {
+        "status": "pending_authoritative_structure_review"
+      },
+      "pinyin": null,
+      "component_name": null,
+      "baseline_identity": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ]
+      },
+      "field_status": {
+        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "structure": "pending_authoritative_structure_review",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "pending_target_row",
+        "fine_stroke_names": "pending_target_row",
+        "pronunciation": "pending_authoritative_row",
+        "component_name": "pending_S03_target_row",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "selected_pending_whole_character_verification"
+      },
+      "migration_boundary": "“面”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
+      "unresolved": [
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "S03目标部件名称条目尚未逐项定位并实际审读",
+        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "采用读音尚未完成适用权威原页复核",
+        "结构分类及位置迁移尚未完成整字原页核验"
+      ]
+    }
+  ],
+  "phase1_rule": "本批baseline evidence与人工content review已入库；教学提示、自查句、整字语境和迁移边界已完成阶段1编辑一致性复核并记录于data/evidence/B18-teaching-review.json；其它权威字段继续逐项pending。",
+  "teaching_review_record": "data/evidence/B18-teaching-review.json"
+}

@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_component_name_review",
+  "batch_id": "B13",
+  "reviewed_at": "2026-10-04",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source_id": "S03",
+  "source_title": "现代常用字部件及部件名称规范",
+  "source_publication_id": "GF0014—2009",
+  "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+  "byte_identity_to_catalog_copy": "not_checked_this_run",
+  "reviewed_field": "component_name",
+  "method": "逐页查看GF0014—2009《现代常用字部件表》原印7—20页；仅精确命中目标部件字形时关闭component_name，相近字形、同组部件和位置变体不替代目标主形。",
+  "entries": [
+    {
+      "character": "矛",
+      "main_id": 121,
+      "result": "matched_exact_S03_row",
+      "component_name": "矛（máo）",
+      "sequence_no": 232,
+      "group_no": 202,
+      "printed_page": 13,
+      "pdf_page": 16
+    },
+    {
+      "character": "耒",
+      "main_id": 122,
+      "result": "matched_exact_S03_row",
+      "component_name": "耒（lěi）",
+      "sequence_no": 205,
+      "group_no": 176,
+      "printed_page": 12,
+      "pdf_page": 15
+    },
+    {
+      "character": "老",
+      "main_id": 123,
+      "result": "matched_exact_S03_row",
+      "component_name": "老（lǎo）",
+      "sequence_no": 202,
+      "group_no": 174,
+      "printed_page": 12,
+      "pdf_page": 15
+    },
+    {
+      "character": "耳",
+      "main_id": 124,
+      "result": "matched_exact_S03_row",
+      "component_name": "耳（ěr）",
+      "sequence_no": 90,
+      "group_no": 77,
+      "printed_page": 9,
+      "pdf_page": 12
+    },
+    {
+      "character": "臣",
+      "main_id": 125,
+      "result": "matched_exact_S03_row",
+      "component_name": "臣（chén）",
+      "sequence_no": 42,
+      "group_no": 37,
+      "printed_page": 8,
+      "pdf_page": 11
+    },
+    {
+      "character": "覀",
+      "main_id": 126,
+      "result": "matched_exact_S03_row",
+      "component_name": "要（yào）字头",
+      "sequence_no": 396,
+      "group_no": 344,
+      "printed_page": 17,
+      "pdf_page": 20
+    },
+    {
+      "character": "而",
+      "main_id": 127,
+      "result": "matched_exact_S03_row",
+      "component_name": "而（ér）",
+      "sequence_no": 88,
+      "group_no": 75,
+      "printed_page": 9,
+      "pdf_page": 12
+    },
+    {
+      "character": "页",
+      "main_id": 128,
+      "result": "matched_exact_S03_row",
+      "component_name": "页（yè）",
+      "sequence_no": 438,
+      "group_no": 379,
+      "printed_page": 18,
+      "pdf_page": 21
+    },
+    {
+      "character": "至",
+      "main_id": 129,
+      "result": "matched_exact_S03_row",
+      "component_name": "至（zhì）",
+      "sequence_no": 492,
+      "group_no": 422,
+      "printed_page": 20,
+      "pdf_page": 23
+    },
+    {
+      "character": "虍",
+      "main_id": 130,
+      "result": "matched_exact_S03_row",
+      "component_name": "虎（hǔ）字头",
+      "sequence_no": 145,
+      "group_no": 126,
+      "printed_page": 10,
+      "pdf_page": 13
+    }
+  ],
+  "limits": "只支持GF0014—2009部件名称；不支持GF0011—2022主附身份、结构、笔顺、细笔名、采用读音或正式位置变体。"
+}

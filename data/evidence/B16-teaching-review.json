@@ -1,0 +1,123 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_editorial_field_review",
+  "batch_id": "B16",
+  "reviewed_at": "2026-10-03",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source_record": "data/B16.json",
+  "reviewed_fields": [
+    "teaching_text",
+    "self_check_text",
+    "whole_character_context",
+    "migration_boundary"
+  ],
+  "method": "逐项核对canonical记录中两条教学提示、自查句、整字语境与迁移边界是否齐全，且未把GF0011—2022精确身份、笔顺、细笔名、采用读音、S03名称、结构或位置变体提前升级为reviewed。",
+  "entries": [
+    {
+      "character": "赤",
+      "main_id": 151,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "豆",
+      "main_id": 152,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "酉",
+      "main_id": 153,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "辰",
+      "main_id": 154,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "豕",
+      "main_id": 155,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "卤",
+      "main_id": 156,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "里",
+      "main_id": 157,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "足",
+      "main_id": 158,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "邑",
+      "main_id": 159,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    },
+    {
+      "character": "身",
+      "main_id": 160,
+      "tip_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "passed_editorial_consistency",
+      "limits": "仅确认阶段1教学文本与迁移边界写作完整、保持fail-closed；不替代权威原页字段核验。"
+    }
+  ],
+  "limits": [
+    "本记录属于阶段1非权威编辑一致性复核，不是规范原页证据。",
+    "B16的baseline_identity、main_id和stroke_count仅由data/evidence/B16-content.json支持。",
+    "其余权威字段仍保持pending；后续若权威原页纠正候选内容，教学文字必须同步回写。"
+  ]
+}
