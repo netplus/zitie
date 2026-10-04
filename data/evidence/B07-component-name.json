@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_component_name_review",
+  "batch_id": "B07",
+  "reviewed_at": "2026-10-04",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source_id": "S03",
+  "source_title": "现代常用字部件及部件名称规范",
+  "source_publication_id": "GF0014—2009",
+  "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+  "byte_identity_to_catalog_copy": "not_checked_this_run",
+  "reviewed_field": "component_name",
+  "method": "逐页查看GF0014—2009《现代常用字部件表》原印7—20页；仅精确命中目标部件字形时关闭component_name，相近字形、同组部件和位置变体不替代目标主形。",
+  "entries": [
+    {
+      "character": "冖",
+      "main_id": 19,
+      "result": "matched_exact_S03_row",
+      "component_name": "秃宝盖（tūbǎogài）",
+      "sequence_no": 366,
+      "group_no": 316,
+      "printed_page": 16,
+      "pdf_page": 19
+    },
+    {
+      "character": "凵",
+      "main_id": 20,
+      "result": "matched_exact_S03_row",
+      "component_name": "凹（āo）",
+      "sequence_no": 2,
+      "group_no": 2,
+      "printed_page": 7,
+      "pdf_page": 10
+    },
+    {
+      "character": "卩",
+      "main_id": 21,
+      "result": "matched_exact_S03_row",
+      "component_name": "卩（jié）/单耳（dān'ěr）",
+      "sequence_no": 174,
+      "group_no": 149,
+      "printed_page": 11,
+      "pdf_page": 14
+    },
+    {
+      "character": "厶",
+      "main_id": 25,
+      "result": "matched_exact_S03_row",
+      "component_name": "厶（sī）/私（sī）字边",
+      "sequence_no": 353,
+      "group_no": 303,
+      "printed_page": 16,
+      "pdf_page": 19
+    },
+    {
+      "character": "廴",
+      "main_id": 26,
+      "result": "matched_exact_S03_row",
+      "component_name": "建之（jiànzhī）",
+      "sequence_no": 169,
+      "group_no": 145,
+      "printed_page": 11,
+      "pdf_page": 14
+    },
+    {
+      "character": "艹",
+      "main_id": 30,
+      "result": "matched_exact_S03_row",
+      "component_name": "草（cǎo）字头",
+      "sequence_no": 32,
+      "group_no": 29,
+      "printed_page": 7,
+      "pdf_page": 10
+    },
+    {
+      "character": "廾",
+      "main_id": 32,
+      "result": "matched_exact_S03_row",
+      "component_name": "弄（nòng）字底",
+      "sequence_no": 261,
+      "group_no": 228,
+      "printed_page": 14,
+      "pdf_page": 17
+    },
+    {
+      "character": "宀",
+      "main_id": 48,
+      "result": "matched_exact_S03_row",
+      "component_name": "宝盖（bǎogài）",
+      "sequence_no": 13,
+      "group_no": 12,
+      "printed_page": 7,
+      "pdf_page": 10
+    },
+    {
+      "character": "辶",
+      "main_id": 49,
+      "result": "matched_exact_S03_row",
+      "component_name": "走之（zǒuzhī）",
+      "sequence_no": 513,
+      "group_no": 440,
+      "printed_page": 20,
+      "pdf_page": 23
+    },
+    {
+      "character": "彐",
+      "main_id": 50,
+      "result": "matched_exact_S03_row",
+      "component_name": "雪（xuě）字底",
+      "sequence_no": 415,
+      "group_no": 360,
+      "printed_page": 18,
+      "pdf_page": 21
+    }
+  ],
+  "limits": "只支持GF0014—2009部件名称及S03精确目标行；不支持GF0011—2022主附身份、结构、笔顺、细笔名、采用读音或正式位置变体。"
+}
