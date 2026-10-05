@@ -50,7 +50,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "candidate_pending_target_row",
+        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -61,7 +61,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
+        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -75,6 +76,14 @@
         "evidence": "data/evidence/B06-pronunciation.json",
         "adopted_pronunciation": "chǎng",
         "result": "direct_target_self_pronunciation_supported_by_S03_row"
+      },
+      "stroke_order_crosscheck": {
+        "evidence": "data/evidence/B06-stroke-order-crosscheck.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "derived_order_code": "13",
+        "result": "matched_derived_GF0023_crosscheck"
       }
     },
     {
@@ -114,7 +123,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "candidate_pending_target_row",
+        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -127,7 +136,8 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -140,6 +150,14 @@
         "publication_id": "GF0014—2009",
         "evidence": "data/evidence/B06-pronunciation.json",
         "result": "S03_name_row_does_not_supply_target_self_pronunciation"
+      },
+      "stroke_order_crosscheck": {
+        "evidence": "data/evidence/B06-stroke-order-crosscheck.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "derived_order_code": "15",
+        "result": "matched_derived_GF0023_crosscheck"
       }
     },
     {
@@ -179,7 +197,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "candidate_pending_target_row",
+        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -190,7 +208,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
+        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -204,6 +223,14 @@
         "evidence": "data/evidence/B06-pronunciation.json",
         "adopted_pronunciation": "bǔ",
         "result": "direct_target_self_pronunciation_supported_by_S03_row"
+      },
+      "stroke_order_crosscheck": {
+        "evidence": "data/evidence/B06-stroke-order-crosscheck.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "derived_order_code": "24",
+        "result": "matched_derived_GF0023_crosscheck"
       }
     },
     {
@@ -243,7 +270,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "candidate_pending_target_row",
+        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -256,7 +283,8 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -269,6 +297,14 @@
         "publication_id": "GF0014—2009",
         "evidence": "data/evidence/B06-pronunciation.json",
         "result": "S03_name_row_does_not_supply_target_self_pronunciation"
+      },
+      "stroke_order_crosscheck": {
+        "evidence": "data/evidence/B06-stroke-order-crosscheck.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "derived_order_code": "25",
+        "result": "matched_derived_GF0023_crosscheck"
       }
     },
     {
@@ -308,7 +344,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "candidate_pending_target_row",
+        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -321,7 +357,8 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -334,6 +371,14 @@
         "publication_id": "GF0014—2009",
         "evidence": "data/evidence/B06-pronunciation.json",
         "result": "S03_name_row_does_not_supply_target_self_pronunciation"
+      },
+      "stroke_order_crosscheck": {
+        "evidence": "data/evidence/B06-stroke-order-crosscheck.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "derived_order_code": "35",
+        "result": "matched_derived_GF0023_crosscheck"
       }
     },
     {
@@ -373,7 +418,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "candidate_pending_target_row",
+        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -384,7 +429,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
+        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -398,6 +444,14 @@
         "evidence": "data/evidence/B06-pronunciation.json",
         "adopted_pronunciation": "ér",
         "result": "direct_target_self_pronunciation_supported_by_S03_row"
+      },
+      "stroke_order_crosscheck": {
+        "evidence": "data/evidence/B06-stroke-order-crosscheck.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "derived_order_code": "35",
+        "result": "matched_derived_GF0023_crosscheck"
       }
     },
     {
@@ -437,7 +491,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "candidate_pending_target_row",
+        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -448,7 +502,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
+        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -462,6 +517,14 @@
         "evidence": "data/evidence/B06-pronunciation.json",
         "adopted_pronunciation": "bǐ",
         "result": "direct_target_self_pronunciation_supported_by_S03_row"
+      },
+      "stroke_order_crosscheck": {
+        "evidence": "data/evidence/B06-stroke-order-crosscheck.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "derived_order_code": "35",
+        "result": "matched_derived_GF0023_crosscheck"
       }
     },
     {
@@ -501,7 +564,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "candidate_pending_target_row",
+        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -512,7 +575,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
+        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -526,6 +590,14 @@
         "evidence": "data/evidence/B06-pronunciation.json",
         "adopted_pronunciation": "jǐ",
         "result": "direct_target_self_pronunciation_supported_by_S03_row"
+      },
+      "stroke_order_crosscheck": {
+        "evidence": "data/evidence/B06-stroke-order-crosscheck.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "derived_order_code": "35",
+        "result": "matched_derived_GF0023_crosscheck"
       }
     },
     {
@@ -565,7 +637,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "candidate_pending_target_row",
+        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -578,7 +650,8 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -591,6 +664,14 @@
         "publication_id": "GF0014—2009",
         "evidence": "data/evidence/B06-pronunciation.json",
         "result": "S03_name_row_does_not_supply_target_self_pronunciation"
+      },
+      "stroke_order_crosscheck": {
+        "evidence": "data/evidence/B06-stroke-order-crosscheck.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "derived_order_code": "41",
+        "result": "matched_derived_GF0023_crosscheck"
       }
     },
     {
@@ -630,7 +711,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "candidate_pending_target_row",
+        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -643,7 +724,8 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -656,6 +738,14 @@
         "publication_id": "GF0014—2009",
         "evidence": "data/evidence/B06-pronunciation.json",
         "result": "S03_name_row_does_not_supply_target_self_pronunciation"
+      },
+      "stroke_order_crosscheck": {
+        "evidence": "data/evidence/B06-stroke-order-crosscheck.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "derived_order_code": "41",
+        "result": "matched_derived_GF0023_crosscheck"
       }
     }
   ],
@@ -663,5 +753,6 @@
   "structure_evidence": "data/evidence/B06-structure.json",
   "baseline_evidence": "data/evidence/B06-content.json",
   "component_name_evidence": "data/evidence/B06-component-name.json",
-  "pronunciation_evidence": "data/evidence/B06-pronunciation.json"
+  "pronunciation_evidence": "data/evidence/B06-pronunciation.json",
+  "stroke_order_crosscheck_evidence": "data/evidence/B06-stroke-order-crosscheck.json"
 }
