@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "record_kind": "whole_character_context_source_review",
+  "batch_id": "B12",
+  "reviewed_at": "2026-10-05",
+  "source_id": "S03",
+  "source_publication_id": "GF0014-2009",
+  "reviewed_field": "whole_character_context_source_occurrence",
+  "encoding_note": "target/example stored as Unicode code points; main_id links to canonical data",
+  "entries": [
+    {
+      "main_id": 55,
+      "target_ucs": "U+5C6E",
+      "result": "no_exact_standalone_S03_row"
+    },
+    {
+      "main_id": 60,
+      "target_ucs": "U+5DDB",
+      "sequence_no": 55,
+      "group_no": 47,
+      "printed_page": 8,
+      "pdf_page": 11,
+      "example_ucs": "U+5DE2",
+      "result": "exact_target_component_row_example_column_reviewed"
+    },
+    {
+      "main_id": 92,
+      "target_ucs": "U+6BB3",
+      "sequence_no": 336,
+      "group_no": 290,
+      "printed_page": 16,
+      "pdf_page": 19,
+      "example_ucs": "U+6BB7",
+      "result": "exact_target_component_row_example_column_reviewed"
+    },
+    {
+      "main_id": 99,
+      "target_ucs": "U+6BCB",
+      "result": "no_exact_standalone_S03_row"
+    },
+    {
+      "main_id": 114,
+      "target_ucs": "U+9E1F",
+      "sequence_no": 256,
+      "group_no": 225,
+      "printed_page": 13,
+      "pdf_page": 16,
+      "example_ucs": "U+9E21",
+      "result": "exact_target_component_row_example_column_reviewed"
+    },
+    {
+      "main_id": 115,
+      "target_ucs": "U+7592",
+      "sequence_no": 26,
+      "group_no": 24,
+      "printed_page": 7,
+      "pdf_page": 10,
+      "example_ucs": "U+75C5",
+      "result": "exact_target_component_row_example_column_reviewed"
+    },
+    {
+      "main_id": 117,
+      "target_ucs": "U+7A74",
+      "sequence_no": 414,
+      "group_no": 359,
+      "printed_page": 18,
+      "pdf_page": 21,
+      "example_ucs": "U+7A7A",
+      "result": "exact_target_component_row_example_column_reviewed"
+    },
+    {
+      "main_id": 118,
+      "target_ucs": "U+758B",
+      "result": "no_exact_standalone_S03_row"
+    },
+    {
+      "main_id": 119,
+      "target_ucs": "U+76AE",
+      "sequence_no": 266,
+      "group_no": 231,
+      "printed_page": 14,
+      "pdf_page": 17,
+      "example_ucs": "U+75B2",
+      "result": "exact_target_component_row_example_column_reviewed"
+    },
+    {
+      "main_id": 120,
+      "target_ucs": "U+7676",
+      "sequence_no": 73,
+      "group_no": 61,
+      "printed_page": 8,
+      "pdf_page": 11,
+      "example_ucs": "U+767B",
+      "result": "exact_target_component_row_example_column_reviewed"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "exact_target_rows": 7,
+    "no_exact_target_rows": 3
+  },
+  "limits": "Source occurrence only; positional migration, full-character stroke order, 2022 identity, and fine-stroke names remain pending."
+}
