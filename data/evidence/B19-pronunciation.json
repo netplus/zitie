@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_pronunciation_review_evidence",
+  "batch_id": "B19",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S03",
+    "publication_id": "GF0014—2009",
+    "title": "现代常用字部件及部件名称规范",
+    "publisher": "教育部、国家语委",
+    "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+    "source_ledger": "sources/catalog.json",
+    "byte_identity_to_catalog_copy": "not_checked_this_run",
+    "method": "exact_target_component_name_row_crosscheck; B20 exact rows additionally rechecked visually this run"
+  },
+  "reviewed_field": "pronunciation",
+  "rule": "仅当S03精确目标部件条目的名称栏以目标字形自身开头，并紧随该目标自身括号拼音时，才关闭采用读音；名称型标签、其它例字读音或无精确独立整形条目均保持pending。",
+  "entries": [
+    {
+      "character": "韭",
+      "main_id": 181,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "jiǔ",
+      "component_name": "韭（jiǔ）",
+      "sequence_no": 189,
+      "group_no": 161,
+      "printed_page": 12,
+      "pdf_page": 15
+    },
+    {
+      "character": "骨",
+      "main_id": 182,
+      "result": "no_exact_standalone_S03_row_pronunciation_not_closed",
+      "component_name": null,
+      "nearest_note": "完整审读原印7—20页未见骨的精确独立整形条目；序号123为“骨（gǔ）字头”，不替代完整主形。",
+      "printed_page": null,
+      "pdf_page": null
+    },
+    {
+      "character": "香",
+      "main_id": 183,
+      "result": "no_exact_standalone_S03_row_pronunciation_not_closed",
+      "component_name": null,
+      "nearest_note": "完整审读原印7—20页未见香的精确独立整形条目。",
+      "printed_page": null,
+      "pdf_page": null
+    },
+    {
+      "character": "鬼",
+      "main_id": 184,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "guǐ",
+      "component_name": "鬼（guǐ）",
+      "sequence_no": 130,
+      "group_no": 114,
+      "printed_page": 10,
+      "pdf_page": 13
+    },
+    {
+      "character": "食",
+      "main_id": 185,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "shí",
+      "component_name": "食（shí）",
+      "sequence_no": 321,
+      "group_no": 279,
+      "printed_page": 15,
+      "pdf_page": 18
+    },
+    {
+      "character": "音",
+      "main_id": 186,
+      "result": "no_exact_standalone_S03_row_pronunciation_not_closed",
+      "component_name": null,
+      "nearest_note": "完整审读原印7—20页未见音的精确独立整形条目。",
+      "printed_page": null,
+      "pdf_page": null
+    },
+    {
+      "character": "首",
+      "main_id": 187,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "shǒu",
+      "component_name": "首（shǒu）",
+      "sequence_no": 335,
+      "group_no": 289,
+      "printed_page": 16,
+      "pdf_page": 19
+    },
+    {
+      "character": "髟",
+      "main_id": 188,
+      "result": "no_exact_standalone_S03_row_pronunciation_not_closed",
+      "component_name": null,
+      "nearest_note": "完整审读原印7—20页未见髟的精确独立整形条目。",
+      "printed_page": null,
+      "pdf_page": null
+    },
+    {
+      "character": "鬲",
+      "main_id": 189,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "gé",
+      "component_name": "鬲（gé）",
+      "sequence_no": 213,
+      "group_no": 184,
+      "printed_page": 12,
+      "pdf_page": 15
+    },
+    {
+      "character": "鬥",
+      "main_id": 190,
+      "result": "no_exact_standalone_S03_row_pronunciation_not_closed",
+      "component_name": null,
+      "nearest_note": "完整审读原印7—20页未见鬥的精确独立整形条目。",
+      "printed_page": null,
+      "pdf_page": null
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "pronunciation_closed": 5,
+    "pronunciation_pending": 5
+  },
+  "limits": [
+    "本证据只支持阶段1 adopted pronunciation；不支持GF0011—2022主附身份、结构、笔顺、细笔名或位置变体。",
+    "S03名称栏中的其它例字/位置名称拼音不得替代目标主形自身读音。"
+  ]
+}

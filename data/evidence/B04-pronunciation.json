@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_pronunciation_review_evidence",
+  "batch_id": "B04",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S03",
+    "publication_id": "GF0014—2009",
+    "title": "现代常用字部件及部件名称规范",
+    "publisher": "教育部、国家语委",
+    "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+    "source_ledger": "sources/catalog.json",
+    "byte_identity_to_catalog_copy": "not_checked_this_run",
+    "method": "exact_target_component_name_row_crosscheck; B20 exact rows additionally rechecked visually this run"
+  },
+  "reviewed_field": "pronunciation",
+  "rule": "仅当S03精确目标部件条目的名称栏以目标字形自身开头，并紧随该目标自身括号拼音时，才关闭采用读音；名称型标签、其它例字读音或无精确独立整形条目均保持pending。",
+  "entries": [
+    {
+      "character": "干",
+      "main_id": 27,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "gān",
+      "component_name": "干（gān）",
+      "sequence_no": 111,
+      "group_no": 95,
+      "printed_page": 10,
+      "pdf_page": 13
+    },
+    {
+      "character": "寸",
+      "main_id": 31,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "cùn",
+      "component_name": "寸（cùn）",
+      "sequence_no": 62,
+      "group_no": 54,
+      "printed_page": 8,
+      "pdf_page": 11
+    },
+    {
+      "character": "夕",
+      "main_id": 43,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "xī",
+      "component_name": "夕（xī）",
+      "sequence_no": 392,
+      "group_no": 342,
+      "printed_page": 17,
+      "pdf_page": 20
+    },
+    {
+      "character": "广",
+      "main_id": 46,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "guǎng",
+      "component_name": "广（guǎng）",
+      "sequence_no": 128,
+      "group_no": 112,
+      "printed_page": 10,
+      "pdf_page": 13
+    },
+    {
+      "character": "门",
+      "main_id": 47,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "mén",
+      "component_name": "门（mén）",
+      "sequence_no": 238,
+      "group_no": 207,
+      "printed_page": 13,
+      "pdf_page": 16
+    },
+    {
+      "character": "尸",
+      "main_id": 51,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "shī",
+      "component_name": "尸（shī）",
+      "sequence_no": 317,
+      "group_no": 275,
+      "printed_page": 15,
+      "pdf_page": 18
+    },
+    {
+      "character": "己",
+      "main_id": 52,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "jǐ",
+      "component_name": "己（jǐ）",
+      "sequence_no": 158,
+      "group_no": 138,
+      "printed_page": 11,
+      "pdf_page": 14
+    },
+    {
+      "character": "弓",
+      "main_id": 53,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "gōng",
+      "component_name": "弓（gōng）",
+      "sequence_no": 122,
+      "group_no": 106,
+      "printed_page": 10,
+      "pdf_page": 13
+    },
+    {
+      "character": "飞",
+      "main_id": 57,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "fēi",
+      "component_name": "飞（fēi）",
+      "sequence_no": 98,
+      "group_no": 84,
+      "printed_page": 9,
+      "pdf_page": 12
+    },
+    {
+      "character": "马",
+      "main_id": 58,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "mǎ",
+      "component_name": "马（mǎ）",
+      "sequence_no": 230,
+      "group_no": 200,
+      "printed_page": 13,
+      "pdf_page": 16
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "pronunciation_closed": 10,
+    "pronunciation_pending": 0
+  },
+  "limits": [
+    "本证据只支持阶段1 adopted pronunciation；不支持GF0011—2022主附身份、结构、笔顺、细笔名或位置变体。",
+    "S03名称栏中的其它例字/位置名称拼音不得替代目标主形自身读音。"
+  ]
+}

@@ -1,0 +1,125 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_pronunciation_review_evidence",
+  "batch_id": "B07",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S03",
+    "publication_id": "GF0014—2009",
+    "title": "现代常用字部件及部件名称规范",
+    "publisher": "教育部、国家语委",
+    "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+    "source_ledger": "sources/catalog.json",
+    "byte_identity_to_catalog_copy": "not_checked_this_run",
+    "method": "exact_target_component_name_row_crosscheck; B20 exact rows additionally rechecked visually this run"
+  },
+  "reviewed_field": "pronunciation",
+  "rule": "仅当S03精确目标部件条目的名称栏以目标字形自身开头，并紧随该目标自身括号拼音时，才关闭采用读音；名称型标签、其它例字读音或无精确独立整形条目均保持pending。",
+  "entries": [
+    {
+      "character": "冖",
+      "main_id": 19,
+      "result": "S03_name_row_does_not_supply_target_self_pronunciation",
+      "component_name": "秃宝盖（tūbǎogài）",
+      "nearest_note": null,
+      "printed_page": 16,
+      "pdf_page": 19
+    },
+    {
+      "character": "凵",
+      "main_id": 20,
+      "result": "S03_name_row_does_not_supply_target_self_pronunciation",
+      "component_name": "凹（āo）",
+      "nearest_note": null,
+      "printed_page": 7,
+      "pdf_page": 10
+    },
+    {
+      "character": "卩",
+      "main_id": 21,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "jié",
+      "component_name": "卩（jié）/单耳（dān'ěr）",
+      "sequence_no": 174,
+      "group_no": 149,
+      "printed_page": 11,
+      "pdf_page": 14
+    },
+    {
+      "character": "厶",
+      "main_id": 25,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "sī",
+      "component_name": "厶（sī）/私（sī）字边",
+      "sequence_no": 353,
+      "group_no": 303,
+      "printed_page": 16,
+      "pdf_page": 19
+    },
+    {
+      "character": "廴",
+      "main_id": 26,
+      "result": "S03_name_row_does_not_supply_target_self_pronunciation",
+      "component_name": "建之（jiànzhī）",
+      "nearest_note": null,
+      "printed_page": 11,
+      "pdf_page": 14
+    },
+    {
+      "character": "艹",
+      "main_id": 30,
+      "result": "S03_name_row_does_not_supply_target_self_pronunciation",
+      "component_name": "草（cǎo）字头",
+      "nearest_note": null,
+      "printed_page": 7,
+      "pdf_page": 10
+    },
+    {
+      "character": "廾",
+      "main_id": 32,
+      "result": "S03_name_row_does_not_supply_target_self_pronunciation",
+      "component_name": "弄（nòng）字底",
+      "nearest_note": null,
+      "printed_page": 14,
+      "pdf_page": 17
+    },
+    {
+      "character": "宀",
+      "main_id": 48,
+      "result": "S03_name_row_does_not_supply_target_self_pronunciation",
+      "component_name": "宝盖（bǎogài）",
+      "nearest_note": null,
+      "printed_page": 7,
+      "pdf_page": 10
+    },
+    {
+      "character": "辶",
+      "main_id": 49,
+      "result": "S03_name_row_does_not_supply_target_self_pronunciation",
+      "component_name": "走之（zǒuzhī）",
+      "nearest_note": null,
+      "printed_page": 20,
+      "pdf_page": 23
+    },
+    {
+      "character": "彐",
+      "main_id": 50,
+      "result": "S03_name_row_does_not_supply_target_self_pronunciation",
+      "component_name": "雪（xuě）字底",
+      "nearest_note": null,
+      "printed_page": 18,
+      "pdf_page": 21
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "pronunciation_closed": 2,
+    "pronunciation_pending": 8
+  },
+  "limits": [
+    "本证据只支持阶段1 adopted pronunciation；不支持GF0011—2022主附身份、结构、笔顺、细笔名或位置变体。",
+    "S03名称栏中的其它例字/位置名称拼音不得替代目标主形自身读音。"
+  ]
+}

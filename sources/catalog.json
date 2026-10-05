@@ -816,9 +816,10 @@
           23
         ],
         "result_summary": "高、黄、鹿、鼎、黑精确完整主形命中；麻、黍、鼓、鼠、鼻未见精确独立整形条目。",
-        "evidence_status": "machine_evidence_write_blocked_this_run",
+        "evidence_status": "machine_evidence_persisted",
         "method": "complete_main_table_visual_review_exact_full_form_only",
-        "limits": "只记录B20十项GF0014—2009部件名称适用性视觉核验；canonical在review/evidence成功入库前不得升级。"
+        "limits": "只记录B20十项GF0014—2009部件名称适用性视觉核验；canonical在review/evidence成功入库前不得升级。",
+        "record": "data/evidence/B20-component-name.json"
       },
       "B10_B17_pronunciation_visual_review": {
         "date": "2026-10-05",
@@ -894,6 +895,56 @@
           "data/evidence/B17-pronunciation.json"
         ],
         "limits": "只支持阶段1采用读音；不支持GF0011—2022主附身份、结构、笔顺、细笔名或位置变体；镜像不计独立证据体系。"
+      },
+      "B04_B07_B09_B18_B20_pronunciation_review": {
+        "date": "2026-10-05",
+        "batches": [
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B09",
+          "B18",
+          "B19",
+          "B20"
+        ],
+        "target_count": 80,
+        "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+        "byte_identity_to_catalog_copy": "not_checked_this_run",
+        "method": "exact_target_component-name row crosscheck; B20 exact rows 高/黄/鹿/鼎/黑 rechecked on source page screenshots this run",
+        "rule": "仅当S03精确目标部件名称栏以目标字形自身开头并直接给出该目标自身括号拼音时，才关闭pronunciation；名称型标签、其它例字读音或无精确独立整形条目均保持pending。",
+        "result_summary": {
+          "pronunciation_closed": 52,
+          "pronunciation_pending": 28,
+          "by_batch": {
+            "B04": "10 closed / 0 pending",
+            "B05": "10 / 0",
+            "B06": "5 / 5",
+            "B07": "2 / 8",
+            "B09": "8 / 2",
+            "B18": "7 / 3",
+            "B19": "5 / 5",
+            "B20": "5 / 5"
+          }
+        },
+        "B20_exact_rows_rechecked": {
+          "鼎": "sequence 81 / group 68 / printed p9 / PDF p12 / dǐng",
+          "高": "114 / 98 / p10 / p13 / gāo",
+          "黑": "137 / 121 / p10 / p13 / hēi",
+          "黄": "150 / 131 / p11 / p14 / huáng",
+          "鹿": "225 / 195 / p13 / p16 / lù"
+        },
+        "evidence": [
+          "data/evidence/B04-pronunciation.json",
+          "data/evidence/B05-pronunciation.json",
+          "data/evidence/B06-pronunciation.json",
+          "data/evidence/B07-pronunciation.json",
+          "data/evidence/B09-pronunciation.json",
+          "data/evidence/B18-pronunciation.json",
+          "data/evidence/B19-pronunciation.json",
+          "data/evidence/B20-pronunciation.json"
+        ],
+        "limits": "只支持阶段1采用读音；不支持GF0011—2022主附身份、结构、笔顺、细笔名或位置变体。"
       }
     }
   ]

@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_component_name_review",
+  "batch_id": "B20",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source_id": "S03",
+  "source_title": "现代常用字部件及部件名称规范",
+  "source_publication_id": "GF0014—2009",
+  "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+  "byte_identity_to_catalog_copy": "not_checked_this_run",
+  "reviewed_field": "component_name",
+  "method": "完整主体表原印7—20页视觉审读；本轮重新核对高/黄/鹿/鼎/黑精确目标行，未命中项沿用已登记的完整主体表审读结果。",
+  "entries": [
+    {
+      "character": "高",
+      "main_id": 191,
+      "result": "matched_exact_S03_row",
+      "component_name": "高（gāo）",
+      "sequence_no": 114,
+      "group_no": 98,
+      "printed_page": 10,
+      "pdf_page": 13
+    },
+    {
+      "character": "黄",
+      "main_id": 192,
+      "result": "matched_exact_S03_row",
+      "component_name": "黄（huáng）",
+      "sequence_no": 150,
+      "group_no": 131,
+      "printed_page": 11,
+      "pdf_page": 14
+    },
+    {
+      "character": "麻",
+      "main_id": 193,
+      "result": "no_exact_standalone_S03_row",
+      "nearest_note": "完整审读原印7—20页未见麻的精确独立整形条目。"
+    },
+    {
+      "character": "鹿",
+      "main_id": 194,
+      "result": "matched_exact_S03_row",
+      "component_name": "鹿（lù）",
+      "sequence_no": 225,
+      "group_no": 195,
+      "printed_page": 13,
+      "pdf_page": 16
+    },
+    {
+      "character": "鼎",
+      "main_id": 195,
+      "result": "matched_exact_S03_row",
+      "component_name": "鼎（dǐng）",
+      "sequence_no": 81,
+      "group_no": 68,
+      "printed_page": 9,
+      "pdf_page": 12
+    },
+    {
+      "character": "黑",
+      "main_id": 196,
+      "result": "matched_exact_S03_row",
+      "component_name": "黑（hēi）",
+      "sequence_no": 137,
+      "group_no": 121,
+      "printed_page": 10,
+      "pdf_page": 13
+    },
+    {
+      "character": "黍",
+      "main_id": 197,
+      "result": "no_exact_standalone_S03_row",
+      "nearest_note": "完整审读原印7—20页未见黍的精确独立整形条目。"
+    },
+    {
+      "character": "鼓",
+      "main_id": 198,
+      "result": "no_exact_standalone_S03_row",
+      "nearest_note": "完整审读原印7—20页未见鼓的精确独立整形条目。"
+    },
+    {
+      "character": "鼠",
+      "main_id": 199,
+      "result": "no_exact_standalone_S03_row",
+      "nearest_note": "完整审读原印7—20页未见鼠的精确独立整形条目。"
+    },
+    {
+      "character": "鼻",
+      "main_id": 200,
+      "result": "no_exact_standalone_S03_row",
+      "nearest_note": "完整审读原印7—20页未见鼻的精确独立整形条目。"
+    }
+  ],
+  "limits": "只支持GF0014—2009部件名称及S03是否存在精确独立整形条目；不支持GF0011—2022主附身份、结构、笔顺、细笔名、采用读音或正式位置变体。"
+}

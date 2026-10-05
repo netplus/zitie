@@ -91,6 +91,22 @@ B10—B17共80个不同主部首完成GF0014—2009《现代常用字部件及�
 
 合计**60/80项采用读音关闭，20/80项保持pending**。对应machine evidence为`data/evidence/B10-pronunciation.json`至`B17-pronunciation.json`，人工复核摘要为`reviews/B10-B17-pronunciation.md`。名称型标签中的其它字读音不得替代目标主形读音。
 
+## 最新80项采用读音推进（二）（2026-10-05）
+
+B04、B05、B06、B07、B09、B18、B19、B20共80个不同主部首完成S03采用读音适用性复核。
+
+结果：
+- B04：10 reviewed / 0 pending；
+- B05：10 / 0；
+- B06：5 / 5；
+- B07：2 / 8；
+- B09：8 / 2；
+- B18：7 / 3；
+- B19：5 / 5；
+- B20：5 / 5。
+
+合计**52/80项pronunciation关闭，28/80项保持pending**。B20同时补齐`data/evidence/B20-component-name.json`，高、黄、鹿、鼎、黑精确目标行重新核对；麻、黍、鼓、鼠、鼻继续保持S03无精确独立整形条目。
+
 ## 当前主要未决字段
 
 1. GF0011—2022精确主项字形、附形、名称和编码；

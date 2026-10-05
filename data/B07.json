@@ -34,7 +34,7 @@
       },
       "pinyin": null,
       "component_name": "秃宝盖",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
+      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -52,7 +52,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
@@ -61,13 +61,20 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
       ],
       "structure_review": {
         "source_id": "S07",
         "publication_id": "GF0013—2009",
         "evidence": "data/evidence/B07-structure.json",
         "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B07-pronunciation.json",
+        "result": "S03_name_row_does_not_supply_target_self_pronunciation"
       }
     },
     {
@@ -91,7 +98,7 @@
       },
       "pinyin": null,
       "component_name": "凹",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
+      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -109,7 +116,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
@@ -118,13 +125,20 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
       ],
       "structure_review": {
         "source_id": "S07",
         "publication_id": "GF0013—2009",
         "evidence": "data/evidence/B07-structure.json",
         "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B07-pronunciation.json",
+        "result": "S03_name_row_does_not_supply_target_self_pronunciation"
       }
     },
     {
@@ -146,9 +160,9 @@
         "position": "right",
         "structure_class": "left_right"
       },
-      "pinyin": null,
+      "pinyin": "jié",
       "component_name": "卩/单耳",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
+      "pinyin_status": "reviewed_S03_GF0014_2009_target_self_pronunciation",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -166,7 +180,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
@@ -182,6 +196,13 @@
         "publication_id": "GF0013—2009",
         "evidence": "data/evidence/B07-structure.json",
         "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B07-pronunciation.json",
+        "adopted_pronunciation": "jié",
+        "result": "direct_target_self_pronunciation_supported_by_S03_row"
       }
     },
     {
@@ -203,9 +224,9 @@
         "position": "bottom",
         "structure_class": "top_bottom"
       },
-      "pinyin": null,
+      "pinyin": "sī",
       "component_name": "厶/私字边",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
+      "pinyin_status": "reviewed_S03_GF0014_2009_target_self_pronunciation",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -223,7 +244,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
@@ -239,6 +260,13 @@
         "publication_id": "GF0013—2009",
         "evidence": "data/evidence/B07-structure.json",
         "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B07-pronunciation.json",
+        "adopted_pronunciation": "sī",
+        "result": "direct_target_self_pronunciation_supported_by_S03_row"
       }
     },
     {
@@ -262,7 +290,7 @@
       },
       "pinyin": null,
       "component_name": "建之",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
+      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -280,7 +308,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
@@ -289,13 +317,20 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
       ],
       "structure_review": {
         "source_id": "S07",
         "publication_id": "GF0013—2009",
         "evidence": "data/evidence/B07-structure.json",
         "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B07-pronunciation.json",
+        "result": "S03_name_row_does_not_supply_target_self_pronunciation"
       }
     },
     {
@@ -320,7 +355,7 @@
       },
       "pinyin": null,
       "component_name": "草字头",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
+      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -338,7 +373,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
@@ -347,13 +382,20 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
       ],
       "structure_review": {
         "source_id": "S07",
         "publication_id": "GF0013—2009",
         "evidence": "data/evidence/B07-structure.json",
         "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B07-pronunciation.json",
+        "result": "S03_name_row_does_not_supply_target_self_pronunciation"
       }
     },
     {
@@ -378,7 +420,7 @@
       },
       "pinyin": null,
       "component_name": "弄字底",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
+      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -396,7 +438,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
@@ -405,13 +447,20 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
       ],
       "structure_review": {
         "source_id": "S07",
         "publication_id": "GF0013—2009",
         "evidence": "data/evidence/B07-structure.json",
         "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B07-pronunciation.json",
+        "result": "S03_name_row_does_not_supply_target_self_pronunciation"
       }
     },
     {
@@ -436,7 +485,7 @@
       },
       "pinyin": null,
       "component_name": "宝盖",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
+      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -454,7 +503,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
@@ -463,13 +512,20 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
       ],
       "structure_review": {
         "source_id": "S07",
         "publication_id": "GF0013—2009",
         "evidence": "data/evidence/B07-structure.json",
         "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B07-pronunciation.json",
+        "result": "S03_name_row_does_not_supply_target_self_pronunciation"
       }
     },
     {
@@ -494,7 +550,7 @@
       },
       "pinyin": null,
       "component_name": "走之",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
+      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -512,7 +568,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
@@ -521,13 +577,20 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
       ],
       "structure_review": {
         "source_id": "S07",
         "publication_id": "GF0013—2009",
         "evidence": "data/evidence/B07-structure.json",
         "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B07-pronunciation.json",
+        "result": "S03_name_row_does_not_supply_target_self_pronunciation"
       }
     },
     {
@@ -552,7 +615,7 @@
       },
       "pinyin": null,
       "component_name": "雪字底",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
+      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -570,7 +633,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
@@ -579,17 +642,25 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
       ],
       "structure_review": {
         "source_id": "S07",
         "publication_id": "GF0013—2009",
         "evidence": "data/evidence/B07-structure.json",
         "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B07-pronunciation.json",
+        "result": "S03_name_row_does_not_supply_target_self_pronunciation"
       }
     }
   ],
   "phase1_rule": "当前只建立可追溯内容稿。候选笔顺/细笔名不得因写入data/B07.json而视为reviewed；必须在对应原页和机器证据真实入库后逐字段升级。",
   "structure_evidence": "data/evidence/B07-structure.json",
-  "baseline_evidence": "data/evidence/B07-content.json"
+  "baseline_evidence": "data/evidence/B07-content.json",
+  "pronunciation_evidence": "data/evidence/B07-pronunciation.json"
 }

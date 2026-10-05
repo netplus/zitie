@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_pronunciation_review_evidence",
+  "batch_id": "B05",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S03",
+    "publication_id": "GF0014—2009",
+    "title": "现代常用字部件及部件名称规范",
+    "publisher": "教育部、国家语委",
+    "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+    "source_ledger": "sources/catalog.json",
+    "byte_identity_to_catalog_copy": "not_checked_this_run",
+    "method": "exact_target_component_name_row_crosscheck; B20 exact rows additionally rechecked visually this run"
+  },
+  "reviewed_field": "pronunciation",
+  "rule": "仅当S03精确目标部件条目的名称栏以目标字形自身开头，并紧随该目标自身括号拼音时，才关闭采用读音；名称型标签、其它例字读音或无精确独立整形条目均保持pending。",
+  "entries": [
+    {
+      "character": "无",
+      "main_id": 62,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "wú",
+      "component_name": "无（wú）",
+      "sequence_no": 385,
+      "group_no": 335,
+      "printed_page": 17,
+      "pdf_page": 20
+    },
+    {
+      "character": "犬",
+      "main_id": 66,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "quǎn",
+      "component_name": "犬（quǎn）",
+      "sequence_no": 289,
+      "group_no": 253,
+      "printed_page": 14,
+      "pdf_page": 17
+    },
+    {
+      "character": "歹",
+      "main_id": 67,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "dǎi",
+      "component_name": "歹（dǎi）",
+      "sequence_no": 64,
+      "group_no": 56,
+      "printed_page": 8,
+      "pdf_page": 11
+    },
+    {
+      "character": "车",
+      "main_id": 68,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "chē",
+      "component_name": "车（chē）",
+      "sequence_no": 41,
+      "group_no": 36,
+      "printed_page": 8,
+      "pdf_page": 11
+    },
+    {
+      "character": "牙",
+      "main_id": 69,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "yá",
+      "component_name": "牙（yá）",
+      "sequence_no": 421,
+      "group_no": 365,
+      "printed_page": 18,
+      "pdf_page": 21
+    },
+    {
+      "character": "戈",
+      "main_id": 70,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "gē",
+      "component_name": "戈（gē）",
+      "sequence_no": 115,
+      "group_no": 99,
+      "printed_page": 10,
+      "pdf_page": 13
+    },
+    {
+      "character": "瓦",
+      "main_id": 72,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "wǎ",
+      "component_name": "瓦（wǎ）",
+      "sequence_no": 371,
+      "group_no": 321,
+      "printed_page": 17,
+      "pdf_page": 20
+    },
+    {
+      "character": "止",
+      "main_id": 73,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "zhǐ",
+      "component_name": "止（zhǐ）",
+      "sequence_no": 488,
+      "group_no": 421,
+      "printed_page": 20,
+      "pdf_page": 23
+    },
+    {
+      "character": "贝",
+      "main_id": 76,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "bèi",
+      "component_name": "贝（bèi）",
+      "sequence_no": 15,
+      "group_no": 14,
+      "printed_page": 7,
+      "pdf_page": 10
+    },
+    {
+      "character": "见",
+      "main_id": 78,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "jiàn",
+      "component_name": "见（jiàn）",
+      "sequence_no": 170,
+      "group_no": 146,
+      "printed_page": 11,
+      "pdf_page": 14
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "pronunciation_closed": 10,
+    "pronunciation_pending": 0
+  },
+  "limits": [
+    "本证据只支持阶段1 adopted pronunciation；不支持GF0011—2022主附身份、结构、笔顺、细笔名或位置变体。",
+    "S03名称栏中的其它例字/位置名称拼音不得替代目标主形自身读音。"
+  ]
+}
