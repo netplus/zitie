@@ -21,7 +21,12 @@
       "sequence_no": 50,
       "group_no": 44,
       "printed_page": 8,
-      "pdf_page": 11
+      "pdf_page": 11,
+      "position_migration_semantic": {
+        "direct_position_role": null,
+        "status": "exact_component_row_no_explicit_position_label_whole_character_visual_pending",
+        "boundary": "Derived only from the S03 component-name row; final whole-character positional form, scale, variant glyph and complete stroke timing remain pending."
+      }
     },
     {
       "character": "肉",
@@ -31,7 +36,12 @@
       "sequence_no": 472,
       "group_no": 409,
       "printed_page": 19,
-      "pdf_page": 22
+      "pdf_page": 22,
+      "position_migration_semantic": {
+        "direct_position_role": null,
+        "status": "exact_component_row_no_explicit_position_label_whole_character_visual_pending",
+        "boundary": "Derived only from the S03 component-name row; final whole-character positional form, scale, variant glyph and complete stroke timing remain pending."
+      }
     },
     {
       "character": "缶",
@@ -41,7 +51,12 @@
       "sequence_no": 104,
       "group_no": 88,
       "printed_page": 9,
-      "pdf_page": 12
+      "pdf_page": 12,
+      "position_migration_semantic": {
+        "direct_position_role": null,
+        "status": "exact_component_row_no_explicit_position_label_whole_character_visual_pending",
+        "boundary": "Derived only from the S03 component-name row; final whole-character positional form, scale, variant glyph and complete stroke timing remain pending."
+      }
     },
     {
       "character": "舌",
@@ -51,7 +66,12 @@
       "sequence_no": 312,
       "group_no": 270,
       "printed_page": 15,
-      "pdf_page": 18
+      "pdf_page": 18,
+      "position_migration_semantic": {
+        "direct_position_role": null,
+        "status": "exact_component_row_no_explicit_position_label_whole_character_visual_pending",
+        "boundary": "Derived only from the S03 component-name row; final whole-character positional form, scale, variant glyph and complete stroke timing remain pending."
+      }
     },
     {
       "character": "竹",
@@ -61,7 +81,12 @@
       "sequence_no": 501,
       "group_no": 431,
       "printed_page": 20,
-      "pdf_page": 23
+      "pdf_page": 23,
+      "position_migration_semantic": {
+        "direct_position_role": null,
+        "status": "exact_component_row_no_explicit_position_label_whole_character_visual_pending",
+        "boundary": "Derived only from the S03 component-name row; final whole-character positional form, scale, variant glyph and complete stroke timing remain pending."
+      }
     },
     {
       "character": "臼",
@@ -71,7 +96,12 @@
       "sequence_no": 193,
       "group_no": 165,
       "printed_page": 12,
-      "pdf_page": 15
+      "pdf_page": 15,
+      "position_migration_semantic": {
+        "direct_position_role": null,
+        "status": "exact_component_row_no_explicit_position_label_whole_character_visual_pending",
+        "boundary": "Derived only from the S03 component-name row; final whole-character positional form, scale, variant glyph and complete stroke timing remain pending."
+      }
     },
     {
       "character": "自",
@@ -81,7 +111,12 @@
       "sequence_no": 512,
       "group_no": 439,
       "printed_page": 20,
-      "pdf_page": 23
+      "pdf_page": 23,
+      "position_migration_semantic": {
+        "direct_position_role": null,
+        "status": "exact_component_row_no_explicit_position_label_whole_character_visual_pending",
+        "boundary": "Derived only from the S03 component-name row; final whole-character positional form, scale, variant glyph and complete stroke timing remain pending."
+      }
     },
     {
       "character": "血",
@@ -91,7 +126,12 @@
       "sequence_no": 417,
       "group_no": 361,
       "printed_page": 18,
-      "pdf_page": 21
+      "pdf_page": 21,
+      "position_migration_semantic": {
+        "direct_position_role": null,
+        "status": "exact_component_row_no_explicit_position_label_whole_character_visual_pending",
+        "boundary": "Derived only from the S03 component-name row; final whole-character positional form, scale, variant glyph and complete stroke timing remain pending."
+      }
     },
     {
       "character": "舟",
@@ -101,7 +141,12 @@
       "sequence_no": 498,
       "group_no": 428,
       "printed_page": 20,
-      "pdf_page": 23
+      "pdf_page": 23,
+      "position_migration_semantic": {
+        "direct_position_role": null,
+        "status": "exact_component_row_no_explicit_position_label_whole_character_visual_pending",
+        "boundary": "Derived only from the S03 component-name row; final whole-character positional form, scale, variant glyph and complete stroke timing remain pending."
+      }
     },
     {
       "character": "色",
@@ -111,8 +156,21 @@
       "sequence_no": 305,
       "group_no": 263,
       "printed_page": 15,
-      "pdf_page": 18
+      "pdf_page": 18,
+      "position_migration_semantic": {
+        "direct_position_role": null,
+        "status": "exact_component_row_no_explicit_position_label_whole_character_visual_pending",
+        "boundary": "Derived only from the S03 component-name row; final whole-character positional form, scale, variant glyph and complete stroke timing remain pending."
+      }
     }
   ],
-  "limits": "只支持GF0014—2009部件名称；不支持GF0011—2022主附身份、结构、笔顺、细笔名、采用读音或正式位置变体。"
+  "limits": "只支持GF0014—2009部件名称；不支持GF0011—2022主附身份、结构、笔顺、细笔名、采用读音或正式位置变体。",
+  "derived_field_extensions": {
+    "position_migration_source_semantics": {
+      "added_at": "2026-10-06",
+      "basis": "same exact S03 component-name row already visually reviewed in this evidence file",
+      "rule": "Only explicit 字头/字底/字框/字心/字边/字旁 wording yields a position role; bare names do not imply one.",
+      "final_gate": "whole-character visual verification remains required"
+    }
+  }
 }
