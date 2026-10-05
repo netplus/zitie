@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "source_id": "S03",
+  "publication_id": "GF0014-2009",
+  "reviewed_at": "2026-10-05",
+  "review_scope": "B12 whole-character context source occurrence",
+  "target_count": 10,
+  "exact_target_rows": 7,
+  "no_exact_target_rows": 3,
+  "no_exact_main_ids": [
+    55,
+    99,
+    118
+  ],
+  "evidence": "data/evidence/B12-whole-character-context-s03-ucs.json",
+  "limits": "Source occurrence only; no promotion of positional migration or full-character stroke order."
+}
