@@ -28,7 +28,15 @@
 
 201个主部首现已**201/201完成批次范围分配**。当前content_ready仍为30项；其余171项已经进入字段级内容与证据闭合流程，各批闭合程度不同，不等同于171项全部完成。
 
-最新阶段1检查点见[当前状态](docs/STATUS.md)：B19 canonical内容稿、人工review和baseline evidence已在库；B20 canonical内容稿、baseline evidence、人工review和教学字段编辑evidence已在库。
+### 最新阶段检查点
+
+2026-10-05，阶段1工作已通过PR #9阶段性合入`main`，merge commit为：
+
+`8b6213b0ec5f85ae26915aa6f823dcb2ba04c187`
+
+当前已不再停留在“建批次内容稿”阶段：B04—B21均有canonical内容记录，多个批次已经补齐baseline、教学字段、S03部件名称/适用性以及部分结构evidence；B04新增GF0013—2009结构evidence，B05、B10、B11、B15—B18等已有不同程度的canonical证据状态同步，B19 component-name machine evidence已入库，B20的S03完整主体表视觉审读已登记来源台账。
+
+下一阶段1主吞吐将逐步从S03名称转向**正式笔顺、细笔名、采用读音和结构字段**，同时清理少量“evidence已入库但canonical/review尚未同步”的状态债。
 
 GF0011—2022逐项全文、附形、名称和编码仍是全书级待核项，但不会阻止其它可独立核验字段继续推进。
 
