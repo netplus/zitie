@@ -1019,6 +1019,87 @@
         "method": "exact character lookup in immutable order.tsv blob; extract order code/unicode/rank/stroke count and compare derived stroke count against canonical baseline",
         "limits": "只提供secondary-derived stroke-order locator和笔数一致性检查；没有canonical候选码时不称crosscheck，GF0023—2020规范原页视觉review前不得标最终reviewed。"
       }
+    },
+    {
+      "id": "D03",
+      "publication_id": "cnchar-order-secondary-fine-stroke-data",
+      "title": "cnchar-order stroke-order-jian.json + stroke-table.json",
+      "publisher": "theajack/cnchar",
+      "role": [
+        "细笔名二次定位",
+        "逐笔复合笔形交叉核验"
+      ],
+      "url": "https://github.com/theajack/cnchar",
+      "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+      "order_blob_sha": "848fcb630a5a0ebbb868afd9f3f5abc63e847ac3",
+      "stroke_table_blob_sha": "6c07faad47c543ee06daeac22aec8eaedf11c603",
+      "license": "MIT",
+      "status": "acquired_crosscheck_only",
+      "documented_ambiguities": [
+        "卧钩=斜钩",
+        "横折弯=横折折",
+        "横折折折钩=横撇弯钩",
+        "横撇=横钩",
+        "竖折折=竖折撇"
+      ],
+      "limits": "二次数据；只用于fine_stroke_names定位/交叉，不替代GF2001、GF0023或S04规范原页，不作为独立权威来源体系。",
+      "B04_B11_fine_stroke_crosscheck": {
+        "date": "2026-10-05",
+        "batches": [
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B09",
+          "B10",
+          "B11"
+        ],
+        "target_count": 80,
+        "evidence": [
+          "data/evidence/B04-fine-stroke-names-crosscheck.json",
+          "data/evidence/B05-fine-stroke-names-crosscheck.json",
+          "data/evidence/B06-fine-stroke-names-crosscheck.json",
+          "data/evidence/B07-fine-stroke-names-crosscheck.json",
+          "data/evidence/B08-fine-stroke-names-crosscheck.json",
+          "data/evidence/B09-fine-stroke-names-crosscheck.json",
+          "data/evidence/B10-fine-stroke-names-crosscheck.json",
+          "data/evidence/B11-fine-stroke-names-crosscheck.json"
+        ],
+        "result_summary": {
+          "secondary_exact_sequence_match": 32,
+          "secondary_source_ambiguous_candidate_compatible": 5,
+          "secondary_sequence_located_candidate_absent_or_length_mismatch": 20,
+          "conflict_secondary_vs_candidate": 4,
+          "secondary_dataset_target_missing": 19
+        },
+        "canonical_summary": {
+          "secondary_crosschecked": 32,
+          "source_ambiguous_compatible": 5,
+          "secondary_located_candidate_migration_pending": 19,
+          "conflict_secondary_vs_candidate": 4,
+          "secondary_dataset_target_missing": 19,
+          "preserved_existing_authoritative_conflict": [
+            "牙"
+          ]
+        },
+        "conflict_characters": [
+          "几",
+          "凵",
+          "风",
+          "心"
+        ],
+        "ambiguous_characters": [
+          "弋",
+          "支",
+          "攴",
+          "氏",
+          "欠"
+        ],
+        "preserved_conflict": "牙第2笔撇折/竖折继续conflict_fail_closed；D03只提供二次定位，不覆盖原冲突。",
+        "method": "逐字符读取固定stroke-order-jian.json字母序列，再用固定stroke-table.json转换细笔名；与canonical stroke_names_candidate逐笔比较。",
+        "limits": "所有结果都不是规范原页review。cnchar明确存在五组同码双名；二次冲突只触发fail-closed，不自动裁决候选错误。"
+      }
     }
   ]
 }
