@@ -141,6 +141,20 @@ B04—B11共80个不同主部首完成`cnchar-order`二次逐笔细分类定位/
 
 cnchar文档明确存在五组同码双名，因此本轮**只推进secondary crosscheck/locator，不替代GF2001、GF0023或S04规范原页**。牙第2笔“撇折/竖折”继续原有`conflict_fail_closed`。
 
+## 最新80项细笔名二次定位：B12—B19（2026-10-05）
+
+B12—B19共80个不同主部首完成`cnchar-order`二次逐笔细分类定位。固定来源为`theajack/cnchar` pinned ref `b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550`。
+
+结果：
+- **62项**取得单义逐笔细分类序列；
+- **12项**取得序列但源自身存在同码双名：殳、穴、疋、皮、矛、虍、色、麦、龟、角、鱼、骨；
+- **6项**该二次数据不覆盖目标：屮、疒、癶、覀、龺、鬥；
+- **0项**出现序列长度与canonical baseline笔数冲突。
+
+B12—B19此前没有逐笔细笔名candidate，因此本轮只形成secondary locator，不称crosscheck。所有项目在GF2001/GF0023/S04等适用规范原页review前都不得标最终`fine_stroke_names reviewed`。
+
+同名分支早期并行推进曾因B19写路径触发tooling_write_blocker而切换到B20；随后B19已经恢复成功。B20额外locator evidence保留，但不计入本轮80项主吞吐。
+
 ## 当前主要未决字段
 
 1. GF0011—2022精确主项字形、附形、名称和编码；
@@ -166,7 +180,7 @@ B03内容层视为`content_ready`。artwork/layout人工记录已存在；PDF归
 ## 下一内容工作
 
 1. 继续清理少量review/状态同步债；B20 component-name machine evidence已补齐；
-2. 下一轮主吞吐继续攻**GF0023/GF2001/S04原页笔顺与细笔名review**；B04—B11已有笔顺交叉与细笔名二次分层，B12—B19已有stroke-order secondary locator，可直接据此回原页确认；常规单轮目标80个不同主部首，无真实阻塞时至少推进60项；
+2. 下一轮主吞吐继续攻**GF0023/GF2001/S04原页笔顺与细笔名review**；B04—B11已有笔顺交叉与细笔名二次分层，B12—B19现在同时具备stroke-order与fine-stroke secondary locator，可直接据此回原页确认；常规单轮目标80个不同主部首，无真实阻塞时至少推进60项；
 3. 结构字段继续利用GF0013—2009等适用来源逐批闭合，但不外推2022部首身份；
 4. 位置迁移继续回目标整字核验；
 5. GF0011—2022逐项精确字段继续由Issue #4并行追踪。
