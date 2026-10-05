@@ -49,7 +49,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -61,8 +61,19 @@
       "migration_boundary": "“壮”只作整字迁移语境；丬的规范名称和位置形态待S03/GF0011原页核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B10-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "structure": {
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B10-structure.json"
+      }
     },
     {
       "character": "幺",
@@ -100,7 +111,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -112,8 +123,19 @@
       "migration_boundary": "“幼”只作左部语境；幺在整字中的压缩比例另核。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B10-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "structure": {
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B10-structure.json"
+      }
     },
     {
       "character": "攴",
@@ -152,7 +174,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -165,8 +187,19 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
-        "攴与攵的主/附关系不得仅凭字形相近确定"
-      ]
+        "攴与攵的主/附关系不得仅凭字形相近确定",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B10-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "structure": {
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B10-structure.json"
+      }
     },
     {
       "character": "氏",
@@ -205,7 +238,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -218,7 +251,18 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B10-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      },
+      "structure": {
+        "status": "reviewed_S07_GF0013_2009_undecomposable",
+        "class": "undecomposable",
+        "evidence": "data/evidence/B10-structure.json"
+      }
     },
     {
       "character": "欠",
@@ -257,7 +301,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -270,8 +314,19 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
-        "欠第2笔候选名称需以目标原页为准"
-      ]
+        "欠第2笔候选名称需以目标原页为准",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B10-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "structure": {
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B10-structure.json"
+      }
     },
     {
       "character": "风",
@@ -310,7 +365,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -322,8 +377,19 @@
       "migration_boundary": "独体“风”为主练习形；作部件时的压缩和附形另核。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B10-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "structure": {
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B10-structure.json"
+      }
     },
     {
       "character": "方",
@@ -362,7 +428,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -375,7 +441,18 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B10-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      },
+      "structure": {
+        "status": "reviewed_S07_GF0013_2009_undecomposable",
+        "class": "undecomposable",
+        "evidence": "data/evidence/B10-structure.json"
+      }
     },
     {
       "character": "斗",
@@ -414,7 +491,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -427,7 +504,18 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B10-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      },
+      "structure": {
+        "status": "reviewed_S07_GF0013_2009_undecomposable",
+        "class": "undecomposable",
+        "evidence": "data/evidence/B10-structure.json"
+      }
     },
     {
       "character": "户",
@@ -466,7 +554,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -479,7 +567,18 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B10-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      },
+      "structure": {
+        "status": "reviewed_S07_GF0013_2009_undecomposable",
+        "class": "undecomposable",
+        "evidence": "data/evidence/B10-structure.json"
+      }
     },
     {
       "character": "心",
@@ -518,7 +617,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -532,8 +631,20 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "心→忄/⺗的附形或教学变体关系待GF0011—2022及整字证据核验"
-      ]
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B10-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      },
+      "structure": {
+        "status": "reviewed_S07_GF0013_2009_undecomposable",
+        "class": "undecomposable",
+        "evidence": "data/evidence/B10-structure.json"
+      }
     }
   ],
-  "phase1_rule": "当前只建立可追溯内容稿。候选笔顺/细笔名不得因写入data文件而视为reviewed；必须在对应原页和机器证据真实入库后逐字段升级。"
+  "phase1_rule": "当前只建立可追溯内容稿。候选笔顺/细笔名不得因写入data文件而视为reviewed；必须在对应原页和机器证据真实入库后逐字段升级。",
+  "structure_evidence": "data/evidence/B10-structure.json"
 }
