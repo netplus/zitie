@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_historical_primary_visual_review",
+  "batch_id": "B06",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "source": {
+    "source_id": "S04",
+    "publication_id": "1997-STROKE-ORDER",
+    "sha256": "ca8a0139744cf8105cb7e4ae7464ebc68cb76310b5a29e7cf004b2489a35ae65",
+    "artifact_id": 11010600883,
+    "artifact_run_id": 36514754022,
+    "method": "rendered_original_scan_visual_review_no_OCR",
+    "complete_scan": {
+      "pdf_pages": [
+        6,
+        26
+      ],
+      "printed_pages": [
+        1,
+        21
+      ],
+      "stroke_count_range": [
+        1,
+        5
+      ]
+    }
+  },
+  "identity_binding": "main_id and batch_id bind to canonical data/B06.json.",
+  "entries": [
+    {
+      "main_id": 7,
+      "result": "matched",
+      "pdf_page": 6,
+      "printed_page": 1,
+      "column": "L",
+      "row": 6,
+      "order_code": "13"
+    },
+    {
+      "main_id": 8,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 9,
+      "result": "matched",
+      "pdf_page": 6,
+      "printed_page": 1,
+      "column": "L",
+      "row": 8,
+      "order_code": "24"
+    },
+    {
+      "main_id": 10,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 13,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 14,
+      "result": "matched",
+      "pdf_page": 6,
+      "printed_page": 1,
+      "column": "R",
+      "row": 3,
+      "order_code": "35"
+    },
+    {
+      "main_id": 15,
+      "result": "matched",
+      "pdf_page": 6,
+      "printed_page": 1,
+      "column": "R",
+      "row": 5,
+      "order_code": "35"
+    },
+    {
+      "main_id": 16,
+      "result": "matched",
+      "pdf_page": 6,
+      "printed_page": 1,
+      "column": "R",
+      "row": 6,
+      "order_code": "35"
+    },
+    {
+      "main_id": 17,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 18,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    }
+  ],
+  "decision": "matched entries gain S04 historical original-page stroke-order review; no-exact entries keep GF0023-2020 original-page review pending and do not infer component order from similar full characters.",
+  "limits": [
+    "stroke_order only; no support for fine-stroke naming, target-edition identity, or positional variants."
+  ]
+}
