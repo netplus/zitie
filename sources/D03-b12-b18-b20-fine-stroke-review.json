@@ -1,0 +1,44 @@
+{
+  "schema_version": 1,
+  "record_kind": "source_review_supplement",
+  "reviewed_at": "2026-10-05",
+  "source_id": "D03",
+  "scope_batches": [
+    "B12",
+    "B13",
+    "B14",
+    "B15",
+    "B16",
+    "B17",
+    "B18",
+    "B20"
+  ],
+  "target_count": 80,
+  "source": {
+    "repository": "theajack/cnchar",
+    "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+    "order_file": "src/cnchar/plugin/order/dict/stroke-order-jian.json",
+    "order_blob_sha": "848fcb630a5a0ebbb868afd9f3f5abc63e847ac3",
+    "stroke_table_file": "src/cnchar/plugin/order/dict/stroke-table.json",
+    "stroke_table_blob_sha": "6c07faad47c543ee06daeac22aec8eaedf11c603",
+    "license": "MIT"
+  },
+  "result_summary": {
+    "secondary_sequence_located": 75,
+    "secondary_dataset_target_missing": 5,
+    "canonical_candidate_present": 0
+  },
+  "missing_targets": [
+    "屮",
+    "疒",
+    "癶",
+    "覀",
+    "龺"
+  ],
+  "substitution": {
+    "blocked_batch": "B19",
+    "substitute_batch": "B20",
+    "reason": "B19 evidence write hit tooling_write_blocker; switched immediately to independent B20 field work"
+  },
+  "limits": "Secondary fine-stroke locator only; normative original-page review is still required."
+}
