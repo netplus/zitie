@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_kind": "phase1_content_draft",
   "batch_id": "B07",
-  "version": "content-draft-2026-10-02",
+  "version": "content-draft-2026-10-05",
   "title": "二三画常用偏旁与包围迁移",
   "content_status": "in_progress",
   "artwork_status": "deferred",
@@ -48,7 +48,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -60,8 +60,15 @@
       "migration_boundary": "只把“写”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B07-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "凵",
@@ -98,7 +105,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -110,8 +117,15 @@
       "migration_boundary": "只把“凶”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B07-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "卩",
@@ -148,7 +162,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -160,8 +174,15 @@
       "migration_boundary": "只把“却”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B07-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "厶",
@@ -198,7 +219,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -210,8 +231,15 @@
       "migration_boundary": "只把“公”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B07-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "廴",
@@ -248,7 +276,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -260,8 +288,15 @@
       "migration_boundary": "只把“建”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B07-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "艹",
@@ -299,7 +334,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -311,8 +346,15 @@
       "migration_boundary": "只把“草”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B07-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "廾",
@@ -350,7 +392,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -362,8 +404,15 @@
       "migration_boundary": "只把“弄”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B07-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "宀",
@@ -401,7 +450,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -413,8 +462,15 @@
       "migration_boundary": "只把“家”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B07-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "辶",
@@ -452,7 +508,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -464,8 +520,15 @@
       "migration_boundary": "只把“近”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B07-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "彐",
@@ -503,7 +566,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
@@ -515,9 +578,17 @@
       "migration_boundary": "只把“雪”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+        "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B07-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     }
   ],
-  "phase1_rule": "当前只建立可追溯内容稿。候选笔顺/细笔名不得因写入data/B07.json而视为reviewed；必须在对应原页和机器证据真实入库后逐字段升级。"
+  "phase1_rule": "当前只建立可追溯内容稿。候选笔顺/细笔名不得因写入data/B07.json而视为reviewed；必须在对应原页和机器证据真实入库后逐字段升级。",
+  "structure_evidence": "data/evidence/B07-structure.json"
 }
