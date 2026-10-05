@@ -1,0 +1,112 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_historical_primary_visual_review",
+  "batch_id": "B09",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "source": {
+    "source_id": "S04",
+    "publication_id": "1997-STROKE-ORDER",
+    "sha256": "ca8a0139744cf8105cb7e4ae7464ebc68cb76310b5a29e7cf004b2489a35ae65",
+    "artifact_id": 11010600883,
+    "artifact_run_id": 36514754022,
+    "method": "rendered_original_scan_visual_review_no_OCR"
+  },
+  "identity_binding": "main_id and batch_id bind to canonical data/B09.json.",
+  "entries": [
+    {
+      "main_id": 63,
+      "pdf_page": 10,
+      "printed_page": 5,
+      "column": "R",
+      "row": 2,
+      "order_code": "1152",
+      "result": "matched"
+    },
+    {
+      "main_id": 65,
+      "pdf_page": 11,
+      "printed_page": 6,
+      "column": "L",
+      "row": 1,
+      "order_code": "1254",
+      "result": "matched"
+    },
+    {
+      "main_id": 71,
+      "pdf_page": 11,
+      "printed_page": 6,
+      "column": "R",
+      "row": 10,
+      "order_code": "1535",
+      "result": "matched"
+    },
+    {
+      "main_id": 81,
+      "pdf_page": 12,
+      "printed_page": 7,
+      "column": "R",
+      "row": 8,
+      "order_code": "3115",
+      "result": "matched"
+    },
+    {
+      "main_id": 83,
+      "pdf_page": 13,
+      "printed_page": 8,
+      "column": "L",
+      "row": 2,
+      "order_code": "3154",
+      "result": "matched"
+    },
+    {
+      "main_id": 84,
+      "pdf_page": 13,
+      "printed_page": 8,
+      "column": "L",
+      "row": 6,
+      "order_code": "3215",
+      "result": "matched"
+    },
+    {
+      "main_id": 85,
+      "pdf_page": 13,
+      "printed_page": 8,
+      "column": "R",
+      "row": 5,
+      "order_code": "3312",
+      "result": "matched"
+    },
+    {
+      "main_id": 86,
+      "pdf_page": 13,
+      "printed_page": 8,
+      "column": "R",
+      "row": 6,
+      "order_code": "3324",
+      "result": "matched"
+    },
+    {
+      "main_id": 87,
+      "pdf_page": 14,
+      "printed_page": 9,
+      "column": "L",
+      "row": 1,
+      "order_code": "3434",
+      "result": "matched"
+    },
+    {
+      "main_id": 93,
+      "pdf_page": 15,
+      "printed_page": 10,
+      "column": "L",
+      "row": 4,
+      "order_code": "4134",
+      "result": "matched"
+    }
+  ],
+  "decision": "All ten targets gain S04 historical original-page stroke-order review; GF0023-2020 original-page final review remains pending.",
+  "limits": [
+    "stroke_order only; no inference to fine-stroke names or positional variants."
+  ]
+}
