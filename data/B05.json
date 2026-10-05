@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_kind": "phase1_content_draft",
   "batch_id": "B05",
-  "version": "content-draft-2026-10-02",
+  "version": "content-draft-2026-10-05",
   "content_status": "in_progress",
   "artwork_status": "deferred",
   "publication_status": "deferred",
@@ -10,7 +10,7 @@
   "release_eligible": false,
   "target_edition": "GF0011—2022",
   "target_edition_status": "exact_fields_pending",
-  "evidence_migration_status": "local_checkpoints_exist_repo_review_evidence_pending",
+  "evidence_migration_status": "baseline_component_name_teaching_evidence_in_repo_structure_stroke_metadata_pending",
   "entries": [
     {
       "character": "无",
@@ -38,18 +38,19 @@
         "formal_variant_promoted": false
       },
       "field_status": {
-        "target_identity": "pending_GF0011_2022_exact_fields",
+        "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "candidate_reviewed_local_evidence_to_migrate",
         "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
         "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
         "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
-        "component_name": "candidate_reviewed_local_evidence_to_migrate",
-        "teaching_text": "draft_reviewed",
-        "whole_character_context": "context_selected_not_variant_promotion"
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline"
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+        "结构、笔顺、细笔名、采用读音仍需对应权威review/evidence；位置迁移仍须回整字核验"
       ]
     },
     {
@@ -78,18 +79,19 @@
         "formal_variant_promoted": false
       },
       "field_status": {
-        "target_identity": "pending_GF0011_2022_exact_fields",
+        "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "candidate_reviewed_local_evidence_to_migrate",
         "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
         "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
         "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
-        "component_name": "candidate_reviewed_local_evidence_to_migrate",
-        "teaching_text": "draft_reviewed",
-        "whole_character_context": "context_selected_not_variant_promotion"
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline"
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+        "结构、笔顺、细笔名、采用读音仍需对应权威review/evidence；位置迁移仍须回整字核验"
       ]
     },
     {
@@ -118,18 +120,19 @@
         "formal_variant_promoted": false
       },
       "field_status": {
-        "target_identity": "pending_GF0011_2022_exact_fields",
+        "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "candidate_reviewed_local_evidence_to_migrate",
         "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
         "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
         "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
-        "component_name": "candidate_reviewed_local_evidence_to_migrate",
-        "teaching_text": "draft_reviewed",
-        "whole_character_context": "context_selected_not_variant_promotion"
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline"
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+        "结构、笔顺、细笔名、采用读音仍需对应权威review/evidence；位置迁移仍须回整字核验"
       ]
     },
     {
@@ -158,18 +161,19 @@
         "formal_variant_promoted": false
       },
       "field_status": {
-        "target_identity": "pending_GF0011_2022_exact_fields",
+        "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "candidate_reviewed_local_evidence_to_migrate",
         "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
         "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
         "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
-        "component_name": "candidate_reviewed_local_evidence_to_migrate",
-        "teaching_text": "draft_reviewed",
-        "whole_character_context": "context_selected_not_variant_promotion"
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline"
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+        "结构、笔顺、细笔名、采用读音仍需对应权威review/evidence；位置迁移仍须回整字核验"
       ]
     },
     {
@@ -198,19 +202,20 @@
         "formal_variant_promoted": false
       },
       "field_status": {
-        "target_identity": "pending_GF0011_2022_exact_fields",
+        "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "candidate_reviewed_local_evidence_to_migrate",
         "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
         "fine_stroke_names": "conflict_fail_closed",
         "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
-        "component_name": "candidate_reviewed_local_evidence_to_migrate",
-        "teaching_text": "draft_reviewed",
-        "whole_character_context": "context_selected_not_variant_promotion"
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline"
       },
       "unresolved": [
-        "牙第2笔“撇折/竖折”权威冲突，须回GF2001与GF0023/S04原页裁决",
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+        "结构、笔顺、细笔名、采用读音仍需对应权威review/evidence；位置迁移仍须回整字核验",
+        "牙第2笔“撇折/竖折”权威冲突，须回GF2001与GF0023/S04原页裁决"
       ]
     },
     {
@@ -239,18 +244,19 @@
         "formal_variant_promoted": false
       },
       "field_status": {
-        "target_identity": "pending_GF0011_2022_exact_fields",
+        "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "candidate_reviewed_local_evidence_to_migrate",
         "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
         "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
         "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
-        "component_name": "candidate_reviewed_local_evidence_to_migrate",
-        "teaching_text": "draft_reviewed",
-        "whole_character_context": "context_selected_not_variant_promotion"
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline"
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+        "结构、笔顺、细笔名、采用读音仍需对应权威review/evidence；位置迁移仍须回整字核验"
       ]
     },
     {
@@ -279,18 +285,19 @@
         "formal_variant_promoted": false
       },
       "field_status": {
-        "target_identity": "pending_GF0011_2022_exact_fields",
+        "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "candidate_reviewed_local_evidence_to_migrate",
         "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
         "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
         "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
-        "component_name": "candidate_reviewed_local_evidence_to_migrate",
-        "teaching_text": "draft_reviewed",
-        "whole_character_context": "context_selected_not_variant_promotion"
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline"
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+        "结构、笔顺、细笔名、采用读音仍需对应权威review/evidence；位置迁移仍须回整字核验"
       ]
     },
     {
@@ -319,18 +326,19 @@
         "formal_variant_promoted": false
       },
       "field_status": {
-        "target_identity": "pending_GF0011_2022_exact_fields",
+        "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "candidate_reviewed_local_evidence_to_migrate",
         "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
         "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
         "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
-        "component_name": "candidate_reviewed_local_evidence_to_migrate",
-        "teaching_text": "draft_reviewed",
-        "whole_character_context": "context_selected_not_variant_promotion"
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline"
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+        "结构、笔顺、细笔名、采用读音仍需对应权威review/evidence；位置迁移仍须回整字核验"
       ]
     },
     {
@@ -359,18 +367,19 @@
         "formal_variant_promoted": false
       },
       "field_status": {
-        "target_identity": "pending_GF0011_2022_exact_fields",
+        "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "candidate_reviewed_local_evidence_to_migrate",
         "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
         "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
         "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
-        "component_name": "candidate_reviewed_local_evidence_to_migrate",
-        "teaching_text": "draft_reviewed",
-        "whole_character_context": "context_selected_not_variant_promotion"
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline"
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+        "结构、笔顺、细笔名、采用读音仍需对应权威review/evidence；位置迁移仍须回整字核验"
       ]
     },
     {
@@ -399,18 +408,19 @@
         "formal_variant_promoted": false
       },
       "field_status": {
-        "target_identity": "pending_GF0011_2022_exact_fields",
+        "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "candidate_reviewed_local_evidence_to_migrate",
         "stroke_order": "candidate_reviewed_local_evidence_to_migrate",
         "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
         "pronunciation": "candidate_reviewed_local_evidence_to_migrate",
-        "component_name": "candidate_reviewed_local_evidence_to_migrate",
-        "teaching_text": "draft_reviewed",
-        "whole_character_context": "context_selected_not_variant_promotion"
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline"
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "阶段1现有本地证据需迁入仓库review/evidence后才能升级为content_ready"
+        "结构、笔顺、细笔名、采用读音仍需对应权威review/evidence；位置迁移仍须回整字核验"
       ]
     }
   ],
