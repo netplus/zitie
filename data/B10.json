@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_kind": "phase1_content_draft",
   "batch_id": "B10",
-  "version": "content-draft-2026-10-02",
+  "version": "content-draft-2026-10-05",
   "title": "常用四画部件与迁移",
   "content_status": "in_progress",
   "artwork_status": "deferred",
@@ -34,9 +34,9 @@
         "structure_class": "left_right"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "将（jiàng）字旁",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -50,18 +50,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "“壮”只作整字迁移语境；丬的规范名称和位置形态待S03/GF0011原页核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
       ]
     },
@@ -86,9 +85,9 @@
         "structure_class": "left_right"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "幺（yāo）/幼（yòu）字旁",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -102,18 +101,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "“幼”只作左部语境；幺在整字中的压缩比例另核。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
       ]
     },
@@ -139,9 +137,9 @@
         "structure_class": "left_right"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "攴（pū）/敲（qiāo）字边",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -155,18 +153,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "“敲”用于观察攴作右部；攵属于位置变形线索，另行逐字核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "攴与攵的主/附关系不得仅凭字形相近确定"
       ]
@@ -193,9 +190,9 @@
         "structure_class": "left_right"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "氏（shì）",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -209,18 +206,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "“纸”只作右部语境；氏在整字中的形态和空间压缩另核。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
       ]
     },
@@ -246,9 +242,9 @@
         "structure_class": "left_right"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "欠（qiàn）",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -262,18 +258,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "“吹”只作右部语境；欠的第2笔细名保持pending。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "欠第2笔候选名称需以目标原页为准"
       ]
@@ -300,9 +295,9 @@
         "structure_class": "undecomposable"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "风（fēng）",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -316,18 +311,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "独体“风”为主练习形；作部件时的压缩和附形另核。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
       ]
     },
@@ -353,9 +347,9 @@
         "structure_class": "top_bottom"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "方（fāng）",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -369,18 +363,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "“房”用于观察方在下部语境；整字结构和比例另核。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
       ]
     },
@@ -406,9 +399,9 @@
         "structure_class": "left_right"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "斗（dǒu）",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -422,18 +415,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "“料”只作右部语境；斗的偏旁比例另核。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
       ]
     },
@@ -459,9 +451,9 @@
         "structure_class": "semi_enclosing"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "户（hù）",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -475,18 +467,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "“房”用于观察户作上部；包围关系及后续内部书写时序另核。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
       ]
     },
@@ -512,9 +503,9 @@
         "structure_class": "top_bottom"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "心（xīn）",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -528,18 +519,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "“思”只作心字底语境；忄等位置变体不得由独体心自动外推。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "心→忄/⺗的附形或教学变体关系待GF0011—2022及整字证据核验"
       ]
