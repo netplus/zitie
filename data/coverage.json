@@ -152,6 +152,65 @@
       "generated_main_count": 0,
       "release_eligible": false,
       "limits": "阶段1内容稿；牙第2笔存在权威材料冲突，专用机器evidence尚待迁入，GF0011—2022精确字段继续pending。"
+    },
+    "B06": {
+      "main_ids": [
+        7,
+        8,
+        9,
+        10,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18
+      ],
+      "content_record": "data/B06.json",
+      "baseline_evidence": "data/evidence/B06-content.json",
+      "component_name_evidence": "data/evidence/B06-component-name.json",
+      "content_status": "in_progress",
+      "reviewed_fields": [
+        "baseline_identity",
+        "main_id",
+        "stroke_count",
+        "component_name"
+      ],
+      "generated_main_count": 0,
+      "release_eligible": false,
+      "limits": "教学编辑专用evidence及结构、逐笔笔顺、细笔名、采用读音、正式位置迁移仍pending；GF0011—2022精确字段未关闭。"
+    },
+    "B07": {
+      "main_ids": [
+        19,
+        20,
+        21,
+        25,
+        26,
+        30,
+        32,
+        48,
+        49,
+        50
+      ],
+      "content_record": "data/B07.json",
+      "baseline_evidence": "data/evidence/B07-content.json",
+      "component_name_evidence": "data/evidence/B07-component-name.json",
+      "teaching_evidence": "data/evidence/B07-teaching-review.json",
+      "content_status": "in_progress",
+      "reviewed_fields": [
+        "baseline_identity",
+        "main_id",
+        "stroke_count",
+        "component_name",
+        "teaching_tips",
+        "self_check",
+        "whole_character_context_editorial_consistency",
+        "migration_boundary_editorial_consistency"
+      ],
+      "generated_main_count": 0,
+      "release_eligible": false,
+      "limits": "结构、逐笔笔顺、细笔名、采用读音和正式位置迁移仍pending；教学editorial review不等于权威位置变体核验。"
     }
   },
   "default_status": {
@@ -193,6 +252,6 @@
     ],
     "next_assignment_starts_at": null,
     "next_work": "existing_batch_field_closure",
-    "note": "201个主部首范围已全部分配至B01—B21；当前吞吐重点转为既有批次字段级证据闭合。B19 canonical+人工review已入库；B20 baseline evidence+人工review+教学编辑evidence已入库。content_ready仍仅B01—B03。"
+    "note": "201个主部首范围已全部分配至B01—B21；B06/B07已补齐baseline字段同步，B06十项S03名称已同步canonical，B07名称与教学editorial evidence保持reviewed。当前content_ready仍仅B01—B03。"
   }
 }
