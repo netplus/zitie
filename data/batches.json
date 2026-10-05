@@ -233,13 +233,13 @@
       "prerequisites": [
         "B15_content_scope"
       ],
-      "note": "canonical data与baseline machine evidence已入库；人工review文件仍含旧的evidence pending描述，待同步。baseline_identity/main_id/stroke_count可按evidence计reviewed，其余权威字段继续pending。"
+      "note": "baseline、S03名称适用性与教学编辑evidence均已入库并同步canonical；赤、豆、酉、辰、豕、卤、里、身的component_name已reviewed，足、邑为S03已核无精确独立整形条目并转替代权威来源pending；结构、笔顺/细笔名、读音、2022精确字段与正式位置迁移继续pending。"
     },
     {
       "id": "B17",
       "title": "七八画常用部件与迁移",
       "main_glyphs": "釆谷豸龟角言辛青龺雨",
-      "note": "baseline machine evidence、canonical data与教学文本编辑一致性evidence已入库；teaching_text/self-check/context/migration boundary完成阶段1编辑复核，人工content review文件仍缺失；其它权威字段继续pending。",
+      "note": "baseline、S03名称适用性与教学编辑evidence均已入库并同步canonical；谷、豸、龟、角、言、辛、雨的component_name已reviewed，釆、青、龺为S03已核无精确独立整形条目并转替代权威来源pending；人工content review文件仍受tooling_write_blocker，结构、笔顺/细笔名、读音、2022精确字段与正式位置迁移继续pending。",
       "scope_frozen_for_content": true,
       "publication_frozen": false,
       "content_status": "in_progress",
