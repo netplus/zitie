@@ -1,0 +1,131 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_pronunciation_review_evidence",
+  "batch_id": "B06",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S03",
+    "publication_id": "GF0014—2009",
+    "title": "现代常用字部件及部件名称规范",
+    "publisher": "教育部、国家语委",
+    "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+    "source_ledger": "sources/catalog.json",
+    "byte_identity_to_catalog_copy": "not_checked_this_run",
+    "method": "exact_target_component_name_row_crosscheck; B20 exact rows additionally rechecked visually this run"
+  },
+  "reviewed_field": "pronunciation",
+  "rule": "仅当S03精确目标部件条目的名称栏以目标字形自身开头，并紧随该目标自身括号拼音时，才关闭采用读音；名称型标签、其它例字读音或无精确独立整形条目均保持pending。",
+  "entries": [
+    {
+      "character": "厂",
+      "main_id": 7,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "chǎng",
+      "component_name": "厂（chǎng）",
+      "sequence_no": 40,
+      "group_no": 35,
+      "printed_page": 8,
+      "pdf_page": 11
+    },
+    {
+      "character": "匚",
+      "main_id": 8,
+      "result": "S03_name_row_does_not_supply_target_self_pronunciation",
+      "component_name": "区（qū）字框",
+      "nearest_note": null,
+      "printed_page": 14,
+      "pdf_page": 17
+    },
+    {
+      "character": "卜",
+      "main_id": 9,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "bǔ",
+      "component_name": "卜（bǔ）",
+      "sequence_no": 27,
+      "group_no": 25,
+      "printed_page": 7,
+      "pdf_page": 10
+    },
+    {
+      "character": "冂",
+      "main_id": 10,
+      "result": "S03_name_row_does_not_supply_target_self_pronunciation",
+      "component_name": "同（tóng）字框",
+      "nearest_note": null,
+      "printed_page": 16,
+      "pdf_page": 19
+    },
+    {
+      "character": "勹",
+      "main_id": 13,
+      "result": "S03_name_row_does_not_supply_target_self_pronunciation",
+      "component_name": "句（jù）字框",
+      "nearest_note": null,
+      "printed_page": 12,
+      "pdf_page": 15
+    },
+    {
+      "character": "儿",
+      "main_id": 14,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "ér",
+      "component_name": "儿（ér）",
+      "sequence_no": 294,
+      "group_no": 255,
+      "printed_page": 14,
+      "pdf_page": 17
+    },
+    {
+      "character": "匕",
+      "main_id": 15,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "bǐ",
+      "component_name": "匕（bǐ）",
+      "sequence_no": 19,
+      "group_no": 18,
+      "printed_page": 7,
+      "pdf_page": 10
+    },
+    {
+      "character": "几",
+      "main_id": 16,
+      "result": "direct_target_self_pronunciation_supported_by_S03_row",
+      "adopted_pronunciation": "jǐ",
+      "component_name": "几（jǐ）",
+      "sequence_no": 157,
+      "group_no": 137,
+      "printed_page": 11,
+      "pdf_page": 14
+    },
+    {
+      "character": "亠",
+      "main_id": 17,
+      "result": "S03_name_row_does_not_supply_target_self_pronunciation",
+      "component_name": "玄（xuán）字头",
+      "nearest_note": null,
+      "printed_page": 18,
+      "pdf_page": 21
+    },
+    {
+      "character": "冫",
+      "main_id": 18,
+      "result": "S03_name_row_does_not_supply_target_self_pronunciation",
+      "component_name": "两点水（liǎngdiǎnshuǐ）/冰（bīng）字旁",
+      "nearest_note": null,
+      "printed_page": 12,
+      "pdf_page": 15
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "pronunciation_closed": 5,
+    "pronunciation_pending": 5
+  },
+  "limits": [
+    "本证据只支持阶段1 adopted pronunciation；不支持GF0011—2022主附身份、结构、笔顺、细笔名或位置变体。",
+    "S03名称栏中的其它例字/位置名称拼音不得替代目标主形自身读音。"
+  ]
+}
