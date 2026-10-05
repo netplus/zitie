@@ -56,7 +56,8 @@
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "S03_no_exact_main_row_alternative_source_pending"
       },
       "migration_boundary": "“剂”仅作整字迁移语境；齐在左部的真实形态、主/附关系和完整时序须回规范原页与整字核验。",
       "unresolved": [
@@ -165,6 +166,17 @@
         "secondary_locator_result": "secondary_fine_stroke_sequence_located_candidate_absent",
         "fold_strokes": [],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B15-component-name.json",
+        "source_result": "no_exact_standalone_S03_row",
+        "component_name": null,
+        "printed_page": null,
+        "pdf_page": null,
+        "direct_position_role": null,
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -211,7 +223,8 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "S03_exact_row_no_position_label_whole_character_pending"
       },
       "migration_boundary": "“装”仅作整字迁移语境；底部衣的形态与时序须回完整整字和规范原页核验。",
       "unresolved": [
@@ -333,6 +346,17 @@
           }
         ],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B15-component-name.json",
+        "source_result": "matched_exact_S03_row",
+        "component_name": "衣（yī）",
+        "printed_page": 18,
+        "pdf_page": 21,
+        "direct_position_role": null,
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -379,7 +403,8 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "S03_exact_row_no_position_label_whole_character_pending"
       },
       "migration_boundary": "“群”仅作整字迁移语境；右部羊的比例、主/附关系和时序待整字证据确认。",
       "unresolved": [
@@ -485,6 +510,17 @@
         "secondary_locator_result": "secondary_fine_stroke_sequence_located_candidate_absent",
         "fold_strokes": [],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B15-component-name.json",
+        "source_result": "matched_exact_S03_row",
+        "component_name": "羊（yáng）",
+        "printed_page": 18,
+        "pdf_page": 21,
+        "direct_position_role": null,
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -531,7 +567,8 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "S03_exact_row_no_position_label_whole_character_pending"
       },
       "migration_boundary": "“粉”仅作整字迁移语境；左部米的形态和真实时序必须回整字与规范原页核验。",
       "unresolved": [
@@ -637,6 +674,17 @@
         "secondary_locator_result": "secondary_fine_stroke_sequence_located_candidate_absent",
         "fold_strokes": [],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B15-component-name.json",
+        "source_result": "matched_exact_S03_row",
+        "component_name": "米（mǐ）",
+        "printed_page": 13,
+        "pdf_page": 16,
+        "direct_position_role": null,
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -682,7 +730,8 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "S03_position_role_located_whole_character_pending"
       },
       "migration_boundary": "“律”仅作整字迁移语境；右部聿的形态、部件身份和完整时序待权威材料确认。",
       "unresolved": [
@@ -805,6 +854,17 @@
           }
         ],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B15-component-name.json",
+        "source_result": "matched_exact_S03_row",
+        "component_name": "聿（yù）/律（lǜ）字边",
+        "printed_page": 19,
+        "pdf_page": 22,
+        "direct_position_role": "side",
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -850,7 +910,8 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "S03_position_role_located_whole_character_pending"
       },
       "migration_boundary": "“很”仅作整字迁移语境；右部艮的真实写法及主/附关系不得从独体形自动外推。",
       "unresolved": [
@@ -988,6 +1049,17 @@
           }
         ],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B15-component-name.json",
+        "source_result": "matched_exact_S03_row",
+        "component_name": "艮（gèn）/根（gēn）字边",
+        "printed_page": 10,
+        "pdf_page": 13,
+        "direct_position_role": "side",
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -1033,7 +1105,8 @@
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "S03_no_exact_main_row_alternative_source_pending"
       },
       "migration_boundary": "“翔”仅作整字迁移语境；右部羽的真实形态和时序必须回完整整字核验。",
       "unresolved": [
@@ -1173,6 +1246,17 @@
           }
         ],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B15-component-name.json",
+        "source_result": "no_exact_standalone_S03_row",
+        "component_name": null,
+        "printed_page": null,
+        "pdf_page": null,
+        "direct_position_role": null,
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -1218,7 +1302,8 @@
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "S03_position_role_located_whole_character_pending"
       },
       "migration_boundary": "“累”仅作整字迁移语境；糸在下部的形态、编码对应和真实时序仍待目标规范与整字证据。",
       "unresolved": [
@@ -1372,6 +1457,17 @@
           }
         ],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B15-component-name.json",
+        "source_result": "matched_exact_S03_row",
+        "component_name": "绞丝底（jiǎosīdǐ）",
+        "printed_page": 11,
+        "pdf_page": 14,
+        "direct_position_role": "bottom",
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -1417,7 +1513,8 @@
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "S03_no_exact_main_row_alternative_source_pending"
       },
       "migration_boundary": "“麸”仅作整字迁移语境；左部麦的形态、主/附关系和完整时序须回规范原页核验。",
       "unresolved": [
@@ -1559,6 +1656,17 @@
           }
         ],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B15-component-name.json",
+        "source_result": "no_exact_standalone_S03_row",
+        "component_name": null,
+        "printed_page": null,
+        "pdf_page": null,
+        "direct_position_role": null,
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -1604,7 +1712,8 @@
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "S03_no_exact_main_row_alternative_source_pending"
       },
       "migration_boundary": "“超”仅作整字迁移语境；走作左下部件时的形态和包托时序必须回完整整字核验。",
       "unresolved": [
@@ -1722,6 +1831,17 @@
         "secondary_locator_result": "secondary_fine_stroke_sequence_located_candidate_absent",
         "fold_strokes": [],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B15-component-name.json",
+        "source_result": "no_exact_standalone_S03_row",
+        "component_name": null,
+        "printed_page": null,
+        "pdf_page": null,
+        "direct_position_role": null,
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     }
   ],
@@ -1731,5 +1851,6 @@
   "pronunciation_evidence": "data/evidence/B15-pronunciation.json",
   "stroke_order_secondary_locator_evidence": "data/evidence/B15-stroke-order-secondary-locator.json",
   "fine_stroke_names_secondary_locator_evidence": "data/evidence/B15-fine-stroke-names-secondary-locator.json",
-  "fine_stroke_gf2001_fold_evidence": "sources/reviews/GF2001-B12-B19-fold-locator-20261006.json"
+  "fine_stroke_gf2001_fold_evidence": "sources/reviews/GF2001-B12-B19-fold-locator-20261006.json",
+  "position_migration_semantic_evidence": "data/evidence/B15-component-name.json"
 }
