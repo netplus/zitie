@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_secondary_locator",
+  "batch_id": "B14",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "source": {
+    "source_kind": "secondary_digitization",
+    "repository": "takushun-wu/han-ideographs-stroke-order",
+    "file": "order.tsv",
+    "blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+    "license": "CC0-1.0",
+    "declared_primary_sources": [
+      "GF0023—2020《通用规范汉字笔顺规范》",
+      "ExcelHome笔画序库",
+      "CNMan/UnicodeCJK-WuBi"
+    ],
+    "limits": "用于二次定位与一致性检查，不替代GF0023—2020规范原页。"
+  },
+  "reviewed_field": "stroke_order_secondary_locator",
+  "entries": [
+    {
+      "character": "虫",
+      "main_id": 131,
+      "canonical_stroke_count": 6,
+      "derived": {
+        "rank": "1261",
+        "unicode": "U+866B",
+        "strokes": 6,
+        "order_code": "251214",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "肉",
+      "main_id": 132,
+      "canonical_stroke_count": 6,
+      "derived": {
+        "rank": "1315",
+        "unicode": "U+8089",
+        "strokes": 6,
+        "order_code": "253434",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "缶",
+      "main_id": 133,
+      "canonical_stroke_count": 6,
+      "derived": {
+        "rank": "1325",
+        "unicode": "U+7F36",
+        "strokes": 6,
+        "order_code": "311252",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "舌",
+      "main_id": 134,
+      "canonical_stroke_count": 6,
+      "derived": {
+        "rank": "1341",
+        "unicode": "U+820C",
+        "strokes": 6,
+        "order_code": "312251",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "竹",
+      "main_id": 135,
+      "canonical_stroke_count": 6,
+      "derived": {
+        "rank": "1343",
+        "unicode": "U+7AF9",
+        "strokes": 6,
+        "order_code": "312312",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "臼",
+      "main_id": 136,
+      "canonical_stroke_count": 6,
+      "derived": {
+        "rank": "1372",
+        "unicode": "U+81FC",
+        "strokes": 6,
+        "order_code": "321511",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "自",
+      "main_id": 137,
+      "canonical_stroke_count": 6,
+      "derived": {
+        "rank": "1425",
+        "unicode": "U+81EA",
+        "strokes": 6,
+        "order_code": "325111",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "血",
+      "main_id": 138,
+      "canonical_stroke_count": 6,
+      "derived": {
+        "rank": "1432",
+        "unicode": "U+8840",
+        "strokes": 6,
+        "order_code": "325221",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "舟",
+      "main_id": 139,
+      "canonical_stroke_count": 6,
+      "derived": {
+        "rank": "1449",
+        "unicode": "U+821F",
+        "strokes": 6,
+        "order_code": "335414",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "色",
+      "main_id": 140,
+      "canonical_stroke_count": 6,
+      "derived": {
+        "rank": "1517",
+        "unicode": "U+8272",
+        "strokes": 6,
+        "order_code": "355215",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "located": 10,
+    "missing": 0,
+    "stroke_count_conflicts": 0
+  },
+  "limits": [
+    "本证据只把stroke_order从pending推进到secondary-derived locator状态；规范原页视觉review前不得标最终reviewed。",
+    "派生order_code可作为后续原页定位/比对线索，不自动成为权威细笔名结论。",
+    "本证据不支持fine_stroke_names、GF0011—2022身份、结构、读音或位置变体。"
+  ]
+}

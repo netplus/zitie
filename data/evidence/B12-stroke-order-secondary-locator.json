@@ -1,0 +1,174 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_secondary_locator",
+  "batch_id": "B12",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "source": {
+    "source_kind": "secondary_digitization",
+    "repository": "takushun-wu/han-ideographs-stroke-order",
+    "file": "order.tsv",
+    "blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+    "license": "CC0-1.0",
+    "declared_primary_sources": [
+      "GF0023—2020《通用规范汉字笔顺规范》",
+      "ExcelHome笔画序库",
+      "CNMan/UnicodeCJK-WuBi"
+    ],
+    "limits": "用于二次定位与一致性检查，不替代GF0023—2020规范原页。"
+  },
+  "reviewed_field": "stroke_order_secondary_locator",
+  "entries": [
+    {
+      "character": "屮",
+      "main_id": 55,
+      "canonical_stroke_count": 3,
+      "derived": {
+        "rank": "245",
+        "unicode": "U+5C6E",
+        "strokes": 3,
+        "order_code": "522",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "巛",
+      "main_id": 60,
+      "canonical_stroke_count": 3,
+      "derived": {
+        "rank": "272",
+        "unicode": "U+5DDB",
+        "strokes": 3,
+        "order_code": "555",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "殳",
+      "main_id": 92,
+      "canonical_stroke_count": 4,
+      "derived": {
+        "rank": "485",
+        "unicode": "U+6BB3",
+        "strokes": 4,
+        "order_code": "3554",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "毋",
+      "main_id": 99,
+      "canonical_stroke_count": 4,
+      "derived": {
+        "rank": "571",
+        "unicode": "U+6BCB",
+        "strokes": 4,
+        "order_code": "5531",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "鸟",
+      "main_id": 114,
+      "canonical_stroke_count": 5,
+      "derived": {
+        "rank": "869",
+        "unicode": "U+9E1F",
+        "strokes": 5,
+        "order_code": "35451",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "疒",
+      "main_id": 115,
+      "canonical_stroke_count": 5,
+      "derived": {
+        "rank": "888",
+        "unicode": "U+7592",
+        "strokes": 5,
+        "order_code": "41341",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "穴",
+      "main_id": 117,
+      "canonical_stroke_count": 5,
+      "derived": {
+        "rank": "927",
+        "unicode": "U+7A74",
+        "strokes": 5,
+        "order_code": "44534",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "疋",
+      "main_id": 118,
+      "canonical_stroke_count": 5,
+      "derived": {
+        "rank": "970",
+        "unicode": "U+758B",
+        "strokes": 5,
+        "order_code": "52134",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "皮",
+      "main_id": 119,
+      "canonical_stroke_count": 5,
+      "derived": {
+        "rank": "991",
+        "unicode": "U+76AE",
+        "strokes": 5,
+        "order_code": "53254",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    },
+    {
+      "character": "癶",
+      "main_id": 120,
+      "canonical_stroke_count": 5,
+      "derived": {
+        "rank": "1004",
+        "unicode": "U+7676",
+        "strokes": 5,
+        "order_code": "54334",
+        "gb_order_code": null,
+        "gb_rank": "\r"
+      },
+      "result": "derived_order_locator_and_stroke_count_match"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "located": 10,
+    "missing": 0,
+    "stroke_count_conflicts": 0
+  },
+  "limits": [
+    "本证据只把stroke_order从pending推进到secondary-derived locator状态；规范原页视觉review前不得标最终reviewed。",
+    "派生order_code可作为后续原页定位/比对线索，不自动成为权威细笔名结论。",
+    "本证据不支持fine_stroke_names、GF0011—2022身份、结构、读音或位置变体。"
+  ]
+}

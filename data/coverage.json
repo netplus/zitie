@@ -391,10 +391,13 @@
         "baseline_stroke_group",
         "component_name_or_S03_applicability",
         "teaching_editorial_consistency",
-        "pronunciation_or_S03_applicability"
+        "pronunciation_or_S03_applicability",
+        "stroke_order_secondary_locator",
+        "derived_stroke_count_crosscheck"
       ],
-      "limits": "阶段1字段级检查点；S03仅在精确目标部件名称栏直接给出目标自身括号拼音时关闭采用读音；名称型标签、其它例字读音或无精确整形条目均保持pending。GF0011—2022精确身份、笔顺/细笔名和正式位置变体继续按各批证据状态处理。",
-      "pronunciation_evidence": "data/evidence/B12-pronunciation.json"
+      "limits": "阶段1字段级检查点；B12—B19的stroke_order已从完全pending推进到secondary-derived locator，派生笔数与canonical baseline一致。该数据不是GF0023规范原页，故规范原页视觉review前不得标最终reviewed；fine_stroke_names继续独立pending。",
+      "pronunciation_evidence": "data/evidence/B12-pronunciation.json",
+      "stroke_order_secondary_locator_evidence": "data/evidence/B12-stroke-order-secondary-locator.json"
     },
     "B13": {
       "main_ids": [
@@ -421,10 +424,13 @@
         "baseline_stroke_group",
         "component_name_or_S03_applicability",
         "teaching_editorial_consistency",
-        "pronunciation_or_S03_applicability"
+        "pronunciation_or_S03_applicability",
+        "stroke_order_secondary_locator",
+        "derived_stroke_count_crosscheck"
       ],
-      "limits": "阶段1字段级检查点；S03仅在精确目标部件名称栏直接给出目标自身括号拼音时关闭采用读音；名称型标签、其它例字读音或无精确整形条目均保持pending。GF0011—2022精确身份、笔顺/细笔名和正式位置变体继续按各批证据状态处理。",
-      "pronunciation_evidence": "data/evidence/B13-pronunciation.json"
+      "limits": "阶段1字段级检查点；B12—B19的stroke_order已从完全pending推进到secondary-derived locator，派生笔数与canonical baseline一致。该数据不是GF0023规范原页，故规范原页视觉review前不得标最终reviewed；fine_stroke_names继续独立pending。",
+      "pronunciation_evidence": "data/evidence/B13-pronunciation.json",
+      "stroke_order_secondary_locator_evidence": "data/evidence/B13-stroke-order-secondary-locator.json"
     },
     "B14": {
       "main_ids": [
@@ -449,10 +455,13 @@
         "baseline_identity",
         "main_id",
         "baseline_stroke_group",
-        "pronunciation_or_S03_applicability"
+        "pronunciation_or_S03_applicability",
+        "stroke_order_secondary_locator",
+        "derived_stroke_count_crosscheck"
       ],
-      "limits": "阶段1字段级检查点；S03仅在精确目标部件名称栏直接给出目标自身括号拼音时关闭采用读音；名称型标签、其它例字读音或无精确整形条目均保持pending。GF0011—2022精确身份、笔顺/细笔名和正式位置变体继续按各批证据状态处理。",
-      "pronunciation_evidence": "data/evidence/B14-pronunciation.json"
+      "limits": "阶段1字段级检查点；B12—B19的stroke_order已从完全pending推进到secondary-derived locator，派生笔数与canonical baseline一致。该数据不是GF0023规范原页，故规范原页视觉review前不得标最终reviewed；fine_stroke_names继续独立pending。",
+      "pronunciation_evidence": "data/evidence/B14-pronunciation.json",
+      "stroke_order_secondary_locator_evidence": "data/evidence/B14-stroke-order-secondary-locator.json"
     },
     "B15": {
       "main_ids": [
@@ -477,10 +486,13 @@
         "baseline_identity",
         "main_id",
         "baseline_stroke_group",
-        "pronunciation_or_S03_applicability"
+        "pronunciation_or_S03_applicability",
+        "stroke_order_secondary_locator",
+        "derived_stroke_count_crosscheck"
       ],
-      "limits": "阶段1字段级检查点；S03仅在精确目标部件名称栏直接给出目标自身括号拼音时关闭采用读音；名称型标签、其它例字读音或无精确整形条目均保持pending。GF0011—2022精确身份、笔顺/细笔名和正式位置变体继续按各批证据状态处理。",
-      "pronunciation_evidence": "data/evidence/B15-pronunciation.json"
+      "limits": "阶段1字段级检查点；B12—B19的stroke_order已从完全pending推进到secondary-derived locator，派生笔数与canonical baseline一致。该数据不是GF0023规范原页，故规范原页视觉review前不得标最终reviewed；fine_stroke_names继续独立pending。",
+      "pronunciation_evidence": "data/evidence/B15-pronunciation.json",
+      "stroke_order_secondary_locator_evidence": "data/evidence/B15-stroke-order-secondary-locator.json"
     },
     "B16": {
       "main_ids": [
@@ -505,10 +517,13 @@
         "baseline_identity",
         "main_id",
         "baseline_stroke_group",
-        "pronunciation_or_S03_applicability"
+        "pronunciation_or_S03_applicability",
+        "stroke_order_secondary_locator",
+        "derived_stroke_count_crosscheck"
       ],
-      "limits": "阶段1字段级检查点；S03仅在精确目标部件名称栏直接给出目标自身括号拼音时关闭采用读音；名称型标签、其它例字读音或无精确整形条目均保持pending。GF0011—2022精确身份、笔顺/细笔名和正式位置变体继续按各批证据状态处理。",
-      "pronunciation_evidence": "data/evidence/B16-pronunciation.json"
+      "limits": "阶段1字段级检查点；B12—B19的stroke_order已从完全pending推进到secondary-derived locator，派生笔数与canonical baseline一致。该数据不是GF0023规范原页，故规范原页视觉review前不得标最终reviewed；fine_stroke_names继续独立pending。",
+      "pronunciation_evidence": "data/evidence/B16-pronunciation.json",
+      "stroke_order_secondary_locator_evidence": "data/evidence/B16-stroke-order-secondary-locator.json"
     },
     "B17": {
       "main_ids": [
@@ -533,10 +548,13 @@
         "baseline_identity",
         "main_id",
         "baseline_stroke_group",
-        "pronunciation_or_S03_applicability"
+        "pronunciation_or_S03_applicability",
+        "stroke_order_secondary_locator",
+        "derived_stroke_count_crosscheck"
       ],
-      "limits": "阶段1字段级检查点；S03仅在精确目标部件名称栏直接给出目标自身括号拼音时关闭采用读音；名称型标签、其它例字读音或无精确整形条目均保持pending。GF0011—2022精确身份、笔顺/细笔名和正式位置变体继续按各批证据状态处理。",
-      "pronunciation_evidence": "data/evidence/B17-pronunciation.json"
+      "limits": "阶段1字段级检查点；B12—B19的stroke_order已从完全pending推进到secondary-derived locator，派生笔数与canonical baseline一致。该数据不是GF0023规范原页，故规范原页视觉review前不得标最终reviewed；fine_stroke_names继续独立pending。",
+      "pronunciation_evidence": "data/evidence/B17-pronunciation.json",
+      "stroke_order_secondary_locator_evidence": "data/evidence/B17-stroke-order-secondary-locator.json"
     },
     "B18": {
       "main_ids": [
@@ -561,10 +579,13 @@
         "baseline_identity",
         "main_id",
         "baseline_stroke_group",
-        "pronunciation_or_S03_applicability"
+        "pronunciation_or_S03_applicability",
+        "stroke_order_secondary_locator",
+        "derived_stroke_count_crosscheck"
       ],
-      "limits": "阶段1字段级检查点；S03仅在精确目标部件名称栏直接给出目标自身括号拼音时关闭采用读音；名称型标签、其它例字读音或无精确整形条目均保持pending。GF0011—2022精确身份、笔顺/细笔名和正式位置变体继续按各批证据状态处理。",
-      "pronunciation_evidence": "data/evidence/B18-pronunciation.json"
+      "limits": "阶段1字段级检查点；B12—B19的stroke_order已从完全pending推进到secondary-derived locator，派生笔数与canonical baseline一致。该数据不是GF0023规范原页，故规范原页视觉review前不得标最终reviewed；fine_stroke_names继续独立pending。",
+      "pronunciation_evidence": "data/evidence/B18-pronunciation.json",
+      "stroke_order_secondary_locator_evidence": "data/evidence/B18-stroke-order-secondary-locator.json"
     },
     "B19": {
       "main_ids": [
@@ -589,10 +610,13 @@
         "baseline_identity",
         "main_id",
         "baseline_stroke_group",
-        "pronunciation_or_S03_applicability"
+        "pronunciation_or_S03_applicability",
+        "stroke_order_secondary_locator",
+        "derived_stroke_count_crosscheck"
       ],
-      "limits": "阶段1字段级检查点；S03仅在精确目标部件名称栏直接给出目标自身括号拼音时关闭采用读音；名称型标签、其它例字读音或无精确整形条目均保持pending。GF0011—2022精确身份、笔顺/细笔名和正式位置变体继续按各批证据状态处理。",
-      "pronunciation_evidence": "data/evidence/B19-pronunciation.json"
+      "limits": "阶段1字段级检查点；B12—B19的stroke_order已从完全pending推进到secondary-derived locator，派生笔数与canonical baseline一致。该数据不是GF0023规范原页，故规范原页视觉review前不得标最终reviewed；fine_stroke_names继续独立pending。",
+      "pronunciation_evidence": "data/evidence/B19-pronunciation.json",
+      "stroke_order_secondary_locator_evidence": "data/evidence/B19-stroke-order-secondary-locator.json"
     },
     "B20": {
       "main_ids": [
@@ -663,6 +687,6 @@
     ],
     "next_assignment_starts_at": null,
     "next_work": "existing_batch_field_closure",
-    "note": "201个主部首范围已全部分配至B01—B21；2026-10-05 B04—B11共80项完成GF0023派生TSV笔顺码交叉核验，80/80一致、0冲突；stroke_order推进为crosschecked，规范原页视觉review仍待完成。下一主吞吐继续细笔名、GF0023原页review及剩余结构/迁移字段。content_ready仍仅B01—B03。"
+    "note": "201个主部首范围已全部分配至B01—B21；2026-10-05 B12—B19共80项完成GF0023派生TSV笔顺定位，80/80目标可定位且派生笔数与canonical一致，0缺失/0冲突；stroke_order推进为secondary-derived locator，GF0023原页review仍待完成。下一主吞吐继续GF0023原页笔顺review、细笔名及剩余结构/迁移字段。content_ready仍仅B01—B03。"
   }
 }

@@ -51,7 +51,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
@@ -61,7 +61,7 @@
       "migration_boundary": "“剂”仅作整字迁移语境；齐在左部的真实形态、主/附关系和完整时序须回规范原页与整字核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验",
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
@@ -81,6 +81,17 @@
         "publication_id": "GF0014—2009",
         "evidence": "data/evidence/B15-pronunciation.json",
         "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
+      },
+      "stroke_order_secondary_locator": {
+        "evidence": "data/evidence/B15-stroke-order-secondary-locator.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "order_code": "413432",
+        "unicode": "U+9F50",
+        "derived_rank": "1538",
+        "stroke_count": 6,
+        "result": "derived_order_locator_and_stroke_count_match"
       }
     },
     {
@@ -122,7 +133,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -132,7 +143,7 @@
       "migration_boundary": "“装”仅作整字迁移语境；底部衣的形态与时序须回完整整字和规范原页核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭",
         "位置迁移仍须回完整整字及适用规范原页核验"
       ],
       "component_name_status": "reviewed_S03_GF0014_2009",
@@ -149,6 +160,17 @@
         "evidence": "data/evidence/B15-pronunciation.json",
         "adopted_pronunciation": "yī",
         "result": "direct_target_self_pronunciation_supported_by_S03_row"
+      },
+      "stroke_order_secondary_locator": {
+        "evidence": "data/evidence/B15-stroke-order-secondary-locator.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "order_code": "413534",
+        "unicode": "U+8863",
+        "derived_rank": "1545",
+        "stroke_count": 6,
+        "result": "derived_order_locator_and_stroke_count_match"
       }
     },
     {
@@ -190,7 +212,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -200,7 +222,7 @@
       "migration_boundary": "“群”仅作整字迁移语境；右部羊的比例、主/附关系和时序待整字证据确认。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭",
         "位置迁移仍须回完整整字及适用规范原页核验"
       ],
       "component_name_status": "reviewed_S03_GF0014_2009",
@@ -217,6 +239,17 @@
         "evidence": "data/evidence/B15-pronunciation.json",
         "adopted_pronunciation": "yáng",
         "result": "direct_target_self_pronunciation_supported_by_S03_row"
+      },
+      "stroke_order_secondary_locator": {
+        "evidence": "data/evidence/B15-stroke-order-secondary-locator.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "order_code": "431112",
+        "unicode": "U+7F8A",
+        "derived_rank": "1567",
+        "stroke_count": 6,
+        "result": "derived_order_locator_and_stroke_count_match"
       }
     },
     {
@@ -258,7 +291,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -268,7 +301,7 @@
       "migration_boundary": "“粉”仅作整字迁移语境；左部米的形态和真实时序必须回整字与规范原页核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭",
         "位置迁移仍须回完整整字及适用规范原页核验"
       ],
       "component_name_status": "reviewed_S03_GF0014_2009",
@@ -285,6 +318,17 @@
         "evidence": "data/evidence/B15-pronunciation.json",
         "adopted_pronunciation": "mǐ",
         "result": "direct_target_self_pronunciation_supported_by_S03_row"
+      },
+      "stroke_order_secondary_locator": {
+        "evidence": "data/evidence/B15-stroke-order-secondary-locator.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "order_code": "431234",
+        "unicode": "U+7C73",
+        "derived_rank": "1576",
+        "stroke_count": 6,
+        "result": "derived_order_locator_and_stroke_count_match"
       }
     },
     {
@@ -325,7 +369,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -335,7 +379,7 @@
       "migration_boundary": "“律”仅作整字迁移语境；右部聿的形态、部件身份和完整时序待权威材料确认。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭",
         "结构分类及位置迁移尚未完成整字原页核验",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
       ],
@@ -353,6 +397,17 @@
         "evidence": "data/evidence/B15-pronunciation.json",
         "adopted_pronunciation": "yù",
         "result": "direct_target_self_pronunciation_supported_by_S03_row"
+      },
+      "stroke_order_secondary_locator": {
+        "evidence": "data/evidence/B15-stroke-order-secondary-locator.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "order_code": "511112",
+        "unicode": "U+807F",
+        "derived_rank": "1667",
+        "stroke_count": 6,
+        "result": "derived_order_locator_and_stroke_count_match"
       }
     },
     {
@@ -393,7 +448,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -403,7 +458,7 @@
       "migration_boundary": "“很”仅作整字迁移语境；右部艮的真实写法及主/附关系不得从独体形自动外推。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭",
         "结构分类及位置迁移尚未完成整字原页核验",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
       ],
@@ -421,6 +476,17 @@
         "evidence": "data/evidence/B15-pronunciation.json",
         "adopted_pronunciation": "gèn",
         "result": "direct_target_self_pronunciation_supported_by_S03_row"
+      },
+      "stroke_order_secondary_locator": {
+        "evidence": "data/evidence/B15-stroke-order-secondary-locator.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "order_code": "511534",
+        "unicode": "U+826E",
+        "derived_rank": "1675",
+        "stroke_count": 6,
+        "result": "derived_order_locator_and_stroke_count_match"
       }
     },
     {
@@ -461,7 +527,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
@@ -471,7 +537,7 @@
       "migration_boundary": "“翔”仅作整字迁移语境；右部羽的真实形态和时序必须回完整整字核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验",
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
@@ -491,6 +557,17 @@
         "publication_id": "GF0014—2009",
         "evidence": "data/evidence/B15-pronunciation.json",
         "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
+      },
+      "stroke_order_secondary_locator": {
+        "evidence": "data/evidence/B15-stroke-order-secondary-locator.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "order_code": "541541",
+        "unicode": "U+7FBD",
+        "derived_rank": "1760",
+        "stroke_count": 6,
+        "result": "derived_order_locator_and_stroke_count_match"
       }
     },
     {
@@ -531,7 +608,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -541,7 +618,7 @@
       "migration_boundary": "“累”仅作整字迁移语境；糸在下部的形态、编码对应和真实时序仍待目标规范与整字证据。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
@@ -560,6 +637,17 @@
         "publication_id": "GF0014—2009",
         "evidence": "data/evidence/B15-pronunciation.json",
         "result": "S03_name_row_does_not_supply_target_self_pronunciation"
+      },
+      "stroke_order_secondary_locator": {
+        "evidence": "data/evidence/B15-stroke-order-secondary-locator.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "order_code": "554234",
+        "unicode": "U+7CF8",
+        "derived_rank": "1787",
+        "stroke_count": 6,
+        "result": "derived_order_locator_and_stroke_count_match"
       }
     },
     {
@@ -600,7 +688,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
@@ -610,7 +698,7 @@
       "migration_boundary": "“麸”仅作整字迁移语境；左部麦的形态、主/附关系和完整时序须回规范原页核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验",
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
@@ -630,6 +718,17 @@
         "publication_id": "GF0014—2009",
         "evidence": "data/evidence/B15-pronunciation.json",
         "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
+      },
+      "stroke_order_secondary_locator": {
+        "evidence": "data/evidence/B15-stroke-order-secondary-locator.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "order_code": "1121354",
+        "unicode": "U+9EA6",
+        "derived_rank": "1804",
+        "stroke_count": 7,
+        "result": "derived_order_locator_and_stroke_count_match"
       }
     },
     {
@@ -670,7 +769,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
@@ -680,7 +779,7 @@
       "migration_boundary": "“超”仅作整字迁移语境；走作左下部件时的形态和包托时序必须回完整整字核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验",
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
@@ -700,11 +799,23 @@
         "publication_id": "GF0014—2009",
         "evidence": "data/evidence/B15-pronunciation.json",
         "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
+      },
+      "stroke_order_secondary_locator": {
+        "evidence": "data/evidence/B15-stroke-order-secondary-locator.json",
+        "source_kind": "secondary_digitization",
+        "source_repository": "takushun-wu/han-ideographs-stroke-order",
+        "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+        "order_code": "1212134",
+        "unicode": "U+8D70",
+        "derived_rank": "1867",
+        "stroke_count": 7,
+        "result": "derived_order_locator_and_stroke_count_match"
       }
     }
   ],
   "phase1_rule": "baseline机器evidence已入库；教学提示、自查句、整字语境和迁移边界已由reviews/B15-content.md中的人工内容复核覆盖，记为非权威编辑复核通过；笔顺、细笔名、部件名称、读音、结构、位置迁移和GF0011—2022精确身份继续逐字段pending。",
   "teaching_review_record": "reviews/B15-content.md",
   "structure_evidence": "data/evidence/B15-structure.json",
-  "pronunciation_evidence": "data/evidence/B15-pronunciation.json"
+  "pronunciation_evidence": "data/evidence/B15-pronunciation.json",
+  "stroke_order_secondary_locator_evidence": "data/evidence/B15-stroke-order-secondary-locator.json"
 }

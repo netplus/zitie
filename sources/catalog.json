@@ -991,6 +991,33 @@
         ],
         "method": "exact character lookup in immutable order.tsv blob and direct comparison against canonical candidate order code",
         "limits": "本检查只把stroke_order推进为secondary-derived crosschecked；GF0023—2020规范原页视觉review完成前不得标最终reviewed。"
+      },
+      "B12_B19_secondary_locator": {
+        "date": "2026-10-05",
+        "batches": [
+          "B12",
+          "B13",
+          "B14",
+          "B15",
+          "B16",
+          "B17",
+          "B18",
+          "B19"
+        ],
+        "target_count": 80,
+        "result_summary": "80/80 targets located in order.tsv; 80/80 derived stroke counts match canonical baseline; 0 missing, 0 stroke-count conflicts.",
+        "evidence": [
+          "data/evidence/B12-stroke-order-secondary-locator.json",
+          "data/evidence/B13-stroke-order-secondary-locator.json",
+          "data/evidence/B14-stroke-order-secondary-locator.json",
+          "data/evidence/B15-stroke-order-secondary-locator.json",
+          "data/evidence/B16-stroke-order-secondary-locator.json",
+          "data/evidence/B17-stroke-order-secondary-locator.json",
+          "data/evidence/B18-stroke-order-secondary-locator.json",
+          "data/evidence/B19-stroke-order-secondary-locator.json"
+        ],
+        "method": "exact character lookup in immutable order.tsv blob; extract order code/unicode/rank/stroke count and compare derived stroke count against canonical baseline",
+        "limits": "只提供secondary-derived stroke-order locator和笔数一致性检查；没有canonical候选码时不称crosscheck，GF0023—2020规范原页视觉review前不得标最终reviewed。"
       }
     }
   ]

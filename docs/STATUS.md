@@ -115,6 +115,19 @@ B04—B11共80个不同主部首完成GF0023派生TSV逐字交叉核验。数据
 
 证据边界：该TSV属于二次数字化材料，因此本轮只把`stroke_order`推进到`crosschecked`，**不替代GF0023—2020规范原页视觉review，不提前标最终reviewed**。B05“牙”的第2笔细笔名冲突继续独立保持`conflict_fail_closed`。
 
+## 最新80项笔顺二次定位：B12—B19（2026-10-05）
+
+B12—B19共80个不同主部首完成GF0023派生TSV二次定位。固定数据源为`takushun-wu/han-ideographs-stroke-order/order.tsv`（blob `ecf422f0bb9d1d07d661250796269bfa752ebd`）。
+
+结果：
+- **80/80目标精确可定位**；
+- **80/80派生笔数与canonical baseline一致**；
+- **0目标缺失、0笔数冲突**。
+
+由于B12—B19此前没有canonical笔顺候选码，本轮不是“候选码交叉通过”，而是新增secondary locator：每项目标保存派生笔顺码、Unicode、排序序号和笔数；canonical `stroke_order`推进为`secondary_GF0023_derived_order_located_original_page_pending`。
+
+证据边界：该TSV是二次数字化材料，**不替代GF0023—2020规范原页视觉review**；`fine_stroke_names`也不能由五类笔顺码反推，继续独立pending。
+
 ## 当前主要未决字段
 
 1. GF0011—2022精确主项字形、附形、名称和编码；
@@ -140,7 +153,7 @@ B03内容层视为`content_ready`。artwork/layout人工记录已存在；PDF归
 ## 下一内容工作
 
 1. 继续清理少量review/状态同步债；B20 component-name machine evidence已补齐；
-2. 下一轮主吞吐优先转向**GF0023原页笔顺review与细笔名**，并继续收口剩余采用读音；常规单轮目标80个不同主部首，无真实阻塞时至少推进60项；
+2. 下一轮主吞吐继续攻**GF0023原页笔顺review与细笔名**；B04—B11已有候选码交叉，B12—B19已有secondary locator，可直接据此分批回原页确认；常规单轮目标80个不同主部首，无真实阻塞时至少推进60项；
 3. 结构字段继续利用GF0013—2009等适用来源逐批闭合，但不外推2022部首身份；
 4. 位置迁移继续回目标整字核验；
 5. GF0011—2022逐项精确字段继续由Issue #4并行追踪。
