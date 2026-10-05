@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "record_kind": "whole_character_context_source_review",
+  "batch_id": "B15",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "automation_agent",
+  "independent_reviewers": 0,
+  "source": {
+    "source_id": "S03",
+    "publication_id": "GF0014—2009",
+    "title": "现代常用字部件及部件名称规范",
+    "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+    "reviewed_pdf_pages": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "reviewed_printed_pages": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ]
+  },
+  "reviewed_field": "whole_character_context_source_occurrence",
+  "method": "actual_pdf_page_screenshot_visual_review_exact_target_row_and_example_column",
+  "entries": [
+    {
+      "character": "齐",
+      "main_id": 141,
+      "result": "no_exact_standalone_S03_row_after_full_main_table_visual_review"
+    },
+    {
+      "character": "衣",
+      "main_id": 142,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 440,
+      "group_no": 381,
+      "printed_page": 18,
+      "pdf_page": 21,
+      "source_example": "依"
+    },
+    {
+      "character": "羊",
+      "main_id": 143,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 430,
+      "group_no": 373,
+      "printed_page": 18,
+      "pdf_page": 21,
+      "source_example": "群"
+    },
+    {
+      "character": "米",
+      "main_id": 144,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 239,
+      "group_no": 208,
+      "printed_page": 13,
+      "pdf_page": 16,
+      "source_example": "粉"
+    },
+    {
+      "character": "聿",
+      "main_id": 145,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 470,
+      "group_no": 408,
+      "printed_page": 19,
+      "pdf_page": 22,
+      "source_example": "律"
+    },
+    {
+      "character": "艮",
+      "main_id": 146,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 118,
+      "group_no": 102,
+      "printed_page": 10,
+      "pdf_page": 13,
+      "source_example": "根"
+    },
+    {
+      "character": "羽",
+      "main_id": 147,
+      "result": "no_exact_standalone_S03_row_after_full_main_table_visual_review"
+    },
+    {
+      "character": "糸",
+      "main_id": 148,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 172,
+      "group_no": 147,
+      "printed_page": 11,
+      "pdf_page": 14,
+      "source_example": "系"
+    },
+    {
+      "character": "麦",
+      "main_id": 149,
+      "result": "no_exact_standalone_S03_row_after_full_main_table_visual_review"
+    },
+    {
+      "character": "走",
+      "main_id": 150,
+      "result": "no_exact_standalone_S03_row_after_full_main_table_visual_review"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "exact_target_rows": 6,
+    "no_exact_target_rows": 4
+  },
+  "limits": "本记录只证明S03精确目标行及其例字栏中的直接整字使用；不自动证明canonical当前例字、位置几何、缩放比例、完整整字笔顺、2022主附身份或细笔名。"
+}
