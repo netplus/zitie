@@ -1,0 +1,301 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_fine_stroke_name_fold_category_primary_source_locator",
+  "batch_id": "B18",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "source": {
+    "source_id": "S05",
+    "publication_id": "GF2001-2001",
+    "sha256": "68a1420580a7eedde79eeb55b91b6b2ff10ef9155d98633ccc712838f04e9b14",
+    "evidence_basis": "reuse of catalogued original-scan table rows 5.1-5.25 already visually reviewed on PDF pages 8-9; no new PDF-page review claimed in this record",
+    "reviewed_pdf_pages": [
+      8,
+      9
+    ],
+    "table_rows": "5.1-5.25",
+    "locator_input": "data/evidence/B18-fine-stroke-names-secondary-locator.json"
+  },
+  "identity_binding": "main_id binds to data/B18.json",
+  "entries": [
+    {
+      "character": "非",
+      "main_id": 171,
+      "secondary_locator_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "fold_strokes": [],
+      "result": "no_fold_stroke_in_secondary_sequence_gf2001_not_applicable_to_plane_strokes"
+    },
+    {
+      "character": "齿",
+      "main_id": 172,
+      "secondary_locator_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "fold_strokes": [
+        {
+          "stroke_index": 7,
+          "secondary_source_name": "竖弯",
+          "secondary_source_name_options": [
+            "竖弯"
+          ],
+          "gf2001_candidates": [
+            {
+              "source_name": "竖弯",
+              "gf2001_row": "5.5",
+              "pdf_page": 8,
+              "abbrev_key": "shu_wan"
+            }
+          ]
+        }
+      ],
+      "result": "gf2001_fold_category_candidates_located_for_secondary_sequence"
+    },
+    {
+      "character": "黾",
+      "main_id": 173,
+      "secondary_locator_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "fold_strokes": [
+        {
+          "stroke_index": 2,
+          "secondary_source_name": "横折",
+          "secondary_source_name_options": [
+            "横折"
+          ],
+          "gf2001_candidates": [
+            {
+              "source_name": "横折",
+              "gf2001_row": "5.1",
+              "pdf_page": 8,
+              "abbrev_key": "heng_zhe"
+            }
+          ]
+        },
+        {
+          "stroke_index": 5,
+          "secondary_source_name": "横折",
+          "secondary_source_name_options": [
+            "横折"
+          ],
+          "gf2001_candidates": [
+            {
+              "source_name": "横折",
+              "gf2001_row": "5.1",
+              "pdf_page": 8,
+              "abbrev_key": "heng_zhe"
+            }
+          ]
+        },
+        {
+          "stroke_index": 8,
+          "secondary_source_name": "竖弯钩",
+          "secondary_source_name_options": [
+            "竖弯钩"
+          ],
+          "gf2001_candidates": [
+            {
+              "source_name": "竖弯钩",
+              "gf2001_row": "5.19",
+              "pdf_page": 9,
+              "abbrev_key": "shu_wan_gou"
+            }
+          ]
+        }
+      ],
+      "result": "gf2001_fold_category_candidates_located_for_secondary_sequence"
+    },
+    {
+      "character": "隹",
+      "main_id": 174,
+      "secondary_locator_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "fold_strokes": [],
+      "result": "no_fold_stroke_in_secondary_sequence_gf2001_not_applicable_to_plane_strokes"
+    },
+    {
+      "character": "阜",
+      "main_id": 175,
+      "secondary_locator_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "fold_strokes": [
+        {
+          "stroke_index": 3,
+          "secondary_source_name": "横折",
+          "secondary_source_name_options": [
+            "横折"
+          ],
+          "gf2001_candidates": [
+            {
+              "source_name": "横折",
+              "gf2001_row": "5.1",
+              "pdf_page": 8,
+              "abbrev_key": "heng_zhe"
+            }
+          ]
+        },
+        {
+          "stroke_index": 5,
+          "secondary_source_name": "横折",
+          "secondary_source_name_options": [
+            "横折"
+          ],
+          "gf2001_candidates": [
+            {
+              "source_name": "横折",
+              "gf2001_row": "5.1",
+              "pdf_page": 8,
+              "abbrev_key": "heng_zhe"
+            }
+          ]
+        }
+      ],
+      "result": "gf2001_fold_category_candidates_located_for_secondary_sequence"
+    },
+    {
+      "character": "金",
+      "main_id": 176,
+      "secondary_locator_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "fold_strokes": [],
+      "result": "no_fold_stroke_in_secondary_sequence_gf2001_not_applicable_to_plane_strokes"
+    },
+    {
+      "character": "鱼",
+      "main_id": 177,
+      "secondary_locator_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "fold_strokes": [
+        {
+          "stroke_index": 2,
+          "secondary_source_name": "横撇|横钩",
+          "secondary_source_name_options": [
+            "横撇",
+            "横钩"
+          ],
+          "gf2001_candidates": [
+            {
+              "source_name": "横撇",
+              "gf2001_row": "5.2",
+              "pdf_page": 8,
+              "abbrev_key": "heng_pie"
+            },
+            {
+              "source_name": "横钩",
+              "gf2001_row": "5.3",
+              "pdf_page": 8,
+              "abbrev_key": "heng_gou"
+            }
+          ]
+        },
+        {
+          "stroke_index": 4,
+          "secondary_source_name": "横折",
+          "secondary_source_name_options": [
+            "横折"
+          ],
+          "gf2001_candidates": [
+            {
+              "source_name": "横折",
+              "gf2001_row": "5.1",
+              "pdf_page": 8,
+              "abbrev_key": "heng_zhe"
+            }
+          ]
+        }
+      ],
+      "result": "gf2001_fold_category_candidates_located_for_secondary_sequence"
+    },
+    {
+      "character": "隶",
+      "main_id": 178,
+      "secondary_locator_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "fold_strokes": [
+        {
+          "stroke_index": 1,
+          "secondary_source_name": "横折",
+          "secondary_source_name_options": [
+            "横折"
+          ],
+          "gf2001_candidates": [
+            {
+              "source_name": "横折",
+              "gf2001_row": "5.1",
+              "pdf_page": 8,
+              "abbrev_key": "heng_zhe"
+            }
+          ]
+        },
+        {
+          "stroke_index": 4,
+          "secondary_source_name": "竖钩",
+          "secondary_source_name_options": [
+            "竖钩"
+          ],
+          "gf2001_candidates": [
+            {
+              "source_name": "竖钩",
+              "gf2001_row": "5.9",
+              "pdf_page": 8,
+              "abbrev_key": "shu_gou"
+            }
+          ]
+        }
+      ],
+      "result": "gf2001_fold_category_candidates_located_for_secondary_sequence"
+    },
+    {
+      "character": "革",
+      "main_id": 179,
+      "secondary_locator_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "fold_strokes": [
+        {
+          "stroke_index": 6,
+          "secondary_source_name": "横折",
+          "secondary_source_name_options": [
+            "横折"
+          ],
+          "gf2001_candidates": [
+            {
+              "source_name": "横折",
+              "gf2001_row": "5.1",
+              "pdf_page": 8,
+              "abbrev_key": "heng_zhe"
+            }
+          ]
+        }
+      ],
+      "result": "gf2001_fold_category_candidates_located_for_secondary_sequence"
+    },
+    {
+      "character": "面",
+      "main_id": 180,
+      "secondary_locator_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "fold_strokes": [
+        {
+          "stroke_index": 4,
+          "secondary_source_name": "横折",
+          "secondary_source_name_options": [
+            "横折"
+          ],
+          "gf2001_candidates": [
+            {
+              "source_name": "横折",
+              "gf2001_row": "5.1",
+              "pdf_page": 8,
+              "abbrev_key": "heng_zhe"
+            }
+          ]
+        }
+      ],
+      "result": "gf2001_fold_category_candidates_located_for_secondary_sequence"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "secondary_sequence_available": 10,
+    "secondary_dataset_target_missing": 0,
+    "entries_with_ambiguous_secondary_fold_option": 1,
+    "entries_with_no_fold_strokes": 3,
+    "fold_stroke_positions_mapped": 12
+  },
+  "decision": "Map every fold-stroke position exposed by the pinned secondary sequence to the already-reviewed GF2001 fold-stroke table. This advances primary-source fold terminology coverage but does not validate the complete per-character fine-stroke sequence.",
+  "limits": [
+    "plane strokes are outside GF2001 fold-stroke-table scope",
+    "secondary-source ambiguities are preserved as multiple GF2001 row candidates and are not auto-resolved",
+    "secondary-missing targets remain pending",
+    "complete fine_stroke_names final review still requires target-specific applicable original-page evidence; no 2022 radical identity or positional-variant claim"
+  ]
+}
