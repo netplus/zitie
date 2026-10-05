@@ -1,0 +1,24 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_component_name_review",
+  "batch_id": "B10",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "source_id": "S03",
+  "source_publication_id": "GF0014—2009",
+  "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+  "reviewed_field": "component_name",
+  "entries": [
+    {"character":"丬","main_id":45,"result":"matched_exact_S03_row","component_name":"将（jiàng）字旁","sequence_no":265,"group_no":230,"printed_page":14,"pdf_page":17},
+    {"character":"幺","main_id":59,"result":"matched_exact_S03_row","component_name":"幺（yāo）/幼（yòu）字旁","sequence_no":433,"group_no":374,"printed_page":18,"pdf_page":21},
+    {"character":"攴","main_id":74,"result":"matched_exact_S03_row","component_name":"攴（pū）/敲（qiāo）字边","sequence_no":96,"group_no":82,"printed_page":9,"pdf_page":12},
+    {"character":"氏","main_id":89,"result":"matched_exact_S03_row","component_name":"氏（shì）","sequence_no":328,"group_no":284,"printed_page":15,"pdf_page":18},
+    {"character":"欠","main_id":90,"result":"matched_exact_S03_row","component_name":"欠（qiàn）","sequence_no":279,"group_no":243,"printed_page":14,"pdf_page":17},
+    {"character":"风","main_id":91,"result":"matched_exact_S03_row","component_name":"风（fēng）","sequence_no":102,"group_no":87,"printed_page":9,"pdf_page":12},
+    {"character":"方","main_id":94,"result":"matched_exact_S03_row","component_name":"方（fāng）","sequence_no":97,"group_no":83,"printed_page":9,"pdf_page":12},
+    {"character":"斗","main_id":96,"result":"matched_exact_S03_row","component_name":"斗（dǒu）","sequence_no":85,"group_no":72,"printed_page":9,"pdf_page":12},
+    {"character":"户","main_id":97,"result":"matched_exact_S03_row","component_name":"户（hù）","sequence_no":147,"group_no":128,"printed_page":10,"pdf_page":13},
+    {"character":"心","main_id":98,"result":"matched_exact_S03_row","component_name":"心（xīn）","sequence_no":406,"group_no":353,"printed_page":17,"pdf_page":20}
+  ],
+  "limits": "Only closes S03 component_name. No claim for GF0011—2022 identity, stroke order, fine stroke names, pronunciation, structure, or positional variants."
+}
