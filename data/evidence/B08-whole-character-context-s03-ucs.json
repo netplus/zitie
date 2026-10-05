@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "record_kind": "whole_character_context_source_review",
+  "batch_id": "B08",
+  "reviewed_at": "2026-10-05",
+  "source_id": "S03",
+  "source_publication_id": "GF0014-2009",
+  "encoding_note": "target and example glyphs are recorded as Unicode code points; main_id links to canonical batch data",
+  "reviewed_field": "whole_character_context_source_occurrence",
+  "entries": [
+    {
+      "main_id": 2,
+      "target_ucs": "U+4E28",
+      "sequence_no": 339,
+      "group_no": 293,
+      "printed_page": 16,
+      "pdf_page": 19,
+      "example_ucs": "U+65E7",
+      "result": "exact_target_component_row_example_column_reviewed"
+    },
+    {
+      "main_id": 3,
+      "target_ucs": "U+4E3F",
+      "sequence_no": 268,
+      "group_no": 233,
+      "printed_page": 14,
+      "pdf_page": 17,
+      "example_ucs": "U+4E4F",
+      "result": "exact_target_component_row_example_column_reviewed"
+    },
+    {
+      "main_id": 4,
+      "target_ucs": "U+4E36",
+      "sequence_no": 77,
+      "group_no": 64,
+      "printed_page": 9,
+      "pdf_page": 12,
+      "example_ucs": "U+5E95",
+      "result": "exact_target_component_row_example_column_reviewed"
+    },
+    {
+      "main_id": 5,
+      "target_ucs": "U+4E5B",
+      "sequence_no": 140,
+      "group_no": 123,
+      "printed_page": 10,
+      "pdf_page": 13,
+      "example_ucs": "U+4E70",
+      "result": "exact_target_component_row_example_column_reviewed"
+    },
+    {
+      "main_id": 34,
+      "target_ucs": "U+5C22",
+      "sequence_no": 451,
+      "group_no": 390,
+      "printed_page": 19,
+      "pdf_page": 22,
+      "example_ucs": "U+6795",
+      "result": "exact_target_component_row_example_column_reviewed"
+    },
+    {
+      "main_id": 35,
+      "target_ucs": "U+5F0B",
+      "sequence_no": 447,
+      "group_no": 386,
+      "printed_page": 19,
+      "pdf_page": 22,
+      "example_ucs": "U+4EE3",
+      "result": "exact_target_component_row_example_column_reviewed"
+    },
+    {
+      "main_id": 38,
+      "target_ucs": "U+56D7",
+      "sequence_no": 376,
+      "group_no": 326,
+      "printed_page": 17,
+      "pdf_page": 20,
+      "example_ucs": "U+56F4",
+      "result": "exact_target_component_row_example_column_reviewed"
+    },
+    {
+      "main_id": 41,
+      "target_ucs": "U+5F73",
+      "sequence_no": 348,
+      "group_no": 301,
+      "printed_page": 16,
+      "pdf_page": 19,
+      "example_ucs": "U+5F80",
+      "result": "exact_target_component_row_example_column_reviewed"
+    },
+    {
+      "main_id": 42,
+      "target_ucs": "U+5F61",
+      "sequence_no": 307,
+      "group_no": 265,
+      "printed_page": 15,
+      "pdf_page": 18,
+      "example_ucs": "U+6749",
+      "result": "exact_target_component_row_example_column_reviewed"
+    },
+    {
+      "main_id": 44,
+      "target_ucs": "U+5902",
+      "sequence_no": 489,
+      "group_no": 421,
+      "printed_page": 20,
+      "pdf_page": 23,
+      "example_ucs": "U+964D",
+      "result": "exact_target_component_row_example_column_reviewed"
+    }
+  ],
+  "limits": "Supports direct target-row and example-column occurrence only. Position geometry, full-character stroke order, positional migration, 2022 identity, and fine-stroke names remain pending."
+}
