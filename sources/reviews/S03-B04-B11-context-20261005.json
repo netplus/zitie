@@ -1,0 +1,63 @@
+{
+  "schema_version": 1,
+  "source_id": "S03",
+  "publication_id": "GF0014-2009",
+  "reviewed_at": "2026-10-05",
+  "review_scope": "B04-B11 whole-character context source occurrence plus residual B08 component-name rows",
+  "reviewed_pdf_pages": [
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23
+  ],
+  "reviewed_printed_pages": [
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20
+  ],
+  "target_count": 80,
+  "exact_target_rows": 78,
+  "no_exact_target_rows": 2,
+  "no_exact_main_ids": [
+    65,
+    71
+  ],
+  "persisted_context_batches": [
+    "B04",
+    "B05",
+    "B07",
+    "B08",
+    "B09",
+    "B10",
+    "B11"
+  ],
+  "tooling_blocked_context_batches": [
+    "B06"
+  ],
+  "additional_evidence": [
+    "data/evidence/B08-component-name.json",
+    "data/evidence/B11-S03-row-correction.json"
+  ],
+  "limits": "Source review record only. It does not close positional migration, full-character stroke order, 2022 identity, or fine-stroke names."
+}
