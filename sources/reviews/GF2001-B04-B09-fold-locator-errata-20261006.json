@@ -1,0 +1,34 @@
+{
+  "schema_version": 1,
+  "record_kind": "source_hash_errata_and_authoritative_evidence_index",
+  "reviewed_at": "2026-10-06",
+  "source_id": "S05",
+  "publication_id": "GF2001-2001",
+  "correct_sha256": "68a1420580a7eedde79eeb55b91b6b2ff10ef9155d98633ccc712838f04e9b14",
+  "reviewed_scope": {
+    "pdf_pages": [
+      8,
+      9
+    ],
+    "table_rows": "5.1-5.25",
+    "field": "fold_stroke_category_partial_fine_stroke_evidence"
+  },
+  "authoritative_v2": [
+    "data/evidence/B04-fine-stroke-gf2001-fold-locator-v2.json",
+    "data/evidence/B06-fine-stroke-gf2001-fold-locator-v2.json",
+    "data/evidence/B08-fine-stroke-gf2001-fold-locator-v2.json",
+    "data/evidence/B09-fine-stroke-gf2001-fold-locator-v2.json"
+  ],
+  "superseded_v1": [
+    "data/evidence/B04-fine-stroke-gf2001-fold-locator.json",
+    "data/evidence/B06-fine-stroke-gf2001-fold-locator.json",
+    "data/evidence/B08-fine-stroke-gf2001-fold-locator.json",
+    "data/evidence/B09-fine-stroke-gf2001-fold-locator.json"
+  ],
+  "erratum": "The four v1 files accidentally carried the S04 scan SHA. Their row mappings and applicability decisions are unchanged, but their source hash metadata is superseded by the v2 files.",
+  "limits": [
+    "GF2001 supports fold-stroke category terminology only for this review scope.",
+    "This does not by itself review the complete target stroke-name sequence.",
+    "Plane strokes and target-specific stroke order require their own applicable evidence."
+  ]
+}
