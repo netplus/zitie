@@ -131,7 +131,7 @@
       "content_status": "in_progress",
       "generated_main_count": 0,
       "release_eligible": false,
-      "limits": "阶段1字段级检查点；S07仅在精确列入现代常用独体字表时关闭structure，未命中不反推为合体字；GF0011—2022精确身份、笔顺/细笔名、读音和正式位置变体继续按各批证据状态处理。",
+      "limits": "B04 structure已reviewed；GF0023—2020十项目标行已精确定位，但原页视觉review完成前stroke_order不升级为reviewed；GF0011—2022精确身份、细笔名、读音和正式位置变体继续pending。",
       "structure_evidence": "data/evidence/B04-structure.json",
       "reviewed_fields": [
         "structure_applicability",
@@ -139,6 +139,10 @@
         "main_id",
         "baseline_stroke_group",
         "component_name_or_S03_applicability"
+      ],
+      "stroke_order_locator_evidence": "data/evidence/B04-stroke-order-locator.json",
+      "located_fields": [
+        "GF0023_2020_stroke_order_exact_target_rows"
       ]
     },
     "B05": {
@@ -387,6 +391,188 @@
         "teaching_editorial_consistency"
       ],
       "limits": "阶段1字段级检查点；S07仅在精确列入现代常用独体字表时关闭structure，未命中不反推为合体字；GF0011—2022精确身份、笔顺/细笔名、读音和正式位置变体继续按各批证据状态处理。"
+    },
+    "B14": {
+      "main_ids": [
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140
+      ],
+      "content_record": "data/B14.json",
+      "content_status": "in_progress",
+      "structure_evidence": "data/evidence/B14-structure.json",
+      "generated_main_count": 0,
+      "release_eligible": false,
+      "reviewed_fields": [
+        "structure_applicability",
+        "baseline_identity",
+        "main_id",
+        "baseline_stroke_group"
+      ],
+      "limits": "阶段1字段级检查点；S07仅在精确列入现代常用独体字表时关闭structure，未命中不反推为合体字；GF0011—2022精确身份、笔顺/细笔名、读音和正式位置变体继续按各批证据状态处理。"
+    },
+    "B15": {
+      "main_ids": [
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        148,
+        149,
+        150
+      ],
+      "content_record": "data/B15.json",
+      "content_status": "in_progress",
+      "structure_evidence": "data/evidence/B15-structure.json",
+      "generated_main_count": 0,
+      "release_eligible": false,
+      "reviewed_fields": [
+        "structure_applicability",
+        "baseline_identity",
+        "main_id",
+        "baseline_stroke_group"
+      ],
+      "limits": "阶段1字段级检查点；S07仅在精确列入现代常用独体字表时关闭structure，未命中不反推为合体字；GF0011—2022精确身份、笔顺/细笔名、读音和正式位置变体继续按各批证据状态处理。"
+    },
+    "B16": {
+      "main_ids": [
+        151,
+        152,
+        153,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160
+      ],
+      "content_record": "data/B16.json",
+      "content_status": "in_progress",
+      "structure_evidence": "data/evidence/B16-structure.json",
+      "generated_main_count": 0,
+      "release_eligible": false,
+      "reviewed_fields": [
+        "structure_applicability",
+        "baseline_identity",
+        "main_id",
+        "baseline_stroke_group"
+      ],
+      "limits": "阶段1字段级检查点；S07仅在精确列入现代常用独体字表时关闭structure，未命中不反推为合体字；GF0011—2022精确身份、笔顺/细笔名、读音和正式位置变体继续按各批证据状态处理。"
+    },
+    "B17": {
+      "main_ids": [
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170
+      ],
+      "content_record": "data/B17.json",
+      "content_status": "in_progress",
+      "structure_evidence": "data/evidence/B17-structure.json",
+      "generated_main_count": 0,
+      "release_eligible": false,
+      "reviewed_fields": [
+        "structure_applicability",
+        "baseline_identity",
+        "main_id",
+        "baseline_stroke_group"
+      ],
+      "limits": "阶段1字段级检查点；S07仅在精确列入现代常用独体字表时关闭structure，未命中不反推为合体字；GF0011—2022精确身份、笔顺/细笔名、读音和正式位置变体继续按各批证据状态处理。"
+    },
+    "B18": {
+      "main_ids": [
+        171,
+        172,
+        173,
+        174,
+        175,
+        176,
+        177,
+        178,
+        179,
+        180
+      ],
+      "content_record": "data/B18.json",
+      "content_status": "in_progress",
+      "structure_evidence": "data/evidence/B18-structure.json",
+      "generated_main_count": 0,
+      "release_eligible": false,
+      "reviewed_fields": [
+        "structure_applicability",
+        "baseline_identity",
+        "main_id",
+        "baseline_stroke_group"
+      ],
+      "limits": "阶段1字段级检查点；S07仅在精确列入现代常用独体字表时关闭structure，未命中不反推为合体字；GF0011—2022精确身份、笔顺/细笔名、读音和正式位置变体继续按各批证据状态处理。"
+    },
+    "B19": {
+      "main_ids": [
+        181,
+        182,
+        183,
+        184,
+        185,
+        186,
+        187,
+        188,
+        189,
+        190
+      ],
+      "content_record": "data/B19.json",
+      "content_status": "in_progress",
+      "structure_evidence": "data/evidence/B19-structure.json",
+      "generated_main_count": 0,
+      "release_eligible": false,
+      "reviewed_fields": [
+        "structure_applicability",
+        "baseline_identity",
+        "main_id",
+        "baseline_stroke_group"
+      ],
+      "limits": "阶段1字段级检查点；S07仅在精确列入现代常用独体字表时关闭structure，未命中不反推为合体字；GF0011—2022精确身份、笔顺/细笔名、读音和正式位置变体继续按各批证据状态处理。"
+    },
+    "B20": {
+      "main_ids": [
+        191,
+        192,
+        193,
+        194,
+        195,
+        196,
+        197,
+        198,
+        199,
+        200
+      ],
+      "content_record": "data/B20.json",
+      "content_status": "in_progress",
+      "structure_evidence": "data/evidence/B20-structure.json",
+      "generated_main_count": 0,
+      "release_eligible": false,
+      "reviewed_fields": [
+        "structure_applicability",
+        "baseline_identity",
+        "main_id",
+        "baseline_stroke_group"
+      ],
+      "limits": "阶段1字段级检查点；S07仅在精确列入现代常用独体字表时关闭structure，未命中不反推为合体字；GF0011—2022精确身份、笔顺/细笔名、读音和正式位置变体继续按各批证据状态处理。"
     }
   },
   "default_status": {
@@ -428,6 +614,6 @@
     ],
     "next_assignment_starts_at": null,
     "next_work": "existing_batch_field_closure",
-    "note": "201个主部首范围已全部分配至B01—B21；2026-10-05 B10—B13共40项完成GF0013—2009结构适用性原页审读并入库，19项structure关闭；阶段1继续转向笔顺/细笔名、读音及剩余结构/迁移字段。content_ready仍仅B01—B03。"
+    "note": "201个主部首范围已全部分配至B01—B21；2026-10-05本轮80项：B14—B20共70项完成GF0013结构适用性审读，20项structure关闭；B04十项GF0023笔顺目标行精确定位，视觉原页review待完成。content_ready仍仅B01—B03。"
   }
 }
