@@ -46,7 +46,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
-        "fine_stroke_names": "pending_target_row",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
@@ -57,7 +57,7 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭"
+        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -88,6 +88,70 @@
         "derived_rank": "1261",
         "stroke_count": 6,
         "result": "derived_order_locator_and_stroke_count_match"
+      },
+      "fine_stroke_names_secondary_locator": {
+        "evidence": "data/evidence/B14-fine-stroke-names-secondary-locator.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent",
+        "source_letters": "fcjfjk",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "f",
+            "shape": "丨",
+            "source_name": "竖",
+            "source_name_options": [
+              "竖"
+            ]
+          },
+          {
+            "index": 2,
+            "letter": "c",
+            "shape": "𠃍",
+            "source_name": "横折",
+            "source_name_options": [
+              "横折"
+            ]
+          },
+          {
+            "index": 3,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ]
+          },
+          {
+            "index": 4,
+            "letter": "f",
+            "shape": "丨",
+            "source_name": "竖",
+            "source_name_options": [
+              "竖"
+            ]
+          },
+          {
+            "index": 5,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ]
+          },
+          {
+            "index": 6,
+            "letter": "k",
+            "shape": "丶",
+            "source_name": "点",
+            "source_name_options": [
+              "点"
+            ]
+          }
+        ],
+        "source_has_ambiguity": false
       }
     },
     {
@@ -123,7 +187,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
-        "fine_stroke_names": "pending_target_row",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
@@ -134,7 +198,7 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭"
+        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -165,6 +229,70 @@
         "derived_rank": "1315",
         "stroke_count": 6,
         "result": "derived_order_locator_and_stroke_count_match"
+      },
+      "fine_stroke_names_secondary_locator": {
+        "evidence": "data/evidence/B14-fine-stroke-names-secondary-locator.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent",
+        "source_letters": "frsksk",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "f",
+            "shape": "丨",
+            "source_name": "竖",
+            "source_name_options": [
+              "竖"
+            ]
+          },
+          {
+            "index": 2,
+            "letter": "r",
+            "shape": "𠃌",
+            "source_name": "横折钩",
+            "source_name_options": [
+              "横折钩"
+            ]
+          },
+          {
+            "index": 3,
+            "letter": "s",
+            "shape": "丿",
+            "source_name": "撇",
+            "source_name_options": [
+              "撇"
+            ]
+          },
+          {
+            "index": 4,
+            "letter": "k",
+            "shape": "丶",
+            "source_name": "点",
+            "source_name_options": [
+              "点"
+            ]
+          },
+          {
+            "index": 5,
+            "letter": "s",
+            "shape": "丿",
+            "source_name": "撇",
+            "source_name_options": [
+              "撇"
+            ]
+          },
+          {
+            "index": 6,
+            "letter": "k",
+            "shape": "丶",
+            "source_name": "点",
+            "source_name_options": [
+              "点"
+            ]
+          }
+        ],
+        "source_has_ambiguity": false
       }
     },
     {
@@ -200,7 +328,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
-        "fine_stroke_names": "pending_target_row",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
@@ -211,8 +339,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
+        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -242,6 +370,70 @@
         "derived_rank": "1325",
         "stroke_count": 6,
         "result": "derived_order_locator_and_stroke_count_match"
+      },
+      "fine_stroke_names_secondary_locator": {
+        "evidence": "data/evidence/B14-fine-stroke-names-secondary-locator.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent",
+        "source_letters": "sjjfbf",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "s",
+            "shape": "丿",
+            "source_name": "撇",
+            "source_name_options": [
+              "撇"
+            ]
+          },
+          {
+            "index": 2,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ]
+          },
+          {
+            "index": 3,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ]
+          },
+          {
+            "index": 4,
+            "letter": "f",
+            "shape": "丨",
+            "source_name": "竖",
+            "source_name_options": [
+              "竖"
+            ]
+          },
+          {
+            "index": 5,
+            "letter": "b",
+            "shape": "㇄",
+            "source_name": "竖弯",
+            "source_name_options": [
+              "竖弯"
+            ]
+          },
+          {
+            "index": 6,
+            "letter": "f",
+            "shape": "丨",
+            "source_name": "竖",
+            "source_name_options": [
+              "竖"
+            ]
+          }
+        ],
+        "source_has_ambiguity": false
       }
     },
     {
@@ -277,7 +469,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
-        "fine_stroke_names": "pending_target_row",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
@@ -288,8 +480,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
+        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -319,6 +511,70 @@
         "derived_rank": "1341",
         "stroke_count": 6,
         "result": "derived_order_locator_and_stroke_count_match"
+      },
+      "fine_stroke_names_secondary_locator": {
+        "evidence": "data/evidence/B14-fine-stroke-names-secondary-locator.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent",
+        "source_letters": "sjffcj",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "s",
+            "shape": "丿",
+            "source_name": "撇",
+            "source_name_options": [
+              "撇"
+            ]
+          },
+          {
+            "index": 2,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ]
+          },
+          {
+            "index": 3,
+            "letter": "f",
+            "shape": "丨",
+            "source_name": "竖",
+            "source_name_options": [
+              "竖"
+            ]
+          },
+          {
+            "index": 4,
+            "letter": "f",
+            "shape": "丨",
+            "source_name": "竖",
+            "source_name_options": [
+              "竖"
+            ]
+          },
+          {
+            "index": 5,
+            "letter": "c",
+            "shape": "𠃍",
+            "source_name": "横折",
+            "source_name_options": [
+              "横折"
+            ]
+          },
+          {
+            "index": 6,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ]
+          }
+        ],
+        "source_has_ambiguity": false
       }
     },
     {
@@ -354,7 +610,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
-        "fine_stroke_names": "pending_target_row",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
@@ -365,8 +621,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
+        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -396,6 +652,70 @@
         "derived_rank": "1343",
         "stroke_count": 6,
         "result": "derived_order_locator_and_stroke_count_match"
+      },
+      "fine_stroke_names_secondary_locator": {
+        "evidence": "data/evidence/B14-fine-stroke-names-secondary-locator.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent",
+        "source_letters": "sjfsjg",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "s",
+            "shape": "丿",
+            "source_name": "撇",
+            "source_name_options": [
+              "撇"
+            ]
+          },
+          {
+            "index": 2,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ]
+          },
+          {
+            "index": 3,
+            "letter": "f",
+            "shape": "丨",
+            "source_name": "竖",
+            "source_name_options": [
+              "竖"
+            ]
+          },
+          {
+            "index": 4,
+            "letter": "s",
+            "shape": "丿",
+            "source_name": "撇",
+            "source_name_options": [
+              "撇"
+            ]
+          },
+          {
+            "index": 5,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ]
+          },
+          {
+            "index": 6,
+            "letter": "g",
+            "shape": "亅",
+            "source_name": "竖钩",
+            "source_name_options": [
+              "竖钩"
+            ]
+          }
+        ],
+        "source_has_ambiguity": false
       }
     },
     {
@@ -431,7 +751,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
-        "fine_stroke_names": "pending_target_row",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
@@ -442,8 +762,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
+        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -473,6 +793,70 @@
         "derived_rank": "1372",
         "stroke_count": 6,
         "result": "derived_order_locator_and_stroke_count_match"
+      },
+      "fine_stroke_names_secondary_locator": {
+        "evidence": "data/evidence/B14-fine-stroke-names-secondary-locator.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent",
+        "source_letters": "sfjcjj",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "s",
+            "shape": "丿",
+            "source_name": "撇",
+            "source_name_options": [
+              "撇"
+            ]
+          },
+          {
+            "index": 2,
+            "letter": "f",
+            "shape": "丨",
+            "source_name": "竖",
+            "source_name_options": [
+              "竖"
+            ]
+          },
+          {
+            "index": 3,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ]
+          },
+          {
+            "index": 4,
+            "letter": "c",
+            "shape": "𠃍",
+            "source_name": "横折",
+            "source_name_options": [
+              "横折"
+            ]
+          },
+          {
+            "index": 5,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ]
+          },
+          {
+            "index": 6,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ]
+          }
+        ],
+        "source_has_ambiguity": false
       }
     },
     {
@@ -508,7 +892,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
-        "fine_stroke_names": "pending_target_row",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
@@ -519,8 +903,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
+        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -550,6 +934,70 @@
         "derived_rank": "1425",
         "stroke_count": 6,
         "result": "derived_order_locator_and_stroke_count_match"
+      },
+      "fine_stroke_names_secondary_locator": {
+        "evidence": "data/evidence/B14-fine-stroke-names-secondary-locator.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent",
+        "source_letters": "sfcjjj",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "s",
+            "shape": "丿",
+            "source_name": "撇",
+            "source_name_options": [
+              "撇"
+            ]
+          },
+          {
+            "index": 2,
+            "letter": "f",
+            "shape": "丨",
+            "source_name": "竖",
+            "source_name_options": [
+              "竖"
+            ]
+          },
+          {
+            "index": 3,
+            "letter": "c",
+            "shape": "𠃍",
+            "source_name": "横折",
+            "source_name_options": [
+              "横折"
+            ]
+          },
+          {
+            "index": 4,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ]
+          },
+          {
+            "index": 5,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ]
+          },
+          {
+            "index": 6,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ]
+          }
+        ],
+        "source_has_ambiguity": false
       }
     },
     {
@@ -585,7 +1033,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
-        "fine_stroke_names": "pending_target_row",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
@@ -596,7 +1044,7 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭"
+        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -627,6 +1075,70 @@
         "derived_rank": "1432",
         "stroke_count": 6,
         "result": "derived_order_locator_and_stroke_count_match"
+      },
+      "fine_stroke_names_secondary_locator": {
+        "evidence": "data/evidence/B14-fine-stroke-names-secondary-locator.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent",
+        "source_letters": "sfcffj",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "s",
+            "shape": "丿",
+            "source_name": "撇",
+            "source_name_options": [
+              "撇"
+            ]
+          },
+          {
+            "index": 2,
+            "letter": "f",
+            "shape": "丨",
+            "source_name": "竖",
+            "source_name_options": [
+              "竖"
+            ]
+          },
+          {
+            "index": 3,
+            "letter": "c",
+            "shape": "𠃍",
+            "source_name": "横折",
+            "source_name_options": [
+              "横折"
+            ]
+          },
+          {
+            "index": 4,
+            "letter": "f",
+            "shape": "丨",
+            "source_name": "竖",
+            "source_name_options": [
+              "竖"
+            ]
+          },
+          {
+            "index": 5,
+            "letter": "f",
+            "shape": "丨",
+            "source_name": "竖",
+            "source_name_options": [
+              "竖"
+            ]
+          },
+          {
+            "index": 6,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ]
+          }
+        ],
+        "source_has_ambiguity": false
       }
     },
     {
@@ -662,7 +1174,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
-        "fine_stroke_names": "pending_target_row",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
@@ -673,7 +1185,7 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭"
+        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -704,6 +1216,70 @@
         "derived_rank": "1449",
         "stroke_count": 6,
         "result": "derived_order_locator_and_stroke_count_match"
+      },
+      "fine_stroke_names_secondary_locator": {
+        "evidence": "data/evidence/B14-fine-stroke-names-secondary-locator.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent",
+        "source_letters": "ssrkjk",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "s",
+            "shape": "丿",
+            "source_name": "撇",
+            "source_name_options": [
+              "撇"
+            ]
+          },
+          {
+            "index": 2,
+            "letter": "s",
+            "shape": "丿",
+            "source_name": "撇",
+            "source_name_options": [
+              "撇"
+            ]
+          },
+          {
+            "index": 3,
+            "letter": "r",
+            "shape": "𠃌",
+            "source_name": "横折钩",
+            "source_name_options": [
+              "横折钩"
+            ]
+          },
+          {
+            "index": 4,
+            "letter": "k",
+            "shape": "丶",
+            "source_name": "点",
+            "source_name_options": [
+              "点"
+            ]
+          },
+          {
+            "index": 5,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ]
+          },
+          {
+            "index": 6,
+            "letter": "k",
+            "shape": "丶",
+            "source_name": "点",
+            "source_name_options": [
+              "点"
+            ]
+          }
+        ],
+        "source_has_ambiguity": false
       }
     },
     {
@@ -739,7 +1315,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
-        "fine_stroke_names": "pending_target_row",
+        "fine_stroke_names": "secondary_fine_stroke_names_source_ambiguous_locator_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
@@ -750,8 +1326,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "stroke_order已有GF0023派生数据定位码，规范原页视觉review仍待完成；fine_stroke_names仍待适用规范原页关闭",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
+        "fine_stroke_names已取得cnchar二次逐笔序列，但源自身存在同码双名；须回GF2001/GF0023/S04原页裁决"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -781,11 +1357,77 @@
         "derived_rank": "1517",
         "stroke_count": 6,
         "result": "derived_order_locator_and_stroke_count_match"
+      },
+      "fine_stroke_names_secondary_locator": {
+        "evidence": "data/evidence/B14-fine-stroke-names-secondary-locator.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent",
+        "source_letters": "secfju",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "s",
+            "shape": "丿",
+            "source_name": "撇",
+            "source_name_options": [
+              "撇"
+            ]
+          },
+          {
+            "index": 2,
+            "letter": "e",
+            "shape": "㇇|乛",
+            "source_name": "横撇|横钩",
+            "source_name_options": [
+              "横撇",
+              "横钩"
+            ]
+          },
+          {
+            "index": 3,
+            "letter": "c",
+            "shape": "𠃍",
+            "source_name": "横折",
+            "source_name_options": [
+              "横折"
+            ]
+          },
+          {
+            "index": 4,
+            "letter": "f",
+            "shape": "丨",
+            "source_name": "竖",
+            "source_name_options": [
+              "竖"
+            ]
+          },
+          {
+            "index": 5,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ]
+          },
+          {
+            "index": 6,
+            "letter": "u",
+            "shape": "乚",
+            "source_name": "竖弯钩",
+            "source_name_options": [
+              "竖弯钩"
+            ]
+          }
+        ],
+        "source_has_ambiguity": true
       }
     }
   ],
   "phase1_rule": "本批先关闭S01-2009基线身份和笔画分组并完成教学中间文稿；笔顺、细笔名、部件名称、采用读音、位置变体和2022精确身份待相应原页证据后逐字段升级。",
   "structure_evidence": "data/evidence/B14-structure.json",
   "pronunciation_evidence": "data/evidence/B14-pronunciation.json",
-  "stroke_order_secondary_locator_evidence": "data/evidence/B14-stroke-order-secondary-locator.json"
+  "stroke_order_secondary_locator_evidence": "data/evidence/B14-stroke-order-secondary-locator.json",
+  "fine_stroke_names_secondary_locator_evidence": "data/evidence/B14-fine-stroke-names-secondary-locator.json"
 }
