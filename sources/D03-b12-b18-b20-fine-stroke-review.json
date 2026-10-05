@@ -40,5 +40,13 @@
     "substitute_batch": "B20",
     "reason": "B19 evidence write hit tooling_write_blocker; switched immediately to independent B20 field work"
   },
-  "limits": "Secondary fine-stroke locator only; normative original-page review is still required."
+  "limits": "Secondary fine-stroke locator only; normative original-page review is still required.",
+  "historical_partial_snapshot": true,
+  "recovery": {
+    "date": "2026-10-05",
+    "b19_status": "recovered_successfully",
+    "b19_evidence": "data/evidence/B19-fine-stroke-names-secondary-locator.json",
+    "current_primary_summary": "sources/catalog.json#D03.B12_B19_fine_stroke_secondary_locator",
+    "note": "早期同分支写入曾因tooling_write_blocker跳过B19并以B20替代；随后B19写入恢复成功。本文件保留该过程事实，不作为当前80项最终统计口径。"
+  }
 }
