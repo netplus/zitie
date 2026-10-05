@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_structure_review_evidence",
+  "batch_id": "B05",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S07",
+    "publication_id": "GF0013—2009",
+    "title": "现代常用独体字规范",
+    "publisher": "教育部、国家语委",
+    "source_ledger": "sources/catalog.json",
+    "visual_review_copy": "https://edu.sh.gov.cn/cmsres/cc/cc76a4a1bbf44271bbc8cf8b47b29289/50476d9ab398dd13a7459af90778d693.pdf",
+    "byte_identity_to_catalog_copy": "not_checked_this_run",
+    "table": "第6节 现代常用独体字表",
+    "reviewed_printed_pages": [
+      2
+    ],
+    "reviewed_pdf_pages": [
+      5
+    ],
+    "method": "actual_pdf_page_screenshot_visual_review"
+  },
+  "reviewed_field": "structure",
+  "entries": [
+    {
+      "character": "无",
+      "main_id": 62,
+      "result": "listed_in_GF0013_2009_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "犬",
+      "main_id": 66,
+      "result": "listed_in_GF0013_2009_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "歹",
+      "main_id": 67,
+      "result": "listed_in_GF0013_2009_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "车",
+      "main_id": 68,
+      "result": "listed_in_GF0013_2009_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "牙",
+      "main_id": 69,
+      "result": "listed_in_GF0013_2009_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "戈",
+      "main_id": 70,
+      "result": "listed_in_GF0013_2009_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "瓦",
+      "main_id": 72,
+      "result": "listed_in_GF0013_2009_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "止",
+      "main_id": 73,
+      "result": "listed_in_GF0013_2009_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "贝",
+      "main_id": 76,
+      "result": "listed_in_GF0013_2009_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "见",
+      "main_id": 78,
+      "result": "listed_in_GF0013_2009_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    }
+  ],
+  "limits": [
+    "本证据只支持结构字段的独体字前提，不支持GF0011—2022主附身份、名称或编码。",
+    "不支持笔顺、细笔名、采用读音或正式位置变体。",
+    "牙第2笔冲突与本证据无关。"
+  ]
+}
