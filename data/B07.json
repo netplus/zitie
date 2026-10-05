@@ -49,7 +49,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
@@ -106,7 +106,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
@@ -163,7 +163,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
@@ -220,7 +220,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
@@ -277,7 +277,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
@@ -335,7 +335,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
@@ -393,7 +393,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
@@ -451,7 +451,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
@@ -509,7 +509,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
@@ -567,7 +567,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
@@ -590,5 +590,6 @@
     }
   ],
   "phase1_rule": "当前只建立可追溯内容稿。候选笔顺/细笔名不得因写入data/B07.json而视为reviewed；必须在对应原页和机器证据真实入库后逐字段升级。",
-  "structure_evidence": "data/evidence/B07-structure.json"
+  "structure_evidence": "data/evidence/B07-structure.json",
+  "baseline_evidence": "data/evidence/B07-content.json"
 }
