@@ -1,10 +1,18 @@
 # 当前编写状态
 
-更新：2026-10-03。工程处于“阶段1：内容覆盖优先”。
+更新：2026-10-05。工程处于“阶段1：内容覆盖优先”。
 
 ## 当前阶段
 
 阶段1目标是先完成201个主部首的字段级内容和证据链；artwork、PDF、manifest和CI尾项不再阻塞后续内容字段推进。阶段2统一处理图形与版式，阶段3处理归档与发布。阶段1的`content_ready`不等于`artwork_ready`或`release_eligible`。
+
+## 阶段检查点
+
+PR #9 已于2026-10-05阶段性合入 `main`，合并提交：
+
+`8b6213b0ec5f85ae26915aa6f823dcb2ba04c187`
+
+该次合入保留阶段1内容优先重构、B03内容成果、B04—B21内容稿以及已真实入库的字段级review/evidence。合入前PR HEAD `45f90049496445206bbd2a265dc43be700c5ccfa` 的 `Book integrity checks` 已成功。该阶段合入不表示全书内容完成、artwork完成或正式发布。
 
 ## 范围与计数
 
@@ -16,36 +24,38 @@
 - 正式release：0。
 - GF0011—2022逐项精确字形、附形、名称和编码继续作为全书级pending；不阻塞其它独立字段。
 
-## 最新阶段1检查点
+## 当前字段闭合进展
 
-本轮主吞吐为B06+B07，共20个不同主部首。
+阶段1已经从“批次范围分配”进入“既有批次字段级证据闭合”。截至本检查点，仓库中的进展至少包括：
 
-### B06：厂、匚、卜、冂、勹、儿、匕、几、亠、冫
+- **B04**：baseline、教学字段、S03部件名称evidence已在库；新增 `data/evidence/B04-structure.json`，确认10项目标字均直接列入GF0013—2009《现代常用独体字表》。structure专用evidence已入库，但canonical structure状态仍待同步。
+- **B05**：baseline、教学字段、S03部件名称evidence已在库；canonical已同步baseline/name/teaching状态。牙第2笔“撇折/竖折”继续 `conflict_fail_closed`；B04+B05结构原页20/20已在source ledger记录，但B05专用structure evidence仍待入库。
+- **B06**：baseline与S03部件名称evidence已在库；教学字段专用evidence仍待补。
+- **B07**：baseline、S03部件名称、教学字段evidence均已在库；canonical笔数等状态仍有同步债。
+- **B08**：baseline和教学字段evidence已在库。
+- **B09**：baseline、教学字段evidence和S03人工review已在库；S03 machine evidence仍待补。
+- **B10—B11**：baseline、S03名称evidence已在库，canonical已完成一轮证据状态同步；B11教学字段evidence亦在库。
+- **B12—B14**：baseline、教学字段和S03名称evidence已形成；部分canonical/review文字仍有同步债。
+- **B15—B18**：已有baseline、教学字段与S03名称/适用性证据；B15、B16、B17、B18均已有不同程度的canonical同步。
+- **B19**：baseline、教学字段与 `data/evidence/B19-component-name.json` 已在库；canonical名称状态仍待同步。
+- **B20**：baseline和教学字段evidence已在库；S03完整主体表视觉审读已经登记在 `sources/catalog.json`，machine component-name evidence仍待补。
+- **B21**：baseline evidence、canonical数据和人工review均已在库。
 
-重新对照`data/B06.json`与`data/coverage.json`的S01-2009中间索引，十项main_id与baseline笔画分组全部一致；既有`data/evidence/B06-content.json`继续支持2009 baseline身份、main_id和2画baseline分组。
+以上只表示对应字段的证据链进展，不表示各批次已经达到`content_ready`。
 
-本轮同时逐项检查两条教学提示、自查句、整字迁移语境和迁移边界，十项均保持候选／待核边界。尝试新增`data/evidence/B06-teaching-review.json`和`reviews/B06-content.md`时，连接器均返回`This tool call was blocked by OpenAI's safety checks. Please double check what you are sending.`，因此教学字段本轮不升级reviewed，canonical旧标签保持不变。
+## 当前主要未决字段
 
-### B07：冖、凵、卩、厶、廴、艹、廾、宀、辶、彐
+1. GF0011—2022精确主项字形、附形、名称和编码；
+2. B04以后大量批次的正式结构、逐笔笔顺、细笔名和采用读音；
+3. 位置变体必须回到完整整字逐项核验，包围部件需保存完整书写时序；
+4. B05“牙”第2笔权威材料冲突继续单字段fail-closed；
+5. 部分批次存在“evidence已入库但canonical/review/状态文档尚未同步”的状态债。
 
-本轮逐项将canonical main_id与笔画数对照S01-2009中间索引，十项全部一致：冖、凵、卩、厶、廴为2画；艹、廾、宀、辶、彐为3画。既有`data/evidence/B07-teaching-review.json`继续支持两条教学提示、自查句、整字语境和迁移边界的非权威编辑一致性。
-
-尝试新增`data/evidence/B07-content.json`和`reviews/B07-content.md`时遭遇同一连接器安全检查，因此baseline_identity、main_id和baseline笔画分组本轮不据此升级reviewed；只保留本次实际交叉检查记录。
-
-本轮没有新增content_ready批次；B01—B03仍为30项content_ready，B04—B21共171项content_in_progress。未推进artwork、PDF、manifest、CI或release。
-
-## 已知内容层缺口
-
-按实时批次记录继续收口：
-- B14：`data/evidence/B14-content.json`已实际存在；此前“baseline machine evidence仍缺”描述已过时，后续不重复补证据。
-- B16：canonical data和baseline evidence已在库，人工review文字仍有旧状态描述待同步；
-- B17：canonical data、baseline evidence与教学evidence已在库，人工content review仍缺；
-- B21：baseline evidence、canonical `data/B21.json`与人工review均已入库；教学字段已完成人工非权威编辑复核；
-- 更早B04—B13仍需继续逐项关闭名称、笔顺／细笔名、采用读音、结构与位置迁移等字段。
+GitHub部分写入路径曾间歇触发 `This tool call was blocked by OpenAI's safety checks...`。该类情况统一记为 `tooling_write_blocker`，不是来源阻塞或内容冲突；单一路径失败不得停止整体阶段1推进。
 
 ## B03阶段2/3尾项
 
-B03内容层视为`content_ready`。artwork/layout人工记录已存在；PDF归档、manifest、通用hard-gate和最终PR收尾属于独立工程尾项，不阻塞阶段1内容吞吐。
+B03内容层视为`content_ready`。artwork/layout人工记录已存在；PDF归档、manifest、通用hard-gate和最终发布属于阶段2/3尾项，不阻塞阶段1内容吞吐。
 
 ## PDF状态
 
@@ -57,7 +67,8 @@ B03内容层视为`content_ready`。artwork/layout人工记录已存在；PDF归
 
 ## 下一内容工作
 
-1. 补B17人工content review和B16 review文字同步；
-2. 补B14 baseline machine evidence；
-3. 以20个不同主部首为一轮，批量关闭S03名称、笔顺／细笔名、采用读音、结构和位置迁移字段；
-4. GF0011—2022逐项精确字段继续由Issue #4并行追踪。
+1. 先清理少量“证据已在库、canonical/review未同步”的状态债：B04 structure、B05 structure evidence、B07 baseline状态、B09/B20 component-name machine evidence、B19 canonical名称状态；
+2. 主吞吐从S03名称逐步转向**笔顺、细笔名和采用读音**，仍按每轮20个不同主部首推进；
+3. 结构字段继续利用GF0013—2009等适用来源逐批闭合，但不外推2022部首身份；
+4. 位置迁移继续回目标整字核验；
+5. GF0011—2022逐项精确字段继续由Issue #4并行追踪。
