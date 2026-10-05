@@ -53,19 +53,49 @@
       "sequence_no": 99,
       "group_no": 85,
       "printed_page": 9,
-      "pdf_page": 12
+      "pdf_page": 12,
+      "position_migration_context_crosscheck": {
+        "reviewed_at": "2026-10-06",
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "explicit_position_role": null,
+        "editorial_context_example": "悲",
+        "editorial_context_position": "top",
+        "result": "S03_name_has_no_explicit_position_word_context_role_not_validated",
+        "limits": "仅交叉比较S03名称中的显式位置语义与canonical当前整字语境角色；不证明主附身份、几何压缩、比例、字形变体或整字完整笔顺。角色不同不自动判冲突，须回实际整字视觉核验。"
+      }
     },
     {
       "character": "齿",
       "main_id": 172,
       "result": "no_exact_standalone_S03_row",
-      "nearest_note": "完整审读原印7—20页未见齿的精确独立整形条目。"
+      "nearest_note": "完整审读原印7—20页未见齿的精确独立整形条目。",
+      "position_migration_context_crosscheck": {
+        "reviewed_at": "2026-10-06",
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "explicit_position_role": null,
+        "editorial_context_example": "龄",
+        "editorial_context_position": "left",
+        "result": "S03_no_exact_target_row_context_role_not_validated",
+        "limits": "仅交叉比较S03名称中的显式位置语义与canonical当前整字语境角色；不证明主附身份、几何压缩、比例、字形变体或整字完整笔顺。角色不同不自动判冲突，须回实际整字视觉核验。"
+      }
     },
     {
       "character": "黾",
       "main_id": 173,
       "result": "no_exact_standalone_S03_row",
-      "nearest_note": "完整审读原印7—20页未见黾的精确独立整形条目。"
+      "nearest_note": "完整审读原印7—20页未见黾的精确独立整形条目。",
+      "position_migration_context_crosscheck": {
+        "reviewed_at": "2026-10-06",
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "explicit_position_role": null,
+        "editorial_context_example": "绳",
+        "editorial_context_position": "right",
+        "result": "S03_no_exact_target_row_context_role_not_validated",
+        "limits": "仅交叉比较S03名称中的显式位置语义与canonical当前整字语境角色；不证明主附身份、几何压缩、比例、字形变体或整字完整笔顺。角色不同不自动判冲突，须回实际整字视觉核验。"
+      }
     },
     {
       "character": "隹",
@@ -75,13 +105,33 @@
       "sequence_no": 508,
       "group_no": 435,
       "printed_page": 20,
-      "pdf_page": 23
+      "pdf_page": 23,
+      "position_migration_context_crosscheck": {
+        "reviewed_at": "2026-10-06",
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "explicit_position_role": "side",
+        "editorial_context_example": "谁",
+        "editorial_context_position": "right",
+        "result": "explicit_S03_position_role_matches_editorial_context_role",
+        "limits": "仅交叉比较S03名称中的显式位置语义与canonical当前整字语境角色；不证明主附身份、几何压缩、比例、字形变体或整字完整笔顺。角色不同不自动判冲突，须回实际整字视觉核验。"
+      }
     },
     {
       "character": "阜",
       "main_id": 175,
       "result": "no_exact_standalone_S03_row",
-      "nearest_note": "完整审读原印7—20页未见阜的精确独立整形条目；不以阝等位置形态替代主形。"
+      "nearest_note": "完整审读原印7—20页未见阜的精确独立整形条目；不以阝等位置形态替代主形。",
+      "position_migration_context_crosscheck": {
+        "reviewed_at": "2026-10-06",
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "explicit_position_role": null,
+        "editorial_context_example": "阜",
+        "editorial_context_position": "self",
+        "result": "S03_no_exact_target_row_context_role_not_validated",
+        "limits": "仅交叉比较S03名称中的显式位置语义与canonical当前整字语境角色；不证明主附身份、几何压缩、比例、字形变体或整字完整笔顺。角色不同不自动判冲突，须回实际整字视觉核验。"
+      }
     },
     {
       "character": "金",
@@ -91,7 +141,17 @@
       "sequence_no": 181,
       "group_no": 154,
       "printed_page": 11,
-      "pdf_page": 14
+      "pdf_page": 14,
+      "position_migration_context_crosscheck": {
+        "reviewed_at": "2026-10-06",
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "explicit_position_role": null,
+        "editorial_context_example": "鉴",
+        "editorial_context_position": "bottom",
+        "result": "S03_name_has_no_explicit_position_word_context_role_not_validated",
+        "limits": "仅交叉比较S03名称中的显式位置语义与canonical当前整字语境角色；不证明主附身份、几何压缩、比例、字形变体或整字完整笔顺。角色不同不自动判冲突，须回实际整字视觉核验。"
+      }
     },
     {
       "character": "鱼",
@@ -101,7 +161,17 @@
       "sequence_no": 462,
       "group_no": 401,
       "printed_page": 19,
-      "pdf_page": 22
+      "pdf_page": 22,
+      "position_migration_context_crosscheck": {
+        "reviewed_at": "2026-10-06",
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "explicit_position_role": null,
+        "editorial_context_example": "鲜",
+        "editorial_context_position": "left",
+        "result": "S03_name_has_no_explicit_position_word_context_role_not_validated",
+        "limits": "仅交叉比较S03名称中的显式位置语义与canonical当前整字语境角色；不证明主附身份、几何压缩、比例、字形变体或整字完整笔顺。角色不同不自动判冲突，须回实际整字视觉核验。"
+      }
     },
     {
       "character": "隶",
@@ -111,7 +181,17 @@
       "sequence_no": 212,
       "group_no": 183,
       "printed_page": 12,
-      "pdf_page": 15
+      "pdf_page": 15,
+      "position_migration_context_crosscheck": {
+        "reviewed_at": "2026-10-06",
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "explicit_position_role": null,
+        "editorial_context_example": "隶",
+        "editorial_context_position": "self",
+        "result": "S03_name_has_no_explicit_position_word_context_role_not_validated",
+        "limits": "仅交叉比较S03名称中的显式位置语义与canonical当前整字语境角色；不证明主附身份、几何压缩、比例、字形变体或整字完整笔顺。角色不同不自动判冲突，须回实际整字视觉核验。"
+      }
     },
     {
       "character": "革",
@@ -121,7 +201,17 @@
       "sequence_no": 116,
       "group_no": 100,
       "printed_page": 10,
-      "pdf_page": 13
+      "pdf_page": 13,
+      "position_migration_context_crosscheck": {
+        "reviewed_at": "2026-10-06",
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "explicit_position_role": null,
+        "editorial_context_example": "鞋",
+        "editorial_context_position": "left",
+        "result": "S03_name_has_no_explicit_position_word_context_role_not_validated",
+        "limits": "仅交叉比较S03名称中的显式位置语义与canonical当前整字语境角色；不证明主附身份、几何压缩、比例、字形变体或整字完整笔顺。角色不同不自动判冲突，须回实际整字视觉核验。"
+      }
     },
     {
       "character": "面",
@@ -131,8 +221,23 @@
       "sequence_no": 241,
       "group_no": 210,
       "printed_page": 13,
-      "pdf_page": 16
+      "pdf_page": 16,
+      "position_migration_context_crosscheck": {
+        "reviewed_at": "2026-10-06",
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "explicit_position_role": null,
+        "editorial_context_example": "面",
+        "editorial_context_position": "self",
+        "result": "S03_name_has_no_explicit_position_word_context_role_not_validated",
+        "limits": "仅交叉比较S03名称中的显式位置语义与canonical当前整字语境角色；不证明主附身份、几何压缩、比例、字形变体或整字完整笔顺。角色不同不自动判冲突，须回实际整字视觉核验。"
+      }
     }
   ],
-  "limits": "只支持GF0014—2009部件名称及S03是否存在完整主形精确独立条目；不支持GF0011—2022主附身份、结构、笔顺、细笔名、采用读音或正式位置变体。"
+  "limits": "只支持GF0014—2009部件名称及S03是否存在完整主形精确独立条目；不支持GF0011—2022主附身份、结构、笔顺、细笔名、采用读音或正式位置变体。",
+  "reviewed_fields": [
+    "component_name",
+    "position_migration_context_crosscheck"
+  ],
+  "position_migration_context_crosscheck_method": "逐项将S03已审目标行名称的显式位置词与canonical当前整字语境position交叉；裸名称与S03未命中项保持不推断。"
 }
