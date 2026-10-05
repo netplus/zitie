@@ -394,9 +394,33 @@
         5,
         6
       ],
-      "checked_at": "2026-09-29",
+      "checked_at": "2026-10-05",
       "provenance": "原出版物扫描件由zispace/hanzi-docs托管；版本身份据实际原件核查，平台不是规范发布者。",
-      "limits": "Only actually reviewed pages/fields are supported; no independent dual review is claimed. B03 characters 刀、力、又、子、女、小、王、石、白、立 were directly checked in printed pp.2-3 / PDF physical pp.5-6 as listed undecomposable characters. This does not support stroke order, pronunciation, radical parent/subordinate relations, positional variants, or 2022-edition identity."
+      "limits": "Only actually reviewed pages/fields are supported; no independent dual review is claimed. B03 characters 刀、力、又、子、女、小、王、石、白、立 were directly checked in printed pp.2-3 / PDF physical pp.5-6 as listed undecomposable characters. This does not support stroke order, pronunciation, radical parent/subordinate relations, positional variants, or 2022-edition identity.",
+      "B04_B05_structure_visual_review": {
+        "date": "2026-10-05",
+        "characters": "干寸夕广门尸己弓飞马无犬歹车牙戈瓦止贝见",
+        "batches": [
+          "B04",
+          "B05"
+        ],
+        "visual_review_copy": "https://edu.sh.gov.cn/cmsres/cc/cc76a4a1bbf44271bbc8cf8b47b29289/50476d9ab398dd13a7459af90778d693.pdf",
+        "host": "上海市教育委员会",
+        "byte_identity_to_catalog_copy": "not_checked_this_run",
+        "pdf_pages_reviewed": [
+          1,
+          2,
+          5
+        ],
+        "printed_pages_reviewed": [
+          2
+        ],
+        "table": "第6节 现代常用独体字表",
+        "result": "20/20目标字直接列入独体字表",
+        "method": "actual_pdf_page_screenshot_visual_review",
+        "evidence_status": "dedicated_review_evidence_write_blocked_this_run",
+        "limits": "只支持结构字段来源定位；独立review/evidence成功入库前不据此升级canonical structure。牙第2笔冲突与本记录无关。"
+      }
     },
     {
       "id": "S03",
