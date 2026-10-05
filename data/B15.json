@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_kind": "phase1_content_draft",
   "batch_id": "B15",
-  "version": "content-draft-2026-10-02",
+  "version": "content-draft-2026-10-05",
   "title": "六七画常用部件与位置迁移",
   "content_status": "in_progress",
   "artwork_status": "deferred",
@@ -53,18 +53,19 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
-        "teaching_text": "reviewed_editorial_manual_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“剂”仅作整字迁移语境；齐在左部的真实形态、主/附关系和完整时序须回规范原页与整字核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭"
+      ],
+      "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending"
     },
     {
       "character": "衣",
@@ -88,7 +89,7 @@
         "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "衣（yī）",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -106,18 +107,18 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
-        "teaching_text": "reviewed_editorial_manual_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“装”仅作整字迁移语境；底部衣的形态与时序须回完整整字和规范原页核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+      ],
+      "component_name_status": "reviewed_S03_GF0014_2009"
     },
     {
       "character": "羊",
@@ -141,7 +142,7 @@
         "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "羊（yáng）",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -159,18 +160,18 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
-        "teaching_text": "reviewed_editorial_manual_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“群”仅作整字迁移语境；右部羊的比例、主/附关系和时序待整字证据确认。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+      ],
+      "component_name_status": "reviewed_S03_GF0014_2009"
     },
     {
       "character": "米",
@@ -194,7 +195,7 @@
         "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "米（mǐ）",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -212,18 +213,18 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
-        "teaching_text": "reviewed_editorial_manual_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“粉”仅作整字迁移语境；左部米的形态和真实时序必须回整字与规范原页核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+      ],
+      "component_name_status": "reviewed_S03_GF0014_2009"
     },
     {
       "character": "聿",
@@ -247,7 +248,7 @@
         "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "聿（yù）/律（lǜ）字边",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -265,18 +266,18 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
-        "teaching_text": "reviewed_editorial_manual_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“律”仅作整字迁移语境；右部聿的形态、部件身份和完整时序待权威材料确认。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+      ],
+      "component_name_status": "reviewed_S03_GF0014_2009"
     },
     {
       "character": "艮",
@@ -300,7 +301,7 @@
         "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "艮（gèn）/根（gēn）字边",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -318,18 +319,18 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
-        "teaching_text": "reviewed_editorial_manual_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“很”仅作整字迁移语境；右部艮的真实写法及主/附关系不得从独体形自动外推。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+      ],
+      "component_name_status": "reviewed_S03_GF0014_2009"
     },
     {
       "character": "羽",
@@ -371,18 +372,19 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
-        "teaching_text": "reviewed_editorial_manual_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“翔”仅作整字迁移语境；右部羽的真实形态和时序必须回完整整字核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭"
+      ],
+      "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending"
     },
     {
       "character": "糸",
@@ -406,7 +408,7 @@
         "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "绞丝底（jiǎosīdǐ）",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -424,18 +426,18 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
-        "teaching_text": "reviewed_editorial_manual_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“累”仅作整字迁移语境；糸在下部的形态、编码对应和真实时序仍待目标规范与整字证据。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+      ],
+      "component_name_status": "reviewed_S03_GF0014_2009"
     },
     {
       "character": "麦",
@@ -477,18 +479,19 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
-        "teaching_text": "reviewed_editorial_manual_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“麸”仅作整字迁移语境；左部麦的形态、主/附关系和完整时序须回规范原页核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭"
+      ],
+      "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending"
     },
     {
       "character": "走",
@@ -530,18 +533,19 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
-        "teaching_text": "reviewed_editorial_manual_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“超”仅作整字迁移语境；走作左下部件时的形态和包托时序必须回完整整字核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭"
+      ],
+      "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending"
     }
   ],
   "phase1_rule": "baseline机器evidence已入库；教学提示、自查句、整字语境和迁移边界已由reviews/B15-content.md中的人工内容复核覆盖，记为非权威编辑复核通过；笔顺、细笔名、部件名称、读音、结构、位置迁移和GF0011—2022精确身份继续逐字段pending。",
