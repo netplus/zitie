@@ -1,0 +1,121 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_fine_stroke_name_fold_category_primary_source_locator",
+  "batch_id": "B06",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "source": {
+    "source_id": "S05",
+    "publication_id": "GF2001-2001",
+    "sha256": "68a1420580a7eedde79eeb55b91b6b2ff10ef9155d98633ccc712838f04e9b14",
+    "method": "original_scan_table_visual_review_no_OCR",
+    "reviewed_pdf_pages": [
+      8,
+      9
+    ],
+    "table_rows": "5.1-5.25"
+  },
+  "identity_binding": "main_id binds to data/B06.json; fold categories are mapped from the current candidate stroke-name sequence",
+  "entries": [
+    {
+      "main_id": 7,
+      "fold_strokes": [],
+      "result": "no_fold_stroke_in_candidate_sequence_gf2001_not_applicable_to_plane_strokes"
+    },
+    {
+      "main_id": 8,
+      "fold_strokes": [
+        {
+          "stroke_index": 2,
+          "gf2001_row": "5.4",
+          "pdf_page": 8,
+          "abbrev_key": "shu_zhe"
+        }
+      ],
+      "result": "gf2001_fold_categories_located_for_candidate_sequence"
+    },
+    {
+      "main_id": 9,
+      "fold_strokes": [],
+      "result": "no_fold_stroke_in_candidate_sequence_gf2001_not_applicable_to_plane_strokes"
+    },
+    {
+      "main_id": 10,
+      "fold_strokes": [
+        {
+          "stroke_index": 2,
+          "gf2001_row": "5.15",
+          "pdf_page": 9,
+          "abbrev_key": "heng_zhe_gou"
+        }
+      ],
+      "result": "gf2001_fold_categories_located_for_candidate_sequence"
+    },
+    {
+      "main_id": 13,
+      "fold_strokes": [
+        {
+          "stroke_index": 2,
+          "gf2001_row": "5.15",
+          "pdf_page": 9,
+          "abbrev_key": "heng_zhe_gou"
+        }
+      ],
+      "result": "gf2001_fold_categories_located_for_candidate_sequence"
+    },
+    {
+      "main_id": 14,
+      "fold_strokes": [
+        {
+          "stroke_index": 2,
+          "gf2001_row": "5.19",
+          "pdf_page": 9,
+          "abbrev_key": "shu_wan_gou"
+        }
+      ],
+      "result": "gf2001_fold_categories_located_for_candidate_sequence"
+    },
+    {
+      "main_id": 15,
+      "fold_strokes": [
+        {
+          "stroke_index": 2,
+          "gf2001_row": "5.19",
+          "pdf_page": 9,
+          "abbrev_key": "shu_wan_gou"
+        }
+      ],
+      "result": "gf2001_fold_categories_located_for_candidate_sequence"
+    },
+    {
+      "main_id": 16,
+      "fold_strokes": [
+        {
+          "stroke_index": 2,
+          "gf2001_row": "5.22",
+          "pdf_page": 9,
+          "abbrev_key": "heng_zhe_wan_gou"
+        }
+      ],
+      "result": "gf2001_fold_categories_located_for_candidate_sequence"
+    },
+    {
+      "main_id": 17,
+      "fold_strokes": [],
+      "result": "no_fold_stroke_in_candidate_sequence_gf2001_not_applicable_to_plane_strokes"
+    },
+    {
+      "main_id": 18,
+      "fold_strokes": [],
+      "result": "no_fold_stroke_in_candidate_sequence_gf2001_not_applicable_to_plane_strokes"
+    }
+  ],
+  "decision": "GF2001 fold-stroke category rows located for each candidate fold name; this is partial fine-stroke evidence and does not by itself validate the full target sequence.",
+  "limits": [
+    "plane strokes are outside GF2001 fold-stroke table scope",
+    "target-specific sequence still requires applicable original-page review",
+    "no target-edition identity or positional-variant claim"
+  ],
+  "version": 2,
+  "v1_status": "superseded_source_hash_erratum"
+}
