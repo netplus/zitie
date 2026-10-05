@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_component_name_review",
+  "batch_id": "B09",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source_id": "S03",
+  "source_title": "现代常用字部件及部件名称规范",
+  "source_publication_id": "GF0014—2009",
+  "review_record": "reviews/B09-component-name.md",
+  "reviewed_field": "component_name",
+  "method": "machine transcription of the already persisted original-page human review; only exact target-form matches close component_name",
+  "entries": [
+    {
+      "character": "韦",
+      "main_id": 63,
+      "result": "matched_exact_S03_row",
+      "component_name": "韦（wéi）",
+      "sequence_no": 377,
+      "group_no": 327,
+      "printed_page": 17
+    },
+    {
+      "character": "支",
+      "main_id": 65,
+      "result": "no_exact_standalone_S03_row",
+      "nearest_note": "reviewed zh section; no exact standalone 支 row"
+    },
+    {
+      "character": "比",
+      "main_id": 71,
+      "result": "no_exact_standalone_S03_row",
+      "nearest_note": "reviewed b section; 匕 row must not substitute 比"
+    },
+    {
+      "character": "气",
+      "main_id": 81,
+      "result": "matched_exact_S03_row",
+      "component_name": "气（qì）",
+      "sequence_no": 275,
+      "group_no": 239,
+      "printed_page": 14
+    },
+    {
+      "character": "长",
+      "main_id": 83,
+      "result": "matched_exact_S03_row",
+      "component_name": "长（cháng）",
+      "sequence_no": 39,
+      "group_no": 34,
+      "printed_page": 8
+    },
+    {
+      "character": "片",
+      "main_id": 84,
+      "result": "matched_exact_S03_row",
+      "component_name": "片（piàn）",
+      "sequence_no": 267,
+      "group_no": 232,
+      "printed_page": 14
+    },
+    {
+      "character": "斤",
+      "main_id": 85,
+      "result": "matched_exact_S03_row",
+      "component_name": "斤（jīn）",
+      "sequence_no": 179,
+      "group_no": 152,
+      "printed_page": 11
+    },
+    {
+      "character": "爪",
+      "main_id": 86,
+      "result": "matched_exact_S03_row",
+      "component_name": "爪（zhǎo）",
+      "sequence_no": 480,
+      "group_no": 415,
+      "printed_page": 19
+    },
+    {
+      "character": "父",
+      "main_id": 87,
+      "result": "matched_exact_S03_row",
+      "component_name": "父（fù）",
+      "sequence_no": 109,
+      "group_no": 93,
+      "printed_page": 9
+    },
+    {
+      "character": "文",
+      "main_id": 93,
+      "result": "matched_exact_S03_row",
+      "component_name": "文（wén）",
+      "sequence_no": 382,
+      "group_no": 332,
+      "printed_page": 17
+    }
+  ],
+  "limits": [
+    "本文件把reviews/B09-component-name.md中已完成的原页复核转成机器可读证据，不声称本次重新审读S03原页。",
+    "只支持S03名称适用性，不支持2022身份、结构、笔顺、细笔名、采用读音或位置变体。"
+  ]
+}

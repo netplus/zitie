@@ -28,20 +28,30 @@ PR #9 已于2026-10-05阶段性合入 `main`，合并提交：
 
 阶段1已经从“批次范围分配”进入“既有批次字段级证据闭合”。截至本检查点，仓库中的进展至少包括：
 
-- **B04**：baseline、教学字段、S03部件名称evidence已在库；新增 `data/evidence/B04-structure.json`，确认10项目标字均直接列入GF0013—2009《现代常用独体字表》。structure专用evidence已入库，但canonical structure状态仍待同步。
-- **B05**：baseline、教学字段、S03部件名称evidence已在库；canonical已同步baseline/name/teaching状态。牙第2笔“撇折/竖折”继续 `conflict_fail_closed`；B04+B05结构原页20/20已在source ledger记录，但B05专用structure evidence仍待入库。
-- **B06**：baseline与S03部件名称evidence已在库；教学字段专用evidence仍待补。
-- **B07**：baseline、S03部件名称、教学字段evidence均已在库；canonical笔数等状态仍有同步债。
+- **B04**：baseline、教学字段、S03部件名称和structure evidence均已在库；10项均直接列入GF0013—2009《现代常用独体字表》，canonical structure已同步reviewed。
+- **B05**：baseline、教学字段、S03部件名称和structure evidence均已在库，canonical已同步相关reviewed状态。牙第2笔“撇折/竖折”继续 `conflict_fail_closed`。
+- **B06**：baseline、S03部件名称和structure evidence已在库；baseline/name canonical状态已同步；教学字段专用evidence仍待补。
+- **B07**：baseline、S03部件名称、教学字段和structure evidence均已在库；baseline笔数canonical状态已同步。
 - **B08**：baseline和教学字段evidence已在库。
-- **B09**：baseline、教学字段evidence和S03人工review已在库；S03 machine evidence仍待补。
+- **B09**：baseline、教学字段、S03人工review、S03 machine evidence和structure evidence均已在库；名称canonical状态已同步。
 - **B10—B11**：baseline、S03名称evidence已在库，canonical已完成一轮证据状态同步；B11教学字段evidence亦在库。
 - **B12—B14**：baseline、教学字段和S03名称evidence已形成；部分canonical/review文字仍有同步债。
 - **B15—B18**：已有baseline、教学字段与S03名称/适用性证据；B15、B16、B17、B18均已有不同程度的canonical同步。
-- **B19**：baseline、教学字段与 `data/evidence/B19-component-name.json` 已在库；canonical名称状态仍待同步。
+- **B19**：baseline、教学字段与 `data/evidence/B19-component-name.json` 已在库；canonical名称状态已同步。
 - **B20**：baseline和教学字段evidence已在库；S03完整主体表视觉审读已经登记在 `sources/catalog.json`，machine component-name evidence仍待补。
 - **B21**：baseline evidence、canonical数据和人工review均已在库。
 
 以上只表示对应字段的证据链进展，不表示各批次已经达到`content_ready`。
+
+## 最新40项结构推进（2026-10-05）
+
+B06—B09共40个不同主部首完成GF0013—2009《现代常用独体字表》结构适用性原页审读并入库专用evidence：
+- B06：5项精确命中（厂、卜、儿、匕、几），5项S07不适用；
+- B07：0项精确命中，10项S07不适用；
+- B08：0项精确命中，10项S07不适用；
+- B09：7项精确命中（气、长、片、斤、爪、父、文），3项S07不适用。
+
+精确命中项的structure已同步为\`reviewed_S07_GF0013_2009_undecomposable\`；未命中项只标记为“S07已审读但不能关闭结构，等待其它适用权威来源”，不反推为合体字。对应evidence为\`data/evidence/B06-structure.json\`至\`B09-structure.json\`，原页审读已登记\`sources/catalog.json\`。
 
 ## 当前主要未决字段
 
@@ -67,8 +77,8 @@ B03内容层视为`content_ready`。artwork/layout人工记录已存在；PDF归
 
 ## 下一内容工作
 
-1. 先清理少量“证据已在库、canonical/review未同步”的状态债：B04 structure、B05 structure evidence、B07 baseline状态、B09/B20 component-name machine evidence、B19 canonical名称状态；
-2. 主吞吐从S03名称逐步转向**笔顺、细笔名和采用读音**，仍按每轮20个不同主部首推进；
+1. 继续清理残余状态债，当前重点只剩B20 component-name machine evidence及少量review文字同步；
+2. 主吞吐从S03名称逐步转向**笔顺、细笔名和采用读音**；常规单轮目标提高为40个不同主部首，无真实阻塞时至少推进30项；
 3. 结构字段继续利用GF0013—2009等适用来源逐批闭合，但不外推2022部首身份；
 4. 位置迁移继续回目标整字核验；
 5. GF0011—2022逐项精确字段继续由Issue #4并行追踪。

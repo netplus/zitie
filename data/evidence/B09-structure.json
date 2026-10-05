@@ -1,0 +1,119 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_structure_review_evidence",
+  "batch_id": "B09",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S07",
+    "publication_id": "GF0013—2009",
+    "title": "现代常用独体字规范",
+    "publisher": "教育部、国家语委",
+    "source_ledger": "sources/catalog.json",
+    "visual_review_copy": "https://edu.sh.gov.cn/cmsres/cc/cc76a4a1bbf44271bbc8cf8b47b29289/50476d9ab398dd13a7459af90778d693.pdf",
+    "byte_identity_to_catalog_copy": "not_checked_this_run",
+    "table": "第6节 现代常用独体字表",
+    "reviewed_printed_pages": [
+      2
+    ],
+    "reviewed_pdf_pages": [
+      5
+    ],
+    "method": "actual_pdf_page_screenshot_visual_review_exact_character_match_only"
+  },
+  "reviewed_field": "structure",
+  "entries": [
+    {
+      "character": "韦",
+      "main_id": 63,
+      "result": "no_exact_standalone_entry_in_reviewed_GF0013_2009_table",
+      "printed_page": 2,
+      "pdf_page": 5,
+      "limits": "本来源未命中不等于可判定为合体结构；structure继续等待其它适用权威来源。"
+    },
+    {
+      "character": "支",
+      "main_id": 65,
+      "result": "no_exact_standalone_entry_in_reviewed_GF0013_2009_table",
+      "printed_page": 2,
+      "pdf_page": 5,
+      "limits": "本来源未命中不等于可判定为合体结构；structure继续等待其它适用权威来源。"
+    },
+    {
+      "character": "比",
+      "main_id": 71,
+      "result": "no_exact_standalone_entry_in_reviewed_GF0013_2009_table",
+      "printed_page": 2,
+      "pdf_page": 5,
+      "limits": "本来源未命中不等于可判定为合体结构；structure继续等待其它适用权威来源。"
+    },
+    {
+      "character": "气",
+      "main_id": 81,
+      "result": "listed_in_GF0013_2009_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "长",
+      "main_id": 83,
+      "result": "listed_in_GF0013_2009_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "片",
+      "main_id": 84,
+      "result": "listed_in_GF0013_2009_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "斤",
+      "main_id": 85,
+      "result": "listed_in_GF0013_2009_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "爪",
+      "main_id": 86,
+      "result": "listed_in_GF0013_2009_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "父",
+      "main_id": 87,
+      "result": "listed_in_GF0013_2009_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "文",
+      "main_id": 93,
+      "result": "listed_in_GF0013_2009_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "exact_undecomposable_matches": 7,
+    "no_exact_table_entry": 3
+  },
+  "limits": [
+    "只有目标字形直接列入《现代常用独体字表》时，才据此关闭structure为独体字。",
+    "未命中只表示S07不适用于关闭该目标结构字段，不得反推为合体字。",
+    "本证据不支持GF0011—2022主附身份、名称/编码、笔顺、细笔名、采用读音或位置变体。",
+    "上海市教育委员会公开副本与仓库catalog登记扫描件的字节同一性本轮未复核。"
+  ]
+}

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_kind": "phase1_content_draft",
   "batch_id": "B09",
-  "version": "content-draft-2026-10-02",
+  "version": "content-draft-2026-10-05",
   "title": "四画常用独体与部件迁移",
   "content_status": "in_progress",
   "artwork_status": "deferred",
@@ -35,7 +35,7 @@
         "structure_class": "left_right"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "韦",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
       "component_name_status": "pending_S03_target_row",
       "baseline_identity": {
@@ -50,12 +50,12 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
@@ -63,8 +63,15 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B09-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "支",
@@ -103,12 +110,12 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
@@ -116,8 +123,15 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B09-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "比",
@@ -156,12 +170,12 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
@@ -169,8 +183,15 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+        "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B09-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "气",
@@ -194,7 +215,7 @@
         "structure_class": "left_right"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "气",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
       "component_name_status": "pending_S03_target_row",
       "baseline_identity": {
@@ -209,12 +230,12 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
@@ -223,7 +244,13 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B09-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      }
     },
     {
       "character": "长",
@@ -247,7 +274,7 @@
         "structure_class": "left_right"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "长",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
       "component_name_status": "pending_S03_target_row",
       "baseline_identity": {
@@ -262,12 +289,12 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
@@ -276,7 +303,13 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B09-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      }
     },
     {
       "character": "片",
@@ -300,7 +333,7 @@
         "structure_class": "left_right"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "片",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
       "component_name_status": "pending_S03_target_row",
       "baseline_identity": {
@@ -315,12 +348,12 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
@@ -329,7 +362,13 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B09-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      }
     },
     {
       "character": "斤",
@@ -353,7 +392,7 @@
         "structure_class": "left_right"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "斤",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
       "component_name_status": "pending_S03_target_row",
       "baseline_identity": {
@@ -368,12 +407,12 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
@@ -382,7 +421,13 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B09-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      }
     },
     {
       "character": "爪",
@@ -406,7 +451,7 @@
         "structure_class": "semi_enclosing"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "爪",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
       "component_name_status": "pending_S03_target_row",
       "baseline_identity": {
@@ -421,12 +466,12 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
@@ -435,7 +480,13 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B09-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      }
     },
     {
       "character": "父",
@@ -459,7 +510,7 @@
         "structure_class": "top_bottom"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "父",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
       "component_name_status": "pending_S03_target_row",
       "baseline_identity": {
@@ -474,12 +525,12 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
@@ -488,7 +539,13 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B09-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      }
     },
     {
       "character": "文",
@@ -512,7 +569,7 @@
         "structure_class": "left_right"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "文",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
       "component_name_status": "pending_S03_target_row",
       "baseline_identity": {
@@ -527,12 +584,12 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "editorial_context_selected_pending_source_crosscheck",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
@@ -541,8 +598,16 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
-      ]
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B09-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      }
     }
   ],
-  "phase1_rule": "当前只建立可追溯内容稿。候选笔顺/细笔名不得因写入data文件而视为reviewed；必须在对应原页和机器证据真实入库后逐字段升级。"
+  "phase1_rule": "当前只建立可追溯内容稿。候选笔顺/细笔名不得因写入data文件而视为reviewed；必须在对应原页和机器证据真实入库后逐字段升级。",
+  "structure_evidence": "data/evidence/B09-structure.json",
+  "component_name_evidence": "data/evidence/B09-component-name.json"
 }

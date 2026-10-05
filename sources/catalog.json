@@ -420,6 +420,46 @@
         "method": "actual_pdf_page_screenshot_visual_review",
         "evidence_status": "dedicated_review_evidence_write_blocked_this_run",
         "limits": "只支持结构字段来源定位；独立review/evidence成功入库前不据此升级canonical structure。牙第2笔冲突与本记录无关。"
+      },
+      "B06_B09_structure_visual_review": {
+        "date": "2026-10-05",
+        "batches": [
+          "B06",
+          "B07",
+          "B08",
+          "B09"
+        ],
+        "characters": "厂匚卜冂勹儿匕几亠冫冖凵卩厶廴艹廾宀辶彐丨丿丶乛尢弋囗彳彡夂韦支比气长片斤爪父文",
+        "visual_review_copy": "https://edu.sh.gov.cn/cmsres/cc/cc76a4a1bbf44271bbc8cf8b47b29289/50476d9ab398dd13a7459af90778d693.pdf",
+        "host": "上海市教育委员会",
+        "byte_identity_to_catalog_copy": "not_checked_this_run",
+        "table": "第6节 现代常用独体字表",
+        "pdf_pages_reviewed": [
+          5
+        ],
+        "printed_pages_reviewed": [
+          2
+        ],
+        "method": "actual_pdf_page_screenshot_visual_review_exact_character_match_only",
+        "result_summary": {
+          "B06": "5 exact undecomposable matches / 5 no exact table entry",
+          "B07": "0 exact / 10 no exact table entry",
+          "B08": "0 exact / 10 no exact table entry",
+          "B09": "7 exact undecomposable matches / 3 no exact table entry"
+        },
+        "exact_matches": {
+          "B06": "厂卜儿匕几",
+          "B07": "",
+          "B08": "",
+          "B09": "气长片斤爪父文"
+        },
+        "evidence": [
+          "data/evidence/B06-structure.json",
+          "data/evidence/B07-structure.json",
+          "data/evidence/B08-structure.json",
+          "data/evidence/B09-structure.json"
+        ],
+        "limits": "只在目标字形直接列入GF0013—2009《现代常用独体字表》时关闭structure为独体字；未命中只表示S07不适用，不反推为合体字；不支持2022身份、笔顺、细笔名、读音或位置变体。"
       }
     },
     {
