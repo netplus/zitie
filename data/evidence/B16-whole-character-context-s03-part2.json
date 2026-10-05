@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "record_kind": "whole_character_context_source_review_shard",
+  "batch_id": "B16",
+  "reviewed_at": "2026-10-06",
+  "source_id": "S03",
+  "publication_id": "GF0014-2009",
+  "method": "actual_pdf_page_screenshot_visual_review_exact_target_row_and_example_column",
+  "entries": [
+    {
+      "main_id": 156,
+      "target_ucs": "U+5364",
+      "sequence_no": 223,
+      "group_no": 193,
+      "printed_page": 13,
+      "pdf_page": 16,
+      "example_ucs": "U+5364",
+      "result": "exact_target_component_row_example_column_reviewed"
+    },
+    {
+      "main_id": 157,
+      "target_ucs": "U+91CC",
+      "sequence_no": 207,
+      "group_no": 178,
+      "printed_page": 12,
+      "pdf_page": 15,
+      "example_ucs": "U+91CE",
+      "result": "exact_target_component_row_example_column_reviewed"
+    },
+    {
+      "main_id": 158,
+      "target_ucs": "U+8DB3",
+      "result": "no_exact_standalone_S03_row_after_full_main_table_visual_review"
+    },
+    {
+      "main_id": 159,
+      "target_ucs": "U+9091",
+      "result": "no_exact_standalone_S03_row_after_full_main_table_visual_review"
+    },
+    {
+      "main_id": 160,
+      "target_ucs": "U+8EAB",
+      "sequence_no": 314,
+      "group_no": 272,
+      "printed_page": 15,
+      "pdf_page": 18,
+      "example_ucs": "U+8EB2",
+      "result": "exact_target_component_row_example_column_reviewed"
+    }
+  ],
+  "limits": "S03 source occurrence only; positional migration and full-character stroke order remain pending."
+}
