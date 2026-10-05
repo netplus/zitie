@@ -35,7 +35,7 @@
       },
       "pinyin": null,
       "component_name": "将（jiàng）字旁",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -53,7 +53,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
@@ -62,7 +62,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "笔数、笔顺和细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -73,6 +74,12 @@
       "structure": {
         "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "evidence": "data/evidence/B10-structure.json"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B10-pronunciation.json",
+        "result": "S03_name_row_does_not_supply_target_self_pronunciation"
       }
     },
     {
@@ -95,9 +102,9 @@
         "position": "left",
         "structure_class": "left_right"
       },
-      "pinyin": null,
+      "pinyin": "yāo",
       "component_name": "幺（yāo）/幼（yòu）字旁",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "pinyin_status": "reviewed_S03_GF0014_2009_target_self_pronunciation",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -115,7 +122,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
@@ -135,6 +142,13 @@
       "structure": {
         "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "evidence": "data/evidence/B10-structure.json"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B10-pronunciation.json",
+        "adopted_pronunciation": "yāo",
+        "result": "direct_target_self_pronunciation_supported_by_S03_row"
       }
     },
     {
@@ -158,9 +172,9 @@
         "position": "right",
         "structure_class": "left_right"
       },
-      "pinyin": null,
+      "pinyin": "pū",
       "component_name": "攴（pū）/敲（qiāo）字边",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "pinyin_status": "reviewed_S03_GF0014_2009_target_self_pronunciation",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -178,7 +192,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
@@ -199,6 +213,13 @@
       "structure": {
         "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "evidence": "data/evidence/B10-structure.json"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B10-pronunciation.json",
+        "adopted_pronunciation": "pū",
+        "result": "direct_target_self_pronunciation_supported_by_S03_row"
       }
     },
     {
@@ -222,9 +243,9 @@
         "position": "right",
         "structure_class": "left_right"
       },
-      "pinyin": null,
+      "pinyin": "shì",
       "component_name": "氏（shì）",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "pinyin_status": "reviewed_S03_GF0014_2009_target_self_pronunciation",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -242,7 +263,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
@@ -262,6 +283,13 @@
         "status": "reviewed_S07_GF0013_2009_undecomposable",
         "class": "undecomposable",
         "evidence": "data/evidence/B10-structure.json"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B10-pronunciation.json",
+        "adopted_pronunciation": "shì",
+        "result": "direct_target_self_pronunciation_supported_by_S03_row"
       }
     },
     {
@@ -285,9 +313,9 @@
         "position": "right",
         "structure_class": "left_right"
       },
-      "pinyin": null,
+      "pinyin": "qiàn",
       "component_name": "欠（qiàn）",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "pinyin_status": "reviewed_S03_GF0014_2009_target_self_pronunciation",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -305,7 +333,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
@@ -326,6 +354,13 @@
       "structure": {
         "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "evidence": "data/evidence/B10-structure.json"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B10-pronunciation.json",
+        "adopted_pronunciation": "qiàn",
+        "result": "direct_target_self_pronunciation_supported_by_S03_row"
       }
     },
     {
@@ -349,9 +384,9 @@
         "position": "self",
         "structure_class": "undecomposable"
       },
-      "pinyin": null,
+      "pinyin": "fēng",
       "component_name": "风（fēng）",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "pinyin_status": "reviewed_S03_GF0014_2009_target_self_pronunciation",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -369,7 +404,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
@@ -389,6 +424,13 @@
       "structure": {
         "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "evidence": "data/evidence/B10-structure.json"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B10-pronunciation.json",
+        "adopted_pronunciation": "fēng",
+        "result": "direct_target_self_pronunciation_supported_by_S03_row"
       }
     },
     {
@@ -412,9 +454,9 @@
         "position": "lower",
         "structure_class": "top_bottom"
       },
-      "pinyin": null,
+      "pinyin": "fāng",
       "component_name": "方（fāng）",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "pinyin_status": "reviewed_S03_GF0014_2009_target_self_pronunciation",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -432,7 +474,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
@@ -452,6 +494,13 @@
         "status": "reviewed_S07_GF0013_2009_undecomposable",
         "class": "undecomposable",
         "evidence": "data/evidence/B10-structure.json"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B10-pronunciation.json",
+        "adopted_pronunciation": "fāng",
+        "result": "direct_target_self_pronunciation_supported_by_S03_row"
       }
     },
     {
@@ -475,9 +524,9 @@
         "position": "right",
         "structure_class": "left_right"
       },
-      "pinyin": null,
+      "pinyin": "dǒu",
       "component_name": "斗（dǒu）",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "pinyin_status": "reviewed_S03_GF0014_2009_target_self_pronunciation",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -495,7 +544,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
@@ -515,6 +564,13 @@
         "status": "reviewed_S07_GF0013_2009_undecomposable",
         "class": "undecomposable",
         "evidence": "data/evidence/B10-structure.json"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B10-pronunciation.json",
+        "adopted_pronunciation": "dǒu",
+        "result": "direct_target_self_pronunciation_supported_by_S03_row"
       }
     },
     {
@@ -538,9 +594,9 @@
         "position": "top",
         "structure_class": "semi_enclosing"
       },
-      "pinyin": null,
+      "pinyin": "hù",
       "component_name": "户（hù）",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "pinyin_status": "reviewed_S03_GF0014_2009_target_self_pronunciation",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -558,7 +614,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
@@ -578,6 +634,13 @@
         "status": "reviewed_S07_GF0013_2009_undecomposable",
         "class": "undecomposable",
         "evidence": "data/evidence/B10-structure.json"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B10-pronunciation.json",
+        "adopted_pronunciation": "hù",
+        "result": "direct_target_self_pronunciation_supported_by_S03_row"
       }
     },
     {
@@ -601,9 +664,9 @@
         "position": "bottom",
         "structure_class": "top_bottom"
       },
-      "pinyin": null,
+      "pinyin": "xīn",
       "component_name": "心（xīn）",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "pinyin_status": "reviewed_S03_GF0014_2009_target_self_pronunciation",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -621,7 +684,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
@@ -642,9 +705,17 @@
         "status": "reviewed_S07_GF0013_2009_undecomposable",
         "class": "undecomposable",
         "evidence": "data/evidence/B10-structure.json"
+      },
+      "pronunciation_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B10-pronunciation.json",
+        "adopted_pronunciation": "xīn",
+        "result": "direct_target_self_pronunciation_supported_by_S03_row"
       }
     }
   ],
   "phase1_rule": "当前只建立可追溯内容稿。候选笔顺/细笔名不得因写入data文件而视为reviewed；必须在对应原页和机器证据真实入库后逐字段升级。",
-  "structure_evidence": "data/evidence/B10-structure.json"
+  "structure_evidence": "data/evidence/B10-structure.json",
+  "pronunciation_evidence": "data/evidence/B10-pronunciation.json"
 }
