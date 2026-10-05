@@ -40,7 +40,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_order": "GF0023_2020_exact_target_row_located_derived_crosschecked_visual_review_pending",
-        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -50,7 +50,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
         "GF0023—2020目标行已精确定位；对应原页视觉复核完成前stroke_order不升级为reviewed",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
+        "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -83,6 +84,50 @@
         "source_blob_sha": "ecf422f0bb9d9b1d07d661250796269bfa752ebd",
         "derived_order_code": "112",
         "result": "matched_derived_GF0023_crosscheck"
+      },
+      "fine_stroke_names_secondary_crosscheck": {
+        "evidence": "data/evidence/B04-fine-stroke-names-crosscheck.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent_or_length_mismatch",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 2,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 3,
+            "letter": "f",
+            "shape": "丨",
+            "source_name": "竖",
+            "source_name_options": [
+              "竖"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          }
+        ]
       }
     },
     {
@@ -113,7 +158,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_order": "GF0023_2020_exact_target_row_located_derived_crosschecked_visual_review_pending",
-        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -123,7 +168,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
         "GF0023—2020目标行已精确定位；对应原页视觉复核完成前stroke_order不升级为reviewed",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
+        "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -156,6 +202,50 @@
         "source_blob_sha": "ecf422f0bb9d9b1d07d661250796269bfa752ebd",
         "derived_order_code": "124",
         "result": "matched_derived_GF0023_crosscheck"
+      },
+      "fine_stroke_names_secondary_crosscheck": {
+        "evidence": "data/evidence/B04-fine-stroke-names-crosscheck.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent_or_length_mismatch",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 2,
+            "letter": "g",
+            "shape": "亅",
+            "source_name": "竖钩",
+            "source_name_options": [
+              "竖钩"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 3,
+            "letter": "k",
+            "shape": "丶",
+            "source_name": "点",
+            "source_name_options": [
+              "点"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          }
+        ]
       }
     },
     {
@@ -186,7 +276,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_order": "GF0023_2020_exact_target_row_located_derived_crosschecked_visual_review_pending",
-        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -196,7 +286,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
         "GF0023—2020目标行已精确定位；对应原页视觉复核完成前stroke_order不升级为reviewed",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
+        "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -229,6 +320,51 @@
         "source_blob_sha": "ecf422f0bb9d9b1d07d661250796269bfa752ebd",
         "derived_order_code": "354",
         "result": "matched_derived_GF0023_crosscheck"
+      },
+      "fine_stroke_names_secondary_crosscheck": {
+        "evidence": "data/evidence/B04-fine-stroke-names-crosscheck.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent_or_length_mismatch",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "s",
+            "shape": "丿",
+            "source_name": "撇",
+            "source_name_options": [
+              "撇"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 2,
+            "letter": "e",
+            "shape": "㇇|乛",
+            "source_name": "横撇|横钩",
+            "source_name_options": [
+              "横撇",
+              "横钩"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 3,
+            "letter": "k",
+            "shape": "丶",
+            "source_name": "点",
+            "source_name_options": [
+              "点"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          }
+        ]
       }
     },
     {
@@ -259,7 +395,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_order": "GF0023_2020_exact_target_row_located_derived_crosschecked_visual_review_pending",
-        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -269,7 +405,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
         "GF0023—2020目标行已精确定位；对应原页视觉复核完成前stroke_order不升级为reviewed",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
+        "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -302,6 +439,50 @@
         "source_blob_sha": "ecf422f0bb9d9b1d07d661250796269bfa752ebd",
         "derived_order_code": "413",
         "result": "matched_derived_GF0023_crosscheck"
+      },
+      "fine_stroke_names_secondary_crosscheck": {
+        "evidence": "data/evidence/B04-fine-stroke-names-crosscheck.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent_or_length_mismatch",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "k",
+            "shape": "丶",
+            "source_name": "点",
+            "source_name_options": [
+              "点"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 2,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 3,
+            "letter": "s",
+            "shape": "丿",
+            "source_name": "撇",
+            "source_name_options": [
+              "撇"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          }
+        ]
       }
     },
     {
@@ -332,7 +513,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_order": "GF0023_2020_exact_target_row_located_derived_crosschecked_visual_review_pending",
-        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -342,7 +523,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
         "GF0023—2020目标行已精确定位；对应原页视觉复核完成前stroke_order不升级为reviewed",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
+        "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -375,6 +557,50 @@
         "source_blob_sha": "ecf422f0bb9d9b1d07d661250796269bfa752ebd",
         "derived_order_code": "425",
         "result": "matched_derived_GF0023_crosscheck"
+      },
+      "fine_stroke_names_secondary_crosscheck": {
+        "evidence": "data/evidence/B04-fine-stroke-names-crosscheck.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent_or_length_mismatch",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "k",
+            "shape": "丶",
+            "source_name": "点",
+            "source_name_options": [
+              "点"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 2,
+            "letter": "f",
+            "shape": "丨",
+            "source_name": "竖",
+            "source_name_options": [
+              "竖"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 3,
+            "letter": "r",
+            "shape": "𠃌",
+            "source_name": "横折钩",
+            "source_name_options": [
+              "横折钩"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          }
+        ]
       }
     },
     {
@@ -405,7 +631,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_order": "GF0023_2020_exact_target_row_located_derived_crosschecked_visual_review_pending",
-        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -415,7 +641,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
         "GF0023—2020目标行已精确定位；对应原页视觉复核完成前stroke_order不升级为reviewed",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
+        "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -448,6 +675,50 @@
         "source_blob_sha": "ecf422f0bb9d9b1d07d661250796269bfa752ebd",
         "derived_order_code": "513",
         "result": "matched_derived_GF0023_crosscheck"
+      },
+      "fine_stroke_names_secondary_crosscheck": {
+        "evidence": "data/evidence/B04-fine-stroke-names-crosscheck.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent_or_length_mismatch",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "c",
+            "shape": "𠃍",
+            "source_name": "横折",
+            "source_name_options": [
+              "横折"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 2,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 3,
+            "letter": "s",
+            "shape": "丿",
+            "source_name": "撇",
+            "source_name_options": [
+              "撇"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          }
+        ]
       }
     },
     {
@@ -478,7 +749,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_order": "GF0023_2020_exact_target_row_located_derived_crosschecked_visual_review_pending",
-        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -488,7 +759,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
         "GF0023—2020目标行已精确定位；对应原页视觉复核完成前stroke_order不升级为reviewed",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
+        "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -521,6 +793,50 @@
         "source_blob_sha": "ecf422f0bb9d9b1d07d661250796269bfa752ebd",
         "derived_order_code": "515",
         "result": "matched_derived_GF0023_crosscheck"
+      },
+      "fine_stroke_names_secondary_crosscheck": {
+        "evidence": "data/evidence/B04-fine-stroke-names-crosscheck.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent_or_length_mismatch",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "c",
+            "shape": "𠃍",
+            "source_name": "横折",
+            "source_name_options": [
+              "横折"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 2,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 3,
+            "letter": "u",
+            "shape": "乚",
+            "source_name": "竖弯钩",
+            "source_name_options": [
+              "竖弯钩"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          }
+        ]
       }
     },
     {
@@ -551,7 +867,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_order": "GF0023_2020_exact_target_row_located_derived_crosschecked_visual_review_pending",
-        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -561,7 +877,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
         "GF0023—2020目标行已精确定位；对应原页视觉复核完成前stroke_order不升级为reviewed",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
+        "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -594,6 +911,50 @@
         "source_blob_sha": "ecf422f0bb9d9b1d07d661250796269bfa752ebd",
         "derived_order_code": "515",
         "result": "matched_derived_GF0023_crosscheck"
+      },
+      "fine_stroke_names_secondary_crosscheck": {
+        "evidence": "data/evidence/B04-fine-stroke-names-crosscheck.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent_or_length_mismatch",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "c",
+            "shape": "𠃍",
+            "source_name": "横折",
+            "source_name_options": [
+              "横折"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 2,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 3,
+            "letter": "z",
+            "shape": "㇉",
+            "source_name": "竖折折钩",
+            "source_name_options": [
+              "竖折折钩"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          }
+        ]
       }
     },
     {
@@ -624,7 +985,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_order": "GF0023_2020_exact_target_row_located_derived_crosschecked_visual_review_pending",
-        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -634,7 +995,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
         "GF0023—2020目标行已精确定位；对应原页视觉复核完成前stroke_order不升级为reviewed",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
+        "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -667,6 +1029,50 @@
         "source_blob_sha": "ecf422f0bb9d9b1d07d661250796269bfa752ebd",
         "derived_order_code": "534",
         "result": "matched_derived_GF0023_crosscheck"
+      },
+      "fine_stroke_names_secondary_crosscheck": {
+        "evidence": "data/evidence/B04-fine-stroke-names-crosscheck.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent_or_length_mismatch",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "o",
+            "shape": "⺄",
+            "source_name": "横斜钩",
+            "source_name_options": [
+              "横斜钩"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 2,
+            "letter": "s",
+            "shape": "丿",
+            "source_name": "撇",
+            "source_name_options": [
+              "撇"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 3,
+            "letter": "k",
+            "shape": "丶",
+            "source_name": "点",
+            "source_name_options": [
+              "点"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          }
+        ]
       }
     },
     {
@@ -697,7 +1103,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_order": "GF0023_2020_exact_target_row_located_derived_crosschecked_visual_review_pending",
-        "fine_stroke_names": "candidate_reviewed_local_evidence_to_migrate",
+        "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -707,7 +1113,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
         "GF0023—2020目标行已精确定位；对应原页视觉复核完成前stroke_order不升级为reviewed",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成"
+        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
+        "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -740,6 +1147,50 @@
         "source_blob_sha": "ecf422f0bb9d9b1d07d661250796269bfa752ebd",
         "derived_order_code": "551",
         "result": "matched_derived_GF0023_crosscheck"
+      },
+      "fine_stroke_names_secondary_crosscheck": {
+        "evidence": "data/evidence/B04-fine-stroke-names-crosscheck.json",
+        "source_repository": "theajack/cnchar",
+        "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+        "result": "secondary_fine_stroke_sequence_located_candidate_absent_or_length_mismatch",
+        "secondary_sequence": [
+          {
+            "index": 1,
+            "letter": "c",
+            "shape": "𠃍",
+            "source_name": "横折",
+            "source_name_options": [
+              "横折"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 2,
+            "letter": "z",
+            "shape": "㇉",
+            "source_name": "竖折折钩",
+            "source_name_options": [
+              "竖折折钩"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          },
+          {
+            "index": 3,
+            "letter": "j",
+            "shape": "一",
+            "source_name": "横",
+            "source_name_options": [
+              "横"
+            ],
+            "candidate": null,
+            "candidate_options": [],
+            "compatible_options": []
+          }
+        ]
       }
     }
   ],
@@ -747,5 +1198,6 @@
   "structure_evidence": "data/evidence/B04-structure.json",
   "stroke_order_locator_evidence": "data/evidence/B04-stroke-order-locator.json",
   "pronunciation_evidence": "data/evidence/B04-pronunciation.json",
-  "stroke_order_crosscheck_evidence": "data/evidence/B04-stroke-order-crosscheck.json"
+  "stroke_order_crosscheck_evidence": "data/evidence/B04-stroke-order-crosscheck.json",
+  "fine_stroke_names_crosscheck_evidence": "data/evidence/B04-fine-stroke-names-crosscheck.json"
 }

@@ -1,0 +1,823 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_fine_stroke_names_secondary_crosscheck",
+  "batch_id": "B09",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "source": {
+    "source_kind": "secondary_digitization",
+    "repository": "theajack/cnchar",
+    "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+    "order_file": "src/cnchar/plugin/order/dict/stroke-order-jian.json",
+    "order_blob_sha": "848fcb630a5a0ebbb868afd9f3f5abc63e847ac3",
+    "stroke_table_file": "src/cnchar/plugin/order/dict/stroke-table.json",
+    "stroke_table_blob_sha": "6c07faad47c543ee06daeac22aec8eaedf11c603",
+    "license": "MIT",
+    "documented_ambiguities": [
+      "卧钩=斜钩",
+      "横折弯=横折折",
+      "横折折折钩=横撇弯钩",
+      "横撇=横钩",
+      "竖折折=竖折撇"
+    ],
+    "limits": "二次数据只用于细笔名定位/交叉核验，不替代GF2001/GF0023等规范原页。"
+  },
+  "reviewed_field": "fine_stroke_names_secondary_crosscheck",
+  "entries": [
+    {
+      "character": "韦",
+      "main_id": 63,
+      "result": "secondary_exact_sequence_match",
+      "source_letters": "jjrf",
+      "secondary_sequence": [
+        {
+          "index": 1,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ],
+          "candidate": "横",
+          "candidate_options": [
+            "横"
+          ],
+          "compatible_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ],
+          "candidate": "横",
+          "candidate_options": [
+            "横"
+          ],
+          "compatible_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 3,
+          "letter": "r",
+          "shape": "𠃌",
+          "source_name": "横折钩",
+          "source_name_options": [
+            "横折钩"
+          ],
+          "candidate": "横折钩",
+          "candidate_options": [
+            "横折钩"
+          ],
+          "compatible_options": [
+            "横折钩"
+          ]
+        },
+        {
+          "index": 4,
+          "letter": "f",
+          "shape": "丨",
+          "source_name": "竖",
+          "source_name_options": [
+            "竖"
+          ],
+          "candidate": "竖",
+          "candidate_options": [
+            "竖"
+          ],
+          "compatible_options": [
+            "竖"
+          ]
+        }
+      ],
+      "candidate_names": [
+        "横",
+        "横",
+        "横折钩",
+        "竖"
+      ]
+    },
+    {
+      "character": "支",
+      "main_id": 65,
+      "result": "secondary_source_ambiguous_candidate_compatible",
+      "source_letters": "jfel",
+      "secondary_sequence": [
+        {
+          "index": 1,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ],
+          "candidate": "横",
+          "candidate_options": [
+            "横"
+          ],
+          "compatible_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "f",
+          "shape": "丨",
+          "source_name": "竖",
+          "source_name_options": [
+            "竖"
+          ],
+          "candidate": "竖",
+          "candidate_options": [
+            "竖"
+          ],
+          "compatible_options": [
+            "竖"
+          ]
+        },
+        {
+          "index": 3,
+          "letter": "e",
+          "shape": "㇇|乛",
+          "source_name": "横撇|横钩",
+          "source_name_options": [
+            "横撇",
+            "横钩"
+          ],
+          "candidate": "横撇",
+          "candidate_options": [
+            "横撇"
+          ],
+          "compatible_options": [
+            "横撇"
+          ]
+        },
+        {
+          "index": 4,
+          "letter": "l",
+          "shape": "㇏",
+          "source_name": "捺",
+          "source_name_options": [
+            "捺"
+          ],
+          "candidate": "捺",
+          "candidate_options": [
+            "捺"
+          ],
+          "compatible_options": [
+            "捺"
+          ]
+        }
+      ],
+      "candidate_names": [
+        "横",
+        "竖",
+        "横撇",
+        "捺"
+      ]
+    },
+    {
+      "character": "比",
+      "main_id": 71,
+      "result": "secondary_exact_sequence_match",
+      "source_letters": "jhsu",
+      "secondary_sequence": [
+        {
+          "index": 1,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ],
+          "candidate": "横",
+          "candidate_options": [
+            "横"
+          ],
+          "compatible_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "h",
+          "shape": "𠄌",
+          "source_name": "竖提",
+          "source_name_options": [
+            "竖提"
+          ],
+          "candidate": "竖提",
+          "candidate_options": [
+            "竖提"
+          ],
+          "compatible_options": [
+            "竖提"
+          ]
+        },
+        {
+          "index": 3,
+          "letter": "s",
+          "shape": "丿",
+          "source_name": "撇",
+          "source_name_options": [
+            "撇"
+          ],
+          "candidate": "撇",
+          "candidate_options": [
+            "撇"
+          ],
+          "compatible_options": [
+            "撇"
+          ]
+        },
+        {
+          "index": 4,
+          "letter": "u",
+          "shape": "乚",
+          "source_name": "竖弯钩",
+          "source_name_options": [
+            "竖弯钩"
+          ],
+          "candidate": "竖弯钩",
+          "candidate_options": [
+            "竖弯钩"
+          ],
+          "compatible_options": [
+            "竖弯钩"
+          ]
+        }
+      ],
+      "candidate_names": [
+        "横",
+        "竖提",
+        "撇",
+        "竖弯钩"
+      ]
+    },
+    {
+      "character": "气",
+      "main_id": 81,
+      "result": "secondary_exact_sequence_match",
+      "source_letters": "sjjo",
+      "secondary_sequence": [
+        {
+          "index": 1,
+          "letter": "s",
+          "shape": "丿",
+          "source_name": "撇",
+          "source_name_options": [
+            "撇"
+          ],
+          "candidate": "撇",
+          "candidate_options": [
+            "撇"
+          ],
+          "compatible_options": [
+            "撇"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ],
+          "candidate": "横",
+          "candidate_options": [
+            "横"
+          ],
+          "compatible_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 3,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ],
+          "candidate": "横",
+          "candidate_options": [
+            "横"
+          ],
+          "compatible_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 4,
+          "letter": "o",
+          "shape": "⺄",
+          "source_name": "横斜钩",
+          "source_name_options": [
+            "横斜钩"
+          ],
+          "candidate": "横斜钩",
+          "candidate_options": [
+            "横斜钩"
+          ],
+          "compatible_options": [
+            "横斜钩"
+          ]
+        }
+      ],
+      "candidate_names": [
+        "撇",
+        "横",
+        "横",
+        "横斜钩"
+      ]
+    },
+    {
+      "character": "长",
+      "main_id": 83,
+      "result": "secondary_exact_sequence_match",
+      "source_letters": "sjhl",
+      "secondary_sequence": [
+        {
+          "index": 1,
+          "letter": "s",
+          "shape": "丿",
+          "source_name": "撇",
+          "source_name_options": [
+            "撇"
+          ],
+          "candidate": "撇",
+          "candidate_options": [
+            "撇"
+          ],
+          "compatible_options": [
+            "撇"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ],
+          "candidate": "横",
+          "candidate_options": [
+            "横"
+          ],
+          "compatible_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 3,
+          "letter": "h",
+          "shape": "𠄌",
+          "source_name": "竖提",
+          "source_name_options": [
+            "竖提"
+          ],
+          "candidate": "竖提",
+          "candidate_options": [
+            "竖提"
+          ],
+          "compatible_options": [
+            "竖提"
+          ]
+        },
+        {
+          "index": 4,
+          "letter": "l",
+          "shape": "㇏",
+          "source_name": "捺",
+          "source_name_options": [
+            "捺"
+          ],
+          "candidate": "捺",
+          "candidate_options": [
+            "捺"
+          ],
+          "compatible_options": [
+            "捺"
+          ]
+        }
+      ],
+      "candidate_names": [
+        "撇",
+        "横",
+        "竖提",
+        "捺"
+      ]
+    },
+    {
+      "character": "片",
+      "main_id": 84,
+      "result": "secondary_exact_sequence_match",
+      "source_letters": "sfjc",
+      "secondary_sequence": [
+        {
+          "index": 1,
+          "letter": "s",
+          "shape": "丿",
+          "source_name": "撇",
+          "source_name_options": [
+            "撇"
+          ],
+          "candidate": "撇",
+          "candidate_options": [
+            "撇"
+          ],
+          "compatible_options": [
+            "撇"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "f",
+          "shape": "丨",
+          "source_name": "竖",
+          "source_name_options": [
+            "竖"
+          ],
+          "candidate": "竖",
+          "candidate_options": [
+            "竖"
+          ],
+          "compatible_options": [
+            "竖"
+          ]
+        },
+        {
+          "index": 3,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ],
+          "candidate": "横",
+          "candidate_options": [
+            "横"
+          ],
+          "compatible_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 4,
+          "letter": "c",
+          "shape": "𠃍",
+          "source_name": "横折",
+          "source_name_options": [
+            "横折"
+          ],
+          "candidate": "横折",
+          "candidate_options": [
+            "横折"
+          ],
+          "compatible_options": [
+            "横折"
+          ]
+        }
+      ],
+      "candidate_names": [
+        "撇",
+        "竖",
+        "横",
+        "横折"
+      ]
+    },
+    {
+      "character": "斤",
+      "main_id": 85,
+      "result": "secondary_exact_sequence_match",
+      "source_letters": "ssjf",
+      "secondary_sequence": [
+        {
+          "index": 1,
+          "letter": "s",
+          "shape": "丿",
+          "source_name": "撇",
+          "source_name_options": [
+            "撇"
+          ],
+          "candidate": "撇",
+          "candidate_options": [
+            "撇"
+          ],
+          "compatible_options": [
+            "撇"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "s",
+          "shape": "丿",
+          "source_name": "撇",
+          "source_name_options": [
+            "撇"
+          ],
+          "candidate": "撇",
+          "candidate_options": [
+            "撇"
+          ],
+          "compatible_options": [
+            "撇"
+          ]
+        },
+        {
+          "index": 3,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ],
+          "candidate": "横",
+          "candidate_options": [
+            "横"
+          ],
+          "compatible_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 4,
+          "letter": "f",
+          "shape": "丨",
+          "source_name": "竖",
+          "source_name_options": [
+            "竖"
+          ],
+          "candidate": "竖",
+          "candidate_options": [
+            "竖"
+          ],
+          "compatible_options": [
+            "竖"
+          ]
+        }
+      ],
+      "candidate_names": [
+        "撇",
+        "撇",
+        "横",
+        "竖"
+      ]
+    },
+    {
+      "character": "爪",
+      "main_id": 86,
+      "result": "secondary_exact_sequence_match",
+      "source_letters": "ssfl",
+      "secondary_sequence": [
+        {
+          "index": 1,
+          "letter": "s",
+          "shape": "丿",
+          "source_name": "撇",
+          "source_name_options": [
+            "撇"
+          ],
+          "candidate": "撇",
+          "candidate_options": [
+            "撇"
+          ],
+          "compatible_options": [
+            "撇"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "s",
+          "shape": "丿",
+          "source_name": "撇",
+          "source_name_options": [
+            "撇"
+          ],
+          "candidate": "撇",
+          "candidate_options": [
+            "撇"
+          ],
+          "compatible_options": [
+            "撇"
+          ]
+        },
+        {
+          "index": 3,
+          "letter": "f",
+          "shape": "丨",
+          "source_name": "竖",
+          "source_name_options": [
+            "竖"
+          ],
+          "candidate": "竖",
+          "candidate_options": [
+            "竖"
+          ],
+          "compatible_options": [
+            "竖"
+          ]
+        },
+        {
+          "index": 4,
+          "letter": "l",
+          "shape": "㇏",
+          "source_name": "捺",
+          "source_name_options": [
+            "捺"
+          ],
+          "candidate": "捺",
+          "candidate_options": [
+            "捺"
+          ],
+          "compatible_options": [
+            "捺"
+          ]
+        }
+      ],
+      "candidate_names": [
+        "撇",
+        "撇",
+        "竖",
+        "捺"
+      ]
+    },
+    {
+      "character": "父",
+      "main_id": 87,
+      "result": "secondary_exact_sequence_match",
+      "source_letters": "sksl",
+      "secondary_sequence": [
+        {
+          "index": 1,
+          "letter": "s",
+          "shape": "丿",
+          "source_name": "撇",
+          "source_name_options": [
+            "撇"
+          ],
+          "candidate": "撇",
+          "candidate_options": [
+            "撇"
+          ],
+          "compatible_options": [
+            "撇"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "k",
+          "shape": "丶",
+          "source_name": "点",
+          "source_name_options": [
+            "点"
+          ],
+          "candidate": "点",
+          "candidate_options": [
+            "点"
+          ],
+          "compatible_options": [
+            "点"
+          ]
+        },
+        {
+          "index": 3,
+          "letter": "s",
+          "shape": "丿",
+          "source_name": "撇",
+          "source_name_options": [
+            "撇"
+          ],
+          "candidate": "撇",
+          "candidate_options": [
+            "撇"
+          ],
+          "compatible_options": [
+            "撇"
+          ]
+        },
+        {
+          "index": 4,
+          "letter": "l",
+          "shape": "㇏",
+          "source_name": "捺",
+          "source_name_options": [
+            "捺"
+          ],
+          "candidate": "捺",
+          "candidate_options": [
+            "捺"
+          ],
+          "compatible_options": [
+            "捺"
+          ]
+        }
+      ],
+      "candidate_names": [
+        "撇",
+        "点",
+        "撇",
+        "捺"
+      ]
+    },
+    {
+      "character": "文",
+      "main_id": 93,
+      "result": "secondary_exact_sequence_match",
+      "source_letters": "kjsl",
+      "secondary_sequence": [
+        {
+          "index": 1,
+          "letter": "k",
+          "shape": "丶",
+          "source_name": "点",
+          "source_name_options": [
+            "点"
+          ],
+          "candidate": "点",
+          "candidate_options": [
+            "点"
+          ],
+          "compatible_options": [
+            "点"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ],
+          "candidate": "横",
+          "candidate_options": [
+            "横"
+          ],
+          "compatible_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 3,
+          "letter": "s",
+          "shape": "丿",
+          "source_name": "撇",
+          "source_name_options": [
+            "撇"
+          ],
+          "candidate": "撇",
+          "candidate_options": [
+            "撇"
+          ],
+          "compatible_options": [
+            "撇"
+          ]
+        },
+        {
+          "index": 4,
+          "letter": "l",
+          "shape": "㇏",
+          "source_name": "捺",
+          "source_name_options": [
+            "捺"
+          ],
+          "candidate": "捺",
+          "candidate_options": [
+            "捺"
+          ],
+          "compatible_options": [
+            "捺"
+          ]
+        }
+      ],
+      "candidate_names": [
+        "点",
+        "横",
+        "撇",
+        "捺"
+      ]
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "exact_matches": 9,
+    "source_ambiguous_compatible": 1,
+    "secondary_located_candidate_absent": 0,
+    "conflicts": 0,
+    "source_missing": 0
+  },
+  "limits": [
+    "精确匹配或兼容只把fine_stroke_names推进为secondary crosschecked，不等于权威原页reviewed。",
+    "cnchar文档明确存在五组同码笔形，相关项不得据此单独裁决。",
+    "二次数据与candidate不一致时必须fail-closed，不能覆盖原候选。",
+    "B05牙既有第2笔冲突必须继续独立保留。"
+  ]
+}

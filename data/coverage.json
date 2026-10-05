@@ -131,7 +131,7 @@
       "content_status": "in_progress",
       "generated_main_count": 0,
       "release_eligible": false,
-      "limits": "阶段1字段级检查点；B04—B11的canonical笔顺候选码已与GF0023派生TSV逐字一致核验。该派生数据是二次数字化材料，不替代GF0023—2020规范原页视觉review；因此stroke_order保持crosschecked而非最终reviewed。",
+      "limits": "阶段1字段级检查点；B04—B11细笔名已完成cnchar二次逐笔定位/交叉，但所有结果仍需GF2001/GF0023/S04等规范原页裁决。二次源自身歧义和二次冲突均fail-closed；牙既有权威冲突继续保留。",
       "structure_evidence": "data/evidence/B04-structure.json",
       "reviewed_fields": [
         "structure_applicability",
@@ -140,14 +140,16 @@
         "baseline_stroke_group",
         "component_name_or_S03_applicability",
         "pronunciation_or_S03_applicability",
-        "stroke_order_secondary_crosscheck"
+        "stroke_order_secondary_crosscheck",
+        "fine_stroke_names_secondary_crosscheck_or_locator"
       ],
       "stroke_order_locator_evidence": "data/evidence/B04-stroke-order-locator.json",
       "located_fields": [
         "GF0023_2020_stroke_order_exact_target_rows"
       ],
       "pronunciation_evidence": "data/evidence/B04-pronunciation.json",
-      "stroke_order_crosscheck_evidence": "data/evidence/B04-stroke-order-crosscheck.json"
+      "stroke_order_crosscheck_evidence": "data/evidence/B04-stroke-order-crosscheck.json",
+      "fine_stroke_names_crosscheck_evidence": "data/evidence/B04-fine-stroke-names-crosscheck.json"
     },
     "B05": {
       "main_ids": [
@@ -167,7 +169,7 @@
       "content_status": "in_progress",
       "generated_main_count": 0,
       "release_eligible": false,
-      "limits": "阶段1字段级检查点；B04—B11的canonical笔顺候选码已与GF0023派生TSV逐字一致核验。该派生数据是二次数字化材料，不替代GF0023—2020规范原页视觉review；因此stroke_order保持crosschecked而非最终reviewed。",
+      "limits": "阶段1字段级检查点；B04—B11细笔名已完成cnchar二次逐笔定位/交叉，但所有结果仍需GF2001/GF0023/S04等规范原页裁决。二次源自身歧义和二次冲突均fail-closed；牙既有权威冲突继续保留。",
       "structure_evidence": "data/evidence/B05-structure.json",
       "reviewed_fields": [
         "structure_applicability",
@@ -176,10 +178,12 @@
         "baseline_stroke_group",
         "component_name_or_S03_applicability",
         "pronunciation_or_S03_applicability",
-        "stroke_order_secondary_crosscheck"
+        "stroke_order_secondary_crosscheck",
+        "fine_stroke_names_secondary_crosscheck_or_locator"
       ],
       "pronunciation_evidence": "data/evidence/B05-pronunciation.json",
-      "stroke_order_crosscheck_evidence": "data/evidence/B05-stroke-order-crosscheck.json"
+      "stroke_order_crosscheck_evidence": "data/evidence/B05-stroke-order-crosscheck.json",
+      "fine_stroke_names_crosscheck_evidence": "data/evidence/B05-fine-stroke-names-crosscheck.json"
     },
     "B06": {
       "main_ids": [
@@ -206,11 +210,13 @@
         "baseline_stroke_group",
         "component_name_or_S03_applicability",
         "pronunciation_or_S03_applicability",
-        "stroke_order_secondary_crosscheck"
+        "stroke_order_secondary_crosscheck",
+        "fine_stroke_names_secondary_crosscheck_or_locator"
       ],
-      "limits": "阶段1字段级检查点；B04—B11的canonical笔顺候选码已与GF0023派生TSV逐字一致核验。该派生数据是二次数字化材料，不替代GF0023—2020规范原页视觉review；因此stroke_order保持crosschecked而非最终reviewed。",
+      "limits": "阶段1字段级检查点；B04—B11细笔名已完成cnchar二次逐笔定位/交叉，但所有结果仍需GF2001/GF0023/S04等规范原页裁决。二次源自身歧义和二次冲突均fail-closed；牙既有权威冲突继续保留。",
       "pronunciation_evidence": "data/evidence/B06-pronunciation.json",
-      "stroke_order_crosscheck_evidence": "data/evidence/B06-stroke-order-crosscheck.json"
+      "stroke_order_crosscheck_evidence": "data/evidence/B06-stroke-order-crosscheck.json",
+      "fine_stroke_names_crosscheck_evidence": "data/evidence/B06-fine-stroke-names-crosscheck.json"
     },
     "B07": {
       "main_ids": [
@@ -237,11 +243,13 @@
         "baseline_stroke_group",
         "component_name_or_S03_applicability",
         "pronunciation_or_S03_applicability",
-        "stroke_order_secondary_crosscheck"
+        "stroke_order_secondary_crosscheck",
+        "fine_stroke_names_secondary_crosscheck_or_locator"
       ],
-      "limits": "阶段1字段级检查点；B04—B11的canonical笔顺候选码已与GF0023派生TSV逐字一致核验。该派生数据是二次数字化材料，不替代GF0023—2020规范原页视觉review；因此stroke_order保持crosschecked而非最终reviewed。",
+      "limits": "阶段1字段级检查点；B04—B11细笔名已完成cnchar二次逐笔定位/交叉，但所有结果仍需GF2001/GF0023/S04等规范原页裁决。二次源自身歧义和二次冲突均fail-closed；牙既有权威冲突继续保留。",
       "pronunciation_evidence": "data/evidence/B07-pronunciation.json",
-      "stroke_order_crosscheck_evidence": "data/evidence/B07-stroke-order-crosscheck.json"
+      "stroke_order_crosscheck_evidence": "data/evidence/B07-stroke-order-crosscheck.json",
+      "fine_stroke_names_crosscheck_evidence": "data/evidence/B07-fine-stroke-names-crosscheck.json"
     },
     "B08": {
       "main_ids": [
@@ -266,10 +274,12 @@
         "baseline_identity",
         "main_id",
         "baseline_stroke_group",
-        "stroke_order_secondary_crosscheck"
+        "stroke_order_secondary_crosscheck",
+        "fine_stroke_names_secondary_crosscheck_or_locator"
       ],
-      "limits": "阶段1字段级检查点；B04—B11的canonical笔顺候选码已与GF0023派生TSV逐字一致核验。该派生数据是二次数字化材料，不替代GF0023—2020规范原页视觉review；因此stroke_order保持crosschecked而非最终reviewed。",
-      "stroke_order_crosscheck_evidence": "data/evidence/B08-stroke-order-crosscheck.json"
+      "limits": "阶段1字段级检查点；B04—B11细笔名已完成cnchar二次逐笔定位/交叉，但所有结果仍需GF2001/GF0023/S04等规范原页裁决。二次源自身歧义和二次冲突均fail-closed；牙既有权威冲突继续保留。",
+      "stroke_order_crosscheck_evidence": "data/evidence/B08-stroke-order-crosscheck.json",
+      "fine_stroke_names_crosscheck_evidence": "data/evidence/B08-fine-stroke-names-crosscheck.json"
     },
     "B09": {
       "main_ids": [
@@ -296,11 +306,13 @@
         "baseline_stroke_group",
         "component_name_or_S03_applicability",
         "pronunciation_or_S03_applicability",
-        "stroke_order_secondary_crosscheck"
+        "stroke_order_secondary_crosscheck",
+        "fine_stroke_names_secondary_crosscheck_or_locator"
       ],
-      "limits": "阶段1字段级检查点；B04—B11的canonical笔顺候选码已与GF0023派生TSV逐字一致核验。该派生数据是二次数字化材料，不替代GF0023—2020规范原页视觉review；因此stroke_order保持crosschecked而非最终reviewed。",
+      "limits": "阶段1字段级检查点；B04—B11细笔名已完成cnchar二次逐笔定位/交叉，但所有结果仍需GF2001/GF0023/S04等规范原页裁决。二次源自身歧义和二次冲突均fail-closed；牙既有权威冲突继续保留。",
       "pronunciation_evidence": "data/evidence/B09-pronunciation.json",
-      "stroke_order_crosscheck_evidence": "data/evidence/B09-stroke-order-crosscheck.json"
+      "stroke_order_crosscheck_evidence": "data/evidence/B09-stroke-order-crosscheck.json",
+      "fine_stroke_names_crosscheck_evidence": "data/evidence/B09-fine-stroke-names-crosscheck.json"
     },
     "B10": {
       "main_ids": [
@@ -328,11 +340,13 @@
         "component_name_or_S03_applicability",
         "teaching_editorial_consistency",
         "pronunciation_or_S03_applicability",
-        "stroke_order_secondary_crosscheck"
+        "stroke_order_secondary_crosscheck",
+        "fine_stroke_names_secondary_crosscheck_or_locator"
       ],
-      "limits": "阶段1字段级检查点；B04—B11的canonical笔顺候选码已与GF0023派生TSV逐字一致核验。该派生数据是二次数字化材料，不替代GF0023—2020规范原页视觉review；因此stroke_order保持crosschecked而非最终reviewed。",
+      "limits": "阶段1字段级检查点；B04—B11细笔名已完成cnchar二次逐笔定位/交叉，但所有结果仍需GF2001/GF0023/S04等规范原页裁决。二次源自身歧义和二次冲突均fail-closed；牙既有权威冲突继续保留。",
       "pronunciation_evidence": "data/evidence/B10-pronunciation.json",
-      "stroke_order_crosscheck_evidence": "data/evidence/B10-stroke-order-crosscheck.json"
+      "stroke_order_crosscheck_evidence": "data/evidence/B10-stroke-order-crosscheck.json",
+      "fine_stroke_names_crosscheck_evidence": "data/evidence/B10-fine-stroke-names-crosscheck.json"
     },
     "B11": {
       "main_ids": [
@@ -360,11 +374,13 @@
         "component_name_or_S03_applicability",
         "teaching_editorial_consistency",
         "pronunciation_or_S03_applicability",
-        "stroke_order_secondary_crosscheck"
+        "stroke_order_secondary_crosscheck",
+        "fine_stroke_names_secondary_crosscheck_or_locator"
       ],
-      "limits": "阶段1字段级检查点；B04—B11的canonical笔顺候选码已与GF0023派生TSV逐字一致核验。该派生数据是二次数字化材料，不替代GF0023—2020规范原页视觉review；因此stroke_order保持crosschecked而非最终reviewed。",
+      "limits": "阶段1字段级检查点；B04—B11细笔名已完成cnchar二次逐笔定位/交叉，但所有结果仍需GF2001/GF0023/S04等规范原页裁决。二次源自身歧义和二次冲突均fail-closed；牙既有权威冲突继续保留。",
       "pronunciation_evidence": "data/evidence/B11-pronunciation.json",
-      "stroke_order_crosscheck_evidence": "data/evidence/B11-stroke-order-crosscheck.json"
+      "stroke_order_crosscheck_evidence": "data/evidence/B11-stroke-order-crosscheck.json",
+      "fine_stroke_names_crosscheck_evidence": "data/evidence/B11-fine-stroke-names-crosscheck.json"
     },
     "B12": {
       "main_ids": [
@@ -687,6 +703,6 @@
     ],
     "next_assignment_starts_at": null,
     "next_work": "existing_batch_field_closure",
-    "note": "201个主部首范围已全部分配至B01—B21；2026-10-05 B12—B19共80项完成GF0023派生TSV笔顺定位，80/80目标可定位且派生笔数与canonical一致，0缺失/0冲突；stroke_order推进为secondary-derived locator，GF0023原页review仍待完成。下一主吞吐继续GF0023原页笔顺review、细笔名及剩余结构/迁移字段。content_ready仍仅B01—B03。"
+    "note": "201个主部首范围已全部分配至B01—B21；2026-10-05 B04—B11共80项完成cnchar二次细笔名定位/交叉：32精确一致、5源歧义但兼容、20二次序列已定位、4二次冲突、19源未覆盖；canonical保留牙既有权威冲突，因此19项进入locator状态。规范原页review仍是最终门槛。content_ready仍仅B01—B03。"
   }
 }
