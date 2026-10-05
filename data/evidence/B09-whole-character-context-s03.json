@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "record_kind": "whole_character_context_source_review",
+  "batch_id": "B09",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "automation_agent",
+  "source_id": "S03",
+  "source_publication_id": "GF0014—2009",
+  "reviewed_field": "whole_character_context_source_occurrence",
+  "entries": [
+    {
+      "character": "韦",
+      "main_id": 63,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 377,
+      "group_no": 327,
+      "printed_page": 17,
+      "pdf_page": 20,
+      "source_example": "韧"
+    },
+    {
+      "character": "支",
+      "main_id": 65,
+      "result": "no_exact_standalone_S03_row_after_full_main_table_visual_review"
+    },
+    {
+      "character": "比",
+      "main_id": 71,
+      "result": "no_exact_standalone_S03_row_after_full_main_table_visual_review"
+    },
+    {
+      "character": "气",
+      "main_id": 81,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 275,
+      "group_no": 239,
+      "printed_page": 14,
+      "pdf_page": 17,
+      "source_example": "汽"
+    },
+    {
+      "character": "长",
+      "main_id": 83,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 39,
+      "group_no": 34,
+      "printed_page": 8,
+      "pdf_page": 11,
+      "source_example": "张"
+    },
+    {
+      "character": "片",
+      "main_id": 84,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 267,
+      "group_no": 232,
+      "printed_page": 14,
+      "pdf_page": 17,
+      "source_example": "版"
+    },
+    {
+      "character": "斤",
+      "main_id": 85,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 179,
+      "group_no": 152,
+      "printed_page": 11,
+      "pdf_page": 14,
+      "source_example": "欣"
+    },
+    {
+      "character": "爪",
+      "main_id": 86,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 480,
+      "group_no": 415,
+      "printed_page": 19,
+      "pdf_page": 22,
+      "source_example": "抓"
+    },
+    {
+      "character": "父",
+      "main_id": 87,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 109,
+      "group_no": 93,
+      "printed_page": 9,
+      "pdf_page": 12,
+      "source_example": "爸"
+    },
+    {
+      "character": "文",
+      "main_id": 93,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 382,
+      "group_no": 332,
+      "printed_page": 17,
+      "pdf_page": 20,
+      "source_example": "蚊"
+    }
+  ],
+  "limits": "仅证明S03精确目标行及例字栏直接整字使用；位置几何、完整整字笔顺和位置迁移仍待逐整字核验。"
+}
