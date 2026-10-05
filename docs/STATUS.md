@@ -38,7 +38,7 @@ PR #9 已于2026-10-05阶段性合入 `main`，合并提交：
 - **B12—B14**：baseline、教学字段和S03名称evidence已形成；部分canonical/review文字仍有同步债。
 - **B15—B18**：已有baseline、教学字段与S03名称/适用性证据；B15、B16、B17、B18均已有不同程度的canonical同步。
 - **B19**：baseline、教学字段与 `data/evidence/B19-component-name.json` 已在库；canonical名称状态已同步。
-- **B20**：baseline和教学字段evidence已在库；S03完整主体表视觉审读已经登记在 `sources/catalog.json`，machine component-name evidence仍待补。
+- **B20**：baseline、教学字段、structure、S03 component-name machine evidence和pronunciation evidence均已在库；高/黄/鹿/鼎/黑名称精确行已复核，其余5项保持S03无精确独立整形条目。
 - **B21**：baseline evidence、canonical数据和人工review均已在库。
 
 以上只表示对应字段的证据链进展，不表示各批次已经达到`content_ready`。
@@ -107,6 +107,14 @@ B04、B05、B06、B07、B09、B18、B19、B20共80个不同主部首完成S03采
 
 合计**52/80项pronunciation关闭，28/80项保持pending**。B20同时补齐`data/evidence/B20-component-name.json`，高、黄、鹿、鼎、黑精确目标行重新核对；麻、黍、鼓、鼠、鼻继续保持S03无精确独立整形条目。
 
+## 最新80项笔顺码交叉核验（2026-10-05）
+
+B04—B11共80个不同主部首完成GF0023派生TSV逐字交叉核验。数据源为公开项目`takushun-wu/han-ideographs-stroke-order`的`order.tsv`（blob `ecf422f0bb9d1d07d661250796269bfa752ebd`），该项目声明其数据来源包括GF0023—2020等资料。
+
+结果为：**80/80 canonical候选笔顺码与派生数据一致，0冲突，0缺失**。对应machine evidence为`data/evidence/B04-stroke-order-crosscheck.json`至`B11-stroke-order-crosscheck.json`，人工摘要为`reviews/B04-B11-stroke-order-crosscheck.md`。
+
+证据边界：该TSV属于二次数字化材料，因此本轮只把`stroke_order`推进到`crosschecked`，**不替代GF0023—2020规范原页视觉review，不提前标最终reviewed**。B05“牙”的第2笔细笔名冲突继续独立保持`conflict_fail_closed`。
+
 ## 当前主要未决字段
 
 1. GF0011—2022精确主项字形、附形、名称和编码；
@@ -131,8 +139,8 @@ B03内容层视为`content_ready`。artwork/layout人工记录已存在；PDF归
 
 ## 下一内容工作
 
-1. 继续清理残余状态债，当前重点只剩B20 component-name machine evidence及少量review文字同步；
-2. 下一轮主吞吐优先转向**笔顺、细笔名**并继续收口剩余采用读音；常规单轮目标80个不同主部首，无真实阻塞时至少推进60项；
+1. 继续清理少量review/状态同步债；B20 component-name machine evidence已补齐；
+2. 下一轮主吞吐优先转向**GF0023原页笔顺review与细笔名**，并继续收口剩余采用读音；常规单轮目标80个不同主部首，无真实阻塞时至少推进60项；
 3. 结构字段继续利用GF0013—2009等适用来源逐批闭合，但不外推2022部首身份；
 4. 位置迁移继续回目标整字核验；
 5. GF0011—2022逐项精确字段继续由Issue #4并行追踪。
