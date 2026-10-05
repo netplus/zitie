@@ -54,7 +54,8 @@
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "position_migration": "S03_no_exact_main_row_alternative_source_pending"
       },
       "migration_boundary": "本轮只保留“釆”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
@@ -170,6 +171,17 @@
         "secondary_locator_result": "secondary_fine_stroke_sequence_located_candidate_absent",
         "fold_strokes": [],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B17-component-name.json",
+        "source_result": "no_exact_standalone_S03_row",
+        "component_name": null,
+        "printed_page": null,
+        "pdf_page": null,
+        "direct_position_role": null,
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -213,7 +225,8 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "position_migration": "S03_exact_row_no_position_label_whole_character_pending"
       },
       "migration_boundary": "本轮只保留“谷”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
@@ -344,6 +357,17 @@
           }
         ],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B17-component-name.json",
+        "source_result": "matched_exact_S03_row",
+        "component_name": "谷（gǔ）",
+        "printed_page": 10,
+        "pdf_page": 13,
+        "direct_position_role": null,
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -387,7 +411,8 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "position_migration": "S03_position_role_located_whole_character_pending"
       },
       "migration_boundary": "本轮只保留“豸”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
@@ -518,6 +543,17 @@
           }
         ],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B17-component-name.json",
+        "source_result": "matched_exact_S03_row",
+        "component_name": "豸（zhì）/豹（bào）字旁",
+        "printed_page": 20,
+        "pdf_page": 23,
+        "direct_position_role": "side",
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -561,7 +597,8 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "position_migration": "S03_exact_row_no_position_label_whole_character_pending"
       },
       "migration_boundary": "本轮只保留“龟”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
@@ -730,6 +767,17 @@
           }
         ],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B17-component-name.json",
+        "source_result": "matched_exact_S03_row",
+        "component_name": "龟（guī）",
+        "printed_page": 10,
+        "pdf_page": 13,
+        "direct_position_role": null,
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -773,7 +821,8 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "position_migration": "S03_exact_row_no_position_label_whole_character_pending"
       },
       "migration_boundary": "本轮只保留“角”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
@@ -927,6 +976,17 @@
           }
         ],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B17-component-name.json",
+        "source_result": "matched_exact_S03_row",
+        "component_name": "角（jiǎo）",
+        "printed_page": 11,
+        "pdf_page": 14,
+        "direct_position_role": null,
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -971,7 +1031,8 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "position_migration": "S03_exact_row_no_position_label_whole_character_pending"
       },
       "migration_boundary": "本轮只保留“言”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
@@ -1101,6 +1162,17 @@
           }
         ],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B17-component-name.json",
+        "source_result": "matched_exact_S03_row",
+        "component_name": "言（yán）",
+        "printed_page": 18,
+        "pdf_page": 21,
+        "direct_position_role": null,
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -1144,7 +1216,8 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "position_migration": "S03_exact_row_no_position_label_whole_character_pending"
       },
       "migration_boundary": "本轮只保留“辛”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
@@ -1259,6 +1332,17 @@
         "secondary_locator_result": "secondary_fine_stroke_sequence_located_candidate_absent",
         "fold_strokes": [],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B17-component-name.json",
+        "source_result": "matched_exact_S03_row",
+        "component_name": "辛（xīn）",
+        "printed_page": 18,
+        "pdf_page": 21,
+        "direct_position_role": null,
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -1302,7 +1386,8 @@
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "position_migration": "S03_no_exact_main_row_alternative_source_pending"
       },
       "migration_boundary": "本轮只保留“青”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
@@ -1443,6 +1528,17 @@
           }
         ],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B17-component-name.json",
+        "source_result": "no_exact_standalone_S03_row",
+        "component_name": null,
+        "printed_page": null,
+        "pdf_page": null,
+        "direct_position_role": null,
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -1486,7 +1582,8 @@
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "position_migration": "S03_no_exact_main_row_alternative_source_pending"
       },
       "migration_boundary": "本轮只保留“龺”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
@@ -1538,6 +1635,17 @@
         "secondary_locator_result": "secondary_dataset_target_missing",
         "fold_strokes": [],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B17-component-name.json",
+        "source_result": "no_exact_standalone_S03_row",
+        "component_name": null,
+        "printed_page": null,
+        "pdf_page": null,
+        "direct_position_role": null,
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     },
     {
@@ -1582,7 +1690,8 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "position_migration": "S03_exact_row_no_position_label_whole_character_pending"
       },
       "migration_boundary": "本轮只保留“雨”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
@@ -1721,6 +1830,17 @@
           }
         ],
         "boundary": "GF2001只关闭折笔类别映射/适用性；完整细笔名仍待GF0023/S04及适用原页闭合。"
+      },
+      "position_migration_review": {
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B17-component-name.json",
+        "source_result": "matched_exact_S03_row",
+        "component_name": "雨（yǔ）",
+        "printed_page": 19,
+        "pdf_page": 22,
+        "direct_position_role": null,
+        "boundary": "S03仅提供位置角色语义；整字位置、比例和完整书写时序仍待核验。"
       }
     }
   ],
@@ -1730,5 +1850,6 @@
   "pronunciation_evidence": "data/evidence/B17-pronunciation.json",
   "stroke_order_secondary_locator_evidence": "data/evidence/B17-stroke-order-secondary-locator.json",
   "fine_stroke_names_secondary_locator_evidence": "data/evidence/B17-fine-stroke-names-secondary-locator.json",
-  "fine_stroke_gf2001_fold_evidence": "sources/reviews/GF2001-B12-B19-fold-locator-20261006.json"
+  "fine_stroke_gf2001_fold_evidence": "sources/reviews/GF2001-B12-B19-fold-locator-20261006.json",
+  "position_migration_semantic_evidence": "data/evidence/B17-component-name.json"
 }
