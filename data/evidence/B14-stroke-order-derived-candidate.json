@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_secondary_candidate",
+  "batch_id": "B14",
+  "reviewed_at": "2026-10-05",
+  "source_id": "D02",
+  "source_blob_sha": "ecf422f0bb9d9b1d07d661250796269bfa752ebd",
+  "source_path": "order.tsv",
+  "authority": "secondary_derived_only",
+  "primary_review_status": "GF0023_2020_original_page_pending",
+  "entries": [
+    {
+      "character": "虫",
+      "main_id": 131,
+      "source_row": 1261,
+      "ucs": "U+866B",
+      "stroke_count": 6,
+      "order_code": "251214"
+    },
+    {
+      "character": "肉",
+      "main_id": 132,
+      "source_row": 1315,
+      "ucs": "U+8089",
+      "stroke_count": 6,
+      "order_code": "253434"
+    },
+    {
+      "character": "缶",
+      "main_id": 133,
+      "source_row": 1325,
+      "ucs": "U+7F36",
+      "stroke_count": 6,
+      "order_code": "311252"
+    },
+    {
+      "character": "舌",
+      "main_id": 134,
+      "source_row": 1341,
+      "ucs": "U+820C",
+      "stroke_count": 6,
+      "order_code": "312251"
+    },
+    {
+      "character": "竹",
+      "main_id": 135,
+      "source_row": 1343,
+      "ucs": "U+7AF9",
+      "stroke_count": 6,
+      "order_code": "312312"
+    },
+    {
+      "character": "臼",
+      "main_id": 136,
+      "source_row": 1372,
+      "ucs": "U+81FC",
+      "stroke_count": 6,
+      "order_code": "321511"
+    },
+    {
+      "character": "自",
+      "main_id": 137,
+      "source_row": 1425,
+      "ucs": "U+81EA",
+      "stroke_count": 6,
+      "order_code": "325111"
+    },
+    {
+      "character": "血",
+      "main_id": 138,
+      "source_row": 1432,
+      "ucs": "U+8840",
+      "stroke_count": 6,
+      "order_code": "325221"
+    },
+    {
+      "character": "舟",
+      "main_id": 139,
+      "source_row": 1449,
+      "ucs": "U+821F",
+      "stroke_count": 6,
+      "order_code": "335414"
+    },
+    {
+      "character": "色",
+      "main_id": 140,
+      "source_row": 1517,
+      "ucs": "U+8272",
+      "stroke_count": 6,
+      "order_code": "355215"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "located": 10,
+    "missing": 0,
+    "stroke_count_conflicts": 0
+  },
+  "limits": "Candidate only; does not grant reviewed stroke_order or fine_stroke_names."
+}

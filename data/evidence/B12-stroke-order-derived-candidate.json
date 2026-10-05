@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_secondary_candidate",
+  "batch_id": "B12",
+  "reviewed_at": "2026-10-05",
+  "source_id": "D02",
+  "source_blob_sha": "ecf422f0bb9d9b1d07d661250796269bfa752ebd",
+  "source_path": "order.tsv",
+  "authority": "secondary_derived_only",
+  "primary_review_status": "GF0023_2020_original_page_pending",
+  "entries": [
+    {"character":"屮","main_id":55,"source_row":245,"ucs":"U+5C6E","stroke_count":3,"order_code":"522"},
+    {"character":"巛","main_id":60,"source_row":272,"ucs":"U+5DDB","stroke_count":3,"order_code":"555"},
+    {"character":"殳","main_id":92,"source_row":485,"ucs":"U+6BB3","stroke_count":4,"order_code":"3554"},
+    {"character":"毋","main_id":99,"source_row":571,"ucs":"U+6BCB","stroke_count":4,"order_code":"5531"},
+    {"character":"鸟","main_id":114,"source_row":869,"ucs":"U+9E1F","stroke_count":5,"order_code":"35451"},
+    {"character":"疒","main_id":115,"source_row":888,"ucs":"U+7592","stroke_count":5,"order_code":"41341"},
+    {"character":"穴","main_id":117,"source_row":927,"ucs":"U+7A74","stroke_count":5,"order_code":"44534"},
+    {"character":"疋","main_id":118,"source_row":970,"ucs":"U+758B","stroke_count":5,"order_code":"52134"},
+    {"character":"皮","main_id":119,"source_row":991,"ucs":"U+76AE","stroke_count":5,"order_code":"53254"},
+    {"character":"癶","main_id":120,"source_row":1004,"ucs":"U+7676","stroke_count":5,"order_code":"54334"}
+  ],
+  "summary": {"target_count":10,"located":10,"missing":0,"stroke_count_conflicts":0},
+  "limits": "Candidate only; does not grant reviewed stroke_order or fine_stroke_names."
+}

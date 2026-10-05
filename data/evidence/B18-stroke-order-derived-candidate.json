@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_secondary_candidate",
+  "batch_id": "B18",
+  "reviewed_at": "2026-10-05",
+  "source_id": "D02",
+  "source_blob_sha": "ecf422f0bb9d9b1d07d661250796269bfa752ebd",
+  "source_path": "order.tsv",
+  "authority": "secondary_derived_only",
+  "primary_review_status": "GF0023_2020_original_page_pending",
+  "entries": [
+    {
+      "character": "非",
+      "main_id": 171,
+      "source_row": 3568,
+      "ucs": "U+975E",
+      "stroke_count": 8,
+      "order_code": "21112111"
+    },
+    {
+      "character": "齿",
+      "main_id": 172,
+      "source_row": 3577,
+      "ucs": "U+9F7F",
+      "stroke_count": 8,
+      "order_code": "21213452"
+    },
+    {
+      "character": "黾",
+      "main_id": 173,
+      "source_row": 3697,
+      "ucs": "U+9EFE",
+      "stroke_count": 8,
+      "order_code": "25125115"
+    },
+    {
+      "character": "隹",
+      "main_id": 174,
+      "source_row": 3985,
+      "ucs": "U+96B9",
+      "stroke_count": 8,
+      "order_code": "32411121"
+    },
+    {
+      "character": "阜",
+      "main_id": 175,
+      "source_row": 4013,
+      "ucs": "U+961C",
+      "stroke_count": 8,
+      "order_code": "32515112"
+    },
+    {
+      "character": "金",
+      "main_id": 176,
+      "source_row": 4048,
+      "ucs": "U+91D1",
+      "stroke_count": 8,
+      "order_code": "34112431"
+    },
+    {
+      "character": "鱼",
+      "main_id": 177,
+      "source_row": 4151,
+      "ucs": "U+9C7C",
+      "stroke_count": 8,
+      "order_code": "35251211"
+    },
+    {
+      "character": "隶",
+      "main_id": 178,
+      "source_row": 4587,
+      "ucs": "U+96B6",
+      "stroke_count": 8,
+      "order_code": "51124134"
+    },
+    {
+      "character": "革",
+      "main_id": 179,
+      "source_row": 5018,
+      "ucs": "U+9769",
+      "stroke_count": 9,
+      "order_code": "122125112"
+    },
+    {
+      "character": "面",
+      "main_id": 180,
+      "source_row": 5322,
+      "ucs": "U+9762",
+      "stroke_count": 9,
+      "order_code": "132522111"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "located": 10,
+    "missing": 0,
+    "stroke_count_conflicts": 0
+  },
+  "limits": "Candidate only; does not grant reviewed stroke_order or fine_stroke_names."
+}

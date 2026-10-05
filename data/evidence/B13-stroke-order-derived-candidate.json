@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_secondary_candidate",
+  "batch_id": "B13",
+  "reviewed_at": "2026-10-05",
+  "source_id": "D02",
+  "source_blob_sha": "ecf422f0bb9d9b1d07d661250796269bfa752ebd",
+  "source_path": "order.tsv",
+  "authority": "secondary_derived_only",
+  "primary_review_status": "GF0023_2020_original_page_pending",
+  "entries": [
+    {
+      "character": "矛",
+      "main_id": 121,
+      "source_row": 1006,
+      "ucs": "U+77DB",
+      "stroke_count": 5,
+      "order_code": "54523"
+    },
+    {
+      "character": "耒",
+      "main_id": 122,
+      "source_row": 1019,
+      "ucs": "U+8012",
+      "stroke_count": 6,
+      "order_code": "111234"
+    },
+    {
+      "character": "老",
+      "main_id": 123,
+      "source_row": 1082,
+      "ucs": "U+8001",
+      "stroke_count": 6,
+      "order_code": "121335"
+    },
+    {
+      "character": "耳",
+      "main_id": 124,
+      "source_row": 1107,
+      "ucs": "U+8033",
+      "stroke_count": 6,
+      "order_code": "122111"
+    },
+    {
+      "character": "臣",
+      "main_id": 125,
+      "source_row": 1155,
+      "ucs": "U+81E3",
+      "stroke_count": 6,
+      "order_code": "125125"
+    },
+    {
+      "character": "覀",
+      "main_id": 126,
+      "source_row": 1162,
+      "ucs": "U+8980",
+      "stroke_count": 6,
+      "order_code": "125221"
+    },
+    {
+      "character": "而",
+      "main_id": 127,
+      "source_row": 1189,
+      "ucs": "U+800C",
+      "stroke_count": 6,
+      "order_code": "132522"
+    },
+    {
+      "character": "页",
+      "main_id": 128,
+      "source_row": 1191,
+      "ucs": "U+9875",
+      "stroke_count": 6,
+      "order_code": "132534"
+    },
+    {
+      "character": "至",
+      "main_id": 129,
+      "source_row": 1228,
+      "ucs": "U+81F3",
+      "stroke_count": 6,
+      "order_code": "154121"
+    },
+    {
+      "character": "虍",
+      "main_id": 130,
+      "source_row": 1237,
+      "ucs": "U+864D",
+      "stroke_count": 6,
+      "order_code": "215315"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "located": 10,
+    "missing": 0,
+    "stroke_count_conflicts": 0
+  },
+  "limits": "Candidate only; does not grant reviewed stroke_order or fine_stroke_names."
+}

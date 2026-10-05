@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_secondary_candidate",
+  "batch_id": "B17",
+  "reviewed_at": "2026-10-05",
+  "source_id": "D02",
+  "source_blob_sha": "ecf422f0bb9d9b1d07d661250796269bfa752ebd",
+  "source_path": "order.tsv",
+  "authority": "secondary_derived_only",
+  "primary_review_status": "GF0023_2020_original_page_pending",
+  "entries": [
+    {
+      "character": "釆",
+      "main_id": 161,
+      "source_row": 2541,
+      "ucs": "U+91C6",
+      "stroke_count": 7,
+      "order_code": "3431234"
+    },
+    {
+      "character": "谷",
+      "main_id": 162,
+      "source_row": 2545,
+      "ucs": "U+8C37",
+      "stroke_count": 7,
+      "order_code": "3434251"
+    },
+    {
+      "character": "豸",
+      "main_id": 163,
+      "source_row": 2551,
+      "ucs": "U+8C78",
+      "stroke_count": 7,
+      "order_code": "3443533"
+    },
+    {
+      "character": "龟",
+      "main_id": 164,
+      "source_row": 2584,
+      "ucs": "U+9F9F",
+      "stroke_count": 7,
+      "order_code": "3525115"
+    },
+    {
+      "character": "角",
+      "main_id": 165,
+      "source_row": 2609,
+      "ucs": "U+89D2",
+      "stroke_count": 7,
+      "order_code": "3535112"
+    },
+    {
+      "character": "言",
+      "main_id": 166,
+      "source_row": 2642,
+      "ucs": "U+8A00",
+      "stroke_count": 7,
+      "order_code": "4111251"
+    },
+    {
+      "character": "辛",
+      "main_id": 167,
+      "source_row": 2685,
+      "ucs": "U+8F9B",
+      "stroke_count": 7,
+      "order_code": "4143112"
+    },
+    {
+      "character": "青",
+      "main_id": 168,
+      "source_row": 3091,
+      "ucs": "U+9752",
+      "stroke_count": 8,
+      "order_code": "11212511"
+    },
+    {
+      "character": "龺",
+      "main_id": 169,
+      "source_row": 3357,
+      "ucs": "U+9FBA",
+      "stroke_count": 8,
+      "order_code": "12251112"
+    },
+    {
+      "character": "雨",
+      "main_id": 170,
+      "source_row": 3472,
+      "ucs": "U+96E8",
+      "stroke_count": 8,
+      "order_code": "12524444"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "located": 10,
+    "missing": 0,
+    "stroke_count_conflicts": 0
+  },
+  "limits": "Candidate only; does not grant reviewed stroke_order or fine_stroke_names."
+}

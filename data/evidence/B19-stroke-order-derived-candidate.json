@@ -1,0 +1,100 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_secondary_candidate",
+  "batch_id": "B19",
+  "reviewed_at": "2026-10-05",
+  "source_id": "D02",
+  "source_blob_sha": "ecf422f0bb9d9b1d07d661250796269bfa752ebd",
+  "source_path": "order.tsv",
+  "authority": "secondary_derived_only",
+  "primary_review_status": "GF0023_2020_original_page_pending",
+  "entries": [
+    {
+      "character": "韭",
+      "main_id": 181,
+      "source_row": 5397,
+      "ucs": "U+97ED",
+      "stroke_count": 9,
+      "order_code": "211121111"
+    },
+    {
+      "character": "骨",
+      "main_id": 182,
+      "source_row": 5713,
+      "ucs": "U+9AA8",
+      "stroke_count": 9,
+      "order_code": "255452511"
+    },
+    {
+      "character": "香",
+      "main_id": 183,
+      "source_row": 5798,
+      "ucs": "U+9999",
+      "stroke_count": 9,
+      "order_code": "312342511"
+    },
+    {
+      "character": "鬼",
+      "main_id": 184,
+      "source_row": 5912,
+      "ucs": "U+9B3C",
+      "stroke_count": 9,
+      "order_code": "325113554"
+    },
+    {
+      "character": "食",
+      "main_id": 185,
+      "source_row": 5995,
+      "ucs": "U+98DF",
+      "stroke_count": 9,
+      "order_code": "344511534"
+    },
+    {
+      "character": "音",
+      "main_id": 186,
+      "source_row": 6223,
+      "ucs": "U+97F3",
+      "stroke_count": 9,
+      "order_code": "414312511"
+    },
+    {
+      "character": "首",
+      "main_id": 187,
+      "source_row": 6290,
+      "ucs": "U+9996",
+      "stroke_count": 9,
+      "order_code": "431325111"
+    },
+    {
+      "character": "髟",
+      "main_id": 188,
+      "source_row": 6925,
+      "ucs": "U+9ADF",
+      "stroke_count": 10,
+      "order_code": "1211154333"
+    },
+    {
+      "character": "鬲",
+      "main_id": 189,
+      "source_row": 7339,
+      "ucs": "U+9B32",
+      "stroke_count": 10,
+      "order_code": "1251254312"
+    },
+    {
+      "character": "鬥",
+      "main_id": 190,
+      "source_row": 7483,
+      "ucs": "U+9B25",
+      "stroke_count": 10,
+      "order_code": "2112111212"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "located": 10,
+    "missing": 0,
+    "stroke_count_conflicts": 0
+  },
+  "limits": "Candidate only; does not grant reviewed stroke_order or fine_stroke_names."
+}
