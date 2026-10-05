@@ -1,0 +1,113 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_historical_primary_visual_review",
+  "batch_id": "B05",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "source": {
+    "source_id": "S04",
+    "publication_id": "1997-STROKE-ORDER",
+    "sha256": "ca8a0139744cf8105cb7e4ae7464ebc68cb76310b5a29e7cf004b2489a35ae65",
+    "artifact_id": 11010600883,
+    "artifact_run_id": 36514754022,
+    "method": "rendered_original_scan_visual_review_no_OCR"
+  },
+  "identity_binding": "main_id binds to data/B05.json",
+  "entries": [
+    {
+      "main_id": 62,
+      "result": "matched",
+      "pdf_page": 10,
+      "printed_page": 5,
+      "column": "R",
+      "row": 1,
+      "order_code": "1135"
+    },
+    {
+      "main_id": 66,
+      "result": "matched",
+      "pdf_page": 11,
+      "printed_page": 6,
+      "column": "L",
+      "row": 7,
+      "order_code": "1344"
+    },
+    {
+      "main_id": 67,
+      "result": "matched",
+      "pdf_page": 11,
+      "printed_page": 6,
+      "column": "R",
+      "row": 1,
+      "order_code": "1354"
+    },
+    {
+      "main_id": 68,
+      "result": "matched",
+      "pdf_page": 11,
+      "printed_page": 6,
+      "column": "R",
+      "row": 5,
+      "order_code": "1512"
+    },
+    {
+      "main_id": 69,
+      "result": "matched",
+      "pdf_page": 11,
+      "printed_page": 6,
+      "column": "R",
+      "row": 7,
+      "order_code": "1523"
+    },
+    {
+      "main_id": 70,
+      "result": "matched",
+      "pdf_page": 11,
+      "printed_page": 6,
+      "column": "R",
+      "row": 9,
+      "order_code": "1534"
+    },
+    {
+      "main_id": 72,
+      "result": "matched",
+      "pdf_page": 12,
+      "printed_page": 7,
+      "column": "L",
+      "row": 3,
+      "order_code": "1554"
+    },
+    {
+      "main_id": 73,
+      "result": "matched",
+      "pdf_page": 12,
+      "printed_page": 7,
+      "column": "L",
+      "row": 4,
+      "order_code": "2121"
+    },
+    {
+      "main_id": 76,
+      "result": "matched",
+      "pdf_page": 12,
+      "printed_page": 7,
+      "column": "L",
+      "row": 9,
+      "order_code": "2534"
+    },
+    {
+      "main_id": 78,
+      "result": "matched",
+      "pdf_page": 12,
+      "printed_page": 7,
+      "column": "R",
+      "row": 3,
+      "order_code": "2535"
+    }
+  ],
+  "decision": "historical_primary_original_page_review_completed_current_standard_original_page_pending",
+  "limits": [
+    "stroke_order_only",
+    "fine_stroke_names_not_adjudicated"
+  ]
+}
