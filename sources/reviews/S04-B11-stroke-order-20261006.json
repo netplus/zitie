@@ -1,0 +1,122 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_historical_primary_visual_review",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "batch_id": "B11",
+  "source": {
+    "source_id": "S04",
+    "publication_id": "1997-STROKE-ORDER",
+    "sha256": "ca8a0139744cf8105cb7e4ae7464ebc68cb76310b5a29e7cf004b2489a35ae65",
+    "artifact_id": 11010600883,
+    "artifact_run_id": 36514754022,
+    "method": "rendered_original_scan_visual_review_no_OCR",
+    "complete_scan": {
+      "pdf_pages": [
+        6,
+        26
+      ],
+      "printed_pages": [
+        1,
+        21
+      ],
+      "stroke_count_range": [
+        1,
+        5
+      ]
+    }
+  },
+  "identity_binding": "main_id binds to data/B11.json",
+  "entries": [
+    {
+      "main_id": 100,
+      "result": "matched",
+      "pdf_page": 17,
+      "printed_page": 12,
+      "column": "L",
+      "row": 3,
+      "order_code": "11234"
+    },
+    {
+      "main_id": 101,
+      "result": "matched",
+      "pdf_page": 17,
+      "printed_page": 12,
+      "column": "R",
+      "row": 7,
+      "order_code": "12211"
+    },
+    {
+      "main_id": 103,
+      "result": "matched",
+      "pdf_page": 18,
+      "printed_page": 13,
+      "column": "R",
+      "row": 8,
+      "order_code": "13534"
+    },
+    {
+      "main_id": 104,
+      "result": "matched",
+      "pdf_page": 19,
+      "printed_page": 14,
+      "column": "R",
+      "row": 1,
+      "order_code": "22431"
+    },
+    {
+      "main_id": 107,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 108,
+      "result": "matched",
+      "pdf_page": 21,
+      "printed_page": 16,
+      "column": "L",
+      "row": 2,
+      "order_code": "25221"
+    },
+    {
+      "main_id": 109,
+      "result": "matched",
+      "pdf_page": 21,
+      "printed_page": 16,
+      "column": "L",
+      "row": 6,
+      "order_code": "31121"
+    },
+    {
+      "main_id": 110,
+      "result": "matched",
+      "pdf_page": 21,
+      "printed_page": 16,
+      "column": "L",
+      "row": 8,
+      "order_code": "31134"
+    },
+    {
+      "main_id": 111,
+      "result": "matched",
+      "pdf_page": 21,
+      "printed_page": 16,
+      "column": "R",
+      "row": 1,
+      "order_code": "31234"
+    },
+    {
+      "main_id": 113,
+      "result": "matched",
+      "pdf_page": 22,
+      "printed_page": 17,
+      "column": "R",
+      "row": 1,
+      "order_code": "33544"
+    }
+  ],
+  "decision": "nine exact S04 historical entries reviewed; one target has no exact entry in the complete 1-to-5-stroke section; current-standard original-page review remains pending.",
+  "limits": [
+    "stroke_order_only",
+    "do_not_equate_component_only_glyph_with_similar_full_character"
+  ]
+}
