@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "record_kind": "evidence_locator_correction",
+  "reviewed_at": "2026-10-05",
+  "source_id": "S03",
+  "publication_id": "GF0014-2009",
+  "batch_id": "B11",
+  "main_id": 110,
+  "target_ucs": "U+77E2",
+  "corrected_locator": {
+    "sequence_no": 324,
+    "group_no": 281,
+    "printed_page": 15,
+    "pdf_page": 18
+  },
+  "supersedes_locator": {
+    "sequence_no": 318,
+    "group_no": 276,
+    "printed_page": 15,
+    "pdf_page": 18
+  },
+  "affected_records": [
+    "data/evidence/B11-component-name.json",
+    "data/evidence/B11-pronunciation.json"
+  ],
+  "status": "correction_reviewed_affected_records_update_tooling_blocked",
+  "limits": "This corrects row coordinates only; component-name and pronunciation semantics are unchanged."
+}
