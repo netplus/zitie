@@ -1,3 +1,24 @@
-# B12-B19 stroke-order candidate review
+# B12—B19笔顺码二次数据候选定位复核
 
-Reviewed 2026-10-05. D02 immutable order.tsv blob ecf422f0bb9d9b1d07d661250796269bfa752ebd was used only as a secondary-derived candidate source. 80/80 target characters were found and stroke counts matched the canonical baseline. GF0023-2020 original-page visual review remains pending; no stroke_order field is promoted to reviewed by this note.
+日期：2026-10-05  
+范围：B12—B19，共80个不同主部首  
+阶段：阶段1内容覆盖
+
+## 结果
+
+- B12：屮、巛、殳、毋、鸟、疒、穴、疋、皮、癶。
+- B13：矛、耒、老、耳、臣、覀、而、页、至、虍。
+- B14：虫、肉、缶、舌、竹、臼、自、血、舟、色。
+- B15：齐、衣、羊、米、聿、艮、羽、糸、麦、走。
+- B16：赤、豆、酉、辰、豕、卤、里、足、邑、身。
+- B17：釆、谷、豸、龟、角、言、辛、青、龺、雨。
+- B18：非、齿、黾、隹、阜、金、鱼、隶、革、面。
+- B19：韭、骨、香、鬼、食、音、首、髟、鬲、鬥。
+
+80/80目标字在D02的不可变`order.tsv` Git blob中精确命中，且其笔数与canonical基线一致。每批已有专用machine evidence。
+
+## 来源边界
+
+D02实际`order.tsv` blob SHA为`ecf422f0bb9d9b1d07d661250796269bfa752ebd`。当前`sources/catalog.json`中的D02 SHA是38位截断值，已另存补充来源记录；catalog本体因tooling_write_blocker尚未改写。
+
+D02是二次数字化材料，本轮只建立笔顺码candidate。GF0023—2020规范原页视觉review完成前，不得把这些项的`stroke_order`升级为reviewed；细笔名也不得由数字码反推。

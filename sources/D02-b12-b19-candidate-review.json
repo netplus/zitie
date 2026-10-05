@@ -1,0 +1,25 @@
+{
+  "schema_version": 1,
+  "record_kind": "source_review_supplement",
+  "reviewed_at": "2026-10-05",
+  "source_id": "D02",
+  "title": "han-ideographs-stroke-order / order.tsv",
+  "repository": "https://github.com/takushun-wu/han-ideographs-stroke-order",
+  "path": "order.tsv",
+  "contents_api_blob_sha": "ecf422f0bb9d9b1d07d661250796269bfa752ebd",
+  "catalog_sha_observation": "sources/catalog.json currently contains a truncated 38-character value; catalog correction remains pending",
+  "scope": [
+    "B12",
+    "B13",
+    "B14",
+    "B15",
+    "B16",
+    "B17",
+    "B18",
+    "B19"
+  ],
+  "target_count": 80,
+  "result": "80/80 exact targets located; source stroke counts match canonical baseline",
+  "authority": "secondary-derived candidate only",
+  "limits": "Does not replace GF0023-2020 original-page visual review and is not an independent authoritative source system."
+}
