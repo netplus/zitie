@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "record_kind": "component_name_review",
+  "batch_id": "B08",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "automation_agent",
+  "independent_reviewers": 0,
+  "source": {
+    "source_id": "S03",
+    "publication_id": "GF0014—2009",
+    "title": "现代常用字部件及部件名称规范",
+    "reviewed_pdf_pages": [
+      12,
+      13,
+      17,
+      18,
+      19,
+      20,
+      22,
+      23
+    ],
+    "reviewed_printed_pages": [
+      9,
+      10,
+      14,
+      15,
+      16,
+      17,
+      19,
+      20
+    ]
+  },
+  "reviewed_field": "component_name",
+  "method": "actual_pdf_page_visual_review_exact_target_row_only",
+  "entries": [
+    {
+      "character": "丨",
+      "main_id": 2,
+      "component_name": "竖（shù）",
+      "sequence_no": 339,
+      "group_no": 293,
+      "printed_page": 16,
+      "pdf_page": 19,
+      "result": "matched_exact_S03_row"
+    },
+    {
+      "character": "丿",
+      "main_id": 3,
+      "component_name": "撇（piě）",
+      "sequence_no": 268,
+      "group_no": 233,
+      "printed_page": 14,
+      "pdf_page": 17,
+      "result": "matched_exact_S03_row"
+    },
+    {
+      "character": "丶",
+      "main_id": 4,
+      "component_name": "点（diǎn）",
+      "sequence_no": 77,
+      "group_no": 64,
+      "printed_page": 9,
+      "pdf_page": 12,
+      "result": "matched_exact_S03_row"
+    },
+    {
+      "character": "乛",
+      "main_id": 5,
+      "component_name": "横钩（hénggōu）",
+      "sequence_no": 140,
+      "group_no": 123,
+      "printed_page": 10,
+      "pdf_page": 13,
+      "result": "matched_exact_S03_row"
+    },
+    {
+      "character": "尢",
+      "main_id": 34,
+      "component_name": "尤（yóu）/枕（zhěn）字边",
+      "sequence_no": 451,
+      "group_no": 390,
+      "printed_page": 19,
+      "pdf_page": 22,
+      "result": "matched_exact_S03_row"
+    },
+    {
+      "character": "弋",
+      "main_id": 35,
+      "component_name": "弋（yì）/代（dài）字边",
+      "sequence_no": 447,
+      "group_no": 386,
+      "printed_page": 19,
+      "pdf_page": 22,
+      "result": "matched_exact_S03_row"
+    },
+    {
+      "character": "囗",
+      "main_id": 38,
+      "component_name": "囗（wéi）/围（wéi）字框",
+      "sequence_no": 376,
+      "group_no": 326,
+      "printed_page": 17,
+      "pdf_page": 20,
+      "result": "matched_exact_S03_row"
+    },
+    {
+      "character": "彳",
+      "main_id": 41,
+      "component_name": "双立人（shuānglìrén）",
+      "sequence_no": 348,
+      "group_no": 301,
+      "printed_page": 16,
+      "pdf_page": 19,
+      "result": "matched_exact_S03_row"
+    },
+    {
+      "character": "彡",
+      "main_id": 42,
+      "component_name": "彡（shān）",
+      "sequence_no": 307,
+      "group_no": 265,
+      "printed_page": 15,
+      "pdf_page": 18,
+      "result": "matched_exact_S03_row"
+    },
+    {
+      "character": "夂",
+      "main_id": 44,
+      "component_name": "降（jiàng）下角",
+      "sequence_no": 489,
+      "group_no": 421,
+      "printed_page": 20,
+      "pdf_page": 23,
+      "result": "matched_exact_S03_row"
+    }
+  ],
+  "limits": "只支持B08十项GF0014—2009部件名称目标行；不支持2022主附身份、笔顺、细笔名、结构或位置变体。"
+}
