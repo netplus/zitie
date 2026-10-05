@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_historical_primary_visual_review",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "batch_id": "B07",
+  "source": {
+    "source_id": "S04",
+    "publication_id": "1997-STROKE-ORDER",
+    "sha256": "ca8a0139744cf8105cb7e4ae7464ebc68cb76310b5a29e7cf004b2489a35ae65",
+    "artifact_id": 11010600883,
+    "artifact_run_id": 36514754022,
+    "method": "rendered_original_scan_visual_review_no_OCR",
+    "complete_scan": {
+      "pdf_pages": [
+        6,
+        26
+      ],
+      "printed_pages": [
+        1,
+        21
+      ],
+      "stroke_count_range": [
+        1,
+        5
+      ]
+    }
+  },
+  "identity_binding": "main_id binds to data/B07.json",
+  "entries": [
+    {
+      "main_id": 19,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 20,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 21,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 25,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 26,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 30,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 32,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 48,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 49,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 50,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    }
+  ],
+  "decision": "S04 complete 1-to-5-stroke section reviewed; no exact standalone full-character entry found for B07 targets; current-standard original-page review remains pending.",
+  "limits": [
+    "stroke_order applicability only",
+    "do_not_infer_order_from_similar_full_characters"
+  ]
+}
