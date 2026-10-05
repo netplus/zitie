@@ -1099,6 +1099,65 @@
         "preserved_conflict": "牙第2笔撇折/竖折继续conflict_fail_closed；D03只提供二次定位，不覆盖原冲突。",
         "method": "逐字符读取固定stroke-order-jian.json字母序列，再用固定stroke-table.json转换细笔名；与canonical stroke_names_candidate逐笔比较。",
         "limits": "所有结果都不是规范原页review。cnchar明确存在五组同码双名；二次冲突只触发fail-closed，不自动裁决候选错误。"
+      },
+      "B12_B19_fine_stroke_secondary_locator": {
+        "date": "2026-10-05",
+        "batches": [
+          "B12",
+          "B13",
+          "B14",
+          "B15",
+          "B16",
+          "B17",
+          "B18",
+          "B19"
+        ],
+        "target_count": 80,
+        "result_summary": {
+          "unambiguous_secondary_sequence_located": 62,
+          "source_ambiguous_secondary_sequence_located": 12,
+          "secondary_dataset_target_missing": 6,
+          "sequence_length_conflicts": 0
+        },
+        "ambiguous_characters": [
+          "殳",
+          "穴",
+          "疋",
+          "皮",
+          "矛",
+          "虍",
+          "色",
+          "麦",
+          "龟",
+          "角",
+          "鱼",
+          "骨"
+        ],
+        "missing_characters": [
+          "屮",
+          "疒",
+          "癶",
+          "覀",
+          "龺",
+          "鬥"
+        ],
+        "evidence": [
+          "data/evidence/B12-fine-stroke-names-secondary-locator.json",
+          "data/evidence/B13-fine-stroke-names-secondary-locator.json",
+          "data/evidence/B14-fine-stroke-names-secondary-locator.json",
+          "data/evidence/B15-fine-stroke-names-secondary-locator.json",
+          "data/evidence/B16-fine-stroke-names-secondary-locator.json",
+          "data/evidence/B17-fine-stroke-names-secondary-locator.json",
+          "data/evidence/B18-fine-stroke-names-secondary-locator.json",
+          "data/evidence/B19-fine-stroke-names-secondary-locator.json"
+        ],
+        "method": "固定cnchar pinned ref逐字读取stroke-order-jian字母序列并由固定stroke-table映射逐笔细类；逐项校验序列长度与canonical baseline笔数一致。",
+        "limits": "只形成secondary fine-stroke locator。12项源自身同码双名须回规范原页裁决；6项源未覆盖继续pending；所有项目在GF2001/GF0023/S04原页review前不得标最终reviewed。"
+      },
+      "B20_extra_fine_stroke_locator": {
+        "date": "2026-10-05",
+        "evidence": "data/evidence/B20-fine-stroke-names-secondary-locator.json",
+        "note": "来自同名分支早期并行推进的额外10项，不计入本轮B12—B19的80项主吞吐；可在后续B20 canonical同步时复用。"
       }
     }
   ]
