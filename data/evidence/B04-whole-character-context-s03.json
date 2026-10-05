@@ -1,0 +1,155 @@
+{
+  "schema_version": 1,
+  "record_kind": "whole_character_context_source_review",
+  "batch_id": "B04",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "automation_agent",
+  "independent_reviewers": 0,
+  "source": {
+    "source_id": "S03",
+    "publication_id": "GF0014—2009",
+    "title": "现代常用字部件及部件名称规范",
+    "reviewed_pdf_pages": [
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23
+    ],
+    "reviewed_printed_pages": [
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ]
+  },
+  "reviewed_field": "whole_character_context_source_occurrence",
+  "method": "actual_pdf_page_visual_review_exact_target_row_and_example_column",
+  "entries": [
+    {
+      "character": "干",
+      "main_id": 27,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 111,
+      "group_no": 95,
+      "printed_page": 10,
+      "pdf_page": 13,
+      "source_example": "刊"
+    },
+    {
+      "character": "寸",
+      "main_id": 31,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 62,
+      "group_no": 54,
+      "printed_page": 8,
+      "pdf_page": 11,
+      "source_example": "村"
+    },
+    {
+      "character": "夕",
+      "main_id": 43,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 392,
+      "group_no": 342,
+      "printed_page": 17,
+      "pdf_page": 20,
+      "source_example": "外"
+    },
+    {
+      "character": "广",
+      "main_id": 46,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 128,
+      "group_no": 112,
+      "printed_page": 10,
+      "pdf_page": 13,
+      "source_example": "扩"
+    },
+    {
+      "character": "门",
+      "main_id": 47,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 238,
+      "group_no": 207,
+      "printed_page": 13,
+      "pdf_page": 16,
+      "source_example": "们"
+    },
+    {
+      "character": "尸",
+      "main_id": 51,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 317,
+      "group_no": 275,
+      "printed_page": 15,
+      "pdf_page": 18,
+      "source_example": "居"
+    },
+    {
+      "character": "己",
+      "main_id": 52,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 158,
+      "group_no": 138,
+      "printed_page": 11,
+      "pdf_page": 14,
+      "source_example": "记"
+    },
+    {
+      "character": "弓",
+      "main_id": 53,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 122,
+      "group_no": 106,
+      "printed_page": 10,
+      "pdf_page": 13,
+      "source_example": "引"
+    },
+    {
+      "character": "飞",
+      "main_id": 57,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 98,
+      "group_no": 84,
+      "printed_page": 9,
+      "pdf_page": 12,
+      "source_example": "飞"
+    },
+    {
+      "character": "马",
+      "main_id": 58,
+      "result": "exact_target_component_row_example_column_reviewed",
+      "sequence_no": 230,
+      "group_no": 200,
+      "printed_page": 13,
+      "pdf_page": 16,
+      "source_example": "驴"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "exact_target_rows": 10,
+    "no_exact_target_rows": 0
+  },
+  "limits": "本记录只证明S03精确目标行及其例字栏中的直接整字使用；不自动证明canonical当前例字、位置几何、缩放比例、完整整字笔顺、2022主附身份或细笔名。"
+}
