@@ -1,0 +1,127 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_whole_character_context_review",
+  "batch_id": "B04",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source_id": "S03",
+  "source_publication_id": "GF0014—2009",
+  "source_title": "现代常用字部件及部件名称规范",
+  "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+  "reviewed_field": "whole_character_context",
+  "method": "实际查看GF0014—2009《现代常用字部件表》原印7—20页的目标部件行与例字列；精确目标部件行的例字仅用于确认整字语境，不据此外推位置变体几何或整字笔顺。",
+  "entries": [
+    {
+      "character": "干",
+      "main_id": 27,
+      "result": "exact_target_row_with_source_example",
+      "sequence_no": 111,
+      "group_no": 95,
+      "printed_page": 10,
+      "pdf_page": 13,
+      "source_example": "刊",
+      "context_status": "reviewed_S03_example_context_variant_geometry_pending"
+    },
+    {
+      "character": "寸",
+      "main_id": 31,
+      "result": "exact_target_row_with_source_example",
+      "sequence_no": 62,
+      "group_no": 54,
+      "printed_page": 8,
+      "pdf_page": 11,
+      "source_example": "村",
+      "context_status": "reviewed_S03_example_context_variant_geometry_pending"
+    },
+    {
+      "character": "夕",
+      "main_id": 43,
+      "result": "exact_target_row_with_source_example",
+      "sequence_no": 392,
+      "group_no": 342,
+      "printed_page": 17,
+      "pdf_page": 20,
+      "source_example": "外",
+      "context_status": "reviewed_S03_example_context_variant_geometry_pending"
+    },
+    {
+      "character": "广",
+      "main_id": 46,
+      "result": "exact_target_row_with_source_example",
+      "sequence_no": 128,
+      "group_no": 112,
+      "printed_page": 10,
+      "pdf_page": 13,
+      "source_example": "扩",
+      "context_status": "reviewed_S03_example_context_variant_geometry_pending"
+    },
+    {
+      "character": "门",
+      "main_id": 47,
+      "result": "exact_target_row_with_source_example",
+      "sequence_no": 238,
+      "group_no": 207,
+      "printed_page": 13,
+      "pdf_page": 16,
+      "source_example": "们",
+      "context_status": "reviewed_S03_example_context_variant_geometry_pending"
+    },
+    {
+      "character": "尸",
+      "main_id": 51,
+      "result": "exact_target_row_with_source_example",
+      "sequence_no": 317,
+      "group_no": 275,
+      "printed_page": 15,
+      "pdf_page": 18,
+      "source_example": "居",
+      "context_status": "reviewed_S03_example_context_variant_geometry_pending"
+    },
+    {
+      "character": "己",
+      "main_id": 52,
+      "result": "exact_target_row_with_source_example",
+      "sequence_no": 158,
+      "group_no": 138,
+      "printed_page": 11,
+      "pdf_page": 14,
+      "source_example": "记",
+      "context_status": "reviewed_S03_example_context_variant_geometry_pending"
+    },
+    {
+      "character": "弓",
+      "main_id": 53,
+      "result": "exact_target_row_with_source_example",
+      "sequence_no": 122,
+      "group_no": 106,
+      "printed_page": 10,
+      "pdf_page": 13,
+      "source_example": "引",
+      "context_status": "reviewed_S03_example_context_variant_geometry_pending"
+    },
+    {
+      "character": "飞",
+      "main_id": 57,
+      "result": "exact_target_row_with_source_example",
+      "sequence_no": 98,
+      "group_no": 84,
+      "printed_page": 9,
+      "pdf_page": 12,
+      "source_example": "飞",
+      "context_status": "reviewed_S03_example_context_variant_geometry_pending"
+    },
+    {
+      "character": "马",
+      "main_id": 58,
+      "result": "exact_target_row_with_source_example",
+      "sequence_no": 230,
+      "group_no": 200,
+      "printed_page": 13,
+      "pdf_page": 16,
+      "source_example": "驴",
+      "context_status": "reviewed_S03_example_context_variant_geometry_pending"
+    }
+  ],
+  "limits": "S03例字列只支持目标部件在整字中的语境存在性；不支持GF0011—2022主附身份、位置变体具体字形/比例、整字笔顺或细笔名。"
+}
