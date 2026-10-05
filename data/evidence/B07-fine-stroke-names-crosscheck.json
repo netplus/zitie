@@ -1,0 +1,256 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_fine_stroke_names_secondary_crosscheck",
+  "batch_id": "B07",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "source": {
+    "source_kind": "secondary_digitization",
+    "repository": "theajack/cnchar",
+    "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550",
+    "order_file": "src/cnchar/plugin/order/dict/stroke-order-jian.json",
+    "order_blob_sha": "848fcb630a5a0ebbb868afd9f3f5abc63e847ac3",
+    "stroke_table_file": "src/cnchar/plugin/order/dict/stroke-table.json",
+    "stroke_table_blob_sha": "6c07faad47c543ee06daeac22aec8eaedf11c603",
+    "license": "MIT",
+    "documented_ambiguities": [
+      "卧钩=斜钩",
+      "横折弯=横折折",
+      "横折折折钩=横撇弯钩",
+      "横撇=横钩",
+      "竖折折=竖折撇"
+    ],
+    "limits": "二次数据只用于细笔名定位/交叉核验，不替代GF2001/GF0023等规范原页。"
+  },
+  "reviewed_field": "fine_stroke_names_secondary_crosscheck",
+  "entries": [
+    {
+      "character": "冖",
+      "main_id": 19,
+      "result": "secondary_dataset_target_missing",
+      "candidate_names": [
+        "点",
+        "横钩"
+      ]
+    },
+    {
+      "character": "凵",
+      "main_id": 20,
+      "result": "conflict_secondary_vs_candidate_fine_stroke_names",
+      "source_letters": "bf",
+      "secondary_sequence": [
+        {
+          "index": 1,
+          "letter": "b",
+          "shape": "㇄",
+          "source_name": "竖弯",
+          "source_name_options": [
+            "竖弯"
+          ],
+          "candidate": "竖折",
+          "candidate_options": [
+            "竖折"
+          ],
+          "compatible_options": []
+        },
+        {
+          "index": 2,
+          "letter": "f",
+          "shape": "丨",
+          "source_name": "竖",
+          "source_name_options": [
+            "竖"
+          ],
+          "candidate": "竖",
+          "candidate_options": [
+            "竖"
+          ],
+          "compatible_options": [
+            "竖"
+          ]
+        }
+      ],
+      "candidate_names": [
+        "竖折",
+        "竖"
+      ]
+    },
+    {
+      "character": "卩",
+      "main_id": 21,
+      "result": "secondary_dataset_target_missing",
+      "candidate_names": [
+        "横折钩",
+        "竖"
+      ]
+    },
+    {
+      "character": "厶",
+      "main_id": 25,
+      "result": "secondary_exact_sequence_match",
+      "source_letters": "nk",
+      "secondary_sequence": [
+        {
+          "index": 1,
+          "letter": "n",
+          "shape": "𠃋",
+          "source_name": "撇折",
+          "source_name_options": [
+            "撇折"
+          ],
+          "candidate": "撇折",
+          "candidate_options": [
+            "撇折"
+          ],
+          "compatible_options": [
+            "撇折"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "k",
+          "shape": "丶",
+          "source_name": "点",
+          "source_name_options": [
+            "点"
+          ],
+          "candidate": "点",
+          "candidate_options": [
+            "点"
+          ],
+          "compatible_options": [
+            "点"
+          ]
+        }
+      ],
+      "candidate_names": [
+        "撇折",
+        "点"
+      ]
+    },
+    {
+      "character": "廴",
+      "main_id": 26,
+      "result": "secondary_dataset_target_missing",
+      "candidate_names": [
+        "横折折撇",
+        "捺"
+      ]
+    },
+    {
+      "character": "艹",
+      "main_id": 30,
+      "result": "secondary_dataset_target_missing",
+      "candidate_names": [
+        "横",
+        "竖",
+        "竖"
+      ]
+    },
+    {
+      "character": "廾",
+      "main_id": 32,
+      "result": "secondary_exact_sequence_match",
+      "source_letters": "jsf",
+      "secondary_sequence": [
+        {
+          "index": 1,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ],
+          "candidate": "横",
+          "candidate_options": [
+            "横"
+          ],
+          "compatible_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "s",
+          "shape": "丿",
+          "source_name": "撇",
+          "source_name_options": [
+            "撇"
+          ],
+          "candidate": "撇",
+          "candidate_options": [
+            "撇"
+          ],
+          "compatible_options": [
+            "撇"
+          ]
+        },
+        {
+          "index": 3,
+          "letter": "f",
+          "shape": "丨",
+          "source_name": "竖",
+          "source_name_options": [
+            "竖"
+          ],
+          "candidate": "竖",
+          "candidate_options": [
+            "竖"
+          ],
+          "compatible_options": [
+            "竖"
+          ]
+        }
+      ],
+      "candidate_names": [
+        "横",
+        "撇",
+        "竖"
+      ]
+    },
+    {
+      "character": "宀",
+      "main_id": 48,
+      "result": "secondary_dataset_target_missing",
+      "candidate_names": [
+        "点",
+        "点",
+        "横钩"
+      ]
+    },
+    {
+      "character": "辶",
+      "main_id": 49,
+      "result": "secondary_dataset_target_missing",
+      "candidate_names": [
+        "点",
+        "横折折撇",
+        "捺"
+      ]
+    },
+    {
+      "character": "彐",
+      "main_id": 50,
+      "result": "secondary_dataset_target_missing",
+      "candidate_names": [
+        "横折",
+        "横",
+        "横"
+      ]
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "exact_matches": 2,
+    "source_ambiguous_compatible": 0,
+    "secondary_located_candidate_absent": 0,
+    "conflicts": 1,
+    "source_missing": 7
+  },
+  "limits": [
+    "精确匹配或兼容只把fine_stroke_names推进为secondary crosschecked，不等于权威原页reviewed。",
+    "cnchar文档明确存在五组同码笔形，相关项不得据此单独裁决。",
+    "二次数据与candidate不一致时必须fail-closed，不能覆盖原候选。",
+    "B05牙既有第2笔冲突必须继续独立保留。"
+  ]
+}
