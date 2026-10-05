@@ -1,0 +1,135 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_locator_evidence",
+  "batch_id": "B04",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "source": {
+    "source_id": "S02",
+    "publication_id": "GF0023-2020",
+    "title": "通用规范汉字笔顺规范",
+    "publisher": "教育部、国家语言文字工作委员会",
+    "official_url": "https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/202103/W020210318300204215237.pdf",
+    "mirror_url": "https://www.htu.edu.cn/_upload/article/files/5b/4f/535eed164dc2b6303182b1ad5654/356ee878-cf3c-4752-b53e-7e0975ed7776.pdf",
+    "method": "official_pdf_search_index_exact_table_entry_locator",
+    "page_mapping_basis": "sources/catalog.json S02 existing reviewed locator mapping; printed page + 6 = PDF physical page for this early table section"
+  },
+  "reviewed_field": "stroke_order_locator",
+  "entries": [
+    {
+      "character": "干",
+      "main_id": 27,
+      "strokes": 3,
+      "order_code": "112",
+      "table_no": "0023",
+      "ucs": "05E72",
+      "printed_page": 3,
+      "pdf_page": 9,
+      "page_status": "exact_table_entry_located_visual_original_page_review_pending"
+    },
+    {
+      "character": "寸",
+      "main_id": 31,
+      "strokes": 3,
+      "order_code": "124",
+      "table_no": "0031",
+      "ucs": "05BF8",
+      "printed_page": 4,
+      "pdf_page": 10,
+      "page_status": "exact_table_entry_located_visual_original_page_review_pending"
+    },
+    {
+      "character": "夕",
+      "main_id": 43,
+      "strokes": 3,
+      "order_code": "354",
+      "table_no": "0046",
+      "ucs": "05915",
+      "printed_page": 5,
+      "pdf_page": 11,
+      "page_status": "exact_table_entry_located_visual_original_page_review_pending"
+    },
+    {
+      "character": "广",
+      "main_id": 46,
+      "strokes": 3,
+      "order_code": "413",
+      "table_no": "0053",
+      "ucs": "05E7F",
+      "printed_page": 5,
+      "pdf_page": 11,
+      "page_status": "exact_table_entry_located_visual_original_page_review_pending"
+    },
+    {
+      "character": "门",
+      "main_id": 47,
+      "strokes": 3,
+      "order_code": "425",
+      "table_no": "0055",
+      "ucs": "095E8",
+      "printed_page": 5,
+      "pdf_page": 11,
+      "page_status": "exact_table_entry_located_visual_original_page_review_pending"
+    },
+    {
+      "character": "尸",
+      "main_id": 51,
+      "strokes": 3,
+      "order_code": "513",
+      "table_no": "0059",
+      "ucs": "05C38",
+      "printed_page": 5,
+      "pdf_page": 11,
+      "page_status": "exact_table_entry_located_visual_original_page_review_pending"
+    },
+    {
+      "character": "己",
+      "main_id": 52,
+      "strokes": 3,
+      "order_code": "515",
+      "table_no": "0060",
+      "ucs": "05DF1",
+      "printed_page": 5,
+      "pdf_page": 11,
+      "page_status": "exact_table_entry_located_visual_original_page_review_pending"
+    },
+    {
+      "character": "弓",
+      "main_id": 53,
+      "strokes": 3,
+      "order_code": "515",
+      "table_no": "0063",
+      "ucs": "05F13",
+      "printed_page": 5,
+      "pdf_page": 11,
+      "page_status": "exact_table_entry_located_visual_original_page_review_pending"
+    },
+    {
+      "character": "飞",
+      "main_id": 57,
+      "strokes": 3,
+      "order_code": "534",
+      "table_no": "0069",
+      "ucs": "098DE",
+      "printed_page": 5,
+      "pdf_page": 11,
+      "page_status": "exact_table_entry_located_visual_original_page_review_pending"
+    },
+    {
+      "character": "马",
+      "main_id": 58,
+      "strokes": 3,
+      "order_code": "551",
+      "table_no": "0072",
+      "ucs": "09A6C",
+      "printed_page": 6,
+      "pdf_page": 12,
+      "page_status": "exact_table_entry_located_visual_original_page_review_pending"
+    }
+  ],
+  "limits": [
+    "本文件关闭的是GF0023—2020目标条目定位，不冒充原页视觉复核。",
+    "笔顺码来自教育部官方PDF的精确表条目；在实际打开对应原页并记录review前，canonical stroke_order不升级为reviewed。",
+    "不支持细笔名、采用读音、GF0011—2022主附身份或位置变体。"
+  ]
+}

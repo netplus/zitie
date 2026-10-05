@@ -235,6 +235,114 @@
             ]
           }
         ]
+      },
+      "B04_locator": {
+        "date": "2026-10-05",
+        "method": "education-ministry official GF0023-2020 PDF indexed exact table entries; locator only, visual original-page review pending",
+        "record": "data/evidence/B04-stroke-order-locator.json",
+        "entries": [
+          {
+            "character": "干",
+            "strokes": 3,
+            "order_code": "112",
+            "table_no": "0023",
+            "ucs": "05E72",
+            "printed_page": 3,
+            "pdf_page": 9,
+            "page_status": "exact_locator_visual_pending"
+          },
+          {
+            "character": "寸",
+            "strokes": 3,
+            "order_code": "124",
+            "table_no": "0031",
+            "ucs": "05BF8",
+            "printed_page": 4,
+            "pdf_page": 10,
+            "page_status": "exact_locator_visual_pending"
+          },
+          {
+            "character": "夕",
+            "strokes": 3,
+            "order_code": "354",
+            "table_no": "0046",
+            "ucs": "05915",
+            "printed_page": 5,
+            "pdf_page": 11,
+            "page_status": "exact_locator_visual_pending"
+          },
+          {
+            "character": "广",
+            "strokes": 3,
+            "order_code": "413",
+            "table_no": "0053",
+            "ucs": "05E7F",
+            "printed_page": 5,
+            "pdf_page": 11,
+            "page_status": "exact_locator_visual_pending"
+          },
+          {
+            "character": "门",
+            "strokes": 3,
+            "order_code": "425",
+            "table_no": "0055",
+            "ucs": "095E8",
+            "printed_page": 5,
+            "pdf_page": 11,
+            "page_status": "exact_locator_visual_pending"
+          },
+          {
+            "character": "尸",
+            "strokes": 3,
+            "order_code": "513",
+            "table_no": "0059",
+            "ucs": "05C38",
+            "printed_page": 5,
+            "pdf_page": 11,
+            "page_status": "exact_locator_visual_pending"
+          },
+          {
+            "character": "己",
+            "strokes": 3,
+            "order_code": "515",
+            "table_no": "0060",
+            "ucs": "05DF1",
+            "printed_page": 5,
+            "pdf_page": 11,
+            "page_status": "exact_locator_visual_pending"
+          },
+          {
+            "character": "弓",
+            "strokes": 3,
+            "order_code": "515",
+            "table_no": "0063",
+            "ucs": "05F13",
+            "printed_page": 5,
+            "pdf_page": 11,
+            "page_status": "exact_locator_visual_pending"
+          },
+          {
+            "character": "飞",
+            "strokes": 3,
+            "order_code": "534",
+            "table_no": "0069",
+            "ucs": "098DE",
+            "printed_page": 5,
+            "pdf_page": 11,
+            "page_status": "exact_locator_visual_pending"
+          },
+          {
+            "character": "马",
+            "strokes": 3,
+            "order_code": "551",
+            "table_no": "0072",
+            "ucs": "09A6C",
+            "printed_page": 6,
+            "pdf_page": 12,
+            "page_status": "exact_locator_visual_pending"
+          }
+        ],
+        "limits": "仅关闭目标行定位，不冒充原页视觉review；visual review完成前stroke_order保持locator状态。"
       }
     },
     {
@@ -500,6 +608,58 @@
           "data/evidence/B11-structure.json",
           "data/evidence/B12-structure.json",
           "data/evidence/B13-structure.json"
+        ],
+        "limits": "只在目标字形直接列入GF0013—2009《现代常用独体字表》时关闭structure为独体字；未命中只表示S07不适用，不反推为合体字；不支持2022身份、笔顺、细笔名、读音或位置变体。"
+      },
+      "B14_B20_structure_visual_review": {
+        "date": "2026-10-05",
+        "batches": [
+          "B14",
+          "B15",
+          "B16",
+          "B17",
+          "B18",
+          "B19",
+          "B20"
+        ],
+        "characters": "虫肉缶舌竹臼自血舟色齐衣羊米聿艮羽糸麦走赤豆酉辰豕卤里足邑身釆谷豸龟角言辛青龺雨非齿黾隹阜金鱼隶革面韭骨香鬼食音首髟鬲鬥高黄麻鹿鼎黑黍鼓鼠鼻",
+        "visual_review_copy": "https://edu.sh.gov.cn/cmsres/cc/cc76a4a1bbf44271bbc8cf8b47b29289/50476d9ab398dd13a7459af90778d693.pdf",
+        "host": "上海市教育委员会",
+        "byte_identity_to_catalog_copy": "not_checked_this_run",
+        "table": "第6节 现代常用独体字表",
+        "pdf_pages_reviewed": [
+          6
+        ],
+        "printed_pages_reviewed": [
+          3
+        ],
+        "method": "actual_pdf_page_screenshot_visual_review_exact_character_match_only",
+        "result_summary": {
+          "B14": "4 exact / 6 no exact",
+          "B15": "3 exact / 7 no exact",
+          "B16": "5 exact / 5 no exact",
+          "B17": "2 exact / 8 no exact",
+          "B18": "3 exact / 7 no exact",
+          "B19": "2 exact / 8 no exact",
+          "B20": "1 exact / 9 no exact"
+        },
+        "exact_matches": {
+          "B14": "虫肉血舟",
+          "B15": "衣羊米",
+          "B16": "酉豕卤里身",
+          "B17": "言雨",
+          "B18": "隶革面",
+          "B19": "鬼首",
+          "B20": "鼠"
+        },
+        "evidence": [
+          "data/evidence/B14-structure.json",
+          "data/evidence/B15-structure.json",
+          "data/evidence/B16-structure.json",
+          "data/evidence/B17-structure.json",
+          "data/evidence/B18-structure.json",
+          "data/evidence/B19-structure.json",
+          "data/evidence/B20-structure.json"
         ],
         "limits": "只在目标字形直接列入GF0013—2009《现代常用独体字表》时关闭structure为独体字；未命中只表示S07不适用，不反推为合体字；不支持2022身份、笔顺、细笔名、读音或位置变体。"
       }

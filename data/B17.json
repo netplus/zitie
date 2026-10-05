@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_kind": "phase1_content_draft",
   "batch_id": "B17",
-  "version": "content-draft-2026-10-02",
+  "version": "content-draft-2026-10-05",
   "title": "七八画常用部件与迁移",
   "content_status": "in_progress",
   "artwork_status": "deferred",
@@ -31,7 +31,8 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B17-structure.json"
       },
       "pinyin": null,
       "component_name": null,
@@ -46,7 +47,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -61,8 +62,15 @@
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验",
-        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭"
-      ]
+        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B17-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "谷",
@@ -82,7 +90,8 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B17-structure.json"
       },
       "pinyin": null,
       "component_name": "谷（gǔ）",
@@ -97,7 +106,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -111,8 +120,15 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B17-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "豸",
@@ -132,7 +148,8 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B17-structure.json"
       },
       "pinyin": null,
       "component_name": "豸（zhì）/豹（bào）字旁",
@@ -147,7 +164,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -161,8 +178,15 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B17-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "龟",
@@ -182,7 +206,8 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B17-structure.json"
       },
       "pinyin": null,
       "component_name": "龟（guī）",
@@ -197,7 +222,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -211,8 +236,15 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B17-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "角",
@@ -232,7 +264,8 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B17-structure.json"
       },
       "pinyin": null,
       "component_name": "角（jiǎo）",
@@ -247,7 +280,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -261,8 +294,15 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B17-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "言",
@@ -282,7 +322,9 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "reviewed_S07_GF0013_2009_undecomposable",
+        "class": "undecomposable",
+        "evidence": "data/evidence/B17-structure.json"
       },
       "pinyin": null,
       "component_name": "言（yán）",
@@ -297,7 +339,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -311,8 +353,14 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "位置迁移仍须回完整整字及适用规范原页核验"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B17-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      }
     },
     {
       "character": "辛",
@@ -332,7 +380,8 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B17-structure.json"
       },
       "pinyin": null,
       "component_name": "辛（xīn）",
@@ -347,7 +396,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -361,8 +410,15 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B17-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "青",
@@ -382,7 +438,8 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B17-structure.json"
       },
       "pinyin": null,
       "component_name": null,
@@ -397,7 +454,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -412,8 +469,15 @@
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验",
-        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭"
-      ]
+        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B17-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "龺",
@@ -433,7 +497,8 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B17-structure.json"
       },
       "pinyin": null,
       "component_name": null,
@@ -448,7 +513,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -463,8 +528,15 @@
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验",
-        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭"
-      ]
+        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B17-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "雨",
@@ -484,7 +556,9 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "reviewed_S07_GF0013_2009_undecomposable",
+        "class": "undecomposable",
+        "evidence": "data/evidence/B17-structure.json"
       },
       "pinyin": null,
       "component_name": "雨（yǔ）",
@@ -499,7 +573,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -513,10 +587,17 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "位置迁移仍须回完整整字及适用规范原页核验"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B17-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      }
     }
   ],
   "phase1_rule": "baseline身份/main_id/笔画分组、S03名称适用性及教学文本编辑一致性已有机器evidence；结构、逐笔笔顺、细笔名、采用读音、GF0011—2022精确身份与正式位置迁移继续pending。",
-  "teaching_review_record": "data/evidence/B17-teaching-review.json"
+  "teaching_review_record": "data/evidence/B17-teaching-review.json",
+  "structure_evidence": "data/evidence/B17-structure.json"
 }

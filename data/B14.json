@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_kind": "phase1_content_draft",
   "batch_id": "B14",
-  "version": "content-draft-2026-10-02",
+  "version": "content-draft-2026-10-05",
   "title": "六画常用部件与位置迁移",
   "content_status": "in_progress",
   "artwork_status": "deferred",
@@ -50,7 +50,8 @@
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable"
       },
       "migration_boundary": "“蚂”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
@@ -58,7 +59,18 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核"
-      ]
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B14-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      },
+      "structure": {
+        "status": "reviewed_S07_GF0013_2009_undecomposable",
+        "class": "undecomposable",
+        "evidence": "data/evidence/B14-structure.json"
+      }
     },
     {
       "character": "肉",
@@ -97,7 +109,8 @@
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable"
       },
       "migration_boundary": "“腐”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。 特别保留“肉/月”形近边界，待目标规范与整字证据裁决。",
       "unresolved": [
@@ -105,7 +118,18 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核"
-      ]
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B14-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      },
+      "structure": {
+        "status": "reviewed_S07_GF0013_2009_undecomposable",
+        "class": "undecomposable",
+        "evidence": "data/evidence/B14-structure.json"
+      }
     },
     {
       "character": "缶",
@@ -144,15 +168,27 @@
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending"
       },
       "migration_boundary": "“缸”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
-        "采用读音尚未完成适用权威原页复核"
-      ]
+        "采用读音尚未完成适用权威原页复核",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B14-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "structure": {
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B14-structure.json"
+      }
     },
     {
       "character": "舌",
@@ -191,15 +227,27 @@
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending"
       },
       "migration_boundary": "“话”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
-        "采用读音尚未完成适用权威原页复核"
-      ]
+        "采用读音尚未完成适用权威原页复核",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B14-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "structure": {
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B14-structure.json"
+      }
     },
     {
       "character": "竹",
@@ -238,15 +286,27 @@
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending"
       },
       "migration_boundary": "“笑”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。 “竹”到字头形态可能涉及正式附形，须等待GF0011—2022及整字时序证据。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
-        "采用读音尚未完成适用权威原页复核"
-      ]
+        "采用读音尚未完成适用权威原页复核",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B14-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "structure": {
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B14-structure.json"
+      }
     },
     {
       "character": "臼",
@@ -285,15 +345,27 @@
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending"
       },
       "migration_boundary": "“舅”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
-        "采用读音尚未完成适用权威原页复核"
-      ]
+        "采用读音尚未完成适用权威原页复核",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B14-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "structure": {
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B14-structure.json"
+      }
     },
     {
       "character": "自",
@@ -332,15 +404,27 @@
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending"
       },
       "migration_boundary": "“息”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
-        "采用读音尚未完成适用权威原页复核"
-      ]
+        "采用读音尚未完成适用权威原页复核",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B14-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "structure": {
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B14-structure.json"
+      }
     },
     {
       "character": "血",
@@ -379,7 +463,8 @@
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable"
       },
       "migration_boundary": "“衅”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
@@ -387,7 +472,18 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核"
-      ]
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B14-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      },
+      "structure": {
+        "status": "reviewed_S07_GF0013_2009_undecomposable",
+        "class": "undecomposable",
+        "evidence": "data/evidence/B14-structure.json"
+      }
     },
     {
       "character": "舟",
@@ -426,7 +522,8 @@
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable"
       },
       "migration_boundary": "“船”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
@@ -434,7 +531,18 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核"
-      ]
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B14-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      },
+      "structure": {
+        "status": "reviewed_S07_GF0013_2009_undecomposable",
+        "class": "undecomposable",
+        "evidence": "data/evidence/B14-structure.json"
+      }
     },
     {
       "character": "色",
@@ -473,16 +581,29 @@
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
         "teaching_text": "drafted",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending"
       },
       "migration_boundary": "“艳”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
-        "采用读音尚未完成适用权威原页复核"
-      ]
+        "采用读音尚未完成适用权威原页复核",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B14-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      },
+      "structure": {
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B14-structure.json"
+      }
     }
   ],
-  "phase1_rule": "本批先关闭S01-2009基线身份和笔画分组并完成教学中间文稿；笔顺、细笔名、部件名称、采用读音、位置变体和2022精确身份待相应原页证据后逐字段升级。"
+  "phase1_rule": "本批先关闭S01-2009基线身份和笔画分组并完成教学中间文稿；笔顺、细笔名、部件名称、采用读音、位置变体和2022精确身份待相应原页证据后逐字段升级。",
+  "structure_evidence": "data/evidence/B14-structure.json"
 }

@@ -31,8 +31,9 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review",
-        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。",
+        "evidence": "data/evidence/B15-structure.json"
       },
       "pinyin": null,
       "component_name": null,
@@ -48,7 +49,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -63,9 +64,16 @@
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验",
-        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭"
+        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
       ],
-      "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending"
+      "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending",
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B15-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "衣",
@@ -85,8 +93,10 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review",
-        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+        "status": "reviewed_S07_GF0013_2009_undecomposable",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。",
+        "class": "undecomposable",
+        "evidence": "data/evidence/B15-structure.json"
       },
       "pinyin": null,
       "component_name": "衣（yī）",
@@ -102,7 +112,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -116,9 +126,15 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
+        "位置迁移仍须回完整整字及适用规范原页核验"
       ],
-      "component_name_status": "reviewed_S03_GF0014_2009"
+      "component_name_status": "reviewed_S03_GF0014_2009",
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B15-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      }
     },
     {
       "character": "羊",
@@ -138,8 +154,10 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review",
-        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+        "status": "reviewed_S07_GF0013_2009_undecomposable",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。",
+        "class": "undecomposable",
+        "evidence": "data/evidence/B15-structure.json"
       },
       "pinyin": null,
       "component_name": "羊（yáng）",
@@ -155,7 +173,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -169,9 +187,15 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
+        "位置迁移仍须回完整整字及适用规范原页核验"
       ],
-      "component_name_status": "reviewed_S03_GF0014_2009"
+      "component_name_status": "reviewed_S03_GF0014_2009",
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B15-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      }
     },
     {
       "character": "米",
@@ -191,8 +215,10 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review",
-        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+        "status": "reviewed_S07_GF0013_2009_undecomposable",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。",
+        "class": "undecomposable",
+        "evidence": "data/evidence/B15-structure.json"
       },
       "pinyin": null,
       "component_name": "米（mǐ）",
@@ -208,7 +234,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -222,9 +248,15 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
+        "位置迁移仍须回完整整字及适用规范原页核验"
       ],
-      "component_name_status": "reviewed_S03_GF0014_2009"
+      "component_name_status": "reviewed_S03_GF0014_2009",
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B15-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      }
     },
     {
       "character": "聿",
@@ -244,8 +276,9 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review",
-        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。",
+        "evidence": "data/evidence/B15-structure.json"
       },
       "pinyin": null,
       "component_name": "聿（yù）/律（lǜ）字边",
@@ -261,7 +294,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -275,9 +308,16 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
       ],
-      "component_name_status": "reviewed_S03_GF0014_2009"
+      "component_name_status": "reviewed_S03_GF0014_2009",
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B15-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "艮",
@@ -297,8 +337,9 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review",
-        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。",
+        "evidence": "data/evidence/B15-structure.json"
       },
       "pinyin": null,
       "component_name": "艮（gèn）/根（gēn）字边",
@@ -314,7 +355,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -328,9 +369,16 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
       ],
-      "component_name_status": "reviewed_S03_GF0014_2009"
+      "component_name_status": "reviewed_S03_GF0014_2009",
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B15-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "羽",
@@ -350,8 +398,9 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review",
-        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。",
+        "evidence": "data/evidence/B15-structure.json"
       },
       "pinyin": null,
       "component_name": null,
@@ -367,7 +416,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -382,9 +431,16 @@
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验",
-        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭"
+        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
       ],
-      "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending"
+      "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending",
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B15-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "糸",
@@ -404,8 +460,9 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review",
-        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。",
+        "evidence": "data/evidence/B15-structure.json"
       },
       "pinyin": null,
       "component_name": "绞丝底（jiǎosīdǐ）",
@@ -421,7 +478,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -435,9 +492,16 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
       ],
-      "component_name_status": "reviewed_S03_GF0014_2009"
+      "component_name_status": "reviewed_S03_GF0014_2009",
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B15-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "麦",
@@ -457,8 +521,9 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review",
-        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。",
+        "evidence": "data/evidence/B15-structure.json"
       },
       "pinyin": null,
       "component_name": null,
@@ -474,7 +539,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -489,9 +554,16 @@
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验",
-        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭"
+        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
       ],
-      "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending"
+      "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending",
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B15-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "走",
@@ -511,8 +583,9 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review",
-        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。",
+        "evidence": "data/evidence/B15-structure.json"
       },
       "pinyin": null,
       "component_name": null,
@@ -528,7 +601,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -543,11 +616,19 @@
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验",
-        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭"
+        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
       ],
-      "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending"
+      "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending",
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B15-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     }
   ],
   "phase1_rule": "baseline机器evidence已入库；教学提示、自查句、整字语境和迁移边界已由reviews/B15-content.md中的人工内容复核覆盖，记为非权威编辑复核通过；笔顺、细笔名、部件名称、读音、结构、位置迁移和GF0011—2022精确身份继续逐字段pending。",
-  "teaching_review_record": "reviews/B15-content.md"
+  "teaching_review_record": "reviews/B15-content.md",
+  "structure_evidence": "data/evidence/B15-structure.json"
 }

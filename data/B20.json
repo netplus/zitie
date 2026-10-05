@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_kind": "phase1_content_draft",
   "batch_id": "B20",
-  "version": "content-draft-2026-10-02",
+  "version": "content-draft-2026-10-05",
   "title": "十至十四画复杂主部首",
   "content_status": "in_progress",
   "artwork_status": "deferred",
@@ -31,7 +31,8 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B20-structure.json"
       },
       "pinyin": null,
       "component_name": null,
@@ -46,7 +47,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -61,8 +62,15 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B20-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "黄",
@@ -82,7 +90,8 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B20-structure.json"
       },
       "pinyin": null,
       "component_name": null,
@@ -97,7 +106,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -112,8 +121,15 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B20-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "麻",
@@ -133,7 +149,8 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B20-structure.json"
       },
       "pinyin": null,
       "component_name": null,
@@ -148,7 +165,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -163,8 +180,15 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B20-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "鹿",
@@ -184,7 +208,8 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B20-structure.json"
       },
       "pinyin": null,
       "component_name": null,
@@ -199,7 +224,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -214,8 +239,15 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B20-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "鼎",
@@ -235,7 +267,8 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B20-structure.json"
       },
       "pinyin": null,
       "component_name": null,
@@ -250,7 +283,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -265,8 +298,15 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B20-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "黑",
@@ -286,7 +326,8 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B20-structure.json"
       },
       "pinyin": null,
       "component_name": null,
@@ -301,7 +342,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -316,8 +357,15 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B20-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "黍",
@@ -337,7 +385,8 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B20-structure.json"
       },
       "pinyin": null,
       "component_name": null,
@@ -352,7 +401,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -367,8 +416,15 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B20-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "鼓",
@@ -388,7 +444,8 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B20-structure.json"
       },
       "pinyin": null,
       "component_name": null,
@@ -403,7 +460,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -418,8 +475,15 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B20-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     },
     {
       "character": "鼠",
@@ -439,7 +503,9 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "reviewed_S07_GF0013_2009_undecomposable",
+        "class": "undecomposable",
+        "evidence": "data/evidence/B20-structure.json"
       },
       "pinyin": null,
       "component_name": null,
@@ -454,7 +520,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -469,8 +535,14 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "位置迁移仍须回完整整字及适用规范原页核验"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B20-structure.json",
+        "result": "listed_in_modern_common_undecomposable_character_table"
+      }
     },
     {
       "character": "鼻",
@@ -490,7 +562,8 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "evidence": "data/evidence/B20-structure.json"
       },
       "pinyin": null,
       "component_name": null,
@@ -505,7 +578,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
@@ -520,11 +593,19 @@
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+      ],
+      "structure_review": {
+        "source_id": "S07",
+        "publication_id": "GF0013—2009",
+        "evidence": "data/evidence/B20-structure.json",
+        "result": "no_exact_standalone_entry_in_reviewed_table"
+      }
     }
   ],
   "phase1_rule": "baseline evidence、人工content review与教学字段编辑一致性evidence已入库；教学提示、自查句、整字语境和迁移边界完成阶段1非权威编辑复核；其它权威字段继续逐项pending。",
   "content_review_record": "reviews/B20-content.md",
-  "teaching_review_record": "data/evidence/B20-teaching-review.json"
+  "teaching_review_record": "data/evidence/B20-teaching-review.json",
+  "structure_evidence": "data/evidence/B20-structure.json"
 }
