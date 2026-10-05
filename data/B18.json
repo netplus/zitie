@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_kind": "phase1_content_draft",
   "batch_id": "B18",
-  "version": "content-draft-2026-10-02",
+  "version": "content-draft-2026-10-05",
   "title": "八九画常用部件与迁移",
   "content_status": "in_progress",
   "artwork_status": "deferred",
@@ -34,7 +34,7 @@
         "status": "pending_authoritative_structure_review"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "非（fēi）",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -51,18 +51,18 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“悲”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+      ],
+      "component_name_status": "reviewed_S03_GF0014_2009"
     },
     {
       "character": "齿",
@@ -102,18 +102,19 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
+        "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“龄”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭"
+      ],
+      "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending"
     },
     {
       "character": "黾",
@@ -153,18 +154,19 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
+        "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“绳”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭"
+      ],
+      "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending"
     },
     {
       "character": "隹",
@@ -187,7 +189,7 @@
         "status": "pending_authoritative_structure_review"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "隹（zhuī）/锥（zhuī）字边",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -204,18 +206,18 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“谁”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+      ],
+      "component_name_status": "reviewed_S03_GF0014_2009"
     },
     {
       "character": "阜",
@@ -255,18 +257,19 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
+        "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“阜”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+        "结构分类及位置迁移尚未完成整字原页核验",
+        "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭"
+      ],
+      "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending"
     },
     {
       "character": "金",
@@ -289,7 +292,7 @@
         "status": "pending_authoritative_structure_review"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "金（jīn）",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -306,18 +309,18 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“鉴”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+      ],
+      "component_name_status": "reviewed_S03_GF0014_2009"
     },
     {
       "character": "鱼",
@@ -340,7 +343,7 @@
         "status": "pending_authoritative_structure_review"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "鱼（yú）",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -357,18 +360,18 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“鲜”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+      ],
+      "component_name_status": "reviewed_S03_GF0014_2009"
     },
     {
       "character": "隶",
@@ -391,7 +394,7 @@
         "status": "pending_authoritative_structure_review"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "隶（lì）",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -408,18 +411,18 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“隶”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+      ],
+      "component_name_status": "reviewed_S03_GF0014_2009"
     },
     {
       "character": "革",
@@ -442,7 +445,7 @@
         "status": "pending_authoritative_structure_review"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "革（gé）",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -459,18 +462,18 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“鞋”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+      ],
+      "component_name_status": "reviewed_S03_GF0014_2009"
     },
     {
       "character": "面",
@@ -493,7 +496,7 @@
         "status": "pending_authoritative_structure_review"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "面（miàn）",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -510,18 +513,18 @@
         "stroke_order": "pending_target_row",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
       },
       "migration_boundary": "“面”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+      ],
+      "component_name_status": "reviewed_S03_GF0014_2009"
     }
   ],
   "phase1_rule": "本批baseline evidence与人工content review已入库；教学提示、自查句、整字语境和迁移边界已完成阶段1编辑一致性复核并记录于data/evidence/B18-teaching-review.json；其它权威字段继续逐项pending。",
