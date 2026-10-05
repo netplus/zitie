@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_historical_primary_visual_review",
+  "batch_id": "B08",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "source": {
+    "source_id": "S04",
+    "publication_id": "1997-STROKE-ORDER",
+    "sha256": "ca8a0139744cf8105cb7e4ae7464ebc68cb76310b5a29e7cf004b2489a35ae65",
+    "artifact_id": 11010600883,
+    "artifact_run_id": 36514754022,
+    "method": "rendered_original_scan_visual_review_no_OCR",
+    "complete_scan": {
+      "pdf_pages": [
+        6,
+        26
+      ],
+      "printed_pages": [
+        1,
+        21
+      ],
+      "stroke_count_range": [
+        1,
+        5
+      ]
+    }
+  },
+  "identity_binding": "main_id and batch_id bind to canonical data/B08.json.",
+  "entries": [
+    {
+      "main_id": 2,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 3,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 4,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 5,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 34,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 35,
+      "result": "matched",
+      "pdf_page": 7,
+      "printed_page": 2,
+      "column": "R",
+      "row": 10,
+      "order_code": "154"
+    },
+    {
+      "main_id": 38,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 41,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 42,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    },
+    {
+      "main_id": 44,
+      "result": "no_exact_entry_in_complete_1_to_5_stroke_section"
+    }
+  ],
+  "decision": "matched target gains S04 historical original-page stroke-order review; the other targets remain fail-closed for this source and need GF0023-2020 original page or another applicable primary source.",
+  "limits": [
+    "stroke_order only; component names, fine-stroke names and position migration are independent fields."
+  ]
+}
