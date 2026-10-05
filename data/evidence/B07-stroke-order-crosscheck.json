@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_derived_crosscheck",
+  "batch_id": "B07",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "source": {
+    "source_kind": "secondary_digitization",
+    "repository": "takushun-wu/han-ideographs-stroke-order",
+    "file": "order.tsv",
+    "blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+    "license": "CC0-1.0",
+    "declared_primary_sources": [
+      "GF0023—2020《通用规范汉字笔顺规范》",
+      "ExcelHome笔画序库",
+      "CNMan/UnicodeCJK-WuBi"
+    ],
+    "limits": "派生数据库用于交叉核验，不替代GF0023—2020规范原页视觉审读。"
+  },
+  "reviewed_field": "stroke_order_crosscheck",
+  "entries": [
+    {
+      "character": "冖",
+      "main_id": 19,
+      "canonical_candidate": "45",
+      "derived": {
+        "rank": "82",
+        "unicode": "U+5196",
+        "strokes": 2,
+        "order": "45",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "凵",
+      "main_id": 20,
+      "canonical_candidate": "52",
+      "derived": {
+        "rank": "88",
+        "unicode": "U+51F5",
+        "strokes": 2,
+        "order": "52",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "卩",
+      "main_id": 21,
+      "canonical_candidate": "52",
+      "derived": {
+        "rank": "91",
+        "unicode": "U+5369",
+        "strokes": 2,
+        "order": "52",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "厶",
+      "main_id": 25,
+      "canonical_candidate": "54",
+      "derived": {
+        "rank": "104",
+        "unicode": "U+53B6",
+        "strokes": 2,
+        "order": "54",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "廴",
+      "main_id": 26,
+      "canonical_candidate": "54",
+      "derived": {
+        "rank": "107",
+        "unicode": "U+5EF4",
+        "strokes": 2,
+        "order": "54",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "艹",
+      "main_id": 30,
+      "canonical_candidate": "122",
+      "derived": {
+        "rank": "128",
+        "unicode": "U+8279",
+        "strokes": 3,
+        "order": "122",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "廾",
+      "main_id": 32,
+      "canonical_candidate": "132",
+      "derived": {
+        "rank": "137",
+        "unicode": "U+5EFE",
+        "strokes": 3,
+        "order": "132",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "宀",
+      "main_id": 48,
+      "canonical_candidate": "445",
+      "derived": {
+        "rank": "219",
+        "unicode": "U+5B80",
+        "strokes": 3,
+        "order": "445",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "辶",
+      "main_id": 49,
+      "canonical_candidate": "454",
+      "derived": {
+        "rank": "221",
+        "unicode": "U+8FB6",
+        "strokes": 3,
+        "order": "454",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "彐",
+      "main_id": 50,
+      "canonical_candidate": "511",
+      "derived": {
+        "rank": "225",
+        "unicode": "U+5F50",
+        "strokes": 3,
+        "order": "511",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "matches": 10,
+    "conflicts": 0,
+    "candidate_missing": 0,
+    "derived_missing": 0
+  },
+  "limits": [
+    "匹配只把stroke_order推进到crosschecked状态；GF0023规范原页视觉review完成前不标最终reviewed。",
+    "如派生码与canonical候选码不一致，必须conflict_fail_closed。",
+    "本证据不支持细笔名、读音、结构、2022部首身份或位置变体。"
+  ]
+}

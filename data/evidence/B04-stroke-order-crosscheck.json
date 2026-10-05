@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_derived_crosscheck",
+  "batch_id": "B04",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "source": {
+    "source_kind": "secondary_digitization",
+    "repository": "takushun-wu/han-ideographs-stroke-order",
+    "file": "order.tsv",
+    "blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+    "license": "CC0-1.0",
+    "declared_primary_sources": [
+      "GF0023—2020《通用规范汉字笔顺规范》",
+      "ExcelHome笔画序库",
+      "CNMan/UnicodeCJK-WuBi"
+    ],
+    "readme": "https://github.com/takushun-wu/han-ideographs-stroke-order",
+    "limits": "派生数据库用于交叉核验，不替代GF0023—2020规范原页视觉审读。"
+  },
+  "reviewed_field": "stroke_order_crosscheck",
+  "entries": [
+    {
+      "character": "干",
+      "main_id": 27,
+      "canonical_candidate": "112",
+      "derived": {
+        "rank": "114",
+        "unicode": "U+5E72",
+        "strokes": 3,
+        "order": "112",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "寸",
+      "main_id": 31,
+      "canonical_candidate": "124",
+      "derived": {
+        "rank": "133",
+        "unicode": "U+5BF8",
+        "strokes": 3,
+        "order": "124",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "夕",
+      "main_id": 43,
+      "canonical_candidate": "354",
+      "derived": {
+        "rank": "188",
+        "unicode": "U+5915",
+        "strokes": 3,
+        "order": "354",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "广",
+      "main_id": 46,
+      "canonical_candidate": "413",
+      "derived": {
+        "rank": "206",
+        "unicode": "U+5E7F",
+        "strokes": 3,
+        "order": "413",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "门",
+      "main_id": 47,
+      "canonical_candidate": "425",
+      "derived": {
+        "rank": "209",
+        "unicode": "U+95E8",
+        "strokes": 3,
+        "order": "425",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "尸",
+      "main_id": 51,
+      "canonical_candidate": "513",
+      "derived": {
+        "rank": "231",
+        "unicode": "U+5C38",
+        "strokes": 3,
+        "order": "513",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "己",
+      "main_id": 52,
+      "canonical_candidate": "515",
+      "derived": {
+        "rank": "233",
+        "unicode": "U+5DF1",
+        "strokes": 3,
+        "order": "515",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "弓",
+      "main_id": 53,
+      "canonical_candidate": "515",
+      "derived": {
+        "rank": "238",
+        "unicode": "U+5F13",
+        "strokes": 3,
+        "order": "515",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "飞",
+      "main_id": 57,
+      "canonical_candidate": "534",
+      "derived": {
+        "rank": "256",
+        "unicode": "U+98DE",
+        "strokes": 3,
+        "order": "534",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "马",
+      "main_id": 58,
+      "canonical_candidate": "551",
+      "derived": {
+        "rank": "262",
+        "unicode": "U+9A6C",
+        "strokes": 3,
+        "order": "551",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "matches": 10,
+    "conflicts": 0,
+    "candidate_missing": 0,
+    "derived_missing": 0
+  },
+  "limits": [
+    "匹配只把stroke_order推进到crosschecked状态；GF0023规范原页视觉review完成前不标最终reviewed。",
+    "如派生码与canonical候选码不一致，必须conflict_fail_closed。",
+    "本证据不支持细笔名、读音、结构、2022部首身份或位置变体。"
+  ]
+}

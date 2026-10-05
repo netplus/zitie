@@ -1,0 +1,176 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_derived_crosscheck",
+  "batch_id": "B05",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "source": {
+    "source_kind": "secondary_digitization",
+    "repository": "takushun-wu/han-ideographs-stroke-order",
+    "file": "order.tsv",
+    "blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+    "license": "CC0-1.0",
+    "declared_primary_sources": [
+      "GF0023—2020《通用规范汉字笔顺规范》",
+      "ExcelHome笔画序库",
+      "CNMan/UnicodeCJK-WuBi"
+    ],
+    "readme": "https://github.com/takushun-wu/han-ideographs-stroke-order",
+    "limits": "派生数据库用于交叉核验，不替代GF0023—2020规范原页视觉审读。"
+  },
+  "reviewed_field": "stroke_order_crosscheck",
+  "entries": [
+    {
+      "character": "无",
+      "main_id": 62,
+      "canonical_candidate": "1135",
+      "derived": {
+        "rank": "286",
+        "unicode": "U+65E0",
+        "strokes": 4,
+        "order": "1135",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "犬",
+      "main_id": 66,
+      "canonical_candidate": "1344",
+      "derived": {
+        "rank": "325",
+        "unicode": "U+72AC",
+        "strokes": 4,
+        "order": "1344",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "歹",
+      "main_id": 67,
+      "canonical_candidate": "1354",
+      "derived": {
+        "rank": "330",
+        "unicode": "U+6B79",
+        "strokes": 4,
+        "order": "1354",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "车",
+      "main_id": 68,
+      "canonical_candidate": "1512",
+      "derived": {
+        "rank": "338",
+        "unicode": "U+8F66",
+        "strokes": 4,
+        "order": "1512",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "牙",
+      "main_id": 69,
+      "canonical_candidate": "1523",
+      "derived": {
+        "rank": "342",
+        "unicode": "U+7259",
+        "strokes": 4,
+        "order": "1523",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "戈",
+      "main_id": 70,
+      "canonical_candidate": "1534",
+      "derived": {
+        "rank": "346",
+        "unicode": "U+6208",
+        "strokes": 4,
+        "order": "1534",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "瓦",
+      "main_id": 72,
+      "canonical_candidate": "1554",
+      "derived": {
+        "rank": "355",
+        "unicode": "U+74E6",
+        "strokes": 4,
+        "order": "1554",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "止",
+      "main_id": 73,
+      "canonical_candidate": "2121",
+      "derived": {
+        "rank": "359",
+        "unicode": "U+6B62",
+        "strokes": 4,
+        "order": "2121",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "贝",
+      "main_id": 76,
+      "canonical_candidate": "2534",
+      "derived": {
+        "rank": "379",
+        "unicode": "U+8D1D",
+        "strokes": 4,
+        "order": "2534",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    },
+    {
+      "character": "见",
+      "main_id": 78,
+      "canonical_candidate": "2535",
+      "derived": {
+        "rank": "388",
+        "unicode": "U+89C1",
+        "strokes": 4,
+        "order": "2535",
+        "gb_order": null,
+        "gb_rank": "\r"
+      },
+      "result": "matched_derived_GF0023_crosscheck"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "matches": 10,
+    "conflicts": 0,
+    "candidate_missing": 0,
+    "derived_missing": 0
+  },
+  "limits": [
+    "匹配只把stroke_order推进到crosschecked状态；GF0023规范原页视觉review完成前不标最终reviewed。",
+    "如派生码与canonical候选码不一致，必须conflict_fail_closed。",
+    "本证据不支持细笔名、读音、结构、2022部首身份或位置变体。"
+  ]
+}

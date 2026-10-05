@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-09-29",
+  "as_of": "2026-10-05",
   "sources": [
     {
       "id": "S01",
@@ -945,6 +945,52 @@
           "data/evidence/B20-pronunciation.json"
         ],
         "limits": "只支持阶段1采用读音；不支持GF0011—2022主附身份、结构、笔顺、细笔名或位置变体。"
+      }
+    },
+    {
+      "id": "D02",
+      "publication_id": "derived-GF0023-stroke-order-tsv",
+      "title": "han-ideographs-stroke-order / order.tsv",
+      "publisher": "takushun-wu (public GitHub repository)",
+      "role": [
+        "笔顺码派生数据交叉核验"
+      ],
+      "url": "https://github.com/takushun-wu/han-ideographs-stroke-order",
+      "license": "CC0-1.0",
+      "status": "acquired_crosscheck_only",
+      "source_blob_sha": "ecf422f0bb9d1d07d661250796269bfa752ebd",
+      "declared_primary_sources": [
+        "GF0023—2020《通用规范汉字笔顺规范》",
+        "ExcelHome笔画序库",
+        "CNMan/UnicodeCJK-WuBi"
+      ],
+      "limits": "二次数字化数据。只作为stroke_order交叉核验，不替代GF0023—2020规范原页视觉审读，不作为独立权威来源体系。",
+      "B04_B11_crosscheck": {
+        "date": "2026-10-05",
+        "batches": [
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B09",
+          "B10",
+          "B11"
+        ],
+        "target_count": 80,
+        "result_summary": "80/80 canonical candidate order codes matched order.tsv; 0 conflicts, 0 missing targets.",
+        "evidence": [
+          "data/evidence/B04-stroke-order-crosscheck.json",
+          "data/evidence/B05-stroke-order-crosscheck.json",
+          "data/evidence/B06-stroke-order-crosscheck.json",
+          "data/evidence/B07-stroke-order-crosscheck.json",
+          "data/evidence/B08-stroke-order-crosscheck.json",
+          "data/evidence/B09-stroke-order-crosscheck.json",
+          "data/evidence/B10-stroke-order-crosscheck.json",
+          "data/evidence/B11-stroke-order-crosscheck.json"
+        ],
+        "method": "exact character lookup in immutable order.tsv blob and direct comparison against canonical candidate order code",
+        "limits": "本检查只把stroke_order推进为secondary-derived crosschecked；GF0023—2020规范原页视觉review完成前不得标最终reviewed。"
       }
     }
   ]
