@@ -34,7 +34,7 @@
 
 `8b6213b0ec5f85ae26915aa6f823dcb2ba04c187`
 
-当前已不再停留在“建批次内容稿”阶段：B04—B21均有canonical内容记录，多个批次已经补齐baseline、教学字段、S03部件名称/适用性以及部分结构evidence；B04新增GF0013—2009结构evidence，B05、B10、B11、B15—B18等已有不同程度的canonical证据状态同步，B19 component-name machine evidence已入库，B20的S03完整主体表视觉审读已登记来源台账。
+当前已不再停留在“建批次内容稿”阶段：B04—B21均有canonical内容记录，多个批次已经补齐baseline、教学字段、S03部件名称/适用性以及部分结构evidence。2026-10-05新增完成B06—B09共40项GF0013—2009结构适用性原页审读；B04/B05结构canonical、B06/B07 baseline状态、B09与B19名称状态等旧债也已同步。B20的S03完整主体表视觉审读已登记来源台账，machine evidence仍待补。
 
 下一阶段1主吞吐将逐步从S03名称转向**正式笔顺、细笔名、采用读音和结构字段**，同时清理少量“evidence已入库但canonical/review尚未同步”的状态债。2026-10-05起常规单轮目标提高为40个不同主部首。
 
