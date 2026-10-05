@@ -1,0 +1,104 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_structure_review_evidence",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S07",
+    "publication_id": "GF0013—2009",
+    "title": "现代常用独体字规范",
+    "publisher": "教育部、国家语委",
+    "source_ledger": "sources/catalog.json",
+    "visual_review_copy": "https://edu.sh.gov.cn/cmsres/cc/cc76a4a1bbf44271bbc8cf8b47b29289/50476d9ab398dd13a7459af90778d693.pdf",
+    "byte_identity_to_catalog_copy": "not_checked_this_run",
+    "table": "第6节 现代常用独体字表",
+    "reviewed_printed_pages": [
+      2
+    ],
+    "reviewed_pdf_pages": [
+      5
+    ],
+    "method": "actual_pdf_page_screenshot_visual_review"
+  },
+  "reviewed_field": "structure",
+  "conclusion": "目标字直接列入GF0013—2009《现代常用独体字表》，据此支持阶段1结构前提为独体字。",
+  "limits": [
+    "本证据只支持结构字段的独体字前提，不支持GF0011—2022主附身份、名称或编码。",
+    "不支持笔顺、细笔名、采用读音或正式位置变体。",
+    "上海市教育委员会公开副本与仓库catalog登记扫描件的字节同一性本轮未复核。"
+  ],
+  "batch_id": "B04",
+  "entries": [
+    {
+      "character": "干",
+      "result": "listed_in_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "寸",
+      "result": "listed_in_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "夕",
+      "result": "listed_in_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "广",
+      "result": "listed_in_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "门",
+      "result": "listed_in_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "尸",
+      "result": "listed_in_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "己",
+      "result": "listed_in_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "弓",
+      "result": "listed_in_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "飞",
+      "result": "listed_in_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    },
+    {
+      "character": "马",
+      "result": "listed_in_modern_common_undecomposable_character_table",
+      "structure": "undecomposable",
+      "printed_page": 2,
+      "pdf_page": 5
+    }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_field_evidence",
+  "batch_id": "B07",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "review_kind": "machine_crosscheck_against_reviewed_S01_2009_baseline_index",
+  "source": {
+    "source_id": "S01-2009",
+    "publication_id": "GF0011-2009",
+    "reviewed_pdf_pages": [
+      6,
+      7,
+      8
+    ],
+    "reviewed_printed_pages": [
+      3,
+      4,
+      5
+    ],
+    "repository_checkpoint": "data/coverage.json#baseline_review",
+    "method": "Cross-checked B07 canonical main_id and stroke_count against the reviewed S01-2009 baseline index; this run does not claim a new reread of the source PDF."
+  },
+  "reviewed_fields": [
+    "baseline_identity",
+    "main_id",
+    "baseline_stroke_group"
+  ],
+  "entries": [
+    {
+      "character": "冖",
+      "main_id": 19,
+      "stroke_count": 2,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "凵",
+      "main_id": 20,
+      "stroke_count": 2,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "卩",
+      "main_id": 21,
+      "stroke_count": 2,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "厶",
+      "main_id": 25,
+      "stroke_count": 2,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "廴",
+      "main_id": 26,
+      "stroke_count": 2,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "艹",
+      "main_id": 30,
+      "stroke_count": 3,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "廾",
+      "main_id": 32,
+      "stroke_count": 3,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "宀",
+      "main_id": 48,
+      "stroke_count": 3,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "辶",
+      "main_id": 49,
+      "stroke_count": 3,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    },
+    {
+      "character": "彐",
+      "main_id": 50,
+      "stroke_count": 3,
+      "result": "matched_baseline_index_and_stroke_group",
+      "limits": "不支持GF0011—2022精确身份、逐笔笔顺、细笔名、部件名称、采用读音、正式结构或位置变体。"
+    }
+  ],
+  "limits": "只支持既有S01-2009中间索引的一致性复核，不替代GF0011—2022原文逐项核验。"
+}

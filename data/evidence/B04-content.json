@@ -1,0 +1,245 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_field_evidence",
+  "batch_id": "B04",
+  "created_at": "2026-10-03",
+  "evidence_scope": [
+    "baseline_identity",
+    "main_id",
+    "stroke_count"
+  ],
+  "source": {
+    "source_id": "S01-2009",
+    "publication_id": "GF0011-2009",
+    "review_basis": "reuse_existing_actual_page_render_visual_comparison",
+    "reviewed_pdf_pages": [
+      6,
+      7,
+      8
+    ],
+    "reviewed_printed_pages": [
+      3,
+      4,
+      5
+    ],
+    "source_ledger": "sources/catalog.json",
+    "repository_checkpoint": "data/coverage.json#baseline_review"
+  },
+  "entries": [
+    {
+      "character": "干",
+      "main_id": 27,
+      "baseline_stroke_group": 3,
+      "target_identity_status": "baseline_2009_reviewed_2022_pending",
+      "stroke_count_status": "reviewed_from_baseline_stroke_group",
+      "source_locator": {
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "reviewed_printed_pages": [
+          3,
+          4,
+          5
+        ],
+        "locator_kind": "reviewed_main_table_page_set",
+        "entry_key": "main_id:27"
+      }
+    },
+    {
+      "character": "寸",
+      "main_id": 31,
+      "baseline_stroke_group": 3,
+      "target_identity_status": "baseline_2009_reviewed_2022_pending",
+      "stroke_count_status": "reviewed_from_baseline_stroke_group",
+      "source_locator": {
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "reviewed_printed_pages": [
+          3,
+          4,
+          5
+        ],
+        "locator_kind": "reviewed_main_table_page_set",
+        "entry_key": "main_id:31"
+      }
+    },
+    {
+      "character": "夕",
+      "main_id": 43,
+      "baseline_stroke_group": 3,
+      "target_identity_status": "baseline_2009_reviewed_2022_pending",
+      "stroke_count_status": "reviewed_from_baseline_stroke_group",
+      "source_locator": {
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "reviewed_printed_pages": [
+          3,
+          4,
+          5
+        ],
+        "locator_kind": "reviewed_main_table_page_set",
+        "entry_key": "main_id:43"
+      }
+    },
+    {
+      "character": "广",
+      "main_id": 46,
+      "baseline_stroke_group": 3,
+      "target_identity_status": "baseline_2009_reviewed_2022_pending",
+      "stroke_count_status": "reviewed_from_baseline_stroke_group",
+      "source_locator": {
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "reviewed_printed_pages": [
+          3,
+          4,
+          5
+        ],
+        "locator_kind": "reviewed_main_table_page_set",
+        "entry_key": "main_id:46"
+      }
+    },
+    {
+      "character": "门",
+      "main_id": 47,
+      "baseline_stroke_group": 3,
+      "target_identity_status": "baseline_2009_reviewed_2022_pending",
+      "stroke_count_status": "reviewed_from_baseline_stroke_group",
+      "source_locator": {
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "reviewed_printed_pages": [
+          3,
+          4,
+          5
+        ],
+        "locator_kind": "reviewed_main_table_page_set",
+        "entry_key": "main_id:47"
+      }
+    },
+    {
+      "character": "尸",
+      "main_id": 51,
+      "baseline_stroke_group": 3,
+      "target_identity_status": "baseline_2009_reviewed_2022_pending",
+      "stroke_count_status": "reviewed_from_baseline_stroke_group",
+      "source_locator": {
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "reviewed_printed_pages": [
+          3,
+          4,
+          5
+        ],
+        "locator_kind": "reviewed_main_table_page_set",
+        "entry_key": "main_id:51"
+      }
+    },
+    {
+      "character": "己",
+      "main_id": 52,
+      "baseline_stroke_group": 3,
+      "target_identity_status": "baseline_2009_reviewed_2022_pending",
+      "stroke_count_status": "reviewed_from_baseline_stroke_group",
+      "source_locator": {
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "reviewed_printed_pages": [
+          3,
+          4,
+          5
+        ],
+        "locator_kind": "reviewed_main_table_page_set",
+        "entry_key": "main_id:52"
+      }
+    },
+    {
+      "character": "弓",
+      "main_id": 53,
+      "baseline_stroke_group": 3,
+      "target_identity_status": "baseline_2009_reviewed_2022_pending",
+      "stroke_count_status": "reviewed_from_baseline_stroke_group",
+      "source_locator": {
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "reviewed_printed_pages": [
+          3,
+          4,
+          5
+        ],
+        "locator_kind": "reviewed_main_table_page_set",
+        "entry_key": "main_id:53"
+      }
+    },
+    {
+      "character": "飞",
+      "main_id": 57,
+      "baseline_stroke_group": 3,
+      "target_identity_status": "baseline_2009_reviewed_2022_pending",
+      "stroke_count_status": "reviewed_from_baseline_stroke_group",
+      "source_locator": {
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "reviewed_printed_pages": [
+          3,
+          4,
+          5
+        ],
+        "locator_kind": "reviewed_main_table_page_set",
+        "entry_key": "main_id:57"
+      }
+    },
+    {
+      "character": "马",
+      "main_id": 58,
+      "baseline_stroke_group": 3,
+      "target_identity_status": "baseline_2009_reviewed_2022_pending",
+      "stroke_count_status": "reviewed_from_baseline_stroke_group",
+      "source_locator": {
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "reviewed_printed_pages": [
+          3,
+          4,
+          5
+        ],
+        "locator_kind": "reviewed_main_table_page_set",
+        "entry_key": "main_id:58"
+      }
+    }
+  ],
+  "limits": [
+    "本证据只复用仓库已记录的GF0011—2009主表实际页复核，不宣称本轮重新审读原PDF。",
+    "不支持GF0011—2022精确字形、附形、名称、国际编码。",
+    "不支持笔顺、细笔名、采用读音、结构或位置变体。"
+  ]
+}

@@ -88,7 +88,7 @@ def validate_evidence(catalog, batches, sources, evidence):
     assert publications['S02']['publication_id'] != publications['S04']['publication_id']
     checkpoint = catalog['field_review_checkpoints'][evidence['batch_id']]
     assert checkpoint['main_ids'] == [e['main_id'] for e in entries]
-    assert checkpoint['evidence'] == declared['stroke_order_evidence']
+    assert checkpoint['stroke_order_evidence'] == declared['stroke_order_evidence']
     assert checkpoint['generated_main_count'] == 0 and checkpoint['release_eligible'] is False
     for e in entries:
         assert ids[e['character']]['main_id'] == e['main_id']
@@ -112,6 +112,71 @@ def validate_evidence(catalog, batches, sources, evidence):
             'source_cross_checked_strokes':evidence['total_strokes'], 'generated_entries':0,
             'formal_release_entries':0, 'note':'Field evidence consistency only; not semantic approval.'}
 
+
+def validate_metadata_evidence(catalog, batches, sources, evidence):
+    """Check B03 fine-stroke-name and pronunciation review bookkeeping only."""
+    assert evidence['schema_version'] == 1
+    assert evidence['record_kind'] == 'metadata_field_review_checkpoint'
+    assert evidence['release_eligible'] is False, 'Metadata review is not a release'
+    assert evidence['status'] == 'fine_stroke_names_and_pronunciation_reviewed'
+    assert evidence['review_method'] == 'original_scan_page_render_visual_review'
+    assert evidence['reviewer'] and evidence['review_date']
+    assert evidence['independent_reviewers'] is False
+    assert set(evidence['supported_fields']) == {'fine_stroke_names','pronunciation'}
+    assert {'component_names','teaching_text','vector_matching','layout','target_edition_identity','variants'} <= set(evidence['pending_fields'])
+    declared = next(b for b in batches['frozen_batches'] if b['id'] == evidence['batch_id'])
+    assert declared['metadata_evidence'] == 'data/evidence/B03-metadata.json'
+    assert declared['metadata_review_record'] == evidence['review_record']
+    assert 'metadata_checked' in declared['status']
+    entries = evidence['entries']
+    assert ''.join(e['character'] for e in entries) == declared['main_glyphs']
+    assert len(entries) == evidence['total_entries'] == 10
+    ids = {r['glyph']:r for r in expand(catalog)}
+    publications = {s['id']:s for s in sources['sources']}
+    assert set(evidence['source_files']) == {'S04','S05','S06'}
+    for sid, file in evidence['source_files'].items():
+        source = publications[sid]
+        assert file['publication_id'] == source['publication_id']
+        assert file['sha256'] == source['sha256'], 'Metadata source hash drift'
+        assert file['pages'] == source.get('pdf_page_count', source.get('pdf_pages'))
+    checkpoint = catalog['field_review_checkpoints'][evidence['batch_id']]
+    assert checkpoint['metadata_evidence'] == declared['metadata_evidence']
+    assert {'fine_stroke_names','pronunciation'} <= set(checkpoint['reviewed_fields'])
+    assert checkpoint['generated_main_count'] == 0 and checkpoint['release_eligible'] is False
+    for e in entries:
+        assert ids[e['character']]['main_id'] == e['main_id']
+        assert len(e['stroke_names']) == ids[e['character']]['strokes']
+        assert e['adopted_pinyin']
+        assert e['stroke_name_evidence'], e['character'] + ': missing fine-stroke evidence'
+        for item in e['stroke_name_evidence']:
+            sid = item['source_id']
+            assert sid in ('S04','S05')
+            source = publications[sid]
+            reviewed = source.get('pdf_pages_reviewed', source.get('reviewed_pdf_pages', []))
+            assert item['pdf_page'] in reviewed
+            if sid == 'S05':
+                assert item['pdf_page'] in (8,9)
+                assert item['printed_page'] == item['pdf_page'] - 2
+                assert item['table_row'] in {'5.1','5.2','5.8','5.9','5.15'}
+                assert item['adopted_name']
+            else:
+                assert item['pdf_page'] == 5 and item['printed_page_label'] == '说明第2页'
+                assert item['supports']
+        pron = e['pronunciation_evidence']
+        assert pron['source_id'] == 'S06' and pron['result'] == 'matched'
+        assert pron['pdf_page'] in {31,34,42,44,47,51,53,73,83,92}
+        assert pron['pdf_page'] - pron['printed_page'] == 6
+        assert pron['adopted_pinyin'] == e['adopted_pinyin']
+        assert pron['application'] in ('direct','morpheme_first')
+        if pron['application'] == 'morpheme_first':
+            assert '不冒充独立' in pron['usage']
+        else:
+            assert '独立词条' in pron['usage']
+    return {'batch_id':evidence['batch_id'], 'metadata_reviewed_entries':len(entries),
+            'fine_stroke_name_entries':len(entries), 'pronunciation_entries':len(entries),
+            'generated_entries':0, 'formal_release_entries':0,
+            'note':'Metadata evidence consistency only; source reading remains separately recorded.'}
+
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--release', action='store_true')
@@ -122,6 +187,8 @@ def main():
     sources = load("sources/catalog.json")
     result["field_checkpoints"] = [validate_evidence(c,b,sources,load(item["stroke_order_evidence"]))
                                    for item in b["frozen_batches"] if item.get("stroke_order_evidence")]
+    result["metadata_checkpoints"] = [validate_metadata_evidence(c,b,sources,load(item["metadata_evidence"]))
+                                      for item in b["frozen_batches"] if item.get("metadata_evidence")]
     if args.release and not x['release_eligible']:
         raise SystemExit('Release blocked: authoritative cross-review and/or other gates remain pending.')
     print(json.dumps(result, ensure_ascii=False, indent=2))

@@ -1,13 +1,18 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "batch_capacity": 10,
   "expected_batch_count": 21,
+  "active_mode": "phase1_content_first",
+  "phase1_goal": "优先完成201个主部首的字段级内容与证据链；artwork、layout、PDF、manifest和release转入后续阶段，不阻塞下一批内容。",
   "frozen_batches": [
     {
       "id": "B01",
       "title": "基础起步",
       "main_glyphs": "一十人八大工土口山巾",
       "status": "content_cross_checked_scope_pending",
+      "content_status": "content_ready",
+      "artwork_status": "artwork_ready",
+      "publication_status": "draft_archived",
       "prerequisites": []
     },
     {
@@ -15,6 +20,9 @@
       "title": "常见独体形与迁移准备",
       "main_glyphs": "水火木日月田目手牛毛",
       "status": "content_cross_checked_scope_pending",
+      "content_status": "content_ready",
+      "artwork_status": "artwork_ready",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B01"
       ]
@@ -23,7 +31,10 @@
       "id": "B03",
       "title": "简单独体与首次位置迁移",
       "main_glyphs": "刀力又子女小王石白立",
-      "status": "scope_frozen_structure_checked_stroke_order_cross_checked_metadata_pending",
+      "status": "scope_frozen_structure_checked_stroke_order_cross_checked_metadata_checked_content_checked_artwork_checked_layout_checked_archive_pending",
+      "content_status": "content_ready",
+      "artwork_status": "artwork_ready_local_candidate",
+      "publication_status": "archive_pending",
       "prerequisites": [
         "B01",
         "B02"
@@ -32,7 +43,267 @@
       "structure_record": "reviews/B03-structure.md",
       "stroke_order_locator_record": "reviews/B03-stroke-order-locator.md",
       "stroke_order_review_record": "reviews/B03-primary-cross.md",
-      "stroke_order_evidence": "data/evidence/B03-stroke-order.json"
+      "stroke_order_evidence": "data/evidence/B03-stroke-order.json",
+      "metadata_review_record": "reviews/B03-metadata.md",
+      "metadata_evidence": "data/evidence/B03-metadata.json",
+      "metadata_source_ledger": "sources/B03-metadata-review.json",
+      "content_review_record": "reviews/B03-content.md",
+      "artwork_review_record": "reviews/B03-artwork.md",
+      "layout_review_record": "reviews/B03-layout.md"
+    }
+  ],
+  "phase1_content_batches": [
+    {
+      "id": "B04",
+      "title": "三画独体与位置迁移",
+      "main_glyphs": "干寸夕广门尸己弓飞马",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B03_content_ready"
+      ],
+      "note": "第一阶段只推进内容和证据链；GF0011—2022精确字段可保留pending，不阻塞其它字段完成。"
+    },
+    {
+      "id": "B05",
+      "title": "四画独体与迁移辨析",
+      "main_glyphs": "无犬歹车牙戈瓦止贝见",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B04_content_scope"
+      ],
+      "note": "第一阶段只推进内容和证据链；牙第2笔等冲突继续fail-closed，不因批次推进而强行裁决。"
+    },
+    {
+      "id": "B06",
+      "title": "二画基础部件与框形",
+      "main_glyphs": "厂匚卜冂勹儿匕几亠冫",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B05_content_scope"
+      ],
+      "note": "阶段1已建立正式内容稿；候选笔顺/细笔名/名称仍需目标原页逐项核验。"
+    },
+    {
+      "id": "B07",
+      "title": "二三画常用偏旁与包围迁移",
+      "main_glyphs": "冖凵卩厶廴艹廾宀辶彐",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B06_content_scope"
+      ],
+      "note": "阶段1已建立正式内容稿；包围时序必须回整字核验，候选字段未升级为reviewed。"
+    },
+    {
+      "id": "B08",
+      "title": "基础笔形与三画辨析",
+      "main_glyphs": "丨丿丶乛尢弋囗彳彡夂",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B07_content_scope"
+      ],
+      "note": "阶段1正式内容稿已入库；人工review与机器evidence尚未形成，字段保持in_progress。"
+    },
+    {
+      "id": "B09",
+      "title": "四画常用独体与部件迁移",
+      "main_glyphs": "韦支比气长片斤爪父文",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B08_content_scope"
+      ],
+      "note": "阶段1正式内容稿已入库；人工review与机器evidence尚未形成，字段保持in_progress。"
+    },
+    {
+      "id": "B10",
+      "title": "常用四画部件与迁移",
+      "main_glyphs": "丬幺攴氏欠风方斗户心",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B09_content_scope"
+      ],
+      "note": "阶段1正式内容稿与人工review已入库；机器evidence尚未形成，未闭合字段保持pending。"
+    },
+    {
+      "id": "B11",
+      "title": "五画常用独体与框形辨析",
+      "main_glyphs": "示甘龙业罒皿生矢禾瓜",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B10_content_scope"
+      ],
+      "note": "阶段1正式内容稿已入库；人工review与机器evidence尚未形成，字段保持in_progress。"
+    },
+    {
+      "id": "B12",
+      "title": "遗留短笔部件与五画过渡",
+      "main_glyphs": "屮巛殳毋鸟疒穴疋皮癶",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B11_content_scope"
+      ],
+      "note": "阶段1正式内容稿、人工review与baseline机器evidence已入库；其它字段继续逐项待核。"
+    },
+    {
+      "id": "B13",
+      "title": "五六画结构与包围过渡",
+      "main_glyphs": "矛耒老耳臣覀而页至虍",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B12_content_scope"
+      ],
+      "note": "阶段1正式内容稿、人工review与baseline机器evidence已入库；其它字段继续逐项待核。"
+    },
+    {
+      "id": "B14",
+      "title": "六画常用部件与位置迁移",
+      "main_glyphs": "虫肉缶舌竹臼自血舟色",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B13_content_scope"
+      ],
+      "note": "阶段1正式内容稿与人工review已入库；data/evidence/B14-content.json写入被安全检查拒绝，因此baseline字段不得据此升级reviewed。"
+    },
+    {
+      "id": "B15",
+      "title": "六七画常用部件与位置迁移",
+      "main_glyphs": "齐衣羊米聿艮羽糸麦走",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B14_content_scope"
+      ],
+      "note": "阶段1正式内容稿与人工review已入库；机器evidence写入被安全检查拒绝，data/B15.json已回退为candidate状态。"
+    },
+    {
+      "id": "B16",
+      "title": "七画常用部件与位置迁移",
+      "main_glyphs": "赤豆酉辰豕卤里足邑身",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B15_content_scope"
+      ],
+      "note": "baseline、S03名称适用性与教学编辑evidence均已入库并同步canonical；赤、豆、酉、辰、豕、卤、里、身的component_name已reviewed，足、邑为S03已核无精确独立整形条目并转替代权威来源pending；结构、笔顺/细笔名、读音、2022精确字段与正式位置迁移继续pending。"
+    },
+    {
+      "id": "B17",
+      "title": "七八画常用部件与迁移",
+      "main_glyphs": "釆谷豸龟角言辛青龺雨",
+      "note": "baseline、S03名称适用性与教学编辑evidence均已入库并同步canonical；谷、豸、龟、角、言、辛、雨的component_name已reviewed，釆、青、龺为S03已核无精确独立整形条目并转替代权威来源pending；人工content review文件仍受tooling_write_blocker，结构、笔顺/细笔名、读音、2022精确字段与正式位置迁移继续pending。",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B16_content_scope"
+      ]
+    },
+    {
+      "id": "B18",
+      "title": "八九画常用部件与迁移",
+      "main_glyphs": "非齿黾隹阜金鱼隶革面",
+      "note": "阶段1正式内容稿、人工review与baseline机器evidence已入库；其它字段继续逐项待核。",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B17_content_scope"
+      ]
+    },
+    {
+      "id": "B19",
+      "title": "九十画常用部件与复杂形过渡",
+      "main_glyphs": "韭骨香鬼食音首髟鬲鬥",
+      "note": "baseline机器evidence、canonical data与人工content review已入库；教学提示、自查句、整字语境和迁移边界完成阶段1人工编辑复核；其它权威字段继续pending。",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B18_content_scope"
+      ]
+    },
+    {
+      "id": "B20",
+      "title": "十至十四画复杂主部首",
+      "main_glyphs": "高黄麻鹿鼎黑黍鼓鼠鼻",
+      "note": "canonical data、baseline机器evidence、人工content review与教学字段编辑一致性evidence已入库；teaching_text已标记为非权威编辑复核完成，其它权威字段继续pending。",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B19_content_scope"
+      ]
+    },
+    {
+      "id": "B21",
+      "title": "终批复杂主部首",
+      "main_glyphs": "龠",
+      "note": "baseline machine evidence、canonical data与人工content review已入库；教学提示、自查句、独立字语境和迁移边界完成阶段1非权威人工编辑复核；其它权威字段继续pending。",
+      "scope_frozen_for_content": true,
+      "publication_frozen": false,
+      "content_status": "in_progress",
+      "artwork_status": "deferred",
+      "publication_status": "deferred",
+      "prerequisites": [
+        "B20_content_scope"
+      ]
     }
   ],
   "remaining_plan": {
@@ -56,8 +327,11 @@
       "B20",
       "B21"
     ],
-    "status": "B03_frozen_B04_plus_pedagogical_assignment_pending",
+    "status": "phase1_scope_fully_assigned_B04_B21_in_progress",
     "main_count": 171,
-    "rule": "按少笔画与常用性、位置变形、易混对照、包围时序、复杂扩展的前置关系分配；B04—B20各10项，B21为1项。冻结下一批时更新明细，不能自动以规范序号替代教学顺序。"
-  }
+    "rule": "兼容现有validator：remaining_plan继续表示尚未进入frozen_batches的全部171个主项，因此包含已进入阶段1内容编写的B04—B07。phase1_content_batches单独表示当前内容工作集，两者允许重叠；正式冻结后再从remaining_plan移除。"
+  },
+  "run_target_main_count": 20,
+  "run_target_rule": "阶段1每次持续推进20个不同主部首的内容与证据链；内部仍为10项一批。不得用附形、复习、字段数或重复检查充数。artwork/layout/publication状态不作为继续下一批内容的常规阻塞条件。",
+  "phase_boundary_rule": "content_ready仅表示可进入阶段2，不等于artwork_ready、draft_archived或release_eligible。"
 }

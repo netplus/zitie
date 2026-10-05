@@ -1,0 +1,408 @@
+{
+  "schema_version": 1,
+  "record_kind": "metadata_field_review_checkpoint",
+  "batch_id": "B03",
+  "based_on_commit": "6f3798e4dc055a7e03cc788e3a9b239e3dd6c547",
+  "review_date": "2026-09-29",
+  "reviewer": "ChatGPT",
+  "review_method": "original_scan_page_render_visual_review",
+  "independent_reviewers": false,
+  "status": "fine_stroke_names_and_pronunciation_reviewed",
+  "supported_fields": [
+    "fine_stroke_names",
+    "pronunciation"
+  ],
+  "pending_fields": [
+    "component_names",
+    "teaching_text",
+    "vector_matching",
+    "layout",
+    "target_edition_identity",
+    "variants"
+  ],
+  "release_eligible": false,
+  "total_entries": 10,
+  "source_files": {
+    "S04": {
+      "publication_id": "1997-STROKE-ORDER",
+      "sha256": "ca8a0139744cf8105cb7e4ae7464ebc68cb76310b5a29e7cf004b2489a35ae65",
+      "pages": 458,
+      "content_scope": "说明第2页用于基本笔形及类别关系。"
+    },
+    "S05": {
+      "publication_id": "GF2001—2001",
+      "sha256": "68a1420580a7eedde79eeb55b91b6b2ff10ef9155d98633ccc712838f04e9b14",
+      "pages": 9,
+      "content_scope": "折笔名称规则与本批所需行。"
+    },
+    "S06": {
+      "publication_id": "GF0015—2010",
+      "sha256": "0d647e1378847480364e2603030fe6aa6102d99320c42cac631b2fb3155d18ce",
+      "pages": 157,
+      "content_scope": "仅采用目标字或目标语素的词条读音；旧版等级不作当前教学分级。"
+    }
+  },
+  "review_record": "reviews/B03-metadata.md",
+  "entries": [
+    {
+      "character": "刀",
+      "main_id": 22,
+      "adopted_pinyin": "dāo",
+      "stroke_names": [
+        "横折钩",
+        "撇"
+      ],
+      "stroke_name_evidence": [
+        {
+          "source_id": "S05",
+          "pdf_page": 9,
+          "printed_page": 7,
+          "table_row": "5.15",
+          "adopted_name": "横折钩"
+        },
+        {
+          "source_id": "S04",
+          "pdf_page": 5,
+          "printed_page_label": "说明第2页",
+          "supports": "撇；主笔形类别码不替代全部细笔名。"
+        }
+      ],
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 34,
+        "printed_page": 28,
+        "entry_number": "一级315",
+        "entry_pinyin": "dāo",
+        "adopted_pinyin": "dāo",
+        "usage": "独立词条",
+        "application": "direct",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "力",
+      "main_id": 23,
+      "adopted_pinyin": "lì",
+      "stroke_names": [
+        "横折钩",
+        "撇"
+      ],
+      "stroke_name_evidence": [
+        {
+          "source_id": "S05",
+          "pdf_page": 9,
+          "printed_page": 7,
+          "table_row": "5.15",
+          "adopted_name": "横折钩"
+        },
+        {
+          "source_id": "S04",
+          "pdf_page": 5,
+          "printed_page_label": "说明第2页",
+          "supports": "撇；主笔形类别码不替代全部细笔名。"
+        }
+      ],
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 42,
+        "printed_page": 36,
+        "entry_number": "一级1019",
+        "entry_pinyin": "lì",
+        "adopted_pinyin": "lì",
+        "usage": "独立词条",
+        "application": "direct",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "又",
+      "main_id": 24,
+      "adopted_pinyin": "yòu",
+      "stroke_names": [
+        "横撇",
+        "捺"
+      ],
+      "stroke_name_evidence": [
+        {
+          "source_id": "S05",
+          "pdf_page": 8,
+          "printed_page": 6,
+          "table_row": "5.2",
+          "adopted_name": "横撇"
+        },
+        {
+          "source_id": "S04",
+          "pdf_page": 5,
+          "printed_page_label": "说明第2页",
+          "supports": "捺；主笔形类别码不替代全部细笔名。"
+        }
+      ],
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 53,
+        "printed_page": 47,
+        "entry_number": "一级1989",
+        "entry_pinyin": "yòu",
+        "adopted_pinyin": "yòu",
+        "usage": "独立词条",
+        "application": "direct",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "子",
+      "main_id": 54,
+      "adopted_pinyin": "zǐ",
+      "stroke_names": [
+        "横撇",
+        "弯钩",
+        "横"
+      ],
+      "stroke_name_evidence": [
+        {
+          "source_id": "S05",
+          "pdf_page": 8,
+          "printed_page": 6,
+          "table_row": "5.2",
+          "adopted_name": "横撇"
+        },
+        {
+          "source_id": "S05",
+          "pdf_page": 8,
+          "printed_page": 6,
+          "table_row": "5.9",
+          "adopted_name": "弯钩"
+        },
+        {
+          "source_id": "S04",
+          "pdf_page": 5,
+          "printed_page_label": "说明第2页",
+          "supports": "横；主笔形类别码不替代全部细笔名。"
+        }
+      ],
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 92,
+        "printed_page": 86,
+        "entry_number": "二级3154",
+        "entry_pinyin": "zǐdàn",
+        "adopted_pinyin": "zǐ",
+        "usage": "取首语素；不冒充独立字条",
+        "application": "morpheme_first",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "女",
+      "main_id": 56,
+      "adopted_pinyin": "nǚ",
+      "stroke_names": [
+        "撇点",
+        "撇",
+        "横"
+      ],
+      "stroke_name_evidence": [
+        {
+          "source_id": "S05",
+          "pdf_page": 8,
+          "printed_page": 6,
+          "table_row": "5.8",
+          "adopted_name": "撇点"
+        },
+        {
+          "source_id": "S04",
+          "pdf_page": 5,
+          "printed_page_label": "说明第2页",
+          "supports": "撇、横；主笔形类别码不替代全部细笔名。"
+        }
+      ],
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 44,
+        "printed_page": 38,
+        "entry_number": "一级1199",
+        "entry_pinyin": "nǚ",
+        "adopted_pinyin": "nǚ",
+        "usage": "独立词条",
+        "application": "direct",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "小",
+      "main_id": 36,
+      "adopted_pinyin": "xiǎo",
+      "stroke_names": [
+        "竖钩",
+        "撇",
+        "点"
+      ],
+      "stroke_name_evidence": [
+        {
+          "source_id": "S04",
+          "pdf_page": 5,
+          "printed_page_label": "说明第2页",
+          "supports": "竖钩、撇、点；主笔形类别码不替代全部细笔名。"
+        }
+      ],
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 51,
+        "printed_page": 45,
+        "entry_number": "一级1793",
+        "entry_pinyin": "xiǎo",
+        "adopted_pinyin": "xiǎo",
+        "usage": "独立词条",
+        "application": "direct",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "王",
+      "main_id": 61,
+      "adopted_pinyin": "wáng",
+      "stroke_names": [
+        "横",
+        "横",
+        "竖",
+        "横"
+      ],
+      "stroke_name_evidence": [
+        {
+          "source_id": "S04",
+          "pdf_page": 5,
+          "printed_page_label": "说明第2页",
+          "supports": "横、竖；主笔形类别码不替代全部细笔名。"
+        }
+      ],
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 83,
+        "printed_page": 77,
+        "entry_number": "二级2376",
+        "entry_pinyin": "wáng",
+        "adopted_pinyin": "wáng",
+        "usage": "独立词条",
+        "application": "direct",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "石",
+      "main_id": 102,
+      "adopted_pinyin": "shí",
+      "stroke_names": [
+        "横",
+        "撇",
+        "竖",
+        "横折",
+        "横"
+      ],
+      "stroke_name_evidence": [
+        {
+          "source_id": "S05",
+          "pdf_page": 8,
+          "printed_page": 6,
+          "table_row": "5.1",
+          "adopted_name": "横折"
+        },
+        {
+          "source_id": "S04",
+          "pdf_page": 5,
+          "printed_page_label": "说明第2页",
+          "supports": "横、撇、竖；主笔形类别码不替代全部细笔名。"
+        }
+      ],
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 47,
+        "printed_page": 41,
+        "entry_number": "一级1448",
+        "entry_pinyin": "shítou",
+        "adopted_pinyin": "shí",
+        "usage": "取首语素；不冒充独立字条",
+        "application": "morpheme_first",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "白",
+      "main_id": 112,
+      "adopted_pinyin": "bái",
+      "stroke_names": [
+        "撇",
+        "竖",
+        "横折",
+        "横",
+        "横"
+      ],
+      "stroke_name_evidence": [
+        {
+          "source_id": "S05",
+          "pdf_page": 8,
+          "printed_page": 6,
+          "table_row": "5.1",
+          "adopted_name": "横折"
+        },
+        {
+          "source_id": "S04",
+          "pdf_page": 5,
+          "printed_page_label": "说明第2页",
+          "supports": "撇、竖、横；主笔形类别码不替代全部细笔名。"
+        }
+      ],
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 31,
+        "printed_page": 25,
+        "entry_number": "一级19",
+        "entry_pinyin": "bái",
+        "adopted_pinyin": "bái",
+        "usage": "独立词条；采用形容词条读音",
+        "application": "direct",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    },
+    {
+      "character": "立",
+      "main_id": 116,
+      "adopted_pinyin": "lì",
+      "stroke_names": [
+        "点",
+        "横",
+        "点",
+        "撇",
+        "横"
+      ],
+      "stroke_name_evidence": [
+        {
+          "source_id": "S04",
+          "pdf_page": 5,
+          "printed_page_label": "说明第2页",
+          "supports": "点、横、撇；主笔形类别码不替代全部细笔名。"
+        }
+      ],
+      "pronunciation_evidence": {
+        "source_id": "S06",
+        "pdf_page": 73,
+        "printed_page": 67,
+        "entry_number": "二级1456",
+        "entry_pinyin": "lì",
+        "adopted_pinyin": "lì",
+        "usage": "独立词条",
+        "application": "direct",
+        "result": "matched",
+        "reviewed_at": "2026-09-29"
+      }
+    }
+  ]
+}

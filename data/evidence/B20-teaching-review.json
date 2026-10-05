@@ -1,0 +1,107 @@
+{
+  "schema_version": 1,
+  "batch_id": "B20",
+  "reviewed_at": "2026-10-03",
+  "reviewer": "ChatGPT",
+  "review_kind": "non_authoritative_editorial_consistency",
+  "review_record": "reviews/B20-content.md",
+  "reviewed_fields": [
+    "tips",
+    "check",
+    "whole_character_context",
+    "migration_boundary"
+  ],
+  "authority_limits": "本证据只证明阶段1教学文稿字段齐全且边界保持fail-closed；不支持GF0011—2022精确身份、正式结构、逐笔笔顺、细笔名、采用读音、部件名称或位置变体审定。",
+  "items": [
+    {
+      "character": "高",
+      "main_id": 191,
+      "tips_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "editorial_fields_complete_fail_closed"
+    },
+    {
+      "character": "黄",
+      "main_id": 192,
+      "tips_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "editorial_fields_complete_fail_closed"
+    },
+    {
+      "character": "麻",
+      "main_id": 193,
+      "tips_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "editorial_fields_complete_fail_closed"
+    },
+    {
+      "character": "鹿",
+      "main_id": 194,
+      "tips_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "editorial_fields_complete_fail_closed"
+    },
+    {
+      "character": "鼎",
+      "main_id": 195,
+      "tips_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "editorial_fields_complete_fail_closed"
+    },
+    {
+      "character": "黑",
+      "main_id": 196,
+      "tips_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "editorial_fields_complete_fail_closed"
+    },
+    {
+      "character": "黍",
+      "main_id": 197,
+      "tips_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "editorial_fields_complete_fail_closed"
+    },
+    {
+      "character": "鼓",
+      "main_id": 198,
+      "tips_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "editorial_fields_complete_fail_closed"
+    },
+    {
+      "character": "鼠",
+      "main_id": 199,
+      "tips_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "editorial_fields_complete_fail_closed"
+    },
+    {
+      "character": "鼻",
+      "main_id": 200,
+      "tips_count": 2,
+      "check_present": true,
+      "context_present": true,
+      "migration_boundary_present": true,
+      "result": "editorial_fields_complete_fail_closed"
+    }
+  ]
+}

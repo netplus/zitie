@@ -394,9 +394,33 @@
         5,
         6
       ],
-      "checked_at": "2026-09-29",
+      "checked_at": "2026-10-05",
       "provenance": "原出版物扫描件由zispace/hanzi-docs托管；版本身份据实际原件核查，平台不是规范发布者。",
-      "limits": "Only actually reviewed pages/fields are supported; no independent dual review is claimed. B03 characters 刀、力、又、子、女、小、王、石、白、立 were directly checked in printed pp.2-3 / PDF physical pp.5-6 as listed undecomposable characters. This does not support stroke order, pronunciation, radical parent/subordinate relations, positional variants, or 2022-edition identity."
+      "limits": "Only actually reviewed pages/fields are supported; no independent dual review is claimed. B03 characters 刀、力、又、子、女、小、王、石、白、立 were directly checked in printed pp.2-3 / PDF physical pp.5-6 as listed undecomposable characters. This does not support stroke order, pronunciation, radical parent/subordinate relations, positional variants, or 2022-edition identity.",
+      "B04_B05_structure_visual_review": {
+        "date": "2026-10-05",
+        "characters": "干寸夕广门尸己弓飞马无犬歹车牙戈瓦止贝见",
+        "batches": [
+          "B04",
+          "B05"
+        ],
+        "visual_review_copy": "https://edu.sh.gov.cn/cmsres/cc/cc76a4a1bbf44271bbc8cf8b47b29289/50476d9ab398dd13a7459af90778d693.pdf",
+        "host": "上海市教育委员会",
+        "byte_identity_to_catalog_copy": "not_checked_this_run",
+        "pdf_pages_reviewed": [
+          1,
+          2,
+          5
+        ],
+        "printed_pages_reviewed": [
+          2
+        ],
+        "table": "第6节 现代常用独体字表",
+        "result": "20/20目标字直接列入独体字表",
+        "method": "actual_pdf_page_screenshot_visual_review",
+        "evidence_status": "dedicated_review_evidence_write_blocked_this_run",
+        "limits": "只支持结构字段来源定位；独立review/evidence成功入库前不据此升级canonical structure。牙第2笔冲突与本记录无关。"
+      }
     },
     {
       "id": "S03",
@@ -418,11 +442,142 @@
         5,
         6,
         7,
-        9
+        9,
+        10,
+        11,
+        13,
+        14,
+        15,
+        17,
+        18,
+        20,
+        21,
+        22,
+        23
       ],
-      "checked_at": "2026-09-29",
+      "checked_at": "2026-10-05",
       "provenance": "原出版物扫描件由zispace/hanzi-docs托管；版本身份据实际原件核查，平台不是规范发布者。",
-      "limits": "仅支持实际审读的页面与字段，不声明独立编制或独立双人审稿。"
+      "limits": "仅支持实际审读的页面与字段；B03部件名称审读新增物理页10、11、15、17、18、20、22、23；不声明独立编制或独立双人审稿。",
+      "reviewed_printed_pages": [
+        7,
+        8,
+        10,
+        11,
+        14,
+        17,
+        18,
+        20
+      ],
+      "B05_component_name_review": {
+        "date": "2026-10-05",
+        "characters": "无犬歹车牙戈瓦止贝见",
+        "pdf_pages": [
+          10,
+          11,
+          13,
+          14,
+          17,
+          20,
+          21,
+          23
+        ],
+        "printed_pages": [
+          7,
+          8,
+          10,
+          11,
+          14,
+          17,
+          18,
+          20
+        ],
+        "record": "data/evidence/B05-component-name.json",
+        "method": "actual_page_render_visual_review_exact_target_row_only",
+        "limits": "只支持B05十项GF0014—2009部件名称目标行；不支持GF0011—2022主附身份、笔顺、细笔名、读音、结构或位置变体；牙第2笔冲突不由本记录裁决。"
+      },
+      "B19_component_name_review": {
+        "date": "2026-10-05",
+        "characters": "韭骨香鬼食音首髟鬲鬥",
+        "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+        "byte_identity_to_catalog_copy": "not_checked_this_run",
+        "printed_pages_reviewed": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "pdf_pages_reviewed": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "record": "data/evidence/B19-component-name.json",
+        "method": "complete_main_table_visual_review_exact_full_form_only",
+        "limits": "只支持B19十项GF0014—2009部件名称适用性；不支持2022身份、结构、笔顺、细笔名、读音或正式位置变体。"
+      },
+      "B20_component_name_visual_review": {
+        "date": "2026-10-05",
+        "characters": "高黄麻鹿鼎黑黍鼓鼠鼻",
+        "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+        "byte_identity_to_catalog_copy": "not_checked_this_run",
+        "printed_pages_reviewed": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "pdf_pages_reviewed": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "result_summary": "高、黄、鹿、鼎、黑精确完整主形命中；麻、黍、鼓、鼠、鼻未见精确独立整形条目。",
+        "evidence_status": "machine_evidence_write_blocked_this_run",
+        "method": "complete_main_table_visual_review_exact_full_form_only",
+        "limits": "只记录B20十项GF0014—2009部件名称适用性视觉核验；canonical在review/evidence成功入库前不得升级。"
+      }
     }
   ]
 }

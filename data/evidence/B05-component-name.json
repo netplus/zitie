@@ -1,0 +1,138 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_component_name_review",
+  "batch_id": "B05",
+  "reviewed_at": "2026-10-05",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source_id": "S03",
+  "source_title": "现代常用字部件及部件名称规范",
+  "source_publication_id": "GF0014—2009",
+  "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+  "byte_identity_to_catalog_copy": "not_checked_this_run",
+  "reviewed_field": "component_name",
+  "method": "逐页查看GF0014—2009《现代常用字部件表》目标原页；仅精确命中目标部件字形时关闭component_name，相近字形、同组部件和位置变体不替代目标主形。",
+  "reviewed_pdf_pages": [
+    10,
+    11,
+    13,
+    14,
+    17,
+    20,
+    21,
+    23
+  ],
+  "reviewed_printed_pages": [
+    7,
+    8,
+    10,
+    11,
+    14,
+    17,
+    18,
+    20
+  ],
+  "entries": [
+    {
+      "character": "无",
+      "main_id": 62,
+      "result": "matched_exact_S03_row",
+      "component_name": "无（wú）",
+      "sequence_no": 385,
+      "group_no": 335,
+      "printed_page": 17,
+      "pdf_page": 20
+    },
+    {
+      "character": "犬",
+      "main_id": 66,
+      "result": "matched_exact_S03_row",
+      "component_name": "犬（quǎn）",
+      "sequence_no": 289,
+      "group_no": 253,
+      "printed_page": 14,
+      "pdf_page": 17
+    },
+    {
+      "character": "歹",
+      "main_id": 67,
+      "result": "matched_exact_S03_row",
+      "component_name": "歹（dǎi）",
+      "sequence_no": 64,
+      "group_no": 56,
+      "printed_page": 8,
+      "pdf_page": 11
+    },
+    {
+      "character": "车",
+      "main_id": 68,
+      "result": "matched_exact_S03_row",
+      "component_name": "车（chē）",
+      "sequence_no": 41,
+      "group_no": 36,
+      "printed_page": 8,
+      "pdf_page": 11
+    },
+    {
+      "character": "牙",
+      "main_id": 69,
+      "result": "matched_exact_S03_row",
+      "component_name": "牙（yá）",
+      "sequence_no": 421,
+      "group_no": 365,
+      "printed_page": 18,
+      "pdf_page": 21
+    },
+    {
+      "character": "戈",
+      "main_id": 70,
+      "result": "matched_exact_S03_row",
+      "component_name": "戈（gē）",
+      "sequence_no": 115,
+      "group_no": 99,
+      "printed_page": 10,
+      "pdf_page": 13
+    },
+    {
+      "character": "瓦",
+      "main_id": 72,
+      "result": "matched_exact_S03_row",
+      "component_name": "瓦（wǎ）",
+      "sequence_no": 371,
+      "group_no": 321,
+      "printed_page": 17,
+      "pdf_page": 20
+    },
+    {
+      "character": "止",
+      "main_id": 73,
+      "result": "matched_exact_S03_row",
+      "component_name": "止（zhǐ）",
+      "sequence_no": 488,
+      "group_no": 421,
+      "printed_page": 20,
+      "pdf_page": 23
+    },
+    {
+      "character": "贝",
+      "main_id": 76,
+      "result": "matched_exact_S03_row",
+      "component_name": "贝（bèi）",
+      "sequence_no": 15,
+      "group_no": 14,
+      "printed_page": 7,
+      "pdf_page": 10
+    },
+    {
+      "character": "见",
+      "main_id": 78,
+      "result": "matched_exact_S03_row",
+      "component_name": "见（jiàn）",
+      "sequence_no": 170,
+      "group_no": 146,
+      "printed_page": 11,
+      "pdf_page": 14
+    }
+  ],
+  "limits": "只支持GF0014—2009部件名称及S03精确目标行；不支持GF0011—2022主附身份、结构、笔顺、细笔名、采用读音或正式位置变体；牙第2笔冲突不由本证据裁决。"
+}

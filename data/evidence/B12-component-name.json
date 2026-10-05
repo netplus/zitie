@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_component_name_review",
+  "batch_id": "B12",
+  "reviewed_at": "2026-10-04",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source_id": "S03",
+  "source_title": "现代常用字部件及部件名称规范",
+  "source_publication_id": "GF0014—2009",
+  "visual_review_copy": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+  "byte_identity_to_catalog_copy": "not_checked_this_run",
+  "reviewed_field": "component_name",
+  "method": "逐页查看GF0014—2009《现代常用字部件表》原印7—20页；仅精确命中目标部件字形时关闭component_name，相近字形、同组部件和位置变体不替代目标主形。",
+  "entries": [
+    {
+      "character": "屮",
+      "main_id": 55,
+      "result": "no_exact_standalone_S03_row",
+      "nearest_note": "逐页核验原印7—20页未见屮的独立整形条目；不以出或屯等相近整字替代主形。"
+    },
+    {
+      "character": "巛",
+      "main_id": 60,
+      "result": "matched_exact_S03_row",
+      "component_name": "巡（xún）字心",
+      "sequence_no": 55,
+      "group_no": 47,
+      "printed_page": 8,
+      "pdf_page": 11
+    },
+    {
+      "character": "殳",
+      "main_id": 92,
+      "result": "matched_exact_S03_row",
+      "component_name": "殳（shū）/设（shè）字边",
+      "sequence_no": 336,
+      "group_no": 290,
+      "printed_page": 16,
+      "pdf_page": 19
+    },
+    {
+      "character": "毋",
+      "main_id": 99,
+      "result": "no_exact_standalone_S03_row",
+      "nearest_note": "逐页核验原印7—20页未见毋的独立整形条目；原印13页的母条目不等同于毋。"
+    },
+    {
+      "character": "鸟",
+      "main_id": 114,
+      "result": "matched_exact_S03_row",
+      "component_name": "鸟（niǎo）",
+      "sequence_no": 256,
+      "group_no": 225,
+      "printed_page": 13,
+      "pdf_page": 16
+    },
+    {
+      "character": "疒",
+      "main_id": 115,
+      "result": "matched_exact_S03_row",
+      "component_name": "病（bìng）字框",
+      "sequence_no": 26,
+      "group_no": 24,
+      "printed_page": 7,
+      "pdf_page": 10
+    },
+    {
+      "character": "穴",
+      "main_id": 117,
+      "result": "matched_exact_S03_row",
+      "component_name": "穴（xué）",
+      "sequence_no": 414,
+      "group_no": 359,
+      "printed_page": 18,
+      "pdf_page": 21
+    },
+    {
+      "character": "疋",
+      "main_id": 118,
+      "result": "no_exact_standalone_S03_row",
+      "nearest_note": "逐页核验原印7—20页未见疋的独立整形条目；不以皮等相近字形替代主形。"
+    },
+    {
+      "character": "皮",
+      "main_id": 119,
+      "result": "matched_exact_S03_row",
+      "component_name": "皮（pí）",
+      "sequence_no": 266,
+      "group_no": 231,
+      "printed_page": 14,
+      "pdf_page": 17
+    },
+    {
+      "character": "癶",
+      "main_id": 120,
+      "result": "matched_exact_S03_row",
+      "component_name": "登（dēng）字头",
+      "sequence_no": 73,
+      "group_no": 61,
+      "printed_page": 8,
+      "pdf_page": 11
+    }
+  ],
+  "limits": "只支持GF0014—2009部件名称及S03是否存在精确独立整形条目；不支持GF0011—2022主附身份、结构、笔顺、细笔名、采用读音或正式位置变体。"
+}
