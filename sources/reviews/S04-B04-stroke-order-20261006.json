@@ -1,0 +1,132 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_historical_primary_visual_review",
+  "batch_id": "B04",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "source": {
+    "source_id": "S04",
+    "publication_id": "1997-STROKE-ORDER",
+    "title": "现代汉语通用字笔顺规范",
+    "sha256": "ca8a0139744cf8105cb7e4ae7464ebc68cb76310b5a29e7cf004b2489a35ae65",
+    "artifact_id": 11010600883,
+    "artifact_run_id": 36514754022,
+    "method": "rendered_original_scan_visual_review_no_OCR"
+  },
+  "entries": [
+    {
+      "main_id": 27,
+      "character": "干",
+      "stroke_count": 3,
+      "pdf_page": 7,
+      "printed_page": 2,
+      "column": "L",
+      "row": 5,
+      "order_code": "112",
+      "result": "matched"
+    },
+    {
+      "main_id": 31,
+      "character": "寸",
+      "stroke_count": 3,
+      "pdf_page": 7,
+      "printed_page": 2,
+      "column": "R",
+      "row": 4,
+      "order_code": "124",
+      "result": "matched"
+    },
+    {
+      "main_id": 43,
+      "character": "夕",
+      "stroke_count": 3,
+      "pdf_page": 8,
+      "printed_page": 3,
+      "column": "R",
+      "row": 6,
+      "order_code": "354",
+      "result": "matched"
+    },
+    {
+      "main_id": 46,
+      "character": "广",
+      "stroke_count": 3,
+      "pdf_page": 8,
+      "printed_page": 3,
+      "column": "R",
+      "row": 9,
+      "order_code": "413",
+      "result": "matched"
+    },
+    {
+      "main_id": 47,
+      "character": "门",
+      "stroke_count": 3,
+      "pdf_page": 9,
+      "printed_page": 4,
+      "column": "L",
+      "row": 1,
+      "order_code": "425",
+      "result": "matched"
+    },
+    {
+      "main_id": 51,
+      "character": "尸",
+      "stroke_count": 3,
+      "pdf_page": 9,
+      "printed_page": 4,
+      "column": "L",
+      "row": 5,
+      "order_code": "513",
+      "result": "matched"
+    },
+    {
+      "main_id": 52,
+      "character": "己",
+      "stroke_count": 3,
+      "pdf_page": 9,
+      "printed_page": 4,
+      "column": "L",
+      "row": 6,
+      "order_code": "515",
+      "result": "matched"
+    },
+    {
+      "main_id": 53,
+      "character": "弓",
+      "stroke_count": 3,
+      "pdf_page": 9,
+      "printed_page": 4,
+      "column": "L",
+      "row": 8,
+      "order_code": "515",
+      "result": "matched"
+    },
+    {
+      "main_id": 57,
+      "character": "飞",
+      "stroke_count": 3,
+      "pdf_page": 9,
+      "printed_page": 4,
+      "column": "R",
+      "row": 6,
+      "order_code": "534",
+      "result": "matched"
+    },
+    {
+      "main_id": 58,
+      "character": "马",
+      "stroke_count": 3,
+      "pdf_page": 9,
+      "printed_page": 4,
+      "column": "R",
+      "row": 10,
+      "order_code": "551",
+      "result": "matched"
+    }
+  ],
+  "decision": "S04原页笔顺交叉reviewed；GF0023-2020目标原页仍pending，不把继承关系计作独立规范体系。",
+  "limits": [
+    "只支持stroke_order历史原页交叉；不支持细笔名、2022主附身份或位置变体。"
+  ]
+}
