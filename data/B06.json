@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_kind": "phase1_content_draft",
   "batch_id": "B06",
-  "version": "content-draft-2026-10-02",
+  "version": "content-sync-2026-10-05",
   "title": "二画基础部件与框形",
   "content_status": "in_progress",
   "artwork_status": "deferred",
@@ -33,9 +33,9 @@
         "structure_class": "semi_enclosing"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "厂（chǎng）",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -49,18 +49,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "只把“原”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
       ]
     },
@@ -84,9 +83,9 @@
         "structure_class": "semi_enclosing"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "区（qū）字框",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -100,18 +99,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "只把“区”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
       ]
     },
@@ -135,9 +133,9 @@
         "structure_class": "left_right"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "卜（bǔ）",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -151,18 +149,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "只把“外”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
       ]
     },
@@ -186,9 +183,9 @@
         "structure_class": "enclosing"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "同（tóng）字框",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -202,18 +199,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "只把“同”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
       ]
     },
@@ -237,9 +233,9 @@
         "structure_class": "semi_enclosing"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "句（jù）字框",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -253,18 +249,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "只把“包”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
       ]
     },
@@ -288,9 +283,9 @@
         "structure_class": "top_bottom"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "儿（ér）",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -304,18 +299,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "只把“元”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
       ]
     },
@@ -339,9 +333,9 @@
         "structure_class": "left_right"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "匕（bǐ）",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -355,18 +349,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "只把“化”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
       ]
     },
@@ -390,9 +383,9 @@
         "structure_class": "left_right"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "几（jǐ）",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -406,18 +399,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "只把“机”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
       ]
     },
@@ -441,9 +433,9 @@
         "structure_class": "top_bottom"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "玄（xuán）字头",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -457,18 +449,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "只把“京”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
       ]
     },
@@ -492,9 +483,9 @@
         "structure_class": "left_right"
       },
       "pinyin": null,
-      "component_name": null,
+      "component_name": "两点水（liǎngdiǎnshuǐ）/冰（bīng）字旁",
       "pinyin_status": "pending_or_not_applicable_until_authoritative_component_row",
-      "component_name_status": "pending_S03_target_row",
+      "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
         "status": "reviewed_baseline_index",
@@ -508,18 +499,17 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "editorial_context_selected_pending_source_crosscheck",
-        "stroke_count": "candidate_pending_target_row",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "candidate_pending_target_row",
         "fine_stroke_names": "candidate_pending_target_row",
         "pronunciation": "pending_or_not_applicable",
-        "component_name": "pending_S03_target_row",
+        "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
       },
       "migration_boundary": "只把“冷”作为整字迁移语境；位置形态和与其它笔画的时序须回到完整整字逐笔核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed"
       ]
     }
