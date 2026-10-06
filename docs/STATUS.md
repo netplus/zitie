@@ -1,6 +1,6 @@
 # 当前编写状态
 
-更新：2026-10-06。工程处于“阶段1：内容覆盖优先”。
+更新：2026-10-06。工程处于“阶段1：内容覆盖优先”，当前活动阶段为P3其它字段扫尾。
 
 ## 当前阶段
 
@@ -305,3 +305,17 @@ B03内容层视为`content_ready`。artwork/layout人工记录已存在；PDF归
 `sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json`。
 
 当前活动阶段正式切换为**P2：fine_stroke_names规范原页收口**。P2优先集合仍按阶段计划：牙、几、凵、风、心、毋、鸟、臣、虫、缶、舟、里、角及D03/D04源歧义项；优先GF2001—2001，再用GF0023/S04整字原页裁决。P1完成不改变content_ready总数，也不表示artwork/PDF/manifest/CI/release完成。
+
+
+## P2完成并切换P3（2026-10-06）
+
+P2细笔名规范原页收口已达到阶段退出条件。B04—B21共171项最终为：**157 reviewed、14 conflict_fail_closed、0普通pending**。14项fail-closed为牙、矛、屮、巛、疒、疋、癶、覀、虍、糸、釆、龺、髟、鬥。
+
+本检查点新增完成：
+- B20—B21 11项细笔名由GF2001术语规则 + GF0023精确目标原页关闭，11/11 reviewed；
+- B16此前10项evidence已reviewed但canonical未同步的状态债已清理；
+- 12个规范目标缺口项在GF2001、GF0023、S04规定来源均已实审后，收口为`conflict_fail_closed_normative_target_gap`，不从secondary数据反推完整细笔名。
+
+证据：`data/evidence/P2-B20-B21-fine-stroke-names-original-page.json`、`data/evidence/P2-normative-target-gap-failclosed.json`、`reviews/P2-completion-20261006.md`。
+
+**当前活动阶段正式切换为P3：pronunciation / component_name / structure扫尾。** P1仍为201/201 stroke_order reviewed；P2完成不改变content_ready统计，也不表示artwork、PDF、manifest、CI或release完成。

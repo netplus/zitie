@@ -1,0 +1,394 @@
+{
+  "schema_version": 1,
+  "record_kind": "P2_fine_stroke_names_fail_closed_normative_target_gap",
+  "phase": "P2",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "scope": {
+    "target_count": 12,
+    "characters": [
+      "屮",
+      "巛",
+      "疒",
+      "疋",
+      "癶",
+      "覀",
+      "虍",
+      "糸",
+      "釆",
+      "龺",
+      "髟",
+      "鬥"
+    ]
+  },
+  "sources_reviewed": [
+    {
+      "source_id": "S02",
+      "publication_id": "GF0023—2020",
+      "role": "exact target whole-character accumulated-stroke row",
+      "evidence_scope": "per-batch P1 stroke-order original-page evidence"
+    },
+    {
+      "source_id": "S04",
+      "publication_id": "1997-STROKE-ORDER",
+      "role": "inheritance crosscheck for exact target whole-character row",
+      "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+      "result": "0/37 exact residual targets located after original-page neighborhood review"
+    },
+    {
+      "source_id": "S05",
+      "publication_id": "GF2001—2001",
+      "role": "folded-stroke terminology and direct target examples",
+      "result": "no direct target-character example sufficient to assign complete per-stroke sequence for these 12 targets"
+    }
+  ],
+  "policy": "No secondary sequence is promoted. After the prescribed normative sources S05 -> S02 -> S04 were actually reviewed and no exact target evidence sufficient for a complete fine-stroke sequence was available, the field is closed as an explicit normative-target-gap conflict rather than left as ordinary pending.",
+  "entries": [
+    {
+      "batch_id": "B12",
+      "character": "屮",
+      "main_id": 55,
+      "prior_secondary_status": "secondary_dataset_target_missing",
+      "result": "conflict_fail_closed_normative_target_gap",
+      "adjudicated_names": null,
+      "gf0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "s04_review": {
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "result": "exact_target_not_located_in_reviewed_order_code_neighborhood"
+      },
+      "gf2001_review": {
+        "source_id": "S05",
+        "result": "no_direct_target_character_example_sufficient_for_complete_sequence"
+      },
+      "resolution_boundary": "Do not infer a complete fine-stroke-name sequence from D03/D04, numeric 1/2/3/4/5 order codes, or a similar-looking character. Reopen only if an applicable normative original page explicitly covers the target glyph or an authoritative rule bridges the exact target."
+    },
+    {
+      "batch_id": "B12",
+      "character": "巛",
+      "main_id": 60,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "result": "conflict_fail_closed_normative_target_gap",
+      "adjudicated_names": null,
+      "gf0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "s04_review": {
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "result": "exact_target_not_located_in_reviewed_order_code_neighborhood"
+      },
+      "gf2001_review": {
+        "source_id": "S05",
+        "result": "no_direct_target_character_example_sufficient_for_complete_sequence"
+      },
+      "resolution_boundary": "Do not infer a complete fine-stroke-name sequence from D03/D04, numeric 1/2/3/4/5 order codes, or a similar-looking character. Reopen only if an applicable normative original page explicitly covers the target glyph or an authoritative rule bridges the exact target."
+    },
+    {
+      "batch_id": "B12",
+      "character": "疒",
+      "main_id": 115,
+      "prior_secondary_status": "secondary_dataset_target_missing",
+      "result": "conflict_fail_closed_normative_target_gap",
+      "adjudicated_names": null,
+      "gf0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "s04_review": {
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "result": "exact_target_not_located_in_reviewed_order_code_neighborhood"
+      },
+      "gf2001_review": {
+        "source_id": "S05",
+        "result": "no_direct_target_character_example_sufficient_for_complete_sequence"
+      },
+      "resolution_boundary": "Do not infer a complete fine-stroke-name sequence from D03/D04, numeric 1/2/3/4/5 order codes, or a similar-looking character. Reopen only if an applicable normative original page explicitly covers the target glyph or an authoritative rule bridges the exact target."
+    },
+    {
+      "batch_id": "B12",
+      "character": "疋",
+      "main_id": 118,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "result": "conflict_fail_closed_normative_target_gap",
+      "adjudicated_names": null,
+      "gf0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "s04_review": {
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "result": "exact_target_not_located_in_reviewed_order_code_neighborhood"
+      },
+      "gf2001_review": {
+        "source_id": "S05",
+        "result": "no_direct_target_character_example_sufficient_for_complete_sequence"
+      },
+      "resolution_boundary": "Do not infer a complete fine-stroke-name sequence from D03/D04, numeric 1/2/3/4/5 order codes, or a similar-looking character. Reopen only if an applicable normative original page explicitly covers the target glyph or an authoritative rule bridges the exact target."
+    },
+    {
+      "batch_id": "B12",
+      "character": "癶",
+      "main_id": 120,
+      "prior_secondary_status": "secondary_dataset_target_missing",
+      "result": "conflict_fail_closed_normative_target_gap",
+      "adjudicated_names": null,
+      "gf0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "s04_review": {
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "result": "exact_target_not_located_in_reviewed_order_code_neighborhood"
+      },
+      "gf2001_review": {
+        "source_id": "S05",
+        "result": "no_direct_target_character_example_sufficient_for_complete_sequence"
+      },
+      "resolution_boundary": "Do not infer a complete fine-stroke-name sequence from D03/D04, numeric 1/2/3/4/5 order codes, or a similar-looking character. Reopen only if an applicable normative original page explicitly covers the target glyph or an authoritative rule bridges the exact target."
+    },
+    {
+      "batch_id": "B13",
+      "character": "覀",
+      "main_id": 126,
+      "prior_secondary_status": "secondary_dataset_target_missing",
+      "result": "conflict_fail_closed_normative_target_gap",
+      "adjudicated_names": null,
+      "gf0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B13-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "s04_review": {
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "result": "exact_target_not_located_in_reviewed_order_code_neighborhood"
+      },
+      "gf2001_review": {
+        "source_id": "S05",
+        "result": "no_direct_target_character_example_sufficient_for_complete_sequence"
+      },
+      "resolution_boundary": "Do not infer a complete fine-stroke-name sequence from D03/D04, numeric 1/2/3/4/5 order codes, or a similar-looking character. Reopen only if an applicable normative original page explicitly covers the target glyph or an authoritative rule bridges the exact target."
+    },
+    {
+      "batch_id": "B13",
+      "character": "虍",
+      "main_id": 130,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "result": "conflict_fail_closed_normative_target_gap",
+      "adjudicated_names": null,
+      "gf0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B13-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "s04_review": {
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "result": "exact_target_not_located_in_reviewed_order_code_neighborhood"
+      },
+      "gf2001_review": {
+        "source_id": "S05",
+        "result": "no_direct_target_character_example_sufficient_for_complete_sequence"
+      },
+      "resolution_boundary": "Do not infer a complete fine-stroke-name sequence from D03/D04, numeric 1/2/3/4/5 order codes, or a similar-looking character. Reopen only if an applicable normative original page explicitly covers the target glyph or an authoritative rule bridges the exact target."
+    },
+    {
+      "batch_id": "B15",
+      "character": "糸",
+      "main_id": 148,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "result": "conflict_fail_closed_normative_target_gap",
+      "adjudicated_names": null,
+      "gf0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B15-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "s04_review": {
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "result": "exact_target_not_located_in_reviewed_order_code_neighborhood"
+      },
+      "gf2001_review": {
+        "source_id": "S05",
+        "result": "no_direct_target_character_example_sufficient_for_complete_sequence"
+      },
+      "resolution_boundary": "Do not infer a complete fine-stroke-name sequence from D03/D04, numeric 1/2/3/4/5 order codes, or a similar-looking character. Reopen only if an applicable normative original page explicitly covers the target glyph or an authoritative rule bridges the exact target."
+    },
+    {
+      "batch_id": "B17",
+      "character": "釆",
+      "main_id": 161,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "result": "conflict_fail_closed_normative_target_gap",
+      "adjudicated_names": null,
+      "gf0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B17-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "s04_review": {
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "result": "exact_target_not_located_in_reviewed_order_code_neighborhood"
+      },
+      "gf2001_review": {
+        "source_id": "S05",
+        "result": "no_direct_target_character_example_sufficient_for_complete_sequence"
+      },
+      "resolution_boundary": "Do not infer a complete fine-stroke-name sequence from D03/D04, numeric 1/2/3/4/5 order codes, or a similar-looking character. Reopen only if an applicable normative original page explicitly covers the target glyph or an authoritative rule bridges the exact target."
+    },
+    {
+      "batch_id": "B17",
+      "character": "龺",
+      "main_id": 169,
+      "prior_secondary_status": "secondary_dataset_target_missing",
+      "result": "conflict_fail_closed_normative_target_gap",
+      "adjudicated_names": null,
+      "gf0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B17-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "s04_review": {
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "result": "exact_target_not_located_in_reviewed_order_code_neighborhood"
+      },
+      "gf2001_review": {
+        "source_id": "S05",
+        "result": "no_direct_target_character_example_sufficient_for_complete_sequence"
+      },
+      "resolution_boundary": "Do not infer a complete fine-stroke-name sequence from D03/D04, numeric 1/2/3/4/5 order codes, or a similar-looking character. Reopen only if an applicable normative original page explicitly covers the target glyph or an authoritative rule bridges the exact target."
+    },
+    {
+      "batch_id": "B19",
+      "character": "髟",
+      "main_id": 188,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "result": "conflict_fail_closed_normative_target_gap",
+      "adjudicated_names": null,
+      "gf0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B19-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "s04_review": {
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "result": "exact_target_not_located_in_reviewed_order_code_neighborhood"
+      },
+      "gf2001_review": {
+        "source_id": "S05",
+        "result": "no_direct_target_character_example_sufficient_for_complete_sequence"
+      },
+      "resolution_boundary": "Do not infer a complete fine-stroke-name sequence from D03/D04, numeric 1/2/3/4/5 order codes, or a similar-looking character. Reopen only if an applicable normative original page explicitly covers the target glyph or an authoritative rule bridges the exact target."
+    },
+    {
+      "batch_id": "B19",
+      "character": "鬥",
+      "main_id": 190,
+      "prior_secondary_status": "secondary_dataset_target_missing",
+      "result": "conflict_fail_closed_normative_target_gap",
+      "adjudicated_names": null,
+      "gf0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B19-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "s04_review": {
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "result": "exact_target_not_located_in_reviewed_order_code_neighborhood"
+      },
+      "gf2001_review": {
+        "source_id": "S05",
+        "result": "no_direct_target_character_example_sufficient_for_complete_sequence"
+      },
+      "resolution_boundary": "Do not infer a complete fine-stroke-name sequence from D03/D04, numeric 1/2/3/4/5 order codes, or a similar-looking character. Reopen only if an applicable normative original page explicitly covers the target glyph or an authoritative rule bridges the exact target."
+    }
+  ],
+  "summary": {
+    "target_count": 12,
+    "conflict_fail_closed": 12,
+    "ordinary_pending_after_this_review": 0
+  },
+  "limits": [
+    "This closes P2 editorial state as fail-closed; it does not invent stroke names.",
+    "It does not close GF0011—2022 identity, component naming, pronunciation, structure, position migration, artwork, PDF, or release status."
+  ]
+}

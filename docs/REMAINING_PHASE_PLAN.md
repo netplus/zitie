@@ -21,7 +21,7 @@
 - S05 GF2001—2001：9页，177,325字节，SHA256 `68a1420...`；
 - 2026-10-06已从历史Actions artifact恢复三份原件并重新核验SHA256、字节数和页数。
 
-P0已完成：2026-10-06新的`source-probe` run 37402630995成功，artifact 11385916300重新取得并强制校验S02/S04/S05/S01-2009字节。后续停止继续寻找D05/D06等二次源，除非规范原件出现无法解决的真缺口。\n\n**当前活动阶段：P2 细笔名规范原页收口。**
+P0已完成：2026-10-06新的`source-probe` run 37402630995成功，artifact 11385916300重新取得并强制校验S02/S04/S05/S01-2009字节。后续停止继续寻找D05/D06等二次源，除非规范原件出现无法解决的真缺口。\n\n**当前活动阶段：P3 其它字段扫尾。**
 
 ## P1 当前进展（2026-10-06）
 
@@ -55,27 +55,22 @@ GF0023主表阶段已扫完B04—B21全部171项：**134/171 reviewed，37/171 r
 
 目标：关闭`fine_stroke_names`。
 
-当前进展（2026-10-06）：B04—B11首轮80项已完成GF2001—2001 + GF0023/GB/T 25741目标原页复核；**79/80 reviewed，牙1项 conflict_fail_closed，0普通pending**。欠第2笔裁决为横撇，风第2笔裁决为横斜钩，心第2笔裁决为卧钩；几/凵等secondary冲突已由规范原页关闭。证据：`data/evidence/P2-B04-B11-fine-stroke-names-original-page.json`、`reviews/P2-B04-B11-fine-stroke-names.md`。
+**已于2026-10-06完成。** B04—B21共171项最终为：
+- **157 reviewed**：均由GF2001—2001术语/折笔规范结合GF0023目标整字原页等规范证据逐项裁决；
+- **14 conflict_fail_closed**：牙、矛，以及屮、巛、疒、疋、癶、覀、虍、糸、釆、龺、髟、鬥；
+- **0普通pending**。
 
-第二轮B12—B19共80项已完成GF2001术语表与GF0023目标原页复核：**67 reviewed、12 alternative-source pending、矛1项 conflict_fail_closed**。12项pending为屮、巛、疒、疋、癶、覀、虍、糸、釆、龺、髟、鬥；共同原因是GF0023无精确目标行且GF2001无足以直接给出完整逐笔名称的目标字例。毋、鸟、臣、虫、缶、舟、里、角等secondary冲突已按目标原页裁决。B16十项evidence已reviewed，但`data/B16.json` canonical同步触发tooling_write_blocker；不影响来源结论，作为状态债保留。证据：`data/evidence/P2-B12-B15-fine-stroke-names-original-page.json`、`data/evidence/P2-B16-B19-fine-stroke-names-original-page.json`、`reviews/P2-B12-B19-fine-stroke-names.md`。
+其中牙、矛属于视觉/术语无法可靠裁决的精确冲突；其余12项属于`conflict_fail_closed_normative_target_gap`：GF2001、GF0023和S04均已按规定路径实际审读，但没有覆盖精确目标字形且足以给出完整逐笔名称的规范证据，secondary locator不得升级。只有取得覆盖精确目标字形的适用规范原页或权威桥接规则时才重开。
 
-优先处理冲突集合：
-- 牙；
-- 几、凵、风、心；
-- 毋、鸟、臣、虫、缶、舟、里、角；
-- D03/D04自身歧义项。
+证据：
+- `data/evidence/P2-B04-B11-fine-stroke-names-original-page.json`
+- `data/evidence/P2-B12-B15-fine-stroke-names-original-page.json`
+- `data/evidence/P2-B16-B19-fine-stroke-names-original-page.json`
+- `data/evidence/P2-B20-B21-fine-stroke-names-original-page.json`
+- `data/evidence/P2-normative-target-gap-failclosed.json`
+- `reviews/P2-completion-20261006.md`
 
-来源顺序：
-1. GF2001—2001折笔规范：裁决折笔类别和名称；
-2. GF0023—2020整字规范图；
-3. S04 1997版作为继承关系交叉。
-
-原则：
-- 不以第三方字符串多数投票；
-- 不从1/2/3/4/5五类码反推细笔名；
-- 规范原页无法裁决时保留精确conflict，不强制清零。
-
-退出条件：绝大多数细笔名reviewed，残余均为有证据、有解决路径的fail-closed冲突。
+退出条件“绝大多数细笔名reviewed，残余均为有证据、有解决路径的fail-closed冲突”已满足。阶段正式切换到P3。
 
 ## P3 其它字段扫尾
 

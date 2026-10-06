@@ -50,7 +50,7 @@
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
-        "fine_stroke_names": "P2_normative_review_no_exact_GF0023_target_alternative_source_pending",
+        "fine_stroke_names": "conflict_fail_closed_normative_target_gap",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -63,7 +63,7 @@
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "P2细笔名原页复核：GF0023主表未定位精确目标行，GF2001无足以直接给出完整逐笔名称的目标字例；等待其它适用规范原页，secondary序列不得升级。"
+        "fine_stroke_names已按P2规范原页审读收口为conflict_fail_closed_normative_target_gap；仅在取得覆盖精确目标字形的适用规范原页或权威桥接规则后重开"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -184,10 +184,10 @@
       },
       "fine_stroke_names_review": {
         "phase": "P2",
-        "evidence": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
-        "result": "pending_no_exact_GF0023_target_row_alternative_normative_source",
+        "evidence": "data/evidence/P2-normative-target-gap-failclosed.json",
+        "result": "conflict_fail_closed_normative_target_gap",
         "adjudicated_names": null,
-        "target_original_page": {
+        "gf0023_review": {
           "source_id": "S02",
           "publication_id": "GF0023—2020",
           "evidence": "data/evidence/B17-stroke-order-original-page.json",
@@ -198,8 +198,15 @@
           "order_code": null,
           "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
         },
-        "visual_review": false,
-        "rationale": "GF0023 main-table original pages were reviewed in P1 but no exact target row was located; GF2001 has no direct target-character example sufficient to assign the full per-stroke name sequence. Secondary locators are not promoted."
+        "s04_review": {
+          "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+          "result": "exact_target_not_located_in_reviewed_order_code_neighborhood"
+        },
+        "gf2001_review": {
+          "source_id": "S05",
+          "result": "no_direct_target_character_example_sufficient_for_complete_sequence"
+        },
+        "resolution_boundary": "Do not infer a complete fine-stroke-name sequence from D03/D04, numeric 1/2/3/4/5 order codes, or a similar-looking character. Reopen only if an applicable normative original page explicitly covers the target glyph or an authoritative rule bridges the exact target."
       }
     },
     {
@@ -1742,7 +1749,7 @@
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
-        "fine_stroke_names": "P2_normative_review_no_exact_GF0023_target_alternative_source_pending",
+        "fine_stroke_names": "conflict_fail_closed_normative_target_gap",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -1755,7 +1762,7 @@
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "P2细笔名原页复核：GF0023主表未定位精确目标行，GF2001无足以直接给出完整逐笔名称的目标字例；等待其它适用规范原页，secondary序列不得升级。"
+        "fine_stroke_names已按P2规范原页审读收口为conflict_fail_closed_normative_target_gap；仅在取得覆盖精确目标字形的适用规范原页或权威桥接规则后重开"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1812,10 +1819,10 @@
       },
       "fine_stroke_names_review": {
         "phase": "P2",
-        "evidence": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
-        "result": "pending_no_exact_GF0023_target_row_alternative_normative_source",
+        "evidence": "data/evidence/P2-normative-target-gap-failclosed.json",
+        "result": "conflict_fail_closed_normative_target_gap",
         "adjudicated_names": null,
-        "target_original_page": {
+        "gf0023_review": {
           "source_id": "S02",
           "publication_id": "GF0023—2020",
           "evidence": "data/evidence/B17-stroke-order-original-page.json",
@@ -1826,8 +1833,15 @@
           "order_code": null,
           "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
         },
-        "visual_review": false,
-        "rationale": "GF0023 main-table original pages were reviewed in P1 but no exact target row was located; GF2001 has no direct target-character example sufficient to assign the full per-stroke name sequence. Secondary locators are not promoted."
+        "s04_review": {
+          "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+          "result": "exact_target_not_located_in_reviewed_order_code_neighborhood"
+        },
+        "gf2001_review": {
+          "source_id": "S05",
+          "result": "no_direct_target_character_example_sufficient_for_complete_sequence"
+        },
+        "resolution_boundary": "Do not infer a complete fine-stroke-name sequence from D03/D04, numeric 1/2/3/4/5 order codes, or a similar-looking character. Reopen only if an applicable normative original page explicitly covers the target glyph or an authoritative rule bridges the exact target."
       }
     },
     {
