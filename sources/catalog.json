@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-05",
+  "as_of": "2026-10-06",
   "sources": [
     {
       "id": "S01",
@@ -1158,6 +1158,80 @@
         "date": "2026-10-05",
         "evidence": "data/evidence/B20-fine-stroke-names-secondary-locator.json",
         "note": "来自同名分支早期并行推进的额外10项，不计入本轮B12—B19的80项主吞吐；可在后续B20 canonical同步时复用。"
+      }
+    },
+    {
+      "id": "D04",
+      "publication_id": "cjklib-secondary-strokeorder",
+      "title": "cjklib strokeorder.csv + strokes.csv",
+      "publisher": "cburgmer/cjklib",
+      "role": [
+        "独立二次细笔名交叉",
+        "补充逐笔locator"
+      ],
+      "url": "https://github.com/cburgmer/cjklib",
+      "ref": "master",
+      "strokeorder_blob_sha": "d58796ec5e2c9ae5a5b3f1314c533a8ae2c47c31",
+      "strokes_blob_sha": "842caa32a1637b14f2ea2e9a791e180df6a50e81",
+      "license_file": "COPYING",
+      "license_blob_sha": "0a9605dc2e9edc209df6230f0dd0695e0c197799",
+      "status": "acquired_crosscheck_only",
+      "limits": "独立二次数据源；只用于fine_stroke_names交叉/补缺，不替代GF2001/GF0023/S04规范原页，不作为独立权威规范体系。",
+      "B12_B19_crosscheck": {
+        "date": "2026-10-06",
+        "batches": [
+          "B12",
+          "B13",
+          "B14",
+          "B15",
+          "B16",
+          "B17",
+          "B18",
+          "B19"
+        ],
+        "target_count": 80,
+        "result_summary": {
+          "exact_two_source_match": 22,
+          "compatible_granularity": 5,
+          "secondary_source_conflicts": 8,
+          "cjklib_only_recovered_cnchar_gap": 4,
+          "cjklib_missing": 41
+        },
+        "conflict_characters": [
+          "毋",
+          "鸟",
+          "臣",
+          "虫",
+          "缶",
+          "舟",
+          "里",
+          "角"
+        ],
+        "compatible_characters": [
+          "皮",
+          "虍",
+          "酉",
+          "辰",
+          "鬼"
+        ],
+        "recovered_characters": [
+          "屮",
+          "疒",
+          "癶",
+          "覀"
+        ],
+        "evidence": [
+          "data/evidence/B12-fine-stroke-names-d04-crosscheck.json",
+          "data/evidence/B13-fine-stroke-names-d04-crosscheck.json",
+          "data/evidence/B14-fine-stroke-names-d04-crosscheck.json",
+          "data/evidence/B15-fine-stroke-names-d04-crosscheck.json",
+          "data/evidence/B16-fine-stroke-names-d04-crosscheck.json",
+          "data/evidence/B17-fine-stroke-names-d04-crosscheck.json",
+          "data/evidence/B18-fine-stroke-names-d04-crosscheck.json",
+          "data/evidence/B19-fine-stroke-names-d04-crosscheck.json"
+        ],
+        "method": "cjklib glyph0 primary row逐笔缩写经strokes.csv映射后，与D03/cnchar固定逐笔序列按名称归一化比较；仅将“竖撇/撇”等粒度差异判为兼容。",
+        "limits": "两套二次数据一致仍不等于规范原页reviewed；二次源冲突全部fail-closed；D04无条目不回退已有D03状态。"
       }
     }
   ]
