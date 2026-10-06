@@ -855,7 +855,7 @@
     ],
     "next_assignment_starts_at": null,
     "next_work": "P2_fine_stroke_names_normative_original_page_closure",
-    "note": "P4 active. All 201/201 main radicals now have GF0011—2022 main-radical membership/main_id continuity reviewed. This closes only the continuity layer supported by the official 2022 release notice plus the reviewed 2009 baseline table. Exact 2022 glyph/attached-form/name/code fields remain pending fulltext/item-level official data. Position migration remains the main P4 content workload. content_ready remains 30.",
+    "note": "P4 active. Main-radical membership/main_id continuity is complete 201/201. First position_migration round closes B06-B11 60/60 selected whole-character contexts from GF0023 original pages; 甘→甜 context role corrected to right; 矢→知 and 禾→和 record 捺→点; 匚/弋/囗 preserve non-contiguous whole-character stroke indices. B04/B05 20 targets remain pending authoritative whole-character context selection. Exact GF0011—2022 glyph/attached-form/name/code fields remain blocked by public fulltext access.",
     "stroke_order_reviewed_main_count": 201,
     "stroke_order_pending_main_count": 0,
     "active_remaining_phase": "P2",
@@ -961,6 +961,24 @@
         "main_radical_membership_continuity_reviewed": 201,
         "exact_2022_item_fields_pending": 201,
         "status": "continuity_layer_complete_exact_2022_item_fields_pending"
+      },
+      "position_migration_round1": {
+        "batches": [
+          "B06",
+          "B07",
+          "B08",
+          "B09",
+          "B10",
+          "B11"
+        ],
+        "target_count": 60,
+        "reviewed": 60,
+        "ordinary_pending": 0,
+        "unique_whole_character_rows": 59,
+        "context_role_corrections": 1,
+        "fine_stroke_change_cases": 2,
+        "evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json",
+        "review": "reviews/P4-B06-B11-position-migration.md"
       }
     }
   }

@@ -1,0 +1,1691 @@
+{
+  "schema_version": 1,
+  "record_kind": "P4_position_migration_whole_character_original_page_review",
+  "phase": "P4",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "scope": {
+    "batches": [
+      "B06",
+      "B07",
+      "B08",
+      "B09",
+      "B10",
+      "B11"
+    ],
+    "target_count": 60,
+    "unique_whole_character_rows": 59
+  },
+  "source": {
+    "source_id": "S02",
+    "publication_id": "GF0023—2020",
+    "sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
+    "acquisition": {
+      "run_id": 37449756736,
+      "artifact_id": 11406995313,
+      "artifact_name": "normative-reference-acquisition"
+    },
+    "reviewed_pdf_pages": [
+      10,
+      12,
+      13,
+      14,
+      15,
+      22,
+      24,
+      25,
+      27,
+      30,
+      31,
+      33,
+      34,
+      39,
+      40,
+      41,
+      42,
+      46,
+      49,
+      52,
+      54,
+      55,
+      57,
+      60,
+      62,
+      73,
+      80,
+      84,
+      88,
+      90,
+      93,
+      99,
+      109,
+      111,
+      127,
+      141,
+      144,
+      151,
+      156,
+      157,
+      199,
+      229,
+      236,
+      259,
+      262,
+      275,
+      276,
+      399,
+      436,
+      493
+    ],
+    "method": "Recovered SHA-pinned normative PDF from the repository source-probe artifact; located each selected whole-character target row from the table text, rendered the actual table row, and visually inspected the cumulative stroke diagrams. Secondary data were not used to grant migration review."
+  },
+  "policy": "Position migration is closed only for the recorded whole-character context. Stroke indices are whole-character indices. Formal GF0011—2022 attached-form status remains independent and pending item-level 2022 data.",
+  "entries": [
+    {
+      "batch_id": "B06",
+      "character": "厂",
+      "main_id": 7,
+      "target_order_code": "13",
+      "whole_character": {
+        "character": "原",
+        "pdf_page": 199,
+        "printed_page": 193,
+        "table_no": "1868",
+        "ucs": "0539F",
+        "whole_order_code": "1332511234"
+      },
+      "verified_position": "upper_left_enclosing",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B06",
+      "character": "匚",
+      "main_id": 8,
+      "target_order_code": "15",
+      "whole_character": {
+        "character": "区",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0094",
+        "ucs": "0533A",
+        "whole_order_code": "1345"
+      },
+      "verified_position": "outer",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        4
+      ],
+      "mapping_kind": "interleaved_enclosing",
+      "full_whole_character_sequence_required": true,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "区 confirms enclosing 匚 is interleaved: stroke 1 opens the frame, inner strokes 2–3 are written, stroke 4 completes 匚."
+    },
+    {
+      "batch_id": "B06",
+      "character": "卜",
+      "main_id": 9,
+      "target_order_code": "24",
+      "whole_character": {
+        "character": "外",
+        "pdf_page": 22,
+        "printed_page": 16,
+        "table_no": "0293",
+        "ucs": "05916",
+        "whole_order_code": "35424"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        4,
+        5
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B06",
+      "character": "冂",
+      "main_id": 10,
+      "target_order_code": "25",
+      "whole_character": {
+        "character": "同",
+        "pdf_page": 30,
+        "printed_page": 24,
+        "table_no": "0427",
+        "ucs": "0540C",
+        "whole_order_code": "251251"
+      },
+      "verified_position": "outer",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2
+      ],
+      "mapping_kind": "contiguous_enclosing",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B06",
+      "character": "勹",
+      "main_id": 13,
+      "target_order_code": "35",
+      "whole_character": {
+        "character": "包",
+        "pdf_page": 22,
+        "printed_page": 16,
+        "table_no": "0298",
+        "ucs": "05305",
+        "whole_order_code": "35515"
+      },
+      "verified_position": "outer",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2
+      ],
+      "mapping_kind": "contiguous_enclosing",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B06",
+      "character": "儿",
+      "main_id": 14,
+      "target_order_code": "35",
+      "whole_character": {
+        "character": "元",
+        "pdf_page": 12,
+        "printed_page": 6,
+        "table_no": "0080",
+        "ucs": "05143",
+        "whole_order_code": "1135"
+      },
+      "verified_position": "bottom",
+      "component_stroke_indices_in_whole_character": [
+        3,
+        4
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B06",
+      "character": "匕",
+      "main_id": 15,
+      "target_order_code": "35",
+      "whole_character": {
+        "character": "化",
+        "pdf_page": 14,
+        "printed_page": 8,
+        "table_no": "0132",
+        "ucs": "05316",
+        "whole_order_code": "3235"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        3,
+        4
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B06",
+      "character": "几",
+      "main_id": 16,
+      "target_order_code": "35",
+      "whole_character": {
+        "character": "机",
+        "pdf_page": 27,
+        "printed_page": 21,
+        "table_no": "0377",
+        "ucs": "0673A",
+        "whole_order_code": "123435"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        5,
+        6
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B06",
+      "character": "亠",
+      "main_id": 17,
+      "target_order_code": "41",
+      "whole_character": {
+        "character": "京",
+        "pdf_page": 99,
+        "printed_page": 93,
+        "table_no": "1205",
+        "ucs": "04EAC",
+        "whole_order_code": "41251234"
+      },
+      "verified_position": "top",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B06",
+      "character": "冫",
+      "main_id": 18,
+      "target_order_code": "41",
+      "whole_character": {
+        "character": "冷",
+        "pdf_page": 55,
+        "printed_page": 49,
+        "table_no": "0838",
+        "ucs": "051B7",
+        "whole_order_code": "4134454"
+      },
+      "verified_position": "left",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B07",
+      "character": "冖",
+      "main_id": 19,
+      "target_order_code": "45",
+      "whole_character": {
+        "character": "写",
+        "pdf_page": 24,
+        "printed_page": 18,
+        "table_no": "0316",
+        "ucs": "05199",
+        "whole_order_code": "45151"
+      },
+      "verified_position": "top",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B07",
+      "character": "凵",
+      "main_id": 20,
+      "target_order_code": "52",
+      "whole_character": {
+        "character": "凶",
+        "pdf_page": 15,
+        "printed_page": 9,
+        "table_no": "0145",
+        "ucs": "051F6",
+        "whole_order_code": "3452"
+      },
+      "verified_position": "outer",
+      "component_stroke_indices_in_whole_character": [
+        3,
+        4
+      ],
+      "mapping_kind": "contiguous_written_after_inner",
+      "full_whole_character_sequence_required": true,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B07",
+      "character": "卩",
+      "main_id": 21,
+      "target_order_code": "52",
+      "whole_character": {
+        "character": "却",
+        "pdf_page": 42,
+        "printed_page": 36,
+        "table_no": "0658",
+        "ucs": "05374",
+        "whole_order_code": "1215452"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        6,
+        7
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B07",
+      "character": "厶",
+      "main_id": 25,
+      "target_order_code": "54",
+      "whole_character": {
+        "character": "公",
+        "pdf_page": 15,
+        "printed_page": 9,
+        "table_no": "0148",
+        "ucs": "0516C",
+        "whole_order_code": "3454"
+      },
+      "verified_position": "bottom",
+      "component_stroke_indices_in_whole_character": [
+        3,
+        4
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B07",
+      "character": "廴",
+      "main_id": 26,
+      "target_order_code": "54",
+      "whole_character": {
+        "character": "建",
+        "pdf_page": 111,
+        "printed_page": 105,
+        "table_no": "1302",
+        "ucs": "05EFA",
+        "whole_order_code": "51111254"
+      },
+      "verified_position": "outer",
+      "component_stroke_indices_in_whole_character": [
+        7,
+        8
+      ],
+      "mapping_kind": "contiguous_written_last",
+      "full_whole_character_sequence_required": true,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B07",
+      "character": "艹",
+      "main_id": 30,
+      "target_order_code": "122",
+      "whole_character": {
+        "character": "草",
+        "pdf_page": 127,
+        "printed_page": 121,
+        "table_no": "1408",
+        "ucs": "08349",
+        "whole_order_code": "122251112"
+      },
+      "verified_position": "top",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B07",
+      "character": "廾",
+      "main_id": 32,
+      "target_order_code": "132",
+      "whole_character": {
+        "character": "弄",
+        "pdf_page": 39,
+        "printed_page": 33,
+        "table_no": "0600",
+        "ucs": "05F04",
+        "whole_order_code": "1121132"
+      },
+      "verified_position": "bottom",
+      "component_stroke_indices_in_whole_character": [
+        5,
+        6,
+        7
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B07",
+      "character": "宀",
+      "main_id": 48,
+      "target_order_code": "445",
+      "whole_character": {
+        "character": "家",
+        "pdf_page": 236,
+        "printed_page": 230,
+        "table_no": "2099",
+        "ucs": "05BB6",
+        "whole_order_code": "4451353334"
+      },
+      "verified_position": "top",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B07",
+      "character": "辶",
+      "main_id": 49,
+      "target_order_code": "454",
+      "whole_character": {
+        "character": "近",
+        "pdf_page": 52,
+        "printed_page": 46,
+        "table_no": "0791",
+        "ucs": "08FD1",
+        "whole_order_code": "3312454"
+      },
+      "verified_position": "outer",
+      "component_stroke_indices_in_whole_character": [
+        5,
+        6,
+        7
+      ],
+      "mapping_kind": "contiguous_written_last",
+      "full_whole_character_sequence_required": true,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B07",
+      "character": "彐",
+      "main_id": 50,
+      "target_order_code": "511",
+      "whole_character": {
+        "character": "雪",
+        "pdf_page": 262,
+        "printed_page": 256,
+        "table_no": "2249",
+        "ucs": "096EA",
+        "whole_order_code": "14524444511"
+      },
+      "verified_position": "bottom",
+      "component_stroke_indices_in_whole_character": [
+        9,
+        10,
+        11
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B08",
+      "character": "丨",
+      "main_id": 2,
+      "target_order_code": "2",
+      "whole_character": {
+        "character": "中",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0113",
+        "ucs": "04E2D",
+        "whole_order_code": "2512"
+      },
+      "verified_position": "center",
+      "component_stroke_indices_in_whole_character": [
+        4
+      ],
+      "mapping_kind": "single_stroke",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B08",
+      "character": "丿",
+      "main_id": 3,
+      "target_order_code": "3",
+      "whole_character": {
+        "character": "千",
+        "pdf_page": 10,
+        "printed_page": 4,
+        "table_no": "0041",
+        "ucs": "05343",
+        "whole_order_code": "312"
+      },
+      "verified_position": "upper_left",
+      "component_stroke_indices_in_whole_character": [
+        1
+      ],
+      "mapping_kind": "single_stroke",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B08",
+      "character": "丶",
+      "main_id": 4,
+      "target_order_code": "4",
+      "whole_character": {
+        "character": "主",
+        "pdf_page": 22,
+        "printed_page": 16,
+        "table_no": "0300",
+        "ucs": "04E3B",
+        "whole_order_code": "41121"
+      },
+      "verified_position": "top",
+      "component_stroke_indices_in_whole_character": [
+        1
+      ],
+      "mapping_kind": "single_stroke",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B08",
+      "character": "乛",
+      "main_id": 5,
+      "target_order_code": "5",
+      "whole_character": {
+        "character": "买",
+        "pdf_page": 39,
+        "printed_page": 33,
+        "table_no": "0588",
+        "ucs": "04E70",
+        "whole_order_code": "544134"
+      },
+      "verified_position": "top",
+      "component_stroke_indices_in_whole_character": [
+        1
+      ],
+      "mapping_kind": "single_stroke",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B08",
+      "character": "尢",
+      "main_id": 34,
+      "target_order_code": "135",
+      "whole_character": {
+        "character": "尬",
+        "pdf_page": 46,
+        "printed_page": 40,
+        "table_no": "0705",
+        "ucs": "05C2C",
+        "whole_order_code": "1353432"
+      },
+      "verified_position": "left_lower",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B08",
+      "character": "弋",
+      "main_id": 35,
+      "target_order_code": "154",
+      "whole_character": {
+        "character": "式",
+        "pdf_page": 25,
+        "printed_page": 19,
+        "table_no": "0349",
+        "ucs": "05F0F",
+        "whole_order_code": "112154"
+      },
+      "verified_position": "outer",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        5,
+        6
+      ],
+      "mapping_kind": "interleaved_outer",
+      "full_whole_character_sequence_required": true,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "式 confirms 弋 is interleaved with the internal component: 弋 strokes are whole-character indices 1,5,6."
+    },
+    {
+      "batch_id": "B08",
+      "character": "囗",
+      "main_id": 38,
+      "target_order_code": "251",
+      "whole_character": {
+        "character": "国",
+        "pdf_page": 80,
+        "printed_page": 74,
+        "table_no": "1081",
+        "ucs": "056FD",
+        "whole_order_code": "25112141"
+      },
+      "verified_position": "outer",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        8
+      ],
+      "mapping_kind": "interleaved_enclosing",
+      "full_whole_character_sequence_required": true,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "国 confirms enclosure sequencing: 囗 strokes are indices 1,2,8; the bottom horizontal closes the frame after internal 玉."
+    },
+    {
+      "batch_id": "B08",
+      "character": "彳",
+      "main_id": 41,
+      "target_order_code": "332",
+      "whole_character": {
+        "character": "很",
+        "pdf_page": 156,
+        "printed_page": 150,
+        "table_no": "1584",
+        "ucs": "05F88",
+        "whole_order_code": "332511534"
+      },
+      "verified_position": "left",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B08",
+      "character": "彡",
+      "main_id": 42,
+      "target_order_code": "333",
+      "whole_character": {
+        "character": "形",
+        "pdf_page": 40,
+        "printed_page": 34,
+        "table_no": "0604",
+        "ucs": "05F62",
+        "whole_order_code": "1132333"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        5,
+        6,
+        7
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B08",
+      "character": "夂",
+      "main_id": 44,
+      "target_order_code": "354",
+      "whole_character": {
+        "character": "条",
+        "pdf_page": 54,
+        "printed_page": 48,
+        "table_no": "0816",
+        "ucs": "06761",
+        "whole_order_code": "3541234"
+      },
+      "verified_position": "top",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B09",
+      "character": "韦",
+      "main_id": 63,
+      "target_order_code": "1152",
+      "whole_character": {
+        "character": "伟",
+        "pdf_page": 31,
+        "printed_page": 25,
+        "table_no": "0454",
+        "ucs": "04F1F",
+        "whole_order_code": "321152"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B09",
+      "character": "支",
+      "main_id": 65,
+      "target_order_code": "1254",
+      "whole_character": {
+        "character": "枝",
+        "pdf_page": 73,
+        "printed_page": 67,
+        "table_no": "1019",
+        "ucs": "0679D",
+        "whole_order_code": "12341254"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B09",
+      "character": "比",
+      "main_id": 71,
+      "target_order_code": "1535",
+      "whole_character": {
+        "character": "批",
+        "pdf_page": 41,
+        "printed_page": 35,
+        "table_no": "0622",
+        "ucs": "06279",
+        "whole_order_code": "1211535"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B09",
+      "character": "气",
+      "main_id": 81,
+      "target_order_code": "3115",
+      "whole_character": {
+        "character": "汽",
+        "pdf_page": 57,
+        "printed_page": 51,
+        "table_no": "0861",
+        "ucs": "06C7D",
+        "whole_order_code": "4413115"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B09",
+      "character": "长",
+      "main_id": 83,
+      "target_order_code": "3154",
+      "whole_character": {
+        "character": "张",
+        "pdf_page": 60,
+        "printed_page": 54,
+        "table_no": "0909",
+        "ucs": "05F20",
+        "whole_order_code": "5153154"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B09",
+      "character": "片",
+      "main_id": 84,
+      "target_order_code": "3215",
+      "whole_character": {
+        "character": "版",
+        "pdf_page": 90,
+        "printed_page": 84,
+        "table_no": "1143",
+        "ucs": "07248",
+        "whole_order_code": "32153354"
+      },
+      "verified_position": "left",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B09",
+      "character": "斤",
+      "main_id": 85,
+      "target_order_code": "3312",
+      "whole_character": {
+        "character": "新",
+        "pdf_page": 399,
+        "printed_page": 393,
+        "table_no": "2994",
+        "ucs": "065B0",
+        "whole_order_code": "4143112343312"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        10,
+        11,
+        12,
+        13
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B09",
+      "character": "爪",
+      "main_id": 86,
+      "target_order_code": "3324",
+      "whole_character": {
+        "character": "爬",
+        "pdf_page": 93,
+        "printed_page": 87,
+        "table_no": "1161",
+        "ucs": "0722C",
+        "whole_order_code": "33245215"
+      },
+      "verified_position": "left_lower",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B09",
+      "character": "父",
+      "main_id": 87,
+      "target_order_code": "3434",
+      "whole_character": {
+        "character": "爷",
+        "pdf_page": 33,
+        "printed_page": 27,
+        "table_no": "0492",
+        "ucs": "07237",
+        "whole_order_code": "343452"
+      },
+      "verified_position": "top",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B09",
+      "character": "文",
+      "main_id": 93,
+      "target_order_code": "4134",
+      "whole_character": {
+        "character": "纹",
+        "pdf_page": 62,
+        "printed_page": 56,
+        "table_no": "0939",
+        "ucs": "07EB9",
+        "whole_order_code": "5514134"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B10",
+      "character": "丬",
+      "main_id": 45,
+      "target_order_code": "412",
+      "whole_character": {
+        "character": "壮",
+        "pdf_page": 34,
+        "printed_page": 28,
+        "table_no": "0510",
+        "ucs": "058EE",
+        "whole_order_code": "412121"
+      },
+      "verified_position": "left",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B10",
+      "character": "幺",
+      "main_id": 59,
+      "target_order_code": "554",
+      "whole_character": {
+        "character": "幼",
+        "pdf_page": 25,
+        "printed_page": 19,
+        "table_no": "0346",
+        "ucs": "05E7C",
+        "whole_order_code": "55453"
+      },
+      "verified_position": "left",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B10",
+      "character": "攴",
+      "main_id": 74,
+      "target_order_code": "2154",
+      "whole_character": {
+        "character": "敲",
+        "pdf_page": 436,
+        "printed_page": 430,
+        "table_no": "3140",
+        "ucs": "06572",
+        "whole_order_code": "41251252512154"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        11,
+        12,
+        13,
+        14
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B10",
+      "character": "氏",
+      "main_id": 89,
+      "target_order_code": "3515",
+      "whole_character": {
+        "character": "纸",
+        "pdf_page": 62,
+        "printed_page": 56,
+        "table_no": "0938",
+        "ucs": "07EB8",
+        "whole_order_code": "5513515"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B10",
+      "character": "欠",
+      "main_id": 90,
+      "target_order_code": "3534",
+      "whole_character": {
+        "character": "吹",
+        "pdf_page": 49,
+        "printed_page": 43,
+        "table_no": "0744",
+        "ucs": "05439",
+        "whole_order_code": "2513534"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B10",
+      "character": "风",
+      "main_id": 91,
+      "target_order_code": "3534",
+      "whole_character": {
+        "character": "风",
+        "pdf_page": 15,
+        "printed_page": 9,
+        "table_no": "0154",
+        "ucs": "098CE",
+        "whole_order_code": "3534"
+      },
+      "verified_position": "self",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mapping_kind": "self_no_migration",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_self_context_no_position_migration",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B10",
+      "character": "方",
+      "main_id": 94,
+      "target_order_code": "4153",
+      "whole_character": {
+        "character": "房",
+        "pdf_page": 109,
+        "printed_page": 103,
+        "table_no": "1290",
+        "ucs": "0623F",
+        "whole_order_code": "45134153"
+      },
+      "verified_position": "lower",
+      "component_stroke_indices_in_whole_character": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B10",
+      "character": "斗",
+      "main_id": 96,
+      "target_order_code": "4412",
+      "whole_character": {
+        "character": "料",
+        "pdf_page": 229,
+        "printed_page": 223,
+        "table_no": "2054",
+        "ucs": "06599",
+        "whole_order_code": "4312344412"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B10",
+      "character": "户",
+      "main_id": 97,
+      "target_order_code": "4513",
+      "whole_character": {
+        "character": "房",
+        "pdf_page": 109,
+        "printed_page": 103,
+        "table_no": "1290",
+        "ucs": "0623F",
+        "whole_order_code": "45134153"
+      },
+      "verified_position": "top",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B10",
+      "character": "心",
+      "main_id": 98,
+      "target_order_code": "4544",
+      "whole_character": {
+        "character": "思",
+        "pdf_page": 144,
+        "printed_page": 138,
+        "table_no": "1500",
+        "ucs": "0601D",
+        "whole_order_code": "251214544"
+      },
+      "verified_position": "bottom",
+      "component_stroke_indices_in_whole_character": [
+        6,
+        7,
+        8,
+        9
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B11",
+      "character": "示",
+      "main_id": 100,
+      "target_order_code": "11234",
+      "whole_character": {
+        "character": "票",
+        "pdf_page": 259,
+        "printed_page": 253,
+        "table_no": "2235",
+        "ucs": "07968",
+        "whole_order_code": "12522111234"
+      },
+      "verified_position": "bottom",
+      "component_stroke_indices_in_whole_character": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B11",
+      "character": "甘",
+      "main_id": 101,
+      "target_order_code": "12211",
+      "whole_character": {
+        "character": "甜",
+        "pdf_page": 275,
+        "printed_page": 269,
+        "table_no": "2311",
+        "ucs": "0751C",
+        "whole_order_code": "31225112211"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "mapping_kind": "contiguous_context_role_corrected",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Canonical context role corrected from left to right: GF0023 甜 writes 舌 in strokes 1–6 and 甘 in strokes 7–11."
+    },
+    {
+      "batch_id": "B11",
+      "character": "龙",
+      "main_id": 103,
+      "target_order_code": "13534",
+      "whole_character": {
+        "character": "笼",
+        "pdf_page": 276,
+        "printed_page": 270,
+        "table_no": "2318",
+        "ucs": "07B3C",
+        "whole_order_code": "31431413534"
+      },
+      "verified_position": "lower",
+      "component_stroke_indices_in_whole_character": [
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B11",
+      "character": "业",
+      "main_id": 104,
+      "target_order_code": "22431",
+      "whole_character": {
+        "character": "显",
+        "pdf_page": 141,
+        "printed_page": 135,
+        "table_no": "1485",
+        "ucs": "0663E",
+        "whole_order_code": "251122431"
+      },
+      "verified_position": "bottom",
+      "component_stroke_indices_in_whole_character": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B11",
+      "character": "罒",
+      "main_id": 107,
+      "target_order_code": "25221",
+      "whole_character": {
+        "character": "罗",
+        "pdf_page": 84,
+        "printed_page": 78,
+        "table_no": "1108",
+        "ucs": "07F57",
+        "whole_order_code": "25221354"
+      },
+      "verified_position": "top",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B11",
+      "character": "皿",
+      "main_id": 108,
+      "target_order_code": "25221",
+      "whole_character": {
+        "character": "盆",
+        "pdf_page": 157,
+        "printed_page": 151,
+        "table_no": "1590",
+        "ucs": "076C6",
+        "whole_order_code": "345325221"
+      },
+      "verified_position": "bottom",
+      "component_stroke_indices_in_whole_character": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B11",
+      "character": "生",
+      "main_id": 109,
+      "target_order_code": "31121",
+      "whole_character": {
+        "character": "牲",
+        "pdf_page": 151,
+        "printed_page": 145,
+        "table_no": "1544",
+        "ucs": "07272",
+        "whole_order_code": "312131121"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    },
+    {
+      "batch_id": "B11",
+      "character": "矢",
+      "main_id": 110,
+      "target_order_code": "31134",
+      "whole_character": {
+        "character": "知",
+        "pdf_page": 88,
+        "printed_page": 82,
+        "table_no": "1122",
+        "ucs": "077E5",
+        "whole_order_code": "31134251"
+      },
+      "verified_position": "left",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [
+        {
+          "component_stroke_index": 5,
+          "whole_character_stroke_index": 5,
+          "standalone_name": "捺",
+          "whole_character_name": "点",
+          "change": "捺→点"
+        }
+      ],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row shows a positional fine-stroke change while preserving the coarse 1/2/3/4/5 category."
+    },
+    {
+      "batch_id": "B11",
+      "character": "禾",
+      "main_id": 111,
+      "target_order_code": "31234",
+      "whole_character": {
+        "character": "和",
+        "pdf_page": 88,
+        "printed_page": 82,
+        "table_no": "1131",
+        "ucs": "0548C",
+        "whole_order_code": "31234251"
+      },
+      "verified_position": "left",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [
+        {
+          "component_stroke_index": 5,
+          "whole_character_stroke_index": 5,
+          "standalone_name": "捺",
+          "whole_character_name": "点",
+          "change": "捺→点"
+        }
+      ],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row shows a positional fine-stroke change while preserving the coarse 1/2/3/4/5 category."
+    },
+    {
+      "batch_id": "B11",
+      "character": "瓜",
+      "main_id": 113,
+      "target_order_code": "33544",
+      "whole_character": {
+        "character": "瓢",
+        "pdf_page": 493,
+        "printed_page": 487,
+        "table_no": "3335",
+        "ucs": "074E2",
+        "whole_order_code": "1252211123433544"
+      },
+      "verified_position": "right",
+      "component_stroke_indices_in_whole_character": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context."
+    }
+  ],
+  "summary": {
+    "target_count": 60,
+    "reviewed": 60,
+    "ordinary_pending": 0,
+    "interleaved_full_sequence_cases": 6,
+    "fine_stroke_change_cases": 2,
+    "context_role_corrections": 1,
+    "self_no_migration_cases": 1
+  },
+  "limits": [
+    "Does not promote a positional form to a formal GF0011—2022 attached radical.",
+    "Does not claim every possible whole-character context has been reviewed; it closes the selected representative migration boundary recorded in canonical data.",
+    "B04/B05 are outside this evidence because main currently has no authoritative whole-character context evidence for those 20 targets."
+  ]
+}
