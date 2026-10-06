@@ -284,12 +284,14 @@
         "baseline_stroke_group",
         "stroke_order_secondary_crosscheck",
         "fine_stroke_names_secondary_crosscheck_or_locator",
-        "stroke_order_GF0023_original_page_or_applicability"
+        "stroke_order_GF0023_original_page_or_applicability",
+        "stroke_order_GF3002_visible_original_page"
       ],
-      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
+      "limits": "P1 checkpoint: GF0023 exact targets reviewed; four residual single-stroke targets (丨、丿、丶、乛) are additionally closed by exact visible rows in the abridged GF3002—1999 original scan. Other fields remain independent.",
       "stroke_order_crosscheck_evidence": "data/evidence/B08-stroke-order-crosscheck.json",
       "fine_stroke_names_crosscheck_evidence": "data/evidence/B08-fine-stroke-names-crosscheck.json",
-      "stroke_order_original_page_evidence": "data/evidence/B08-stroke-order-original-page.json"
+      "stroke_order_original_page_evidence": "data/evidence/B08-stroke-order-original-page.json",
+      "stroke_order_GF3002_visible_evidence": "data/evidence/B08-stroke-order-gf3002-original-page.json"
     },
     "B09": {
       "main_ids": [
@@ -354,13 +356,15 @@
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_crosscheck",
         "fine_stroke_names_secondary_crosscheck_or_locator",
-        "stroke_order_GF0023_original_page_or_applicability"
+        "stroke_order_GF0023_original_page_or_applicability",
+        "stroke_order_GF3002_visible_original_page"
       ],
-      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
+      "limits": "P1 checkpoint: GF0023 exact targets reviewed; residual 丬 is additionally closed by an exact visible row in the abridged GF3002—1999 original scan. Other fields remain independent.",
       "pronunciation_evidence": "data/evidence/B10-pronunciation.json",
       "stroke_order_crosscheck_evidence": "data/evidence/B10-stroke-order-crosscheck.json",
       "fine_stroke_names_crosscheck_evidence": "data/evidence/B10-fine-stroke-names-crosscheck.json",
-      "stroke_order_original_page_evidence": "data/evidence/B10-stroke-order-original-page.json"
+      "stroke_order_original_page_evidence": "data/evidence/B10-stroke-order-original-page.json",
+      "stroke_order_GF3002_visible_evidence": "data/evidence/B10-stroke-order-gf3002-original-page.json"
     },
     "B11": {
       "main_ids": [
@@ -786,6 +790,6 @@
     ],
     "next_assignment_starts_at": null,
     "next_work": "existing_batch_field_closure",
-    "note": "P1 active. 2026-10-06 B04-B11 80 targets reviewed against GF0023 original pages: 55 exact targets upgraded to reviewed_GF0023_2020_original_page; 25 component/radical targets not exactly located in reviewed main-table pages and remain pending alternative normative source. content_ready remains B01-B03."
+    "note": "P1 active. GF0023 main-table review closed 164/201 stroke_order including B01-B03 baseline; five fixed residuals (丨、丿、丶、乛、丬) are now additionally closed by exact visible GF3002—1999 rows, bringing stroke_order to 169/201 reviewed with 32 residual. content_ready remains B01-B03."
   }
 }
