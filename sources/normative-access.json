@@ -126,6 +126,38 @@
           "data/evidence/B10-stroke-order-gf3002-original-page.json"
         ]
       }
+    },
+    {
+      "source_id": "S09",
+      "publication_id": "GB/T 25741—2010",
+      "title": "信息技术 汉字编码字符集 汉字部首序和笔顺序：附录C（规范性附录）汉字笔顺序",
+      "repo": "zispace/hanzi-docs",
+      "pinned_commit": "d26705ffc52b81b6e1a45483c7b591f62962f49f",
+      "git_blob_sha": "002f83b2431ffd1128fa9969e3a35898ee8ff2a2",
+      "bytes": 43054573,
+      "pages": 323,
+      "sha256": "0514f50e310ae2eb32a743a3813d2630be9accec28b8bf244b06499d1d737baf",
+      "acquisition": {
+        "run_id": 37410749431,
+        "artifact_id": 11389525521
+      },
+      "reviewed_pdf_pages": [
+        1,
+        2,
+        3,
+        7,
+        9,
+        10,
+        12,
+        18,
+        26,
+        35,
+        74,
+        80
+      ],
+      "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+      "status": "original_pages_reviewed_for_P1",
+      "limits": "恢复原件与SHA校验本身不授予reviewed；P1状态来自逐项目标原页视觉审读。"
     }
   ],
   "reproducible_acquisition": {
