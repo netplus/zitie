@@ -192,6 +192,16 @@
       "status": "verified_original_pages_reviewed_for_P3_pronunciation",
       "evidence": "data/evidence/P3-pronunciation-GF0015-original-page.json",
       "limits": "Recovery/hash verification alone does not grant pronunciation reviewed. P3 conclusions come from visually reviewed direct/morpheme entries or exhaustively reviewed pinyin ranges."
+    },
+    {
+      "source_id": "S01",
+      "publication_id": "GF0011—2022",
+      "title": "汉字部首表（2022年修订）",
+      "official_url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202211/t20221118_995332.html",
+      "status": "item_level_source_blocked_fail_closed",
+      "review_boundary": "Official release notice is repeatably accessible and supports the retained 201-main-radical set, but the formal item-level 2022 table was not located through repeatable public channels. Do not infer exact item fields.",
+      "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+      "reopen_condition": "formal GF0011—2022 table or equivalent official item-level dataset becomes repeatably accessible"
     }
   ],
   "reproducible_acquisition": {
@@ -230,7 +240,7 @@
       }
     ]
   },
-  "next_stage": "P4_2022_identity_and_position_migration",
+  "next_stage": "P5_content_ready_final_review",
   "current_probe_run": {
     "run_id": 37410985779,
     "artifact_id": 11389595541,
@@ -244,5 +254,5 @@
       "editorial_status": "abridged_not_admissible_for_residual_review"
     }
   },
-  "current_active_stage": "P4"
+  "current_active_stage": "P5"
 }
