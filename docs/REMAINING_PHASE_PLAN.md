@@ -160,3 +160,10 @@ GF0011—2022：
 实际渲染并检查PDF全部8页后确认：该镜像不是完整20902字正文。目录明确写明GF3002规范正文/字表跨原印第4—343页，但当前文件只有8个PDF物理页；末页样表到序号134即出现“（略）”。因此本镜像不能用于外推未显示条目；但主表序号1—134中真实可见且逐项视觉核对的精确条目可以单独作为原页证据。现已关闭丨、丿、丶、乛、丬5项，证据见`data/evidence/B08-stroke-order-gf3002-original-page.json`与`data/evidence/B10-stroke-order-gf3002-original-page.json`。
 
 P1当前为**169/201 reviewed，32/201 residual**。继续寻找完整GF3002—1999、GB/T 25741附录C或其它适用权威来源，只处理固定32项，不再扩新的secondary数据源。
+
+
+## P1 fixed-residual source checkpoint（2026-10-06）
+
+固定32项stroke_order residual已有新的适用规范原件入口：GB/T 25741-2010《信息技术 汉字编码字符集 汉字部首序和笔顺序》附录C。临时reference acquisition实际恢复文件为43,054,573 bytes、323页，SHA256 `0514f50e310ae2eb32a743a3813d2630be9accec28b8bf244b06499d1d737baf`；固定外部Git blob为 `002f83b2431ffd1128fa9969e3a35898ee8ff2a2`。对应probe run `37422060922` 成功。
+
+该检查点只表示“可恢复原件已取得并核对字节/hash/页数”，**不授予任何stroke_order reviewed**。P1统计仍为169/201 reviewed、32/201 residual。下一步只对这32项逐项做附录C目标原页审读；实际原页证据入库后才升级字段，未命中则继续转其它适用规范。
