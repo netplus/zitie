@@ -298,7 +298,8 @@
         "fine_stroke_names_secondary_crosscheck_or_locator",
         "stroke_order_GF0023_original_page_or_applicability",
         "stroke_order_GF3002_visible_original_page",
-        "fine_stroke_names_P2_normative_original_pages"
+        "fine_stroke_names_P2_normative_original_pages",
+        "component_name_P3_S03_original_page_sync"
       ],
       "limits": "P1 checkpoint: GF0023 exact targets reviewed; four residual single-stroke targets (丨、丿、丶、乛) are additionally closed by exact visible rows in the abridged GF3002—1999 original scan. Other fields remain independent. P2 fine_stroke_names original-page review completed for this batch; only 牙 remains fail-closed in B05.",
       "stroke_order_crosscheck_evidence": "data/evidence/B08-stroke-order-crosscheck.json",
@@ -545,7 +546,8 @@
         "fine_stroke_names_secondary_locator",
         "fine_stroke_names_independent_secondary_crosscheck",
         "stroke_order_GF0023_original_page_or_applicability",
-        "fine_stroke_names_P2_normative_original_pages_or_applicability"
+        "fine_stroke_names_P2_normative_original_pages_or_applicability",
+        "component_name_P3_S03_original_page_sync"
       ],
       "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located after stroke-order-code neighboring-row review remain pending alternative normative source. fine_stroke_names and other fields are independent. P2 fine_stroke_names original-page review/applicability result is synchronized to canonical for this batch.",
       "pronunciation_evidence": "data/evidence/B14-pronunciation.json",
@@ -853,7 +855,7 @@
     ],
     "next_assignment_starts_at": null,
     "next_work": "P2_fine_stroke_names_normative_original_page_closure",
-    "note": "P2 completed. B04-B21 fine_stroke_names: 157 reviewed_P2_normative_original_pages, 14 conflict_fail_closed, 0 ordinary pending. Fail-closed set: 牙、矛、屮、巛、疒、疋、癶、覀、虍、糸、釆、龺、髟、鬥. P3 is now active for pronunciation/component_name/structure. content_ready remains B01-B03.",
+    "note": "P3 active. component_name round1 progressed 47 distinct main items: B08+B14 20 items synced to reviewed_S03_GF0014_2009 from existing original-page evidence; 27 S03 no-exact-row items routed to P4 GF0011—2022 exact-name gate without being marked reviewed. Ordinary P3 component_name gap remaining: B21 龠 only. pronunciation and structure remain active. content_ready remains B01-B03.",
     "stroke_order_reviewed_main_count": 201,
     "stroke_order_pending_main_count": 0,
     "active_remaining_phase": "P2",
@@ -865,6 +867,16 @@
       "conflict_fail_closed": 14,
       "ordinary_pending": 0,
       "completion_review": "reviews/P2-completion-20261006.md"
+    },
+    "p3_other_fields": {
+      "status": "in_progress",
+      "component_name_round1": {
+        "progressed_main_count": 47,
+        "reviewed_from_existing_S03_original_page_evidence": 20,
+        "deferred_to_P4_exact_name_gate": 27,
+        "ordinary_component_name_P3_gap_remaining": 1,
+        "review": "reviews/P3-round1-component-name-20261006.md"
+      }
     }
   }
 }

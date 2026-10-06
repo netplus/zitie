@@ -319,3 +319,12 @@ P2细笔名规范原页收口已达到阶段退出条件。B04—B21共171项最
 证据：`data/evidence/P2-B20-B21-fine-stroke-names-original-page.json`、`data/evidence/P2-normative-target-gap-failclosed.json`、`reviews/P2-completion-20261006.md`。
 
 **当前活动阶段正式切换为P3：pronunciation / component_name / structure扫尾。** P1仍为201/201 stroke_order reviewed；P2完成不改变content_ready统计，也不表示artwork、PDF、manifest、CI或release完成。
+
+
+## P3第一轮：component_name状态债与P4路由（2026-10-06）
+
+本轮实际推进47个不同主部首的component_name：B08十项恢复既有S03原页证据并同步canonical，B14十项把已在库的S03精确目标行同步canonical，共20项正式`reviewed_S03_GF0014_2009`。另27项此前已完成S03原页审读且明确无精确独立主形条目，本轮不再作为P3普通pending，而按阶段职责路由至P4的GF0011—2022精确名称门槛；这些27项**不标reviewed**。
+
+27项为：支、比、屮、毋、疋、齐、羽、麦、走、足、邑、釆、青、龺、齿、黾、阜、骨、香、音、髟、鬥、麻、黍、鼓、鼠、鼻。P3中的component_name普通缺口目前仅剩B21龠1项。pronunciation与structure未因本轮名称处理而升级，仍是P3后续主吞吐。
+
+证据：`data/evidence/B08-component-name.json`、`data/evidence/B14-component-name.json`、`data/evidence/P3-component-name-S03-no-exact-route-P4.json`、`reviews/P3-round1-component-name-20261006.md`。
