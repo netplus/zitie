@@ -1,0 +1,103 @@
+{
+  "schema_version": 1,
+  "record_kind": "P6_cumulative_vector_artwork_review",
+  "batch_id": "B06",
+  "reviewed_at": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "vector_revision": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+  "workflow_run_id": 37548434948,
+  "artifact_id": 11452390328,
+  "artifact_digest": "sha256:0d010d8e219bde36cac95fb4fcb08c2adf40e72c4075f1c7f42d8c8817bed4f",
+  "review_pdf": "B06-artwork-review.pdf",
+  "review_pdf_sha256": "57080ce44d2c976a22411c1b349f2772a88c92b58aa88b35b4b7e27aa2fbce82",
+  "review_method": "rendered cumulative-stroke PDF -> 120dpi PNG -> full batch contact-sheet visual inspection",
+  "targeted_second_pass": [],
+  "entries": [
+    {
+      "character": "厂",
+      "main_id": 7,
+      "order_code": "13",
+      "stroke_count": 2,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "匚",
+      "main_id": 8,
+      "order_code": "15",
+      "stroke_count": 2,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "卜",
+      "main_id": 9,
+      "order_code": "24",
+      "stroke_count": 2,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "冂",
+      "main_id": 10,
+      "order_code": "25",
+      "stroke_count": 2,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "勹",
+      "main_id": 13,
+      "order_code": "35",
+      "stroke_count": 2,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "儿",
+      "main_id": 14,
+      "order_code": "35",
+      "stroke_count": 2,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "匕",
+      "main_id": 15,
+      "order_code": "35",
+      "stroke_count": 2,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "几",
+      "main_id": 16,
+      "order_code": "35",
+      "stroke_count": 2,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "亠",
+      "main_id": 17,
+      "order_code": "41",
+      "stroke_count": 2,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "冫",
+      "main_id": 18,
+      "order_code": "41",
+      "stroke_count": 2,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "reviewed": 10,
+    "artwork_conflicts": 0
+  },
+  "limits": "Drawing-material approval only. Semantic authority remains existing content evidence; final A4 layout/PDF/release are independent."
+}
