@@ -749,6 +749,38 @@
           "result": "60/60 selected whole-character migration contexts visually reviewed",
           "evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json",
           "limits": "Supports only the recorded representative whole-character contexts and stroke-index mappings; does not promote formal GF0011—2022 attached-form status."
+        },
+        {
+          "date": "2026-10-06",
+          "batches": [
+            "B12",
+            "B13",
+            "B14",
+            "B15",
+            "B16",
+            "B17",
+            "B18",
+            "B19"
+          ],
+          "target_count": 80,
+          "reviewed": 78,
+          "conflict_fail_closed": 2,
+          "conflict_characters": [
+            "屮",
+            "毋"
+          ],
+          "full_whole_character_sequence_required": [
+            "疒",
+            "虍"
+          ],
+          "stroke_change_targets": [
+            "疋",
+            "竹",
+            "足"
+          ],
+          "result": "78/80 representative whole-character migration contexts visually reviewed; 2 fail-closed mapping conflicts",
+          "evidence": "data/evidence/P4-B12-B19-position-migration-whole-character.json",
+          "limits": "Supports only recorded representative whole-character contexts and stroke-index mappings; does not promote formal GF0011—2022 attached-form status."
         }
       ]
     },

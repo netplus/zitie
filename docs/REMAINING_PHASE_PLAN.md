@@ -139,7 +139,11 @@ B06—B11共60项完成代表整字GF0023原页核验，60/60 reviewed。重点�
 - 甘→甜位置由left纠正为right；
 - 风self语境无位置迁移。
 
-B04/B05 20项当前main缺少权威整字语境evidence，保持pending，不以编辑例字凑数。后续继续B04/B05补语境，并推进B12以后整字迁移。
+B04/B05 20项当前main缺少权威整字语境evidence，保持pending，不以编辑例字凑数。
+
+B12—B19第二轮80项已完成整字迁移原页核验：**78 reviewed + 2 conflict_fail_closed（屮、毋）**。疒、虍保留完整整字时序门槛；疋、竹、足记录了进入代表整字后的粗粒度笔画类别变化。累计B06—B19共140项position_migration为**138 reviewed + 2 fail-closed**。
+
+后续继续B20/B21、B04/B05及B01—B03位置迁移回归；GF0011—2022正式附形身份仍独立等待逐项官方数据。
 
 ## P5 内容终审与content_ready收口
 
