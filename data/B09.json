@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_kind": "phase1_content_draft",
   "batch_id": "B09",
-  "version": "content-draft-2026-10-05",
+  "version": "content-draft-2026-10-06",
   "title": "四画常用独体与部件迁移",
   "content_status": "in_progress",
   "artwork_status": "deferred",
@@ -52,7 +52,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -158,6 +158,18 @@
             ]
           }
         ]
+      },
+      "order_code": "1152",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 12,
+        "printed_page": 6,
+        "table_no": "3509",
+        "ucs": "097E6",
+        "order_code": "1152",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -199,7 +211,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_source_ambiguous_candidate_compatible_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
@@ -306,6 +318,18 @@
             ]
           }
         ]
+      },
+      "order_code": "1254",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 12,
+        "printed_page": 6,
+        "table_no": "0089",
+        "ucs": "0652F",
+        "order_code": "1254",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -347,7 +371,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
@@ -453,6 +477,18 @@
             ]
           }
         ]
+      },
+      "order_code": "1535",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0105",
+        "ucs": "06BD4",
+        "order_code": "1535",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -494,7 +530,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -599,6 +635,18 @@
             ]
           }
         ]
+      },
+      "order_code": "3115",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 14,
+        "printed_page": 8,
+        "table_no": "0122",
+        "ucs": "06C14",
+        "order_code": "3115",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -640,7 +688,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -745,6 +793,18 @@
             ]
           }
         ]
+      },
+      "order_code": "3154",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 14,
+        "printed_page": 8,
+        "table_no": "0127",
+        "ucs": "0957F",
+        "order_code": "3154",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -786,7 +846,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -891,6 +951,18 @@
             ]
           }
         ]
+      },
+      "order_code": "3215",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 14,
+        "printed_page": 8,
+        "table_no": "0130",
+        "ucs": "07247",
+        "order_code": "3215",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -932,7 +1004,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -1037,6 +1109,18 @@
             ]
           }
         ]
+      },
+      "order_code": "3312",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 15,
+        "printed_page": 9,
+        "table_no": "0137",
+        "ucs": "065A4",
+        "order_code": "3312",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -1078,7 +1162,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -1183,6 +1267,18 @@
             ]
           }
         ]
+      },
+      "order_code": "3324",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 15,
+        "printed_page": 9,
+        "table_no": "0138",
+        "ucs": "0722A",
+        "order_code": "3324",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -1224,7 +1320,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -1329,6 +1425,18 @@
             ]
           }
         ]
+      },
+      "order_code": "3434",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 15,
+        "printed_page": 9,
+        "table_no": "0141",
+        "ucs": "07236",
+        "order_code": "3434",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -1370,7 +1478,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -1475,6 +1583,18 @@
             ]
           }
         ]
+      },
+      "order_code": "4134",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 16,
+        "printed_page": 10,
+        "table_no": "0161",
+        "ucs": "06587",
+        "order_code": "4134",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     }
   ],
@@ -1483,5 +1603,6 @@
   "component_name_evidence": "data/evidence/B09-component-name.json",
   "pronunciation_evidence": "data/evidence/B09-pronunciation.json",
   "stroke_order_crosscheck_evidence": "data/evidence/B09-stroke-order-crosscheck.json",
-  "fine_stroke_names_crosscheck_evidence": "data/evidence/B09-fine-stroke-names-crosscheck.json"
+  "fine_stroke_names_crosscheck_evidence": "data/evidence/B09-fine-stroke-names-crosscheck.json",
+  "stroke_order_original_page_evidence": "data/evidence/B09-stroke-order-original-page.json"
 }

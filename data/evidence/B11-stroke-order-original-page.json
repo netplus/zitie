@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_original_page_review",
+  "phase": "P1",
+  "batch_id": "B11",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S02",
+    "publication_id": "GF0023—2020",
+    "title": "通用规范汉字笔顺规范",
+    "sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
+    "bytes": 51412684,
+    "pages": 581,
+    "recovery_manifest": "sources/normative-access.json",
+    "recovery_run_id": 37402630995,
+    "recovery_artifact_id": 11385916300,
+    "reviewed_pdf_pages": [
+      17,
+      18,
+      19,
+      20,
+      21
+    ],
+    "method": "verified artifact recovery -> local original PDF render -> target-row crop visual review; PDF text layer used only to index row/table_no/UCS/order digits"
+  },
+  "reviewed_field": "stroke_order",
+  "entries": [
+    {
+      "character": "示",
+      "main_id": 100,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 17,
+      "printed_page": 11,
+      "order_code": "11234",
+      "table_no": "0194",
+      "ucs": "0793A",
+      "stroke_count": 5,
+      "canonical_candidate": "11234",
+      "visual_review": true
+    },
+    {
+      "character": "甘",
+      "main_id": 101,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 18,
+      "printed_page": 12,
+      "order_code": "12211",
+      "table_no": "0205",
+      "ucs": "07518",
+      "stroke_count": 5,
+      "canonical_candidate": "12211",
+      "visual_review": true
+    },
+    {
+      "character": "龙",
+      "main_id": 103,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 19,
+      "printed_page": 13,
+      "order_code": "13534",
+      "table_no": "0221",
+      "ucs": "09F99",
+      "stroke_count": 5,
+      "canonical_candidate": "13534",
+      "visual_review": true
+    },
+    {
+      "character": "业",
+      "main_id": 104,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 19,
+      "printed_page": 13,
+      "order_code": "22431",
+      "table_no": "0231",
+      "ucs": "04E1A",
+      "stroke_count": 5,
+      "canonical_candidate": "22431",
+      "visual_review": true
+    },
+    {
+      "character": "罒",
+      "main_id": 107,
+      "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
+      "canonical_candidate": "25221",
+      "stroke_count": 5,
+      "reviewed_pdf_pages": [
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "limits": "不能据此判定笔顺错误或不存在；仅说明本轮GF0023主表相关页未定位到精确目标条目，需S04/其它适用规范继续关闭。"
+    },
+    {
+      "character": "皿",
+      "main_id": 108,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 20,
+      "printed_page": 14,
+      "order_code": "25221",
+      "table_no": "0259",
+      "ucs": "076BF",
+      "stroke_count": 5,
+      "canonical_candidate": "25221",
+      "visual_review": true
+    },
+    {
+      "character": "生",
+      "main_id": 109,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 21,
+      "printed_page": 15,
+      "order_code": "31121",
+      "table_no": "0263",
+      "ucs": "0751F",
+      "stroke_count": 5,
+      "canonical_candidate": "31121",
+      "visual_review": true
+    },
+    {
+      "character": "矢",
+      "main_id": 110,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 21,
+      "printed_page": 15,
+      "order_code": "31134",
+      "table_no": "0264",
+      "ucs": "077E2",
+      "stroke_count": 5,
+      "canonical_candidate": "31134",
+      "visual_review": true
+    },
+    {
+      "character": "禾",
+      "main_id": 111,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 21,
+      "printed_page": 15,
+      "order_code": "31234",
+      "table_no": "0267",
+      "ucs": "079BE",
+      "stroke_count": 5,
+      "canonical_candidate": "31234",
+      "visual_review": true
+    },
+    {
+      "character": "瓜",
+      "main_id": 113,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 21,
+      "printed_page": 15,
+      "order_code": "33544",
+      "table_no": "0279",
+      "ucs": "074DC",
+      "stroke_count": 5,
+      "canonical_candidate": "33544",
+      "visual_review": true
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "reviewed_exact": 9,
+    "exact_target_not_located": 1
+  },
+  "limits": [
+    "只有实际在GF0023原页精确定位并视觉核对的目标才升级stroke_order reviewed。",
+    "未定位项保持pending，不把secondary候选或相近字形冒充规范原页结论。",
+    "本证据不授予fine_stroke_names、GF0011—2022身份、位置变体或artwork结论。"
+  ]
+}

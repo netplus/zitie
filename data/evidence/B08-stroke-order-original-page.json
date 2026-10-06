@@ -1,0 +1,177 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_original_page_review",
+  "phase": "P1",
+  "batch_id": "B08",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S02",
+    "publication_id": "GF0023—2020",
+    "title": "通用规范汉字笔顺规范",
+    "sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
+    "bytes": 51412684,
+    "pages": 581,
+    "recovery_manifest": "sources/normative-access.json",
+    "recovery_run_id": 37402630995,
+    "recovery_artifact_id": 11385916300,
+    "reviewed_pdf_pages": [
+      9,
+      10,
+      11,
+      12
+    ],
+    "method": "verified artifact recovery -> local original PDF render -> target-row crop visual review; PDF text layer used only to index row/table_no/UCS/order digits"
+  },
+  "reviewed_field": "stroke_order",
+  "entries": [
+    {
+      "character": "丨",
+      "main_id": 2,
+      "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
+      "canonical_candidate": "2",
+      "stroke_count": 1,
+      "reviewed_pdf_pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "limits": "不能据此判定笔顺错误或不存在；仅说明本轮GF0023主表相关页未定位到精确目标条目，需S04/其它适用规范继续关闭。"
+    },
+    {
+      "character": "丿",
+      "main_id": 3,
+      "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
+      "canonical_candidate": "3",
+      "stroke_count": 1,
+      "reviewed_pdf_pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "limits": "不能据此判定笔顺错误或不存在；仅说明本轮GF0023主表相关页未定位到精确目标条目，需S04/其它适用规范继续关闭。"
+    },
+    {
+      "character": "丶",
+      "main_id": 4,
+      "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
+      "canonical_candidate": "4",
+      "stroke_count": 1,
+      "reviewed_pdf_pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "limits": "不能据此判定笔顺错误或不存在；仅说明本轮GF0023主表相关页未定位到精确目标条目，需S04/其它适用规范继续关闭。"
+    },
+    {
+      "character": "乛",
+      "main_id": 5,
+      "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
+      "canonical_candidate": "5",
+      "stroke_count": 1,
+      "reviewed_pdf_pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "limits": "不能据此判定笔顺错误或不存在；仅说明本轮GF0023主表相关页未定位到精确目标条目，需S04/其它适用规范继续关闭。"
+    },
+    {
+      "character": "尢",
+      "main_id": 34,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 10,
+      "printed_page": 4,
+      "order_code": "135",
+      "table_no": "6502",
+      "ucs": "05C22",
+      "stroke_count": 3,
+      "canonical_candidate": "135",
+      "visual_review": true
+    },
+    {
+      "character": "弋",
+      "main_id": 35,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 10,
+      "printed_page": 4,
+      "order_code": "154",
+      "table_no": "3504",
+      "ucs": "05F0B",
+      "stroke_count": 3,
+      "canonical_candidate": "154",
+      "visual_review": true
+    },
+    {
+      "character": "囗",
+      "main_id": 38,
+      "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
+      "canonical_candidate": "251",
+      "stroke_count": 3,
+      "reviewed_pdf_pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "limits": "不能据此判定笔顺错误或不存在；仅说明本轮GF0023主表相关页未定位到精确目标条目，需S04/其它适用规范继续关闭。"
+    },
+    {
+      "character": "彳",
+      "main_id": 41,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 10,
+      "printed_page": 4,
+      "order_code": "332",
+      "table_no": "6503",
+      "ucs": "05F73",
+      "stroke_count": 3,
+      "canonical_candidate": "332",
+      "visual_review": true
+    },
+    {
+      "character": "彡",
+      "main_id": 42,
+      "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
+      "canonical_candidate": "333",
+      "stroke_count": 3,
+      "reviewed_pdf_pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "limits": "不能据此判定笔顺错误或不存在；仅说明本轮GF0023主表相关页未定位到精确目标条目，需S04/其它适用规范继续关闭。"
+    },
+    {
+      "character": "夂",
+      "main_id": 44,
+      "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
+      "canonical_candidate": "354",
+      "stroke_count": 3,
+      "reviewed_pdf_pages": [
+        9,
+        10,
+        11,
+        12
+      ],
+      "limits": "不能据此判定笔顺错误或不存在；仅说明本轮GF0023主表相关页未定位到精确目标条目，需S04/其它适用规范继续关闭。"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "reviewed_exact": 3,
+    "exact_target_not_located": 7
+  },
+  "limits": [
+    "只有实际在GF0023原页精确定位并视觉核对的目标才升级stroke_order reviewed。",
+    "未定位项保持pending，不把secondary候选或相近字形冒充规范原页结论。",
+    "本证据不授予fine_stroke_names、GF0011—2022身份、位置变体或artwork结论。"
+  ]
+}

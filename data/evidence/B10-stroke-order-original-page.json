@@ -1,0 +1,175 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_original_page_review",
+  "phase": "P1",
+  "batch_id": "B10",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S02",
+    "publication_id": "GF0023—2020",
+    "title": "通用规范汉字笔顺规范",
+    "sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
+    "bytes": 51412684,
+    "pages": 581,
+    "recovery_manifest": "sources/normative-access.json",
+    "recovery_run_id": 37402630995,
+    "recovery_artifact_id": 11385916300,
+    "reviewed_pdf_pages": [
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "method": "verified artifact recovery -> local original PDF render -> target-row crop visual review; PDF text layer used only to index row/table_no/UCS/order digits"
+  },
+  "reviewed_field": "stroke_order",
+  "entries": [
+    {
+      "character": "丬",
+      "main_id": 45,
+      "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
+      "canonical_candidate": "412",
+      "stroke_count": 3,
+      "reviewed_pdf_pages": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "limits": "不能据此判定笔顺错误或不存在；仅说明本轮GF0023主表相关页未定位到精确目标条目，需S04/其它适用规范继续关闭。"
+    },
+    {
+      "character": "幺",
+      "main_id": 59,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 12,
+      "printed_page": 6,
+      "order_code": "554",
+      "table_no": "3507",
+      "ucs": "05E7A",
+      "stroke_count": 3,
+      "canonical_candidate": "554",
+      "visual_review": true
+    },
+    {
+      "character": "攴",
+      "main_id": 74,
+      "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
+      "canonical_candidate": "2154",
+      "stroke_count": 4,
+      "reviewed_pdf_pages": [
+        12,
+        13,
+        14,
+        15,
+        16
+      ],
+      "limits": "不能据此判定笔顺错误或不存在；仅说明本轮GF0023主表相关页未定位到精确目标条目，需S04/其它适用规范继续关闭。"
+    },
+    {
+      "character": "氏",
+      "main_id": 89,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 15,
+      "printed_page": 9,
+      "order_code": "3515",
+      "table_no": "0151",
+      "ucs": "06C0F",
+      "stroke_count": 4,
+      "canonical_candidate": "3515",
+      "visual_review": true
+    },
+    {
+      "character": "欠",
+      "main_id": 90,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 15,
+      "printed_page": 9,
+      "order_code": "3534",
+      "table_no": "0153",
+      "ucs": "06B20",
+      "stroke_count": 4,
+      "canonical_candidate": "3534",
+      "visual_review": true
+    },
+    {
+      "character": "风",
+      "main_id": 91,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 15,
+      "printed_page": 9,
+      "order_code": "3534",
+      "table_no": "0154",
+      "ucs": "098CE",
+      "stroke_count": 4,
+      "canonical_candidate": "3534",
+      "visual_review": true
+    },
+    {
+      "character": "方",
+      "main_id": 94,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 16,
+      "printed_page": 10,
+      "order_code": "4153",
+      "table_no": "0163",
+      "ucs": "065B9",
+      "stroke_count": 4,
+      "canonical_candidate": "4153",
+      "visual_review": true
+    },
+    {
+      "character": "斗",
+      "main_id": 96,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 16,
+      "printed_page": 10,
+      "order_code": "4412",
+      "table_no": "0166",
+      "ucs": "06597",
+      "stroke_count": 4,
+      "canonical_candidate": "4412",
+      "visual_review": true
+    },
+    {
+      "character": "户",
+      "main_id": 97,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 16,
+      "printed_page": 10,
+      "order_code": "4513",
+      "table_no": "0170",
+      "ucs": "06237",
+      "stroke_count": 4,
+      "canonical_candidate": "4513",
+      "visual_review": true
+    },
+    {
+      "character": "心",
+      "main_id": 98,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 16,
+      "printed_page": 10,
+      "order_code": "4544",
+      "table_no": "0174",
+      "ucs": "05FC3",
+      "stroke_count": 4,
+      "canonical_candidate": "4544",
+      "visual_review": true
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "reviewed_exact": 8,
+    "exact_target_not_located": 2
+  },
+  "limits": [
+    "只有实际在GF0023原页精确定位并视觉核对的目标才升级stroke_order reviewed。",
+    "未定位项保持pending，不把secondary候选或相近字形冒充规范原页结论。",
+    "本证据不授予fine_stroke_names、GF0011—2022身份、位置变体或artwork结论。"
+  ]
+}

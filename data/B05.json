@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_kind": "phase1_content_draft",
   "batch_id": "B05",
-  "version": "content-draft-2026-10-05",
+  "version": "content-draft-2026-10-06",
   "content_status": "in_progress",
   "artwork_status": "deferred",
   "publication_status": "deferred",
@@ -40,7 +40,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -50,7 +50,6 @@
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
         "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
@@ -130,6 +129,17 @@
             "compatible_options": []
           }
         ]
+      },
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 12,
+        "printed_page": 6,
+        "table_no": "0081",
+        "ucs": "065E0",
+        "order_code": "1135",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -160,7 +170,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -170,7 +180,6 @@
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
         "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
@@ -250,6 +259,17 @@
             "compatible_options": []
           }
         ]
+      },
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0092",
+        "ucs": "072AC",
+        "order_code": "1344",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -280,7 +300,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -290,7 +310,6 @@
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
         "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
@@ -371,6 +390,17 @@
             "compatible_options": []
           }
         ]
+      },
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0096",
+        "ucs": "06B79",
+        "order_code": "1354",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -401,7 +431,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -411,7 +441,6 @@
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
         "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
@@ -491,6 +520,17 @@
             "compatible_options": []
           }
         ]
+      },
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0100",
+        "ucs": "08F66",
+        "order_code": "1512",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -521,7 +561,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "conflict_fail_closed",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -532,7 +572,6 @@
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
         "牙第2笔“撇折/竖折”权威冲突，须回GF2001与GF0023/S04原页裁决",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
         "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
@@ -612,6 +651,17 @@
             "compatible_options": []
           }
         ]
+      },
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0102",
+        "ucs": "07259",
+        "order_code": "1523",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -642,7 +692,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -652,7 +702,6 @@
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
         "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
@@ -733,6 +782,17 @@
             "compatible_options": []
           }
         ]
+      },
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0104",
+        "ucs": "06208",
+        "order_code": "1534",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -763,7 +823,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -773,7 +833,6 @@
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
         "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
@@ -853,6 +912,17 @@
             "compatible_options": []
           }
         ]
+      },
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0108",
+        "ucs": "074E6",
+        "order_code": "1554",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -883,7 +953,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -893,7 +963,6 @@
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
         "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
@@ -973,6 +1042,17 @@
             "compatible_options": []
           }
         ]
+      },
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0109",
+        "ucs": "06B62",
+        "order_code": "2121",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -1003,7 +1083,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -1013,7 +1093,6 @@
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
         "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
@@ -1093,6 +1172,17 @@
             "compatible_options": []
           }
         ]
+      },
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 14,
+        "printed_page": 8,
+        "table_no": "0114",
+        "ucs": "08D1D",
+        "order_code": "2534",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     },
     {
@@ -1123,7 +1213,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
-        "stroke_order": "crosschecked_GF0023_derived_dataset_original_page_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_located_candidate_migration_pending_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -1133,7 +1223,6 @@
       },
       "unresolved": [
         "GF0011—2022精确主项字形/附形/名称/编码待正式全文或官方逐项数据",
-        "stroke_order已完成GF0023派生数据交叉核验；规范原页视觉review仍待完成",
         "fine_stroke_names已取得cnchar二次逐笔定位序列；canonical候选迁移及规范原页review仍待完成"
       ],
       "structure_review": {
@@ -1213,6 +1302,17 @@
             "compatible_options": []
           }
         ]
+      },
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 14,
+        "printed_page": 8,
+        "table_no": "0118",
+        "ucs": "089C1",
+        "order_code": "2535",
+        "result": "reviewed_exact_GF0023_2020_original_page"
       }
     }
   ],
@@ -1220,5 +1320,6 @@
   "structure_evidence": "data/evidence/B05-structure.json",
   "pronunciation_evidence": "data/evidence/B05-pronunciation.json",
   "stroke_order_crosscheck_evidence": "data/evidence/B05-stroke-order-crosscheck.json",
-  "fine_stroke_names_crosscheck_evidence": "data/evidence/B05-fine-stroke-names-crosscheck.json"
+  "fine_stroke_names_crosscheck_evidence": "data/evidence/B05-fine-stroke-names-crosscheck.json",
+  "stroke_order_original_page_evidence": "data/evidence/B05-stroke-order-original-page.json"
 }
