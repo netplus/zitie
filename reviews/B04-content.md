@@ -41,3 +41,22 @@
 2. 对冲突或仅本地存在的来源状态做一次仓库级复核；
 3. 更新每项field_status；
 4. 保留全书级GF0011—2022未决，不要求阶段1为此停止后续批次。
+
+## 2026-10-06 Unicode 18.0 RS二级身份定位
+
+来源：Unicode 18.0.0 `RSIndex.txt`（源文件日期2026-07-30）。逐项按Unicode标量值精确定位RS记录，仅作为`target_identity`二级Unicode/RS交叉证据；GF0011—2022正式主部首身份、主附关系、名称和编码继续pending。
+
+| 主项 | Unicode | RS记录 | RS列 |
+|---|---|---|---|
+| 干 | U+5E72 | 51.0 | traditional_radicals |
+| 寸 | U+5BF8 | 41.0 | traditional_radicals |
+| 夕 | U+5915 | 36.0 | traditional_radicals |
+| 广 | U+5E7F | 53.0 | traditional_radicals |
+| 门 | U+95E8 | 169.0 | chinese_simplified_radicals |
+| 尸 | U+5C38 | 44.0 | traditional_radicals |
+| 己 | U+5DF1 | 49.0 | traditional_radicals |
+| 弓 | U+5F13 | 57.0 | traditional_radicals |
+| 飞 | U+98DE | 183.0 | chinese_simplified_radicals |
+| 马 | U+9A6C | 187.0 | chinese_simplified_radicals |
+
+源文件：https://www.unicode.org/Public/18.0.0/charts/RSIndex.txt 。本节不支持笔顺、细笔名、部件名称、正式附形或位置几何结论。
