@@ -426,3 +426,23 @@ P4现在的主工作从“主项是否仍在201集合中”转为：
 3. 附形/位置变体冻结与完整时序核验。
 
 证据：`data/evidence/P4-B01-B03-main-radical-identity-continuity.json`、`reviews/P4-B01-B03-main-identity-continuity.md`。
+
+
+## P4 position_migration 第一轮：B06—B11（2026-10-06）
+
+本轮实际推进**60个不同主部首**的位置迁移整字核验。由于B04/B05当前main没有可复用的权威整字语境evidence，没有为凑80而使用编辑例字升级状态。
+
+使用source-probe已SHA固定的GF0023—2020原件，对B06—B11已选定的59个唯一整字目标逐行实际渲染、视觉查看跟随式累计笔画图，并保存整字页码、表序号、UCS、数字笔顺、部件在整字中的笔画索引和改笔信息。
+
+结果：
+- **60/60 position_migration reviewed，0普通pending（本轮范围内）**；
+- 甘→甜的canonical位置由错误的`left`修正为`right`；
+- 匚→区=`[1,4]`、弋→式=`[1,5,6]`、囗→国=`[1,2,8]`，明确要求完整整字时序，不能按部件自写顺序连续播放；
+- 矢→知第5笔、禾→和第5笔均确认**捺→点**；
+- 风→风为self语境，确认当前无位置迁移。
+
+证据：
+- `data/evidence/P4-B06-B11-position-migration-whole-character.json`
+- `reviews/P4-B06-B11-position-migration.md`
+
+边界：本轮只关闭记录的代表整字语境，不把它提升为GF0011—2022正式附形认定；2022精确附形/名称/编码仍受全文访问门槛约束。B04/B05 20项下一轮补权威整字目标后继续。
