@@ -67,7 +67,7 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_self_context_no_position_migration"
       },
       "migration_boundary": "本轮只保留“高”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -185,6 +185,26 @@
         "visual_review_origin": "reused_prior_original_page_review",
         "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
         "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
+      },
+      "whole_character_context_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B12-B21-whole-character-context-sync.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration_status": "reviewed_P4_self_context_no_position_migration",
+        "position_migration_evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "data/evidence/B20-stroke-order-original-page.json",
+          "pdf_page": 224,
+          "printed_page": 218,
+          "table_no": "2021",
+          "ucs": "09AD8",
+          "whole_order_code": "4125125251"
+        },
+        "visual_review": true,
+        "mapping_result": "reviewed_P4_self_context_no_position_migration",
+        "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
       }
     },
     {
@@ -242,7 +262,7 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_self_context_no_position_migration"
       },
       "migration_boundary": "本轮只保留“黄”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -362,6 +382,26 @@
         "visual_review_origin": "reused_prior_original_page_review",
         "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
         "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
+      },
+      "whole_character_context_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B12-B21-whole-character-context-sync.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration_status": "reviewed_P4_self_context_no_position_migration",
+        "position_migration_evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "data/evidence/B20-stroke-order-original-page.json",
+          "pdf_page": 253,
+          "printed_page": 247,
+          "table_no": "2201",
+          "ucs": "09EC4",
+          "whole_order_code": "12212512134"
+        },
+        "visual_review": true,
+        "mapping_result": "reviewed_P4_self_context_no_position_migration",
+        "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
       }
     },
     {
@@ -419,7 +459,7 @@
         "pronunciation": "reviewed_S06_GF0015_2010_target_self_pronunciation",
         "component_name": "source_blocked_fail_closed_GF0011_2022_exact_name_not_publicly_released",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_self_context_no_position_migration"
       },
       "migration_boundary": "本轮只保留“麻”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -554,6 +594,26 @@
         "visual_review_origin": "reused_prior_original_page_review",
         "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
         "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
+      },
+      "whole_character_context_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B12-B21-whole-character-context-sync.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration_status": "reviewed_P4_self_context_no_position_migration",
+        "position_migration_evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "data/evidence/B20-stroke-order-original-page.json",
+          "pdf_page": 286,
+          "printed_page": 280,
+          "table_no": "2379",
+          "ucs": "09EBB",
+          "whole_order_code": "41312341234"
+        },
+        "visual_review": true,
+        "mapping_result": "reviewed_P4_self_context_no_position_migration",
+        "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
       }
     },
     {
@@ -611,7 +671,7 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_self_context_no_position_migration"
       },
       "migration_boundary": "本轮只保留“鹿”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -731,6 +791,26 @@
         "visual_review_origin": "reused_prior_original_page_review",
         "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
         "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
+      },
+      "whole_character_context_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B12-B21-whole-character-context-sync.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration_status": "reviewed_P4_self_context_no_position_migration",
+        "position_migration_evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "data/evidence/B20-stroke-order-original-page.json",
+          "pdf_page": 287,
+          "printed_page": 281,
+          "table_no": "2387",
+          "ucs": "09E7F",
+          "whole_order_code": "41352211535"
+        },
+        "visual_review": true,
+        "mapping_result": "reviewed_P4_self_context_no_position_migration",
+        "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
       }
     },
     {
@@ -789,7 +869,7 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_self_context_no_position_migration"
       },
       "migration_boundary": "本轮只保留“鼎”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -911,6 +991,26 @@
         "visual_review_origin": "reused_prior_original_page_review",
         "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
         "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
+      },
+      "whole_character_context_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B12-B21-whole-character-context-sync.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration_status": "reviewed_P4_self_context_no_position_migration",
+        "position_migration_evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "data/evidence/B20-stroke-order-original-page.json",
+          "pdf_page": 326,
+          "printed_page": 320,
+          "table_no": "2617",
+          "ucs": "09F0E",
+          "whole_order_code": "251115132125"
+        },
+        "visual_review": true,
+        "mapping_result": "reviewed_P4_self_context_no_position_migration",
+        "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
       }
     },
     {
@@ -969,7 +1069,7 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_self_context_no_position_migration"
       },
       "migration_boundary": "本轮只保留“黑”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -1091,6 +1191,26 @@
         "visual_review_origin": "reused_prior_original_page_review",
         "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
         "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
+      },
+      "whole_character_context_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B12-B21-whole-character-context-sync.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration_status": "reviewed_P4_self_context_no_position_migration",
+        "position_migration_evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "data/evidence/B20-stroke-order-original-page.json",
+          "pdf_page": 334,
+          "printed_page": 328,
+          "table_no": "2655",
+          "ucs": "09ED1",
+          "whole_order_code": "254312114444"
+        },
+        "visual_review": true,
+        "mapping_result": "reviewed_P4_self_context_no_position_migration",
+        "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
       }
     },
     {
@@ -1149,7 +1269,7 @@
         "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
         "component_name": "source_blocked_fail_closed_GF0011_2022_exact_name_not_publicly_released",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_self_context_no_position_migration"
       },
       "migration_boundary": "本轮只保留“黍”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -1306,6 +1426,26 @@
         "visual_review_origin": "reused_prior_original_page_review",
         "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
         "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
+      },
+      "whole_character_context_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B12-B21-whole-character-context-sync.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration_status": "reviewed_P4_self_context_no_position_migration",
+        "position_migration_evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "data/evidence/B20-stroke-order-original-page.json",
+          "pdf_page": 338,
+          "printed_page": 332,
+          "table_no": "5202",
+          "ucs": "09ECD",
+          "whole_order_code": "312343424134"
+        },
+        "visual_review": true,
+        "mapping_result": "reviewed_P4_self_context_no_position_migration",
+        "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
       }
     },
     {
@@ -1365,7 +1505,7 @@
         "pronunciation": "reviewed_S06_GF0015_2010_target_self_pronunciation",
         "component_name": "source_blocked_fail_closed_GF0011_2022_exact_name_not_publicly_released",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_self_context_no_position_migration"
       },
       "migration_boundary": "本轮只保留“鼓”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -1504,6 +1644,26 @@
         "visual_review_origin": "reused_prior_original_page_review",
         "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
         "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
+      },
+      "whole_character_context_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B12-B21-whole-character-context-sync.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration_status": "reviewed_P4_self_context_no_position_migration",
+        "position_migration_evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "data/evidence/B20-stroke-order-original-page.json",
+          "pdf_page": 367,
+          "printed_page": 361,
+          "table_no": "2837",
+          "ucs": "09F13",
+          "whole_order_code": "1212514311254"
+        },
+        "visual_review": true,
+        "mapping_result": "reviewed_P4_self_context_no_position_migration",
+        "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
       }
     },
     {
@@ -1562,7 +1722,7 @@
         "pronunciation": "reviewed_S06_GF0015_2010_target_self_pronunciation",
         "component_name": "source_blocked_fail_closed_GF0011_2022_exact_name_not_publicly_released",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_self_context_no_position_migration"
       },
       "migration_boundary": "本轮只保留“鼠”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -1700,6 +1860,26 @@
         "visual_review_origin": "reused_prior_original_page_review",
         "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
         "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
+      },
+      "whole_character_context_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B12-B21-whole-character-context-sync.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration_status": "reviewed_P4_self_context_no_position_migration",
+        "position_migration_evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "data/evidence/B20-stroke-order-original-page.json",
+          "pdf_page": 391,
+          "printed_page": 385,
+          "table_no": "2958",
+          "ucs": "09F20",
+          "whole_order_code": "3215115445445"
+        },
+        "visual_review": true,
+        "mapping_result": "reviewed_P4_self_context_no_position_migration",
+        "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
       }
     },
     {
@@ -1760,7 +1940,7 @@
         "pronunciation": "reviewed_S06_GF0015_2010_morpheme_pronunciation",
         "component_name": "source_blocked_fail_closed_GF0011_2022_exact_name_not_publicly_released",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_self_context_no_position_migration"
       },
       "migration_boundary": "本轮只保留“鼻”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -1901,6 +2081,26 @@
         "visual_review_origin": "reused_prior_original_page_review",
         "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
         "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
+      },
+      "whole_character_context_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B12-B21-whole-character-context-sync.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration_status": "reviewed_P4_self_context_no_position_migration",
+        "position_migration_evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "data/evidence/B20-stroke-order-original-page.json",
+          "pdf_page": 432,
+          "printed_page": 426,
+          "table_no": "3128",
+          "ucs": "09F3B",
+          "whole_order_code": "32511125121132"
+        },
+        "visual_review": true,
+        "mapping_result": "reviewed_P4_self_context_no_position_migration",
+        "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
       }
     }
   ],
