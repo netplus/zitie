@@ -35,3 +35,22 @@
 - 正式结构分类和位置迁移整字核验。
 
 本记录只授予baseline字段reviewed，不授予content_ready、artwork、PDF或release结论。
+
+## 2026-10-06 Unicode 18.0 RS二级身份定位
+
+来源：Unicode 18.0.0 `RSIndex.txt`（Unihan Radical-Stroke Index Collation Data，源文件日期2026-07-30）。本节逐项按Unicode标量值精确定位RS记录；仅作为`target_identity`的二级Unicode/RS交叉证据，**不替代GF0011—2022对201主部首身份、主附关系、名称或编码的正式裁决**。
+
+| 主项 | Unicode | RS记录 | RS列 | 结论 |
+|---|---|---|---|---|
+| 非 | U+975E | 175.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 齿 | U+9F7F | 211.0 | chinese_simplified_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 黾 | U+9EFE | 205.0 | chinese_simplified_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 隹 | U+96B9 | 172.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 阜 | U+961C | 170.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 金 | U+91D1 | 167.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 鱼 | U+9C7C | 195.0 | chinese_simplified_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 隶 | U+96B6 | 171.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 革 | U+9769 | 177.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 面 | U+9762 | 176.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+
+源文件：https://www.unicode.org/Public/18.0.0/charts/RSIndex.txt 。RSIndex为分号分隔文本：第1列是radical-stroke pair，第2—5列依次为traditional、Chinese simplified、non-Chinese simplified、secondary non-Chinese simplified排序列。本节不支持笔顺、细笔名、部件名称或位置变体结论。
