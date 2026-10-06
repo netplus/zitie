@@ -1,6 +1,6 @@
 # 当前编写状态
 
-更新：2026-10-06。工程处于“阶段1：内容覆盖优先”，当前活动阶段为P3其它字段扫尾。
+更新：2026-10-06。工程处于“阶段1：内容覆盖优先”，当前活动阶段为P4：GF0011—2022精确身份与位置迁移。
 
 ## 当前阶段
 
@@ -351,3 +351,20 @@ P2细笔名规范原页收口已达到阶段退出条件。B04—B21共171项最
 `reviews/P3-structure-GF3001-synthesis-20261006.md`。
 
 P3当前剩余主吞吐：pronunciation；component_name普通缺口仅B21龠1项。P4路由项不计作P3普通pending，也不冒充reviewed。
+
+
+## P3完成并切换P4（2026-10-06）
+
+P3 `pronunciation / component_name / structure` 已达到阶段退出条件，B04—B21三个字段普通pending全部归零：
+
+- **pronunciation**：126 reviewed、11 conflict_fail_closed、34 not_applicable、0普通pending；
+- **component_name**：143 reviewed、28项完成S03适用性审读后转P4 GF0011—2022精确名称门槛、0普通pending；
+- **structure**：134 reviewed、37项非GF0023精确目标转P4精确身份/主附关系门槛、0普通pending。
+
+本轮pronunciation关键新增：S06/GF0015—2010正式扫描件已通过source-probe run `37449756736`、artifact `11406995313`恢复并强校验（19,262,366字节、157页、SHA256 `0d647e1378847480364e2603030fe6aa6102d99320c42cac631b2fb3155d18ce`）。25个GF0023精确规范字完成原页核验，14项取得直接字条/明确词素读音，11项在初中高三级对应拼音区间均无目标证据而fail-closed。34个部件型项目收口为当前教学表面pronunciation不适用。
+
+B21龠完成S03主体表序号1—514全表排除审读，未见精确独立名称条目，component_name正式转P4而不标reviewed。
+
+证据：`data/evidence/P3-pronunciation-GF0015-original-page.json`、`data/evidence/P3-pronunciation-nonlexical-component-not-applicable.json`、`data/evidence/B21-component-name-S03-applicability.json`、`reviews/P3-completion-20261006.md`。
+
+当前活动阶段正式切换为 **P4：GF0011—2022精确身份、主形/附形、名称、编码与位置迁移**。P1/P2/P3完成不改变content_ready总数，也不表示artwork、PDF、manifest、CI或release完成。
