@@ -13,8 +13,9 @@ GF3003—1999, 《GB13000.1字符集汉字字序（笔画序）规范》, is a n
 
 - Ministry of Education publication metadata for GF3003—1999 is publicly discoverable and lists an attachment.
 - Qinghai Normal University and Baoji University of Arts and Sciences publicly list GF3002/GF3003 attachments, but their attachment endpoints require a CAPTCHA. No attempt was made to bypass that control.
-- Wikisource exposes an index for GF3003, but the available scan has only 8 page images and is therefore treated as abridged/incomplete for P1.
-- The pinned public repository used for other normative references lists a GF3003 PDF at commit d26705ffc52b81b6e1a45483c7b591f62962f49f. Completeness, byte size, page count and SHA256 have not yet been verified.
+- The Ministry metadata page lists a GF3003 PDF attachment. The Wikimedia/Wikisource copy explicitly identifies that Ministry attachment as its source; that PDF is only 8 pages / 7,651,554 bytes. It is therefore an abridged online attachment, not the full table required for P1 closure.
+- Google Books bibliographic metadata for the Shanghai Education Press edition reports 725 pages and states that the work contains the 20,902-character order table. This is bibliographic confirmation of the expected full extent, not an admissible review copy.
+- The pinned public repository used for other normative references lists a GF3003 PDF at commit d26705ffc52b81b6e1a45483c7b591f62962f49f. Its completeness, byte size, page count and SHA256 have not yet been verified; do not assume it is the 725-page edition.
 
 ## Editorial status
 
