@@ -1643,6 +1643,34 @@
         "verified_sha256": "cb5cb74f108dafed41a3583bc8d33d8dd318d1a21d714923c0f1ced89443cf3e",
         "rule": "artifact recovery/hash verification alone does not mark pages or fields reviewed"
       }
+    },
+    {
+      "id": "S09",
+      "title": "信息技术 汉字编码字符集 汉字部首序和笔顺序：附录C 汉字笔顺序",
+      "publication_id": "GB/T 25741—2010",
+      "publisher": "国家标准",
+      "status": "formal_normative_appendix_original_pages_reviewed",
+      "sha256": "0514f50e310ae2eb32a743a3813d2630be9accec28b8bf244b06499d1d737baf",
+      "git_blob_sha": "002f83b2431ffd1128fa9969e3a35898ee8ff2a2",
+      "pdf_pages": 323,
+      "reviewed_pdf_pages": [
+        1,
+        2,
+        3,
+        7,
+        9,
+        10,
+        12,
+        18,
+        26,
+        35,
+        74,
+        80
+      ],
+      "checked_at": "2026-10-06",
+      "provenance": "固定公开Git blob经Actions临时artifact恢复；P1逐项目标行实际原页视觉审读。",
+      "limits": "仅关闭实际定位并视觉核验的stroke_order目标行；不外推其它字段。",
+      "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json"
     }
   ]
 }
