@@ -14,8 +14,8 @@
         "部分名称"
       ],
       "url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202211/t20221118_995332.html",
-      "status": "official_release_notice_main_set_continuity_reviewed_fulltext_pending",
-      "limits": "官方发布说明确认保持原有201个主部首，并说明附形、名称和国际编码有修订；可支持主部首集合连续性，不替代2022正式全文逐项字形/附形/名称/编码核验。",
+      "status": "official_notice_reviewed_item_level_source_blocked_fail_closed",
+      "limits": "官方发布说明仅支持201主部首集合连续性及修订范围概要；不提供逐项2022主形/附形/名称/编码。逐项字段已在P4按source_blocked_fail_closed收口，不得从2009版或IRG混合来源反推。",
       "checked_at": "2026-10-06",
       "P4_main_set_continuity": {
         "scope": "B04-B11",
@@ -24,6 +24,13 @@
         "evidence": "data/evidence/P4-B04-B11-main-radical-identity-continuity.json",
         "access_audit": "sources/reviews/P4-GF0011-2022-public-access-audit-20261006.json",
         "boundary": "Exact 2022 glyph/attached-form/name/code fields remain pending."
+      },
+      "P4_completion": {
+        "main_radical_membership_continuity": "201/201 reviewed",
+        "exact_item_fields": "201/201 source_blocked_fail_closed",
+        "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+        "completion_review": "reviews/P4-completion-20261006.md",
+        "reopen_condition": "formal GF0011—2022 table or equivalent official item-level dataset becomes repeatably accessible"
       }
     },
     {
