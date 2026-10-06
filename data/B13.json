@@ -945,7 +945,7 @@
       "main_id": 126,
       "stroke_count": 6,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
-      "order_code_candidate": null,
+      "order_code_candidate": "125221",
       "stroke_names_candidate": null,
       "tips": [
         "覀属于非成字形态，先按六画基线主项定位；不得用相近“西”直接替代。",
@@ -972,7 +972,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_cjklib_only_locator_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -986,8 +986,7 @@
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待GF2001/GF0023/S04等适用规范原页",
-        "cnchar未覆盖但cjklib提供逐笔细类locator；仅作二次补缺，仍须规范原页review",
-        "GF0023—2020原页已按笔顺码排序邻接区间核对，未见精确目标条目；stroke_order转S04/其它适用规范继续关闭"
+        "cnchar未覆盖但cjklib提供逐笔细类locator；仅作二次补缺，仍须规范原页review"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1070,21 +1069,17 @@
         }
       },
       "stroke_order_review": {
-        "source_id": "S02",
-        "publication_id": "GF0023—2020",
-        "evidence": "data/evidence/B13-stroke-order-original-page.json",
-        "reviewed_pdf_pages": [
-          28
-        ],
-        "secondary_candidate_order_code": "125221",
-        "sort_gap_review": {
-          "previous_table_no": "0382",
-          "previous_order_code": "125211",
-          "next_table_no": "0383",
-          "next_order_code": "125344"
-        },
-        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
-        "limits": "按GF0023笔顺码排序邻接区间查看规范原页，未见精确目标条目；不据此判定该目标没有规范笔顺，转S04/其它适用规范继续关闭。"
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 12,
+        "printed_page": 322,
+        "table_sequence": 933,
+        "stroke_count": 6,
+        "order_code": "125221",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
       }
     },
     {
@@ -1605,7 +1600,7 @@
       "main_id": 130,
       "stroke_count": 6,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
-      "order_code_candidate": null,
+      "order_code_candidate": "215315",
       "stroke_names_candidate": null,
       "tips": [
         "先认识虍的六画上包围轮廓；折钩类笔形和时序必须由原页核验。",
@@ -1632,7 +1627,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "secondary_two_source_fine_stroke_names_compatible_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -1646,8 +1641,7 @@
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "fine_stroke_names已取得cnchar二次逐笔序列，但源自身存在同码双名；须回GF2001/GF0023/S04原页裁决",
-        "fine_stroke_names在两套二次数据中兼容，仅存在如“撇/竖撇”的粒度差异；仍须规范原页裁决",
-        "GF0023—2020原页已按笔顺码排序邻接区间核对，未见精确目标条目；stroke_order转S04/其它适用规范继续关闭"
+        "fine_stroke_names在两套二次数据中兼容，仅存在如“撇/竖撇”的粒度差异；仍须规范原页裁决"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1786,21 +1780,17 @@
         }
       },
       "stroke_order_review": {
-        "source_id": "S02",
-        "publication_id": "GF0023—2020",
-        "evidence": "data/evidence/B13-stroke-order-original-page.json",
-        "reviewed_pdf_pages": [
-          29
-        ],
-        "secondary_candidate_order_code": "215315",
-        "sort_gap_review": {
-          "previous_table_no": "0412",
-          "previous_order_code": "212534",
-          "next_table_no": "0413",
-          "next_order_code": "231252"
-        },
-        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
-        "limits": "按GF0023笔顺码排序邻接区间查看规范原页，未见精确目标条目；不据此判定该目标没有规范笔顺，转S04/其它适用规范继续关闭。"
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 12,
+        "printed_page": 322,
+        "table_sequence": 1001,
+        "stroke_count": 6,
+        "order_code": "215315",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
       }
     }
   ],
