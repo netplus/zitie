@@ -74,15 +74,14 @@
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
-        "component_name": "pending_S03_target_row",
+        "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "本轮只保留“龠”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
-        "pronunciation已按S03+GF0015原页审读收口为conflict_fail_closed；仅在取得适用权威读音来源或P4精确身份规则后重开"
+        "pronunciation已按S03+GF0015原页审读收口为conflict_fail_closed；仅在取得适用权威读音来源或P4精确身份规则后重开",
+        "component_name已完成P3 S03完整主体表排除审读并转P4 GF0011—2022精确名称门槛；当前不标reviewed"
       ],
       "stroke_order_review": {
         "source_id": "S02",
@@ -172,6 +171,13 @@
         ],
         "visual_review": true,
         "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+      },
+      "component_name_status": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
+      "component_name_resolution": {
+        "phase": "P3",
+        "evidence": "data/evidence/B21-component-name-S03-applicability.json",
+        "result": "S03_reviewed_no_exact_standalone_row_deferred_P4_GF0011_2022_exact_name_gate",
+        "boundary": "Complete GF0014—2009 component-name main table reviewed; no exact 龠 row. P4 GF0011—2022 exact target identity/name evidence required."
       }
     }
   ],
