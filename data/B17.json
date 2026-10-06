@@ -4,7 +4,7 @@
   "batch_id": "B17",
   "version": "content-draft-2026-10-06",
   "title": "七八画常用部件与迁移",
-  "content_status": "in_progress",
+  "content_status": "content_ready",
   "artwork_status": "deferred",
   "publication_status": "deferred",
   "scope_frozen_for_content": true,
@@ -2869,5 +2869,12 @@
   "stroke_order_secondary_locator_evidence": "data/evidence/B17-stroke-order-secondary-locator.json",
   "fine_stroke_names_secondary_locator_evidence": "data/evidence/B17-fine-stroke-names-secondary-locator.json",
   "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B17-fine-stroke-names-d04-crosscheck.json",
-  "stroke_order_original_page_evidence": "data/evidence/B17-stroke-order-original-page.json"
+  "stroke_order_original_page_evidence": "data/evidence/B17-stroke-order-original-page.json",
+  "content_ready_review": {
+    "phase": "P5",
+    "date": "2026-10-07",
+    "evidence": "data/evidence/P5-B13-B21-final-content-acceptance.json",
+    "result": "accepted_P5_content_ready",
+    "limits": "Content acceptance only; artwork/layout/PDF/manifest/CI publication/release remain separate later-stage gates."
+  }
 }
