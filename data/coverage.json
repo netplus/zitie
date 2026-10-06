@@ -855,7 +855,7 @@
     ],
     "next_assignment_starts_at": null,
     "next_work": "P2_fine_stroke_names_normative_original_page_closure",
-    "note": "P3 active. structure round progressed 100 distinct main items: 63 GF0023 exact standard-character targets closed via S07+GF3001 published normative-set synthesis (15 undecomposable, 48 decomposable); 37 non-GF0023 component-like targets routed to P4 exact identity/main-variant gate without being marked structure reviewed. Ordinary P3 structure gap is now 0. component_name ordinary gap remains B21 龠 only; pronunciation remains the main P3 workload. content_ready remains B01-B03.",
+    "note": "P3 completed for B04-B21: pronunciation 126 reviewed + 11 fail-closed + 34 not-applicable; component_name 143 reviewed + 28 deferred to P4 exact-name gate; structure 134 reviewed + 37 deferred to P4 exact-identity gate. All three P3 fields have 0 ordinary pending. P4 is now active for GF0011—2022 exact identity/name/main-variant relations and position migration. content_ready remains B01-B03.",
     "stroke_order_reviewed_main_count": 201,
     "stroke_order_pending_main_count": 0,
     "active_remaining_phase": "P2",
@@ -869,24 +869,30 @@
       "completion_review": "reviews/P2-completion-20261006.md"
     },
     "p3_other_fields": {
-      "status": "in_progress",
-      "component_name_round1": {
-        "progressed_main_count": 47,
-        "reviewed_from_existing_S03_original_page_evidence": 20,
-        "deferred_to_P4_exact_name_gate": 27,
-        "ordinary_component_name_P3_gap_remaining": 1,
-        "review": "reviews/P3-round1-component-name-20261006.md"
+      "status": "completed",
+      "completed_at": "2026-10-06",
+      "pronunciation": {
+        "reviewed": 126,
+        "conflict_fail_closed": 11,
+        "not_applicable": 34,
+        "ordinary_pending": 0,
+        "evidence": [
+          "data/evidence/P3-pronunciation-GF0015-original-page.json",
+          "data/evidence/P3-pronunciation-nonlexical-component-not-applicable.json"
+        ]
       },
-      "structure_round2": {
-        "progressed_main_count": 100,
-        "reviewed_standard_character_targets": 63,
-        "reviewed_undecomposable_GF3001": 15,
-        "reviewed_decomposable_combined_S07_GF3001": 48,
+      "component_name": {
+        "reviewed": 143,
+        "deferred_to_P4_exact_name_gate": 28,
+        "ordinary_pending": 0
+      },
+      "structure": {
+        "reviewed": 134,
         "deferred_to_P4_exact_identity_gate": 37,
-        "ordinary_structure_P3_gap_remaining": 0,
-        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
-        "review": "reviews/P3-structure-GF3001-synthesis-20261006.md"
-      }
+        "ordinary_pending": 0,
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json"
+      },
+      "completion_review": "reviews/P3-completion-20261006.md"
     }
   }
 }
