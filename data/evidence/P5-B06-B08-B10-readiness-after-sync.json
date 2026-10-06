@@ -1,0 +1,298 @@
+{
+  "schema_version": 1,
+  "record_kind": "P5_batch_readiness_after_sync_audit",
+  "phase": "P5",
+  "reviewed_at": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "scope": {
+    "batches": [
+      "B06",
+      "B08",
+      "B10"
+    ],
+    "target_count": 30
+  },
+  "method": "Re-evaluate ordinary canonical blockers while crediting only P5 synchronization evidence already persisted on this branch; no canonical status is changed by this record.",
+  "entries": [
+    {
+      "batch_id": "B06",
+      "character": "厂",
+      "main_id": 7,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B06",
+      "character": "匚",
+      "main_id": 8,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B06",
+      "character": "卜",
+      "main_id": 9,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B06",
+      "character": "冂",
+      "main_id": 10,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B06",
+      "character": "勹",
+      "main_id": 13,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B06",
+      "character": "儿",
+      "main_id": 14,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B06",
+      "character": "匕",
+      "main_id": 15,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B06",
+      "character": "几",
+      "main_id": 16,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B06",
+      "character": "亠",
+      "main_id": 17,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B06",
+      "character": "冫",
+      "main_id": 18,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B08",
+      "character": "丨",
+      "main_id": 2,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B08",
+      "character": "丿",
+      "main_id": 3,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B08",
+      "character": "丶",
+      "main_id": 4,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B08",
+      "character": "乛",
+      "main_id": 5,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B08",
+      "character": "尢",
+      "main_id": 34,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": "data/evidence/P5-B08-stroke-count-sync.json",
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B08",
+      "character": "弋",
+      "main_id": 35,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": "data/evidence/P5-B08-stroke-count-sync.json",
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B08",
+      "character": "囗",
+      "main_id": 38,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": "data/evidence/P5-B08-stroke-count-sync.json",
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B08",
+      "character": "彳",
+      "main_id": 41,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": "data/evidence/P5-B08-stroke-count-sync.json",
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B08",
+      "character": "彡",
+      "main_id": 42,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": "data/evidence/P5-B08-stroke-count-sync.json",
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B08",
+      "character": "夂",
+      "main_id": 44,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": "data/evidence/P5-B08-stroke-count-sync.json",
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B10",
+      "character": "丬",
+      "main_id": 45,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B10",
+      "character": "幺",
+      "main_id": 59,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B10",
+      "character": "攴",
+      "main_id": 74,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B10",
+      "character": "氏",
+      "main_id": 89,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B10",
+      "character": "欠",
+      "main_id": 90,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B10",
+      "character": "风",
+      "main_id": 91,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B10",
+      "character": "方",
+      "main_id": 94,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B10",
+      "character": "斗",
+      "main_id": 96,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B10",
+      "character": "户",
+      "main_id": 97,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    },
+    {
+      "batch_id": "B10",
+      "character": "心",
+      "main_id": 98,
+      "teaching_text_sync_evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+      "stroke_count_sync_evidence": null,
+      "residual_ordinary_blockers": [],
+      "result": "eligible_after_persisted_P5_sync"
+    }
+  ],
+  "summary": {
+    "target_count": 30,
+    "eligible_after_persisted_sync": 30,
+    "still_blocked": 0
+  },
+  "limits": [
+    "Eligibility here is not content_ready until canonical synchronization and final batch acceptance are written.",
+    "No new normative source review is introduced."
+  ]
+}
