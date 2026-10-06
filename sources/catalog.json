@@ -14,8 +14,17 @@
         "部分名称"
       ],
       "url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202211/t20221118_995332.html",
-      "status": "notice_located_fulltext_pending",
-      "limits": "发布说明确认保持201主部首；不替代2022正文逐项核验。"
+      "status": "official_release_notice_main_set_continuity_reviewed_fulltext_pending",
+      "limits": "官方发布说明确认保持原有201个主部首，并说明附形、名称和国际编码有修订；可支持主部首集合连续性，不替代2022正式全文逐项字形/附形/名称/编码核验。",
+      "checked_at": "2026-10-06",
+      "P4_main_set_continuity": {
+        "scope": "B04-B11",
+        "target_count": 80,
+        "result": "80/80 main-radical membership and project main_id continuity reviewed",
+        "evidence": "data/evidence/P4-B04-B11-main-radical-identity-continuity.json",
+        "access_audit": "sources/reviews/P4-GF0011-2022-public-access-audit-20261006.json",
+        "boundary": "Exact 2022 glyph/attached-form/name/code fields remain pending."
+      }
     },
     {
       "id": "S01-2009",

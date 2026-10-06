@@ -368,3 +368,24 @@ B21龠完成S03主体表序号1—514全表排除审读，未见精确独立名�
 证据：`data/evidence/P3-pronunciation-GF0015-original-page.json`、`data/evidence/P3-pronunciation-nonlexical-component-not-applicable.json`、`data/evidence/B21-component-name-S03-applicability.json`、`reviews/P3-completion-20261006.md`。
 
 当前活动阶段正式切换为 **P4：GF0011—2022精确身份、主形/附形、名称、编码与位置迁移**。P1/P2/P3完成不改变content_ready总数，也不表示artwork、PDF、manifest、CI或release完成。
+
+
+## P4第一轮：B04—B11主部首身份连续性（2026-10-06）
+
+本轮实际推进**80个不同主部首**。教育部/国家语委2022年发布说明明确GF0011—2022为2009版修订，并“保持原有201个主部首”，修订重点包括附形部首增补微调、部分常用部首名称与信息处理国际编码。
+
+结合已实际审读的GF0011—2009主表，B04—B11八批80项的`target_identity`已从笼统的`baseline_2009_reviewed_2022_pending`细化为：
+
+`P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending`
+
+已关闭：201主部首集合成员身份连续性、项目固定main_id连续性。  
+仍pending：2022精确主形字形、正式附形/从属形、常用名称、信息处理国际编码。
+
+本轮没有宣称取得GF0011—2022完整正文。公开访问审计确认：官方发布说明可重复访问，但尚未定位可重复公开获取的正式全文；Unicode/IRG材料可证明2022规范已被中国部件工作使用，但不替代逐项正文。因此该问题记为**source blocker（仅针对2022逐项精确字段）**，不阻塞P4位置迁移或后续批次的主部首身份连续性复核。
+
+证据：
+- `data/evidence/P4-B04-B11-main-radical-identity-continuity.json`
+- `reviews/P4-B04-B11-main-identity-continuity.md`
+- `sources/reviews/P4-GF0011-2022-public-access-audit-20261006.json`
+
+P4下一轮按计划推进B12—B19 80项；同时可独立处理位置迁移，不等待2022全文。

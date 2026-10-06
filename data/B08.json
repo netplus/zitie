@@ -46,7 +46,7 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "structure": "deferred_P4_exact_target_identity_before_structure",
         "stroke_count": "reviewed_GF3002_1999_original_page",
         "stroke_order": "reviewed_GF3002_1999_original_page",
@@ -58,7 +58,7 @@
       },
       "migration_boundary": "“中”只作为整字语境；本项不从单笔部首外推整字全部笔顺。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
       ],
       "structure_review": {
@@ -137,6 +137,15 @@
         "evidence": "data/evidence/P3-pronunciation-nonlexical-component-not-applicable.json",
         "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B11-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 2,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -172,7 +181,7 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "structure": "deferred_P4_exact_target_identity_before_structure",
         "stroke_count": "reviewed_GF3002_1999_original_page",
         "stroke_order": "reviewed_GF3002_1999_original_page",
@@ -184,7 +193,7 @@
       },
       "migration_boundary": "“千”仅用于观察撇在整字中的位置；整字笔顺另核。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
       ],
       "structure_review": {
@@ -263,6 +272,15 @@
         "evidence": "data/evidence/P3-pronunciation-nonlexical-component-not-applicable.json",
         "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B11-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 3,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -298,7 +316,7 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "structure": "deferred_P4_exact_target_identity_before_structure",
         "stroke_count": "reviewed_GF3002_1999_original_page",
         "stroke_order": "reviewed_GF3002_1999_original_page",
@@ -310,7 +328,7 @@
       },
       "migration_boundary": "“主”仅用于观察点的位置；整字其余笔画不由本项推导。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
       ],
       "structure_review": {
@@ -389,6 +407,15 @@
         "evidence": "data/evidence/P3-pronunciation-nonlexical-component-not-applicable.json",
         "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B11-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 4,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -424,7 +451,7 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "structure": "deferred_P4_exact_target_identity_before_structure",
         "stroke_count": "reviewed_GF3002_1999_original_page",
         "stroke_order": "reviewed_GF3002_1999_original_page",
@@ -436,7 +463,7 @@
       },
       "migration_boundary": "“买”作为横钩语境；是否与GF0011目标字形完全对应仍待原件核验。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
       ],
       "structure_review": {
@@ -515,6 +542,15 @@
         "evidence": "data/evidence/P3-pronunciation-nonlexical-component-not-applicable.json",
         "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B11-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 5,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -552,7 +588,7 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "structure": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "reviewed_GF0023_2020_original_page",
@@ -564,7 +600,7 @@
       },
       "migration_boundary": "“尬”只作迁移语境；尢在整字中的形态和占位需回整字核验。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "pronunciation已按S03+GF0015原页审读收口为conflict_fail_closed；仅在取得适用权威读音来源或P4精确身份规则后重开"
       ],
       "structure_review": {
@@ -723,6 +759,15 @@
         ],
         "visual_review": true,
         "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B11-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 34,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -760,7 +805,7 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "structure": "reviewed_P3_GF3001_1997_undecomposable_via_published_membership_synthesis",
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "reviewed_GF0023_2020_original_page",
@@ -772,7 +817,7 @@
       },
       "migration_boundary": "“式”用于观察弋与内部部件关系；整字时序另核。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "pronunciation已按S03+GF0015原页审读收口为conflict_fail_closed；仅在取得适用权威读音来源或P4精确身份规则后重开"
       ],
       "structure_review": {
@@ -933,6 +978,15 @@
         ],
         "visual_review": true,
         "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B11-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 35,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -970,7 +1024,7 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "structure": "deferred_P4_exact_target_identity_before_structure",
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
@@ -982,7 +1036,7 @@
       },
       "migration_boundary": "“国”必须保存完整整字时序；第三笔封口位置不能仅按部件自写顺序处理。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
       ],
       "structure_review": {
@@ -1116,6 +1170,15 @@
         "evidence": "data/evidence/P3-pronunciation-nonlexical-component-not-applicable.json",
         "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B11-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 38,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -1153,7 +1216,7 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "structure": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "reviewed_GF0023_2020_original_page",
@@ -1165,7 +1228,7 @@
       },
       "migration_boundary": "“很”只作左旁语境；两撇具体位置和整字比例待整字核验。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "pronunciation已按S03+GF0015原页审读收口为conflict_fail_closed；仅在取得适用权威读音来源或P4精确身份规则后重开"
       ],
       "structure_review": {
@@ -1273,6 +1336,15 @@
         ],
         "visual_review": true,
         "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B11-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 41,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -1310,7 +1382,7 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "structure": "deferred_P4_exact_target_identity_before_structure",
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
@@ -1322,7 +1394,7 @@
       },
       "migration_boundary": "“形”用于观察右旁位置；不从字体连带视觉推导合笔。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
       ],
       "structure_review": {
@@ -1407,6 +1479,15 @@
         "evidence": "data/evidence/P3-pronunciation-nonlexical-component-not-applicable.json",
         "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B11-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 42,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -1444,7 +1525,7 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "structure": "deferred_P4_exact_target_identity_before_structure",
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
@@ -1456,7 +1537,7 @@
       },
       "migration_boundary": "“条”只作上部语境；夂与相近部件夊的区别后续单列核验。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
       ],
       "structure_review": {
@@ -1541,6 +1622,15 @@
         "evidence": "data/evidence/P3-pronunciation-nonlexical-component-not-applicable.json",
         "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B11-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 44,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     }
   ],
