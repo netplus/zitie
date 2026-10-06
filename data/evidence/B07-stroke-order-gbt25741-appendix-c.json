@@ -1,0 +1,160 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_original_page_review",
+  "phase": "P1",
+  "batch_id": "B07",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S09",
+    "publication_id": "GB/T 25741—2010",
+    "appendix": "C（规范性附录：汉字笔顺序）",
+    "sha256": "0514f50e310ae2eb32a743a3813d2630be9accec28b8bf244b06499d1d737baf",
+    "bytes": 43054573,
+    "pages": 323,
+    "evidence_ledger": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json"
+  },
+  "reviewed_field": "stroke_order",
+  "entries": [
+    {
+      "batch_id": "B07",
+      "character": "冖",
+      "main_id": 19,
+      "pdf_page": 1,
+      "printed_page": 311,
+      "table_sequence": 45,
+      "stroke_count": 2,
+      "order_code": "45",
+      "visual_review": true,
+      "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+      "canonical_candidate_match": true
+    },
+    {
+      "batch_id": "B07",
+      "character": "凵",
+      "main_id": 20,
+      "pdf_page": 1,
+      "printed_page": 311,
+      "table_sequence": 48,
+      "stroke_count": 2,
+      "order_code": "52",
+      "visual_review": true,
+      "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+      "canonical_candidate_match": true
+    },
+    {
+      "batch_id": "B07",
+      "character": "卩",
+      "main_id": 21,
+      "pdf_page": 1,
+      "printed_page": 311,
+      "table_sequence": 50,
+      "stroke_count": 2,
+      "order_code": "52",
+      "visual_review": true,
+      "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+      "canonical_candidate_match": true
+    },
+    {
+      "batch_id": "B07",
+      "character": "厶",
+      "main_id": 25,
+      "pdf_page": 1,
+      "printed_page": 311,
+      "table_sequence": 57,
+      "stroke_count": 2,
+      "order_code": "54",
+      "visual_review": true,
+      "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+      "canonical_candidate_match": true
+    },
+    {
+      "batch_id": "B07",
+      "character": "廴",
+      "main_id": 26,
+      "pdf_page": 1,
+      "printed_page": 311,
+      "table_sequence": 60,
+      "stroke_count": 2,
+      "order_code": "54",
+      "visual_review": true,
+      "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+      "canonical_candidate_match": true
+    },
+    {
+      "batch_id": "B07",
+      "character": "艹",
+      "main_id": 30,
+      "pdf_page": 2,
+      "printed_page": 312,
+      "table_sequence": 75,
+      "stroke_count": 3,
+      "order_code": "122",
+      "visual_review": true,
+      "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+      "canonical_candidate_match": true
+    },
+    {
+      "batch_id": "B07",
+      "character": "廾",
+      "main_id": 32,
+      "pdf_page": 2,
+      "printed_page": 312,
+      "table_sequence": 82,
+      "stroke_count": 3,
+      "order_code": "132",
+      "visual_review": true,
+      "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+      "canonical_candidate_match": true
+    },
+    {
+      "batch_id": "B07",
+      "character": "宀",
+      "main_id": 48,
+      "pdf_page": 2,
+      "printed_page": 312,
+      "table_sequence": 139,
+      "stroke_count": 3,
+      "order_code": "445",
+      "visual_review": true,
+      "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+      "canonical_candidate_match": true
+    },
+    {
+      "batch_id": "B07",
+      "character": "辶",
+      "main_id": 49,
+      "pdf_page": 2,
+      "printed_page": 312,
+      "table_sequence": 141,
+      "stroke_count": 3,
+      "order_code": "454",
+      "visual_review": true,
+      "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+      "canonical_candidate_match": true
+    },
+    {
+      "batch_id": "B07",
+      "character": "彐",
+      "main_id": 50,
+      "pdf_page": 2,
+      "printed_page": 312,
+      "table_sequence": 142,
+      "stroke_count": 3,
+      "order_code": "511",
+      "visual_review": true,
+      "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+      "canonical_candidate_match": true
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "reviewed_exact": 10,
+    "normative_order_conflicts": 0
+  },
+  "limits": [
+    "Only the exact Appendix C rows visually reviewed here are upgraded.",
+    "No other field is closed by this evidence."
+  ]
+}
