@@ -274,7 +274,7 @@
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
-      "pinyin": null,
+      "pinyin": "gǔ",
       "component_name": null,
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -292,14 +292,13 @@
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
-        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+        "pronunciation": "reviewed_S06_GF0015_2010_morpheme_pronunciation",
         "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed"
       ],
       "structure_review": {
@@ -309,12 +308,21 @@
         "structure_class": "decomposable",
         "membership_basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
-      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "pinyin_status": "reviewed_S06_GF0015_2010_morpheme_pronunciation",
       "pronunciation_review": {
-        "source_id": "S03",
-        "publication_id": "GF0014—2009",
-        "evidence": "data/evidence/B19-pronunciation.json",
-        "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
+        "phase": "P3",
+        "source_id": "S06",
+        "publication_id": "GF0015—2010",
+        "evidence": "data/evidence/P3-pronunciation-GF0015-original-page.json",
+        "result": "reviewed_S06_GF0015_2010_morpheme_pronunciation",
+        "adopted_pronunciation": "gǔ",
+        "pdf_page": 105,
+        "printed_page": 99,
+        "entry_no": 1034,
+        "evidence_word": "骨折",
+        "entry_pinyin": "gǔzhé",
+        "evidence_scope": "first_morpheme",
+        "visual_review": true
       },
       "stroke_order_secondary_locator": {
         "evidence": "data/evidence/B19-stroke-order-secondary-locator.json",
@@ -558,7 +566,7 @@
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
-      "pinyin": null,
+      "pinyin": "xiāng",
       "component_name": null,
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -576,14 +584,13 @@
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
-        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+        "pronunciation": "reviewed_S06_GF0015_2010_target_self_pronunciation",
         "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed"
       ],
       "structure_review": {
@@ -593,12 +600,21 @@
         "structure_class": "decomposable",
         "membership_basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
-      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "pinyin_status": "reviewed_S06_GF0015_2010_target_self_pronunciation",
       "pronunciation_review": {
-        "source_id": "S03",
-        "publication_id": "GF0014—2009",
-        "evidence": "data/evidence/B19-pronunciation.json",
-        "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
+        "phase": "P3",
+        "source_id": "S06",
+        "publication_id": "GF0015—2010",
+        "evidence": "data/evidence/P3-pronunciation-GF0015-original-page.json",
+        "result": "reviewed_S06_GF0015_2010_target_self_pronunciation",
+        "adopted_pronunciation": "xiāng",
+        "pdf_page": 51,
+        "printed_page": 45,
+        "entry_no": 1778,
+        "evidence_word": "香",
+        "entry_pinyin": "xiāng",
+        "evidence_scope": "direct_target_self",
+        "visual_review": true
       },
       "stroke_order_secondary_locator": {
         "evidence": "data/evidence/B19-stroke-order-secondary-locator.json",
@@ -1341,7 +1357,7 @@
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
-      "pinyin": null,
+      "pinyin": "yīn",
       "component_name": null,
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -1359,14 +1375,13 @@
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
-        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+        "pronunciation": "reviewed_S06_GF0015_2010_morpheme_pronunciation",
         "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed"
       ],
       "structure_review": {
@@ -1376,12 +1391,21 @@
         "structure_class": "decomposable",
         "membership_basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
-      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "pinyin_status": "reviewed_S06_GF0015_2010_morpheme_pronunciation",
       "pronunciation_review": {
-        "source_id": "S03",
-        "publication_id": "GF0014—2009",
-        "evidence": "data/evidence/B19-pronunciation.json",
-        "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
+        "phase": "P3",
+        "source_id": "S06",
+        "publication_id": "GF0015—2010",
+        "evidence": "data/evidence/P3-pronunciation-GF0015-original-page.json",
+        "result": "reviewed_S06_GF0015_2010_morpheme_pronunciation",
+        "adopted_pronunciation": "yīn",
+        "pdf_page": 53,
+        "printed_page": 47,
+        "entry_no": 1946,
+        "evidence_word": "音乐",
+        "entry_pinyin": "yīnyuè",
+        "evidence_scope": "first_morpheme",
+        "visual_review": true
       },
       "stroke_order_secondary_locator": {
         "evidence": "data/evidence/B19-stroke-order-secondary-locator.json",
