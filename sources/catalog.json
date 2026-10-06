@@ -1579,6 +1579,70 @@
         "method": "cjklib glyph0 primary row逐笔缩写经strokes.csv映射后，与D03/cnchar固定逐笔序列按名称归一化比较；仅将“竖撇/撇”等粒度差异判为兼容。",
         "limits": "两套二次数据一致仍不等于规范原页reviewed；二次源冲突全部fail-closed；D04无条目不回退已有D03状态。"
       }
+    },
+    {
+      "id": "S08",
+      "title": "GB 13000.1字符集汉字笔顺规范",
+      "publication_id": "GF3002—1999",
+      "publisher": "国家语言文字工作委员会",
+      "status": "formal_scan_acquired_selected_rows_reviewed_public_pdf_abridged",
+      "urls": [
+        "https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/201001/W020150902457900316281.pdf",
+        "https://api.github.com/repos/zispace/hanzi-docs/git/blobs/4500a72bce326385b08003197edb91c04f40c2d8"
+      ],
+      "sha256": "cb5cb74f108dafed41a3583bc8d33d8dd318d1a21d714923c0f1ced89443cf3e",
+      "git_blob_sha": "4500a72bce326385b08003197edb91c04f40c2d8",
+      "pdf_pages": 8,
+      "reviewed_pdf_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ],
+      "checked_at": "2026-10-06",
+      "provenance": "规范身份由教育部公开资料核对；实际审读字节来自固定commit的公开扫描镜像。镜像托管方不是规范发布者。",
+      "limits": "公开PDF仅实际印出主表序号1—134，随后明确标注“（略）”；因此只能为实际可见且逐项视觉核对的字条授予reviewed，不能把规范声明的20902字范围等同于本PDF已提供20902行全文。",
+      "P1_residual_visual_review": {
+        "date": "2026-10-06",
+        "characters": "丨丿丶乛丬",
+        "batches": [
+          "B08",
+          "B10"
+        ],
+        "exact_table_sequences": [
+          41,
+          64,
+          55,
+          92,
+          45
+        ],
+        "pdf_pages_reviewed": [
+          7,
+          8
+        ],
+        "printed_pages_reviewed": [
+          4,
+          5
+        ],
+        "result": "5/5 exact visible rows reviewed; 0 normative code conflicts",
+        "evidence": [
+          "data/evidence/B08-stroke-order-gf3002-original-page.json",
+          "data/evidence/B10-stroke-order-gf3002-original-page.json"
+        ],
+        "limits": "仅支持这5个GF3002公开PDF可见精确字条；其余residual不得由本删节PDF外推。"
+      },
+      "reproducible_access": {
+        "manifest": "sources/normative-access.json",
+        "workflow": ".github/workflows/source-probe.yml",
+        "probe_run_id": 37410985779,
+        "probe_artifact_id": 11389595541,
+        "verified_sha256": "cb5cb74f108dafed41a3583bc8d33d8dd318d1a21d714923c0f1ced89443cf3e",
+        "rule": "artifact recovery/hash verification alone does not mark pages or fields reviewed"
+      }
     }
   ]
 }
