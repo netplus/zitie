@@ -55,6 +55,8 @@ GF0023主表阶段已扫完B04—B21全部171项：**134/171 reviewed，37/171 r
 
 目标：关闭`fine_stroke_names`。
 
+当前进展（2026-10-06）：B04—B11首轮80项已完成GF2001—2001 + GF0023/GB/T 25741目标原页复核；**79/80 reviewed，牙1项 conflict_fail_closed，0普通pending**。欠第2笔裁决为横撇，风第2笔裁决为横斜钩，心第2笔裁决为卧钩；几/凵等secondary冲突已由规范原页关闭。证据：`data/evidence/P2-B04-B11-fine-stroke-names-original-page.json`、`reviews/P2-B04-B11-fine-stroke-names.md`。
+
 优先处理冲突集合：
 - 牙；
 - 几、凵、风、心；
