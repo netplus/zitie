@@ -5,7 +5,7 @@
   "version": "content-draft-2026-10-06",
   "title": "基础笔形与三画辨析",
   "content_status": "content_ready",
-  "artwork_status": "deferred",
+  "artwork_status": "artwork_ready",
   "publication_status": "deferred",
   "scope_frozen_for_content": true,
   "release_eligible": false,
@@ -2205,5 +2205,17 @@
     "evidence": "data/evidence/P5-B04-B12-final-content-acceptance.json",
     "result": "accepted_P5_content_ready",
     "limits": "Content acceptance only; artwork/layout/PDF/manifest/CI publication/release remain separate later-stage gates."
+  },
+  "artwork_review": {
+    "phase": "P6",
+    "status": "passed",
+    "reviewer": "ChatGPT",
+    "date": "2026-10-07",
+    "evidence": "data/evidence/P6-B08-artwork-review.json",
+    "vector_revision": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+    "workflow_run_id": 37548434948,
+    "artifact_id": 11452390328,
+    "method": "manual cumulative-stroke visual review from temporary P6 review-sheet artifact",
+    "limits": "Artwork review only. Final A4 layout, practice-grid composition, PDF archive/manifest and release remain independent."
   }
 }
