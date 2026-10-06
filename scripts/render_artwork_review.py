@@ -136,7 +136,7 @@ def render_batch(batch_id: str, outdir: Path) -> dict:
         c.setFont("Helvetica-Bold", 13)
         c.drawString(margin_x, H - 24, f"{batch_id}  item={entry_index:02d}  main_id={entry.get('main_id')}  U+{ord(ch):04X}")
         c.setFont("Helvetica", 9)
-        c.drawString(margin_x, H - 39, f"strokes={len(names)}  order_code={code}  vector_sha256={hashlib.sha256(raw).hexdigest()[:16]}...")
+        c.drawString(margin_x, H - 39, f"strokes={expected_count}  order_code={code}  vector_sha256={hashlib.sha256(raw).hexdigest()[:16]}...")
         c.setFont("Helvetica", 8)
         c.drawRightString(W - margin_x, H - 39, "FULL + cumulative steps; current=red previous=gray")
 
