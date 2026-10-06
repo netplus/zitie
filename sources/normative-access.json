@@ -78,6 +78,28 @@
         "sha256_match": true
       },
       "next_use": "P2 compound/folded stroke-name adjudication"
+    },
+    {
+      "source_id": "S06",
+      "publication_id": "GF3002—1999",
+      "title": "GB 13000.1字符集汉字笔顺规范",
+      "repo": "zispace/hanzi-docs",
+      "pinned_commit": "d26705ffc52b81b6e1a45483c7b591f62962f49f",
+      "path": "中国大陆/2-GF-语言文字规范/19991001-GF 3002-1999《GB13000.1字符集汉字笔顺规范》.pdf",
+      "bytes": 6730497,
+      "pages": 8,
+      "sha256": "cb5cb74f108dafed41a3583bc8d33d8dd318d1a21d714923c0f1ced89443cf3e",
+      "probe_2026_10_06": {
+        "run_id": 37410985779,
+        "artifact_id": 11389595541,
+        "result": "success",
+        "byte_hash_verified": true,
+        "visual_audit": "pages 1-8 rendered and inspected",
+        "finding": "mirror is an abridged extract: TOC points to normative body pp.4-343, but the file contains only 8 PDF pages and the sample table ends at item 134 with （略）"
+      },
+      "status": "verified_bytes_abridged_not_admissible_for_P1_residual_closure",
+      "limits": "Do not mark any of the fixed 37 P1 residual radicals reviewed from this mirror. A complete GF3002—1999 original or another applicable normative source is still required.",
+      "next_use": "source locator only; continue searching for a complete GF3002—1999 copy"
     }
   ],
   "reproducible_acquisition": {
@@ -116,5 +138,18 @@
       }
     ]
   },
-  "next_stage": "P1_stroke_order_original_page_closure"
+  "next_stage": "P1_stroke_order_original_page_closure",
+  "current_probe_run": {
+    "run_id": 37410985779,
+    "artifact_id": 11389595541,
+    "artifact_name": "normative-reference-acquisition",
+    "result": "success",
+    "observed_file": {
+      "name": "gf3002-1999.pdf",
+      "bytes": 6730497,
+      "pages": 8,
+      "sha256": "cb5cb74f108dafed41a3583bc8d33d8dd318d1a21d714923c0f1ced89443cf3e",
+      "editorial_status": "abridged_not_admissible_for_residual_review"
+    }
+  }
 }
