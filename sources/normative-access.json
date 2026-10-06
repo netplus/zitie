@@ -80,7 +80,7 @@
       "next_use": "P2 compound/folded stroke-name adjudication"
     },
     {
-      "source_id": "S06",
+      "source_id": "S08",
       "publication_id": "GF3002—1999",
       "title": "GB 13000.1字符集汉字笔顺规范",
       "repo": "zispace/hanzi-docs",
@@ -171,6 +171,27 @@
       "status": "official_identity_verified_pinned_blob",
       "review_boundary": "GF3001 authority supplies the basic-component definition. This run does not claim direct full-table original-page expansion through the connector; exact independent-character membership is crosschecked through published scholarly transcription A01.",
       "next_use": "P3 structure closure for GF0023 exact standard-character targets"
+    },
+    {
+      "source_id": "S06",
+      "publication_id": "GF0015—2010",
+      "title": "汉语国际教育用音节汉字词汇等级划分",
+      "repo": "zispace/hanzi-docs",
+      "pinned_commit": "d26705ffc52b81b6e1a45483c7b591f62962f49f",
+      "path": "中国大陆/2-GF-语言文字规范/20101019-GF 0015-2010《汉语国际教育用音节汉字词汇等级划分》.pdf",
+      "git_blob_sha": "13c76ed4c0dd835d356dd2c4c0504e050a576061",
+      "bytes": 19262366,
+      "pages": 157,
+      "sha256": "0d647e1378847480364e2603030fe6aa6102d99320c42cac631b2fb3155d18ce",
+      "acquisition": {
+        "run_id": 37449756736,
+        "artifact_id": 11406995313,
+        "artifact_name": "normative-reference-acquisition",
+        "result": "success"
+      },
+      "status": "verified_original_pages_reviewed_for_P3_pronunciation",
+      "evidence": "data/evidence/P3-pronunciation-GF0015-original-page.json",
+      "limits": "Recovery/hash verification alone does not grant pronunciation reviewed. P3 conclusions come from visually reviewed direct/morpheme entries or exhaustively reviewed pinyin ranges."
     }
   ],
   "reproducible_acquisition": {
@@ -209,7 +230,7 @@
       }
     ]
   },
-  "next_stage": "P3_other_content_fields_closure",
+  "next_stage": "P4_2022_identity_and_position_migration",
   "current_probe_run": {
     "run_id": 37410985779,
     "artifact_id": 11389595541,
@@ -223,5 +244,5 @@
       "editorial_status": "abridged_not_admissible_for_residual_review"
     }
   },
-  "current_active_stage": "P3"
+  "current_active_stage": "P4"
 }
