@@ -1,0 +1,1081 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_fine_stroke_names_secondary_independent_crosscheck",
+  "batch_id": "B13",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "source": {
+    "source_id": "D04",
+    "source_kind": "secondary_dataset",
+    "repository": "cburgmer/cjklib",
+    "ref": "master",
+    "strokeorder_file": "cjklib/data/strokeorder.csv",
+    "strokeorder_blob_sha": "d58796ec5e2c9ae5a5b3f1314c533a8ae2c47c31",
+    "strokes_file": "cjklib/data/strokes.csv",
+    "strokes_blob_sha": "842caa32a1637b14f2ea2e9a791e180df6a50e81",
+    "license_file": "COPYING",
+    "license_blob_sha": "0a9605dc2e9edc209df6230f0dd0695e0c197799",
+    "limits": "独立二次数据源，只用于交叉/补缺，不替代GF2001/GF0023/S04规范原页。"
+  },
+  "compared_against": {
+    "source_id": "D03",
+    "repository": "theajack/cnchar",
+    "pinned_ref": "b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550"
+  },
+  "entries": [
+    {
+      "character": "矛",
+      "main_id": 121,
+      "result": "secondary_sources_exact_name_sequence_match",
+      "previous_cnchar_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "cjklib_primary": {
+        "order": "HG-D-HG-SG-P",
+        "glyph": 0,
+        "flags": "",
+        "tokens": [
+          {
+            "abbrev": "HG",
+            "name": "横钩",
+            "shape": "㇖"
+          },
+          {
+            "abbrev": "D",
+            "name": "点",
+            "shape": "㇔"
+          },
+          {
+            "abbrev": "HG",
+            "name": "横钩",
+            "shape": "㇖"
+          },
+          {
+            "abbrev": "SG",
+            "name": "竖钩",
+            "shape": "㇚"
+          },
+          {
+            "abbrev": "P",
+            "name": "撇",
+            "shape": "㇒"
+          }
+        ]
+      },
+      "cnchar_sequence": [
+        {
+          "index": 1,
+          "letter": "e",
+          "shape": "㇇|乛",
+          "source_name": "横撇|横钩",
+          "source_name_options": [
+            "横撇",
+            "横钩"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "k",
+          "shape": "丶",
+          "source_name": "点",
+          "source_name_options": [
+            "点"
+          ]
+        },
+        {
+          "index": 3,
+          "letter": "e",
+          "shape": "㇇|乛",
+          "source_name": "横撇|横钩",
+          "source_name_options": [
+            "横撇",
+            "横钩"
+          ]
+        },
+        {
+          "index": 4,
+          "letter": "g",
+          "shape": "亅",
+          "source_name": "竖钩",
+          "source_name_options": [
+            "竖钩"
+          ]
+        },
+        {
+          "index": 5,
+          "letter": "s",
+          "shape": "丿",
+          "source_name": "撇",
+          "source_name_options": [
+            "撇"
+          ]
+        }
+      ],
+      "step_comparison": [
+        {
+          "index": 1,
+          "cjklib_name": "横钩",
+          "cjklib_shape": "㇖",
+          "cnchar_options": [
+            "横撇",
+            "横钩"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 2,
+          "cjklib_name": "点",
+          "cjklib_shape": "㇔",
+          "cnchar_options": [
+            "点"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 3,
+          "cjklib_name": "横钩",
+          "cjklib_shape": "㇖",
+          "cnchar_options": [
+            "横撇",
+            "横钩"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 4,
+          "cjklib_name": "竖钩",
+          "cjklib_shape": "㇚",
+          "cnchar_options": [
+            "竖钩"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 5,
+          "cjklib_name": "撇",
+          "cjklib_shape": "㇒",
+          "cnchar_options": [
+            "撇"
+          ],
+          "comparison": "exact"
+        }
+      ],
+      "cjklib_rows": [
+        {
+          "order": "HG-D-HG-SG-P",
+          "glyph": 0,
+          "flags": ""
+        }
+      ]
+    },
+    {
+      "character": "耒",
+      "main_id": 122,
+      "result": "secondary_sources_exact_name_sequence_match",
+      "previous_cnchar_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "cjklib_primary": {
+        "order": "H-H-H-S-P-N",
+        "glyph": 0,
+        "flags": "",
+        "tokens": [
+          {
+            "abbrev": "H",
+            "name": "横",
+            "shape": "㇐"
+          },
+          {
+            "abbrev": "H",
+            "name": "横",
+            "shape": "㇐"
+          },
+          {
+            "abbrev": "H",
+            "name": "横",
+            "shape": "㇐"
+          },
+          {
+            "abbrev": "S",
+            "name": "竖",
+            "shape": "㇑"
+          },
+          {
+            "abbrev": "P",
+            "name": "撇",
+            "shape": "㇒"
+          },
+          {
+            "abbrev": "N",
+            "name": "捺",
+            "shape": "㇏"
+          }
+        ]
+      },
+      "cnchar_sequence": [
+        {
+          "index": 1,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 3,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 4,
+          "letter": "f",
+          "shape": "丨",
+          "source_name": "竖",
+          "source_name_options": [
+            "竖"
+          ]
+        },
+        {
+          "index": 5,
+          "letter": "s",
+          "shape": "丿",
+          "source_name": "撇",
+          "source_name_options": [
+            "撇"
+          ]
+        },
+        {
+          "index": 6,
+          "letter": "l",
+          "shape": "㇏",
+          "source_name": "捺",
+          "source_name_options": [
+            "捺"
+          ]
+        }
+      ],
+      "step_comparison": [
+        {
+          "index": 1,
+          "cjklib_name": "横",
+          "cjklib_shape": "㇐",
+          "cnchar_options": [
+            "横"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 2,
+          "cjklib_name": "横",
+          "cjklib_shape": "㇐",
+          "cnchar_options": [
+            "横"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 3,
+          "cjklib_name": "横",
+          "cjklib_shape": "㇐",
+          "cnchar_options": [
+            "横"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 4,
+          "cjklib_name": "竖",
+          "cjklib_shape": "㇑",
+          "cnchar_options": [
+            "竖"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 5,
+          "cjklib_name": "撇",
+          "cjklib_shape": "㇒",
+          "cnchar_options": [
+            "撇"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 6,
+          "cjklib_name": "捺",
+          "cjklib_shape": "㇏",
+          "cnchar_options": [
+            "捺"
+          ],
+          "comparison": "exact"
+        }
+      ],
+      "cjklib_rows": [
+        {
+          "order": "H-H-H-S-P-N",
+          "glyph": 0,
+          "flags": ""
+        },
+        {
+          "order": "P-H-H-S-P-N",
+          "glyph": 1,
+          "flags": ""
+        }
+      ]
+    },
+    {
+      "character": "老",
+      "main_id": 123,
+      "result": "cjklib_target_missing",
+      "previous_cnchar_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "cjklib_rows": []
+    },
+    {
+      "character": "耳",
+      "main_id": 124,
+      "result": "secondary_sources_exact_name_sequence_match",
+      "previous_cnchar_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "cjklib_primary": {
+        "order": "H-S-S-H-H-H",
+        "glyph": 0,
+        "flags": "",
+        "tokens": [
+          {
+            "abbrev": "H",
+            "name": "横",
+            "shape": "㇐"
+          },
+          {
+            "abbrev": "S",
+            "name": "竖",
+            "shape": "㇑"
+          },
+          {
+            "abbrev": "S",
+            "name": "竖",
+            "shape": "㇑"
+          },
+          {
+            "abbrev": "H",
+            "name": "横",
+            "shape": "㇐"
+          },
+          {
+            "abbrev": "H",
+            "name": "横",
+            "shape": "㇐"
+          },
+          {
+            "abbrev": "H",
+            "name": "横",
+            "shape": "㇐"
+          }
+        ]
+      },
+      "cnchar_sequence": [
+        {
+          "index": 1,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "f",
+          "shape": "丨",
+          "source_name": "竖",
+          "source_name_options": [
+            "竖"
+          ]
+        },
+        {
+          "index": 3,
+          "letter": "f",
+          "shape": "丨",
+          "source_name": "竖",
+          "source_name_options": [
+            "竖"
+          ]
+        },
+        {
+          "index": 4,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 5,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 6,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ]
+        }
+      ],
+      "step_comparison": [
+        {
+          "index": 1,
+          "cjklib_name": "横",
+          "cjklib_shape": "㇐",
+          "cnchar_options": [
+            "横"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 2,
+          "cjklib_name": "竖",
+          "cjklib_shape": "㇑",
+          "cnchar_options": [
+            "竖"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 3,
+          "cjklib_name": "竖",
+          "cjklib_shape": "㇑",
+          "cnchar_options": [
+            "竖"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 4,
+          "cjklib_name": "横",
+          "cjklib_shape": "㇐",
+          "cnchar_options": [
+            "横"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 5,
+          "cjklib_name": "横",
+          "cjklib_shape": "㇐",
+          "cnchar_options": [
+            "横"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 6,
+          "cjklib_name": "横",
+          "cjklib_shape": "㇐",
+          "cnchar_options": [
+            "横"
+          ],
+          "comparison": "exact"
+        }
+      ],
+      "cjklib_rows": [
+        {
+          "order": "H-S-S-H-H-H",
+          "glyph": 0,
+          "flags": ""
+        },
+        {
+          "order": "H-S-H-H-T-S",
+          "glyph": 1,
+          "flags": ""
+        }
+      ]
+    },
+    {
+      "character": "臣",
+      "main_id": 125,
+      "result": "conflict_secondary_sources_fine_stroke_names",
+      "previous_cnchar_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "cjklib_primary": {
+        "order": "H-S-HZ-H-S-SZ",
+        "glyph": 0,
+        "flags": "",
+        "tokens": [
+          {
+            "abbrev": "H",
+            "name": "横",
+            "shape": "㇐"
+          },
+          {
+            "abbrev": "S",
+            "name": "竖",
+            "shape": "㇑"
+          },
+          {
+            "abbrev": "HZ",
+            "name": "横折",
+            "shape": "㇕"
+          },
+          {
+            "abbrev": "H",
+            "name": "横",
+            "shape": "㇐"
+          },
+          {
+            "abbrev": "S",
+            "name": "竖",
+            "shape": "㇑"
+          },
+          {
+            "abbrev": "SZ",
+            "name": "竖折",
+            "shape": "㇗"
+          }
+        ]
+      },
+      "cnchar_sequence": [
+        {
+          "index": 1,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "f",
+          "shape": "丨",
+          "source_name": "竖",
+          "source_name_options": [
+            "竖"
+          ]
+        },
+        {
+          "index": 3,
+          "letter": "c",
+          "shape": "𠃍",
+          "source_name": "横折",
+          "source_name_options": [
+            "横折"
+          ]
+        },
+        {
+          "index": 4,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 5,
+          "letter": "f",
+          "shape": "丨",
+          "source_name": "竖",
+          "source_name_options": [
+            "竖"
+          ]
+        },
+        {
+          "index": 6,
+          "letter": "b",
+          "shape": "㇄",
+          "source_name": "竖弯",
+          "source_name_options": [
+            "竖弯"
+          ]
+        }
+      ],
+      "step_comparison": [
+        {
+          "index": 1,
+          "cjklib_name": "横",
+          "cjklib_shape": "㇐",
+          "cnchar_options": [
+            "横"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 2,
+          "cjklib_name": "竖",
+          "cjklib_shape": "㇑",
+          "cnchar_options": [
+            "竖"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 3,
+          "cjklib_name": "横折",
+          "cjklib_shape": "㇕",
+          "cnchar_options": [
+            "横折"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 4,
+          "cjklib_name": "横",
+          "cjklib_shape": "㇐",
+          "cnchar_options": [
+            "横"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 5,
+          "cjklib_name": "竖",
+          "cjklib_shape": "㇑",
+          "cnchar_options": [
+            "竖"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 6,
+          "cjklib_name": "竖折",
+          "cjklib_shape": "㇗",
+          "cnchar_options": [
+            "竖弯"
+          ],
+          "comparison": "conflict"
+        }
+      ],
+      "cjklib_rows": [
+        {
+          "order": "H-S-HZ-H-S-SZ",
+          "glyph": 0,
+          "flags": ""
+        },
+        {
+          "order": "S-H-S-HZ-H-S-H",
+          "glyph": 1,
+          "flags": ""
+        }
+      ]
+    },
+    {
+      "character": "覀",
+      "main_id": 126,
+      "result": "cjklib_only_locator_recovers_cnchar_gap",
+      "previous_cnchar_result": "secondary_dataset_target_missing",
+      "cjklib_primary": {
+        "order": "H-S-HZ-S-S-H",
+        "glyph": 0,
+        "flags": "",
+        "tokens": [
+          {
+            "abbrev": "H",
+            "name": "横",
+            "shape": "㇐"
+          },
+          {
+            "abbrev": "S",
+            "name": "竖",
+            "shape": "㇑"
+          },
+          {
+            "abbrev": "HZ",
+            "name": "横折",
+            "shape": "㇕"
+          },
+          {
+            "abbrev": "S",
+            "name": "竖",
+            "shape": "㇑"
+          },
+          {
+            "abbrev": "S",
+            "name": "竖",
+            "shape": "㇑"
+          },
+          {
+            "abbrev": "H",
+            "name": "横",
+            "shape": "㇐"
+          }
+        ]
+      },
+      "cjklib_rows": [
+        {
+          "order": "H-S-HZ-S-S-H",
+          "glyph": 0,
+          "flags": ""
+        }
+      ]
+    },
+    {
+      "character": "而",
+      "main_id": 127,
+      "result": "secondary_sources_exact_name_sequence_match",
+      "previous_cnchar_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "cjklib_primary": {
+        "order": "H-P-S-HZG-S-S",
+        "glyph": 0,
+        "flags": "",
+        "tokens": [
+          {
+            "abbrev": "H",
+            "name": "横",
+            "shape": "㇐"
+          },
+          {
+            "abbrev": "P",
+            "name": "撇",
+            "shape": "㇒"
+          },
+          {
+            "abbrev": "S",
+            "name": "竖",
+            "shape": "㇑"
+          },
+          {
+            "abbrev": "HZG",
+            "name": "横折钩",
+            "shape": "㇆"
+          },
+          {
+            "abbrev": "S",
+            "name": "竖",
+            "shape": "㇑"
+          },
+          {
+            "abbrev": "S",
+            "name": "竖",
+            "shape": "㇑"
+          }
+        ]
+      },
+      "cnchar_sequence": [
+        {
+          "index": 1,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "s",
+          "shape": "丿",
+          "source_name": "撇",
+          "source_name_options": [
+            "撇"
+          ]
+        },
+        {
+          "index": 3,
+          "letter": "f",
+          "shape": "丨",
+          "source_name": "竖",
+          "source_name_options": [
+            "竖"
+          ]
+        },
+        {
+          "index": 4,
+          "letter": "r",
+          "shape": "𠃌",
+          "source_name": "横折钩",
+          "source_name_options": [
+            "横折钩"
+          ]
+        },
+        {
+          "index": 5,
+          "letter": "f",
+          "shape": "丨",
+          "source_name": "竖",
+          "source_name_options": [
+            "竖"
+          ]
+        },
+        {
+          "index": 6,
+          "letter": "f",
+          "shape": "丨",
+          "source_name": "竖",
+          "source_name_options": [
+            "竖"
+          ]
+        }
+      ],
+      "step_comparison": [
+        {
+          "index": 1,
+          "cjklib_name": "横",
+          "cjklib_shape": "㇐",
+          "cnchar_options": [
+            "横"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 2,
+          "cjklib_name": "撇",
+          "cjklib_shape": "㇒",
+          "cnchar_options": [
+            "撇"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 3,
+          "cjklib_name": "竖",
+          "cjklib_shape": "㇑",
+          "cnchar_options": [
+            "竖"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 4,
+          "cjklib_name": "横折钩",
+          "cjklib_shape": "㇆",
+          "cnchar_options": [
+            "横折钩"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 5,
+          "cjklib_name": "竖",
+          "cjklib_shape": "㇑",
+          "cnchar_options": [
+            "竖"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 6,
+          "cjklib_name": "竖",
+          "cjklib_shape": "㇑",
+          "cnchar_options": [
+            "竖"
+          ],
+          "comparison": "exact"
+        }
+      ],
+      "cjklib_rows": [
+        {
+          "order": "H-P-S-HZG-S-S",
+          "glyph": 0,
+          "flags": ""
+        }
+      ]
+    },
+    {
+      "character": "页",
+      "main_id": 128,
+      "result": "cjklib_target_missing",
+      "previous_cnchar_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "cjklib_rows": []
+    },
+    {
+      "character": "至",
+      "main_id": 129,
+      "result": "cjklib_target_missing",
+      "previous_cnchar_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "cjklib_rows": []
+    },
+    {
+      "character": "虍",
+      "main_id": 130,
+      "result": "secondary_sources_compatible_with_granularity_difference",
+      "previous_cnchar_result": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "cjklib_primary": {
+        "order": "S-H-HG-SP H-SWG",
+        "glyph": 0,
+        "flags": "",
+        "tokens": [
+          {
+            "abbrev": "S",
+            "name": "竖",
+            "shape": "㇑"
+          },
+          {
+            "abbrev": "H",
+            "name": "横",
+            "shape": "㇐"
+          },
+          {
+            "abbrev": "HG",
+            "name": "横钩",
+            "shape": "㇖"
+          },
+          {
+            "abbrev": "SP",
+            "name": "竖撇",
+            "shape": "㇓"
+          },
+          {
+            "abbrev": "H",
+            "name": "横",
+            "shape": "㇐"
+          },
+          {
+            "abbrev": "SWG",
+            "name": "竖弯钩",
+            "shape": "㇟"
+          }
+        ]
+      },
+      "cnchar_sequence": [
+        {
+          "index": 1,
+          "letter": "f",
+          "shape": "丨",
+          "source_name": "竖",
+          "source_name_options": [
+            "竖"
+          ]
+        },
+        {
+          "index": 2,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 3,
+          "letter": "e",
+          "shape": "㇇|乛",
+          "source_name": "横撇|横钩",
+          "source_name_options": [
+            "横撇",
+            "横钩"
+          ]
+        },
+        {
+          "index": 4,
+          "letter": "s",
+          "shape": "丿",
+          "source_name": "撇",
+          "source_name_options": [
+            "撇"
+          ]
+        },
+        {
+          "index": 5,
+          "letter": "j",
+          "shape": "一",
+          "source_name": "横",
+          "source_name_options": [
+            "横"
+          ]
+        },
+        {
+          "index": 6,
+          "letter": "u",
+          "shape": "乚",
+          "source_name": "竖弯钩",
+          "source_name_options": [
+            "竖弯钩"
+          ]
+        }
+      ],
+      "step_comparison": [
+        {
+          "index": 1,
+          "cjklib_name": "竖",
+          "cjklib_shape": "㇑",
+          "cnchar_options": [
+            "竖"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 2,
+          "cjklib_name": "横",
+          "cjklib_shape": "㇐",
+          "cnchar_options": [
+            "横"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 3,
+          "cjklib_name": "横钩",
+          "cjklib_shape": "㇖",
+          "cnchar_options": [
+            "横撇",
+            "横钩"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 4,
+          "cjklib_name": "竖撇",
+          "cjklib_shape": "㇓",
+          "cnchar_options": [
+            "撇"
+          ],
+          "comparison": "refinement"
+        },
+        {
+          "index": 5,
+          "cjklib_name": "横",
+          "cjklib_shape": "㇐",
+          "cnchar_options": [
+            "横"
+          ],
+          "comparison": "exact"
+        },
+        {
+          "index": 6,
+          "cjklib_name": "竖弯钩",
+          "cjklib_shape": "㇟",
+          "cnchar_options": [
+            "竖弯钩"
+          ],
+          "comparison": "exact"
+        }
+      ],
+      "cjklib_rows": [
+        {
+          "order": "S-H-HG-SP H-SWG",
+          "glyph": 0,
+          "flags": ""
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "exact": 4,
+    "compatible_granularity": 1,
+    "conflicts": 1,
+    "recovered_cnchar_gap": 1,
+    "cjklib_missing": 3
+  },
+  "limits": [
+    "两套二次数据一致仍不等于规范原页reviewed。",
+    "二次源冲突一律fail-closed。",
+    "cjklib-only补缺只形成secondary locator。"
+  ]
+}
