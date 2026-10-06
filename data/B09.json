@@ -57,9 +57,10 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
-      "migration_boundary": "“伟”只作韦部件语境；简化字形与位置变化另核。",
+      "migration_boundary": "GF0023—2020整字原页已核“伟”：目标部件位于right，对应整字笔画索引[3,4,5,6]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读"
@@ -209,6 +210,32 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 63,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "伟",
+          "pdf_page": 31,
+          "printed_page": 25,
+          "table_no": "0454",
+          "ucs": "04F1F",
+          "whole_order_code": "321152"
+        },
+        "verified_position": "right",
+        "component_stroke_indices_in_whole_character": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
       }
     },
     {
@@ -255,9 +282,10 @@
         "pronunciation": "reviewed_S06_GF0015_2010_target_self_pronunciation",
         "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
-      "migration_boundary": "“枝”作为右部语境；整字比例和收笔另核。",
+      "migration_boundary": "GF0023—2020整字原页已核“枝”：目标部件位于right，对应整字笔画索引[5,6,7,8]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
@@ -423,6 +451,32 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 65,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "枝",
+          "pdf_page": 73,
+          "printed_page": 67,
+          "table_no": "1019",
+          "ucs": "0679D",
+          "whole_order_code": "12341254"
+        },
+        "verified_position": "right",
+        "component_stroke_indices_in_whole_character": [
+          5,
+          6,
+          7,
+          8
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
       }
     },
     {
@@ -469,9 +523,10 @@
         "pronunciation": "reviewed_S06_GF0015_2010_target_self_pronunciation",
         "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
-      "migration_boundary": "“批”只作右部语境；比在整字中的压缩与相对位置另核。",
+      "migration_boundary": "GF0023—2020整字原页已核“批”：目标部件位于right，对应整字笔画索引[4,5,6,7]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
@@ -636,6 +691,32 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 71,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "批",
+          "pdf_page": 41,
+          "printed_page": 35,
+          "table_no": "0622",
+          "ucs": "06279",
+          "whole_order_code": "1211535"
+        },
+        "verified_position": "right",
+        "component_stroke_indices_in_whole_character": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
       }
     },
     {
@@ -682,9 +763,10 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
-      "migration_boundary": "“汽”作为整字迁移语境；末笔细名需规范原页确认。",
+      "migration_boundary": "GF0023—2020整字原页已核“汽”：目标部件位于right，对应整字笔画索引[4,5,6,7]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读"
@@ -827,6 +909,32 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 81,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "汽",
+          "pdf_page": 57,
+          "printed_page": 51,
+          "table_no": "0861",
+          "ucs": "06C7D",
+          "whole_order_code": "4413115"
+        },
+        "verified_position": "right",
+        "component_stroke_indices_in_whole_character": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
       }
     },
     {
@@ -873,9 +981,10 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
-      "migration_boundary": "“张”只作右部语境；位置变形不从独体形自动外推。",
+      "migration_boundary": "GF0023—2020整字原页已核“张”：目标部件位于right，对应整字笔画索引[4,5,6,7]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读"
@@ -1018,6 +1127,32 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 83,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "张",
+          "pdf_page": 60,
+          "printed_page": 54,
+          "table_no": "0909",
+          "ucs": "05F20",
+          "whole_order_code": "5153154"
+        },
+        "verified_position": "right",
+        "component_stroke_indices_in_whole_character": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
       }
     },
     {
@@ -1064,9 +1199,10 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
-      "migration_boundary": "“版”只作左旁语境；片旁比例与整字关系另核。",
+      "migration_boundary": "GF0023—2020整字原页已核“版”：目标部件位于left，对应整字笔画索引[1,2,3,4]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读"
@@ -1209,6 +1345,32 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 84,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "版",
+          "pdf_page": 90,
+          "printed_page": 84,
+          "table_no": "1143",
+          "ucs": "07248",
+          "whole_order_code": "32153354"
+        },
+        "verified_position": "left",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
       }
     },
     {
@@ -1255,9 +1417,10 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
-      "migration_boundary": "“新”用于观察斤作右部；整字完整时序另核。",
+      "migration_boundary": "GF0023—2020整字原页已核“新”：目标部件位于right，对应整字笔画索引[10,11,12,13]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读"
@@ -1400,6 +1563,32 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 85,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "新",
+          "pdf_page": 399,
+          "printed_page": 393,
+          "table_no": "2994",
+          "ucs": "065B0",
+          "whole_order_code": "4143112343312"
+        },
+        "verified_position": "right",
+        "component_stroke_indices_in_whole_character": [
+          10,
+          11,
+          12,
+          13
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
       }
     },
     {
@@ -1446,9 +1635,10 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
-      "migration_boundary": "“爬”只作完整整字语境；爫不由独体爪自动推广。",
+      "migration_boundary": "GF0023—2020整字原页已核“爬”：目标部件位于left_lower，对应整字笔画索引[1,2,3,4]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读"
@@ -1591,6 +1781,32 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 86,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "爬",
+          "pdf_page": 93,
+          "printed_page": 87,
+          "table_no": "1161",
+          "ucs": "0722C",
+          "whole_order_code": "33245215"
+        },
+        "verified_position": "left_lower",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
       }
     },
     {
@@ -1637,9 +1853,10 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
-      "migration_boundary": "“爷”用于观察父作上部；简化后的整字结构另核。",
+      "migration_boundary": "GF0023—2020整字原页已核“爷”：目标部件位于top，对应整字笔画索引[1,2,3,4]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读"
@@ -1782,6 +1999,32 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 87,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "爷",
+          "pdf_page": 33,
+          "printed_page": 27,
+          "table_no": "0492",
+          "ucs": "07237",
+          "whole_order_code": "343452"
+        },
+        "verified_position": "top",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
       }
     },
     {
@@ -1828,9 +2071,10 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
-      "migration_boundary": "“纹”作为右部语境；独体与偏旁比例变化另核。",
+      "migration_boundary": "GF0023—2020整字原页已核“纹”：目标部件位于right，对应整字笔画索引[4,5,6,7]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读"
@@ -1973,6 +2217,32 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 93,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "纹",
+          "pdf_page": 62,
+          "printed_page": 56,
+          "table_no": "0939",
+          "ucs": "07EB9",
+          "whole_order_code": "5514134"
+        },
+        "verified_position": "right",
+        "component_stroke_indices_in_whole_character": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
       }
     }
   ],
