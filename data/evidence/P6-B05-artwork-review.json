@@ -1,0 +1,106 @@
+{
+  "schema_version": 1,
+  "record_kind": "P6_cumulative_vector_artwork_review",
+  "batch_id": "B05",
+  "reviewed_at": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "vector_revision": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+  "workflow_run_id": 37548434948,
+  "artifact_id": 11452390328,
+  "artifact_digest": "sha256:0d010d8e219bde36cac95fb4fcb08c2adf40e72c4075f1c7f42d8c8817bed4f",
+  "review_pdf": "B05-artwork-review.pdf",
+  "review_pdf_sha256": "f1c496273095e19e64d1e95ad25730b669f5c7fc305d472fa1721e8fdabf4600",
+  "review_method": "rendered cumulative-stroke PDF -> 120dpi PNG -> full batch contact-sheet visual inspection",
+  "targeted_second_pass": [
+    "牙",
+    "瓦"
+  ],
+  "entries": [
+    {
+      "character": "无",
+      "main_id": 62,
+      "order_code": "1135",
+      "stroke_count": 4,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "犬",
+      "main_id": 66,
+      "order_code": "1344",
+      "stroke_count": 4,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "歹",
+      "main_id": 67,
+      "order_code": "1354",
+      "stroke_count": 4,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "车",
+      "main_id": 68,
+      "order_code": "1512",
+      "stroke_count": 4,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "牙",
+      "main_id": 69,
+      "order_code": "1523",
+      "stroke_count": 4,
+      "review_pass": "contact_sheet_plus_targeted_page_second_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "戈",
+      "main_id": 70,
+      "order_code": "1534",
+      "stroke_count": 4,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "瓦",
+      "main_id": 72,
+      "order_code": "1554",
+      "stroke_count": 4,
+      "review_pass": "contact_sheet_plus_targeted_page_second_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "止",
+      "main_id": 73,
+      "order_code": "2121",
+      "stroke_count": 4,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "贝",
+      "main_id": 76,
+      "order_code": "2534",
+      "stroke_count": 4,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "见",
+      "main_id": 78,
+      "order_code": "2535",
+      "stroke_count": 4,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "reviewed": 10,
+    "artwork_conflicts": 0
+  },
+  "limits": "Drawing-material approval only. 牙 retains its inherited P2 fine-stroke-name semantic conflict; artwork review does not resolve nomenclature. Final A4 layout/PDF/release are independent."
+}
