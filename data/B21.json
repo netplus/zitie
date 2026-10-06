@@ -76,7 +76,7 @@
         "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
         "component_name": "source_blocked_fail_closed_GF0011_2022_exact_name_not_publicly_released",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_self_context_no_position_migration"
       },
       "migration_boundary": "本轮只保留“龠”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
@@ -243,6 +243,26 @@
         "visual_review_origin": "reused_prior_original_page_review",
         "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
         "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
+      },
+      "whole_character_context_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B12-B21-whole-character-context-sync.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration_status": "reviewed_P4_self_context_no_position_migration",
+        "position_migration_evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "data/evidence/B21-stroke-order-original-page.json",
+          "pdf_page": 533,
+          "printed_page": 527,
+          "table_no": "6267",
+          "ucs": "09FA0",
+          "whole_order_code": "34125125125125122"
+        },
+        "visual_review": true,
+        "mapping_result": "reviewed_P4_self_context_no_position_migration",
+        "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
       }
     }
   ],
