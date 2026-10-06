@@ -17,6 +17,16 @@ GF3003—1999, 《GB13000.1字符集汉字字序（笔画序）规范》, is a n
 - Google Books bibliographic metadata for the Shanghai Education Press edition reports 725 pages and states that the work contains the 20,902-character order table. This is bibliographic confirmation of the expected full extent, not an admissible review copy.
 - The pinned public repository used for other normative references lists a GF3003 PDF at commit d26705ffc52b81b6e1a45483c7b591f62962f49f. Its completeness, byte size, page count and SHA256 have not yet been verified; do not assume it is the 725-page edition.
 
+
+## Fixed-37 repertoire applicability screen
+
+The fixed P1 residual set was checked against the Unicode 1.1 CJK Unified Ideographs repertoire boundary. Unicode documents U+4E00..U+9FA5 as the 20,902 CJK Unified Ideographs introduced in Unicode 1.1. GF3003 bibliographic metadata likewise describes a 20,902-character table.
+
+- 36/37 residual targets fall in U+4E00..U+9FA5 and are repertoire-compatible candidates for review in a complete GF3003 table.
+- 龺 is U+9FBA, outside U+4E00..U+9FA5. A complete 20,902-entry GF3003 table must not be assumed to cover it; this target needs a separate applicable normative-source path unless the original publication proves otherwise.
+
+This is a repertoire applicability screen only. It does not establish any target's stroke order and does not upgrade stroke_order.
+
 ## Editorial status
 
 status: candidate_normative_source_full_copy_not_yet_verified
