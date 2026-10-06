@@ -2,7 +2,7 @@
   "schema_version": 1,
   "as_of": "2026-10-06",
   "stage": "P0_normative_source_access",
-  "status": "operational_historical_artifact_verified_new_probe_pending",
+  "status": "operational_verified",
   "policy": {
     "review_boundary": "source_recovery_and_hash_verification_do_not_mark_any_page_or_field_reviewed",
     "storage": "normative PDFs stay in temporary Actions artifacts or local review workspace; do not commit source PDFs to the public repository",
@@ -85,5 +85,36 @@
     "artifact_name": "normative-reference-acquisition",
     "retention_days": 7,
     "verification": "workflow must reject any downloaded file whose SHA256 differs from the pinned expected digest"
-  }
+  },
+  "p0_completed_at": "2026-10-06",
+  "current_verified_run": {
+    "run_id": 37402630995,
+    "artifact_id": 11385916300,
+    "artifact_name": "normative-reference-acquisition",
+    "expires_at": "2026-10-13T02:07:59Z",
+    "result": "success",
+    "verified_files": [
+      {
+        "name": "gf0023-2020.pdf",
+        "bytes": 51412684,
+        "sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0"
+      },
+      {
+        "name": "stroke-order-1997.pdf",
+        "bytes": 13214987,
+        "sha256": "ca8a0139744cf8105cb7e4ae7464ebc68cb76310b5a29e7cf004b2489a35ae65"
+      },
+      {
+        "name": "gf2001-2001.pdf",
+        "bytes": 177325,
+        "sha256": "68a1420580a7eedde79eeb55b91b6b2ff10ef9155d98633ccc712838f04e9b14"
+      },
+      {
+        "name": "gf0011-2009.pdf",
+        "bytes": 1188569,
+        "sha256": "c8ccfcc51400bb04eddab256017a67ed20def41ee29f8c06e2c54ddbb76b1f48"
+      }
+    ]
+  },
+  "next_stage": "P1_stroke_order_original_page_closure"
 }
