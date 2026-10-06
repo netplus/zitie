@@ -545,3 +545,20 @@ P5逐批内容终审已经完成。B04—B21共171项逐项检查身份、结构
 - **全书201/201 content_ready，0 content_in_progress。**
 
 这只表示内容层完成，不表示artwork、PDF、manifest、CI发布门槛或正式release完成。当前活动阶段正式切换为**P6 Artwork / 版式**。
+
+
+## P6启动：201项矢量材料覆盖与B03正规化（2026-10-07）
+
+P6已完成全书绘图材料覆盖审计。固定Hanzi Writer / Make Me a Hanzi revision `68d10a4b21150cae5e1ebbd223eed289cf32d90c`，workflow run `37513572597` 实际遍历B01—B21全部201项：
+
+- 201/201矢量可取得；
+- 201/201矢量笔数与内容层终审笔数一致；
+- 0 missing；
+- 0 stroke_count_mismatch；
+- 0 other_errors。
+
+该结果只关闭“绘图材料存在且笔数兼容”，**不授予B04—B21 artwork_ready**。证据：`data/evidence/P6-vector-material-coverage-20261007.json`。
+
+B03此前已在2026-09-30完成真实逐笔矢量人工复核（`data/evidence/B03-artwork.json`、`reviews/B03-artwork.md`），其`artwork_ready_local_candidate`只是旧阶段模型把PDF归档绑在一起。P6将B03正规化为`artwork_ready`，PDF归档仍独立留给P7。
+
+当前artwork_ready：**30/201（B01—B03）**。B04—B21共171项下一步必须逐项做累计笔画视觉QA，不能从本次材料覆盖审计自动升级。
