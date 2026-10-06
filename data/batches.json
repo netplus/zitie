@@ -50,267 +50,248 @@
       "content_review_record": "reviews/B03-content.md",
       "artwork_review_record": "reviews/B03-artwork.md",
       "layout_review_record": "reviews/B03-layout.md"
-    }
-  ],
-  "phase1_content_batches": [
+    },
     {
       "id": "B04",
       "title": "三画独体与位置迁移",
       "main_glyphs": "干寸夕广门尸己弓飞马",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B03_content_ready"
       ],
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。"
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     },
     {
       "id": "B05",
       "title": "四画独体与迁移辨析",
       "main_glyphs": "无犬歹车牙戈瓦止贝见",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B04_content_scope"
       ],
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。"
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     },
     {
       "id": "B06",
       "title": "二画基础部件与框形",
       "main_glyphs": "厂匚卜冂勹儿匕几亠冫",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B05_content_scope"
       ],
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。"
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     },
     {
       "id": "B07",
       "title": "二三画常用偏旁与包围迁移",
       "main_glyphs": "冖凵卩厶廴艹廾宀辶彐",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B06_content_scope"
       ],
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。"
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     },
     {
       "id": "B08",
       "title": "基础笔形与三画辨析",
       "main_glyphs": "丨丿丶乛尢弋囗彳彡夂",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B07_content_scope"
       ],
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。"
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     },
     {
       "id": "B09",
       "title": "四画常用独体与部件迁移",
       "main_glyphs": "韦支比气长片斤爪父文",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B08_content_scope"
       ],
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。"
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     },
     {
       "id": "B10",
       "title": "常用四画部件与迁移",
       "main_glyphs": "丬幺攴氏欠风方斗户心",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B09_content_scope"
       ],
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。"
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     },
     {
       "id": "B11",
       "title": "五画常用独体与框形辨析",
       "main_glyphs": "示甘龙业罒皿生矢禾瓜",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B10_content_scope"
       ],
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。"
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     },
     {
       "id": "B12",
       "title": "遗留短笔部件与五画过渡",
       "main_glyphs": "屮巛殳毋鸟疒穴疋皮癶",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B11_content_scope"
       ],
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。"
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     },
     {
       "id": "B13",
       "title": "五六画结构与包围过渡",
       "main_glyphs": "矛耒老耳臣覀而页至虍",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B12_content_scope"
       ],
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。"
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     },
     {
       "id": "B14",
       "title": "六画常用部件与位置迁移",
       "main_glyphs": "虫肉缶舌竹臼自血舟色",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B13_content_scope"
       ],
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。"
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     },
     {
       "id": "B15",
       "title": "六七画常用部件与位置迁移",
       "main_glyphs": "齐衣羊米聿艮羽糸麦走",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B14_content_scope"
       ],
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。"
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     },
     {
       "id": "B16",
       "title": "七画常用部件与位置迁移",
       "main_glyphs": "赤豆酉辰豕卤里足邑身",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B15_content_scope"
       ],
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。"
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     },
     {
       "id": "B17",
       "title": "七八画常用部件与迁移",
       "main_glyphs": "釆谷豸龟角言辛青龺雨",
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B16_content_scope"
-      ]
+      ],
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     },
     {
       "id": "B18",
       "title": "八九画常用部件与迁移",
       "main_glyphs": "非齿黾隹阜金鱼隶革面",
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B17_content_scope"
-      ]
+      ],
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     },
     {
       "id": "B19",
       "title": "九十画常用部件与复杂形过渡",
       "main_glyphs": "韭骨香鬼食音首髟鬲鬥",
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B18_content_scope"
-      ]
+      ],
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     },
     {
       "id": "B20",
       "title": "十至十四画复杂主部首",
       "main_glyphs": "高黄麻鹿鼎黑黍鼓鼠鼻",
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B19_content_scope"
-      ]
+      ],
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     },
     {
       "id": "B21",
       "title": "终批复杂主部首",
       "main_glyphs": "龠",
-      "note": "P5 content终审已通过；该批次内容层完成。artwork/layout/publication继续由P6/P7独立推进。",
-      "scope_frozen_for_content": true,
-      "publication_frozen": false,
+      "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "deferred",
       "publication_status": "deferred",
       "prerequisites": [
         "B20_content_scope"
-      ]
+      ],
+      "note": "P5内容终审通过；正式冻结为content_ready批次。P6/P7继续独立推进artwork与发布。"
     }
   ],
+  "phase1_content_batches": [],
   "remaining_plan": {
     "batch_ids": [],
     "status": "phase1_content_complete_201_of_201",
     "main_count": 0,
-    "rule": "P5已完成201/201 content_ready；不再保留阶段1内容待编批次。后续工作进入P6 artwork/layout。"
+    "rule": "P5已完成201/201 content_ready；B01—B21全部进入frozen_batches。"
   },
   "run_target_main_count": 0,
   "run_target_rule": "P5已完成；P6/P7按阶段门槛推进，不用主项数量强行凑批次。",
