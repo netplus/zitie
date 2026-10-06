@@ -64,7 +64,8 @@
         "pronunciation": "reviewed_S06_GF0015_2010_target_self_pronunciation",
         "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "“剂”仅作整字迁移语境；齐在左部的真实形态、主/附关系和完整时序须回规范原页与整字核验。",
       "unresolved": [
@@ -228,6 +229,36 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 141,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "剂",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 100,
+          "printed_page": 94,
+          "table_no": "1216",
+          "ucs": "05242",
+          "whole_order_code": "41343222"
+        },
+        "verified_position": "left",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; recorded stroke indices close only this representative position-migration context. Formal GF0011—2022 attached-form status remains independent.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; exact edition attached-form identity remains pending."
       }
     },
     {
@@ -281,12 +312,12 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "“装”仅作整字迁移语境；底部衣的形态与时序须回完整整字和规范原页核验。",
       "unresolved": [
-        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
-        "位置迁移仍须回完整整字及适用规范原页核验"
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
       ],
       "component_name_status": "reviewed_S03_GF0014_2009",
       "structure_review": {
@@ -430,6 +461,36 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 142,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "装",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 347,
+          "printed_page": 341,
+          "table_no": "2726",
+          "ucs": "088C5",
+          "whole_order_code": "412121413534"
+        },
+        "verified_position": "bottom",
+        "component_stroke_indices_in_whole_character": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; recorded stroke indices close only this representative position-migration context. Formal GF0011—2022 attached-form status remains independent.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; exact edition attached-form identity remains pending."
       }
     },
     {
@@ -483,12 +544,12 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "“群”仅作整字迁移语境；右部羊的比例、主/附关系和时序待整字证据确认。",
       "unresolved": [
-        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
-        "位置迁移仍须回完整整字及适用规范原页核验"
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
       ],
       "component_name_status": "reviewed_S03_GF0014_2009",
       "structure_review": {
@@ -668,6 +729,36 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 143,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "群",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 408,
+          "printed_page": 402,
+          "table_no": "3035",
+          "ucs": "07FA4",
+          "whole_order_code": "5113251431112"
+        },
+        "verified_position": "right",
+        "component_stroke_indices_in_whole_character": [
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; recorded stroke indices close only this representative position-migration context. Formal GF0011—2022 attached-form status remains independent.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; exact edition attached-form identity remains pending."
       }
     },
     {
@@ -721,12 +812,12 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "“粉”仅作整字迁移语境；左部米的形态和真实时序必须回整字与规范原页核验。",
       "unresolved": [
-        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
-        "位置迁移仍须回完整整字及适用规范原页核验"
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
       ],
       "component_name_status": "reviewed_S03_GF0014_2009",
       "structure_review": {
@@ -906,6 +997,36 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 144,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "粉",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 229,
+          "printed_page": 223,
+          "table_no": "2053",
+          "ucs": "07C89",
+          "whole_order_code": "4312343453"
+        },
+        "verified_position": "left",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; recorded stroke indices close only this representative position-migration context. Formal GF0011—2022 attached-form status remains independent.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; exact edition attached-form identity remains pending."
       }
     },
     {
@@ -959,7 +1080,8 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "“律”仅作整字迁移语境；右部聿的形态、部件身份和完整时序待权威材料确认。",
       "unresolved": [
@@ -1144,6 +1266,36 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 145,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "律",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 156,
+          "printed_page": 150,
+          "table_no": "1583",
+          "ucs": "05F8B",
+          "whole_order_code": "332511112"
+        },
+        "verified_position": "right",
+        "component_stroke_indices_in_whole_character": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; recorded stroke indices close only this representative position-migration context. Formal GF0011—2022 attached-form status remains independent.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; exact edition attached-form identity remains pending."
       }
     },
     {
@@ -1197,7 +1349,8 @@
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "“很”仅作整字迁移语境；右部艮的真实写法及主/附关系不得从独体形自动外推。",
       "unresolved": [
@@ -1382,6 +1535,36 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 146,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "很",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 156,
+          "printed_page": 150,
+          "table_no": "1584",
+          "ucs": "05F88",
+          "whole_order_code": "332511534"
+        },
+        "verified_position": "right",
+        "component_stroke_indices_in_whole_character": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; recorded stroke indices close only this representative position-migration context. Formal GF0011—2022 attached-form status remains independent.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; exact edition attached-form identity remains pending."
       }
     },
     {
@@ -1435,7 +1618,8 @@
         "pronunciation": "reviewed_S06_GF0015_2010_morpheme_pronunciation",
         "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "“翔”仅作整字迁移语境；右部羽的真实形态和时序必须回完整整字核验。",
       "unresolved": [
@@ -1599,6 +1783,36 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 147,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "翔",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 350,
+          "printed_page": 344,
+          "table_no": "2739",
+          "ucs": "07FD4",
+          "whole_order_code": "431113541541"
+        },
+        "verified_position": "right",
+        "component_stroke_indices_in_whole_character": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; recorded stroke indices close only this representative position-migration context. Formal GF0011—2022 attached-form status remains independent.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; exact edition attached-form identity remains pending."
       }
     },
     {
@@ -1645,7 +1859,8 @@
         "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "“累”仅作整字迁移语境；糸在下部的形态、编码对应和真实时序仍待目标规范与整字证据。",
       "unresolved": [
@@ -1797,6 +2012,36 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 148,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "累",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 268,
+          "printed_page": 262,
+          "table_no": "2282",
+          "ucs": "07D2F",
+          "whole_order_code": "25121554234"
+        },
+        "verified_position": "bottom",
+        "component_stroke_indices_in_whole_character": [
+          6,
+          7,
+          8,
+          9,
+          10,
+          11
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; recorded stroke indices close only this representative position-migration context. Formal GF0011—2022 attached-form status remains independent.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; exact edition attached-form identity remains pending."
       }
     },
     {
@@ -1851,7 +2096,8 @@
         "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
         "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "“麸”仅作整字迁移语境；左部麦的形态、主/附关系和完整时序须回规范原页核验。",
       "unresolved": [
@@ -2044,6 +2290,37 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 149,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "麸",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 246,
+          "printed_page": 240,
+          "table_no": "4715",
+          "ucs": "09EB8",
+          "whole_order_code": "11213541134"
+        },
+        "verified_position": "left",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; recorded stroke indices close only this representative position-migration context. Formal GF0011—2022 attached-form status remains independent.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; exact edition attached-form identity remains pending."
       }
     },
     {
@@ -2098,7 +2375,8 @@
         "pronunciation": "reviewed_S06_GF0015_2010_target_self_pronunciation",
         "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_non_authoritative",
-        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
+        "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "“超”仅作整字迁移语境；走作左下部件时的形态和包托时序必须回完整整字核验。",
       "unresolved": [
@@ -2272,6 +2550,37 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 150,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-position-migration-whole-character.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "超",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 310,
+          "printed_page": 304,
+          "table_no": "2517",
+          "ucs": "08D85",
+          "whole_order_code": "121213453251"
+        },
+        "verified_position": "lower_left",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "notes": "Whole-character original row visually reviewed; recorded stroke indices close only this representative position-migration context. Formal GF0011—2022 attached-form status remains independent.",
+        "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; exact edition attached-form identity remains pending."
       }
     }
   ],
