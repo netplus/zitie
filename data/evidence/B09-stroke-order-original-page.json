@@ -1,0 +1,171 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_original_page_review",
+  "phase": "P1",
+  "batch_id": "B09",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S02",
+    "publication_id": "GF0023—2020",
+    "title": "通用规范汉字笔顺规范",
+    "sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
+    "bytes": 51412684,
+    "pages": 581,
+    "recovery_manifest": "sources/normative-access.json",
+    "recovery_run_id": 37402630995,
+    "recovery_artifact_id": 11385916300,
+    "reviewed_pdf_pages": [
+      12,
+      13,
+      14,
+      15,
+      16
+    ],
+    "method": "verified artifact recovery -> local original PDF render -> target-row crop visual review; PDF text layer used only to index row/table_no/UCS/order digits"
+  },
+  "reviewed_field": "stroke_order",
+  "entries": [
+    {
+      "character": "韦",
+      "main_id": 63,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 12,
+      "printed_page": 6,
+      "order_code": "1152",
+      "table_no": "3509",
+      "ucs": "097E6",
+      "stroke_count": 4,
+      "canonical_candidate": "1152",
+      "visual_review": true
+    },
+    {
+      "character": "支",
+      "main_id": 65,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 12,
+      "printed_page": 6,
+      "order_code": "1254",
+      "table_no": "0089",
+      "ucs": "0652F",
+      "stroke_count": 4,
+      "canonical_candidate": "1254",
+      "visual_review": true
+    },
+    {
+      "character": "比",
+      "main_id": 71,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 13,
+      "printed_page": 7,
+      "order_code": "1535",
+      "table_no": "0105",
+      "ucs": "06BD4",
+      "stroke_count": 4,
+      "canonical_candidate": "1535",
+      "visual_review": true
+    },
+    {
+      "character": "气",
+      "main_id": 81,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 14,
+      "printed_page": 8,
+      "order_code": "3115",
+      "table_no": "0122",
+      "ucs": "06C14",
+      "stroke_count": 4,
+      "canonical_candidate": "3115",
+      "visual_review": true
+    },
+    {
+      "character": "长",
+      "main_id": 83,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 14,
+      "printed_page": 8,
+      "order_code": "3154",
+      "table_no": "0127",
+      "ucs": "0957F",
+      "stroke_count": 4,
+      "canonical_candidate": "3154",
+      "visual_review": true
+    },
+    {
+      "character": "片",
+      "main_id": 84,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 14,
+      "printed_page": 8,
+      "order_code": "3215",
+      "table_no": "0130",
+      "ucs": "07247",
+      "stroke_count": 4,
+      "canonical_candidate": "3215",
+      "visual_review": true
+    },
+    {
+      "character": "斤",
+      "main_id": 85,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 15,
+      "printed_page": 9,
+      "order_code": "3312",
+      "table_no": "0137",
+      "ucs": "065A4",
+      "stroke_count": 4,
+      "canonical_candidate": "3312",
+      "visual_review": true
+    },
+    {
+      "character": "爪",
+      "main_id": 86,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 15,
+      "printed_page": 9,
+      "order_code": "3324",
+      "table_no": "0138",
+      "ucs": "0722A",
+      "stroke_count": 4,
+      "canonical_candidate": "3324",
+      "visual_review": true
+    },
+    {
+      "character": "父",
+      "main_id": 87,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 15,
+      "printed_page": 9,
+      "order_code": "3434",
+      "table_no": "0141",
+      "ucs": "07236",
+      "stroke_count": 4,
+      "canonical_candidate": "3434",
+      "visual_review": true
+    },
+    {
+      "character": "文",
+      "main_id": 93,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 16,
+      "printed_page": 10,
+      "order_code": "4134",
+      "table_no": "0161",
+      "ucs": "06587",
+      "stroke_count": 4,
+      "canonical_candidate": "4134",
+      "visual_review": true
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "reviewed_exact": 10,
+    "exact_target_not_located": 0
+  },
+  "limits": [
+    "只有实际在GF0023原页精确定位并视觉核对的目标才升级stroke_order reviewed。",
+    "未定位项保持pending，不把secondary候选或相近字形冒充规范原页结论。",
+    "本证据不授予fine_stroke_names、GF0011—2022身份、位置变体或artwork结论。"
+  ]
+}
