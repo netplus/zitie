@@ -1830,7 +1830,7 @@
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
-        "fine_stroke_names": "P2_normative_review_no_exact_GF0023_target_alternative_source_pending",
+        "fine_stroke_names": "conflict_fail_closed_P2_normative_coverage_gap",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
@@ -1842,7 +1842,7 @@
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "P2细笔名原页复核：GF0023主表未定位精确目标行，GF2001无足以直接给出完整逐笔名称的目标字例；等待其它适用规范原页，secondary序列不得升级。"
+        "P2细笔名fail-closed：GF2001/GF0023/S04无法提供该目标的精确逐笔累计形态；S09只有静态字形和数字笔顺码，按规则不得由数字码反推细笔名。等待具有精确逐笔形态/名称映射的适用规范原件。"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1990,10 +1990,23 @@
       },
       "fine_stroke_names_review": {
         "phase": "P2",
-        "evidence": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
-        "result": "pending_no_exact_GF0023_target_row_alternative_normative_source",
-        "adjudicated_names": null,
-        "target_original_page": {
+        "evidence": "data/evidence/P2-residual12-fine-stroke-fail-closed.json",
+        "result": "conflict_fail_closed_normative_coverage_gap",
+        "adopted_names": null,
+        "GF2001_review": {
+          "source_id": "S05",
+          "publication_id": "GF2001—2001",
+          "reviewed_pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "finding": "terminology/fold classification available, but no direct target-character example sufficient to assign the full per-stroke name sequence"
+        },
+        "GF0023_review": {
           "source_id": "S02",
           "publication_id": "GF0023—2020",
           "evidence": "data/evidence/B19-stroke-order-original-page.json",
@@ -2004,8 +2017,24 @@
           "order_code": null,
           "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
         },
-        "visual_review": false,
-        "rationale": "GF0023 main-table original pages were reviewed in P1 but no exact target row was located; GF2001 has no direct target-character example sufficient to assign the full per-stroke name sequence. Secondary locators are not promoted."
+        "S04_review": {
+          "source_id": "S04",
+          "publication_id": "1997-STROKE-ORDER",
+          "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+          "finding": "fixed residual original-page neighborhoods visually reviewed; exact target not located"
+        },
+        "S09_static_target_review": {
+          "source_id": "S09",
+          "publication_id": "GB/T 25741—2010 Appendix C",
+          "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+          "pdf_page": 74,
+          "printed_page": 384,
+          "table_sequence": 6308,
+          "order_code": "1211154333",
+          "finding": "exact static target row exists and was visually reviewed, but Appendix C supplies static glyph + stroke count/order code rather than accumulated per-stroke forms"
+        },
+        "fail_closed_reason": "The prescribed P2 originals do not provide an exact accumulated per-stroke target form for this radical. S09 confirms the exact target glyph but is insufficient for fine-stroke naming without inferring from numeric order codes, which P2 policy forbids.",
+        "resolution_path": "Require an applicable normative original with exact target and per-stroke shape/name mapping, or an explicit official mapping for the target; secondary D03/D04 cannot close this field."
       }
     },
     {
@@ -2282,7 +2311,7 @@
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
-        "fine_stroke_names": "P2_normative_review_no_exact_GF0023_target_alternative_source_pending",
+        "fine_stroke_names": "conflict_fail_closed_P2_normative_coverage_gap",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
@@ -2294,7 +2323,7 @@
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "P2细笔名原页复核：GF0023主表未定位精确目标行，GF2001无足以直接给出完整逐笔名称的目标字例；等待其它适用规范原页，secondary序列不得升级。"
+        "P2细笔名fail-closed：GF2001/GF0023/S04无法提供该目标的精确逐笔累计形态；S09只有静态字形和数字笔顺码，按规则不得由数字码反推细笔名。等待具有精确逐笔形态/名称映射的适用规范原件。"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -2351,10 +2380,23 @@
       },
       "fine_stroke_names_review": {
         "phase": "P2",
-        "evidence": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
-        "result": "pending_no_exact_GF0023_target_row_alternative_normative_source",
-        "adjudicated_names": null,
-        "target_original_page": {
+        "evidence": "data/evidence/P2-residual12-fine-stroke-fail-closed.json",
+        "result": "conflict_fail_closed_normative_coverage_gap",
+        "adopted_names": null,
+        "GF2001_review": {
+          "source_id": "S05",
+          "publication_id": "GF2001—2001",
+          "reviewed_pdf_pages": [
+            4,
+            5,
+            6,
+            7,
+            8,
+            9
+          ],
+          "finding": "terminology/fold classification available, but no direct target-character example sufficient to assign the full per-stroke name sequence"
+        },
+        "GF0023_review": {
           "source_id": "S02",
           "publication_id": "GF0023—2020",
           "evidence": "data/evidence/B19-stroke-order-original-page.json",
@@ -2365,8 +2407,24 @@
           "order_code": null,
           "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
         },
-        "visual_review": false,
-        "rationale": "GF0023 main-table original pages were reviewed in P1 but no exact target row was located; GF2001 has no direct target-character example sufficient to assign the full per-stroke name sequence. Secondary locators are not promoted."
+        "S04_review": {
+          "source_id": "S04",
+          "publication_id": "1997-STROKE-ORDER",
+          "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+          "finding": "fixed residual original-page neighborhoods visually reviewed; exact target not located"
+        },
+        "S09_static_target_review": {
+          "source_id": "S09",
+          "publication_id": "GB/T 25741—2010 Appendix C",
+          "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+          "pdf_page": 80,
+          "printed_page": 390,
+          "table_sequence": 6837,
+          "order_code": "2112111212",
+          "finding": "exact static target row exists and was visually reviewed, but Appendix C supplies static glyph + stroke count/order code rather than accumulated per-stroke forms"
+        },
+        "fail_closed_reason": "The prescribed P2 originals do not provide an exact accumulated per-stroke target form for this radical. S09 confirms the exact target glyph but is insufficient for fine-stroke naming without inferring from numeric order codes, which P2 policy forbids.",
+        "resolution_path": "Require an applicable normative original with exact target and per-stroke shape/name mapping, or an explicit official mapping for the target; secondary D03/D04 cannot close this field."
       }
     }
   ],
