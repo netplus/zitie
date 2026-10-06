@@ -1,0 +1,2610 @@
+{
+  "schema_version": 1,
+  "record_kind": "P2_fine_stroke_names_normative_original_page_review",
+  "phase": "P2",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "scope": {
+    "batches": [
+      "B04",
+      "B05",
+      "B06",
+      "B07",
+      "B08",
+      "B09",
+      "B10",
+      "B11"
+    ],
+    "target_count": 80
+  },
+  "sources": [
+    {
+      "source_id": "S05",
+      "publication_id": "GF2001—2001",
+      "sha256": "68a1420580a7eedde79eeb55b91b6b2ff10ef9155d98633ccc712838f04e9b14",
+      "reviewed_pdf_pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "method": "原扫描件高分辨率渲染；实际审读术语、分类原则、命名原则、楷体卧钩说明和25种折笔表"
+    },
+    {
+      "source_id": "S02",
+      "publication_id": "GF0023—2020",
+      "sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
+      "reviewed_pdf_pages": [
+        9,
+        10,
+        11,
+        12,
+        13,
+        14,
+        15,
+        16,
+        17,
+        18,
+        19,
+        20,
+        21
+      ],
+      "method": "B04—B11精确目标页重新渲染并视觉审读累计手写图"
+    },
+    {
+      "source_id": "S09",
+      "publication_id": "GB/T 25741—2010",
+      "appendix": "C",
+      "sha256": "0514f50e310ae2eb32a743a3813d2630be9accec28b8bf244b06499d1d737baf",
+      "reviewed_pdf_pages": [
+        1,
+        2,
+        3,
+        7
+      ],
+      "method": "GF0023无精确目标的部首行重新渲染并视觉审读"
+    },
+    {
+      "source_id": "S08",
+      "publication_id": "GF3002—1999",
+      "sha256": "cb5cb74f108dafed41a3583bc8d33d8dd318d1a21d714923c0f1ced89443cf3e",
+      "method": "仅复用P1已经真实显示且逐项审读的5个精确字条，不外推（略）部分"
+    }
+  ],
+  "policy": {
+    "secondary_sources": "D03/D04仅作locator/crosscheck，不授予reviewed",
+    "digit_codes": "不从1/2/3/4/5笔顺码反推细笔名",
+    "review_boundary": "reviewed结论来自S05规范原页命名体系加适用规范目标原页；牙因规范语境冲突保持fail-closed"
+  },
+  "source_context_counts": {
+    "S02": 55,
+    "S09": 20,
+    "S06": 5
+  },
+  "entries": [
+    {
+      "batch_id": "B04",
+      "character": "干",
+      "main_id": 27,
+      "prior_candidate": [
+        "横",
+        "横",
+        "竖"
+      ],
+      "adjudicated_names": [
+        "横",
+        "横",
+        "竖"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B04-stroke-order-original-page.json",
+        "pdf_page": 9,
+        "printed_page": 3,
+        "table_no": "0023",
+        "ucs": "05E72",
+        "order_code": "112",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B04",
+      "character": "寸",
+      "main_id": 31,
+      "prior_candidate": [
+        "横",
+        "竖钩",
+        "点"
+      ],
+      "adjudicated_names": [
+        "横",
+        "竖钩",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B04-stroke-order-original-page.json",
+        "pdf_page": 10,
+        "printed_page": 4,
+        "table_no": "0031",
+        "ucs": "05BF8",
+        "order_code": "124",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B04",
+      "character": "夕",
+      "main_id": 43,
+      "prior_candidate": [
+        "撇",
+        "横撇",
+        "点"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "横撇",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B04-stroke-order-original-page.json",
+        "pdf_page": 11,
+        "printed_page": 5,
+        "table_no": "0046",
+        "ucs": "05915",
+        "order_code": "354",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B04",
+      "character": "广",
+      "main_id": 46,
+      "prior_candidate": [
+        "点",
+        "横",
+        "撇"
+      ],
+      "adjudicated_names": [
+        "点",
+        "横",
+        "撇"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B04-stroke-order-original-page.json",
+        "pdf_page": 11,
+        "printed_page": 5,
+        "table_no": "0053",
+        "ucs": "05E7F",
+        "order_code": "413",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B04",
+      "character": "门",
+      "main_id": 47,
+      "prior_candidate": [
+        "点",
+        "竖",
+        "横折钩"
+      ],
+      "adjudicated_names": [
+        "点",
+        "竖",
+        "横折钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": "5.15 横折钩",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B04-stroke-order-original-page.json",
+        "pdf_page": 11,
+        "printed_page": 5,
+        "table_no": "0055",
+        "ucs": "095E8",
+        "order_code": "425",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B04",
+      "character": "尸",
+      "main_id": 51,
+      "prior_candidate": [
+        "横折",
+        "横",
+        "撇"
+      ],
+      "adjudicated_names": [
+        "横折",
+        "横",
+        "撇"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B04-stroke-order-original-page.json",
+        "pdf_page": 11,
+        "printed_page": 5,
+        "table_no": "0059",
+        "ucs": "05C38",
+        "order_code": "513",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B04",
+      "character": "己",
+      "main_id": 52,
+      "prior_candidate": [
+        "横折",
+        "横",
+        "竖弯钩"
+      ],
+      "adjudicated_names": [
+        "横折",
+        "横",
+        "竖弯钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": "5.19 竖弯钩",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B04-stroke-order-original-page.json",
+        "pdf_page": 11,
+        "printed_page": 5,
+        "table_no": "0060",
+        "ucs": "05DF1",
+        "order_code": "515",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B04",
+      "character": "弓",
+      "main_id": 53,
+      "prior_candidate": [
+        "横折",
+        "横",
+        "竖折折钩"
+      ],
+      "adjudicated_names": [
+        "横折",
+        "横",
+        "竖折折钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": "5.24 竖折折钩",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B04-stroke-order-original-page.json",
+        "pdf_page": 11,
+        "printed_page": 5,
+        "table_no": "0063",
+        "ucs": "05F13",
+        "order_code": "515",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B04",
+      "character": "飞",
+      "main_id": 57,
+      "prior_candidate": [
+        "横斜钩",
+        "撇",
+        "点"
+      ],
+      "adjudicated_names": [
+        "横斜钩",
+        "撇",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": "5.16 横斜钩",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B04-stroke-order-original-page.json",
+        "pdf_page": 11,
+        "printed_page": 5,
+        "table_no": "0069",
+        "ucs": "098DE",
+        "order_code": "534",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B04",
+      "character": "马",
+      "main_id": 58,
+      "prior_candidate": [
+        "横折",
+        "竖折折钩",
+        "横"
+      ],
+      "adjudicated_names": [
+        "横折",
+        "竖折折钩",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": "5.24 竖折折钩",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B04-stroke-order-original-page.json",
+        "pdf_page": 12,
+        "printed_page": 6,
+        "table_no": "0072",
+        "ucs": "09A6C",
+        "order_code": "551",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B05",
+      "character": "无",
+      "main_id": 62,
+      "prior_candidate": [
+        "横",
+        "横",
+        "撇",
+        "竖弯钩"
+      ],
+      "adjudicated_names": [
+        "横",
+        "横",
+        "撇",
+        "竖弯钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 12,
+        "printed_page": 6,
+        "table_no": "0081",
+        "ucs": "065E0",
+        "order_code": "1135",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B05",
+      "character": "犬",
+      "main_id": 66,
+      "prior_candidate": [
+        "横",
+        "撇",
+        "捺",
+        "点"
+      ],
+      "adjudicated_names": [
+        "横",
+        "撇",
+        "捺",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0092",
+        "ucs": "072AC",
+        "order_code": "1344",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B05",
+      "character": "歹",
+      "main_id": 67,
+      "prior_candidate": [
+        "横",
+        "撇",
+        "横撇",
+        "点"
+      ],
+      "adjudicated_names": [
+        "横",
+        "撇",
+        "横撇",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0096",
+        "ucs": "06B79",
+        "order_code": "1354",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B05",
+      "character": "车",
+      "main_id": 68,
+      "prior_candidate": [
+        "横",
+        "撇折",
+        "横",
+        "竖"
+      ],
+      "adjudicated_names": [
+        "横",
+        "撇折",
+        "横",
+        "竖"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0100",
+        "ucs": "08F66",
+        "order_code": "1512",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B05",
+      "character": "牙",
+      "main_id": 69,
+      "prior_candidate": [
+        "横",
+        "撇折",
+        "竖钩",
+        "撇"
+      ],
+      "adjudicated_names": [
+        "横",
+        "撇折",
+        "竖钩",
+        "撇"
+      ],
+      "result": "conflict_fail_closed",
+      "direct_GF2001_reference": "5.4 竖折（印刷宋体例字；与目标教学手写候选存在冲突）",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0102",
+        "ucs": "07259",
+        "order_code": "1523",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF2001—2001表5.4把“牙”作为“竖折”例字；GF0023—2020目标累计手写图与既有教学候选“撇折”存在形态张力。缺少足以桥接印刷体分类与教学手写定名的显式依据，本轮不强行裁决。"
+    },
+    {
+      "batch_id": "B05",
+      "character": "戈",
+      "main_id": 70,
+      "prior_candidate": [
+        "横",
+        "斜钩",
+        "撇",
+        "点"
+      ],
+      "adjudicated_names": [
+        "横",
+        "斜钩",
+        "撇",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": "5.11 斜钩",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0104",
+        "ucs": "06208",
+        "order_code": "1534",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B05",
+      "character": "瓦",
+      "main_id": 72,
+      "prior_candidate": [
+        "横",
+        "竖提",
+        "横折弯钩",
+        "点"
+      ],
+      "adjudicated_names": [
+        "横",
+        "竖提",
+        "横折弯钩",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0108",
+        "ucs": "074E6",
+        "order_code": "1554",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B05",
+      "character": "止",
+      "main_id": 73,
+      "prior_candidate": [
+        "竖",
+        "横",
+        "竖",
+        "横"
+      ],
+      "adjudicated_names": [
+        "竖",
+        "横",
+        "竖",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0109",
+        "ucs": "06B62",
+        "order_code": "2121",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B05",
+      "character": "贝",
+      "main_id": 76,
+      "prior_candidate": [
+        "竖",
+        "横折",
+        "撇",
+        "点"
+      ],
+      "adjudicated_names": [
+        "竖",
+        "横折",
+        "撇",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 14,
+        "printed_page": 8,
+        "table_no": "0114",
+        "ucs": "08D1D",
+        "order_code": "2534",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B05",
+      "character": "见",
+      "main_id": 78,
+      "prior_candidate": [
+        "竖",
+        "横折",
+        "撇",
+        "竖弯钩"
+      ],
+      "adjudicated_names": [
+        "竖",
+        "横折",
+        "撇",
+        "竖弯钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B05-stroke-order-original-page.json",
+        "pdf_page": 14,
+        "printed_page": 8,
+        "table_no": "0118",
+        "ucs": "089C1",
+        "order_code": "2535",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B06",
+      "character": "厂",
+      "main_id": 7,
+      "prior_candidate": [
+        "横",
+        "撇"
+      ],
+      "adjudicated_names": [
+        "横",
+        "撇"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B06-stroke-order-original-page.json",
+        "pdf_page": 9,
+        "printed_page": 3,
+        "table_no": "0006",
+        "ucs": "05382",
+        "order_code": "13",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B06",
+      "character": "匚",
+      "main_id": 8,
+      "prior_candidate": [
+        "横",
+        "竖折"
+      ],
+      "adjudicated_names": [
+        "横",
+        "竖折"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 1,
+        "printed_page": 311,
+        "table_sequence": 20,
+        "stroke_count": 2,
+        "order_code": "15",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B06",
+      "character": "卜",
+      "main_id": 9,
+      "prior_candidate": [
+        "竖",
+        "点"
+      ],
+      "adjudicated_names": [
+        "竖",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B06-stroke-order-original-page.json",
+        "pdf_page": 9,
+        "printed_page": 3,
+        "table_no": "0008",
+        "ucs": "0535C",
+        "order_code": "24",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B06",
+      "character": "冂",
+      "main_id": 10,
+      "prior_candidate": [
+        "竖",
+        "横折钩"
+      ],
+      "adjudicated_names": [
+        "竖",
+        "横折钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 1,
+        "printed_page": 311,
+        "table_sequence": 27,
+        "stroke_count": 2,
+        "order_code": "25",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B06",
+      "character": "勹",
+      "main_id": 13,
+      "prior_candidate": [
+        "撇",
+        "横折钩"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "横折钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 1,
+        "printed_page": 311,
+        "table_sequence": 37,
+        "stroke_count": 2,
+        "order_code": "35",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B06",
+      "character": "儿",
+      "main_id": 14,
+      "prior_candidate": [
+        "撇",
+        "竖弯钩"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "竖弯钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B06-stroke-order-original-page.json",
+        "pdf_page": 9,
+        "printed_page": 3,
+        "table_no": "0012",
+        "ucs": "0513F",
+        "order_code": "35",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B06",
+      "character": "匕",
+      "main_id": 15,
+      "prior_candidate": [
+        "撇",
+        "竖弯钩"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "竖弯钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B06-stroke-order-original-page.json",
+        "pdf_page": 9,
+        "printed_page": 3,
+        "table_no": "0013",
+        "ucs": "05315",
+        "order_code": "35",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B06",
+      "character": "几",
+      "main_id": 16,
+      "prior_candidate": [
+        "撇",
+        "横折弯钩"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "横折弯钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": "5.22 横折弯钩",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B06-stroke-order-original-page.json",
+        "pdf_page": 9,
+        "printed_page": 3,
+        "table_no": "0014",
+        "ucs": "051E0",
+        "order_code": "35",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF2001—2001表5.22直接以“几”为“横折弯钩”例字；GF0023—2020目标第2笔形态一致，裁决D03“横斜钩”冲突。"
+    },
+    {
+      "batch_id": "B06",
+      "character": "亠",
+      "main_id": 17,
+      "prior_candidate": [
+        "点",
+        "横"
+      ],
+      "adjudicated_names": [
+        "点",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 1,
+        "printed_page": 311,
+        "table_sequence": 42,
+        "stroke_count": 2,
+        "order_code": "41",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B06",
+      "character": "冫",
+      "main_id": 18,
+      "prior_candidate": [
+        "点",
+        "提"
+      ],
+      "adjudicated_names": [
+        "点",
+        "提"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 1,
+        "printed_page": 311,
+        "table_sequence": 43,
+        "stroke_count": 2,
+        "order_code": "41",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B07",
+      "character": "冖",
+      "main_id": 19,
+      "prior_candidate": [
+        "点",
+        "横钩"
+      ],
+      "adjudicated_names": [
+        "点",
+        "横钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 1,
+        "printed_page": 311,
+        "table_sequence": 45,
+        "stroke_count": 2,
+        "order_code": "45",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B07",
+      "character": "凵",
+      "main_id": 20,
+      "prior_candidate": [
+        "竖折",
+        "竖"
+      ],
+      "adjudicated_names": [
+        "竖折",
+        "竖"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 1,
+        "printed_page": 311,
+        "table_sequence": 48,
+        "stroke_count": 2,
+        "order_code": "52",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "GF2001—2001区分“竖折”与“竖弯”；GB/T 25741—2010附录C目标字形为明确折角的凵形，采用“竖折、竖”，裁决D03“竖弯”冲突。"
+    },
+    {
+      "batch_id": "B07",
+      "character": "卩",
+      "main_id": 21,
+      "prior_candidate": [
+        "横折钩",
+        "竖"
+      ],
+      "adjudicated_names": [
+        "横折钩",
+        "竖"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 1,
+        "printed_page": 311,
+        "table_sequence": 50,
+        "stroke_count": 2,
+        "order_code": "52",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B07",
+      "character": "厶",
+      "main_id": 25,
+      "prior_candidate": [
+        "撇折",
+        "点"
+      ],
+      "adjudicated_names": [
+        "撇折",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 1,
+        "printed_page": 311,
+        "table_sequence": 57,
+        "stroke_count": 2,
+        "order_code": "54",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B07",
+      "character": "廴",
+      "main_id": 26,
+      "prior_candidate": [
+        "横折折撇",
+        "捺"
+      ],
+      "adjudicated_names": [
+        "横折折撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 1,
+        "printed_page": 311,
+        "table_sequence": 60,
+        "stroke_count": 2,
+        "order_code": "54",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B07",
+      "character": "艹",
+      "main_id": 30,
+      "prior_candidate": [
+        "横",
+        "竖",
+        "竖"
+      ],
+      "adjudicated_names": [
+        "横",
+        "竖",
+        "竖"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 2,
+        "printed_page": 312,
+        "table_sequence": 75,
+        "stroke_count": 3,
+        "order_code": "122",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B07",
+      "character": "廾",
+      "main_id": 32,
+      "prior_candidate": [
+        "横",
+        "撇",
+        "竖"
+      ],
+      "adjudicated_names": [
+        "横",
+        "撇",
+        "竖"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 2,
+        "printed_page": 312,
+        "table_sequence": 82,
+        "stroke_count": 3,
+        "order_code": "132",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B07",
+      "character": "宀",
+      "main_id": 48,
+      "prior_candidate": [
+        "点",
+        "点",
+        "横钩"
+      ],
+      "adjudicated_names": [
+        "点",
+        "点",
+        "横钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 2,
+        "printed_page": 312,
+        "table_sequence": 139,
+        "stroke_count": 3,
+        "order_code": "445",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B07",
+      "character": "辶",
+      "main_id": 49,
+      "prior_candidate": [
+        "点",
+        "横折折撇",
+        "捺"
+      ],
+      "adjudicated_names": [
+        "点",
+        "横折折撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 2,
+        "printed_page": 312,
+        "table_sequence": 141,
+        "stroke_count": 3,
+        "order_code": "454",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B07",
+      "character": "彐",
+      "main_id": 50,
+      "prior_candidate": [
+        "横折",
+        "横",
+        "横"
+      ],
+      "adjudicated_names": [
+        "横折",
+        "横",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 2,
+        "printed_page": 312,
+        "table_sequence": 142,
+        "stroke_count": 3,
+        "order_code": "511",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B08",
+      "character": "丨",
+      "main_id": 2,
+      "prior_candidate": [
+        "竖"
+      ],
+      "adjudicated_names": [
+        "竖"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S06",
+        "publication_id": "GF3002—1999",
+        "evidence": "data/evidence/B08-stroke-order-gf3002-original-page.json",
+        "pdf_page": 7,
+        "printed_page": 4,
+        "table_sequence": 41,
+        "exchange_code": "4E28",
+        "order_code": "2",
+        "result": "reviewed_exact_GF3002_1999_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B08",
+      "character": "丿",
+      "main_id": 3,
+      "prior_candidate": [
+        "撇"
+      ],
+      "adjudicated_names": [
+        "撇"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S06",
+        "publication_id": "GF3002—1999",
+        "evidence": "data/evidence/B08-stroke-order-gf3002-original-page.json",
+        "pdf_page": 8,
+        "printed_page": 5,
+        "table_sequence": 64,
+        "exchange_code": "4E3F",
+        "order_code": "3",
+        "result": "reviewed_exact_GF3002_1999_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B08",
+      "character": "丶",
+      "main_id": 4,
+      "prior_candidate": [
+        "点"
+      ],
+      "adjudicated_names": [
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S06",
+        "publication_id": "GF3002—1999",
+        "evidence": "data/evidence/B08-stroke-order-gf3002-original-page.json",
+        "pdf_page": 7,
+        "printed_page": 4,
+        "table_sequence": 55,
+        "exchange_code": "4E36",
+        "order_code": "4",
+        "result": "reviewed_exact_GF3002_1999_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B08",
+      "character": "乛",
+      "main_id": 5,
+      "prior_candidate": [
+        "横钩"
+      ],
+      "adjudicated_names": [
+        "横钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S06",
+        "publication_id": "GF3002—1999",
+        "evidence": "data/evidence/B08-stroke-order-gf3002-original-page.json",
+        "pdf_page": 8,
+        "printed_page": 5,
+        "table_sequence": 92,
+        "exchange_code": "4E5B",
+        "order_code": "5",
+        "result": "reviewed_exact_GF3002_1999_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B08",
+      "character": "尢",
+      "main_id": 34,
+      "prior_candidate": [
+        "横",
+        "撇",
+        "竖弯钩"
+      ],
+      "adjudicated_names": [
+        "横",
+        "撇",
+        "竖弯钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B08-stroke-order-original-page.json",
+        "pdf_page": 10,
+        "printed_page": 4,
+        "table_no": "6502",
+        "ucs": "05C22",
+        "order_code": "135",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B08",
+      "character": "弋",
+      "main_id": 35,
+      "prior_candidate": [
+        "横",
+        "斜钩",
+        "点"
+      ],
+      "adjudicated_names": [
+        "横",
+        "斜钩",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B08-stroke-order-original-page.json",
+        "pdf_page": 10,
+        "printed_page": 4,
+        "table_no": "3504",
+        "ucs": "05F0B",
+        "order_code": "154",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B08",
+      "character": "囗",
+      "main_id": 38,
+      "prior_candidate": [
+        "竖",
+        "横折",
+        "横"
+      ],
+      "adjudicated_names": [
+        "竖",
+        "横折",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C（规范性附录：汉字笔顺序）",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 2,
+        "printed_page": 312,
+        "table_sequence": 99,
+        "stroke_count": 3,
+        "order_code": "251",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B08",
+      "character": "彳",
+      "main_id": 41,
+      "prior_candidate": [
+        "撇",
+        "撇",
+        "竖"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "撇",
+        "竖"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B08-stroke-order-original-page.json",
+        "pdf_page": 10,
+        "printed_page": 4,
+        "table_no": "6503",
+        "ucs": "05F73",
+        "order_code": "332",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B08",
+      "character": "彡",
+      "main_id": 42,
+      "prior_candidate": [
+        "撇",
+        "撇",
+        "撇"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "撇",
+        "撇"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C（规范性附录：汉字笔顺序）",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 2,
+        "printed_page": 312,
+        "table_sequence": 108,
+        "stroke_count": 3,
+        "order_code": "333",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B08",
+      "character": "夂",
+      "main_id": 44,
+      "prior_candidate": [
+        "撇",
+        "横撇",
+        "捺"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "横撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C（规范性附录：汉字笔顺序）",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 2,
+        "printed_page": 312,
+        "table_sequence": 122,
+        "stroke_count": 3,
+        "order_code": "354",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B09",
+      "character": "韦",
+      "main_id": 63,
+      "prior_candidate": [
+        "横",
+        "横",
+        "横折钩",
+        "竖"
+      ],
+      "adjudicated_names": [
+        "横",
+        "横",
+        "横折钩",
+        "竖"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 12,
+        "printed_page": 6,
+        "table_no": "3509",
+        "ucs": "097E6",
+        "order_code": "1152",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B09",
+      "character": "支",
+      "main_id": 65,
+      "prior_candidate": [
+        "横",
+        "竖",
+        "横撇",
+        "捺"
+      ],
+      "adjudicated_names": [
+        "横",
+        "竖",
+        "横撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 12,
+        "printed_page": 6,
+        "table_no": "0089",
+        "ucs": "0652F",
+        "order_code": "1254",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B09",
+      "character": "比",
+      "main_id": 71,
+      "prior_candidate": [
+        "横",
+        "竖提",
+        "撇",
+        "竖弯钩"
+      ],
+      "adjudicated_names": [
+        "横",
+        "竖提",
+        "撇",
+        "竖弯钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0105",
+        "ucs": "06BD4",
+        "order_code": "1535",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B09",
+      "character": "气",
+      "main_id": 81,
+      "prior_candidate": [
+        "撇",
+        "横",
+        "横",
+        "横斜钩"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "横",
+        "横",
+        "横斜钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 14,
+        "printed_page": 8,
+        "table_no": "0122",
+        "ucs": "06C14",
+        "order_code": "3115",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B09",
+      "character": "长",
+      "main_id": 83,
+      "prior_candidate": [
+        "撇",
+        "横",
+        "竖提",
+        "捺"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "横",
+        "竖提",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": "5.6 竖提",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 14,
+        "printed_page": 8,
+        "table_no": "0127",
+        "ucs": "0957F",
+        "order_code": "3154",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B09",
+      "character": "片",
+      "main_id": 84,
+      "prior_candidate": [
+        "撇",
+        "竖",
+        "横",
+        "横折"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "竖",
+        "横",
+        "横折"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 14,
+        "printed_page": 8,
+        "table_no": "0130",
+        "ucs": "07247",
+        "order_code": "3215",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B09",
+      "character": "斤",
+      "main_id": 85,
+      "prior_candidate": [
+        "撇",
+        "撇",
+        "横",
+        "竖"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "撇",
+        "横",
+        "竖"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 15,
+        "printed_page": 9,
+        "table_no": "0137",
+        "ucs": "065A4",
+        "order_code": "3312",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B09",
+      "character": "爪",
+      "main_id": 86,
+      "prior_candidate": [
+        "撇",
+        "撇",
+        "竖",
+        "捺"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "撇",
+        "竖",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 15,
+        "printed_page": 9,
+        "table_no": "0138",
+        "ucs": "0722A",
+        "order_code": "3324",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B09",
+      "character": "父",
+      "main_id": 87,
+      "prior_candidate": [
+        "撇",
+        "点",
+        "撇",
+        "捺"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "点",
+        "撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 15,
+        "printed_page": 9,
+        "table_no": "0141",
+        "ucs": "07236",
+        "order_code": "3434",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B09",
+      "character": "文",
+      "main_id": 93,
+      "prior_candidate": [
+        "点",
+        "横",
+        "撇",
+        "捺"
+      ],
+      "adjudicated_names": [
+        "点",
+        "横",
+        "撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B09-stroke-order-original-page.json",
+        "pdf_page": 16,
+        "printed_page": 10,
+        "table_no": "0161",
+        "ucs": "06587",
+        "order_code": "4134",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B10",
+      "character": "丬",
+      "main_id": 45,
+      "prior_candidate": [
+        "点",
+        "提",
+        "竖"
+      ],
+      "adjudicated_names": [
+        "点",
+        "提",
+        "竖"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S06",
+        "publication_id": "GF3002—1999",
+        "evidence": "data/evidence/B10-stroke-order-gf3002-original-page.json",
+        "pdf_page": 7,
+        "printed_page": 4,
+        "table_sequence": 45,
+        "exchange_code": "4E2C",
+        "order_code": "412",
+        "result": "reviewed_exact_GF3002_1999_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B10",
+      "character": "幺",
+      "main_id": 59,
+      "prior_candidate": [
+        "撇折",
+        "撇折",
+        "点"
+      ],
+      "adjudicated_names": [
+        "撇折",
+        "撇折",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B10-stroke-order-original-page.json",
+        "pdf_page": 12,
+        "printed_page": 6,
+        "table_no": "3507",
+        "ucs": "05E7A",
+        "order_code": "554",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B10",
+      "character": "攴",
+      "main_id": 74,
+      "prior_candidate": [
+        "竖",
+        "横",
+        "横撇",
+        "捺"
+      ],
+      "adjudicated_names": [
+        "竖",
+        "横",
+        "横撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C（规范性附录：汉字笔顺序）",
+        "evidence": "data/evidence/B10-stroke-order-gbt25741-appendix-c.json",
+        "pdf_page": 3,
+        "printed_page": 313,
+        "table_sequence": 240,
+        "stroke_count": 4,
+        "order_code": "2154",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B10",
+      "character": "氏",
+      "main_id": 89,
+      "prior_candidate": [
+        "撇",
+        "竖提",
+        "横",
+        "斜钩"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "竖提",
+        "横",
+        "斜钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B10-stroke-order-original-page.json",
+        "pdf_page": 15,
+        "printed_page": 9,
+        "table_no": "0151",
+        "ucs": "06C0F",
+        "order_code": "3515",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B10",
+      "character": "欠",
+      "main_id": 90,
+      "prior_candidate": [
+        "撇",
+        "横撇/横钩（待原页定名）",
+        "撇",
+        "捺"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "横撇",
+        "撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B10-stroke-order-original-page.json",
+        "pdf_page": 15,
+        "printed_page": 9,
+        "table_no": "0153",
+        "ucs": "06B20",
+        "order_code": "3534",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF2001—2001区分“横撇”与“横钩”；GF0023—2020“欠”目标第2笔向左下撇出，定名“横撇”。"
+    },
+    {
+      "batch_id": "B10",
+      "character": "风",
+      "main_id": 91,
+      "prior_candidate": [
+        "撇",
+        "横折弯钩",
+        "撇",
+        "点"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "横斜钩",
+        "撇",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": "5.16 横斜钩",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B10-stroke-order-original-page.json",
+        "pdf_page": 15,
+        "printed_page": 9,
+        "table_no": "0154",
+        "ucs": "098CE",
+        "order_code": "3534",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF2001—2001表5.16直接以“风”为“横斜钩”例字；GF0023—2020目标第2笔形态一致，覆盖原候选“横折弯钩”。"
+    },
+    {
+      "batch_id": "B10",
+      "character": "方",
+      "main_id": 94,
+      "prior_candidate": [
+        "点",
+        "横",
+        "横折钩",
+        "撇"
+      ],
+      "adjudicated_names": [
+        "点",
+        "横",
+        "横折钩",
+        "撇"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B10-stroke-order-original-page.json",
+        "pdf_page": 16,
+        "printed_page": 10,
+        "table_no": "0163",
+        "ucs": "065B9",
+        "order_code": "4153",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B10",
+      "character": "斗",
+      "main_id": 96,
+      "prior_candidate": [
+        "点",
+        "点",
+        "横",
+        "竖"
+      ],
+      "adjudicated_names": [
+        "点",
+        "点",
+        "横",
+        "竖"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B10-stroke-order-original-page.json",
+        "pdf_page": 16,
+        "printed_page": 10,
+        "table_no": "0166",
+        "ucs": "06597",
+        "order_code": "4412",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B10",
+      "character": "户",
+      "main_id": 97,
+      "prior_candidate": [
+        "点",
+        "横折",
+        "横",
+        "撇"
+      ],
+      "adjudicated_names": [
+        "点",
+        "横折",
+        "横",
+        "撇"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B10-stroke-order-original-page.json",
+        "pdf_page": 16,
+        "printed_page": 10,
+        "table_no": "0170",
+        "ucs": "06237",
+        "order_code": "4513",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B10",
+      "character": "心",
+      "main_id": 98,
+      "prior_candidate": [
+        "点",
+        "斜钩",
+        "点",
+        "点"
+      ],
+      "adjudicated_names": [
+        "点",
+        "卧钩",
+        "点",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": "§4 楷体额外卧钩 + 5.19 印刷宋体心例字语境",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B10-stroke-order-original-page.json",
+        "pdf_page": 16,
+        "printed_page": 10,
+        "table_no": "0174",
+        "ucs": "05FC3",
+        "order_code": "4544",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF2001—2001第4节明确印刷楷体额外存在“卧钩”；GF0023—2020“心”目标第2笔为横卧回钩手写形，本字帖按楷体手写教学定名“卧钩”。GF2001印刷宋体表5.19把“心”列入“竖弯钩”例字的字体语境同时保留。"
+    },
+    {
+      "batch_id": "B11",
+      "character": "示",
+      "main_id": 100,
+      "prior_candidate": [
+        "横",
+        "横",
+        "竖钩",
+        "撇",
+        "点"
+      ],
+      "adjudicated_names": [
+        "横",
+        "横",
+        "竖钩",
+        "撇",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B11-stroke-order-original-page.json",
+        "pdf_page": 17,
+        "printed_page": 11,
+        "table_no": "0194",
+        "ucs": "0793A",
+        "order_code": "11234",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B11",
+      "character": "甘",
+      "main_id": 101,
+      "prior_candidate": [
+        "横",
+        "竖",
+        "竖",
+        "横",
+        "横"
+      ],
+      "adjudicated_names": [
+        "横",
+        "竖",
+        "竖",
+        "横",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B11-stroke-order-original-page.json",
+        "pdf_page": 18,
+        "printed_page": 12,
+        "table_no": "0205",
+        "ucs": "07518",
+        "order_code": "12211",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B11",
+      "character": "龙",
+      "main_id": 103,
+      "prior_candidate": [
+        "横",
+        "撇",
+        "竖弯钩",
+        "撇",
+        "点"
+      ],
+      "adjudicated_names": [
+        "横",
+        "撇",
+        "竖弯钩",
+        "撇",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B11-stroke-order-original-page.json",
+        "pdf_page": 19,
+        "printed_page": 13,
+        "table_no": "0221",
+        "ucs": "09F99",
+        "order_code": "13534",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B11",
+      "character": "业",
+      "main_id": 104,
+      "prior_candidate": [
+        "竖",
+        "竖",
+        "点",
+        "撇",
+        "横"
+      ],
+      "adjudicated_names": [
+        "竖",
+        "竖",
+        "点",
+        "撇",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B11-stroke-order-original-page.json",
+        "pdf_page": 19,
+        "printed_page": 13,
+        "table_no": "0231",
+        "ucs": "04E1A",
+        "order_code": "22431",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B11",
+      "character": "罒",
+      "main_id": 107,
+      "prior_candidate": [
+        "竖",
+        "横折",
+        "竖",
+        "竖",
+        "横"
+      ],
+      "adjudicated_names": [
+        "竖",
+        "横折",
+        "竖",
+        "竖",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 7,
+        "printed_page": 317,
+        "table_sequence": 555,
+        "stroke_count": 5,
+        "order_code": "25221",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B11",
+      "character": "皿",
+      "main_id": 108,
+      "prior_candidate": [
+        "竖",
+        "横折",
+        "竖",
+        "竖",
+        "横"
+      ],
+      "adjudicated_names": [
+        "竖",
+        "横折",
+        "竖",
+        "竖",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B11-stroke-order-original-page.json",
+        "pdf_page": 20,
+        "printed_page": 14,
+        "table_no": "0259",
+        "ucs": "076BF",
+        "order_code": "25221",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B11",
+      "character": "生",
+      "main_id": 109,
+      "prior_candidate": [
+        "撇",
+        "横",
+        "横",
+        "竖",
+        "横"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "横",
+        "横",
+        "竖",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B11-stroke-order-original-page.json",
+        "pdf_page": 21,
+        "printed_page": 15,
+        "table_no": "0263",
+        "ucs": "0751F",
+        "order_code": "31121",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B11",
+      "character": "矢",
+      "main_id": 110,
+      "prior_candidate": [
+        "撇",
+        "横",
+        "横",
+        "撇",
+        "捺"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "横",
+        "横",
+        "撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B11-stroke-order-original-page.json",
+        "pdf_page": 21,
+        "printed_page": 15,
+        "table_no": "0264",
+        "ucs": "077E2",
+        "order_code": "31134",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B11",
+      "character": "禾",
+      "main_id": 111,
+      "prior_candidate": [
+        "撇",
+        "横",
+        "竖",
+        "撇",
+        "捺"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "横",
+        "竖",
+        "撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B11-stroke-order-original-page.json",
+        "pdf_page": 21,
+        "printed_page": 15,
+        "table_no": "0267",
+        "ucs": "079BE",
+        "order_code": "31234",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    },
+    {
+      "batch_id": "B11",
+      "character": "瓜",
+      "main_id": 113,
+      "prior_candidate": [
+        "撇",
+        "撇",
+        "竖提",
+        "点",
+        "捺"
+      ],
+      "adjudicated_names": [
+        "撇",
+        "撇",
+        "竖提",
+        "点",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "direct_GF2001_reference": null,
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B11-stroke-order-original-page.json",
+        "pdf_page": 21,
+        "printed_page": 15,
+        "table_no": "0279",
+        "ucs": "074DC",
+        "order_code": "33544",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+    }
+  ],
+  "summary": {
+    "target_count": 80,
+    "evidence_level_reviewed": 79,
+    "evidence_level_pending": 0,
+    "evidence_level_conflict_fail_closed": 1,
+    "canonical_upgrades_applied": 0,
+    "canonical_sync_blocked": true,
+    "corrected_candidates": [
+      "欠：第2笔横撇/横钩待定→横撇",
+      "风：第2笔横折弯钩→横斜钩",
+      "心：第2笔斜钩→卧钩"
+    ],
+    "secondary_conflicts_adjudicated_at_evidence_level": [
+      "几",
+      "凵",
+      "风",
+      "心"
+    ],
+    "remaining_conflicts": [
+      "牙"
+    ]
+  },
+  "tooling_write_blocker": {
+    "path": "data/B04.json via GitHub update_file",
+    "raw_error": "This tool call was blocked by OpenAI's safety checks. Please double check what you are sending.",
+    "handling": "按工程约定停止该写路径；未虚构canonical reviewed计数，继续提交独立证据和review记录。"
+  },
+  "limits": [
+    "本记录形成P2规范原页审读结论，但由于canonical update_file路径被Safety Check阻断，本轮不把data/B04—B11的field_status冒充为已升级。",
+    "不关闭GF0011—2022身份、读音、名称、结构、位置迁移、artwork、PDF、manifest、CI或release。"
+  ]
+}
