@@ -855,7 +855,7 @@
     ],
     "next_assignment_starts_at": null,
     "next_work": "P2_fine_stroke_names_normative_original_page_closure",
-    "note": "P4 active. B04-B11 80 targets now have GF0011—2022 main-radical membership/main_id continuity reviewed from the official 2022 release notice plus the reviewed 2009 baseline main table. Exact 2022 glyph/attached-form/name/code fields remain pending formal item-level 2022 data. GF0011—2022 public fulltext remains a source-level blocker only for those exact fields; position migration remains independently actionable. content_ready remains B01-B03.",
+    "note": "P4 active. B04-B21 all 171 in-progress main items now have GF0011—2022 main-radical membership/main_id continuity reviewed from the official 2022 release notice plus the reviewed 2009 baseline table. Exact 2022 glyph/attached-form/name/code fields remain pending fulltext/item-level official data. Position migration remains independently active. B01-B03 30 content-ready items still require P4 continuity regression before 201/201 identity continuity is complete.",
     "stroke_order_reviewed_main_count": 201,
     "stroke_order_pending_main_count": 0,
     "active_remaining_phase": "P2",
@@ -914,6 +914,35 @@
         "evidence": "data/evidence/P4-B04-B11-main-radical-identity-continuity.json",
         "review": "reviews/P4-B04-B11-main-identity-continuity.md",
         "source_access_audit": "sources/reviews/P4-GF0011-2022-public-access-audit-20261006.json"
+      },
+      "round2": {
+        "batches": [
+          "B12",
+          "B13",
+          "B14",
+          "B15",
+          "B16",
+          "B17",
+          "B18",
+          "B19",
+          "B20",
+          "B21"
+        ],
+        "target_count": 91,
+        "main_radical_membership_continuity_reviewed": 91,
+        "exact_2022_item_fields_reviewed": 0,
+        "exact_2022_item_fields_pending": 91,
+        "evidence": [
+          "data/evidence/P4-B12-B19-main-radical-identity-continuity.json",
+          "data/evidence/P4-B20-B21-main-radical-identity-continuity.json"
+        ],
+        "review": "reviews/P4-B12-B21-main-identity-continuity.md"
+      },
+      "cumulative_in_progress_batches": {
+        "scope": "B04-B21",
+        "target_count": 171,
+        "main_radical_membership_continuity_reviewed": 171,
+        "exact_2022_item_fields_pending": 171
       }
     }
   }
