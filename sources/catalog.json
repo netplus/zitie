@@ -620,6 +620,57 @@
           "data/evidence/B19-stroke-order-original-page.json"
         ],
         "limits": "Only exact targets visually located on GF0023 original pages are reviewed. The 12 unresolved component/radical targets are not declared absent; they remain pending for S04 or other applicable normative sources."
+      },
+      "P1_B20_B21_original_page_review": {
+        "date": "2026-10-06",
+        "phase": "P1",
+        "batches": [
+          "B20",
+          "B21"
+        ],
+        "target_count": 11,
+        "reviewed_exact_count": 11,
+        "exact_target_not_located_count": 0,
+        "reviewed_pdf_pages": [
+          224,
+          253,
+          286,
+          287,
+          326,
+          334,
+          338,
+          367,
+          391,
+          432,
+          533
+        ],
+        "reviewed_printed_pages": [
+          218,
+          247,
+          280,
+          281,
+          320,
+          328,
+          332,
+          361,
+          385,
+          426,
+          527
+        ],
+        "source_sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
+        "recovery_run_id": 37402630995,
+        "recovery_artifact_id": 11385916300,
+        "method": "verified artifact recovery; local original-PDF render; all 11 exact target rows visually inspected; text layer used only to index table_no/UCS/order digits",
+        "result_summary": {
+          "B20": "10 reviewed / 0 pending",
+          "B21": "1 / 0"
+        },
+        "pending_characters": [],
+        "evidence": [
+          "data/evidence/B20-stroke-order-original-page.json",
+          "data/evidence/B21-stroke-order-original-page.json"
+        ],
+        "limits": "All 11 targets are exact GF0023 original-page hits. This closes stroke_order only; fine_stroke_names and later-stage fields remain independent."
       }
     },
     {
