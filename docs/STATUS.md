@@ -242,6 +242,12 @@ B20—B21共11个主部首已逐项回GF0023—2020原页视觉复核，**11/11�
 
 人工记录：`reviews/P1-B20-B21-GF0023-original-page.md`。
 
+## P2第一轮：B04—B11细笔名规范原页收口（2026-10-06）
+
+B04—B11共80个主部首已完成GF2001—2001折笔规范与目标整字规范原页逐项复核。结果：**79项 fine_stroke_names reviewed，1项牙保持 conflict_fail_closed，0普通pending**。关键裁决：几=撇、横折弯钩；凵=竖折、竖；欠第2笔=横撇；风第2笔=横斜钩；心第2笔=卧钩。secondary D03/D04只作locator/crosscheck，不参与多数投票。
+
+证据：`data/evidence/P2-B04-B11-fine-stroke-names-original-page.json`；人工摘要：`reviews/P2-B04-B11-fine-stroke-names.md`。canonical `data/B04.json`—`data/B11.json`已同步；牙仍保留精确冲突和解决路径。P1保持201/201 stroke_order reviewed。
+
 ## 当前主要未决字段
 
 1. GF0011—2022精确主项字形、附形、名称和编码；
