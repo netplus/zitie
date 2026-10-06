@@ -194,7 +194,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "structure": "deferred_P4_exact_target_identity_before_structure",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -207,14 +207,15 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
+        "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
       ],
       "structure_review": {
-        "source_id": "S07",
-        "publication_id": "GF0013—2009",
-        "evidence": "data/evidence/B06-structure.json",
-        "result": "no_exact_standalone_entry_in_reviewed_table"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "result": "deferred_P4_exact_target_identity_before_structure",
+        "structure_class": null,
+        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
       },
       "pronunciation_review": {
         "source_id": "S03",
@@ -274,6 +275,12 @@
         },
         "visual_review": true,
         "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+      },
+      "structure": {
+        "status": "deferred_P4_exact_target_identity_before_structure",
+        "class": null,
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
       }
     },
     {
@@ -457,7 +464,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "structure": "deferred_P4_exact_target_identity_before_structure",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -470,14 +477,15 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
+        "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
       ],
       "structure_review": {
-        "source_id": "S07",
-        "publication_id": "GF0013—2009",
-        "evidence": "data/evidence/B06-structure.json",
-        "result": "no_exact_standalone_entry_in_reviewed_table"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "result": "deferred_P4_exact_target_identity_before_structure",
+        "structure_class": null,
+        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
       },
       "pronunciation_review": {
         "source_id": "S03",
@@ -570,6 +578,12 @@
         },
         "visual_review": true,
         "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+      },
+      "structure": {
+        "status": "deferred_P4_exact_target_identity_before_structure",
+        "class": null,
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
       }
     },
     {
@@ -607,7 +621,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "structure": "deferred_P4_exact_target_identity_before_structure",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -620,14 +634,15 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
+        "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
       ],
       "structure_review": {
-        "source_id": "S07",
-        "publication_id": "GF0013—2009",
-        "evidence": "data/evidence/B06-structure.json",
-        "result": "no_exact_standalone_entry_in_reviewed_table"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "result": "deferred_P4_exact_target_identity_before_structure",
+        "structure_class": null,
+        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
       },
       "pronunciation_review": {
         "source_id": "S03",
@@ -720,6 +735,12 @@
         },
         "visual_review": true,
         "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+      },
+      "structure": {
+        "status": "deferred_P4_exact_target_identity_before_structure",
+        "class": null,
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
       }
     },
     {
@@ -1193,7 +1214,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "structure": "deferred_P4_exact_target_identity_before_structure",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -1206,14 +1227,15 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
+        "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
       ],
       "structure_review": {
-        "source_id": "S07",
-        "publication_id": "GF0013—2009",
-        "evidence": "data/evidence/B06-structure.json",
-        "result": "no_exact_standalone_entry_in_reviewed_table"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "result": "deferred_P4_exact_target_identity_before_structure",
+        "structure_class": null,
+        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
       },
       "pronunciation_review": {
         "source_id": "S03",
@@ -1273,6 +1295,12 @@
         },
         "visual_review": true,
         "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+      },
+      "structure": {
+        "status": "deferred_P4_exact_target_identity_before_structure",
+        "class": null,
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
       }
     },
     {
@@ -1310,7 +1338,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "structure": "deferred_P4_exact_target_identity_before_structure",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -1323,14 +1351,15 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
+        "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
       ],
       "structure_review": {
-        "source_id": "S07",
-        "publication_id": "GF0013—2009",
-        "evidence": "data/evidence/B06-structure.json",
-        "result": "no_exact_standalone_entry_in_reviewed_table"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "result": "deferred_P4_exact_target_identity_before_structure",
+        "structure_class": null,
+        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
       },
       "pronunciation_review": {
         "source_id": "S03",
@@ -1390,6 +1419,12 @@
         },
         "visual_review": true,
         "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+      },
+      "structure": {
+        "status": "deferred_P4_exact_target_identity_before_structure",
+        "class": null,
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
       }
     }
   ],

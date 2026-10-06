@@ -50,7 +50,10 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "pending_authoritative_structure_review"
+        "status": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "class": "decomposable",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
       "pinyin": null,
       "component_name": null,
@@ -66,7 +69,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "pending_authoritative_structure_review",
+        "structure": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -79,8 +82,7 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验"
+        "采用读音尚未完成适用权威原页复核"
       ],
       "stroke_order_review": {
         "source_id": "S02",
@@ -129,6 +131,13 @@
         },
         "visual_review": true,
         "rationale": "GF0023 exact accumulated-stroke row for 龠 was visually reviewed stroke by stroke; GF2001 naming rules were applied to the observed basic and 横折 strokes. No secondary sequence was used as authority."
+      },
+      "structure_review": {
+        "phase": "P3",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "result": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "structure_class": "decomposable",
+        "membership_basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       }
     }
   ],

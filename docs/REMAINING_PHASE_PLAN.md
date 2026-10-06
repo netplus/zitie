@@ -84,6 +84,14 @@ GF0023主表阶段已扫完B04—B21全部171项：**134/171 reviewed，37/171 r
 
 退出条件：除GF0011—2022和位置迁移外，字段pending基本清零。
 
+### P3当前进展（2026-10-06）
+
+- component_name第一轮：B08+B14共20项从既有S03原页证据同步reviewed；27项S03已实审但无精确独立主形名称条目的目标转P4 GF0011—2022精确名称门槛；P3普通component_name缺口仅B21龠1项。
+- structure第二轮：此前100项未闭合structure全部完成P3适用性审查。63个GF0023精确规范字由S07+GF3001规范集合关闭（15 undecomposable、48 decomposable）；37个非GF0023精确目标的部件型主项转P4精确身份门槛，不标reviewed。**P3 structure普通pending=0。**
+- pronunciation仍是P3主剩余字段。
+
+structure证据：`data/evidence/P3-structure-GF3001-synthesis.json`、`reviews/P3-structure-GF3001-synthesis-20261006.md`。
+
 ## P4 2022身份与位置迁移
 
 目标：处理全书级语义门槛。

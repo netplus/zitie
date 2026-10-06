@@ -855,7 +855,7 @@
     ],
     "next_assignment_starts_at": null,
     "next_work": "P2_fine_stroke_names_normative_original_page_closure",
-    "note": "P3 active. component_name round1 progressed 47 distinct main items: B08+B14 20 items synced to reviewed_S03_GF0014_2009 from existing original-page evidence; 27 S03 no-exact-row items routed to P4 GF0011—2022 exact-name gate without being marked reviewed. Ordinary P3 component_name gap remaining: B21 龠 only. pronunciation and structure remain active. content_ready remains B01-B03.",
+    "note": "P3 active. structure round progressed 100 distinct main items: 63 GF0023 exact standard-character targets closed via S07+GF3001 published normative-set synthesis (15 undecomposable, 48 decomposable); 37 non-GF0023 component-like targets routed to P4 exact identity/main-variant gate without being marked structure reviewed. Ordinary P3 structure gap is now 0. component_name ordinary gap remains B21 龠 only; pronunciation remains the main P3 workload. content_ready remains B01-B03.",
     "stroke_order_reviewed_main_count": 201,
     "stroke_order_pending_main_count": 0,
     "active_remaining_phase": "P2",
@@ -876,6 +876,16 @@
         "deferred_to_P4_exact_name_gate": 27,
         "ordinary_component_name_P3_gap_remaining": 1,
         "review": "reviews/P3-round1-component-name-20261006.md"
+      },
+      "structure_round2": {
+        "progressed_main_count": 100,
+        "reviewed_standard_character_targets": 63,
+        "reviewed_undecomposable_GF3001": 15,
+        "reviewed_decomposable_combined_S07_GF3001": 48,
+        "deferred_to_P4_exact_identity_gate": 37,
+        "ordinary_structure_P3_gap_remaining": 0,
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "review": "reviews/P3-structure-GF3001-synthesis-20261006.md"
       }
     }
   }

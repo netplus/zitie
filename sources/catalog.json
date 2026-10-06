@@ -1671,6 +1671,48 @@
       "provenance": "固定公开Git blob经Actions临时artifact恢复；P1逐项目标行实际原页视觉审读。",
       "limits": "仅关闭实际定位并视觉核验的stroke_order目标行；不外推其它字段。",
       "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json"
+    },
+    {
+      "id": "S10",
+      "title": "信息处理用GB13000.1字符集汉字部件规范",
+      "publication_id": "GF3001—1997",
+      "publisher": "国家语言文字工作委员会",
+      "role": [
+        "P3 structure basis",
+        "基础部件/不可再拆分定义"
+      ],
+      "urls": [
+        "https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/201001/t20100115_75616.html",
+        "https://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/12/20150112165337190.pdf"
+      ],
+      "status": "official_identity_verified_pinned_public_blob_membership_via_published_transcription",
+      "repo": "zispace/hanzi-docs",
+      "pinned_commit": "d26705ffc52b81b6e1a45483c7b591f62962f49f",
+      "path": "中国大陆/2-GF-语言文字规范/19971201-GF 3001-1997《信息处理用GB13000.1字符集汉字部件规范》.pdf",
+      "git_blob_sha": "fe3d4405e7af2438ee923d89c64825ff17d7b8a1",
+      "checked_at": "2026-10-06",
+      "provenance": "教育部官方页面确认规范身份与主题；固定公开Git blob用于字节身份锚定。GF3001规定基础部件为最小、不再拆分的部件。",
+      "limits": "本轮不声称连接器已直接展开GF3001大PDF基础部件表全部原页；具体成字基础部件成员关系通过已发表学术转录A01交叉，权威定义仍来自GF3001。"
+    },
+    {
+      "id": "A01",
+      "title": "《通用规范汉字表》独体字统计与思考",
+      "publication_id": "Shao-2021-GF3001-independent-character-synthesis",
+      "publisher": "盐城师范学院学报（人文社会科学版）",
+      "author": "邵霭吉",
+      "year": 2021,
+      "role": [
+        "GF3001成字基础部件完整转录",
+        "GF3001与GF0013独体字集合交叉"
+      ],
+      "url": "https://xb.yctu.edu.cn/_upload/article/files/62/9d/ac4fdfad40d0aa60f3032a5612d3/9843ba30-2f8e-4acb-8df8-c42e8140bb5a.pdf",
+      "doi": "10.16401/j.cnki.ysxb.1003-6873.2021.03.034",
+      "status": "published_scholarly_transcription_auxiliary",
+      "checked_at": "2026-10-06",
+      "reviewed_sections": [
+        "printed pp.34-37, GF3001 230 independent characters and S07/GF3001 comparison"
+      ],
+      "limits": "不是语言文字规范，不作为独立权威体系；仅用于完整转录/交叉GF3001与S07的成员集合，结构结论的规范语义来自S10/S07。"
     }
   ]
 }

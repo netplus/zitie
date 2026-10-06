@@ -50,7 +50,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "structure": "reviewed_P3_GF3001_1997_undecomposable_via_published_membership_synthesis",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -62,14 +62,14 @@
       "migration_boundary": "“伟”只作韦部件语境；简化字形与位置变化另核。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "S03目标部件名称条目尚未逐项定位并实际审读"
       ],
       "structure_review": {
-        "source_id": "S07",
-        "publication_id": "GF0013—2009",
-        "evidence": "data/evidence/B09-structure.json",
-        "result": "no_exact_standalone_entry_in_reviewed_table"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "result": "reviewed_P3_GF3001_1997_undecomposable_via_published_membership_synthesis",
+        "structure_class": "undecomposable",
+        "membership_basis": "A01 complete transcription: member of the 39 GF3001-independent characters absent from S07"
       },
       "pronunciation_review": {
         "source_id": "S03",
@@ -194,6 +194,12 @@
         },
         "visual_review": true,
         "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+      },
+      "structure": {
+        "status": "reviewed_P3_GF3001_1997_undecomposable_via_published_membership_synthesis",
+        "class": "undecomposable",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "basis": "A01 complete transcription: member of the 39 GF3001-independent characters absent from S07"
       }
     },
     {
@@ -233,7 +239,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "structure": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -246,15 +252,15 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed"
       ],
       "structure_review": {
-        "source_id": "S07",
-        "publication_id": "GF0013—2009",
-        "evidence": "data/evidence/B09-structure.json",
-        "result": "no_exact_standalone_entry_in_reviewed_table"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "result": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "structure_class": "decomposable",
+        "membership_basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
       "pronunciation_review": {
         "source_id": "S03",
@@ -385,6 +391,12 @@
         "evidence": "data/evidence/P3-component-name-S03-no-exact-route-P4.json",
         "result": "deferred_to_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "boundary": "No component name is invented or borrowed from a similar glyph. Reopen in P4 against GF0011—2022 exact target identity/name evidence."
+      },
+      "structure": {
+        "status": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "class": "decomposable",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       }
     },
     {
@@ -424,7 +436,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "structure": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -437,15 +449,15 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed"
       ],
       "structure_review": {
-        "source_id": "S07",
-        "publication_id": "GF0013—2009",
-        "evidence": "data/evidence/B09-structure.json",
-        "result": "no_exact_standalone_entry_in_reviewed_table"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "result": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "structure_class": "decomposable",
+        "membership_basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
       "pronunciation_review": {
         "source_id": "S03",
@@ -575,6 +587,12 @@
         "evidence": "data/evidence/P3-component-name-S03-no-exact-route-P4.json",
         "result": "deferred_to_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "boundary": "No component name is invented or borrowed from a similar glyph. Reopen in P4 against GF0011—2022 exact target identity/name evidence."
+      },
+      "structure": {
+        "status": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "class": "decomposable",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       }
     },
     {

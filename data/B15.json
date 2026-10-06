@@ -38,9 +38,10 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
-        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。",
-        "evidence": "data/evidence/B15-structure.json"
+        "status": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "class": "decomposable",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
       "pinyin": null,
       "component_name": null,
@@ -56,7 +57,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "structure": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -69,17 +70,16 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed"
       ],
       "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending",
       "structure_review": {
-        "source_id": "S07",
-        "publication_id": "GF0013—2009",
-        "evidence": "data/evidence/B15-structure.json",
-        "result": "no_exact_standalone_entry_in_reviewed_table"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "result": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "structure_class": "decomposable",
+        "membership_basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
       "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
       "pronunciation_review": {
@@ -890,9 +890,10 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
-        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。",
-        "evidence": "data/evidence/B15-structure.json"
+        "status": "reviewed_P3_GF3001_1997_undecomposable_via_published_membership_synthesis",
+        "class": "undecomposable",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "basis": "A01 complete transcription: member of the 39 GF3001-independent characters absent from S07"
       },
       "pinyin": "yù",
       "component_name": "聿（yù）/律（lǜ）字边",
@@ -908,7 +909,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "structure": "reviewed_P3_GF3001_1997_undecomposable_via_published_membership_synthesis",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -919,16 +920,15 @@
       },
       "migration_boundary": "“律”仅作整字迁移语境；右部聿的形态、部件身份和完整时序待权威材料确认。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "结构分类及位置迁移尚未完成整字原页核验",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据"
       ],
       "component_name_status": "reviewed_S03_GF0014_2009",
       "structure_review": {
-        "source_id": "S07",
-        "publication_id": "GF0013—2009",
-        "evidence": "data/evidence/B15-structure.json",
-        "result": "no_exact_standalone_entry_in_reviewed_table"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "result": "reviewed_P3_GF3001_1997_undecomposable_via_published_membership_synthesis",
+        "structure_class": "undecomposable",
+        "membership_basis": "A01 complete transcription: member of the 39 GF3001-independent characters absent from S07"
       },
       "pinyin_status": "reviewed_S03_GF0014_2009_target_self_pronunciation",
       "pronunciation_review": {
@@ -1119,9 +1119,10 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
-        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。",
-        "evidence": "data/evidence/B15-structure.json"
+        "status": "reviewed_P3_GF3001_1997_undecomposable_via_published_membership_synthesis",
+        "class": "undecomposable",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "basis": "A01 complete transcription: member of the 39 GF3001-independent characters absent from S07"
       },
       "pinyin": "gèn",
       "component_name": "艮（gèn）/根（gēn）字边",
@@ -1137,7 +1138,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "structure": "reviewed_P3_GF3001_1997_undecomposable_via_published_membership_synthesis",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -1148,16 +1149,15 @@
       },
       "migration_boundary": "“很”仅作整字迁移语境；右部艮的真实写法及主/附关系不得从独体形自动外推。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "结构分类及位置迁移尚未完成整字原页核验",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
+        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据"
       ],
       "component_name_status": "reviewed_S03_GF0014_2009",
       "structure_review": {
-        "source_id": "S07",
-        "publication_id": "GF0013—2009",
-        "evidence": "data/evidence/B15-structure.json",
-        "result": "no_exact_standalone_entry_in_reviewed_table"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "result": "reviewed_P3_GF3001_1997_undecomposable_via_published_membership_synthesis",
+        "structure_class": "undecomposable",
+        "membership_basis": "A01 complete transcription: member of the 39 GF3001-independent characters absent from S07"
       },
       "pinyin_status": "reviewed_S03_GF0014_2009_target_self_pronunciation",
       "pronunciation_review": {
@@ -1348,9 +1348,10 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
-        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。",
-        "evidence": "data/evidence/B15-structure.json"
+        "status": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "class": "decomposable",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
       "pinyin": null,
       "component_name": null,
@@ -1366,7 +1367,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "structure": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -1379,17 +1380,16 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed"
       ],
       "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending",
       "structure_review": {
-        "source_id": "S07",
-        "publication_id": "GF0013—2009",
-        "evidence": "data/evidence/B15-structure.json",
-        "result": "no_exact_standalone_entry_in_reviewed_table"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "result": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "structure_class": "decomposable",
+        "membership_basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
       "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
       "pronunciation_review": {
@@ -1542,9 +1542,10 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
-        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。",
-        "evidence": "data/evidence/B15-structure.json"
+        "status": "deferred_P4_exact_target_identity_before_structure",
+        "class": null,
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
       },
       "pinyin": null,
       "component_name": "绞丝底（jiǎosīdǐ）",
@@ -1560,7 +1561,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "structure": "deferred_P4_exact_target_identity_before_structure",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "conflict_fail_closed_normative_target_gap",
@@ -1573,17 +1574,17 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "fine_stroke_names已按P2规范原页审读收口为conflict_fail_closed_normative_target_gap；仅在取得覆盖精确目标字形的适用规范原页或权威桥接规则后重开"
+        "fine_stroke_names已按P2规范原页审读收口为conflict_fail_closed_normative_target_gap；仅在取得覆盖精确目标字形的适用规范原页或权威桥接规则后重开",
+        "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
       ],
       "component_name_status": "reviewed_S03_GF0014_2009",
       "structure_review": {
-        "source_id": "S07",
-        "publication_id": "GF0013—2009",
-        "evidence": "data/evidence/B15-structure.json",
-        "result": "no_exact_standalone_entry_in_reviewed_table"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "result": "deferred_P4_exact_target_identity_before_structure",
+        "structure_class": null,
+        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
       },
       "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
       "pronunciation_review": {
@@ -1740,9 +1741,10 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
-        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。",
-        "evidence": "data/evidence/B15-structure.json"
+        "status": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "class": "decomposable",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
       "pinyin": null,
       "component_name": null,
@@ -1758,7 +1760,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "structure": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -1771,17 +1773,16 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed"
       ],
       "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending",
       "structure_review": {
-        "source_id": "S07",
-        "publication_id": "GF0013—2009",
-        "evidence": "data/evidence/B15-structure.json",
-        "result": "no_exact_standalone_entry_in_reviewed_table"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "result": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "structure_class": "decomposable",
+        "membership_basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
       "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
       "pronunciation_review": {
@@ -1953,9 +1954,10 @@
         "structure_class": "pending_whole_character_verification"
       },
       "structure": {
-        "status": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
-        "note": "当前只记录整字迁移语境，不授予正式结构分类结论。",
-        "evidence": "data/evidence/B15-structure.json"
+        "status": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "class": "decomposable",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
       "pinyin": null,
       "component_name": null,
@@ -1971,7 +1973,7 @@
       },
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
-        "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
+        "structure": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -1984,17 +1986,16 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "采用读音尚未完成适用权威原页复核",
-        "结构分类及位置迁移尚未完成整字原页核验",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed"
       ],
       "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending",
       "structure_review": {
-        "source_id": "S07",
-        "publication_id": "GF0013—2009",
-        "evidence": "data/evidence/B15-structure.json",
-        "result": "no_exact_standalone_entry_in_reviewed_table"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
+        "result": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "structure_class": "decomposable",
+        "membership_basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
       "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
       "pronunciation_review": {
