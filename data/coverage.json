@@ -410,12 +410,14 @@
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_locator",
         "derived_stroke_count_crosscheck",
-        "fine_stroke_names_secondary_locator"
+        "fine_stroke_names_secondary_locator",
+        "fine_stroke_names_independent_secondary_crosscheck"
       ],
-      "limits": "阶段1字段级检查点；B12—B19细笔名已完成cnchar二次逐笔定位。62项单义locator、12项源自身同码双名、6项目标未覆盖；全部仍需GF2001/GF0023/S04等规范原页review后才能最终reviewed。",
+      "limits": "阶段1字段级检查点；D04/cjklib作为独立二次源对D03/cnchar进行细笔名交叉。两源一致/兼容仅提升secondary confidence，8个冲突fail-closed，4项补cnchar缺口；规范原页review仍是最终门槛。",
       "pronunciation_evidence": "data/evidence/B12-pronunciation.json",
       "stroke_order_secondary_locator_evidence": "data/evidence/B12-stroke-order-secondary-locator.json",
-      "fine_stroke_names_secondary_locator_evidence": "data/evidence/B12-fine-stroke-names-secondary-locator.json"
+      "fine_stroke_names_secondary_locator_evidence": "data/evidence/B12-fine-stroke-names-secondary-locator.json",
+      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B12-fine-stroke-names-d04-crosscheck.json"
     },
     "B13": {
       "main_ids": [
@@ -445,12 +447,14 @@
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_locator",
         "derived_stroke_count_crosscheck",
-        "fine_stroke_names_secondary_locator"
+        "fine_stroke_names_secondary_locator",
+        "fine_stroke_names_independent_secondary_crosscheck"
       ],
-      "limits": "阶段1字段级检查点；B12—B19细笔名已完成cnchar二次逐笔定位。62项单义locator、12项源自身同码双名、6项目标未覆盖；全部仍需GF2001/GF0023/S04等规范原页review后才能最终reviewed。",
+      "limits": "阶段1字段级检查点；D04/cjklib作为独立二次源对D03/cnchar进行细笔名交叉。两源一致/兼容仅提升secondary confidence，8个冲突fail-closed，4项补cnchar缺口；规范原页review仍是最终门槛。",
       "pronunciation_evidence": "data/evidence/B13-pronunciation.json",
       "stroke_order_secondary_locator_evidence": "data/evidence/B13-stroke-order-secondary-locator.json",
-      "fine_stroke_names_secondary_locator_evidence": "data/evidence/B13-fine-stroke-names-secondary-locator.json"
+      "fine_stroke_names_secondary_locator_evidence": "data/evidence/B13-fine-stroke-names-secondary-locator.json",
+      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B13-fine-stroke-names-d04-crosscheck.json"
     },
     "B14": {
       "main_ids": [
@@ -478,12 +482,14 @@
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_locator",
         "derived_stroke_count_crosscheck",
-        "fine_stroke_names_secondary_locator"
+        "fine_stroke_names_secondary_locator",
+        "fine_stroke_names_independent_secondary_crosscheck"
       ],
-      "limits": "阶段1字段级检查点；B12—B19细笔名已完成cnchar二次逐笔定位。62项单义locator、12项源自身同码双名、6项目标未覆盖；全部仍需GF2001/GF0023/S04等规范原页review后才能最终reviewed。",
+      "limits": "阶段1字段级检查点；D04/cjklib作为独立二次源对D03/cnchar进行细笔名交叉。两源一致/兼容仅提升secondary confidence，8个冲突fail-closed，4项补cnchar缺口；规范原页review仍是最终门槛。",
       "pronunciation_evidence": "data/evidence/B14-pronunciation.json",
       "stroke_order_secondary_locator_evidence": "data/evidence/B14-stroke-order-secondary-locator.json",
-      "fine_stroke_names_secondary_locator_evidence": "data/evidence/B14-fine-stroke-names-secondary-locator.json"
+      "fine_stroke_names_secondary_locator_evidence": "data/evidence/B14-fine-stroke-names-secondary-locator.json",
+      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B14-fine-stroke-names-d04-crosscheck.json"
     },
     "B15": {
       "main_ids": [
@@ -511,12 +517,14 @@
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_locator",
         "derived_stroke_count_crosscheck",
-        "fine_stroke_names_secondary_locator"
+        "fine_stroke_names_secondary_locator",
+        "fine_stroke_names_independent_secondary_crosscheck"
       ],
-      "limits": "阶段1字段级检查点；B12—B19细笔名已完成cnchar二次逐笔定位。62项单义locator、12项源自身同码双名、6项目标未覆盖；全部仍需GF2001/GF0023/S04等规范原页review后才能最终reviewed。",
+      "limits": "阶段1字段级检查点；D04/cjklib作为独立二次源对D03/cnchar进行细笔名交叉。两源一致/兼容仅提升secondary confidence，8个冲突fail-closed，4项补cnchar缺口；规范原页review仍是最终门槛。",
       "pronunciation_evidence": "data/evidence/B15-pronunciation.json",
       "stroke_order_secondary_locator_evidence": "data/evidence/B15-stroke-order-secondary-locator.json",
-      "fine_stroke_names_secondary_locator_evidence": "data/evidence/B15-fine-stroke-names-secondary-locator.json"
+      "fine_stroke_names_secondary_locator_evidence": "data/evidence/B15-fine-stroke-names-secondary-locator.json",
+      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B15-fine-stroke-names-d04-crosscheck.json"
     },
     "B16": {
       "main_ids": [
@@ -544,12 +552,14 @@
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_locator",
         "derived_stroke_count_crosscheck",
-        "fine_stroke_names_secondary_locator"
+        "fine_stroke_names_secondary_locator",
+        "fine_stroke_names_independent_secondary_crosscheck"
       ],
-      "limits": "阶段1字段级检查点；B12—B19细笔名已完成cnchar二次逐笔定位。62项单义locator、12项源自身同码双名、6项目标未覆盖；全部仍需GF2001/GF0023/S04等规范原页review后才能最终reviewed。",
+      "limits": "阶段1字段级检查点；D04/cjklib作为独立二次源对D03/cnchar进行细笔名交叉。两源一致/兼容仅提升secondary confidence，8个冲突fail-closed，4项补cnchar缺口；规范原页review仍是最终门槛。",
       "pronunciation_evidence": "data/evidence/B16-pronunciation.json",
       "stroke_order_secondary_locator_evidence": "data/evidence/B16-stroke-order-secondary-locator.json",
-      "fine_stroke_names_secondary_locator_evidence": "data/evidence/B16-fine-stroke-names-secondary-locator.json"
+      "fine_stroke_names_secondary_locator_evidence": "data/evidence/B16-fine-stroke-names-secondary-locator.json",
+      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B16-fine-stroke-names-d04-crosscheck.json"
     },
     "B17": {
       "main_ids": [
@@ -577,12 +587,14 @@
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_locator",
         "derived_stroke_count_crosscheck",
-        "fine_stroke_names_secondary_locator"
+        "fine_stroke_names_secondary_locator",
+        "fine_stroke_names_independent_secondary_crosscheck"
       ],
-      "limits": "阶段1字段级检查点；B12—B19细笔名已完成cnchar二次逐笔定位。62项单义locator、12项源自身同码双名、6项目标未覆盖；全部仍需GF2001/GF0023/S04等规范原页review后才能最终reviewed。",
+      "limits": "阶段1字段级检查点；D04/cjklib作为独立二次源对D03/cnchar进行细笔名交叉。两源一致/兼容仅提升secondary confidence，8个冲突fail-closed，4项补cnchar缺口；规范原页review仍是最终门槛。",
       "pronunciation_evidence": "data/evidence/B17-pronunciation.json",
       "stroke_order_secondary_locator_evidence": "data/evidence/B17-stroke-order-secondary-locator.json",
-      "fine_stroke_names_secondary_locator_evidence": "data/evidence/B17-fine-stroke-names-secondary-locator.json"
+      "fine_stroke_names_secondary_locator_evidence": "data/evidence/B17-fine-stroke-names-secondary-locator.json",
+      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B17-fine-stroke-names-d04-crosscheck.json"
     },
     "B18": {
       "main_ids": [
@@ -610,12 +622,14 @@
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_locator",
         "derived_stroke_count_crosscheck",
-        "fine_stroke_names_secondary_locator"
+        "fine_stroke_names_secondary_locator",
+        "fine_stroke_names_independent_secondary_crosscheck"
       ],
-      "limits": "阶段1字段级检查点；B12—B19细笔名已完成cnchar二次逐笔定位。62项单义locator、12项源自身同码双名、6项目标未覆盖；全部仍需GF2001/GF0023/S04等规范原页review后才能最终reviewed。",
+      "limits": "阶段1字段级检查点；D04/cjklib作为独立二次源对D03/cnchar进行细笔名交叉。两源一致/兼容仅提升secondary confidence，8个冲突fail-closed，4项补cnchar缺口；规范原页review仍是最终门槛。",
       "pronunciation_evidence": "data/evidence/B18-pronunciation.json",
       "stroke_order_secondary_locator_evidence": "data/evidence/B18-stroke-order-secondary-locator.json",
-      "fine_stroke_names_secondary_locator_evidence": "data/evidence/B18-fine-stroke-names-secondary-locator.json"
+      "fine_stroke_names_secondary_locator_evidence": "data/evidence/B18-fine-stroke-names-secondary-locator.json",
+      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B18-fine-stroke-names-d04-crosscheck.json"
     },
     "B19": {
       "main_ids": [
@@ -643,12 +657,14 @@
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_locator",
         "derived_stroke_count_crosscheck",
-        "fine_stroke_names_secondary_locator"
+        "fine_stroke_names_secondary_locator",
+        "fine_stroke_names_independent_secondary_crosscheck"
       ],
-      "limits": "阶段1字段级检查点；B12—B19细笔名已完成cnchar二次逐笔定位。62项单义locator、12项源自身同码双名、6项目标未覆盖；全部仍需GF2001/GF0023/S04等规范原页review后才能最终reviewed。",
+      "limits": "阶段1字段级检查点；D04/cjklib作为独立二次源对D03/cnchar进行细笔名交叉。两源一致/兼容仅提升secondary confidence，8个冲突fail-closed，4项补cnchar缺口；规范原页review仍是最终门槛。",
       "pronunciation_evidence": "data/evidence/B19-pronunciation.json",
       "stroke_order_secondary_locator_evidence": "data/evidence/B19-stroke-order-secondary-locator.json",
-      "fine_stroke_names_secondary_locator_evidence": "data/evidence/B19-fine-stroke-names-secondary-locator.json"
+      "fine_stroke_names_secondary_locator_evidence": "data/evidence/B19-fine-stroke-names-secondary-locator.json",
+      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B19-fine-stroke-names-d04-crosscheck.json"
     },
     "B20": {
       "main_ids": [
@@ -719,6 +735,6 @@
     ],
     "next_assignment_starts_at": null,
     "next_work": "existing_batch_field_closure",
-    "note": "201个主部首范围已全部分配至B01—B21；2026-10-05 B12—B19共80项完成cnchar二次fine_stroke_names定位：62单义、12源歧义、6未覆盖、0序列长度冲突。fine_stroke_names仍待规范原页review。content_ready仍仅B01—B03。"
+    "note": "201个主部首范围已全部分配至B01—B21；2026-10-06 B12—B19共80项完成D04/cjklib独立二次细笔交叉：22完全一致、5粒度兼容、8冲突、4补缺、41 D04无条目。冲突全部fail-closed，所有项目最终仍待GF2001/GF0023/S04原页review。content_ready仍仅B01—B03。"
   }
 }
