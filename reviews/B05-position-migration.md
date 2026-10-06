@@ -18,3 +18,22 @@
 牙第2笔“撇折/竖折”继续 `conflict_fail_closed`；本位置语义复核不参与该冲突裁决。
 
 限制：不证明GF0011—2022主附身份，不证明整字内比例、几何压缩、字形变体或完整书写时序；不得据此把位置变体升级为最终reviewed。
+
+## 2026-10-06 Unicode 18.0 RS二级身份定位
+
+来源：Unicode 18.0.0 `RSIndex.txt`（源文件日期2026-07-30）。本节只增加Unicode标量值与radical-stroke分类的二级交叉证据，不改变GF0011—2022正式主部首身份pending状态，也不参与牙第2笔“撇折/竖折”冲突裁决。
+
+| 主项 | Unicode | RS记录 | RS列 |
+|---|---|---|---|
+| 无 | U+65E0 | 71.0 | traditional_radicals |
+| 犬 | U+72AC | 94.0 | traditional_radicals |
+| 歹 | U+6B79 | 78.0 | traditional_radicals |
+| 车 | U+8F66 | 159.0 | chinese_simplified_radicals |
+| 牙 | U+7259 | 92.0 | traditional_radicals |
+| 戈 | U+6208 | 62.0 | traditional_radicals |
+| 瓦 | U+74E6 | 98.0 | traditional_radicals |
+| 止 | U+6B62 | 77.0 | traditional_radicals |
+| 贝 | U+8D1D | 154.0 | chinese_simplified_radicals |
+| 见 | U+89C1 | 147.0 | chinese_simplified_radicals |
+
+源文件：https://www.unicode.org/Public/18.0.0/charts/RSIndex.txt 。RSIndex第1列为radical-stroke pair，第2—5列依次为traditional、Chinese simplified、non-Chinese simplified、secondary non-Chinese simplified排序列。本节不支持部首名称、附形、笔顺、细笔名或位置几何结论。
