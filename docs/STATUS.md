@@ -328,3 +328,26 @@ P2细笔名规范原页收口已达到阶段退出条件。B04—B21共171项最
 27项为：支、比、屮、毋、疋、齐、羽、麦、走、足、邑、釆、青、龺、齿、黾、阜、骨、香、音、髟、鬥、麻、黍、鼓、鼠、鼻。P3中的component_name普通缺口目前仅剩B21龠1项。pronunciation与structure未因本轮名称处理而升级，仍是P3后续主吞吐。
 
 证据：`data/evidence/B08-component-name.json`、`data/evidence/B14-component-name.json`、`data/evidence/P3-component-name-S03-no-exact-route-P4.json`、`reviews/P3-round1-component-name-20261006.md`。
+
+
+## P3第二轮：structure规范集合收口（2026-10-06）
+
+本轮实际推进**100个不同主部首**的structure，全部来自此前S07未直接关闭的项目。
+
+来源链：
+- S07 / GF0013—2009：既有原页适用性审读；
+- S10 / GF3001—1997《信息处理用GB13000.1字符集汉字部件规范》：教育部官方规范身份，固定公开Git blob `fe3d4405e7af2438ee923d89c64825ff17d7b8a1`；规范定义“基础部件”为最小、不再拆分的部件；
+- A01 / 邵霭吉《〈通用规范汉字表〉独体字统计与思考》（2021）：公开发表的规范集合完整转录/比较，给出GF3001的230个成字基础部件，并确认其与S07的191项重合及39项GF3001补充独体字。A01只作成员转录/交叉，不作为独立权威体系。
+
+结果：
+- **63项GF0023精确规范字完成structure关闭**
+  - 15项 `undecomposable`：弋、韦、幺、示、毋、皮、缶、竹、聿、艮、豸、非、金、食、黑；
+  - 48项 `decomposable`：既不在S07独体字表，也不在GF3001补充39独体字集合；本轮只关闭“可拆/合体”层，不虚构左右/上下/包围等更细拓扑。
+- **37项非GF0023精确目标的部件型主项**不套通用规范汉字295独体字集合，全部转P4 GF0011—2022精确目标身份/主附关系门槛；这些项目不标structure reviewed。
+- **P3 structure普通pending由100降为0。**
+
+证据：
+`data/evidence/P3-structure-GF3001-synthesis.json`、
+`reviews/P3-structure-GF3001-synthesis-20261006.md`。
+
+P3当前剩余主吞吐：pronunciation；component_name普通缺口仅B21龠1项。P4路由项不计作P3普通pending，也不冒充reviewed。
