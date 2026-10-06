@@ -856,7 +856,7 @@
       },
       "pinyin": null,
       "component_name": "罗（luó）字头",
-      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "pinyin_status": "deferred_P4_exact_target_identity_before_pronunciation",
       "component_name_status": "reviewed_S03_GF0014_2009",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -874,7 +874,7 @@
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
-        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+        "pronunciation": "deferred_P4_exact_target_identity_before_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
@@ -960,6 +960,13 @@
         },
         "visual_review": true,
         "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
+      },
+      "pronunciation_gate": {
+        "phase": "P3_to_P4",
+        "result": "deferred_P4_exact_target_identity_before_pronunciation",
+        "basis_field": "structure",
+        "basis_status": "deferred_P4_exact_target_identity_before_structure",
+        "rationale": "Exact target identity is already gated to P4; do not assign a pronunciation from mnemonic/component labels before GF0011—2022 target identity is resolved."
       }
     },
     {
