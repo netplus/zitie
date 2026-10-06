@@ -50,7 +50,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "secondary_fine_stroke_dataset_target_missing_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -63,8 +63,7 @@
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待适用规范原页",
-        "GF0023—2020相关主表原页已审读但未定位精确目标条目；stroke_order待S04或其它适用规范继续关闭"
+        "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待适用规范原页"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -94,16 +93,17 @@
         "secondary_sequence": null
       },
       "stroke_order_review": {
-        "source_id": "S02",
-        "publication_id": "GF0023—2020",
-        "evidence": "data/evidence/B07-stroke-order-original-page.json",
-        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
-        "reviewed_pdf_pages": [
-          9,
-          10,
-          11,
-          12
-        ]
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 1,
+        "printed_page": 311,
+        "table_sequence": 45,
+        "stroke_count": 2,
+        "order_code": "45",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
       }
     },
     {
@@ -143,7 +143,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "conflict_fail_closed_secondary_fine_stroke_dataset_vs_candidate",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -156,8 +156,7 @@
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "fine_stroke_names候选与cnchar二次数据不一致；保持fail-closed，待规范原页裁决",
-        "GF0023—2020相关主表原页已审读但未定位精确目标条目；stroke_order待S04或其它适用规范继续关闭"
+        "fine_stroke_names候选与cnchar二次数据不一致；保持fail-closed，待规范原页裁决"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -218,16 +217,17 @@
         ]
       },
       "stroke_order_review": {
-        "source_id": "S02",
-        "publication_id": "GF0023—2020",
-        "evidence": "data/evidence/B07-stroke-order-original-page.json",
-        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
-        "reviewed_pdf_pages": [
-          9,
-          10,
-          11,
-          12
-        ]
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 1,
+        "printed_page": 311,
+        "table_sequence": 48,
+        "stroke_count": 2,
+        "order_code": "52",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
       }
     },
     {
@@ -267,7 +267,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "secondary_fine_stroke_dataset_target_missing_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -279,8 +279,7 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待适用规范原页",
-        "GF0023—2020相关主表原页已审读但未定位精确目标条目；stroke_order待S04或其它适用规范继续关闭"
+        "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待适用规范原页"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -311,16 +310,17 @@
         "secondary_sequence": null
       },
       "stroke_order_review": {
-        "source_id": "S02",
-        "publication_id": "GF0023—2020",
-        "evidence": "data/evidence/B07-stroke-order-original-page.json",
-        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
-        "reviewed_pdf_pages": [
-          9,
-          10,
-          11,
-          12
-        ]
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 1,
+        "printed_page": 311,
+        "table_sequence": 50,
+        "stroke_count": 2,
+        "order_code": "52",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
       }
     },
     {
@@ -360,7 +360,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -372,8 +372,7 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "fine_stroke_names已与cnchar二次逐笔细分类数据精确一致；规范原页review仍待完成",
-        "GF0023—2020相关主表原页已审读但未定位精确目标条目；stroke_order待S04或其它适用规范继续关闭"
+        "fine_stroke_names已与cnchar二次逐笔细分类数据精确一致；规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -437,16 +436,17 @@
         ]
       },
       "stroke_order_review": {
-        "source_id": "S02",
-        "publication_id": "GF0023—2020",
-        "evidence": "data/evidence/B07-stroke-order-original-page.json",
-        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
-        "reviewed_pdf_pages": [
-          9,
-          10,
-          11,
-          12
-        ]
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 1,
+        "printed_page": 311,
+        "table_sequence": 57,
+        "stroke_count": 2,
+        "order_code": "54",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
       }
     },
     {
@@ -486,7 +486,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "secondary_fine_stroke_dataset_target_missing_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -499,8 +499,7 @@
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待适用规范原页",
-        "GF0023—2020相关主表原页已审读但未定位精确目标条目；stroke_order待S04或其它适用规范继续关闭"
+        "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待适用规范原页"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -530,16 +529,17 @@
         "secondary_sequence": null
       },
       "stroke_order_review": {
-        "source_id": "S02",
-        "publication_id": "GF0023—2020",
-        "evidence": "data/evidence/B07-stroke-order-original-page.json",
-        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
-        "reviewed_pdf_pages": [
-          9,
-          10,
-          11,
-          12
-        ]
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 1,
+        "printed_page": 311,
+        "table_sequence": 60,
+        "stroke_count": 2,
+        "order_code": "54",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
       }
     },
     {
@@ -580,7 +580,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "secondary_fine_stroke_dataset_target_missing_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -593,8 +593,7 @@
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待适用规范原页",
-        "GF0023—2020相关主表原页已审读但未定位精确目标条目；stroke_order待S04或其它适用规范继续关闭"
+        "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待适用规范原页"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -624,16 +623,17 @@
         "secondary_sequence": null
       },
       "stroke_order_review": {
-        "source_id": "S02",
-        "publication_id": "GF0023—2020",
-        "evidence": "data/evidence/B07-stroke-order-original-page.json",
-        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
-        "reviewed_pdf_pages": [
-          9,
-          10,
-          11,
-          12
-        ]
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 2,
+        "printed_page": 312,
+        "table_sequence": 75,
+        "stroke_count": 3,
+        "order_code": "122",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
       }
     },
     {
@@ -674,7 +674,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -687,8 +687,7 @@
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "fine_stroke_names已与cnchar二次逐笔细分类数据精确一致；规范原页review仍待完成",
-        "GF0023—2020相关主表原页已审读但未定位精确目标条目；stroke_order待S04或其它适用规范继续关闭"
+        "fine_stroke_names已与cnchar二次逐笔细分类数据精确一致；规范原页review仍待完成"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -767,16 +766,17 @@
         ]
       },
       "stroke_order_review": {
-        "source_id": "S02",
-        "publication_id": "GF0023—2020",
-        "evidence": "data/evidence/B07-stroke-order-original-page.json",
-        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
-        "reviewed_pdf_pages": [
-          9,
-          10,
-          11,
-          12
-        ]
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 2,
+        "printed_page": 312,
+        "table_sequence": 82,
+        "stroke_count": 3,
+        "order_code": "132",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
       }
     },
     {
@@ -817,7 +817,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "secondary_fine_stroke_dataset_target_missing_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -830,8 +830,7 @@
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待适用规范原页",
-        "GF0023—2020相关主表原页已审读但未定位精确目标条目；stroke_order待S04或其它适用规范继续关闭"
+        "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待适用规范原页"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -861,16 +860,17 @@
         "secondary_sequence": null
       },
       "stroke_order_review": {
-        "source_id": "S02",
-        "publication_id": "GF0023—2020",
-        "evidence": "data/evidence/B07-stroke-order-original-page.json",
-        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
-        "reviewed_pdf_pages": [
-          9,
-          10,
-          11,
-          12
-        ]
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 2,
+        "printed_page": 312,
+        "table_sequence": 139,
+        "stroke_count": 3,
+        "order_code": "445",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
       }
     },
     {
@@ -911,7 +911,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "secondary_fine_stroke_dataset_target_missing_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -924,8 +924,7 @@
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待适用规范原页",
-        "GF0023—2020相关主表原页已审读但未定位精确目标条目；stroke_order待S04或其它适用规范继续关闭"
+        "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待适用规范原页"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -955,16 +954,17 @@
         "secondary_sequence": null
       },
       "stroke_order_review": {
-        "source_id": "S02",
-        "publication_id": "GF0023—2020",
-        "evidence": "data/evidence/B07-stroke-order-original-page.json",
-        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
-        "reviewed_pdf_pages": [
-          9,
-          10,
-          11,
-          12
-        ]
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 2,
+        "printed_page": 312,
+        "table_sequence": 141,
+        "stroke_count": 3,
+        "order_code": "454",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
       }
     },
     {
@@ -1005,7 +1005,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "secondary_fine_stroke_dataset_target_missing_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -1018,8 +1018,7 @@
         "细笔名候选需回到适用规范原页逐笔核验后才能升级为reviewed",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待适用规范原页",
-        "GF0023—2020相关主表原页已审读但未定位精确目标条目；stroke_order待S04或其它适用规范继续关闭"
+        "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待适用规范原页"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1049,16 +1048,17 @@
         "secondary_sequence": null
       },
       "stroke_order_review": {
-        "source_id": "S02",
-        "publication_id": "GF0023—2020",
-        "evidence": "data/evidence/B07-stroke-order-original-page.json",
-        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
-        "reviewed_pdf_pages": [
-          9,
-          10,
-          11,
-          12
-        ]
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 2,
+        "printed_page": 312,
+        "table_sequence": 142,
+        "stroke_count": 3,
+        "order_code": "511",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
       }
     }
   ],
