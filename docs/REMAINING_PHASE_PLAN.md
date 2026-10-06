@@ -120,7 +120,7 @@ GF0011—2022：
 - `data/evidence/P4-B04-B11-main-radical-identity-continuity.json`
 - `sources/reviews/P4-GF0011-2022-public-access-audit-20261006.json`
 
-下一轮：B12—B19 80项身份连续性 + 可独立的整字位置迁移核验。
+第二轮B12—B21共91项也已完成同层级身份连续性复核。当前B04—B21 **171/171** 个在编主项的主部首成员身份/main_id连续性已reviewed；2022精确主形/附形/名称/编码仍pending。下一步做B01—B03 30项P4连续性回归，并把主吞吐转向完整整字位置迁移。
 
 ## P5 内容终审与content_ready收口
 

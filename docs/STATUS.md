@@ -389,3 +389,21 @@ B21龠完成S03主体表序号1—514全表排除审读，未见精确独立名�
 - `sources/reviews/P4-GF0011-2022-public-access-audit-20261006.json`
 
 P4下一轮按计划推进B12—B19 80项；同时可独立处理位置迁移，不等待2022全文。
+
+
+## P4第二轮：B12—B21主部首身份连续性（2026-10-06）
+
+本轮实际推进**91个不同主部首**：B12—B19八批80项，再顺带完成B20/B21 11项。全部按与第一轮相同的证据边界，只关闭GF0011—2022官方发布说明明确支持的“201主部首集合连续性 + 项目main_id连续性”，不把发布说明冒充逐项正文。
+
+结果：
+- **91/91** `P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending`；
+- 与第一轮累计，**B04—B21共171/171个在编主项**的主部首成员身份/main_id连续性已reviewed；
+- 2022逐项精确主形、附形、名称和国际编码仍全部等待正式全文或官方逐项数据；
+- position_migration仍未因此关闭，继续独立回完整整字核验。
+
+证据：
+- `data/evidence/P4-B12-B19-main-radical-identity-continuity.json`
+- `data/evidence/P4-B20-B21-main-radical-identity-continuity.json`
+- `reviews/P4-B12-B21-main-identity-continuity.md`
+
+P4的身份连续性下一步只剩B01—B03既有30项回归；P4主工作将逐步转向位置迁移和2022精确逐项字段。
