@@ -972,7 +972,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "GF0023_2020_and_S04_1997_original_tables_reviewed_exact_target_not_located_alternative_normative_source_pending",
         "fine_stroke_names": "secondary_fine_stroke_names_cjklib_only_locator_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -1085,6 +1085,21 @@
         },
         "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
         "limits": "按GF0023笔顺码排序邻接区间查看规范原页，未见精确目标条目；不据此判定该目标没有规范笔顺，转S04/其它适用规范继续关闭。"
+      },
+      "stroke_order_s04_review": {
+        "source_id": "S04",
+        "publication_id": "1997-STROKE-ORDER",
+        "evidence": "data/evidence/P1-S04-residual-37.json",
+        "reviewed_pdf_pages": [
+          29
+        ],
+        "reviewed_printed_pages": [
+          24
+        ],
+        "canonical_candidate_order_code": "125221",
+        "visual_window": "再(125211)→协(125344)",
+        "result": "S04_1997_original_table_reviewed_exact_target_not_located",
+        "limits": "S04适用性审读已闭合；stroke_order本身继续等待其它适用规范依据。"
       }
     },
     {
@@ -1632,7 +1647,7 @@
       "field_status": {
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "GF0023_2020_and_S04_1997_original_tables_reviewed_exact_target_not_located_alternative_normative_source_pending",
         "fine_stroke_names": "secondary_two_source_fine_stroke_names_compatible_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -1801,6 +1816,21 @@
         },
         "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
         "limits": "按GF0023笔顺码排序邻接区间查看规范原页，未见精确目标条目；不据此判定该目标没有规范笔顺，转S04/其它适用规范继续关闭。"
+      },
+      "stroke_order_s04_review": {
+        "source_id": "S04",
+        "publication_id": "1997-STROKE-ORDER",
+        "evidence": "data/evidence/P1-S04-residual-37.json",
+        "reviewed_pdf_pages": [
+          31
+        ],
+        "reviewed_printed_pages": [
+          26
+        ],
+        "canonical_candidate_order_code": "215315",
+        "visual_window": "贞(212534)→师(231252)",
+        "result": "S04_1997_original_table_reviewed_exact_target_not_located",
+        "limits": "S04适用性审读已闭合；stroke_order本身继续等待其它适用规范依据。"
       }
     }
   ],
@@ -1813,5 +1843,6 @@
   "stroke_order_secondary_locator_evidence": "data/evidence/B13-stroke-order-secondary-locator.json",
   "fine_stroke_names_secondary_locator_evidence": "data/evidence/B13-fine-stroke-names-secondary-locator.json",
   "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B13-fine-stroke-names-d04-crosscheck.json",
-  "stroke_order_original_page_evidence": "data/evidence/B13-stroke-order-original-page.json"
+  "stroke_order_original_page_evidence": "data/evidence/B13-stroke-order-original-page.json",
+  "stroke_order_s04_residual_evidence": "data/evidence/P1-S04-residual-37.json"
 }
