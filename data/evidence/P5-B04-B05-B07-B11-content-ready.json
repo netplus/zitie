@@ -1,0 +1,960 @@
+{
+  "schema_version": 1,
+  "record_kind": "P5_batch_content_ready_review",
+  "phase": "P5",
+  "reviewed_at": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "scope": {
+    "batches": [
+      "B04",
+      "B05",
+      "B07",
+      "B11"
+    ],
+    "target_count": 40
+  },
+  "method": "Batch-level canonical audit against current main field_status, teaching text presence, unresolved boundaries, and existing P1-P4 evidence links. No new source claim is introduced.",
+  "entries": [
+    {
+      "batch_id": "B04",
+      "character": "干",
+      "main_id": 27,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B04",
+      "character": "寸",
+      "main_id": 31,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B04",
+      "character": "夕",
+      "main_id": 43,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B04",
+      "character": "广",
+      "main_id": 46,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B04",
+      "character": "门",
+      "main_id": 47,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B04",
+      "character": "尸",
+      "main_id": 51,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B04",
+      "character": "己",
+      "main_id": 52,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B04",
+      "character": "弓",
+      "main_id": 53,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B04",
+      "character": "飞",
+      "main_id": 57,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B04",
+      "character": "马",
+      "main_id": 58,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B05",
+      "character": "无",
+      "main_id": 62,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B05",
+      "character": "犬",
+      "main_id": 66,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B05",
+      "character": "歹",
+      "main_id": 67,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B05",
+      "character": "车",
+      "main_id": 68,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B05",
+      "character": "牙",
+      "main_id": 69,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "conflict_fail_closed_GF2001_vs_target_original_page_bridge_pending",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
+        "牙第2笔“撇折/竖折”权威冲突，须回GF2001与GF0023/S04原页裁决"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B05",
+      "character": "戈",
+      "main_id": 70,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B05",
+      "character": "瓦",
+      "main_id": 72,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "conflict_fail_closed_P4_whole_character_component_mapping"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
+        "position_migration已按GF0023整字原页/持久化映射证据收口为conflict_fail_closed；仅在取得可可靠恢复整字笔画索引的规范证据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B05",
+      "character": "止",
+      "main_id": 73,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B05",
+      "character": "贝",
+      "main_id": 76,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B05",
+      "character": "见",
+      "main_id": 78,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B07",
+      "character": "冖",
+      "main_id": 19,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B07",
+      "character": "凵",
+      "main_id": 20,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B07",
+      "character": "卩",
+      "main_id": 21,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B07",
+      "character": "厶",
+      "main_id": 25,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B07",
+      "character": "廴",
+      "main_id": 26,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B07",
+      "character": "艹",
+      "main_id": 30,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B07",
+      "character": "廾",
+      "main_id": 32,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B07",
+      "character": "宀",
+      "main_id": 48,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B07",
+      "character": "辶",
+      "main_id": 49,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B07",
+      "character": "彐",
+      "main_id": 50,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B11",
+      "character": "示",
+      "main_id": 100,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_P3_GF3001_1997_undecomposable_via_published_membership_synthesis",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
+        "示→礻的附形或教学变体关系待GF0011—2022及整字证据核验"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B11",
+      "character": "甘",
+      "main_id": 101,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B11",
+      "character": "龙",
+      "main_id": 103,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B11",
+      "character": "业",
+      "main_id": 104,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B11",
+      "character": "罒",
+      "main_id": 107,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
+        "罒的规范名称与GF0011主/附身份需原页核验"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B11",
+      "character": "皿",
+      "main_id": 108,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B11",
+      "character": "生",
+      "main_id": 109,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B11",
+      "character": "矢",
+      "main_id": 110,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B11",
+      "character": "禾",
+      "main_id": 111,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    },
+    {
+      "batch_id": "B11",
+      "character": "瓜",
+      "main_id": 113,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "result": "accepted_P5_content_ready",
+      "rationale": "All ordinary P1-P4 content fields are closed as reviewed/not_applicable/source_blocked_fail_closed/conflict_fail_closed. Teaching tips and self-check are present. Remaining unresolved items are explicit fail-closed/source-blocked boundaries with reopen conditions, not ordinary pending work."
+    }
+  ],
+  "summary": {
+    "target_count": 40,
+    "accepted_content_ready": 40,
+    "ordinary_pending": 0,
+    "batches_accepted": [
+      "B04",
+      "B05",
+      "B07",
+      "B11"
+    ]
+  },
+  "limits": [
+    "content_ready is content-only and does not imply artwork_ready, PDF archived, CI release gate passed, or release_eligible.",
+    "GF0011—2022 exact item fields remain source_blocked_fail_closed and reopen only when formal item-level data becomes repeatably accessible.",
+    "Existing explicit P2/P4 conflict_fail_closed items remain unresolved by design and are not silently converted to reviewed."
+  ]
+}
