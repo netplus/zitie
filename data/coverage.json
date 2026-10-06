@@ -427,13 +427,15 @@
         "stroke_order_secondary_locator",
         "derived_stroke_count_crosscheck",
         "fine_stroke_names_secondary_locator",
-        "fine_stroke_names_independent_secondary_crosscheck"
+        "fine_stroke_names_independent_secondary_crosscheck",
+        "stroke_order_GF0023_original_page_or_applicability"
       ],
-      "limits": "阶段1字段级检查点；D04/cjklib作为独立二次源对D03/cnchar进行细笔名交叉。两源一致/兼容仅提升secondary confidence，8个冲突fail-closed，4项补cnchar缺口；规范原页review仍是最终门槛。",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located after stroke-order-code neighboring-row review remain pending alternative normative source. fine_stroke_names and other fields are independent.",
       "pronunciation_evidence": "data/evidence/B12-pronunciation.json",
       "stroke_order_secondary_locator_evidence": "data/evidence/B12-stroke-order-secondary-locator.json",
       "fine_stroke_names_secondary_locator_evidence": "data/evidence/B12-fine-stroke-names-secondary-locator.json",
-      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B12-fine-stroke-names-d04-crosscheck.json"
+      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B12-fine-stroke-names-d04-crosscheck.json",
+      "stroke_order_original_page_evidence": "data/evidence/B12-stroke-order-original-page.json"
     },
     "B13": {
       "main_ids": [
@@ -464,13 +466,15 @@
         "stroke_order_secondary_locator",
         "derived_stroke_count_crosscheck",
         "fine_stroke_names_secondary_locator",
-        "fine_stroke_names_independent_secondary_crosscheck"
+        "fine_stroke_names_independent_secondary_crosscheck",
+        "stroke_order_GF0023_original_page_or_applicability"
       ],
-      "limits": "阶段1字段级检查点；D04/cjklib作为独立二次源对D03/cnchar进行细笔名交叉。两源一致/兼容仅提升secondary confidence，8个冲突fail-closed，4项补cnchar缺口；规范原页review仍是最终门槛。",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located after stroke-order-code neighboring-row review remain pending alternative normative source. fine_stroke_names and other fields are independent.",
       "pronunciation_evidence": "data/evidence/B13-pronunciation.json",
       "stroke_order_secondary_locator_evidence": "data/evidence/B13-stroke-order-secondary-locator.json",
       "fine_stroke_names_secondary_locator_evidence": "data/evidence/B13-fine-stroke-names-secondary-locator.json",
-      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B13-fine-stroke-names-d04-crosscheck.json"
+      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B13-fine-stroke-names-d04-crosscheck.json",
+      "stroke_order_original_page_evidence": "data/evidence/B13-stroke-order-original-page.json"
     },
     "B14": {
       "main_ids": [
@@ -499,13 +503,15 @@
         "stroke_order_secondary_locator",
         "derived_stroke_count_crosscheck",
         "fine_stroke_names_secondary_locator",
-        "fine_stroke_names_independent_secondary_crosscheck"
+        "fine_stroke_names_independent_secondary_crosscheck",
+        "stroke_order_GF0023_original_page_or_applicability"
       ],
-      "limits": "阶段1字段级检查点；D04/cjklib作为独立二次源对D03/cnchar进行细笔名交叉。两源一致/兼容仅提升secondary confidence，8个冲突fail-closed，4项补cnchar缺口；规范原页review仍是最终门槛。",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located after stroke-order-code neighboring-row review remain pending alternative normative source. fine_stroke_names and other fields are independent.",
       "pronunciation_evidence": "data/evidence/B14-pronunciation.json",
       "stroke_order_secondary_locator_evidence": "data/evidence/B14-stroke-order-secondary-locator.json",
       "fine_stroke_names_secondary_locator_evidence": "data/evidence/B14-fine-stroke-names-secondary-locator.json",
-      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B14-fine-stroke-names-d04-crosscheck.json"
+      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B14-fine-stroke-names-d04-crosscheck.json",
+      "stroke_order_original_page_evidence": "data/evidence/B14-stroke-order-original-page.json"
     },
     "B15": {
       "main_ids": [
@@ -534,13 +540,15 @@
         "stroke_order_secondary_locator",
         "derived_stroke_count_crosscheck",
         "fine_stroke_names_secondary_locator",
-        "fine_stroke_names_independent_secondary_crosscheck"
+        "fine_stroke_names_independent_secondary_crosscheck",
+        "stroke_order_GF0023_original_page_or_applicability"
       ],
-      "limits": "阶段1字段级检查点；D04/cjklib作为独立二次源对D03/cnchar进行细笔名交叉。两源一致/兼容仅提升secondary confidence，8个冲突fail-closed，4项补cnchar缺口；规范原页review仍是最终门槛。",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located after stroke-order-code neighboring-row review remain pending alternative normative source. fine_stroke_names and other fields are independent.",
       "pronunciation_evidence": "data/evidence/B15-pronunciation.json",
       "stroke_order_secondary_locator_evidence": "data/evidence/B15-stroke-order-secondary-locator.json",
       "fine_stroke_names_secondary_locator_evidence": "data/evidence/B15-fine-stroke-names-secondary-locator.json",
-      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B15-fine-stroke-names-d04-crosscheck.json"
+      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B15-fine-stroke-names-d04-crosscheck.json",
+      "stroke_order_original_page_evidence": "data/evidence/B15-stroke-order-original-page.json"
     },
     "B16": {
       "main_ids": [
@@ -569,13 +577,15 @@
         "stroke_order_secondary_locator",
         "derived_stroke_count_crosscheck",
         "fine_stroke_names_secondary_locator",
-        "fine_stroke_names_independent_secondary_crosscheck"
+        "fine_stroke_names_independent_secondary_crosscheck",
+        "stroke_order_GF0023_original_page_or_applicability"
       ],
-      "limits": "阶段1字段级检查点；D04/cjklib作为独立二次源对D03/cnchar进行细笔名交叉。两源一致/兼容仅提升secondary confidence，8个冲突fail-closed，4项补cnchar缺口；规范原页review仍是最终门槛。",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located after stroke-order-code neighboring-row review remain pending alternative normative source. fine_stroke_names and other fields are independent.",
       "pronunciation_evidence": "data/evidence/B16-pronunciation.json",
       "stroke_order_secondary_locator_evidence": "data/evidence/B16-stroke-order-secondary-locator.json",
       "fine_stroke_names_secondary_locator_evidence": "data/evidence/B16-fine-stroke-names-secondary-locator.json",
-      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B16-fine-stroke-names-d04-crosscheck.json"
+      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B16-fine-stroke-names-d04-crosscheck.json",
+      "stroke_order_original_page_evidence": "data/evidence/B16-stroke-order-original-page.json"
     },
     "B17": {
       "main_ids": [
@@ -604,13 +614,15 @@
         "stroke_order_secondary_locator",
         "derived_stroke_count_crosscheck",
         "fine_stroke_names_secondary_locator",
-        "fine_stroke_names_independent_secondary_crosscheck"
+        "fine_stroke_names_independent_secondary_crosscheck",
+        "stroke_order_GF0023_original_page_or_applicability"
       ],
-      "limits": "阶段1字段级检查点；D04/cjklib作为独立二次源对D03/cnchar进行细笔名交叉。两源一致/兼容仅提升secondary confidence，8个冲突fail-closed，4项补cnchar缺口；规范原页review仍是最终门槛。",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located after stroke-order-code neighboring-row review remain pending alternative normative source. fine_stroke_names and other fields are independent.",
       "pronunciation_evidence": "data/evidence/B17-pronunciation.json",
       "stroke_order_secondary_locator_evidence": "data/evidence/B17-stroke-order-secondary-locator.json",
       "fine_stroke_names_secondary_locator_evidence": "data/evidence/B17-fine-stroke-names-secondary-locator.json",
-      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B17-fine-stroke-names-d04-crosscheck.json"
+      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B17-fine-stroke-names-d04-crosscheck.json",
+      "stroke_order_original_page_evidence": "data/evidence/B17-stroke-order-original-page.json"
     },
     "B18": {
       "main_ids": [
@@ -639,13 +651,15 @@
         "stroke_order_secondary_locator",
         "derived_stroke_count_crosscheck",
         "fine_stroke_names_secondary_locator",
-        "fine_stroke_names_independent_secondary_crosscheck"
+        "fine_stroke_names_independent_secondary_crosscheck",
+        "stroke_order_GF0023_original_page_or_applicability"
       ],
-      "limits": "阶段1字段级检查点；D04/cjklib作为独立二次源对D03/cnchar进行细笔名交叉。两源一致/兼容仅提升secondary confidence，8个冲突fail-closed，4项补cnchar缺口；规范原页review仍是最终门槛。",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located after stroke-order-code neighboring-row review remain pending alternative normative source. fine_stroke_names and other fields are independent.",
       "pronunciation_evidence": "data/evidence/B18-pronunciation.json",
       "stroke_order_secondary_locator_evidence": "data/evidence/B18-stroke-order-secondary-locator.json",
       "fine_stroke_names_secondary_locator_evidence": "data/evidence/B18-fine-stroke-names-secondary-locator.json",
-      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B18-fine-stroke-names-d04-crosscheck.json"
+      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B18-fine-stroke-names-d04-crosscheck.json",
+      "stroke_order_original_page_evidence": "data/evidence/B18-stroke-order-original-page.json"
     },
     "B19": {
       "main_ids": [
@@ -674,13 +688,15 @@
         "stroke_order_secondary_locator",
         "derived_stroke_count_crosscheck",
         "fine_stroke_names_secondary_locator",
-        "fine_stroke_names_independent_secondary_crosscheck"
+        "fine_stroke_names_independent_secondary_crosscheck",
+        "stroke_order_GF0023_original_page_or_applicability"
       ],
-      "limits": "阶段1字段级检查点；D04/cjklib作为独立二次源对D03/cnchar进行细笔名交叉。两源一致/兼容仅提升secondary confidence，8个冲突fail-closed，4项补cnchar缺口；规范原页review仍是最终门槛。",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located after stroke-order-code neighboring-row review remain pending alternative normative source. fine_stroke_names and other fields are independent.",
       "pronunciation_evidence": "data/evidence/B19-pronunciation.json",
       "stroke_order_secondary_locator_evidence": "data/evidence/B19-stroke-order-secondary-locator.json",
       "fine_stroke_names_secondary_locator_evidence": "data/evidence/B19-fine-stroke-names-secondary-locator.json",
-      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B19-fine-stroke-names-d04-crosscheck.json"
+      "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B19-fine-stroke-names-d04-crosscheck.json",
+      "stroke_order_original_page_evidence": "data/evidence/B19-stroke-order-original-page.json"
     },
     "B20": {
       "main_ids": [
