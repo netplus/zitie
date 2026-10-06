@@ -1,0 +1,597 @@
+{
+  "schema_version": 1,
+  "record_kind": "P3_pronunciation_GF0015_original_page_review",
+  "phase": "P3",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S06",
+    "publication_id": "GF0015—2010",
+    "title": "汉语国际教育用音节汉字词汇等级划分",
+    "git_blob_sha": "13c76ed4c0dd835d356dd2c4c0504e050a576061",
+    "bytes": 19262366,
+    "pages": 157,
+    "sha256": "0d647e1378847480364e2603030fe6aa6102d99320c42cac631b2fb3155d18ce",
+    "acquisition_run_id": 37449756736,
+    "artifact_id": 11406995313,
+    "method": "verified artifact recovery -> render scanned original pages -> visually inspect direct target entries or pinyin-sorted candidate ranges; no OCR authority"
+  },
+  "reviewed_entries": [
+    {
+      "batch_id": "B09",
+      "character": "支",
+      "main_id": 65,
+      "pinyin": "zhī",
+      "pdf_page": 55,
+      "printed_page": 49,
+      "entry_no": 2105,
+      "evidence_word": "支",
+      "entry_pinyin": "zhī",
+      "scope": "direct_target_self",
+      "result": "reviewed_S06_GF0015_2010_target_self_pronunciation",
+      "visual_review": true
+    },
+    {
+      "batch_id": "B09",
+      "character": "比",
+      "main_id": 71,
+      "pinyin": "bǐ",
+      "pdf_page": 31,
+      "printed_page": 25,
+      "entry_no": 76,
+      "evidence_word": "比",
+      "entry_pinyin": "bǐ",
+      "scope": "direct_target_self",
+      "result": "reviewed_S06_GF0015_2010_target_self_pronunciation",
+      "visual_review": true
+    },
+    {
+      "batch_id": "B15",
+      "character": "齐",
+      "main_id": 141,
+      "pinyin": "qí",
+      "pdf_page": 45,
+      "printed_page": 39,
+      "entry_no": 1256,
+      "evidence_word": "齐",
+      "entry_pinyin": "qí",
+      "scope": "direct_target_self",
+      "result": "reviewed_S06_GF0015_2010_target_self_pronunciation",
+      "visual_review": true
+    },
+    {
+      "batch_id": "B15",
+      "character": "羽",
+      "main_id": 147,
+      "pinyin": "yǔ",
+      "pdf_page": 89,
+      "printed_page": 83,
+      "entry_no": 2844,
+      "evidence_word": "羽毛球",
+      "entry_pinyin": "yǔmáoqiú",
+      "scope": "first_morpheme",
+      "result": "reviewed_S06_GF0015_2010_morpheme_pronunciation",
+      "visual_review": true
+    },
+    {
+      "batch_id": "B15",
+      "character": "走",
+      "main_id": 150,
+      "pinyin": "zǒu",
+      "pdf_page": 56,
+      "printed_page": 50,
+      "entry_no": 2211,
+      "evidence_word": "走",
+      "entry_pinyin": "zǒu",
+      "scope": "direct_target_self",
+      "result": "reviewed_S06_GF0015_2010_target_self_pronunciation",
+      "visual_review": true
+    },
+    {
+      "batch_id": "B16",
+      "character": "足",
+      "main_id": 158,
+      "pinyin": "zú",
+      "pdf_page": 56,
+      "printed_page": 50,
+      "entry_no": 2218,
+      "evidence_word": "足球",
+      "entry_pinyin": "zúqiú",
+      "scope": "first_morpheme",
+      "result": "reviewed_S06_GF0015_2010_morpheme_pronunciation",
+      "visual_review": true
+    },
+    {
+      "batch_id": "B17",
+      "character": "青",
+      "main_id": 168,
+      "pinyin": "qīng",
+      "pdf_page": 45,
+      "printed_page": 39,
+      "entry_no": 1294,
+      "evidence_word": "青年",
+      "entry_pinyin": "qīngnián",
+      "scope": "first_morpheme",
+      "result": "reviewed_S06_GF0015_2010_morpheme_pronunciation",
+      "visual_review": true
+    },
+    {
+      "batch_id": "B19",
+      "character": "骨",
+      "main_id": 182,
+      "pinyin": "gǔ",
+      "pdf_page": 105,
+      "printed_page": 99,
+      "entry_no": 1034,
+      "evidence_word": "骨折",
+      "entry_pinyin": "gǔzhé",
+      "scope": "first_morpheme",
+      "result": "reviewed_S06_GF0015_2010_morpheme_pronunciation",
+      "visual_review": true
+    },
+    {
+      "batch_id": "B19",
+      "character": "香",
+      "main_id": 183,
+      "pinyin": "xiāng",
+      "pdf_page": 51,
+      "printed_page": 45,
+      "entry_no": 1778,
+      "evidence_word": "香",
+      "entry_pinyin": "xiāng",
+      "scope": "direct_target_self",
+      "result": "reviewed_S06_GF0015_2010_target_self_pronunciation",
+      "visual_review": true
+    },
+    {
+      "batch_id": "B19",
+      "character": "音",
+      "main_id": 186,
+      "pinyin": "yīn",
+      "pdf_page": 53,
+      "printed_page": 47,
+      "entry_no": 1946,
+      "evidence_word": "音乐",
+      "entry_pinyin": "yīnyuè",
+      "scope": "first_morpheme",
+      "result": "reviewed_S06_GF0015_2010_morpheme_pronunciation",
+      "visual_review": true
+    },
+    {
+      "batch_id": "B20",
+      "character": "麻",
+      "main_id": 193,
+      "pinyin": "má",
+      "pdf_page": 74,
+      "printed_page": 68,
+      "entry_no": 1540,
+      "evidence_word": "麻",
+      "entry_pinyin": "má",
+      "scope": "direct_target_self",
+      "result": "reviewed_S06_GF0015_2010_target_self_pronunciation",
+      "visual_review": true
+    },
+    {
+      "batch_id": "B20",
+      "character": "鼓",
+      "main_id": 198,
+      "pinyin": "gǔ",
+      "pdf_page": 37,
+      "printed_page": 31,
+      "entry_no": 576,
+      "evidence_word": "鼓",
+      "entry_pinyin": "gǔ",
+      "scope": "direct_target_self",
+      "result": "reviewed_S06_GF0015_2010_target_self_pronunciation",
+      "visual_review": true
+    },
+    {
+      "batch_id": "B20",
+      "character": "鼠",
+      "main_id": 199,
+      "pinyin": "shǔ",
+      "pdf_page": 48,
+      "printed_page": 42,
+      "entry_no": 1517,
+      "evidence_word": "鼠",
+      "entry_pinyin": "shǔ",
+      "scope": "direct_target_self",
+      "result": "reviewed_S06_GF0015_2010_target_self_pronunciation",
+      "visual_review": true
+    },
+    {
+      "batch_id": "B20",
+      "character": "鼻",
+      "main_id": 200,
+      "pinyin": "bí",
+      "pdf_page": 57,
+      "printed_page": 51,
+      "entry_no": 101,
+      "evidence_word": "鼻子",
+      "entry_pinyin": "bízi",
+      "scope": "first_morpheme",
+      "result": "reviewed_S06_GF0015_2010_morpheme_pronunciation",
+      "visual_review": true
+    }
+  ],
+  "fail_closed_entries": [
+    {
+      "batch_id": "B08",
+      "character": "尢",
+      "main_id": 34,
+      "expected_reading_hint": "yóu",
+      "reviewed_ranges": [
+        {
+          "pdf_pages": [
+            53
+          ],
+          "level": "1",
+          "range": "yóu→yuè"
+        },
+        {
+          "pdf_pages": [
+            88,
+            89
+          ],
+          "level": "2",
+          "range": "yōng/yóu→yuè"
+        },
+        {
+          "pdf_pages": [
+            135,
+            136
+          ],
+          "level": "3",
+          "range": "yì/yóu→yuè"
+        }
+      ],
+      "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+      "visual_review": true,
+      "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+    },
+    {
+      "batch_id": "B08",
+      "character": "弋",
+      "main_id": 35,
+      "expected_reading_hint": "yì",
+      "reviewed_ranges": [
+        {
+          "pdf_pages": [
+            52,
+            53
+          ],
+          "level": "1",
+          "range": "yī/yì"
+        },
+        {
+          "pdf_pages": [
+            87,
+            88
+          ],
+          "level": "2",
+          "range": "yī/yì"
+        },
+        {
+          "pdf_pages": [
+            134,
+            135
+          ],
+          "level": "3",
+          "range": "yè/yī/yì"
+        }
+      ],
+      "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+      "visual_review": true,
+      "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+    },
+    {
+      "batch_id": "B08",
+      "character": "彳",
+      "main_id": 41,
+      "expected_reading_hint": "chì",
+      "reviewed_ranges": [
+        {
+          "pdf_pages": [
+            33
+          ],
+          "level": "1",
+          "range": "chī→chóng"
+        },
+        {
+          "pdf_pages": [
+            60
+          ],
+          "level": "2",
+          "range": "chī/chí/chǐ→chóng"
+        },
+        {
+          "pdf_pages": [
+            97
+          ],
+          "level": "3",
+          "range": "chī/chí/chǐ/chì→chóng"
+        }
+      ],
+      "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+      "visual_review": true,
+      "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+    },
+    {
+      "batch_id": "B12",
+      "character": "毋",
+      "main_id": 99,
+      "expected_reading_hint": "wú",
+      "reviewed_ranges": [
+        {
+          "pdf_pages": [
+            50
+          ],
+          "level": "1",
+          "range": "wǎn→wǔ"
+        },
+        {
+          "pdf_pages": [
+            84
+          ],
+          "level": "2",
+          "range": "wéi→wǔ"
+        },
+        {
+          "pdf_pages": [
+            130
+          ],
+          "level": "3",
+          "range": "wéi→wǔ"
+        }
+      ],
+      "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+      "visual_review": true,
+      "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+    },
+    {
+      "batch_id": "B16",
+      "character": "邑",
+      "main_id": 159,
+      "expected_reading_hint": "yì",
+      "reviewed_ranges": [
+        {
+          "pdf_pages": [
+            52,
+            53
+          ],
+          "level": "1",
+          "range": "yī/yì"
+        },
+        {
+          "pdf_pages": [
+            87,
+            88
+          ],
+          "level": "2",
+          "range": "yī/yì"
+        },
+        {
+          "pdf_pages": [
+            134,
+            135
+          ],
+          "level": "3",
+          "range": "yè/yī/yì"
+        }
+      ],
+      "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+      "visual_review": true,
+      "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+    },
+    {
+      "batch_id": "B18",
+      "character": "齿",
+      "main_id": 172,
+      "expected_reading_hint": "chǐ",
+      "reviewed_ranges": [
+        {
+          "pdf_pages": [
+            33
+          ],
+          "level": "1",
+          "range": "chī/chí/chǐ→chóng"
+        },
+        {
+          "pdf_pages": [
+            60
+          ],
+          "level": "2",
+          "range": "chī/chí/chǐ→chóng"
+        },
+        {
+          "pdf_pages": [
+            97
+          ],
+          "level": "3",
+          "range": "chī/chí/chǐ/chì→chóng"
+        }
+      ],
+      "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+      "visual_review": true,
+      "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+    },
+    {
+      "batch_id": "B18",
+      "character": "黾",
+      "main_id": 173,
+      "expected_reading_hint": "mǐn/měng",
+      "reviewed_ranges": [
+        {
+          "pdf_pages": [
+            43
+          ],
+          "level": "1",
+          "range": "mǎi→míng"
+        },
+        {
+          "pdf_pages": [
+            74,
+            75
+          ],
+          "level": "2",
+          "range": "mǎi/meng→míng"
+        },
+        {
+          "pdf_pages": [
+            116,
+            117
+          ],
+          "level": "3",
+          "range": "mǎi/meng/mǐn→míng"
+        }
+      ],
+      "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+      "visual_review": true,
+      "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+    },
+    {
+      "batch_id": "B18",
+      "character": "阜",
+      "main_id": 175,
+      "expected_reading_hint": "fù",
+      "reviewed_ranges": [
+        {
+          "pdf_pages": [
+            36
+          ],
+          "level": "1",
+          "range": "fēn→fù"
+        },
+        {
+          "pdf_pages": [
+            65
+          ],
+          "level": "2",
+          "range": "fēn→fù"
+        },
+        {
+          "pdf_pages": [
+            102,
+            103
+          ],
+          "level": "3",
+          "range": "fǎn→fù"
+        }
+      ],
+      "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+      "visual_review": true,
+      "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+    },
+    {
+      "batch_id": "B15",
+      "character": "麦",
+      "main_id": 149,
+      "expected_reading_hint": "mài",
+      "reviewed_ranges": [
+        {
+          "pdf_pages": [
+            43
+          ],
+          "level": "1",
+          "range": "mǎi/mài→míng"
+        },
+        {
+          "pdf_pages": [
+            74
+          ],
+          "level": "2",
+          "range": "mǎi/mài→měng"
+        },
+        {
+          "pdf_pages": [
+            116
+          ],
+          "level": "3",
+          "range": "má/mǎi/mài"
+        }
+      ],
+      "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+      "visual_review": true,
+      "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+    },
+    {
+      "batch_id": "B20",
+      "character": "黍",
+      "main_id": 197,
+      "expected_reading_hint": "shǔ",
+      "reviewed_ranges": [
+        {
+          "pdf_pages": [
+            48
+          ],
+          "level": "1",
+          "range": "shī→shǔ"
+        },
+        {
+          "pdf_pages": [
+            80,
+            81
+          ],
+          "level": "2",
+          "range": "shī→shǔ"
+        },
+        {
+          "pdf_pages": [
+            125,
+            126
+          ],
+          "level": "3",
+          "range": "shī→shǔ"
+        }
+      ],
+      "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+      "visual_review": true,
+      "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+    },
+    {
+      "batch_id": "B21",
+      "character": "龠",
+      "main_id": 201,
+      "expected_reading_hint": "yuè",
+      "reviewed_ranges": [
+        {
+          "pdf_pages": [
+            53,
+            54
+          ],
+          "level": "1",
+          "range": "yóu/yú→yuè"
+        },
+        {
+          "pdf_pages": [
+            89
+          ],
+          "level": "2",
+          "range": "yú→yuè"
+        },
+        {
+          "pdf_pages": [
+            136
+          ],
+          "level": "3",
+          "range": "yú→yuè"
+        }
+      ],
+      "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+      "visual_review": true,
+      "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+    }
+  ],
+  "summary": {
+    "target_count": 25,
+    "reviewed": 14,
+    "conflict_fail_closed": 11,
+    "ordinary_pending_after_review": 0
+  },
+  "limits": [
+    "GF0015 word-grade labels are not used as current teaching levels.",
+    "Morpheme pronunciation is used only where the target glyph appears explicitly in the reviewed entry.",
+    "This does not alter GF0011—2022 identity, component_name, structure, position migration, artwork, PDF or release status."
+  ]
+}

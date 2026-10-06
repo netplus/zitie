@@ -53,7 +53,7 @@
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "conflict_fail_closed_normative_target_gap",
-        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
@@ -61,7 +61,6 @@
       "migration_boundary": "本轮只保留“釆”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "fine_stroke_names已按P2规范原页审读收口为conflict_fail_closed_normative_target_gap；仅在取得覆盖精确目标字形的适用规范原页或权威桥接规则后重开",
         "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed",
         "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
@@ -73,12 +72,12 @@
         "structure_class": null,
         "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
       },
-      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "pinyin_status": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
       "pronunciation_review": {
-        "source_id": "S03",
-        "publication_id": "GF0014—2009",
-        "evidence": "data/evidence/B17-pronunciation.json",
-        "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-pronunciation-nonlexical-component-not-applicable.json",
+        "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
       },
       "stroke_order_secondary_locator": {
         "evidence": "data/evidence/B17-stroke-order-secondary-locator.json",
@@ -1544,7 +1543,7 @@
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
-      "pinyin": null,
+      "pinyin": "qīng",
       "component_name": null,
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -1561,7 +1560,7 @@
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
-        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+        "pronunciation": "reviewed_S06_GF0015_2010_morpheme_pronunciation",
         "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
@@ -1569,7 +1568,6 @@
       "migration_boundary": "本轮只保留“青”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed"
       ],
       "structure_review": {
@@ -1579,12 +1577,21 @@
         "structure_class": "decomposable",
         "membership_basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
-      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "pinyin_status": "reviewed_S06_GF0015_2010_morpheme_pronunciation",
       "pronunciation_review": {
-        "source_id": "S03",
-        "publication_id": "GF0014—2009",
-        "evidence": "data/evidence/B17-pronunciation.json",
-        "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
+        "phase": "P3",
+        "source_id": "S06",
+        "publication_id": "GF0015—2010",
+        "evidence": "data/evidence/P3-pronunciation-GF0015-original-page.json",
+        "result": "reviewed_S06_GF0015_2010_morpheme_pronunciation",
+        "adopted_pronunciation": "qīng",
+        "pdf_page": 45,
+        "printed_page": 39,
+        "entry_no": 1294,
+        "evidence_word": "青年",
+        "entry_pinyin": "qīngnián",
+        "evidence_scope": "first_morpheme",
+        "visual_review": true
       },
       "stroke_order_secondary_locator": {
         "evidence": "data/evidence/B17-stroke-order-secondary-locator.json",
@@ -1772,7 +1779,7 @@
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "conflict_fail_closed_normative_target_gap",
-        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
@@ -1780,7 +1787,6 @@
       "migration_boundary": "本轮只保留“龺”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "fine_stroke_names已按P2规范原页审读收口为conflict_fail_closed_normative_target_gap；仅在取得覆盖精确目标字形的适用规范原页或权威桥接规则后重开",
         "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed",
         "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
@@ -1792,12 +1798,12 @@
         "structure_class": null,
         "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
       },
-      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "pinyin_status": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
       "pronunciation_review": {
-        "source_id": "S03",
-        "publication_id": "GF0014—2009",
-        "evidence": "data/evidence/B17-pronunciation.json",
-        "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-pronunciation-nonlexical-component-not-applicable.json",
+        "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
       },
       "stroke_order_secondary_locator": {
         "evidence": "data/evidence/B17-stroke-order-secondary-locator.json",

@@ -322,7 +322,7 @@
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
-        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+        "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
         "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
@@ -330,8 +330,8 @@
       "migration_boundary": "“龄”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed"
+        "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed",
+        "pronunciation已按S03+GF0015原页审读收口为conflict_fail_closed；仅在取得适用权威读音来源或P4精确身份规则后重开"
       ],
       "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending",
       "structure_review": {
@@ -341,12 +341,38 @@
         "structure_class": "decomposable",
         "membership_basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
-      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "pinyin_status": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
       "pronunciation_review": {
-        "source_id": "S03",
-        "publication_id": "GF0014—2009",
-        "evidence": "data/evidence/B18-pronunciation.json",
-        "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
+        "phase": "P3",
+        "source_id": "S06",
+        "publication_id": "GF0015—2010",
+        "evidence": "data/evidence/P3-pronunciation-GF0015-original-page.json",
+        "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+        "reviewed_ranges": [
+          {
+            "pdf_pages": [
+              33
+            ],
+            "level": "1",
+            "range": "chī/chí/chǐ→chóng"
+          },
+          {
+            "pdf_pages": [
+              60
+            ],
+            "level": "2",
+            "range": "chī/chí/chǐ→chóng"
+          },
+          {
+            "pdf_pages": [
+              97
+            ],
+            "level": "3",
+            "range": "chī/chí/chǐ/chì→chóng"
+          }
+        ],
+        "visual_review": true,
+        "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
       },
       "stroke_order_secondary_locator": {
         "evidence": "data/evidence/B18-stroke-order-secondary-locator.json",
@@ -543,7 +569,7 @@
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
-        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+        "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
         "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
@@ -551,8 +577,8 @@
       "migration_boundary": "“绳”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed"
+        "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed",
+        "pronunciation已按S03+GF0015原页审读收口为conflict_fail_closed；仅在取得适用权威读音来源或P4精确身份规则后重开"
       ],
       "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending",
       "structure_review": {
@@ -562,12 +588,40 @@
         "structure_class": "decomposable",
         "membership_basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
-      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "pinyin_status": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
       "pronunciation_review": {
-        "source_id": "S03",
-        "publication_id": "GF0014—2009",
-        "evidence": "data/evidence/B18-pronunciation.json",
-        "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
+        "phase": "P3",
+        "source_id": "S06",
+        "publication_id": "GF0015—2010",
+        "evidence": "data/evidence/P3-pronunciation-GF0015-original-page.json",
+        "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+        "reviewed_ranges": [
+          {
+            "pdf_pages": [
+              43
+            ],
+            "level": "1",
+            "range": "mǎi→míng"
+          },
+          {
+            "pdf_pages": [
+              74,
+              75
+            ],
+            "level": "2",
+            "range": "mǎi/meng→míng"
+          },
+          {
+            "pdf_pages": [
+              116,
+              117
+            ],
+            "level": "3",
+            "range": "mǎi/meng/mǐn→míng"
+          }
+        ],
+        "visual_review": true,
+        "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
       },
       "stroke_order_secondary_locator": {
         "evidence": "data/evidence/B18-stroke-order-secondary-locator.json",
@@ -1024,7 +1078,7 @@
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
-        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+        "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
         "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending"
@@ -1032,8 +1086,8 @@
       "migration_boundary": "“阜”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed"
+        "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed",
+        "pronunciation已按S03+GF0015原页审读收口为conflict_fail_closed；仅在取得适用权威读音来源或P4精确身份规则后重开"
       ],
       "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending",
       "structure_review": {
@@ -1043,12 +1097,39 @@
         "structure_class": "decomposable",
         "membership_basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
-      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "pinyin_status": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
       "pronunciation_review": {
-        "source_id": "S03",
-        "publication_id": "GF0014—2009",
-        "evidence": "data/evidence/B18-pronunciation.json",
-        "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
+        "phase": "P3",
+        "source_id": "S06",
+        "publication_id": "GF0015—2010",
+        "evidence": "data/evidence/P3-pronunciation-GF0015-original-page.json",
+        "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+        "reviewed_ranges": [
+          {
+            "pdf_pages": [
+              36
+            ],
+            "level": "1",
+            "range": "fēn→fù"
+          },
+          {
+            "pdf_pages": [
+              65
+            ],
+            "level": "2",
+            "range": "fēn→fù"
+          },
+          {
+            "pdf_pages": [
+              102,
+              103
+            ],
+            "level": "3",
+            "range": "fǎn→fù"
+          }
+        ],
+        "visual_review": true,
+        "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
       },
       "stroke_order_secondary_locator": {
         "evidence": "data/evidence/B18-stroke-order-secondary-locator.json",

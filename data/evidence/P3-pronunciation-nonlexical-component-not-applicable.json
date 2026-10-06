@@ -1,0 +1,536 @@
+{
+  "schema_version": 1,
+  "record_kind": "P3_pronunciation_not_applicable_component_surface",
+  "phase": "P3",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "target_count": 34,
+  "evidence_basis": [
+    "S03/GF0014—2009 original-page pronunciation applicability reviews already stored in per-batch pronunciation evidence",
+    "P1 stroke-order identity anchors distinguish exact GF0023 main-table standard characters from component-like/non-main-table targets"
+  ],
+  "policy": "For component-like targets with no direct target-self pronunciation in S03 and no exact GF0023 main-table standard-character row, close the P3 pronunciation field as not applicable on the current teaching surface. Do not borrow pronunciation from a component-name example character or from unrelated dictionary/classical glyph readings.",
+  "entries": [
+    {
+      "batch_id": "B06",
+      "character": "匚",
+      "main_id": 8,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "区",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B06",
+      "character": "冂",
+      "main_id": 10,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "同",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B06",
+      "character": "勹",
+      "main_id": 13,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "句",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B06",
+      "character": "亠",
+      "main_id": 17,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "玄",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B06",
+      "character": "冫",
+      "main_id": 18,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "两点水",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B07",
+      "character": "冖",
+      "main_id": 19,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "秃宝盖",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B07",
+      "character": "凵",
+      "main_id": 20,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "凹",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B07",
+      "character": "廴",
+      "main_id": 26,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "建之",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B07",
+      "character": "艹",
+      "main_id": 30,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "草字头",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B07",
+      "character": "廾",
+      "main_id": 32,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "弄字底",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B07",
+      "character": "宀",
+      "main_id": 48,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "宝盖",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B07",
+      "character": "辶",
+      "main_id": 49,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "走之",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B07",
+      "character": "彐",
+      "main_id": 50,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "雪字底",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B08",
+      "character": "丨",
+      "main_id": 2,
+      "prior_status": "pending_or_not_applicable",
+      "component_name": "竖（shù）",
+      "stroke_order_identity_anchor": {
+        "source_id": "S06",
+        "publication_id": "GF3002—1999",
+        "evidence": "data/evidence/B08-stroke-order-gf3002-original-page.json",
+        "result": "reviewed_exact_GF3002_1999_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B08",
+      "character": "丿",
+      "main_id": 3,
+      "prior_status": "pending_or_not_applicable",
+      "component_name": "撇（piě）",
+      "stroke_order_identity_anchor": {
+        "source_id": "S06",
+        "publication_id": "GF3002—1999",
+        "evidence": "data/evidence/B08-stroke-order-gf3002-original-page.json",
+        "result": "reviewed_exact_GF3002_1999_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B08",
+      "character": "丶",
+      "main_id": 4,
+      "prior_status": "pending_or_not_applicable",
+      "component_name": "点（diǎn）",
+      "stroke_order_identity_anchor": {
+        "source_id": "S06",
+        "publication_id": "GF3002—1999",
+        "evidence": "data/evidence/B08-stroke-order-gf3002-original-page.json",
+        "result": "reviewed_exact_GF3002_1999_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B08",
+      "character": "乛",
+      "main_id": 5,
+      "prior_status": "pending_or_not_applicable",
+      "component_name": "横钩（hénggōu）",
+      "stroke_order_identity_anchor": {
+        "source_id": "S06",
+        "publication_id": "GF3002—1999",
+        "evidence": "data/evidence/B08-stroke-order-gf3002-original-page.json",
+        "result": "reviewed_exact_GF3002_1999_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B08",
+      "character": "囗",
+      "main_id": 38,
+      "prior_status": "pending_or_not_applicable",
+      "component_name": "囗（wéi）/围（wéi）字框",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B08",
+      "character": "彡",
+      "main_id": 42,
+      "prior_status": "pending_or_not_applicable",
+      "component_name": "彡（shān）",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B08",
+      "character": "夂",
+      "main_id": 44,
+      "prior_status": "pending_or_not_applicable",
+      "component_name": "降（jiàng）下角",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B10",
+      "character": "丬",
+      "main_id": 45,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "将（jiàng）字旁",
+      "stroke_order_identity_anchor": {
+        "source_id": "S06",
+        "publication_id": "GF3002—1999",
+        "evidence": "data/evidence/B10-stroke-order-gf3002-original-page.json",
+        "result": "reviewed_exact_GF3002_1999_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B11",
+      "character": "罒",
+      "main_id": 107,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "罗（luó）字头",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B12",
+      "character": "屮",
+      "main_id": 55,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": null,
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "data/evidence/B12-stroke-order-gbt25741-appendix-c.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B12",
+      "character": "巛",
+      "main_id": 60,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "巡（xún）字心",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "data/evidence/B12-stroke-order-gbt25741-appendix-c.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B12",
+      "character": "疒",
+      "main_id": 115,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "病（bìng）字框",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "data/evidence/B12-stroke-order-gbt25741-appendix-c.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B12",
+      "character": "疋",
+      "main_id": 118,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": null,
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "data/evidence/B12-stroke-order-gbt25741-appendix-c.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B12",
+      "character": "癶",
+      "main_id": 120,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "登（dēng）字头",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "data/evidence/B12-stroke-order-gbt25741-appendix-c.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B13",
+      "character": "覀",
+      "main_id": 126,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "要（yào）字头",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B13",
+      "character": "虍",
+      "main_id": 130,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "虎（hǔ）字头",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B15",
+      "character": "糸",
+      "main_id": 148,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": "绞丝底（jiǎosīdǐ）",
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "data/evidence/B15-stroke-order-gbt25741-appendix-c.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B17",
+      "character": "釆",
+      "main_id": 161,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": null,
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "data/evidence/B17-stroke-order-gbt25741-appendix-c.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B17",
+      "character": "龺",
+      "main_id": 169,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": null,
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "data/evidence/B17-stroke-order-gbt25741-appendix-c.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B19",
+      "character": "髟",
+      "main_id": 188,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": null,
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    },
+    {
+      "batch_id": "B19",
+      "character": "鬥",
+      "main_id": 190,
+      "prior_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "component_name": null,
+      "stroke_order_identity_anchor": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page"
+      },
+      "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+      "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
+    }
+  ],
+  "summary": {
+    "target_count": 34,
+    "not_applicable": 34,
+    "ordinary_pending_after_this_review": 0
+  },
+  "limits": [
+    "This is a P3 pronunciation applicability conclusion, not a GF0011—2022 identity decision.",
+    "P4 may reopen if the 2022 exact target identity explicitly requires a self pronunciation.",
+    "Does not alter component_name, structure, fine_stroke_names, position migration, artwork, PDF or release status."
+  ]
+}
