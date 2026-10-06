@@ -33,7 +33,7 @@
       "main_glyphs": "刀力又子女小王石白立",
       "status": "scope_frozen_structure_checked_stroke_order_cross_checked_metadata_checked_content_checked_artwork_checked_layout_checked_archive_pending",
       "content_status": "content_ready",
-      "artwork_status": "artwork_ready_local_candidate",
+      "artwork_status": "artwork_ready",
       "publication_status": "archive_pending",
       "prerequisites": [
         "B01",
@@ -49,7 +49,8 @@
       "metadata_source_ledger": "sources/B03-metadata-review.json",
       "content_review_record": "reviews/B03-content.md",
       "artwork_review_record": "reviews/B03-artwork.md",
-      "layout_review_record": "reviews/B03-layout.md"
+      "layout_review_record": "reviews/B03-layout.md",
+      "note": "P6正规化：2026-09-30既有B03逐笔矢量人工复核已真实完成，data/evidence/B03-artwork.json与reviews/B03-artwork.md有效；PDF归档与manifest仍独立留待P7。"
     },
     {
       "id": "B04",
