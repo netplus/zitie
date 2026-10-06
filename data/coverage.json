@@ -284,12 +284,14 @@
         "baseline_stroke_group",
         "stroke_order_secondary_crosscheck",
         "fine_stroke_names_secondary_crosscheck_or_locator",
-        "stroke_order_GF0023_original_page_or_applicability"
+        "stroke_order_GF0023_original_page_or_applicability",
+        "stroke_order_GF3002_original_page_partial_residual_closure"
       ],
-      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
+      "limits": "P1 checkpoint: GF0023 exact original-page targets are reviewed; GF3002—1999 public original PDF additionally closes four visible one-stroke residuals（丨、丿、丶、乛）from exact rows 41/64/55/92. Other fields remain independent; the public GF3002 PDF is abridged after table sequence 134.",
       "stroke_order_crosscheck_evidence": "data/evidence/B08-stroke-order-crosscheck.json",
       "fine_stroke_names_crosscheck_evidence": "data/evidence/B08-fine-stroke-names-crosscheck.json",
-      "stroke_order_original_page_evidence": "data/evidence/B08-stroke-order-original-page.json"
+      "stroke_order_original_page_evidence": "data/evidence/B08-stroke-order-original-page.json",
+      "stroke_order_gf3002_original_page_evidence": "data/evidence/B08-stroke-order-gf3002-original-page.json"
     },
     "B09": {
       "main_ids": [
@@ -354,13 +356,15 @@
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_crosscheck",
         "fine_stroke_names_secondary_crosscheck_or_locator",
-        "stroke_order_GF0023_original_page_or_applicability"
+        "stroke_order_GF0023_original_page_or_applicability",
+        "stroke_order_GF3002_original_page_partial_residual_closure"
       ],
-      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
+      "limits": "P1 checkpoint: GF0023 exact original-page targets are reviewed; GF3002—1999 public original PDF additionally closes residual 丬 from exact visible row 45. Other fields remain independent; the public GF3002 PDF is abridged after table sequence 134.",
       "pronunciation_evidence": "data/evidence/B10-pronunciation.json",
       "stroke_order_crosscheck_evidence": "data/evidence/B10-stroke-order-crosscheck.json",
       "fine_stroke_names_crosscheck_evidence": "data/evidence/B10-fine-stroke-names-crosscheck.json",
-      "stroke_order_original_page_evidence": "data/evidence/B10-stroke-order-original-page.json"
+      "stroke_order_original_page_evidence": "data/evidence/B10-stroke-order-original-page.json",
+      "stroke_order_gf3002_original_page_evidence": "data/evidence/B10-stroke-order-gf3002-original-page.json"
     },
     "B11": {
       "main_ids": [
