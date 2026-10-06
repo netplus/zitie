@@ -854,7 +854,7 @@
     "batches_content_in_progress": [],
     "next_assignment_starts_at": null,
     "next_work": "P6_artwork_layout_full_book",
-    "note": "P5 completed: 201/201 main radicals are content_ready. All ordinary content pending is zero; remaining conflicts/source-blocked states are explicit terminal boundaries with reopen conditions. P6 artwork/layout is now active. Artwork/PDF/manifest/release statuses remain separate.",
+    "note": "P6 active. All 201 main radicals have immutable Hanzi Writer vector material available with stroke-count compatibility (0 missing/mismatch), but vector availability does not grant artwork approval. B01-B03 total 30 are artwork_ready; B04-B21 171 still require cumulative-stroke visual review against reviewed content evidence.",
     "stroke_order_reviewed_main_count": 201,
     "stroke_order_pending_main_count": 0,
     "active_remaining_phase": "P6",
@@ -1081,6 +1081,29 @@
         "data/evidence/P5-B13-B21-final-content-acceptance.json"
       ],
       "completion_review": "reviews/P5-completion-20261007.md"
+    },
+    "p6_artwork_layout": {
+      "status": "in_progress",
+      "vector_material_coverage": {
+        "target_count": 201,
+        "compatible": 201,
+        "missing": 0,
+        "stroke_count_mismatch": 0,
+        "other_errors": 0,
+        "evidence": "data/evidence/P6-vector-material-coverage-20261007.json",
+        "review": "reviews/P6-vector-coverage-and-B03-promotion-20261007.md",
+        "workflow_run_id": 37513572597,
+        "artifact_id": 11435744872
+      },
+      "artwork_ready": {
+        "main_count": 30,
+        "batches": [
+          "B01",
+          "B02",
+          "B03"
+        ],
+        "note": "B01/B02既有artwork_ready；B03按2026-09-30已完成的真实逐笔矢量复核正规化为artwork_ready。B04—B21仍需逐项累计笔画视觉QA。"
+      }
     }
   }
 }
