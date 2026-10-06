@@ -128,7 +128,7 @@
   },
   "release_eligible": false,
   "remaining_gates": [
-    "GF0011—2022全文及目标版主项身份核验",
+    "GF0011—2022 main-radical membership continuity reviewed in P4; exact 2022 glyph/attached-form/name/code fields remain pending.",
     "将B03候选PDF按新版本归档至deliverables/drafts并同步manifest真实source_commit、页数、字节数、SHA256和复核记录",
     "目标HEAD必要CI通过后完成PR审查与合入"
   ],
@@ -192,6 +192,15 @@
         "adopted_name": "刀",
         "result": "matched",
         "reviewed_at": "2026-09-29"
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 22,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -252,6 +261,15 @@
         "adopted_name": "力",
         "result": "matched",
         "reviewed_at": "2026-09-29"
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 23,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -312,6 +330,15 @@
         "adopted_name": "又",
         "result": "matched",
         "reviewed_at": "2026-09-29"
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 24,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -373,6 +400,15 @@
         "adopted_name": "子",
         "result": "matched",
         "reviewed_at": "2026-09-29"
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 54,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -434,6 +470,15 @@
         "adopted_name": "女",
         "result": "matched",
         "reviewed_at": "2026-09-29"
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 56,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -495,6 +540,15 @@
         "adopted_name": "小",
         "result": "matched",
         "reviewed_at": "2026-09-29"
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 36,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -557,6 +611,15 @@
         "adopted_name": "王",
         "result": "matched",
         "reviewed_at": "2026-09-29"
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 61,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -620,6 +683,15 @@
         "adopted_name": "石",
         "result": "matched",
         "reviewed_at": "2026-09-29"
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 102,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -684,7 +756,16 @@
         "result": "matched",
         "reviewed_at": "2026-09-29"
       },
-      "artwork_note": "S02 PDF21与S04 PDF22的第3步均显示横折向下、无钩；Hanzi Writer固定revision第3矢量同样无钩。"
+      "artwork_note": "S02 PDF21与S04 PDF22的第3步均显示横折向下、无钩；Hanzi Writer固定revision第3矢量同样无钩。",
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 112,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      }
     },
     {
       "character": "立",
@@ -747,9 +828,24 @@
         "adopted_name": "立",
         "result": "matched",
         "reviewed_at": "2026-09-29"
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 116,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     }
   ],
   "metadata_review_record": "reviews/B03-metadata.md",
-  "content_review_record": "reviews/B03-content.md"
+  "content_review_record": "reviews/B03-content.md",
+  "P4_target_identity_review": {
+    "status": "main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+    "target_count": 10,
+    "evidence": "data/evidence/P4-B01-B03-main-radical-identity-continuity.json",
+    "limits": "Does not change existing content_ready/artwork/layout/publication status."
+  }
 }
