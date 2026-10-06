@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_kind": "phase1_content_draft",
   "batch_id": "B19",
-  "version": "content-draft-2026-10-05",
+  "version": "content-draft-2026-10-06",
   "title": "九十画常用部件与复杂形过渡",
   "content_status": "in_progress",
   "artwork_status": "deferred",
@@ -64,7 +64,8 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "结构分类及位置迁移尚未完成整字原页核验",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成"
+        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
+        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -181,6 +182,13 @@
           }
         ],
         "source_has_ambiguity": false
+      },
+      "fine_stroke_names_d04_crosscheck": {
+        "evidence": "data/evidence/B19-fine-stroke-names-d04-crosscheck.json",
+        "source_id": "D04",
+        "source_repository": "cburgmer/cjklib",
+        "result": "cjklib_target_missing",
+        "cjklib_primary": null
       }
     },
     {
@@ -222,7 +230,7 @@
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
-        "fine_stroke_names": "secondary_fine_stroke_names_source_ambiguous_locator_original_page_pending",
+        "fine_stroke_names": "secondary_two_source_fine_stroke_names_exact_consistent_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
@@ -234,7 +242,8 @@
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "fine_stroke_names已取得cnchar二次逐笔序列，但源自身存在同码双名；须回GF2001/GF0023/S04原页裁决"
+        "fine_stroke_names已取得cnchar二次逐笔序列，但源自身存在同码双名；须回GF2001/GF0023/S04原页裁决",
+        "fine_stroke_names在cnchar与cjklib两套二次数据中逐笔一致；仍须规范原页review后才能最终reviewed"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -351,6 +360,64 @@
           }
         ],
         "source_has_ambiguity": true
+      },
+      "fine_stroke_names_d04_crosscheck": {
+        "evidence": "data/evidence/B19-fine-stroke-names-d04-crosscheck.json",
+        "source_id": "D04",
+        "source_repository": "cburgmer/cjklib",
+        "result": "secondary_sources_exact_name_sequence_match",
+        "cjklib_primary": {
+          "order": "S-HZ-HZ-D-HG S-HZG-H-H",
+          "glyph": 0,
+          "flags": "",
+          "tokens": [
+            {
+              "abbrev": "S",
+              "name": "竖",
+              "shape": "㇑"
+            },
+            {
+              "abbrev": "HZ",
+              "name": "横折",
+              "shape": "㇕"
+            },
+            {
+              "abbrev": "HZ",
+              "name": "横折",
+              "shape": "㇕"
+            },
+            {
+              "abbrev": "D",
+              "name": "点",
+              "shape": "㇔"
+            },
+            {
+              "abbrev": "HG",
+              "name": "横钩",
+              "shape": "㇖"
+            },
+            {
+              "abbrev": "S",
+              "name": "竖",
+              "shape": "㇑"
+            },
+            {
+              "abbrev": "HZG",
+              "name": "横折钩",
+              "shape": "㇆"
+            },
+            {
+              "abbrev": "H",
+              "name": "横",
+              "shape": "㇐"
+            },
+            {
+              "abbrev": "H",
+              "name": "横",
+              "shape": "㇐"
+            }
+          ]
+        }
       }
     },
     {
@@ -404,7 +471,8 @@
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成"
+        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
+        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -520,6 +588,13 @@
           }
         ],
         "source_has_ambiguity": false
+      },
+      "fine_stroke_names_d04_crosscheck": {
+        "evidence": "data/evidence/B19-fine-stroke-names-d04-crosscheck.json",
+        "source_id": "D04",
+        "source_repository": "cburgmer/cjklib",
+        "result": "cjklib_target_missing",
+        "cjklib_primary": null
       }
     },
     {
@@ -562,7 +637,7 @@
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
-        "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
+        "fine_stroke_names": "secondary_two_source_fine_stroke_names_compatible_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
@@ -571,7 +646,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "位置迁移仍须回完整整字及适用规范原页核验",
-        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成"
+        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
+        "fine_stroke_names在两套二次数据中兼容，仅存在如“撇/竖撇”的粒度差异；仍须规范原页裁决"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -688,6 +764,64 @@
           }
         ],
         "source_has_ambiguity": false
+      },
+      "fine_stroke_names_d04_crosscheck": {
+        "evidence": "data/evidence/B19-fine-stroke-names-d04-crosscheck.json",
+        "source_id": "D04",
+        "source_repository": "cburgmer/cjklib",
+        "result": "secondary_sources_compatible_with_granularity_difference",
+        "cjklib_primary": {
+          "order": "P-S-HZ-H-H-SP-SWG PZ-D",
+          "glyph": 0,
+          "flags": "",
+          "tokens": [
+            {
+              "abbrev": "P",
+              "name": "撇",
+              "shape": "㇒"
+            },
+            {
+              "abbrev": "S",
+              "name": "竖",
+              "shape": "㇑"
+            },
+            {
+              "abbrev": "HZ",
+              "name": "横折",
+              "shape": "㇕"
+            },
+            {
+              "abbrev": "H",
+              "name": "横",
+              "shape": "㇐"
+            },
+            {
+              "abbrev": "H",
+              "name": "横",
+              "shape": "㇐"
+            },
+            {
+              "abbrev": "SP",
+              "name": "竖撇",
+              "shape": "㇓"
+            },
+            {
+              "abbrev": "SWG",
+              "name": "竖弯钩",
+              "shape": "㇟"
+            },
+            {
+              "abbrev": "PZ",
+              "name": "撇折",
+              "shape": "㇜"
+            },
+            {
+              "abbrev": "D",
+              "name": "点",
+              "shape": "㇔"
+            }
+          ]
+        }
       }
     },
     {
@@ -729,7 +863,7 @@
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
-        "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
+        "fine_stroke_names": "secondary_two_source_fine_stroke_names_exact_consistent_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
@@ -739,7 +873,8 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "结构分类及位置迁移尚未完成整字原页核验",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成"
+        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
+        "fine_stroke_names在cnchar与cjklib两套二次数据中逐笔一致；仍须规范原页review后才能最终reviewed"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -856,6 +991,64 @@
           }
         ],
         "source_has_ambiguity": false
+      },
+      "fine_stroke_names_d04_crosscheck": {
+        "evidence": "data/evidence/B19-fine-stroke-names-d04-crosscheck.json",
+        "source_id": "D04",
+        "source_repository": "cburgmer/cjklib",
+        "result": "secondary_sources_exact_name_sequence_match",
+        "cjklib_primary": {
+          "order": "P-N-D-HZ-H-H-ST-P-D",
+          "glyph": 0,
+          "flags": "",
+          "tokens": [
+            {
+              "abbrev": "P",
+              "name": "撇",
+              "shape": "㇒"
+            },
+            {
+              "abbrev": "N",
+              "name": "捺",
+              "shape": "㇏"
+            },
+            {
+              "abbrev": "D",
+              "name": "点",
+              "shape": "㇔"
+            },
+            {
+              "abbrev": "HZ",
+              "name": "横折",
+              "shape": "㇕"
+            },
+            {
+              "abbrev": "H",
+              "name": "横",
+              "shape": "㇐"
+            },
+            {
+              "abbrev": "H",
+              "name": "横",
+              "shape": "㇐"
+            },
+            {
+              "abbrev": "ST",
+              "name": "竖提",
+              "shape": "㇙"
+            },
+            {
+              "abbrev": "P",
+              "name": "撇",
+              "shape": "㇒"
+            },
+            {
+              "abbrev": "D",
+              "name": "点",
+              "shape": "㇔"
+            }
+          ]
+        }
       }
     },
     {
@@ -909,7 +1102,8 @@
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成"
+        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
+        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1025,6 +1219,13 @@
           }
         ],
         "source_has_ambiguity": false
+      },
+      "fine_stroke_names_d04_crosscheck": {
+        "evidence": "data/evidence/B19-fine-stroke-names-d04-crosscheck.json",
+        "source_id": "D04",
+        "source_repository": "cburgmer/cjklib",
+        "result": "cjklib_target_missing",
+        "cjklib_primary": null
       }
     },
     {
@@ -1067,7 +1268,7 @@
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "secondary_GF0023_derived_order_located_original_page_pending",
-        "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
+        "fine_stroke_names": "secondary_two_source_fine_stroke_names_exact_consistent_original_page_pending",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
@@ -1076,7 +1277,8 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "位置迁移仍须回完整整字及适用规范原页核验",
-        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成"
+        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
+        "fine_stroke_names在cnchar与cjklib两套二次数据中逐笔一致；仍须规范原页review后才能最终reviewed"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1193,6 +1395,64 @@
           }
         ],
         "source_has_ambiguity": false
+      },
+      "fine_stroke_names_d04_crosscheck": {
+        "evidence": "data/evidence/B19-fine-stroke-names-d04-crosscheck.json",
+        "source_id": "D04",
+        "source_repository": "cburgmer/cjklib",
+        "result": "secondary_sources_exact_name_sequence_match",
+        "cjklib_primary": {
+          "order": "D-P-H-P-S-HZ-H-H-H",
+          "glyph": 0,
+          "flags": "",
+          "tokens": [
+            {
+              "abbrev": "D",
+              "name": "点",
+              "shape": "㇔"
+            },
+            {
+              "abbrev": "P",
+              "name": "撇",
+              "shape": "㇒"
+            },
+            {
+              "abbrev": "H",
+              "name": "横",
+              "shape": "㇐"
+            },
+            {
+              "abbrev": "P",
+              "name": "撇",
+              "shape": "㇒"
+            },
+            {
+              "abbrev": "S",
+              "name": "竖",
+              "shape": "㇑"
+            },
+            {
+              "abbrev": "HZ",
+              "name": "横折",
+              "shape": "㇕"
+            },
+            {
+              "abbrev": "H",
+              "name": "横",
+              "shape": "㇐"
+            },
+            {
+              "abbrev": "H",
+              "name": "横",
+              "shape": "㇐"
+            },
+            {
+              "abbrev": "H",
+              "name": "横",
+              "shape": "㇐"
+            }
+          ]
+        }
       }
     },
     {
@@ -1246,7 +1506,8 @@
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成"
+        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
+        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1371,6 +1632,13 @@
           }
         ],
         "source_has_ambiguity": false
+      },
+      "fine_stroke_names_d04_crosscheck": {
+        "evidence": "data/evidence/B19-fine-stroke-names-d04-crosscheck.json",
+        "source_id": "D04",
+        "source_repository": "cburgmer/cjklib",
+        "result": "cjklib_target_missing",
+        "cjklib_primary": null
       }
     },
     {
@@ -1422,7 +1690,8 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "结构分类及位置迁移尚未完成整字原页核验",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成"
+        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
+        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1548,6 +1817,13 @@
           }
         ],
         "source_has_ambiguity": false
+      },
+      "fine_stroke_names_d04_crosscheck": {
+        "evidence": "data/evidence/B19-fine-stroke-names-d04-crosscheck.json",
+        "source_id": "D04",
+        "source_repository": "cburgmer/cjklib",
+        "result": "cjklib_target_missing",
+        "cjklib_primary": null
       }
     },
     {
@@ -1601,7 +1877,8 @@
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待GF2001/GF0023/S04等适用规范原页"
+        "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待GF2001/GF0023/S04等适用规范原页",
+        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1635,6 +1912,13 @@
         "source_letters": null,
         "secondary_sequence": null,
         "source_has_ambiguity": false
+      },
+      "fine_stroke_names_d04_crosscheck": {
+        "evidence": "data/evidence/B19-fine-stroke-names-d04-crosscheck.json",
+        "source_id": "D04",
+        "source_repository": "cburgmer/cjklib",
+        "result": "cjklib_target_missing",
+        "cjklib_primary": null
       }
     }
   ],
@@ -1643,5 +1927,6 @@
   "structure_evidence": "data/evidence/B19-structure.json",
   "pronunciation_evidence": "data/evidence/B19-pronunciation.json",
   "stroke_order_secondary_locator_evidence": "data/evidence/B19-stroke-order-secondary-locator.json",
-  "fine_stroke_names_secondary_locator_evidence": "data/evidence/B19-fine-stroke-names-secondary-locator.json"
+  "fine_stroke_names_secondary_locator_evidence": "data/evidence/B19-fine-stroke-names-secondary-locator.json",
+  "fine_stroke_names_d04_crosscheck_evidence": "data/evidence/B19-fine-stroke-names-d04-crosscheck.json"
 }
