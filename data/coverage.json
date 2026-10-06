@@ -855,7 +855,7 @@
     ],
     "next_assignment_starts_at": null,
     "next_work": "P2_fine_stroke_names_normative_original_page_closure",
-    "note": "P4 active but position_migration is now fully closed: 201/201 = 198 reviewed + 3 conflict_fail_closed (屮、毋、瓦), 0 ordinary pending. Main-radical membership continuity is also 201/201 reviewed. Remaining P4 blocker is GF0011—2022 exact item-level glyph/attached-form/name/code data; fulltext/item-level official data are not yet available through a repeatable public channel.",
+    "note": "P4 completed. Main-radical membership continuity: 201/201 reviewed. Position migration: 198 reviewed + 3 conflict_fail_closed, 0 ordinary pending. GF0011—2022 exact item fields: 201/201 source_blocked_fail_closed with no invented values; P3-deferred component_name/structure gates are likewise closed as source-blocked. P5 content_ready final review is now active; content_ready remains 30 until batch-level P5 acceptance.",
     "stroke_order_reviewed_main_count": 201,
     "stroke_order_pending_main_count": 0,
     "active_remaining_phase": "P2",
@@ -895,7 +895,7 @@
       "completion_review": "reviews/P3-completion-20261006.md"
     },
     "p4_identity_position_migration": {
-      "status": "position_migration_complete_exact_2022_item_fields_source_blocked",
+      "status": "completed",
       "round1": {
         "batches": [
           "B04",
@@ -1047,7 +1047,35 @@
           "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
           "data/evidence/P4-B04-B05-position-migration-final.json"
         ]
-      }
+      },
+      "completed_at": "2026-10-06",
+      "exact_2022_item_fields": {
+        "target_count": 201,
+        "reviewed": 0,
+        "source_blocked_fail_closed": 201,
+        "ordinary_pending": 0,
+        "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+        "reopen_condition": "formal GF0011—2022 table or equivalent official item-level dataset becomes repeatably accessible"
+      },
+      "component_name_final": {
+        "scope": "B04-B21",
+        "reviewed": 143,
+        "source_blocked_fail_closed": 28,
+        "ordinary_pending": 0
+      },
+      "structure_final": {
+        "scope": "B04-B21",
+        "reviewed": 134,
+        "source_blocked_fail_closed": 37,
+        "ordinary_pending": 0
+      },
+      "completion_review": "reviews/P4-completion-20261006.md"
+    },
+    "p5_content_ready": {
+      "status": "active",
+      "started_at": "2026-10-06",
+      "content_ready_count": 30,
+      "content_in_progress_count": 171
     }
   }
 }

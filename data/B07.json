@@ -10,7 +10,7 @@
   "scope_frozen_for_content": true,
   "release_eligible": false,
   "target_edition": "GF0011—2022",
-  "target_edition_status": "exact_fields_pending",
+  "target_edition_status": "exact_fields_source_blocked_fail_closed",
   "scope_basis": "从data/coverage.json的201主项中选择尚未覆盖的二三画常用偏旁及包围部件，避免与B01—B06重复。",
   "entries": [
     {
@@ -47,8 +47,8 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
-        "structure": "deferred_P4_exact_target_identity_before_structure",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -60,15 +60,15 @@
       },
       "migration_boundary": "GF0023—2020整字原页已核“写”：目标部件位于top，对应整字笔画索引[1,2]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
-        "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "phase": "P3",
-        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
-        "result": "deferred_P4_exact_target_identity_before_structure",
+        "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+        "result": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "structure_class": null,
-        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
+        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved.",
+        "reopen_condition": "formal GF0011—2022 exact target identity/main-variant relation becomes repeatably accessible"
       },
       "pronunciation_review": {
         "phase": "P3",
@@ -130,7 +130,7 @@
         "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       },
       "structure": {
-        "status": "deferred_P4_exact_target_identity_before_structure",
+        "status": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "class": null,
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
@@ -142,7 +142,18 @@
         "publication_id": "GF0011—2022",
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 19,
-        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data.",
+        "exact_2022_item_fields_resolution": {
+          "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+          "status": "source_blocked_fail_closed_GF0011_2022_item_level_not_publicly_released",
+          "fields": [
+            "exact_main_glyph",
+            "attached_forms",
+            "common_name",
+            "international_code"
+          ],
+          "reopen_condition": "formal GF0011—2022 table or equivalent official item-level dataset becomes repeatably accessible"
+        }
       },
       "position_migration_review": {
         "phase": "P4",
@@ -203,8 +214,8 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
-        "structure": "deferred_P4_exact_target_identity_before_structure",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -216,15 +227,15 @@
       },
       "migration_boundary": "GF0023—2020整字原页已核“凶”：目标部件位于outer，对应整字笔画索引[3,4]，映射=contiguous_written_after_inner；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
-        "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "phase": "P3",
-        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
-        "result": "deferred_P4_exact_target_identity_before_structure",
+        "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+        "result": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "structure_class": null,
-        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
+        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved.",
+        "reopen_condition": "formal GF0011—2022 exact target identity/main-variant relation becomes repeatably accessible"
       },
       "pronunciation_review": {
         "phase": "P3",
@@ -317,7 +328,7 @@
         "rationale": "GF2001—2001区分“竖折”与“竖弯”；GB/T 25741—2010附录C目标字形为明确折角的凵形，采用“竖折、竖”，裁决D03“竖弯”冲突。"
       },
       "structure": {
-        "status": "deferred_P4_exact_target_identity_before_structure",
+        "status": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "class": null,
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
@@ -329,7 +340,18 @@
         "publication_id": "GF0011—2022",
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 20,
-        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data.",
+        "exact_2022_item_fields_resolution": {
+          "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+          "status": "source_blocked_fail_closed_GF0011_2022_item_level_not_publicly_released",
+          "fields": [
+            "exact_main_glyph",
+            "attached_forms",
+            "common_name",
+            "international_code"
+          ],
+          "reopen_condition": "formal GF0011—2022 table or equivalent official item-level dataset becomes repeatably accessible"
+        }
       },
       "position_migration_review": {
         "phase": "P4",
@@ -390,8 +412,8 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
-        "structure": "deferred_P4_exact_target_identity_before_structure",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -403,15 +425,15 @@
       },
       "migration_boundary": "GF0023—2020整字原页已核“却”：目标部件位于right，对应整字笔画索引[6,7]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
-        "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "phase": "P3",
-        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
-        "result": "deferred_P4_exact_target_identity_before_structure",
+        "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+        "result": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "structure_class": null,
-        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
+        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved.",
+        "reopen_condition": "formal GF0011—2022 exact target identity/main-variant relation becomes repeatably accessible"
       },
       "pronunciation_review": {
         "source_id": "S03",
@@ -474,7 +496,7 @@
         "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       },
       "structure": {
-        "status": "deferred_P4_exact_target_identity_before_structure",
+        "status": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "class": null,
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
@@ -486,7 +508,18 @@
         "publication_id": "GF0011—2022",
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 21,
-        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data.",
+        "exact_2022_item_fields_resolution": {
+          "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+          "status": "source_blocked_fail_closed_GF0011_2022_item_level_not_publicly_released",
+          "fields": [
+            "exact_main_glyph",
+            "attached_forms",
+            "common_name",
+            "international_code"
+          ],
+          "reopen_condition": "formal GF0011—2022 table or equivalent official item-level dataset becomes repeatably accessible"
+        }
       },
       "position_migration_review": {
         "phase": "P4",
@@ -547,8 +580,8 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
-        "structure": "deferred_P4_exact_target_identity_before_structure",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -560,15 +593,15 @@
       },
       "migration_boundary": "GF0023—2020整字原页已核“公”：目标部件位于bottom，对应整字笔画索引[3,4]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
-        "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "phase": "P3",
-        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
-        "result": "deferred_P4_exact_target_identity_before_structure",
+        "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+        "result": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "structure_class": null,
-        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
+        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved.",
+        "reopen_condition": "formal GF0011—2022 exact target identity/main-variant relation becomes repeatably accessible"
       },
       "pronunciation_review": {
         "source_id": "S03",
@@ -664,7 +697,7 @@
         "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       },
       "structure": {
-        "status": "deferred_P4_exact_target_identity_before_structure",
+        "status": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "class": null,
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
@@ -676,7 +709,18 @@
         "publication_id": "GF0011—2022",
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 25,
-        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data.",
+        "exact_2022_item_fields_resolution": {
+          "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+          "status": "source_blocked_fail_closed_GF0011_2022_item_level_not_publicly_released",
+          "fields": [
+            "exact_main_glyph",
+            "attached_forms",
+            "common_name",
+            "international_code"
+          ],
+          "reopen_condition": "formal GF0011—2022 table or equivalent official item-level dataset becomes repeatably accessible"
+        }
       },
       "position_migration_review": {
         "phase": "P4",
@@ -737,8 +781,8 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
-        "structure": "deferred_P4_exact_target_identity_before_structure",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -750,15 +794,15 @@
       },
       "migration_boundary": "GF0023—2020整字原页已核“建”：目标部件位于outer，对应整字笔画索引[7,8]，映射=contiguous_written_last；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
-        "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "phase": "P3",
-        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
-        "result": "deferred_P4_exact_target_identity_before_structure",
+        "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+        "result": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "structure_class": null,
-        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
+        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved.",
+        "reopen_condition": "formal GF0011—2022 exact target identity/main-variant relation becomes repeatably accessible"
       },
       "pronunciation_review": {
         "phase": "P3",
@@ -820,7 +864,7 @@
         "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       },
       "structure": {
-        "status": "deferred_P4_exact_target_identity_before_structure",
+        "status": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "class": null,
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
@@ -832,7 +876,18 @@
         "publication_id": "GF0011—2022",
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 26,
-        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data.",
+        "exact_2022_item_fields_resolution": {
+          "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+          "status": "source_blocked_fail_closed_GF0011_2022_item_level_not_publicly_released",
+          "fields": [
+            "exact_main_glyph",
+            "attached_forms",
+            "common_name",
+            "international_code"
+          ],
+          "reopen_condition": "formal GF0011—2022 table or equivalent official item-level dataset becomes repeatably accessible"
+        }
       },
       "position_migration_review": {
         "phase": "P4",
@@ -894,8 +949,8 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
-        "structure": "deferred_P4_exact_target_identity_before_structure",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -907,15 +962,15 @@
       },
       "migration_boundary": "GF0023—2020整字原页已核“草”：目标部件位于top，对应整字笔画索引[1,2,3]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
-        "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "phase": "P3",
-        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
-        "result": "deferred_P4_exact_target_identity_before_structure",
+        "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+        "result": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "structure_class": null,
-        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
+        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved.",
+        "reopen_condition": "formal GF0011—2022 exact target identity/main-variant relation becomes repeatably accessible"
       },
       "pronunciation_review": {
         "phase": "P3",
@@ -978,7 +1033,7 @@
         "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       },
       "structure": {
-        "status": "deferred_P4_exact_target_identity_before_structure",
+        "status": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "class": null,
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
@@ -990,7 +1045,18 @@
         "publication_id": "GF0011—2022",
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 30,
-        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data.",
+        "exact_2022_item_fields_resolution": {
+          "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+          "status": "source_blocked_fail_closed_GF0011_2022_item_level_not_publicly_released",
+          "fields": [
+            "exact_main_glyph",
+            "attached_forms",
+            "common_name",
+            "international_code"
+          ],
+          "reopen_condition": "formal GF0011—2022 table or equivalent official item-level dataset becomes repeatably accessible"
+        }
       },
       "position_migration_review": {
         "phase": "P4",
@@ -1053,8 +1119,8 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
-        "structure": "deferred_P4_exact_target_identity_before_structure",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -1066,15 +1132,15 @@
       },
       "migration_boundary": "GF0023—2020整字原页已核“弄”：目标部件位于bottom，对应整字笔画索引[5,6,7]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
-        "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "phase": "P3",
-        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
-        "result": "deferred_P4_exact_target_identity_before_structure",
+        "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+        "result": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "structure_class": null,
-        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
+        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved.",
+        "reopen_condition": "formal GF0011—2022 exact target identity/main-variant relation becomes repeatably accessible"
       },
       "pronunciation_review": {
         "phase": "P3",
@@ -1186,7 +1252,7 @@
         "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       },
       "structure": {
-        "status": "deferred_P4_exact_target_identity_before_structure",
+        "status": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "class": null,
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
@@ -1198,7 +1264,18 @@
         "publication_id": "GF0011—2022",
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 32,
-        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data.",
+        "exact_2022_item_fields_resolution": {
+          "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+          "status": "source_blocked_fail_closed_GF0011_2022_item_level_not_publicly_released",
+          "fields": [
+            "exact_main_glyph",
+            "attached_forms",
+            "common_name",
+            "international_code"
+          ],
+          "reopen_condition": "formal GF0011—2022 table or equivalent official item-level dataset becomes repeatably accessible"
+        }
       },
       "position_migration_review": {
         "phase": "P4",
@@ -1261,8 +1338,8 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
-        "structure": "deferred_P4_exact_target_identity_before_structure",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -1274,15 +1351,15 @@
       },
       "migration_boundary": "GF0023—2020整字原页已核“家”：目标部件位于top，对应整字笔画索引[1,2,3]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
-        "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "phase": "P3",
-        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
-        "result": "deferred_P4_exact_target_identity_before_structure",
+        "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+        "result": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "structure_class": null,
-        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
+        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved.",
+        "reopen_condition": "formal GF0011—2022 exact target identity/main-variant relation becomes repeatably accessible"
       },
       "pronunciation_review": {
         "phase": "P3",
@@ -1345,7 +1422,7 @@
         "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       },
       "structure": {
-        "status": "deferred_P4_exact_target_identity_before_structure",
+        "status": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "class": null,
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
@@ -1357,7 +1434,18 @@
         "publication_id": "GF0011—2022",
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 48,
-        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data.",
+        "exact_2022_item_fields_resolution": {
+          "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+          "status": "source_blocked_fail_closed_GF0011_2022_item_level_not_publicly_released",
+          "fields": [
+            "exact_main_glyph",
+            "attached_forms",
+            "common_name",
+            "international_code"
+          ],
+          "reopen_condition": "formal GF0011—2022 table or equivalent official item-level dataset becomes repeatably accessible"
+        }
       },
       "position_migration_review": {
         "phase": "P4",
@@ -1420,8 +1508,8 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
-        "structure": "deferred_P4_exact_target_identity_before_structure",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -1433,15 +1521,15 @@
       },
       "migration_boundary": "GF0023—2020整字原页已核“近”：目标部件位于outer，对应整字笔画索引[5,6,7]，映射=contiguous_written_last；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
-        "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "phase": "P3",
-        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
-        "result": "deferred_P4_exact_target_identity_before_structure",
+        "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+        "result": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "structure_class": null,
-        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
+        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved.",
+        "reopen_condition": "formal GF0011—2022 exact target identity/main-variant relation becomes repeatably accessible"
       },
       "pronunciation_review": {
         "phase": "P3",
@@ -1504,7 +1592,7 @@
         "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       },
       "structure": {
-        "status": "deferred_P4_exact_target_identity_before_structure",
+        "status": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "class": null,
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
@@ -1516,7 +1604,18 @@
         "publication_id": "GF0011—2022",
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 49,
-        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data.",
+        "exact_2022_item_fields_resolution": {
+          "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+          "status": "source_blocked_fail_closed_GF0011_2022_item_level_not_publicly_released",
+          "fields": [
+            "exact_main_glyph",
+            "attached_forms",
+            "common_name",
+            "international_code"
+          ],
+          "reopen_condition": "formal GF0011—2022 table or equivalent official item-level dataset becomes repeatably accessible"
+        }
       },
       "position_migration_review": {
         "phase": "P4",
@@ -1579,8 +1678,8 @@
         "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
-        "structure": "deferred_P4_exact_target_identity_before_structure",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "stroke_count": "reviewed_from_S01_2009_baseline",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -1592,15 +1691,15 @@
       },
       "migration_boundary": "GF0023—2020整字原页已核“雪”：目标部件位于bottom，对应整字笔画索引[9,10,11]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
-        "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "phase": "P3",
-        "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
-        "result": "deferred_P4_exact_target_identity_before_structure",
+        "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+        "result": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "structure_class": null,
-        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
+        "membership_basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved.",
+        "reopen_condition": "formal GF0011—2022 exact target identity/main-variant relation becomes repeatably accessible"
       },
       "pronunciation_review": {
         "phase": "P3",
@@ -1663,7 +1762,7 @@
         "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       },
       "structure": {
-        "status": "deferred_P4_exact_target_identity_before_structure",
+        "status": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
         "class": null,
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
@@ -1675,7 +1774,18 @@
         "publication_id": "GF0011—2022",
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 50,
-        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data.",
+        "exact_2022_item_fields_resolution": {
+          "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+          "status": "source_blocked_fail_closed_GF0011_2022_item_level_not_publicly_released",
+          "fields": [
+            "exact_main_glyph",
+            "attached_forms",
+            "common_name",
+            "international_code"
+          ],
+          "reopen_condition": "formal GF0011—2022 table or equivalent official item-level dataset becomes repeatably accessible"
+        }
       },
       "position_migration_review": {
         "phase": "P4",
