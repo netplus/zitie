@@ -131,7 +131,7 @@
       "content_status": "in_progress",
       "generated_main_count": 0,
       "release_eligible": false,
-      "limits": "阶段1字段级检查点；B04—B11细笔名已完成cnchar二次逐笔定位/交叉，但所有结果仍需GF2001/GF0023/S04等规范原页裁决。二次源自身歧义和二次冲突均fail-closed；牙既有权威冲突继续保留。",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
       "structure_evidence": "data/evidence/B04-structure.json",
       "reviewed_fields": [
         "structure_applicability",
@@ -141,7 +141,8 @@
         "component_name_or_S03_applicability",
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_crosscheck",
-        "fine_stroke_names_secondary_crosscheck_or_locator"
+        "fine_stroke_names_secondary_crosscheck_or_locator",
+        "stroke_order_GF0023_original_page_or_applicability"
       ],
       "stroke_order_locator_evidence": "data/evidence/B04-stroke-order-locator.json",
       "located_fields": [
@@ -149,7 +150,8 @@
       ],
       "pronunciation_evidence": "data/evidence/B04-pronunciation.json",
       "stroke_order_crosscheck_evidence": "data/evidence/B04-stroke-order-crosscheck.json",
-      "fine_stroke_names_crosscheck_evidence": "data/evidence/B04-fine-stroke-names-crosscheck.json"
+      "fine_stroke_names_crosscheck_evidence": "data/evidence/B04-fine-stroke-names-crosscheck.json",
+      "stroke_order_original_page_evidence": "data/evidence/B04-stroke-order-original-page.json"
     },
     "B05": {
       "main_ids": [
@@ -169,7 +171,7 @@
       "content_status": "in_progress",
       "generated_main_count": 0,
       "release_eligible": false,
-      "limits": "阶段1字段级检查点；B04—B11细笔名已完成cnchar二次逐笔定位/交叉，但所有结果仍需GF2001/GF0023/S04等规范原页裁决。二次源自身歧义和二次冲突均fail-closed；牙既有权威冲突继续保留。",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
       "structure_evidence": "data/evidence/B05-structure.json",
       "reviewed_fields": [
         "structure_applicability",
@@ -179,11 +181,13 @@
         "component_name_or_S03_applicability",
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_crosscheck",
-        "fine_stroke_names_secondary_crosscheck_or_locator"
+        "fine_stroke_names_secondary_crosscheck_or_locator",
+        "stroke_order_GF0023_original_page_or_applicability"
       ],
       "pronunciation_evidence": "data/evidence/B05-pronunciation.json",
       "stroke_order_crosscheck_evidence": "data/evidence/B05-stroke-order-crosscheck.json",
-      "fine_stroke_names_crosscheck_evidence": "data/evidence/B05-fine-stroke-names-crosscheck.json"
+      "fine_stroke_names_crosscheck_evidence": "data/evidence/B05-fine-stroke-names-crosscheck.json",
+      "stroke_order_original_page_evidence": "data/evidence/B05-stroke-order-original-page.json"
     },
     "B06": {
       "main_ids": [
@@ -211,12 +215,14 @@
         "component_name_or_S03_applicability",
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_crosscheck",
-        "fine_stroke_names_secondary_crosscheck_or_locator"
+        "fine_stroke_names_secondary_crosscheck_or_locator",
+        "stroke_order_GF0023_original_page_or_applicability"
       ],
-      "limits": "阶段1字段级检查点；B04—B11细笔名已完成cnchar二次逐笔定位/交叉，但所有结果仍需GF2001/GF0023/S04等规范原页裁决。二次源自身歧义和二次冲突均fail-closed；牙既有权威冲突继续保留。",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
       "pronunciation_evidence": "data/evidence/B06-pronunciation.json",
       "stroke_order_crosscheck_evidence": "data/evidence/B06-stroke-order-crosscheck.json",
-      "fine_stroke_names_crosscheck_evidence": "data/evidence/B06-fine-stroke-names-crosscheck.json"
+      "fine_stroke_names_crosscheck_evidence": "data/evidence/B06-fine-stroke-names-crosscheck.json",
+      "stroke_order_original_page_evidence": "data/evidence/B06-stroke-order-original-page.json"
     },
     "B07": {
       "main_ids": [
@@ -244,12 +250,14 @@
         "component_name_or_S03_applicability",
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_crosscheck",
-        "fine_stroke_names_secondary_crosscheck_or_locator"
+        "fine_stroke_names_secondary_crosscheck_or_locator",
+        "stroke_order_GF0023_original_page_or_applicability"
       ],
-      "limits": "阶段1字段级检查点；B04—B11细笔名已完成cnchar二次逐笔定位/交叉，但所有结果仍需GF2001/GF0023/S04等规范原页裁决。二次源自身歧义和二次冲突均fail-closed；牙既有权威冲突继续保留。",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
       "pronunciation_evidence": "data/evidence/B07-pronunciation.json",
       "stroke_order_crosscheck_evidence": "data/evidence/B07-stroke-order-crosscheck.json",
-      "fine_stroke_names_crosscheck_evidence": "data/evidence/B07-fine-stroke-names-crosscheck.json"
+      "fine_stroke_names_crosscheck_evidence": "data/evidence/B07-fine-stroke-names-crosscheck.json",
+      "stroke_order_original_page_evidence": "data/evidence/B07-stroke-order-original-page.json"
     },
     "B08": {
       "main_ids": [
@@ -275,11 +283,13 @@
         "main_id",
         "baseline_stroke_group",
         "stroke_order_secondary_crosscheck",
-        "fine_stroke_names_secondary_crosscheck_or_locator"
+        "fine_stroke_names_secondary_crosscheck_or_locator",
+        "stroke_order_GF0023_original_page_or_applicability"
       ],
-      "limits": "阶段1字段级检查点；B04—B11细笔名已完成cnchar二次逐笔定位/交叉，但所有结果仍需GF2001/GF0023/S04等规范原页裁决。二次源自身歧义和二次冲突均fail-closed；牙既有权威冲突继续保留。",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
       "stroke_order_crosscheck_evidence": "data/evidence/B08-stroke-order-crosscheck.json",
-      "fine_stroke_names_crosscheck_evidence": "data/evidence/B08-fine-stroke-names-crosscheck.json"
+      "fine_stroke_names_crosscheck_evidence": "data/evidence/B08-fine-stroke-names-crosscheck.json",
+      "stroke_order_original_page_evidence": "data/evidence/B08-stroke-order-original-page.json"
     },
     "B09": {
       "main_ids": [
@@ -307,12 +317,14 @@
         "component_name_or_S03_applicability",
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_crosscheck",
-        "fine_stroke_names_secondary_crosscheck_or_locator"
+        "fine_stroke_names_secondary_crosscheck_or_locator",
+        "stroke_order_GF0023_original_page_or_applicability"
       ],
-      "limits": "阶段1字段级检查点；B04—B11细笔名已完成cnchar二次逐笔定位/交叉，但所有结果仍需GF2001/GF0023/S04等规范原页裁决。二次源自身歧义和二次冲突均fail-closed；牙既有权威冲突继续保留。",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
       "pronunciation_evidence": "data/evidence/B09-pronunciation.json",
       "stroke_order_crosscheck_evidence": "data/evidence/B09-stroke-order-crosscheck.json",
-      "fine_stroke_names_crosscheck_evidence": "data/evidence/B09-fine-stroke-names-crosscheck.json"
+      "fine_stroke_names_crosscheck_evidence": "data/evidence/B09-fine-stroke-names-crosscheck.json",
+      "stroke_order_original_page_evidence": "data/evidence/B09-stroke-order-original-page.json"
     },
     "B10": {
       "main_ids": [
@@ -341,12 +353,14 @@
         "teaching_editorial_consistency",
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_crosscheck",
-        "fine_stroke_names_secondary_crosscheck_or_locator"
+        "fine_stroke_names_secondary_crosscheck_or_locator",
+        "stroke_order_GF0023_original_page_or_applicability"
       ],
-      "limits": "阶段1字段级检查点；B04—B11细笔名已完成cnchar二次逐笔定位/交叉，但所有结果仍需GF2001/GF0023/S04等规范原页裁决。二次源自身歧义和二次冲突均fail-closed；牙既有权威冲突继续保留。",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
       "pronunciation_evidence": "data/evidence/B10-pronunciation.json",
       "stroke_order_crosscheck_evidence": "data/evidence/B10-stroke-order-crosscheck.json",
-      "fine_stroke_names_crosscheck_evidence": "data/evidence/B10-fine-stroke-names-crosscheck.json"
+      "fine_stroke_names_crosscheck_evidence": "data/evidence/B10-fine-stroke-names-crosscheck.json",
+      "stroke_order_original_page_evidence": "data/evidence/B10-stroke-order-original-page.json"
     },
     "B11": {
       "main_ids": [
@@ -375,12 +389,14 @@
         "teaching_editorial_consistency",
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_crosscheck",
-        "fine_stroke_names_secondary_crosscheck_or_locator"
+        "fine_stroke_names_secondary_crosscheck_or_locator",
+        "stroke_order_GF0023_original_page_or_applicability"
       ],
-      "limits": "阶段1字段级检查点；B04—B11细笔名已完成cnchar二次逐笔定位/交叉，但所有结果仍需GF2001/GF0023/S04等规范原页裁决。二次源自身歧义和二次冲突均fail-closed；牙既有权威冲突继续保留。",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
       "pronunciation_evidence": "data/evidence/B11-pronunciation.json",
       "stroke_order_crosscheck_evidence": "data/evidence/B11-stroke-order-crosscheck.json",
-      "fine_stroke_names_crosscheck_evidence": "data/evidence/B11-fine-stroke-names-crosscheck.json"
+      "fine_stroke_names_crosscheck_evidence": "data/evidence/B11-fine-stroke-names-crosscheck.json",
+      "stroke_order_original_page_evidence": "data/evidence/B11-stroke-order-original-page.json"
     },
     "B12": {
       "main_ids": [
@@ -735,6 +751,6 @@
     ],
     "next_assignment_starts_at": null,
     "next_work": "existing_batch_field_closure",
-    "note": "201个主部首范围已全部分配至B01—B21；2026-10-06 B12—B19共80项完成D04/cjklib独立二次细笔交叉：22完全一致、5粒度兼容、8冲突、4补缺、41 D04无条目。冲突全部fail-closed，所有项目最终仍待GF2001/GF0023/S04原页review。content_ready仍仅B01—B03。"
+    "note": "P1 active. 2026-10-06 B04-B11 80 targets reviewed against GF0023 original pages: 55 exact targets upgraded to reviewed_GF0023_2020_original_page; 25 component/radical targets not exactly located in reviewed main-table pages and remain pending alternative normative source. content_ready remains B01-B03."
   }
 }
