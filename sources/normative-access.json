@@ -78,13 +78,39 @@
         "sha256_match": true
       },
       "next_use": "P2 compound/folded stroke-name adjudication"
+    },
+    {
+      "source_id": "S08",
+      "publication_id": "GF3002—1999",
+      "title": "GB 13000.1字符集汉字笔顺规范",
+      "repo": "zispace/hanzi-docs",
+      "pinned_commit": "d26705ffc52b81b6e1a45483c7b591f62962f49f",
+      "path": "中国大陆/2-GF-语言文字规范/19991001-GF 3002-1999《GB13000.1字符集汉字笔顺规范》.pdf",
+      "git_blob_sha": "4500a72bce326385b08003197edb91c04f40c2d8",
+      "bytes": 6730497,
+      "pages": 8,
+      "sha256": "cb5cb74f108dafed41a3583bc8d33d8dd318d1a21d714923c0f1ced89443cf3e",
+      "first_probe": {
+        "run_id": 37410985779,
+        "artifact_id": 11389595541,
+        "artifact_name": "normative-reference-acquisition",
+        "bytes": 6730497,
+        "sha256_match_to_subsequently_pinned_digest": true
+      },
+      "verified_2026_10_06": {
+        "bytes": 6730497,
+        "pages": 8,
+        "sha256_match": true,
+        "note": "hash obtained in one PROBE_ONLY acquisition then pinned in the next workflow revision; the public PDF is abridged after table sequence 134"
+      },
+      "next_use": "P1 residual stroke_order only for exact rows actually visible in the abridged public PDF"
     }
   ],
   "reproducible_acquisition": {
     "workflow": ".github/workflows/source-probe.yml",
     "artifact_name": "normative-reference-acquisition",
     "retention_days": 7,
-    "verification": "workflow must reject any downloaded file whose SHA256 differs from the pinned expected digest"
+    "verification": "Every admitted reference must use fetch_verified and fail on SHA256 mismatch. A newly discovered source may use one explicitly labelled PROBE_ONLY acquisition solely to obtain its byte digest; it grants no review status and must be converted to fetch_verified before admission."
   },
   "p0_completed_at": "2026-10-06",
   "current_verified_run": {
@@ -116,5 +142,15 @@
       }
     ]
   },
-  "next_stage": "P1_stroke_order_original_page_closure"
+  "next_stage": "P1_stroke_order_original_page_closure",
+  "pending_probe": {
+    "source": "GB/T 25741—2010 Appendix C",
+    "filename": "gbt25741-appendix-c.pdf",
+    "repo": "zispace/hanzi-docs",
+    "pinned_commit": "d26705ffc52b81b6e1a45483c7b591f62962f49f",
+    "git_blob_sha": "002f83b2431ffd1128fa9969e3a35898ee8ff2a2",
+    "expected_repo_blob_bytes": 43054573,
+    "state": "PROBE_ONLY_digest_pending_main_push",
+    "rule": "not admitted as a normative source and grants no review status until SHA256 is pinned and a verified acquisition succeeds"
+  }
 }
