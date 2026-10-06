@@ -567,7 +567,7 @@
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
-        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+        "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
         "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
@@ -576,8 +576,8 @@
       "migration_boundary": "“每”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed"
+        "component_name已完成P3来源排除并转P4 GF0011—2022精确名称门槛；当前不标reviewed",
+        "pronunciation已按S03+GF0015原页审读收口为conflict_fail_closed；仅在取得适用权威读音来源或P4精确身份规则后重开"
       ],
       "structure_review": {
         "phase": "P3",
@@ -592,12 +592,38 @@
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "A01 complete transcription: member of the 39 GF3001-independent characters absent from S07"
       },
-      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "pinyin_status": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
       "pronunciation_review": {
-        "source_id": "S03",
-        "publication_id": "GF0014—2009",
-        "evidence": "data/evidence/B12-pronunciation.json",
-        "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
+        "phase": "P3",
+        "source_id": "S06",
+        "publication_id": "GF0015—2010",
+        "evidence": "data/evidence/P3-pronunciation-GF0015-original-page.json",
+        "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+        "reviewed_ranges": [
+          {
+            "pdf_pages": [
+              50
+            ],
+            "level": "1",
+            "range": "wǎn→wǔ"
+          },
+          {
+            "pdf_pages": [
+              84
+            ],
+            "level": "2",
+            "range": "wéi→wǔ"
+          },
+          {
+            "pdf_pages": [
+              130
+            ],
+            "level": "3",
+            "range": "wéi→wǔ"
+          }
+        ],
+        "visual_review": true,
+        "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
       },
       "stroke_order_secondary_locator": {
         "evidence": "data/evidence/B12-stroke-order-secondary-locator.json",
