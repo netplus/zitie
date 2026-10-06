@@ -248,6 +248,14 @@ B04—B11共80个主部首已完成GF2001—2001折笔规范与目标整字规�
 
 证据：`data/evidence/P2-B04-B11-fine-stroke-names-original-page.json`；人工摘要：`reviews/P2-B04-B11-fine-stroke-names.md`。canonical `data/B04.json`—`data/B11.json`已同步；牙仍保留精确冲突和解决路径。P1保持201/201 stroke_order reviewed。
 
+## P2第二轮：B12—B19细笔名规范原页收口（2026-10-06）
+
+B12—B19共80个主部首完成GF2001—2001术语/折笔分类与GF0023目标原页复核。结果：**67项 fine_stroke_names reviewed，12项 alternative-source pending，1项矛 conflict_fail_closed**。12项pending：屮、巛、疒、疋、癶、覀、虍、糸、釆、龺、髟、鬥；这些目标在GF0023主表没有精确行，GF2001也无直接目标字例，secondary locator不得升级。
+
+高风险secondary冲突毋、鸟、臣、虫、缶、舟、里、角已由规范目标原页裁决；例如毋首笔=竖折、臣末笔=竖折、缶第5笔=竖折、角第2笔=横撇。矛的两个code-5折笔在当前规范扫描下仍不足以可靠区分横撇/横钩，保持fail-closed。
+
+B12—B15、B17—B19 canonical已同步；B16十项evidence为10/10 reviewed，但`data/B16.json`更新触发tooling_write_blocker，保留canonical状态债。证据：`data/evidence/P2-B12-B15-fine-stroke-names-original-page.json`、`data/evidence/P2-B16-B19-fine-stroke-names-original-page.json`、`reviews/P2-B12-B19-fine-stroke-names.md`。
+
 ## 当前主要未决字段
 
 1. GF0011—2022精确主项字形、附形、名称和编码；
