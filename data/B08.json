@@ -22,10 +22,10 @@
         "竖"
       ],
       "tips": [
-        "当前候选只有一笔竖，教学重点是起收位置而不是机械加笔。",
-        "在整字中出现时仍按所在字的真实时序核验。"
+        "按“竖”的顺序书写，共1画。",
+        "在“中”中处于中部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
       ],
-      "check": "候选一笔：竖。",
+      "check": "共1画：竖。",
       "context": {
         "example": "中",
         "position": "center",
@@ -53,7 +53,7 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
@@ -181,6 +181,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "reviewed_GF3002_1999_original_page",
+          "stroke_order_status": "reviewed_GF3002_1999_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -192,10 +204,10 @@
         "撇"
       ],
       "tips": [
-        "当前候选只有一笔撇，注意由右上向左下行笔。",
-        "与点、提等短笔形分开辨认。"
+        "按“撇”的顺序书写，共1画。",
+        "在“千”中处于upper_left；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
       ],
-      "check": "候选一笔：撇。",
+      "check": "共1画：撇。",
       "context": {
         "example": "千",
         "position": "upper_left",
@@ -223,7 +235,7 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
@@ -351,6 +363,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "reviewed_GF3002_1999_original_page",
+          "stroke_order_status": "reviewed_GF3002_1999_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -362,10 +386,10 @@
         "点"
       ],
       "tips": [
-        "当前候选只有一笔点，注意落点位置和方向。",
-        "不要因字体形态把点拖成短捺。"
+        "按“点”的顺序书写，共1画。",
+        "在“主”中处于上部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
       ],
-      "check": "候选一笔：点。",
+      "check": "共1画：点。",
       "context": {
         "example": "主",
         "position": "top",
@@ -393,7 +417,7 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
@@ -521,6 +545,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "reviewed_GF3002_1999_original_page",
+          "stroke_order_status": "reviewed_GF3002_1999_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -532,10 +568,10 @@
         "横钩"
       ],
       "tips": [
-        "候选细笔名为横钩，整笔连续完成。",
-        "折钩类别必须回GF2001等规范原页确认后才升级。"
+        "按“横钩”的顺序书写，共1画。",
+        "在“买”中处于上部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
       ],
-      "check": "候选一笔折笔；细名待原页核验。",
+      "check": "共1画：横钩。",
       "context": {
         "example": "买",
         "position": "top",
@@ -563,7 +599,7 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
@@ -691,6 +727,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "reviewed_GF3002_1999_original_page",
+          "stroke_order_status": "reviewed_GF3002_1999_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -704,10 +752,10 @@
         "竖弯钩"
       ],
       "tips": [
-        "候选顺序为横、撇、竖弯钩。",
-        "末笔带弯钩，不能写成普通竖钩。"
+        "按“横、撇、竖弯钩”的顺序书写，共3画。",
+        "在“尬”中处于左下部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
       ],
-      "check": "候选三笔，竖弯钩最后写。",
+      "check": "共3画：横、撇、竖弯钩。",
       "context": {
         "example": "尬",
         "position": "left_lower",
@@ -735,7 +783,7 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
@@ -945,6 +993,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "candidate_pending_target_row",
+          "stroke_order_status": "reviewed_GF0023_2020_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -958,10 +1018,10 @@
         "点"
       ],
       "tips": [
-        "候选顺序为横、斜钩、点。",
-        "斜钩是一整笔，点最后补。"
+        "按“横、斜钩、点”的顺序书写，共3画。",
+        "在“式”中处于外框；书写时按完整整字时序处理，不能只把部件自身笔画连续写完。"
       ],
-      "check": "候选三笔，末笔是点。",
+      "check": "共3画：横、斜钩、点。",
       "context": {
         "example": "式",
         "position": "outer",
@@ -989,7 +1049,7 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
@@ -1201,6 +1261,18 @@
         "visual_review": true,
         "notes": "式 confirms 弋 is interleaved with the internal component: 弋 strokes are whole-character indices 1,5,6.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "candidate_pending_target_row",
+          "stroke_order_status": "reviewed_GF0023_2020_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -1214,10 +1286,10 @@
         "横"
       ],
       "tips": [
-        "部件自身候选三笔为竖、横折、横。",
-        "在包围整字中最后一横通常承担封口，不能把部件自身顺序机械连续套用。"
+        "按“竖、横折、横”的顺序书写，共3画。",
+        "在“国”中处于外框；书写时按完整整字时序处理，不能只把部件自身笔画连续写完。"
       ],
-      "check": "候选三笔；整字封口时序必须另核。",
+      "check": "共3画：竖、横折、横。",
       "context": {
         "example": "国",
         "position": "outer",
@@ -1245,7 +1317,7 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
@@ -1430,6 +1502,18 @@
         "visual_review": true,
         "notes": "国 confirms enclosure sequencing: 囗 strokes are indices 1,2,8; the bottom horizontal closes the frame after internal 玉.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "candidate_pending_target_row",
+          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -1443,10 +1527,10 @@
         "竖"
       ],
       "tips": [
-        "候选顺序为撇、撇、竖。",
-        "两撇方向和长短不同，末笔竖负责承接右部。"
+        "按“撇、撇、竖”的顺序书写，共3画。",
+        "在“很”中处于左部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
       ],
-      "check": "候选三笔：撇、撇、竖。",
+      "check": "共3画：撇、撇、竖。",
       "context": {
         "example": "很",
         "position": "left",
@@ -1474,7 +1558,7 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
@@ -1633,6 +1717,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "candidate_pending_target_row",
+          "stroke_order_status": "reviewed_GF0023_2020_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -1646,10 +1742,10 @@
         "撇"
       ],
       "tips": [
-        "候选为连续三撇，但每一撇都是独立笔画。",
-        "三撇应分出起笔位置与长度层次，不合写。"
+        "按“撇、撇、撇”的顺序书写，共3画。",
+        "在“形”中处于右部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
       ],
-      "check": "候选三笔均为撇。",
+      "check": "共3画：撇、撇、撇。",
       "context": {
         "example": "形",
         "position": "right",
@@ -1677,7 +1773,7 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
@@ -1813,6 +1909,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "candidate_pending_target_row",
+          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -1826,10 +1934,10 @@
         "捺"
       ],
       "tips": [
-        "候选顺序为撇、横撇、捺。",
-        "第2笔横撇是一笔连续转折。"
+        "按“撇、横撇、捺”的顺序书写，共3画。",
+        "在“条”中处于上部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
       ],
-      "check": "候选三笔，横撇居中。",
+      "check": "共3画：撇、横撇、捺。",
       "context": {
         "example": "条",
         "position": "top",
@@ -1857,7 +1965,7 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
@@ -1993,6 +2101,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "candidate_pending_target_row",
+          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     }
   ],
