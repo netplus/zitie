@@ -57,6 +57,12 @@ jobs:
           fetch_verified gf0011-2009.pdf \
             'https://raw.githubusercontent.com/zispace/hanzi-docs/d26705ffc52b81b6e1a45483c7b591f62962f49f/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/2-GF-%E8%AF%AD%E8%A8%80%E6%96%87%E5%AD%97%E8%A7%84%E8%8C%83/20090112-GF%200011-2009%E3%80%8A%E6%B1%89%E5%AD%97%E9%83%A8%E9%A6%96%E8%A1%A8%E3%80%8B.pdf' \
             'c8ccfcc51400bb04eddab256017a67ed20def41ee29f8c06e2c54ddbb76b1f48'
+
+          # S06 / GF 0015-2010 is already cataloged and SHA-pinned.
+          # Restore it for P3 pronunciation original-page review only.
+          fetch_verified gf0015-2010.pdf \
+            'https://raw.githubusercontent.com/zispace/hanzi-docs/d26705ffc52b81b6e1a45483c7b591f62962f49f/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/2-GF-%E8%AF%AD%E8%A8%80%E6%96%87%E5%AD%97%E8%A7%84%E8%8C%83/20101019-GF%200015-2010%E3%80%8A%E6%B1%89%E8%AF%AD%E5%9B%BD%E9%99%85%E6%95%99%E8%82%B2%E7%94%A8%E9%9F%B3%E8%8A%82%E6%B1%89%E5%AD%97%E8%AF%8D%E6%B1%87%E7%AD%89%E7%BA%A7%E5%88%86%E3%80%8B.pdf' \
+            '0d647e1378847480364e2603030fe6aa6102d99320c42cac631b2fb3155d18ce'
           # GF 3002-1999 mirror bytes are now pinned after the successful
           # 2026-10-06 probe. Note: this mirror is an 8-page abridged extract,
           # so byte verification does not make it usable for P1 residual closure.
