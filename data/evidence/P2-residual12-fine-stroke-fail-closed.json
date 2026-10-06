@@ -1,0 +1,647 @@
+{
+  "schema_version": 1,
+  "record_kind": "P2_fine_stroke_names_fail_closed_normative_coverage_gap",
+  "phase": "P2",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "scope": {
+    "target_count": 12,
+    "characters": [
+      "屮",
+      "巛",
+      "疒",
+      "疋",
+      "癶",
+      "覀",
+      "虍",
+      "糸",
+      "釆",
+      "龺",
+      "髟",
+      "鬥"
+    ]
+  },
+  "policy": "Do not infer fine-stroke names from 1/2/3/4/5 order codes; secondary locators cannot replace normative target-page evidence.",
+  "sources_reviewed": [
+    {
+      "source_id": "S05",
+      "publication_id": "GF2001—2001",
+      "sha256": "68a1420580a7eedde79eeb55b91b6b2ff10ef9155d98633ccc712838f04e9b14"
+    },
+    {
+      "source_id": "S02",
+      "publication_id": "GF0023—2020",
+      "sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0"
+    },
+    {
+      "source_id": "S04",
+      "publication_id": "1997-STROKE-ORDER",
+      "sha256": "ca8a0139744cf8105cb7e4ae7464ebc68cb76310b5a29e7cf004b2489a35ae65"
+    },
+    {
+      "source_id": "S09",
+      "publication_id": "GB/T 25741—2010 Appendix C",
+      "sha256": "0514f50e310ae2eb32a743a3813d2630be9accec28b8bf244b06499d1d737baf"
+    }
+  ],
+  "entries": [
+    {
+      "batch_id": "B12",
+      "character": "屮",
+      "main_id": 55,
+      "result": "conflict_fail_closed_normative_coverage_gap",
+      "adopted_names": null,
+      "GF2001_review": {
+        "source_id": "S05",
+        "publication_id": "GF2001—2001",
+        "reviewed_pdf_pages": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "finding": "terminology/fold classification available, but no direct target-character example sufficient to assign the full per-stroke name sequence"
+      },
+      "GF0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "S04_review": {
+        "source_id": "S04",
+        "publication_id": "1997-STROKE-ORDER",
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "finding": "fixed residual original-page neighborhoods visually reviewed; exact target not located"
+      },
+      "S09_static_target_review": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010 Appendix C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 2,
+        "printed_page": 312,
+        "table_sequence": 153,
+        "order_code": "522",
+        "finding": "exact static target row exists and was visually reviewed, but Appendix C supplies static glyph + stroke count/order code rather than accumulated per-stroke forms"
+      },
+      "fail_closed_reason": "The prescribed P2 originals do not provide an exact accumulated per-stroke target form for this radical. S09 confirms the exact target glyph but is insufficient for fine-stroke naming without inferring from numeric order codes, which P2 policy forbids.",
+      "resolution_path": "Require an applicable normative original with exact target and per-stroke shape/name mapping, or an explicit official mapping for the target; secondary D03/D04 cannot close this field."
+    },
+    {
+      "batch_id": "B12",
+      "character": "巛",
+      "main_id": 60,
+      "result": "conflict_fail_closed_normative_coverage_gap",
+      "adopted_names": null,
+      "GF2001_review": {
+        "source_id": "S05",
+        "publication_id": "GF2001—2001",
+        "reviewed_pdf_pages": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "finding": "terminology/fold classification available, but no direct target-character example sufficient to assign the full per-stroke name sequence"
+      },
+      "GF0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "S04_review": {
+        "source_id": "S04",
+        "publication_id": "1997-STROKE-ORDER",
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "finding": "fixed residual original-page neighborhoods visually reviewed; exact target not located"
+      },
+      "S09_static_target_review": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010 Appendix C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 3,
+        "printed_page": 313,
+        "table_sequence": 171,
+        "order_code": "555",
+        "finding": "exact static target row exists and was visually reviewed, but Appendix C supplies static glyph + stroke count/order code rather than accumulated per-stroke forms"
+      },
+      "fail_closed_reason": "The prescribed P2 originals do not provide an exact accumulated per-stroke target form for this radical. S09 confirms the exact target glyph but is insufficient for fine-stroke naming without inferring from numeric order codes, which P2 policy forbids.",
+      "resolution_path": "Require an applicable normative original with exact target and per-stroke shape/name mapping, or an explicit official mapping for the target; secondary D03/D04 cannot close this field."
+    },
+    {
+      "batch_id": "B12",
+      "character": "疒",
+      "main_id": 115,
+      "result": "conflict_fail_closed_normative_coverage_gap",
+      "adopted_names": null,
+      "GF2001_review": {
+        "source_id": "S05",
+        "publication_id": "GF2001—2001",
+        "reviewed_pdf_pages": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "finding": "terminology/fold classification available, but no direct target-character example sufficient to assign the full per-stroke name sequence"
+      },
+      "GF0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "S04_review": {
+        "source_id": "S04",
+        "publication_id": "1997-STROKE-ORDER",
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "finding": "fixed residual original-page neighborhoods visually reviewed; exact target not located"
+      },
+      "S09_static_target_review": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010 Appendix C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 9,
+        "printed_page": 319,
+        "table_sequence": 682,
+        "order_code": "41341",
+        "finding": "exact static target row exists and was visually reviewed, but Appendix C supplies static glyph + stroke count/order code rather than accumulated per-stroke forms"
+      },
+      "fail_closed_reason": "The prescribed P2 originals do not provide an exact accumulated per-stroke target form for this radical. S09 confirms the exact target glyph but is insufficient for fine-stroke naming without inferring from numeric order codes, which P2 policy forbids.",
+      "resolution_path": "Require an applicable normative original with exact target and per-stroke shape/name mapping, or an explicit official mapping for the target; secondary D03/D04 cannot close this field."
+    },
+    {
+      "batch_id": "B12",
+      "character": "疋",
+      "main_id": 118,
+      "result": "conflict_fail_closed_normative_coverage_gap",
+      "adopted_names": null,
+      "GF2001_review": {
+        "source_id": "S05",
+        "publication_id": "GF2001—2001",
+        "reviewed_pdf_pages": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "finding": "terminology/fold classification available, but no direct target-character example sufficient to assign the full per-stroke name sequence"
+      },
+      "GF0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "S04_review": {
+        "source_id": "S04",
+        "publication_id": "1997-STROKE-ORDER",
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "finding": "fixed residual original-page neighborhoods visually reviewed; exact target not located"
+      },
+      "S09_static_target_review": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010 Appendix C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 9,
+        "printed_page": 319,
+        "table_sequence": 753,
+        "order_code": "52134",
+        "finding": "exact static target row exists and was visually reviewed, but Appendix C supplies static glyph + stroke count/order code rather than accumulated per-stroke forms"
+      },
+      "fail_closed_reason": "The prescribed P2 originals do not provide an exact accumulated per-stroke target form for this radical. S09 confirms the exact target glyph but is insufficient for fine-stroke naming without inferring from numeric order codes, which P2 policy forbids.",
+      "resolution_path": "Require an applicable normative original with exact target and per-stroke shape/name mapping, or an explicit official mapping for the target; secondary D03/D04 cannot close this field."
+    },
+    {
+      "batch_id": "B12",
+      "character": "癶",
+      "main_id": 120,
+      "result": "conflict_fail_closed_normative_coverage_gap",
+      "adopted_names": null,
+      "GF2001_review": {
+        "source_id": "S05",
+        "publication_id": "GF2001—2001",
+        "reviewed_pdf_pages": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "finding": "terminology/fold classification available, but no direct target-character example sufficient to assign the full per-stroke name sequence"
+      },
+      "GF0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "S04_review": {
+        "source_id": "S04",
+        "publication_id": "1997-STROKE-ORDER",
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "finding": "fixed residual original-page neighborhoods visually reviewed; exact target not located"
+      },
+      "S09_static_target_review": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010 Appendix C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 10,
+        "printed_page": 320,
+        "table_sequence": 784,
+        "order_code": "54334",
+        "finding": "exact static target row exists and was visually reviewed, but Appendix C supplies static glyph + stroke count/order code rather than accumulated per-stroke forms"
+      },
+      "fail_closed_reason": "The prescribed P2 originals do not provide an exact accumulated per-stroke target form for this radical. S09 confirms the exact target glyph but is insufficient for fine-stroke naming without inferring from numeric order codes, which P2 policy forbids.",
+      "resolution_path": "Require an applicable normative original with exact target and per-stroke shape/name mapping, or an explicit official mapping for the target; secondary D03/D04 cannot close this field."
+    },
+    {
+      "batch_id": "B13",
+      "character": "覀",
+      "main_id": 126,
+      "result": "conflict_fail_closed_normative_coverage_gap",
+      "adopted_names": null,
+      "GF2001_review": {
+        "source_id": "S05",
+        "publication_id": "GF2001—2001",
+        "reviewed_pdf_pages": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "finding": "terminology/fold classification available, but no direct target-character example sufficient to assign the full per-stroke name sequence"
+      },
+      "GF0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B13-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "S04_review": {
+        "source_id": "S04",
+        "publication_id": "1997-STROKE-ORDER",
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "finding": "fixed residual original-page neighborhoods visually reviewed; exact target not located"
+      },
+      "S09_static_target_review": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010 Appendix C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 12,
+        "printed_page": 322,
+        "table_sequence": 933,
+        "order_code": "125221",
+        "finding": "exact static target row exists and was visually reviewed, but Appendix C supplies static glyph + stroke count/order code rather than accumulated per-stroke forms"
+      },
+      "fail_closed_reason": "The prescribed P2 originals do not provide an exact accumulated per-stroke target form for this radical. S09 confirms the exact target glyph but is insufficient for fine-stroke naming without inferring from numeric order codes, which P2 policy forbids.",
+      "resolution_path": "Require an applicable normative original with exact target and per-stroke shape/name mapping, or an explicit official mapping for the target; secondary D03/D04 cannot close this field."
+    },
+    {
+      "batch_id": "B13",
+      "character": "虍",
+      "main_id": 130,
+      "result": "conflict_fail_closed_normative_coverage_gap",
+      "adopted_names": null,
+      "GF2001_review": {
+        "source_id": "S05",
+        "publication_id": "GF2001—2001",
+        "reviewed_pdf_pages": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "finding": "terminology/fold classification available, but no direct target-character example sufficient to assign the full per-stroke name sequence"
+      },
+      "GF0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B13-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "S04_review": {
+        "source_id": "S04",
+        "publication_id": "1997-STROKE-ORDER",
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "finding": "fixed residual original-page neighborhoods visually reviewed; exact target not located"
+      },
+      "S09_static_target_review": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010 Appendix C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 12,
+        "printed_page": 322,
+        "table_sequence": 1001,
+        "order_code": "215315",
+        "finding": "exact static target row exists and was visually reviewed, but Appendix C supplies static glyph + stroke count/order code rather than accumulated per-stroke forms"
+      },
+      "fail_closed_reason": "The prescribed P2 originals do not provide an exact accumulated per-stroke target form for this radical. S09 confirms the exact target glyph but is insufficient for fine-stroke naming without inferring from numeric order codes, which P2 policy forbids.",
+      "resolution_path": "Require an applicable normative original with exact target and per-stroke shape/name mapping, or an explicit official mapping for the target; secondary D03/D04 cannot close this field."
+    },
+    {
+      "batch_id": "B15",
+      "character": "糸",
+      "main_id": 148,
+      "result": "conflict_fail_closed_normative_coverage_gap",
+      "adopted_names": null,
+      "GF2001_review": {
+        "source_id": "S05",
+        "publication_id": "GF2001—2001",
+        "reviewed_pdf_pages": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "finding": "terminology/fold classification available, but no direct target-character example sufficient to assign the full per-stroke name sequence"
+      },
+      "GF0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B15-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "S04_review": {
+        "source_id": "S04",
+        "publication_id": "1997-STROKE-ORDER",
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "finding": "fixed residual original-page neighborhoods visually reviewed; exact target not located"
+      },
+      "S09_static_target_review": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010 Appendix C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 18,
+        "printed_page": 328,
+        "table_sequence": 1508,
+        "order_code": "554234",
+        "finding": "exact static target row exists and was visually reviewed, but Appendix C supplies static glyph + stroke count/order code rather than accumulated per-stroke forms"
+      },
+      "fail_closed_reason": "The prescribed P2 originals do not provide an exact accumulated per-stroke target form for this radical. S09 confirms the exact target glyph but is insufficient for fine-stroke naming without inferring from numeric order codes, which P2 policy forbids.",
+      "resolution_path": "Require an applicable normative original with exact target and per-stroke shape/name mapping, or an explicit official mapping for the target; secondary D03/D04 cannot close this field."
+    },
+    {
+      "batch_id": "B17",
+      "character": "釆",
+      "main_id": 161,
+      "result": "conflict_fail_closed_normative_coverage_gap",
+      "adopted_names": null,
+      "GF2001_review": {
+        "source_id": "S05",
+        "publication_id": "GF2001—2001",
+        "reviewed_pdf_pages": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "finding": "terminology/fold classification available, but no direct target-character example sufficient to assign the full per-stroke name sequence"
+      },
+      "GF0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B17-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "S04_review": {
+        "source_id": "S04",
+        "publication_id": "1997-STROKE-ORDER",
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "finding": "fixed residual original-page neighborhoods visually reviewed; exact target not located"
+      },
+      "S09_static_target_review": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010 Appendix C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 26,
+        "printed_page": 336,
+        "table_sequence": 2198,
+        "order_code": "3431234",
+        "finding": "exact static target row exists and was visually reviewed, but Appendix C supplies static glyph + stroke count/order code rather than accumulated per-stroke forms"
+      },
+      "fail_closed_reason": "The prescribed P2 originals do not provide an exact accumulated per-stroke target form for this radical. S09 confirms the exact target glyph but is insufficient for fine-stroke naming without inferring from numeric order codes, which P2 policy forbids.",
+      "resolution_path": "Require an applicable normative original with exact target and per-stroke shape/name mapping, or an explicit official mapping for the target; secondary D03/D04 cannot close this field."
+    },
+    {
+      "batch_id": "B17",
+      "character": "龺",
+      "main_id": 169,
+      "result": "conflict_fail_closed_normative_coverage_gap",
+      "adopted_names": null,
+      "GF2001_review": {
+        "source_id": "S05",
+        "publication_id": "GF2001—2001",
+        "reviewed_pdf_pages": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "finding": "terminology/fold classification available, but no direct target-character example sufficient to assign the full per-stroke name sequence"
+      },
+      "GF0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B17-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "S04_review": {
+        "source_id": "S04",
+        "publication_id": "1997-STROKE-ORDER",
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "finding": "fixed residual original-page neighborhoods visually reviewed; exact target not located"
+      },
+      "S09_static_target_review": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010 Appendix C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 35,
+        "printed_page": 345,
+        "table_sequence": 2960,
+        "order_code": "12251112",
+        "finding": "exact static target row exists and was visually reviewed, but Appendix C supplies static glyph + stroke count/order code rather than accumulated per-stroke forms"
+      },
+      "fail_closed_reason": "The prescribed P2 originals do not provide an exact accumulated per-stroke target form for this radical. S09 confirms the exact target glyph but is insufficient for fine-stroke naming without inferring from numeric order codes, which P2 policy forbids.",
+      "resolution_path": "Require an applicable normative original with exact target and per-stroke shape/name mapping, or an explicit official mapping for the target; secondary D03/D04 cannot close this field."
+    },
+    {
+      "batch_id": "B19",
+      "character": "髟",
+      "main_id": 188,
+      "result": "conflict_fail_closed_normative_coverage_gap",
+      "adopted_names": null,
+      "GF2001_review": {
+        "source_id": "S05",
+        "publication_id": "GF2001—2001",
+        "reviewed_pdf_pages": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "finding": "terminology/fold classification available, but no direct target-character example sufficient to assign the full per-stroke name sequence"
+      },
+      "GF0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B19-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "S04_review": {
+        "source_id": "S04",
+        "publication_id": "1997-STROKE-ORDER",
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "finding": "fixed residual original-page neighborhoods visually reviewed; exact target not located"
+      },
+      "S09_static_target_review": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010 Appendix C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 74,
+        "printed_page": 384,
+        "table_sequence": 6308,
+        "order_code": "1211154333",
+        "finding": "exact static target row exists and was visually reviewed, but Appendix C supplies static glyph + stroke count/order code rather than accumulated per-stroke forms"
+      },
+      "fail_closed_reason": "The prescribed P2 originals do not provide an exact accumulated per-stroke target form for this radical. S09 confirms the exact target glyph but is insufficient for fine-stroke naming without inferring from numeric order codes, which P2 policy forbids.",
+      "resolution_path": "Require an applicable normative original with exact target and per-stroke shape/name mapping, or an explicit official mapping for the target; secondary D03/D04 cannot close this field."
+    },
+    {
+      "batch_id": "B19",
+      "character": "鬥",
+      "main_id": 190,
+      "result": "conflict_fail_closed_normative_coverage_gap",
+      "adopted_names": null,
+      "GF2001_review": {
+        "source_id": "S05",
+        "publication_id": "GF2001—2001",
+        "reviewed_pdf_pages": [
+          4,
+          5,
+          6,
+          7,
+          8,
+          9
+        ],
+        "finding": "terminology/fold classification available, but no direct target-character example sufficient to assign the full per-stroke name sequence"
+      },
+      "GF0023_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B19-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "S04_review": {
+        "source_id": "S04",
+        "publication_id": "1997-STROKE-ORDER",
+        "evidence": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+        "finding": "fixed residual original-page neighborhoods visually reviewed; exact target not located"
+      },
+      "S09_static_target_review": {
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010 Appendix C",
+        "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "pdf_page": 80,
+        "printed_page": 390,
+        "table_sequence": 6837,
+        "order_code": "2112111212",
+        "finding": "exact static target row exists and was visually reviewed, but Appendix C supplies static glyph + stroke count/order code rather than accumulated per-stroke forms"
+      },
+      "fail_closed_reason": "The prescribed P2 originals do not provide an exact accumulated per-stroke target form for this radical. S09 confirms the exact target glyph but is insufficient for fine-stroke naming without inferring from numeric order codes, which P2 policy forbids.",
+      "resolution_path": "Require an applicable normative original with exact target and per-stroke shape/name mapping, or an explicit official mapping for the target; secondary D03/D04 cannot close this field."
+    }
+  ],
+  "summary": {
+    "target_count": 12,
+    "conflict_fail_closed": 12,
+    "ordinary_pending": 0
+  },
+  "limits": [
+    "Fail-closed is a content safety boundary, not a claim that no correct fine-stroke sequence exists.",
+    "No artwork/PDF/release conclusion is granted."
+  ]
+}
