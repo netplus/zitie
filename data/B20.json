@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_kind": "phase1_content_draft",
   "batch_id": "B20",
-  "version": "content-draft-2026-10-05",
+  "version": "content-draft-2026-10-06",
   "title": "十至十四画复杂主部首",
   "content_status": "in_progress",
   "artwork_status": "deferred",
@@ -18,7 +18,7 @@
       "main_id": 191,
       "stroke_count": 10,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
-      "order_code_candidate": null,
+      "order_code_candidate": "4125125251",
       "stroke_names_candidate": null,
       "tips": [
         "先识别高的十画基线主形；框形与内部笔组的逐笔关系待目标规范原页关闭。",
@@ -49,7 +49,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -59,7 +59,7 @@
       "migration_boundary": "本轮只保留“高”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "细笔名尚未由适用规范原页关闭",
         "结构分类及位置迁移尚未完成整字原页核验",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
       ],
@@ -77,14 +77,25 @@
         "adopted_pronunciation": "gāo",
         "result": "direct_target_self_pronunciation_supported_by_S03_row"
       },
-      "component_name_status": "reviewed_S03_GF0014_2009"
+      "component_name_status": "reviewed_S03_GF0014_2009",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B20-stroke-order-original-page.json",
+        "pdf_page": 224,
+        "printed_page": 218,
+        "table_no": "2021",
+        "ucs": "09AD8",
+        "order_code": "4125125251",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      }
     },
     {
       "character": "黄",
       "main_id": 192,
       "stroke_count": 11,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
-      "order_code_candidate": null,
+      "order_code_candidate": "12212512134",
       "stroke_names_candidate": null,
       "tips": [
         "先识别黄的十一画基线主形；上中下笔组的真实先后待目标行确认。",
@@ -115,7 +126,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -125,7 +136,7 @@
       "migration_boundary": "本轮只保留“黄”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "细笔名尚未由适用规范原页关闭",
         "结构分类及位置迁移尚未完成整字原页核验",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
       ],
@@ -143,14 +154,25 @@
         "adopted_pronunciation": "huáng",
         "result": "direct_target_self_pronunciation_supported_by_S03_row"
       },
-      "component_name_status": "reviewed_S03_GF0014_2009"
+      "component_name_status": "reviewed_S03_GF0014_2009",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B20-stroke-order-original-page.json",
+        "pdf_page": 253,
+        "printed_page": 247,
+        "table_no": "2201",
+        "ucs": "09EC4",
+        "order_code": "12212512134",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      }
     },
     {
       "character": "麻",
       "main_id": 193,
       "stroke_count": 11,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
-      "order_code_candidate": null,
+      "order_code_candidate": "41312341234",
       "stroke_names_candidate": null,
       "tips": [
         "先识别麻的十一画基线主形；内部重复笔组的先后不凭字体外观推定。",
@@ -181,7 +203,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
@@ -191,7 +213,7 @@
       "migration_boundary": "本轮只保留“麻”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "细笔名尚未由适用规范原页关闭",
         "结构分类及位置迁移尚未完成整字原页核验",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
@@ -210,14 +232,25 @@
         "evidence": "data/evidence/B20-pronunciation.json",
         "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
       },
-      "component_name_status": "S03_reviewed_no_exact_standalone_row_alternative_source_pending"
+      "component_name_status": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B20-stroke-order-original-page.json",
+        "pdf_page": 286,
+        "printed_page": 280,
+        "table_no": "2379",
+        "ucs": "09EBB",
+        "order_code": "41312341234",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      }
     },
     {
       "character": "鹿",
       "main_id": 194,
       "stroke_count": 11,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
-      "order_code_candidate": null,
+      "order_code_candidate": "41352211535",
       "stroke_names_candidate": null,
       "tips": [
         "先识别鹿的十一画基线主形；内部笔组与末部转折的细名待原页裁决。",
@@ -248,7 +281,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -258,7 +291,7 @@
       "migration_boundary": "本轮只保留“鹿”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "细笔名尚未由适用规范原页关闭",
         "结构分类及位置迁移尚未完成整字原页核验",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
       ],
@@ -276,14 +309,25 @@
         "adopted_pronunciation": "lù",
         "result": "direct_target_self_pronunciation_supported_by_S03_row"
       },
-      "component_name_status": "reviewed_S03_GF0014_2009"
+      "component_name_status": "reviewed_S03_GF0014_2009",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B20-stroke-order-original-page.json",
+        "pdf_page": 287,
+        "printed_page": 281,
+        "table_no": "2387",
+        "ucs": "09E7F",
+        "order_code": "41352211535",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      }
     },
     {
       "character": "鼎",
       "main_id": 195,
       "stroke_count": 12,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
-      "order_code_candidate": null,
+      "order_code_candidate": "251115132125",
       "stroke_names_candidate": null,
       "tips": [
         "先识别鼎的十二画基线主形；内部纵横与折笔组合需按目标行逐笔关闭。",
@@ -314,7 +358,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -324,7 +368,7 @@
       "migration_boundary": "本轮只保留“鼎”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "细笔名尚未由适用规范原页关闭",
         "结构分类及位置迁移尚未完成整字原页核验",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
       ],
@@ -342,14 +386,25 @@
         "adopted_pronunciation": "dǐng",
         "result": "direct_target_self_pronunciation_supported_by_S03_row"
       },
-      "component_name_status": "reviewed_S03_GF0014_2009"
+      "component_name_status": "reviewed_S03_GF0014_2009",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B20-stroke-order-original-page.json",
+        "pdf_page": 326,
+        "printed_page": 320,
+        "table_no": "2617",
+        "ucs": "09F0E",
+        "order_code": "251115132125",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      }
     },
     {
       "character": "黑",
       "main_id": 196,
       "stroke_count": 12,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
-      "order_code_candidate": null,
+      "order_code_candidate": "254312114444",
       "stroke_names_candidate": null,
       "tips": [
         "先识别黑的十二画基线主形；中部和底部点画关系待权威原页确认。",
@@ -380,7 +435,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -390,7 +445,7 @@
       "migration_boundary": "本轮只保留“黑”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "细笔名尚未由适用规范原页关闭",
         "结构分类及位置迁移尚未完成整字原页核验",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
       ],
@@ -408,14 +463,25 @@
         "adopted_pronunciation": "hēi",
         "result": "direct_target_self_pronunciation_supported_by_S03_row"
       },
-      "component_name_status": "reviewed_S03_GF0014_2009"
+      "component_name_status": "reviewed_S03_GF0014_2009",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B20-stroke-order-original-page.json",
+        "pdf_page": 334,
+        "printed_page": 328,
+        "table_no": "2655",
+        "ucs": "09ED1",
+        "order_code": "254312114444",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      }
     },
     {
       "character": "黍",
       "main_id": 197,
       "stroke_count": 12,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
-      "order_code_candidate": null,
+      "order_code_candidate": "312343424134",
       "stroke_names_candidate": null,
       "tips": [
         "先识别黍的十二画基线主形；上下笔组的实际顺序待目标行逐笔核验。",
@@ -446,7 +512,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
@@ -456,7 +522,7 @@
       "migration_boundary": "本轮只保留“黍”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "细笔名尚未由适用规范原页关闭",
         "结构分类及位置迁移尚未完成整字原页核验",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
@@ -475,14 +541,25 @@
         "evidence": "data/evidence/B20-pronunciation.json",
         "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
       },
-      "component_name_status": "S03_reviewed_no_exact_standalone_row_alternative_source_pending"
+      "component_name_status": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B20-stroke-order-original-page.json",
+        "pdf_page": 338,
+        "printed_page": 332,
+        "table_no": "5202",
+        "ucs": "09ECD",
+        "order_code": "312343424134",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      }
     },
     {
       "character": "鼓",
       "main_id": 198,
       "stroke_count": 13,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
-      "order_code_candidate": null,
+      "order_code_candidate": "1212514311254",
       "stroke_names_candidate": null,
       "tips": [
         "先识别鼓的十三画基线主形；左右组成部分的逐笔衔接待规范原页确认。",
@@ -513,7 +590,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
@@ -523,7 +600,7 @@
       "migration_boundary": "本轮只保留“鼓”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "细笔名尚未由适用规范原页关闭",
         "结构分类及位置迁移尚未完成整字原页核验",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
@@ -542,14 +619,25 @@
         "evidence": "data/evidence/B20-pronunciation.json",
         "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
       },
-      "component_name_status": "S03_reviewed_no_exact_standalone_row_alternative_source_pending"
+      "component_name_status": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B20-stroke-order-original-page.json",
+        "pdf_page": 367,
+        "printed_page": 361,
+        "table_no": "2837",
+        "ucs": "09F13",
+        "order_code": "1212514311254",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      }
     },
     {
       "character": "鼠",
       "main_id": 199,
       "stroke_count": 13,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
-      "order_code_candidate": null,
+      "order_code_candidate": "3215115445445",
       "stroke_names_candidate": null,
       "tips": [
         "先识别鼠的十三画基线主形；下部多折多点笔组须按原页逐笔核验。",
@@ -581,7 +669,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
@@ -591,7 +679,7 @@
       "migration_boundary": "本轮只保留“鼠”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "细笔名尚未由适用规范原页关闭",
         "位置迁移仍须回完整整字及适用规范原页核验",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭"
@@ -609,14 +697,25 @@
         "evidence": "data/evidence/B20-pronunciation.json",
         "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
       },
-      "component_name_status": "S03_reviewed_no_exact_standalone_row_alternative_source_pending"
+      "component_name_status": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B20-stroke-order-original-page.json",
+        "pdf_page": 391,
+        "printed_page": 385,
+        "table_no": "2958",
+        "ucs": "09F20",
+        "order_code": "3215115445445",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      }
     },
     {
       "character": "鼻",
       "main_id": 200,
       "stroke_count": 14,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
-      "order_code_candidate": null,
+      "order_code_candidate": "32511125121132",
       "stroke_names_candidate": null,
       "tips": [
         "先识别鼻的十四画基线主形；中下部笔组的真实先后待目标行核验。",
@@ -647,7 +746,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
@@ -657,7 +756,7 @@
       "migration_boundary": "本轮只保留“鼻”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "细笔名尚未由适用规范原页关闭",
         "结构分类及位置迁移尚未完成整字原页核验",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
@@ -676,7 +775,18 @@
         "evidence": "data/evidence/B20-pronunciation.json",
         "result": "no_exact_standalone_S03_row_pronunciation_not_closed"
       },
-      "component_name_status": "S03_reviewed_no_exact_standalone_row_alternative_source_pending"
+      "component_name_status": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B20-stroke-order-original-page.json",
+        "pdf_page": 432,
+        "printed_page": 426,
+        "table_no": "3128",
+        "ucs": "09F3B",
+        "order_code": "32511125121132",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      }
     }
   ],
   "phase1_rule": "baseline evidence、人工content review与教学字段编辑一致性evidence已入库；教学提示、自查句、整字语境和迁移边界完成阶段1非权威编辑复核；其它权威字段继续逐项pending。",
@@ -684,5 +794,6 @@
   "teaching_review_record": "data/evidence/B20-teaching-review.json",
   "structure_evidence": "data/evidence/B20-structure.json",
   "component_name_evidence": "data/evidence/B20-component-name.json",
-  "pronunciation_evidence": "data/evidence/B20-pronunciation.json"
+  "pronunciation_evidence": "data/evidence/B20-pronunciation.json",
+  "stroke_order_original_page_evidence": "data/evidence/B20-stroke-order-original-page.json"
 }
