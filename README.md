@@ -38,11 +38,11 @@
 
 阶段1已连续完成两轮80项采用读音复核；B04—B11完成GF0023派生笔顺码交叉，B12—B19完成secondary stroke-order locator。细笔名方面，B04—B11已完成一轮80项二次交叉/定位；B12—B19先完成cnchar locator，随后又用独立D04/cjklib对同80项做第二套二次交叉：22项完全一致、5项粒度兼容、8项二次源冲突、4项补缺、41项D04无条目。所有二次数据都不替代规范原页review。下一主吞吐集中到**GF0023/GF2001/S04原页笔顺与细笔名review**以及剩余位置迁移。常规单轮目标为80个不同主部首。
 
-GF0011—2022逐项全文、附形、名称和编码仍是全书级待核项，但不会阻止其它可独立核验字段继续推进。
+GF0011—2022逐项全文、附形、名称和编码仍是全书级待核项，但不会阻止其它可独立核验字段继续推进。\n### 当前剩余阶段\n\n2026-10-06起改为P0—P7阶段化收口：**P0规范源通道已完成，当前进入P1笔顺规范原页收口**。新的reference workflow可以重新取得并强制SHA256校验GF0023—2020、1997笔顺规范和GF2001折笔规范；恢复原件不等于内容review。后续停止无目的扩展secondary数据源，优先把已有locator/crosscheck回到规范原页并升级为reviewed。\n
 
 ## 项目入口
 
-[当前状态](docs/STATUS.md) · [内容优先工作流](docs/CONTENT_FIRST_WORKFLOW.md) · [编写计划](docs/EDITORIAL_PLAN.md) · [前言源稿](book/front-matter/preface.md) · [201项索引](data/coverage.json) · [批次计划](data/batches.json) · [附形候选](data/variants.json) · [来源台账](sources/catalog.json) · [质量门槛](docs/QUALITY_GATES.md) · [总控Issue](https://github.com/netplus/zitie/issues/1)
+[当前状态](docs/STATUS.md) · [剩余完书阶段计划](docs/REMAINING_PHASE_PLAN.md) · [内容优先工作流](docs/CONTENT_FIRST_WORKFLOW.md) · [编写计划](docs/EDITORIAL_PLAN.md) · [前言源稿](book/front-matter/preface.md) · [201项索引](data/coverage.json) · [批次计划](data/batches.json) · [附形候选](data/variants.json) · [来源台账](sources/catalog.json) · [质量门槛](docs/QUALITY_GATES.md) · [总控Issue](https://github.com/netplus/zitie/issues/1)
 
 ## 阶段1内容标准
 

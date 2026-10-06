@@ -9,30 +9,67 @@ permissions:
 jobs:
   acquire:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 12
     steps:
-      - name: Fetch public references without changing editorial status
+      - name: Fetch pinned public references without changing editorial status
         shell: bash
         run: |
-          set -u
+          set -euo pipefail
           mkdir -p references
-          fetch() {
-            name="$1"; url="$2"
-            if curl --fail --location --retry 1 --max-time 100 "$url" -o "references/$name"; then
-              sha256sum "references/$name" >> references/SHA256SUMS.txt
-              printf 'OK\t%s\t%s\n' "$name" "$url" >> references/retrieval.tsv
-            else
+          : > references/SHA256SUMS.txt
+          : > references/retrieval.tsv
+
+          fetch_verified() {
+            name="$1"
+            url="$2"
+            expected="$3"
+            if ! curl --fail --location --retry 2 --retry-delay 2 --max-time 180 "$url" -o "references/$name"; then
               rm -f "references/$name"
-              printf 'FAILED\t%s\t%s\n' "$name" "$url" >> references/retrieval.tsv
+              printf 'FAILED_FETCH\t%s\t%s\n' "$name" "$url" >> references/retrieval.tsv
+              return 1
             fi
+
+            actual="$(sha256sum "references/$name" | awk '{print $1}')"
+            bytes="$(stat -c '%s' "references/$name")"
+            printf '%s  %s\n' "$actual" "$name" >> references/SHA256SUMS.txt
+
+            if [ "$actual" != "$expected" ]; then
+              printf 'FAILED_SHA256\t%s\t%s\t%s\t%s\t%s\n' "$name" "$bytes" "$expected" "$actual" "$url" >> references/retrieval.tsv
+              rm -f "references/$name"
+              return 1
+            fi
+
+            printf 'OK\t%s\t%s\t%s\t%s\n' "$name" "$bytes" "$actual" "$url" >> references/retrieval.tsv
           }
-          fetch gf0023-2020.pdf 'https://www.htu.edu.cn/_upload/article/files/5b/4f/535eed164dc2b6303182b1ad5654/356ee878-cf3c-4752-b53e-7e0975ed7776.pdf'
-          fetch gf0011-2009.pdf 'https://archive.org/download/GF0011-2009/GF0011-2009%20%E6%B1%89%E5%AD%97%E9%83%A8%E9%A6%96%E8%A1%A8.pdf'
-          printf '%s\n' 'Reference acquisition only. No source has been declared reviewed by this workflow. Do not redistribute third-party source PDFs as book deliverables.' > references/README.txt
-      - name: Store temporary reference bundle
+
+          fetch_verified gf0023-2020.pdf \
+            'https://raw.githubusercontent.com/zispace/hanzi-docs/d26705ffc52b81b6e1a45483c7b591f62962f49f/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/2-GF-%E8%AF%AD%E8%A8%80%E6%96%87%E5%AD%97%E8%A7%84%E8%8C%83/20201123-GF%200023-2020%E3%80%8A%E9%80%9A%E7%94%A8%E8%A7%84%E8%8C%83%E6%B1%89%E5%AD%97%E7%AC%94%E9%A1%BA%E8%A7%84%E8%8C%83%E3%80%8B.pdf' \
+            '0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0'
+
+          fetch_verified stroke-order-1997.pdf \
+            'https://raw.githubusercontent.com/zispace/hanzi-docs/d26705ffc52b81b6e1a45483c7b591f62962f49f/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/1-%E6%97%A7%E7%89%88%E5%AD%97%E8%A1%A8/19970407-%E7%8E%B0%E4%BB%A3%E6%B1%89%E8%AF%AD%E9%80%9A%E7%94%A8%E5%AD%97%E7%AC%94%E9%A1%BA%E8%A7%84%E8%8C%83.pdf' \
+            'ca8a0139744cf8105cb7e4ae7464ebc68cb76310b5a29e7cf004b2489a35ae65'
+
+          fetch_verified gf2001-2001.pdf \
+            'https://raw.githubusercontent.com/zispace/hanzi-docs/d26705ffc52b81b6e1a45483c7b591f62962f49f/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/2-GF-%E8%AF%AD%E8%A8%80%E6%96%87%E5%AD%97%E8%A7%84%E8%8C%83/20011219-GF%202001-2001%E3%80%8AGB%2013000.1%20%E5%AD%97%E7%AC%A6%E9%9B%86%E6%B1%89%E5%AD%97%E6%8A%98%E7%AC%94%E8%A7%84%E8%8C%83%E3%80%8B-%E5%8E%8B%E7%BC%A9%E7%89%88.pdf' \
+            '68a1420580a7eedde79eeb55b91b6b2ff10ef9155d98633ccc712838f04e9b14'
+
+          fetch_verified gf0011-2009.pdf \
+            'https://raw.githubusercontent.com/zispace/hanzi-docs/d26705ffc52b81b6e1a45483c7b591f62962f49f/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/2-GF-%E8%AF%AD%E8%A8%80%E6%96%87%E5%AD%97%E8%A7%84%E8%8C%83/20090112-GF%200011-2009%E3%80%8A%E6%B1%89%E5%AD%97%E9%83%A8%E9%A6%96%E8%A1%A8%E3%80%8B.pdf' \
+            'c8ccfcc51400bb04eddab256017a67ed20def41ee29f8c06e2c54ddbb76b1f48'
+
+          printf '%s\n' \
+            'Reference acquisition only.' \
+            'Every fetched file is pinned to a public GitHub commit and must match the expected SHA256.' \
+            'This workflow does not mark any page or field as reviewed.' \
+            'Temporary reference artifacts are for source verification/review only and are not book deliverables.' \
+            'Do not commit or redistribute source PDFs as deliverables.' \
+            > references/README.txt
+
+      - name: Store temporary verified reference bundle
         uses: actions/upload-artifact@v4
         with:
-          name: reference-acquisition
+          name: normative-reference-acquisition
           path: references/
           retention-days: 7
           if-no-files-found: error

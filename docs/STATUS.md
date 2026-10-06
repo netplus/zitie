@@ -168,6 +168,16 @@ B12—B19共80个不同主部首新增第二套独立二次源D04/cjklib，与�
 
 两套二次源即使一致也不替代规范原页；8个冲突必须回GF2001/GF0023/S04原页裁决。
 
+## 剩余阶段状态（2026-10-06）
+
+剩余工作已改为P0—P7阶段化收口，详见`docs/REMAINING_PHASE_PLAN.md`。
+
+- **P0 规范源通道：完成。** 新`source-probe` run `37402630995`成功，artifact `11385916300 normative-reference-acquisition`重新取得并强制SHA256校验S02/GF0023—2020、S04/1997笔顺规范、S05/GF2001—2001和S01-2009；当前artifact有效至2026-10-13。恢复原件本身不授予任何字段reviewed。
+- **P1 笔顺规范原页收口：当前活动阶段。** B04—B11已有候选码/secondary crosscheck，B12—B19已有secondary locator，下一步直接回GF0023目标原页，必要时与S04交叉。
+- P2：细笔名规范原页收口；P3：其它字段扫尾；P4：2022身份与位置迁移；P5：201项content_ready终审；P6：artwork/layout；P7：PDF/QA/release。
+
+从P1开始不再主动扩D05/D06等secondary数据源，除非规范原件出现真实无法定位缺口。
+
 ## 当前主要未决字段
 
 1. GF0011—2022精确主项字形、附形、名称和编码；
@@ -193,7 +203,7 @@ B03内容层视为`content_ready`。artwork/layout人工记录已存在；PDF归
 ## 下一内容工作
 
 1. 继续清理少量review/状态同步债；B20 component-name machine evidence已补齐；
-2. 下一轮主吞吐继续攻**GF0023/GF2001/S04原页笔顺与细笔名review**；B04—B11已有笔顺交叉与细笔名二次分层，B12—B19现在同时具备stroke-order与fine-stroke secondary locator，可直接据此回原页确认；常规单轮目标80个不同主部首，无真实阻塞时至少推进60项；
+2. 当前进入**P1笔顺规范原页收口**：优先B04—B11，再B12—B19，随后B20/B21及残余；P1仍以80个不同主部首/轮为常规目标。
 3. 结构字段继续利用GF0013—2009等适用来源逐批闭合，但不外推2022部首身份；
 4. 位置迁移继续回目标整字核验；
 5. GF0011—2022逐项精确字段继续由Issue #4并行追踪。

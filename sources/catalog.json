@@ -343,6 +343,15 @@
           }
         ],
         "limits": "仅关闭目标行定位，不冒充原页视觉review；visual review完成前stroke_order保持locator状态。"
+      },
+      "reproducible_access": {
+        "manifest": "sources/normative-access.json",
+        "workflow": ".github/workflows/source-probe.yml",
+        "latest_verified_run_id": 37402630995,
+        "latest_verified_artifact_id": 11385916300,
+        "latest_verified_artifact_name": "normative-reference-acquisition",
+        "verified_at": "2026-10-06",
+        "rule": "artifact recovery/hash verification does not mark pages or fields reviewed"
       }
     },
     {
@@ -421,6 +430,15 @@
         "evidence": "data/evidence/B03-stroke-order.json",
         "method": "local_original_page_render_and_paired_row_second_pass",
         "limits": "只审读本批目标字条；不授予细笔名、读音、矢量、2022部首身份或变体通过。"
+      },
+      "reproducible_access": {
+        "manifest": "sources/normative-access.json",
+        "workflow": ".github/workflows/source-probe.yml",
+        "latest_verified_run_id": 37402630995,
+        "latest_verified_artifact_id": 11385916300,
+        "latest_verified_artifact_name": "normative-reference-acquisition",
+        "verified_at": "2026-10-06",
+        "rule": "artifact recovery/hash verification does not mark pages or fields reviewed"
       }
     },
     {
@@ -446,7 +464,16 @@
       ],
       "checked_at": "2026-09-29",
       "provenance": "原出版物扫描件由zispace/hanzi-docs托管；版本身份据实际原件核查，平台不是规范发布者。",
-      "limits": "仅支持实际审读的页面与字段，不声明独立编制或独立双人审稿。"
+      "limits": "仅支持实际审读的页面与字段，不声明独立编制或独立双人审稿。",
+      "reproducible_access": {
+        "manifest": "sources/normative-access.json",
+        "workflow": ".github/workflows/source-probe.yml",
+        "latest_verified_run_id": 37402630995,
+        "latest_verified_artifact_id": 11385916300,
+        "latest_verified_artifact_name": "normative-reference-acquisition",
+        "verified_at": "2026-10-06",
+        "rule": "artifact recovery/hash verification does not mark pages or fields reviewed"
+      }
     },
     {
       "id": "S06",
