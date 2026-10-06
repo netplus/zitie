@@ -1,0 +1,34 @@
+name: P6 vector coverage audit
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'feat/p6-*'
+    paths:
+      - 'scripts/acquire_vectors.py'
+      - 'scripts/audit_vector_coverage.py'
+      - 'data/batches.json'
+      - 'data/B*.json'
+      - '.github/workflows/artwork-probe.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Audit all 201 vector materials
+        run: python scripts/audit_vector_coverage.py
+      - name: Upload temporary vector review bundle
+        uses: actions/upload-artifact@v4
+        with:
+          name: p6-vector-coverage
+          path: build/vector-audit
+          retention-days: 7

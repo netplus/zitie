@@ -1,0 +1,61 @@
+{
+  "schema_version": 1,
+  "record_kind": "P6_vector_material_coverage_audit",
+  "phase": "P6",
+  "audited_at": "2026-10-07",
+  "vector_source": {
+    "project": "Hanzi Writer / Make Me a Hanzi",
+    "revision": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+    "license": "ARPHIC PUBLIC LICENSE",
+    "role": "drawing_material_only"
+  },
+  "workflow": {
+    "name": "P6 vector coverage audit",
+    "run_id": 37513572597,
+    "head_sha": "bc24d5e02474f38e6363dc14db11f735e50a9789",
+    "artifact_id": 11435744872,
+    "artifact_name": "p6-vector-coverage",
+    "artifact_size_bytes": 186463,
+    "artifact_digest": "sha256:1db8dd6f85a8d66f3168aa23f93c22d71fc30ac997a8286faf977d9ae028fa67",
+    "expires_at": "2026-10-13T18:44:18Z"
+  },
+  "scope": {
+    "batches": [
+      "B01",
+      "B02",
+      "B03",
+      "B04",
+      "B05",
+      "B06",
+      "B07",
+      "B08",
+      "B09",
+      "B10",
+      "B11",
+      "B12",
+      "B13",
+      "B14",
+      "B15",
+      "B16",
+      "B17",
+      "B18",
+      "B19",
+      "B20",
+      "B21"
+    ],
+    "target_count": 201
+  },
+  "summary": {
+    "compatible": 201,
+    "missing": 0,
+    "stroke_count_mismatch": 0,
+    "other_errors": 0,
+    "artwork_ready_granted": 0
+  },
+  "policy": "Vector availability and stroke-count compatibility are material-readiness checks only. They do not grant artwork_ready; each target still requires comparison against its reviewed normative stroke/shape evidence and cumulative-stroke visual review.",
+  "limits": [
+    "Third-party vector JSON files remain temporary review material and are not committed as normative evidence.",
+    "No font files are included.",
+    "This audit does not validate glyph outline identity, terminal details, positional variants, page layout, PDF, manifest, or release eligibility."
+  ]
+}
