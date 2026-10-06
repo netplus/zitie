@@ -686,9 +686,9 @@
         "position": "outer",
         "structure_class": "semi_enclosing"
       },
-      "pinyin": null,
+      "pinyin": "yì",
       "component_name": "弋（yì）/代（dài）字边",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "pinyin_status": "reviewed_S03_exact_target_self_label_pinyin",
       "component_name_status": "pending_S03_target_row",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -706,7 +706,7 @@
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "reviewed_S03_GF0014_2009_exact_target_self_label",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
@@ -838,6 +838,18 @@
         "class": "undecomposable",
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "A01 complete transcription: member of the 39 GF3001-independent characters absent from S07"
+      },
+      "pronunciation_review": {
+        "phase": "P3",
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B08-component-name.json",
+        "sequence_no": 447,
+        "group_no": 386,
+        "printed_page": 19,
+        "pdf_page": 22,
+        "result": "reviewed_exact_target_self_label_pinyin",
+        "review_basis": "existing exact-row original-page visual review in B08 component-name evidence; pronunciation accepted only where the S03 row directly labels the target glyph itself with pinyin"
       }
     },
     {
@@ -860,9 +872,9 @@
         "position": "outer",
         "structure_class": "enclosing"
       },
-      "pinyin": null,
+      "pinyin": "wéi",
       "component_name": "囗（wéi）/围（wéi）字框",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "pinyin_status": "reviewed_S03_exact_target_self_label_pinyin",
       "component_name_status": "pending_S03_target_row",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -880,7 +892,7 @@
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "reviewed_S03_GF0014_2009_exact_target_self_label",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
@@ -1015,6 +1027,18 @@
         "class": null,
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
+      },
+      "pronunciation_review": {
+        "phase": "P3",
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B08-component-name.json",
+        "sequence_no": 376,
+        "group_no": 326,
+        "printed_page": 17,
+        "pdf_page": 20,
+        "result": "reviewed_exact_target_self_label_pinyin",
+        "review_basis": "existing exact-row original-page visual review in B08 component-name evidence; pronunciation accepted only where the S03 row directly labels the target glyph itself with pinyin"
       }
     },
     {
@@ -1161,9 +1185,9 @@
         "position": "right",
         "structure_class": "left_right"
       },
-      "pinyin": null,
+      "pinyin": "shān",
       "component_name": "彡（shān）",
-      "pinyin_status": "pending_or_not_applicable_until_authoritative_source",
+      "pinyin_status": "reviewed_S03_exact_target_self_label_pinyin",
       "component_name_status": "pending_S03_target_row",
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -1181,7 +1205,7 @@
         "stroke_count": "candidate_pending_target_row",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
-        "pronunciation": "pending_or_not_applicable",
+        "pronunciation": "reviewed_S03_GF0014_2009_exact_target_self_label",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "drafted",
         "whole_character_context": "selected_for_later_whole_character_verification"
@@ -1267,6 +1291,18 @@
         "class": null,
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
+      },
+      "pronunciation_review": {
+        "phase": "P3",
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "evidence": "data/evidence/B08-component-name.json",
+        "sequence_no": 307,
+        "group_no": 265,
+        "printed_page": 15,
+        "pdf_page": 18,
+        "result": "reviewed_exact_target_self_label_pinyin",
+        "review_basis": "existing exact-row original-page visual review in B08 component-name evidence; pronunciation accepted only where the S03 row directly labels the target glyph itself with pinyin"
       }
     },
     {
