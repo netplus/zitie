@@ -1,0 +1,180 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_original_page_review",
+  "phase": "P1",
+  "batch_id": "B13",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S02",
+    "publication_id": "GF0023—2020",
+    "title": "通用规范汉字笔顺规范",
+    "sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
+    "bytes": 51412684,
+    "pages": 581,
+    "recovery_manifest": "sources/normative-access.json",
+    "recovery_run_id": 37402630995,
+    "recovery_artifact_id": 11385916300,
+    "reviewed_pdf_pages": [
+      25,
+      26,
+      27,
+      28,
+      29
+    ],
+    "method": "verified artifact recovery -> local original PDF render -> exact target-row crop visual review; unresolved targets checked by visually reviewing their stroke-order-code neighboring rows; PDF text layer used only as an index for row/table_no/UCS/order digits"
+  },
+  "reviewed_field": "stroke_order",
+  "entries": [
+    {
+      "character": "矛",
+      "main_id": 121,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 25,
+      "printed_page": 19,
+      "order_code": "54523",
+      "table_no": "0343",
+      "ucs": "077DB",
+      "stroke_count": 5,
+      "canonical_candidate": "54523",
+      "visual_review": true
+    },
+    {
+      "character": "耒",
+      "main_id": 122,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 25,
+      "printed_page": 19,
+      "order_code": "111234",
+      "table_no": "3564",
+      "ucs": "08012",
+      "stroke_count": 6,
+      "canonical_candidate": "111234",
+      "visual_review": true
+    },
+    {
+      "character": "老",
+      "main_id": 123,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 26,
+      "printed_page": 20,
+      "order_code": "121335",
+      "table_no": "0360",
+      "ucs": "08001",
+      "stroke_count": 6,
+      "canonical_candidate": "121335",
+      "visual_review": true
+    },
+    {
+      "character": "耳",
+      "main_id": 124,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 27,
+      "printed_page": 21,
+      "order_code": "122111",
+      "table_no": "0369",
+      "ucs": "08033",
+      "stroke_count": 6,
+      "canonical_candidate": "122111",
+      "visual_review": true
+    },
+    {
+      "character": "臣",
+      "main_id": 125,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 27,
+      "printed_page": 21,
+      "order_code": "125125",
+      "table_no": "0380",
+      "ucs": "081E3",
+      "stroke_count": 6,
+      "canonical_candidate": "125125",
+      "visual_review": true
+    },
+    {
+      "character": "覀",
+      "main_id": 126,
+      "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
+      "canonical_candidate": "125221",
+      "stroke_count": 6,
+      "reviewed_pdf_pages": [
+        28
+      ],
+      "sort_gap_review": {
+        "previous_table_no": "0382",
+        "previous_order_code": "125211",
+        "next_table_no": "0383",
+        "next_order_code": "125344"
+      },
+      "limits": "不能据此判定笔顺错误或不存在；仅说明GF0023主表在该笔顺码邻接区间未定位精确目标条目，需S04/其它适用规范继续关闭。"
+    },
+    {
+      "character": "而",
+      "main_id": 127,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 28,
+      "printed_page": 22,
+      "order_code": "132522",
+      "table_no": "0392",
+      "ucs": "0800C",
+      "stroke_count": 6,
+      "canonical_candidate": "132522",
+      "visual_review": true
+    },
+    {
+      "character": "页",
+      "main_id": 128,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 28,
+      "printed_page": 22,
+      "order_code": "132534",
+      "table_no": "0393",
+      "ucs": "09875",
+      "stroke_count": 6,
+      "canonical_candidate": "132534",
+      "visual_review": true
+    },
+    {
+      "character": "至",
+      "main_id": 129,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 29,
+      "printed_page": 23,
+      "order_code": "154121",
+      "table_no": "0410",
+      "ucs": "081F3",
+      "stroke_count": 6,
+      "canonical_candidate": "154121",
+      "visual_review": true
+    },
+    {
+      "character": "虍",
+      "main_id": 130,
+      "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
+      "canonical_candidate": "215315",
+      "stroke_count": 6,
+      "reviewed_pdf_pages": [
+        29
+      ],
+      "sort_gap_review": {
+        "previous_table_no": "0412",
+        "previous_order_code": "212534",
+        "next_table_no": "0413",
+        "next_order_code": "231252"
+      },
+      "limits": "不能据此判定笔顺错误或不存在；仅说明GF0023主表在该笔顺码邻接区间未定位精确目标条目，需S04/其它适用规范继续关闭。"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "reviewed_exact": 8,
+    "exact_target_not_located": 2,
+    "normative_code_conflicts": 0
+  },
+  "limits": [
+    "只有实际在GF0023原页精确定位并视觉核对的目标才升级stroke_order reviewed。",
+    "未定位项保持pending；本轮通过笔顺码排序邻接行复核目标缺口，不把secondary候选或相近字形冒充规范原页结论。",
+    "本证据不授予fine_stroke_names、GF0011—2022身份、位置变体或artwork结论。"
+  ]
+}

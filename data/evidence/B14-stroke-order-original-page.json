@@ -1,0 +1,173 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_original_page_review",
+  "phase": "P1",
+  "batch_id": "B14",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S02",
+    "publication_id": "GF0023—2020",
+    "title": "通用规范汉字笔顺规范",
+    "sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
+    "bytes": 51412684,
+    "pages": 581,
+    "recovery_manifest": "sources/normative-access.json",
+    "recovery_run_id": 37402630995,
+    "recovery_artifact_id": 11385916300,
+    "reviewed_pdf_pages": [
+      29,
+      30,
+      31,
+      32,
+      33,
+      34
+    ],
+    "method": "verified artifact recovery -> local original PDF render -> exact target-row crop visual review; unresolved targets checked by visually reviewing their stroke-order-code neighboring rows; PDF text layer used only as an index for row/table_no/UCS/order digits"
+  },
+  "reviewed_field": "stroke_order",
+  "entries": [
+    {
+      "character": "虫",
+      "main_id": 131,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 29,
+      "printed_page": 23,
+      "order_code": "251214",
+      "table_no": "0423",
+      "ucs": "0866B",
+      "stroke_count": 6,
+      "canonical_candidate": "251214",
+      "visual_review": true
+    },
+    {
+      "character": "肉",
+      "main_id": 132,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 30,
+      "printed_page": 24,
+      "order_code": "253434",
+      "table_no": "0443",
+      "ucs": "08089",
+      "stroke_count": 6,
+      "canonical_candidate": "253434",
+      "visual_review": true
+    },
+    {
+      "character": "缶",
+      "main_id": 133,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 31,
+      "printed_page": 25,
+      "order_code": "311252",
+      "table_no": "3598",
+      "ucs": "07F36",
+      "stroke_count": 6,
+      "canonical_candidate": "311252",
+      "visual_review": true
+    },
+    {
+      "character": "舌",
+      "main_id": 134,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 31,
+      "printed_page": 25,
+      "order_code": "312251",
+      "table_no": "0449",
+      "ucs": "0820C",
+      "stroke_count": 6,
+      "canonical_candidate": "312251",
+      "visual_review": true
+    },
+    {
+      "character": "竹",
+      "main_id": 135,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 31,
+      "printed_page": 25,
+      "order_code": "312312",
+      "table_no": "0450",
+      "ucs": "07AF9",
+      "stroke_count": 6,
+      "canonical_candidate": "312312",
+      "visual_review": true
+    },
+    {
+      "character": "臼",
+      "main_id": 136,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 32,
+      "printed_page": 26,
+      "order_code": "321511",
+      "table_no": "0462",
+      "ucs": "081FC",
+      "stroke_count": 6,
+      "canonical_candidate": "321511",
+      "visual_review": true
+    },
+    {
+      "character": "自",
+      "main_id": 137,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 33,
+      "printed_page": 27,
+      "order_code": "325111",
+      "table_no": "0477",
+      "ucs": "081EA",
+      "stroke_count": 6,
+      "canonical_candidate": "325111",
+      "visual_review": true
+    },
+    {
+      "character": "血",
+      "main_id": 138,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 33,
+      "printed_page": 27,
+      "order_code": "325221",
+      "table_no": "0479",
+      "ucs": "08840",
+      "stroke_count": 6,
+      "canonical_candidate": "325221",
+      "visual_review": true
+    },
+    {
+      "character": "舟",
+      "main_id": 139,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 33,
+      "printed_page": 27,
+      "order_code": "335414",
+      "table_no": "0484",
+      "ucs": "0821F",
+      "stroke_count": 6,
+      "canonical_candidate": "335414",
+      "visual_review": true
+    },
+    {
+      "character": "色",
+      "main_id": 140,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 34,
+      "printed_page": 28,
+      "order_code": "355215",
+      "table_no": "0509",
+      "ucs": "08272",
+      "stroke_count": 6,
+      "canonical_candidate": "355215",
+      "visual_review": true
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "reviewed_exact": 10,
+    "exact_target_not_located": 0,
+    "normative_code_conflicts": 0
+  },
+  "limits": [
+    "只有实际在GF0023原页精确定位并视觉核对的目标才升级stroke_order reviewed。",
+    "未定位项保持pending；本轮通过笔顺码排序邻接行复核目标缺口，不把secondary候选或相近字形冒充规范原页结论。",
+    "本证据不授予fine_stroke_names、GF0011—2022身份、位置变体或artwork结论。"
+  ]
+}
