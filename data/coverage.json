@@ -855,7 +855,7 @@
     ],
     "next_assignment_starts_at": null,
     "next_work": "P2_fine_stroke_names_normative_original_page_closure",
-    "note": "P4 active. B04-B21 all 171 in-progress main items now have GF0011—2022 main-radical membership/main_id continuity reviewed from the official 2022 release notice plus the reviewed 2009 baseline table. Exact 2022 glyph/attached-form/name/code fields remain pending fulltext/item-level official data. Position migration remains independently active. B01-B03 30 content-ready items still require P4 continuity regression before 201/201 identity continuity is complete.",
+    "note": "P4 active. All 201/201 main radicals now have GF0011—2022 main-radical membership/main_id continuity reviewed. This closes only the continuity layer supported by the official 2022 release notice plus the reviewed 2009 baseline table. Exact 2022 glyph/attached-form/name/code fields remain pending fulltext/item-level official data. Position migration remains the main P4 content workload. content_ready remains 30.",
     "stroke_order_reviewed_main_count": 201,
     "stroke_order_pending_main_count": 0,
     "active_remaining_phase": "P2",
@@ -943,6 +943,24 @@
         "target_count": 171,
         "main_radical_membership_continuity_reviewed": 171,
         "exact_2022_item_fields_pending": 171
+      },
+      "b01_b03_regression": {
+        "batches": [
+          "B01",
+          "B02",
+          "B03"
+        ],
+        "target_count": 30,
+        "main_radical_membership_continuity_reviewed": 30,
+        "exact_2022_item_fields_pending": 30,
+        "evidence": "data/evidence/P4-B01-B03-main-radical-identity-continuity.json",
+        "review": "reviews/P4-B01-B03-main-identity-continuity.md"
+      },
+      "cumulative_main_radical_identity": {
+        "target_count": 201,
+        "main_radical_membership_continuity_reviewed": 201,
+        "exact_2022_item_fields_pending": 201,
+        "status": "continuity_layer_complete_exact_2022_item_fields_pending"
       }
     }
   }
