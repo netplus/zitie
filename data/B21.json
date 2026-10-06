@@ -2,7 +2,7 @@
   "schema_version": 1,
   "record_kind": "phase1_content_draft",
   "batch_id": "B21",
-  "version": "content-draft-2026-10-03",
+  "version": "content-draft-2026-10-06",
   "title": "终批复杂主部首",
   "content_status": "in_progress",
   "artwork_status": "deferred",
@@ -19,7 +19,7 @@
       "main_id": 201,
       "stroke_count": 17,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
-      "order_code_candidate": null,
+      "order_code_candidate": "34125125125125122",
       "stroke_names_candidate": null,
       "tips": [
         "先把龠作为十七画基线主项整体识别；复杂内部笔组不凭字体外观拆分逐笔顺序。",
@@ -50,7 +50,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "pending_authoritative_structure_review",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "pending_target_row",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "pending_target_row",
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
@@ -61,12 +61,24 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "逐笔笔顺和细笔名尚未由适用规范目标行关闭",
+        "细笔名尚未由适用规范原页关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验"
-      ]
+      ],
+      "stroke_order_review": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B21-stroke-order-original-page.json",
+        "pdf_page": 533,
+        "printed_page": 527,
+        "table_no": "6267",
+        "ucs": "09FA0",
+        "order_code": "34125125125125122",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      }
     }
   ],
   "phase1_rule": "baseline evidence与人工content review已入库；教学提示、自查句、独立字语境和迁移边界完成阶段1非权威人工编辑复核；其它权威字段继续pending。",
-  "content_review_record": "reviews/B21-content.md"
+  "content_review_record": "reviews/B21-content.md",
+  "stroke_order_original_page_evidence": "data/evidence/B21-stroke-order-original-page.json"
 }
