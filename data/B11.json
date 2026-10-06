@@ -770,7 +770,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "GF0023_2020_and_S04_1997_original_tables_reviewed_exact_target_not_located_alternative_normative_source_pending",
         "fine_stroke_names": "secondary_fine_stroke_dataset_target_missing_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -829,6 +829,20 @@
           20,
           21
         ]
+      },
+      "stroke_order_s04_review": {
+        "source_id": "S04",
+        "publication_id": "1997-STROKE-ORDER",
+        "evidence": "sources/catalog.json#sources[id=S04].P1_residual_37_original_page_review",
+        "reviewed_pdf_pages": [
+          21
+        ],
+        "reviewed_printed_pages": [
+          16
+        ],
+        "canonical_candidate_order_code": "25221",
+        "result": "S04_1997_original_table_reviewed_exact_target_not_located",
+        "limits": "S04 applicability closed; stroke_order remains pending another applicable normative basis."
       }
     },
     {
@@ -1732,5 +1746,6 @@
   "pronunciation_evidence": "data/evidence/B11-pronunciation.json",
   "stroke_order_crosscheck_evidence": "data/evidence/B11-stroke-order-crosscheck.json",
   "fine_stroke_names_crosscheck_evidence": "data/evidence/B11-fine-stroke-names-crosscheck.json",
-  "stroke_order_original_page_evidence": "data/evidence/B11-stroke-order-original-page.json"
+  "stroke_order_original_page_evidence": "data/evidence/B11-stroke-order-original-page.json",
+  "stroke_order_s04_residual_evidence": "sources/catalog.json#sources[id=S04].P1_residual_37_original_page_review"
 }
