@@ -46,7 +46,8 @@
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
-        "stroke_count": "reviewed_from_S01_2009_baseline"
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
@@ -179,6 +180,36 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 62,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B05-position-migration-final.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "抚",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 40,
+          "printed_page": 34,
+          "table_no": "0613",
+          "ucs": "0629A",
+          "stored_whole_order_code": "1211135",
+          "stored_whole_order_code_complete": true
+        },
+        "verified_position": "right",
+        "component_stroke_indices_in_whole_character": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+        "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+        "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
       }
     },
     {
@@ -215,7 +246,8 @@
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
-        "stroke_count": "reviewed_from_S01_2009_baseline"
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
@@ -348,6 +380,36 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 66,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B05-position-migration-final.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "状",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 54,
+          "printed_page": 48,
+          "table_no": "0828",
+          "ucs": "072B6",
+          "stored_whole_order_code": "4121344",
+          "stored_whole_order_code_complete": true
+        },
+        "verified_position": "right",
+        "component_stroke_indices_in_whole_character": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+        "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+        "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
       }
     },
     {
@@ -384,7 +446,8 @@
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
-        "stroke_count": "reviewed_from_S01_2009_baseline"
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
@@ -518,6 +581,36 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 67,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B05-position-migration-final.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "残",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 137,
+          "printed_page": 131,
+          "table_no": "1460",
+          "ucs": "06B8B",
+          "stored_whole_order_code": "1354115",
+          "stored_whole_order_code_complete": false
+        },
+        "verified_position": "left",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "mapping_kind": "contiguous_prefix_mapping_from_visually_reviewed_row",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+        "notes": "GF0023 whole-character row was visually reviewed; stored code is truncated only after the target prefix, so the target component prefix mapping remains reliable.",
+        "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
       }
     },
     {
@@ -554,7 +647,8 @@
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
-        "stroke_count": "reviewed_from_S01_2009_baseline"
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
@@ -687,6 +781,47 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 68,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B05-position-migration-final.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "辆",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 263,
+          "printed_page": 257,
+          "table_no": "2251",
+          "ucs": "08F86",
+          "stored_whole_order_code": "1521125",
+          "stored_whole_order_code_complete": false
+        },
+        "verified_position": "left",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "mapping_kind": "contiguous_position_variant_with_stroke_changes",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [
+          {
+            "component_stroke": 3,
+            "target_code": "1",
+            "whole_code": "2"
+          },
+          {
+            "component_stroke": 4,
+            "target_code": "2",
+            "whole_code": "1"
+          }
+        ],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+        "notes": "GF0023 辆整字原页已核；持久化数字码虽在后段截断，但前4笔完整可见为1521，可可靠映射车[1,2,3,4]并确认第3/4笔由独体1512变为位置形1521。",
+        "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
       }
     },
     {
@@ -723,7 +858,8 @@
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
-        "stroke_count": "reviewed_from_S01_2009_baseline"
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
@@ -851,6 +987,36 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 69,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B05-position-migration-final.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "邪",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 29,
+          "printed_page": 23,
+          "table_no": "0405",
+          "ucs": "090AA",
+          "stored_whole_order_code": "152352",
+          "stored_whole_order_code_complete": true
+        },
+        "verified_position": "left",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+        "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+        "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
       }
     },
     {
@@ -887,7 +1053,8 @@
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
-        "stroke_count": "reviewed_from_S01_2009_baseline"
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
@@ -1021,6 +1188,36 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 70,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B05-position-migration-final.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "划",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 29,
+          "printed_page": 23,
+          "table_no": "0407",
+          "ucs": "05212",
+          "stored_whole_order_code": "153422",
+          "stored_whole_order_code_complete": true
+        },
+        "verified_position": "left",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3,
+          4
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+        "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+        "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
       }
     },
     {
@@ -1057,10 +1254,12 @@
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
-        "stroke_count": "reviewed_from_S01_2009_baseline"
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "conflict_fail_closed_P4_whole_character_component_mapping"
       },
       "unresolved": [
-        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
+        "position_migration已按GF0023整字原页/持久化映射证据收口为conflict_fail_closed；仅在取得可可靠恢复整字笔画索引的规范证据后重开"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1190,6 +1389,31 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 72,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B05-position-migration-final.json",
+        "result": "conflict_fail_closed_P4_whole_character_component_mapping",
+        "whole_character": {
+          "character": "瓶",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 228,
+          "printed_page": 222,
+          "table_no": "2051",
+          "ucs": "074F6",
+          "stored_whole_order_code": "4311321",
+          "stored_whole_order_code_complete": false
+        },
+        "verified_position": "right",
+        "component_stroke_indices_in_whole_character": [],
+        "mapping_kind": "unresolved_component_mapping",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+        "notes": "GF0023 瓶整字原页上下文已核，但旧审读记录中的整字数字笔顺在进入瓦部件前即截断；当前无法从已持久化证据可靠恢复瓦的4笔索引与改笔，不据字形常识或secondary数据强行补齐。",
+        "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
       }
     },
     {
@@ -1226,7 +1450,8 @@
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
-        "stroke_count": "reviewed_from_S01_2009_baseline"
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
@@ -1359,6 +1584,36 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 73,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B05-position-migration-final.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "扯",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 41,
+          "printed_page": 35,
+          "table_no": "0624",
+          "ucs": "0626F",
+          "stored_whole_order_code": "1212121",
+          "stored_whole_order_code_complete": true
+        },
+        "verified_position": "right",
+        "component_stroke_indices_in_whole_character": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+        "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+        "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
       }
     },
     {
@@ -1395,7 +1650,8 @@
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
-        "stroke_count": "reviewed_from_S01_2009_baseline"
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
@@ -1528,6 +1784,36 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 76,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B05-position-migration-final.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "坝",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 41,
+          "printed_page": 35,
+          "table_no": "0629",
+          "ucs": "0575D",
+          "stored_whole_order_code": "1212534",
+          "stored_whole_order_code_complete": true
+        },
+        "verified_position": "right",
+        "component_stroke_indices_in_whole_character": [
+          4,
+          5,
+          6,
+          7
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+        "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+        "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
       }
     },
     {
@@ -1564,7 +1850,8 @@
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
-        "stroke_count": "reviewed_from_S01_2009_baseline"
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "unresolved": [
         "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
@@ -1697,6 +1984,36 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 78,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B04-B05-position-migration-final.json",
+        "result": "reviewed_P4_GF0023_whole_character_original_page",
+        "whole_character": {
+          "character": "观",
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "pdf_page": 38,
+          "printed_page": 32,
+          "table_no": "0586",
+          "ucs": "089C2",
+          "stored_whole_order_code": "542535",
+          "stored_whole_order_code_complete": true
+        },
+        "verified_position": "right",
+        "component_stroke_indices_in_whole_character": [
+          3,
+          4,
+          5,
+          6
+        ],
+        "mapping_kind": "contiguous",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+        "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+        "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
       }
     }
   ],
