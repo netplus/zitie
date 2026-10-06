@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-06",
+  "phase": "P1",
+  "fixed_residual_count": 37,
+  "S04_original_page_audit": "sources/reviews/P1-S04-fixed37-original-page-20261006.json",
+  "S04_result": "0 exact targets located; 37 remain pending; 0 conflicts",
+  "next_source_gate": {
+    "gf3003_candidate_count": 36,
+    "gf3003_requirement": "complete non-abridged original with verified bytes/page-count/SHA256, followed by actual target-page review",
+    "gf3003_public_copy_status": "known public online copy is abridged; pinned Git mirror metadata is consistent with that 8-page copy",
+    "separate_path": [
+      {
+        "character": "龺",
+        "ucs": "U+9FBA",
+        "reason": "outside Unicode 1.1 U+4E00..U+9FA5 20,902-character repertoire; do not assume GF3003 coverage",
+        "required": "other applicable normative original or an original-publication proof of coverage"
+      }
+    ]
+  },
+  "formal_field_state": "stroke_order reviewed 164/201; pending 37/201",
+  "transition_rule": "P1 cannot exit until all 37 pending targets are closed by applicable normative original-page evidence or a precise fail-closed disposition accepted by the phase plan."
+}
