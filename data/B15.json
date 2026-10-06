@@ -19,7 +19,14 @@
       "stroke_count": 6,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
       "order_code_candidate": "413432",
-      "stroke_names_candidate": null,
+      "stroke_names_candidate": [
+        "点",
+        "横",
+        "撇",
+        "捺",
+        "撇",
+        "竖"
+      ],
       "tips": [
         "先把齐作为六画基线主项识别；具体逐笔顺序和细笔名待目标规范行确认。",
         "在“剂”等整字左部只观察位置压缩，不把静态字体变化直接写成正式附形。"
@@ -52,7 +59,7 @@
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -65,9 +72,7 @@
         "结构分类及位置迁移尚未完成整字原页核验",
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
-        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级"
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
       ],
       "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending",
       "structure_review": {
@@ -175,6 +180,32 @@
         "ucs": "09F50",
         "order_code": "413432",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "点",
+          "横",
+          "撇",
+          "捺",
+          "撇",
+          "竖"
+        ],
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B15-stroke-order-original-page.json",
+          "pdf_page": 35,
+          "printed_page": 29,
+          "table_no": "0518",
+          "ucs": "09F50",
+          "order_code": "413432",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
       }
     },
     {
@@ -183,7 +214,14 @@
       "stroke_count": 6,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
       "order_code_candidate": "413534",
-      "stroke_names_candidate": null,
+      "stroke_names_candidate": [
+        "点",
+        "横",
+        "撇",
+        "竖提",
+        "撇",
+        "捺"
+      ],
       "tips": [
         "先识别衣的六画基线主形；撇捺及内部点画的逐笔关系待目标行复核。",
         "在“装”等整字下部观察宽度变化，不能把整字中的位置写法直接当作独体衣。"
@@ -217,7 +255,7 @@
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -226,9 +264,7 @@
       "migration_boundary": "“装”仅作整字迁移语境；底部衣的形态与时序须回完整整字和规范原页核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "位置迁移仍须回完整整字及适用规范原页核验",
-        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
-        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级"
+        "位置迁移仍须回完整整字及适用规范原页核验"
       ],
       "component_name_status": "reviewed_S03_GF0014_2009",
       "structure_review": {
@@ -337,6 +373,32 @@
         "ucs": "08863",
         "order_code": "413534",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "点",
+          "横",
+          "撇",
+          "竖提",
+          "撇",
+          "捺"
+        ],
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B15-stroke-order-original-page.json",
+          "pdf_page": 35,
+          "printed_page": 29,
+          "table_no": "0520",
+          "ucs": "08863",
+          "order_code": "413534",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
       }
     },
     {
@@ -345,7 +407,14 @@
       "stroke_count": 6,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
       "order_code_candidate": "431112",
-      "stroke_names_candidate": null,
+      "stroke_names_candidate": [
+        "点",
+        "撇",
+        "横",
+        "横",
+        "横",
+        "竖"
+      ],
       "tips": [
         "先识别羊的六画基线轮廓；横画与竖画的真实先后待目标行关闭。",
         "在“群”等整字右部观察比例变化，位置形态与独体主形分开记录。"
@@ -379,7 +448,7 @@
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_two_source_fine_stroke_names_exact_consistent_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -388,9 +457,7 @@
       "migration_boundary": "“群”仅作整字迁移语境；右部羊的比例、主/附关系和时序待整字证据确认。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "位置迁移仍须回完整整字及适用规范原页核验",
-        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
-        "fine_stroke_names在cnchar与cjklib两套二次数据中逐笔一致；仍须规范原页review后才能最终reviewed"
+        "位置迁移仍须回完整整字及适用规范原页核验"
       ],
       "component_name_status": "reviewed_S03_GF0014_2009",
       "structure_review": {
@@ -535,6 +602,32 @@
         "ucs": "07F8A",
         "order_code": "431112",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "点",
+          "撇",
+          "横",
+          "横",
+          "横",
+          "竖"
+        ],
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B15-stroke-order-original-page.json",
+          "pdf_page": 35,
+          "printed_page": 29,
+          "table_no": "0530",
+          "ucs": "07F8A",
+          "order_code": "431112",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
       }
     },
     {
@@ -543,7 +636,14 @@
       "stroke_count": 6,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
       "order_code_candidate": "431234",
-      "stroke_names_candidate": null,
+      "stroke_names_candidate": [
+        "点",
+        "撇",
+        "横",
+        "竖",
+        "撇",
+        "捺"
+      ],
       "tips": [
         "先识别米的六画基线结构；点、撇与十字骨架的逐笔顺序待原页确认。",
         "在“粉”等整字左部观察收窄，不凭视觉压缩推断减笔或合笔。"
@@ -577,7 +677,7 @@
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_two_source_fine_stroke_names_exact_consistent_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -586,9 +686,7 @@
       "migration_boundary": "“粉”仅作整字迁移语境；左部米的形态和真实时序必须回整字与规范原页核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "位置迁移仍须回完整整字及适用规范原页核验",
-        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
-        "fine_stroke_names在cnchar与cjklib两套二次数据中逐笔一致；仍须规范原页review后才能最终reviewed"
+        "位置迁移仍须回完整整字及适用规范原页核验"
       ],
       "component_name_status": "reviewed_S03_GF0014_2009",
       "structure_review": {
@@ -733,6 +831,32 @@
         "ucs": "07C73",
         "order_code": "431234",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "点",
+          "撇",
+          "横",
+          "竖",
+          "撇",
+          "捺"
+        ],
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B15-stroke-order-original-page.json",
+          "pdf_page": 35,
+          "printed_page": 29,
+          "table_no": "0533",
+          "ucs": "07C73",
+          "order_code": "431234",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
       }
     },
     {
@@ -741,7 +865,14 @@
       "stroke_count": 6,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
       "order_code_candidate": "511112",
-      "stroke_names_candidate": null,
+      "stroke_names_candidate": [
+        "横折",
+        "横",
+        "横",
+        "横",
+        "横",
+        "竖"
+      ],
       "tips": [
         "先把聿作为六画基线主项识别；横竖交叉的逐笔次序待目标行复核。",
         "在“律”等整字右部观察纵向比例，不从字体字形直接推断笔顺。"
@@ -774,7 +905,7 @@
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_two_source_fine_stroke_names_exact_consistent_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -784,9 +915,7 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "结构分类及位置迁移尚未完成整字原页核验",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
-        "fine_stroke_names在cnchar与cjklib两套二次数据中逐笔一致；仍须规范原页review后才能最终reviewed"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
       ],
       "component_name_status": "reviewed_S03_GF0014_2009",
       "structure_review": {
@@ -931,6 +1060,32 @@
         "ucs": "0807F",
         "order_code": "511112",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "横折",
+          "横",
+          "横",
+          "横",
+          "横",
+          "竖"
+        ],
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B15-stroke-order-original-page.json",
+          "pdf_page": 37,
+          "printed_page": 31,
+          "table_no": "3635",
+          "ucs": "0807F",
+          "order_code": "511112",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
       }
     },
     {
@@ -939,7 +1094,14 @@
       "stroke_count": 6,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
       "order_code_candidate": "511534",
-      "stroke_names_candidate": null,
+      "stroke_names_candidate": [
+        "横折",
+        "横",
+        "横",
+        "竖提",
+        "撇",
+        "捺"
+      ],
       "tips": [
         "先识别艮的六画基线主形；折笔、撇捺关系的细笔名待原页核验。",
         "在“很”等整字右部观察收窄，独体与位置形态分开记录。"
@@ -972,7 +1134,7 @@
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_two_source_fine_stroke_names_exact_consistent_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -982,9 +1144,7 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "结构分类及位置迁移尚未完成整字原页核验",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
-        "fine_stroke_names在cnchar与cjklib两套二次数据中逐笔一致；仍须规范原页review后才能最终reviewed"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
       ],
       "component_name_status": "reviewed_S03_GF0014_2009",
       "structure_review": {
@@ -1129,6 +1289,32 @@
         "ucs": "0826E",
         "order_code": "511534",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "横折",
+          "横",
+          "横",
+          "竖提",
+          "撇",
+          "捺"
+        ],
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B15-stroke-order-original-page.json",
+          "pdf_page": 37,
+          "printed_page": 31,
+          "table_no": "3636",
+          "ucs": "0826E",
+          "order_code": "511534",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
       }
     },
     {
@@ -1137,7 +1323,14 @@
       "stroke_count": 6,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
       "order_code_candidate": "541541",
-      "stroke_names_candidate": null,
+      "stroke_names_candidate": [
+        "横折钩",
+        "点",
+        "提",
+        "横折钩",
+        "点",
+        "提"
+      ],
       "tips": [
         "先识别羽的六画双翼基线结构；重复笔组的具体顺序与细名待目标行确认。",
         "在“翔”等整字右部观察上下与左右比例，不把字体连写感误判为合笔。"
@@ -1170,7 +1363,7 @@
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -1183,9 +1376,7 @@
         "结构分类及位置迁移尚未完成整字原页核验",
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
-        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级"
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
       ],
       "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending",
       "structure_review": {
@@ -1293,6 +1484,32 @@
         "ucs": "07FBD",
         "order_code": "541541",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "横折钩",
+          "点",
+          "提",
+          "横折钩",
+          "点",
+          "提"
+        ],
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B15-stroke-order-original-page.json",
+          "pdf_page": 38,
+          "printed_page": 32,
+          "table_no": "0585",
+          "ucs": "07FBD",
+          "order_code": "541541",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
       }
     },
     {
@@ -1334,7 +1551,7 @@
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
-        "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
+        "fine_stroke_names": "P2_normative_review_no_exact_GF0023_target_alternative_source_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -1347,8 +1564,7 @@
         "结构分类及位置迁移尚未完成整字原页核验",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
-        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级"
+        "P2细笔名原页复核：GF0023主表未定位精确目标行，GF2001无足以直接给出完整逐笔名称的目标字例；等待其它适用规范原页，secondary序列不得升级。"
       ],
       "component_name_status": "reviewed_S03_GF0014_2009",
       "structure_review": {
@@ -1458,6 +1674,25 @@
         "order_code": "554234",
         "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
         "visual_review": true
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "result": "pending_no_exact_GF0023_target_row_alternative_normative_source",
+        "adjudicated_names": null,
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B15-stroke-order-original-page.json",
+          "pdf_page": null,
+          "printed_page": null,
+          "table_no": null,
+          "ucs": null,
+          "order_code": null,
+          "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+        },
+        "visual_review": false,
+        "rationale": "GF0023 main-table original pages were reviewed in P1 but no exact target row was located; GF2001 has no direct target-character example sufficient to assign the full per-stroke name sequence. Secondary locators are not promoted."
       }
     },
     {
@@ -1466,7 +1701,15 @@
       "stroke_count": 7,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
       "order_code_candidate": "1121354",
-      "stroke_names_candidate": null,
+      "stroke_names_candidate": [
+        "横",
+        "横",
+        "竖",
+        "横",
+        "撇",
+        "横撇",
+        "捺"
+      ],
       "tips": [
         "先识别麦的七画基线主形；上部横画与下部笔组的顺序待目标行复核。",
         "在“麸”等整字左部观察压缩，位置写法不得直接视为独体麦的等价替代。"
@@ -1499,7 +1742,7 @@
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_fine_stroke_names_source_ambiguous_locator_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -1512,9 +1755,7 @@
         "结构分类及位置迁移尚未完成整字原页核验",
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "fine_stroke_names已取得cnchar二次逐笔序列，但源自身存在同码双名；须回GF2001/GF0023/S04原页裁决",
-        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级"
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
       ],
       "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending",
       "structure_review": {
@@ -1632,6 +1873,33 @@
         "ucs": "09EA6",
         "order_code": "1121354",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "横",
+          "横",
+          "竖",
+          "横",
+          "撇",
+          "横撇",
+          "捺"
+        ],
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B15-stroke-order-original-page.json",
+          "pdf_page": 39,
+          "printed_page": 33,
+          "table_no": "0601",
+          "ucs": "09EA6",
+          "order_code": "1121354",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
       }
     },
     {
@@ -1640,7 +1908,15 @@
       "stroke_count": 7,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
       "order_code_candidate": "1212134",
-      "stroke_names_candidate": null,
+      "stroke_names_candidate": [
+        "横",
+        "竖",
+        "横",
+        "竖",
+        "横",
+        "撇",
+        "捺"
+      ],
       "tips": [
         "先识别走的七画基线主形；上部土形与下部捺向结构的逐笔顺序待目标行确认。",
         "在“超”等整字左下部观察包托关系，必须保留整字中的真实穿插时序。"
@@ -1673,7 +1949,7 @@
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -1686,9 +1962,7 @@
         "结构分类及位置迁移尚未完成整字原页核验",
         "S03完整主体表已核，无精确独立整形条目；名称待GF0011—2022或其他适用权威来源关闭",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
-        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级"
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
       ],
       "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending",
       "structure_review": {
@@ -1805,6 +2079,33 @@
         "ucs": "08D70",
         "order_code": "1212134",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "横",
+          "竖",
+          "横",
+          "竖",
+          "横",
+          "撇",
+          "捺"
+        ],
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B15-stroke-order-original-page.json",
+          "pdf_page": 41,
+          "printed_page": 35,
+          "table_no": "0625",
+          "ucs": "08D70",
+          "order_code": "1212134",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
       }
     }
   ],

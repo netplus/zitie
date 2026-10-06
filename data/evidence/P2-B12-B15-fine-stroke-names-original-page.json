@@ -1,0 +1,1124 @@
+{
+  "schema_version": 1,
+  "record_kind": "P2_fine_stroke_names_normative_original_page_review",
+  "phase": "P2",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "scope": {
+    "batches": [
+      "B12",
+      "B13",
+      "B14",
+      "B15"
+    ],
+    "target_count": 40
+  },
+  "sources": [
+    {
+      "source_id": "S05",
+      "publication_id": "GF2001—2001",
+      "sha256": "68a1420580a7eedde79eeb55b91b6b2ff10ef9155d98633ccc712838f04e9b14",
+      "reviewed_pdf_pages": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "use": "fine-stroke terminology and folded-stroke classification"
+    },
+    {
+      "source_id": "S02",
+      "publication_id": "GF0023—2020",
+      "sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
+      "use": "exact target rows and accumulated stroke-form visual review"
+    }
+  ],
+  "policy": "D03/D04 secondary data are used only for location/risk screening; no majority vote and no five-class order-code inference.",
+  "entries": [
+    {
+      "batch_id": "B12",
+      "character": "屮",
+      "main_id": 55,
+      "prior_secondary_status": "secondary_dataset_target_missing",
+      "adjudicated_names": null,
+      "result": "pending_no_exact_GF0023_target_row_alternative_normative_source",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "visual_review": false,
+      "rationale": "GF0023 main-table original pages were reviewed in P1 but no exact target row was located; GF2001 has no direct target-character example sufficient to assign the full per-stroke name sequence. Secondary locators are not promoted."
+    },
+    {
+      "batch_id": "B12",
+      "character": "巛",
+      "main_id": 60,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": null,
+      "result": "pending_no_exact_GF0023_target_row_alternative_normative_source",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "visual_review": false,
+      "rationale": "GF0023 main-table original pages were reviewed in P1 but no exact target row was located; GF2001 has no direct target-character example sufficient to assign the full per-stroke name sequence. Secondary locators are not promoted."
+    },
+    {
+      "batch_id": "B12",
+      "character": "殳",
+      "main_id": 92,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "撇",
+        "横折弯",
+        "横撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": 15,
+        "printed_page": 9,
+        "table_no": "6505",
+        "ucs": "06BB3",
+        "order_code": "3554",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B12",
+      "character": "毋",
+      "main_id": 99,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "竖折",
+        "横折钩",
+        "撇",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": 17,
+        "printed_page": 11,
+        "table_no": "3527",
+        "ucs": "06BCB",
+        "order_code": "5531",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B12",
+      "character": "鸟",
+      "main_id": 114,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "撇",
+        "横折钩",
+        "点",
+        "竖折折钩",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": 22,
+        "printed_page": 16,
+        "table_no": "0296",
+        "ucs": "09E1F",
+        "order_code": "35451",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B12",
+      "character": "疒",
+      "main_id": 115,
+      "prior_secondary_status": "secondary_dataset_target_missing",
+      "adjudicated_names": null,
+      "result": "pending_no_exact_GF0023_target_row_alternative_normative_source",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "visual_review": false,
+      "rationale": "GF0023 main-table original pages were reviewed in P1 but no exact target row was located; GF2001 has no direct target-character example sufficient to assign the full per-stroke name sequence. Secondary locators are not promoted."
+    },
+    {
+      "batch_id": "B12",
+      "character": "穴",
+      "main_id": 117,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "点",
+        "点",
+        "横钩",
+        "撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": 23,
+        "printed_page": 17,
+        "table_no": "0313",
+        "ucs": "07A74",
+        "order_code": "44534",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B12",
+      "character": "疋",
+      "main_id": 118,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": null,
+      "result": "pending_no_exact_GF0023_target_row_alternative_normative_source",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "visual_review": false,
+      "rationale": "GF0023 main-table original pages were reviewed in P1 but no exact target row was located; GF2001 has no direct target-character example sufficient to assign the full per-stroke name sequence. Secondary locators are not promoted."
+    },
+    {
+      "batch_id": "B12",
+      "character": "皮",
+      "main_id": 119,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "横钩",
+        "撇",
+        "竖",
+        "横撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": 25,
+        "printed_page": 19,
+        "table_no": "0336",
+        "ucs": "076AE",
+        "order_code": "53254",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B12",
+      "character": "癶",
+      "main_id": 120,
+      "prior_secondary_status": "secondary_dataset_target_missing",
+      "adjudicated_names": null,
+      "result": "pending_no_exact_GF0023_target_row_alternative_normative_source",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B12-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "visual_review": false,
+      "rationale": "GF0023 main-table original pages were reviewed in P1 but no exact target row was located; GF2001 has no direct target-character example sufficient to assign the full per-stroke name sequence. Secondary locators are not promoted."
+    },
+    {
+      "batch_id": "B13",
+      "character": "矛",
+      "main_id": 121,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": null,
+      "result": "conflict_fail_closed_visual_subtype_ambiguous",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B13-stroke-order-original-page.json",
+        "pdf_page": 25,
+        "printed_page": 19,
+        "table_no": "0343",
+        "ucs": "077DB",
+        "order_code": "54523",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "Exact GF0023 target row was visually reviewed, but the two code-5 folded strokes in 矛 cannot be distinguished with sufficient confidence as 横撇 versus 横钩 from the current scan under GF2001 naming rules. Retain fail-closed rather than infer from secondary data."
+    },
+    {
+      "batch_id": "B13",
+      "character": "耒",
+      "main_id": 122,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "横",
+        "横",
+        "横",
+        "竖",
+        "撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B13-stroke-order-original-page.json",
+        "pdf_page": 25,
+        "printed_page": 19,
+        "table_no": "3564",
+        "ucs": "08012",
+        "order_code": "111234",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B13",
+      "character": "老",
+      "main_id": 123,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "横",
+        "竖",
+        "横",
+        "撇",
+        "撇",
+        "竖弯钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B13-stroke-order-original-page.json",
+        "pdf_page": 26,
+        "printed_page": 20,
+        "table_no": "0360",
+        "ucs": "08001",
+        "order_code": "121335",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B13",
+      "character": "耳",
+      "main_id": 124,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "横",
+        "竖",
+        "竖",
+        "横",
+        "横",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B13-stroke-order-original-page.json",
+        "pdf_page": 27,
+        "printed_page": 21,
+        "table_no": "0369",
+        "ucs": "08033",
+        "order_code": "122111",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B13",
+      "character": "臣",
+      "main_id": 125,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "横",
+        "竖",
+        "横折",
+        "横",
+        "竖",
+        "竖折"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B13-stroke-order-original-page.json",
+        "pdf_page": 27,
+        "printed_page": 21,
+        "table_no": "0380",
+        "ucs": "081E3",
+        "order_code": "125125",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B13",
+      "character": "覀",
+      "main_id": 126,
+      "prior_secondary_status": "secondary_dataset_target_missing",
+      "adjudicated_names": null,
+      "result": "pending_no_exact_GF0023_target_row_alternative_normative_source",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B13-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "visual_review": false,
+      "rationale": "GF0023 main-table original pages were reviewed in P1 but no exact target row was located; GF2001 has no direct target-character example sufficient to assign the full per-stroke name sequence. Secondary locators are not promoted."
+    },
+    {
+      "batch_id": "B13",
+      "character": "而",
+      "main_id": 127,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "横",
+        "撇",
+        "竖",
+        "横折钩",
+        "竖",
+        "竖"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B13-stroke-order-original-page.json",
+        "pdf_page": 28,
+        "printed_page": 22,
+        "table_no": "0392",
+        "ucs": "0800C",
+        "order_code": "132522",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B13",
+      "character": "页",
+      "main_id": 128,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "横",
+        "撇",
+        "竖",
+        "横折",
+        "撇",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B13-stroke-order-original-page.json",
+        "pdf_page": 28,
+        "printed_page": 22,
+        "table_no": "0393",
+        "ucs": "09875",
+        "order_code": "132534",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B13",
+      "character": "至",
+      "main_id": 129,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "横",
+        "撇折",
+        "点",
+        "横",
+        "竖",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B13-stroke-order-original-page.json",
+        "pdf_page": 29,
+        "printed_page": 23,
+        "table_no": "0410",
+        "ucs": "081F3",
+        "order_code": "154121",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B13",
+      "character": "虍",
+      "main_id": 130,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": null,
+      "result": "pending_no_exact_GF0023_target_row_alternative_normative_source",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B13-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "visual_review": false,
+      "rationale": "GF0023 main-table original pages were reviewed in P1 but no exact target row was located; GF2001 has no direct target-character example sufficient to assign the full per-stroke name sequence. Secondary locators are not promoted."
+    },
+    {
+      "batch_id": "B14",
+      "character": "虫",
+      "main_id": 131,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "竖",
+        "横折",
+        "横",
+        "竖",
+        "横",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B14-stroke-order-original-page.json",
+        "pdf_page": 29,
+        "printed_page": 23,
+        "table_no": "0423",
+        "ucs": "0866B",
+        "order_code": "251214",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B14",
+      "character": "肉",
+      "main_id": 132,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "竖",
+        "横折钩",
+        "撇",
+        "点",
+        "撇",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B14-stroke-order-original-page.json",
+        "pdf_page": 30,
+        "printed_page": 24,
+        "table_no": "0443",
+        "ucs": "08089",
+        "order_code": "253434",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B14",
+      "character": "缶",
+      "main_id": 133,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "撇",
+        "横",
+        "横",
+        "竖",
+        "竖折",
+        "竖"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B14-stroke-order-original-page.json",
+        "pdf_page": 31,
+        "printed_page": 25,
+        "table_no": "3598",
+        "ucs": "07F36",
+        "order_code": "311252",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B14",
+      "character": "舌",
+      "main_id": 134,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "撇",
+        "横",
+        "竖",
+        "竖",
+        "横折",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B14-stroke-order-original-page.json",
+        "pdf_page": 31,
+        "printed_page": 25,
+        "table_no": "0449",
+        "ucs": "0820C",
+        "order_code": "312251",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B14",
+      "character": "竹",
+      "main_id": 135,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "撇",
+        "横",
+        "竖",
+        "撇",
+        "横",
+        "竖钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B14-stroke-order-original-page.json",
+        "pdf_page": 31,
+        "printed_page": 25,
+        "table_no": "0450",
+        "ucs": "07AF9",
+        "order_code": "312312",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B14",
+      "character": "臼",
+      "main_id": 136,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "撇",
+        "竖",
+        "横",
+        "横折",
+        "横",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B14-stroke-order-original-page.json",
+        "pdf_page": 32,
+        "printed_page": 26,
+        "table_no": "0462",
+        "ucs": "081FC",
+        "order_code": "321511",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B14",
+      "character": "自",
+      "main_id": 137,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "撇",
+        "竖",
+        "横折",
+        "横",
+        "横",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B14-stroke-order-original-page.json",
+        "pdf_page": 33,
+        "printed_page": 27,
+        "table_no": "0477",
+        "ucs": "081EA",
+        "order_code": "325111",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B14",
+      "character": "血",
+      "main_id": 138,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "撇",
+        "竖",
+        "横折",
+        "竖",
+        "竖",
+        "横"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B14-stroke-order-original-page.json",
+        "pdf_page": 33,
+        "printed_page": 27,
+        "table_no": "0479",
+        "ucs": "08840",
+        "order_code": "325221",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B14",
+      "character": "舟",
+      "main_id": 139,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "撇",
+        "撇",
+        "横折钩",
+        "点",
+        "横",
+        "点"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B14-stroke-order-original-page.json",
+        "pdf_page": 33,
+        "printed_page": 27,
+        "table_no": "0484",
+        "ucs": "0821F",
+        "order_code": "335414",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B14",
+      "character": "色",
+      "main_id": 140,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "撇",
+        "横撇",
+        "横折",
+        "竖",
+        "横",
+        "竖弯钩"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B14-stroke-order-original-page.json",
+        "pdf_page": 34,
+        "printed_page": 28,
+        "table_no": "0509",
+        "ucs": "08272",
+        "order_code": "355215",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B15",
+      "character": "齐",
+      "main_id": 141,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "点",
+        "横",
+        "撇",
+        "捺",
+        "撇",
+        "竖"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B15-stroke-order-original-page.json",
+        "pdf_page": 35,
+        "printed_page": 29,
+        "table_no": "0518",
+        "ucs": "09F50",
+        "order_code": "413432",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B15",
+      "character": "衣",
+      "main_id": 142,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "点",
+        "横",
+        "撇",
+        "竖提",
+        "撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B15-stroke-order-original-page.json",
+        "pdf_page": 35,
+        "printed_page": 29,
+        "table_no": "0520",
+        "ucs": "08863",
+        "order_code": "413534",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B15",
+      "character": "羊",
+      "main_id": 143,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "点",
+        "撇",
+        "横",
+        "横",
+        "横",
+        "竖"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B15-stroke-order-original-page.json",
+        "pdf_page": 35,
+        "printed_page": 29,
+        "table_no": "0530",
+        "ucs": "07F8A",
+        "order_code": "431112",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B15",
+      "character": "米",
+      "main_id": 144,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "点",
+        "撇",
+        "横",
+        "竖",
+        "撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B15-stroke-order-original-page.json",
+        "pdf_page": 35,
+        "printed_page": 29,
+        "table_no": "0533",
+        "ucs": "07C73",
+        "order_code": "431234",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B15",
+      "character": "聿",
+      "main_id": 145,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "横折",
+        "横",
+        "横",
+        "横",
+        "横",
+        "竖"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B15-stroke-order-original-page.json",
+        "pdf_page": 37,
+        "printed_page": 31,
+        "table_no": "3635",
+        "ucs": "0807F",
+        "order_code": "511112",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B15",
+      "character": "艮",
+      "main_id": 146,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "横折",
+        "横",
+        "横",
+        "竖提",
+        "撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B15-stroke-order-original-page.json",
+        "pdf_page": 37,
+        "printed_page": 31,
+        "table_no": "3636",
+        "ucs": "0826E",
+        "order_code": "511534",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B15",
+      "character": "羽",
+      "main_id": 147,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "横折钩",
+        "点",
+        "提",
+        "横折钩",
+        "点",
+        "提"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B15-stroke-order-original-page.json",
+        "pdf_page": 38,
+        "printed_page": 32,
+        "table_no": "0585",
+        "ucs": "07FBD",
+        "order_code": "541541",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B15",
+      "character": "糸",
+      "main_id": 148,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": null,
+      "result": "pending_no_exact_GF0023_target_row_alternative_normative_source",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B15-stroke-order-original-page.json",
+        "pdf_page": null,
+        "printed_page": null,
+        "table_no": null,
+        "ucs": null,
+        "order_code": null,
+        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located"
+      },
+      "visual_review": false,
+      "rationale": "GF0023 main-table original pages were reviewed in P1 but no exact target row was located; GF2001 has no direct target-character example sufficient to assign the full per-stroke name sequence. Secondary locators are not promoted."
+    },
+    {
+      "batch_id": "B15",
+      "character": "麦",
+      "main_id": 149,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "横",
+        "横",
+        "竖",
+        "横",
+        "撇",
+        "横撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B15-stroke-order-original-page.json",
+        "pdf_page": 39,
+        "printed_page": 33,
+        "table_no": "0601",
+        "ucs": "09EA6",
+        "order_code": "1121354",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    },
+    {
+      "batch_id": "B15",
+      "character": "走",
+      "main_id": 150,
+      "prior_secondary_status": "secondary_fine_stroke_sequence_located_candidate_absent",
+      "adjudicated_names": [
+        "横",
+        "竖",
+        "横",
+        "竖",
+        "横",
+        "撇",
+        "捺"
+      ],
+      "result": "reviewed_normative_original_pages",
+      "target_original_page": {
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "evidence": "data/evidence/B15-stroke-order-original-page.json",
+        "pdf_page": 41,
+        "printed_page": 35,
+        "table_no": "0625",
+        "ucs": "08D70",
+        "order_code": "1212134",
+        "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "visual_review": true,
+      "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+    }
+  ],
+  "summary": {
+    "target_count": 40,
+    "reviewed": 31,
+    "pending": 8,
+    "conflict_fail_closed": 1,
+    "pending_characters": [
+      "屮",
+      "巛",
+      "疒",
+      "疋",
+      "癶",
+      "覀",
+      "虍",
+      "糸"
+    ],
+    "conflict_characters": [
+      "矛"
+    ],
+    "corrected_secondary_conflicts": [
+      "毋",
+      "臣",
+      "虫",
+      "缶",
+      "舟"
+    ]
+  },
+  "limits": [
+    "No target without an exact GF0023 row is promoted in this file.",
+    "This review does not close pronunciation, component_name, structure, GF0011—2022 identity, position migration, artwork or release status."
+  ]
+}

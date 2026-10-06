@@ -57,6 +57,8 @@ GF0023主表阶段已扫完B04—B21全部171项：**134/171 reviewed，37/171 r
 
 当前进展（2026-10-06）：B04—B11首轮80项已完成GF2001—2001 + GF0023/GB/T 25741目标原页复核；**79/80 reviewed，牙1项 conflict_fail_closed，0普通pending**。欠第2笔裁决为横撇，风第2笔裁决为横斜钩，心第2笔裁决为卧钩；几/凵等secondary冲突已由规范原页关闭。证据：`data/evidence/P2-B04-B11-fine-stroke-names-original-page.json`、`reviews/P2-B04-B11-fine-stroke-names.md`。
 
+第二轮B12—B19共80项已完成GF2001术语表与GF0023目标原页复核：**67 reviewed、12 alternative-source pending、矛1项 conflict_fail_closed**。12项pending为屮、巛、疒、疋、癶、覀、虍、糸、釆、龺、髟、鬥；共同原因是GF0023无精确目标行且GF2001无足以直接给出完整逐笔名称的目标字例。毋、鸟、臣、虫、缶、舟、里、角等secondary冲突已按目标原页裁决。B16十项evidence已reviewed，但`data/B16.json` canonical同步触发tooling_write_blocker；不影响来源结论，作为状态债保留。证据：`data/evidence/P2-B12-B15-fine-stroke-names-original-page.json`、`data/evidence/P2-B16-B19-fine-stroke-names-original-page.json`、`reviews/P2-B12-B19-fine-stroke-names.md`。
+
 优先处理冲突集合：
 - 牙；
 - 几、凵、风、心；
