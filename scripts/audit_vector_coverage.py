@@ -5,6 +5,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+from concurrent.futures import ThreadPoolExecutor, as_completed
 from pathlib import Path
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote
@@ -69,8 +70,8 @@ def main() -> None:
         for entry in batch["entries"]:
             entries.append((batch_id, entry))
 
-    records = []
-    for batch_id, entry in entries:
+    def audit_one(item):
+        batch_id, entry = item
         ch = entry["character"]
         expected, expected_from = expected_stroke_count(entry)
         url = BASE + "/data/" + quote(ch) + ".json"
@@ -103,7 +104,14 @@ def main() -> None:
             record.update({"status": "fetch_error", "error": str(exc)})
         except (json.JSONDecodeError, ValueError) as exc:
             record.update({"status": "invalid_vector_data", "error": str(exc)})
-        records.append(record)
+        return record
+
+    records = []
+    with ThreadPoolExecutor(max_workers=16) as executor:
+        futures = [executor.submit(audit_one, item) for item in entries]
+        for future in as_completed(futures):
+            records.append(future.result())
+    records.sort(key=lambda r: (r.get("main_id") is None, r.get("main_id") or 10**9, r["character"]))
 
     compatible = [r for r in records if r["status"] == "compatible"]
     mismatch = [r for r in records if r["status"] == "stroke_count_mismatch"]
