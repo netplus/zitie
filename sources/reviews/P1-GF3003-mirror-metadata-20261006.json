@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-06",
+  "phase": "P1",
+  "publication_id": "GF3003—1999",
+  "title": "GB13000.1字符集汉字字序（笔画序）规范",
+  "purpose": "fixed 37 stroke_order residual source applicability audit",
+  "github_mirror": {
+    "repository": "zispace/hanzi-docs",
+    "pinned_commit": "d26705ffc52b81b6e1a45483c7b591f62962f49f",
+    "path": "中国大陆/2-GF-语言文字规范/19991001-GF 3003-1999《GB13000.1字符集汉字字序（笔画序）规范》.pdf",
+    "git_blob_sha": "dff62b5ae42b73f3f0fa1d9637da7009257a618a",
+    "size_bytes": 7651554,
+    "retrieval_method": "Git tree metadata only; binary content not admitted as reviewed"
+  },
+  "public_online_scan": {
+    "source_kind": "Ministry-derived Wikimedia/Wikisource scan",
+    "size_bytes": 7651554,
+    "pages": 8,
+    "completeness": "abridged",
+    "note": "Published file metadata identifies the Ministry attachment as source; the online scan contains only 8 pages."
+  },
+  "full_edition_bibliography": {
+    "publisher": "上海教育出版社",
+    "year": 2000,
+    "pages": 725,
+    "repertoire_count": 20902,
+    "role": "bibliographic expectation only; not an admissible review copy"
+  },
+  "repertoire_screen": {
+    "unicode_1_1_range": "U+4E00..U+9FA5",
+    "count": 20902,
+    "residual_targets_total": 37,
+    "residual_targets_in_range": 36,
+    "residual_targets_outside_range": [
+      {
+        "character": "龺",
+        "ucs": "U+9FBA"
+      }
+    ],
+    "boundary": "This screen does not establish stroke order or grant reviewed status."
+  },
+  "conclusion": "The pinned GF3003 mirror has the same byte size as the known 8-page online scan and must not be treated as the 725-page full edition without independent completeness verification. Even a complete 20902-entry edition should not be assumed to cover 龺 U+9FBA.",
+  "editorial_status": "candidate_source_audited_no_stroke_order_upgrade"
+}
