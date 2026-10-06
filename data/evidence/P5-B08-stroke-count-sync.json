@@ -1,0 +1,109 @@
+{
+  "schema_version": 1,
+  "record_kind": "P5_B08_stroke_count_status_sync",
+  "phase": "P5",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "method": "Reuse already-reviewed exact normative stroke-order target rows. An exact target row that explicitly carries the target stroke count closes stroke_count; no new source or inference is introduced.",
+  "entries": [
+    {
+      "character": "尢",
+      "main_id": 34,
+      "stroke_count": 3,
+      "prior_status": "candidate_pending_target_row",
+      "stroke_order_source": "S02",
+      "publication_id": "GF0023—2020",
+      "evidence": "data/evidence/B08-stroke-order-original-page.json",
+      "pdf_page": 10,
+      "printed_page": 4,
+      "table_no": "6502",
+      "order_code": "135",
+      "stroke_count_from_source": 3,
+      "result": "reviewed_from_exact_normative_stroke_order_row"
+    },
+    {
+      "character": "弋",
+      "main_id": 35,
+      "stroke_count": 3,
+      "prior_status": "candidate_pending_target_row",
+      "stroke_order_source": "S02",
+      "publication_id": "GF0023—2020",
+      "evidence": "data/evidence/B08-stroke-order-original-page.json",
+      "pdf_page": 10,
+      "printed_page": 4,
+      "table_no": "3504",
+      "order_code": "154",
+      "stroke_count_from_source": 3,
+      "result": "reviewed_from_exact_normative_stroke_order_row"
+    },
+    {
+      "character": "囗",
+      "main_id": 38,
+      "stroke_count": 3,
+      "prior_status": "candidate_pending_target_row",
+      "stroke_order_source": "S09",
+      "publication_id": "GB/T 25741—2010",
+      "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+      "pdf_page": 2,
+      "printed_page": 312,
+      "table_no": 99,
+      "order_code": "251",
+      "stroke_count_from_source": 3,
+      "result": "reviewed_from_exact_normative_stroke_order_row"
+    },
+    {
+      "character": "彳",
+      "main_id": 41,
+      "stroke_count": 3,
+      "prior_status": "candidate_pending_target_row",
+      "stroke_order_source": "S02",
+      "publication_id": "GF0023—2020",
+      "evidence": "data/evidence/B08-stroke-order-original-page.json",
+      "pdf_page": 10,
+      "printed_page": 4,
+      "table_no": "6503",
+      "order_code": "332",
+      "stroke_count_from_source": 3,
+      "result": "reviewed_from_exact_normative_stroke_order_row"
+    },
+    {
+      "character": "彡",
+      "main_id": 42,
+      "stroke_count": 3,
+      "prior_status": "candidate_pending_target_row",
+      "stroke_order_source": "S09",
+      "publication_id": "GB/T 25741—2010",
+      "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+      "pdf_page": 2,
+      "printed_page": 312,
+      "table_no": 108,
+      "order_code": "333",
+      "stroke_count_from_source": 3,
+      "result": "reviewed_from_exact_normative_stroke_order_row"
+    },
+    {
+      "character": "夂",
+      "main_id": 44,
+      "stroke_count": 3,
+      "prior_status": "candidate_pending_target_row",
+      "stroke_order_source": "S09",
+      "publication_id": "GB/T 25741—2010",
+      "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+      "pdf_page": 2,
+      "printed_page": 312,
+      "table_no": 122,
+      "order_code": "354",
+      "stroke_count_from_source": 3,
+      "result": "reviewed_from_exact_normative_stroke_order_row"
+    }
+  ],
+  "summary": {
+    "target_count": 6,
+    "reviewed": 6,
+    "ordinary_pending": 0
+  },
+  "limits": [
+    "Does not re-review stroke order; it only clears stale canonical stroke_count state from the same exact reviewed row."
+  ]
+}
