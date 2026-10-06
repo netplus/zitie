@@ -74,15 +74,15 @@
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "pending_authoritative_row",
-        "component_name": "pending_S03_target_row",
+        "component_name": "deferred_P4_GF0011_2022_exact_target_name",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
       },
       "migration_boundary": "本轮只保留“龠”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
-        "采用读音尚未完成适用权威原页复核"
+        "采用读音尚未完成适用权威原页复核",
+        "GF0011—2022精确名称待P4原文核验"
       ],
       "stroke_order_review": {
         "source_id": "S02",
@@ -138,6 +138,48 @@
         "result": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
         "structure_class": "decomposable",
         "membership_basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
+      },
+      "component_name_status": "deferred_P4_GF0011_2022_exact_target_name",
+      "component_name_review": {
+        "phase": "P3",
+        "source_id": "S03",
+        "publication_id": "GF0014—2009",
+        "reviewed_at": "2026-10-06",
+        "method": "full_main_table_original_page_visual_scan_for_exact_target",
+        "reviewed_printed_pages": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20
+        ],
+        "reviewed_pdf_pages": [
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          21,
+          22,
+          23
+        ],
+        "result": "no_exact_independent_target_row_in_S03_main_table_defer_to_P4_GF0011_2022",
+        "limits": "Negative S03 result does not supply a component name. P4 must resolve the exact 2022 radical identity/name; no inferred name is adopted."
       }
     }
   ],
