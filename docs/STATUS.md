@@ -1,6 +1,6 @@
 # 当前编写状态
 
-更新：2026-10-06。工程处于“阶段1：内容覆盖优先”，当前活动阶段为P4：GF0011—2022精确身份与位置迁移。
+更新：2026-10-06。工程处于“阶段1：内容覆盖优先”，当前活动阶段为P5：内容终审与content_ready收口。
 
 ## 当前阶段
 
@@ -492,3 +492,32 @@ P4位置迁移已完成全书201项收口：
 证据总检查点：`reviews/P4-position-migration-completion-20261006.md`。
 
 P4尚未退出：**GF0011—2022正式全文/官方逐项数据仍是独立source blocker**。当前201/201主部首集合连续性已reviewed，201/201 position_migration也已reviewed/fail-closed；但2022逐项精确主形、正式附形、常用名称和国际编码仍pending，不能冒充完成。
+
+
+## P4完成并切换P5（2026-10-06）
+
+P4已满足阶段退出条件。
+
+全书主部首身份：
+- **201/201** 主部首集合成员身份/main_id连续性 reviewed；
+- GF0011—2022逐项精确主形、正式附形、常用名称和国际编码：**201/201 source_blocked_fail_closed**，不填造值。
+
+全书position_migration：
+- **198 reviewed**
+- **3 conflict_fail_closed：屮、毋、瓦**
+- **0普通pending**
+
+P3转P4字段：
+- component_name（B04—B21）：143 reviewed + 28 source_blocked_fail_closed；
+- structure（B04—B21）：134 reviewed + 37 source_blocked_fail_closed；
+- 普通pending均为0。
+
+GF0011—2022正式全文/官方逐项数据的公开访问审计已固定：教育部发布说明只支持“保持原有201主部首”等总体事实；公开规范索引、高校下载区、公开Git规范镜像均未定位正式2022逐项正文；Unicode IRG后续材料引用GF0011—2022并明确标注“not released”。因此P4按“精确source-blocked fail-closed + 明确重开条件”收口，不无限横向扩secondary数据。
+
+P4完成检查点：
+- `reviews/P4-completion-20261006.md`
+- `sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json`
+- `reviews/P4-position-migration-completion-20261006.md`
+
+**当前活动阶段正式切换P5：逐批内容终审与content_ready收口。**
+当前content_ready仍为30（B01—B03），content_in_progress仍为171（B04—B21），只有P5逐批验收通过后才增加content_ready。P4完成不表示artwork、PDF、manifest、CI发布门槛或正式release完成。
