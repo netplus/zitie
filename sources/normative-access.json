@@ -158,6 +158,19 @@
       "evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
       "status": "original_pages_reviewed_for_P1",
       "limits": "恢复原件与SHA校验本身不授予reviewed；P1状态来自逐项目标原页视觉审读。"
+    },
+    {
+      "source_id": "S10",
+      "publication_id": "GF3001—1997",
+      "title": "信息处理用GB13000.1字符集汉字部件规范",
+      "repo": "zispace/hanzi-docs",
+      "pinned_commit": "d26705ffc52b81b6e1a45483c7b591f62962f49f",
+      "path": "中国大陆/2-GF-语言文字规范/19971201-GF 3001-1997《信息处理用GB13000.1字符集汉字部件规范》.pdf",
+      "git_blob_sha": "fe3d4405e7af2438ee923d89c64825ff17d7b8a1",
+      "official_url": "https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/201001/t20100115_75616.html",
+      "status": "official_identity_verified_pinned_blob",
+      "review_boundary": "GF3001 authority supplies the basic-component definition. This run does not claim direct full-table original-page expansion through the connector; exact independent-character membership is crosschecked through published scholarly transcription A01.",
+      "next_use": "P3 structure closure for GF0023 exact standard-character targets"
     }
   ],
   "reproducible_acquisition": {
