@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "record_kind": "P4_GF0011_2022_public_access_audit",
+  "reviewed_at": "2026-10-06",
+  "source_id": "S01",
+  "publication_id": "GF0011—2022",
+  "findings": [
+    {
+      "source": "教育部/国家语委发布说明",
+      "url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202211/t20221118_995332.html",
+      "result": "official_release_notice",
+      "facts": [
+        "2022版是2009第一版修订",
+        "保持原有201个主部首",
+        "增补微调个别附形部首",
+        "给出部分常用部首名称和信息处理国际编码",
+        "2022-12-15起实施"
+      ]
+    },
+    {
+      "source": "Unicode IRG China activity report",
+      "url": "https://www.unicode.org/irg/docs/n2816r-ChinaActivityReport.pdf",
+      "result": "corroborating_downstream_use",
+      "facts": [
+        "中国CJK部件整理工作将GF0011—2022最新版纳入部件字汇更新"
+      ]
+    },
+    {
+      "source": "Unicode IRG CJK Components proposal",
+      "url": "https://www.unicode.org/irg/docs/n2878r-CJKComponents4IDS.pdf",
+      "result": "public_access_limitation_signal",
+      "facts": [
+        "该IRG材料把GF0011—2022列为基础部件来源之一，并在材料中注明not released"
+      ]
+    }
+  ],
+  "fulltext_access": {
+    "status": "formal_fulltext_not_located_in_repeatable_public_channel",
+    "checked_channels": [
+      "教育部发布说明/语言文字规范入口",
+      "公开搜索",
+      "公开高校规范材料入口",
+      "Unicode IRG衍生材料"
+    ],
+    "consequence": "P4不得把发布说明或IRG衍生数据冒充GF0011—2022逐项正文。"
+  },
+  "supported_P4_conclusion": "201个主部首集合/成员身份连续性可与已审读2009主表合并形成continuity review；2022逐项精确主形、附形、名称、编码继续pending。",
+  "source_blocker": "GF0011—2022正式全文或等效官方逐项数据尚无可重复公开访问通道",
+  "blocker_scope": "只阻塞2022逐项精确字段，不阻塞位置迁移等可独立核验工作",
+  "limits": [
+    "不宣称GF0011—2022全文已审读",
+    "不从IRG GCP数据反推201项逐项2022字段"
+  ]
+}
