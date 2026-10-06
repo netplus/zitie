@@ -1,0 +1,89 @@
+{
+  "schema_version": 1,
+  "as_of": "2026-10-06",
+  "stage": "P0_normative_source_access",
+  "status": "operational_historical_artifact_verified_new_probe_pending",
+  "policy": {
+    "review_boundary": "source_recovery_and_hash_verification_do_not_mark_any_page_or_field_reviewed",
+    "storage": "normative PDFs stay in temporary Actions artifacts or local review workspace; do not commit source PDFs to the public repository",
+    "page_review": "P1/P2 must record actual original-page inspection separately"
+  },
+  "sources": [
+    {
+      "source_id": "S02",
+      "publication_id": "GF0023—2020",
+      "title": "通用规范汉字笔顺规范",
+      "repo": "zispace/hanzi-docs",
+      "pinned_commit": "d26705ffc52b81b6e1a45483c7b591f62962f49f",
+      "path": "中国大陆/2-GF-语言文字规范/20201123-GF 0023-2020《通用规范汉字笔顺规范》.pdf",
+      "git_blob_sha": "53faf84b4eeb3399c0ae46819e91b4dcd4f0b641",
+      "bytes": 51412684,
+      "pages": 581,
+      "sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
+      "historical_recovery": {
+        "run_id": 36511612769,
+        "artifact_id": 11009044445,
+        "artifact_name": "reference-acquisition"
+      },
+      "verified_2026_10_06": {
+        "bytes": 51412684,
+        "pages": 581,
+        "sha256_match": true
+      },
+      "web_backend": "large_pdf_fetch_not_reliable",
+      "next_use": "P1 stroke_order original-page review"
+    },
+    {
+      "source_id": "S04",
+      "publication_id": "1997-STROKE-ORDER",
+      "title": "现代汉语通用字笔顺规范",
+      "repo": "zispace/hanzi-docs",
+      "pinned_commit": "d26705ffc52b81b6e1a45483c7b591f62962f49f",
+      "path": "中国大陆/1-旧版字表/19970407-现代汉语通用字笔顺规范.pdf",
+      "git_blob_sha": "9996a58e3f515d307bf35e104cf624a84f876d5e",
+      "bytes": 13214987,
+      "pages": 458,
+      "sha256": "ca8a0139744cf8105cb7e4ae7464ebc68cb76310b5a29e7cf004b2489a35ae65",
+      "historical_recovery": {
+        "run_id": 36514754022,
+        "artifact_id": 11010600883,
+        "artifact_name": "zitie-reference-review-round2"
+      },
+      "verified_2026_10_06": {
+        "bytes": 13214987,
+        "pages": 458,
+        "sha256_match": true
+      },
+      "next_use": "P1 stroke_order inheritance crosscheck; P2 whole-character stroke-shape context"
+    },
+    {
+      "source_id": "S05",
+      "publication_id": "GF2001—2001",
+      "title": "GB 13000.1 字符集汉字折笔规范",
+      "repo": "zispace/hanzi-docs",
+      "pinned_commit": "d26705ffc52b81b6e1a45483c7b591f62962f49f",
+      "path": "中国大陆/2-GF-语言文字规范/20011219-GF 2001-2001《GB 13000.1 字符集汉字折笔规范》-压缩版.pdf",
+      "git_blob_sha": "d9802042adae66ec106a7b977d019341a0492aa6",
+      "bytes": 177325,
+      "pages": 9,
+      "sha256": "68a1420580a7eedde79eeb55b91b6b2ff10ef9155d98633ccc712838f04e9b14",
+      "historical_recovery": {
+        "run_id": 36514754022,
+        "artifact_id": 11010600883,
+        "artifact_name": "zitie-reference-review-round2"
+      },
+      "verified_2026_10_06": {
+        "bytes": 177325,
+        "pages": 9,
+        "sha256_match": true
+      },
+      "next_use": "P2 compound/folded stroke-name adjudication"
+    }
+  ],
+  "reproducible_acquisition": {
+    "workflow": ".github/workflows/source-probe.yml",
+    "artifact_name": "normative-reference-acquisition",
+    "retention_days": 7,
+    "verification": "workflow must reject any downloaded file whose SHA256 differs from the pinned expected digest"
+  }
+}
