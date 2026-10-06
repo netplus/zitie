@@ -99,7 +99,33 @@
       },
       "status": "verified_bytes_abridged_not_admissible_for_P1_residual_closure",
       "limits": "Do not mark any of the fixed 37 P1 residual radicals reviewed from this mirror. A complete GF3002—1999 original or another applicable normative source is still required.",
-      "next_use": "source locator only; continue searching for a complete GF3002—1999 copy"
+      "next_use": "source locator only; continue searching for a complete GF3002—1999 copy",
+      "selected_visible_row_review": {
+        "date": "2026-10-06",
+        "characters": [
+          "丨",
+          "丿",
+          "丶",
+          "乛",
+          "丬"
+        ],
+        "exact_table_sequences": [
+          41,
+          64,
+          55,
+          92,
+          45
+        ],
+        "pdf_pages": [
+          7,
+          8
+        ],
+        "result": "5 exact visible rows visually reviewed; omitted rows remain unusable",
+        "evidence": [
+          "data/evidence/B08-stroke-order-gf3002-original-page.json",
+          "data/evidence/B10-stroke-order-gf3002-original-page.json"
+        ]
+      }
     }
   ],
   "reproducible_acquisition": {
