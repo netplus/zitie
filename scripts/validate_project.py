@@ -54,7 +54,7 @@ def validate(catalog, batches, variants, batch):
     return {'main_index_count':len(rows), 'frozen_batch_count':len(batches['frozen_batches']),
             'variant_candidates':len(vs), batch['batch_id']+'_primary_checked':len(batch['entries']),
             batch['batch_id']+'_cross_checked':len(batch['entries']) if batch['cross_review']['status']=='passed' else 0,
-            'formal_release_entries':10 if batch['release_eligible'] else 0,
+            'formal_release_entries':len(batch['entries']) if batch['release_eligible'] else 0,
             'note':'Structural checks only; no automatic semantic approval.'}
 
 def validate_evidence(catalog, batches, sources, evidence):
@@ -180,9 +180,13 @@ def validate_metadata_evidence(catalog, batches, sources, evidence):
 def main():
     p = argparse.ArgumentParser()
     p.add_argument('--release', action='store_true')
-    p.add_argument('--batch', choices=['B01','B02'], default='B01')
+    p.add_argument('--batch', default='B01')
     args = p.parse_args()
-    c,b,v,x = (load(n) for n in ['data/coverage.json','data/batches.json','data/variants.json',f'data/{args.batch}.json'])
+    c,b,v = (load(n) for n in ['data/coverage.json','data/batches.json','data/variants.json'])
+    valid_batches = {item['id'] for item in b['frozen_batches']}
+    if args.batch not in valid_batches:
+        raise SystemExit('Unknown frozen batch: '+args.batch)
+    x = load(f'data/{args.batch}.json')
     result = validate(c,b,v,x)
     sources = load("sources/catalog.json")
     result["field_checkpoints"] = [validate_evidence(c,b,sources,load(item["stroke_order_evidence"]))
