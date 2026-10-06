@@ -73,7 +73,7 @@
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
-        "pronunciation": "pending_authoritative_row",
+        "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
         "component_name": "pending_S03_target_row",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "selected_pending_whole_character_verification"
@@ -82,7 +82,7 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "采用读音尚未完成适用权威原页复核"
+        "pronunciation已按S03+GF0015原页审读收口为conflict_fail_closed；仅在取得适用权威读音来源或P4精确身份规则后重开"
       ],
       "stroke_order_review": {
         "source_id": "S02",
@@ -138,6 +138,40 @@
         "result": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
         "structure_class": "decomposable",
         "membership_basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
+      },
+      "pinyin_status": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+      "pronunciation_review": {
+        "phase": "P3",
+        "source_id": "S06",
+        "publication_id": "GF0015—2010",
+        "evidence": "data/evidence/P3-pronunciation-GF0015-original-page.json",
+        "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+        "reviewed_ranges": [
+          {
+            "pdf_pages": [
+              53,
+              54
+            ],
+            "level": "1",
+            "range": "yóu/yú→yuè"
+          },
+          {
+            "pdf_pages": [
+              89
+            ],
+            "level": "2",
+            "range": "yú→yuè"
+          },
+          {
+            "pdf_pages": [
+              136
+            ],
+            "level": "3",
+            "range": "yú→yuè"
+          }
+        ],
+        "visual_review": true,
+        "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
       }
     }
   ],
