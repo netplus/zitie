@@ -799,7 +799,7 @@
       "title": "汉语国际教育用音节汉字词汇等级划分",
       "publication_id": "GF0015—2010",
       "publisher": "教育部、国家语委",
-      "status": "formal_scan_acquired_selected_pages_reviewed",
+      "status": "formal_scan_acquired_P3_pronunciation_pages_reviewed",
       "urls": [
         "https://api.github.com/repos/zispace/hanzi-docs/git/blobs/13c76ed4c0dd835d356dd2c4c0504e050a576061"
       ],
@@ -829,7 +829,24 @@
       ],
       "checked_at": "2026-09-29",
       "provenance": "原出版物扫描件由zispace/hanzi-docs托管；版本身份据实际原件核查，平台不是规范发布者。",
-      "limits": "仅引用词条读音，不采用旧版词汇等级作为当前教学分级。工、巾取工人、毛巾的语素读音，并非独立字条。 B02的目取目光首语素，其他九项为独立词条。"
+      "limits": "仅引用词条读音，不采用旧版词汇等级作为当前教学分级。工、巾取工人、毛巾的语素读音，并非独立字条。 B02的目取目光首语素，其他九项为独立词条。",
+      "bytes": 19262366,
+      "reproducible_access": {
+        "workflow": ".github/workflows/source-probe.yml",
+        "run_id": 37449756736,
+        "artifact_id": 11406995313,
+        "artifact_name": "normative-reference-acquisition",
+        "sha256_verified": true
+      },
+      "P3_pronunciation_review": {
+        "date": "2026-10-06",
+        "target_count": 25,
+        "reviewed": 14,
+        "conflict_fail_closed_no_target_entry": 11,
+        "evidence": "data/evidence/P3-pronunciation-GF0015-original-page.json",
+        "method": "rendered scanned original pages; direct target/morpheme rows or all three level pinyin-range pages visually reviewed",
+        "limits": "Word-level/morpheme readings only; grade labels are not used as current teaching levels. Absence is fail-closed only for the explicitly reviewed pinyin ranges recorded in evidence."
+      }
     },
     {
       "id": "S07",
