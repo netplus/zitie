@@ -855,7 +855,7 @@
     ],
     "next_assignment_starts_at": null,
     "next_work": "P2_fine_stroke_names_normative_original_page_closure",
-    "note": "P4 active. Main-radical membership continuity is 201/201 reviewed. Position migration now covers B06-B19: 138 reviewed + 2 conflict_fail_closed (屮、毋) across 140 main items. B04-B05 still lack authoritative whole-character context evidence; B20-B21 and B01-B03 position-migration regression remain to be handled. Exact GF0011—2022 glyph/attached-form/name/code fields remain blocked by fulltext/item-level source access.",
+    "note": "P4 active but position_migration is now fully closed: 201/201 = 198 reviewed + 3 conflict_fail_closed (屮、毋、瓦), 0 ordinary pending. Main-radical membership continuity is also 201/201 reviewed. Remaining P4 blocker is GF0011—2022 exact item-level glyph/attached-form/name/code data; fulltext/item-level official data are not yet available through a repeatable public channel.",
     "stroke_order_reviewed_main_count": 201,
     "stroke_order_pending_main_count": 0,
     "active_remaining_phase": "P2",
@@ -895,7 +895,7 @@
       "completion_review": "reviews/P3-completion-20261006.md"
     },
     "p4_identity_position_migration": {
-      "status": "in_progress",
+      "status": "position_migration_complete_exact_2022_item_fields_source_blocked",
       "round1": {
         "batches": [
           "B04",
@@ -1012,26 +1012,41 @@
         "review": "reviews/P4-B12-B19-position-migration.md"
       },
       "position_migration_cumulative": {
-        "reviewed": 138,
-        "conflict_fail_closed": 2,
-        "ordinary_pending_in_reviewed_scope": 0,
-        "covered_batches": [
-          "B06",
-          "B07",
-          "B08",
-          "B09",
-          "B10",
-          "B11",
-          "B12",
-          "B13",
-          "B14",
-          "B15",
-          "B16",
-          "B17",
-          "B18",
-          "B19"
+        "target_count": 201,
+        "reviewed": 198,
+        "conflict_fail_closed": 3,
+        "ordinary_pending": 0,
+        "conflicts": [
+          "屮",
+          "毋",
+          "瓦"
         ],
-        "covered_main_count": 140
+        "status": "complete_reviewed_or_fail_closed",
+        "review": "reviews/P4-position-migration-completion-20261006.md"
+      },
+      "position_migration_round3": {
+        "scope": [
+          "B01",
+          "B02",
+          "B03",
+          "B04",
+          "B05",
+          "B20",
+          "B21"
+        ],
+        "target_count": 61,
+        "reviewed": 60,
+        "conflict_fail_closed": 1,
+        "ordinary_pending": 0,
+        "conflict_characters": [
+          "瓦"
+        ],
+        "self_context_reviewed": 41,
+        "embedded_context_reviewed": 19,
+        "evidence": [
+          "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+          "data/evidence/P4-B04-B05-position-migration-final.json"
+        ]
       }
     }
   }
