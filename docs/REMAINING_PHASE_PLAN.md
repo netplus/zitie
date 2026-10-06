@@ -21,7 +21,7 @@
 - S05 GF2001—2001：9页，177,325字节，SHA256 `68a1420...`；
 - 2026-10-06已从历史Actions artifact恢复三份原件并重新核验SHA256、字节数和页数。
 
-P0已完成：2026-10-06新的`source-probe` run 37402630995成功，artifact 11385916300重新取得并强制校验S02/S04/S05/S01-2009字节。后续停止继续寻找D05/D06等二次源，除非规范原件出现无法解决的真缺口。\n\n**当前活动阶段：P3 其它字段扫尾。**
+P0已完成：2026-10-06新的`source-probe` run 37402630995成功，artifact 11385916300重新取得并强制校验S02/S04/S05/S01-2009字节。后续停止继续寻找D05/D06等二次源，除非规范原件出现无法解决的真缺口。\n\n**当前活动阶段：P4 2022身份与位置迁移。**
 
 ## P1 当前进展（2026-10-06）
 
@@ -76,21 +76,21 @@ GF0023主表阶段已扫完B04—B21全部171项：**134/171 reviewed，37/171 r
 
 目标：关闭剩余`pronunciation`、`component_name`、`structure`。
 
-执行：
-- 对S03不能直接关闭读音的项目换用适用权威来源；
-- 对S03无完整主形名称条目的项目补替代来源；
-- 对S07未覆盖的structure项使用其它适用结构依据；
-- 不重复扫描已经reviewed字段。
+**已于2026-10-06完成。** B04—B21共171项最终状态：
 
-退出条件：除GF0011—2022和位置迁移外，字段pending基本清零。
+- pronunciation：**126 reviewed + 11 conflict_fail_closed + 34 not_applicable + 0普通pending**；
+- component_name：**143 reviewed + 28 deferred_P4_exact_name_gate + 0普通pending**；
+- structure：**134 reviewed + 37 deferred_P4_exact_identity_gate + 0普通pending**。
 
-### P3当前进展（2026-10-06）
+关键收口：
+- GF0015—2010通过source-probe run `37449756736` / artifact `11406995313`恢复并强校验；25个GF0023精确规范字完成原页pronunciation审读，14项关闭、11项精确fail-closed；
+- 34个部件型/非GF0023精确目标，S03无目标自身读音，pronunciation按当前教学表面收口为not-applicable，不借名称例字或字典古音；
+- B08/B14共20项component_name状态债同步reviewed；28个S03无精确主形名称条目的目标转P4 GF0011—2022精确名称门槛，不标reviewed；
+- structure此前100项缺口中，63个GF0023精确规范字由S07+GF3001规范集合关闭，37个部件型目标转P4精确身份/主附关系门槛。
 
-- component_name第一轮：B08+B14共20项从既有S03原页证据同步reviewed；27项S03已实审但无精确独立主形名称条目的目标转P4 GF0011—2022精确名称门槛；P3普通component_name缺口仅B21龠1项。
-- structure第二轮：此前100项未闭合structure全部完成P3适用性审查。63个GF0023精确规范字由S07+GF3001规范集合关闭（15 undecomposable、48 decomposable）；37个非GF0023精确目标的部件型主项转P4精确身份门槛，不标reviewed。**P3 structure普通pending=0。**
-- pronunciation仍是P3主剩余字段。
+证据总检查点：`reviews/P3-completion-20261006.md`。
 
-structure证据：`data/evidence/P3-structure-GF3001-synthesis.json`、`reviews/P3-structure-GF3001-synthesis-20261006.md`。
+退出条件“除GF0011—2022和位置迁移外，字段pending基本清零”已满足，活动阶段正式切换P4。
 
 ## P4 2022身份与位置迁移
 
