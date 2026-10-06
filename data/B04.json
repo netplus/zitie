@@ -2077,5 +2077,12 @@
     "evidence": "data/evidence/P5-B04-B05-B07-B11-content-ready.json",
     "scope": "B04 only",
     "boundary": "P5 content acceptance does not change artwork_status, publication_status, release_eligible, or GF0011—2022 fail-closed fields."
+  },
+  "content_ready_review": {
+    "phase": "P5",
+    "date": "2026-10-07",
+    "evidence": "data/evidence/P5-B04-B12-final-content-acceptance.json",
+    "result": "accepted_P5_content_ready",
+    "limits": "Content acceptance only; artwork/layout/PDF/manifest/CI publication/release remain separate later-stage gates."
   }
 }
