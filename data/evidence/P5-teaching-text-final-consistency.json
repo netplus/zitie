@@ -1,0 +1,910 @@
+{
+  "schema_version": 1,
+  "record_kind": "P5_teaching_text_final_consistency_review",
+  "phase": "P5",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "scope": {
+    "batches": [
+      "B06",
+      "B08",
+      "B10",
+      "B14"
+    ],
+    "target_count": 40
+  },
+  "method": "Rewrite stale candidate/pending teaching language so it only restates already-closed stroke_count/stroke_order/fine_stroke_names and P4 position_migration. No new normative claim is introduced.",
+  "entries": [
+    {
+      "batch_id": "B06",
+      "character": "厂",
+      "main_id": 7,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选写法为先横后撇；正式笔顺结论待原页核验。",
+        "教学时强调两笔分开，不把横与撇连成一笔。"
+      ],
+      "prior_check": "先确认横，再确认撇；当前仅为内容候选。",
+      "revised_tips": [
+        "按“横、撇”的顺序书写，共2画。",
+        "在“原”中处于左上包围；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共2画：横、撇。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B06",
+      "character": "匚",
+      "main_id": 8,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选写法为先横，再写竖折形成左、下边。",
+        "右侧保持开口；不能把外框写成封闭框。"
+      ],
+      "prior_check": "两笔候选：横、竖折；细笔名待原页核验。",
+      "revised_tips": [
+        "按“横、竖折”的顺序书写，共2画。",
+        "在“区”中处于外框；书写时按完整整字时序处理，不能只把部件自身笔画连续写完。"
+      ],
+      "revised_check": "共2画：横、竖折。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B06",
+      "character": "卜",
+      "main_id": 9,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选写法为先竖后点。",
+        "点与竖分开落笔，避免把点拖成长横。"
+      ],
+      "prior_check": "候选顺序是竖、点。",
+      "revised_tips": [
+        "按“竖、点”的顺序书写，共2画。",
+        "在“外”中处于右部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共2画：竖、点。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B06",
+      "character": "冂",
+      "main_id": 10,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选写法为先左竖，再写横折钩形成上边和右边。",
+        "作为外框时要给内部部件留出空间；整字时序另核。"
+      ],
+      "prior_check": "第二笔候选为带折钩的整笔。",
+      "revised_tips": [
+        "按“竖、横折钩”的顺序书写，共2画。",
+        "在“同”中处于外框；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共2画：竖、横折钩。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B06",
+      "character": "勹",
+      "main_id": 13,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选写法为先撇，再写横折钩。",
+        "作包围部件时内部字形的先后必须回到完整整字核验。"
+      ],
+      "prior_check": "候选两笔：撇、横折钩。",
+      "revised_tips": [
+        "按“撇、横折钩”的顺序书写，共2画。",
+        "在“包”中处于外框；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共2画：撇、横折钩。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B06",
+      "character": "儿",
+      "main_id": 14,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选写法为先撇，再写竖弯钩。",
+        "与“匕”等相似二笔部件只按自身结构教学，不互相套形。"
+      ],
+      "prior_check": "第二笔候选为竖弯钩。",
+      "revised_tips": [
+        "按“撇、竖弯钩”的顺序书写，共2画。",
+        "在“元”中处于下部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共2画：撇、竖弯钩。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B06",
+      "character": "匕",
+      "main_id": 15,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选写法为先撇，再写竖弯钩。",
+        "与“儿”粗笔类相近，但轮廓和相对位置必须单独核对。"
+      ],
+      "prior_check": "候选两笔与“儿”同属粗类35，不代表字形相同。",
+      "revised_tips": [
+        "按“撇、竖弯钩”的顺序书写，共2画。",
+        "在“化”中处于右部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共2画：撇、竖弯钩。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B06",
+      "character": "几",
+      "main_id": 16,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "先撇，再写横折弯钩。",
+        "第二笔转折、弯和钩连续一笔完成。"
+      ],
+      "prior_check": "两笔，第二笔为横折弯钩。",
+      "revised_tips": [
+        "按“撇、横折弯钩”的顺序书写，共2画。",
+        "在“机”中处于右部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共2画：撇、横折弯钩。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B06",
+      "character": "亠",
+      "main_id": 17,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选写法为先点后横。",
+        "作为字头时只教学实际字中的位置关系，不凭部件形态推断整字笔顺。"
+      ],
+      "prior_check": "候选两笔：点、横。",
+      "revised_tips": [
+        "按“点、横”的顺序书写，共2画。",
+        "在“京”中处于上部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共2画：点、横。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B06",
+      "character": "冫",
+      "main_id": 18,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选写法为先点后提。",
+        "第二笔候选是提，不按普通横处理；细笔名待S03/S05相关原页闭合。"
+      ],
+      "prior_check": "候选顺序是点、提。",
+      "revised_tips": [
+        "按“点、提”的顺序书写，共2画。",
+        "在“冷”中处于左部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共2画：点、提。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B08",
+      "character": "丨",
+      "main_id": 2,
+      "source_fields": {
+        "stroke_count_status": "reviewed_GF3002_1999_original_page",
+        "stroke_order_status": "reviewed_GF3002_1999_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "当前候选只有一笔竖，教学重点是起收位置而不是机械加笔。",
+        "在整字中出现时仍按所在字的真实时序核验。"
+      ],
+      "prior_check": "候选一笔：竖。",
+      "revised_tips": [
+        "按“竖”的顺序书写，共1画。",
+        "在“中”中处于中部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共1画：竖。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B08",
+      "character": "丿",
+      "main_id": 3,
+      "source_fields": {
+        "stroke_count_status": "reviewed_GF3002_1999_original_page",
+        "stroke_order_status": "reviewed_GF3002_1999_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "当前候选只有一笔撇，注意由右上向左下行笔。",
+        "与点、提等短笔形分开辨认。"
+      ],
+      "prior_check": "候选一笔：撇。",
+      "revised_tips": [
+        "按“撇”的顺序书写，共1画。",
+        "在“千”中处于upper_left；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共1画：撇。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B08",
+      "character": "丶",
+      "main_id": 4,
+      "source_fields": {
+        "stroke_count_status": "reviewed_GF3002_1999_original_page",
+        "stroke_order_status": "reviewed_GF3002_1999_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "当前候选只有一笔点，注意落点位置和方向。",
+        "不要因字体形态把点拖成短捺。"
+      ],
+      "prior_check": "候选一笔：点。",
+      "revised_tips": [
+        "按“点”的顺序书写，共1画。",
+        "在“主”中处于上部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共1画：点。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B08",
+      "character": "乛",
+      "main_id": 5,
+      "source_fields": {
+        "stroke_count_status": "reviewed_GF3002_1999_original_page",
+        "stroke_order_status": "reviewed_GF3002_1999_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选细笔名为横钩，整笔连续完成。",
+        "折钩类别必须回GF2001等规范原页确认后才升级。"
+      ],
+      "prior_check": "候选一笔折笔；细名待原页核验。",
+      "revised_tips": [
+        "按“横钩”的顺序书写，共1画。",
+        "在“买”中处于上部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共1画：横钩。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B08",
+      "character": "尢",
+      "main_id": 34,
+      "source_fields": {
+        "stroke_count_status": "candidate_pending_target_row",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选顺序为横、撇、竖弯钩。",
+        "末笔带弯钩，不能写成普通竖钩。"
+      ],
+      "prior_check": "候选三笔，竖弯钩最后写。",
+      "revised_tips": [
+        "按“横、撇、竖弯钩”的顺序书写，共3画。",
+        "在“尬”中处于左下部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共3画：横、撇、竖弯钩。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B08",
+      "character": "弋",
+      "main_id": 35,
+      "source_fields": {
+        "stroke_count_status": "candidate_pending_target_row",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选顺序为横、斜钩、点。",
+        "斜钩是一整笔，点最后补。"
+      ],
+      "prior_check": "候选三笔，末笔是点。",
+      "revised_tips": [
+        "按“横、斜钩、点”的顺序书写，共3画。",
+        "在“式”中处于外框；书写时按完整整字时序处理，不能只把部件自身笔画连续写完。"
+      ],
+      "revised_check": "共3画：横、斜钩、点。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B08",
+      "character": "囗",
+      "main_id": 38,
+      "source_fields": {
+        "stroke_count_status": "candidate_pending_target_row",
+        "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "部件自身候选三笔为竖、横折、横。",
+        "在包围整字中最后一横通常承担封口，不能把部件自身顺序机械连续套用。"
+      ],
+      "prior_check": "候选三笔；整字封口时序必须另核。",
+      "revised_tips": [
+        "按“竖、横折、横”的顺序书写，共3画。",
+        "在“国”中处于外框；书写时按完整整字时序处理，不能只把部件自身笔画连续写完。"
+      ],
+      "revised_check": "共3画：竖、横折、横。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B08",
+      "character": "彳",
+      "main_id": 41,
+      "source_fields": {
+        "stroke_count_status": "candidate_pending_target_row",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选顺序为撇、撇、竖。",
+        "两撇方向和长短不同，末笔竖负责承接右部。"
+      ],
+      "prior_check": "候选三笔：撇、撇、竖。",
+      "revised_tips": [
+        "按“撇、撇、竖”的顺序书写，共3画。",
+        "在“很”中处于左部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共3画：撇、撇、竖。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B08",
+      "character": "彡",
+      "main_id": 42,
+      "source_fields": {
+        "stroke_count_status": "candidate_pending_target_row",
+        "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选为连续三撇，但每一撇都是独立笔画。",
+        "三撇应分出起笔位置与长度层次，不合写。"
+      ],
+      "prior_check": "候选三笔均为撇。",
+      "revised_tips": [
+        "按“撇、撇、撇”的顺序书写，共3画。",
+        "在“形”中处于右部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共3画：撇、撇、撇。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B08",
+      "character": "夂",
+      "main_id": 44,
+      "source_fields": {
+        "stroke_count_status": "candidate_pending_target_row",
+        "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选顺序为撇、横撇、捺。",
+        "第2笔横撇是一笔连续转折。"
+      ],
+      "prior_check": "候选三笔，横撇居中。",
+      "revised_tips": [
+        "按“撇、横撇、捺”的顺序书写，共3画。",
+        "在“条”中处于上部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共3画：撇、横撇、捺。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B10",
+      "character": "丬",
+      "main_id": 45,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GF3002_1999_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选顺序为点、提、竖。",
+        "作为左旁时要回完整整字核对位置与时序。"
+      ],
+      "prior_check": "候选三笔：点、提、竖。",
+      "revised_tips": [
+        "按“点、提、竖”的顺序书写，共3画。",
+        "在“壮”中处于左部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共3画：点、提、竖。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B10",
+      "character": "幺",
+      "main_id": 59,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选连续写两个撇折，最后写点。",
+        "两个撇折都是独立笔画，不能连成一笔。"
+      ],
+      "prior_check": "候选三笔，末笔为点。",
+      "revised_tips": [
+        "按“撇折、撇折、点”的顺序书写，共3画。",
+        "在“幼”中处于左部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共3画：撇折、撇折、点。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B10",
+      "character": "攴",
+      "main_id": 74,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选先竖、横，再横撇、捺。",
+        "攴与常见位置形态攵必须分开核验，不自动互推。"
+      ],
+      "prior_check": "候选四笔，后两笔为横撇、捺。",
+      "revised_tips": [
+        "按“竖、横、横撇、捺”的顺序书写，共4画。",
+        "在“敲”中处于右部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共4画：竖、横、横撇、捺。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B10",
+      "character": "氏",
+      "main_id": 89,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选先撇、竖提，再横、斜钩。",
+        "第2笔和末笔都属于复合笔形，不能拆写。"
+      ],
+      "prior_check": "候选四笔，斜钩收尾。",
+      "revised_tips": [
+        "按“撇、竖提、横、斜钩”的顺序书写，共4画。",
+        "在“纸”中处于右部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共4画：撇、竖提、横、斜钩。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B10",
+      "character": "欠",
+      "main_id": 90,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "先撇，再写横撇，最后撇、捺。",
+        "第2笔已由P2规范原页裁决为横撇；位置变体仍需在整字中另核。"
+      ],
+      "prior_check": "四笔，第2笔为横撇。",
+      "revised_tips": [
+        "按“撇、横撇、撇、捺”的顺序书写，共4画。",
+        "在“吹”中处于右部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共4画：撇、横撇、撇、捺。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B10",
+      "character": "风",
+      "main_id": 91,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_self_context_no_position_migration"
+      },
+      "prior_tips": [
+        "先撇，再写横斜钩，内部撇、点后写。",
+        "外框第2笔为一整笔横斜钩，不拆写。"
+      ],
+      "prior_check": "四笔，第2笔为横斜钩。",
+      "revised_tips": [
+        "按“撇、横斜钩、撇、点”的顺序书写，共4画。",
+        "本页练独体主形；作部件时仍以所在整字的已核证据为准，不能从独体形自动外推。"
+      ],
+      "revised_check": "共4画：撇、横斜钩、撇、点。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B10",
+      "character": "方",
+      "main_id": 94,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选先点、横，再横折钩，最后撇。",
+        "第3笔横折钩一笔完成。"
+      ],
+      "prior_check": "候选四笔，撇最后写。",
+      "revised_tips": [
+        "按“点、横、横折钩、撇”的顺序书写，共4画。",
+        "在“房”中处于下部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共4画：点、横、横折钩、撇。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B10",
+      "character": "斗",
+      "main_id": 96,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选先写两点，再横、竖。",
+        "前两点分开书写，末笔竖贯穿横。"
+      ],
+      "prior_check": "候选四笔：点、点、横、竖。",
+      "revised_tips": [
+        "按“点、点、横、竖”的顺序书写，共4画。",
+        "在“料”中处于右部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共4画：点、点、横、竖。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B10",
+      "character": "户",
+      "main_id": 97,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "候选先点，再横折、横、撇。",
+        "第2笔横折不能拆成两笔。"
+      ],
+      "prior_check": "候选四笔，撇最后写。",
+      "revised_tips": [
+        "按“点、横折、横、撇”的顺序书写，共4画。",
+        "在“房”中处于上部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共4画：点、横折、横、撇。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B10",
+      "character": "心",
+      "main_id": 98,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_S01_2009_baseline",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "先点、卧钩，再写后两点。",
+        "第2笔按P2规范原页裁决为卧钩；心与忄、⺗的位置形态另行核验。"
+      ],
+      "prior_check": "四笔，卧钩为第2笔。",
+      "revised_tips": [
+        "按“点、卧钩、点、点”的顺序书写，共4画。",
+        "在“思”中处于下部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共4画：点、卧钩、点、点。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B14",
+      "character": "虫",
+      "main_id": 131,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_baseline_stroke_group",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "先把虫作为六画基线主项识别；中部折画和末笔细名待目标行复核。",
+        "在“蚂”等整字左部观察压缩，独体主形与偏旁位置形态分开记录。"
+      ],
+      "prior_check": "基线笔数为6画；逐笔顺序、细笔名和采用读音未核前不凭候选稿记忆。",
+      "revised_tips": [
+        "按“竖、横折、横、竖、横、点”的顺序书写，共6画。",
+        "在“蚂”中处于左部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共6画：竖、横折、横、竖、横、点。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B14",
+      "character": "肉",
+      "main_id": 132,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_baseline_stroke_group",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "先识别肉的六画基线主形；框内两笔的具体细名和次序待原页核验。",
+        "在“腐”等整字下部观察布局，不把形似“月”的部件无证据等同于肉。"
+      ],
+      "prior_check": "基线笔数为6画；逐笔顺序、细笔名和采用读音未核前不凭候选稿记忆。",
+      "revised_tips": [
+        "按“竖、横折钩、撇、点、撇、点”的顺序书写，共6画。",
+        "在“腐”中处于下部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共6画：竖、横折钩、撇、点、撇、点。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B14",
+      "character": "缶",
+      "main_id": 133,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_baseline_stroke_group",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "先识别缶的六画基线主形；顶部与下部笔画的具体顺序待规范目标行确认。",
+        "在“缸”等整字左部观察比例变化，位置形态不得由独体主形直接推定。"
+      ],
+      "prior_check": "基线笔数为6画；逐笔顺序、细笔名和采用读音未核前不凭候选稿记忆。",
+      "revised_tips": [
+        "按“撇、横、横、竖、竖折、竖”的顺序书写，共6画。",
+        "在“缸”中处于左部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共6画：撇、横、横、竖、竖折、竖。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B14",
+      "character": "舌",
+      "main_id": 134,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_baseline_stroke_group",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "先识别舌的六画基线结构；横竖与口部的先后待规范目标行关闭。",
+        "在“话”等整字右部观察整体压缩，保持主形与位置形态证据分离。"
+      ],
+      "prior_check": "基线笔数为6画；逐笔顺序、细笔名和采用读音未核前不凭候选稿记忆。",
+      "revised_tips": [
+        "按“撇、横、竖、竖、横折、横”的顺序书写，共6画。",
+        "在“话”中处于右部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共6画：撇、横、竖、竖、横折、横。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B14",
+      "character": "竹",
+      "main_id": 135,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_baseline_stroke_group",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page_with_coarse_stroke_changes"
+      },
+      "prior_tips": [
+        "先识别竹的六画主形；左右两组笔画的具体次序和细名待目标原页复核。",
+        "在“笑”等整字顶部只作为位置迁移线索，竹字头形态不得从独体竹自动复制。"
+      ],
+      "prior_check": "基线笔数为6画；逐笔顺序、细笔名和采用读音未核前不凭候选稿记忆。",
+      "revised_tips": [
+        "按“撇、横、竖、撇、横、竖钩”的顺序书写，共6画。",
+        "在“笑”中处于上部；P4核验记录了位置改笔，组合字要按整字中的实际笔形书写。"
+      ],
+      "revised_check": "共6画：撇、横、竖、撇、横、竖钩。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B14",
+      "character": "臼",
+      "main_id": 136,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_baseline_stroke_group",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "先识别臼的六画框内结构；内部横画与收框关系待适用规范目标行确认。",
+        "在“舅”等整字顶部观察纵向压缩，不凭字体静态外观推定笔顺。"
+      ],
+      "prior_check": "基线笔数为6画；逐笔顺序、细笔名和采用读音未核前不凭候选稿记忆。",
+      "revised_tips": [
+        "按“撇、竖、横、横折、横、横”的顺序书写，共6画。",
+        "在“舅”中处于上部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共6画：撇、竖、横、横折、横、横。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B14",
+      "character": "自",
+      "main_id": 137,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_baseline_stroke_group",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "先识别自的六画基线主形；内部横画的真实先后待目标行核验。",
+        "在“息”等上下结构中观察顶部宽度变化，独体与位置形态分开记录。"
+      ],
+      "prior_check": "基线笔数为6画；逐笔顺序、细笔名和采用读音未核前不凭候选稿记忆。",
+      "revised_tips": [
+        "按“撇、竖、横折、横、横、横”的顺序书写，共6画。",
+        "在“息”中处于上部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共6画：撇、竖、横折、横、横、横。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B14",
+      "character": "血",
+      "main_id": 138,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_baseline_stroke_group",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "先识别血的六画基线主形；内部横画和底横关系待规范原页确认。",
+        "在“衅”等整字左部只作迁移语境，位置形态及真实部件关系仍需整字核验。"
+      ],
+      "prior_check": "基线笔数为6画；逐笔顺序、细笔名和采用读音未核前不凭候选稿记忆。",
+      "revised_tips": [
+        "按“撇、竖、横折、竖、竖、横”的顺序书写，共6画。",
+        "在“衅”中处于左部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共6画：撇、竖、横折、竖、竖、横。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B14",
+      "character": "舟",
+      "main_id": 139,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_baseline_stroke_group",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "先识别舟的六画基线主形；中部点横关系和逐笔时序待目标行关闭。",
+        "在“船”等整字左部观察收窄，不能把视觉压缩误判为减笔。"
+      ],
+      "prior_check": "基线笔数为6画；逐笔顺序、细笔名和采用读音未核前不凭候选稿记忆。",
+      "revised_tips": [
+        "按“撇、撇、横折钩、点、横、点”的顺序书写，共6画。",
+        "在“船”中处于左部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共6画：撇、撇、横折钩、点、横、点。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    },
+    {
+      "batch_id": "B14",
+      "character": "色",
+      "main_id": 140,
+      "source_fields": {
+        "stroke_count_status": "reviewed_from_baseline_stroke_group",
+        "stroke_order_status": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+        "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "prior_tips": [
+        "先识别色的六画整体轮廓；下部弯钩类细名待权威目标行复核。",
+        "在“艳”等整字右部观察比例和弯折位置，迁移时保持完整笔画时序。"
+      ],
+      "prior_check": "基线笔数为6画；逐笔顺序、细笔名和采用读音未核前不凭候选稿记忆。",
+      "revised_tips": [
+        "按“撇、横撇、横折、竖、横、竖弯钩”的顺序书写，共6画。",
+        "在“艳”中处于右部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
+      ],
+      "revised_check": "共6画：撇、横撇、横折、竖、横、竖弯钩。",
+      "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields"
+    }
+  ],
+  "summary": {
+    "target_count": 40,
+    "reviewed": 40,
+    "ordinary_pending": 0
+  },
+  "limits": [
+    "Teaching text is editorial, not an independent normative source.",
+    "GF0011—2022 formal attached-form role remains source-blocked fail-closed.",
+    "Existing fine-stroke conflicts, if any, must not be silently resolved by teaching prose."
+  ]
+}
