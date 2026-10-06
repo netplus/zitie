@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "record_kind": "P6_cumulative_vector_artwork_review",
+  "batch_id": "B04",
+  "reviewed_at": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "vector_revision": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+  "workflow_run_id": 37548434948,
+  "artifact_id": 11452390328,
+  "artifact_digest": "sha256:0d010d8e219bde36cac95fb4fcb08c2adf40e72c4075f1c7f42d8c8817bed4f",
+  "review_pdf": "B04-artwork-review.pdf",
+  "review_pdf_sha256": "e3c24ca2ee8bac60f25c455ac252e5f5e358993582b7c799c2a9f9a50bcc9501",
+  "review_method": "rendered cumulative-stroke PDF -> 120dpi PNG -> full batch contact-sheet visual inspection",
+  "entries": [
+    {
+      "character": "干",
+      "main_id": 27,
+      "order_code": "112",
+      "stroke_count": 3,
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "寸",
+      "main_id": 31,
+      "order_code": "124",
+      "stroke_count": 3,
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "夕",
+      "main_id": 43,
+      "order_code": "354",
+      "stroke_count": 3,
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "广",
+      "main_id": 46,
+      "order_code": "413",
+      "stroke_count": 3,
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "门",
+      "main_id": 47,
+      "order_code": "425",
+      "stroke_count": 3,
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "尸",
+      "main_id": 51,
+      "order_code": "513",
+      "stroke_count": 3,
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "己",
+      "main_id": 52,
+      "order_code": "515",
+      "stroke_count": 3,
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "弓",
+      "main_id": 53,
+      "order_code": "515",
+      "stroke_count": 3,
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "飞",
+      "main_id": 57,
+      "order_code": "534",
+      "stroke_count": 3,
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "马",
+      "main_id": 58,
+      "order_code": "551",
+      "stroke_count": 3,
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "reviewed": 10,
+    "artwork_conflicts": 0
+  },
+  "limits": "Drawing-material approval only. Semantic authority remains existing content evidence; final A4 layout/PDF/release are independent."
+}

@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "record_kind": "P6_cumulative_vector_artwork_review",
+  "batch_id": "B11",
+  "reviewed_at": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "vector_revision": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+  "workflow_run_id": 37548434948,
+  "artifact_id": 11452390328,
+  "artifact_digest": "sha256:0d010d8e219bde36cac95fb4fcb08c2adf40e72c4075f1c7f42d8c8817bed4f",
+  "review_pdf": "B11-artwork-review.pdf",
+  "review_pdf_sha256": "adc12c330c95e2ed2c0b595879fe550d3d14d8eba1f0a58529ba68751d561d27",
+  "review_method": "rendered cumulative-stroke PDF -> 120dpi PNG -> full batch contact-sheet visual inspection",
+  "targeted_second_pass": [
+    "罒"
+  ],
+  "entries": [
+    {
+      "character": "示",
+      "main_id": 100,
+      "order_code": "11234",
+      "stroke_count": 5,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "甘",
+      "main_id": 101,
+      "order_code": "12211",
+      "stroke_count": 5,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "龙",
+      "main_id": 103,
+      "order_code": "13534",
+      "stroke_count": 5,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "业",
+      "main_id": 104,
+      "order_code": "22431",
+      "stroke_count": 5,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "罒",
+      "main_id": 107,
+      "order_code": "25221",
+      "stroke_count": 5,
+      "review_pass": "contact_sheet_plus_targeted_page_second_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "皿",
+      "main_id": 108,
+      "order_code": "25221",
+      "stroke_count": 5,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "生",
+      "main_id": 109,
+      "order_code": "31121",
+      "stroke_count": 5,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "矢",
+      "main_id": 110,
+      "order_code": "31134",
+      "stroke_count": 5,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "禾",
+      "main_id": 111,
+      "order_code": "31234",
+      "stroke_count": 5,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "瓜",
+      "main_id": 113,
+      "order_code": "33544",
+      "stroke_count": 5,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "reviewed": 10,
+    "artwork_conflicts": 0
+  },
+  "limits": "Drawing-material approval only. Semantic authority remains existing content evidence; final A4 layout/PDF/release are independent."
+}

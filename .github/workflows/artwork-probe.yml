@@ -8,6 +8,7 @@ on:
     paths:
       - 'scripts/acquire_vectors.py'
       - 'scripts/audit_vector_coverage.py'
+      - 'scripts/render_artwork_review.py'
       - 'data/batches.json'
       - 'data/B*.json'
       - '.github/workflows/artwork-probe.yml'
@@ -24,11 +25,23 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
+      - name: Install P6 rendering dependencies
+        run: python -m pip install -r requirements.txt
       - name: Audit all 201 vector materials
         run: python scripts/audit_vector_coverage.py
-      - name: Upload temporary vector review bundle
+      - name: Acquire first P6 review-round vectors
+        run: python scripts/acquire_vectors.py --batches B04 B05 B06 B07 B08 B09 B10 B11
+      - name: Render B04-B11 cumulative-stroke review sheets
+        run: python scripts/render_artwork_review.py --batches B04 B05 B06 B07 B08 B09 B10 B11
+      - name: Upload temporary vector coverage bundle
         uses: actions/upload-artifact@v4
         with:
           name: p6-vector-coverage
           path: build/vector-audit
+          retention-days: 7
+      - name: Upload temporary B04-B11 artwork review sheets
+        uses: actions/upload-artifact@v4
+        with:
+          name: p6-artwork-review-b04-b11
+          path: build/artwork-review
           retention-days: 7

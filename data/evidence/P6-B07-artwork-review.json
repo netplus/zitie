@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "record_kind": "P6_cumulative_vector_artwork_review",
+  "batch_id": "B07",
+  "reviewed_at": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "vector_revision": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+  "workflow_run_id": 37548434948,
+  "artifact_id": 11452390328,
+  "artifact_digest": "sha256:0d010d8e219bde36cac95fb4fcb08c2adf40e72c4075f1c7f42d8c8817bed4f",
+  "review_pdf": "B07-artwork-review.pdf",
+  "review_pdf_sha256": "abf32a57c78b15e166c0ed997db67f4627f9a479f334f0a3333a9f946a2f72ce",
+  "review_method": "rendered cumulative-stroke PDF -> 120dpi PNG -> full batch contact-sheet visual inspection",
+  "targeted_second_pass": [
+    "廴"
+  ],
+  "entries": [
+    {
+      "character": "冖",
+      "main_id": 19,
+      "order_code": "45",
+      "stroke_count": 2,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "凵",
+      "main_id": 20,
+      "order_code": "52",
+      "stroke_count": 2,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "卩",
+      "main_id": 21,
+      "order_code": "52",
+      "stroke_count": 2,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "厶",
+      "main_id": 25,
+      "order_code": "54",
+      "stroke_count": 2,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "廴",
+      "main_id": 26,
+      "order_code": "54",
+      "stroke_count": 2,
+      "review_pass": "contact_sheet_plus_targeted_page_second_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "艹",
+      "main_id": 30,
+      "order_code": "122",
+      "stroke_count": 3,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "廾",
+      "main_id": 32,
+      "order_code": "132",
+      "stroke_count": 3,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "宀",
+      "main_id": 48,
+      "order_code": "445",
+      "stroke_count": 3,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "辶",
+      "main_id": 49,
+      "order_code": "454",
+      "stroke_count": 3,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "彐",
+      "main_id": 50,
+      "order_code": "511",
+      "stroke_count": 3,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "reviewed": 10,
+    "artwork_conflicts": 0
+  },
+  "limits": "Drawing-material approval only. Semantic authority remains existing content evidence; final A4 layout/PDF/release are independent."
+}
