@@ -1,0 +1,2117 @@
+{
+  "schema_version": 1,
+  "record_kind": "P4_GF0011_2022_main_radical_membership_continuity_review",
+  "phase": "P4",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "scope": {
+    "batches": [
+      "B04",
+      "B05",
+      "B06",
+      "B07",
+      "B08",
+      "B09",
+      "B10",
+      "B11"
+    ],
+    "target_count": 80
+  },
+  "sources": [
+    {
+      "source_id": "S01",
+      "publication_id": "GF0011—2022",
+      "kind": "official_release_notice",
+      "url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202211/t20221118_995332.html",
+      "supported_facts": [
+        "GF0011—2022 is the revision of the 2009 first edition",
+        "the revision keeps the existing 201 main radicals",
+        "the revision adds/adjusts some attached-form radicals",
+        "the revision adds some common radical names and information-processing international codes"
+      ],
+      "boundary": "The public notice does not expose the complete 2022 table, so it does not support item-level 2022 glyph/attached-form/name/code adjudication."
+    },
+    {
+      "source_id": "S01-2009",
+      "publication_id": "GF0011—2009",
+      "kind": "reviewed_baseline_main_table",
+      "boundary": "Provides the exact 201-item baseline index/main_id used by the project; must not be renamed or treated as the 2022 edition."
+    }
+  ],
+  "policy": "Because the official 2022 release notice explicitly states that the existing 201 main radicals are retained, the 2009-reviewed main-radical membership and stable project main_id can be carried forward as a P4 continuity conclusion. Exact 2022 glyph rendering, attached forms, names and codes remain pending until the formal 2022 table or equivalent official item-level data are available.",
+  "entries": [
+    {
+      "batch_id": "B04",
+      "character": "干",
+      "main_id": 27,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B04",
+      "character": "寸",
+      "main_id": 31,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B04",
+      "character": "夕",
+      "main_id": 43,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B04",
+      "character": "广",
+      "main_id": 46,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B04",
+      "character": "门",
+      "main_id": 47,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B04",
+      "character": "尸",
+      "main_id": 51,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B04",
+      "character": "己",
+      "main_id": 52,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B04",
+      "character": "弓",
+      "main_id": 53,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B04",
+      "character": "飞",
+      "main_id": 57,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B04",
+      "character": "马",
+      "main_id": 58,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B05",
+      "character": "无",
+      "main_id": 62,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B05",
+      "character": "犬",
+      "main_id": 66,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B05",
+      "character": "歹",
+      "main_id": 67,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B05",
+      "character": "车",
+      "main_id": 68,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B05",
+      "character": "牙",
+      "main_id": 69,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B05",
+      "character": "戈",
+      "main_id": 70,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B05",
+      "character": "瓦",
+      "main_id": 72,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B05",
+      "character": "止",
+      "main_id": 73,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B05",
+      "character": "贝",
+      "main_id": 76,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B05",
+      "character": "见",
+      "main_id": 78,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": null,
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B06",
+      "character": "厂",
+      "main_id": 7,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B06",
+      "character": "匚",
+      "main_id": 8,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B06",
+      "character": "卜",
+      "main_id": 9,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B06",
+      "character": "冂",
+      "main_id": 10,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B06",
+      "character": "勹",
+      "main_id": 13,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B06",
+      "character": "儿",
+      "main_id": 14,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B06",
+      "character": "匕",
+      "main_id": 15,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B06",
+      "character": "几",
+      "main_id": 16,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B06",
+      "character": "亠",
+      "main_id": 17,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B06",
+      "character": "冫",
+      "main_id": 18,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B07",
+      "character": "冖",
+      "main_id": 19,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B07",
+      "character": "凵",
+      "main_id": 20,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B07",
+      "character": "卩",
+      "main_id": 21,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B07",
+      "character": "厶",
+      "main_id": 25,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B07",
+      "character": "廴",
+      "main_id": 26,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B07",
+      "character": "艹",
+      "main_id": 30,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B07",
+      "character": "廾",
+      "main_id": 32,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B07",
+      "character": "宀",
+      "main_id": 48,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B07",
+      "character": "辶",
+      "main_id": 49,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B07",
+      "character": "彐",
+      "main_id": 50,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B08",
+      "character": "丨",
+      "main_id": 2,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B08",
+      "character": "丿",
+      "main_id": 3,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B08",
+      "character": "丶",
+      "main_id": 4,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B08",
+      "character": "乛",
+      "main_id": 5,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B08",
+      "character": "尢",
+      "main_id": 34,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B08",
+      "character": "弋",
+      "main_id": 35,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B08",
+      "character": "囗",
+      "main_id": 38,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B08",
+      "character": "彳",
+      "main_id": 41,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B08",
+      "character": "彡",
+      "main_id": 42,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B08",
+      "character": "夂",
+      "main_id": 44,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B09",
+      "character": "韦",
+      "main_id": 63,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B09",
+      "character": "支",
+      "main_id": 65,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B09",
+      "character": "比",
+      "main_id": 71,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B09",
+      "character": "气",
+      "main_id": 81,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B09",
+      "character": "长",
+      "main_id": 83,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B09",
+      "character": "片",
+      "main_id": 84,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B09",
+      "character": "斤",
+      "main_id": 85,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B09",
+      "character": "爪",
+      "main_id": 86,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B09",
+      "character": "父",
+      "main_id": 87,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B09",
+      "character": "文",
+      "main_id": 93,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B10",
+      "character": "丬",
+      "main_id": 45,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B10",
+      "character": "幺",
+      "main_id": 59,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B10",
+      "character": "攴",
+      "main_id": 74,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B10",
+      "character": "氏",
+      "main_id": 89,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B10",
+      "character": "欠",
+      "main_id": 90,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B10",
+      "character": "风",
+      "main_id": 91,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B10",
+      "character": "方",
+      "main_id": 94,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B10",
+      "character": "斗",
+      "main_id": 96,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B10",
+      "character": "户",
+      "main_id": 97,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B10",
+      "character": "心",
+      "main_id": 98,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B11",
+      "character": "示",
+      "main_id": 100,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B11",
+      "character": "甘",
+      "main_id": 101,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B11",
+      "character": "龙",
+      "main_id": 103,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B11",
+      "character": "业",
+      "main_id": 104,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B11",
+      "character": "罒",
+      "main_id": 107,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B11",
+      "character": "皿",
+      "main_id": 108,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B11",
+      "character": "生",
+      "main_id": 109,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B11",
+      "character": "矢",
+      "main_id": 110,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B11",
+      "character": "禾",
+      "main_id": 111,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    },
+    {
+      "batch_id": "B11",
+      "character": "瓜",
+      "main_id": 113,
+      "prior_status": "baseline_2009_reviewed_2022_pending",
+      "baseline_source": "S01-2009",
+      "baseline_evidence": {
+        "source_id": "S01-2009",
+        "status": "reviewed_baseline_index",
+        "reviewed_pdf_pages": [
+          6,
+          7,
+          8
+        ],
+        "limits": "支持2009版201主部首中间索引及main_id；不替代GF0011—2022逐项身份。"
+      },
+      "result": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
+      "reviewed_claim": {
+        "main_radical_membership_continuity": true,
+        "main_id_continuity": true
+      },
+      "still_pending": [
+        "2022 exact main-glyph rendering",
+        "2022 attached/variant radical forms",
+        "2022 common radical name where supplied",
+        "2022 international information-processing code where supplied"
+      ]
+    }
+  ],
+  "summary": {
+    "target_count": 80,
+    "membership_continuity_reviewed": 80,
+    "exact_2022_item_fields_reviewed": 0,
+    "exact_2022_item_fields_pending": 80
+  },
+  "limits": [
+    "This evidence does not claim the full GF0011—2022 text was reviewed.",
+    "This evidence does not freeze attached forms or positional variants.",
+    "This evidence does not close position_migration.",
+    "This evidence does not alter P1/P2/P3 field conclusions, artwork, PDF, manifest or release status."
+  ]
+}
