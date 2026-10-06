@@ -76,7 +76,8 @@
         "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
         "component_name": "deferred_P4_GF0011_2022_exact_name_gate_after_S03_no_exact_row",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
-        "whole_character_context": "selected_pending_whole_character_verification"
+        "whole_character_context": "selected_pending_whole_character_verification",
+        "position_migration": "reviewed_P4_self_context_no_position_migration"
       },
       "migration_boundary": "本轮只保留“龠”独立字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
@@ -188,6 +189,48 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 201,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "result": "reviewed_P4_self_context_no_position_migration",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "data/evidence/B21-stroke-order-original-page.json",
+          "pdf_page": 533,
+          "printed_page": 527,
+          "table_no": "6267",
+          "ucs": "09FA0",
+          "whole_order_code": "34125125125125122"
+        },
+        "verified_position": "self",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17
+        ],
+        "mapping_kind": "self_no_position_migration",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_original_page_review",
+        "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
+        "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
       }
     }
   ],
