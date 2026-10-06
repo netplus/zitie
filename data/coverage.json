@@ -131,7 +131,7 @@
       "content_status": "in_progress",
       "generated_main_count": 0,
       "release_eligible": false,
-      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent. P2 fine_stroke_names original-page review completed for this batch; only 牙 remains fail-closed in B05.",
       "structure_evidence": "data/evidence/B04-structure.json",
       "reviewed_fields": [
         "structure_applicability",
@@ -142,7 +142,8 @@
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_crosscheck",
         "fine_stroke_names_secondary_crosscheck_or_locator",
-        "stroke_order_GF0023_original_page_or_applicability"
+        "stroke_order_GF0023_original_page_or_applicability",
+        "fine_stroke_names_P2_normative_original_pages"
       ],
       "stroke_order_locator_evidence": "data/evidence/B04-stroke-order-locator.json",
       "located_fields": [
@@ -151,7 +152,8 @@
       "pronunciation_evidence": "data/evidence/B04-pronunciation.json",
       "stroke_order_crosscheck_evidence": "data/evidence/B04-stroke-order-crosscheck.json",
       "fine_stroke_names_crosscheck_evidence": "data/evidence/B04-fine-stroke-names-crosscheck.json",
-      "stroke_order_original_page_evidence": "data/evidence/B04-stroke-order-original-page.json"
+      "stroke_order_original_page_evidence": "data/evidence/B04-stroke-order-original-page.json",
+      "fine_stroke_names_P2_evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
     },
     "B05": {
       "main_ids": [
@@ -171,7 +173,7 @@
       "content_status": "in_progress",
       "generated_main_count": 0,
       "release_eligible": false,
-      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent. P2 fine_stroke_names original-page review completed for this batch; only 牙 remains fail-closed in B05.",
       "structure_evidence": "data/evidence/B05-structure.json",
       "reviewed_fields": [
         "structure_applicability",
@@ -182,12 +184,14 @@
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_crosscheck",
         "fine_stroke_names_secondary_crosscheck_or_locator",
-        "stroke_order_GF0023_original_page_or_applicability"
+        "stroke_order_GF0023_original_page_or_applicability",
+        "fine_stroke_names_P2_normative_original_pages"
       ],
       "pronunciation_evidence": "data/evidence/B05-pronunciation.json",
       "stroke_order_crosscheck_evidence": "data/evidence/B05-stroke-order-crosscheck.json",
       "fine_stroke_names_crosscheck_evidence": "data/evidence/B05-fine-stroke-names-crosscheck.json",
-      "stroke_order_original_page_evidence": "data/evidence/B05-stroke-order-original-page.json"
+      "stroke_order_original_page_evidence": "data/evidence/B05-stroke-order-original-page.json",
+      "fine_stroke_names_P2_evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
     },
     "B06": {
       "main_ids": [
@@ -216,15 +220,17 @@
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_crosscheck",
         "fine_stroke_names_secondary_crosscheck_or_locator",
-        "stroke_order_GF0023_original_page_or_applicability"
+        "stroke_order_GF0023_original_page_or_applicability",
+        "fine_stroke_names_P2_normative_original_pages"
       ],
-      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent. P2 fine_stroke_names original-page review completed for this batch; only 牙 remains fail-closed in B05.",
       "pronunciation_evidence": "data/evidence/B06-pronunciation.json",
       "stroke_order_crosscheck_evidence": "data/evidence/B06-stroke-order-crosscheck.json",
       "fine_stroke_names_crosscheck_evidence": "data/evidence/B06-fine-stroke-names-crosscheck.json",
       "stroke_order_original_page_evidence": "data/evidence/B06-stroke-order-original-page.json",
       "stroke_order_completion_status": "P1_complete_all_targets_reviewed",
-      "stroke_order_completion_evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json"
+      "stroke_order_completion_evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+      "fine_stroke_names_P2_evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
     },
     "B07": {
       "main_ids": [
@@ -253,15 +259,17 @@
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_crosscheck",
         "fine_stroke_names_secondary_crosscheck_or_locator",
-        "stroke_order_GF0023_original_page_or_applicability"
+        "stroke_order_GF0023_original_page_or_applicability",
+        "fine_stroke_names_P2_normative_original_pages"
       ],
-      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent. P2 fine_stroke_names original-page review completed for this batch; only 牙 remains fail-closed in B05.",
       "pronunciation_evidence": "data/evidence/B07-pronunciation.json",
       "stroke_order_crosscheck_evidence": "data/evidence/B07-stroke-order-crosscheck.json",
       "fine_stroke_names_crosscheck_evidence": "data/evidence/B07-fine-stroke-names-crosscheck.json",
       "stroke_order_original_page_evidence": "data/evidence/B07-stroke-order-original-page.json",
       "stroke_order_completion_status": "P1_complete_all_targets_reviewed",
-      "stroke_order_completion_evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json"
+      "stroke_order_completion_evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+      "fine_stroke_names_P2_evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
     },
     "B08": {
       "main_ids": [
@@ -289,15 +297,17 @@
         "stroke_order_secondary_crosscheck",
         "fine_stroke_names_secondary_crosscheck_or_locator",
         "stroke_order_GF0023_original_page_or_applicability",
-        "stroke_order_GF3002_visible_original_page"
+        "stroke_order_GF3002_visible_original_page",
+        "fine_stroke_names_P2_normative_original_pages"
       ],
-      "limits": "P1 checkpoint: GF0023 exact targets reviewed; four residual single-stroke targets (丨、丿、丶、乛) are additionally closed by exact visible rows in the abridged GF3002—1999 original scan. Other fields remain independent.",
+      "limits": "P1 checkpoint: GF0023 exact targets reviewed; four residual single-stroke targets (丨、丿、丶、乛) are additionally closed by exact visible rows in the abridged GF3002—1999 original scan. Other fields remain independent. P2 fine_stroke_names original-page review completed for this batch; only 牙 remains fail-closed in B05.",
       "stroke_order_crosscheck_evidence": "data/evidence/B08-stroke-order-crosscheck.json",
       "fine_stroke_names_crosscheck_evidence": "data/evidence/B08-fine-stroke-names-crosscheck.json",
       "stroke_order_original_page_evidence": "data/evidence/B08-stroke-order-original-page.json",
       "stroke_order_GF3002_visible_evidence": "data/evidence/B08-stroke-order-gf3002-original-page.json",
       "stroke_order_completion_status": "P1_complete_all_targets_reviewed",
-      "stroke_order_completion_evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json"
+      "stroke_order_completion_evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+      "fine_stroke_names_P2_evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
     },
     "B09": {
       "main_ids": [
@@ -326,13 +336,15 @@
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_crosscheck",
         "fine_stroke_names_secondary_crosscheck_or_locator",
-        "stroke_order_GF0023_original_page_or_applicability"
+        "stroke_order_GF0023_original_page_or_applicability",
+        "fine_stroke_names_P2_normative_original_pages"
       ],
-      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent. P2 fine_stroke_names original-page review completed for this batch; only 牙 remains fail-closed in B05.",
       "pronunciation_evidence": "data/evidence/B09-pronunciation.json",
       "stroke_order_crosscheck_evidence": "data/evidence/B09-stroke-order-crosscheck.json",
       "fine_stroke_names_crosscheck_evidence": "data/evidence/B09-fine-stroke-names-crosscheck.json",
-      "stroke_order_original_page_evidence": "data/evidence/B09-stroke-order-original-page.json"
+      "stroke_order_original_page_evidence": "data/evidence/B09-stroke-order-original-page.json",
+      "fine_stroke_names_P2_evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
     },
     "B10": {
       "main_ids": [
@@ -363,16 +375,18 @@
         "stroke_order_secondary_crosscheck",
         "fine_stroke_names_secondary_crosscheck_or_locator",
         "stroke_order_GF0023_original_page_or_applicability",
-        "stroke_order_GF3002_visible_original_page"
+        "stroke_order_GF3002_visible_original_page",
+        "fine_stroke_names_P2_normative_original_pages"
       ],
-      "limits": "P1 checkpoint: GF0023 exact targets reviewed; residual 丬 is additionally closed by an exact visible row in the abridged GF3002—1999 original scan. Other fields remain independent.",
+      "limits": "P1 checkpoint: GF0023 exact targets reviewed; residual 丬 is additionally closed by an exact visible row in the abridged GF3002—1999 original scan. Other fields remain independent. P2 fine_stroke_names original-page review completed for this batch; only 牙 remains fail-closed in B05.",
       "pronunciation_evidence": "data/evidence/B10-pronunciation.json",
       "stroke_order_crosscheck_evidence": "data/evidence/B10-stroke-order-crosscheck.json",
       "fine_stroke_names_crosscheck_evidence": "data/evidence/B10-fine-stroke-names-crosscheck.json",
       "stroke_order_original_page_evidence": "data/evidence/B10-stroke-order-original-page.json",
       "stroke_order_GF3002_visible_evidence": "data/evidence/B10-stroke-order-gf3002-original-page.json",
       "stroke_order_completion_status": "P1_complete_all_targets_reviewed",
-      "stroke_order_completion_evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json"
+      "stroke_order_completion_evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+      "fine_stroke_names_P2_evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
     },
     "B11": {
       "main_ids": [
@@ -402,15 +416,17 @@
         "pronunciation_or_S03_applicability",
         "stroke_order_secondary_crosscheck",
         "fine_stroke_names_secondary_crosscheck_or_locator",
-        "stroke_order_GF0023_original_page_or_applicability"
+        "stroke_order_GF0023_original_page_or_applicability",
+        "fine_stroke_names_P2_normative_original_pages"
       ],
-      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent.",
+      "limits": "P1 checkpoint: exact GF0023 original-page targets are reviewed; targets not located in the reviewed main-table range remain pending alternative normative source. fine_stroke_names and other fields are independent. P2 fine_stroke_names original-page review completed for this batch; only 牙 remains fail-closed in B05.",
       "pronunciation_evidence": "data/evidence/B11-pronunciation.json",
       "stroke_order_crosscheck_evidence": "data/evidence/B11-stroke-order-crosscheck.json",
       "fine_stroke_names_crosscheck_evidence": "data/evidence/B11-fine-stroke-names-crosscheck.json",
       "stroke_order_original_page_evidence": "data/evidence/B11-stroke-order-original-page.json",
       "stroke_order_completion_status": "P1_complete_all_targets_reviewed",
-      "stroke_order_completion_evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json"
+      "stroke_order_completion_evidence": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+      "fine_stroke_names_P2_evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
     },
     "B12": {
       "main_ids": [
@@ -810,7 +826,7 @@
     ],
     "next_assignment_starts_at": null,
     "next_work": "P2_fine_stroke_names_normative_original_page_closure",
-    "note": "P1 complete: 201/201 stroke_order reviewed from applicable normative original pages; residual queue 0. Active remaining phase is P2. content_ready remains B01-B03.",
+    "note": "P2 active. B04-B11 80 targets completed fine_stroke_names normative original-page review: 79 reviewed, 1 conflict_fail_closed (牙). P1 remains 201/201 stroke_order reviewed. content_ready remains B01-B03.",
     "stroke_order_reviewed_main_count": 201,
     "stroke_order_pending_main_count": 0,
     "active_remaining_phase": "P2"
