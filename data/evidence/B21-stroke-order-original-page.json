@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_original_page_review",
+  "phase": "P1",
+  "batch_id": "B21",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S02",
+    "publication_id": "GF0023—2020",
+    "title": "通用规范汉字笔顺规范",
+    "sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
+    "bytes": 51412684,
+    "pages": 581,
+    "recovery_manifest": "sources/normative-access.json",
+    "recovery_run_id": 37402630995,
+    "recovery_artifact_id": 11385916300,
+    "reviewed_pdf_pages": [
+      533
+    ],
+    "method": "verified artifact recovery -> local original PDF render -> exact target-row visual review; PDF text layer used only as an index for row/table_no/UCS/order digits"
+  },
+  "reviewed_field": "stroke_order",
+  "entries": [
+    {
+      "character": "龠",
+      "main_id": 201,
+      "result": "reviewed_exact_GF0023_2020_original_page",
+      "pdf_page": 533,
+      "printed_page": 527,
+      "order_code": "34125125125125122",
+      "table_no": "6267",
+      "ucs": "09FA0",
+      "stroke_count": 17,
+      "canonical_candidate": "34125125125125122",
+      "visual_review": true
+    }
+  ],
+  "summary": {
+    "target_count": 1,
+    "reviewed_exact": 1,
+    "exact_target_not_located": 0,
+    "normative_code_conflicts": 0
+  },
+  "limits": [
+    "只有实际在GF0023原页精确定位并视觉核对的目标才升级stroke_order reviewed。",
+    "本证据只关闭stroke_order，不授予fine_stroke_names、GF0011—2022身份、位置变体或artwork结论。"
+  ]
+}

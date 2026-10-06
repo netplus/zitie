@@ -721,11 +721,30 @@
         "baseline_identity",
         "main_id",
         "baseline_stroke_group",
-        "pronunciation_or_S03_applicability"
+        "pronunciation_or_S03_applicability",
+        "stroke_order_GF0023_original_page_or_applicability"
       ],
-      "limits": "阶段1字段级检查点；S03仅在精确目标部件名称栏直接给出目标自身括号拼音时关闭采用读音；名称型标签、其它例字读音或无精确整形条目均保持pending。GF0011—2022精确身份、笔顺/细笔名和正式位置变体继续按各批证据状态处理。",
+      "limits": "阶段1字段级检查点；B20十项stroke_order已由GF0023—2020精确目标原页视觉复核关闭。S03采用读音/名称、fine_stroke_names、GF0011—2022精确身份和位置迁移仍按各自证据状态独立处理。",
       "pronunciation_evidence": "data/evidence/B20-pronunciation.json",
-      "component_name_evidence": "data/evidence/B20-component-name.json"
+      "component_name_evidence": "data/evidence/B20-component-name.json",
+      "stroke_order_original_page_evidence": "data/evidence/B20-stroke-order-original-page.json"
+    },
+    "B21": {
+      "main_ids": [
+        201
+      ],
+      "content_record": "data/B21.json",
+      "content_status": "in_progress",
+      "generated_main_count": 0,
+      "release_eligible": false,
+      "reviewed_fields": [
+        "baseline_identity",
+        "main_id",
+        "baseline_stroke_group",
+        "stroke_order_GF0023_original_page_or_applicability"
+      ],
+      "limits": "P1 checkpoint: 龠的stroke_order已由GF0023—2020精确目标原页视觉复核关闭；fine_stroke_names、采用读音、名称、结构、GF0011—2022精确身份和位置迁移仍独立pending。",
+      "stroke_order_original_page_evidence": "data/evidence/B21-stroke-order-original-page.json"
     }
   },
   "default_status": {

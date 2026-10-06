@@ -29,16 +29,19 @@ P0已完成：2026-10-06新的`source-probe` run 37402630995成功，artifact 11
 
 第二轮B12—B19共80项也已完成GF0023原页复核：68项精确命中并升级为`reviewed_GF0023_2020_original_page`；12项在目标数字笔顺码排序邻接区间的原页中仍未见精确目标，继续pending并转S04/其它适用规范；68项规范码与既有secondary locator一致，0冲突。
 
-前两轮累计：**123/160 reviewed，37/160 pending**。下一步处理B20/B21，然后集中处理前两轮37项及B20/B21可能产生的P1残余。
+第三轮B20—B21共11项也已完成GF0023原页复核：**11/11精确命中，0 pending，0 conflict**。
+
+GF0023主表阶段至此已扫完B04—B21全部171项：**134/171 reviewed，37/171 residual**。加上B01—B03既有30项，全书stroke_order当前为**164/201 reviewed，37/201 residual**。37项集合已经固定，下一步不再扩GF0023批次，直接转S04/其它适用规范逐项关闭。
 
 ## P1 笔顺规范原页收口
 
 目标：关闭B04—B21的`stroke_order`。
 
 执行顺序：
-1. B04—B11：已有canonical候选码 + secondary crosscheck，80项；
-2. B12—B19：已有secondary locator，80项；
-3. B20—B21及前两轮遗漏/冲突。
+1. B04—B11：GF0023原页review已完成；
+2. B12—B19：GF0023原页review已完成；
+3. B20—B21：GF0023原页review已完成；
+4. 当前仅剩37项GF0023未精确定位目标，统一转S04/其它适用规范做residual closure。
 
 原则：
 - secondary locator只负责找字、找页，不授予最终结论；
