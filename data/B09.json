@@ -53,7 +53,7 @@
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -63,8 +63,7 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "fine_stroke_names已与cnchar二次逐笔细分类数据精确一致；规范原页review仍待完成"
+        "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -170,6 +169,31 @@
         "ucs": "097E6",
         "order_code": "1152",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "横",
+          "横",
+          "横折钩",
+          "竖"
+        ],
+        "direct_GF2001_reference": null,
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B09-stroke-order-original-page.json",
+          "pdf_page": 12,
+          "printed_page": 6,
+          "table_no": "3509",
+          "ucs": "097E6",
+          "order_code": "1152",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       }
     },
     {
@@ -212,7 +236,7 @@
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_fine_stroke_names_source_ambiguous_candidate_compatible_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -223,8 +247,7 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "fine_stroke_names与cnchar二次数据兼容，但该数据源自身存在同码双名；须回规范原页裁决"
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -330,6 +353,31 @@
         "ucs": "0652F",
         "order_code": "1254",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "横",
+          "竖",
+          "横撇",
+          "捺"
+        ],
+        "direct_GF2001_reference": null,
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B09-stroke-order-original-page.json",
+          "pdf_page": 12,
+          "printed_page": 6,
+          "table_no": "0089",
+          "ucs": "0652F",
+          "order_code": "1254",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       }
     },
     {
@@ -372,7 +420,7 @@
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -383,8 +431,7 @@
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
-        "fine_stroke_names已与cnchar二次逐笔细分类数据精确一致；规范原页review仍待完成"
+        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -489,6 +536,31 @@
         "ucs": "06BD4",
         "order_code": "1535",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "横",
+          "竖提",
+          "撇",
+          "竖弯钩"
+        ],
+        "direct_GF2001_reference": null,
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B09-stroke-order-original-page.json",
+          "pdf_page": 13,
+          "printed_page": 7,
+          "table_no": "0105",
+          "ucs": "06BD4",
+          "order_code": "1535",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       }
     },
     {
@@ -531,7 +603,7 @@
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -540,8 +612,7 @@
       "migration_boundary": "“汽”作为整字迁移语境；末笔细名需规范原页确认。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
-        "fine_stroke_names已与cnchar二次逐笔细分类数据精确一致；规范原页review仍待完成"
+        "S03目标部件名称条目尚未逐项定位并实际审读"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -647,6 +718,31 @@
         "ucs": "06C14",
         "order_code": "3115",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "撇",
+          "横",
+          "横",
+          "横斜钩"
+        ],
+        "direct_GF2001_reference": null,
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B09-stroke-order-original-page.json",
+          "pdf_page": 14,
+          "printed_page": 8,
+          "table_no": "0122",
+          "ucs": "06C14",
+          "order_code": "3115",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       }
     },
     {
@@ -689,7 +785,7 @@
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -698,8 +794,7 @@
       "migration_boundary": "“张”只作右部语境；位置变形不从独体形自动外推。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
-        "fine_stroke_names已与cnchar二次逐笔细分类数据精确一致；规范原页review仍待完成"
+        "S03目标部件名称条目尚未逐项定位并实际审读"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -805,6 +900,31 @@
         "ucs": "0957F",
         "order_code": "3154",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "撇",
+          "横",
+          "竖提",
+          "捺"
+        ],
+        "direct_GF2001_reference": "5.6 竖提",
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B09-stroke-order-original-page.json",
+          "pdf_page": 14,
+          "printed_page": 8,
+          "table_no": "0127",
+          "ucs": "0957F",
+          "order_code": "3154",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       }
     },
     {
@@ -847,7 +967,7 @@
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -856,8 +976,7 @@
       "migration_boundary": "“版”只作左旁语境；片旁比例与整字关系另核。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
-        "fine_stroke_names已与cnchar二次逐笔细分类数据精确一致；规范原页review仍待完成"
+        "S03目标部件名称条目尚未逐项定位并实际审读"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -963,6 +1082,31 @@
         "ucs": "07247",
         "order_code": "3215",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "撇",
+          "竖",
+          "横",
+          "横折"
+        ],
+        "direct_GF2001_reference": null,
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B09-stroke-order-original-page.json",
+          "pdf_page": 14,
+          "printed_page": 8,
+          "table_no": "0130",
+          "ucs": "07247",
+          "order_code": "3215",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       }
     },
     {
@@ -1005,7 +1149,7 @@
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -1014,8 +1158,7 @@
       "migration_boundary": "“新”用于观察斤作右部；整字完整时序另核。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
-        "fine_stroke_names已与cnchar二次逐笔细分类数据精确一致；规范原页review仍待完成"
+        "S03目标部件名称条目尚未逐项定位并实际审读"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1121,6 +1264,31 @@
         "ucs": "065A4",
         "order_code": "3312",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "撇",
+          "撇",
+          "横",
+          "竖"
+        ],
+        "direct_GF2001_reference": null,
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B09-stroke-order-original-page.json",
+          "pdf_page": 15,
+          "printed_page": 9,
+          "table_no": "0137",
+          "ucs": "065A4",
+          "order_code": "3312",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       }
     },
     {
@@ -1163,7 +1331,7 @@
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -1172,8 +1340,7 @@
       "migration_boundary": "“爬”只作完整整字语境；爫不由独体爪自动推广。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
-        "fine_stroke_names已与cnchar二次逐笔细分类数据精确一致；规范原页review仍待完成"
+        "S03目标部件名称条目尚未逐项定位并实际审读"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1279,6 +1446,31 @@
         "ucs": "0722A",
         "order_code": "3324",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "撇",
+          "撇",
+          "竖",
+          "捺"
+        ],
+        "direct_GF2001_reference": null,
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B09-stroke-order-original-page.json",
+          "pdf_page": 15,
+          "printed_page": 9,
+          "table_no": "0138",
+          "ucs": "0722A",
+          "order_code": "3324",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       }
     },
     {
@@ -1321,7 +1513,7 @@
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -1330,8 +1522,7 @@
       "migration_boundary": "“爷”用于观察父作上部；简化后的整字结构另核。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
-        "fine_stroke_names已与cnchar二次逐笔细分类数据精确一致；规范原页review仍待完成"
+        "S03目标部件名称条目尚未逐项定位并实际审读"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1437,6 +1628,31 @@
         "ucs": "07236",
         "order_code": "3434",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "撇",
+          "点",
+          "撇",
+          "捺"
+        ],
+        "direct_GF2001_reference": null,
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B09-stroke-order-original-page.json",
+          "pdf_page": 15,
+          "printed_page": 9,
+          "table_no": "0141",
+          "ucs": "07236",
+          "order_code": "3434",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       }
     },
     {
@@ -1479,7 +1695,7 @@
         "structure": "reviewed_S07_GF0013_2009_undecomposable",
         "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "secondary_fine_stroke_names_crosschecked_original_page_pending",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_non_authoritative",
@@ -1488,8 +1704,7 @@
       "migration_boundary": "“纹”作为右部语境；独体与偏旁比例变化另核。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03目标部件名称条目尚未逐项定位并实际审读",
-        "fine_stroke_names已与cnchar二次逐笔细分类数据精确一致；规范原页review仍待完成"
+        "S03目标部件名称条目尚未逐项定位并实际审读"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1595,6 +1810,31 @@
         "ucs": "06587",
         "order_code": "4134",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "点",
+          "横",
+          "撇",
+          "捺"
+        ],
+        "direct_GF2001_reference": null,
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B09-stroke-order-original-page.json",
+          "pdf_page": 16,
+          "printed_page": 10,
+          "table_no": "0161",
+          "ucs": "06587",
+          "order_code": "4134",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "按GF2001—2001术语、折笔分类与命名规则，对照目标的规范原页字形/累计笔形逐笔核对。"
       }
     }
   ],
