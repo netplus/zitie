@@ -1300,7 +1300,7 @@
       "main_id": 148,
       "stroke_count": 6,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
-      "order_code_candidate": null,
+      "order_code_candidate": "554234",
       "stroke_names_candidate": null,
       "tips": [
         "先把糸作为六画基线主项识别；折点类细笔名和逐笔次序待规范原页确认。",
@@ -1333,7 +1333,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "reviewed_S03_GF0014_2009",
@@ -1348,8 +1348,7 @@
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
-        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级",
-        "GF0023—2020原页已按笔顺码排序邻接区间核对，未见精确目标条目；stroke_order转S04/其它适用规范继续关闭"
+        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级"
       ],
       "component_name_status": "reviewed_S03_GF0014_2009",
       "structure_review": {
@@ -1448,21 +1447,17 @@
         "cjklib_primary": null
       },
       "stroke_order_review": {
-        "source_id": "S02",
-        "publication_id": "GF0023—2020",
-        "evidence": "data/evidence/B15-stroke-order-original-page.json",
-        "reviewed_pdf_pages": [
-          39
-        ],
-        "secondary_candidate_order_code": "554234",
-        "sort_gap_review": {
-          "previous_table_no": "0597",
-          "previous_order_code": "551534",
-          "next_table_no": "0598",
-          "next_order_code": "555454"
-        },
-        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
-        "limits": "按GF0023笔顺码排序邻接区间查看规范原页，未见精确目标条目；不据此判定该目标没有规范笔顺，转S04/其它适用规范继续关闭。"
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C（规范性附录：汉字笔顺序）",
+        "evidence": "data/evidence/B15-stroke-order-gbt25741-appendix-c.json",
+        "pdf_page": 18,
+        "printed_page": 328,
+        "table_sequence": 1508,
+        "stroke_count": 6,
+        "order_code": "554234",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
       }
     },
     {

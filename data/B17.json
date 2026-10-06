@@ -18,7 +18,7 @@
       "main_id": 161,
       "stroke_count": 7,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
-      "order_code_candidate": null,
+      "order_code_candidate": "3431234",
       "stroke_names_candidate": null,
       "tips": [
         "先识别釆的七画基线主形；上部撇点与下部笔组的真实次序待目标行确认。",
@@ -49,7 +49,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "secondary_fine_stroke_names_located_unambiguous_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
@@ -64,8 +64,7 @@
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "fine_stroke_names已取得cnchar二次单义逐笔序列；规范原页review仍待完成",
-        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级",
-        "GF0023—2020原页已按笔顺码排序邻接区间核对，未见精确目标条目；stroke_order转S04/其它适用规范继续关闭"
+        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -172,21 +171,17 @@
         "cjklib_primary": null
       },
       "stroke_order_review": {
-        "source_id": "S02",
-        "publication_id": "GF0023—2020",
-        "evidence": "data/evidence/B17-stroke-order-original-page.json",
-        "reviewed_pdf_pages": [
-          52
-        ],
-        "secondary_candidate_order_code": "3431234",
-        "sort_gap_review": {
-          "previous_table_no": "3738",
-          "previous_order_code": "3414431",
-          "next_table_no": "0797",
-          "next_order_code": "3434121"
-        },
-        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
-        "limits": "按GF0023笔顺码排序邻接区间查看规范原页，未见精确目标条目；不据此判定该目标没有规范笔顺，转S04/其它适用规范继续关闭。"
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C（规范性附录：汉字笔顺序）",
+        "evidence": "data/evidence/B17-stroke-order-gbt25741-appendix-c.json",
+        "pdf_page": 26,
+        "printed_page": 336,
+        "table_sequence": 2198,
+        "stroke_count": 7,
+        "order_code": "3431234",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
       }
     },
     {
@@ -1464,7 +1459,7 @@
       "main_id": 169,
       "stroke_count": 8,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
-      "order_code_candidate": null,
+      "order_code_candidate": "12251112",
       "stroke_names_candidate": null,
       "tips": [
         "先识别龺的八画基线主形；内部十与日形笔组的真实时序待原页核验。",
@@ -1495,7 +1490,7 @@
         "target_identity": "baseline_2009_reviewed_2022_pending",
         "structure": "S07_reviewed_no_exact_undecomposable_entry_alternative_source_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
-        "stroke_order": "GF0023_2020_original_main_table_reviewed_exact_target_not_located_alternative_source_pending",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "secondary_fine_stroke_dataset_target_missing_original_page_pending",
         "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
         "component_name": "S03_reviewed_no_exact_standalone_row_alternative_source_pending",
@@ -1510,8 +1505,7 @@
         "GF0013—2009独体字表已审读但未见本目标的精确独立整形条目；structure等待其它适用权威来源关闭",
         "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "cnchar二次细笔数据未覆盖该目标；fine_stroke_names继续等待GF2001/GF0023/S04等适用规范原页",
-        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级",
-        "GF0023—2020原页已按笔顺码排序邻接区间核对，未见精确目标条目；stroke_order转S04/其它适用规范继续关闭"
+        "cjklib无本目标条目；保留既有cnchar locator/状态，不据此降级或升级"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1554,21 +1548,17 @@
         "cjklib_primary": null
       },
       "stroke_order_review": {
-        "source_id": "S02",
-        "publication_id": "GF0023—2020",
-        "evidence": "data/evidence/B17-stroke-order-original-page.json",
-        "reviewed_pdf_pages": [
-          72
-        ],
-        "secondary_candidate_order_code": "12251112",
-        "sort_gap_review": {
-          "previous_table_no": "1011",
-          "previous_order_code": "12251111",
-          "next_table_no": "6662",
-          "next_order_code": "12251515"
-        },
-        "result": "GF0023_2020_original_main_table_reviewed_exact_target_not_located",
-        "limits": "按GF0023笔顺码排序邻接区间查看规范原页，未见精确目标条目；不据此判定该目标没有规范笔顺，转S04/其它适用规范继续关闭。"
+        "source_id": "S09",
+        "publication_id": "GB/T 25741—2010",
+        "appendix": "C（规范性附录：汉字笔顺序）",
+        "evidence": "data/evidence/B17-stroke-order-gbt25741-appendix-c.json",
+        "pdf_page": 35,
+        "printed_page": 345,
+        "table_sequence": 2960,
+        "stroke_count": 8,
+        "order_code": "12251112",
+        "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+        "visual_review": true
       }
     },
     {

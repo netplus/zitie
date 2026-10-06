@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_original_page_review",
+  "phase": "P1",
+  "batch_id": "B15",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S09",
+    "publication_id": "GB/T 25741—2010",
+    "appendix": "C（规范性附录：汉字笔顺序）",
+    "sha256": "0514f50e310ae2eb32a743a3813d2630be9accec28b8bf244b06499d1d737baf",
+    "bytes": 43054573,
+    "pages": 323,
+    "evidence_ledger": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json"
+  },
+  "reviewed_field": "stroke_order",
+  "entries": [
+    {
+      "batch_id": "B15",
+      "character": "糸",
+      "main_id": 148,
+      "pdf_page": 18,
+      "printed_page": 328,
+      "table_sequence": 1508,
+      "stroke_count": 6,
+      "order_code": "554234",
+      "visual_review": true,
+      "result": "reviewed_exact_GBT25741_2010_appendix_C_original_page",
+      "canonical_candidate_match": true
+    }
+  ],
+  "summary": {
+    "target_count": 1,
+    "reviewed_exact": 1,
+    "normative_order_conflicts": 0
+  },
+  "limits": [
+    "Only the exact Appendix C rows visually reviewed here are upgraded.",
+    "No other field is closed by this evidence."
+  ]
+}
