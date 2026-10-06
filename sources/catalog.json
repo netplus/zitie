@@ -781,6 +781,30 @@
           "result": "78/80 representative whole-character migration contexts visually reviewed; 2 fail-closed mapping conflicts",
           "evidence": "data/evidence/P4-B12-B19-position-migration-whole-character.json",
           "limits": "Supports only recorded representative whole-character contexts and stroke-index mappings; does not promote formal GF0011—2022 attached-form status."
+        },
+        {
+          "date": "2026-10-06",
+          "scope": [
+            "B01",
+            "B02",
+            "B03",
+            "B04",
+            "B05",
+            "B20",
+            "B21"
+          ],
+          "target_count": 61,
+          "reviewed": 60,
+          "conflict_fail_closed": 1,
+          "conflict_characters": [
+            "瓦"
+          ],
+          "result": "final P4 position_migration closure round; self-context regression + B04/B05 embedded mappings",
+          "evidence": [
+            "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+            "data/evidence/P4-B04-B05-position-migration-final.json"
+          ],
+          "limits": "Supports only reviewed representative whole-character/self contexts and stored stroke-index mappings; does not promote formal GF0011—2022 attached-form identity."
         }
       ]
     },

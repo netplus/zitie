@@ -1,0 +1,720 @@
+{
+  "schema_version": 1,
+  "record_kind": "P4_position_migration_whole_character_review",
+  "phase": "P4",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "scope": {
+    "batches": [
+      "B04",
+      "B05"
+    ],
+    "target_count": 20
+  },
+  "source_review_origin": {
+    "source_id": "S02",
+    "publication_id": "GF0023—2020",
+    "prior_evidence_branch": "feat/p4-position-migration-b04-b11-20261006",
+    "prior_evidence_path": "data/evidence/P4-B04-B11-whole-character-position-original-page.json",
+    "boundary": "Prior evidence visually reviewed the exact whole-character context row. This record adds only stroke-index/mapping adjudication needed for P4 position_migration."
+  },
+  "entries": [
+    {
+      "batch_id": "B04",
+      "character": "干",
+      "main_id": 27,
+      "target_order_code": "112",
+      "target_stroke_count": 3,
+      "whole_character": {
+        "character": "刊",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 17,
+        "printed_page": 11,
+        "table_no": "0191",
+        "ucs": "0520A",
+        "stored_whole_order_code": "11222",
+        "stored_whole_order_code_complete": true
+      },
+      "verified_position": "left",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B04",
+      "character": "寸",
+      "main_id": 31,
+      "target_order_code": "124",
+      "target_stroke_count": 3,
+      "whole_character": {
+        "character": "村",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 44,
+        "printed_page": 38,
+        "table_no": "0682",
+        "ucs": "06751",
+        "stored_whole_order_code": "1234124",
+        "stored_whole_order_code_complete": true
+      },
+      "verified_position": "right",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [
+        5,
+        6,
+        7
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B04",
+      "character": "夕",
+      "main_id": 43,
+      "target_order_code": "354",
+      "target_stroke_count": 3,
+      "whole_character": {
+        "character": "外",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 22,
+        "printed_page": 16,
+        "table_no": "0293",
+        "ucs": "05916",
+        "stored_whole_order_code": "35424",
+        "stored_whole_order_code_complete": true
+      },
+      "verified_position": "left",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B04",
+      "character": "广",
+      "main_id": 46,
+      "target_order_code": "413",
+      "target_stroke_count": 3,
+      "whole_character": {
+        "character": "扩",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 26,
+        "printed_page": 20,
+        "table_no": "0364",
+        "ucs": "06269",
+        "stored_whole_order_code": "121413",
+        "stored_whole_order_code_complete": true
+      },
+      "verified_position": "right",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [
+        4,
+        5,
+        6
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B04",
+      "character": "门",
+      "main_id": 47,
+      "target_order_code": "425",
+      "target_stroke_count": 3,
+      "whole_character": {
+        "character": "们",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 21,
+        "printed_page": 15,
+        "table_no": "0273",
+        "ucs": "04EEC",
+        "stored_whole_order_code": "32425",
+        "stored_whole_order_code_complete": true
+      },
+      "verified_position": "right",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [
+        3,
+        4,
+        5
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B04",
+      "character": "尸",
+      "main_id": 51,
+      "target_order_code": "513",
+      "target_stroke_count": 3,
+      "whole_character": {
+        "character": "居",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 112,
+        "printed_page": 106,
+        "table_no": "1308",
+        "ucs": "05C45",
+        "stored_whole_order_code": "5131225",
+        "stored_whole_order_code_complete": false
+      },
+      "verified_position": "upper_left_enclosing",
+      "structure_class": "semi_enclosing",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3
+      ],
+      "mapping_kind": "contiguous_prefix_mapping_from_visually_reviewed_row",
+      "full_whole_character_sequence_required": true,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; stored code is truncated only after the target prefix, so the target component prefix mapping remains reliable.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B04",
+      "character": "己",
+      "main_id": 52,
+      "target_order_code": "515",
+      "target_stroke_count": 3,
+      "whole_character": {
+        "character": "记",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 24,
+        "printed_page": 18,
+        "table_no": "0323",
+        "ucs": "08BB0",
+        "stored_whole_order_code": "45515",
+        "stored_whole_order_code_complete": true
+      },
+      "verified_position": "right",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [
+        3,
+        4,
+        5
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B04",
+      "character": "弓",
+      "main_id": 53,
+      "target_order_code": "515",
+      "target_stroke_count": 3,
+      "whole_character": {
+        "character": "引",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 16,
+        "printed_page": 10,
+        "table_no": "0176",
+        "ucs": "05F15",
+        "stored_whole_order_code": "5152",
+        "stored_whole_order_code_complete": true
+      },
+      "verified_position": "left",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B04",
+      "character": "飞",
+      "main_id": 57,
+      "target_order_code": "534",
+      "target_stroke_count": 3,
+      "whole_character": {
+        "character": "飞",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 11,
+        "printed_page": 5,
+        "table_no": "0069",
+        "ucs": "098DE",
+        "stored_whole_order_code": "534",
+        "stored_whole_order_code_complete": true
+      },
+      "verified_position": "self",
+      "structure_class": "undecomposable",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3
+      ],
+      "mapping_kind": "self_no_position_migration",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B04",
+      "character": "马",
+      "main_id": 58,
+      "target_order_code": "551",
+      "target_stroke_count": 3,
+      "whole_character": {
+        "character": "驴",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 63,
+        "printed_page": 57,
+        "table_no": "0941",
+        "ucs": "09A74",
+        "stored_whole_order_code": "5514513",
+        "stored_whole_order_code_complete": true
+      },
+      "verified_position": "left",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B05",
+      "character": "无",
+      "main_id": 62,
+      "target_order_code": "1135",
+      "target_stroke_count": 4,
+      "whole_character": {
+        "character": "抚",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 40,
+        "printed_page": 34,
+        "table_no": "0613",
+        "ucs": "0629A",
+        "stored_whole_order_code": "1211135",
+        "stored_whole_order_code_complete": true
+      },
+      "verified_position": "right",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B05",
+      "character": "犬",
+      "main_id": 66,
+      "target_order_code": "1344",
+      "target_stroke_count": 4,
+      "whole_character": {
+        "character": "状",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 54,
+        "printed_page": 48,
+        "table_no": "0828",
+        "ucs": "072B6",
+        "stored_whole_order_code": "4121344",
+        "stored_whole_order_code_complete": true
+      },
+      "verified_position": "right",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B05",
+      "character": "歹",
+      "main_id": 67,
+      "target_order_code": "1354",
+      "target_stroke_count": 4,
+      "whole_character": {
+        "character": "残",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 137,
+        "printed_page": 131,
+        "table_no": "1460",
+        "ucs": "06B8B",
+        "stored_whole_order_code": "1354115",
+        "stored_whole_order_code_complete": false
+      },
+      "verified_position": "left",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mapping_kind": "contiguous_prefix_mapping_from_visually_reviewed_row",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; stored code is truncated only after the target prefix, so the target component prefix mapping remains reliable.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B05",
+      "character": "车",
+      "main_id": 68,
+      "target_order_code": "1512",
+      "target_stroke_count": 4,
+      "whole_character": {
+        "character": "辆",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 263,
+        "printed_page": 257,
+        "table_no": "2251",
+        "ucs": "08F86",
+        "stored_whole_order_code": "1521125",
+        "stored_whole_order_code_complete": false
+      },
+      "verified_position": "left",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mapping_kind": "contiguous_position_variant_with_stroke_changes",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [
+        {
+          "component_stroke": 3,
+          "target_code": "1",
+          "whole_code": "2"
+        },
+        {
+          "component_stroke": 4,
+          "target_code": "2",
+          "whole_code": "1"
+        }
+      ],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 辆整字原页已核；持久化数字码虽在后段截断，但前4笔完整可见为1521，可可靠映射车[1,2,3,4]并确认第3/4笔由独体1512变为位置形1521。",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B05",
+      "character": "牙",
+      "main_id": 69,
+      "target_order_code": "1523",
+      "target_stroke_count": 4,
+      "whole_character": {
+        "character": "邪",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 29,
+        "printed_page": 23,
+        "table_no": "0405",
+        "ucs": "090AA",
+        "stored_whole_order_code": "152352",
+        "stored_whole_order_code_complete": true
+      },
+      "verified_position": "left",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B05",
+      "character": "戈",
+      "main_id": 70,
+      "target_order_code": "1534",
+      "target_stroke_count": 4,
+      "whole_character": {
+        "character": "划",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 29,
+        "printed_page": 23,
+        "table_no": "0407",
+        "ucs": "05212",
+        "stored_whole_order_code": "153422",
+        "stored_whole_order_code_complete": true
+      },
+      "verified_position": "left",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [
+        1,
+        2,
+        3,
+        4
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B05",
+      "character": "瓦",
+      "main_id": 72,
+      "target_order_code": "1554",
+      "target_stroke_count": 4,
+      "whole_character": {
+        "character": "瓶",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 228,
+        "printed_page": 222,
+        "table_no": "2051",
+        "ucs": "074F6",
+        "stored_whole_order_code": "4311321",
+        "stored_whole_order_code_complete": false
+      },
+      "verified_position": "right",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [],
+      "mapping_kind": "unresolved_component_mapping",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "conflict_fail_closed_P4_whole_character_component_mapping",
+      "notes": "GF0023 瓶整字原页上下文已核，但旧审读记录中的整字数字笔顺在进入瓦部件前即截断；当前无法从已持久化证据可靠恢复瓦的4笔索引与改笔，不据字形常识或secondary数据强行补齐。",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B05",
+      "character": "止",
+      "main_id": 73,
+      "target_order_code": "2121",
+      "target_stroke_count": 4,
+      "whole_character": {
+        "character": "扯",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 41,
+        "printed_page": 35,
+        "table_no": "0624",
+        "ucs": "0626F",
+        "stored_whole_order_code": "1212121",
+        "stored_whole_order_code_complete": true
+      },
+      "verified_position": "right",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B05",
+      "character": "贝",
+      "main_id": 76,
+      "target_order_code": "2534",
+      "target_stroke_count": 4,
+      "whole_character": {
+        "character": "坝",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 41,
+        "printed_page": 35,
+        "table_no": "0629",
+        "ucs": "0575D",
+        "stored_whole_order_code": "1212534",
+        "stored_whole_order_code_complete": true
+      },
+      "verified_position": "right",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [
+        4,
+        5,
+        6,
+        7
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    },
+    {
+      "batch_id": "B05",
+      "character": "见",
+      "main_id": 78,
+      "target_order_code": "2535",
+      "target_stroke_count": 4,
+      "whole_character": {
+        "character": "观",
+        "source_id": "S02",
+        "publication_id": "GF0023—2020",
+        "pdf_page": 38,
+        "printed_page": 32,
+        "table_no": "0586",
+        "ucs": "089C2",
+        "stored_whole_order_code": "542535",
+        "stored_whole_order_code_complete": true
+      },
+      "verified_position": "right",
+      "structure_class": "left_right",
+      "component_stroke_indices_in_whole_character": [
+        3,
+        4,
+        5,
+        6
+      ],
+      "mapping_kind": "contiguous",
+      "full_whole_character_sequence_required": false,
+      "stroke_changes": [],
+      "visual_review": true,
+      "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+      "result": "reviewed_P4_GF0023_whole_character_original_page",
+      "notes": "GF0023 whole-character row was visually reviewed; target coarse stroke sequence maps reliably to the recorded whole-character sequence.",
+      "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+    }
+  ],
+  "summary": {
+    "target_count": 20,
+    "reviewed": 19,
+    "conflict_fail_closed": 1,
+    "ordinary_pending": 0,
+    "conflicts": [
+      "瓦"
+    ],
+    "stroke_change_targets": [
+      "车"
+    ],
+    "full_whole_character_sequence_required": [
+      "尸"
+    ]
+  },
+  "policy": "Close only mappings supported by the persisted original-page review plus a reliable target-to-whole stroke-index mapping. Do not reconstruct truncated whole-character codes beyond the persisted evidence. Fail closed when mapping cannot be recovered.",
+  "limits": [
+    "No formal GF0011—2022 attached-form identity is promoted.",
+    "No secondary source grants position_migration reviewed."
+  ]
+}

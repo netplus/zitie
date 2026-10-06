@@ -119,6 +119,32 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 1,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "result": "reviewed_P4_self_context_no_position_migration",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "reviews/B01-primary.md",
+          "pdf_page": 9,
+          "printed_page": 3,
+          "table_no": null,
+          "ucs": null,
+          "whole_order_code": "1"
+        },
+        "verified_position": "self",
+        "component_stroke_indices_in_whole_character": [
+          1
+        ],
+        "mapping_kind": "self_no_position_migration",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_original_page_review",
+        "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
+        "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
       }
     },
     {
@@ -182,6 +208,33 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 6,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "result": "reviewed_P4_self_context_no_position_migration",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "reviews/B01-primary.md",
+          "pdf_page": 9,
+          "printed_page": 3,
+          "table_no": null,
+          "ucs": null,
+          "whole_order_code": "12"
+        },
+        "verified_position": "self",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2
+        ],
+        "mapping_kind": "self_no_position_migration",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_original_page_review",
+        "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
+        "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
       }
     },
     {
@@ -245,6 +298,33 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 12,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "result": "reviewed_P4_self_context_no_position_migration",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "reviews/B01-primary.md",
+          "pdf_page": 9,
+          "printed_page": 3,
+          "table_no": null,
+          "ucs": null,
+          "whole_order_code": "34"
+        },
+        "verified_position": "self",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2
+        ],
+        "mapping_kind": "self_no_position_migration",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_original_page_review",
+        "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
+        "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
       }
     },
     {
@@ -308,6 +388,33 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 11,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "result": "reviewed_P4_self_context_no_position_migration",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "reviews/B01-primary.md",
+          "pdf_page": 9,
+          "printed_page": 3,
+          "table_no": null,
+          "ucs": null,
+          "whole_order_code": "34"
+        },
+        "verified_position": "self",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2
+        ],
+        "mapping_kind": "self_no_position_migration",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_original_page_review",
+        "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
+        "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
       }
     },
     {
@@ -372,6 +479,34 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 33,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "result": "reviewed_P4_self_context_no_position_migration",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "reviews/B01-primary.md",
+          "pdf_page": 10,
+          "printed_page": 4,
+          "table_no": null,
+          "ucs": null,
+          "whole_order_code": "134"
+        },
+        "verified_position": "self",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3
+        ],
+        "mapping_kind": "self_no_position_migration",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_original_page_review",
+        "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
+        "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
       }
     },
     {
@@ -436,6 +571,34 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 28,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "result": "reviewed_P4_self_context_no_position_migration",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "reviews/B01-primary.md",
+          "pdf_page": 10,
+          "printed_page": 4,
+          "table_no": null,
+          "ucs": null,
+          "whole_order_code": "121"
+        },
+        "verified_position": "self",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3
+        ],
+        "mapping_kind": "self_no_position_migration",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_original_page_review",
+        "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
+        "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
       }
     },
     {
@@ -500,6 +663,34 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 29,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "result": "reviewed_P4_self_context_no_position_migration",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "reviews/B01-primary.md",
+          "pdf_page": 10,
+          "printed_page": 4,
+          "table_no": null,
+          "ucs": null,
+          "whole_order_code": "121"
+        },
+        "verified_position": "self",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3
+        ],
+        "mapping_kind": "self_no_position_migration",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_original_page_review",
+        "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
+        "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
       }
     },
     {
@@ -571,6 +762,34 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 37,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "result": "reviewed_P4_self_context_no_position_migration",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "reviews/B01-primary.md",
+          "pdf_page": 10,
+          "printed_page": 4,
+          "table_no": null,
+          "ucs": null,
+          "whole_order_code": "251"
+        },
+        "verified_position": "self",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3
+        ],
+        "mapping_kind": "self_no_position_migration",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_original_page_review",
+        "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
+        "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
       }
     },
     {
@@ -642,6 +861,34 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 39,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "result": "reviewed_P4_self_context_no_position_migration",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "reviews/B01-primary.md",
+          "pdf_page": 10,
+          "printed_page": 4,
+          "table_no": null,
+          "ucs": null,
+          "whole_order_code": "252"
+        },
+        "verified_position": "self",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3
+        ],
+        "mapping_kind": "self_no_position_migration",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_original_page_review",
+        "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
+        "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
       }
     },
     {
@@ -713,6 +960,34 @@
         "result": "main_radical_membership_and_main_id_continuity_reviewed",
         "main_id": 40,
         "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
+      },
+      "position_migration_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+        "result": "reviewed_P4_self_context_no_position_migration",
+        "whole_character": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "source_evidence": "reviews/B01-primary.md",
+          "pdf_page": 10,
+          "printed_page": 4,
+          "table_no": null,
+          "ucs": null,
+          "whole_order_code": "252"
+        },
+        "verified_position": "self",
+        "component_stroke_indices_in_whole_character": [
+          1,
+          2,
+          3
+        ],
+        "mapping_kind": "self_no_position_migration",
+        "full_whole_character_sequence_required": false,
+        "stroke_changes": [],
+        "visual_review": true,
+        "visual_review_origin": "reused_prior_original_page_review",
+        "notes": "Prior GF0023 original-page review already verified the exact target whole-character row. P4 reuses that actual visual review to close only the self-context/no-position-migration case; it does not claim any embedded attached-form behavior or GF0011—2022 attached-form identity.",
+        "attached_form_boundary": "Self-context review only; no GF0011—2022 attached-form identity is promoted."
       }
     }
   ],
@@ -726,5 +1001,12 @@
     "target_count": 10,
     "evidence": "data/evidence/P4-B01-B03-main-radical-identity-continuity.json",
     "limits": "Does not change existing content_ready/artwork/layout/publication status."
+  },
+  "position_migration_review": {
+    "phase": "P4",
+    "status": "passed_self_context_only",
+    "evidence": "data/evidence/P4-B01-B03-B20-B21-position-migration-self-context.json",
+    "reviewed_main_count": 10,
+    "limits": "Only self-context/no-position-migration is closed for this batch; embedded attached-form behavior remains independent."
   }
 }
