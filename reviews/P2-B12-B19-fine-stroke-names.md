@@ -17,3 +17,7 @@
 - `data/evidence/P2-B16-B19-fine-stroke-names-original-page.json`
 
 本轮只处理fine_stroke_names，不改变pronunciation、component_name、structure、GF0011—2022身份、position migration、artwork、PDF、manifest或release状态。
+
+## Canonical同步状态
+
+B12—B15、B17—B19已成功同步canonical。B16十项的规范原页evidence已经入库并判定为10/10 reviewed，但尝试更新`data/B16.json`时触发tooling_write_blocker，原始错误：`This tool call was blocked by OpenAI because we couldn't determine the safety status of the request.`。按工程约定停止该路径，不使用低层Git对象绕过；B16 canonical留作后续状态债，不把写入失败误记为source blocker或content conflict。
