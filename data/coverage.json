@@ -854,7 +854,7 @@
     "batches_content_in_progress": [],
     "next_assignment_starts_at": null,
     "next_work": "P6_artwork_layout_full_book",
-    "note": "P6 active. All 201 main radicals have immutable Hanzi Writer vector material available with stroke-count compatibility (0 missing/mismatch), but vector availability does not grant artwork approval. B01-B03 total 30 are artwork_ready; B04-B21 171 still require cumulative-stroke visual review against reviewed content evidence.",
+    "note": "P6 active. Vector material coverage is 201/201 compatible. B04-B11 80 cumulative-stroke artwork sheets were manually visually reviewed with 0 artwork conflicts; artwork_ready is now 110/201 (B01-B11). B12-B21 91 remain for artwork QA. Final A4 layout/PDF/manifest/release remain independent.",
     "stroke_order_reviewed_main_count": 201,
     "stroke_order_pending_main_count": 0,
     "active_remaining_phase": "P6",
@@ -1096,13 +1096,50 @@
         "artifact_id": 11435744872
       },
       "artwork_ready": {
-        "main_count": 30,
+        "main_count": 110,
         "batches": [
           "B01",
           "B02",
-          "B03"
+          "B03",
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B09",
+          "B10",
+          "B11"
         ],
-        "note": "B01/B02既有artwork_ready；B03按2026-09-30已完成的真实逐笔矢量复核正规化为artwork_ready。B04—B21仍需逐项累计笔画视觉QA。"
+        "remaining_main_count": 91
+      },
+      "artwork_round1": {
+        "batches": [
+          "B04",
+          "B05",
+          "B06",
+          "B07",
+          "B08",
+          "B09",
+          "B10",
+          "B11"
+        ],
+        "target_count": 80,
+        "reviewed": 80,
+        "conflicts": 0,
+        "ordinary_pending": 0,
+        "workflow_run_id": 37548434948,
+        "artifact_id": 11452390328,
+        "evidence": [
+          "data/evidence/P6-B04-artwork-review.json",
+          "data/evidence/P6-B05-artwork-review.json",
+          "data/evidence/P6-B06-artwork-review.json",
+          "data/evidence/P6-B07-artwork-review.json",
+          "data/evidence/P6-B08-artwork-review.json",
+          "data/evidence/P6-B09-artwork-review.json",
+          "data/evidence/P6-B10-artwork-review.json",
+          "data/evidence/P6-B11-artwork-review.json"
+        ],
+        "review": "reviews/P6-B04-B11-artwork-review-20261007.md"
       }
     }
   }
