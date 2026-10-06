@@ -145,6 +145,17 @@ B12—B19第二轮80项已完成整字迁移原页核验：**78 reviewed + 2 con
 
 后续继续B20/B21、B04/B05及B01—B03位置迁移回归；GF0011—2022正式附形身份仍独立等待逐项官方数据。
 
+### P4 position_migration 收口（2026-10-06）
+
+position_migration 已完成201/201：
+- **198 reviewed**
+- **3 conflict_fail_closed：屮、毋、瓦**
+- **0普通pending**
+
+证据总检查点：`reviews/P4-position-migration-completion-20261006.md`。
+
+P4当前只剩GF0011—2022逐项精确字段门槛：201项主部首集合/main_id连续性已reviewed，但2022精确主形、正式附形、名称、国际编码仍等待正式全文或官方逐项数据。由于该来源尚无可重复公开访问通道，P4保持active，不提前进入P5。
+
 ## P5 内容终审与content_ready收口
 
 目标：把B04—B21逐批验收，而不是继续按字段横向铺开。
