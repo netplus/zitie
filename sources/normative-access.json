@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "as_of": "2026-10-06",
+  "as_of": "2026-10-07",
   "stage": "P0_normative_source_access",
   "status": "operational_verified",
   "policy": {
@@ -240,7 +240,7 @@
       }
     ]
   },
-  "next_stage": "P5_content_ready_final_review",
+  "next_stage": "P6_artwork_layout",
   "current_probe_run": {
     "run_id": 37410985779,
     "artifact_id": 11389595541,
@@ -254,5 +254,5 @@
       "editorial_status": "abridged_not_admissible_for_residual_review"
     }
   },
-  "current_active_stage": "P5"
+  "current_active_stage": "P6"
 }

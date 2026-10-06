@@ -4,7 +4,7 @@
   "batch_id": "B06",
   "version": "content-draft-2026-10-06",
   "title": "二画基础部件与框形",
-  "content_status": "in_progress",
+  "content_status": "content_ready",
   "artwork_status": "deferred",
   "publication_status": "deferred",
   "scope_frozen_for_content": true,
@@ -23,10 +23,10 @@
         "撇"
       ],
       "tips": [
-        "候选写法为先横后撇；正式笔顺结论待原页核验。",
-        "教学时强调两笔分开，不把横与撇连成一笔。"
+        "按“横、撇”的顺序书写，共2画。",
+        "在“原”中处于左上包围；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
       ],
-      "check": "先确认横，再确认撇；当前仅为内容候选。",
+      "check": "共2画：横、撇。",
       "context": {
         "example": "原",
         "position": "upper_left_enclosing",
@@ -54,14 +54,13 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "GF0023—2020整字原页已核“原”：目标部件位于upper_left_enclosing，对应整字笔画索引[1,2]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
-        "S03目标部件名称条目尚未逐项定位并实际审读"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -202,6 +201,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "reviewed_from_S01_2009_baseline",
+          "stroke_order_status": "reviewed_GF0023_2020_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -214,10 +225,10 @@
         "竖折"
       ],
       "tips": [
-        "候选写法为先横，再写竖折形成左、下边。",
-        "右侧保持开口；不能把外框写成封闭框。"
+        "按“横、竖折”的顺序书写，共2画。",
+        "在“区”中处于外框；书写时按完整整字时序处理，不能只把部件自身笔画连续写完。"
       ],
-      "check": "两笔候选：横、竖折；细笔名待原页核验。",
+      "check": "共2画：横、竖折。",
       "context": {
         "example": "区",
         "position": "outer",
@@ -245,14 +256,13 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "GF0023—2020整字原页已核“区”：目标部件位于outer，对应整字笔画索引[1,4]，映射=interleaved_enclosing；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
-        "S03目标部件名称条目尚未逐项定位并实际审读"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "phase": "P3",
@@ -370,6 +380,18 @@
         "visual_review": true,
         "notes": "区 confirms enclosing 匚 is interleaved: stroke 1 opens the frame, inner strokes 2–3 are written, stroke 4 completes 匚.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "reviewed_from_S01_2009_baseline",
+          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -382,10 +404,10 @@
         "点"
       ],
       "tips": [
-        "候选写法为先竖后点。",
-        "点与竖分开落笔，避免把点拖成长横。"
+        "按“竖、点”的顺序书写，共2画。",
+        "在“外”中处于右部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
       ],
-      "check": "候选顺序是竖、点。",
+      "check": "共2画：竖、点。",
       "context": {
         "example": "外",
         "position": "right",
@@ -413,14 +435,13 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "GF0023—2020整字原页已核“外”：目标部件位于right，对应整字笔画索引[4,5]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
-        "S03目标部件名称条目尚未逐项定位并实际审读"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -561,6 +582,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "reviewed_from_S01_2009_baseline",
+          "stroke_order_status": "reviewed_GF0023_2020_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -573,10 +606,10 @@
         "横折钩"
       ],
       "tips": [
-        "候选写法为先左竖，再写横折钩形成上边和右边。",
-        "作为外框时要给内部部件留出空间；整字时序另核。"
+        "按“竖、横折钩”的顺序书写，共2画。",
+        "在“同”中处于外框；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
       ],
-      "check": "第二笔候选为带折钩的整笔。",
+      "check": "共2画：竖、横折钩。",
       "context": {
         "example": "同",
         "position": "outer",
@@ -604,14 +637,13 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "GF0023—2020整字原页已核“同”：目标部件位于outer，对应整字笔画索引[1,2]，映射=contiguous_enclosing；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
-        "S03目标部件名称条目尚未逐项定位并实际审读"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "phase": "P3",
@@ -762,6 +794,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "reviewed_from_S01_2009_baseline",
+          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -774,10 +818,10 @@
         "横折钩"
       ],
       "tips": [
-        "候选写法为先撇，再写横折钩。",
-        "作包围部件时内部字形的先后必须回到完整整字核验。"
+        "按“撇、横折钩”的顺序书写，共2画。",
+        "在“包”中处于外框；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
       ],
-      "check": "候选两笔：撇、横折钩。",
+      "check": "共2画：撇、横折钩。",
       "context": {
         "example": "包",
         "position": "outer",
@@ -805,14 +849,13 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "GF0023—2020整字原页已核“包”：目标部件位于outer，对应整字笔画索引[1,2]，映射=contiguous_enclosing；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
-        "S03目标部件名称条目尚未逐项定位并实际审读"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "phase": "P3",
@@ -963,6 +1006,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "reviewed_from_S01_2009_baseline",
+          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -975,10 +1030,10 @@
         "竖弯钩"
       ],
       "tips": [
-        "候选写法为先撇，再写竖弯钩。",
-        "与“匕”等相似二笔部件只按自身结构教学，不互相套形。"
+        "按“撇、竖弯钩”的顺序书写，共2画。",
+        "在“元”中处于下部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
       ],
-      "check": "第二笔候选为竖弯钩。",
+      "check": "共2画：撇、竖弯钩。",
       "context": {
         "example": "元",
         "position": "bottom",
@@ -1006,14 +1061,13 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "GF0023—2020整字原页已核“元”：目标部件位于bottom，对应整字笔画索引[3,4]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
-        "S03目标部件名称条目尚未逐项定位并实际审读"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1154,6 +1208,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "reviewed_from_S01_2009_baseline",
+          "stroke_order_status": "reviewed_GF0023_2020_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -1166,10 +1232,10 @@
         "竖弯钩"
       ],
       "tips": [
-        "候选写法为先撇，再写竖弯钩。",
-        "与“儿”粗笔类相近，但轮廓和相对位置必须单独核对。"
+        "按“撇、竖弯钩”的顺序书写，共2画。",
+        "在“化”中处于右部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
       ],
-      "check": "候选两笔与“儿”同属粗类35，不代表字形相同。",
+      "check": "共2画：撇、竖弯钩。",
       "context": {
         "example": "化",
         "position": "right",
@@ -1197,14 +1263,13 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "GF0023—2020整字原页已核“化”：目标部件位于right，对应整字笔画索引[3,4]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
-        "S03目标部件名称条目尚未逐项定位并实际审读"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1345,6 +1410,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "reviewed_from_S01_2009_baseline",
+          "stroke_order_status": "reviewed_GF0023_2020_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -1357,10 +1434,10 @@
         "横折弯钩"
       ],
       "tips": [
-        "先撇，再写横折弯钩。",
-        "第二笔转折、弯和钩连续一笔完成。"
+        "按“撇、横折弯钩”的顺序书写，共2画。",
+        "在“机”中处于右部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
       ],
-      "check": "两笔，第二笔为横折弯钩。",
+      "check": "共2画：撇、横折弯钩。",
       "context": {
         "example": "机",
         "position": "right",
@@ -1388,14 +1465,13 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "GF0023—2020整字原页已核“机”：目标部件位于right，对应整字笔画索引[5,6]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
-        "S03目标部件名称条目尚未逐项定位并实际审读"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1534,6 +1610,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "reviewed_from_S01_2009_baseline",
+          "stroke_order_status": "reviewed_GF0023_2020_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -1546,10 +1634,10 @@
         "横"
       ],
       "tips": [
-        "候选写法为先点后横。",
-        "作为字头时只教学实际字中的位置关系，不凭部件形态推断整字笔顺。"
+        "按“点、横”的顺序书写，共2画。",
+        "在“京”中处于上部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
       ],
-      "check": "候选两笔：点、横。",
+      "check": "共2画：点、横。",
       "context": {
         "example": "京",
         "position": "top",
@@ -1577,14 +1665,13 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "GF0023—2020整字原页已核“京”：目标部件位于top，对应整字笔画索引[1,2]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
-        "S03目标部件名称条目尚未逐项定位并实际审读"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "phase": "P3",
@@ -1702,6 +1789,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "reviewed_from_S01_2009_baseline",
+          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     },
     {
@@ -1714,10 +1813,10 @@
         "提"
       ],
       "tips": [
-        "候选写法为先点后提。",
-        "第二笔候选是提，不按普通横处理；细笔名待S03/S05相关原页闭合。"
+        "按“点、提”的顺序书写，共2画。",
+        "在“冷”中处于左部；按P4已核整字时序观察位置变化，不把独体主形机械照搬。"
       ],
-      "check": "候选顺序是点、提。",
+      "check": "共2画：点、提。",
       "context": {
         "example": "冷",
         "position": "left",
@@ -1745,14 +1844,13 @@
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
-        "teaching_text": "drafted",
+        "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
         "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
       },
       "migration_boundary": "GF0023—2020整字原页已核“冷”：目标部件位于left，对应整字笔画索引[1,2]，映射=contiguous；未观察到细笔类型改笔。该结论只关闭本整字迁移边界，不等同GF0011—2022正式附形认定。",
       "unresolved": [
-        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
-        "S03目标部件名称条目尚未逐项定位并实际审读"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "phase": "P3",
@@ -1870,6 +1968,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-teaching-text-final-consistency.json",
+        "result": "reviewed_editorial_consistency_against_closed_P1_P2_P4_fields",
+        "basis": {
+          "stroke_count_status": "reviewed_from_S01_2009_baseline",
+          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page"
+        },
+        "limits": "Editorial teaching-text consistency review only; normative field conclusions remain in their own P1-P4 evidence."
       }
     }
   ],
@@ -1880,5 +1990,12 @@
   "pronunciation_evidence": "data/evidence/B06-pronunciation.json",
   "stroke_order_crosscheck_evidence": "data/evidence/B06-stroke-order-crosscheck.json",
   "fine_stroke_names_crosscheck_evidence": "data/evidence/B06-fine-stroke-names-crosscheck.json",
-  "stroke_order_original_page_evidence": "data/evidence/B06-stroke-order-original-page.json"
+  "stroke_order_original_page_evidence": "data/evidence/B06-stroke-order-original-page.json",
+  "content_ready_review": {
+    "phase": "P5",
+    "date": "2026-10-07",
+    "evidence": "data/evidence/P5-B04-B12-final-content-acceptance.json",
+    "result": "accepted_P5_content_ready",
+    "limits": "Content acceptance only; artwork/layout/PDF/manifest/CI publication/release remain separate later-stage gates."
+  }
 }

@@ -4,7 +4,7 @@
 
 从2026-10-02起，工程采用“阶段1内容覆盖 → 阶段2图形版式 → 阶段3归档发布”的解耦流程，详见`docs/CONTENT_FIRST_WORKFLOW.md`。
 
-阶段1是当前默认工作重点：
+阶段1内容层已于2026-10-07完成201/201 content_ready。以下阶段1规则作为内容回归约束保留：
 - 先持续完成201个主部首的字段级内容和证据链；
 - 内部每批10项，单次运行常规目标推进80个不同主部首（连续8批）；无真实阻塞时至少实质推进60项，40项只作为真实阻塞下的退化结果；
 - B03的PDF归档、hard-gate和CI尾项不得再阻塞B04/B05及后续批次的内容编写；
@@ -14,7 +14,7 @@
 
 阶段1的content_ready不等于release_eligible。正式发布仍必须完成图形、版式、PDF、manifest、CI和全书级门槛。
 
-\n## 剩余完书阶段\n\n2026-10-06起按\`docs/REMAINING_PHASE_PLAN.md\`分阶段收口。P0规范源通道已完成，当前活动阶段为**P5：内容终审与content_ready收口**。\n\n- P1—P4继续以80个不同主部首/轮为常规吞吐；\n- P0、P5—P7按阶段门槛推进，不为了计数凑80项；\n- 不再横向增加D05/D06等secondary数据源，除非规范原件出现真实无法定位的缺口；\n- secondary locator/crosscheck只用于原页定位和风险筛选，不能授予最终reviewed；\n- 当前优先级：逐批P5内容终审 → 201/201 content_ready。P1已完成201/201 stroke_order；P2已完成细笔名收口；P3已完成pronunciation/component_name/structure扫尾；P4已完成201/201身份连续性和201/201位置迁移边界，GF0011—2022逐项精确字段因正式数据未公开而精确source-blocked fail-closed。\n\n## 接续入口
+\n## 剩余完书阶段\n\n2026-10-06起按\`docs/REMAINING_PHASE_PLAN.md\`分阶段收口。P0规范源通道已完成，当前活动阶段为**P6：Artwork / 版式**。\n\n- P1—P4继续以80个不同主部首/轮为常规吞吐；\n- P0、P5—P7按阶段门槛推进，不为了计数凑80项；\n- 不再横向增加D05/D06等secondary数据源，除非规范原件出现真实无法定位的缺口；\n- secondary locator/crosscheck只用于原页定位和风险筛选，不能授予最终reviewed；\n- 当前优先级：201项矢量与逐笔示范统一 → A4版式与练习层级 → artwork_ready。P1—P4已完成；P5已完成201/201 content_ready。GF0011—2022逐项精确字段保持source-blocked fail-closed，不在P6伪造补值。\n\n## 接续入口
 先读README.md、docs/STATUS.md、docs/CONTENT_FIRST_WORKFLOW.md、docs/EDITORIAL_PLAN.md、data/coverage.json和当前批次文件；再读当前分支、开放Issue及PR。仓库事实优先于会话记忆。不重新从零规划，不把阶段稿改名充当终审稿。
 
 ## 授权边界

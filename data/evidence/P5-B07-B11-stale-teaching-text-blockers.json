@@ -1,0 +1,334 @@
+{
+  "schema_version": 1,
+  "record_kind": "P5_teaching_text_stale_wording_audit",
+  "phase": "P5",
+  "reviewed_at": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "scope": {
+    "batches": [
+      "B07",
+      "B11"
+    ],
+    "blocked_count": 19
+  },
+  "method": "Compare canonical teaching wording against the current closed field_status values. Flag only stale candidate/pending wording that contradicts fields already closed in P1/P2/P4; do not alter explicit fail-closed uncertainty.",
+  "entries": [
+    {
+      "batch_id": "B07",
+      "character": "冖",
+      "main_id": 19,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选写法为先点，再写横钩。",
+        "作字头时保持上部覆盖关系；具体整字中的起收位置另核。"
+      ],
+      "current_check": "候选两笔：点、横钩。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B07",
+      "character": "卩",
+      "main_id": 21,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选写法为先横折钩，再写竖。",
+        "作右部时注意两笔相对高低，不能按“阝”直接套形。"
+      ],
+      "current_check": "候选顺序为横折钩、竖。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B07",
+      "character": "厶",
+      "main_id": 25,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选写法为先撇折，再写点。",
+        "第1笔是一整笔折笔，不能拆成撇和横。"
+      ],
+      "current_check": "候选两笔：撇折、点。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B07",
+      "character": "廴",
+      "main_id": 26,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选写法为先写连续折撇，再写捺。",
+        "作为包围部件时，内部部件与最后捺的时序必须在完整整字中核验。"
+      ],
+      "current_check": "候选第二笔为捺；包围时序仍待整字证据。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B07",
+      "character": "艹",
+      "main_id": 30,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选写法为先横，再写两竖。",
+        "字体中的连带视觉不能当作合笔；正式笔数和顺序待部件原页核验。"
+      ],
+      "current_check": "当前按三笔候选记录，不因字体连写效果合并。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B07",
+      "character": "廾",
+      "main_id": 32,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选写法为横、撇、竖。",
+        "作下部时保持三笔独立，不从整字外形反推合笔。"
+      ],
+      "current_check": "候选三笔：横、撇、竖。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B07",
+      "character": "宀",
+      "main_id": 48,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选写法为先上点，再左点，最后横钩。",
+        "横钩负责覆盖下部空间，不能提前封住整字内部。"
+      ],
+      "current_check": "候选第3笔为横钩。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B07",
+      "character": "辶",
+      "main_id": 49,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选写法为点、连续折撇、捺。",
+        "半包围整字中最后捺与内部部件的时序必须以完整字笔顺原页为准。"
+      ],
+      "current_check": "候选三笔；整字时序暂不从部件自身外推。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B07",
+      "character": "彐",
+      "main_id": 50,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选写法为横折、横、横。",
+        "作下部或右部时只迁移已核形态，不因位置变化自动改变笔数。"
+      ],
+      "current_check": "候选三笔：横折后接两横。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B11",
+      "character": "示",
+      "main_id": 100,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GF0023_2020_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选先两横，再竖钩，最后撇、点。",
+        "独体示与礻位置形态必须分开核验。"
+      ],
+      "current_check": "候选五笔，竖钩为第3笔。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B11",
+      "character": "甘",
+      "main_id": 101,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GF0023_2020_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选先横，再写两竖，随后内部横，最后底横。",
+        "两个横的先后和封合关系需回原页确认。"
+      ],
+      "current_check": "候选五笔，末笔为横。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B11",
+      "character": "龙",
+      "main_id": 103,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GF0023_2020_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选先横、撇，再竖弯钩，最后撇、点。",
+        "第3笔复合钩形不能拆写。"
+      ],
+      "current_check": "候选五笔，竖弯钩为第3笔。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B11",
+      "character": "业",
+      "main_id": 104,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GF0023_2020_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选先两竖，再点、撇，最后横。",
+        "中部点和撇分开书写，底横最后收束。"
+      ],
+      "current_check": "候选五笔，横最后写。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B11",
+      "character": "罒",
+      "main_id": 107,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选先写左竖和横折，再两竖，最后横封底。",
+        "作为字头时必须回完整整字核验比例和时序。"
+      ],
+      "current_check": "候选五笔，最后一横封底。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B11",
+      "character": "皿",
+      "main_id": 108,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GF0023_2020_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选粗笔类与罒相同，但形态和位置不同，不能互换。",
+        "底横最后写，框内两竖分开。"
+      ],
+      "current_check": "候选五笔，末笔为底横。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B11",
+      "character": "生",
+      "main_id": 109,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GF0023_2020_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选先撇，再两横，随后竖，最后横。",
+        "竖的穿插位置与三横长短关系需原图核验。"
+      ],
+      "current_check": "候选五笔，最后一横收尾。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B11",
+      "character": "矢",
+      "main_id": 110,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GF0023_2020_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选先撇、两横，再撇、捺。",
+        "末两笔展开但仍是独立两笔。"
+      ],
+      "current_check": "候选五笔，末两笔为撇、捺。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B11",
+      "character": "禾",
+      "main_id": 111,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GF0023_2020_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选先撇、横、竖，再撇、捺。",
+        "中竖是第3笔，左右撇捺后写。"
+      ],
+      "current_check": "候选五笔，竖为第3笔。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    },
+    {
+      "batch_id": "B11",
+      "character": "瓜",
+      "main_id": 113,
+      "teaching_text_status": "reviewed_editorial_non_authoritative",
+      "stroke_order_status": "reviewed_GF0023_2020_original_page",
+      "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+      "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+      "current_tips": [
+        "候选先两撇，再竖提、点、捺。",
+        "第3笔竖提一笔完成，点和捺分开。"
+      ],
+      "current_check": "候选五笔，竖提为第3笔。",
+      "result": "blocked_P5_stale_candidate_or_pending_wording",
+      "rationale": "The canonical teaching text still presents already-closed P1/P2/P4 content as candidate/pending. P5 content_ready must not retain stale uncertainty wording unless it corresponds to an explicit fail-closed field."
+    }
+  ],
+  "summary": {
+    "blocked_count": 19,
+    "by_batch": {
+      "B07": 9,
+      "B11": 10
+    }
+  },
+  "consequence": "The earlier P5-B04-B05-B07-B11 acceptance record overstates readiness for B07/B11. B04/B05 remain independently clean; B07/B11 require teaching-text cleanup and re-review before content_ready.",
+  "limits": [
+    "This is an editorial consistency audit, not a new normative source review.",
+    "No artwork/PDF/release status is changed."
+  ]
+}

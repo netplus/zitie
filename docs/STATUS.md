@@ -1,6 +1,6 @@
 # 当前编写状态
 
-更新：2026-10-06。工程处于“阶段1：内容覆盖优先”，当前活动阶段为P5：内容终审与content_ready收口。
+更新：2026-10-07。阶段1内容层已完成，当前活动阶段为P6：Artwork / 版式。
 
 ## 当前阶段
 
@@ -17,12 +17,12 @@ PR #9 已于2026-10-05阶段性合入 `main`，合并提交：
 ## 范围与计数
 
 - 主部首范围：**201/201已分配**，B01—B20各10项，B21为龠1项。
-- `content_ready`：**30项**，B01—B03。
-- `content_in_progress`：**171项**，B04—B21。
+- `content_ready`：**201项**，B01—B21全部完成。
+- `content_in_progress`：**0项**。
 - 已形成练习页：20项（B01+B02）。
 - Git内阶段PDF：11份draft。
 - 正式release：0。
-- GF0011—2022逐项精确字形、附形、名称和编码继续作为全书级pending；不阻塞其它独立字段。
+- GF0011—2022逐项精确主形/附形/名称/编码已在P4按公开来源审计收口为`source_blocked_fail_closed`；正式逐项数据可重复取得后再重开，不在P6伪造补值。
 
 ## 当前字段闭合进展
 
@@ -521,3 +521,27 @@ P4完成检查点：
 
 **当前活动阶段正式切换P5：逐批内容终审与content_ready收口。**
 当前content_ready仍为30（B01—B03），content_in_progress仍为171（B04—B21），只有P5逐批验收通过后才增加content_ready。P4完成不表示artwork、PDF、manifest、CI发布门槛或正式release完成。
+
+
+## P5完成：201/201 content_ready（2026-10-07）
+
+P5逐批内容终审已经完成。B04—B21共171项逐项检查身份、结构、笔数、笔顺、细笔名、读音、部件名称、教学提示、自查句、整字语境、位置迁移与field-level evidence；普通pending全部清零。
+
+本轮P5主要清理P1—P4已闭合证据与canonical之间的状态债：
+- B06/B08/B10/B14共40项教学文案由旧候选语气同步为与已审笔顺/细笔名/位置迁移一致的最终教学表述；
+- B08 6项stroke_count由旧candidate状态同步为精确规范笔顺行reviewed；
+- B12—B21 91项whole_character_context同步P4整字原页结果；
+- B07/B11 19项删除已经失效的“候选/待核”措辞；
+- 清理若干已被后续阶段取代的历史unresolved文本，同时保留牙、矛、屮、毋、瓦等真正fail-closed边界及重开条件。
+
+终审evidence：
+- `data/evidence/P5-B04-B12-final-content-acceptance.json`：90/90 accepted；
+- `data/evidence/P5-B13-B21-final-content-acceptance.json`：81/81 accepted；
+- `reviews/P5-completion-20261007.md`。
+
+因此：
+- B01—B03既有30项content_ready；
+- B04—B21新增171项content_ready；
+- **全书201/201 content_ready，0 content_in_progress。**
+
+这只表示内容层完成，不表示artwork、PDF、manifest、CI发布门槛或正式release完成。当前活动阶段正式切换为**P6 Artwork / 版式**。

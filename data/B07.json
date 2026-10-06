@@ -4,7 +4,7 @@
   "batch_id": "B07",
   "version": "content-draft-2026-10-06",
   "title": "二三画常用偏旁与包围迁移",
-  "content_status": "in_progress",
+  "content_status": "content_ready",
   "artwork_status": "deferred",
   "publication_status": "deferred",
   "scope_frozen_for_content": true,
@@ -23,10 +23,10 @@
         "横钩"
       ],
       "tips": [
-        "候选写法为先点，再写横钩。",
-        "作字头时保持上部覆盖关系；具体整字中的起收位置另核。"
+        "按“点、横钩”的顺序书写，共2画。",
+        "在“写”中处于top位置；P4整字原页已核笔画映射，当前未见细笔类型变化。横钩覆盖下部空间，仍保持两笔独立。"
       ],
-      "check": "候选两笔：点、横钩。",
+      "check": "共2画：点、横钩。",
       "context": {
         "example": "写",
         "position": "top",
@@ -178,6 +178,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B07-B11-teaching-text-final-fixes.json",
+        "result": "reviewed_P5_teaching_text_after_closed_field_sync",
+        "basis": {
+          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+          "position_migration_evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json"
+        },
+        "limits": "Editorial text finalization after P1/P2/P4 closure; does not override fail-closed/source-blocked normative fields."
       }
     },
     {
@@ -388,10 +400,10 @@
         "竖"
       ],
       "tips": [
-        "候选写法为先横折钩，再写竖。",
-        "作右部时注意两笔相对高低，不能按“阝”直接套形。"
+        "按“横折钩、竖”的顺序书写，共2画。",
+        "在“却”中处于right位置；P4整字原页已核笔画映射，当前未见细笔类型变化。作右部时不要按“阝”直接套形。"
       ],
-      "check": "候选顺序为横折钩、竖。",
+      "check": "共2画：横折钩、竖。",
       "context": {
         "example": "却",
         "position": "right",
@@ -544,6 +556,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B07-B11-teaching-text-final-fixes.json",
+        "result": "reviewed_P5_teaching_text_after_closed_field_sync",
+        "basis": {
+          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+          "position_migration_evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json"
+        },
+        "limits": "Editorial text finalization after P1/P2/P4 closure; does not override fail-closed/source-blocked normative fields."
       }
     },
     {
@@ -556,10 +580,10 @@
         "点"
       ],
       "tips": [
-        "候选写法为先撇折，再写点。",
-        "第1笔是一整笔折笔，不能拆成撇和横。"
+        "按“撇折、点”的顺序书写，共2画。",
+        "在“公”中处于bottom位置；P4整字原页已核笔画映射，当前未见细笔类型变化。第1笔撇折一笔完成，不拆成撇和横。"
       ],
-      "check": "候选两笔：撇折、点。",
+      "check": "共2画：撇折、点。",
       "context": {
         "example": "公",
         "position": "bottom",
@@ -745,6 +769,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B07-B11-teaching-text-final-fixes.json",
+        "result": "reviewed_P5_teaching_text_after_closed_field_sync",
+        "basis": {
+          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+          "position_migration_evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json"
+        },
+        "limits": "Editorial text finalization after P1/P2/P4 closure; does not override fail-closed/source-blocked normative fields."
       }
     },
     {
@@ -757,10 +793,10 @@
         "捺"
       ],
       "tips": [
-        "候选写法为先写连续折撇，再写捺。",
-        "作为包围部件时，内部部件与最后捺的时序必须在完整整字中核验。"
+        "按“横折折撇、捺”的顺序书写，共2画。",
+        "在“建”中处于outer位置；按P4已核完整整字时序处理，不能只按部件局部顺序提前写完。"
       ],
-      "check": "候选第二笔为捺；包围时序仍待整字证据。",
+      "check": "共2画：横折折撇、捺。",
       "context": {
         "example": "建",
         "position": "outer",
@@ -912,6 +948,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B07-B11-teaching-text-final-fixes.json",
+        "result": "reviewed_P5_teaching_text_after_closed_field_sync",
+        "basis": {
+          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+          "position_migration_evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json"
+        },
+        "limits": "Editorial text finalization after P1/P2/P4 closure; does not override fail-closed/source-blocked normative fields."
       }
     },
     {
@@ -925,10 +973,10 @@
         "竖"
       ],
       "tips": [
-        "候选写法为先横，再写两竖。",
-        "字体中的连带视觉不能当作合笔；正式笔数和顺序待部件原页核验。"
+        "按“横、竖、竖”的顺序书写，共3画。",
+        "在“草”中处于top位置；P4整字原页已核笔画映射，当前未见细笔类型变化。三笔保持独立，不因字体中的连带视觉合笔。"
       ],
-      "check": "当前按三笔候选记录，不因字体连写效果合并。",
+      "check": "共3画：横、竖、竖。",
       "context": {
         "example": "草",
         "position": "top",
@@ -1082,6 +1130,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B07-B11-teaching-text-final-fixes.json",
+        "result": "reviewed_P5_teaching_text_after_closed_field_sync",
+        "basis": {
+          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+          "position_migration_evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json"
+        },
+        "limits": "Editorial text finalization after P1/P2/P4 closure; does not override fail-closed/source-blocked normative fields."
       }
     },
     {
@@ -1095,10 +1155,10 @@
         "竖"
       ],
       "tips": [
-        "候选写法为横、撇、竖。",
-        "作下部时保持三笔独立，不从整字外形反推合笔。"
+        "按“横、撇、竖”的顺序书写，共3画。",
+        "在“弄”中处于bottom位置；P4整字原页已核笔画映射，当前未见细笔类型变化。三笔保持独立，不从整字外形反推合笔。"
       ],
-      "check": "候选三笔：横、撇、竖。",
+      "check": "共3画：横、撇、竖。",
       "context": {
         "example": "弄",
         "position": "bottom",
@@ -1301,6 +1361,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B07-B11-teaching-text-final-fixes.json",
+        "result": "reviewed_P5_teaching_text_after_closed_field_sync",
+        "basis": {
+          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+          "position_migration_evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json"
+        },
+        "limits": "Editorial text finalization after P1/P2/P4 closure; does not override fail-closed/source-blocked normative fields."
       }
     },
     {
@@ -1314,10 +1386,10 @@
         "横钩"
       ],
       "tips": [
-        "候选写法为先上点，再左点，最后横钩。",
-        "横钩负责覆盖下部空间，不能提前封住整字内部。"
+        "按“点、点、横钩”的顺序书写，共3画。",
+        "在“家”中处于top位置；P4整字原页已核笔画映射，当前未见细笔类型变化。横钩覆盖下部空间，三笔保持独立。"
       ],
-      "check": "候选第3笔为横钩。",
+      "check": "共3画：点、点、横钩。",
       "context": {
         "example": "家",
         "position": "top",
@@ -1471,6 +1543,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B07-B11-teaching-text-final-fixes.json",
+        "result": "reviewed_P5_teaching_text_after_closed_field_sync",
+        "basis": {
+          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+          "position_migration_evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json"
+        },
+        "limits": "Editorial text finalization after P1/P2/P4 closure; does not override fail-closed/source-blocked normative fields."
       }
     },
     {
@@ -1484,10 +1568,10 @@
         "捺"
       ],
       "tips": [
-        "候选写法为点、连续折撇、捺。",
-        "半包围整字中最后捺与内部部件的时序必须以完整字笔顺原页为准。"
+        "按“点、横折折撇、捺”的顺序书写，共3画。",
+        "在“近”中处于outer位置；按P4已核完整整字时序处理，不能只按部件局部顺序提前写完。"
       ],
-      "check": "候选三笔；整字时序暂不从部件自身外推。",
+      "check": "共3画：点、横折折撇、捺。",
       "context": {
         "example": "近",
         "position": "outer",
@@ -1641,6 +1725,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B07-B11-teaching-text-final-fixes.json",
+        "result": "reviewed_P5_teaching_text_after_closed_field_sync",
+        "basis": {
+          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+          "position_migration_evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json"
+        },
+        "limits": "Editorial text finalization after P1/P2/P4 closure; does not override fail-closed/source-blocked normative fields."
       }
     },
     {
@@ -1654,10 +1750,10 @@
         "横"
       ],
       "tips": [
-        "候选写法为横折、横、横。",
-        "作下部或右部时只迁移已核形态，不因位置变化自动改变笔数。"
+        "按“横折、横、横”的顺序书写，共3画。",
+        "在“雪”中处于bottom位置；P4整字原页已核笔画映射，当前未见细笔类型变化。横折后接两横，位置变化不自动改变笔数。"
       ],
-      "check": "候选三笔：横折后接两横。",
+      "check": "共3画：横折、横、横。",
       "context": {
         "example": "雪",
         "position": "bottom",
@@ -1811,6 +1907,18 @@
         "visual_review": true,
         "notes": "Whole-character original row visually reviewed; mapped strokes preserve the target coarse stroke categories. No fine-stroke-type change was observed in this context.",
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
+      },
+      "teaching_text_review": {
+        "phase": "P5",
+        "evidence": "data/evidence/P5-B07-B11-teaching-text-final-fixes.json",
+        "result": "reviewed_P5_teaching_text_after_closed_field_sync",
+        "basis": {
+          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
+          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
+          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
+          "position_migration_evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json"
+        },
+        "limits": "Editorial text finalization after P1/P2/P4 closure; does not override fail-closed/source-blocked normative fields."
       }
     }
   ],
@@ -1820,5 +1928,12 @@
   "pronunciation_evidence": "data/evidence/B07-pronunciation.json",
   "stroke_order_crosscheck_evidence": "data/evidence/B07-stroke-order-crosscheck.json",
   "fine_stroke_names_crosscheck_evidence": "data/evidence/B07-fine-stroke-names-crosscheck.json",
-  "stroke_order_original_page_evidence": "data/evidence/B07-stroke-order-original-page.json"
+  "stroke_order_original_page_evidence": "data/evidence/B07-stroke-order-original-page.json",
+  "content_ready_review": {
+    "phase": "P5",
+    "date": "2026-10-07",
+    "evidence": "data/evidence/P5-B04-B12-final-content-acceptance.json",
+    "result": "accepted_P5_content_ready",
+    "limits": "Content acceptance only; artwork/layout/PDF/manifest/CI publication/release remain separate later-stage gates."
+  }
 }

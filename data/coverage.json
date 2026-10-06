@@ -826,14 +826,12 @@
   "workflow_mode": "phase1_content_first",
   "phase1_content_progress": {
     "scoped_main_count": 201,
-    "content_ready_main_count": 30,
-    "content_in_progress_main_count": 171,
+    "content_ready_main_count": 201,
+    "content_in_progress_main_count": 0,
     "batches_content_ready": [
       "B01",
       "B02",
-      "B03"
-    ],
-    "batches_content_in_progress": [
+      "B03",
       "B04",
       "B05",
       "B06",
@@ -853,12 +851,13 @@
       "B20",
       "B21"
     ],
+    "batches_content_in_progress": [],
     "next_assignment_starts_at": null,
-    "next_work": "P2_fine_stroke_names_normative_original_page_closure",
-    "note": "P4 completed. Main-radical membership continuity: 201/201 reviewed. Position migration: 198 reviewed + 3 conflict_fail_closed, 0 ordinary pending. GF0011—2022 exact item fields: 201/201 source_blocked_fail_closed with no invented values; P3-deferred component_name/structure gates are likewise closed as source-blocked. P5 content_ready final review is now active; content_ready remains 30 until batch-level P5 acceptance.",
+    "next_work": "P6_artwork_layout_full_book",
+    "note": "P5 completed: 201/201 main radicals are content_ready. All ordinary content pending is zero; remaining conflicts/source-blocked states are explicit terminal boundaries with reopen conditions. P6 artwork/layout is now active. Artwork/PDF/manifest/release statuses remain separate.",
     "stroke_order_reviewed_main_count": 201,
     "stroke_order_pending_main_count": 0,
-    "active_remaining_phase": "P2",
+    "active_remaining_phase": "P6",
     "p2_fine_stroke_names": {
       "status": "completed",
       "scope": "B04-B21",
@@ -1072,10 +1071,16 @@
       "completion_review": "reviews/P4-completion-20261006.md"
     },
     "p5_content_ready": {
-      "status": "active",
-      "started_at": "2026-10-06",
-      "content_ready_count": 30,
-      "content_in_progress_count": 171
+      "status": "completed",
+      "completed_at": "2026-10-07",
+      "target_count": 201,
+      "content_ready": 201,
+      "ordinary_pending": 0,
+      "acceptance_evidence": [
+        "data/evidence/P5-B04-B12-final-content-acceptance.json",
+        "data/evidence/P5-B13-B21-final-content-acceptance.json"
+      ],
+      "completion_review": "reviews/P5-completion-20261007.md"
     }
   }
 }

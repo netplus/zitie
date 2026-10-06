@@ -1,0 +1,2217 @@
+{
+  "schema_version": 1,
+  "record_kind": "P5_final_content_acceptance",
+  "phase": "P5",
+  "reviewed_at": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "scope": {
+    "batches": [
+      "B04",
+      "B05",
+      "B06",
+      "B07",
+      "B08",
+      "B09",
+      "B10",
+      "B11",
+      "B12"
+    ],
+    "target_count": 90
+  },
+  "policy": "A target is accepted only when all tracked content fields are terminal (reviewed/not_applicable/conflict_fail_closed/source_blocked_fail_closed), exactly two teaching tips and a self-check are present, and unresolved notes contain no ordinary pending work. Explicit fail-closed/source-blocked states with reopen conditions are allowed.",
+  "entries": [
+    {
+      "batch_id": "B04",
+      "character": "干",
+      "main_id": 27,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B04",
+      "character": "寸",
+      "main_id": 31,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B04",
+      "character": "夕",
+      "main_id": 43,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B04",
+      "character": "广",
+      "main_id": 46,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B04",
+      "character": "门",
+      "main_id": 47,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B04",
+      "character": "尸",
+      "main_id": 51,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B04",
+      "character": "己",
+      "main_id": 52,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B04",
+      "character": "弓",
+      "main_id": 53,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B04",
+      "character": "飞",
+      "main_id": 57,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B04",
+      "character": "马",
+      "main_id": 58,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B05",
+      "character": "无",
+      "main_id": 62,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B05",
+      "character": "犬",
+      "main_id": 66,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B05",
+      "character": "歹",
+      "main_id": 67,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B05",
+      "character": "车",
+      "main_id": 68,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B05",
+      "character": "牙",
+      "main_id": 69,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "conflict_fail_closed_GF2001_vs_target_original_page_bridge_pending",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
+        "fine_stroke_names已按P2收口为conflict_fail_closed_GF2001_vs_target_original_page_bridge_pending；仅在取得能直接覆盖或权威桥接该目标字形的适用规范证据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B05",
+      "character": "戈",
+      "main_id": 70,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B05",
+      "character": "瓦",
+      "main_id": 72,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "conflict_fail_closed_P4_whole_character_component_mapping"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
+        "position_migration已按GF0023整字原页/持久化映射证据收口为conflict_fail_closed；仅在取得可可靠恢复整字笔画索引的规范证据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B05",
+      "character": "止",
+      "main_id": 73,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B05",
+      "character": "贝",
+      "main_id": 76,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B05",
+      "character": "见",
+      "main_id": 78,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B06",
+      "character": "厂",
+      "main_id": 7,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B06",
+      "character": "匚",
+      "main_id": 8,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B06",
+      "character": "卜",
+      "main_id": 9,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B06",
+      "character": "冂",
+      "main_id": 10,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B06",
+      "character": "勹",
+      "main_id": 13,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B06",
+      "character": "儿",
+      "main_id": 14,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B06",
+      "character": "匕",
+      "main_id": 15,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B06",
+      "character": "几",
+      "main_id": 16,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B06",
+      "character": "亠",
+      "main_id": 17,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B06",
+      "character": "冫",
+      "main_id": 18,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B07",
+      "character": "冖",
+      "main_id": 19,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B07",
+      "character": "凵",
+      "main_id": 20,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B07",
+      "character": "卩",
+      "main_id": 21,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B07",
+      "character": "厶",
+      "main_id": 25,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B07",
+      "character": "廴",
+      "main_id": 26,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B07",
+      "character": "艹",
+      "main_id": 30,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B07",
+      "character": "廾",
+      "main_id": 32,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B07",
+      "character": "宀",
+      "main_id": 48,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B07",
+      "character": "辶",
+      "main_id": 49,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B07",
+      "character": "彐",
+      "main_id": 50,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B08",
+      "character": "丨",
+      "main_id": 2,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_GF3002_1999_original_page",
+        "stroke_order": "reviewed_GF3002_1999_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B08",
+      "character": "丿",
+      "main_id": 3,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_GF3002_1999_original_page",
+        "stroke_order": "reviewed_GF3002_1999_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B08",
+      "character": "丶",
+      "main_id": 4,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_GF3002_1999_original_page",
+        "stroke_order": "reviewed_GF3002_1999_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B08",
+      "character": "乛",
+      "main_id": 5,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_GF3002_1999_original_page",
+        "stroke_order": "reviewed_GF3002_1999_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B08",
+      "character": "尢",
+      "main_id": 34,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "stroke_count": "reviewed_from_exact_normative_stroke_order_row",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
+        "pronunciation已按S03+GF0015原页审读收口为conflict_fail_closed；仅在取得适用权威读音来源或P4精确身份规则后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B08",
+      "character": "弋",
+      "main_id": 35,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_P3_GF3001_1997_undecomposable_via_published_membership_synthesis",
+        "stroke_count": "reviewed_from_exact_normative_stroke_order_row",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
+        "pronunciation已按S03+GF0015原页审读收口为conflict_fail_closed；仅在取得适用权威读音来源或P4精确身份规则后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B08",
+      "character": "囗",
+      "main_id": 38,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_exact_normative_stroke_order_row",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B08",
+      "character": "彳",
+      "main_id": 41,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "stroke_count": "reviewed_from_exact_normative_stroke_order_row",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
+        "pronunciation已按S03+GF0015原页审读收口为conflict_fail_closed；仅在取得适用权威读音来源或P4精确身份规则后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B08",
+      "character": "彡",
+      "main_id": 42,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_exact_normative_stroke_order_row",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B08",
+      "character": "夂",
+      "main_id": 44,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_exact_normative_stroke_order_row",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B09",
+      "character": "韦",
+      "main_id": 63,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_P3_GF3001_1997_undecomposable_via_published_membership_synthesis",
+        "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B09",
+      "character": "支",
+      "main_id": 65,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S06_GF0015_2010_target_self_pronunciation",
+        "component_name": "source_blocked_fail_closed_GF0011_2022_exact_name_not_publicly_released",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B09",
+      "character": "比",
+      "main_id": 71,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S06_GF0015_2010_target_self_pronunciation",
+        "component_name": "source_blocked_fail_closed_GF0011_2022_exact_name_not_publicly_released",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B09",
+      "character": "气",
+      "main_id": 81,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B09",
+      "character": "长",
+      "main_id": 83,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B09",
+      "character": "片",
+      "main_id": 84,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B09",
+      "character": "斤",
+      "main_id": 85,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B09",
+      "character": "爪",
+      "main_id": 86,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B09",
+      "character": "父",
+      "main_id": 87,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B09",
+      "character": "文",
+      "main_id": 93,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_baseline_S01_2009_2022_target_pending",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B10",
+      "character": "丬",
+      "main_id": 45,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF3002_1999_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B10",
+      "character": "幺",
+      "main_id": 59,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_P3_GF3001_1997_undecomposable_via_published_membership_synthesis",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B10",
+      "character": "攴",
+      "main_id": 74,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B10",
+      "character": "氏",
+      "main_id": 89,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B10",
+      "character": "欠",
+      "main_id": 90,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B10",
+      "character": "风",
+      "main_id": 91,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_self_context_no_position_migration"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B10",
+      "character": "方",
+      "main_id": 94,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B10",
+      "character": "斗",
+      "main_id": 96,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B10",
+      "character": "户",
+      "main_id": 97,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B10",
+      "character": "心",
+      "main_id": 98,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B11",
+      "character": "示",
+      "main_id": 100,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_P3_GF3001_1997_undecomposable_via_published_membership_synthesis",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B11",
+      "character": "甘",
+      "main_id": 101,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B11",
+      "character": "龙",
+      "main_id": 103,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B11",
+      "character": "业",
+      "main_id": 104,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B11",
+      "character": "罒",
+      "main_id": 107,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B11",
+      "character": "皿",
+      "main_id": 108,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B11",
+      "character": "生",
+      "main_id": 109,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B11",
+      "character": "矢",
+      "main_id": 110,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B11",
+      "character": "禾",
+      "main_id": 111,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B11",
+      "character": "瓜",
+      "main_id": 113,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "stroke_count": "reviewed_from_S01_2009_baseline",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B12",
+      "character": "屮",
+      "main_id": 55,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "conflict_fail_closed_normative_target_gap",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "source_blocked_fail_closed_GF0011_2022_exact_name_not_publicly_released",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
+        "whole_character_context": "reviewed_P4_whole_character_original_page_with_mapping_conflict_fail_closed",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "position_migration": "conflict_fail_closed_P4_whole_character_component_mapping"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
+        "fine_stroke_names已按P2规范原页审读收口为conflict_fail_closed_normative_target_gap；仅在取得覆盖精确目标字形的适用规范原页或权威桥接规则后重开",
+        "position_migration已按GF0023整字原页核验收口为conflict_fail_closed；仅在取得可可靠映射该目标部件的完整整字规范证据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B12",
+      "character": "巛",
+      "main_id": 60,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "conflict_fail_closed_normative_target_gap",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
+        "fine_stroke_names已按P2规范原页审读收口为conflict_fail_closed_normative_target_gap；仅在取得覆盖精确目标字形的适用规范原页或权威桥接规则后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B12",
+      "character": "殳",
+      "main_id": 92,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "structure": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B12",
+      "character": "毋",
+      "main_id": 99,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+        "component_name": "source_blocked_fail_closed_GF0011_2022_exact_name_not_publicly_released",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
+        "whole_character_context": "reviewed_P4_whole_character_original_page_with_mapping_conflict_fail_closed",
+        "structure": "reviewed_P3_GF3001_1997_undecomposable_via_published_membership_synthesis",
+        "position_migration": "conflict_fail_closed_P4_whole_character_component_mapping"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
+        "pronunciation已按S03+GF0015原页审读收口为conflict_fail_closed；仅在取得适用权威读音来源或P4精确身份规则后重开",
+        "position_migration已按GF0023整字原页核验收口为conflict_fail_closed；仅在取得可可靠映射该目标部件的完整整字规范证据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B12",
+      "character": "鸟",
+      "main_id": 114,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "structure": "reviewed_S07_GF0013_2009_undecomposable",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B12",
+      "character": "疒",
+      "main_id": 115,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "conflict_fail_closed_normative_target_gap",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
+        "fine_stroke_names已按P2规范原页审读收口为conflict_fail_closed_normative_target_gap；仅在取得覆盖精确目标字形的适用规范原页或权威桥接规则后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B12",
+      "character": "穴",
+      "main_id": 117,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "structure": "reviewed_P3_S07_GF3001_combined_decomposable_via_published_synthesis",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B12",
+      "character": "疋",
+      "main_id": 118,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "conflict_fail_closed_normative_target_gap",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "source_blocked_fail_closed_GF0011_2022_exact_name_not_publicly_released",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page_with_coarse_stroke_changes"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
+        "fine_stroke_names已按P2规范原页审读收口为conflict_fail_closed_normative_target_gap；仅在取得覆盖精确目标字形的适用规范原页或权威桥接规则后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B12",
+      "character": "皮",
+      "main_id": 119,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "reviewed_GF0023_2020_original_page",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
+        "pronunciation": "reviewed_S03_GF0014_2009_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "structure": "reviewed_P3_GF3001_1997_undecomposable_via_published_membership_synthesis",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    },
+    {
+      "batch_id": "B12",
+      "character": "癶",
+      "main_id": 120,
+      "field_status": {
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_source_blocked_fail_closed",
+        "stroke_count": "reviewed_from_baseline_stroke_group",
+        "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
+        "fine_stroke_names": "conflict_fail_closed_normative_target_gap",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "component_name": "reviewed_S03_GF0014_2009",
+        "teaching_text": "reviewed_editorial_manual_non_authoritative",
+        "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
+        "structure": "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure",
+        "position_migration": "reviewed_P4_GF0023_whole_character_original_page"
+      },
+      "teaching_text_present": true,
+      "unresolved": [
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
+        "fine_stroke_names已按P2规范原页审读收口为conflict_fail_closed_normative_target_gap；仅在取得覆盖精确目标字形的适用规范原页或权威桥接规则后重开"
+      ],
+      "ordinary_nonterminal_fields": [],
+      "nonterminal_unresolved": [],
+      "result": "accepted_P5_content_ready"
+    }
+  ],
+  "summary": {
+    "target_count": 90,
+    "accepted_content_ready": 90,
+    "blocked": 0,
+    "batches_accepted": [
+      "B04",
+      "B05",
+      "B06",
+      "B07",
+      "B08",
+      "B09",
+      "B10",
+      "B11",
+      "B12"
+    ]
+  },
+  "limits": [
+    "content_ready is content-only; it does not imply artwork_ready, PDF archival, CI publication gate success, or release eligibility."
+  ]
+}
