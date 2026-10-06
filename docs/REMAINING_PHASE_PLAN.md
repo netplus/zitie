@@ -1,6 +1,6 @@
 # 剩余完书阶段计划
 
-更新：2026-10-06。
+更新：2026-10-07。
 
 本文件把当前“阶段1内容覆盖优先”进一步拆成可收口的剩余阶段。目标是不再无限横向扩充secondary evidence，而是按“规范原页 → 内容收口 → artwork → 发布”的顺序把全书推进到release。
 
@@ -21,7 +21,7 @@
 - S05 GF2001—2001：9页，177,325字节，SHA256 `68a1420...`；
 - 2026-10-06已从历史Actions artifact恢复三份原件并重新核验SHA256、字节数和页数。
 
-P0已完成：2026-10-06新的`source-probe` run 37402630995成功，artifact 11385916300重新取得并强制校验S02/S04/S05/S01-2009字节。后续停止继续寻找D05/D06等二次源，除非规范原件出现无法解决的真缺口。\n\n**当前活动阶段：P5 内容终审与content_ready收口。**
+P0已完成：2026-10-06新的`source-probe` run 37402630995成功，artifact 11385916300重新取得并强制校验S02/S04/S05/S01-2009字节。后续停止继续寻找D05/D06等二次源，除非规范原件出现无法解决的真缺口。\n\n**当前活动阶段：P6 Artwork / 版式。**
 
 ## P1 当前进展（2026-10-06）
 
@@ -162,14 +162,31 @@ P4当前只剩GF0011—2022逐项精确字段门槛：201项主部首集合/main
 
 目标：把B04—B21逐批验收，而不是继续按字段横向铺开。
 
-每项检查：
-- 身份/结构/笔数/笔顺/细笔名/读音/名称；
-- 两条教学提示、自查句、整字语境；
-- 位置迁移边界；
-- field-level evidence/review；
-- conflict与pending必须精确且有解决路径。
+**已于2026-10-07完成。**
 
-退出条件：**201/201 content_ready**。
+终审规则：
+- 所有已跟踪内容字段必须是terminal状态：`reviewed_*`、`not_applicable_*`、`conflict_fail_closed_*`或`source_blocked_fail_closed_*`；
+- 每项必须有两条教学提示和自查句；
+- whole-character context与position_migration必须与P4实际审读结果同步；
+- unresolved不得保留普通pending，只允许有明确重开条件的fail-closed/source-blocked边界；
+- content_ready不等于artwork_ready或release_eligible。
+
+P5清理的主要状态债：
+- 40项教学文本最终一致性同步；
+- B08 6项stroke_count规范行同步；
+- B12—B21 91项whole-character context同步；
+- B07/B11 19项陈旧“候选/待核”教学措辞修订；
+- 清理已被P2/P3/P4覆盖的历史unresolved文本。
+
+逐项验收结果：
+- `data/evidence/P5-B04-B12-final-content-acceptance.json`：90/90 accepted；
+- `data/evidence/P5-B13-B21-final-content-acceptance.json`：81/81 accepted；
+- B04—B21：171/171 content_ready；
+- 加B01—B03既有30项：**201/201 content_ready，0 content_in_progress**。
+
+完成检查点：`reviews/P5-completion-20261007.md`。
+
+退出条件**201/201 content_ready**已满足，阶段正式切换P6。
 
 ## P6 Artwork / 版式
 
