@@ -203,6 +203,16 @@ P5清理的主要状态债：
 
 退出条件：201项artwork_ready。
 
+### P6当前进展（2026-10-07）
+
+- 全书201项固定revision矢量材料已审计：201 compatible / 0 missing / 0 stroke-count mismatch；
+- 该机器审计只关闭材料覆盖，不授予artwork_ready；
+- B01/B02沿用既有artwork_ready，B03将2026-09-30已真实完成的逐笔矢量人工复核正规化为artwork_ready；
+- 当前 **30/201 artwork_ready**；
+- B04—B21 171项仍须逐项累计笔画视觉QA，并确认当前笔红色、旧笔深灰、笔形关系、复杂字分页与练习层级。
+
+证据：`data/evidence/P6-vector-material-coverage-20261007.json`、`reviews/P6-vector-coverage-and-B03-promotion-20261007.md`。
+
 ## P7 PDF、全书QA与正式发布
 
 顺序：
