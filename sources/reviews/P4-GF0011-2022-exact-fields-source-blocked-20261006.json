@@ -1,0 +1,65 @@
+{
+  "schema_version": 1,
+  "record_kind": "P4_GF0011_2022_exact_item_fields_source_blocked_fail_closed",
+  "phase": "P4",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source_id": "S01",
+  "publication_id": "GF0011—2022",
+  "supported_facts": {
+    "official_release_notice": {
+      "url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202211/t20221118_995332.html",
+      "result": "official_release_notice_reviewed",
+      "facts": [
+        "GF0011—2022 revises the 2009 first edition",
+        "the existing 201 main radicals are retained",
+        "some attached-form radicals are added/adjusted",
+        "some common radical names and information-processing international codes are added"
+      ],
+      "boundary": "The notice does not expose the item-level 2022 table."
+    },
+    "official_standard_index": {
+      "url": "https://www.moe.gov.cn/s78/A19/A19_ztzl/ztzl_yywzgfbz/",
+      "result": "release/news entry located; no repeatable public item-level GF0011—2022 file located in this audit"
+    },
+    "unicode_irg": {
+      "url": "https://www.unicode.org/irg/docs/n2878r-CJKComponents4IDS.pdf",
+      "result": "downstream China component work cites GF0011—2022 and explicitly describes it as not released",
+      "boundary": "IRG GCP component data mix GF3001—1997, GF0014—2009 and GF0011—2022; they cannot be inverted into the GF0011—2022 item table."
+    },
+    "public_archives": {
+      "checked": [
+        "public university language-standard download collections",
+        "public GitHub language-standard mirrors",
+        "general exact-title/PDF searches"
+      ],
+      "result": "older GF0011—2009 copies located; no repeatable formal GF0011—2022 fulltext/item-level official dataset located"
+    }
+  },
+  "decision": {
+    "status": "source_blocked_fail_closed_GF0011_2022_item_level_not_publicly_released",
+    "affected_exact_fields": [
+      "exact_2022_main_glyph_rendering",
+      "exact_2022_attached_or_subordinate_forms",
+      "exact_2022_common_radical_name_where_supplied",
+      "exact_2022_information_processing_international_code_where_supplied"
+    ],
+    "item_count": 201,
+    "value_policy": "Do not invent, copy forward, or infer item-level 2022 values from the 2009 edition, IRG mixed-source GCP data, a similar glyph, or a teaching positional variant.",
+    "reopen_condition": "Reopen only when the formal GF0011—2022 table or equivalent official item-level dataset becomes repeatably accessible and its publication identity/completeness can be verified."
+  },
+  "phase_impact": {
+    "main_radical_membership_continuity": "201/201 reviewed separately",
+    "position_migration": "201/201 closed separately as 198 reviewed + 3 conflict_fail_closed",
+    "component_name_deferred_from_P3": "Convert only deferred GF0011—2022 exact-name gates to source_blocked_fail_closed; do not overwrite 143 reviewed names.",
+    "structure_deferred_from_P3": "Convert only deferred exact-identity gates to source_blocked_fail_closed; do not overwrite 134 reviewed structures.",
+    "p4_exit": "All remaining P4 exact-item fields become explicit source-blocked fail-closed with a single reopen condition; no ordinary P4 pending remains."
+  },
+  "limits": [
+    "This is not a claim that the 2022 item values were reviewed.",
+    "This does not close Issue #4 permanently; Issue #4 remains the future source-upgrade entry point.",
+    "This does not alter P1/P2 stroke conclusions or P3 reviewed fields.",
+    "This does not grant artwork_ready, PDF readiness, manifest completion, CI release eligibility, or publication."
+  ]
+}
