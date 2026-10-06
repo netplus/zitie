@@ -20,7 +20,25 @@
       "stroke_count": 17,
       "stroke_count_status": "reviewed_S01_2009_stroke_group",
       "order_code_candidate": "34125125125125122",
-      "stroke_names_candidate": null,
+      "stroke_names_candidate": [
+        "撇",
+        "捺",
+        "横",
+        "竖",
+        "横折",
+        "横",
+        "竖",
+        "横折",
+        "横",
+        "竖",
+        "横折",
+        "横",
+        "竖",
+        "横折",
+        "横",
+        "竖",
+        "竖"
+      ],
       "tips": [
         "先把龠作为十七画基线主项整体识别；复杂内部笔组不凭字体外观拆分逐笔顺序。",
         "本轮只保留独立字语境；位置迁移、主附关系和完整时序后续回权威原页与整字证据核验。"
@@ -51,7 +69,7 @@
         "structure": "pending_authoritative_structure_review",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
-        "fine_stroke_names": "pending_target_row",
+        "fine_stroke_names": "reviewed_P2_normative_original_pages",
         "pronunciation": "pending_authoritative_row",
         "component_name": "pending_S03_target_row",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
@@ -61,7 +79,6 @@
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
         "S03目标部件名称条目尚未逐项定位并实际审读",
-        "细笔名尚未由适用规范原页关闭",
         "采用读音尚未完成适用权威原页复核",
         "结构分类及位置迁移尚未完成整字原页核验"
       ],
@@ -75,6 +92,43 @@
         "ucs": "09FA0",
         "order_code": "34125125125125122",
         "result": "reviewed_exact_GF0023_2020_original_page"
+      },
+      "fine_stroke_names_review": {
+        "phase": "P2",
+        "evidence": "data/evidence/P2-B20-B21-fine-stroke-names-original-page.json",
+        "result": "reviewed_normative_original_pages",
+        "adjudicated_names": [
+          "撇",
+          "捺",
+          "横",
+          "竖",
+          "横折",
+          "横",
+          "竖",
+          "横折",
+          "横",
+          "竖",
+          "横折",
+          "横",
+          "竖",
+          "横折",
+          "横",
+          "竖",
+          "竖"
+        ],
+        "target_original_page": {
+          "source_id": "S02",
+          "publication_id": "GF0023—2020",
+          "evidence": "data/evidence/B21-stroke-order-original-page.json",
+          "pdf_page": 533,
+          "printed_page": 527,
+          "table_no": "6267",
+          "ucs": "09FA0",
+          "order_code": "34125125125125122",
+          "result": "reviewed_exact_GF0023_2020_original_page"
+        },
+        "visual_review": true,
+        "rationale": "GF0023 exact accumulated-stroke row for 龠 was visually reviewed stroke by stroke; GF2001 naming rules were applied to the observed basic and 横折 strokes. No secondary sequence was used as authority."
       }
     }
   ],
