@@ -562,3 +562,24 @@ P6已完成全书绘图材料覆盖审计。固定Hanzi Writer / Make Me a Hanzi
 B03此前已在2026-09-30完成真实逐笔矢量人工复核（`data/evidence/B03-artwork.json`、`reviews/B03-artwork.md`），其`artwork_ready_local_candidate`只是旧阶段模型把PDF归档绑在一起。P6将B03正规化为`artwork_ready`，PDF归档仍独立留给P7。
 
 当前artwork_ready：**30/201（B01—B03）**。B04—B21共171项下一步必须逐项做累计笔画视觉QA，不能从本次材料覆盖审计自动升级。
+
+
+## P6第一轮：B04—B11 artwork视觉复核（2026-10-07）
+
+本轮使用固定Hanzi Writer revision `68d10a4b21150cae5e1ebbd223eed289cf32d90c`，由workflow run `37548434948`生成B04—B11 80项临时累计笔画审图包（artifact `11452390328`）。8个批次PDF全部渲染为120dpi PNG后逐批实际查看；牙、瓦、廴、心、罒额外做单页第二遍复核。
+
+结果：
+- **80/80 artwork reviewed**
+- 0 artwork conflict
+- 0 ordinary artwork pending
+- 当前笔红色/旧笔深灰关系正确
+- 累计笔画顺序与content_ready数据一致
+- 未见明显轮廓裁切、重叠或笔数不符
+
+牙的P2细笔名语义冲突保持fail-closed；P6不借绘图材料解决术语冲突。
+
+因此B04—B11全部升级为`artwork_ready`。连同B01—B03，当前全书为 **110/201 artwork_ready**，剩余B12—B21共91项继续同流程审图。
+
+证据：`reviews/P6-B04-B11-artwork-review-20261007.md`及`data/evidence/P6-B04-artwork-review.json`至`P6-B11-artwork-review.json`。
+
+注意：artwork_ready不等于layout_ready或PDF/release完成；最终A4版式与P7归档仍独立。
