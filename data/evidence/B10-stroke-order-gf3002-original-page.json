@@ -1,0 +1,49 @@
+{
+  "schema_version": 1,
+  "record_kind": "phase1_stroke_order_original_page_review",
+  "phase": "P1",
+  "batch_id": "B10",
+  "reviewed_at": "2026-10-06",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source": {
+    "source_id": "S08",
+    "publication_id": "GF3002—1999",
+    "title": "GB 13000.1字符集汉字笔顺规范",
+    "sha256": "cb5cb74f108dafed41a3583bc8d33d8dd318d1a21d714923c0f1ced89443cf3e",
+    "bytes": 6730497,
+    "pages": 8,
+    "acquisition_run_id": 37410985779,
+    "acquisition_artifact_id": 11389595541,
+    "official_url": "https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/201001/W020150902457900316281.pdf",
+    "mirror_commit": "d26705ffc52b81b6e1a45483c7b591f62962f49f",
+    "mirror_blob_sha": "4500a72bce326385b08003197edb91c04f40c2d8",
+    "method": "verified artifact recovery -> render complete 8-page original scan -> visual overview of all pages -> high-resolution visual review of exact target rows on PDF pages 7-8; table is explicitly abridged after sequence 134"
+  },
+  "reviewed_field": "stroke_order",
+  "entries": [
+    {
+      "character": "丬",
+      "pdf_page": 7,
+      "printed_page": 4,
+      "table_sequence": 45,
+      "exchange_code": "4E2C",
+      "stroke_count": 3,
+      "order_code": "412",
+      "main_id": 45,
+      "result": "reviewed_exact_GF3002_1999_original_page",
+      "canonical_candidate": "412",
+      "visual_review": true
+    }
+  ],
+  "summary": {
+    "target_count": 1,
+    "reviewed_exact": 1,
+    "normative_code_conflicts": 0
+  },
+  "limits": [
+    "Only exact rows actually visible in the GF3002 public PDF are upgraded.",
+    "The public PDF prints table sequences 1-134 then marks the remainder as omitted; it is not treated as a complete 20,902-row table.",
+    "This evidence does not close fine_stroke_names, pronunciation, component naming, GF0011—2022 identity, position migration, artwork, PDF or release status."
+  ]
+}
