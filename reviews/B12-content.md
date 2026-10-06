@@ -20,3 +20,22 @@
 - 正式位置变体与完整整字书写时序。
 
 本记录不授予artwork、PDF、manifest或release结论。
+
+## 2026-10-06 Unicode 18.0 RS二级身份定位
+
+来源：Unicode 18.0.0 `RSIndex.txt`（Unihan Radical-Stroke Index Collation Data，源文件日期2026-07-30）。本节逐项按Unicode标量值精确定位RS记录；仅作为`target_identity`的二级Unicode/RS交叉证据，**不替代GF0011—2022对201主部首身份、主附关系、名称或编码的正式裁决**。
+
+| 主项 | Unicode | RS记录 | RS列 | 结论 |
+|---|---|---|---|---|
+| 屮 | U+5C6E | 45.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 巛 | U+5DDB | 47.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 殳 | U+6BB3 | 79.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 毋 | U+6BCB | 80.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 鸟 | U+9E1F | 196.0 | chinese_simplified_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 疒 | U+7592 | 104.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 穴 | U+7A74 | 116.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 疋 | U+758B | 103.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 皮 | U+76AE | 107.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 癶 | U+7676 | 105.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+
+源文件：https://www.unicode.org/Public/18.0.0/charts/RSIndex.txt 。RSIndex为分号分隔文本：第1列是radical-stroke pair，第2—5列依次为traditional、Chinese simplified、non-Chinese simplified、secondary non-Chinese simplified排序列。本节不支持笔顺、细笔名、部件名称或位置变体结论。
