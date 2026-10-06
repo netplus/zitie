@@ -43,7 +43,7 @@
         "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "conflict_fail_closed_GF0023_visual_subtype_ambiguous_GF2001_bridge_pending",
@@ -55,7 +55,7 @@
       },
       "migration_boundary": "“柔”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "P2细笔名原页复核仍未裁决：GF0023目标行中的code-5折笔在当前扫描下不足以可靠区分横撇/横钩，GF2001缺少直接目标字桥接；保持fail-closed。"
       ],
       "structure_review": {
@@ -212,6 +212,15 @@
         },
         "visual_review": true,
         "rationale": "Exact GF0023 target row was visually reviewed, but the two code-5 folded strokes in 矛 cannot be distinguished with sufficient confidence as 横撇 versus 横钩 from the current scan under GF2001 naming rules. Retain fail-closed rather than infer from secondary data."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 121,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -251,7 +260,7 @@
         "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -263,7 +272,7 @@
       },
       "migration_boundary": "“耕”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据"
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
       ],
       "structure_review": {
         "phase": "P3",
@@ -440,6 +449,15 @@
         },
         "visual_review": true,
         "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 122,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -479,7 +497,7 @@
         "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -491,7 +509,7 @@
       },
       "migration_boundary": "“老”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据"
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
       ],
       "structure_review": {
         "phase": "P3",
@@ -632,6 +650,15 @@
         },
         "visual_review": true,
         "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 123,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -671,7 +698,7 @@
         "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -683,7 +710,7 @@
       },
       "migration_boundary": "“聪”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据"
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -858,6 +885,15 @@
         },
         "visual_review": true,
         "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 124,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -897,7 +933,7 @@
         "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -909,7 +945,7 @@
       },
       "migration_boundary": "“卧”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据"
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1084,6 +1120,15 @@
         },
         "visual_review": true,
         "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 125,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -1116,7 +1161,7 @@
         "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "conflict_fail_closed_normative_target_gap",
@@ -1128,7 +1173,7 @@
       },
       "migration_boundary": "“要”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "fine_stroke_names已按P2规范原页审读收口为conflict_fail_closed_normative_target_gap；仅在取得覆盖精确目标字形的适用规范原页或权威桥接规则后重开",
         "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
       ],
@@ -1253,6 +1298,15 @@
           "result": "no_direct_target_character_example_sufficient_for_complete_sequence"
         },
         "resolution_boundary": "Do not infer a complete fine-stroke-name sequence from D03/D04, numeric 1/2/3/4/5 order codes, or a similar-looking character. Reopen only if an applicable normative original page explicitly covers the target glyph or an authoritative rule bridges the exact target."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 126,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -1292,7 +1346,7 @@
         "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -1304,7 +1358,7 @@
       },
       "migration_boundary": "“耐”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据"
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1479,6 +1533,15 @@
         },
         "visual_review": true,
         "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 127,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -1518,7 +1581,7 @@
         "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -1530,7 +1593,7 @@
       },
       "migration_boundary": "“题”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据"
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1669,6 +1732,15 @@
         },
         "visual_review": true,
         "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 128,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -1708,7 +1780,7 @@
         "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
@@ -1720,7 +1792,7 @@
       },
       "migration_boundary": "“到”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据"
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据"
       ],
       "structure_review": {
         "phase": "P3",
@@ -1861,6 +1933,15 @@
         },
         "visual_review": true,
         "rationale": "GF0023 exact target row and accumulated stroke forms were visually reviewed; GF2001 basic/folded-stroke naming rules were applied to the observed shapes. D03/D04 are locator/risk inputs only."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 129,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     },
     {
@@ -1893,7 +1974,7 @@
         "limits": "支持2009版201主部首中间索引、main_id及主表笔画分组；不替代GF0011—2022逐项身份。"
       },
       "field_status": {
-        "target_identity": "baseline_2009_reviewed_2022_pending",
+        "target_identity": "P4_main_radical_membership_continuity_reviewed_exact_2022_fields_pending",
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "conflict_fail_closed_normative_target_gap",
@@ -1905,7 +1986,7 @@
       },
       "migration_boundary": "“虎”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
-        "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
+        "GF0011—2022已确认201主部首集合连续；本项main_id/主部首成员身份已P4 reviewed，但2022精确主形字形、附形、名称和编码仍待正式全文或官方逐项数据",
         "fine_stroke_names已按P2规范原页审读收口为conflict_fail_closed_normative_target_gap；仅在取得覆盖精确目标字形的适用规范原页或权威桥接规则后重开",
         "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
       ],
@@ -2086,6 +2167,15 @@
           "result": "no_direct_target_character_example_sufficient_for_complete_sequence"
         },
         "resolution_boundary": "Do not infer a complete fine-stroke-name sequence from D03/D04, numeric 1/2/3/4/5 order codes, or a similar-looking character. Reopen only if an applicable normative original page explicitly covers the target glyph or an authoritative rule bridges the exact target."
+      },
+      "target_identity_review": {
+        "phase": "P4",
+        "evidence": "data/evidence/P4-B12-B19-main-radical-identity-continuity.json",
+        "source_id": "S01",
+        "publication_id": "GF0011—2022",
+        "result": "main_radical_membership_and_main_id_continuity_reviewed",
+        "main_id": 130,
+        "limits": "2022 exact main-glyph rendering, attached forms, common name and international code remain pending formal item-level 2022 data."
       }
     }
   ],
