@@ -1120,7 +1120,7 @@
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "conflict_fail_closed_normative_target_gap",
-        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
@@ -1129,7 +1129,6 @@
       "migration_boundary": "“要”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "fine_stroke_names已按P2规范原页审读收口为conflict_fail_closed_normative_target_gap；仅在取得覆盖精确目标字形的适用规范原页或权威桥接规则后重开",
         "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
       ],
@@ -1146,12 +1145,12 @@
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
       },
-      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "pinyin_status": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
       "pronunciation_review": {
-        "source_id": "S03",
-        "publication_id": "GF0014—2009",
-        "evidence": "data/evidence/B13-pronunciation.json",
-        "result": "S03_name_row_does_not_supply_target_self_pronunciation"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-pronunciation-nonlexical-component-not-applicable.json",
+        "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
       },
       "stroke_order_secondary_locator": {
         "evidence": "data/evidence/B13-stroke-order-secondary-locator.json",
@@ -1898,7 +1897,7 @@
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GBT25741_2010_appendix_C_original_page",
         "fine_stroke_names": "conflict_fail_closed_normative_target_gap",
-        "pronunciation": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+        "pronunciation": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
         "component_name": "reviewed_S03_GF0014_2009",
         "teaching_text": "reviewed_editorial_manual_non_authoritative",
         "whole_character_context": "reviewed_editorial_non_authoritative_whole_character_verification_pending",
@@ -1907,7 +1906,6 @@
       "migration_boundary": "“虎”仅作整字迁移语境；位置形态、主/附关系和真实时序必须回规范原页与完整整字核验。",
       "unresolved": [
         "GF0011—2022精确主项字形、附形、名称和编码待正式全文或官方逐项数据",
-        "S03已审读但不能直接关闭目标自身采用读音；待其它适用权威来源确认",
         "fine_stroke_names已按P2规范原页审读收口为conflict_fail_closed_normative_target_gap；仅在取得覆盖精确目标字形的适用规范原页或权威桥接规则后重开",
         "structure已完成P3适用性审查并转P4：须先由GF0011—2022解决精确目标身份/主附关系后再判定，不标reviewed"
       ],
@@ -1924,12 +1922,12 @@
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "Target was not an exact GF0023 main-table standard-character row. Do not apply the 295-standard-character independent/compound set before GF0011—2022 exact target identity/main-variant relation is resolved."
       },
-      "pinyin_status": "S03_reviewed_no_direct_target_self_pronunciation_alternative_source_pending",
+      "pinyin_status": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
       "pronunciation_review": {
-        "source_id": "S03",
-        "publication_id": "GF0014—2009",
-        "evidence": "data/evidence/B13-pronunciation.json",
-        "result": "S03_name_row_does_not_supply_target_self_pronunciation"
+        "phase": "P3",
+        "evidence": "data/evidence/P3-pronunciation-nonlexical-component-not-applicable.json",
+        "result": "not_applicable_P3_nonlexical_component_no_direct_target_self_pronunciation",
+        "boundary": "S03 original-page review did not provide a direct pronunciation of the target glyph itself. The target is not an exact GF0023 main-table standard-character row in this project. Do not borrow the pronunciation of an example/name character or assign a dictionary/classical glyph reading. P4 exact GF0011—2022 identity may reopen only if the target is formally established as requiring a self reading."
       },
       "stroke_order_secondary_locator": {
         "evidence": "data/evidence/B13-stroke-order-secondary-locator.json",
