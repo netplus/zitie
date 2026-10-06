@@ -35,3 +35,22 @@
 - GF0011—2022精确主项字形、附形、名称和编码：pending。
 
 本记录不授予content_ready，更不授予artwork、layout、PDF或release结论。
+
+## 2026-10-06 Unicode 18.0 RS二级身份定位
+
+来源：Unicode 18.0.0 `RSIndex.txt`（Unihan Radical-Stroke Index Collation Data，源文件日期2026-07-30）。本节逐项按Unicode标量值精确定位RS记录；仅作为`target_identity`的二级Unicode/RS交叉证据，**不替代GF0011—2022对201主部首身份、主附关系、名称或编码的正式裁决**。
+
+| 主项 | Unicode | RS记录 | RS列 | 结论 |
+|---|---|---|---|---|
+| 赤 | U+8D64 | 155.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 豆 | U+8C46 | 151.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 酉 | U+9149 | 164.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 辰 | U+8FB0 | 161.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 豕 | U+8C55 | 152.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 卤 | U+5364 | 25.5 + 197.0 | traditional_radicals + chinese_simplified_radicals | 多RS关联，全部保留，不自动裁决 |
+| 里 | U+91CC | 166.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 足 | U+8DB3 | 157.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 邑 | U+9091 | 163.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+| 身 | U+8EAB | 158.0 | traditional_radicals | 标量值精确定位，GF0011—2022仍pending |
+
+源文件：https://www.unicode.org/Public/18.0.0/charts/RSIndex.txt 。RSIndex为分号分隔文本：第1列是radical-stroke pair，第2—5列依次为traditional、Chinese simplified、non-Chinese simplified、secondary non-Chinese simplified排序列。本节不支持笔顺、细笔名、部件名称或位置变体结论。
