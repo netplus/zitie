@@ -47,6 +47,7 @@ jobs:
           python scripts/build_book_matter.py
           python scripts/build_collection.py
           python scripts/verify_book_matter.py
+          python scripts/verify_release_candidate.py
           git rev-parse HEAD > build/SOURCE_COMMIT.txt
       - name: Check formal publication separately
         run: |

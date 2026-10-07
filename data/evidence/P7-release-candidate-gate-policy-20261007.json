@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "record_kind": "P7_release_candidate_gate_policy",
+  "review_date": "2026-10-07",
+  "status": "candidate_gate_defined_formal_release_still_pending",
+  "rationale": "P4 deliberately closed GF0011—2022 item-level exact fields as source_blocked_fail_closed after public-access audit. P7 must not require or fabricate fulltext_verified to progress a release candidate.",
+  "accepted_terminal_states": {
+    "exact_GF0011_2022_item_fields": {
+      "target_count": 201,
+      "reviewed": 0,
+      "source_blocked_fail_closed": 201,
+      "ordinary_pending": 0,
+      "evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+      "reopen_condition": "formal GF0011—2022 table or equivalent official item-level dataset becomes repeatably accessible"
+    },
+    "position_migration": {
+      "reviewed": 198,
+      "conflict_fail_closed": 3,
+      "ordinary_pending": 0
+    }
+  },
+  "required_candidate_gates": [
+    "201/201 content_ready",
+    "201/201 artwork_ready",
+    "201/201 layout_ready",
+    "v0.4.0 276-page draft archived in deliverables/drafts and manifest hash/bytes/pages match repository bytes",
+    "P7 TOC/index/variant/legacy27 visual QA passed",
+    "ordinary pending = 0 in terminal content layers",
+    "target HEAD CI executes scripts/verify_release_candidate.py"
+  ],
+  "non_claims": [
+    "Does not mark GF0011—2022 full text as obtained.",
+    "Does not upgrade any source_blocked_fail_closed or conflict_fail_closed field to reviewed.",
+    "Does not itself create deliverables/releases/ or a formal release."
+  ],
+  "verifier": "scripts/verify_release_candidate.py"
+}
