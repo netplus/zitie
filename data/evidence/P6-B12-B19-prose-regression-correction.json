@@ -1,0 +1,37 @@
+{
+  "schema_version": 1,
+  "record_kind": "P6_prose_regression_correction",
+  "review_date": "2026-10-07",
+  "phase": "P6",
+  "scope": [
+    "B12",
+    "B13",
+    "B14",
+    "B15",
+    "B16",
+    "B17",
+    "B18",
+    "B19"
+  ],
+  "reviewed_entries": 80,
+  "stale_sentence_corrections": 118,
+  "batch_corrections": {
+    "B12": 16,
+    "B13": 4,
+    "B14": 0,
+    "B15": 20,
+    "B16": 20,
+    "B17": 20,
+    "B18": 20,
+    "B19": 18
+  },
+  "method": "Batch-wide scan of teaching tips/checks against terminal canonical field_status. Obsolete pending/待核 wording for already closed fields was replaced with pedagogical wording grounded in reviewed stroke order and P4 context. Genuine conflict_fail_closed/source_blocked_fail_closed states were not promoted.",
+  "preserved_boundaries": [
+    "fine_stroke_names conflict_fail_closed entries are not assigned candidate stroke-name labels",
+    "pronunciation not_applicable/conflict_fail_closed entries are not assigned invented pinyin",
+    "GF0011—2022 exact item-level identity/name/attached-form/code fields remain source_blocked_fail_closed",
+    "position-migration mapping conflicts remain fail-closed"
+  ],
+  "result": "B12_B19_editorial_prose_resynchronized_for_P6_layout",
+  "phase_boundary": "P6 editorial/layout regression correction only; no PDF archival, manifest promotion, or release."
+}
