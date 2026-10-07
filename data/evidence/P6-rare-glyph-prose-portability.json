@@ -1,0 +1,36 @@
+{
+  "schema_version": 1,
+  "record_kind": "P6_editorial_font_portability_review",
+  "review_date": "2026-10-07",
+  "phase": "P6",
+  "trigger": "Full-batch A4 CI exposed rare attached-form glyphs in prose that are not covered by the configured AR PL KaitiM GB font.",
+  "policy": "Do not substitute a lookalike Unicode code point and do not bundle a new font. Keep target glyph artwork vector-rendered; rewrite prose to semantically equivalent ordinary-language descriptions.",
+  "entries": [
+    {
+      "batch": "B09",
+      "target": "爪",
+      "removed_literal": "爫",
+      "replacement_scope": "上部附形"
+    },
+    {
+      "batch": "B11",
+      "target": "示",
+      "removed_literal": "礻",
+      "replacement_scope": "左侧附形"
+    },
+    {
+      "batch": "B11",
+      "target": "罒",
+      "removed_literal": "罒/囗 in prose",
+      "replacement_scope": "围框类、皿形"
+    },
+    {
+      "batch": "B11",
+      "target": "皿",
+      "removed_literal": "罒",
+      "replacement_scope": "上部网形部件"
+    }
+  ],
+  "result": "prose_no_longer_depends_on_these_rare_font_glyphs",
+  "boundary": "No target identity, attached-form identity, stroke conclusion, or source status is changed."
+}
