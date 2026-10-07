@@ -21,7 +21,7 @@
 - S05 GF2001—2001：9页，177,325字节，SHA256 `68a1420...`；
 - 2026-10-06已从历史Actions artifact恢复三份原件并重新核验SHA256、字节数和页数。
 
-P0已完成：2026-10-06新的`source-probe` run 37402630995成功，artifact 11385916300重新取得并强制校验S02/S04/S05/S01-2009字节。后续停止继续寻找D05/D06等二次源，除非规范原件出现无法解决的真缺口。\n\n**当前活动阶段：P7 PDF、全书QA与正式发布。**
+P0已完成：2026-10-06新的`source-probe` run 37402630995成功，artifact 11385916300重新取得并强制校验S02/S04/S05/S01-2009字节。后续停止继续寻找D05/D06等二次源，除非规范原件出现无法解决的真缺口。\n\n**P0—P7全部完成；v0.4.0正式发布已完成。**
 
 ## P1 当前进展（2026-10-06）
 
@@ -209,19 +209,26 @@ P6退出条件已满足：**201/201 artwork_ready + 全书layout_ready**。
 - `reviews/P6-full-book-layout-review-20261007.md`
 - 既有P6 artwork evidence/review继续保留。
 
-## P7 PDF、全书QA与正式发布
+## P7 PDF、全书QA与正式发布（已完成：2026-10-07）
 
-顺序：
-1. 全书draft；
-2. 分段逐页视觉QA；
-3. 修版与回归；
-4. manifest；
-5. 目标HEAD CI；
-6. release candidate；
-7. 201主项/附形/原27项/目录索引/页码终审；
-8. 正式release。
+正式v0.4.0已经完成全部P7门槛：
+- 全书structured draft与RC1均已归档；
+- 201主项、32项教学变体、原V001—V027、目录/索引/页码/来源台账完成QA；
+- formal preflight HEAD `9149a6e9b751bfbc97e95c3bbfc64a5c8681f7fd` 的 run `37570965306` 成功；
+- 正式PDF已进入 `deliverables/releases/v0.4.0/B01-B21_with_preface_toc_appendices_v0.4.0_A4.pdf`；
+- 276页，3,749,164 bytes，SHA256 `ab3c23d7547872f4d0e2c128de397e9e89ed6de97b681876e2dff017ff5c4894`；
+- final release PR #55 HEAD `61ab933143137766f3fb00e5f946e7897d2e2349` 的 Book integrity checks run `37571448193` 成功；
+- PR #55 已合入main，merge commit `576812fec7cc681df45ed85b36f51a1abe5ad4bb`；
+- manifest条目为 `status=released`、`release_eligible=true`。
 
-退出条件：正式PDF进入`deliverables/releases/`且release门槛全部通过。
+terminal fail-closed继续明确披露：
+- fine_stroke_names：14；
+- position_migration：3；
+- GF0011—2022逐项精确字段：201 source_blocked_fail_closed。
+
+这些终态边界是经过审计的发布状态，不等于普通pending，也不因正式发布而消失。
+
+**P7退出条件已满足，P0—P7全部完成。** 后续仅做维护、勘误或新权威来源触发的重开。
 
 ## 吞吐约定
 
