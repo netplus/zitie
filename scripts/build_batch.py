@@ -51,6 +51,22 @@ def text(c,x,y,value,size=11,color='ink',font='CJK',center=False,width=None):
     if center: c.drawCentredString(x,y,value)
     else: c.drawString(x,y,value)
 
+def wrapped_text(c,x,y,value,size=11,color='ink',font='CJK',width=100,leading=None,max_lines=2):
+    leading=leading or size*1.25
+    lines=[]; current=''
+    for ch in value:
+        candidate=current+ch
+        if current and pdfmetrics.stringWidth(candidate,font,size)>width:
+            lines.append(current); current=ch
+        else:
+            current=candidate
+    if current: lines.append(current)
+    if len(lines)>max_lines:
+        raise ValueError('Text exceeds wrapped layout: '+value)
+    for i,line in enumerate(lines):
+        text(c,x,y-i*leading,line,size=size,color=color,font=font)
+    return len(lines)
+
 def grid(c,x,y,size):
     c.saveState(); c.setStrokeColor(HexColor(COL['border'])); c.setLineWidth(.65)
     c.rect(x,y,size,size)
@@ -79,33 +95,70 @@ def glyph(c,data,x,y,size,color='red',step=None):
         c.setFillColor(HexColor(COL[paint])); path=c.beginPath(); parse_path(s,Pen(path)); c.drawPath(path,stroke=0,fill=1)
     c.restoreState()
 
-def make_page(c,e,data,page_number,draft,batch):
-    n=len(e['stroke_names'])
-    if n>6: raise ValueError('This initial renderer supports <=6 strokes; extend by pagination, never shrink.')
-    text(c,LEFT,H-49,e['character']+'｜笔顺练字帖',25)
-    text(c,RIGHT-120,H-46,batch['batch_id']+' / A4 / 田字格',10,color='muted',font='CJK')
+def reviewed_stroke_names(e,n):
+    status=((e.get('field_status') or {}).get('fine_stroke_names') or '')
+    if 'conflict_fail_closed' in status or 'source_blocked_fail_closed' in status:
+        return None
+    candidates=[
+        e.get('stroke_names'),
+        (e.get('fine_stroke_names_review') or {}).get('adjudicated_names')
+    ]
+    for names in candidates:
+        if isinstance(names,list) and len(names)==n:
+            return names
+    return None
+
+def source_caption(e):
+    review=e.get('stroke_order_review') or {}
+    publication=review.get('publication_id') or review.get('source_id')
+    printed=review.get('printed_page')
+    if publication and printed is not None:
+        return f'依据：{publication}，原印第{printed}页'
+    printed=e.get('primary_printed_page')
+    if printed is not None:
+        return f'依据：GF0023—2020，第{printed}页'
+    return '依据：已入库并审读的笔顺证据'
+
+def make_page(c,e,data,page_number,draft,batch,step_start,step_end,part,total_parts):
+    n=len(data[0])
+    names=reviewed_stroke_names(e,n)
+    continuation=part>1
+    suffix='' if total_parts==1 else f'（第{part}/{total_parts}页）'
+    glyph(c,data,LEFT,H-61,31,color='ink')
+    text(c,LEFT+39,H-49,'笔顺练字帖'+suffix,25)
+    text(c,RIGHT-150,H-46,batch['batch_id']+' / A4 / 田字格',10,color='muted',font='CJK')
     text(c,LEFT,H-80,'姓名：________________',11,color='muted')
     text(c,RIGHT-200,H-80,'日期：______年____月____日',11,color='muted')
     c.setStrokeColor(HexColor(COL['red'])); c.setLineWidth(1.1); c.line(LEFT,H-94,RIGHT,H-94)
     grid(c,LEFT,642,94); glyph(c,data,LEFT,642,94)
-    text(c,155,709,e['pinyin'],24,font='Latin')
-    text(c,155,686,str(n)+'画 · 独体字',13)
-    text(c,155,663,e['tips'][0],11.5,width=RIGHT-155)
-    text(c,155,642,e['tips'][1],11.5,color='red',width=RIGHT-155)
+    if e.get('pinyin'):
+        text(c,155,709,e['pinyin'],24,font='Latin')
+    else:
+        text(c,155,709,'读音：本项目不单列',12,color='muted')
+    text(c,155,686,str(n)+'画 · 主部首',13)
+    if not continuation:
+        wrapped_text(c,155,667,e['tips'][0],11.5,width=RIGHT-155,leading=13,max_lines=2)
+        wrapped_text(c,155,640,e['tips'][1],11.5,color='red',width=RIGHT-155,leading=13,max_lines=2)
+    else:
+        wrapped_text(c,155,663,'逐笔示范续页：保持与前页相同的格子尺寸，不缩小复杂字。',10.5,color='muted',width=RIGHT-155,leading=12,max_lines=2)
     text(c,LEFT,606,'01  看笔顺',14,color='red')
     text(c,300,607,'红色：新写的一笔',9,color='red')
     text(c,427,607,'深灰：此前笔画',9,color='previous')
     size=86
-    starts=[(LEFT+RIGHT-size)/2] if n==1 else [LEFT+i*(RIGHT-LEFT-size)/(n-1) for i in range(n)]
-    for i,x in enumerate(starts):
-        text(c,x+size/2,575,str(i+1)+'  '+e['stroke_names'][i],12,center=True)
+    indices=list(range(step_start,step_end))
+    count=len(indices)
+    starts=[(LEFT+RIGHT-size)/2] if count==1 else [LEFT+i*(RIGHT-LEFT-size)/(count-1) for i in range(count)]
+    for pos,i in enumerate(indices):
+        x=starts[pos]
+        label=names[i] if names else '第'+str(i+1)+'笔'
+        text(c,x+size/2,575,str(i+1)+'  '+label,12,center=True)
         grid(c,x,477,size); glyph(c,data,x,477,size,step=i)
-        if i<n-1:
-            x1,x2=x+size+9,starts[i+1]-9
+        if pos<count-1:
+            x1,x2=x+size+9,starts[pos+1]-9
             if x2>x1+4:
                 c.setStrokeColor(HexColor(COL['border'])); c.setLineWidth(.7); c.line(x1,520,x2,520)
                 c.line(x2-3,523,x2,520); c.line(x2-3,517,x2,520)
-    text(c,LEFT,454,'先按顺序读笔画，再用手指书空。格间箭头表示阅读顺序。',10,color='muted')
+    text(c,LEFT,454,'按页码顺序连续读笔画，再用手指书空。每页最多展示6个累计步骤。',10,color='muted')
     text(c,LEFT,425,'02  描红、描淡字、独立写',14,color='red')
     text(c,LEFT,405,'第1行描红，第2行描淡字；后两行看范字，再在空格中练写。',10,color='muted')
     cell=(RIGHT-LEFT-7*6)/8
@@ -114,15 +167,24 @@ def make_page(c,e,data,page_number,draft,batch):
         for col in range(8):
             x=LEFT+col*(cell+6); grid(c,x,y,cell)
             if row<2 or col==0: glyph(c,data,x,y,cell,['trace','pale','ink','ink'][row])
-    text(c,LEFT,89,'写完检查：'+e['check'],10,color='muted',width=RIGHT-LEFT)
+    wrapped_text(c,LEFT,94,'写完检查：'+e['check'],10,color='muted',width=RIGHT-LEFT,leading=12,max_lines=2)
     c.setStrokeColor(HexColor(COL['guide'])); c.line(LEFT,74,RIGHT,74)
-    label=batch['draft_label'] if draft else '已通过本工程发布门槛。'
+    label=batch.get('draft_label','编写稿') if draft else '已通过本工程发布门槛。'
     text(c,LEFT,58,label,8,color='red' if draft else 'muted')
     artnote='；横折收笔已整理。' if e.get('artwork_override') else '。'
-    text(c,LEFT,43,'依据：GF0023—2020，第'+str(e['primary_printed_page'])+'页；矢量：Hanzi Writer / Arphic PL'+artnote,8,color='muted',width=RIGHT-LEFT)
+    text(c,LEFT,43,source_caption(e)+'；矢量：Hanzi Writer / Arphic PL'+artnote,8,color='muted',width=RIGHT-LEFT)
     text(c,LEFT,29,'打印：A4纵向，实际大小 / 100%；建议彩色。',8,color='muted')
-    text(c,RIGHT-40,29,f"{batch['batch_id']} / {page_number:02}",8,color='muted',font='Latin')
+    text(c,RIGHT-82,29,f"{batch['batch_id']} / {page_number:03} / {part}-{total_parts}",8,color='muted',font='Latin')
     c.showPage()
+
+def make_entry_pages(c,e,data,page_number,draft,batch):
+    n=len(data[0])
+    total=max(1,math.ceil(n/6))
+    for part in range(total):
+        start=part*6
+        end=min(n,start+6)
+        make_page(c,e,data,page_number+part,draft,batch,start,end,part+1,total)
+    return total
 
 def frontmatter(path):
     body=ParagraphStyle('body',fontName='CJK',fontSize=11.5,leading=20,spaceAfter=9,wordWrap='CJK',firstLineIndent=23)
@@ -150,7 +212,9 @@ def frontmatter(path):
 
 def main():
     p=argparse.ArgumentParser(); p.add_argument('--draft',action='store_true')
-    p.add_argument('--batch',choices=['B01','B02'],default='B01')
+    batch_plan=load('data/batches.json')
+    valid_batches=[item['id'] for item in batch_plan['frozen_batches']]
+    p.add_argument('--batch',choices=valid_batches,default='B01')
     p.add_argument('--font',default='/usr/share/fonts/truetype/arphic-gkai00mp/gkai00mp.ttf')
     p.add_argument('--latin-font',default='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf')
     args=p.parse_args()
@@ -162,18 +226,22 @@ def main():
     mode='draft' if args.draft else 'release'
     pdf=out/f'{args.batch}_{mode}_A4.pdf'; c=canvas.Canvas(str(pdf),pagesize=A4,pageCompression=1,invariant=1)
     c.setTitle(args.batch+'笔顺练字帖'+('（编写稿）' if args.draft else ''))
-    checks=[]
-    for i,e in enumerate(batch['entries'],1):
+    checks=[]; page_number=1
+    for e in batch['entries']:
         fp=out/'vectors'/f'{ord(e["character"]):04X}.json'; raw=fp.read_bytes()
         artwork,audit=apply_artwork(e['character'],raw)
-        d=prepare(artwork,len(e['stroke_names'])); make_page(c,e,d,i,args.draft,batch)
-        checks.append({'character':e['character'],'stroke_count':len(d[0]),'sha256':hashlib.sha256(raw).hexdigest(),'artwork_audit':audit,'practice_cells':32})
+        expected=(e.get('stroke_count') if isinstance(e.get('stroke_count'),int) else
+                  len(e.get('stroke_names') or (e.get('fine_stroke_names_review') or {}).get('adjudicated_names') or e.get('stroke_names_candidate') or []))
+        d=prepare(artwork,expected)
+        pages=make_entry_pages(c,e,d,page_number,args.draft,batch)
+        checks.append({'character':e['character'],'stroke_count':len(d[0]),'sha256':hashlib.sha256(raw).hexdigest(),'artwork_audit':audit,'practice_cells':32*pages,'entry_pages':pages})
+        page_number+=pages
     c.save(); pre=out/BOOK['preface_file']; frontmatter(pre)
     writer=PdfWriter()
     for file in [pre,pdf]: writer.append(str(file))
     combined=out/f'{args.batch}_with_preface_{mode}_A4.pdf'
     with combined.open('wb') as stream: writer.write(stream)
-    (out/f'generation_{args.batch}.json').write_text(json.dumps({'draft':args.draft,'entries':checks,'practice_pages':10,'preface_pages':len(PdfReader(str(pre)).pages),'visual_review':'pending'},ensure_ascii=False,indent=2),encoding='utf-8')
+    (out/f'generation_{args.batch}.json').write_text(json.dumps({'draft':args.draft,'entries':checks,'practice_pages':page_number-1,'preface_pages':len(PdfReader(str(pre)).pages),'visual_review':'pending'},ensure_ascii=False,indent=2),encoding='utf-8')
     print(combined)
 
 if __name__=='__main__':main()

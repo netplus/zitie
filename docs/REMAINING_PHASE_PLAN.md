@@ -21,7 +21,7 @@
 - S05 GF2001—2001：9页，177,325字节，SHA256 `68a1420...`；
 - 2026-10-06已从历史Actions artifact恢复三份原件并重新核验SHA256、字节数和页数。
 
-P0已完成：2026-10-06新的`source-probe` run 37402630995成功，artifact 11385916300重新取得并强制校验S02/S04/S05/S01-2009字节。后续停止继续寻找D05/D06等二次源，除非规范原件出现无法解决的真缺口。\n\n**当前活动阶段：P6 Artwork / 版式。**
+P0已完成：2026-10-06新的`source-probe` run 37402630995成功，artifact 11385916300重新取得并强制校验S02/S04/S05/S01-2009字节。后续停止继续寻找D05/D06等二次源，除非规范原件出现无法解决的真缺口。\n\n**当前活动阶段：P7 PDF、全书QA与正式发布。**
 
 ## P1 当前进展（2026-10-06）
 
@@ -188,32 +188,26 @@ P5清理的主要状态债：
 
 退出条件**201/201 content_ready**已满足，阶段正式切换P6。
 
-## P6 Artwork / 版式
+## P6 Artwork / 版式（已完成：2026-10-07）
 
 目标：201项进入稳定图形和版式流程。
 
-工作：
-- 固定矢量来源；
-- 逐笔累计示范；
-- 当前笔红色、旧笔深灰；
-- A4田字格；
-- 描红/淡灰/独立书写；
-- 拼音、结构和教学说明；
-- 复杂字按可练写原则分页。
+完成结果：
+- 全书201项固定revision矢量材料审计：201 compatible / 0 missing / 0 stroke-count mismatch；
+- B01—B21累计笔画人工审图完成：201/201 artwork_ready；
+- 通用A4 builder已覆盖B01—B21，非独立读音不伪造拼音，细笔名fail-closed项不渲染候选笔名；
+- 复杂字每页最多6个累计步骤，保持练写格尺寸，不通过缩小解决；
+- PR #47 workflow run `37560963767` 已实际完成全21批research build与PDF structural preflight；
+- artifact `11456961693`（digest `sha256:c87ce0b3d3bd7daa5d713bc54500223daa339b62e7581141560ac84dff64b7e1`）中的B01—B21共258个练习页全部渲染并完成视觉layout review；
+- B08、B20、B21另做高分辨率复看；B21“龠”17画按6+6+5三页连续展示；
+- 未见可见裁切、文字/格线重叠、黑块或目标字形缺失。
 
-退出条件：201项artwork_ready。
+P6退出条件已满足：**201/201 artwork_ready + 全书layout_ready**。
 
-### P6当前进展（2026-10-07）
-
-- 全书201项固定revision矢量材料已审计：201 compatible / 0 missing / 0 stroke-count mismatch；
-- 该机器审计只关闭材料覆盖，不授予artwork_ready；
-- B01/B02沿用既有artwork_ready，B03将2026-09-30已真实完成的逐笔矢量人工复核正规化为artwork_ready；
-- 第一轮B04—B11 80项累计笔画审图完成，80/80通过；
-- 第二轮B12—B21 91项累计笔画审图完成，91/91通过；对细笔名fail-closed项只使用reviewed步数/顺序，不伪造笔名标签；
-- 当前 **201/201 artwork_ready**；
-- P6剩余唯一主门槛：全书A4版式/练习层级/复杂字分页统一与layout review。达到layout_ready后才进入P7。
-
-证据：`data/evidence/P6-vector-material-coverage-20261007.json`、`reviews/P6-vector-coverage-and-B03-promotion-20261007.md`。
+证据：
+- `data/evidence/P6-full-book-layout-review-20261007.json`
+- `reviews/P6-full-book-layout-review-20261007.md`
+- 既有P6 artwork evidence/review继续保留。
 
 ## P7 PDF、全书QA与正式发布
 

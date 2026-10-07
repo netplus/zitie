@@ -1,6 +1,20 @@
 # 当前编写状态
 
-更新：2026-10-07。阶段1内容层已完成，当前活动阶段为P6：Artwork / 版式。
+更新：2026-10-07。P1—P6均已完成，当前活动阶段为P7：PDF、全书QA与正式发布。
+
+## 最新阶段检查点：P6完成并进入P7（2026-10-07）
+
+- 内容：**201/201 content_ready，0 content_in_progress**；
+- artwork：**201/201 artwork_ready**；
+- layout：**201/201 layout_ready**，B01—B21共258个练习页已全部渲染并完成视觉复核；
+- P6 CI：PR #47 workflow run `37560963767` 成功，全21批结构校验、research build、PDF structural preflight、formal-release fail-closed检查、source export和artifact upload全部通过；
+- P6 artifact：`11456961693 zitie-p6-full-layout-research`，digest `sha256:c87ce0b3d3bd7daa5d713bc54500223daa339b62e7581141560ac84dff64b7e1`；
+- 视觉QA：258/258页按五组contact sheet全量查看；B08、B20、B21另做高分辨率复核；未见裁切、重叠、黑块或复杂字缩小；
+- P6 review：`reviews/P6-full-book-layout-review-20261007.md`；
+- P6 evidence：`data/evidence/P6-full-book-layout-review-20261007.json`；
+- 正式release仍为 **0**。P6完成不等于P7归档/manifest/release完成。
+
+P7下一步：先生成并真实归档全书draft到`deliverables/drafts/`，登记manifest，再做全书PDF目录/页码/索引/附形回归视觉QA，最后以目标HEAD CI和release gate收口。
 
 ## 当前阶段
 

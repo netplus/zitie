@@ -16,6 +16,29 @@ def expand(catalog):
             rows.append({'main_id':len(rows)+1, 'glyph':glyph, 'strokes':group['strokes']})
     return rows
 
+def entry_stroke_count(entry):
+    if isinstance(entry.get('stroke_count'), int):
+        return entry['stroke_count']
+    if isinstance(entry.get('stroke_names'), list):
+        return len(entry['stroke_names'])
+    review=entry.get('fine_stroke_names_review') or {}
+    if isinstance(review.get('adjudicated_names'), list):
+        return len(review['adjudicated_names'])
+    if isinstance(entry.get('stroke_names_candidate'), list):
+        return len(entry['stroke_names_candidate'])
+    raise AssertionError(entry['character'] + ': no reviewed stroke-count source')
+
+def entry_order_code(entry):
+    for value in (
+        entry.get('order_code'),
+        entry.get('order_code_candidate'),
+        (entry.get('stroke_order_review') or {}).get('order_code'),
+        (entry.get('stroke_order_secondary_locator') or {}).get('derived_order_code'),
+    ):
+        if isinstance(value, str) and value:
+            return value
+    return None
+
 def validate(catalog, batches, variants, batch):
     rows = expand(catalog)
     chars = [r['glyph'] for r in rows]
@@ -42,9 +65,17 @@ def validate(catalog, batches, variants, batch):
     assert declared is not None, 'Unknown batch ID'
     assert ''.join(e['character'] for e in batch['entries']) == declared['main_glyphs']
     for e in batch['entries']:
-        assert len(e['stroke_names']) == len(e['order_code']), e['character'] + ': stroke count mismatch'
-        assert set(e['order_code']) <= set('12345'), 'Invalid stroke category code'
-        assert e['primary_pdf_page'] - e['primary_printed_page'] == 6
+        count=entry_stroke_count(e)
+        code=entry_order_code(e)
+        if code is not None:
+            assert len(code) == count, e['character'] + ': stroke count mismatch'
+            assert set(code) <= set('12345'), 'Invalid stroke category code'
+        if 'primary_pdf_page' in e and 'primary_printed_page' in e:
+            assert e['primary_pdf_page'] - e['primary_printed_page'] == 6
+        review=e.get('stroke_order_review') or {}
+        if review.get('pdf_page') is not None and review.get('printed_page') is not None:
+            assert isinstance(review['pdf_page'], int) and review['pdf_page'] > 0
+            assert isinstance(review['printed_page'], int) and review['printed_page'] >= 0
     if batch['release_eligible']:
         assert catalog['target_edition_status'] == 'fulltext_verified'
         assert batch['cross_review']['status'] == 'passed' and batch['cross_review']['source_id']
@@ -53,7 +84,7 @@ def validate(catalog, batches, variants, batch):
         assert batch['layout_review']['status'] == 'passed' and batch['layout_review']['reviewer']
     return {'main_index_count':len(rows), 'frozen_batch_count':len(batches['frozen_batches']),
             'variant_candidates':len(vs), batch['batch_id']+'_primary_checked':len(batch['entries']),
-            batch['batch_id']+'_cross_checked':len(batch['entries']) if batch['cross_review']['status']=='passed' else 0,
+            batch['batch_id']+'_cross_checked':len(batch['entries']) if (batch.get('cross_review') or {}).get('status')=='passed' else 0,
             'formal_release_entries':len(batch['entries']) if batch['release_eligible'] else 0,
             'note':'Structural checks only; no automatic semantic approval.'}
 

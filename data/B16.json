@@ -29,10 +29,10 @@
         "点"
       ],
       "tips": [
-        "先识别赤的七画基线主形；逐笔顺序待目标行确认。",
+        "按已核规范笔顺逐笔书写，共7画；先看累计示范，再完整书写。",
         "“赦”仅作迁移语境，左部压缩不自动视为正式附形。"
       ],
-      "check": "基线笔数为7画；逐笔顺序、细笔名、读音和结构继续pending。",
+      "check": "共7画；按累计步骤检查先后，确认没有漏写或提前。",
       "context": {
         "example": "赦",
         "position": "left",
@@ -285,6 +285,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_GF0023_whole_character_original_page",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B12-B19-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -303,10 +309,10 @@
         "横"
       ],
       "tips": [
-        "先辨认豆的七画整体框架；口部与下部笔组的逐笔关系待核。",
+        "按已核规范笔顺逐笔书写，共7画；先看累计示范，再完整书写。",
         "“豌”只作左部迁移语境，真实形态和时序回整字原页确认。"
       ],
-      "check": "基线笔数为7画；逐笔、名称和结构仍待权威证据。",
+      "check": "共7画；按累计步骤检查先后，确认没有漏写或提前。",
       "context": {
         "example": "豌",
         "position": "left",
@@ -559,6 +565,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_GF0023_whole_character_original_page",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B12-B19-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -578,9 +590,9 @@
       ],
       "tips": [
         "先识别酉的七画框架与内部横画；收框关系不凭静态字体推断。",
-        "“酒”只作右部迁移语境，比例和时序待整字证据。"
+        "在“酒”中的位置变化已按P4整字证据核对；本页先练主形，不外推正式附形。"
       ],
-      "check": "基线笔数为7画；逐笔、读音和位置迁移继续pending。",
+      "check": "共7画；按累计步骤检查先后，确认没有漏写或提前。",
       "context": {
         "example": "酒",
         "position": "right",
@@ -872,6 +884,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_GF0023_whole_character_original_page",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B12-B19-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -890,10 +908,10 @@
         "捺"
       ],
       "tips": [
-        "先识别辰的七画主形；折、撇、捺类细笔名待原页裁决。",
+        "按已核规范笔顺逐笔书写，共7画；先看累计示范，再完整书写。",
         "“辱”只作上部迁移语境，压缩形态不从独体辰直接外推。"
       ],
-      "check": "基线笔数为7画；逐笔顺序和结构仍待核。",
+      "check": "共7画；按累计步骤检查先后，确认没有漏写或提前。",
       "context": {
         "example": "辱",
         "position": "top",
@@ -1187,6 +1205,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_GF0023_whole_character_original_page",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B12-B19-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -1205,10 +1229,10 @@
         "捺"
       ],
       "tips": [
-        "先识别豕的七画基线主形；弯钩、撇捺类细名待目标规范。",
+        "按已核规范笔顺逐笔书写，共7画；先看累计示范，再完整书写。",
         "“家”只作下部迁移语境，真实笔形和时序须回完整整字。"
       ],
-      "check": "基线笔数为7画；细笔名和结构分类尚未审定。",
+      "check": "共7画；按累计步骤检查先后，确认没有漏写或提前。",
       "context": {
         "example": "家",
         "position": "bottom",
@@ -1500,6 +1524,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_GF0023_whole_character_original_page",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B12-B19-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -1518,10 +1548,10 @@
         "横"
       ],
       "tips": [
-        "先识别卤的七画基线主形；框内笔组的逐笔关系待目标行确认。",
+        "按已核规范笔顺逐笔书写，共7画；先看累计示范，再完整书写。",
         "本轮只保留独立字语境，不强行指定位置变体。"
       ],
-      "check": "基线笔数为7画；逐笔、读音和结构仍待证据关闭。",
+      "check": "共7画；按累计步骤检查先后，确认没有漏写或提前。",
       "context": {
         "example": "卤",
         "position": "self",
@@ -1772,6 +1802,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_self_context_no_position_migration",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B12-B19-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -1790,10 +1826,10 @@
         "横"
       ],
       "tips": [
-        "先识别里的七画主形；框内横竖关系的真实笔顺待目标行确认。",
+        "按已核规范笔顺逐笔书写，共7画；先看累计示范，再完整书写。",
         "“埋”只作右部迁移语境，收窄不能解释为减笔。"
       ],
-      "check": "基线笔数为7画；逐笔顺序、细笔名和结构继续pending。",
+      "check": "共7画；按累计步骤检查先后，确认没有漏写或提前。",
       "context": {
         "example": "埋",
         "position": "right",
@@ -2085,6 +2121,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_GF0023_whole_character_original_page",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B12-B19-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -2103,10 +2145,10 @@
         "捺"
       ],
       "tips": [
-        "先识别独体足的七画基线主形；逐笔关系待目标行确认。",
+        "按已核规范笔顺逐笔书写，共7画；先看累计示范，再完整书写。",
         "“跑”只作迁移线索，不把常见足字旁无证据地等同于独体足。"
       ],
-      "check": "基线笔数为7画；正式附形、逐笔和结构继续pending。",
+      "check": "共7画；按累计步骤检查先后，确认没有漏写或提前。",
       "context": {
         "example": "跑",
         "position": "left",
@@ -2385,6 +2427,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_GF0023_whole_character_original_page_with_coarse_stroke_changes",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B12-B19-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -2403,10 +2451,10 @@
         "竖弯钩"
       ],
       "tips": [
-        "先识别邑的七画主形；内部口与下部笔组待原页逐笔核验。",
+        "按已核规范笔顺逐笔书写，共7画；先看累计示范，再完整书写。",
         "“都”右侧阝只作迁移线索，不直接认定为邑的正式附形。"
       ],
-      "check": "基线笔数为7画；主附关系、字形和时序均待规范裁决。",
+      "check": "共7画；按累计步骤检查先后，确认没有漏写或提前。",
       "context": {
         "example": "都",
         "position": "right",
@@ -2690,6 +2738,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_whole_character_attached_form_observed_parent_identity_deferred",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B12-B19-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -2708,10 +2762,10 @@
         "撇"
       ],
       "tips": [
-        "先识别身的七画基线主形；内部横撇关系的顺序待原页核验。",
+        "按已核规范笔顺逐笔书写，共7画；先看累计示范，再完整书写。",
         "“躬”只作左部迁移语境，收窄形态与独体主形分开记录。"
       ],
-      "check": "基线笔数为7画；逐笔、名称和位置迁移仍待权威证据。",
+      "check": "共7画；按累计步骤检查先后，确认没有漏写或提前。",
       "context": {
         "example": "躬",
         "position": "left",
@@ -3003,6 +3057,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_GF0023_whole_character_original_page",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B12-B19-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     }
   ],

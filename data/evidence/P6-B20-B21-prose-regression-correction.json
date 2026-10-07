@@ -1,0 +1,67 @@
+{
+  "schema_version": 1,
+  "record_kind": "P6_prose_regression_correction",
+  "review_date": "2026-10-07",
+  "phase": "P6",
+  "scope": [
+    "B20",
+    "B21"
+  ],
+  "reviewed_entries": 11,
+  "trigger": "Representative P6 A4 layout visual review exposed stale pre-closure wording that contradicted terminal P1-P4 field states.",
+  "method": "Compare each teaching tip/check sentence against canonical terminal field_status; remove obsolete pending/待核 wording while preserving conflict_fail_closed and source_blocked_fail_closed boundaries.",
+  "invariant": [
+    "No stroke order, fine stroke name, pronunciation, component-name, structure, target-identity or position-migration conclusion is upgraded by this correction.",
+    "GF0011—2022 item-level exact fields remain source_blocked_fail_closed.",
+    "Pronunciation conflict_fail_closed remains explicit for 黍 and 龠.",
+    "Exact component-name source_blocked boundary remains explicit for 麻、黍、鼓、鼠、鼻、龠."
+  ],
+  "entries": [
+    {
+      "character": "高",
+      "result": "full_reviewed_prose_synced"
+    },
+    {
+      "character": "黄",
+      "result": "full_reviewed_prose_synced"
+    },
+    {
+      "character": "麻",
+      "result": "exact_name_source_blocked_retained"
+    },
+    {
+      "character": "鹿",
+      "result": "full_reviewed_prose_synced"
+    },
+    {
+      "character": "鼎",
+      "result": "full_reviewed_prose_synced"
+    },
+    {
+      "character": "黑",
+      "result": "full_reviewed_prose_synced"
+    },
+    {
+      "character": "黍",
+      "result": "pronunciation_conflict_and_exact_name_source_blocked_retained"
+    },
+    {
+      "character": "鼓",
+      "result": "exact_name_source_blocked_retained"
+    },
+    {
+      "character": "鼠",
+      "result": "exact_name_source_blocked_retained"
+    },
+    {
+      "character": "鼻",
+      "result": "exact_name_source_blocked_retained"
+    },
+    {
+      "character": "龠",
+      "result": "pronunciation_conflict_and_exact_name_source_blocked_retained"
+    }
+  ],
+  "result": "11_of_11_stale_prose_regressions_corrected",
+  "layout_boundary": "This correction was triggered by P6 layout QA. It does not constitute P7 PDF archival, manifest QA, or release."
+}

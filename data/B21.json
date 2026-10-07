@@ -40,10 +40,10 @@
         "竖"
       ],
       "tips": [
-        "先把龠作为十七画基线主项整体识别；复杂内部笔组不凭字体外观拆分逐笔顺序。",
-        "本轮只保留独立字语境；位置迁移、主附关系和完整时序后续回权威原页与整字证据核验。"
+        "按已核规范笔顺逐笔书写，共17画；复杂笔组按累计示范连续观察。",
+        "本页只练独立主形；采用读音保持conflict_fail_closed，2022版精确部件名称及附形保持source-blocked。"
       ],
-      "check": "基线笔数为17画；逐笔顺序、细笔名、采用读音、部件名称和结构仍待逐项证据。",
+      "check": "共17画；笔顺与细笔名已核；采用读音保持conflict_fail_closed，2022版精确部件名称保持source-blocked。",
       "context": {
         "example": "龠",
         "position": "self",
@@ -263,6 +263,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_self_context_no_position_migration",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B20-B21-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     }
   ],

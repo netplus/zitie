@@ -7,7 +7,7 @@
 2. **阶段2：图形与版式**——统一处理矢量、逐笔累计示范、A4版式和PDF视觉检查。
 3. **阶段3：归档与发布**——统一处理draft归档、manifest、CI、release和全书终审。
 
-详见`docs/CONTENT_FIRST_WORKFLOW.md`。阶段1内容层已完成，当前进入阶段2/P6图形与版式。
+详见`docs/CONTENT_FIRST_WORKFLOW.md`。阶段1/P1—P5内容层已完成，阶段2/P6图形与版式也已于2026-10-07完成；当前进入阶段3/P7归档与发布。
 
 ## 一、范围与计数
 
@@ -102,7 +102,7 @@
 - 来源和复核记录完整性；
 - “evidence已入库但canonical/review尚未同步”的状态债数量。
 
-当前主吞吐已经转入阶段2/P6：固定矢量来源、逐笔累计示范、A4版式、描红/淡字/独立书写和逐项artwork QA。内容若发现错误再回写，但不重新打开已终审字段的普通pending。
+阶段2/P6已经完成：固定矢量来源、逐笔累计示范、A4版式、描红/淡字/独立书写、201/201 artwork QA以及258页全书layout review均已关闭。内容若发现错误仍可回写，但不重新打开已终审字段的普通pending。
 
-PDF归档、manifest、全书视觉QA和release仍属于P7，不与P6 artwork_ready混合。
-\n## 剩余阶段执行\n\n2026-10-06起，剩余完书工作以`docs/REMAINING_PHASE_PLAN.md`为执行基线。P0—P5均已完成，当前为P6 Artwork/版式；P7处理PDF、全书QA、manifest和正式发布。二次数据从“主吞吐”降级为定位/风险筛选工具。\n
+当前主吞吐为阶段3/P7：PDF真实归档、manifest、全书PDF/目录/页码/索引视觉QA、目标HEAD CI和release；这些状态继续与content_ready/artwork_ready分开统计。
+\n## 剩余阶段执行\n\n2026-10-06起，剩余完书工作以`docs/REMAINING_PHASE_PLAN.md`为执行基线。P0—P6均已完成，当前为P7；P7处理PDF真实归档、全书QA、manifest、目标HEAD CI和正式发布。二次数据从“主吞吐”降级为定位/风险筛选工具。\n
