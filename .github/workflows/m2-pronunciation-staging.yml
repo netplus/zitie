@@ -1,0 +1,94 @@
+name: M2 pronunciation temporary text staging
+on:
+  push:
+    branches: [maintenance/m2-gf0025-pronunciation-20261007]
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 9afb5be95ba87a4cca33b66e8c83a89fc1157d0f
+          persist-credentials: false
+      - name: Create only hash-checked unreferenced text blobs
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PYCODE'
+          from pathlib import Path
+          import json,hashlib,copy,subprocess
+          R=Path.cwd()
+          DATE='2026-10-07'; UPSTREAM='9afb5be95ba87a4cca33b66e8c83a89fc1157d0f'
+          EV='data/evidence/M2-GF0025-pronunciation-20261007.json'
+          AUD='sources/reviews/M2-GF0025-pronunciation-audit-20261007.json'
+          REV='reviews/M2-GF0025-pronunciation-20261007.md'
+          NEW='reviewed_M2_GF0025_2021_target_morpheme_pronunciation'
+          OLD='conflict_fail_closed_no_S03_or_S06_target_pronunciation'
+          SHA='e451fdf0899d9267bbd122db66e7e75bdd2851ad1e6732e47b6e960290d73a63'
+          def load(p):return json.loads((R/p).read_text())
+          def save(p,d): (R/p).write_text(json.dumps(d,ensure_ascii=False,indent=2)+'\n')
+          expected_inputs={'data/B15.json': 'e1e95e1a71ef0cd5e74f74d9bb59ab832a6fd2aca58ad6abf151e8a87c62cf80', 'data/B18.json': '7aaa00d21a317b8ae139ff0d508047b8b6ce09f45ee345515d711e45bca987d1', 'sources/catalog.json': '7885b5198d324cdc94a0ef7af54af39b8bbf16cb62d4861d28a6ae23a5794107'}
+          for p,h in expected_inputs.items():
+           assert hashlib.sha256((R/p).read_bytes()).hexdigest()==h, p
+          entries=[('B15',149,'麦','小麦','xiǎomài',['xiǎo','mài'],105,99,'6',888),('B18',172,'齿','牙齿','yáchǐ',['yá','chǐ'],164,158,'7-9',4758)]
+          source={'source_id':'S11','publication_id':'GF0025—2021','title':'国际中文教育中文水平等级标准',
+           'publisher':'教育部/国家语言文字工作委员会','url':'https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/202111/W020211118507389477190.pdf',
+           'pdf_sha256':SHA,'pdf_bytes':51104405,'pdf_pages':260,
+           'acquisition_record':'sources/reviews/M2-GF0025-2021-acquisition-20261007.json',
+           'recovery':{'artifact_id':11468789360,'workflow_run_id':37592557617,'zip_sha256':'3cc2664ca1e928003b03868f6b4b32520861ad175704ea674de3ad698ade82ca'},
+           'identity_review':'reuse_explicit_prior_acquisition_review; this round reads target entries, not a new edition',
+           'scope':'Selected vocabulary entries only. No independent character entry, full reading inventory or formal radical identity is claimed.'}
+          rec={'schema_version':1,'phase':'M2','date':DATE,'kind':'selected_target_morpheme_pronunciation_adjudication','baseline_commit':UPSTREAM,'source':source,'adopted':[],
+          'boundaries':{'independent_character_entries':False,'all_readings_of_character_verified':False,'formal_GF0011_2022_identity_promoted':False,'component_name_promoted':False,'structure_promoted':False,'entire_GF0025_exclusion_review':False,'M2_completed':False,'Q1_completed':False},
+          'remaining_characters':list('尢弋彳毋邑黾阜黍龠'),'bounded_probe_audit':AUD}
+          basehash={}
+          for batch,mid,ch,word,pinyin,syllables,pdf,printed,level,no in entries:
+           path=f'data/{batch}.json'; basehash[path]=hashlib.sha256((R/path).read_bytes()).hexdigest(); d=load(path); e=next(e for e in d['entries'] if e['main_id']==mid)
+           assert e['character']==ch and e['pinyin'] is None and e['field_status']['pronunciation']==OLD
+           prior=copy.deepcopy(e['pronunciation_review'])
+           target={'batch':batch,'main_id':mid,'character':ch,'field':'pronunciation'}
+           locus={'section':'词汇表','level':level,'table_entry':no,'pdf_page':pdf,'printed_page':printed,'word':word,'printed_pinyin':pinyin,'syllables':syllables,'target_character_index':2,'target_syllable_index':2}
+           new={'phase':'M2','source_id':'S11','publication_id':'GF0025—2021','evidence':EV,'result':NEW,'target':ch,'adopted_reading':syllables[1],
+                'evidence_kind':'word_target_morpheme_not_independent_character_entry','locator':locus,'pdf_sha256':SHA,'visual_review':True,'reviewed_at':DATE,
+                'resolution_boundary':'Only the second morpheme of this explicitly printed two-character word supports the selected target reading. Does not establish a standalone dictionary entry, every reading, official radical name/form/code, structure, or teaching grade of the radical.'}
+           e.setdefault('pronunciation_review_history',[]).append(prior)
+           e['pronunciation_review']=new; e['pinyin']=syllables[1];e['pinyin_status']=NEW;e['field_status']['pronunciation']=NEW
+           removal=[v for v in e['unresolved'] if v.startswith('pronunciation已按S03+GF0015原页审读收口')];assert len(removal)==1
+           e['unresolved'].remove(removal[0])
+           rec['adopted'].append({'target':target,'locator':locus,'adopted_reading':syllables[1],'old_pinyin':None,'old_field_status':OLD,'old_review':prior,'new_review':new,
+             'visual_review':{'whole_page_viewed':True,'target_row_viewed_enlarged':True,'target_morpheme_alignment_checked':True,'reviewer':'ChatGPT; same-agent source review, not independent double review'},
+             'application':{'new_field_status':NEW,'removed_unresolved':removal[0],'displayed_field_changed':'pinyin only','new_edition_layout_recheck_required':True}})
+           save(path,d)
+          rec['baseline_file_sha256']=basehash;save(EV,rec)
+          cat=load('sources/catalog.json'); assert not any(s['id']=='S11' for s in cat['sources'])
+          cat['sources'].append({'id':'S11','title':'国际中文教育中文水平等级标准','publication_id':'GF0025—2021','publisher':source['publisher'],
+           'status':'official_original_selected_morpheme_pronunciation_reviewed','urls':[source['url']],'sha256':SHA,'bytes':51104405,'pdf_pages':260,'checked_at':DATE,
+           'role':['selected_target_morpheme_pronunciation'],'acquisition_record':source['acquisition_record'],'reviewed_pdf_pages':[105,164],
+           'target_entries':[{'word':'小麦','level':'6','entry':888,'pdf_page':105,'adopted_target':'麦','adopted_reading':'mài'}, {'word':'牙齿','level':'7-9','entry':4758,'pdf_page':164,'adopted_target':'齿','adopted_reading':'chǐ'}],
+           'evidence':EV,'bounded_probe_audit':AUD,'limits':'仅采用两个词条中第二语素的标注读音，不声称独立字条、全部读音、正式部首名称/附形/编码或结构；其余9项仅作有限范围探查，未证明整部标准未收录。'})
+          save('sources/catalog.json',cat)
+
+          import base64,os,urllib.request
+          expected_outputs={'data/B15.json': '6396d50a2b41ee73fe8877136063966f18d236f4', 'data/B18.json': 'eb814e1c10846171fdad292671938543462a3f6a', 'sources/catalog.json': '5dfee8b66c9784876fa9a851f0990c047edf257c', 'data/evidence/M2-GF0025-pronunciation-20261007.json': 'b0ca3f688c792d6f2b2e72002971a1f6066b8e33'}
+          refs={}
+          for p,h in expected_outputs.items():
+           raw=(R/p).read_bytes()
+           actual=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+           assert actual==h,(p,actual,h)
+           body=json.dumps({'content':base64.b64encode(raw).decode('ascii'),'encoding':'base64'}).encode()
+           req=urllib.request.Request('https://api.github.com/repos/netplus/zitie/git/blobs',data=body,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','Content-Type':'application/json'})
+           with urllib.request.urlopen(req,timeout=60) as response: result=json.load(response)
+           assert result['sha']==h
+           refs[p]=h
+          out=R/'stage-reference';out.mkdir()
+          (out/'references.json').write_text(json.dumps({'blobs':refs,'status':'unreferenced_verified_text_blobs_only_no_ref_changed'},indent=2)+'\n')
+          print(json.dumps(refs))
+          PYCODE
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m2-pronunciation-text-references
+          path: stage-reference/
+          retention-days: 3
