@@ -15,17 +15,19 @@ from build_book_matter import stroke_count
 from build_m3_preview import paragraph, new_canvas, wrap_lines
 from m3_model import ROOT, CONFIG, M3Edition, authorize, digest, display_entry, read_model, validate_config
 from verify_m2_closeout import require
+from m3_migration import read_migrations, sequence_pages
 
-OUT=ROOT/'build/v0.5.0-dev1'
+OUT=ROOT/'build/v0.5.0-dev2'
 
 
 def validate_metadata(m):
-    require(m['schema_version']==1 and m['version']=='0.5.0-dev1','Wrong version')
+    require(m['schema_version']==1 and m['version']=='0.5.0-dev2','Wrong version')
     require(m['status']=='engineering_preview','Not an engineering preview')
     for key in ('candidate_frozen','release_eligible','Q1_completed'):
         require(m[key] is False,'Premature approval: '+key)
-    require(m['missing_modules']==['whole_character_migration'] and m['migration_pages']==0,
-            'Do not claim missing migration pages exist')
+    require(m['missing_modules']==[] and m['migration_pages']==10 and m['migration_case_count']==6,
+            'All six whole-character cases and ten pages are required')
+    require(len(m['migration_records'])==6 and len(m['migration_links'])==10, 'Missing migration integration')
     require(m['main_count']==201 and m['practice_pages']==258,'Wrong main coverage')
     require(m['comparison_pages']==m['recall_pages']==6,'Wrong supplementary counts')
     require(sorted(map(int,m['main_navigation']))==list(range(1,202)),'Missing main navigation')
@@ -42,12 +44,12 @@ def verify(directory=OUT):
     for path,sha in m['input_sha256'].items():require(digest(ROOT/path)==sha,'Generation input changed: '+path)
     config,scope,policy,batches,by_id=read_model()
     r=PdfReader(directory/m['pdf']);texts=[p.extract_text() or '' for p in r.pages]
-    require(len(texts)==m['pages']==288,'Unannounced page count change')
+    require(len(texts)==m['pages']==299,'Unannounced page count change')
     for i,p in enumerate(r.pages):
         require(abs(float(p.mediabox.width)-595.2756)<.1 and abs(float(p.mediabox.height)-841.8898)<.1,'Not A4')
         require(f'{i+1}/{len(texts)}' in texts[i] and M3Edition().label in texts[i],'Missing real folio/preview label')
     require('看一笔，写一笔' in texts[0] and '陪孩子看懂，再练稳' in texts[1],'Guidance missing')
-    require('尚未生成' in ''.join(texts[1].split()) and 'Q1尚未开始' in ''.join(texts[-1].split()),'Incomplete status hidden')
+    require('候选也尚未冻结' in ''.join(texts[1].split()) and 'Q1尚未开始' in ''.join(texts[-1].split()),'Publication limits hidden')
     expected_bookmarks={x['title']:x['page'] for x in m['bookmarks']}
     actual={}
     def walk(items):
@@ -93,10 +95,35 @@ def verify(directory=OUT):
             for i,name in enumerate(names,1):require(f'{i} {name}' in comp,'Pair steps/names missing')
             answer_text='\n'.join(l for l in recall.splitlines() if not l.startswith('返回示范'))
             require(not any(name in answer_text for name in names),'Recall leaks fine-name answers')
+    migrations=read_migrations((config,scope,policy,batches,by_id))
+    sections=[x for x in m['sections'] if x['kind']=='migration']
+    require(len(sections)==6, 'Missing migration navigation')
+    for section,(record,art,timeline),migration_meta in zip(sections,migrations,m['migration_records']):
+        require(section['id']==migration_meta['id']==record['id'], 'Migration order changed')
+        require(section['pages']==len(timeline) and migration_meta['timeline']==timeline, 'Whole sequence not preserved')
+        require(migration_meta['indices']==record['indices'] and migration_meta['vector_sha256']==record['vector_sha256'], 'Migration evidence/rendering mismatch')
+        for offset,steps in enumerate(timeline):
+            page_index=section['start']-1+offset;text=texts[page_index]
+            require('在整字中找部件' in text and record['component']+' → '+record['whole_character'] in text,'Migration heading missing')
+            for step in steps:require(f"第{step['step']}笔" in text,'Missing full-character step')
+            require(f"原印第{record['source_row']['printed_page']}页" in text,'Missing source-page label')
+            ops=r.pages[page_index].get_contents().operations
+            cells=[v for v,op in ops if op==b're' and abs(float(v[2])-cell)<.01 and abs(float(v[3])-cell)<.01]
+            require(len(cells)==32,'Migration practice cells missing or resized')
+            require('不只写部件' in text,'Whole-character practice instruction missing')
+            baseline=[]
+            def instruction_position(value,cm,tm,font,size):
+                if '第1行描红' in value:baseline.append(tm[5]+cm[5])
+            r.pages[page_index].extract_text(visitor_text=instruction_position)
+            require(len(baseline)==1 and baseline[0]>326+cell+5, 'Instruction overlaps first practice row')
+    for rec in m['migration_links']:
+        require(any(destination_page(a.get_object())==rec['target'] for a in r.pages[rec['page']].get('/Annots',[])),
+                'Migration return destination wrong')
     require('199项已核' in texts[-3] and '128项已核' in texts[-3],'Current statistics missing')
     return {'kind':'M3_engineering_preflight_not_visual_QA','pages':len(texts),'main_items':201,
             'practice_pages':258,'comparison_pages':6,'recall_pages':6,'bookmarks':len(actual),
-            'toc_links':len(m['toc_links']),'candidate_frozen':False,'Q1_completed':False}
+            'toc_links':len(m['toc_links']),'migration_pages':m['migration_pages'],
+            'migration_cases':m['migration_case_count'],'migration_return_links':len(m['migration_links']),'candidate_frozen':False,'Q1_completed':False}
 
 
 class ModelTests(unittest.TestCase):
@@ -125,8 +152,8 @@ class ModelTests(unittest.TestCase):
     def test_unknown_module(self):
         c=copy.deepcopy(self.config);c['modules'].append('automatic_answers')
         with self.assertRaises(ValueError):validate_config(c)
-    def test_undisclosed_missing_module(self):
-        c=copy.deepcopy(self.config);c['missing_modules']=[]
+    def test_missing_migration_configuration(self):
+        c=copy.deepcopy(self.config);c['migration_artwork']='missing.json'
         with self.assertRaises(ValueError):validate_config(c)
     def test_no_positive_order(self):
         b,e=self.by_id[149];e=copy.deepcopy(e);e['field_status']['stroke_order']='pending'
@@ -193,8 +220,8 @@ class MetadataTests(unittest.TestCase):
     def test_release(self):self.reject('release_eligible',True)
     def test_Q1(self):self.reject('Q1_completed',True)
     def test_wrong_mode(self):self.reject('status','release_candidate')
-    def test_missing_migration_hidden(self):self.reject('missing_modules',[])
-    def test_invented_migration(self):self.reject('migration_pages',6)
+    def test_missing_migration_module(self):self.reject('missing_modules',['whole_character_migration'])
+    def test_incomplete_migration_pages(self):self.reject('migration_pages',6)
     def test_inflated_main(self):self.reject('main_count',213)
     def test_missing_recall(self):self.reject('recall_pages',5)
     def test_bad_path(self):self.reject('pdf','../output.pdf')

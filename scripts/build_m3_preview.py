@@ -1,9 +1,10 @@
 #!/usr/bin/env python3
-"""Build an explicitly incomplete M3 engineering preview, never a release."""
+"""Build all M3 teaching modules as an engineering preview, never a release."""
 import argparse
 import hashlib
 import io
 import json
+import math
 import re
 import subprocess
 from pathlib import Path
@@ -17,6 +18,7 @@ from apply_artwork import apply_artwork
 from build_batch import LEFT, RIGHT, setup_fonts, prepare, make_entry_pages, grid, glyph, reviewed_stroke_names
 from build_book_matter import page_count, stroke_count
 from m3_model import ROOT, CONFIG, M3Edition, authorize, digest, display_entry, read_model
+from m3_migration import RECORD as MIGRATION_RECORD, read_migrations
 from verify_m2_closeout import load, require
 
 W, H = A4
@@ -133,6 +135,61 @@ def pair_pages(path, pair, model, art):
     c.showPage(); c.save()
 
 
+def migration_pages(path, record, whole_art, timeline, component_art):
+    """Whole-character steps stay 1..N even for interleaved enclosures."""
+    from build_batch import Pen, COL
+    from fontTools.svgLib.path import parse_path
+    from reportlab.lib.colors import HexColor
+
+    def position_picture(c, x, y, size):
+        strokes, (a,b,d,e) = whole_art
+        scale=.81*size/max(d-a,e-b)
+        c.saveState();c.translate(x+size/2-(a+d)*scale/2,y+size/2-(b+e)*scale/2);c.scale(scale,scale)
+        for i,stroke in enumerate(strokes,1):
+            c.setFillColor(HexColor(COL['red' if i in record['indices'] else 'previous']))
+            p=c.beginPath();parse_path(stroke,Pen(p));c.drawPath(p,stroke=0,fill=1)
+        c.restoreState()
+
+    c=new_canvas(path);n=record['stroke_count']
+    for part,steps in enumerate(timeline,1):
+        header(c,'在整字中找部件：'+record['component']+' → '+record['whole_character'],
+               f"{record['id']} · 第{part}/{len(timeline)}页｜按整字顺序连续看，不把部件抽出重排。")
+        line(c,L,712,'本次部件',11)
+        grid(c,L,620,80);glyph(c,component_art,L,620,80,color='ink')
+        line(c,166,724,'位置图：红色为部件',10)
+        grid(c,166,610,104);position_picture(c,166,610,104)
+        line(c,293,710,f"整字{record['whole_character']}：共{n}笔",14)
+        paragraph(c,293,683,'部件对应整字第'+'、'.join(map(str,record['indices']))+'笔。',
+                  width=R-293,size=11,leading=17)
+        paragraph(c,293,639,record['teaching_note'],width=R-293,size=11,leading=17)
+        c.setFillColorRGB(.68,.18,.21);line(c,L,583,'01  看完整整字笔顺',14)
+        c.setFillColorRGB(.22,.23,.24)
+        line(c,L,562,f"本页第{steps[0]['step']}—{steps[-1]['step']}笔；红色是新写的一笔，深灰是此前笔画。",10)
+        size=86;count=len(steps)
+        xs=[(LEFT+RIGHT-size)/2] if count==1 else [LEFT+i*(RIGHT-LEFT-size)/(count-1) for i in range(count)]
+        for x,step in zip(xs,steps):
+            line(c,x+4,540,f"第{step['step']}笔",11)
+            grid(c,x,443,size);glyph(c,whole_art,x,443,size,step=step['step']-1)
+            c.setFillColorRGB(*((.68,.18,.21) if step['is_target_component'] else (.40,.40,.40)))
+            line(c,x+4,428,'本次部件' if step['is_target_component'] else '整字其余笔',9)
+            c.setFillColorRGB(.22,.23,.24)
+        c.setFillColorRGB(.68,.18,.21);line(c,L,409,'02  写完整整字，不只写部件',14)
+        c.setFillColorRGB(.22,.23,.24)
+        line(c,L,393,'第1行描红，第2行描淡字；后两行看范字，再独立写。',10)
+        cell=(RIGHT-LEFT-7*6)/8
+        for row in range(4):
+            y=326-row*(cell+13)
+            for col in range(8):
+                x=LEFT+col*(cell+6);grid(c,x,y,cell)
+                if row<2 or col==0:glyph(c,whole_art,x,y,cell,color=['trace','pale','ink','ink'][row])
+        paragraph(c,L,92,'自查：'+record['teaching_note'],size=10,leading=13)
+        line(c,L,57,f"依据：GF0023—2020，原印第{record['source_row']['printed_page']}页；本例不认定正式附形。",8.5)
+        line(c,L,44,'绘图：Hanzi Writer / Arphic PL；字体造型不用于判定细笔名。',8)
+        c.showPage()
+    c.save()
+    require(len(PdfReader(path).pages)==len(timeline),'Migration continuation mismatch')
+
+
 def appendix(path, by_id, nav, variants, sources, policy, config):
     c = new_canvas(path); labels = []
     def start(title, subtitle=''):
@@ -184,11 +241,11 @@ def appendix(path, by_id, nav, variants, sources, policy, config):
         line(c,L,y,heading,15);y-=25;y=paragraph(c,L,y,text,size=12,leading=21)-25
     paragraph(c,L,y,'儿童页面中简化的技术说明在这里集中保留；原教学提示与审读记录仍存于各批数据。这个预览没有删除或升级任何规范结论。',size=11,leading=19)
     c.showPage()
-    start('版本与未完成模块', M3Edition().label+'；不是完整候选，不是正式交付。')
+    start('版本与待完成验收', M3Edition().label+'；不是冻结候选，不是正式交付。')
     y=H-133
     for text in ['历史v0.4.0、v0.4.1及所有候选稿保留原字节、清单和审读记录。',
-                 '本预览包含新的分层说明、201主项练习和六组比较／回忆页面。',
-                 '尚未生成：六个整字迁移教学模块。不能把选题清单当作已经绘制的教学内容。',
+                 '本预览包含分层说明、201主项练习、六组比较／回忆及六例整字迁移。',
+                 '六例迁移共10页，均保留完整整字步骤；它们另计，不增加201主项覆盖数。',
                  'M3结束须冻结完整候选及其源码、配置、字体环境、页码映射和PDF哈希。',
                  'Q1尚未开始。未来须对最终同一份PDF逐页复核，修改后更新哈希并检查受影响页。',
                  '本次检查不代表实物打印，不允许由工程预览自动升级为正式v0.5.0。']:
@@ -219,10 +276,15 @@ def build(args):
         c.save();files.append(('batch',path))
     for pair in scope['comparison_pairs']:
         path=out/(pair['id']+'.pdf');pair_pages(path,pair,model,art);files.append(('pair',path))
+    migrations=read_migrations(model)
+    for record,whole_art,timeline in migrations:
+        path=out/(record['id']+'.pdf')
+        migration_pages(path,record,whole_art,timeline,art[record['main_id']])
+        files.append(('migration',path))
     # Count generated components before constructing page references.
     guide_pages=len(PdfReader(out/'guidance.pdf').pages)
     require(guide_pages==2,'Guidance must remain two complete pages')
-    toc_count=2; cursor=guide_pages+toc_count+1; nav={}; toc=[]; section=[]
+    toc_count=math.ceil((len(files)-1+1)/16); cursor=guide_pages+toc_count+1; nav={}; toc=[]; section=[]
     for kind,path in files[1:]:
         count=len(PdfReader(path).pages);label=path.stem
         if kind=='batch':
@@ -230,19 +292,28 @@ def build(args):
             for row in rows:
                 start=cursor+row['local_start']-1;nav[row['main_id']]=(start,start+row['pages']-1)
             title=label+'  '+''.join(r['character'] for r in rows)
-        else:
+        elif kind=='pair':
             pair=next(p for p in scope['comparison_pairs'] if p['id']==label)
             title=label+'  '+' / '.join(t['character'] for t in pair['targets'])+'：比较与回忆'
+        else:
+            record=next(r for r,_,_ in migrations if r['id']==label)
+            title=label+'  '+record['component']+' → '+record['whole_character']+'：完整整字迁移'
         toc.append((title,cursor));section.append({'kind':kind,'id':label,'start':cursor,'pages':count});cursor+=count
     back_start=cursor
     labels=appendix(out/'appendix.pdf',by_id,nav,load(ROOT,'data/variants.json'),load(ROOT,'sources/catalog.json'),policy,config)
     require(len(PdfReader(out/'appendix.pdf').pages)==len(labels),'Appendix labels mismatch')
     toc.append(('卷末索引与来源说明',back_start)); files.append(('appendix',out/'appendix.pdf'))
     links=[];c=new_canvas(out/'contents.pdf')
-    for idx in range(toc_count):
-        header(c,'目录与学习导航', '点击目录或使用PDF书签跳转；迁移模块尚未生成，不列虚拟页码。')
+    # Keep complete learning sections together instead of stranding two rows on page 3.
+    toc_groups=[toc[:11],toc[11:21],toc[21:]]
+    require(len(toc_groups)==toc_count and all(len(g)<=16 for g in toc_groups),'TOC grouping overflow')
+    subtitles=['主项练习 B01—B11；点击目录或使用PDF书签跳转。',
+               '主项练习 B12—B21；复杂字的续页按实际生成页数编排。',
+               '比较、回忆、整字迁移与卷末说明；新增页面单独计数。']
+    for idx,rows in enumerate(toc_groups):
+        header(c,'目录与学习导航',subtitles[idx])
         y=H-129
-        for title,page in toc[idx*16:(idx+1)*16]:
+        for title,page in rows:
             line(c,L,y,title,11,width=R-L-55);line(c,R-43,y,str(page),11)
             links.append({'page':guide_pages+idx,'target':page-1,'rect':[L,y-4,R,y+15]});y-=33
         c.showPage()
@@ -255,10 +326,21 @@ def build(args):
     # Per-page temporary readers can alias translation caches and bloat the PDF.
     buf=io.BytesIO();stamp=new_canvas(buf)
     recall_starts={s['start']:s['start'] for s in section if s['kind']=='pair'}
+    migration_links=[]
+    for sec in section:
+        if sec['kind']=='migration':
+            record=next(r for r,_,_ in migrations if r['id']==sec['id'])
+            for i in range(sec['start']-1,sec['start']-1+sec['pages']):
+                migration_links.append({'page':i,'target':nav[record['main_id']][0]-1,'case':record['id'],
+                                        'rect':[L,22,R,39]})
+    migration_returns={x['page']:x for x in migration_links}
     for i in range(total):
         line(stamp,L,15,f'{edition.label}    {i+1}/{total}',8,width=R-L)
         if i in recall_starts:
             line(stamp,L,94,f'返回示范：第{recall_starts[i]}页（写完再点击）',11)
+        if i in migration_returns:
+            target=migration_returns[i]['target']+1
+            line(stamp,L,29,f'回到主项示范：第{target}页（整字与部件时序分开核对）',9)
         stamp.showPage()
     stamp.save();buf.seek(0);overlay=PdfReader(buf)
     for i,page in enumerate(writer.pages):
@@ -277,13 +359,15 @@ def build(args):
     for s in section:
         if s['kind']=='pair':
             target=s['start']-1;writer.add_annotation(s['start'],Link(rect=(L,80,R,110),target_page_index=target))
+    for rec in migration_links:
+        writer.add_annotation(rec['page'],Link(rect=rec['rect'],target_page_index=rec['target']))
     # Use explicit page objects, not numeric pseudo-destinations, for local links.
     for page in writer.pages:
         for annotation in page.get('/Annots', []):
             dest=annotation.get_object().get('/Dest')
             if dest is not None and isinstance(dest[0], int):
                 dest[0]=writer.pages[int(dest[0])].indirect_reference
-    writer.add_metadata({'/Title':'循序渐进汉字部首字帖｜'+edition.label,'/Subject':'Incomplete engineering preview; F03 and Q1 pending'})
+    writer.add_metadata({'/Title':'循序渐进汉字部首字帖｜'+edition.label,'/Subject':'All M3 modules integrated; candidate freeze and Q1 pending'})
     pdf=out/f'zitie-v{edition.identifier}.pdf'
     for page in writer.pages:
         page.compress_content_streams()
@@ -291,14 +375,20 @@ def build(args):
     with pdf.open('wb') as f:writer.write(f)
     input_paths=[CONFIG,config['guidance'],'data/m3_scope.json','data/teaching-source-policy.json','sources/catalog.json']
     input_paths += [f'data/{bid}.json' for bid in config['batches']]
-    input_paths += ['scripts/m3_model.py','scripts/build_m3_preview.py','scripts/build_batch.py']
+    input_paths += ['scripts/m3_model.py','scripts/build_m3_preview.py','scripts/build_batch.py',
+                    'scripts/m3_migration.py',MIGRATION_RECORD]
+    input_paths += list(dict.fromkeys(r['evidence'] for r,_,_ in migrations))
     source=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     dirty=bool(subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True).strip())
     meta={'schema_version':1,'version':edition.identifier,'status':'engineering_preview','candidate_frozen':False,
           'release_eligible':False,'Q1_completed':False,'source_commit':source,'source_dirty':dirty,
           'pdf':pdf.name,'sha256':digest(pdf),'bytes':pdf.stat().st_size,'pages':total,
           'main_count':len(records),'practice_pages':sum(r['pages'] for r in records),'comparison_pages':6,'recall_pages':6,
-          'migration_pages':0,'missing_modules':config['missing_modules'],'guide_pages':guide_pages,'toc_pages':toc_count,
+          'migration_pages':sum(len(t) for _,_,t in migrations),'migration_case_count':len(migrations),
+          'migration_records':[{'id':r['id'],'main_id':r['main_id'],'whole_character':r['whole_character'],
+                                'indices':r['indices'],'vector_sha256':r['vector_sha256'],'timeline':t}
+                               for r,_,t in migrations],
+          'migration_links':migration_links,'missing_modules':config['missing_modules'],'guide_pages':guide_pages,'toc_pages':toc_count,
           'appendix_start':back_start,'appendix_labels':labels,'main_navigation':nav,'sections':section,
           'bookmarks':bookmarks,'toc_links':links,'decisions':decisions,'entries':records,
           'input_sha256':{p:digest(ROOT/p) for p in input_paths},

@@ -27,7 +27,7 @@ class M3Edition:
 
     @property
     def identifier(self):
-        return self.version + '-dev1'
+        return self.version + '-dev2'
 
     @property
     def label(self):
@@ -47,9 +47,10 @@ def validate_config(config):
     require(config['batches'] == [f'B{i:02}' for i in range(1, 22)], 'Expected B01-B21')
     require(config['layout'] == {'paper': 'A4', 'orientation': 'portrait', 'rows': 4,
                                 'columns': 8, 'max_steps_per_page': 6}, 'Practice geometry changed')
-    require(config['modules'] == ['guidance', 'contents', 'practice', 'comparison_recall', 'appendix'],
+    require(config['modules'] == ['guidance', 'contents', 'practice', 'comparison_recall', 'whole_character_migration', 'appendix'],
             'Unknown or incomplete module declaration')
-    require(config['missing_modules'] == ['whole_character_migration'], 'Declare unfinished migration module')
+    require(config['missing_modules'] == [] and config['migration_artwork'] == 'data/artwork/m3-migration.json',
+            'Whole-character migration module must be explicitly configured')
     return config
 
 
