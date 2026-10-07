@@ -853,8 +853,8 @@
     ],
     "batches_content_in_progress": [],
     "next_assignment_starts_at": null,
-    "next_work": "P7_full_book_PDF_QA_manifest_release",
-    "note": "P6 complete: 201/201 artwork_ready and full-book A4 layout/complex-character pagination review passed on 258/258 rendered practice pages. P7 active for draft archival, manifest, full-book PDF/TOC/page/index QA, target-HEAD CI and release.",
+    "next_work": "P7_full_book_final_QA_manifest_target_HEAD_CI_release",
+    "note": "P7 active. v0.3.0 full-book research draft is permanently archived in deliverables/drafts and registered in manifest. Remaining gates: full-book PDF/TOC/page/index/variant regression QA, manifest final review, target-HEAD CI, release candidate and formal release.",
     "stroke_order_reviewed_main_count": 201,
     "stroke_order_pending_main_count": 0,
     "active_remaining_phase": "P7",
@@ -1188,6 +1188,28 @@
         "evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
         "review": "reviews/P6-full-book-layout-review-20261007.md"
       }
+    },
+    "p7_publication": {
+      "status": "in_progress",
+      "draft_archive": {
+        "version": "0.3.0",
+        "path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+        "pages": 261,
+        "bytes": 3652431,
+        "sha256": "6c8ddf162b0f72ef921a8624095096cce177128efd4ccf8d50c5168b31cb4773",
+        "source_commit": "a7b0ffa385417d84c8d8651ada0ed56a5b8cfa7b",
+        "workflow_run_id": 37561985856,
+        "review": "reviews/v0.3.0-full-book-draft-ci.md",
+        "status": "draft_archived",
+        "release_eligible": false
+      },
+      "manifest_registered": true,
+      "final_pdf_visual_QA": "pending",
+      "toc_index_page_QA": "pending",
+      "variants_and_legacy27_regression": "pending",
+      "target_HEAD_CI": "pending",
+      "release_candidate": "pending",
+      "formal_release": "pending"
     }
   }
 }
