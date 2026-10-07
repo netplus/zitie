@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "record_kind": "P6_full_book_layout_review",
+  "phase": "P6",
+  "review_date": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "workflow_run_id": 37560963767,
+  "workflow_head_sha": "dcb52d2af614d58eb4893228bce170f6105aade3",
+  "artifact_id": 11456961693,
+  "artifact_name": "zitie-p6-full-layout-research",
+  "artifact_digest": "sha256:c87ce0b3d3bd7daa5d713bc54500223daa339b62e7581141560ac84dff64b7e1",
+  "artifact_source_commit": "5efd471df1de9ee43204a32effcd7a4bfc0f2711",
+  "scope": {
+    "batches": [
+      "B01",
+      "B02",
+      "B03",
+      "B04",
+      "B05",
+      "B06",
+      "B07",
+      "B08",
+      "B09",
+      "B10",
+      "B11",
+      "B12",
+      "B13",
+      "B14",
+      "B15",
+      "B16",
+      "B17",
+      "B18",
+      "B19",
+      "B20",
+      "B21"
+    ],
+    "main_radicals": 201,
+    "rendered_practice_pages": 258
+  },
+  "machine_gate": {
+    "full_frozen_batch_validation": true,
+    "validation_tests": 32,
+    "deliverable_tests": 11,
+    "all_21_batch_research_build": true,
+    "all_21_batch_pdf_structural_preflight": true,
+    "formal_publication_gate_remained_fail_closed": true,
+    "artifact_upload": true
+  },
+  "visual_review": {
+    "method": "render_all_21_batch_draft_PDFs_to_PNG_then_five_group_contact_sheet_visual_review_with_high_resolution_spot_checks",
+    "full_book_render_dpi": 72,
+    "full_book_pages_viewed": 258,
+    "overview_groups": [
+      "B01-B05",
+      "B06-B10",
+      "B11-B15",
+      "B16-B19",
+      "B20-B21"
+    ],
+    "high_resolution_spot_checks": [
+      {
+        "scope": "B08",
+        "pages": 10,
+        "dpi": 120,
+        "focus": "no-independent-pinyin branch and rare component forms"
+      },
+      {
+        "scope": "B20",
+        "pages": 23,
+        "dpi": 120,
+        "focus": "10-14 stroke pagination, long teaching/self-check text, page continuity"
+      },
+      {
+        "scope": "B21",
+        "pages": 3,
+        "dpi": 140,
+        "focus": "龠 17-stroke three-page pagination and long fail-closed self-check"
+      },
+      {
+        "scope": "B20 page 14",
+        "dpi": 120,
+        "focus": "黍 second page long self-check wrapped to two lines without clipping"
+      }
+    ],
+    "checks": [
+      "no visible clipping",
+      "no visible text or grid overlap",
+      "no black-square/missing-glyph regression in rendered target glyphs",
+      "32 practice cells retained per page",
+      "maximum six cumulative stroke steps per page",
+      "complex characters preserve practice-grid size rather than shrinking",
+      "B20/B21 long self-check text wraps without content deletion",
+      "B21 17-stroke sequence spans three continuous pages"
+    ],
+    "result": "passed"
+  },
+  "boundaries": [
+    "This review closes P6 layout readiness only.",
+    "CI and temporary artifact do not archive deliverables/drafts or update manifest.",
+    "Formal release remains P7 and release_eligible remains fail-closed until P7 gates are satisfied.",
+    "Existing semantic conflict_fail_closed/source_blocked_fail_closed states remain unchanged."
+  ],
+  "status": "layout_ready_P6_complete"
+}
