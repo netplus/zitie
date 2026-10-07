@@ -10,7 +10,7 @@ from pathlib import Path
 from reportlab.lib.pagesizes import A4
 from reportlab.lib.colors import HexColor
 from reportlab.pdfbase import pdfmetrics
-from reportlab.pdfbase.ttfonts import TTFont
+from reportlab.pdfbase.cidfonts import UnicodeCIDFont
 from reportlab.pdfgen import canvas
 from pypdf import PdfReader
 
@@ -25,14 +25,11 @@ RULE=HexColor('#D8C2C4')
 def load(path):
     return json.loads((ROOT/path).read_text(encoding='utf-8'))
 
-def register_font(path):
-    if not Path(path).is_file():
-        raise ValueError('Missing appendix CJK font: '+path)
-    try:
-        pdfmetrics.registerFont(TTFont('APPENDIX_CJK',path,subfontIndex=0))
-    except TypeError:
-        pdfmetrics.registerFont(TTFont('APPENDIX_CJK',path))
-    return 'APPENDIX_CJK'
+def register_font(_path=None):
+    # Use ReportLab's built-in CJK CID font instead of relying on distro TTC/CFF
+    # files that TTFont cannot load portably on GitHub Actions.
+    pdfmetrics.registerFont(UnicodeCIDFont('STSong-Light'))
+    return 'STSong-Light'
 
 def txt(c,x,y,s,size=9,color=INK,font='APPENDIX_CJK'):
     c.setFillColor(color); c.setFont(font,size); c.drawString(x,y,str(s))
@@ -114,15 +111,16 @@ def build_backmatter(path,font):
     variants=load('data/variants.json')
     sources=load('sources/catalog.json')
     _,_,items,_=build_navigation()
+    items_by_main_id=sorted(items,key=lambda row: row['main_id'])
     c=canvas.Canvas(str(path),pagesize=A4,pageCompression=1,invariant=1)
     c.setTitle('循序渐进汉字部首字帖｜卷末索引与复核说明')
     page_no=0
 
     # 201 main-radical index: 34 rows/page => 6 pages.
     rows_per=34
-    for chunk_start in range(0,len(items),rows_per):
+    for chunk_start in range(0,len(items_by_main_id),rows_per):
         page_no+=1
-        chunk=items[chunk_start:chunk_start+rows_per]
+        chunk=items_by_main_id[chunk_start:chunk_start+rows_per]
         header(c,'201主部首索引','按main_id排序；页码对应本版练习页',f'索引 {page_no}/13')
         y=H-104
         txt(c,L,y,'ID',8,RED); txt(c,L+34,y,'主部首',8,RED); txt(c,L+92,y,'批次',8,RED); txt(c,L+145,y,'页码',8,RED)
@@ -239,7 +237,7 @@ def build_backmatter(path,font):
 
 def main():
     p=argparse.ArgumentParser()
-    p.add_argument('--font',required=True)
+    p.add_argument('--font',default=None,help='Deprecated; built-in STSong-Light CID font is used for portability.')
     args=p.parse_args()
     font=register_font(args.font)
     out=ROOT/'build'; out.mkdir(exist_ok=True)
