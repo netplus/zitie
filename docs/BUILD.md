@@ -70,3 +70,17 @@ python scripts/verify_patch_archive.py
 正式预检输出`build/v0.4.1/`，与RC输出隔离。前言正文按模式修改；候选原稿和旧v0.4.0渲染路径保持。正式预检metadata仍为release_eligible=false，生成成功不表示允许发布。
 
 归档门禁绑定PDF字节、生成提交、原始generation JSON、影响页QA和manifest。旧v0.4.0门禁与新v0.4.1检查独立，额外未登记release会拒绝。最终归档HEAD CI通过并合入后再记录M1退出；v0.5.0仍必须经过M2/M3/Q1。
+
+## M3内部工程预览（不冻结候选）
+
+```sh
+python scripts/build_m3_preview.py
+python scripts/verify_m3_preview.py --self-test
+python scripts/verify_m3_preview.py
+```
+
+依赖已恢复并校验的`build/vectors/`与本机楷体/拉丁/UMing字体，输出`build/v0.5.0-dev1/`。支持`--font`、`--latin-font`、`--variant-font`；不导出字体。配置为`data/m3_book.json`，学生/辅导者文案为`book/front-matter/m3-guidance.json`。
+
+当前288页包含201主项练习及6组对照/回忆，明确缺少整字迁移模块；没有candidate/formal升级参数。metadata保存输入/字体哈希、实际源码提交及dirty状态、逐项证据判定、页码/书签/链接；只有无阻塞且具正面证据的字段才允许呈现。
+
+内部调试预览不替代永久归档候选；本轮不交付或发布该PDF。M3完成全模块后另冻结新候选，Q1验收最终同一字节。旧构建路径、17份历史PDF和manifest不覆盖。当前块状态见`data/m3_scope.json`。

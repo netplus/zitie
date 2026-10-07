@@ -1,8 +1,16 @@
 # Agent工作约定
 
-## 发布后新周期接续（2026-10-07）
+## M3最新实现检查点（2026-10-07）
 
-当前以`docs/STATUS.md`、`data/post_release.json`为准。M1完成、正式v0.4.1保留；M2本周期按`completed_with_source_blocks`结束，累计采用瓦位置映射及麦/齿读音3个字段，来源#4仍open。当前M3已启动，先读`docs/M3_SCOPE.md`和`data/teaching-source-policy.json`，不要重复M1发布或将M2结束理解为残余已证实。五个功能包尚未完成，Q1仍planned；按字段限制出题/展示，不禁用无关已核字段，不补造精确2022结论。下列P0—P7是历史基线规则。
+F01学生/辅导者分层说明与F02六组比较/回忆已实现，内部工程预览实际288页；F03整字迁移未生成，F04导航/F05字段策略已接入当前模块但待迁移集成。五包完成2，不是M3已完成。232书签、28目录跳转、201主项逐字段呈现检查已运行；全部12个比较/回忆页实际查看。下一步实现完整整字迁移，不重复M1/M2收口。
+
+工程预览不是冻结候选、不作为正式PDF交付；旧17份PDF及manifest不改。来源阻塞保持，Q1未开始，candidate=null、final_release_eligible=false。当前细节以[STATUS](docs/STATUS.md)和`data/m3_scope.json`为准，复核见`reviews/M3-foundation-comparison-20261007.md`。
+
+## 既有阶段记录（本轮之前）
+
+## M2退出时的接续记录（历史）
+
+当前以`docs/STATUS.md`、`data/post_release.json`为准。M1完成、正式v0.4.1保留；M2本周期按`completed_with_source_blocks`结束，累计采用瓦位置映射及麦/齿读音3个字段，来源#4仍open。当前M3已启动，先读`docs/M3_SCOPE.md`和`data/teaching-source-policy.json`，不要重复M1发布或将M2结束理解为残余已证实。M3启动时五个功能包尚未完成；最新实现以上方检查点为准，Q1仍planned；按字段限制出题/展示，不禁用无关已核字段，不补造精确2022结论。下列P0—P7是历史基线规则。
 
 ## 当前工作模式：内容优先
 

@@ -85,6 +85,11 @@ jobs:
           python scripts/verify_patch_release.py
           python scripts/test_patch_release.py
           python scripts/verify_patch_archive.py
+      - name: Build and check M3 engineering preview
+        run: |
+          python scripts/build_m3_preview.py
+          python scripts/verify_m3_preview.py --self-test
+          python scripts/verify_m3_preview.py
       - name: Check formal publication separately
         run: |
           for N in $(seq -w 1 21); do
