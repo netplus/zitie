@@ -243,8 +243,8 @@ def main():
     args=p.parse_args()
     font=register_font(args.font)
     out=ROOT/'build'; out.mkdir(exist_ok=True)
-    toc=out/'toc_v0.3.0.pdf'
-    back=out/'backmatter_v0.3.0.pdf'
+    toc=out/'toc_v0.4.0.pdf'
+    back=out/'backmatter_v0.4.0.pdf'
     toc_pages=build_toc(toc,font)
     back_pages=build_backmatter(back,font)
     meta={'toc_file':toc.name,'toc_pages':toc_pages,'backmatter_file':back.name,'backmatter_pages':back_pages,
