@@ -25,8 +25,12 @@ for forbidden in ('编写稿','前言初稿','编写中'):
             hits.append({'page':page_no,'context':text[max(0,pos-40):pos+80].replace('\\n',' / ')})
     assert not hits, f'RC1 still contains draft label {forbidden}: {hits}'
 
+preface_candidate_markers=sum('发布候选稿 RC1' in t for t in texts[:3])
+practice_candidate_markers=sum('发布候选稿 RC1' in t for t in texts[5:263])
 candidate_markers=sum('发布候选稿 RC1' in t for t in texts)
-assert candidate_markers==258, candidate_markers
+assert preface_candidate_markers==3, preface_candidate_markers
+assert practice_candidate_markers==258, practice_candidate_markers
+assert candidate_markers==261, candidate_markers
 
 assert 'GF0011—2022逐项精确字段' in joined
 assert '201 source_blocked_fail_closed' in joined
@@ -39,7 +43,9 @@ assert '原27项对应表' in joined
 print(json.dumps({
     'status':'RC1_pdf_preflight_passed',
     'pages':len(reader.pages),
-    'candidate_practice_page_markers':candidate_markers,
+    'candidate_preface_page_markers':preface_candidate_markers,
+    'candidate_practice_page_markers':practice_candidate_markers,
+    'candidate_total_markers':candidate_markers,
     'release_eligible':False,
     'formal_release':False
 },ensure_ascii=False,indent=2))
