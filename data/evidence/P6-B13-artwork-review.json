@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "record_kind": "P6_cumulative_vector_artwork_review",
+  "batch_id": "B13",
+  "reviewed_at": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "vector_revision": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+  "workflow_run_id": 37549583534,
+  "workflow_head_sha": "9a421a34b6db37c991fd0f8a45f807cead083ea3",
+  "artifact_id": 11452452267,
+  "artifact_name": "p6-artwork-review-b12-b21",
+  "artifact_digest": "sha256:c6d536587de540e2c9cb0a2ff7ff5c61ae607fc9b538a7d81f8f2e37a3e10519",
+  "review_pdf": "B13-artwork-review.pdf",
+  "review_pdf_sha256": "efcbc90a1b1c59ff440f6e04e786224464e292a651412f8033533fb8f8811550",
+  "review_method": "rendered cumulative-stroke PDF -> 120dpi PNG -> full batch contact-sheet visual inspection",
+  "targeted_single_page_second_pass": [],
+  "fail_closed_label_policy": "If fine_stroke_names is fail-closed and no adjudicated sequence exists, the review sheet uses reviewed stroke count/order steps without inventing stroke-name labels.",
+  "entries": [
+    {
+      "character": "矛",
+      "main_id": 121,
+      "order_code": "54523",
+      "stroke_count": 5,
+      "stroke_name_labels_available": false,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "耒",
+      "main_id": 122,
+      "order_code": "111234",
+      "stroke_count": 6,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "老",
+      "main_id": 123,
+      "order_code": "121335",
+      "stroke_count": 6,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "耳",
+      "main_id": 124,
+      "order_code": "122111",
+      "stroke_count": 6,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "臣",
+      "main_id": 125,
+      "order_code": "125125",
+      "stroke_count": 6,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "覀",
+      "main_id": 126,
+      "order_code": "125221",
+      "stroke_count": 6,
+      "stroke_name_labels_available": false,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "而",
+      "main_id": 127,
+      "order_code": "132522",
+      "stroke_count": 6,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "页",
+      "main_id": 128,
+      "order_code": "132534",
+      "stroke_count": 6,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "至",
+      "main_id": 129,
+      "order_code": "154121",
+      "stroke_count": 6,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "虍",
+      "main_id": 130,
+      "order_code": "215315",
+      "stroke_count": 6,
+      "stroke_name_labels_available": false,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "reviewed": 10,
+    "artwork_conflicts": 0,
+    "ordinary_pending": 0
+  },
+  "limits": "Drawing-material approval only. Inherited content fail-closed states remain unchanged. Final A4 layout/PDF/manifest/release are independent."
+}
