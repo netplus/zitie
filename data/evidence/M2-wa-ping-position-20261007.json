@@ -1,0 +1,54 @@
+{
+  "schema_version": 1,
+  "phase": "M2",
+  "date": "2026-10-07",
+  "record_kind": "field_reopen_original_page_adjudication",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "target": {"batch": "B05", "main_id": 72, "character": "瓦", "field": "position_migration"},
+  "baseline_commit": "c703e79c7a3c8a3381884ed50482adc351ac7947",
+  "source": {
+    "source_id": "S02", "publication_id": "GF0023—2020",
+    "official_url": "https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/202103/W020210318300204215237.pdf",
+    "recovery_workflow_run_id": 37449756736, "recovery_artifact_id": 11406995313,
+    "artifact_sha256": "0cb5ef351aaf8fb8a43c83e800357fcbc84c2c6464308b66d31cffbd84f8d2a7",
+    "pdf_sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
+    "pdf_bytes": 51412684, "pdf_pages": 581,
+    "novelty": "既有规范原件的完整行新证据，不是新出版物或新版本规范"
+  },
+  "independent_target": {"character": "瓦", "pdf_page": 13, "printed_page": 7, "table_no": "0108", "ucs": "074E6", "stroke_count": 4, "order_code": "1554"},
+  "whole_character": {"character": "瓶", "source_id": "S02", "publication_id": "GF0023—2020", "pdf_page": 228, "printed_page": 222, "table_no": "2051", "ucs": "074F6", "stored_whole_order_code": "4311321554", "stored_whole_order_code_complete": true, "stroke_count": 10},
+  "old_review": {
+    "phase": "P4", "evidence": "data/evidence/P4-B04-B05-position-migration-final.json",
+    "result": "conflict_fail_closed_P4_whole_character_component_mapping",
+    "whole_character": {"character": "瓶", "source_id": "S02", "publication_id": "GF0023—2020", "pdf_page": 228, "printed_page": 222, "table_no": "2051", "ucs": "074F6", "stored_whole_order_code": "4311321", "stored_whole_order_code_complete": false},
+    "verified_position": "right", "component_stroke_indices_in_whole_character": [],
+    "mapping_kind": "unresolved_component_mapping", "full_whole_character_sequence_required": false, "stroke_changes": [],
+    "visual_review": true, "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+    "notes": "GF0023 瓶整字原页上下文已核，但旧审读记录中的整字数字笔顺在进入瓦部件前即截断；当前无法从已持久化证据可靠恢复瓦的4笔索引与改笔，不据字形常识或secondary数据强行补齐。",
+    "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+  },
+  "new_review": {
+    "phase": "M2", "evidence": "data/evidence/M2-wa-ping-position-20261007.json",
+    "result": "reviewed_M2_GF0023_complete_whole_character_row",
+    "whole_character": {"character": "瓶", "source_id": "S02", "publication_id": "GF0023—2020", "pdf_page": 228, "printed_page": 222, "table_no": "2051", "ucs": "074F6", "stored_whole_order_code": "4311321554", "stored_whole_order_code_complete": true, "stroke_count": 10},
+    "verified_position": "right", "component_stroke_indices_in_whole_character": [7, 8, 9, 10],
+    "mapping_kind": "contiguous", "full_whole_character_sequence_required": false, "stroke_changes": [],
+    "visual_review": true, "visual_review_origin": "actual_complete_GF0023_rows_independent_and_whole_character_20261007",
+    "notes": "实际复核GF0023物理第13页瓦条及第228页瓶条的完整累计示范；瓶10笔数字笔顺为4311321554，瓦对应第7—10笔1554。旧记录只保存上行4311321，漏了下行554；此次恢复完整行，不据二次码表补值。",
+    "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code.",
+    "reviewed_at": "2026-10-07"
+  },
+  "adjudication": {
+    "component_stroke_indices": [7, 8, 9, 10], "component_order_code": "1554", "position": "right", "mapping_kind": "contiguous", "stroke_changes": [],
+    "source_lines": ["4311321", "554"], "complete_order_code": "4311321554", "visual_pages": [13, 228],
+    "target_rows_viewed_enlarged": true, "fine_stroke_names_changed": false, "formal_GF0011_2022_identity_promoted": false,
+    "scope": "仅瓦在瓶中的已观察对应关系；不外推所有位置变体或正式附形身份"
+  },
+  "application": {
+    "path": "data/B05.json", "base_file_sha256": "1baf0803276e1f4a21b60e835a64e0e689351199fde5b214efb0f0be38b05c8d",
+    "expected_blob_sha": "e955f63c33e3af68df7d8ec1172648152320f7c1",
+    "new_field_status": "reviewed_M2_GF0023_complete_whole_character_row", "preserve_old_review_as": "position_migration_review_history"
+  },
+  "release_boundary": "v0.4.0/v0.4.1历史P4快照保持198 reviewed + 3 fail-closed；当前工作数据为199 + 2，下一版本才能体现新结论。未修改现有PDF、manifest或教学文本。"
+}

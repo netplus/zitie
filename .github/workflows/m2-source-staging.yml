@@ -1,0 +1,73 @@
+name: M2 temporary evidence staging
+on:
+  push:
+    branches: [maintenance/m2-wa-complete-row-20261007]
+permissions:
+  contents: read
+jobs:
+  stage-reviewed-text:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Stage only the already reviewed B05 patch without updating any ref
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import base64, copy, hashlib, json, os, pathlib, urllib.request
+          p=pathlib.Path('data/B05.json')
+          ev=json.loads(pathlib.Path('data/evidence/M2-wa-ping-position-20261007.json').read_text())
+          assert hashlib.sha256(p.read_bytes()).hexdigest()==ev['application']['base_file_sha256']
+          b=json.loads(p.read_text())
+          e=next(e for e in b['entries'] if e['character']=='瓦')
+          assert e['main_id']==72 and e['position_migration_review']==ev['old_review']
+          e['position_migration_review_history']=[copy.deepcopy(e['position_migration_review'])]
+          e['position_migration_review']=ev['new_review']
+          e['field_status']['position_migration']=ev['application']['new_field_status']
+          e['unresolved']=[t for t in e['unresolved'] if not t.startswith('position_migration已按GF0023整字原页/')]
+          raw=(json.dumps(b,ensure_ascii=False,indent=2)+'\n').encode()
+          sha=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()
+          assert sha==ev['application']['expected_blob_sha']
+          body=json.dumps({'content':base64.b64encode(raw).decode(),'encoding':'base64'}).encode()
+          req=urllib.request.Request('https://api.github.com/repos/netplus/zitie/git/blobs',data=body,headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','Content-Type':'application/json'})
+          with urllib.request.urlopen(req,timeout=60) as r: result=json.load(r)
+          assert result['sha']==sha
+          out=pathlib.Path('staged');out.mkdir()
+          (out/'B05-reference.json').write_text(json.dumps({'path':str(p),'blob_sha':sha,'bytes':len(raw),'source_commit':os.environ['GITHUB_SHA'],'status':'unreferenced_blob_only'},indent=2)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m2-reviewed-B05-reference
+          path: staged/
+          retention-days: 3
+  acquire-public-standard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Try the exact official GF0025 PDF; record failure without inferring absence
+        run: |
+          mkdir -p reference
+          python - <<'PY'
+          import hashlib,json,pathlib,urllib.request
+          url='https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/202111/W020211118507389477190.pdf'
+          record={'url':url,'purpose':'GF0025-2021 pronunciation candidate; no field approval'}
+          try:
+              req=urllib.request.Request(url,headers={'User-Agent':'Mozilla/5.0'})
+              with urllib.request.urlopen(req,timeout=90) as r:
+                  raw=r.read(200*1024*1024+1); record['final_url']=r.url
+              assert len(raw)<=200*1024*1024 and raw.startswith(b'%PDF-')
+              pathlib.Path('reference/gf0025-2021.pdf').write_bytes(raw)
+              record.update(status='acquired_pending_identity_and_page_review',bytes=len(raw),sha256=hashlib.sha256(raw).hexdigest())
+          except Exception as e:
+              record.update(status='retrieval_failed_not_evidence_of_absence',error_type=type(e).__name__,error=str(e))
+          pathlib.Path('reference/acquisition.json').write_text(json.dumps(record,ensure_ascii=False,indent=2)+'\n')
+          print(json.dumps(record,ensure_ascii=False))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m2-gf0025-reference-probe
+          path: reference/
+          retention-days: 3
