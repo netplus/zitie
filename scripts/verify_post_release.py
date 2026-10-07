@@ -91,6 +91,9 @@ def verify(root=ROOT):
             safe_file(root, evidence)
     from verify_patch_archive import verify as verify_patch_archive
     verify_patch_archive(root)
+    if state['phases'][1]['status'] in DONE:
+        from verify_m2_closeout import verify as verify_m2_closeout
+        verify_m2_closeout(root)
     candidate = state.get('candidate')
     if candidate:
         require(re.fullmatch(r'[0-9a-f]{40}', candidate['source_commit']), 'Exact candidate source required')

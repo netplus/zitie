@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_at": "2026-10-07",
-  "active_phase": "M2",
+  "active_phase": "M3",
   "plan": "docs/POST_RELEASE_PLAN.md",
   "baseline": {
     "version": "0.4.0",
@@ -26,68 +26,33 @@
     {
       "id": "M2",
       "name": "新权威来源重开",
-      "status": "in_progress",
+      "status": "completed_with_source_blocks",
       "source_issue": 4,
-      "exit_evidence": [],
+      "exit_evidence": [
+        "reviews/M2-completion-20261007.md",
+        "data/evidence/M2-closeout-20261007.json",
+        "sources/reviews/M2-final-source-audit-20261007.json"
+      ],
       "started_at": "2026-10-07",
       "scope_inventory": "data/evidence/M2-reopen-inventory-20261007.json",
       "entry_source_audit": "sources/reviews/M2-entry-source-audit-20261007.json",
       "latest_checkpoint": {
         "date": "2026-10-07",
-        "review": "reviews/M2-GF0025-pronunciation-20261007.md",
-        "adopted_reopens": [
-          "data/evidence/M2-wa-ping-position-20261007.json",
-          "data/evidence/M2-GF0025-pronunciation-20261007.json"
-        ],
-        "working_position_migration": {
-          "reviewed": 199,
-          "conflict_fail_closed": 2,
-          "conflict_characters": [
-            "屮",
-            "毋"
-          ]
+        "review": "reviews/M2-completion-20261007.md",
+        "all_M2_scopes_audited": true,
+        "all_fields_resolved": false,
+        "cumulative_adopted_field_updates": 3,
+        "new_this_round": 0,
+        "remaining_counts": {
+          "exact_2022_item_fields": 201,
+          "fine_stroke_names": 14,
+          "position_migration": 2,
+          "pronunciation": 9,
+          "component_name": 28,
+          "structure": 37
         },
-        "historical_release_position_migration": {
-          "reviewed": 198,
-          "conflict_fail_closed": 3
-        },
-        "new_source_acquisition": "sources/reviews/M2-GF0025-2021-acquisition-20261007.json",
-        "new_source_item_fields_reviewed": 2,
-        "all_M2_scopes_audited": false,
-        "pronunciation_evidence": "data/evidence/M2-GF0025-pronunciation-20261007.json",
-        "pronunciation_source_audit": "sources/reviews/M2-GF0025-pronunciation-audit-20261007.json",
-        "working_pronunciation": {
-          "scope": "B04-B21",
-          "target_count": 171,
-          "reviewed": 128,
-          "not_applicable": 34,
-          "conflict_fail_closed": 9,
-          "conflict_characters": [
-            "尢",
-            "弋",
-            "彳",
-            "毋",
-            "邑",
-            "黾",
-            "阜",
-            "黍",
-            "龠"
-          ]
-        },
-        "current_round": {
-          "field": "pronunciation",
-          "adopted_characters": [
-            "麦",
-            "齿"
-          ],
-          "adopted_count": 2,
-          "bounded_unresolved_probes": 9,
-          "entire_source_exclusion_claimed": false
-        },
-        "visual_impact": {
-          "review": "data/evidence/M2-GF0025-pronunciation-layout-20261007.json",
-          "status": "passed_temporary_affected_samples_not_final_edition_Q1"
-        }
+        "source_issue": 4,
+        "teaching_policy": "data/teaching-source-policy.json"
       },
       "checkpoint_history": [
         {
@@ -111,14 +76,74 @@
           "new_source_acquisition": "sources/reviews/M2-GF0025-2021-acquisition-20261007.json",
           "new_source_item_fields_reviewed": 0,
           "all_M2_scopes_audited": false
+        },
+        {
+          "date": "2026-10-07",
+          "review": "reviews/M2-GF0025-pronunciation-20261007.md",
+          "adopted_reopens": [
+            "data/evidence/M2-wa-ping-position-20261007.json",
+            "data/evidence/M2-GF0025-pronunciation-20261007.json"
+          ],
+          "working_position_migration": {
+            "reviewed": 199,
+            "conflict_fail_closed": 2,
+            "conflict_characters": [
+              "屮",
+              "毋"
+            ]
+          },
+          "historical_release_position_migration": {
+            "reviewed": 198,
+            "conflict_fail_closed": 3
+          },
+          "new_source_acquisition": "sources/reviews/M2-GF0025-2021-acquisition-20261007.json",
+          "new_source_item_fields_reviewed": 2,
+          "all_M2_scopes_audited": false,
+          "pronunciation_evidence": "data/evidence/M2-GF0025-pronunciation-20261007.json",
+          "pronunciation_source_audit": "sources/reviews/M2-GF0025-pronunciation-audit-20261007.json",
+          "working_pronunciation": {
+            "scope": "B04-B21",
+            "target_count": 171,
+            "reviewed": 128,
+            "not_applicable": 34,
+            "conflict_fail_closed": 9,
+            "conflict_characters": [
+              "尢",
+              "弋",
+              "彳",
+              "毋",
+              "邑",
+              "黾",
+              "阜",
+              "黍",
+              "龠"
+            ]
+          },
+          "current_round": {
+            "field": "pronunciation",
+            "adopted_characters": [
+              "麦",
+              "齿"
+            ],
+            "adopted_count": 2,
+            "bounded_unresolved_probes": 9,
+            "entire_source_exclusion_claimed": false
+          },
+          "visual_impact": {
+            "review": "data/evidence/M2-GF0025-pronunciation-layout-20261007.json",
+            "status": "passed_temporary_affected_samples_not_final_edition_Q1"
+          }
         }
-      ]
+      ],
+      "completed_at": "2026-10-07"
     },
     {
       "id": "M3",
       "name": "v0.5.0功能与教学质量增强",
-      "status": "planned",
-      "exit_evidence": []
+      "status": "in_progress",
+      "exit_evidence": [],
+      "started_at": "2026-10-07",
+      "scope_record": "docs/M3_SCOPE.md"
     },
     {
       "id": "Q1",
@@ -212,7 +237,7 @@
   ],
   "candidate": null,
   "final_release_eligible": false,
-  "next_work": "M2已采用GF0025小麦/牙齿的目标语素读音，麦mài、齿chǐ两项关闭；剩余9项读音仅有限范围未命中，仍需适用证据，不作全书无条目结论。继续其它M2字段，M3/Q1未开始；旧17份PDF和历史快照不改。",
+  "next_work": "按docs/M3_SCOPE.md落实v0.5.0功能清单；先学生前言/术语显示与版本生成参数，再比较、回忆、迁移和导航。M2有阻塞完成，Issue4继续重开追踪；不得再为同一缺口无界循环，也不得填造未证实字段。M3未完成，Q1未开始。",
   "tracking_issue": 58,
   "patch_candidate": {
     "path": "deliverables/drafts/v0.4.1-rc1/B01-B21_v0.4.1-rc1_A4.pdf",
