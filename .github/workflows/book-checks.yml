@@ -54,6 +54,14 @@ jobs:
           done
           python scripts/build_collection.py --candidate
           python scripts/verify_release_candidate_pdf.py
+          python scripts/verify_formal_release_gate.py
+          for N in $(seq -w 1 21); do
+            BATCH="B$N"
+            python scripts/build_batch.py --formal --batch "$BATCH" --font "$FONT" --latin-font "$LATIN"
+          done
+          python scripts/build_book_matter.py --formal
+          python scripts/build_collection.py --formal
+          python scripts/verify_formal_release_pdf.py
           git rev-parse HEAD > build/SOURCE_COMMIT.txt
       - name: Check formal publication separately
         run: |
@@ -70,7 +78,7 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: always()
         with:
-          name: zitie-p7-draft-and-rc1-research
+          name: zitie-p7-draft-rc1-formal-preflight
           path: build/
           retention-days: 14
           if-no-files-found: error
