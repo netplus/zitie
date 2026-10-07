@@ -30,7 +30,15 @@ def verify(directory):
     require(len(raw) == meta['bytes'], 'Candidate size mismatch')
     require(hashlib.sha256(raw).hexdigest() == meta['sha256'], 'Candidate hash mismatch')
     reader = PdfReader(directory / meta['pdf'])
-    texts = [p.extract_text() or '' for p in reader.pages]
+    texts, font_runs = [], {}
+    for i, page in enumerate(reader.pages):
+        runs = []
+        def visitor(text, cm, tm, font, size):
+            if text.strip():
+                runs.append((text, str((font or {}).get('/BaseFont', ''))))
+        texts.append(page.extract_text(visitor_text=visitor) or '')
+        if i in (269, 270, 271, 272):
+            font_runs[i] = runs
     require(len(texts) == meta['pages'] == 276, 'Unexpected candidate page count')
     for page in reader.pages:
         require(abs(float(page.mediabox.width) - 595.2756) < .1
@@ -46,6 +54,13 @@ def verify(directory):
     for i in range(5, 263):
         require(edition.practice_label in texts[i], 'Wrong practice edition on page ' + str(i+1))
         require('正式发布版 v0.4.0' not in texts[i], 'Stale practice edition')
+    required_forms = {269: ['龵'], 270: ['⻊', '⺮', '⺌', '⺶'], 271: ['龵'], 272: ['⻊']}
+    pattern = re.escape(meta['variant_font']['font_name']) + r'(?:-\d+)?'
+    for i, forms in required_forms.items():
+        for form in forms:
+            require(any(form in text and re.fullmatch(pattern, base.split('+')[-1].lstrip('/'))
+                        for text, base in font_runs[i]),
+                    f'Fallback font not used for {form} on page {i+1}')
     for i in (269, 271):
         require('V007' in texts[i] and '龵' in texts[i], 'V007 content missing')
         fonts = reader.pages[i]['/Resources']['/Font'].get_object().values()

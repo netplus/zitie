@@ -141,7 +141,7 @@ def build_backmatter(path,font,formal=False,edition=None,variant_font=None):
 
     def form_label(x,y,parent,separator,form,suffix='',size=12):
         # Preserve all non-form typography; only the variant token uses fallback.
-        if edition is None or form != '龵':
+        if edition is None or form not in ('龵', '⻊', '⺮', '⺌', '⺶'):
             txt(c,x,y,parent+separator+form+suffix,size)
             return
         prefix=parent+separator
@@ -275,7 +275,7 @@ def build_backmatter(path,font,formal=False,edition=None,variant_font=None):
         records=records[:-1]+[
             ('v0.4.0','276页正式基线；保留原PDF字节和既有审读记录'),
             ('本次版本',edition.identifier+'；'+('候选；正式发布另需M1终审' if edition.mode=='candidate' else '勘误修订，发布状态以manifest为准')),
-            ('本次勘误','E001：修复V007索引缺字；E002：明确细笔名统计范围')
+            ('本次勘误','E001：修复5项变体索引缺字；E002：明确细笔名统计范围')
         ]
     for ver,note in records:
         txt(c,L,y,ver,10,RED); txt(c,L+95,y,note,9); y-=34

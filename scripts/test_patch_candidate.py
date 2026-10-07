@@ -88,6 +88,10 @@ class CandidateTests(unittest.TestCase):
         self.meta['variant_font']['checked_form_count'] = 31
         with self.assertRaises(ValueError): self.run_check()
 
+    def test_wrong_font_binding(self):
+        self.meta['variant_font']['font_name'] = 'STSong-Light'
+        with self.assertRaises(ValueError): self.run_check()
+
     def test_wrong_version(self):
         self.meta['version'] = '0.4.0-rc1'
         with self.assertRaises(ValueError): self.run_check()

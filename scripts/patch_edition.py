@@ -57,7 +57,8 @@ def register_variant_font(path, forms, subfont=0, name='VariantFallback'):
         'sha256': hashlib.sha256(path.read_bytes()).hexdigest(),
         'font_name': font.face.name.decode('ascii', errors='replace') if isinstance(font.face.name, bytes) else str(font.face.name),
         'checked_form_count': len(forms), 'missing_glyphs': [],
-        'rendering_scope': 'V007 form 龵 only; other typography unchanged',
+        'rendering_scope': 'V007/V026/V029/V031/V032 form tokens only; other typography unchanged',
+        'embedded_forms': ['龵', '⻊', '⺮', '⺌', '⺶'],
         'embedding': 'TrueType subset in PDF only; no font file exported',
         'visual_approval': False,
     }
