@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import copy
 import unittest
+import re
 from validate_project import load, validate, validate_evidence, validate_metadata_evidence
 
 class ValidationTests(unittest.TestCase):
@@ -42,6 +43,19 @@ class ValidationTests(unittest.TestCase):
             result=validate(catalog,batches,variants,batch)
             self.assertEqual(result['main_index_count'],201)
             self.assertEqual(result['formal_release_entries'],0)
+
+    def test_content_ready_prose_has_no_stale_working_state(self):
+        batches=load('data/batches.json')
+        stale=re.compile(r'候选|pending|未核|待核|仍待|尚未审定|待原页|待权威|待目标|待规范')
+        allowed={('B05','牙','第2笔细笔名存在权威材料冲突，正式审定前保持待核。')}
+        found=[]
+        for item in batches['frozen_batches']:
+            batch=load(f"data/{item['id']}.json")
+            for entry in batch['entries']:
+                for text in [*(entry.get('tips') or []),entry.get('check') or '']:
+                    if stale.search(text) and (item['id'],entry['character'],text) not in allowed:
+                        found.append((item['id'],entry['character'],text))
+        self.assertEqual(found,[],found)
 
 
 class EvidenceTests(unittest.TestCase):
