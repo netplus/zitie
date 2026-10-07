@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "version": "0.3.0",
-  "preface_file": "preface_v0.3.0.pdf",
+  "version": "0.4.0",
+  "preface_file": "preface_v0.4.0.pdf",
   "built_batches": [
     "B01",
     "B02",
@@ -25,5 +25,7 @@
     "B20",
     "B21"
   ],
-  "collection_file": "B01-B21_with_preface_draft_A4.pdf"
+  "collection_file": "B01-B21_with_preface_toc_appendices_draft_A4.pdf",
+  "toc_file": "toc_v0.4.0.pdf",
+  "backmatter_file": "backmatter_v0.4.0.pdf"
 }
