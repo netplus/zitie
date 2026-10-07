@@ -13,7 +13,10 @@
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
       "publication_status": "draft_archived",
-      "prerequisites": []
+      "prerequisites": [],
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B02",
@@ -25,7 +28,10 @@
       "publication_status": "draft_archived",
       "prerequisites": [
         "B01"
-      ]
+      ],
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B03",
@@ -49,8 +55,10 @@
       "metadata_source_ledger": "sources/B03-metadata-review.json",
       "content_review_record": "reviews/B03-content.md",
       "artwork_review_record": "reviews/B03-artwork.md",
-      "layout_review_record": "reviews/B03-layout.md",
-      "note": "P6正规化：2026-09-30既有B03逐笔矢量人工复核已真实完成，data/evidence/B03-artwork.json与reviews/B03-artwork.md有效；PDF归档与manifest仍独立留待P7。"
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "note": "P6正规化：2026-09-30既有B03逐笔矢量人工复核已真实完成，data/evidence/B03-artwork.json与reviews/B03-artwork.md有效；PDF归档与manifest仍独立留待P7。",
+      "layout_status": "layout_ready",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B04",
@@ -64,7 +72,10 @@
         "B03_content_ready"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B05",
@@ -78,7 +89,10 @@
         "B04_content_scope"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B06",
@@ -92,7 +106,10 @@
         "B05_content_scope"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B07",
@@ -106,7 +123,10 @@
         "B06_content_scope"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B08",
@@ -120,7 +140,10 @@
         "B07_content_scope"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B09",
@@ -134,7 +157,10 @@
         "B08_content_scope"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B10",
@@ -148,7 +174,10 @@
         "B09_content_scope"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B11",
@@ -162,7 +191,10 @@
         "B10_content_scope"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B12",
@@ -176,7 +208,10 @@
         "B11_content_scope"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。语义fail-closed状态保持不变；最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B13",
@@ -190,7 +225,10 @@
         "B12_content_scope"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。语义fail-closed状态保持不变；最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B14",
@@ -204,7 +242,10 @@
         "B13_content_scope"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。语义fail-closed状态保持不变；最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B15",
@@ -218,7 +259,10 @@
         "B14_content_scope"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。语义fail-closed状态保持不变；最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B16",
@@ -232,7 +276,10 @@
         "B15_content_scope"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。语义fail-closed状态保持不变；最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B17",
@@ -246,7 +293,10 @@
         "B16_content_scope"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。语义fail-closed状态保持不变；最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B18",
@@ -260,7 +310,10 @@
         "B17_content_scope"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。语义fail-closed状态保持不变；最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B19",
@@ -274,7 +327,10 @@
         "B18_content_scope"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。语义fail-closed状态保持不变；最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B20",
@@ -288,7 +344,10 @@
         "B19_content_scope"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。语义fail-closed状态保持不变；最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     },
     {
       "id": "B21",
@@ -302,7 +361,10 @@
         "B20_content_scope"
       ],
       "note": "P6逐笔累计矢量人工视觉复核通过；artwork_ready。语义fail-closed状态保持不变；最终A4版式、PDF归档、manifest和release仍独立留待P6/P7。",
-      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md"
+      "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
+      "layout_status": "layout_ready",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
     }
   ],
   "phase1_content_batches": [],
@@ -313,6 +375,6 @@
     "rule": "P5已完成201/201 content_ready；B01—B21全部进入frozen_batches。"
   },
   "run_target_main_count": 0,
-  "run_target_rule": "P5已完成；P6/P7按阶段门槛推进，不用主项数量强行凑批次。",
-  "phase_boundary_rule": "content_ready已201/201完成；P6继续独立统计artwork_ready，P7独立统计PDF/manifest/release_eligible。"
+  "run_target_rule": "P6已完成；P7按发布门槛推进，不按主项数量凑批次。",
+  "phase_boundary_rule": "content_ready与artwork/layout_ready均已201/201完成；当前P7独立统计draft归档、manifest、全书PDF/视觉QA、目标HEAD CI与release_eligible。"
 }
