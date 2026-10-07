@@ -188,6 +188,21 @@
       "artifact_id": 11458786539,
       "review_record": "reviews/P7-structured-draft-visual-QA-20261007.md",
       "release_eligible": false
+    },
+    {
+      "path": "deliverables/drafts/v0.4.0-rc1/B01-B21_with_preface_toc_appendices_rc1_A4.pdf",
+      "title": "《循序渐进汉字部首字帖》v0.4.0 RC1发布候选稿",
+      "version": "0.4.0-rc1",
+      "status": "release_candidate",
+      "batch": "B01-B21",
+      "pages": 276,
+      "bytes": 3756330,
+      "sha256": "fb88257a792c39aa147bb6074fd00656bd7c3c7458dd12c4b6750ddb65498bff",
+      "source_commit": "5ab536f32ac7f1c2909236e0261d3f8db745f6a5",
+      "workflow_run_id": 37569826763,
+      "artifact_id": 11460128190,
+      "review_record": "reviews/P7-RC1-visual-QA-20261007.md",
+      "release_eligible": false
     }
   ]
 }
