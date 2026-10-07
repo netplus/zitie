@@ -48,7 +48,8 @@ jobs:
           git rev-parse HEAD > build/SOURCE_COMMIT.txt
       - name: Check formal publication separately
         run: |
-          for BATCH in B01 B02; do
+          for N in $(seq -w 1 21); do
+            BATCH="B$N"
             if python scripts/validate_project.py --batch "$BATCH" --release; then
               echo "$BATCH release gates passed."
             else
@@ -59,7 +60,7 @@ jobs:
         run: git archive --format=zip HEAD -o build/zitie-source.zip
       - uses: actions/upload-artifact@v4
         with:
-          name: zitie-p6-full-layout-research
+          name: zitie-p7-full-book-draft-research
           path: build/
           retention-days: 14
           if-no-files-found: error
