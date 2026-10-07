@@ -13,8 +13,8 @@
     "version": "0.5.0-dev1",
     "pdf": "zitie-v0.5.0-dev1.pdf",
     "pages": 288,
-    "bytes": 3948271,
-    "sha256": "d671704fdeb98fe9f5d292b5a6ccb701a6dd0a746c12f8b2d54e6621eb5fbde1",
+    "bytes": 3948416,
+    "sha256": "4604749afbb4c15c4722382d6e9747d9354a8904918ba60113eb41bd41959e06",
     "main_count": 201,
     "practice_pages": 258,
     "comparison_pages": 6,
@@ -57,7 +57,7 @@
     "data/B20.json": "a56a690f0c234c8955b48e72619be9067339992c1b53a5c29b43424fec4ba2a3",
     "data/B21.json": "7d5de09715de9b84417b3cc91e05a4e1566c99752236e011a6316800e9d0e1c4",
     "scripts/m3_model.py": "5a606be6b059931d9e5e3976f200486cc4948a03ca8e0491b62c355a07fb7fbb",
-    "scripts/build_m3_preview.py": "e715d7574af54b6fc1800914444ace445ea07791b763f6bec89a8509023c78ae",
+    "scripts/build_m3_preview.py": "65eb68b27c148871458247517630953de0070483ffb75071aa6999236d8ccdf3",
     "scripts/build_batch.py": "4682c47e9f8babe69fcd86888c57822cc57d24e3e448ce0474759a525940eccc"
   },
   "fonts": [
@@ -107,7 +107,18 @@
       281
     ],
     "Poppler_max_pixels": 1600,
-    "scope": "Actual opened readable page images; navigation thumbnails do not count. Not a 288-page Q1 review."
+    "scope": "Actual opened readable page images; navigation thumbnails do not count. Not a 288-page Q1 review.",
+    "final_destination_revision": {
+      "before_sha256": "d671704fdeb98fe9f5d292b5a6ccb701a6dd0a746c12f8b2d54e6621eb5fbde1",
+      "final_sha256": "4604749afbb4c15c4722382d6e9747d9354a8904918ba60113eb41bd41959e06",
+      "rendered_pages_inclusive_range": [
+        1,
+        288
+      ],
+      "dpi": 72,
+      "different_pages": [],
+      "meaning": "Only link destination encoding changed; all previously opened page images remain byte-identical at raster level. Final pages 3/264 opened again."
+    }
   },
   "structural_checks": {
     "pages": 288,
@@ -118,10 +129,11 @@
     "page_text_bounds_checked": 288,
     "out_of_page_text": [],
     "recall_blank_cells_per_page": 32,
-    "legacy_cell_side_pt": 60.159448818897644
+    "legacy_cell_side_pt": 60.159448818897644,
+    "explicit_local_link_page_objects": 34
   },
   "raster_regression": {
-    "pdf_sha256": "d671704fdeb98fe9f5d292b5a6ccb701a6dd0a746c12f8b2d54e6621eb5fbde1",
+    "pdf_sha256": "4604749afbb4c15c4722382d6e9747d9354a8904918ba60113eb41bd41959e06",
     "baseline_sha256": "7270104b8698603fcce4eec14037a0194c31e33b868669d0a8dd0307a090a7e7",
     "dpi": 96,
     "regions_pdf_top_coordinates": {
@@ -157,7 +169,8 @@
   "iterations_closed": [
     "Orphan fragment and leading closing punctuation in guide wrapping",
     "Return-to-example overlay font subset mismatch; fixed with a shared multipage overlay",
-    "Overlay PDF growth; streams compressed and duplicate objects removed"
+    "Overlay PDF growth; streams compressed and duplicate objects removed",
+    "Local annotations now use explicit page object references; all 34 targets cross-read with MuPDF, which reports Fit-view links using its named-link representation."
   ],
   "blocking_findings_in_reviewed_scope": 0,
   "tests": {

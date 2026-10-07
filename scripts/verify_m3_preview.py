@@ -7,6 +7,7 @@ import json
 import unittest
 from pathlib import Path
 from pypdf import PdfReader
+from pypdf.generic import IndirectObject
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from build_batch import LEFT, RIGHT, reviewed_stroke_names
@@ -55,9 +56,15 @@ def verify(directory=OUT):
             else:actual[item.title]=r.get_destination_page_number(item)+1
     walk(r.outline)
     require(actual==expected_bookmarks,'Bookmark target mismatch')
+    def destination_page(annotation):
+        dest=annotation.get('/Dest')
+        require(dest and isinstance(dest[0],IndirectObject),'Local link must reference a page object')
+        refs={p.indirect_reference.idnum:i for i,p in enumerate(r.pages)}
+        require(dest[0].idnum in refs,'Link target is not a page in this PDF')
+        return refs[dest[0].idnum]
     for rec in m['toc_links']:
         annots=[a.get_object() for a in r.pages[rec['page']].get('/Annots',[])]
-        require(any(a.get('/Dest',[None])[0]==rec['target'] for a in annots),'Missing TOC jump')
+        require(any(destination_page(a)==rec['target'] for a in annots),'Missing TOC jump')
     for mid,(batch,entry) in by_id.items():
         shown,decision=display_entry(ROOT,policy,batch,entry)
         start,end=m['main_navigation'][str(mid)]
@@ -75,7 +82,7 @@ def verify(directory=OUT):
         pi=section['start'];comp=texts[pi-1];recall=texts[pi]
         require('对照观察' in comp and '独立回忆' in recall,'Pair/recall missing')
         require(f'返回示范：第{pi}页（写完再点击）' in recall,'Return label/font mapping corrupted')
-        require(any(a.get_object().get('/Dest',[None])[0]==pi-1 for a in r.pages[pi].get('/Annots',[])),
+        require(any(destination_page(a.get_object())==pi-1 for a in r.pages[pi].get('/Annots',[])),
                 'Recall return destination wrong')
         operations=r.pages[pi].get_contents().operations
         cells=[v for v,op in operations if op==b're' and abs(float(v[2])-cell)<.01 and abs(float(v[3])-cell)<.01]

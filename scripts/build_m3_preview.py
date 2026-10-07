@@ -277,6 +277,12 @@ def build(args):
     for s in section:
         if s['kind']=='pair':
             target=s['start']-1;writer.add_annotation(s['start'],Link(rect=(L,80,R,110),target_page_index=target))
+    # Use explicit page objects, not numeric pseudo-destinations, for local links.
+    for page in writer.pages:
+        for annotation in page.get('/Annots', []):
+            dest=annotation.get_object().get('/Dest')
+            if dest is not None and isinstance(dest[0], int):
+                dest[0]=writer.pages[int(dest[0])].indirect_reference
     writer.add_metadata({'/Title':'循序渐进汉字部首字帖｜'+edition.label,'/Subject':'Incomplete engineering preview; F03 and Q1 pending'})
     pdf=out/f'zitie-v{edition.identifier}.pdf'
     for page in writer.pages:
