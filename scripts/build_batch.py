@@ -207,6 +207,10 @@ def frontmatter(path,mode,edition=None):
     note=ParagraphStyle('note',parent=body,fontSize=10,leading=17,firstLineIndent=0,textColor=HexColor(COL['muted']))
     story=[]
     raw=(ROOT/'book/front-matter/preface.md').read_text(encoding='utf-8')
+    if edition is not None:
+        if edition.mode != mode:
+            raise ValueError('Preface mode disagrees with edition')
+        raw=edition.preface_text(raw)
     for block in raw.split('\n\n'):
         block=block.strip()
         if not block or block=='---': continue

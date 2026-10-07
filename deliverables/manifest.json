@@ -249,6 +249,47 @@
       "artifact_id": 11464939841,
       "review_record": "reviews/M1-v0.4.1-rc1-review-20261007.md",
       "release_eligible": false
+    },
+    {
+      "path": "deliverables/releases/v0.4.1/B01-B21_v0.4.1_A4.pdf",
+      "title": "《循序渐进汉字部首字帖》v0.4.1勘误修订版",
+      "version": "0.4.1",
+      "status": "released",
+      "batch": "B01-B21",
+      "pages": 276,
+      "bytes": 3748910,
+      "sha256": "7270104b8698603fcce4eec14037a0194c31e33b868669d0a8dd0307a090a7e7",
+      "source_commit": "0c55d903ed23db565853541c664fdcc44395a2f1",
+      "workflow_run_id": 37587438677,
+      "artifact_id": 11467072366,
+      "review_record": "reviews/M1-v0.4.1-formal-review-20261007.md",
+      "generation_record": "data/evidence/M1-v0.4.1-formal-generation-20261007.json",
+      "evidence": "data/evidence/M1-v0.4.1-formal-QA-20261007.json",
+      "release_eligible": true,
+      "git_blob_sha": "a9c62e466805ff83b7061d808051593bea012a7b",
+      "release_gate_snapshot": {
+        "scope": "passed",
+        "primary": "passed",
+        "cross": "passed",
+        "metadata": "passed",
+        "artwork": "passed",
+        "layout": "passed",
+        "unresolved_conflicts": 0,
+        "terminal_fail_closed_disclosed": true,
+        "terminal_fail_closed": {
+          "fine_stroke_names": 14,
+          "position_migration": 3,
+          "exact_GF0011_2022_item_fields": 201
+        },
+        "gf0011_2022_item_level_fulltext": "source_blocked_fail_closed",
+        "patch_errata_resolved": [
+          "E001",
+          "E002",
+          "E003",
+          "E004"
+        ],
+        "basis": "v0.4.0 reviewed baseline + M1 byte-bound impact review; no new normative review"
+      }
     }
   ]
 }

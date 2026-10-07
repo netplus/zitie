@@ -87,7 +87,11 @@ assert len(raw)==rc["bytes"]
 assert hashlib.sha256(raw).hexdigest()==rc["sha256"]
 assert len(PdfReader(str(pdf)).pages)==276
 
-released=[x for x in manifest["artifacts"] if x.get("status")=="released"]
+# Validate the immutable v0.4.0 release here; additional releases require
+# the independent, byte-bound M1 archive gate below.
+released=[x for x in manifest["artifacts"] if x.get("status")=="released" and x.get("version")=="0.4.0"]
+from verify_patch_archive import verify as verify_patch_archive
+verify_patch_archive(ROOT)
 release_dir=ROOT/"deliverables/releases"
 
 if not released:

@@ -30,6 +30,23 @@ class PatchEdition:
     def label(self):
         return ('发布候选稿 v' if self.mode == 'candidate' else '勘误修订版 v') + self.identifier
 
+    def preface_text(self, raw):
+        """Change only the version notice; preserve legacy/RC source verbatim.
+
+        An exact one-occurrence guard prevents silently missing a future source
+        edit or replacing unrelated uses of the word 'candidate'.
+        """
+        old = ('本候选版本用于全书终审与发布门槛检查，不改变上述 '
+               'fail-closed/source-blocked 结论，也不等同于正式release。')
+        if raw.count(old) != 1:
+            raise ValueError('Expected exactly one version notice in preface')
+        if self.mode == 'candidate':
+            return raw
+        new = (f'本勘误修订版为 v{self.version}，修正已登记的显示和表述问题；'
+               '上述 fail-closed/source-blocked 结论不变。'
+               '正式归档状态以交付清单、目标HEAD CI及发布记录为准。')
+        return raw.replace(old, new)
+
     @property
     def practice_label(self):
         return self.label + '｜保留卷末 fail-closed/source-blocked 边界。'

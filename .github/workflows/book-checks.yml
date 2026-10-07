@@ -73,6 +73,12 @@ jobs:
           python scripts/build_patch_candidate.py --font "$FONT" --latin-font "$LATIN" --variant-font "$VARIANT"
           python scripts/verify_patch_candidate.py
           python scripts/test_patch_candidate.py
+      - name: Build and check M1 formal preflight
+        run: |
+          python scripts/build_patch_release.py
+          python scripts/verify_patch_release.py
+          python scripts/test_patch_release.py
+          python scripts/verify_patch_archive.py
       - name: Check formal publication separately
         run: |
           for N in $(seq -w 1 21); do

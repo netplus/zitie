@@ -16,14 +16,15 @@ def require(condition, message):
         raise ValueError(message)
 
 
-def verify(directory):
+def verify(directory, expected_mode='candidate', metadata=None):
     directory = Path(directory)
-    meta = json.loads((directory / 'generation.json').read_text(encoding='utf-8'))
-    edition = PatchEdition(meta['version'].split('-rc')[0])
+    meta = metadata if metadata is not None else json.loads((directory / 'generation.json').read_text(encoding='utf-8'))
+    require(expected_mode in ('candidate', 'formal'), 'Unknown expected mode')
+    edition = PatchEdition(meta['version'].split('-rc')[0], mode=expected_mode)
     require(meta['version'] == edition.identifier, 'Candidate version mismatch')
     require(Path(meta['pdf']).name == meta['pdf'], 'Expected a flat candidate filename')
     require(re.fullmatch(r'[0-9a-f]{40}', meta['source_commit']), 'Exact source commit required')
-    require(meta['mode'] == 'candidate' and meta['release_eligible'] is False, 'Premature release')
+    require(meta['mode'] == expected_mode and meta['release_eligible'] is False, 'Premature release')
     require(meta['variant_font']['checked_form_count'] == 32, 'Variant font coverage incomplete')
     require(meta['variant_font']['missing_glyphs'] == [], 'Missing variant font glyphs')
     raw = (directory / meta['pdf']).read_bytes()
@@ -43,7 +44,7 @@ def verify(directory):
     for page in reader.pages:
         require(abs(float(page.mediabox.width) - 595.2756) < .1
                 and abs(float(page.mediabox.height) - 841.8898) < .1, 'Not portrait A4')
-    require(meta['mode'] == 'candidate' and meta['release_eligible'] is False, 'Premature release')
+    require(meta['mode'] == expected_mode and meta['release_eligible'] is False, 'Premature release')
     require(meta['main_count'] == len(meta['entries']) == 201, 'Main count mismatch')
     require(sorted(x['main_id'] for x in meta['entries']) == list(range(1, 202)), 'Main IDs mismatch')
     require(meta['practice_pages'] == sum(x['pages'] for x in meta['entries']) == 258, 'Practice count mismatch')
@@ -73,6 +74,17 @@ def verify(directory):
     require(edition.identifier in texts[275] and 'E001' in texts[275] and 'E002' in texts[275], 'Errata/version record missing')
     require(meta['variant_font']['checked_form_count'] == 32, 'Variant font coverage incomplete')
     require(meta['variant_font']['missing_glyphs'] == [], 'Missing variant font glyphs')
+    if expected_mode == 'formal':
+        require('本勘误修订版为 v' + edition.version in texts[2], 'Formal preface body missing')
+        for bad in ('本候选版本', '不等同于正式release', '发布候选稿', edition.version + '-rc'):
+            require(not any(bad in t for t in texts[:5] + texts[5:263] + [texts[275]]),
+                    'Stale candidate wording: ' + bad)
+        require('本次候选' not in texts[275], 'Stale candidate back matter')
+        require('E004' in texts[275], 'Preface erratum absent from version record')
+        require(meta['corrected_errata'] == ['E001', 'E002', 'E004'], 'Formal errata list mismatch')
+    else:
+        require('本候选版本' in texts[2] and '不等同于正式release' in texts[2],
+                'Candidate must retain the original candidate notice')
     return {'version': edition.identifier, 'pages': 276, 'sha256': meta['sha256'],
             'structural_checks': 'passed', 'visual_approval': False,
             'release_eligible': False}

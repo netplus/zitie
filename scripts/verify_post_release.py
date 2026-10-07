@@ -50,6 +50,8 @@ def validate_state(state):
     require(state['active_phase'] == expected, 'Active phase disagrees with sequence')
     if active:
         require(active == [expected], 'Wrong phase is in progress')
+    if phases[0]['status'] in DONE:
+        require(isinstance(state.get('patch_release'), dict), 'M1 requires an archived formal patch')
     if phases[2]['status'] in DONE:
         require(isinstance(state.get('candidate'), dict), 'M3 needs a frozen candidate')
     if phases[3]['status'] in DONE:
@@ -87,6 +89,8 @@ def verify(root=ROOT):
     for phase in state['phases']:
         for evidence in phase.get('exit_evidence', []):
             safe_file(root, evidence)
+    from verify_patch_archive import verify as verify_patch_archive
+    verify_patch_archive(root)
     candidate = state.get('candidate')
     if candidate:
         require(re.fullmatch(r'[0-9a-f]{40}', candidate['source_commit']), 'Exact candidate source required')

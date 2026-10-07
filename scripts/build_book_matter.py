@@ -277,6 +277,8 @@ def build_backmatter(path,font,formal=False,edition=None,variant_font=None):
             ('本次版本',edition.identifier+'；'+('候选；正式发布另需M1终审' if edition.mode=='candidate' else '勘误修订，发布状态以manifest为准')),
             ('本次勘误','E001：修复5项变体索引缺字；E002：明确细笔名统计范围')
         ]
+    if edition is not None and edition.mode=='formal':
+        records.append(('前言勘误','E004：正式模式正文与版本标识一致；候选原稿保留'))
     for ver,note in records:
         txt(c,L,y,ver,10,RED); txt(c,L+95,y,note,9); y-=34
     y-=10
@@ -286,7 +288,9 @@ def build_backmatter(path,font,formal=False,edition=None,variant_font=None):
     status_line=('本正式PDF的发布状态以deliverables/manifest.json、目标HEAD CI与release记录共同为准。' if formal
                  else '正式PDF不得由本页状态文字自动升级；以deliverables/manifest.json、目标HEAD CI和最终release记录共同为准。')
     if edition is not None:
-        status_line='本次候选不改变既有规范字段；正式发布须完成M1验收、归档清单与目标HEAD CI。'
+        status_line=('本次候选不改变既有规范字段；正式发布须完成M1验收、归档清单与目标HEAD CI。'
+                     if edition.mode=='candidate' else
+                     '本勘误修订版不改变既有规范字段；正式归档状态以交付清单、目标HEAD CI及发布记录为准。')
     txt(c,L,y,status_line,8.5)
     footer(c,'历史draft不覆盖；新修订使用新版本目录并保留旧字节。')
     c.showPage()

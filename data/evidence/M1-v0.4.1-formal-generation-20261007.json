@@ -1,0 +1,4484 @@
+{
+  "schema_version": 1,
+  "version": "0.4.1",
+  "mode": "formal",
+  "pdf": "B01-B21_v0.4.1_A4.pdf",
+  "pages": 276,
+  "bytes": 3748910,
+  "sha256": "7270104b8698603fcce4eec14037a0194c31e33b868669d0a8dd0307a090a7e7",
+  "source_commit": "0c55d903ed23db565853541c664fdcc44395a2f1",
+  "variant_font": {
+    "file_name": "uming.ttc",
+    "subfont_index": 0,
+    "sha256": "fe952e55617275142d9cefd4d79eade4df446517b0478b2567d9bc7df49f70e2",
+    "font_name": "UMingCN",
+    "checked_form_count": 32,
+    "missing_glyphs": [],
+    "rendering_scope": "V007/V026/V029/V031/V032 form tokens only; other typography unchanged",
+    "embedded_forms": [
+      "龵",
+      "⻊",
+      "⺮",
+      "⺌",
+      "⺶"
+    ],
+    "embedding": "TrueType subset in PDF only; no font file exported",
+    "visual_approval": false
+  },
+  "body_fonts": [
+    {
+      "file_name": "gkai00mp.ttf",
+      "sha256": "61519fb9bdda4a1a3aa02a12cbb76c2ef897ce879775d7ea2265d0a65fe54d16"
+    },
+    {
+      "file_name": "DejaVuSans.ttf",
+      "sha256": "ae7b7855e115a5966d8b1b3f80f254ccc117ec86f9965e202ee2940453837280"
+    }
+  ],
+  "main_count": 201,
+  "practice_pages": 258,
+  "entries": [
+    {
+      "main_id": 1,
+      "character": "一",
+      "batch": "B01",
+      "pages": 1,
+      "vector_sha256": "ed728673d86fb9aa559c5b150e59ffbee666b085d4a55597c524079a91ebc8ce",
+      "artwork_audit": {
+        "source_sha256": "ed728673d86fb9aa559c5b150e59ffbee666b085d4a55597c524079a91ebc8ce",
+        "applied_artwork_sha256": "28beda816ace083b91252b4462c6c93946fb4bdb0236a59f500f8e75ec0d15dd",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 6,
+      "character": "十",
+      "batch": "B01",
+      "pages": 1,
+      "vector_sha256": "257a0939af5742ca31a980adfa1421d0302d5e90491ab3215c1934bea9a59bef",
+      "artwork_audit": {
+        "source_sha256": "257a0939af5742ca31a980adfa1421d0302d5e90491ab3215c1934bea9a59bef",
+        "applied_artwork_sha256": "a9d96d4bf40a64e521025750318210863c40931fdd775af6fa3dbdca620e86c1",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 12,
+      "character": "人",
+      "batch": "B01",
+      "pages": 1,
+      "vector_sha256": "18ffb9fb727576b0c3e7dc44914be7ffd43164de9ba121710824b83f27bd3bb1",
+      "artwork_audit": {
+        "source_sha256": "18ffb9fb727576b0c3e7dc44914be7ffd43164de9ba121710824b83f27bd3bb1",
+        "applied_artwork_sha256": "f810229feba9bc824d746d77b842a4b9c2ae6f82099f8576163dfc8988193ac4",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 11,
+      "character": "八",
+      "batch": "B01",
+      "pages": 1,
+      "vector_sha256": "650e961eefa88d95cc119146ff6606275ecad54c3f8ad1442c08889f928ec5af",
+      "artwork_audit": {
+        "source_sha256": "650e961eefa88d95cc119146ff6606275ecad54c3f8ad1442c08889f928ec5af",
+        "applied_artwork_sha256": "6f655f1f75bed10cf636011747f0890867ce2c77b7f4fb12eb5fc8f707e6bcec",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 33,
+      "character": "大",
+      "batch": "B01",
+      "pages": 1,
+      "vector_sha256": "83c82950e903c915aa50d0d62b084a2d31c85fe68dce21e0acf39e2f9607e611",
+      "artwork_audit": {
+        "source_sha256": "83c82950e903c915aa50d0d62b084a2d31c85fe68dce21e0acf39e2f9607e611",
+        "applied_artwork_sha256": "3c896b0e39549725ec787e5456a9a0c57d373044131e7665fd7a98d4d62f8122",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 28,
+      "character": "工",
+      "batch": "B01",
+      "pages": 1,
+      "vector_sha256": "a1d8521d2b9c64ed6818fc9314dea0b59499b2652dad15a4cf361d37893c4bcb",
+      "artwork_audit": {
+        "source_sha256": "a1d8521d2b9c64ed6818fc9314dea0b59499b2652dad15a4cf361d37893c4bcb",
+        "applied_artwork_sha256": "f1f8813a64165b630cd62c8cdfdea4df04a58f586f232a34f14c4a86ff25f9ec",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 29,
+      "character": "土",
+      "batch": "B01",
+      "pages": 1,
+      "vector_sha256": "f1f7bfa95a5821fa27573560d3c88552a9e70a3fd3816724cbd441b5c07d17ee",
+      "artwork_audit": {
+        "source_sha256": "f1f7bfa95a5821fa27573560d3c88552a9e70a3fd3816724cbd441b5c07d17ee",
+        "applied_artwork_sha256": "79fb09e5b07fd074630e9f1ec65a72844b494fa7f882672104f294d7cf8d01ad",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 37,
+      "character": "口",
+      "batch": "B01",
+      "pages": 1,
+      "vector_sha256": "ac208865e3166fc35214cec326f00a4b6788a8cac9b4c5a6a37745077e32ddab",
+      "artwork_audit": {
+        "source_sha256": "ac208865e3166fc35214cec326f00a4b6788a8cac9b4c5a6a37745077e32ddab",
+        "applied_artwork_sha256": "49572ead1bbe73feed5246ca78dec39f1a8a48a74679e9f79fbf1bf1d5e77f11",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 39,
+      "character": "山",
+      "batch": "B01",
+      "pages": 1,
+      "vector_sha256": "c1e58c4b20cba28ae9778dfb280a93dc18fdccd3ecbec00bece20ce739c9f459",
+      "artwork_audit": {
+        "source_sha256": "c1e58c4b20cba28ae9778dfb280a93dc18fdccd3ecbec00bece20ce739c9f459",
+        "applied_artwork_sha256": "a88342c92769312b6455b4b17890ddfe9879f6bdf486c5885fdcd2534b9a3bdf",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 40,
+      "character": "巾",
+      "batch": "B01",
+      "pages": 1,
+      "vector_sha256": "e1c1ed3205109a87671ba5bee21a2af2f1e46f0b60d1f39a07c511e45fa7e508",
+      "artwork_audit": {
+        "source_sha256": "e1c1ed3205109a87671ba5bee21a2af2f1e46f0b60d1f39a07c511e45fa7e508",
+        "applied_artwork_sha256": "5bfb5f6676a8965c73c66e55ea67696e256123fadb11744101d0bffdc7e2b083",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 77,
+      "character": "水",
+      "batch": "B02",
+      "pages": 1,
+      "vector_sha256": "46e262a80f2b7da72ea04788d1c19c40339e18beaba16987cc84d55fc257c9e3",
+      "artwork_audit": {
+        "source_sha256": "46e262a80f2b7da72ea04788d1c19c40339e18beaba16987cc84d55fc257c9e3",
+        "applied_artwork_sha256": "60d79b52258b983d057a1bdc67458f8117672255c5c896524665596b8e2b50b7",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 95,
+      "character": "火",
+      "batch": "B02",
+      "pages": 1,
+      "vector_sha256": "09fc0a54adb11753319f5750dcdc127698dfb8a453f1a57b5f11b6a1ee3c64e0",
+      "artwork_audit": {
+        "source_sha256": "09fc0a54adb11753319f5750dcdc127698dfb8a453f1a57b5f11b6a1ee3c64e0",
+        "applied_artwork_sha256": "4237f1919802b06ae5ce06e349e786d04dfb03983d4f2f7fecdc3b9331f33ae9",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 64,
+      "character": "木",
+      "batch": "B02",
+      "pages": 1,
+      "vector_sha256": "2b5bb221b4403a303a567756304545a104d915117cc0f1b3fdea71e7928dfc50",
+      "artwork_audit": {
+        "source_sha256": "2b5bb221b4403a303a567756304545a104d915117cc0f1b3fdea71e7928dfc50",
+        "applied_artwork_sha256": "e6c845b4c391f4ead7cd72aa2f365c30c7f1744d3c884600c942271a423c0371",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 75,
+      "character": "日",
+      "batch": "B02",
+      "pages": 1,
+      "vector_sha256": "5c6bad210149abac8bd645cb12b1394edea5681f224154c27f422134299520fb",
+      "artwork_audit": {
+        "source_sha256": "5c6bad210149abac8bd645cb12b1394edea5681f224154c27f422134299520fb",
+        "applied_artwork_sha256": "41e03fbf104f678c8a086f9e8ed22154eb5ece0d9b155c16873f2c803b41ae0f",
+        "override_sha256": "7fb484888e0920834c8cb6b3571b2e9c8de5516fcc014e340d8528304e1743b7",
+        "modified_stroke_indices": [
+          1
+        ],
+        "notice": "Source-pinned teaching artwork edit, not an official normative glyph."
+      }
+    },
+    {
+      "main_id": 88,
+      "character": "月",
+      "batch": "B02",
+      "pages": 1,
+      "vector_sha256": "441949321eb706def6e8d0c1eeca6b461141703dcc07619939a32d681e08fc46",
+      "artwork_audit": {
+        "source_sha256": "441949321eb706def6e8d0c1eeca6b461141703dcc07619939a32d681e08fc46",
+        "applied_artwork_sha256": "6776ceb9cada116bca577f102cbf9690137f5aa64c54211022771928f79c23af",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 106,
+      "character": "田",
+      "batch": "B02",
+      "pages": 1,
+      "vector_sha256": "d2441470ac4a6c9ea680389bc770cb60f9c29b6819863ebcc39df2b89cea7f04",
+      "artwork_audit": {
+        "source_sha256": "d2441470ac4a6c9ea680389bc770cb60f9c29b6819863ebcc39df2b89cea7f04",
+        "applied_artwork_sha256": "9f70455aee52127ce09fbb98587fdcaf38de8cc954ad0a0e10ffaba288ca9659",
+        "override_sha256": "7fb484888e0920834c8cb6b3571b2e9c8de5516fcc014e340d8528304e1743b7",
+        "modified_stroke_indices": [
+          1
+        ],
+        "notice": "Source-pinned teaching artwork edit, not an official normative glyph."
+      }
+    },
+    {
+      "main_id": 105,
+      "character": "目",
+      "batch": "B02",
+      "pages": 1,
+      "vector_sha256": "f5392f6be0cba05d57c6b9cdb111ad402415e57e886e491a18fbeda6d0206a6b",
+      "artwork_audit": {
+        "source_sha256": "f5392f6be0cba05d57c6b9cdb111ad402415e57e886e491a18fbeda6d0206a6b",
+        "applied_artwork_sha256": "224afbd65ebe7e2b35e9eb2b0e2561e3b329f8f2333483c8737863360265b92b",
+        "override_sha256": "7fb484888e0920834c8cb6b3571b2e9c8de5516fcc014e340d8528304e1743b7",
+        "modified_stroke_indices": [
+          1
+        ],
+        "notice": "Source-pinned teaching artwork edit, not an official normative glyph."
+      }
+    },
+    {
+      "main_id": 80,
+      "character": "手",
+      "batch": "B02",
+      "pages": 1,
+      "vector_sha256": "7964eac3bced473343f5741f98fea3eb2dd842eecd57ec20b4369912570964a7",
+      "artwork_audit": {
+        "source_sha256": "7964eac3bced473343f5741f98fea3eb2dd842eecd57ec20b4369912570964a7",
+        "applied_artwork_sha256": "dc1d6518d936c3cf5fdf9f562ad1cd19012d2a43182dc3fee7318e8300d1703c",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 79,
+      "character": "牛",
+      "batch": "B02",
+      "pages": 1,
+      "vector_sha256": "cb0c578ebb919ca2ad759cc8a79159f1eff623ae7f57dacca26a1bbbc523ab98",
+      "artwork_audit": {
+        "source_sha256": "cb0c578ebb919ca2ad759cc8a79159f1eff623ae7f57dacca26a1bbbc523ab98",
+        "applied_artwork_sha256": "d369bd3422c2bee75e9d3f90c0ce9921c286c6884dbee05ff0aaf38d3a1b399e",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 82,
+      "character": "毛",
+      "batch": "B02",
+      "pages": 1,
+      "vector_sha256": "3c8090a06192de74be5f07b8fe2cf9d1da5f4e76baa21af64cc6f9e67db6f000",
+      "artwork_audit": {
+        "source_sha256": "3c8090a06192de74be5f07b8fe2cf9d1da5f4e76baa21af64cc6f9e67db6f000",
+        "applied_artwork_sha256": "95a6c53894c5f9e17b13c37d0ec8afe8335df9dc82a31895dfd108218ff84220",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 22,
+      "character": "刀",
+      "batch": "B03",
+      "pages": 1,
+      "vector_sha256": "aac96a5e729080db1d551df5cb73f179ebb0081796a833f7aae32a182e59d483",
+      "artwork_audit": {
+        "source_sha256": "aac96a5e729080db1d551df5cb73f179ebb0081796a833f7aae32a182e59d483",
+        "applied_artwork_sha256": "3d1848bd728623f78a0eb2fb05d98db2c80eef940080eccfe5dc7b37b350be92",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 23,
+      "character": "力",
+      "batch": "B03",
+      "pages": 1,
+      "vector_sha256": "c51740470368f15b32d3f8ee1d7b0c93b6aa92c015f286c27137adfb2d7844a3",
+      "artwork_audit": {
+        "source_sha256": "c51740470368f15b32d3f8ee1d7b0c93b6aa92c015f286c27137adfb2d7844a3",
+        "applied_artwork_sha256": "2d1bc7861db7b7a09b06e24592c88519ce83bfa08828c643ee1e489961a10e6b",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 24,
+      "character": "又",
+      "batch": "B03",
+      "pages": 1,
+      "vector_sha256": "f69d714f3a4822dbc02c31969dafdf034307e3747f496e5b48b6004ee3e4ad49",
+      "artwork_audit": {
+        "source_sha256": "f69d714f3a4822dbc02c31969dafdf034307e3747f496e5b48b6004ee3e4ad49",
+        "applied_artwork_sha256": "fdf3914ad12db430709d331c3f02f5bb2bfcf55e68c5e95227f21304293bd950",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 54,
+      "character": "子",
+      "batch": "B03",
+      "pages": 1,
+      "vector_sha256": "f5b7ff9aa3de64ec676e3f06e7c22795aa834eb11eec43b9423f355db5f46474",
+      "artwork_audit": {
+        "source_sha256": "f5b7ff9aa3de64ec676e3f06e7c22795aa834eb11eec43b9423f355db5f46474",
+        "applied_artwork_sha256": "7c010fd0464020107b8b1591eb58f1651bd13aaad3993ae40921d1a91d20d4e4",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 56,
+      "character": "女",
+      "batch": "B03",
+      "pages": 1,
+      "vector_sha256": "8a17d3644493617f0090476873c0e01c25d83271e586c097e40ef0256ced5ac8",
+      "artwork_audit": {
+        "source_sha256": "8a17d3644493617f0090476873c0e01c25d83271e586c097e40ef0256ced5ac8",
+        "applied_artwork_sha256": "9db4c984b6bcfe59c0ac3eb5378a311a5f57c35d20f27a8b0613c5eda8cfab86",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 36,
+      "character": "小",
+      "batch": "B03",
+      "pages": 1,
+      "vector_sha256": "72bf769c8c3426bffa578502eb8b1532fb1e622ddb6f40ded04e484290c0fe8c",
+      "artwork_audit": {
+        "source_sha256": "72bf769c8c3426bffa578502eb8b1532fb1e622ddb6f40ded04e484290c0fe8c",
+        "applied_artwork_sha256": "86dccc7d7d8a3065b697a9be23028cd373bb2fdea45ca2663b089d46c79a2e13",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 61,
+      "character": "王",
+      "batch": "B03",
+      "pages": 1,
+      "vector_sha256": "0cae737cee78a605967be1c36bd978fa68bd54c75799992f3f230d941e2327a4",
+      "artwork_audit": {
+        "source_sha256": "0cae737cee78a605967be1c36bd978fa68bd54c75799992f3f230d941e2327a4",
+        "applied_artwork_sha256": "3ec69865e5535923514eb4674b9df81af33f437446ffbcd10d4ff17a4b45b3a3",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 102,
+      "character": "石",
+      "batch": "B03",
+      "pages": 1,
+      "vector_sha256": "ee18a323fc63c0f4dd0f00477102c547a670c75ae2e3f38c9cb5b1985609b2b3",
+      "artwork_audit": {
+        "source_sha256": "ee18a323fc63c0f4dd0f00477102c547a670c75ae2e3f38c9cb5b1985609b2b3",
+        "applied_artwork_sha256": "e9ec138db30280b2be4e695a6df75edd01ad10ae846550b81b2f904097bf1e24",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 112,
+      "character": "白",
+      "batch": "B03",
+      "pages": 1,
+      "vector_sha256": "a3858cdfb3a8d08b8046aa4e8c9161dac017119c8f7986e52c9e6752d1721f2e",
+      "artwork_audit": {
+        "source_sha256": "a3858cdfb3a8d08b8046aa4e8c9161dac017119c8f7986e52c9e6752d1721f2e",
+        "applied_artwork_sha256": "4cf5801a3d0a3c0b6ff53d6816e68a551cca2948acf0ded06c5e6c8b7c9523e7",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 116,
+      "character": "立",
+      "batch": "B03",
+      "pages": 1,
+      "vector_sha256": "be3a3135457203801eccfc357d620b742aa025938766395a3944c4f18ebbd295",
+      "artwork_audit": {
+        "source_sha256": "be3a3135457203801eccfc357d620b742aa025938766395a3944c4f18ebbd295",
+        "applied_artwork_sha256": "19f422efd5b640c56bc58adc3a6f418bf6a5a58da9862dddf60b1b22f345f5d2",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 27,
+      "character": "干",
+      "batch": "B04",
+      "pages": 1,
+      "vector_sha256": "5e3b240f9a912cd4c0f5bc6c9b9f8e15d93a0dd2e33055ac2d3cc08f2ef61822",
+      "artwork_audit": {
+        "source_sha256": "5e3b240f9a912cd4c0f5bc6c9b9f8e15d93a0dd2e33055ac2d3cc08f2ef61822",
+        "applied_artwork_sha256": "cb18a033cc405185782a4a170ff7cf8e55d88d787ce855a18511b3fb8606fcf1",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 31,
+      "character": "寸",
+      "batch": "B04",
+      "pages": 1,
+      "vector_sha256": "f4604c426c945dd104619650a7a54935c033fcb24f2c6c741906faf0a8f09397",
+      "artwork_audit": {
+        "source_sha256": "f4604c426c945dd104619650a7a54935c033fcb24f2c6c741906faf0a8f09397",
+        "applied_artwork_sha256": "369fd9a97f32e337ebfba9b3087a6c119454684bf5c04570e9585ec6827f5d09",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 43,
+      "character": "夕",
+      "batch": "B04",
+      "pages": 1,
+      "vector_sha256": "bb36e8aadf206af6f24a57a25fbbf4ffc7d9d3457ab747ab1c5aeb2d066a3490",
+      "artwork_audit": {
+        "source_sha256": "bb36e8aadf206af6f24a57a25fbbf4ffc7d9d3457ab747ab1c5aeb2d066a3490",
+        "applied_artwork_sha256": "58c5ef0888929d6e49fd66418c4ba0975a706e1a5a933a7a164d4237400f2089",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 46,
+      "character": "广",
+      "batch": "B04",
+      "pages": 1,
+      "vector_sha256": "0c11f22d3152ff319f3cabeb80c4045034e558e76b58509f8487dc7c5872b5c9",
+      "artwork_audit": {
+        "source_sha256": "0c11f22d3152ff319f3cabeb80c4045034e558e76b58509f8487dc7c5872b5c9",
+        "applied_artwork_sha256": "6b26c92295cd3a33da740a121a05ae471feb17b2c3f0ca8d889731156784194b",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 47,
+      "character": "门",
+      "batch": "B04",
+      "pages": 1,
+      "vector_sha256": "d37eeb35aa87a9862da22248e0818b203af85258f05c67f9023dfc0d7498ca3c",
+      "artwork_audit": {
+        "source_sha256": "d37eeb35aa87a9862da22248e0818b203af85258f05c67f9023dfc0d7498ca3c",
+        "applied_artwork_sha256": "a4bdce782bf32ad535567d49454194cdf87db499cd983795a9fa2ef2c207c888",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 51,
+      "character": "尸",
+      "batch": "B04",
+      "pages": 1,
+      "vector_sha256": "d2ddb620148a45e1ba92721cec1ac449dacb15e837aeb02b3c655fb5c4734479",
+      "artwork_audit": {
+        "source_sha256": "d2ddb620148a45e1ba92721cec1ac449dacb15e837aeb02b3c655fb5c4734479",
+        "applied_artwork_sha256": "894faf550fc101d96d120b3fa3e710ab3223546688a2e8bf6cd4eb25914b7c0f",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 52,
+      "character": "己",
+      "batch": "B04",
+      "pages": 1,
+      "vector_sha256": "318727d2358115b813a9ac45b8b26033df9cdc5faa6e6042f641d3e92fbf8caf",
+      "artwork_audit": {
+        "source_sha256": "318727d2358115b813a9ac45b8b26033df9cdc5faa6e6042f641d3e92fbf8caf",
+        "applied_artwork_sha256": "980ebaf30519907d606b8963f8bce6abf990070aa9929a8ad8767572b3c05cf7",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 53,
+      "character": "弓",
+      "batch": "B04",
+      "pages": 1,
+      "vector_sha256": "4239bd8f41b6f0971061566023b4c64e713ec24a1e70e53d4d878bb4131ae239",
+      "artwork_audit": {
+        "source_sha256": "4239bd8f41b6f0971061566023b4c64e713ec24a1e70e53d4d878bb4131ae239",
+        "applied_artwork_sha256": "72db14bcee5d070b38e7e20a0f94b47b01724e7b27f0d34c1f8a1070ff920128",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 57,
+      "character": "飞",
+      "batch": "B04",
+      "pages": 1,
+      "vector_sha256": "dbc770bc5fa91957ce1b1b171a493dcff730f430c1df765c1ce59cf7d3496ba4",
+      "artwork_audit": {
+        "source_sha256": "dbc770bc5fa91957ce1b1b171a493dcff730f430c1df765c1ce59cf7d3496ba4",
+        "applied_artwork_sha256": "1070ee0d4fd477dcb741b7cce37c2c8dfb0251d0b435b3f729387263d640c7d6",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 58,
+      "character": "马",
+      "batch": "B04",
+      "pages": 1,
+      "vector_sha256": "451304b0187c080bcf62115dbd75f19f6306f44e955df59236484e13e031bfc5",
+      "artwork_audit": {
+        "source_sha256": "451304b0187c080bcf62115dbd75f19f6306f44e955df59236484e13e031bfc5",
+        "applied_artwork_sha256": "4a0c1136e8fafc74d24d74c649ba1d4801ee5f3377a5ac9c69e7f6520dea2df0",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 62,
+      "character": "无",
+      "batch": "B05",
+      "pages": 1,
+      "vector_sha256": "d9f4dce9455d8747047d9633761ccb89bbaa600ccf04288d59710070f3caf281",
+      "artwork_audit": {
+        "source_sha256": "d9f4dce9455d8747047d9633761ccb89bbaa600ccf04288d59710070f3caf281",
+        "applied_artwork_sha256": "8f779bc3283bb22da2e1ca9b5c36824d5cfd305015e09eac25777a7ab5ba2681",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 66,
+      "character": "犬",
+      "batch": "B05",
+      "pages": 1,
+      "vector_sha256": "a12a742cfa64cd2f54bea0d6beb84eb09dbd574bb11c27d3b05440af4b086ea5",
+      "artwork_audit": {
+        "source_sha256": "a12a742cfa64cd2f54bea0d6beb84eb09dbd574bb11c27d3b05440af4b086ea5",
+        "applied_artwork_sha256": "f2fa4f93d5dd30e58e66eed145e7063dd3287bdfc837bb138c9192a57b332689",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 67,
+      "character": "歹",
+      "batch": "B05",
+      "pages": 1,
+      "vector_sha256": "f40fe85f991ec0c7ed04feac4611d8649e9279fd48b8013691e3c2238ac425f2",
+      "artwork_audit": {
+        "source_sha256": "f40fe85f991ec0c7ed04feac4611d8649e9279fd48b8013691e3c2238ac425f2",
+        "applied_artwork_sha256": "03fb4cc6381c5da35981a707872791002a57d2f4e4d6a8064328a1bb811c4088",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 68,
+      "character": "车",
+      "batch": "B05",
+      "pages": 1,
+      "vector_sha256": "7f863fb9a5d558ea337928cdd50c65be932c4a35fbde2cf28bfda48f8a438ac8",
+      "artwork_audit": {
+        "source_sha256": "7f863fb9a5d558ea337928cdd50c65be932c4a35fbde2cf28bfda48f8a438ac8",
+        "applied_artwork_sha256": "b8c1f54839dc29a5c3f9c80702c012a71c9c0cce7c126194cf6396b087554ffd",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 69,
+      "character": "牙",
+      "batch": "B05",
+      "pages": 1,
+      "vector_sha256": "9e6edbc8741cfc6d0e36e7e354091f02052b77f7a40bf218c74e241812e342b3",
+      "artwork_audit": {
+        "source_sha256": "9e6edbc8741cfc6d0e36e7e354091f02052b77f7a40bf218c74e241812e342b3",
+        "applied_artwork_sha256": "22f359eb8c033f16b05e8725807fbc70c6702213d75d890e482912db3e2c9ff2",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 70,
+      "character": "戈",
+      "batch": "B05",
+      "pages": 1,
+      "vector_sha256": "0108a1e01261934646136dbdfcb861d650a336487c2e0222ea330e3aff10e71f",
+      "artwork_audit": {
+        "source_sha256": "0108a1e01261934646136dbdfcb861d650a336487c2e0222ea330e3aff10e71f",
+        "applied_artwork_sha256": "8f0d52c00b336b80bd11293ee9f7fe3f6e7226a176335f9d9665ddb71eb911d1",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 72,
+      "character": "瓦",
+      "batch": "B05",
+      "pages": 1,
+      "vector_sha256": "442e596c82fb95a8e52552378ff86cbb8ff54f70cd13e0cfae40435632012a7d",
+      "artwork_audit": {
+        "source_sha256": "442e596c82fb95a8e52552378ff86cbb8ff54f70cd13e0cfae40435632012a7d",
+        "applied_artwork_sha256": "d24183c3b53e60185ad4a2c5f9636dc7fffb0a758a973597e950f05523483e53",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 73,
+      "character": "止",
+      "batch": "B05",
+      "pages": 1,
+      "vector_sha256": "a44ceb736f7010d23d72e1290f766c8af69a139a451bba1f74dcdd0b5b722278",
+      "artwork_audit": {
+        "source_sha256": "a44ceb736f7010d23d72e1290f766c8af69a139a451bba1f74dcdd0b5b722278",
+        "applied_artwork_sha256": "d53b7fc46e2970a19e19ff48303e08b884f11d6b8b796ae0cfc8880110ae05b8",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 76,
+      "character": "贝",
+      "batch": "B05",
+      "pages": 1,
+      "vector_sha256": "01a852cf0c38d7f054c83b9007bcdcf876127352aa595267aa0600bfd26bcb6f",
+      "artwork_audit": {
+        "source_sha256": "01a852cf0c38d7f054c83b9007bcdcf876127352aa595267aa0600bfd26bcb6f",
+        "applied_artwork_sha256": "bbea0de309579cc92150af59bdc06c90635e37546b4fa5db84ca2f9ddb8ce6c8",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 78,
+      "character": "见",
+      "batch": "B05",
+      "pages": 1,
+      "vector_sha256": "38f248a32907c2061fe800b7217847f07181ec6ecfa421e194e020426b79ec3d",
+      "artwork_audit": {
+        "source_sha256": "38f248a32907c2061fe800b7217847f07181ec6ecfa421e194e020426b79ec3d",
+        "applied_artwork_sha256": "4bb769ef04b29944f28543af95aaa2f925eebee591312bb8e8665c3a1d4278c6",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 7,
+      "character": "厂",
+      "batch": "B06",
+      "pages": 1,
+      "vector_sha256": "2313e9675adefdeacccef76ac9df3dc895eee2759b65a1e711cf8e39f2b3dd45",
+      "artwork_audit": {
+        "source_sha256": "2313e9675adefdeacccef76ac9df3dc895eee2759b65a1e711cf8e39f2b3dd45",
+        "applied_artwork_sha256": "321b432ff3d5d09c0100d81967da8d36fac6228737e4c4df58c13562ba8205f6",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 8,
+      "character": "匚",
+      "batch": "B06",
+      "pages": 1,
+      "vector_sha256": "c7ccc786b2c03474e48e61ff4f140e56f5de836de83339f6f6edae32439ca2b5",
+      "artwork_audit": {
+        "source_sha256": "c7ccc786b2c03474e48e61ff4f140e56f5de836de83339f6f6edae32439ca2b5",
+        "applied_artwork_sha256": "39ef8df70b12aadde4baf59edeafe7c018236b72f44c940effe6a445b3412dfe",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 9,
+      "character": "卜",
+      "batch": "B06",
+      "pages": 1,
+      "vector_sha256": "f7b4fbb51535afe702d2511c35b4621c667e41afbb4a73a0649148b77b875cc4",
+      "artwork_audit": {
+        "source_sha256": "f7b4fbb51535afe702d2511c35b4621c667e41afbb4a73a0649148b77b875cc4",
+        "applied_artwork_sha256": "3446f04bf6f1d6067a29929791c92695427c865fe9c779d436081c8df35d833c",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 10,
+      "character": "冂",
+      "batch": "B06",
+      "pages": 1,
+      "vector_sha256": "59b8347986721caf12e5887294c31a9e57f4bc401e80b552d14f4141bbaec346",
+      "artwork_audit": {
+        "source_sha256": "59b8347986721caf12e5887294c31a9e57f4bc401e80b552d14f4141bbaec346",
+        "applied_artwork_sha256": "dbfe293083540f88398d542d273270d666315b88693263b6e327bbf5d74c67c2",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 13,
+      "character": "勹",
+      "batch": "B06",
+      "pages": 1,
+      "vector_sha256": "d3da2339d1ffe90479eaa852f6703a29fb9a50884eccdd7e43c596ce513b9cc6",
+      "artwork_audit": {
+        "source_sha256": "d3da2339d1ffe90479eaa852f6703a29fb9a50884eccdd7e43c596ce513b9cc6",
+        "applied_artwork_sha256": "0462fd72c551897e96f65f085de647ecb96082d1577745d78bf925483d0d6d04",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 14,
+      "character": "儿",
+      "batch": "B06",
+      "pages": 1,
+      "vector_sha256": "9f1e8515ba0fbf39f3b03e0fdd2342771f0c7197fff7c2ceee64674b95bf2c68",
+      "artwork_audit": {
+        "source_sha256": "9f1e8515ba0fbf39f3b03e0fdd2342771f0c7197fff7c2ceee64674b95bf2c68",
+        "applied_artwork_sha256": "65b6cb8eb04aa4018869f120dd261693563a11f5c551be985de777a6745c38a8",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 15,
+      "character": "匕",
+      "batch": "B06",
+      "pages": 1,
+      "vector_sha256": "c3a3ed15b3eb83995574b857d87a03d97ed230f49b9730906b4ea10ed4ca4e09",
+      "artwork_audit": {
+        "source_sha256": "c3a3ed15b3eb83995574b857d87a03d97ed230f49b9730906b4ea10ed4ca4e09",
+        "applied_artwork_sha256": "38b90f47da4fd15db32615b05fbf7770957ecf342a9b6de419b51b7cd7cd6692",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 16,
+      "character": "几",
+      "batch": "B06",
+      "pages": 1,
+      "vector_sha256": "b730f3432a2e0697863f512fe5fbf8bef705a296fe657be4c7433102e1961a37",
+      "artwork_audit": {
+        "source_sha256": "b730f3432a2e0697863f512fe5fbf8bef705a296fe657be4c7433102e1961a37",
+        "applied_artwork_sha256": "059ce7cdfd6ce5cdf025d7bb78c95842a7b2800da95992f9cdc9a80ca38d6f2d",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 17,
+      "character": "亠",
+      "batch": "B06",
+      "pages": 1,
+      "vector_sha256": "d29f4a5c5945a0183110769c381915d5e65c3bea15106918e6c3e837ade94728",
+      "artwork_audit": {
+        "source_sha256": "d29f4a5c5945a0183110769c381915d5e65c3bea15106918e6c3e837ade94728",
+        "applied_artwork_sha256": "319733bf964b1c0c27d76a6c8821b99608f8d36f4304e914ae26be20379919ee",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 18,
+      "character": "冫",
+      "batch": "B06",
+      "pages": 1,
+      "vector_sha256": "4a30fa8448511e2b7f85a72d8e21160765244be5963da9870e83fd241ecc0a46",
+      "artwork_audit": {
+        "source_sha256": "4a30fa8448511e2b7f85a72d8e21160765244be5963da9870e83fd241ecc0a46",
+        "applied_artwork_sha256": "6686eb3857a1fc6348d0990f8989f6c4f7bbe29eb731d45c57b10cd6f237dd37",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 19,
+      "character": "冖",
+      "batch": "B07",
+      "pages": 1,
+      "vector_sha256": "9b7860b3fcbc82bfad5963d5f55ba1ac3ec4fbfc689db7e02a128c9de20b9033",
+      "artwork_audit": {
+        "source_sha256": "9b7860b3fcbc82bfad5963d5f55ba1ac3ec4fbfc689db7e02a128c9de20b9033",
+        "applied_artwork_sha256": "261081e9a985d52e05036c7e4e4e5a7c579f90af9a58d86aefbe2a79271f8d16",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 20,
+      "character": "凵",
+      "batch": "B07",
+      "pages": 1,
+      "vector_sha256": "2a5389dbe0edcf6c863c1ecbd589c5de4eb137e31af52853a8caa11057e08972",
+      "artwork_audit": {
+        "source_sha256": "2a5389dbe0edcf6c863c1ecbd589c5de4eb137e31af52853a8caa11057e08972",
+        "applied_artwork_sha256": "121589fcd809d861c52ebd1366cc06d31f9526edf12d812bb889ee5489a7dce1",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 21,
+      "character": "卩",
+      "batch": "B07",
+      "pages": 1,
+      "vector_sha256": "d3ffae15212d8c1bdf1b6e2fb544ff9b4623632c093c093028b0de65f37e48a5",
+      "artwork_audit": {
+        "source_sha256": "d3ffae15212d8c1bdf1b6e2fb544ff9b4623632c093c093028b0de65f37e48a5",
+        "applied_artwork_sha256": "13f92fa276a4df1bdbd732ebdc9de887797aa93c92734c0adbd327da6fc64f65",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 25,
+      "character": "厶",
+      "batch": "B07",
+      "pages": 1,
+      "vector_sha256": "cf2e998505885326b71234b95aeaa4e7ac829270f4c13b53ec7b6e07cee165a5",
+      "artwork_audit": {
+        "source_sha256": "cf2e998505885326b71234b95aeaa4e7ac829270f4c13b53ec7b6e07cee165a5",
+        "applied_artwork_sha256": "f69e2a466dc14aa8d010955d07d79956d42166a20dfa28d9e4149475fcb02aee",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 26,
+      "character": "廴",
+      "batch": "B07",
+      "pages": 1,
+      "vector_sha256": "7a2367ffc19746fdd1fd3fd6b59a0cfe182e17eb76ca8e52240972390b5a93d7",
+      "artwork_audit": {
+        "source_sha256": "7a2367ffc19746fdd1fd3fd6b59a0cfe182e17eb76ca8e52240972390b5a93d7",
+        "applied_artwork_sha256": "7c2344d7021bbd0c594c1e134d2f7cf7b5948c216c13ecbeea1b8cdc90ea77af",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 30,
+      "character": "艹",
+      "batch": "B07",
+      "pages": 1,
+      "vector_sha256": "6c31d7b009c958fa588f02b5e53be6777f8efd978d394a1c187009fc793471d5",
+      "artwork_audit": {
+        "source_sha256": "6c31d7b009c958fa588f02b5e53be6777f8efd978d394a1c187009fc793471d5",
+        "applied_artwork_sha256": "a72c00aa56694ccd22d142ba52a5315c0a64e39329180be070928a28eef3ad9b",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 32,
+      "character": "廾",
+      "batch": "B07",
+      "pages": 1,
+      "vector_sha256": "c47a99cab3a07430aea7e784ede933649f534824a96c3c405da7ff6577404b4a",
+      "artwork_audit": {
+        "source_sha256": "c47a99cab3a07430aea7e784ede933649f534824a96c3c405da7ff6577404b4a",
+        "applied_artwork_sha256": "70c07ff8e12ca0e93b366242c952c106d8c833db79defd5c54faf2b7646c5a0f",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 48,
+      "character": "宀",
+      "batch": "B07",
+      "pages": 1,
+      "vector_sha256": "12bdbd0678187ba9a66a7cba4e9fe07273e0d2f6eed58abeceff73e328733e3e",
+      "artwork_audit": {
+        "source_sha256": "12bdbd0678187ba9a66a7cba4e9fe07273e0d2f6eed58abeceff73e328733e3e",
+        "applied_artwork_sha256": "779ef5c4518ce3bdea160b26777130f73fb82d18bacfea9e6071e1a36c45ddb1",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 49,
+      "character": "辶",
+      "batch": "B07",
+      "pages": 1,
+      "vector_sha256": "0ea0babb3c970be25c16da08e3e64ba7261f9dafbdbaeeb83fa08fcdb30a2171",
+      "artwork_audit": {
+        "source_sha256": "0ea0babb3c970be25c16da08e3e64ba7261f9dafbdbaeeb83fa08fcdb30a2171",
+        "applied_artwork_sha256": "16a100010de97cb46e15355657eaf5883fb148ceb2b9033da7776ccf8b18d70e",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 50,
+      "character": "彐",
+      "batch": "B07",
+      "pages": 1,
+      "vector_sha256": "dc973ed0464e5174cffee0d8352cc685cb137a3ca28a1c49379e4a6f1bd127b6",
+      "artwork_audit": {
+        "source_sha256": "dc973ed0464e5174cffee0d8352cc685cb137a3ca28a1c49379e4a6f1bd127b6",
+        "applied_artwork_sha256": "0d1816d220f4907dde574a517f040cb63deed98e0d5e28c2f92af69cdcb25410",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 2,
+      "character": "丨",
+      "batch": "B08",
+      "pages": 1,
+      "vector_sha256": "6775ba9b97a69b42d57fc4496cdef117a842b96006742f330e96c7c141f9d8ff",
+      "artwork_audit": {
+        "source_sha256": "6775ba9b97a69b42d57fc4496cdef117a842b96006742f330e96c7c141f9d8ff",
+        "applied_artwork_sha256": "c99ade31019424955952b338a1df97430549a32c568e5464de3998e039e8bf89",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 3,
+      "character": "丿",
+      "batch": "B08",
+      "pages": 1,
+      "vector_sha256": "4669a78a486210e071d3d50f0a1eaa8b116417b5b24e390082d0364a9e418fc4",
+      "artwork_audit": {
+        "source_sha256": "4669a78a486210e071d3d50f0a1eaa8b116417b5b24e390082d0364a9e418fc4",
+        "applied_artwork_sha256": "d3dad85275235b0a7a2c6595c93d358d7bd36931a2703117ab71d6e20f8fcbfd",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 4,
+      "character": "丶",
+      "batch": "B08",
+      "pages": 1,
+      "vector_sha256": "87376601fd1002b74ad136626e119e81a96d610fcfccac746c62b80deecab8f9",
+      "artwork_audit": {
+        "source_sha256": "87376601fd1002b74ad136626e119e81a96d610fcfccac746c62b80deecab8f9",
+        "applied_artwork_sha256": "1efcd0d850c777d294711730b61f10582d449b8a06dec7228b97affea08e1ebb",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 5,
+      "character": "乛",
+      "batch": "B08",
+      "pages": 1,
+      "vector_sha256": "1a22fd5553d6bad39dce2bc170fedbfca422dfcd25e2902752d70fcaa7c6e148",
+      "artwork_audit": {
+        "source_sha256": "1a22fd5553d6bad39dce2bc170fedbfca422dfcd25e2902752d70fcaa7c6e148",
+        "applied_artwork_sha256": "805b76701f6d8b833ca1be54ce952d5a3244ae145373e4f6bdc7d0d7a46a5c0d",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 34,
+      "character": "尢",
+      "batch": "B08",
+      "pages": 1,
+      "vector_sha256": "d353691a1aa36693cc18153f1704fe822dd5c0b8d9a4781413df5130678bdd63",
+      "artwork_audit": {
+        "source_sha256": "d353691a1aa36693cc18153f1704fe822dd5c0b8d9a4781413df5130678bdd63",
+        "applied_artwork_sha256": "73b51f86a702aa20775f5ed4f90cdfd888ece0cd89b5b769e2f48fca14cf28b5",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 35,
+      "character": "弋",
+      "batch": "B08",
+      "pages": 1,
+      "vector_sha256": "48f1958e38190456d7e7c551e74feee5e2c6a60e6cd84ac0f7b6be2a116bd06d",
+      "artwork_audit": {
+        "source_sha256": "48f1958e38190456d7e7c551e74feee5e2c6a60e6cd84ac0f7b6be2a116bd06d",
+        "applied_artwork_sha256": "e5076eb6b60cb5d9b795636574184305e638cc4893df6da817666c3abb57ef82",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 38,
+      "character": "囗",
+      "batch": "B08",
+      "pages": 1,
+      "vector_sha256": "5328313a2bd8e8b718f1dc1652083a7d99c23a49dbc2e18dec34eadc8042b9be",
+      "artwork_audit": {
+        "source_sha256": "5328313a2bd8e8b718f1dc1652083a7d99c23a49dbc2e18dec34eadc8042b9be",
+        "applied_artwork_sha256": "c206803ec90cc1c69e9a24fa45f8a2918884ca093072dda6355a85c40ef523d1",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 41,
+      "character": "彳",
+      "batch": "B08",
+      "pages": 1,
+      "vector_sha256": "e437abab24610c2c38df47263dc118d7097eb1c9e3d1be25a6d9168da9613fb6",
+      "artwork_audit": {
+        "source_sha256": "e437abab24610c2c38df47263dc118d7097eb1c9e3d1be25a6d9168da9613fb6",
+        "applied_artwork_sha256": "6699973b4ff15abdadf5e23792bfeeb124d424066ded48ecfd95cf86cfce5aaf",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 42,
+      "character": "彡",
+      "batch": "B08",
+      "pages": 1,
+      "vector_sha256": "1e472ae1cdabcc38ee1c816ebc331ea8220b6dec895c16b370cde7d323a4d276",
+      "artwork_audit": {
+        "source_sha256": "1e472ae1cdabcc38ee1c816ebc331ea8220b6dec895c16b370cde7d323a4d276",
+        "applied_artwork_sha256": "cc148f302fbe2646353b69e9ea511d95c0509bb7104df9318a0d3547e95bf57f",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 44,
+      "character": "夂",
+      "batch": "B08",
+      "pages": 1,
+      "vector_sha256": "27f8bcd78403b55b8e6971add1444dff6a3d23494a7d5781806717f3c7feafd2",
+      "artwork_audit": {
+        "source_sha256": "27f8bcd78403b55b8e6971add1444dff6a3d23494a7d5781806717f3c7feafd2",
+        "applied_artwork_sha256": "e6617a03a3cd2b5c50218cfefa5ba3cfc8db83fa0df18f2de1e29bfc6a1ba28e",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 63,
+      "character": "韦",
+      "batch": "B09",
+      "pages": 1,
+      "vector_sha256": "0b571391f80bb0902e3d3c912f7d64e027096cace1b300ac24400f8c80b5e05e",
+      "artwork_audit": {
+        "source_sha256": "0b571391f80bb0902e3d3c912f7d64e027096cace1b300ac24400f8c80b5e05e",
+        "applied_artwork_sha256": "06fa65e5b87d1f362c713f206e73b84759f25a9eddf0044aa5d217c9fb394d20",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 65,
+      "character": "支",
+      "batch": "B09",
+      "pages": 1,
+      "vector_sha256": "eedb382470dfe005c782caea7475a49bf07830d101467e2e7070b5a8b34cdfa8",
+      "artwork_audit": {
+        "source_sha256": "eedb382470dfe005c782caea7475a49bf07830d101467e2e7070b5a8b34cdfa8",
+        "applied_artwork_sha256": "25d2836ef03f63ff2408b7453073c9add0547f39b5feedd369587aea07575d1f",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 71,
+      "character": "比",
+      "batch": "B09",
+      "pages": 1,
+      "vector_sha256": "4dc980796f5251417cd1a2ebf706e94bfcabb05d1b275cff28721aeb190fd12e",
+      "artwork_audit": {
+        "source_sha256": "4dc980796f5251417cd1a2ebf706e94bfcabb05d1b275cff28721aeb190fd12e",
+        "applied_artwork_sha256": "e61f888efd4e9ce844fda324bfa2f624d8db9016f93fef6cec68236d92fa476d",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 81,
+      "character": "气",
+      "batch": "B09",
+      "pages": 1,
+      "vector_sha256": "32ebb998c7bd7165e10e781ff52db83e5a3413f01cb70438e2271e99773abf56",
+      "artwork_audit": {
+        "source_sha256": "32ebb998c7bd7165e10e781ff52db83e5a3413f01cb70438e2271e99773abf56",
+        "applied_artwork_sha256": "7c238c6c2ddbd2d27234ca8de2e8eaf7443fd7aed98f21181317906c1495c3e8",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 83,
+      "character": "长",
+      "batch": "B09",
+      "pages": 1,
+      "vector_sha256": "c99fe3d6a862b82befc528e49164b6bf80d461aa6a4b9c9258f4d3debbc49b81",
+      "artwork_audit": {
+        "source_sha256": "c99fe3d6a862b82befc528e49164b6bf80d461aa6a4b9c9258f4d3debbc49b81",
+        "applied_artwork_sha256": "8528a201f0ba3cebf5eba1f926188fd03c16dcf42aded812644e4b2502c7377a",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 84,
+      "character": "片",
+      "batch": "B09",
+      "pages": 1,
+      "vector_sha256": "6952beb0745e6dc5a1d56ea31a80c271986d2af59e0cda16c7e478ea6c2de640",
+      "artwork_audit": {
+        "source_sha256": "6952beb0745e6dc5a1d56ea31a80c271986d2af59e0cda16c7e478ea6c2de640",
+        "applied_artwork_sha256": "31b113137e60d1dbdd8e2e6c3fc86e45ce6c232fced2de9f44556d3bb19d29cf",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 85,
+      "character": "斤",
+      "batch": "B09",
+      "pages": 1,
+      "vector_sha256": "87283ed709ff54f401fb8bb60f9242bd35ac4184c2c47b46580ce0456cd578d8",
+      "artwork_audit": {
+        "source_sha256": "87283ed709ff54f401fb8bb60f9242bd35ac4184c2c47b46580ce0456cd578d8",
+        "applied_artwork_sha256": "9f8a73f7203ebe8dc030961006c6152162ce4c22653384d4b67003e05a14874a",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 86,
+      "character": "爪",
+      "batch": "B09",
+      "pages": 1,
+      "vector_sha256": "fffe24791281e95c13002d70b400abe7731a6d1df207fb74c156fc008ba482ad",
+      "artwork_audit": {
+        "source_sha256": "fffe24791281e95c13002d70b400abe7731a6d1df207fb74c156fc008ba482ad",
+        "applied_artwork_sha256": "5a5251c4e007962d4ccd2ed926a8507245d581e234db0e8ded8e21b5237f3fee",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 87,
+      "character": "父",
+      "batch": "B09",
+      "pages": 1,
+      "vector_sha256": "7a5ff74de6fcb7dcbd8c8673bebe17b239eab65534abc235e68944b1500f7fd5",
+      "artwork_audit": {
+        "source_sha256": "7a5ff74de6fcb7dcbd8c8673bebe17b239eab65534abc235e68944b1500f7fd5",
+        "applied_artwork_sha256": "591994f8d57d2b9bf6ec400e93d562db3f7898dff27195aa9f665c1803dba12c",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 93,
+      "character": "文",
+      "batch": "B09",
+      "pages": 1,
+      "vector_sha256": "da58df874e176b10cbda075bb800aaa486fc716476a563fcc83f8f06b2169dbe",
+      "artwork_audit": {
+        "source_sha256": "da58df874e176b10cbda075bb800aaa486fc716476a563fcc83f8f06b2169dbe",
+        "applied_artwork_sha256": "de0b1b5514f7898e1a968cbba32f304e442771d962f66520a59e026c62a5d774",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 45,
+      "character": "丬",
+      "batch": "B10",
+      "pages": 1,
+      "vector_sha256": "c7541c9f0618a7475aafe0637a91483b72068ce413778d1552d2a8e63e86ffdd",
+      "artwork_audit": {
+        "source_sha256": "c7541c9f0618a7475aafe0637a91483b72068ce413778d1552d2a8e63e86ffdd",
+        "applied_artwork_sha256": "fc50871d627968897cfe7802fb31d9c1cd469ddda51a4beba08814b2cf365796",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 59,
+      "character": "幺",
+      "batch": "B10",
+      "pages": 1,
+      "vector_sha256": "e5ffa04c600f3fa50f927de31b8ee70cf58216f8e09ddab8e0d4c63adc3289b8",
+      "artwork_audit": {
+        "source_sha256": "e5ffa04c600f3fa50f927de31b8ee70cf58216f8e09ddab8e0d4c63adc3289b8",
+        "applied_artwork_sha256": "7d1207cbb75de4283acc0ace1328c3127415ebf62e80caff2006c8723f962dbb",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 74,
+      "character": "攴",
+      "batch": "B10",
+      "pages": 1,
+      "vector_sha256": "c9526cd0e4d32dc1264f7d334b8f23a48929b3023ae5c19d624b98de326b50fa",
+      "artwork_audit": {
+        "source_sha256": "c9526cd0e4d32dc1264f7d334b8f23a48929b3023ae5c19d624b98de326b50fa",
+        "applied_artwork_sha256": "0512b7046f4eac1a43bfade8bc52afa177434db3c6cea190024280f9177cc495",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 89,
+      "character": "氏",
+      "batch": "B10",
+      "pages": 1,
+      "vector_sha256": "a72168f552b076ccb6d8137ea897040be8e94febed0a1bd86f9b4a70683e4582",
+      "artwork_audit": {
+        "source_sha256": "a72168f552b076ccb6d8137ea897040be8e94febed0a1bd86f9b4a70683e4582",
+        "applied_artwork_sha256": "9ea6e7e444fe3094266845aeffb986491e50f0d89a983cf0553cdd7b3578b2fc",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 90,
+      "character": "欠",
+      "batch": "B10",
+      "pages": 1,
+      "vector_sha256": "159c36ee7bdcacdcdc77db5c23b0f259d8915c158a58a0122d255fae24d4dec7",
+      "artwork_audit": {
+        "source_sha256": "159c36ee7bdcacdcdc77db5c23b0f259d8915c158a58a0122d255fae24d4dec7",
+        "applied_artwork_sha256": "9ea9b3545e56eaa7ab9cb782417110bf6c9c183d50ed5dcc469c514511ec4365",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 91,
+      "character": "风",
+      "batch": "B10",
+      "pages": 1,
+      "vector_sha256": "64177681c0214a2908853526000dc3bb8fd8d9489da7fe373a0330c38d0aee0d",
+      "artwork_audit": {
+        "source_sha256": "64177681c0214a2908853526000dc3bb8fd8d9489da7fe373a0330c38d0aee0d",
+        "applied_artwork_sha256": "3e1f80b252f1444538c237221ba95a7ce3a415744c7c28ea84f82525e2a3934e",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 94,
+      "character": "方",
+      "batch": "B10",
+      "pages": 1,
+      "vector_sha256": "d643e7b430d9ecf2a81676aa4fae8b06981a4cd811d3b035f0278a72362e3a6a",
+      "artwork_audit": {
+        "source_sha256": "d643e7b430d9ecf2a81676aa4fae8b06981a4cd811d3b035f0278a72362e3a6a",
+        "applied_artwork_sha256": "0e12de7efcfd57fbd2b3e85f55a42bb48694517f483965fbcb8942d8a38a3adb",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 96,
+      "character": "斗",
+      "batch": "B10",
+      "pages": 1,
+      "vector_sha256": "28dbf765b6db0ae55b14c43c247bed9430c5e4993dc64108c2096c7ab11df8e5",
+      "artwork_audit": {
+        "source_sha256": "28dbf765b6db0ae55b14c43c247bed9430c5e4993dc64108c2096c7ab11df8e5",
+        "applied_artwork_sha256": "ee7509cfa59697289b0cf5db523fb718dabf4f13d68fedd921a86a3c5c871608",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 97,
+      "character": "户",
+      "batch": "B10",
+      "pages": 1,
+      "vector_sha256": "7eb536b593113e847ba72052c0414958cbb2dcfafefb22b07a420343b5c41e89",
+      "artwork_audit": {
+        "source_sha256": "7eb536b593113e847ba72052c0414958cbb2dcfafefb22b07a420343b5c41e89",
+        "applied_artwork_sha256": "f9ed4d7adc58a62a3a081a6b4aa3207c0ebab7b926e6f7d227a216d4f99a65f2",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 98,
+      "character": "心",
+      "batch": "B10",
+      "pages": 1,
+      "vector_sha256": "24b00ca173bbf7403181af1a4f9414f3b9175ed04b17108055c7d9e3fe6d6215",
+      "artwork_audit": {
+        "source_sha256": "24b00ca173bbf7403181af1a4f9414f3b9175ed04b17108055c7d9e3fe6d6215",
+        "applied_artwork_sha256": "9f354376edc9050f6f677acd0c603cd2a12bf855b4427f55ffc171309803992d",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 100,
+      "character": "示",
+      "batch": "B11",
+      "pages": 1,
+      "vector_sha256": "a3fe0df5914370d9251b503ce088e7adde89c60a64b72bdbb3de82300b05c5e5",
+      "artwork_audit": {
+        "source_sha256": "a3fe0df5914370d9251b503ce088e7adde89c60a64b72bdbb3de82300b05c5e5",
+        "applied_artwork_sha256": "6bf18e4f7c989675fc9f7b6a572576285ee198595f031212a3ec79281a3509a1",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 101,
+      "character": "甘",
+      "batch": "B11",
+      "pages": 1,
+      "vector_sha256": "d2fc3d37ab57ba8ac80166e2764615b154378742861be49dcd3d3fbee7878297",
+      "artwork_audit": {
+        "source_sha256": "d2fc3d37ab57ba8ac80166e2764615b154378742861be49dcd3d3fbee7878297",
+        "applied_artwork_sha256": "8e3a369cbb10d9ff919789e815c8577e498cbcb4454930501a0852a5eca92466",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 103,
+      "character": "龙",
+      "batch": "B11",
+      "pages": 1,
+      "vector_sha256": "a4885011d03b3980605502ba36c53a6e2945651756fbd0db1f705f066120bb4b",
+      "artwork_audit": {
+        "source_sha256": "a4885011d03b3980605502ba36c53a6e2945651756fbd0db1f705f066120bb4b",
+        "applied_artwork_sha256": "5a296f1c205e6a7f16a11cd53a9ef7db12287445b78fc3ba0998d8bd6b974b22",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 104,
+      "character": "业",
+      "batch": "B11",
+      "pages": 1,
+      "vector_sha256": "5af383964161810b3b08f1b4a287a7d385046eb0a857834fec00907e74031edb",
+      "artwork_audit": {
+        "source_sha256": "5af383964161810b3b08f1b4a287a7d385046eb0a857834fec00907e74031edb",
+        "applied_artwork_sha256": "feaf4014210e90380b50537ab452ef2be069e597274ecdc677fe81a62ed0a30c",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 107,
+      "character": "罒",
+      "batch": "B11",
+      "pages": 1,
+      "vector_sha256": "cd90e38d7888b54251eccb781f210485f3a017734f0eef2f298a1dddae37089f",
+      "artwork_audit": {
+        "source_sha256": "cd90e38d7888b54251eccb781f210485f3a017734f0eef2f298a1dddae37089f",
+        "applied_artwork_sha256": "453c38241882cb5e725fe7967d0bee6a01961d4cb59195268dc79954be13313f",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 108,
+      "character": "皿",
+      "batch": "B11",
+      "pages": 1,
+      "vector_sha256": "f822985f3359b565efce5f84acbcf458217d165b228e69457e944c5483045ea8",
+      "artwork_audit": {
+        "source_sha256": "f822985f3359b565efce5f84acbcf458217d165b228e69457e944c5483045ea8",
+        "applied_artwork_sha256": "2d2da0d1641ca230af9f46ab0c55208a4584374b6e70dc55365d365fd99538dc",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 109,
+      "character": "生",
+      "batch": "B11",
+      "pages": 1,
+      "vector_sha256": "dbe556919f5c0a95448c40997dfce35ad56ebf26d874218e7076d8c12374cfd8",
+      "artwork_audit": {
+        "source_sha256": "dbe556919f5c0a95448c40997dfce35ad56ebf26d874218e7076d8c12374cfd8",
+        "applied_artwork_sha256": "76d6b022a094dc3df6a47787df97264c5e77374b605b640756a7903160f793af",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 110,
+      "character": "矢",
+      "batch": "B11",
+      "pages": 1,
+      "vector_sha256": "67a256d1a1c0d2b0318f03799b4dfe9c865acaba9120252e863b469f9a12822b",
+      "artwork_audit": {
+        "source_sha256": "67a256d1a1c0d2b0318f03799b4dfe9c865acaba9120252e863b469f9a12822b",
+        "applied_artwork_sha256": "3b08d50c3ec6096bd6ed63cb135607cafeba4dfc1e84fa0e9b08762ea1d98c42",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 111,
+      "character": "禾",
+      "batch": "B11",
+      "pages": 1,
+      "vector_sha256": "74d7e9274a9b3d02fbb353f424a40988a3f8760bb9f465d834d048eceb7451ae",
+      "artwork_audit": {
+        "source_sha256": "74d7e9274a9b3d02fbb353f424a40988a3f8760bb9f465d834d048eceb7451ae",
+        "applied_artwork_sha256": "5cd23ae39a28551c3e2284b729560c11a8a31ca07c1e8017c895835ceccef1ae",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 113,
+      "character": "瓜",
+      "batch": "B11",
+      "pages": 1,
+      "vector_sha256": "cebc4c9aba61f4fa5f9cac84c83617cdcd738fb1b91446f9396a32b245423903",
+      "artwork_audit": {
+        "source_sha256": "cebc4c9aba61f4fa5f9cac84c83617cdcd738fb1b91446f9396a32b245423903",
+        "applied_artwork_sha256": "be307230b85f4bc4aa2204b2ff3bb719004d44305f43507f855ab06e2d1458d6",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 55,
+      "character": "屮",
+      "batch": "B12",
+      "pages": 1,
+      "vector_sha256": "ec408b5cd5d6ce60ba02d621aa2a8db8109bdbf4b1fb74a2f65d16dc0e606d37",
+      "artwork_audit": {
+        "source_sha256": "ec408b5cd5d6ce60ba02d621aa2a8db8109bdbf4b1fb74a2f65d16dc0e606d37",
+        "applied_artwork_sha256": "084e5d3966184cfef33e77261ad72f028f39327af63947f9664c9ff04939cb1f",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 60,
+      "character": "巛",
+      "batch": "B12",
+      "pages": 1,
+      "vector_sha256": "3a66cb5b29f28a93836473ea04d3342246f2b8f95d95c7e59e68406ff25e2ded",
+      "artwork_audit": {
+        "source_sha256": "3a66cb5b29f28a93836473ea04d3342246f2b8f95d95c7e59e68406ff25e2ded",
+        "applied_artwork_sha256": "78bc6b204bd72c2edf5def844d1a14da2ef9eeae16066f81a1beab26d442d5f6",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 92,
+      "character": "殳",
+      "batch": "B12",
+      "pages": 1,
+      "vector_sha256": "c6646babb9158f131fc979defa9173558c82e5b946f644f2d8c58873fa54d38c",
+      "artwork_audit": {
+        "source_sha256": "c6646babb9158f131fc979defa9173558c82e5b946f644f2d8c58873fa54d38c",
+        "applied_artwork_sha256": "6e6952346e52e90b58446b207dae1c37ac00d9fc4bc079119746884f1880323b",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 99,
+      "character": "毋",
+      "batch": "B12",
+      "pages": 1,
+      "vector_sha256": "c44122bd9603c2fc9d78977b8e6ce450919f8e8bfb47724d78d54983faf4daed",
+      "artwork_audit": {
+        "source_sha256": "c44122bd9603c2fc9d78977b8e6ce450919f8e8bfb47724d78d54983faf4daed",
+        "applied_artwork_sha256": "ce1847709cb22d58998ad83ed5509afb8b7dab931419b7ba631cd0849d465570",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 114,
+      "character": "鸟",
+      "batch": "B12",
+      "pages": 1,
+      "vector_sha256": "2d62bee9f3dce68cead54e04298b7ca9be109f8ebe9c59d356d2f89c38184a33",
+      "artwork_audit": {
+        "source_sha256": "2d62bee9f3dce68cead54e04298b7ca9be109f8ebe9c59d356d2f89c38184a33",
+        "applied_artwork_sha256": "cc92d138caf99911af897d501d5318776f775adb2ac2bf61bc4674e780c93924",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 115,
+      "character": "疒",
+      "batch": "B12",
+      "pages": 1,
+      "vector_sha256": "9958313d45cbf8ac47892a7ea4c9b688a21c8e97de7b145ee13126cd3f283874",
+      "artwork_audit": {
+        "source_sha256": "9958313d45cbf8ac47892a7ea4c9b688a21c8e97de7b145ee13126cd3f283874",
+        "applied_artwork_sha256": "565f2f2415c19d7e89b5fb9bd2c526af1d06147ea4fe33bbe8306e0c775df283",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 117,
+      "character": "穴",
+      "batch": "B12",
+      "pages": 1,
+      "vector_sha256": "6a07dfe14d15e66456f2793ae74e29fc83c751bd5f9f26067e3bd9b4f0489c25",
+      "artwork_audit": {
+        "source_sha256": "6a07dfe14d15e66456f2793ae74e29fc83c751bd5f9f26067e3bd9b4f0489c25",
+        "applied_artwork_sha256": "0280f52b3b23bbd19da88c00834004a1a44f6c4147000a855fac6098750adc63",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 118,
+      "character": "疋",
+      "batch": "B12",
+      "pages": 1,
+      "vector_sha256": "a01352236f1a7df6fc88151b0cda614a5b5f6c0760b9f92ce1e30e015ef317e7",
+      "artwork_audit": {
+        "source_sha256": "a01352236f1a7df6fc88151b0cda614a5b5f6c0760b9f92ce1e30e015ef317e7",
+        "applied_artwork_sha256": "289b6a347528b14e6374f85a3dbb5399f05fadad7300db57cb1d1c6b87004981",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 119,
+      "character": "皮",
+      "batch": "B12",
+      "pages": 1,
+      "vector_sha256": "0a18effe9f6f9fa7facd4e1abac5dc1f2b05a88dfd882532cfd5e717e660e46d",
+      "artwork_audit": {
+        "source_sha256": "0a18effe9f6f9fa7facd4e1abac5dc1f2b05a88dfd882532cfd5e717e660e46d",
+        "applied_artwork_sha256": "563ea5887c08fe209ed04d7ae0ba9c6c6d79c80a7f07dea0625d78de15a4ae7a",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 120,
+      "character": "癶",
+      "batch": "B12",
+      "pages": 1,
+      "vector_sha256": "2e58ae590b6ef50d1028cc858993c7c610a5c47ce48c889cb59295e5f3c77709",
+      "artwork_audit": {
+        "source_sha256": "2e58ae590b6ef50d1028cc858993c7c610a5c47ce48c889cb59295e5f3c77709",
+        "applied_artwork_sha256": "61254919e8c18c9e4bba6f30d22f39e2aa36b1ec53f380b434e9a81e8636ec25",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 121,
+      "character": "矛",
+      "batch": "B13",
+      "pages": 1,
+      "vector_sha256": "1f9b73afd34d0bb248c2fca5cea838cfaf619a8c8508cb6ac3ee2bac694b4608",
+      "artwork_audit": {
+        "source_sha256": "1f9b73afd34d0bb248c2fca5cea838cfaf619a8c8508cb6ac3ee2bac694b4608",
+        "applied_artwork_sha256": "fe6e145d30ec88bed8619f2165eebd834d28d1ab2f0693e5cdc8c7a77fba678a",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 122,
+      "character": "耒",
+      "batch": "B13",
+      "pages": 1,
+      "vector_sha256": "fb636b65acbc4b331affd42db16988fe22291097b2afc9a77032d36cfec5bcf1",
+      "artwork_audit": {
+        "source_sha256": "fb636b65acbc4b331affd42db16988fe22291097b2afc9a77032d36cfec5bcf1",
+        "applied_artwork_sha256": "fd59a092c2893e4ec3da69a2ae6f972cf4b8261e5f8fb304bce5b1d07da16efb",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 123,
+      "character": "老",
+      "batch": "B13",
+      "pages": 1,
+      "vector_sha256": "f3130d50e757c65792633c581be89788d963819ed0df23380b6c94d5e31bf9d1",
+      "artwork_audit": {
+        "source_sha256": "f3130d50e757c65792633c581be89788d963819ed0df23380b6c94d5e31bf9d1",
+        "applied_artwork_sha256": "435771a09978ca40d63c4e8ad529945abb2f6a654ba837c1238c35cb6d3276ff",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 124,
+      "character": "耳",
+      "batch": "B13",
+      "pages": 1,
+      "vector_sha256": "87d23fce6860c1b5600982e241b3ed486e7bededf8d78a674c55ccd8479e4c10",
+      "artwork_audit": {
+        "source_sha256": "87d23fce6860c1b5600982e241b3ed486e7bededf8d78a674c55ccd8479e4c10",
+        "applied_artwork_sha256": "a8242278fae8682069e8c4cccee7317d0ce838a97b551ab73be3de2ed68dd52e",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 125,
+      "character": "臣",
+      "batch": "B13",
+      "pages": 1,
+      "vector_sha256": "fecbce50e22e38e81d7a7094e6b18e9596b5e5fa54d5c6be39a19519a4830d03",
+      "artwork_audit": {
+        "source_sha256": "fecbce50e22e38e81d7a7094e6b18e9596b5e5fa54d5c6be39a19519a4830d03",
+        "applied_artwork_sha256": "a57650529fe013681b7a76b947b637e19f18b15dd733b58375fa0415fef9a812",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 126,
+      "character": "覀",
+      "batch": "B13",
+      "pages": 1,
+      "vector_sha256": "8ec25df2255eac0373c7c521f9a28396753277831435d2afe2790320966b145a",
+      "artwork_audit": {
+        "source_sha256": "8ec25df2255eac0373c7c521f9a28396753277831435d2afe2790320966b145a",
+        "applied_artwork_sha256": "b6a89331344be9e1a124a3a757aa136739137d08be3fbb3a20f6f3276e8bf453",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 127,
+      "character": "而",
+      "batch": "B13",
+      "pages": 1,
+      "vector_sha256": "a957f94a3ab8c0609edce0b27cec24a6d321eb9e332d342bee09c7d6379c0b5c",
+      "artwork_audit": {
+        "source_sha256": "a957f94a3ab8c0609edce0b27cec24a6d321eb9e332d342bee09c7d6379c0b5c",
+        "applied_artwork_sha256": "5cce95abe0d2026669c9ab17a935b718e79562cfd4eadc64371c47fab17a5996",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 128,
+      "character": "页",
+      "batch": "B13",
+      "pages": 1,
+      "vector_sha256": "1464f7a8269fd481338e489a82222e3c83616ee233f66b3c70466d16ba62bd37",
+      "artwork_audit": {
+        "source_sha256": "1464f7a8269fd481338e489a82222e3c83616ee233f66b3c70466d16ba62bd37",
+        "applied_artwork_sha256": "44be51241b134ba2f0b0f5311169daab5c70f1037f06764cde73e00cdd431bb4",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 129,
+      "character": "至",
+      "batch": "B13",
+      "pages": 1,
+      "vector_sha256": "f923aa97bdf2ab2a7dea03a380a0c37b70758d9a89ced9ee87acc48b87dd0a79",
+      "artwork_audit": {
+        "source_sha256": "f923aa97bdf2ab2a7dea03a380a0c37b70758d9a89ced9ee87acc48b87dd0a79",
+        "applied_artwork_sha256": "ad2cbc3dfcb585b5e98cc1250dea88f7ce231e435bb47c151a87ca9f239edefd",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 130,
+      "character": "虍",
+      "batch": "B13",
+      "pages": 1,
+      "vector_sha256": "97ba6b6814112907734b7817a0a0557964021e83b319876adfcd940858837778",
+      "artwork_audit": {
+        "source_sha256": "97ba6b6814112907734b7817a0a0557964021e83b319876adfcd940858837778",
+        "applied_artwork_sha256": "986e8fcb279faa8187e497b763d70b44e3c1c2f76710958b99a3d9d8124f7dee",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 131,
+      "character": "虫",
+      "batch": "B14",
+      "pages": 1,
+      "vector_sha256": "7fe903f045c6a90e401b81b859f6aa78a833a62e862110331bfc6d8c0f9a7e2e",
+      "artwork_audit": {
+        "source_sha256": "7fe903f045c6a90e401b81b859f6aa78a833a62e862110331bfc6d8c0f9a7e2e",
+        "applied_artwork_sha256": "fc5fd56fb7da15cfa283203312ba702ac3dd4dcbcaf40279f2da26102acfcd1e",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 132,
+      "character": "肉",
+      "batch": "B14",
+      "pages": 1,
+      "vector_sha256": "05c46b453d470ad79c4e38743b0f9e7afa746eacd3793d518b97f18ba0d43c3c",
+      "artwork_audit": {
+        "source_sha256": "05c46b453d470ad79c4e38743b0f9e7afa746eacd3793d518b97f18ba0d43c3c",
+        "applied_artwork_sha256": "0ce8301ca8f75529212119a708372474fbc808c91726bbd28d945c8575d9f519",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 133,
+      "character": "缶",
+      "batch": "B14",
+      "pages": 1,
+      "vector_sha256": "414f9a176ec2621317d7e83c5dd02b693ba348eca08c04c861e248dd385ad937",
+      "artwork_audit": {
+        "source_sha256": "414f9a176ec2621317d7e83c5dd02b693ba348eca08c04c861e248dd385ad937",
+        "applied_artwork_sha256": "c1a3b418d60dcfbeafc9cdb4b34c6c0bc449ce65654b90cba62ac06b25ce754f",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 134,
+      "character": "舌",
+      "batch": "B14",
+      "pages": 1,
+      "vector_sha256": "b2ed3b5dc48c556b378212a0b67b2d4b6e452a7adc4d2cc2b0b385a9247def16",
+      "artwork_audit": {
+        "source_sha256": "b2ed3b5dc48c556b378212a0b67b2d4b6e452a7adc4d2cc2b0b385a9247def16",
+        "applied_artwork_sha256": "489767b0b30f6c6c65db9134fdf1e01d2642489c01949ccd3321102fdf405ad3",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 135,
+      "character": "竹",
+      "batch": "B14",
+      "pages": 1,
+      "vector_sha256": "038ede060ba5a500666f4c34051cdd760a3f7f122f04c4f4b040046a0a02e39d",
+      "artwork_audit": {
+        "source_sha256": "038ede060ba5a500666f4c34051cdd760a3f7f122f04c4f4b040046a0a02e39d",
+        "applied_artwork_sha256": "2d51e77261ab857f81403ff7beec147df7052ead0d54a34d21e12fc034b93342",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 136,
+      "character": "臼",
+      "batch": "B14",
+      "pages": 1,
+      "vector_sha256": "abc6e126cd50f75288a5268a4a0ea5ea25c12b4e8c88e5e9f1729296a06dffd8",
+      "artwork_audit": {
+        "source_sha256": "abc6e126cd50f75288a5268a4a0ea5ea25c12b4e8c88e5e9f1729296a06dffd8",
+        "applied_artwork_sha256": "e6a054bcd29a117124d658a6a39fb556946c9218afd463af6de3adf026f1541d",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 137,
+      "character": "自",
+      "batch": "B14",
+      "pages": 1,
+      "vector_sha256": "440fa4d045ea9dad8643485ae45df8c446e03d91296923ece78e07695739ba90",
+      "artwork_audit": {
+        "source_sha256": "440fa4d045ea9dad8643485ae45df8c446e03d91296923ece78e07695739ba90",
+        "applied_artwork_sha256": "b46992215fd7939510ac5ba4d5aaa94147e8ded25b1fe8e9300e8e76d2e431ad",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 138,
+      "character": "血",
+      "batch": "B14",
+      "pages": 1,
+      "vector_sha256": "a0cce905555ccf8f135f4f8037d2abb2e00707debec33eb47a27deae3426db06",
+      "artwork_audit": {
+        "source_sha256": "a0cce905555ccf8f135f4f8037d2abb2e00707debec33eb47a27deae3426db06",
+        "applied_artwork_sha256": "5abb3240a3cbf819b322b45ec0f5c05873f3d86182e6f0c57993ef79b6b02a12",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 139,
+      "character": "舟",
+      "batch": "B14",
+      "pages": 1,
+      "vector_sha256": "fdd5bbaa11dd49e66e459cca9a869b3f3fe0bff4b5ee7d1abee15791be27db48",
+      "artwork_audit": {
+        "source_sha256": "fdd5bbaa11dd49e66e459cca9a869b3f3fe0bff4b5ee7d1abee15791be27db48",
+        "applied_artwork_sha256": "f26cbefda2177d400cd7405db5f73f61d558ce941412d2b42eeae943c4f7668e",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 140,
+      "character": "色",
+      "batch": "B14",
+      "pages": 1,
+      "vector_sha256": "42da4bb8eb6b22d796e73b226c71c1ceb5486d1cd31df3d1963c31e712f80ab3",
+      "artwork_audit": {
+        "source_sha256": "42da4bb8eb6b22d796e73b226c71c1ceb5486d1cd31df3d1963c31e712f80ab3",
+        "applied_artwork_sha256": "f27c20a82b04ec2f3aeef1c32bd45d80fb083c3fcfe164128baf2bf2ab9f455b",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 141,
+      "character": "齐",
+      "batch": "B15",
+      "pages": 1,
+      "vector_sha256": "9f8dc5fcbe4c2a7a5caa25d997ba03fa3c03bdd47980c2a44d3d75bc5bf1a40d",
+      "artwork_audit": {
+        "source_sha256": "9f8dc5fcbe4c2a7a5caa25d997ba03fa3c03bdd47980c2a44d3d75bc5bf1a40d",
+        "applied_artwork_sha256": "aee6f78f3985d0b6ff2c87f885e680a2efbe919d810a1416504c5fda6850f64c",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 142,
+      "character": "衣",
+      "batch": "B15",
+      "pages": 1,
+      "vector_sha256": "bb83d26ab543feaf262f3da5622aa5d7d35591f36286ad0ef5072ee96d73b7ad",
+      "artwork_audit": {
+        "source_sha256": "bb83d26ab543feaf262f3da5622aa5d7d35591f36286ad0ef5072ee96d73b7ad",
+        "applied_artwork_sha256": "0787e00f340e34e92bef1a7ee5fbb2579805d2d839bbc5fc1c34bd727ad5ba9a",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 143,
+      "character": "羊",
+      "batch": "B15",
+      "pages": 1,
+      "vector_sha256": "9f9f43158c9af7617b092a0f9946e3191fb206dced2aa5a3b19c180244362422",
+      "artwork_audit": {
+        "source_sha256": "9f9f43158c9af7617b092a0f9946e3191fb206dced2aa5a3b19c180244362422",
+        "applied_artwork_sha256": "4fbcaeb29e8cdae03b23749cf61bd12e4a711362b34c5c11171589edddc9ff41",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 144,
+      "character": "米",
+      "batch": "B15",
+      "pages": 1,
+      "vector_sha256": "105847e8be1741677145b1e7b7168ba883e9ca3ae1abb7b60a476d430117e88e",
+      "artwork_audit": {
+        "source_sha256": "105847e8be1741677145b1e7b7168ba883e9ca3ae1abb7b60a476d430117e88e",
+        "applied_artwork_sha256": "7d73a4d2914a0e09bab72c9fdb8f64c31ae63061e4fc1f7a49672e8fae6579df",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 145,
+      "character": "聿",
+      "batch": "B15",
+      "pages": 1,
+      "vector_sha256": "6d2b42fb79869850069eaf15dbfe9b2cfbd76a6bc278d1125a1d07b9e647d97f",
+      "artwork_audit": {
+        "source_sha256": "6d2b42fb79869850069eaf15dbfe9b2cfbd76a6bc278d1125a1d07b9e647d97f",
+        "applied_artwork_sha256": "770804dab00b7ac21052b8577e8f525a381a69bd9da346a3384b2add871129ce",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 146,
+      "character": "艮",
+      "batch": "B15",
+      "pages": 1,
+      "vector_sha256": "d1c1a84e5923b69e172c4f791ff7d4d54c8464bf104fb2fa6bf7549f6cc2eca1",
+      "artwork_audit": {
+        "source_sha256": "d1c1a84e5923b69e172c4f791ff7d4d54c8464bf104fb2fa6bf7549f6cc2eca1",
+        "applied_artwork_sha256": "26c69886a18720fab53cdfde06b95842427011ae4f143363ed169f87d42f3ef9",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 147,
+      "character": "羽",
+      "batch": "B15",
+      "pages": 1,
+      "vector_sha256": "65a2a3c1e79111665e8e92b0733fd221618e957df25508467d955cf01faa9e0c",
+      "artwork_audit": {
+        "source_sha256": "65a2a3c1e79111665e8e92b0733fd221618e957df25508467d955cf01faa9e0c",
+        "applied_artwork_sha256": "d0d0c4eff5bd35c002303f079a4b02921e5feaa34e0e569ef39423781a36be2c",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 148,
+      "character": "糸",
+      "batch": "B15",
+      "pages": 1,
+      "vector_sha256": "e5ece9785bc296f0a56fc81bc89fbfb229637942c0d3c0b5c2d2a351708d7271",
+      "artwork_audit": {
+        "source_sha256": "e5ece9785bc296f0a56fc81bc89fbfb229637942c0d3c0b5c2d2a351708d7271",
+        "applied_artwork_sha256": "f518649fef5e1d16ad307195f2750c23832b41a20423b9887fc1152c7dd5b6c8",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 149,
+      "character": "麦",
+      "batch": "B15",
+      "pages": 2,
+      "vector_sha256": "7ed9942f7fd3ab275912f42dddf47b3c3d6e8488e3b7b96b0c84c5c46af79bcf",
+      "artwork_audit": {
+        "source_sha256": "7ed9942f7fd3ab275912f42dddf47b3c3d6e8488e3b7b96b0c84c5c46af79bcf",
+        "applied_artwork_sha256": "cd66117fb5c57b69c68d727dd5287f45cb2f6c6190f17bf1a14854a04c812f5b",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 150,
+      "character": "走",
+      "batch": "B15",
+      "pages": 2,
+      "vector_sha256": "2d73ebc4b90cdf561408b3deb5948509048f2c7a49fb005c80c6bdc001ff24a7",
+      "artwork_audit": {
+        "source_sha256": "2d73ebc4b90cdf561408b3deb5948509048f2c7a49fb005c80c6bdc001ff24a7",
+        "applied_artwork_sha256": "31391a4c431adc92da9324e73df9670995f59f019c3228c8dedd83117ff599ce",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 151,
+      "character": "赤",
+      "batch": "B16",
+      "pages": 2,
+      "vector_sha256": "14cc4ab2d73ef4f932d61c1e64a215bc50d6c3df8e30d40c5566c7480b34abc5",
+      "artwork_audit": {
+        "source_sha256": "14cc4ab2d73ef4f932d61c1e64a215bc50d6c3df8e30d40c5566c7480b34abc5",
+        "applied_artwork_sha256": "695ca996eccd85b0dd46198d2d1dabe8eebe176864a97b13e6b5aebb53b80843",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 152,
+      "character": "豆",
+      "batch": "B16",
+      "pages": 2,
+      "vector_sha256": "cbe442dcce7675f367fdc0c193e610bd5a8a6c55e9c7e015b4589bb8f7a4301a",
+      "artwork_audit": {
+        "source_sha256": "cbe442dcce7675f367fdc0c193e610bd5a8a6c55e9c7e015b4589bb8f7a4301a",
+        "applied_artwork_sha256": "abd10a8dbbaf339646ae31e28f081bf90ac6a08582577f7dada99e39f68106ca",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 153,
+      "character": "酉",
+      "batch": "B16",
+      "pages": 2,
+      "vector_sha256": "6cd9553242a0962532c64c9a8c60819b12c350a8a3534391f1917d90e1d0d278",
+      "artwork_audit": {
+        "source_sha256": "6cd9553242a0962532c64c9a8c60819b12c350a8a3534391f1917d90e1d0d278",
+        "applied_artwork_sha256": "edba81b8488c6f90b0efecbeb8bdb127244076ed5eb1b0028ea4a78e2980022b",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 154,
+      "character": "辰",
+      "batch": "B16",
+      "pages": 2,
+      "vector_sha256": "4c8dead0f3ff298ee8ae58481c844310037c69b28eba676a425bea47cfff0108",
+      "artwork_audit": {
+        "source_sha256": "4c8dead0f3ff298ee8ae58481c844310037c69b28eba676a425bea47cfff0108",
+        "applied_artwork_sha256": "9d0c7b1921ed96496acc8fc882093652a0bf2e5968c9d067688528ef200ef4b3",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 155,
+      "character": "豕",
+      "batch": "B16",
+      "pages": 2,
+      "vector_sha256": "82031436e8230be6494aca52df69894058023e3f0ee5f162b93782bd36f60899",
+      "artwork_audit": {
+        "source_sha256": "82031436e8230be6494aca52df69894058023e3f0ee5f162b93782bd36f60899",
+        "applied_artwork_sha256": "87f8c4dcfce84e79d55df1f363c6324d81c641caf6d6f2bc2083eb45db9a421d",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 156,
+      "character": "卤",
+      "batch": "B16",
+      "pages": 2,
+      "vector_sha256": "e043b12a2236b45184457f20220436d0d3696d9e2d785c7d4e011096ce9121ea",
+      "artwork_audit": {
+        "source_sha256": "e043b12a2236b45184457f20220436d0d3696d9e2d785c7d4e011096ce9121ea",
+        "applied_artwork_sha256": "f5d641f0131492ce7229196db44876ea93b2ef01d4a8ece9b85999bc32f88bbb",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 157,
+      "character": "里",
+      "batch": "B16",
+      "pages": 2,
+      "vector_sha256": "5f0d84aa3b6f871759148b105314fd01c4a9019d3234afac345cbbf1ca263d5d",
+      "artwork_audit": {
+        "source_sha256": "5f0d84aa3b6f871759148b105314fd01c4a9019d3234afac345cbbf1ca263d5d",
+        "applied_artwork_sha256": "f8866fa870bcebcd791580a2595eff5c2d17e6364c526fbfc1724bc97e9686b8",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 158,
+      "character": "足",
+      "batch": "B16",
+      "pages": 2,
+      "vector_sha256": "5261cef041c9bcca1db60469259e7f033ae7fc5a86b6a929ba5ddb15010e0742",
+      "artwork_audit": {
+        "source_sha256": "5261cef041c9bcca1db60469259e7f033ae7fc5a86b6a929ba5ddb15010e0742",
+        "applied_artwork_sha256": "0a65ca108e441d8364353c3e566e7f2d96bb2f58fcadab771fce2deb3d69520b",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 159,
+      "character": "邑",
+      "batch": "B16",
+      "pages": 2,
+      "vector_sha256": "1855d6ac4f2bd35cfe6e1e6fa7420fe83158b3f2ca42d16d58da0cfbee7a3393",
+      "artwork_audit": {
+        "source_sha256": "1855d6ac4f2bd35cfe6e1e6fa7420fe83158b3f2ca42d16d58da0cfbee7a3393",
+        "applied_artwork_sha256": "dc3728c743d89e087b7d0726a6307157b361cb6b94c71cca647adefba400e4b9",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 160,
+      "character": "身",
+      "batch": "B16",
+      "pages": 2,
+      "vector_sha256": "a7ca66f13f6d4885442641f1eb3bd4b07c603f7dbb238791f62eb842cfe18baf",
+      "artwork_audit": {
+        "source_sha256": "a7ca66f13f6d4885442641f1eb3bd4b07c603f7dbb238791f62eb842cfe18baf",
+        "applied_artwork_sha256": "ff6dee9a6418f98b2fda2cfc1ad0a30152f70d5b3299bc4de70f19db1aa15b84",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 161,
+      "character": "釆",
+      "batch": "B17",
+      "pages": 2,
+      "vector_sha256": "a43913172f83864ad6f40bf1e815a388695085a050fb3f52058f54c2396b05be",
+      "artwork_audit": {
+        "source_sha256": "a43913172f83864ad6f40bf1e815a388695085a050fb3f52058f54c2396b05be",
+        "applied_artwork_sha256": "6b03d9860dddc1eb8ac1ebc73c38869d951cc1fa5b350fae877f5770d6ba5d3c",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 162,
+      "character": "谷",
+      "batch": "B17",
+      "pages": 2,
+      "vector_sha256": "077a4c49a13992af2aa3a48d69670cff26b8bb716a1cb8c1449e369b44f233db",
+      "artwork_audit": {
+        "source_sha256": "077a4c49a13992af2aa3a48d69670cff26b8bb716a1cb8c1449e369b44f233db",
+        "applied_artwork_sha256": "6d4458574d7c83edff066a3cc732003ecf6f405ed752fffd2b7db7429ce192be",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 163,
+      "character": "豸",
+      "batch": "B17",
+      "pages": 2,
+      "vector_sha256": "871cf7cf6fbfdde5dbe2aca33723429c32879a687a4e12ed589ad00ae4480d2c",
+      "artwork_audit": {
+        "source_sha256": "871cf7cf6fbfdde5dbe2aca33723429c32879a687a4e12ed589ad00ae4480d2c",
+        "applied_artwork_sha256": "aa99ccb8400fe5eacf65e94961c566c8a014f743257a7c2bff5faeee6edcdbe9",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 164,
+      "character": "龟",
+      "batch": "B17",
+      "pages": 2,
+      "vector_sha256": "63b6e517f7b568661d4ee20bc0fc017afebbdfe4e34983ac75f9cd4225f5ec14",
+      "artwork_audit": {
+        "source_sha256": "63b6e517f7b568661d4ee20bc0fc017afebbdfe4e34983ac75f9cd4225f5ec14",
+        "applied_artwork_sha256": "0b5f534c150c04eefa0c6425a57e73f3338512a54a6b2f10d6ba0bb61da7858a",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 165,
+      "character": "角",
+      "batch": "B17",
+      "pages": 2,
+      "vector_sha256": "96fb28d9a0587f6961a6ee1ef964e30b9dbdc206b7e4374b6067a949cffd07ba",
+      "artwork_audit": {
+        "source_sha256": "96fb28d9a0587f6961a6ee1ef964e30b9dbdc206b7e4374b6067a949cffd07ba",
+        "applied_artwork_sha256": "eb90abb191cf8671066bc7992c3d3f15b4d588ee3db3f50a8a4347a498cdb31e",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 166,
+      "character": "言",
+      "batch": "B17",
+      "pages": 2,
+      "vector_sha256": "f816e180e084d7108648203ba5fdab37bbf1b9684524b4ab1fa90dcfebafd58c",
+      "artwork_audit": {
+        "source_sha256": "f816e180e084d7108648203ba5fdab37bbf1b9684524b4ab1fa90dcfebafd58c",
+        "applied_artwork_sha256": "8e54849789811648f8f091111659fd91421352ea2300772fb35f51c0260daf08",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 167,
+      "character": "辛",
+      "batch": "B17",
+      "pages": 2,
+      "vector_sha256": "8327972d75273471ab3990380e4007f3b546d984ccbd57897c5ac8ea13fc31c5",
+      "artwork_audit": {
+        "source_sha256": "8327972d75273471ab3990380e4007f3b546d984ccbd57897c5ac8ea13fc31c5",
+        "applied_artwork_sha256": "c70119079a9164b3f80a5d70b57cf7f17a5c8e4cb7ee4532b1b40982e862fa2f",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 168,
+      "character": "青",
+      "batch": "B17",
+      "pages": 2,
+      "vector_sha256": "cea73597fcae7b6896e4902c574cf2dbfd1b30db6e1d60f17188cb72afd21089",
+      "artwork_audit": {
+        "source_sha256": "cea73597fcae7b6896e4902c574cf2dbfd1b30db6e1d60f17188cb72afd21089",
+        "applied_artwork_sha256": "3b3d3860775b3b555c4ecafa72a3163b46180f8f1b4e049920a5aa78f7f357df",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 169,
+      "character": "龺",
+      "batch": "B17",
+      "pages": 2,
+      "vector_sha256": "282e10b1d921611f23b7729db50f30e4e3bfe0da3983f093a88fad24a6207977",
+      "artwork_audit": {
+        "source_sha256": "282e10b1d921611f23b7729db50f30e4e3bfe0da3983f093a88fad24a6207977",
+        "applied_artwork_sha256": "e0a05ec81a2b4bb9d168fcb187e05b44c650932292c6be3fd1ae60ee3cc115b2",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 170,
+      "character": "雨",
+      "batch": "B17",
+      "pages": 2,
+      "vector_sha256": "0e249bab348c40874b194b2ba75aa185961bd190ca2e09c9a4c303aa34f62e2c",
+      "artwork_audit": {
+        "source_sha256": "0e249bab348c40874b194b2ba75aa185961bd190ca2e09c9a4c303aa34f62e2c",
+        "applied_artwork_sha256": "983108399a90fb92191c938a828c74ce13890b1b89f1aec61481f618067a348a",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 171,
+      "character": "非",
+      "batch": "B18",
+      "pages": 2,
+      "vector_sha256": "cb6dd22e1c2410f3d7edf71987173f4bc9b2737308a1433975c1993aa6f2b69f",
+      "artwork_audit": {
+        "source_sha256": "cb6dd22e1c2410f3d7edf71987173f4bc9b2737308a1433975c1993aa6f2b69f",
+        "applied_artwork_sha256": "16b887b06c1b7a88bdf302febe46a3b6600ebc56cb3752bf2cb5ebd19c7f7d4b",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 172,
+      "character": "齿",
+      "batch": "B18",
+      "pages": 2,
+      "vector_sha256": "7871560dab1d5bd5dacc5b30ca86be0b7b425282913a5743301e09c413a2da61",
+      "artwork_audit": {
+        "source_sha256": "7871560dab1d5bd5dacc5b30ca86be0b7b425282913a5743301e09c413a2da61",
+        "applied_artwork_sha256": "dc02e9f5dd2c2f78ec138f3d93f259bc6df98a332a48c388b6280a6584cb6e5b",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 173,
+      "character": "黾",
+      "batch": "B18",
+      "pages": 2,
+      "vector_sha256": "6ff7ce134dcb9a75ae538632d0389eeaab0ebfdf0d65131f2d4e0ee70d4733ee",
+      "artwork_audit": {
+        "source_sha256": "6ff7ce134dcb9a75ae538632d0389eeaab0ebfdf0d65131f2d4e0ee70d4733ee",
+        "applied_artwork_sha256": "496310c7cd6fc5725b3ddd240121d3b58c016a1fbc4a44a04e3fac2b140f0a0c",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 174,
+      "character": "隹",
+      "batch": "B18",
+      "pages": 2,
+      "vector_sha256": "8d6a488e4187bcf1eb1b77b789ee4ed2d9a7c807b45b2d260d70e88ff845cf73",
+      "artwork_audit": {
+        "source_sha256": "8d6a488e4187bcf1eb1b77b789ee4ed2d9a7c807b45b2d260d70e88ff845cf73",
+        "applied_artwork_sha256": "14f5a66d1535e6973e0bb0ed142d9101345e1904d5081b08c22b6c95ea2e08ba",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 175,
+      "character": "阜",
+      "batch": "B18",
+      "pages": 2,
+      "vector_sha256": "4430c994ef8971a89395aaca1bd5077c0ba304e1fae14c3a4142543b54bc1f6e",
+      "artwork_audit": {
+        "source_sha256": "4430c994ef8971a89395aaca1bd5077c0ba304e1fae14c3a4142543b54bc1f6e",
+        "applied_artwork_sha256": "ef7907925ca9b8362f7c7b9d138f0fdf0cfc121348b8c2697b561e8159e09521",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 176,
+      "character": "金",
+      "batch": "B18",
+      "pages": 2,
+      "vector_sha256": "4a193b0afb63f9c79a939cb2304362569e9de18d67fb2ecf2cade484e09bb7c7",
+      "artwork_audit": {
+        "source_sha256": "4a193b0afb63f9c79a939cb2304362569e9de18d67fb2ecf2cade484e09bb7c7",
+        "applied_artwork_sha256": "715a26f7aafe6178d7bb239d9332018f92e4cd6fd2bded39d50f20e5d839d1f8",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 177,
+      "character": "鱼",
+      "batch": "B18",
+      "pages": 2,
+      "vector_sha256": "1f1d05821b3338075b2bb7e29687b51a70945786556799e8700a200073ba18eb",
+      "artwork_audit": {
+        "source_sha256": "1f1d05821b3338075b2bb7e29687b51a70945786556799e8700a200073ba18eb",
+        "applied_artwork_sha256": "c2d38f1e33970b9f82be9f29761a59fd0b5f90b60ec7a3626e1523e3de42df0e",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 178,
+      "character": "隶",
+      "batch": "B18",
+      "pages": 2,
+      "vector_sha256": "7b1170350783f53f50bb0df87bd7d08b89b10cae42b3baf52cc3b98155865b34",
+      "artwork_audit": {
+        "source_sha256": "7b1170350783f53f50bb0df87bd7d08b89b10cae42b3baf52cc3b98155865b34",
+        "applied_artwork_sha256": "4eda07c1d8642b69a9a6b4b3951e5c620f552678d34f761190d448ac5efbbfa6",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 179,
+      "character": "革",
+      "batch": "B18",
+      "pages": 2,
+      "vector_sha256": "664cd7aef0dd8df7eea5087bdd78df9ee65ac4a08c5c6c036f113145c2f86755",
+      "artwork_audit": {
+        "source_sha256": "664cd7aef0dd8df7eea5087bdd78df9ee65ac4a08c5c6c036f113145c2f86755",
+        "applied_artwork_sha256": "2ec013e757478437ed09fa4f4b6961698fa240d47c456edfafa4983eb8921850",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 180,
+      "character": "面",
+      "batch": "B18",
+      "pages": 2,
+      "vector_sha256": "720049f194a8d51d6cc01669f1319bed7510650a584d7185f0fa289d9f487ca2",
+      "artwork_audit": {
+        "source_sha256": "720049f194a8d51d6cc01669f1319bed7510650a584d7185f0fa289d9f487ca2",
+        "applied_artwork_sha256": "bd58bd7d9a66ab142ea808f00a34456e26e55c410ea49a9654acb560c4c7e4db",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 181,
+      "character": "韭",
+      "batch": "B19",
+      "pages": 2,
+      "vector_sha256": "9ed19b301cfee08327929364c6f0716a9a5d162214f97909ce155f8e672461b4",
+      "artwork_audit": {
+        "source_sha256": "9ed19b301cfee08327929364c6f0716a9a5d162214f97909ce155f8e672461b4",
+        "applied_artwork_sha256": "0a2ebf3bb3f40603c9dbb5c95659dd8c9e59bff61234466442ca5267889ff2ec",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 182,
+      "character": "骨",
+      "batch": "B19",
+      "pages": 2,
+      "vector_sha256": "ee9689819d40660cc3057ceb9c07521d03b7c3c6beab91d57d6e5e02e025a70b",
+      "artwork_audit": {
+        "source_sha256": "ee9689819d40660cc3057ceb9c07521d03b7c3c6beab91d57d6e5e02e025a70b",
+        "applied_artwork_sha256": "5233c2512d6364a8ece248c89f84ec7eae5be167bdf0ac26dee30d7c5ceb149b",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 183,
+      "character": "香",
+      "batch": "B19",
+      "pages": 2,
+      "vector_sha256": "dcde03c089100ff6bfb6ef4b2ee8b234c2b2fc54cbc511a449fc61ebd50db24b",
+      "artwork_audit": {
+        "source_sha256": "dcde03c089100ff6bfb6ef4b2ee8b234c2b2fc54cbc511a449fc61ebd50db24b",
+        "applied_artwork_sha256": "075b45716e9bd73130546daa8eed6009160e7e3a24e0d6d0dcf0f1ce555bd326",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 184,
+      "character": "鬼",
+      "batch": "B19",
+      "pages": 2,
+      "vector_sha256": "1f1c9563137fad6a7e54349dd2f6f91babad44471293f31d5b838cf702b24f1b",
+      "artwork_audit": {
+        "source_sha256": "1f1c9563137fad6a7e54349dd2f6f91babad44471293f31d5b838cf702b24f1b",
+        "applied_artwork_sha256": "814e1826c444c1c49258ed43cd1482a45500b166c451be2fe6eb545afb8381c0",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 185,
+      "character": "食",
+      "batch": "B19",
+      "pages": 2,
+      "vector_sha256": "7089ce03df07185a663771e71e4d615a22455d59af670b1810accb6b925ea73e",
+      "artwork_audit": {
+        "source_sha256": "7089ce03df07185a663771e71e4d615a22455d59af670b1810accb6b925ea73e",
+        "applied_artwork_sha256": "574662afff5a80d42229dd5fd5a51635d680f9a340ff332ed671cfc936d34ba3",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 186,
+      "character": "音",
+      "batch": "B19",
+      "pages": 2,
+      "vector_sha256": "146e65609cb73e155c02fed48cb2eefe20a6f559af3fcbd4f7ecb20c52f0bc93",
+      "artwork_audit": {
+        "source_sha256": "146e65609cb73e155c02fed48cb2eefe20a6f559af3fcbd4f7ecb20c52f0bc93",
+        "applied_artwork_sha256": "1ba3d2133c0c6f0dfc3acb3040225483e7ca9dde95969778268640dd3f7bc5f8",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 187,
+      "character": "首",
+      "batch": "B19",
+      "pages": 2,
+      "vector_sha256": "197fefd85084b496c38c447e80652d2a290534319ff6c46e02baee52ee1e720a",
+      "artwork_audit": {
+        "source_sha256": "197fefd85084b496c38c447e80652d2a290534319ff6c46e02baee52ee1e720a",
+        "applied_artwork_sha256": "6af2cb18dfd18d779a8cfbce5167e341a9c7e415a3008007c86edc7c06edb176",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 188,
+      "character": "髟",
+      "batch": "B19",
+      "pages": 2,
+      "vector_sha256": "68cf3b70ebad6de8700fadada2ad64370f9787da12eb18a5807573404bac9871",
+      "artwork_audit": {
+        "source_sha256": "68cf3b70ebad6de8700fadada2ad64370f9787da12eb18a5807573404bac9871",
+        "applied_artwork_sha256": "eb2e1f39989a51b1e5de340d55364eb1469e1253ef37feb316d2505c7c6e90f6",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 189,
+      "character": "鬲",
+      "batch": "B19",
+      "pages": 2,
+      "vector_sha256": "faa06125d40b8335bde5af6bbda89f6907d69c35846ed90c962ad0c8ef4a33c4",
+      "artwork_audit": {
+        "source_sha256": "faa06125d40b8335bde5af6bbda89f6907d69c35846ed90c962ad0c8ef4a33c4",
+        "applied_artwork_sha256": "89b9475e27b63e6722b65133301342f47dbe01f61e30b3444ac29f06f8d99a4c",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "batch": "B19",
+      "pages": 2,
+      "vector_sha256": "1be039c9cf631436be80faa25290ec7e5f001753c457dd84ead6fef948d76a7a",
+      "artwork_audit": {
+        "source_sha256": "1be039c9cf631436be80faa25290ec7e5f001753c457dd84ead6fef948d76a7a",
+        "applied_artwork_sha256": "68eae9941643395848375db59a890c8f3f3103585f26d0adbfcf60f7f117c7ca",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 191,
+      "character": "高",
+      "batch": "B20",
+      "pages": 2,
+      "vector_sha256": "99d078f0a742511e3225a994169678c2b35ed42d4a39e4f5c41946c1e4c04567",
+      "artwork_audit": {
+        "source_sha256": "99d078f0a742511e3225a994169678c2b35ed42d4a39e4f5c41946c1e4c04567",
+        "applied_artwork_sha256": "fecd9b1bd6175f66c24f875564a51b48bd362fd41082e4ad4bf6d2f0e86813ff",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 192,
+      "character": "黄",
+      "batch": "B20",
+      "pages": 2,
+      "vector_sha256": "44aadf91995fab44d399eb60408faa5431244ee46d1fc26a3f7c31a7ea83de72",
+      "artwork_audit": {
+        "source_sha256": "44aadf91995fab44d399eb60408faa5431244ee46d1fc26a3f7c31a7ea83de72",
+        "applied_artwork_sha256": "5cbe47982ef8f607d67148c61432adedcfc1650d239baba858e2666cd5943522",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 193,
+      "character": "麻",
+      "batch": "B20",
+      "pages": 2,
+      "vector_sha256": "e117a6df9c37fe758e5ff22316f95fdb88b1eb93fa2579846148488102755caf",
+      "artwork_audit": {
+        "source_sha256": "e117a6df9c37fe758e5ff22316f95fdb88b1eb93fa2579846148488102755caf",
+        "applied_artwork_sha256": "8a4b90159a02c259238c314308ae3e496ff3a7d2b18d1768566c8c0a308becf9",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 194,
+      "character": "鹿",
+      "batch": "B20",
+      "pages": 2,
+      "vector_sha256": "83e6dabb8e229bb7b6efdc9cf1e816a42cef1e72388a7a76df1ad8aac171e56d",
+      "artwork_audit": {
+        "source_sha256": "83e6dabb8e229bb7b6efdc9cf1e816a42cef1e72388a7a76df1ad8aac171e56d",
+        "applied_artwork_sha256": "fff974df42792f2fd7ba5d9ea24d4318965dc9b252c0dc4b52ab0e5ad60cd76b",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 195,
+      "character": "鼎",
+      "batch": "B20",
+      "pages": 2,
+      "vector_sha256": "fcee8f53a91633b7953a254403dd9a568cae612059bc7789c23be36b5e94f709",
+      "artwork_audit": {
+        "source_sha256": "fcee8f53a91633b7953a254403dd9a568cae612059bc7789c23be36b5e94f709",
+        "applied_artwork_sha256": "8dadfb70d5f70fbd45ec5608572116017c9b9fcecfa3843fa6664fe58b7874a8",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 196,
+      "character": "黑",
+      "batch": "B20",
+      "pages": 2,
+      "vector_sha256": "5bd1451a45e6781326726ce7d2d30352f8495993e4aeef2f7af32afaf45f3cda",
+      "artwork_audit": {
+        "source_sha256": "5bd1451a45e6781326726ce7d2d30352f8495993e4aeef2f7af32afaf45f3cda",
+        "applied_artwork_sha256": "f7a7bcba9b578c6d68c29a48b8721e01cff63f74329b3202be0cc42e0a792278",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 197,
+      "character": "黍",
+      "batch": "B20",
+      "pages": 2,
+      "vector_sha256": "beb23dc20e371a243a045955c478b42b9f00eb3107287157a31d54f3bed78e89",
+      "artwork_audit": {
+        "source_sha256": "beb23dc20e371a243a045955c478b42b9f00eb3107287157a31d54f3bed78e89",
+        "applied_artwork_sha256": "66d8dfaa301e339bbef4988afe4417e5c61f59671dc6efb95cfa68b0449f75ae",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 198,
+      "character": "鼓",
+      "batch": "B20",
+      "pages": 3,
+      "vector_sha256": "5489240986476d1cf36662afd5c0fcb2015d602268177cad272f28c44253434d",
+      "artwork_audit": {
+        "source_sha256": "5489240986476d1cf36662afd5c0fcb2015d602268177cad272f28c44253434d",
+        "applied_artwork_sha256": "27572e335f82a08e332cb05297431eb1fa7cfd4a9e11b4c427dc4715de586f81",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 199,
+      "character": "鼠",
+      "batch": "B20",
+      "pages": 3,
+      "vector_sha256": "180a95537e64f9c749102e2341ef9e1b9fff345d9373fcc236cff9eb5ced1f8e",
+      "artwork_audit": {
+        "source_sha256": "180a95537e64f9c749102e2341ef9e1b9fff345d9373fcc236cff9eb5ced1f8e",
+        "applied_artwork_sha256": "d22913adf7348ef27514555c565c4b1a654203530f382df00c19d196a6ecd3fb",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 200,
+      "character": "鼻",
+      "batch": "B20",
+      "pages": 3,
+      "vector_sha256": "21d278948c2605d22adf1edf6cecc7c35727971cbcd6087863a81231084a0286",
+      "artwork_audit": {
+        "source_sha256": "21d278948c2605d22adf1edf6cecc7c35727971cbcd6087863a81231084a0286",
+        "applied_artwork_sha256": "1694edc1486a7f906e92389792a198555308d4f5f9e0f794788265cbc0149829",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    },
+    {
+      "main_id": 201,
+      "character": "龠",
+      "batch": "B21",
+      "pages": 3,
+      "vector_sha256": "97119fbecc5b0e49026615b426d757522c460429d6d0ef40a05b66e39dbd32ff",
+      "artwork_audit": {
+        "source_sha256": "97119fbecc5b0e49026615b426d757522c460429d6d0ef40a05b66e39dbd32ff",
+        "applied_artwork_sha256": "4c8d5f73161fbd81e429f9be7e9312339bd9c90fe119b673bf0fdfd9761f836e",
+        "override_sha256": null,
+        "modified_stroke_indices": [],
+        "notice": "Unmodified vendor artwork."
+      }
+    }
+  ],
+  "navigation": [
+    {
+      "main_id": 1,
+      "character": "一",
+      "batch": "B01",
+      "start": 6,
+      "end": 6,
+      "pages": 1
+    },
+    {
+      "main_id": 6,
+      "character": "十",
+      "batch": "B01",
+      "start": 7,
+      "end": 7,
+      "pages": 1
+    },
+    {
+      "main_id": 12,
+      "character": "人",
+      "batch": "B01",
+      "start": 8,
+      "end": 8,
+      "pages": 1
+    },
+    {
+      "main_id": 11,
+      "character": "八",
+      "batch": "B01",
+      "start": 9,
+      "end": 9,
+      "pages": 1
+    },
+    {
+      "main_id": 33,
+      "character": "大",
+      "batch": "B01",
+      "start": 10,
+      "end": 10,
+      "pages": 1
+    },
+    {
+      "main_id": 28,
+      "character": "工",
+      "batch": "B01",
+      "start": 11,
+      "end": 11,
+      "pages": 1
+    },
+    {
+      "main_id": 29,
+      "character": "土",
+      "batch": "B01",
+      "start": 12,
+      "end": 12,
+      "pages": 1
+    },
+    {
+      "main_id": 37,
+      "character": "口",
+      "batch": "B01",
+      "start": 13,
+      "end": 13,
+      "pages": 1
+    },
+    {
+      "main_id": 39,
+      "character": "山",
+      "batch": "B01",
+      "start": 14,
+      "end": 14,
+      "pages": 1
+    },
+    {
+      "main_id": 40,
+      "character": "巾",
+      "batch": "B01",
+      "start": 15,
+      "end": 15,
+      "pages": 1
+    },
+    {
+      "main_id": 77,
+      "character": "水",
+      "batch": "B02",
+      "start": 16,
+      "end": 16,
+      "pages": 1
+    },
+    {
+      "main_id": 95,
+      "character": "火",
+      "batch": "B02",
+      "start": 17,
+      "end": 17,
+      "pages": 1
+    },
+    {
+      "main_id": 64,
+      "character": "木",
+      "batch": "B02",
+      "start": 18,
+      "end": 18,
+      "pages": 1
+    },
+    {
+      "main_id": 75,
+      "character": "日",
+      "batch": "B02",
+      "start": 19,
+      "end": 19,
+      "pages": 1
+    },
+    {
+      "main_id": 88,
+      "character": "月",
+      "batch": "B02",
+      "start": 20,
+      "end": 20,
+      "pages": 1
+    },
+    {
+      "main_id": 106,
+      "character": "田",
+      "batch": "B02",
+      "start": 21,
+      "end": 21,
+      "pages": 1
+    },
+    {
+      "main_id": 105,
+      "character": "目",
+      "batch": "B02",
+      "start": 22,
+      "end": 22,
+      "pages": 1
+    },
+    {
+      "main_id": 80,
+      "character": "手",
+      "batch": "B02",
+      "start": 23,
+      "end": 23,
+      "pages": 1
+    },
+    {
+      "main_id": 79,
+      "character": "牛",
+      "batch": "B02",
+      "start": 24,
+      "end": 24,
+      "pages": 1
+    },
+    {
+      "main_id": 82,
+      "character": "毛",
+      "batch": "B02",
+      "start": 25,
+      "end": 25,
+      "pages": 1
+    },
+    {
+      "main_id": 22,
+      "character": "刀",
+      "batch": "B03",
+      "start": 26,
+      "end": 26,
+      "pages": 1
+    },
+    {
+      "main_id": 23,
+      "character": "力",
+      "batch": "B03",
+      "start": 27,
+      "end": 27,
+      "pages": 1
+    },
+    {
+      "main_id": 24,
+      "character": "又",
+      "batch": "B03",
+      "start": 28,
+      "end": 28,
+      "pages": 1
+    },
+    {
+      "main_id": 54,
+      "character": "子",
+      "batch": "B03",
+      "start": 29,
+      "end": 29,
+      "pages": 1
+    },
+    {
+      "main_id": 56,
+      "character": "女",
+      "batch": "B03",
+      "start": 30,
+      "end": 30,
+      "pages": 1
+    },
+    {
+      "main_id": 36,
+      "character": "小",
+      "batch": "B03",
+      "start": 31,
+      "end": 31,
+      "pages": 1
+    },
+    {
+      "main_id": 61,
+      "character": "王",
+      "batch": "B03",
+      "start": 32,
+      "end": 32,
+      "pages": 1
+    },
+    {
+      "main_id": 102,
+      "character": "石",
+      "batch": "B03",
+      "start": 33,
+      "end": 33,
+      "pages": 1
+    },
+    {
+      "main_id": 112,
+      "character": "白",
+      "batch": "B03",
+      "start": 34,
+      "end": 34,
+      "pages": 1
+    },
+    {
+      "main_id": 116,
+      "character": "立",
+      "batch": "B03",
+      "start": 35,
+      "end": 35,
+      "pages": 1
+    },
+    {
+      "main_id": 27,
+      "character": "干",
+      "batch": "B04",
+      "start": 36,
+      "end": 36,
+      "pages": 1
+    },
+    {
+      "main_id": 31,
+      "character": "寸",
+      "batch": "B04",
+      "start": 37,
+      "end": 37,
+      "pages": 1
+    },
+    {
+      "main_id": 43,
+      "character": "夕",
+      "batch": "B04",
+      "start": 38,
+      "end": 38,
+      "pages": 1
+    },
+    {
+      "main_id": 46,
+      "character": "广",
+      "batch": "B04",
+      "start": 39,
+      "end": 39,
+      "pages": 1
+    },
+    {
+      "main_id": 47,
+      "character": "门",
+      "batch": "B04",
+      "start": 40,
+      "end": 40,
+      "pages": 1
+    },
+    {
+      "main_id": 51,
+      "character": "尸",
+      "batch": "B04",
+      "start": 41,
+      "end": 41,
+      "pages": 1
+    },
+    {
+      "main_id": 52,
+      "character": "己",
+      "batch": "B04",
+      "start": 42,
+      "end": 42,
+      "pages": 1
+    },
+    {
+      "main_id": 53,
+      "character": "弓",
+      "batch": "B04",
+      "start": 43,
+      "end": 43,
+      "pages": 1
+    },
+    {
+      "main_id": 57,
+      "character": "飞",
+      "batch": "B04",
+      "start": 44,
+      "end": 44,
+      "pages": 1
+    },
+    {
+      "main_id": 58,
+      "character": "马",
+      "batch": "B04",
+      "start": 45,
+      "end": 45,
+      "pages": 1
+    },
+    {
+      "main_id": 62,
+      "character": "无",
+      "batch": "B05",
+      "start": 46,
+      "end": 46,
+      "pages": 1
+    },
+    {
+      "main_id": 66,
+      "character": "犬",
+      "batch": "B05",
+      "start": 47,
+      "end": 47,
+      "pages": 1
+    },
+    {
+      "main_id": 67,
+      "character": "歹",
+      "batch": "B05",
+      "start": 48,
+      "end": 48,
+      "pages": 1
+    },
+    {
+      "main_id": 68,
+      "character": "车",
+      "batch": "B05",
+      "start": 49,
+      "end": 49,
+      "pages": 1
+    },
+    {
+      "main_id": 69,
+      "character": "牙",
+      "batch": "B05",
+      "start": 50,
+      "end": 50,
+      "pages": 1
+    },
+    {
+      "main_id": 70,
+      "character": "戈",
+      "batch": "B05",
+      "start": 51,
+      "end": 51,
+      "pages": 1
+    },
+    {
+      "main_id": 72,
+      "character": "瓦",
+      "batch": "B05",
+      "start": 52,
+      "end": 52,
+      "pages": 1
+    },
+    {
+      "main_id": 73,
+      "character": "止",
+      "batch": "B05",
+      "start": 53,
+      "end": 53,
+      "pages": 1
+    },
+    {
+      "main_id": 76,
+      "character": "贝",
+      "batch": "B05",
+      "start": 54,
+      "end": 54,
+      "pages": 1
+    },
+    {
+      "main_id": 78,
+      "character": "见",
+      "batch": "B05",
+      "start": 55,
+      "end": 55,
+      "pages": 1
+    },
+    {
+      "main_id": 7,
+      "character": "厂",
+      "batch": "B06",
+      "start": 56,
+      "end": 56,
+      "pages": 1
+    },
+    {
+      "main_id": 8,
+      "character": "匚",
+      "batch": "B06",
+      "start": 57,
+      "end": 57,
+      "pages": 1
+    },
+    {
+      "main_id": 9,
+      "character": "卜",
+      "batch": "B06",
+      "start": 58,
+      "end": 58,
+      "pages": 1
+    },
+    {
+      "main_id": 10,
+      "character": "冂",
+      "batch": "B06",
+      "start": 59,
+      "end": 59,
+      "pages": 1
+    },
+    {
+      "main_id": 13,
+      "character": "勹",
+      "batch": "B06",
+      "start": 60,
+      "end": 60,
+      "pages": 1
+    },
+    {
+      "main_id": 14,
+      "character": "儿",
+      "batch": "B06",
+      "start": 61,
+      "end": 61,
+      "pages": 1
+    },
+    {
+      "main_id": 15,
+      "character": "匕",
+      "batch": "B06",
+      "start": 62,
+      "end": 62,
+      "pages": 1
+    },
+    {
+      "main_id": 16,
+      "character": "几",
+      "batch": "B06",
+      "start": 63,
+      "end": 63,
+      "pages": 1
+    },
+    {
+      "main_id": 17,
+      "character": "亠",
+      "batch": "B06",
+      "start": 64,
+      "end": 64,
+      "pages": 1
+    },
+    {
+      "main_id": 18,
+      "character": "冫",
+      "batch": "B06",
+      "start": 65,
+      "end": 65,
+      "pages": 1
+    },
+    {
+      "main_id": 19,
+      "character": "冖",
+      "batch": "B07",
+      "start": 66,
+      "end": 66,
+      "pages": 1
+    },
+    {
+      "main_id": 20,
+      "character": "凵",
+      "batch": "B07",
+      "start": 67,
+      "end": 67,
+      "pages": 1
+    },
+    {
+      "main_id": 21,
+      "character": "卩",
+      "batch": "B07",
+      "start": 68,
+      "end": 68,
+      "pages": 1
+    },
+    {
+      "main_id": 25,
+      "character": "厶",
+      "batch": "B07",
+      "start": 69,
+      "end": 69,
+      "pages": 1
+    },
+    {
+      "main_id": 26,
+      "character": "廴",
+      "batch": "B07",
+      "start": 70,
+      "end": 70,
+      "pages": 1
+    },
+    {
+      "main_id": 30,
+      "character": "艹",
+      "batch": "B07",
+      "start": 71,
+      "end": 71,
+      "pages": 1
+    },
+    {
+      "main_id": 32,
+      "character": "廾",
+      "batch": "B07",
+      "start": 72,
+      "end": 72,
+      "pages": 1
+    },
+    {
+      "main_id": 48,
+      "character": "宀",
+      "batch": "B07",
+      "start": 73,
+      "end": 73,
+      "pages": 1
+    },
+    {
+      "main_id": 49,
+      "character": "辶",
+      "batch": "B07",
+      "start": 74,
+      "end": 74,
+      "pages": 1
+    },
+    {
+      "main_id": 50,
+      "character": "彐",
+      "batch": "B07",
+      "start": 75,
+      "end": 75,
+      "pages": 1
+    },
+    {
+      "main_id": 2,
+      "character": "丨",
+      "batch": "B08",
+      "start": 76,
+      "end": 76,
+      "pages": 1
+    },
+    {
+      "main_id": 3,
+      "character": "丿",
+      "batch": "B08",
+      "start": 77,
+      "end": 77,
+      "pages": 1
+    },
+    {
+      "main_id": 4,
+      "character": "丶",
+      "batch": "B08",
+      "start": 78,
+      "end": 78,
+      "pages": 1
+    },
+    {
+      "main_id": 5,
+      "character": "乛",
+      "batch": "B08",
+      "start": 79,
+      "end": 79,
+      "pages": 1
+    },
+    {
+      "main_id": 34,
+      "character": "尢",
+      "batch": "B08",
+      "start": 80,
+      "end": 80,
+      "pages": 1
+    },
+    {
+      "main_id": 35,
+      "character": "弋",
+      "batch": "B08",
+      "start": 81,
+      "end": 81,
+      "pages": 1
+    },
+    {
+      "main_id": 38,
+      "character": "囗",
+      "batch": "B08",
+      "start": 82,
+      "end": 82,
+      "pages": 1
+    },
+    {
+      "main_id": 41,
+      "character": "彳",
+      "batch": "B08",
+      "start": 83,
+      "end": 83,
+      "pages": 1
+    },
+    {
+      "main_id": 42,
+      "character": "彡",
+      "batch": "B08",
+      "start": 84,
+      "end": 84,
+      "pages": 1
+    },
+    {
+      "main_id": 44,
+      "character": "夂",
+      "batch": "B08",
+      "start": 85,
+      "end": 85,
+      "pages": 1
+    },
+    {
+      "main_id": 63,
+      "character": "韦",
+      "batch": "B09",
+      "start": 86,
+      "end": 86,
+      "pages": 1
+    },
+    {
+      "main_id": 65,
+      "character": "支",
+      "batch": "B09",
+      "start": 87,
+      "end": 87,
+      "pages": 1
+    },
+    {
+      "main_id": 71,
+      "character": "比",
+      "batch": "B09",
+      "start": 88,
+      "end": 88,
+      "pages": 1
+    },
+    {
+      "main_id": 81,
+      "character": "气",
+      "batch": "B09",
+      "start": 89,
+      "end": 89,
+      "pages": 1
+    },
+    {
+      "main_id": 83,
+      "character": "长",
+      "batch": "B09",
+      "start": 90,
+      "end": 90,
+      "pages": 1
+    },
+    {
+      "main_id": 84,
+      "character": "片",
+      "batch": "B09",
+      "start": 91,
+      "end": 91,
+      "pages": 1
+    },
+    {
+      "main_id": 85,
+      "character": "斤",
+      "batch": "B09",
+      "start": 92,
+      "end": 92,
+      "pages": 1
+    },
+    {
+      "main_id": 86,
+      "character": "爪",
+      "batch": "B09",
+      "start": 93,
+      "end": 93,
+      "pages": 1
+    },
+    {
+      "main_id": 87,
+      "character": "父",
+      "batch": "B09",
+      "start": 94,
+      "end": 94,
+      "pages": 1
+    },
+    {
+      "main_id": 93,
+      "character": "文",
+      "batch": "B09",
+      "start": 95,
+      "end": 95,
+      "pages": 1
+    },
+    {
+      "main_id": 45,
+      "character": "丬",
+      "batch": "B10",
+      "start": 96,
+      "end": 96,
+      "pages": 1
+    },
+    {
+      "main_id": 59,
+      "character": "幺",
+      "batch": "B10",
+      "start": 97,
+      "end": 97,
+      "pages": 1
+    },
+    {
+      "main_id": 74,
+      "character": "攴",
+      "batch": "B10",
+      "start": 98,
+      "end": 98,
+      "pages": 1
+    },
+    {
+      "main_id": 89,
+      "character": "氏",
+      "batch": "B10",
+      "start": 99,
+      "end": 99,
+      "pages": 1
+    },
+    {
+      "main_id": 90,
+      "character": "欠",
+      "batch": "B10",
+      "start": 100,
+      "end": 100,
+      "pages": 1
+    },
+    {
+      "main_id": 91,
+      "character": "风",
+      "batch": "B10",
+      "start": 101,
+      "end": 101,
+      "pages": 1
+    },
+    {
+      "main_id": 94,
+      "character": "方",
+      "batch": "B10",
+      "start": 102,
+      "end": 102,
+      "pages": 1
+    },
+    {
+      "main_id": 96,
+      "character": "斗",
+      "batch": "B10",
+      "start": 103,
+      "end": 103,
+      "pages": 1
+    },
+    {
+      "main_id": 97,
+      "character": "户",
+      "batch": "B10",
+      "start": 104,
+      "end": 104,
+      "pages": 1
+    },
+    {
+      "main_id": 98,
+      "character": "心",
+      "batch": "B10",
+      "start": 105,
+      "end": 105,
+      "pages": 1
+    },
+    {
+      "main_id": 100,
+      "character": "示",
+      "batch": "B11",
+      "start": 106,
+      "end": 106,
+      "pages": 1
+    },
+    {
+      "main_id": 101,
+      "character": "甘",
+      "batch": "B11",
+      "start": 107,
+      "end": 107,
+      "pages": 1
+    },
+    {
+      "main_id": 103,
+      "character": "龙",
+      "batch": "B11",
+      "start": 108,
+      "end": 108,
+      "pages": 1
+    },
+    {
+      "main_id": 104,
+      "character": "业",
+      "batch": "B11",
+      "start": 109,
+      "end": 109,
+      "pages": 1
+    },
+    {
+      "main_id": 107,
+      "character": "罒",
+      "batch": "B11",
+      "start": 110,
+      "end": 110,
+      "pages": 1
+    },
+    {
+      "main_id": 108,
+      "character": "皿",
+      "batch": "B11",
+      "start": 111,
+      "end": 111,
+      "pages": 1
+    },
+    {
+      "main_id": 109,
+      "character": "生",
+      "batch": "B11",
+      "start": 112,
+      "end": 112,
+      "pages": 1
+    },
+    {
+      "main_id": 110,
+      "character": "矢",
+      "batch": "B11",
+      "start": 113,
+      "end": 113,
+      "pages": 1
+    },
+    {
+      "main_id": 111,
+      "character": "禾",
+      "batch": "B11",
+      "start": 114,
+      "end": 114,
+      "pages": 1
+    },
+    {
+      "main_id": 113,
+      "character": "瓜",
+      "batch": "B11",
+      "start": 115,
+      "end": 115,
+      "pages": 1
+    },
+    {
+      "main_id": 55,
+      "character": "屮",
+      "batch": "B12",
+      "start": 116,
+      "end": 116,
+      "pages": 1
+    },
+    {
+      "main_id": 60,
+      "character": "巛",
+      "batch": "B12",
+      "start": 117,
+      "end": 117,
+      "pages": 1
+    },
+    {
+      "main_id": 92,
+      "character": "殳",
+      "batch": "B12",
+      "start": 118,
+      "end": 118,
+      "pages": 1
+    },
+    {
+      "main_id": 99,
+      "character": "毋",
+      "batch": "B12",
+      "start": 119,
+      "end": 119,
+      "pages": 1
+    },
+    {
+      "main_id": 114,
+      "character": "鸟",
+      "batch": "B12",
+      "start": 120,
+      "end": 120,
+      "pages": 1
+    },
+    {
+      "main_id": 115,
+      "character": "疒",
+      "batch": "B12",
+      "start": 121,
+      "end": 121,
+      "pages": 1
+    },
+    {
+      "main_id": 117,
+      "character": "穴",
+      "batch": "B12",
+      "start": 122,
+      "end": 122,
+      "pages": 1
+    },
+    {
+      "main_id": 118,
+      "character": "疋",
+      "batch": "B12",
+      "start": 123,
+      "end": 123,
+      "pages": 1
+    },
+    {
+      "main_id": 119,
+      "character": "皮",
+      "batch": "B12",
+      "start": 124,
+      "end": 124,
+      "pages": 1
+    },
+    {
+      "main_id": 120,
+      "character": "癶",
+      "batch": "B12",
+      "start": 125,
+      "end": 125,
+      "pages": 1
+    },
+    {
+      "main_id": 121,
+      "character": "矛",
+      "batch": "B13",
+      "start": 126,
+      "end": 126,
+      "pages": 1
+    },
+    {
+      "main_id": 122,
+      "character": "耒",
+      "batch": "B13",
+      "start": 127,
+      "end": 127,
+      "pages": 1
+    },
+    {
+      "main_id": 123,
+      "character": "老",
+      "batch": "B13",
+      "start": 128,
+      "end": 128,
+      "pages": 1
+    },
+    {
+      "main_id": 124,
+      "character": "耳",
+      "batch": "B13",
+      "start": 129,
+      "end": 129,
+      "pages": 1
+    },
+    {
+      "main_id": 125,
+      "character": "臣",
+      "batch": "B13",
+      "start": 130,
+      "end": 130,
+      "pages": 1
+    },
+    {
+      "main_id": 126,
+      "character": "覀",
+      "batch": "B13",
+      "start": 131,
+      "end": 131,
+      "pages": 1
+    },
+    {
+      "main_id": 127,
+      "character": "而",
+      "batch": "B13",
+      "start": 132,
+      "end": 132,
+      "pages": 1
+    },
+    {
+      "main_id": 128,
+      "character": "页",
+      "batch": "B13",
+      "start": 133,
+      "end": 133,
+      "pages": 1
+    },
+    {
+      "main_id": 129,
+      "character": "至",
+      "batch": "B13",
+      "start": 134,
+      "end": 134,
+      "pages": 1
+    },
+    {
+      "main_id": 130,
+      "character": "虍",
+      "batch": "B13",
+      "start": 135,
+      "end": 135,
+      "pages": 1
+    },
+    {
+      "main_id": 131,
+      "character": "虫",
+      "batch": "B14",
+      "start": 136,
+      "end": 136,
+      "pages": 1
+    },
+    {
+      "main_id": 132,
+      "character": "肉",
+      "batch": "B14",
+      "start": 137,
+      "end": 137,
+      "pages": 1
+    },
+    {
+      "main_id": 133,
+      "character": "缶",
+      "batch": "B14",
+      "start": 138,
+      "end": 138,
+      "pages": 1
+    },
+    {
+      "main_id": 134,
+      "character": "舌",
+      "batch": "B14",
+      "start": 139,
+      "end": 139,
+      "pages": 1
+    },
+    {
+      "main_id": 135,
+      "character": "竹",
+      "batch": "B14",
+      "start": 140,
+      "end": 140,
+      "pages": 1
+    },
+    {
+      "main_id": 136,
+      "character": "臼",
+      "batch": "B14",
+      "start": 141,
+      "end": 141,
+      "pages": 1
+    },
+    {
+      "main_id": 137,
+      "character": "自",
+      "batch": "B14",
+      "start": 142,
+      "end": 142,
+      "pages": 1
+    },
+    {
+      "main_id": 138,
+      "character": "血",
+      "batch": "B14",
+      "start": 143,
+      "end": 143,
+      "pages": 1
+    },
+    {
+      "main_id": 139,
+      "character": "舟",
+      "batch": "B14",
+      "start": 144,
+      "end": 144,
+      "pages": 1
+    },
+    {
+      "main_id": 140,
+      "character": "色",
+      "batch": "B14",
+      "start": 145,
+      "end": 145,
+      "pages": 1
+    },
+    {
+      "main_id": 141,
+      "character": "齐",
+      "batch": "B15",
+      "start": 146,
+      "end": 146,
+      "pages": 1
+    },
+    {
+      "main_id": 142,
+      "character": "衣",
+      "batch": "B15",
+      "start": 147,
+      "end": 147,
+      "pages": 1
+    },
+    {
+      "main_id": 143,
+      "character": "羊",
+      "batch": "B15",
+      "start": 148,
+      "end": 148,
+      "pages": 1
+    },
+    {
+      "main_id": 144,
+      "character": "米",
+      "batch": "B15",
+      "start": 149,
+      "end": 149,
+      "pages": 1
+    },
+    {
+      "main_id": 145,
+      "character": "聿",
+      "batch": "B15",
+      "start": 150,
+      "end": 150,
+      "pages": 1
+    },
+    {
+      "main_id": 146,
+      "character": "艮",
+      "batch": "B15",
+      "start": 151,
+      "end": 151,
+      "pages": 1
+    },
+    {
+      "main_id": 147,
+      "character": "羽",
+      "batch": "B15",
+      "start": 152,
+      "end": 152,
+      "pages": 1
+    },
+    {
+      "main_id": 148,
+      "character": "糸",
+      "batch": "B15",
+      "start": 153,
+      "end": 153,
+      "pages": 1
+    },
+    {
+      "main_id": 149,
+      "character": "麦",
+      "batch": "B15",
+      "start": 154,
+      "end": 155,
+      "pages": 2
+    },
+    {
+      "main_id": 150,
+      "character": "走",
+      "batch": "B15",
+      "start": 156,
+      "end": 157,
+      "pages": 2
+    },
+    {
+      "main_id": 151,
+      "character": "赤",
+      "batch": "B16",
+      "start": 158,
+      "end": 159,
+      "pages": 2
+    },
+    {
+      "main_id": 152,
+      "character": "豆",
+      "batch": "B16",
+      "start": 160,
+      "end": 161,
+      "pages": 2
+    },
+    {
+      "main_id": 153,
+      "character": "酉",
+      "batch": "B16",
+      "start": 162,
+      "end": 163,
+      "pages": 2
+    },
+    {
+      "main_id": 154,
+      "character": "辰",
+      "batch": "B16",
+      "start": 164,
+      "end": 165,
+      "pages": 2
+    },
+    {
+      "main_id": 155,
+      "character": "豕",
+      "batch": "B16",
+      "start": 166,
+      "end": 167,
+      "pages": 2
+    },
+    {
+      "main_id": 156,
+      "character": "卤",
+      "batch": "B16",
+      "start": 168,
+      "end": 169,
+      "pages": 2
+    },
+    {
+      "main_id": 157,
+      "character": "里",
+      "batch": "B16",
+      "start": 170,
+      "end": 171,
+      "pages": 2
+    },
+    {
+      "main_id": 158,
+      "character": "足",
+      "batch": "B16",
+      "start": 172,
+      "end": 173,
+      "pages": 2
+    },
+    {
+      "main_id": 159,
+      "character": "邑",
+      "batch": "B16",
+      "start": 174,
+      "end": 175,
+      "pages": 2
+    },
+    {
+      "main_id": 160,
+      "character": "身",
+      "batch": "B16",
+      "start": 176,
+      "end": 177,
+      "pages": 2
+    },
+    {
+      "main_id": 161,
+      "character": "釆",
+      "batch": "B17",
+      "start": 178,
+      "end": 179,
+      "pages": 2
+    },
+    {
+      "main_id": 162,
+      "character": "谷",
+      "batch": "B17",
+      "start": 180,
+      "end": 181,
+      "pages": 2
+    },
+    {
+      "main_id": 163,
+      "character": "豸",
+      "batch": "B17",
+      "start": 182,
+      "end": 183,
+      "pages": 2
+    },
+    {
+      "main_id": 164,
+      "character": "龟",
+      "batch": "B17",
+      "start": 184,
+      "end": 185,
+      "pages": 2
+    },
+    {
+      "main_id": 165,
+      "character": "角",
+      "batch": "B17",
+      "start": 186,
+      "end": 187,
+      "pages": 2
+    },
+    {
+      "main_id": 166,
+      "character": "言",
+      "batch": "B17",
+      "start": 188,
+      "end": 189,
+      "pages": 2
+    },
+    {
+      "main_id": 167,
+      "character": "辛",
+      "batch": "B17",
+      "start": 190,
+      "end": 191,
+      "pages": 2
+    },
+    {
+      "main_id": 168,
+      "character": "青",
+      "batch": "B17",
+      "start": 192,
+      "end": 193,
+      "pages": 2
+    },
+    {
+      "main_id": 169,
+      "character": "龺",
+      "batch": "B17",
+      "start": 194,
+      "end": 195,
+      "pages": 2
+    },
+    {
+      "main_id": 170,
+      "character": "雨",
+      "batch": "B17",
+      "start": 196,
+      "end": 197,
+      "pages": 2
+    },
+    {
+      "main_id": 171,
+      "character": "非",
+      "batch": "B18",
+      "start": 198,
+      "end": 199,
+      "pages": 2
+    },
+    {
+      "main_id": 172,
+      "character": "齿",
+      "batch": "B18",
+      "start": 200,
+      "end": 201,
+      "pages": 2
+    },
+    {
+      "main_id": 173,
+      "character": "黾",
+      "batch": "B18",
+      "start": 202,
+      "end": 203,
+      "pages": 2
+    },
+    {
+      "main_id": 174,
+      "character": "隹",
+      "batch": "B18",
+      "start": 204,
+      "end": 205,
+      "pages": 2
+    },
+    {
+      "main_id": 175,
+      "character": "阜",
+      "batch": "B18",
+      "start": 206,
+      "end": 207,
+      "pages": 2
+    },
+    {
+      "main_id": 176,
+      "character": "金",
+      "batch": "B18",
+      "start": 208,
+      "end": 209,
+      "pages": 2
+    },
+    {
+      "main_id": 177,
+      "character": "鱼",
+      "batch": "B18",
+      "start": 210,
+      "end": 211,
+      "pages": 2
+    },
+    {
+      "main_id": 178,
+      "character": "隶",
+      "batch": "B18",
+      "start": 212,
+      "end": 213,
+      "pages": 2
+    },
+    {
+      "main_id": 179,
+      "character": "革",
+      "batch": "B18",
+      "start": 214,
+      "end": 215,
+      "pages": 2
+    },
+    {
+      "main_id": 180,
+      "character": "面",
+      "batch": "B18",
+      "start": 216,
+      "end": 217,
+      "pages": 2
+    },
+    {
+      "main_id": 181,
+      "character": "韭",
+      "batch": "B19",
+      "start": 218,
+      "end": 219,
+      "pages": 2
+    },
+    {
+      "main_id": 182,
+      "character": "骨",
+      "batch": "B19",
+      "start": 220,
+      "end": 221,
+      "pages": 2
+    },
+    {
+      "main_id": 183,
+      "character": "香",
+      "batch": "B19",
+      "start": 222,
+      "end": 223,
+      "pages": 2
+    },
+    {
+      "main_id": 184,
+      "character": "鬼",
+      "batch": "B19",
+      "start": 224,
+      "end": 225,
+      "pages": 2
+    },
+    {
+      "main_id": 185,
+      "character": "食",
+      "batch": "B19",
+      "start": 226,
+      "end": 227,
+      "pages": 2
+    },
+    {
+      "main_id": 186,
+      "character": "音",
+      "batch": "B19",
+      "start": 228,
+      "end": 229,
+      "pages": 2
+    },
+    {
+      "main_id": 187,
+      "character": "首",
+      "batch": "B19",
+      "start": 230,
+      "end": 231,
+      "pages": 2
+    },
+    {
+      "main_id": 188,
+      "character": "髟",
+      "batch": "B19",
+      "start": 232,
+      "end": 233,
+      "pages": 2
+    },
+    {
+      "main_id": 189,
+      "character": "鬲",
+      "batch": "B19",
+      "start": 234,
+      "end": 235,
+      "pages": 2
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "batch": "B19",
+      "start": 236,
+      "end": 237,
+      "pages": 2
+    },
+    {
+      "main_id": 191,
+      "character": "高",
+      "batch": "B20",
+      "start": 238,
+      "end": 239,
+      "pages": 2
+    },
+    {
+      "main_id": 192,
+      "character": "黄",
+      "batch": "B20",
+      "start": 240,
+      "end": 241,
+      "pages": 2
+    },
+    {
+      "main_id": 193,
+      "character": "麻",
+      "batch": "B20",
+      "start": 242,
+      "end": 243,
+      "pages": 2
+    },
+    {
+      "main_id": 194,
+      "character": "鹿",
+      "batch": "B20",
+      "start": 244,
+      "end": 245,
+      "pages": 2
+    },
+    {
+      "main_id": 195,
+      "character": "鼎",
+      "batch": "B20",
+      "start": 246,
+      "end": 247,
+      "pages": 2
+    },
+    {
+      "main_id": 196,
+      "character": "黑",
+      "batch": "B20",
+      "start": 248,
+      "end": 249,
+      "pages": 2
+    },
+    {
+      "main_id": 197,
+      "character": "黍",
+      "batch": "B20",
+      "start": 250,
+      "end": 251,
+      "pages": 2
+    },
+    {
+      "main_id": 198,
+      "character": "鼓",
+      "batch": "B20",
+      "start": 252,
+      "end": 254,
+      "pages": 3
+    },
+    {
+      "main_id": 199,
+      "character": "鼠",
+      "batch": "B20",
+      "start": 255,
+      "end": 257,
+      "pages": 3
+    },
+    {
+      "main_id": 200,
+      "character": "鼻",
+      "batch": "B20",
+      "start": 258,
+      "end": 260,
+      "pages": 3
+    },
+    {
+      "main_id": 201,
+      "character": "龠",
+      "batch": "B21",
+      "start": 261,
+      "end": 263,
+      "pages": 3
+    }
+  ],
+  "p2_summary_scope": {
+    "scope": "B04-B21",
+    "target_count": 171
+  },
+  "corrected_errata": [
+    "E001",
+    "E002",
+    "E004"
+  ],
+  "visual_review": "pending",
+  "status": "formal_generated_not_archived",
+  "release_eligible": false
+}
