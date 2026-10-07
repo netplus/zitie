@@ -1,10 +1,16 @@
 # PDF版本归档
 
+## 最新正式版 v0.4.1
+
+[276页正式勘误修订版](releases/v0.4.1/B01-B21_v0.4.1_A4.pdf)：3,748,910 bytes；SHA256 `7270104b8698603fcce4eec14037a0194c31e33b868669d0a8dd0307a090a7e7`。
+
+PR #61最终HEAD CI run `37588926485`成功并合入main，E001—E004修复完成。manifest为released、release_eligible=true；精确生成与QA记录保持。M1已退出，M2进行中；M3/Q1尚未开始，不将补丁影响复核算作最终全书排版验收。
+
 ## M1勘误候选 v0.4.1-rc1
 
 [276页勘误候选PDF](drafts/v0.4.1-rc1/B01-B21_v0.4.1-rc1_A4.pdf)：修复5项变体索引缺字，并明确细笔名统计的171项范围。3,754,409 bytes；SHA256 `581101ba2b744f4cba32291731c35d391c3a1df13b5cc11c1abdd7ade2bb4895`。
 
-状态为release_candidate、release_eligible=false；正式v0.4.1尚未发布，M1仍需处理正式前言措辞和正式版本验收。来源及受影响页记录见[候选复核](../reviews/M1-v0.4.1-rc1-review-20261007.md)。原正式版及历史稿不覆盖。
+此历史候选保持release_candidate、release_eligible=false，不修改原状态；其后的正式v0.4.1见上方。来源及受影响页记录见[候选复核](../reviews/M1-v0.4.1-rc1-review-20261007.md)。原正式版及历史稿不覆盖。
 
 ## 正式发布 v0.4.0
 
@@ -31,7 +37,7 @@
 
 阶段性和最终PDF均直接保存在本Git仓库。Actions附件仅用于构建传输，不代替永久归档。
 
-## 最新编写稿 v0.2.0
+## 历史编写稿 v0.2.0
 
 | 内容 | 页数 | PDF |
 |---|---:|---|
@@ -51,7 +57,7 @@ B01已完成本批笔顺、笔名、结构与采用读音的来源对照；B02�
 ## 版本与校验
 
 - `drafts/<version>/`保存已交付或送审的阶段性PDF，新版本用新目录，旧PDF不覆盖。
-- `releases/<version>/`仅用于达到正式门槛后的版本。当前正式版为`releases/v0.4.0/`。
+- `releases/<version>/`仅用于达到正式门槛后的版本。最新正式版为`releases/v0.4.1/`，`releases/v0.4.0/`保留。
 - [manifest.json](manifest.json)逐文件记录页数、字节数、SHA256、源提交、审稿记录和发布状态。
 - [v0.2版面与字形检查](../reviews/v0.2-layout.md)记录实际看过的页面、修订及未决问题。
 - CI检查二进制、目录及历史清单一致性；机器检查不授予内容审定结论。
