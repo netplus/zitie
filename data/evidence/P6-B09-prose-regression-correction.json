@@ -1,0 +1,14 @@
+{
+  "schema_version": 1,
+  "record_kind": "P6_prose_regression_correction",
+  "review_date": "2026-10-07",
+  "phase": "P6",
+  "scope": [
+    "B09"
+  ],
+  "reviewed_entries": 10,
+  "trigger": "Full P6 A4 build reached B09 and exposed stale candidate wording plus a rare attached-form glyph in prose.",
+  "method": "Replace obsolete candidate labels in teaching tips/checks after terminal content review; preserve the reviewed pedagogical stroke-shape notes. Replace rare-glyph prose with neutral attached-form wording rather than substituting another Unicode glyph.",
+  "result": "10_of_10_B09_entries_resynchronized",
+  "phase_boundary": "Editorial/layout correction only; no P1-P4 field promotion and no P7 archival/release."
+}
