@@ -1,0 +1,45 @@
+{
+  "schema_version": 1,
+  "record_kind": "M2_entry_source_qualification_probe",
+  "date": "2026-10-07",
+  "scope": "GF0011—2022精确逐项表入口；不是M2全部六类字段的完整审计",
+  "queries": [
+    "site.moe.gov.cn \"汉字部首表\" \"2022\"",
+    "\"GF0011\" \"2022\" \"pdf\"",
+    "site.china-language.gov.cn \"汉字部首表\""
+  ],
+  "observations": [
+    {
+      "id": "M2-S01-entry",
+      "url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202211/t20221118_995332.html",
+      "result": "fetch_timeout_this_attempt",
+      "content_reviewed_this_attempt": false,
+      "conclusion": "本次访问失败不证明未公开、不存在或原发布说明有误；旧S01证据保留。"
+    },
+    {
+      "id": "M2-UAX38-42",
+      "url": "https://www.unicode.org/reports/tr38/tr38-42.html",
+      "discovery_url": "https://www.unicode.org/reports/tr38/proposed.html",
+      "publisher": "Unicode Consortium",
+      "observed_document": "Proposed Update UAX #38, revision 42, Unicode 19.0.0 Draft 3, dated 2026-09-27",
+      "sections_read": [
+        "header and Status",
+        "kIRG_GSource description and GCP source definition"
+      ],
+      "findings": [
+        "该文件自述为可变化的草案，不是稳定正式版本。",
+        "GCP-00001—00130混合依据GF3001—1997、GF0014—2009与GF0011—2022；另一区间依据GB18030—2022二级字拆分。",
+        "G-source说明提醒提供给IRG的版本可能与可公开取得版本不同。"
+      ],
+      "admissibility": "downstream_source_locator_only_not_GF0011_2022_item_table",
+      "conclusion": "不提供201主项与精确主形/附形/名称/编码的逐项来源分解，不能反向填充本工程字段。",
+      "raw_bytes_archived": false,
+      "raw_sha256": null
+    }
+  ],
+  "result": "no_admissible_GF0011_2022_item_table_obtained_in_this_entry_probe",
+  "normative_fields_promoted": 0,
+  "source_issue": 4,
+  "m2_completed": false,
+  "next_work": "继续正式原件/等效官方逐项数据的身份、完整性和定位审计；其它五组精确残余仍需新来源审计。"
+}
