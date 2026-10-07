@@ -24,7 +24,11 @@ p5=progress["p5_content_ready"]
 p6=progress["p6_artwork_layout"]
 p7=progress["p7_publication"]
 
-assert progress["active_remaining_phase"]=="P7"
+phase=progress["active_remaining_phase"]
+assert phase in ("P7","completed"), phase
+if phase=="completed":
+    assert p7["status"]=="completed"
+    assert p7.get("exit_condition")=="met"
 assert coverage["target_edition"]=="GF0011—2022"
 # Do not fake access to a source that remains unavailable.
 assert coverage["target_edition_status"]=="fulltext_pending"
