@@ -134,7 +134,7 @@ def make_page(c,e,data,page_number,mode,batch,step_start,step_end,part,total_par
     if e.get('pinyin'):
         text(c,155,709,e['pinyin'],24,font='Latin')
     else:
-        text(c,155,709,'读音：本项目不单列',12,color='muted')
+        text(c,155,709,e.get('reading_note','读音：本项目不单列'),12,color='muted',width=RIGHT-155)
     text(c,155,686,str(n)+'画 · 主部首',13)
     if not continuation:
         wrapped_text(c,155,667,e['tips'][0],11.5,width=RIGHT-155,leading=13,max_lines=2)
