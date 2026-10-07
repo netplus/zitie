@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated_at": "2026-10-07",
-  "active_phase": "M1",
+  "active_phase": "M2",
   "plan": "docs/POST_RELEASE_PLAN.md",
   "baseline": {
     "version": "0.4.0",
@@ -16,15 +16,20 @@
     {
       "id": "M1",
       "name": "v0.4.x勘误维护",
-      "status": "in_progress",
-      "exit_evidence": []
+      "status": "completed",
+      "exit_evidence": [
+        "reviews/M1-completion-20261007.md",
+        "data/evidence/M1-v0.4.1-formal-QA-20261007.json"
+      ],
+      "completed_at": "2026-10-07"
     },
     {
       "id": "M2",
       "name": "新权威来源重开",
-      "status": "planned",
+      "status": "in_progress",
       "source_issue": 4,
-      "exit_evidence": []
+      "exit_evidence": [],
+      "started_at": "2026-10-07"
     },
     {
       "id": "M3",
@@ -43,15 +48,15 @@
     {
       "id": "E001",
       "phase": "M1",
-      "status": "open",
-      "blocks_phase_exit": true,
+      "status": "resolved",
+      "blocks_phase_exit": false,
       "pages": [
         270,
         271,
         272,
         273
       ],
-      "summary": "V007/V026/V029/V031/V032共5项变体、7处索引缺字；候选已修复，正式补丁未发布",
+      "summary": "V007/V026/V029/V031/V032共5项变体、7处索引缺字；已在正式v0.4.1修复",
       "review": "reviews/M1-baseline-audit-20261007.md",
       "candidate_resolution": {
         "version": "0.4.1-rc1",
@@ -59,19 +64,20 @@
         "review": "reviews/M1-v0.4.1-rc1-review-20261007.md",
         "sha256": "581101ba2b744f4cba32291731c35d391c3a1df13b5cc11c1abdd7ade2bb4895"
       },
-      "formal_release_pending": true,
+      "formal_release_pending": false,
       "formal_resolution": {
         "version": "0.4.1",
-        "status": "fixed_reviewed_archived_pending_final_CI",
+        "status": "released_and_verified",
         "sha256": "7270104b8698603fcce4eec14037a0194c31e33b868669d0a8dd0307a090a7e7",
         "review": "reviews/M1-v0.4.1-formal-review-20261007.md"
-      }
+      },
+      "resolution": "reviews/M1-completion-20261007.md"
     },
     {
       "id": "E002",
       "phase": "M1",
-      "status": "open",
-      "blocks_phase_exit": true,
+      "status": "resolved",
+      "blocks_phase_exit": false,
       "pages": [
         274
       ],
@@ -83,13 +89,14 @@
         "review": "reviews/M1-v0.4.1-rc1-review-20261007.md",
         "sha256": "581101ba2b744f4cba32291731c35d391c3a1df13b5cc11c1abdd7ade2bb4895"
       },
-      "formal_release_pending": true,
+      "formal_release_pending": false,
       "formal_resolution": {
         "version": "0.4.1",
-        "status": "fixed_reviewed_archived_pending_final_CI",
+        "status": "released_and_verified",
         "sha256": "7270104b8698603fcce4eec14037a0194c31e33b868669d0a8dd0307a090a7e7",
         "review": "reviews/M1-v0.4.1-formal-review-20261007.md"
-      }
+      },
+      "resolution": "reviews/M1-completion-20261007.md"
     },
     {
       "id": "E003",
@@ -103,24 +110,26 @@
     {
       "id": "E004",
       "phase": "M1",
-      "status": "open",
-      "blocks_phase_exit": true,
+      "status": "resolved",
+      "blocks_phase_exit": false,
       "pages": [
         3
       ],
-      "summary": "旧v0.4.0正式前言正文仍称本候选版本/不等同于正式release；正式v0.4.1须按模式修正",
+      "summary": "旧v0.4.0正式前言正文误称候选；新正式v0.4.1已按模式修正",
       "review": "reviews/M1-v0.4.1-rc1-review-20261007.md",
       "formal_resolution": {
         "version": "0.4.1",
-        "status": "fixed_reviewed_archived_pending_final_CI",
+        "status": "released_and_verified",
         "sha256": "7270104b8698603fcce4eec14037a0194c31e33b868669d0a8dd0307a090a7e7",
         "review": "reviews/M1-v0.4.1-formal-review-20261007.md"
-      }
+      },
+      "formal_release_pending": false,
+      "resolution": "reviews/M1-completion-20261007.md"
     }
   ],
   "candidate": null,
   "final_release_eligible": false,
-  "next_work": "正式v0.4.1已按精确字节归档并完成M1影响复核；PR61最终HEAD CI成功及合入后，关闭E001/E002/E004并将M1标为completed，进入M2。不得以生成run代替最终归档CI。",
+  "next_work": "M2首轮：沿用Issue4核对既有来源审计和残余字段集合，优先GF0011—2022正式逐项原件；只在新适用证据实际审读后重开，未取得继续source-blocked。M3/Q1尚未开始。",
   "tracking_issue": 58,
   "patch_candidate": {
     "path": "deliverables/drafts/v0.4.1-rc1/B01-B21_v0.4.1-rc1_A4.pdf",
@@ -180,5 +189,12 @@
       "basis": "v0.4.0 reviewed baseline + M1 byte-bound impact review; no new normative review"
     }
   },
-  "patch_archive_ci_status": "pending_final_PR61_HEAD_CI"
+  "patch_archive_ci_status": "passed",
+  "patch_final_ci": {
+    "pr": 61,
+    "head_sha": "21f317f822a436470bc4e3e0421a3bcea4d3caf6",
+    "workflow_run_id": 37588926485,
+    "conclusion": "success",
+    "merge_commit": "e22d2075c1cc6728b60d3580ec9aaa9bb4873354"
+  }
 }
