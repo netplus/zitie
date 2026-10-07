@@ -245,8 +245,17 @@ def main():
     back=out/'backmatter_v0.4.0.pdf'
     toc_pages=build_toc(toc,font)
     back_pages=build_backmatter(back,font)
-    meta={'toc_file':toc.name,'toc_pages':toc_pages,'backmatter_file':back.name,'backmatter_pages':back_pages,
-          'status':'P7_release_structure_material_generated_not_yet_archived_or_released'}
+    _,_,nav_items,_=build_navigation()
+    meta={
+        'toc_file':toc.name,
+        'toc_pages':toc_pages,
+        'backmatter_file':back.name,
+        'backmatter_pages':back_pages,
+        'main_index_main_ids':[row['main_id'] for row in sorted(nav_items,key=lambda row: row['main_id'])],
+        'variant_ids':[v['id'] for v in load('data/variants.json')['items']],
+        'legacy_variant_ids':[v['id'] for v in load('data/variants.json')['items'][:27]],
+        'status':'P7_release_structure_material_generated_not_yet_archived_or_released'
+    }
     (out/'generation_book_matter.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(meta,ensure_ascii=False))
 
