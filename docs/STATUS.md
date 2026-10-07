@@ -635,3 +635,30 @@ B03此前已在2026-09-30完成真实逐笔矢量人工复核（`data/evidence/B
 证据：`reviews/P6-B12-B21-artwork-review-20261007.md`、`data/evidence/P6-B12-artwork-review.json`至`P6-B21-artwork-review.json`。
 
 **P6仍未完成。** 下一门槛是全书统一A4版式、练习层级以及复杂字分页策略；实际PDF归档、manifest、全书PDF视觉QA和正式release仍属于P7。
+
+## P7 v0.4.0 structured draft archive（2026-10-07）
+
+PR #49 已合入 main，merge commit `81c6c6b9bb282966b29a9c96c1c8bb016e54ab76`。该 PR 完成了 P7 结构化全书导航：2 页目录、201 主部首索引、32 项教学附形/位置变体索引、原 V001—V027 回归表、来源/字段复核说明与版本/勘误页。
+
+目标 HEAD `327b732f15aa4a01406606aad1fed80dbae144fb` 的 Book integrity checks run `37565130391` 成功。其 artifact `11458786539 zitie-p7-structured-draft-research` 已实际生成 276 页结构化全书 draft；artifact digest 为 `sha256:5b415bc111ff30da91bc25c17858d9c1cc37f5354487188992947287826e821e`。
+
+P7 新增页面已完成实际视觉 QA：
+- 目录 2 页；
+- 201 主部首索引 6 页，main_id 001—201 连续，`201 龠 -> B21 -> 261–263`；
+- 32 项教学候选变体索引 2 页；
+- 原 V001—V027 回归表 2 页；
+- 来源/字段复核与来源台账 2 页；
+- 版本、勘误与发布状态 1 页。
+
+共 15/15 个本轮新增页面实际渲染查看通过；长来源标题已改为换行展示，不再硬截断。证据：`data/evidence/P7-structured-draft-visual-QA-20261007.json`、`reviews/P7-structured-draft-visual-QA-20261007.md`。
+
+随后通过一次性 feature-branch archive workflow 固定下载上述已审 artifact，强校验页数、字节数和 SHA256，并已真实写入：
+- `deliverables/drafts/v0.4.0/B01-B21_with_preface_toc_appendices_draft_A4.pdf`
+- 276 页
+- 3,683,612 bytes
+- SHA256 `b44c7b13a38b020f8e5e83cc3b8058736a10d4556998689ed4d15076b54cc9eb`
+
+`deliverables/manifest.json` 已登记 v0.4.0，`release_eligible=false`。一次性 archive workflow 在归档提交中已自行删除，不留驻 main 的临时自动化。
+
+当前 P7 尚未完成：归档 PR 的目标 HEAD CI、全书级 release gate、release candidate 和正式 `deliverables/releases/` 仍保持 pending。GF0011—2022 逐项精确字段仍按 P4 既有结论 source-blocked fail-closed，不因归档 PDF 而升级。
+
