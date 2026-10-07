@@ -783,3 +783,11 @@ RC1已通过一次性feature-branch归档流程真实写入：
 
 后续仅进入维护/勘误模式；若GF0011—2022正式逐项数据出现可重复公开通道，再按现有reopen_condition开启新版本修订。
 
+
+## 发布后维护检查点（2026-10-07）
+
+正式 v0.4.0 已完成 P0—P7 并保留历史字节不覆盖。发布后对正式 PDF 卷末索引做 180 dpi 复核时，新发现一个视觉勘误：V007 的 U+9FB5 在第270页教学变体索引和第272页原27项对应表显示为缺字方框。canonical `data/variants.json` 未改变，因此当前判断为 appendix 字体覆盖问题，不是内容字段错误。
+
+已验证的修复方向：卷末变体 form 使用覆盖 U+9FB5 的局部 CJK fallback，正文维持现有字体，同时增加32项 teaching variant form 的字体覆盖断言。历史 v0.4.0 不覆盖，修复应作为补丁版本重新生成和视觉 QA。
+
+本轮尝试写入 `scripts/build_book_matter.py` 时 GitHub 写路径返回原始错误 `This tool call was blocked by OpenAI's safety checks. Please double check what you are sending.`，记录为 `tooling_write_blocker`；按工程约定停止该写路径，没有绕过。尝试新建勘误 Issue 的写路径也收到同一错误，同样停止该路径。当前维护分支为 `fix/v0.4.1-variant-glyph-fallback-20261007`，尚无修复提交。
