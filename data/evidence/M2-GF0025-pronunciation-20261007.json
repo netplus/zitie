@@ -1,0 +1,251 @@
+{
+  "schema_version": 1,
+  "phase": "M2",
+  "date": "2026-10-07",
+  "kind": "selected_target_morpheme_pronunciation_adjudication",
+  "baseline_commit": "9afb5be95ba87a4cca33b66e8c83a89fc1157d0f",
+  "source": {
+    "source_id": "S11",
+    "publication_id": "GF0025—2021",
+    "title": "国际中文教育中文水平等级标准",
+    "publisher": "教育部/国家语言文字工作委员会",
+    "url": "https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/202111/W020211118507389477190.pdf",
+    "pdf_sha256": "e451fdf0899d9267bbd122db66e7e75bdd2851ad1e6732e47b6e960290d73a63",
+    "pdf_bytes": 51104405,
+    "pdf_pages": 260,
+    "acquisition_record": "sources/reviews/M2-GF0025-2021-acquisition-20261007.json",
+    "recovery": {
+      "artifact_id": 11468789360,
+      "workflow_run_id": 37592557617,
+      "zip_sha256": "3cc2664ca1e928003b03868f6b4b32520861ad175704ea674de3ad698ade82ca"
+    },
+    "identity_review": "reuse_explicit_prior_acquisition_review; this round reads target entries, not a new edition",
+    "scope": "Selected vocabulary entries only. No independent character entry, full reading inventory or formal radical identity is claimed."
+  },
+  "adopted": [
+    {
+      "target": {
+        "batch": "B15",
+        "main_id": 149,
+        "character": "麦",
+        "field": "pronunciation"
+      },
+      "locator": {
+        "section": "词汇表",
+        "level": "6",
+        "table_entry": 888,
+        "pdf_page": 105,
+        "printed_page": 99,
+        "word": "小麦",
+        "printed_pinyin": "xiǎomài",
+        "syllables": [
+          "xiǎo",
+          "mài"
+        ],
+        "target_character_index": 2,
+        "target_syllable_index": 2
+      },
+      "adopted_reading": "mài",
+      "old_pinyin": null,
+      "old_field_status": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+      "old_review": {
+        "phase": "P3",
+        "source_id": "S06",
+        "publication_id": "GF0015—2010",
+        "evidence": "data/evidence/P3-pronunciation-GF0015-original-page.json",
+        "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+        "reviewed_ranges": [
+          {
+            "pdf_pages": [
+              43
+            ],
+            "level": "1",
+            "range": "mǎi/mài→míng"
+          },
+          {
+            "pdf_pages": [
+              74
+            ],
+            "level": "2",
+            "range": "mǎi/mài→měng"
+          },
+          {
+            "pdf_pages": [
+              116
+            ],
+            "level": "3",
+            "range": "má/mǎi/mài"
+          }
+        ],
+        "visual_review": true,
+        "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+      },
+      "new_review": {
+        "phase": "M2",
+        "source_id": "S11",
+        "publication_id": "GF0025—2021",
+        "evidence": "data/evidence/M2-GF0025-pronunciation-20261007.json",
+        "result": "reviewed_M2_GF0025_2021_target_morpheme_pronunciation",
+        "target": "麦",
+        "adopted_reading": "mài",
+        "evidence_kind": "word_target_morpheme_not_independent_character_entry",
+        "locator": {
+          "section": "词汇表",
+          "level": "6",
+          "table_entry": 888,
+          "pdf_page": 105,
+          "printed_page": 99,
+          "word": "小麦",
+          "printed_pinyin": "xiǎomài",
+          "syllables": [
+            "xiǎo",
+            "mài"
+          ],
+          "target_character_index": 2,
+          "target_syllable_index": 2
+        },
+        "pdf_sha256": "e451fdf0899d9267bbd122db66e7e75bdd2851ad1e6732e47b6e960290d73a63",
+        "visual_review": true,
+        "reviewed_at": "2026-10-07",
+        "resolution_boundary": "Only the second morpheme of this explicitly printed two-character word supports the selected target reading. Does not establish a standalone dictionary entry, every reading, official radical name/form/code, structure, or teaching grade of the radical."
+      },
+      "visual_review": {
+        "whole_page_viewed": true,
+        "target_row_viewed_enlarged": true,
+        "target_morpheme_alignment_checked": true,
+        "reviewer": "ChatGPT; same-agent source review, not independent double review"
+      },
+      "application": {
+        "new_field_status": "reviewed_M2_GF0025_2021_target_morpheme_pronunciation",
+        "removed_unresolved": "pronunciation已按S03+GF0015原页审读收口为conflict_fail_closed；仅在取得适用权威读音来源或P4精确身份规则后重开",
+        "displayed_field_changed": "pinyin only",
+        "new_edition_layout_recheck_required": true
+      }
+    },
+    {
+      "target": {
+        "batch": "B18",
+        "main_id": 172,
+        "character": "齿",
+        "field": "pronunciation"
+      },
+      "locator": {
+        "section": "词汇表",
+        "level": "7-9",
+        "table_entry": 4758,
+        "pdf_page": 164,
+        "printed_page": 158,
+        "word": "牙齿",
+        "printed_pinyin": "yáchǐ",
+        "syllables": [
+          "yá",
+          "chǐ"
+        ],
+        "target_character_index": 2,
+        "target_syllable_index": 2
+      },
+      "adopted_reading": "chǐ",
+      "old_pinyin": null,
+      "old_field_status": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+      "old_review": {
+        "phase": "P3",
+        "source_id": "S06",
+        "publication_id": "GF0015—2010",
+        "evidence": "data/evidence/P3-pronunciation-GF0015-original-page.json",
+        "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+        "reviewed_ranges": [
+          {
+            "pdf_pages": [
+              33
+            ],
+            "level": "1",
+            "range": "chī/chí/chǐ→chóng"
+          },
+          {
+            "pdf_pages": [
+              60
+            ],
+            "level": "2",
+            "range": "chī/chí/chǐ→chóng"
+          },
+          {
+            "pdf_pages": [
+              97
+            ],
+            "level": "3",
+            "range": "chī/chí/chǐ/chì→chóng"
+          }
+        ],
+        "visual_review": true,
+        "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+      },
+      "new_review": {
+        "phase": "M2",
+        "source_id": "S11",
+        "publication_id": "GF0025—2021",
+        "evidence": "data/evidence/M2-GF0025-pronunciation-20261007.json",
+        "result": "reviewed_M2_GF0025_2021_target_morpheme_pronunciation",
+        "target": "齿",
+        "adopted_reading": "chǐ",
+        "evidence_kind": "word_target_morpheme_not_independent_character_entry",
+        "locator": {
+          "section": "词汇表",
+          "level": "7-9",
+          "table_entry": 4758,
+          "pdf_page": 164,
+          "printed_page": 158,
+          "word": "牙齿",
+          "printed_pinyin": "yáchǐ",
+          "syllables": [
+            "yá",
+            "chǐ"
+          ],
+          "target_character_index": 2,
+          "target_syllable_index": 2
+        },
+        "pdf_sha256": "e451fdf0899d9267bbd122db66e7e75bdd2851ad1e6732e47b6e960290d73a63",
+        "visual_review": true,
+        "reviewed_at": "2026-10-07",
+        "resolution_boundary": "Only the second morpheme of this explicitly printed two-character word supports the selected target reading. Does not establish a standalone dictionary entry, every reading, official radical name/form/code, structure, or teaching grade of the radical."
+      },
+      "visual_review": {
+        "whole_page_viewed": true,
+        "target_row_viewed_enlarged": true,
+        "target_morpheme_alignment_checked": true,
+        "reviewer": "ChatGPT; same-agent source review, not independent double review"
+      },
+      "application": {
+        "new_field_status": "reviewed_M2_GF0025_2021_target_morpheme_pronunciation",
+        "removed_unresolved": "pronunciation已按S03+GF0015原页审读收口为conflict_fail_closed；仅在取得适用权威读音来源或P4精确身份规则后重开",
+        "displayed_field_changed": "pinyin only",
+        "new_edition_layout_recheck_required": true
+      }
+    }
+  ],
+  "boundaries": {
+    "independent_character_entries": false,
+    "all_readings_of_character_verified": false,
+    "formal_GF0011_2022_identity_promoted": false,
+    "component_name_promoted": false,
+    "structure_promoted": false,
+    "entire_GF0025_exclusion_review": false,
+    "M2_completed": false,
+    "Q1_completed": false
+  },
+  "remaining_characters": [
+    "尢",
+    "弋",
+    "彳",
+    "毋",
+    "邑",
+    "黾",
+    "阜",
+    "黍",
+    "龠"
+  ],
+  "bounded_probe_audit": "sources/reviews/M2-GF0025-pronunciation-audit-20261007.json",
+  "baseline_file_sha256": {
+    "data/B15.json": "e1e95e1a71ef0cd5e74f74d9bb59ab832a6fd2aca58ad6abf151e8a87c62cf80",
+    "data/B18.json": "7aaa00d21a317b8ae139ff0d508047b8b6ce09f45ee345515d711e45bca987d1"
+  }
+}

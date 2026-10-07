@@ -1,0 +1,94 @@
+{
+  "kind": "M2_selected_pronunciation_temporary_render_impact_not_Q1",
+  "date": "2026-10-07",
+  "upstream_baseline_commit": "9afb5be95ba87a4cca33b66e8c83a89fc1157d0f",
+  "pdf_source_review": "data/evidence/M2-GF0025-pronunciation-20261007.json",
+  "affected": [
+    {
+      "main_id": 149,
+      "character": "麦",
+      "pinyin": "mài",
+      "batch": "B15",
+      "batch_page_start": 9,
+      "pages": 2
+    },
+    {
+      "main_id": 172,
+      "character": "齿",
+      "pinyin": "chǐ",
+      "batch": "B18",
+      "batch_page_start": 3,
+      "pages": 2
+    }
+  ],
+  "existing_navigation_page_refs": [
+    154,
+    155,
+    200,
+    201
+  ],
+  "temporary_preview_sha256": "55c963f4f5b83b21227251ba6b3b3e0e859b347d623ce7dcad9430ee9447ca75",
+  "temporary_backmatter_sha256": "b96a6a1f38e67717d3174da5aaddc68cc42aa3519ef550ee96b9c79a97522bb7",
+  "pixel_regression": {
+    "dpi": 120,
+    "sample_pages_changed": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "changes_outside_pinyin_box": [],
+    "excluded_pinyin_box_pt_top_left": [
+      148,
+      96,
+      390,
+      145
+    ],
+    "backmatter_different_pages": [
+      12
+    ],
+    "backmatter_equal_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      13
+    ]
+  },
+  "visual_review": {
+    "reviewer": "ChatGPT; same-agent review",
+    "MuPDF_sample_pages": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "MuPDF_backmatter_pages": [
+      12
+    ],
+    "Poppler_sample_pages": [
+      1,
+      3
+    ],
+    "result": "Displayed accents mài/chǐ are readable on both characters; both continuation pages inspected; no new clipping/overlap in changed pinyin block. S11 source line fits on existing ledger page.",
+    "scope": "Only affected samples plus source-ledger page; not final v0.5.0 or Q1."
+  },
+  "formal_PDF_published": false,
+  "Q1_completed": false,
+  "original_source_or_font_exported": false,
+  "inputs_sha256": {
+    "data/B15.json": "7f1577e54531725f460d024b9d239de56c1c2d3912f1e8561885e8f0557f2847",
+    "data/B18.json": "1f173d53aff61bfbe3848b282c62c6d84ec57132065d26dab180e74bf5a7c76b",
+    "sources/catalog.json": "b8c6ada7a6369b3a2a0d133241e197b20ea984258a651de71e20694214890100",
+    "scripts/build_batch.py": "1925dd55a5b31c5d27032121e0f24ae26b75031e3d168a32544a99f834afa915",
+    "scripts/build_book_matter.py": "5382d135a7edb6bdcdc6f512c3dfc50e9bce652e11e9c8293c1e1cecaf2d3547"
+  },
+  "blocking_findings_in_scope": 0
+}
