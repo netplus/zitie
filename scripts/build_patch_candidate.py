@@ -21,8 +21,8 @@ def load(path):
     return json.loads((ROOT / path).read_text(encoding='utf-8'))
 
 
-def build(args):
-    edition = PatchEdition(args.version)
+def build(args, mode='candidate'):
+    edition = PatchEdition(args.version, mode=mode)
     out = ROOT / 'build' / ('v' + edition.identifier)
     out.mkdir(parents=True, exist_ok=True)
     coverage = load('data/coverage.json')
@@ -37,7 +37,7 @@ def build(args):
         args.variant_font, [v['form'] for v in variants['items']], args.variant_subfont)
     files = []
     preface = out / 'preface.pdf'
-    frontmatter(preface, 'candidate', edition=edition)
+    frontmatter(preface, edition.mode, edition=edition)
     files.append(preface)
     toc = out / 'toc.pdf'
     build_toc(toc, font, edition=edition)
@@ -46,7 +46,7 @@ def build(args):
     for bid in expected_batches:
         batch = load(f'data/{bid}.json')
         validate(coverage, batches, variants, batch)
-        pdf = out / (bid + '_candidate_A4.pdf')
+        pdf = out / (bid + '_' + edition.mode + '_A4.pdf')
         c = canvas.Canvas(str(pdf), pagesize=A4, pageCompression=1, invariant=1)
         c.setTitle(bid + '笔顺练字帖｜' + edition.label)
         page_number = 1
@@ -55,7 +55,7 @@ def build(args):
             raw = (ROOT / 'build/vectors' / f'{ord(char):04X}.json').read_bytes()
             art, audit = apply_artwork(char, raw)
             data = prepare(art, stroke_count(entry))
-            pages = make_entry_pages(c, entry, data, page_number, 'candidate', batch, edition=edition)
+            pages = make_entry_pages(c, entry, data, page_number, edition.mode, batch, edition=edition)
             checks.append({'main_id': entry['main_id'], 'character': char, 'batch': bid,
                            'pages': pages, 'vector_sha256': hashlib.sha256(raw).hexdigest(),
                            'artwork_audit': audit})
@@ -77,7 +77,7 @@ def build(args):
     _, _, nav, _ = build_navigation()
     p2 = coverage['phase1_content_progress']['p2_fine_stroke_names']
     source = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=ROOT, text=True).strip()
-    meta = {'schema_version': 1, 'version': edition.identifier, 'mode': 'candidate',
+    meta = {'schema_version': 1, 'version': edition.identifier, 'mode': edition.mode,
             'pdf': full.name, 'pages': pages, 'bytes': len(raw),
             'sha256': hashlib.sha256(raw).hexdigest(), 'source_commit': source,
             'variant_font': font_audit,
@@ -86,21 +86,21 @@ def build(args):
             'main_count': len(checks), 'practice_pages': sum(x['pages'] for x in checks),
             'entries': checks, 'navigation': nav,
             'p2_summary_scope': {'scope': p2['scope'], 'target_count': p2['target_count']},
-            'corrected_errata': ['E001', 'E002'], 'visual_review': 'pending',
-            'status': 'candidate_generated_not_archived', 'release_eligible': False}
+            'corrected_errata': ['E001', 'E002'] + (['E004'] if mode == 'formal' else []), 'visual_review': 'pending',
+            'status': edition.mode + '_generated_not_archived', 'release_eligible': False}
     (out / 'generation.json').write_text(json.dumps(meta, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
     print(json.dumps({k: meta[k] for k in ('version', 'pdf', 'pages', 'bytes', 'sha256', 'source_commit', 'status')}, ensure_ascii=False, indent=2))
     return meta
 
 
-def main():
+def main(mode='candidate'):
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument('--version', default='0.4.1')
     p.add_argument('--font', default='/usr/share/fonts/truetype/arphic-gkai00mp/gkai00mp.ttf')
     p.add_argument('--latin-font', default='/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf')
     p.add_argument('--variant-font', default='/usr/share/fonts/truetype/arphic/uming.ttc')
     p.add_argument('--variant-subfont', type=int, default=0)
-    build(p.parse_args())
+    build(p.parse_args(), mode=mode)
 
 
 if __name__ == '__main__':
