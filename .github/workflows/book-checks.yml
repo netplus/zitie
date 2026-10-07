@@ -29,6 +29,8 @@ jobs:
           python scripts/test_deliverables.py
           python scripts/verify_post_release.py --self-test
           python scripts/verify_post_release.py
+          python scripts/verify_m2_reopens.py --self-test
+          python scripts/verify_m2_reopens.py
           if [ -n "$BASE_SHA" ]; then
             python scripts/verify_deliverables.py --base-ref "$BASE_SHA"
           else
