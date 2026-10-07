@@ -1,0 +1,48 @@
+{
+  "schema_version": 1,
+  "phase": "P6",
+  "page_size": "A4 portrait",
+  "palette": {
+    "current_stroke": "#BB3D42",
+    "previous_stroke": "#5F6264",
+    "full_glyph": "#282B2D",
+    "trace_red": "#BB3D42",
+    "trace_gray": "#9A9D9F",
+    "grid": "#D9D9D9"
+  },
+  "typography": {
+    "ui_font": "Noto Sans CJK SC (system font; not stored in repo)",
+    "glyph_source": "Hanzi Writer / Make Me a Hanzi fixed vector revision 68d10a4b21150cae5e1ebbd223eed289cf32d90c"
+  },
+  "simple_page": {
+    "max_strokes": 6,
+    "pages_per_item": 1,
+    "sections": [
+      "large exemplar + pinyin/structure/name",
+      "cumulative stroke demonstration",
+      "two teaching tips + self-check",
+      "4x8 practice grid"
+    ]
+  },
+  "complex_page": {
+    "min_strokes": 7,
+    "pages_per_item": 2,
+    "page1": "large exemplar + metadata + full cumulative stroke demonstration",
+    "page2": "teaching tips + self-check + 4x8 practice grid",
+    "principle": "paginate rather than shrink stroke-demo cells"
+  },
+  "practice_grid": {
+    "columns": 8,
+    "rows": 4,
+    "row1": "red tracing repeated in all 8 cells",
+    "row2": "light-gray tracing repeated in all 8 cells",
+    "row3": "gray exemplars with alternating blank cells",
+    "row4": "sparser gray exemplars with blank cells"
+  },
+  "fail_closed_policy": {
+    "fine_stroke_names": "If no adjudicated sequence exists, label steps only as 第N笔; do not invent a stroke name.",
+    "pronunciation": "If not applicable/fail-closed, display 本项不标 rather than borrowing a dictionary/example reading.",
+    "component_name": "If source-blocked, display — rather than inventing a name."
+  },
+  "status_boundary": "Layout preview and visual QA do not create deliverable PDFs or release eligibility. P7 owns deliverables/drafts, manifest, full-book PDF QA and release."
+}
