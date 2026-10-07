@@ -1,0 +1,92 @@
+{
+  "schema_version": 1,
+  "record_kind": "P6_full_book_layout_prototype",
+  "reviewed_at": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "phase": "P6",
+  "baseline_main_merge": "171e9496b0bb480da91b3bfedafa35daec0bfb4c",
+  "baseline_main_note": "PR #46 merge; 201/201 artwork_ready on main.",
+  "local_source_tree": "f5f774e363d7f25f9737f7ec87bdd16ffe03ccac",
+  "local_source_tree_equivalence": {
+    "compared_to_main": "171e9496b0bb480da91b3bfedafa35daec0bfb4c",
+    "file_diff_count": 0,
+    "note": "GitHub compare reported no file differences; commits differ only by merge topology."
+  },
+  "renderer": {
+    "path": "scripts/render_layout_review.py",
+    "branch": "feat/p6-layout-review-20261007",
+    "commit": "7061a3d839163a3963203c98e80e8660a83b3cd6",
+    "publication_output": false,
+    "complex_pagination_rule": "at most 6 cumulative-stroke steps per A4 page; practice grid is not shrunk",
+    "fail_closed_policy": "Do not print disputed/source-blocked fine-stroke names; do not invent missing pronunciation; preserve canonical structure/source boundaries."
+  },
+  "vector_material": {
+    "workflow_run_id": 37549583534,
+    "artifact_id": 11452520358,
+    "source_revision": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+    "boundary": "Pinned drawing material only; normative semantics remain from reviewed content evidence."
+  },
+  "generation": {
+    "target_count": 201,
+    "page_count": 258,
+    "complex_target_count": 53,
+    "combined_pdf": "P6-layout-review-A4.pdf",
+    "combined_pdf_sha256": "0471016950379008f91cf4b647b569205070400c5c25eb7ae0e4642c3c0b6fa2",
+    "pdf_preflight": {
+      "openable": true,
+      "encrypted": false,
+      "page_count": 258,
+      "xfa_present": false
+    },
+    "selected_batch_hashes": {
+      "B01": {
+        "pages": 10,
+        "sha256": "8dad4babf5a80c9fbad61a43bf45c0ebcf650e93909082c1411b46117335adfa"
+      },
+      "B08": {
+        "pages": 10,
+        "sha256": "b403a2cb3da3ac38456373a0a68110e093b0830496e1d066af3363b10db50377"
+      },
+      "B12": {
+        "pages": 10,
+        "sha256": "3fb5d8e3aefeeaf1db24429cfe998f33550867d0399e61003f3137f9d6691b21"
+      },
+      "B15": {
+        "pages": 12,
+        "sha256": "e361485f956785578956bd1ff14879af1d6f937fbd9852c004e11f3a895c1c91"
+      },
+      "B20": {
+        "pages": 23,
+        "sha256": "461f5a1ca48cb4941d7a32190cde1d074f0ab2772a4009b2af315385fb1b0b40"
+      },
+      "B21": {
+        "pages": 3,
+        "sha256": "7c5dd94f7d3f77986ad9ad1d5cd39e84098f611ab29e7b6e9aff3a68b8eaca4b"
+      }
+    }
+  },
+  "manual_layout_spot_review": {
+    "reviewed_samples": [
+      "B01 一 single-page baseline",
+      "B08 乛 non-lexical/no-pinyin fallback-font path",
+      "B12 屮 fail-closed fine-stroke-name label suppression",
+      "B15 麦 two-page pagination",
+      "B20 高 two-page pagination",
+      "B20 鼎 two-page pagination",
+      "B20 鼓 three-page pagination",
+      "B21 龠 three-page/17-stroke pagination"
+    ],
+    "result": "spot_review_passed",
+    "observations": [
+      "current stroke red / previous strokes gray are preserved",
+      "practice grid remains full-size on final page",
+      "no obvious clipping or overlap in reviewed samples",
+      "complex targets paginate without shrinking the cumulative-step cells",
+      "non-applicable or fail-closed pronunciation/fine-stroke labels are not fabricated"
+    ],
+    "limits": "This is a representative high-risk spot review, not the full 258-page layout acceptance."
+  },
+  "status": "prototype_generated_spot_reviewed_full_layout_review_pending",
+  "next_gate": "full 258-page visual layout QA, then persist layout_ready state before entering P7",
+  "deliverable_boundary": "Temporary P6 layout-review output only; not stored in deliverables/drafts, not in manifest, not a release."
+}
