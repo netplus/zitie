@@ -1,6 +1,6 @@
 # 当前编写状态
 
-更新：2026-10-07。P1—P6均已完成，当前活动阶段为P7：PDF、全书QA与正式发布。
+更新：2026-10-07。P1—P6均已完成，P0—P7已全部完成；当前为v0.4.0正式发布后的维护状态。
 
 ## 最新阶段检查点：P6完成并进入P7（2026-10-07）
 
@@ -709,3 +709,41 @@ RC1已通过一次性feature-branch归档流程真实写入：
 
 **当前仍未宣布P7完成。** 唯一剩余门槛是本正式release归档PR的目标HEAD CI；只有该CI成功后才更新P7为completed并合入main。
 
+
+
+## P7完成：v0.4.0正式发布（2026-10-07）
+
+全书正式发布门槛已全部通过。
+
+正式PDF：
+- 路径：`deliverables/releases/v0.4.0/B01-B21_with_preface_toc_appendices_v0.4.0_A4.pdf`
+- 页数：276
+- 字节数：3,749,164
+- SHA256：`ab3c23d7547872f4d0e2c128de397e9e89ed6de97b681876e2dff017ff5c4894`
+- formal preflight source HEAD：`9149a6e9b751bfbc97e95c3bbfc64a5c8681f7fd`
+- formal preflight run：`37570965306`
+- visual QA：`reviews/P7-formal-v0.4.0-visual-QA-20261007.md`
+
+最终release归档PR：
+- PR #55
+- HEAD：`61ab933143137766f3fb00e5f946e7897d2e2349`
+- Book integrity checks run：`37571448193` — **success**
+- merge commit：`576812fec7cc681df45ed85b36f51a1abe5ad4bb`
+
+`deliverables/manifest.json`正式条目为`status=released`、`release_eligible=true`，并保存release gate snapshot。
+
+全书最终里程碑：
+- 201/201 content_ready
+- 201/201 artwork_ready
+- 201/201 layout_ready
+- 正式PDF已归档
+- P0—P7全部完成
+
+发布版继续公开披露终态fail-closed边界：
+- fine_stroke_names：14项
+- position_migration：3项（屮、毋、瓦）
+- GF0011—2022逐项精确主形/附形/名称/编码：201项source_blocked_fail_closed
+
+这些是有明确重开条件的终态边界，不是未分类普通pending；正式发布不伪造GF0011—2022未公开逐项数据。
+
+后续仅进入维护/勘误模式；若GF0011—2022正式逐项数据出现可重复公开通道，再按现有reopen_condition开启新版本修订。
