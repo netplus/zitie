@@ -853,11 +853,11 @@
     ],
     "batches_content_in_progress": [],
     "next_assignment_starts_at": null,
-    "next_work": "P6_artwork_layout_full_book",
-    "note": "P6 active. Artwork QA is complete: 201/201 main radicals artwork_ready after manual cumulative-stroke visual review. Remaining P6 gate is unified A4 layout/practice hierarchy/complex-character pagination review. PDF archival/manifest/full-book visual QA/release remain P7.",
+    "next_work": "P7_full_book_PDF_QA_manifest_release",
+    "note": "P6 complete: 201/201 artwork_ready and full-book A4 layout/complex-character pagination review passed on 258/258 rendered practice pages. P7 active for draft archival, manifest, full-book PDF/TOC/page/index QA, target-HEAD CI and release.",
     "stroke_order_reviewed_main_count": 201,
     "stroke_order_pending_main_count": 0,
-    "active_remaining_phase": "P6",
+    "active_remaining_phase": "P7",
     "p2_fine_stroke_names": {
       "status": "completed",
       "scope": "B04-B21",
@@ -1083,7 +1083,7 @@
       "completion_review": "reviews/P5-completion-20261007.md"
     },
     "p6_artwork_layout": {
-      "status": "in_progress",
+      "status": "completed",
       "vector_material_coverage": {
         "target_count": 201,
         "compatible": 201,
@@ -1175,7 +1175,19 @@
         "review": "reviews/P6-B12-B21-artwork-review-20261007.md",
         "evidence_range": "data/evidence/P6-B12-artwork-review.json through P6-B21-artwork-review.json"
       },
-      "next_gate": "full_book_A4_layout_and_complex_character_pagination_review"
+      "next_gate": "P7_draft_archive_manifest_full_book_QA_target_HEAD_CI_release",
+      "completed_at": "2026-10-07",
+      "layout_ready": {
+        "status": "complete",
+        "main_count": 201,
+        "rendered_practice_pages": 258,
+        "workflow_run_id": 37560963767,
+        "workflow_head_sha": "dcb52d2af614d58eb4893228bce170f6105aade3",
+        "artifact_id": 11456961693,
+        "artifact_digest": "sha256:c87ce0b3d3bd7daa5d713bc54500223daa339b62e7581141560ac84dff64b7e1",
+        "evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+        "review": "reviews/P6-full-book-layout-review-20261007.md"
+      }
     }
   }
 }
