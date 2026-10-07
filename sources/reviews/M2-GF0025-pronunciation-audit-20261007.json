@@ -1,0 +1,148 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-07",
+  "phase": "M2",
+  "source_id": "S11",
+  "publication_id": "GF0025—2021",
+  "pdf_sha256": "e451fdf0899d9267bbd122db66e7e75bdd2851ad1e6732e47b6e960290d73a63",
+  "source_acquisition_record": "sources/reviews/M2-GF0025-2021-acquisition-20261007.json",
+  "purpose": "Bounded source audit of the 11 residual pronunciation targets; not an exhaustive absence claim.",
+  "adopted_evidence": "data/evidence/M2-GF0025-pronunciation-20261007.json",
+  "adopted_count": 2,
+  "remaining_count": 9,
+  "bounded_probes": [
+    {
+      "character": "尢",
+      "pdf_pages": [
+        168
+      ],
+      "scope": "七—九级词汇表you候选段；不覆盖全书或全部词中位置",
+      "result": "no_admissible_reading_in_inspected_candidate_ranges",
+      "canonical_status_changed": false,
+      "entire_source_absence_claimed": false
+    },
+    {
+      "character": "弋",
+      "pdf_pages": [
+        167,
+        168
+      ],
+      "scope": "七—九级yi候选段与you/游词头段；未以常识或古音补值",
+      "result": "no_admissible_reading_in_inspected_candidate_ranges",
+      "canonical_status_changed": false,
+      "entire_source_absence_claimed": false
+    },
+    {
+      "character": "彳",
+      "pdf_pages": [
+        114
+      ],
+      "scope": "七—九级chi候选段；不把字形相似或部件名代替读音",
+      "result": "no_admissible_reading_in_inspected_candidate_ranges",
+      "canonical_status_changed": false,
+      "entire_source_absence_claimed": false
+    },
+    {
+      "character": "毋",
+      "pdf_pages": [
+        144,
+        160
+      ],
+      "scope": "七—九级ning/宁与wu候选段；未见可采用的目标词素",
+      "result": "no_admissible_reading_in_inspected_candidate_ranges",
+      "canonical_status_changed": false,
+      "entire_source_absence_claimed": false
+    },
+    {
+      "character": "邑",
+      "pdf_pages": [
+        167
+      ],
+      "scope": "七—九级yi候选段",
+      "result": "no_admissible_reading_in_inspected_candidate_ranges",
+      "canonical_status_changed": false,
+      "entire_source_absence_claimed": false
+    },
+    {
+      "character": "黾",
+      "pdf_pages": [
+        142
+      ],
+      "scope": "七—九级men/meng/min候选段",
+      "result": "no_admissible_reading_in_inspected_candidate_ranges",
+      "canonical_status_changed": false,
+      "entire_source_absence_claimed": false
+    },
+    {
+      "character": "阜",
+      "pdf_pages": [
+        122,
+        123
+      ],
+      "scope": "七—九级fu候选段及相邻页边界",
+      "result": "no_admissible_reading_in_inspected_candidate_ranges",
+      "canonical_status_changed": false,
+      "entire_source_absence_claimed": false
+    },
+    {
+      "character": "黍",
+      "pdf_pages": [
+        153
+      ],
+      "scope": "七—九级shu候选段",
+      "result": "no_admissible_reading_in_inspected_candidate_ranges",
+      "canonical_status_changed": false,
+      "entire_source_absence_claimed": false
+    },
+    {
+      "character": "龠",
+      "pdf_pages": [
+        169
+      ],
+      "scope": "七—九级yue候选段",
+      "result": "no_admissible_reading_in_inspected_candidate_ranges",
+      "canonical_status_changed": false,
+      "entire_source_absence_claimed": false
+    }
+  ],
+  "exclusions": {
+    "not_applicable_targets_reopened": false,
+    "prior_not_applicable_count": 34,
+    "rules": "No text-layer negative is used as absence evidence; no OCR or secondary transcription is used as a normative reading."
+  },
+  "actual_target_pages": [
+    105,
+    164
+  ],
+  "actual_other_pages_viewed": [
+    21,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    42,
+    67,
+    79,
+    101,
+    114,
+    122,
+    123,
+    124,
+    141,
+    142,
+    144,
+    153,
+    160,
+    165,
+    167,
+    168,
+    169
+  ],
+  "additional_page_scope": "Character-table and navigation pages assist locating only; this list does not make every row on these pages an adjudicated entry. The 9 negative probes are restricted to the specified candidate segments.",
+  "method": "Read full original target pages, then enlarged exact rows; compare target character index with syllable index. Only two clear morpheme readings are adopted.",
+  "next_work": "Find applicable direct entries or additional unambiguous morpheme evidence for 9 remaining targets; current bounded probes do not finish the pronunciation source audit or M2."
+}

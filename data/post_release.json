@@ -34,9 +34,10 @@
       "entry_source_audit": "sources/reviews/M2-entry-source-audit-20261007.json",
       "latest_checkpoint": {
         "date": "2026-10-07",
-        "review": "reviews/M2-wa-reopen-and-source-acquisition-20261007.md",
+        "review": "reviews/M2-GF0025-pronunciation-20261007.md",
         "adopted_reopens": [
-          "data/evidence/M2-wa-ping-position-20261007.json"
+          "data/evidence/M2-wa-ping-position-20261007.json",
+          "data/evidence/M2-GF0025-pronunciation-20261007.json"
         ],
         "working_position_migration": {
           "reviewed": 199,
@@ -51,9 +52,67 @@
           "conflict_fail_closed": 3
         },
         "new_source_acquisition": "sources/reviews/M2-GF0025-2021-acquisition-20261007.json",
-        "new_source_item_fields_reviewed": 0,
-        "all_M2_scopes_audited": false
-      }
+        "new_source_item_fields_reviewed": 2,
+        "all_M2_scopes_audited": false,
+        "pronunciation_evidence": "data/evidence/M2-GF0025-pronunciation-20261007.json",
+        "pronunciation_source_audit": "sources/reviews/M2-GF0025-pronunciation-audit-20261007.json",
+        "working_pronunciation": {
+          "scope": "B04-B21",
+          "target_count": 171,
+          "reviewed": 128,
+          "not_applicable": 34,
+          "conflict_fail_closed": 9,
+          "conflict_characters": [
+            "尢",
+            "弋",
+            "彳",
+            "毋",
+            "邑",
+            "黾",
+            "阜",
+            "黍",
+            "龠"
+          ]
+        },
+        "current_round": {
+          "field": "pronunciation",
+          "adopted_characters": [
+            "麦",
+            "齿"
+          ],
+          "adopted_count": 2,
+          "bounded_unresolved_probes": 9,
+          "entire_source_exclusion_claimed": false
+        },
+        "visual_impact": {
+          "review": "data/evidence/M2-GF0025-pronunciation-layout-20261007.json",
+          "status": "passed_temporary_affected_samples_not_final_edition_Q1"
+        }
+      },
+      "checkpoint_history": [
+        {
+          "date": "2026-10-07",
+          "review": "reviews/M2-wa-reopen-and-source-acquisition-20261007.md",
+          "adopted_reopens": [
+            "data/evidence/M2-wa-ping-position-20261007.json"
+          ],
+          "working_position_migration": {
+            "reviewed": 199,
+            "conflict_fail_closed": 2,
+            "conflict_characters": [
+              "屮",
+              "毋"
+            ]
+          },
+          "historical_release_position_migration": {
+            "reviewed": 198,
+            "conflict_fail_closed": 3
+          },
+          "new_source_acquisition": "sources/reviews/M2-GF0025-2021-acquisition-20261007.json",
+          "new_source_item_fields_reviewed": 0,
+          "all_M2_scopes_audited": false
+        }
+      ]
     },
     {
       "id": "M3",
@@ -153,7 +212,7 @@
   ],
   "candidate": null,
   "final_release_eligible": false,
-  "next_work": "M2继续：对新取得GF0025—2021的11项读音残余做适用性及原页字条审读；未取得证据不得升级。瓦→瓶映射已闭合，屮/毋保留阻塞；GF0011—2022精确201项及其它字段仍按证据推进，M3/Q1未开始。",
+  "next_work": "M2已采用GF0025小麦/牙齿的目标语素读音，麦mài、齿chǐ两项关闭；剩余9项读音仅有限范围未命中，仍需适用证据，不作全书无条目结论。继续其它M2字段，M3/Q1未开始；旧17份PDF和历史快照不改。",
   "tracking_issue": 58,
   "patch_candidate": {
     "path": "deliverables/drafts/v0.4.1-rc1/B01-B21_v0.4.1-rc1_A4.pdf",

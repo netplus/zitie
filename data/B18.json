@@ -384,7 +384,7 @@
         "evidence": "data/evidence/P3-structure-GF3001-synthesis.json",
         "basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
-      "pinyin": null,
+      "pinyin": "chǐ",
       "component_name": null,
       "baseline_identity": {
         "source_id": "S01-2009",
@@ -401,7 +401,7 @@
         "stroke_count": "reviewed_from_baseline_stroke_group",
         "stroke_order": "reviewed_GF0023_2020_original_page",
         "fine_stroke_names": "reviewed_P2_normative_original_pages",
-        "pronunciation": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+        "pronunciation": "reviewed_M2_GF0025_2021_target_morpheme_pronunciation",
         "component_name": "source_blocked_fail_closed_GF0011_2022_exact_name_not_publicly_released",
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_P4_GF0023_whole_character_original_page",
@@ -409,8 +409,7 @@
       },
       "migration_boundary": "“龄”只作为当前整字语境；位置形态、主附关系和完整时序须回规范原页与整字证据核验。",
       "unresolved": [
-        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
-        "pronunciation已按S03+GF0015原页审读收口为conflict_fail_closed；仅在取得适用权威读音来源或P4精确身份规则后重开"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "component_name_status": "S03_no_exact_standalone_row_alternative_source_pending",
       "structure_review": {
@@ -420,38 +419,35 @@
         "structure_class": "decomposable",
         "membership_basis": "S07 original-table review found no exact undecomposable entry; A01 complete comparison shows target absent from GF3001-only 39 supplement, therefore outside combined 295 independent-character set"
       },
-      "pinyin_status": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+      "pinyin_status": "reviewed_M2_GF0025_2021_target_morpheme_pronunciation",
       "pronunciation_review": {
-        "phase": "P3",
-        "source_id": "S06",
-        "publication_id": "GF0015—2010",
-        "evidence": "data/evidence/P3-pronunciation-GF0015-original-page.json",
-        "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
-        "reviewed_ranges": [
-          {
-            "pdf_pages": [
-              33
-            ],
-            "level": "1",
-            "range": "chī/chí/chǐ→chóng"
-          },
-          {
-            "pdf_pages": [
-              60
-            ],
-            "level": "2",
-            "range": "chī/chí/chǐ→chóng"
-          },
-          {
-            "pdf_pages": [
-              97
-            ],
-            "level": "3",
-            "range": "chī/chí/chǐ/chì→chóng"
-          }
-        ],
+        "phase": "M2",
+        "source_id": "S11",
+        "publication_id": "GF0025—2021",
+        "evidence": "data/evidence/M2-GF0025-pronunciation-20261007.json",
+        "result": "reviewed_M2_GF0025_2021_target_morpheme_pronunciation",
+        "target": "齿",
+        "adopted_reading": "chǐ",
+        "evidence_kind": "word_target_morpheme_not_independent_character_entry",
+        "locator": {
+          "section": "词汇表",
+          "level": "7-9",
+          "table_entry": 4758,
+          "pdf_page": 164,
+          "printed_page": 158,
+          "word": "牙齿",
+          "printed_pinyin": "yáchǐ",
+          "syllables": [
+            "yá",
+            "chǐ"
+          ],
+          "target_character_index": 2,
+          "target_syllable_index": 2
+        },
+        "pdf_sha256": "e451fdf0899d9267bbd122db66e7e75bdd2851ad1e6732e47b6e960290d73a63",
         "visual_review": true,
-        "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+        "reviewed_at": "2026-10-07",
+        "resolution_boundary": "Only the second morpheme of this explicitly printed two-character word supports the selected target reading. Does not establish a standalone dictionary entry, every reading, official radical name/form/code, structure, or teaching grade of the radical."
       },
       "stroke_order_secondary_locator": {
         "evidence": "data/evidence/B18-stroke-order-secondary-locator.json",
@@ -676,7 +672,41 @@
         "evidence": "data/evidence/P6-B12-B19-prose-regression-correction.json",
         "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
         "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
-      }
+      },
+      "pronunciation_review_history": [
+        {
+          "phase": "P3",
+          "source_id": "S06",
+          "publication_id": "GF0015—2010",
+          "evidence": "data/evidence/P3-pronunciation-GF0015-original-page.json",
+          "result": "conflict_fail_closed_no_S03_or_S06_target_pronunciation",
+          "reviewed_ranges": [
+            {
+              "pdf_pages": [
+                33
+              ],
+              "level": "1",
+              "range": "chī/chí/chǐ→chóng"
+            },
+            {
+              "pdf_pages": [
+                60
+              ],
+              "level": "2",
+              "range": "chī/chí/chǐ→chóng"
+            },
+            {
+              "pdf_pages": [
+                97
+              ],
+              "level": "3",
+              "range": "chī/chí/chǐ/chì→chóng"
+            }
+          ],
+          "visual_review": true,
+          "resolution_boundary": "S03 original-page review did not directly support the target-self pronunciation; all GF0015 initial/intermediate/advanced pinyin-sorted candidate ranges listed here were visually reviewed without a target entry or unambiguous target morpheme. Do not import a dictionary/classical reading. Reopen only with an applicable authoritative pronunciation source or P4 exact identity rule."
+        }
+      ]
     },
     {
       "character": "黾",

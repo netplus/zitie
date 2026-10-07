@@ -1872,6 +1872,49 @@
         "printed pp.34-37, GF3001 230 independent characters and S07/GF3001 comparison"
       ],
       "limits": "不是语言文字规范，不作为独立权威体系；仅用于完整转录/交叉GF3001与S07的成员集合，结构结论的规范语义来自S10/S07。"
+    },
+    {
+      "id": "S11",
+      "title": "国际中文教育中文水平等级标准",
+      "publication_id": "GF0025—2021",
+      "publisher": "教育部/国家语言文字工作委员会",
+      "status": "official_original_selected_morpheme_pronunciation_reviewed",
+      "urls": [
+        "https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/202111/W020211118507389477190.pdf"
+      ],
+      "sha256": "e451fdf0899d9267bbd122db66e7e75bdd2851ad1e6732e47b6e960290d73a63",
+      "bytes": 51104405,
+      "pdf_pages": 260,
+      "checked_at": "2026-10-07",
+      "role": [
+        "selected_target_morpheme_pronunciation"
+      ],
+      "acquisition_record": "sources/reviews/M2-GF0025-2021-acquisition-20261007.json",
+      "reviewed_pdf_pages": [
+        105,
+        164
+      ],
+      "target_entries": [
+        {
+          "word": "小麦",
+          "level": "6",
+          "entry": 888,
+          "pdf_page": 105,
+          "adopted_target": "麦",
+          "adopted_reading": "mài"
+        },
+        {
+          "word": "牙齿",
+          "level": "7-9",
+          "entry": 4758,
+          "pdf_page": 164,
+          "adopted_target": "齿",
+          "adopted_reading": "chǐ"
+        }
+      ],
+      "evidence": "data/evidence/M2-GF0025-pronunciation-20261007.json",
+      "bounded_probe_audit": "sources/reviews/M2-GF0025-pronunciation-audit-20261007.json",
+      "limits": "仅采用两个词条中第二语素的标注读音，不声称独立字条、全部读音、正式部首名称/附形/编码或结构；其余9项仅作有限范围探查，未证明整部标准未收录。"
     }
   ]
 }
