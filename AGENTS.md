@@ -14,7 +14,7 @@
 
 阶段1的content_ready不等于release_eligible。正式发布仍必须完成图形、版式、PDF、manifest、CI和全书级门槛。
 
-\n## 剩余完书阶段\n\n2026-10-06起按\`docs/REMAINING_PHASE_PLAN.md\`分阶段收口。P0规范源通道已完成，当前活动阶段为**P7：PDF、全书QA与正式发布**。\n\n- P1—P4继续以80个不同主部首/轮为常规吞吐；\n- P0、P5—P7按阶段门槛推进，不为了计数凑80项；\n- 不再横向增加D05/D06等secondary数据源，除非规范原件出现真实无法定位的缺口；\n- secondary locator/crosscheck只用于原页定位和风险筛选，不能授予最终reviewed；\n- 当前优先级：全书draft归档 → manifest → 全书PDF/目录/页码/索引视觉QA → 目标HEAD CI → release candidate → 正式release。P1—P6已完成；201/201 content_ready、201/201 artwork_ready且layout_ready。GF0011—2022逐项精确字段继续保持source-blocked fail-closed，不在P7伪造补值。\n\n## 接续入口
+\n## 剩余完书阶段\n\n2026-10-06起按\`docs/REMAINING_PHASE_PLAN.md\`分阶段收口。P0规范源通道已完成，**P0—P7已全部完成；v0.4.0正式PDF已进入`deliverables/releases/`。**\n\n- P1—P4继续以80个不同主部首/轮为常规吞吐；\n- P0、P5—P7按阶段门槛推进，不为了计数凑80项；\n- 不再横向增加D05/D06等secondary数据源，除非规范原件出现真实无法定位的缺口；\n- secondary locator/crosscheck只用于原页定位和风险筛选，不能授予最终reviewed；\n- 当前状态：正式v0.4.0已发布；后续只做维护、勘误或新权威来源触发的重开。201/201 content_ready、201/201 artwork_ready且layout_ready；GF0011—2022逐项精确字段继续保持source-blocked fail-closed，不因正式发布伪造补值。\n\n## 接续入口
 先读README.md、docs/STATUS.md、docs/CONTENT_FIRST_WORKFLOW.md、docs/EDITORIAL_PLAN.md、data/coverage.json和当前批次文件；再读当前分支、开放Issue及PR。仓库事实优先于会话记忆。不重新从零规划，不把阶段稿改名充当终审稿。
 
 ## 授权边界
