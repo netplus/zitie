@@ -1,0 +1,81 @@
+{
+  "schema_version": 1,
+  "record_kind": "P7_RC1_visual_QA",
+  "review_date": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source_commit": "37ecce8f0f8447d0405b0b1a342863f8e1e844a8",
+  "workflow_run": 37569445886,
+  "artifact": {
+    "id": 11460206893,
+    "name": "zitie-p7-draft-and-rc1-research",
+    "digest": "sha256:897bbbc80b432900b0d1cd5e19386a40cb796177240e5b065fde3b5d8b565d12"
+  },
+  "candidate": {
+    "file": "B01-B21_with_preface_toc_appendices_rc1_A4.pdf",
+    "pages": 276,
+    "status": "release_candidate_QA_passed_not_archived_not_formal_release"
+  },
+  "text_preflight": {
+    "forbidden_labels_zero": [
+      "编写中",
+      "编写稿",
+      "前言初稿"
+    ],
+    "candidate_markers": {
+      "preface_pages": 3,
+      "practice_pages": 258,
+      "total": 261
+    },
+    "fail_closed_disclosure_retained": true,
+    "formal_release_still_zero": true
+  },
+  "visual_review": {
+    "dpi": 150,
+    "sampled_pages": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      238,
+      259,
+      260,
+      261,
+      263,
+      264,
+      269,
+      270,
+      273,
+      275,
+      276
+    ],
+    "sampled_count": 16,
+    "result": "passed",
+    "checks": [
+      "candidate preface label is clear and no draft-status banner is visible",
+      "TOC pages are legible and unclipped",
+      "ordinary practice-page layout remains stable",
+      "B20 complex continuation pages preserve grid size and step sequence",
+      "B21 龠 17-stroke continuation pages are complete and unclipped",
+      "201-main-radical index first/last ranges are legible",
+      "variant and legacy27 tables are legible",
+      "source ledger and version/release-status pages are legible"
+    ]
+  },
+  "inherited_review_boundary": {
+    "practice_pages": "258 pages already fully reviewed in P6 layout evidence; RC1 changes status labels/preface mode, not stroke artwork/layout geometry",
+    "navigation_backmatter": "15 pages fully reviewed in P7 structured-draft visual QA",
+    "references": [
+      "data/evidence/P6-full-book-layout-review-20261007.json",
+      "reviews/P6-full-book-layout-review-20261007.md",
+      "data/evidence/P7-structured-draft-visual-QA-20261007.json",
+      "reviews/P7-structured-draft-visual-QA-20261007.md"
+    ]
+  },
+  "non_claims": [
+    "This record does not create deliverables/releases/.",
+    "This record does not convert source_blocked_fail_closed or conflict_fail_closed fields to reviewed.",
+    "This record does not claim an independent second reviewer."
+  ]
+}

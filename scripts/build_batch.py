@@ -119,7 +119,7 @@ def source_caption(e):
         return f'依据：GF0023—2020，第{printed}页'
     return '依据：已入库并审读的笔顺证据'
 
-def make_page(c,e,data,page_number,draft,batch,step_start,step_end,part,total_parts):
+def make_page(c,e,data,page_number,mode,batch,step_start,step_end,part,total_parts):
     n=len(data[0])
     names=reviewed_stroke_names(e,n)
     continuation=part>1
@@ -169,24 +169,32 @@ def make_page(c,e,data,page_number,draft,batch,step_start,step_end,part,total_pa
             if row<2 or col==0: glyph(c,data,x,y,cell,['trace','pale','ink','ink'][row])
     wrapped_text(c,LEFT,94,'写完检查：'+e['check'],10,color='muted',width=RIGHT-LEFT,leading=12,max_lines=2)
     c.setStrokeColor(HexColor(COL['guide'])); c.line(LEFT,74,RIGHT,74)
-    label=batch.get('draft_label','编写稿') if draft else '已通过本工程发布门槛。'
-    text(c,LEFT,58,label,8,color='red' if draft else 'muted')
+    if mode=='draft':
+        label=batch.get('draft_label','编写稿')
+        label_color='red'
+    elif mode=='candidate':
+        label='发布候选稿 RC1｜已通过候选门槛；正式 release 尚未完成。'
+        label_color='red'
+    else:
+        label='已通过本工程正式发布门槛。'
+        label_color='muted'
+    text(c,LEFT,58,label,8,color=label_color)
     artnote='；横折收笔已整理。' if e.get('artwork_override') else '。'
     text(c,LEFT,43,source_caption(e)+'；矢量：Hanzi Writer / Arphic PL'+artnote,8,color='muted',width=RIGHT-LEFT)
     text(c,LEFT,29,'打印：A4纵向，实际大小 / 100%；建议彩色。',8,color='muted')
     text(c,RIGHT-82,29,f"{batch['batch_id']} / {page_number:03} / {part}-{total_parts}",8,color='muted',font='Latin')
     c.showPage()
 
-def make_entry_pages(c,e,data,page_number,draft,batch):
+def make_entry_pages(c,e,data,page_number,mode,batch):
     n=len(data[0])
     total=max(1,math.ceil(n/6))
     for part in range(total):
         start=part*6
         end=min(n,start+6)
-        make_page(c,e,data,page_number+part,draft,batch,start,end,part+1,total)
+        make_page(c,e,data,page_number+part,mode,batch,start,end,part+1,total)
     return total
 
-def frontmatter(path):
+def frontmatter(path,mode):
     body=ParagraphStyle('body',fontName='CJK',fontSize=11.5,leading=20,spaceAfter=9,wordWrap='CJK',firstLineIndent=23)
     heading=ParagraphStyle('heading',parent=body,fontSize=15,leading=24,spaceBefore=11,spaceAfter=8,firstLineIndent=0,textColor=HexColor(COL['red']),keepWithNext=True)
     title=ParagraphStyle('title',parent=heading,fontSize=25,leading=36,spaceBefore=0)
@@ -205,13 +213,23 @@ def frontmatter(path):
         paragraph=Paragraph(html.escape(block).replace('\n','<br/>'),style)
         story.append(KeepTogether([paragraph]) if block.startswith('本字帖采用A4') else paragraph)
     def page(c,doc):
-        text(c,42,H-29,'循序渐进汉字部首字帖 · 前言初稿',9,color='muted')
-        text(c,42,29,'编写中 v'+BOOK['version']+'｜201主项为全书目标，不代表正文已全部审定。',8,color='muted')
+        if mode=='candidate':
+            text(c,42,H-29,'循序渐进汉字部首字帖 · 前言｜发布候选稿 RC1',9,color='muted')
+            text(c,42,29,'v'+BOOK['version']+' RC1｜保留已披露的 fail-closed/source-blocked 边界；正式 release 尚未完成。',8,color='muted')
+        elif mode=='draft':
+            text(c,42,H-29,'循序渐进汉字部首字帖 · 前言初稿',9,color='muted')
+            text(c,42,29,'编写中 v'+BOOK['version']+'｜201主项为全书目标，不代表正文已全部审定。',8,color='muted')
+        else:
+            text(c,42,H-29,'循序渐进汉字部首字帖 · 前言',9,color='muted')
+            text(c,42,29,'正式发布版 v'+BOOK['version'],8,color='muted')
         text(c,W-68,29,str(doc.page),9,color='muted',font='Latin')
     SimpleDocTemplate(str(path),pagesize=A4,leftMargin=42,rightMargin=42,topMargin=57,bottomMargin=55).build(story,onFirstPage=page,onLaterPages=page)
 
 def main():
-    p=argparse.ArgumentParser(); p.add_argument('--draft',action='store_true')
+    p=argparse.ArgumentParser()
+    modes=p.add_mutually_exclusive_group()
+    modes.add_argument('--draft',action='store_true')
+    modes.add_argument('--candidate',action='store_true')
     batch_plan=load('data/batches.json')
     valid_batches=[item['id'] for item in batch_plan['frozen_batches']]
     p.add_argument('--batch',choices=valid_batches,default='B01')
@@ -220,12 +238,14 @@ def main():
     args=p.parse_args()
     cat,batches,variants,batch=(load(n) for n in ['data/coverage.json','data/batches.json','data/variants.json',f'data/{args.batch}.json'])
     validate(cat,batches,variants,batch)
-    if not args.draft and not batch['release_eligible']: raise SystemExit('Formal publication blocked; use --draft for explicit research output.')
+    mode='candidate' if args.candidate else ('draft' if args.draft else 'release')
+    if mode=='release' and not batch['release_eligible']:
+        raise SystemExit('Formal publication blocked; use --draft or --candidate as appropriate.')
     setup_fonts(args.font,args.latin_font)
     out=ROOT/'build'; out.mkdir(exist_ok=True)
-    mode='draft' if args.draft else 'release'
     pdf=out/f'{args.batch}_{mode}_A4.pdf'; c=canvas.Canvas(str(pdf),pagesize=A4,pageCompression=1,invariant=1)
-    c.setTitle(args.batch+'笔顺练字帖'+('（编写稿）' if args.draft else ''))
+    title_suffix='（编写稿）' if mode=='draft' else ('（发布候选稿 RC1）' if mode=='candidate' else '')
+    c.setTitle(args.batch+'笔顺练字帖'+title_suffix)
     checks=[]; page_number=1
     for e in batch['entries']:
         fp=out/'vectors'/f'{ord(e["character"]):04X}.json'; raw=fp.read_bytes()
@@ -233,15 +253,18 @@ def main():
         expected=(e.get('stroke_count') if isinstance(e.get('stroke_count'),int) else
                   len(e.get('stroke_names') or (e.get('fine_stroke_names_review') or {}).get('adjudicated_names') or e.get('stroke_names_candidate') or []))
         d=prepare(artwork,expected)
-        pages=make_entry_pages(c,e,d,page_number,args.draft,batch)
+        pages=make_entry_pages(c,e,d,page_number,mode,batch)
         checks.append({'character':e['character'],'stroke_count':len(d[0]),'sha256':hashlib.sha256(raw).hexdigest(),'artwork_audit':audit,'practice_cells':32*pages,'entry_pages':pages})
         page_number+=pages
-    c.save(); pre=out/BOOK['preface_file']; frontmatter(pre)
+    c.save()
+    pre_name=BOOK['preface_file'] if mode=='draft' else ('preface_v0.4.0_rc1.pdf' if mode=='candidate' else 'preface_v0.4.0_release.pdf')
+    pre=out/pre_name
+    frontmatter(pre,mode)
     writer=PdfWriter()
     for file in [pre,pdf]: writer.append(str(file))
     combined=out/f'{args.batch}_with_preface_{mode}_A4.pdf'
     with combined.open('wb') as stream: writer.write(stream)
-    (out/f'generation_{args.batch}.json').write_text(json.dumps({'draft':args.draft,'entries':checks,'practice_pages':page_number-1,'preface_pages':len(PdfReader(str(pre)).pages),'visual_review':'pending'},ensure_ascii=False,indent=2),encoding='utf-8')
+    (out/f'generation_{args.batch}.json').write_text(json.dumps({'mode':mode,'draft':mode=='draft','candidate':mode=='candidate','entries':checks,'practice_pages':page_number-1,'preface_pages':len(PdfReader(str(pre)).pages),'visual_review':'pending'},ensure_ascii=False,indent=2),encoding='utf-8')
     print(combined)
 
 if __name__=='__main__':main()
