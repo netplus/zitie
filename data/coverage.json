@@ -853,8 +853,8 @@
     ],
     "batches_content_in_progress": [],
     "next_assignment_starts_at": null,
-    "next_work": "P7_full_book_final_QA_manifest_target_HEAD_CI_release",
-    "note": "P7 active. v0.3.0 full-book research draft is permanently archived in deliverables/drafts and registered in manifest. Remaining gates: full-book PDF/TOC/page/index/variant regression QA, manifest final review, target-HEAD CI, release candidate and formal release.",
+    "next_work": "P7_final_release_PR_target_HEAD_CI_then_stage_completion",
+    "note": "P7 formal v0.4.0 PDF is present on the release branch and registered in manifest. Remaining gate: final release PR target-HEAD CI, then mark P7 completed and merge. GF0011—2022 exact item-level fields remain 201 source_blocked_fail_closed.",
     "stroke_order_reviewed_main_count": 201,
     "stroke_order_pending_main_count": 0,
     "active_remaining_phase": "P7",
@@ -1190,7 +1190,7 @@
       }
     },
     "p7_publication": {
-      "status": "in_progress",
+      "status": "release_ready_pending_final_PR_CI",
       "draft_archive": {
         "version": "0.4.0",
         "path": "deliverables/drafts/v0.4.0/B01-B21_with_preface_toc_appendices_draft_A4.pdf",
@@ -1209,9 +1209,11 @@
       "toc_index_page_QA": "passed",
       "variants_and_legacy27_regression": "passed",
       "target_HEAD_CI": {
-        "status": "passed",
-        "merge_commit": "c29574180e1a3f11324313be7e5179c208077d46",
-        "note": "RC1 rendering capability merged after target-HEAD CI; candidate archive PR still requires its own target-HEAD CI."
+        "status": "pending_final_release_PR_HEAD",
+        "formal_preflight_head": "9149a6e9b751bfbc97e95c3bbfc64a5c8681f7fd",
+        "formal_preflight_run": 37570965306,
+        "formal_preflight_result": "success",
+        "note": "Formal PDF artifact and QA passed; final release archive branch must pass target-HEAD CI before P7 is marked completed."
       },
       "release_candidate": {
         "version": "0.4.0-rc1",
@@ -1226,7 +1228,20 @@
         "status": "candidate_archived",
         "release_eligible": false
       },
-      "formal_release": "pending"
+      "formal_release": {
+        "version": "0.4.0",
+        "path": "deliverables/releases/v0.4.0/B01-B21_with_preface_toc_appendices_v0.4.0_A4.pdf",
+        "pages": 276,
+        "bytes": 3749164,
+        "sha256": "ab3c23d7547872f4d0e2c128de397e9e89ed6de97b681876e2dff017ff5c4894",
+        "source_commit": "9149a6e9b751bfbc97e95c3bbfc64a5c8681f7fd",
+        "workflow_run_id": 37570965306,
+        "artifact_id": 11460761965,
+        "review": "reviews/P7-formal-v0.4.0-visual-QA-20261007.md",
+        "status": "released",
+        "release_eligible": true,
+        "terminal_fail_closed_disclosed": true
+      }
     }
   }
 }
