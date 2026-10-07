@@ -48,6 +48,12 @@ jobs:
           python scripts/build_collection.py
           python scripts/verify_book_matter.py
           python scripts/verify_release_candidate.py
+          for N in $(seq -w 1 21); do
+            BATCH="B$N"
+            python scripts/build_batch.py --candidate --batch "$BATCH" --font "$FONT" --latin-font "$LATIN"
+          done
+          python scripts/build_collection.py --candidate
+          python scripts/verify_release_candidate_pdf.py
           git rev-parse HEAD > build/SOURCE_COMMIT.txt
       - name: Check formal publication separately
         run: |
@@ -63,7 +69,7 @@ jobs:
         run: git archive --format=zip HEAD -o build/zitie-source.zip
       - uses: actions/upload-artifact@v4
         with:
-          name: zitie-p7-structured-draft-research
+          name: zitie-p7-draft-and-rc1-research
           path: build/
           retention-days: 14
           if-no-files-found: error
