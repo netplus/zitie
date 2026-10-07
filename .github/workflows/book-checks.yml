@@ -24,7 +24,7 @@ jobs:
         env:
           BASE_SHA: ${{ github.event.pull_request.base.sha }}
         run: |
-          for BATCH in B01 B02 B08 B20 B21; do python scripts/validate_project.py --batch "$BATCH"; done
+          for N in $(seq -w 1 21); do BATCH="B$N"; python scripts/validate_project.py --batch "$BATCH"; done
           python scripts/test_validation.py
           python scripts/test_deliverables.py
           if [ -n "$BASE_SHA" ]; then
@@ -34,11 +34,13 @@ jobs:
           fi
       - name: Build explicitly labelled research output
         run: |
-          python scripts/acquire_vectors.py --batches B01 B02 B08 B20 B21
+          BATCHES="$(printf 'B%02d ' {1..21})"
+          python scripts/acquire_vectors.py --batches $BATCHES
           python scripts/test_artwork.py
           FONT="$(fc-match -f '%{file}' 'AR PL KaitiM GB')"
           LATIN="$(fc-match -f '%{file}' 'DejaVu Sans')"
-          for BATCH in B01 B02 B08 B20 B21; do
+          for N in $(seq -w 1 21); do
+            BATCH="B$N"
             python scripts/build_batch.py --draft --batch "$BATCH" --font "$FONT" --latin-font "$LATIN"
             python scripts/verify_pdf.py --batch "$BATCH"
           done
@@ -57,7 +59,7 @@ jobs:
         run: git archive --format=zip HEAD -o build/zitie-source.zip
       - uses: actions/upload-artifact@v4
         with:
-          name: zitie-p6-layout-smoke-research
+          name: zitie-p6-full-layout-research
           path: build/
           retention-days: 14
           if-no-files-found: error
