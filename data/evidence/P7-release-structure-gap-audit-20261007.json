@@ -1,0 +1,52 @@
+{
+  "schema_version": 1,
+  "record_kind": "P7_release_structure_gap_audit",
+  "phase": "P7",
+  "audit_date": "2026-10-07",
+  "basis": [
+    "book/outline.md",
+    "data/coverage.json",
+    "data/batches.json",
+    "data/variants.json",
+    "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+    "scripts/build_collection.py"
+  ],
+  "archived_draft": {
+    "version": "0.3.0",
+    "pages": 261,
+    "composition": "3-page preface + 258 practice pages from B01-B21",
+    "main_radicals": 201,
+    "status": "draft_archived"
+  },
+  "release_structure_requirements": {
+    "table_of_contents": {
+      "required": true,
+      "present_in_v0_3_0": false
+    },
+    "main_radical_index_201": {
+      "required": true,
+      "present_in_v0_3_0": false
+    },
+    "teaching_variant_index": {
+      "required": true,
+      "candidate_count": 32,
+      "present_in_v0_3_0": false,
+      "normative_boundary": "Do not label the 32 teaching candidates as formal GF0011-2022 attached forms; exact attached-form roles remain source_blocked_fail_closed."
+    },
+    "legacy_27_mapping": {
+      "required": true,
+      "scope": "V001-V027 retained historical regression subset",
+      "present_in_v0_3_0": false
+    },
+    "source_review_appendix": {
+      "required": true,
+      "present_in_v0_3_0": false
+    },
+    "version_errata_record": {
+      "required": true,
+      "present_in_v0_3_0": false
+    }
+  },
+  "conclusion": "v0.3.0 is a complete 201-main-radical practice draft, not yet a structurally complete release candidate.",
+  "next_gate": "generate and review TOC/index/variant/legacy27/source-version appendices, then rebuild full-book release-candidate draft"
+}
