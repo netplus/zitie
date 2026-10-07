@@ -158,6 +158,21 @@
       "source_commit": "00d521c0aec3ff1f29bf4c241a216cac351e38df",
       "workflow_run_id": 36531067871,
       "artifact_id": 11016642724
+    },
+    {
+      "path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "title": "《循序渐进汉字部首字帖》全书编写稿",
+      "version": "0.3.0",
+      "status": "draft",
+      "batch": "B01-B21",
+      "pages": 261,
+      "bytes": 3652431,
+      "sha256": "6c8ddf162b0f72ef921a8624095096cce177128efd4ccf8d50c5168b31cb4773",
+      "source_commit": "a7b0ffa385417d84c8d8651ada0ed56a5b8cfa7b",
+      "workflow_run_id": 37561985856,
+      "review_record": "reviews/v0.3.0-full-book-draft-ci.md",
+      "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
+      "release_eligible": false
     }
   ]
 }
