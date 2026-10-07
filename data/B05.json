@@ -1321,11 +1321,10 @@
         "teaching_text": "reviewed_editorial_non_authoritative",
         "whole_character_context": "reviewed_editorial_context_not_variant_promotion",
         "stroke_count": "reviewed_from_S01_2009_baseline",
-        "position_migration": "conflict_fail_closed_P4_whole_character_component_mapping"
+        "position_migration": "reviewed_M2_GF0023_complete_whole_character_row"
       },
       "unresolved": [
-        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开",
-        "position_migration已按GF0023整字原页/持久化映射证据收口为conflict_fail_closed；仅在取得可可靠恢复整字笔画索引的规范证据后重开"
+        "GF0011—2022逐项精确主形/附形/名称/编码已按公开来源审计收口为source_blocked_fail_closed；不填造值，仅在取得正式全文或官方逐项数据后重开"
       ],
       "structure_review": {
         "source_id": "S07",
@@ -1468,9 +1467,9 @@
         }
       },
       "position_migration_review": {
-        "phase": "P4",
-        "evidence": "data/evidence/P4-B04-B05-position-migration-final.json",
-        "result": "conflict_fail_closed_P4_whole_character_component_mapping",
+        "phase": "M2",
+        "evidence": "data/evidence/M2-wa-ping-position-20261007.json",
+        "result": "reviewed_M2_GF0023_complete_whole_character_row",
         "whole_character": {
           "character": "瓶",
           "source_id": "S02",
@@ -1479,19 +1478,53 @@
           "printed_page": 222,
           "table_no": "2051",
           "ucs": "074F6",
-          "stored_whole_order_code": "4311321",
-          "stored_whole_order_code_complete": false
+          "stored_whole_order_code": "4311321554",
+          "stored_whole_order_code_complete": true,
+          "stroke_count": 10
         },
         "verified_position": "right",
-        "component_stroke_indices_in_whole_character": [],
-        "mapping_kind": "unresolved_component_mapping",
+        "component_stroke_indices_in_whole_character": [
+          7,
+          8,
+          9,
+          10
+        ],
+        "mapping_kind": "contiguous",
         "full_whole_character_sequence_required": false,
         "stroke_changes": [],
         "visual_review": true,
-        "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
-        "notes": "GF0023 瓶整字原页上下文已核，但旧审读记录中的整字数字笔顺在进入瓦部件前即截断；当前无法从已持久化证据可靠恢复瓦的4笔索引与改笔，不据字形常识或secondary数据强行补齐。",
-        "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
-      }
+        "visual_review_origin": "actual_complete_GF0023_rows_independent_and_whole_character_20261007",
+        "notes": "实际复核GF0023物理第13页瓦条及第228页瓶条的完整累计示范；瓶10笔数字笔顺为4311321554，瓦对应第7—10笔1554。旧记录只保存上行4311321，漏了下行554；此次恢复完整行，不据二次码表补值。",
+        "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code.",
+        "reviewed_at": "2026-10-07"
+      },
+      "position_migration_review_history": [
+        {
+          "phase": "P4",
+          "evidence": "data/evidence/P4-B04-B05-position-migration-final.json",
+          "result": "conflict_fail_closed_P4_whole_character_component_mapping",
+          "whole_character": {
+            "character": "瓶",
+            "source_id": "S02",
+            "publication_id": "GF0023—2020",
+            "pdf_page": 228,
+            "printed_page": 222,
+            "table_no": "2051",
+            "ucs": "074F6",
+            "stored_whole_order_code": "4311321",
+            "stored_whole_order_code_complete": false
+          },
+          "verified_position": "right",
+          "component_stroke_indices_in_whole_character": [],
+          "mapping_kind": "unresolved_component_mapping",
+          "full_whole_character_sequence_required": false,
+          "stroke_changes": [],
+          "visual_review": true,
+          "visual_review_origin": "reused_prior_GF0023_original_page_context_row_review",
+          "notes": "GF0023 瓶整字原页上下文已核，但旧审读记录中的整字数字笔顺在进入瓦部件前即截断；当前无法从已持久化证据可靠恢复瓦的4笔索引与改笔，不据字形常识或secondary数据强行补齐。",
+          "attached_form_boundary": "This representative whole-character migration result does not promote a formal GF0011—2022 attached-form identity/name/code."
+        }
+      ]
     },
     {
       "character": "止",

@@ -29,7 +29,31 @@
       "status": "in_progress",
       "source_issue": 4,
       "exit_evidence": [],
-      "started_at": "2026-10-07"
+      "started_at": "2026-10-07",
+      "scope_inventory": "data/evidence/M2-reopen-inventory-20261007.json",
+      "entry_source_audit": "sources/reviews/M2-entry-source-audit-20261007.json",
+      "latest_checkpoint": {
+        "date": "2026-10-07",
+        "review": "reviews/M2-wa-reopen-and-source-acquisition-20261007.md",
+        "adopted_reopens": [
+          "data/evidence/M2-wa-ping-position-20261007.json"
+        ],
+        "working_position_migration": {
+          "reviewed": 199,
+          "conflict_fail_closed": 2,
+          "conflict_characters": [
+            "屮",
+            "毋"
+          ]
+        },
+        "historical_release_position_migration": {
+          "reviewed": 198,
+          "conflict_fail_closed": 3
+        },
+        "new_source_acquisition": "sources/reviews/M2-GF0025-2021-acquisition-20261007.json",
+        "new_source_item_fields_reviewed": 0,
+        "all_M2_scopes_audited": false
+      }
     },
     {
       "id": "M3",
@@ -129,7 +153,7 @@
   ],
   "candidate": null,
   "final_release_eligible": false,
-  "next_work": "M2首轮：沿用Issue4核对既有来源审计和残余字段集合，优先GF0011—2022正式逐项原件；只在新适用证据实际审读后重开，未取得继续source-blocked。M3/Q1尚未开始。",
+  "next_work": "M2继续：对新取得GF0025—2021的11项读音残余做适用性及原页字条审读；未取得证据不得升级。瓦→瓶映射已闭合，屮/毋保留阻塞；GF0011—2022精确201项及其它字段仍按证据推进，M3/Q1未开始。",
   "tracking_issue": 58,
   "patch_candidate": {
     "path": "deliverables/drafts/v0.4.1-rc1/B01-B21_v0.4.1-rc1_A4.pdf",

@@ -1,0 +1,227 @@
+{
+  "schema_version": 1,
+  "record_kind": "M2_scope_snapshot_not_new_source_review",
+  "date": "2026-10-07",
+  "baseline_commit": "e22d2075c1cc6728b60d3580ec9aaa9bb4873354",
+  "baseline_tree": "2ecd3242318c739d09922d375fc11e1c506fe736",
+  "scope_definition": "六类字段集合，不按集合求和当作不同主项；精确2022字段按201主项计，不乘四字段充数。",
+  "canonical_files_sha256": {
+    "data/B01.json": "967a1d702ed85337c0237bfd65c9321d9c333ac6aa566d74839735d97f0687ab",
+    "data/B02.json": "3e1a60627d93ad49355cf9525ffde1237ebf7bcae68bb49925775fe6f621b656",
+    "data/B03.json": "7aba3cb36c139236356d8cf7a601897e140b68d1febe4bf418058124ed03405c",
+    "data/B04.json": "3830732458a9f25016b6df9379009a3cb262b277ec0b533aa6fcdfcfc295dba0",
+    "data/B05.json": "1baf0803276e1f4a21b60e835a64e0e689351199fde5b214efb0f0be38b05c8d",
+    "data/B06.json": "24f063fee9d9d99e2d03d0f7e90d02fdf08f4a2d735772f7fc3a237f9d41593c",
+    "data/B07.json": "193ca181340ca63bb688fa39bf67972776ae328c740efecb673c6ab2b84ca358",
+    "data/B08.json": "36253cdfd99c19a9631d7c80e1357889dbb238ee1265e2331b05aea186a72f2d",
+    "data/B09.json": "ba9f443392d8b3baf2a647d640c87d5d844159e47b2852e9f0fe41060dc7a0ec",
+    "data/B10.json": "b7c45827b6633e3b34d15fd92864d17dfde0a59dabbac004518e71456f9b7a66",
+    "data/B11.json": "2c742c83b448fd2d9279b4ff3263eea903e6adfec34ed0339b6197dcb0f7a1b5",
+    "data/B12.json": "45f4b19f5b1528ab40b74205126e438906e94ee1c1c46b3460da2b001c8409a1",
+    "data/B13.json": "f7591971769578339a8ca394527fdfd07fee8a76c6bd994d5a0eeed15eb5dbae",
+    "data/B14.json": "0e7d103870dab8b0e27d864daebff0ed6e8bf3c46e7b322d5a231e80c570f584",
+    "data/B15.json": "e1e95e1a71ef0cd5e74f74d9bb59ab832a6fd2aca58ad6abf151e8a87c62cf80",
+    "data/B16.json": "4f1128c0e0055498222ad72d5578a6bb8bbecfc35c1baf5a8c51317319f7e773",
+    "data/B17.json": "c9cb19da66bede7bcbfdb928101021162ee9c622bd6cf9b3a44133f355ffdebd",
+    "data/B18.json": "7aaa00d21a317b8ae139ff0d508047b8b6ce09f45ee345515d711e45bca987d1",
+    "data/B19.json": "b12f603fda758a85018803d13784195c8b7a7dfb6b5a2dd4e0e71bcebcbd4ea6",
+    "data/B20.json": "a56a690f0c234c8955b48e72619be9067339992c1b53a5c29b43424fec4ba2a3",
+    "data/B21.json": "7d5de09715de9b84417b3cc91e05a4e1566c99752236e011a6316800e9d0e1c4"
+  },
+  "exact_2022_item_fields": {
+    "scope": "B01-B21",
+    "target_count": 201,
+    "main_id_range": [
+      1,
+      201
+    ],
+    "fields": [
+      "exact_main_glyph",
+      "attached_forms",
+      "common_name",
+      "international_code"
+    ],
+    "baseline_status_counts": {
+      "source_blocked_fail_closed_GF0011_2022_item_level_not_publicly_released": 201
+    },
+    "baseline_evidence": "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+    "source_audit_status": "entry_probe_only_no_admissible_item_table",
+    "promoted_count": 0
+  },
+  "residual_groups": [
+    {
+      "field": "fine_stroke_names",
+      "scope": "B04-B21",
+      "target_count": 14,
+      "characters": "屮巛牙疒疋癶矛覀虍糸釆龺髟鬥",
+      "main_ids": [
+        55,
+        60,
+        69,
+        115,
+        118,
+        120,
+        121,
+        126,
+        130,
+        148,
+        161,
+        169,
+        188,
+        190
+      ],
+      "baseline_status_groups": {
+        "conflict_fail_closed_normative_target_gap": "屮巛疒疋癶覀虍糸釆龺髟鬥",
+        "conflict_fail_closed_GF2001_vs_target_original_page_bridge_pending": "牙",
+        "conflict_fail_closed_GF0023_visual_subtype_ambiguous_GF2001_bridge_pending": "矛"
+      },
+      "locator": "data/Bxx.json entries by main_id; field_status plus field-specific review/resolution",
+      "source_audit_status": "not_yet_reviewed_in_M2",
+      "promoted_count": 0
+    },
+    {
+      "field": "position_migration",
+      "scope": "B01-B21",
+      "target_count": 3,
+      "characters": "屮瓦毋",
+      "main_ids": [
+        55,
+        72,
+        99
+      ],
+      "baseline_status_groups": {
+        "conflict_fail_closed_P4_whole_character_component_mapping": "屮瓦毋"
+      },
+      "locator": "data/Bxx.json entries by main_id; field_status plus field-specific review/resolution",
+      "source_audit_status": "not_yet_reviewed_in_M2",
+      "promoted_count": 0
+    },
+    {
+      "field": "pronunciation",
+      "scope": "B04-B21",
+      "target_count": 11,
+      "characters": "尢弋彳毋麦邑齿黾阜黍龠",
+      "main_ids": [
+        34,
+        35,
+        41,
+        99,
+        149,
+        159,
+        172,
+        173,
+        175,
+        197,
+        201
+      ],
+      "baseline_status_groups": {
+        "conflict_fail_closed_no_S03_or_S06_target_pronunciation": "尢弋彳毋麦邑齿黾阜黍龠"
+      },
+      "locator": "data/Bxx.json entries by main_id; field_status plus field-specific review/resolution",
+      "source_audit_status": "not_yet_reviewed_in_M2",
+      "promoted_count": 0
+    },
+    {
+      "field": "component_name",
+      "scope": "B04-B21",
+      "target_count": 28,
+      "characters": "屮支比毋疋齐羽麦走足邑釆青龺齿黾阜骨香音髟鬥麻黍鼓鼠鼻龠",
+      "main_ids": [
+        55,
+        65,
+        71,
+        99,
+        118,
+        141,
+        147,
+        149,
+        150,
+        158,
+        159,
+        161,
+        168,
+        169,
+        172,
+        173,
+        175,
+        182,
+        183,
+        186,
+        188,
+        190,
+        193,
+        197,
+        198,
+        199,
+        200,
+        201
+      ],
+      "baseline_status_groups": {
+        "source_blocked_fail_closed_GF0011_2022_exact_name_not_publicly_released": "屮支比毋疋齐羽麦走足邑釆青龺齿黾阜骨香音髟鬥麻黍鼓鼠鼻龠"
+      },
+      "locator": "data/Bxx.json entries by main_id; field_status plus field-specific review/resolution",
+      "source_audit_status": "not_yet_reviewed_in_M2",
+      "promoted_count": 0
+    },
+    {
+      "field": "structure",
+      "scope": "B04-B21",
+      "target_count": 37,
+      "characters": "丨丿丶乛匚冂勹亠冫冖凵卩厶廴艹廾囗彡夂丬宀辶彐屮巛攴罒疒疋癶覀虍糸釆龺髟鬥",
+      "main_ids": [
+        2,
+        3,
+        4,
+        5,
+        8,
+        10,
+        13,
+        17,
+        18,
+        19,
+        20,
+        21,
+        25,
+        26,
+        30,
+        32,
+        38,
+        42,
+        44,
+        45,
+        48,
+        49,
+        50,
+        55,
+        60,
+        74,
+        107,
+        115,
+        118,
+        120,
+        126,
+        130,
+        148,
+        161,
+        169,
+        188,
+        190
+      ],
+      "baseline_status_groups": {
+        "source_blocked_fail_closed_GF0011_2022_exact_identity_required_for_structure": "丨丿丶乛匚冂勹亠冫冖凵卩厶廴艹廾囗彡夂丬宀辶彐屮巛攴罒疒疋癶覀虍糸釆龺髟鬥"
+      },
+      "locator": "data/Bxx.json entries by main_id; field_status plus field-specific review/resolution",
+      "source_audit_status": "not_yet_reviewed_in_M2",
+      "promoted_count": 0
+    }
+  ],
+  "excluded_pronunciation_not_applicable": {
+    "count": 34,
+    "characters": "丨丿丶乛匚冂勹亠冫冖凵廴艹廾囗彡夂丬宀辶彐屮巛罒疒疋癶覀虍糸釆龺髟鬥",
+    "rule": "不是34个待补读音；只有新证据同时证明当前目标适用性时才重开。"
+  },
+  "normative_fields_changed": false,
+  "new_reviewed_count": 0,
+  "m2_exit_eligible": false,
+  "next_work": "按正式原件身份/完整性/目标页定位逐字段审计；保留旧状态字面值仅供追溯，不把not_publicly_released历史标签当作本轮已证实的公开状态。"
+}

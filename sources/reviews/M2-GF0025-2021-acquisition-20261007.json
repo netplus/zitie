@@ -1,0 +1,41 @@
+{
+  "schema_version": 1,
+  "phase": "M2",
+  "date": "2026-10-07",
+  "source_role": "candidate_authoritative_pronunciation_source",
+  "publication_id": "GF0025—2021",
+  "title": "国际中文教育中文水平等级标准",
+  "request_url": "https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/202111/W020211118507389477190.pdf",
+  "final_url": "http://www.moe.gov.cn/jyb_sjzl/ziliao/A19/202111/W020211118507389477190.pdf",
+  "retrieval": {
+    "workflow_run_id": 37592557617,
+    "artifact_id": 11468789360,
+    "source_commit": "3c977f53d1e2557ebecec839dcc59d61514570e9",
+    "artifact_sha256": "3cc2664ca1e928003b03868f6b4b32520861ad175704ea674de3ad698ade82ca",
+    "pdf_bytes": 51104405,
+    "pdf_sha256": "e451fdf0899d9267bbd122db66e7e75bdd2851ad1e6732e47b6e960290d73a63",
+    "pdf_pages": 260,
+    "artifact_expires_at": "2026-10-10T08:15:49Z"
+  },
+  "identity_review": {
+    "method": "actual_cover_TOC_vocabulary_start_and_last_page_images",
+    "viewed_physical_pages": [1, 3, 42, 260],
+    "publication_number_visible": "GF 0025—2021",
+    "issuing_bodies": ["中华人民共和国教育部", "国家语言文字工作委员会"],
+    "published_date_visible": "2021-03-24",
+    "implementation_date_visible": "2021-07-01",
+    "TOC_printed_pages": {"syllables": 9, "characters": 15, "vocabulary": 36, "grammar_appendix": 170},
+    "vocabulary_start_physical_page": 42,
+    "last_printed_page_visible": 254,
+    "item_level_review": "not_started",
+    "completeness": "260-page official file acquired; not a claim that every page has been read"
+  },
+  "text_layer_audit": {
+    "method": "PyMuPDF extraction of all pages without OCR",
+    "finding": "目标汉字检索未命中，但文件主体为扫描页/文本层主要为水印；不得据此判定词条缺失",
+    "unreviewed_pronunciation_targets": ["尢", "弋", "彳", "毋", "麦", "邑", "齿", "黾", "阜", "黍", "龠"]
+  },
+  "field_changes": [],
+  "not_admissible_for": ["GF0011—2022 formal radical identity", "GF0011—2022 attached forms/codes"],
+  "repository_boundary": "Only acquisition/review metadata committed; source PDF remains a short-lived reference artifact, not a copybook deliverable. No font file exported."
+}
