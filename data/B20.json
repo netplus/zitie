@@ -32,10 +32,10 @@
         "横"
       ],
       "tips": [
-        "先识别高的十画基线主形；框形与内部笔组的逐笔关系待目标规范原页关闭。",
-        "本轮只用独立字语境，不从静态字体推导位置变体。"
+        "按已核规范笔顺逐笔书写，共10画；复杂笔组按累计示范连续观察。",
+        "本页只练独立主形；GF0011—2022逐项精确主形、附形和国际编码仍按source-blocked边界保留，不向附形外推。"
       ],
-      "check": "基线笔数为10画；逐笔顺序、细笔名、采用读音和结构未核前保持pending。",
+      "check": "共10画；笔顺、细笔名和采用读音已核，独立主形不外推为2022版附形结论。",
       "context": {
         "example": "高",
         "position": "self",
@@ -205,6 +205,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_self_context_no_position_migration",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B20-B21-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -227,10 +233,10 @@
         "点"
       ],
       "tips": [
-        "先识别黄的十一画基线主形；上中下笔组的真实先后待目标行确认。",
-        "独体黄只用于建立整体轮廓，不把局部压缩写法当作正式附形。"
+        "按已核规范笔顺逐笔书写，共11画；复杂笔组按累计示范连续观察。",
+        "本页只练独立主形；GF0011—2022逐项精确主形、附形和国际编码仍按source-blocked边界保留，不向附形外推。"
       ],
-      "check": "基线笔数为11画；逐笔关系和细笔名待权威目标行核验。",
+      "check": "共11画；笔顺、细笔名和采用读音已核，独立主形不外推为2022版附形结论。",
       "context": {
         "example": "黄",
         "position": "self",
@@ -402,6 +408,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_self_context_no_position_migration",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B20-B21-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -424,10 +436,10 @@
         "捺"
       ],
       "tips": [
-        "先识别麻的十一画基线主形；内部重复笔组的先后不凭字体外观推定。",
-        "本轮保留独立字语境，位置迁移另行取整字证据。"
+        "按已核规范笔顺逐笔书写，共11画；复杂笔组按累计示范连续观察。",
+        "本页只练独立主形；2022版精确部件名称及附形仍保持source-blocked，不借相似字形补值。"
       ],
-      "check": "基线笔数为11画；逐笔顺序、细笔名和结构仍待逐项证据。",
+      "check": "共11画；笔顺、细笔名和采用读音已核；2022版精确部件名称保持source-blocked。",
       "context": {
         "example": "麻",
         "position": "self",
@@ -614,6 +626,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_self_context_no_position_migration",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B20-B21-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -636,10 +654,10 @@
         "竖弯钩"
       ],
       "tips": [
-        "先识别鹿的十一画基线主形；内部笔组与末部转折的细名待原页裁决。",
-        "本轮只记录独体鹿，不把相似字形或偏旁写法直接并入。"
+        "按已核规范笔顺逐笔书写，共11画；复杂笔组按累计示范连续观察。",
+        "本页只练独立主形；GF0011—2022逐项精确主形、附形和国际编码仍按source-blocked边界保留，不向附形外推。"
       ],
-      "check": "基线笔数为11画；复杂笔组未核前不凭记忆拆分。",
+      "check": "共11画；笔顺、细笔名和采用读音已核，独立主形不外推为2022版附形结论。",
       "context": {
         "example": "鹿",
         "position": "self",
@@ -811,6 +829,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_self_context_no_position_migration",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B20-B21-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -834,10 +858,10 @@
         "横折"
       ],
       "tips": [
-        "先识别鼎的十二画基线主形；内部纵横与折笔组合需按目标行逐笔关闭。",
-        "复杂字优先保持整字观察，位置迁移后续单独核验。"
+        "按已核规范笔顺逐笔书写，共12画；复杂笔组按累计示范连续观察。",
+        "本页只练独立主形；GF0011—2022逐项精确主形、附形和国际编码仍按source-blocked边界保留，不向附形外推。"
       ],
-      "check": "基线笔数为12画；逐笔顺序和细笔名继续pending。",
+      "check": "共12画；笔顺、细笔名和采用读音已核，独立主形不外推为2022版附形结论。",
       "context": {
         "example": "鼎",
         "position": "self",
@@ -1011,6 +1035,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_self_context_no_position_migration",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B20-B21-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -1034,10 +1064,10 @@
         "点"
       ],
       "tips": [
-        "先识别黑的十二画基线主形；中部和底部点画关系待权威原页确认。",
-        "本轮只使用独立字语境，不从印刷字形推断连写。"
+        "按已核规范笔顺逐笔书写，共12画；复杂笔组按累计示范连续观察。",
+        "本页只练独立主形；GF0011—2022逐项精确主形、附形和国际编码仍按source-blocked边界保留，不向附形外推。"
       ],
-      "check": "基线笔数为12画；逐笔、读音采用口径和结构仍待证据关闭。",
+      "check": "共12画；笔顺、细笔名和采用读音已核，独立主形不外推为2022版附形结论。",
       "context": {
         "example": "黑",
         "position": "self",
@@ -1211,6 +1241,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_self_context_no_position_migration",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B20-B21-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -1234,10 +1270,10 @@
         "点"
       ],
       "tips": [
-        "先识别黍的十二画基线主形；上下笔组的实际顺序待目标行逐笔核验。",
-        "本轮保留独立字语境，任何位置变形均另证。"
+        "按已核规范笔顺逐笔书写，共12画；复杂笔组按累计示范连续观察。",
+        "本页只练独立主形；采用读音保持conflict_fail_closed，2022版精确部件名称及附形保持source-blocked。"
       ],
-      "check": "基线笔数为12画；细笔名和结构分类尚未审定。",
+      "check": "共12画；笔顺与细笔名已核；采用读音保持conflict_fail_closed，2022版精确部件名称保持source-blocked。",
       "context": {
         "example": "黍",
         "position": "self",
@@ -1446,6 +1482,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_self_context_no_position_migration",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B20-B21-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -1470,10 +1512,10 @@
         "捺"
       ],
       "tips": [
-        "先识别鼓的十三画基线主形；左右组成部分的逐笔衔接待规范原页确认。",
-        "本轮只记录独立字整体，不将局部部件拆分结论前置。"
+        "按已核规范笔顺逐笔书写，共13画；复杂笔组按累计示范连续观察。",
+        "本页只练独立主形；2022版精确部件名称及附形仍保持source-blocked，不借相似字形补值。"
       ],
-      "check": "基线笔数为13画；复杂内部时序继续pending。",
+      "check": "共13画；笔顺、细笔名和采用读音已核；2022版精确部件名称保持source-blocked。",
       "context": {
         "example": "鼓",
         "position": "self",
@@ -1664,6 +1706,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_self_context_no_position_migration",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B20-B21-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -1688,10 +1736,10 @@
         "斜钩"
       ],
       "tips": [
-        "先识别鼠的十三画基线主形；下部多折多点笔组须按原页逐笔核验。",
-        "复杂形先保持整字语境，不凭字体近似推导附形。"
+        "按已核规范笔顺逐笔书写，共13画；复杂笔组按累计示范连续观察。",
+        "本页只练独立主形；2022版精确部件名称及附形仍保持source-blocked，不借相似字形补值。"
       ],
-      "check": "基线笔数为13画；逐笔顺序、细笔名及结构仍待权威证据。",
+      "check": "共13画；笔顺、细笔名和采用读音已核；2022版精确部件名称保持source-blocked。",
       "context": {
         "example": "鼠",
         "position": "self",
@@ -1880,6 +1928,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_self_context_no_position_migration",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B20-B21-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     },
     {
@@ -1905,10 +1959,10 @@
         "竖"
       ],
       "tips": [
-        "先识别鼻的十四画基线主形；中下部笔组的真实先后待目标行核验。",
-        "本轮只保留独立字语境，位置迁移和部件拆分后续另证。"
+        "按已核规范笔顺逐笔书写，共14画；复杂笔组按累计示范连续观察。",
+        "本页只练独立主形；2022版精确部件名称及附形仍保持source-blocked，不借相似字形补值。"
       ],
-      "check": "基线笔数为14画；复杂笔组未关闭前保持fail-closed。",
+      "check": "共14画；笔顺、细笔名和采用读音已核；2022版精确部件名称保持source-blocked。",
       "context": {
         "example": "鼻",
         "position": "self",
@@ -2101,6 +2155,12 @@
         "visual_review": true,
         "mapping_result": "reviewed_P4_self_context_no_position_migration",
         "limits": "Canonical status synchronization only; formal GF0011—2022 attached-form identity remains independent."
+      },
+      "teaching_text_review": {
+        "phase": "P6",
+        "evidence": "data/evidence/P6-B20-B21-prose-regression-correction.json",
+        "result": "reviewed_editorial_correction_against_terminal_P1_P2_P3_P4_states",
+        "limits": "Editorial correction only; no P1-P4 normative field conclusion is changed."
       }
     }
   ],
