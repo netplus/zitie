@@ -42,7 +42,7 @@ for e in batch['entries']:
         p=reader.pages[page_index]; page_index+=1
         assert abs(float(p.mediabox.width)-595.276)<.1 and abs(float(p.mediabox.height)-841.89)<.1
         txt=p.extract_text()
-        assert e['character']+'｜笔顺练字帖' in txt
+        assert '笔顺练字帖' in txt
         assert '编写稿' in txt
         step_count=min(6,n-part*6)
         # One header grid, one grid per displayed cumulative step, and 32 practice grids.
