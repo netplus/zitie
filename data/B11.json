@@ -27,7 +27,7 @@
       ],
       "tips": [
         "按“横、横、竖钩、撇、点”的顺序书写，共5画。",
-        "在“票”中处于bottom位置；P4整字原页已核笔画映射，当前未见细笔类型变化。独体“示”与“礻”位置形态分开处理；本项只写独体主形。"
+        "在“票”中处于bottom位置；P4整字原页已核笔画映射，当前未见细笔类型变化。独体主形与左侧附形分开处理；本项只写独体主形。"
       ],
       "check": "共5画：横、横、竖钩、撇、点。",
       "context": {
@@ -267,16 +267,10 @@
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
       },
       "teaching_text_review": {
-        "phase": "P5",
-        "evidence": "data/evidence/P5-B07-B11-teaching-text-final-fixes.json",
-        "result": "reviewed_P5_teaching_text_after_closed_field_sync",
-        "basis": {
-          "stroke_order_status": "reviewed_GF0023_2020_original_page",
-          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
-          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
-          "position_migration_evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json"
-        },
-        "limits": "Editorial text finalization after P1/P2/P4 closure; does not override fail-closed/source-blocked normative fields."
+        "phase": "P6",
+        "evidence": "data/evidence/P6-rare-glyph-prose-portability.json",
+        "result": "reviewed_editorial_portability_without_unicode_substitution",
+        "limits": "Wording only; target/variant identities and normative conclusions are unchanged."
       }
     },
     {
@@ -1085,7 +1079,7 @@
       ],
       "tips": [
         "按“竖、横折、竖、竖、横”的顺序书写，共5画。",
-        "在“罗”中处于top位置；P4整字原页已核笔画映射，当前未见细笔类型变化。与囗、皿保持形态区分；本项按已核五笔顺序。"
+        "在“罗”中处于top位置；P4整字原页已核笔画映射，当前未见细笔类型变化。与围框类、皿形保持区分；本项按已核五笔顺序。"
       ],
       "check": "共5画：竖、横折、竖、竖、横。",
       "context": {
@@ -1247,16 +1241,10 @@
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
       },
       "teaching_text_review": {
-        "phase": "P5",
-        "evidence": "data/evidence/P5-B07-B11-teaching-text-final-fixes.json",
-        "result": "reviewed_P5_teaching_text_after_closed_field_sync",
-        "basis": {
-          "stroke_order_status": "reviewed_GBT25741_2010_appendix_C_original_page",
-          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
-          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
-          "position_migration_evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json"
-        },
-        "limits": "Editorial text finalization after P1/P2/P4 closure; does not override fail-closed/source-blocked normative fields."
+        "phase": "P6",
+        "evidence": "data/evidence/P6-rare-glyph-prose-portability.json",
+        "result": "reviewed_editorial_portability_without_unicode_substitution",
+        "limits": "Wording only; target/variant identities and normative conclusions are unchanged."
       }
     },
     {
@@ -1273,7 +1261,7 @@
       ],
       "tips": [
         "按“竖、横折、竖、竖、横”的顺序书写，共5画。",
-        "在“盆”中处于bottom位置；P4整字原页已核笔画映射，当前未见细笔类型变化。与罒形态和位置不同，不能互换。"
+        "在“盆”中处于bottom位置；P4整字原页已核笔画映射，当前未见细笔类型变化。与上部网形部件在形态和位置上不同，不能互换。"
       ],
       "check": "共5画：竖、横折、竖、竖、横。",
       "context": {
@@ -1511,16 +1499,10 @@
         "attached_form_boundary": "Does not promote this position form to a formal GF0011—2022 attached radical; that exact edition field remains pending."
       },
       "teaching_text_review": {
-        "phase": "P5",
-        "evidence": "data/evidence/P5-B07-B11-teaching-text-final-fixes.json",
-        "result": "reviewed_P5_teaching_text_after_closed_field_sync",
-        "basis": {
-          "stroke_order_status": "reviewed_GF0023_2020_original_page",
-          "fine_stroke_names_status": "reviewed_P2_normative_original_pages",
-          "position_migration_status": "reviewed_P4_GF0023_whole_character_original_page",
-          "position_migration_evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json"
-        },
-        "limits": "Editorial text finalization after P1/P2/P4 closure; does not override fail-closed/source-blocked normative fields."
+        "phase": "P6",
+        "evidence": "data/evidence/P6-rare-glyph-prose-portability.json",
+        "result": "reviewed_editorial_portability_without_unicode_substitution",
+        "limits": "Wording only; target/variant identities and normative conclusions are unchanged."
       }
     },
     {
