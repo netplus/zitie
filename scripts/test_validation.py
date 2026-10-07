@@ -35,6 +35,14 @@ class ValidationTests(unittest.TestCase):
     def test_false_approval(self):
         self.reject(lambda d:d[3].update(release_eligible=True))
 
+    def test_all_frozen_batches_structural(self):
+        catalog,batches,variants = [load(n) for n in ['data/coverage.json','data/batches.json','data/variants.json']]
+        for item in batches['frozen_batches']:
+            batch=load(f"data/{item['id']}.json")
+            result=validate(catalog,batches,variants,batch)
+            self.assertEqual(result['main_index_count'],201)
+            self.assertEqual(result['formal_release_entries'],0)
+
 
 class EvidenceTests(unittest.TestCase):
     def setUp(self):
