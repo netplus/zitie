@@ -1,0 +1,150 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-07",
+  "kind": "M1_impacted_page_review_not_Q1",
+  "reviewer": "ChatGPT_same_agent_not_independent_expert",
+  "candidate": {
+    "path": "deliverables/drafts/v0.4.1-rc1/B01-B21_v0.4.1-rc1_A4.pdf",
+    "title": "《循序渐进汉字部首字帖》v0.4.1 RC1勘误候选",
+    "version": "0.4.1-rc1",
+    "status": "release_candidate",
+    "batch": "B01-B21",
+    "pages": 276,
+    "bytes": 3754409,
+    "sha256": "581101ba2b744f4cba32291731c35d391c3a1df13b5cc11c1abdd7ade2bb4895",
+    "source_commit": "bee6953a6b367082b312ed07e5fbb76fdea1e025",
+    "workflow_run_id": 37582786085,
+    "artifact_id": 11464939841,
+    "review_record": "reviews/M1-v0.4.1-rc1-review-20261007.md",
+    "release_eligible": false
+  },
+  "git_blob_sha": "0b8048bf53c3bbd87d6112fd05725bd1f3c6e65f",
+  "artifact_zip_sha256": "95756a348c05f351815f60d9306feb1f77d08ff9a13646829cd8ad3f291ee331",
+  "font": {
+    "file_name": "uming.ttc",
+    "subfont_index": 0,
+    "sha256": "fe952e55617275142d9cefd4d79eade4df446517b0478b2567d9bc7df49f70e2",
+    "font_name": "UMingCN",
+    "checked_form_count": 32,
+    "missing_glyphs": [],
+    "rendering_scope": "V007/V026/V029/V031/V032 form tokens only; other typography unchanged",
+    "embedded_forms": [
+      "龵",
+      "⻊",
+      "⺮",
+      "⺌",
+      "⺶"
+    ],
+    "embedding": "TrueType subset in PDF only; no font file exported",
+    "visual_approval": false
+  },
+  "E001": {
+    "ids": [
+      "V007",
+      "V026",
+      "V029",
+      "V031",
+      "V032"
+    ],
+    "forms": [
+      "龵",
+      "⻊",
+      "⺮",
+      "⺌",
+      "⺶"
+    ],
+    "occurrence_pages": {
+      "270": [
+        "龵"
+      ],
+      "271": [
+        "⻊",
+        "⺮",
+        "⺌",
+        "⺶"
+      ],
+      "272": [
+        "龵"
+      ],
+      "273": [
+        "⻊"
+      ]
+    },
+    "candidate_result": "fixed_and_visually_checked",
+    "normative_identity_promoted": false
+  },
+  "E002": {
+    "page": 274,
+    "scope": "B04-B21",
+    "target_count": 171,
+    "reviewed": 157,
+    "conflict_fail_closed": 14,
+    "candidate_result": "scope_explicit"
+  },
+  "visual_review": {
+    "MuPDF_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      263,
+      270,
+      271,
+      272,
+      273,
+      274,
+      276
+    ],
+    "Poppler_pages": [
+      270,
+      271,
+      272,
+      273
+    ],
+    "variant_index_items_checked": 32,
+    "legacy_index_items_checked": 27,
+    "comparison": "Local reviewed PDF and downloaded CI PDF are byte-identical; independently compared all276 pages at120dpi with no pixel difference",
+    "q1_completed": false,
+    "physical_print_test": false
+  },
+  "raster_regression": {
+    "baseline_sha256": "ab3c23d7547872f4d0e2c128de397e9e89ed6de97b681876e2dff017ff5c4894",
+    "practice_body_pages": {
+      "first": 6,
+      "last": 263,
+      "count": 258
+    },
+    "excluded_region": "bottom74pt; candidate labels checked separately on all258 pages",
+    "practice_body_different_pages": [],
+    "unchanged_backmatter_pages": [
+      264,
+      265,
+      266,
+      267,
+      268,
+      269,
+      275
+    ],
+    "renderer": "MuPDF",
+    "dpi": 72,
+    "backmatter_dpi": 96
+  },
+  "tests": {
+    "data": 32,
+    "deliverables": 13,
+    "artwork": 10,
+    "phase_state": 9,
+    "patch_candidate": 18,
+    "total": 82,
+    "batch_structural_checks": 21
+  },
+  "remaining": {
+    "E004": "v0.4.0 formal preface page3 says candidate/not formal; mode-aware body correction required before formal0.4.1",
+    "M1": "in_progress",
+    "M2": "planned",
+    "M3": "planned",
+    "Q1": "planned"
+  }
+}

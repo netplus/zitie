@@ -1,5 +1,11 @@
 # PDF版本归档
 
+## M1勘误候选 v0.4.1-rc1
+
+[276页勘误候选PDF](drafts/v0.4.1-rc1/B01-B21_v0.4.1-rc1_A4.pdf)：修复5项变体索引缺字，并明确细笔名统计的171项范围。3,754,409 bytes；SHA256 `581101ba2b744f4cba32291731c35d391c3a1df13b5cc11c1abdd7ade2bb4895`。
+
+状态为release_candidate、release_eligible=false；正式v0.4.1尚未发布，M1仍需处理正式前言措辞和正式版本验收。来源及受影响页记录见[候选复核](../reviews/M1-v0.4.1-rc1-review-20261007.md)。原正式版及历史稿不覆盖。
+
 ## 正式发布 v0.4.0
 
 [《循序渐进汉字部首字帖》v0.4.0，276页](releases/v0.4.0/B01-B21_with_preface_toc_appendices_v0.4.0_A4.pdf)
