@@ -1,0 +1,35 @@
+name: M3 migration material acquisition
+on:
+  push:
+    branches: [feat/m3-whole-migration-20261007]
+permissions:
+  contents: read
+jobs:
+  acquire:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - name: Obtain six pinned whole-character outlines for actual review
+        run: |
+          python - <<'PY'
+          import hashlib,json,pathlib,urllib.request,urllib.parse
+          revision='68d10a4b21150cae5e1ebbd223eed289cf32d90c'
+          base='https://raw.githubusercontent.com/chanind/hanzi-writer-data/'+revision
+          out=pathlib.Path('material');out.mkdir()
+          records=[]
+          for ch,count in [('原',10),('们',5),('瓶',10),('近',7),('国',8),('区',4)]:
+              url=base+'/data/'+urllib.parse.quote(ch)+'.json'
+              with urllib.request.urlopen(url,timeout=30) as r: raw=r.read(1024*1024)
+              data=json.loads(raw);assert len(data['strokes'])==len(data['medians'])==count
+              name=f'{ord(ch):04X}.json';(out/name).write_bytes(raw)
+              records.append({'character':ch,'file':name,'url':url,'sha256':hashlib.sha256(raw).hexdigest(),'bytes':len(raw),'stroke_count':count,'status':'acquired_not_reviewed'})
+          with urllib.request.urlopen(base+'/ARPHICPL.TXT',timeout=30) as r: license=r.read()
+          assert b'ARPHIC PUBLIC LICENSE' in license
+          (out/'ARPHICPL.TXT').write_bytes(license)
+          (out/'manifest.json').write_text(json.dumps({'revision':revision,'items':records},ensure_ascii=False,indent=2)+'\n')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m3-six-whole-character-material
+          path: material/
+          retention-days: 7
