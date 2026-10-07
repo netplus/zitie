@@ -119,7 +119,7 @@ def source_caption(e):
         return f'依据：GF0023—2020，第{printed}页'
     return '依据：已入库并审读的笔顺证据'
 
-def make_page(c,e,data,page_number,mode,batch,step_start,step_end,part,total_parts):
+def make_page(c,e,data,page_number,mode,batch,step_start,step_end,part,total_parts,edition=None):
     n=len(data[0])
     names=reviewed_stroke_names(e,n)
     continuation=part>1
@@ -169,7 +169,10 @@ def make_page(c,e,data,page_number,mode,batch,step_start,step_end,part,total_par
             if row<2 or col==0: glyph(c,data,x,y,cell,['trace','pale','ink','ink'][row])
     wrapped_text(c,LEFT,94,'写完检查：'+e['check'],10,color='muted',width=RIGHT-LEFT,leading=12,max_lines=2)
     c.setStrokeColor(HexColor(COL['guide'])); c.line(LEFT,74,RIGHT,74)
-    if mode=='draft':
+    if edition is not None:
+        label=edition.practice_label
+        label_color='red' if edition.mode=='candidate' else 'muted'
+    elif mode=='draft':
         label=batch.get('draft_label','编写稿')
         label_color='red'
     elif mode=='candidate':
@@ -188,16 +191,16 @@ def make_page(c,e,data,page_number,mode,batch,step_start,step_end,part,total_par
     text(c,RIGHT-82,29,f"{batch['batch_id']} / {page_number:03} / {part}-{total_parts}",8,color='muted',font='Latin')
     c.showPage()
 
-def make_entry_pages(c,e,data,page_number,mode,batch):
+def make_entry_pages(c,e,data,page_number,mode,batch,edition=None):
     n=len(data[0])
     total=max(1,math.ceil(n/6))
     for part in range(total):
         start=part*6
         end=min(n,start+6)
-        make_page(c,e,data,page_number+part,mode,batch,start,end,part+1,total)
+        make_page(c,e,data,page_number+part,mode,batch,start,end,part+1,total,edition=edition)
     return total
 
-def frontmatter(path,mode):
+def frontmatter(path,mode,edition=None):
     body=ParagraphStyle('body',fontName='CJK',fontSize=11.5,leading=20,spaceAfter=9,wordWrap='CJK',firstLineIndent=23)
     heading=ParagraphStyle('heading',parent=body,fontSize=15,leading=24,spaceBefore=11,spaceAfter=8,firstLineIndent=0,textColor=HexColor(COL['red']),keepWithNext=True)
     title=ParagraphStyle('title',parent=heading,fontSize=25,leading=36,spaceBefore=0)
@@ -216,7 +219,10 @@ def frontmatter(path,mode):
         paragraph=Paragraph(html.escape(block).replace('\n','<br/>'),style)
         story.append(KeepTogether([paragraph]) if block.startswith('本字帖采用A4') else paragraph)
     def page(c,doc):
-        if mode=='candidate':
+        if edition is not None:
+            text(c,42,H-29,'循序渐进汉字部首字帖 · 前言｜'+edition.label,9,color='muted')
+            text(c,42,29,edition.practice_label,8,color='muted',width=W-110)
+        elif mode=='candidate':
             text(c,42,H-29,'循序渐进汉字部首字帖 · 前言｜发布候选稿 RC1',9,color='muted')
             text(c,42,29,'v'+BOOK['version']+' RC1｜保留已披露的 fail-closed/source-blocked 边界；正式 release 尚未完成。',8,color='muted')
         elif mode=='draft':
