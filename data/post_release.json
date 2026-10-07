@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "updated_at": "2026-10-07",
+  "active_phase": "M1",
+  "plan": "docs/POST_RELEASE_PLAN.md",
+  "baseline": {
+    "version": "0.4.0",
+    "main_commit": "1d6a3a797a8e61264f34337274aecc35e2f623e7",
+    "tree": "f2301b2162155f362ff6ad6199914b77cb7ffaa5",
+    "path": "deliverables/releases/v0.4.0/B01-B21_with_preface_toc_appendices_v0.4.0_A4.pdf",
+    "pages": 276,
+    "bytes": 3749164,
+    "sha256": "ab3c23d7547872f4d0e2c128de397e9e89ed6de97b681876e2dff017ff5c4894"
+  },
+  "phases": [
+    {
+      "id": "M1",
+      "name": "v0.4.x勘误维护",
+      "status": "in_progress",
+      "exit_evidence": []
+    },
+    {
+      "id": "M2",
+      "name": "新权威来源重开",
+      "status": "planned",
+      "source_issue": 4,
+      "exit_evidence": []
+    },
+    {
+      "id": "M3",
+      "name": "v0.5.0功能与教学质量增强",
+      "status": "planned",
+      "exit_evidence": []
+    },
+    {
+      "id": "Q1",
+      "name": "最终候选全书排版复核",
+      "status": "planned",
+      "exit_evidence": []
+    }
+  ],
+  "errata": [
+    {
+      "id": "E001",
+      "phase": "M1",
+      "status": "open",
+      "blocks_phase_exit": true,
+      "pages": [270, 272],
+      "summary": "V007龵未正确显示；文本可提取不能替代实际渲染",
+      "review": "reviews/M1-baseline-audit-20261007.md"
+    },
+    {
+      "id": "E002",
+      "phase": "M1",
+      "status": "open",
+      "blocks_phase_exit": true,
+      "pages": [274],
+      "summary": "157 reviewed + 14 fail-closed缺少B04—B21/171项范围",
+      "review": "reviews/M1-baseline-audit-20261007.md"
+    },
+    {
+      "id": "E003",
+      "phase": "M1",
+      "status": "resolved",
+      "blocks_phase_exit": false,
+      "summary": "BUILD.md仅B01/不超过6笔的说明已过期",
+      "resolution": "docs/BUILD.md",
+      "review": "reviews/M1-baseline-audit-20261007.md"
+    }
+  ],
+  "candidate": null,
+  "final_release_eligible": false,
+  "next_work": "修复E001/E002并完成v0.4.1候选版本标识、字体覆盖及受影响页回归；本轮未修订或发布新PDF。",
+  "tracking_issue": 58
+}

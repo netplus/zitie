@@ -27,6 +27,8 @@ jobs:
           for N in $(seq -w 1 21); do BATCH="B$N"; python scripts/validate_project.py --batch "$BATCH"; done
           python scripts/test_validation.py
           python scripts/test_deliverables.py
+          python scripts/verify_post_release.py --self-test
+          python scripts/verify_post_release.py
           if [ -n "$BASE_SHA" ]; then
             python scripts/verify_deliverables.py --base-ref "$BASE_SHA"
           else

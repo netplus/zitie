@@ -1,20 +1,45 @@
-# 重建B01编写稿
+# 重建与检查
 
-当前生成器落实首批简单独体形，明确限制为每字不超过6笔；复杂字、包围部件与位置变体需要后续扩展分页及整字时序模块，不能直接套本脚本批量标为完成。
+更新：2026-10-07。当前生成器覆盖B01—B21全部201主项；复杂项每页最多6个累计笔顺步骤，自动分页，不限于B01或六笔以内的字。
+
+## 基线完整性
 
 ```sh
 python -m pip install -r requirements.txt
-python scripts/validate_project.py
+for N in $(seq -w 1 21); do python scripts/validate_project.py --batch "B$N"; done
 python scripts/test_validation.py
-python scripts/acquire_vectors.py
-python scripts/build_batch.py --draft --font /path/to/local-chinese-kai.ttf --latin-font /path/to/local-latin.ttf
-python scripts/verify_pdf.py
+python scripts/test_deliverables.py
+python scripts/verify_deliverables.py
+python scripts/verify_formal_release_gate.py
+python scripts/verify_post_release.py --self-test
+python scripts/verify_post_release.py
 ```
 
-字体由运行环境提供，不随仓库或输出包分发。默认路径适用于已配置的Linux环境，也可显式传入。首次取得矢量需要联网；离线时将已经取得的十个JSON及许可放入`build/vectors/`后跳过获取步骤。
+归档完整性、正式v0.4.0历史状态与新周期计划一致性是三种不同检查。全部通过仍不代表E001/E002已修复或Q1完成。
 
-输出：`build/preface_v0.1.pdf`、`build/B01_draft_A4.pdf`、`build/B01_with_preface_draft_A4.pdf`、`build/generation.json`。前言在合集练习页之前。
+## 全书研究稿
 
-本轮预期为3页前言＋10页练习。生成清单记录的是本次构建信息；`visual_review: pending`表示每次重建默认需要重新视觉检查，并不覆盖`reviews/B01-layout.md`中对已交付版本的历史验收。
+以下使用Bash、fontconfig和已安装的可加载中文/拉丁字体。字体由本机提供，不提交字体文件。
 
-不带`--draft`时，来源和审读条件未齐就拒绝正式输出。CI只做结构、生成和预检，不会自动把内容改为核验通过。工作流中间包保存14天；长期成果以可重建源文件和之后的正式版本发布为准。
+```sh
+BATCHES="$(printf 'B%02d ' {1..21})"
+python scripts/acquire_vectors.py --batches $BATCHES
+python scripts/test_artwork.py
+FONT="$(fc-match -f '%{file}' 'AR PL KaitiM GB')"
+LATIN="$(fc-match -f '%{file}' 'DejaVu Sans')"
+for BATCH in $BATCHES; do
+  python scripts/build_batch.py --draft --batch "$BATCH" --font "$FONT" --latin-font "$LATIN"
+  python scripts/verify_pdf.py --batch "$BATCH"
+done
+python scripts/build_book_matter.py
+python scripts/build_collection.py
+python scripts/verify_book_matter.py
+```
+
+首次矢量获取需联网；离线时使用已恢复且经过哈希检查的`build/vectors/`材料，不能用未经验证的同名字形代替。
+
+当前`data/book-config.json`和部分脚本仍固定v0.4.0；全书结构为3页前言、2页目录、258页练习、13页卷末，共276页。输出在`build/`，不是新的正式交付。已有缺字勘误尚待M1修复，重建成功不能当作视觉通过。
+
+`--candidate`/`--formal`属于现有全书构建路径；不带模式的旧逐批release仍受独立门禁限制。不要只改文件名或配置版本便宣称得到v0.4.1/v0.5.0：版本参数化、标题页脚、目录、校验器和归档都需要同步。完整旧流水线见`.github/workflows/book-checks.yml`。
+
+正式归档PDF的精确字节由manifest固定。重建产物需要新的视觉记录；字体环境或PDF元数据可能影响字节哈希。M1/M3新PDF使用新版本目录，Q1绑定最终候选SHA256，历史PDF和manifest旧条目不可覆盖。
