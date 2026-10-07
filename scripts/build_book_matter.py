@@ -37,6 +37,23 @@ def txt(c,x,y,s,size=9,color=INK,font='STSong-Light'):
 def right(c,x,y,s,size=9,color=INK,font='STSong-Light'):
     c.setFillColor(color); c.setFont(font,size); c.drawRightString(x,y,str(s))
 
+def wrap_text(value,font='STSong-Light',size=8.5,width=420,max_lines=2):
+    lines=[]; current=''
+    for ch in str(value):
+        candidate=current+ch
+        if current and pdfmetrics.stringWidth(candidate,font,size)>width:
+            lines.append(current); current=ch
+        else:
+            current=candidate
+    if current: lines.append(current)
+    if len(lines)>max_lines:
+        lines=lines[:max_lines]
+        tail=lines[-1]
+        while tail and pdfmetrics.stringWidth(tail+'…',font,size)>width:
+            tail=tail[:-1]
+        lines[-1]=tail+'…'
+    return lines
+
 def header(c,title,subtitle,page_label):
     txt(c,L,H-48,title,20,RED)
     txt(c,L,H-68,subtitle,9,MUTED)
@@ -203,9 +220,11 @@ def build_backmatter(path,font):
         pub=s.get('publication_id','')
         if not (sid or title): continue
         txt(c,L,y,sid,8,RED)
-        txt(c,L+45,y,(pub+' '+title)[:42],8.5)
-        y-=24
-        if y<70: break
+        lines=wrap_text((pub+' '+title).strip(),width=R-(L+45),max_lines=2)
+        for li,line in enumerate(lines):
+            txt(c,L+45,y-li*11,line,8.5)
+        y-=34
+        if y<60: raise ValueError('Source ledger page overflow')
     footer(c,'这里只做书目导航；实际字段采用范围须回对应evidence/review。')
     c.showPage()
 
