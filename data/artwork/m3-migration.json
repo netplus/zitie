@@ -1,0 +1,258 @@
+{
+  "schema_version": 1,
+  "kind": "M3_rendering_adaptation_of_existing_reviewed_whole_contexts",
+  "upstream_revision": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+  "normative_source": {
+    "source_id": "S02",
+    "publication_id": "GF0023—2020",
+    "pdf_sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0"
+  },
+  "boundary": "Only six recorded whole-character contexts; no new normative identity, fine-name or pronunciation approval.",
+  "cases": [
+    {
+      "id": "T01",
+      "main_id": 7,
+      "component": "厂",
+      "whole_character": "原",
+      "indices": [
+        1,
+        2
+      ],
+      "mapping_kind": "contiguous",
+      "whole_order_code": "1332511234",
+      "stroke_count": 10,
+      "render_full_sequence": true,
+      "fine_stroke_names_claimed": false,
+      "formal_attached_form_claimed": false,
+      "evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json",
+      "evidence_sha256": "9823f4d5a63da69525ec083f886ef645e101f31e116a0efa38d17bc15bd0b8c9",
+      "mapping_review_sha256": "0080d497f0ef0a6591dc4f895dd681853c85894e366bb1bf3831c24c1032fd15",
+      "source_row": {
+        "pdf_page": 199,
+        "printed_page": 193,
+        "table_no": "1868",
+        "ucs": "0539F"
+      },
+      "vector_url": "https://raw.githubusercontent.com/chanind/hanzi-writer-data/68d10a4b21150cae5e1ebbd223eed289cf32d90c/data/%E5%8E%9F.json",
+      "vector_sha256": "67b69a0c119fe4adba151ee33daccc381e05ad9ea83045afc5e1160659e3510b",
+      "upstream_blob_sha": "6b49986dccc06abf928c2ddab8f12131535cd89b",
+      "upstream_radStrokes_used": false,
+      "teaching_note": "先写整字第1、2笔，再接着写里面的部分。",
+      "vector_review": {
+        "result": "passed_original_row_shape_and_order_comparison",
+        "date": "2026-10-08",
+        "reviewer": "ChatGPT; same-agent visual comparison",
+        "independent_reviewers": false,
+        "proof_page": 1,
+        "source_row_crop_viewed": true,
+        "all_cumulative_steps_viewed": true,
+        "limits": "Outline/ordering comparison only; font styling does not assign fine stroke names."
+      }
+    },
+    {
+      "id": "T02",
+      "main_id": 47,
+      "component": "门",
+      "whole_character": "们",
+      "indices": [
+        3,
+        4,
+        5
+      ],
+      "mapping_kind": "contiguous",
+      "whole_order_code": "32425",
+      "stroke_count": 5,
+      "render_full_sequence": true,
+      "fine_stroke_names_claimed": false,
+      "formal_attached_form_claimed": false,
+      "evidence": "data/evidence/P4-B04-B05-position-migration-final.json",
+      "evidence_sha256": "cc2f897cbe386e344ffeab2afd2c000f86db253342a25992577528d185e03947",
+      "mapping_review_sha256": "fe2920d6affb78dc667c57bc3419e04dd2a1cfe1388504e4d81ea13b53451e42",
+      "source_row": {
+        "pdf_page": 21,
+        "printed_page": 15,
+        "table_no": "0273",
+        "ucs": "04EEC"
+      },
+      "vector_url": "https://raw.githubusercontent.com/chanind/hanzi-writer-data/68d10a4b21150cae5e1ebbd223eed289cf32d90c/data/%E4%BB%AC.json",
+      "vector_sha256": "0a25764ae60803a9958ae3cade375c57d8743d7db0e0bf2031e73b0d0449609e",
+      "upstream_blob_sha": "87307bc1c61d2b5496077fa0891b4d2b3e622546",
+      "upstream_radStrokes_used": false,
+      "teaching_note": "先写整字第1、2笔；门从第3笔开始，写到第5笔。",
+      "vector_review": {
+        "result": "passed_original_row_shape_and_order_comparison",
+        "date": "2026-10-08",
+        "reviewer": "ChatGPT; same-agent visual comparison",
+        "independent_reviewers": false,
+        "proof_page": 2,
+        "source_row_crop_viewed": true,
+        "all_cumulative_steps_viewed": true,
+        "limits": "Outline/ordering comparison only; font styling does not assign fine stroke names."
+      }
+    },
+    {
+      "id": "T03",
+      "main_id": 72,
+      "component": "瓦",
+      "whole_character": "瓶",
+      "indices": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "mapping_kind": "contiguous",
+      "whole_order_code": "4311321554",
+      "stroke_count": 10,
+      "render_full_sequence": true,
+      "fine_stroke_names_claimed": false,
+      "formal_attached_form_claimed": false,
+      "evidence": "data/evidence/M2-wa-ping-position-20261007.json",
+      "evidence_sha256": "bd4493ccf985be3eb442fa829f4419cd4d1d0e826e675e6e6a78f658fba3011f",
+      "mapping_review_sha256": "ede1452ddd07d9d3dc57a485c8e40d91b3750258ec18ad0de640a2371f0abc5a",
+      "source_row": {
+        "pdf_page": 228,
+        "printed_page": 222,
+        "table_no": "2051",
+        "ucs": "074F6"
+      },
+      "vector_url": "https://raw.githubusercontent.com/chanind/hanzi-writer-data/68d10a4b21150cae5e1ebbd223eed289cf32d90c/data/%E7%93%B6.json",
+      "vector_sha256": "303c7727b9298ff65aca6ef0ff6693a361fb3df6492f0437c3423a2ced2457ef",
+      "upstream_blob_sha": "cc7e9bff2dc840be3ff74551cbedb6b791782694",
+      "upstream_radStrokes_used": false,
+      "teaching_note": "先写完左边的6笔；瓦从第7笔开始，写到第10笔。",
+      "vector_review": {
+        "result": "passed_original_row_shape_and_order_comparison",
+        "date": "2026-10-08",
+        "reviewer": "ChatGPT; same-agent visual comparison",
+        "independent_reviewers": false,
+        "proof_page": 3,
+        "source_row_crop_viewed": true,
+        "all_cumulative_steps_viewed": true,
+        "limits": "Outline/ordering comparison only; font styling does not assign fine stroke names."
+      }
+    },
+    {
+      "id": "T04",
+      "main_id": 49,
+      "component": "辶",
+      "whole_character": "近",
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "mapping_kind": "contiguous_written_last",
+      "whole_order_code": "3312454",
+      "stroke_count": 7,
+      "render_full_sequence": true,
+      "fine_stroke_names_claimed": false,
+      "formal_attached_form_claimed": false,
+      "evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json",
+      "evidence_sha256": "9823f4d5a63da69525ec083f886ef645e101f31e116a0efa38d17bc15bd0b8c9",
+      "mapping_review_sha256": "cae3e8054b4a36b99e318b786f4a6e0b487540d1c317b231d9c3a080157fb205",
+      "source_row": {
+        "pdf_page": 52,
+        "printed_page": 46,
+        "table_no": "0791",
+        "ucs": "08FD1"
+      },
+      "vector_url": "https://raw.githubusercontent.com/chanind/hanzi-writer-data/68d10a4b21150cae5e1ebbd223eed289cf32d90c/data/%E8%BF%91.json",
+      "vector_sha256": "5548b4cabaeeb00b23b3c0b5134cdc9190b825c50c6eac1937ad3ee7df61d886",
+      "upstream_blob_sha": "a39012b224cb80aa18106411568bc0b4a58df17b",
+      "upstream_radStrokes_used": false,
+      "teaching_note": "先写整字第1—4笔，再写辶的第5—7笔。",
+      "vector_review": {
+        "result": "passed_original_row_shape_and_order_comparison",
+        "date": "2026-10-08",
+        "reviewer": "ChatGPT; same-agent visual comparison",
+        "independent_reviewers": false,
+        "proof_page": 4,
+        "source_row_crop_viewed": true,
+        "all_cumulative_steps_viewed": true,
+        "limits": "Outline/ordering comparison only; font styling does not assign fine stroke names."
+      }
+    },
+    {
+      "id": "T05",
+      "main_id": 38,
+      "component": "囗",
+      "whole_character": "国",
+      "indices": [
+        1,
+        2,
+        8
+      ],
+      "mapping_kind": "interleaved_enclosing",
+      "whole_order_code": "25112141",
+      "stroke_count": 8,
+      "render_full_sequence": true,
+      "fine_stroke_names_claimed": false,
+      "formal_attached_form_claimed": false,
+      "evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json",
+      "evidence_sha256": "9823f4d5a63da69525ec083f886ef645e101f31e116a0efa38d17bc15bd0b8c9",
+      "mapping_review_sha256": "e9951be94c0f19f7514f2ba7fd7a5f2423c3623b50748a37a1cc7683f0ee835b",
+      "source_row": {
+        "pdf_page": 80,
+        "printed_page": 74,
+        "table_no": "1081",
+        "ucs": "056FD"
+      },
+      "vector_url": "https://raw.githubusercontent.com/chanind/hanzi-writer-data/68d10a4b21150cae5e1ebbd223eed289cf32d90c/data/%E5%9B%BD.json",
+      "vector_sha256": "40b46b7cbe5c292abcf79507dc544c5424c9cfa4df0376aa3b8fa42e535c2f7f",
+      "upstream_blob_sha": "7c4d546ecab496f735603128fb0d418b1ef62bdb",
+      "upstream_radStrokes_used": false,
+      "teaching_note": "先写第1、2笔，写完里面第3—7笔，最后第8笔封口。",
+      "vector_review": {
+        "result": "passed_original_row_shape_and_order_comparison",
+        "date": "2026-10-08",
+        "reviewer": "ChatGPT; same-agent visual comparison",
+        "independent_reviewers": false,
+        "proof_page": 5,
+        "source_row_crop_viewed": true,
+        "all_cumulative_steps_viewed": true,
+        "limits": "Outline/ordering comparison only; font styling does not assign fine stroke names."
+      }
+    },
+    {
+      "id": "T06",
+      "main_id": 8,
+      "component": "匚",
+      "whole_character": "区",
+      "indices": [
+        1,
+        4
+      ],
+      "mapping_kind": "interleaved_enclosing",
+      "whole_order_code": "1345",
+      "stroke_count": 4,
+      "render_full_sequence": true,
+      "fine_stroke_names_claimed": false,
+      "formal_attached_form_claimed": false,
+      "evidence": "data/evidence/P4-B06-B11-position-migration-whole-character.json",
+      "evidence_sha256": "9823f4d5a63da69525ec083f886ef645e101f31e116a0efa38d17bc15bd0b8c9",
+      "mapping_review_sha256": "aa41fd9046be82259571cffb92a47fa9be78900bf1d6ccfdeab4579c26157eaf",
+      "source_row": {
+        "pdf_page": 13,
+        "printed_page": 7,
+        "table_no": "0094",
+        "ucs": "0533A"
+      },
+      "vector_url": "https://raw.githubusercontent.com/chanind/hanzi-writer-data/68d10a4b21150cae5e1ebbd223eed289cf32d90c/data/%E5%8C%BA.json",
+      "vector_sha256": "d7c3f283870ace9e8cd726a08086cb50704eb002d1e0d9c2a502a67c6d85b9ba",
+      "upstream_blob_sha": "83a2f2986bbc71132872e508b7224e7230f8f3ff",
+      "upstream_radStrokes_used": false,
+      "teaching_note": "先写第1笔，接着写里面第2、3笔，最后第4笔收框。",
+      "vector_review": {
+        "result": "passed_original_row_shape_and_order_comparison",
+        "date": "2026-10-08",
+        "reviewer": "ChatGPT; same-agent visual comparison",
+        "independent_reviewers": false,
+        "proof_page": 6,
+        "source_row_crop_viewed": true,
+        "all_cumulative_steps_viewed": true,
+        "limits": "Outline/ordering comparison only; font styling does not assign fine stroke names."
+      }
+    }
+  ]
+}

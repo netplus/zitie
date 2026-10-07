@@ -71,16 +71,20 @@ python scripts/verify_patch_archive.py
 
 归档门禁绑定PDF字节、生成提交、原始generation JSON、影响页QA和manifest。旧v0.4.0门禁与新v0.4.1检查独立，额外未登记release会拒绝。最终归档HEAD CI通过并合入后再记录M1退出；v0.5.0仍必须经过M2/M3/Q1。
 
-## M3内部工程预览（不冻结候选）
+## M3内部工程预览（全模块，不冻结候选）
 
 ```sh
+python scripts/acquire_m3_vectors.py
 python scripts/build_m3_preview.py
+python scripts/test_m3_migration.py
 python scripts/verify_m3_preview.py --self-test
 python scripts/verify_m3_preview.py
 ```
 
-依赖已恢复并校验的`build/vectors/`与本机楷体/拉丁/UMing字体，输出`build/v0.5.0-dev1/`。支持`--font`、`--latin-font`、`--variant-font`；不导出字体。配置为`data/m3_book.json`，学生/辅导者文案为`book/front-matter/m3-guidance.json`。
+依赖已核验的201主项`build/vectors/`和六个完整整字`build/m3-whole-vectors/`，本机楷体/拉丁/UMing字体保持原要求。首次取得六个整字使用固定upstream提交、SHA256及Git blob双检；离线用`python scripts/acquire_m3_vectors.py --offline`，缺缓存会报错，不换来源猜测。上游radStrokes不是本题教学部件索引。字体文件不导出。
 
-当前288页包含201主项练习及6组对照/回忆，明确缺少整字迁移模块；没有candidate/formal升级参数。metadata保存输入/字体哈希、实际源码提交及dirty状态、逐项证据判定、页码/书签/链接；只有无阻塞且具正面证据的字段才允许呈现。
+输出`build/v0.5.0-dev2/`：299页，含201主项练习、六组比较/回忆及六例完整整字迁移。迁移10页覆盖44笔，每页最多6个累计步骤，续页保留前序笔画；常规练习4行×8格。配置`data/m3_book.json`，文案`book/front-matter/m3-guidance.json`，迁移证据及绘图摘要`data/artwork/m3-migration.json`。
 
-内部调试预览不替代永久归档候选；本轮不交付或发布该PDF。M3完成全模块后另冻结新候选，Q1验收最终同一字节。旧构建路径、17份历史PDF和manifest不覆盖。当前块状态见`data/m3_scope.json`。
+metadata记录输入及字体哈希、真实checkout与dirty状态、逐项证据判定、完整时序、页码/书签/链接。无阻塞仍须有正面证据；不通过字体的radStrokes或外形推导新规范结论。35项新版测试与34项迁移测试分别运行。
+
+该入口只构建内部工程预览，没有candidate/formal升级参数。五包实现后仍需真实冻结和归档完整候选，绑定实际源码提交与PDF字节，再做独立Q1。旧构建路径、17份历史PDF和manifest保持不变。
