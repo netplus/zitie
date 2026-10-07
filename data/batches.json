@@ -16,7 +16,9 @@
       "prerequisites": [],
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B02",
@@ -31,7 +33,9 @@
       ],
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B03",
@@ -40,7 +44,7 @@
       "status": "scope_frozen_structure_checked_stroke_order_cross_checked_metadata_checked_content_checked_artwork_checked_layout_checked_archive_pending",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "archive_pending",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B01",
         "B02"
@@ -58,7 +62,9 @@
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
       "note": "P6正规化：2026-09-30既有B03逐笔矢量人工复核已真实完成，data/evidence/B03-artwork.json与reviews/B03-artwork.md有效；PDF归档与manifest仍独立留待P7。",
       "layout_status": "layout_ready",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B04",
@@ -67,7 +73,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B03_content_ready"
       ],
@@ -75,7 +81,9 @@
       "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B05",
@@ -84,7 +92,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B04_content_scope"
       ],
@@ -92,7 +100,9 @@
       "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B06",
@@ -101,7 +111,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B05_content_scope"
       ],
@@ -109,7 +119,9 @@
       "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B07",
@@ -118,7 +130,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B06_content_scope"
       ],
@@ -126,7 +138,9 @@
       "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B08",
@@ -135,7 +149,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B07_content_scope"
       ],
@@ -143,7 +157,9 @@
       "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B09",
@@ -152,7 +168,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B08_content_scope"
       ],
@@ -160,7 +176,9 @@
       "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B10",
@@ -169,7 +187,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B09_content_scope"
       ],
@@ -177,7 +195,9 @@
       "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B11",
@@ -186,7 +206,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B10_content_scope"
       ],
@@ -194,7 +214,9 @@
       "artwork_review_record": "reviews/P6-B04-B11-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B12",
@@ -203,7 +225,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B11_content_scope"
       ],
@@ -211,7 +233,9 @@
       "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B13",
@@ -220,7 +244,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B12_content_scope"
       ],
@@ -228,7 +252,9 @@
       "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B14",
@@ -237,7 +263,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B13_content_scope"
       ],
@@ -245,7 +271,9 @@
       "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B15",
@@ -254,7 +282,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B14_content_scope"
       ],
@@ -262,7 +290,9 @@
       "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B16",
@@ -271,7 +301,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B15_content_scope"
       ],
@@ -279,7 +309,9 @@
       "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B17",
@@ -288,7 +320,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B16_content_scope"
       ],
@@ -296,7 +328,9 @@
       "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B18",
@@ -305,7 +339,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B17_content_scope"
       ],
@@ -313,7 +347,9 @@
       "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B19",
@@ -322,7 +358,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B18_content_scope"
       ],
@@ -330,7 +366,9 @@
       "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B20",
@@ -339,7 +377,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B19_content_scope"
       ],
@@ -347,7 +385,9 @@
       "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     },
     {
       "id": "B21",
@@ -356,7 +396,7 @@
       "status": "content_ready",
       "content_status": "content_ready",
       "artwork_status": "artwork_ready",
-      "publication_status": "deferred",
+      "publication_status": "draft_archived",
       "prerequisites": [
         "B20_content_scope"
       ],
@@ -364,7 +404,9 @@
       "artwork_review_record": "reviews/P6-B12-B21-artwork-review-20261007.md",
       "layout_status": "layout_ready",
       "layout_review_record": "reviews/P6-full-book-layout-review-20261007.md",
-      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json"
+      "layout_evidence": "data/evidence/P6-full-book-layout-review-20261007.json",
+      "draft_archive_path": "deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf",
+      "draft_archive_review": "reviews/v0.3.0-full-book-draft-ci.md"
     }
   ],
   "phase1_content_batches": [],
@@ -376,5 +418,5 @@
   },
   "run_target_main_count": 0,
   "run_target_rule": "P6已完成；P7按发布门槛推进，不按主项数量凑批次。",
-  "phase_boundary_rule": "content_ready与artwork/layout_ready均已201/201完成；当前P7独立统计draft归档、manifest、全书PDF/视觉QA、目标HEAD CI与release_eligible。"
+  "phase_boundary_rule": "content_ready、artwork/layout_ready均已201/201完成；P7已归档v0.3.0全书draft，后续继续全书QA、manifest终审、目标HEAD CI、release candidate与正式release。"
 }
