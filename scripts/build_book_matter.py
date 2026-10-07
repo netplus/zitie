@@ -96,13 +96,15 @@ def build_navigation():
         batch_ranges[b['id']]={'start':start,'end':current-1,'title':b['title'],'glyphs':b['main_glyphs']}
     return batches,batch_ranges,item_ranges,current
 
-def build_toc(path,font):
+def build_toc(path,font,formal=False):
     batches,ranges,items,back_start=build_navigation()
     c=canvas.Canvas(str(path),pagesize=A4,pageCompression=1,invariant=1)
     c.setTitle('循序渐进汉字部首字帖｜目录与导航')
     halves=[batches[:11],batches[11:]]
     for p,rows in enumerate(halves,1):
-        header(c,'目录与学习导航','P7全书编排；页码基于当前release-candidate结构生成',f'目录 {p}/2')
+        subtitle=('正式发布版 v0.4.0｜页码基于当前正式结构生成' if formal
+                  else 'P7全书编排；页码基于当前release-candidate结构生成')
+        header(c,'目录与学习导航',subtitle,f'目录 {p}/2')
         y=H-110
         for b in rows:
             rg=ranges[b['id']]
@@ -123,7 +125,7 @@ def build_toc(path,font):
     if len(PdfReader(str(path)).pages)!=2: raise ValueError('TOC must be exactly 2 pages')
     return 2
 
-def build_backmatter(path,font):
+def build_backmatter(path,font,formal=False):
     coverage=load('data/coverage.json')
     variants=load('data/variants.json')
     sources=load('sources/catalog.json')
@@ -230,14 +232,16 @@ def build_backmatter(path,font):
 
     # Version/errata record: 1 page.
     page_no+=1
-    header(c,'版本、勘误与发布状态','本页记录当前候选结构；正式release另需P7最终门槛',f'索引 {page_no}/13')
+    version_subtitle=('正式发布版 v0.4.0；字段边界与重开条件继续保留' if formal
+                      else '本页记录当前候选结构；正式release另需P7最终门槛')
+    header(c,'版本、勘误与发布状态',version_subtitle,f'索引 {page_no}/13')
     y=H-110
     records=[
       ('v0.1.0','B01阶段稿，历史保留，不覆盖'),
       ('v0.2.0','B01+B02阶段稿'),
       ('v0.2.1','B01+B02内容复核修订稿'),
-      ('v0.3.0','201主项全书draft；已归档，仍非正式release'),
-      ('当前release','0；deliverables/releases/仍为空')
+      ('v0.3.0','201主项全书draft；历史归档'),
+      ('当前release',('v0.4.0；正式发布，字段边界见来源说明' if formal else '0；deliverables/releases/仍为空'))
     ]
     for ver,note in records:
         txt(c,L,y,ver,10,RED); txt(c,L+95,y,note,9); y-=34
@@ -245,7 +249,9 @@ def build_backmatter(path,font):
     txt(c,L,y,'重开条件',11,RED); y-=25
     txt(c,L,y,'如取得GF0011—2022正式逐项表或等效官方数据，需重开相关source-blocked字段并重新跑P5—P7受影响门槛。',8.5)
     y-=32
-    txt(c,L,y,'正式PDF不得由本页状态文字自动升级；以deliverables/manifest.json、目标HEAD CI和最终release记录共同为准。',8.5)
+    status_line=('本正式PDF的发布状态以deliverables/manifest.json、目标HEAD CI与release记录共同为准。' if formal
+                 else '正式PDF不得由本页状态文字自动升级；以deliverables/manifest.json、目标HEAD CI和最终release记录共同为准。')
+    txt(c,L,y,status_line,8.5)
     footer(c,'历史draft不覆盖；新修订使用新版本目录并保留旧字节。')
     c.showPage()
 
@@ -257,13 +263,14 @@ def build_backmatter(path,font):
 def main():
     p=argparse.ArgumentParser()
     p.add_argument('--font',default=None,help='Deprecated; built-in STSong-Light CID font is used for portability.')
+    p.add_argument('--formal',action='store_true')
     args=p.parse_args()
     font=register_font(args.font)
     out=ROOT/'build'; out.mkdir(exist_ok=True)
     toc=out/'toc_v0.4.0.pdf'
     back=out/'backmatter_v0.4.0.pdf'
-    toc_pages=build_toc(toc,font)
-    back_pages=build_backmatter(back,font)
+    toc_pages=build_toc(toc,font,args.formal)
+    back_pages=build_backmatter(back,font,args.formal)
     _,_,nav_items,_=build_navigation()
     meta={
         'toc_file':toc.name,
@@ -273,7 +280,9 @@ def main():
         'main_index_main_ids':[row['main_id'] for row in sorted(nav_items,key=lambda row: row['main_id'])],
         'variant_ids':[v['id'] for v in load('data/variants.json')['items']],
         'legacy_variant_ids':[v['id'] for v in load('data/variants.json')['items'][:27]],
-        'status':'P7_release_structure_material_generated_not_yet_archived_or_released'
+        'status':('P7_formal_release_book_matter_generated_not_archived' if args.formal
+                  else 'P7_release_structure_material_generated_not_yet_archived_or_released'),
+        'formal':args.formal
     }
     (out/'generation_book_matter.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps(meta,ensure_ascii=False))
