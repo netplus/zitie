@@ -101,8 +101,7 @@ def reviewed_stroke_names(e,n):
         return None
     candidates=[
         e.get('stroke_names'),
-        (e.get('fine_stroke_names_review') or {}).get('adjudicated_names'),
-        e.get('stroke_names_candidate')
+        (e.get('fine_stroke_names_review') or {}).get('adjudicated_names')
     ]
     for names in candidates:
         if isinstance(names,list) and len(names)==n:
