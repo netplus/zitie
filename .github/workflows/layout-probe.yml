@@ -1,0 +1,40 @@
+name: P6 full-book layout preview
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - 'feat/p6-layout-*'
+    paths:
+      - 'scripts/render_layout_preview.py'
+      - 'data/layout-policy.json'
+      - 'data/B*.json'
+      - 'data/batches.json'
+      - '.github/workflows/layout-probe.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install system CJK font
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq fonts-noto-cjk
+      - name: Install rendering dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Acquire all 201 vector materials
+        run: python scripts/acquire_vectors.py --batches B01 B02 B03 B04 B05 B06 B07 B08 B09 B10 B11 B12 B13 B14 B15 B16 B17 B18 B19 B20 B21
+      - name: Render full-book A4 layout preview
+        run: python scripts/render_layout_preview.py
+      - name: Upload temporary P6 layout preview
+        uses: actions/upload-artifact@v4
+        with:
+          name: p6-full-book-layout-preview
+          path: build/layout-preview
+          retention-days: 7
