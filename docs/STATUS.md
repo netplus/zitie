@@ -16,6 +16,20 @@
 
 P7下一步：先生成并真实归档全书draft到`deliverables/drafts/`，登记manifest，再做全书PDF目录/页码/索引/附形回归视觉QA，最后以目标HEAD CI和release gate收口。
 
+## P7最新检查点：v0.3.0全书draft已归档（2026-10-07）
+
+- 全书draft：`deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf`
+- 页数：**261**
+- 字节：**3,652,431**
+- SHA256：`6c8ddf162b0f72ef921a8624095096cce177128efd4ccf8d50c5168b31cb4773`
+- source commit：`a7b0ffa385417d84c8d8651ada0ed56a5b8cfa7b`
+- 归档workflow run：`37561985856`
+- review：`reviews/v0.3.0-full-book-draft-ci.md`
+- manifest：已登记，`release_eligible=false`
+- B01—B21均已标记为包含在该全书draft归档中。
+
+这只关闭P7的“全书draft真实归档+manifest登记”门槛；正式release仍为0。下一步继续全书PDF/目录/页码/索引/附形及原27项回归QA、manifest终审、目标HEAD CI、release candidate和正式release。
+
 ## 当前阶段
 
 阶段1目标是先完成201个主部首的字段级内容和证据链；artwork、PDF、manifest和CI尾项不再阻塞后续内容字段推进。阶段2统一处理图形与版式，阶段3处理归档与发布。阶段1的`content_ready`不等于`artwork_ready`或`release_eligible`。
