@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "record_kind": "P7_structured_draft_visual_QA",
+  "review_date": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source_commit": "a0fec601f3cb8a8833e662cec57d3ef56293edd6",
+  "workflow_run": 37564891335,
+  "artifact": {
+    "id": 11457814109,
+    "name": "zitie-p7-structured-draft-research",
+    "digest": "sha256:3923aaafe54af8706c3b2e9722a1b6735d50363f56ef5d00b5839d21556e8af5"
+  },
+  "collection": {
+    "file": "B01-B21_with_preface_toc_appendices_draft_A4.pdf",
+    "pages": 276,
+    "release_eligible": false
+  },
+  "render_review": {
+    "dpi": 170,
+    "pages_reviewed": [
+      "4-5",
+      "264-276"
+    ],
+    "total_new_pages_reviewed": 15,
+    "engine": "pdf skill render_pdf.py",
+    "result": "passed_new_P7_navigation_and_backmatter_visual_QA"
+  },
+  "checks": {
+    "toc": "2/2 viewed; no clipping/overlap; batch ranges align with generated navigation",
+    "main_index": "6/6 viewed; IDs strictly 001..201; page references present; 201 龠 -> B21 -> 261-263",
+    "variants": "2/2 viewed; V001-V032 present; teaching-candidate/source-blocked boundary retained",
+    "legacy_regression": "2/2 viewed; V001-V027 present",
+    "source_summary": "2/2 viewed; field-status summary retained; source-ledger titles wrap without truncation",
+    "version_status": "1/1 viewed; v0.3.0 archived draft retained; formal release remains 0"
+  },
+  "limits": [
+    "This QA covers the 15 pages newly introduced by the P7 TOC/index/appendix structure.",
+    "The 258 practice pages were not re-adjudicated semantically by this record; they are covered by existing P6 layout/artwork review and current CI structural regeneration.",
+    "No PDF is archived or released by this evidence alone."
+  ],
+  "status": "reviewed_passed_not_archived_not_released"
+}
