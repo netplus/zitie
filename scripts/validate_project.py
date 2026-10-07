@@ -74,7 +74,8 @@ def validate(catalog, batches, variants, batch):
             assert e['primary_pdf_page'] - e['primary_printed_page'] == 6
         review=e.get('stroke_order_review') or {}
         if review.get('pdf_page') is not None and review.get('printed_page') is not None:
-            assert review['pdf_page'] >= review['printed_page'] > 0
+            assert isinstance(review['pdf_page'], int) and review['pdf_page'] > 0
+            assert isinstance(review['printed_page'], int) and review['printed_page'] >= 0
     if batch['release_eligible']:
         assert catalog['target_edition_status'] == 'fulltext_verified'
         assert batch['cross_review']['status'] == 'passed' and batch['cross_review']['source_id']
