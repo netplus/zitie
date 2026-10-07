@@ -1,0 +1,106 @@
+name: One-shot archive v0.4.0 formal release
+
+on:
+  push:
+    branches:
+      - feat/p7-v0.4.0-release-archive-20261007
+
+permissions:
+  contents: write
+  actions: read
+
+jobs:
+  archive:
+    if: ${{ !contains(github.event.head_commit.message, '[release-bot]') }}
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      ARTIFACT_ID: "11460761965"
+      EXPECTED_SHA256: "ab3c23d7547872f4d0e2c128de397e9e89ed6de97b681876e2dff017ff5c4894"
+      EXPECTED_BYTES: "3749164"
+      SOURCE_COMMIT: "9149a6e9b751bfbc97e95c3bbfc64a5c8681f7fd"
+      SOURCE_RUN: "37570965306"
+      TARGET_PATH: "deliverables/releases/v0.4.0/B01-B21_with_preface_toc_appendices_v0.4.0_A4.pdf"
+      REVIEW_RECORD: "reviews/P7-formal-v0.4.0-visual-QA-20261007.md"
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Download reviewed formal artifact
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh api -H "Accept: application/vnd.github+json"             "/repos/${GITHUB_REPOSITORY}/actions/artifacts/${ARTIFACT_ID}/zip" > /tmp/formal.zip
+          mkdir -p /tmp/formal
+          unzip -q /tmp/formal.zip -d /tmp/formal
+          test -f /tmp/formal/B01-B21_with_preface_toc_appendices_v0.4.0_A4.pdf
+      - name: Verify and stage formal release
+        run: |
+          python -m pip install pypdf==5.9.0
+          python - <<'PY'
+          import hashlib, os, json
+          from pathlib import Path
+          from pypdf import PdfReader
+
+          src=Path('/tmp/formal/B01-B21_with_preface_toc_appendices_v0.4.0_A4.pdf')
+          raw=src.read_bytes()
+          got_hash=hashlib.sha256(raw).hexdigest()
+          got_bytes=len(raw)
+          pages=len(PdfReader(str(src)).pages)
+          assert got_hash==os.environ['EXPECTED_SHA256'], (got_hash, os.environ['EXPECTED_SHA256'])
+          assert got_bytes==int(os.environ['EXPECTED_BYTES']), (got_bytes, os.environ['EXPECTED_BYTES'])
+          assert pages==276, pages
+
+          dst=Path(os.environ['TARGET_PATH'])
+          dst.parent.mkdir(parents=True,exist_ok=True)
+          dst.write_bytes(raw)
+
+          manifest=Path('deliverables/manifest.json')
+          data=json.loads(manifest.read_text(encoding='utf-8'))
+          path=os.environ['TARGET_PATH']
+          if any(x.get('path')==path for x in data['artifacts']):
+              raise SystemExit('Formal release path already exists in manifest')
+          data['artifacts'].append({
+              'path': path,
+              'title': '《循序渐进汉字部首字帖》v0.4.0正式发布版',
+              'version': '0.4.0',
+              'status': 'released',
+              'batch': 'B01-B21',
+              'pages': pages,
+              'bytes': got_bytes,
+              'sha256': got_hash,
+              'source_commit': os.environ['SOURCE_COMMIT'],
+              'workflow_run_id': int(os.environ['SOURCE_RUN']),
+              'artifact_id': int(os.environ['ARTIFACT_ID']),
+              'review_record': os.environ['REVIEW_RECORD'],
+              'release_eligible': True,
+              'release_gate_snapshot': {
+                  'scope':'passed',
+                  'primary':'passed',
+                  'cross':'passed',
+                  'metadata':'passed',
+                  'artwork':'passed',
+                  'layout':'passed',
+                  'unresolved_conflicts':0,
+                  'terminal_fail_closed_disclosed':True,
+                  'terminal_fail_closed':{
+                      'fine_stroke_names':14,
+                      'position_migration':3,
+                      'exact_GF0011_2022_item_fields':201
+                  },
+                  'gf0011_2022_item_level_fulltext':'source_blocked_fail_closed'
+              }
+          })
+          manifest.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          PY
+      - name: Remove one-shot workflow and commit release
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git rm .github/workflows/archive-v040-release-once.yml
+          git add deliverables/manifest.json "${TARGET_PATH}"
+          git commit -m "[release-bot] P7: archive v0.4.0 formal release"
+          git push origin "HEAD:${GITHUB_REF_NAME}"
