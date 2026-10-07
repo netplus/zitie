@@ -29,6 +29,24 @@
       "target": "皿",
       "removed_literal": "罒",
       "replacement_scope": "上部网形部件"
+    },
+    {
+      "batch": "B12",
+      "target": "癶",
+      "removed_literal": "癶 in prose",
+      "replacement_scope": "本页五画顶部部件"
+    },
+    {
+      "batch": "B13",
+      "target": "老",
+      "removed_literal": "耂",
+      "replacement_scope": "顶部位置形态"
+    },
+    {
+      "batch": "B13",
+      "target": "覀",
+      "removed_literal": "覀 in prose",
+      "replacement_scope": "本页目标"
     }
   ],
   "result": "prose_no_longer_depends_on_these_rare_font_glyphs",
