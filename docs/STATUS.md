@@ -692,3 +692,20 @@ RC1已通过一次性feature-branch归档流程真实写入：
 
 当前P7仅剩：RC1归档PR目标HEAD CI、最终formal-release gate、正式PDF生成/终审、`deliverables/releases/`归档与release记录。GF0011—2022逐项精确字段继续保持201项source_blocked fail-closed，不因候选归档而升级。
 
+## P7 v0.4.0正式发布归档候选（2026-10-07）
+
+正式发布版已由PR #54目标HEAD `9149a6e9b751bfbc97e95c3bbfc64a5c8681f7fd`生成并完成formal gate与视觉QA。对应Book integrity checks run `37570965306`成功，artifact `11460761965 zitie-p7-draft-rc1-formal-preflight`。
+
+固定正式PDF：
+- 路径：`deliverables/releases/v0.4.0/B01-B21_with_preface_toc_appendices_v0.4.0_A4.pdf`
+- 页数：276
+- 字节：3,749,164
+- SHA256：`ab3c23d7547872f4d0e2c128de397e9e89ed6de97b681876e2dff017ff5c4894`
+- visual QA：`reviews/P7-formal-v0.4.0-visual-QA-20261007.md`
+
+正式PDF全文预检确认：不存在“编写稿”“前言初稿”“编写中”“发布候选稿 RC1”等预发布标签；3个前言页和258个练习页均使用正式发布状态文字；目录、201主部首索引、32项教学变体、原V001—V027、来源台账和版本页保留。GF0011—2022逐项精确字段仍明确披露为201项source_blocked fail-closed，不因正式发布而改记reviewed。
+
+`deliverables/manifest.json`已在当前release分支登记`status=released`、`release_eligible=true`，并保存release gate snapshot。terminal fail-closed继续披露为：细笔名14项、position_migration 3项、GF0011—2022逐项精确字段201项；`unresolved_conflicts=0`仅表示没有未分类/未路由的发布冲突，不表示这些fail-closed字段消失。
+
+**当前仍未宣布P7完成。** 唯一剩余门槛是本正式release归档PR的目标HEAD CI；只有该CI成功后才更新P7为completed并合入main。
+
