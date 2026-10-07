@@ -203,6 +203,37 @@
       "artifact_id": 11460128190,
       "review_record": "reviews/P7-RC1-visual-QA-20261007.md",
       "release_eligible": false
+    },
+    {
+      "path": "deliverables/releases/v0.4.0/B01-B21_with_preface_toc_appendices_v0.4.0_A4.pdf",
+      "title": "《循序渐进汉字部首字帖》v0.4.0正式发布版",
+      "version": "0.4.0",
+      "status": "released",
+      "batch": "B01-B21",
+      "pages": 276,
+      "bytes": 3749164,
+      "sha256": "ab3c23d7547872f4d0e2c128de397e9e89ed6de97b681876e2dff017ff5c4894",
+      "source_commit": "9149a6e9b751bfbc97e95c3bbfc64a5c8681f7fd",
+      "workflow_run_id": 37570965306,
+      "artifact_id": 11460761965,
+      "review_record": "reviews/P7-formal-v0.4.0-visual-QA-20261007.md",
+      "release_eligible": true,
+      "release_gate_snapshot": {
+        "scope": "passed",
+        "primary": "passed",
+        "cross": "passed",
+        "metadata": "passed",
+        "artwork": "passed",
+        "layout": "passed",
+        "unresolved_conflicts": 0,
+        "terminal_fail_closed_disclosed": true,
+        "terminal_fail_closed": {
+          "fine_stroke_names": 14,
+          "position_migration": 3,
+          "exact_GF0011_2022_item_fields": 201
+        },
+        "gf0011_2022_item_level_fulltext": "source_blocked_fail_closed"
+      }
     }
   ]
 }
