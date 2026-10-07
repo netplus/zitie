@@ -18,9 +18,9 @@
 
 阶段1的“content_ready”只表示内容层可以进入后续图形处理，不表示正式发布。全书级阻塞（例如GF0011—2022逐项全文）允许保留为明确pending，不阻止后续批次继续完成其他可独立核验字段。
 
-\n## 阶段1后半程收口计划\n\n阶段1的剩余工作不再无限按字段横向扩展，按\`docs/REMAINING_PHASE_PLAN.md\`执行P0—P5：\n\n- P0规范源通道：已完成；\n- P1笔顺规范原页收口：当前活动阶段；\n- P2细笔名规范原页收口；\n- P3其它字段扫尾；\n- P4 GF0011—2022身份与位置迁移；\n- P5逐批content_ready终审。\n\nP6/P7分别对应图形版式与全书发布。P1—P4保持80项常规吞吐；阶段门槛优先于机械计数。\n\n## 阶段2：图形与版式
+\n## 阶段收口状态\n\n剩余完书工作按\`docs/REMAINING_PHASE_PLAN.md\`执行P0—P7。到2026-10-07：P0—P6均已完成，201/201 content_ready、201/201 artwork_ready且全书layout_ready；当前活动阶段为P7。P7独立处理draft归档、manifest、全书PDF/目录/页码/索引视觉QA、目标HEAD CI和正式release。阶段门槛优先于机械计数。\n\n## 阶段2：图形与版式
 
-阶段2统一处理：
+阶段2已于P6完成，统一处理了：
 - 固定矢量来源；
 - 逐笔路径与规范原图对照；
 - 当前笔红色、旧笔深灰的累计示范；
@@ -31,7 +31,7 @@
 
 ## 阶段3：归档与发布
 
-阶段3处理：
+阶段3/P7当前处理：
 - deliverables/drafts/真实PDF归档；
 - manifest中的pages、bytes、SHA256、source_commit和review_record；
 - 目标HEAD CI；
