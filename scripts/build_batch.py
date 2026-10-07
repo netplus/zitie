@@ -51,6 +51,22 @@ def text(c,x,y,value,size=11,color='ink',font='CJK',center=False,width=None):
     if center: c.drawCentredString(x,y,value)
     else: c.drawString(x,y,value)
 
+def wrapped_text(c,x,y,value,size=11,color='ink',font='CJK',width=100,leading=None,max_lines=2):
+    leading=leading or size*1.25
+    lines=[]; current=''
+    for ch in value:
+        candidate=current+ch
+        if current and pdfmetrics.stringWidth(candidate,font,size)>width:
+            lines.append(current); current=ch
+        else:
+            current=candidate
+    if current: lines.append(current)
+    if len(lines)>max_lines:
+        raise ValueError('Text exceeds wrapped layout: '+value)
+    for i,line in enumerate(lines):
+        text(c,x,y-i*leading,line,size=size,color=color,font=font)
+    return len(lines)
+
 def grid(c,x,y,size):
     c.saveState(); c.setStrokeColor(HexColor(COL['border'])); c.setLineWidth(.65)
     c.rect(x,y,size,size)
@@ -121,10 +137,10 @@ def make_page(c,e,data,page_number,draft,batch,step_start,step_end,part,total_pa
         text(c,155,709,'读音：本项目不单列',12,color='muted')
     text(c,155,686,str(n)+'画 · 主部首',13)
     if not continuation:
-        text(c,155,663,e['tips'][0],11.5,width=RIGHT-155)
-        text(c,155,642,e['tips'][1],11.5,color='red',width=RIGHT-155)
+        wrapped_text(c,155,667,e['tips'][0],11.5,width=RIGHT-155,leading=13,max_lines=2)
+        wrapped_text(c,155,640,e['tips'][1],11.5,color='red',width=RIGHT-155,leading=13,max_lines=2)
     else:
-        text(c,155,663,'逐笔示范续页：保持与前页相同的格子尺寸，不缩小复杂字。',10.5,color='muted',width=RIGHT-155)
+        wrapped_text(c,155,663,'逐笔示范续页：保持与前页相同的格子尺寸，不缩小复杂字。',10.5,color='muted',width=RIGHT-155,leading=12,max_lines=2)
     text(c,LEFT,606,'01  看笔顺',14,color='red')
     text(c,300,607,'红色：新写的一笔',9,color='red')
     text(c,427,607,'深灰：此前笔画',9,color='previous')
