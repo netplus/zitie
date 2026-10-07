@@ -68,6 +68,7 @@ jobs:
       - name: Export editable project source without font files
         run: git archive --format=zip HEAD -o build/zitie-source.zip
       - uses: actions/upload-artifact@v4
+        if: always()
         with:
           name: zitie-p7-draft-and-rc1-research
           path: build/
