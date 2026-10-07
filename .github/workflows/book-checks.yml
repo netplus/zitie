@@ -57,7 +57,7 @@ jobs:
         run: git archive --format=zip HEAD -o build/zitie-source.zip
       - uses: actions/upload-artifact@v4
         with:
-          name: zitie-B01-B02-research
+          name: zitie-p6-layout-smoke-research
           path: build/
           retention-days: 14
           if-no-files-found: error
