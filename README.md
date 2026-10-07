@@ -1,94 +1,94 @@
 # 循序渐进汉字部首字帖
 
-201个主部首＋常用附形与位置变体；A4田字格；逐笔示范与分层练习。
+面向简体中文基础书写教学的 A4 部首练字工程：覆盖 **201 个主部首**，并保留常用附形、位置变体、历史 27 项回归、目录与索引等全书级检查。
 
-**阶段1内容层已完成：201/201 `content_ready`；当前进入阶段2（P6）：Artwork / 版式。仍不是正式发布版。**
+## 当前状态
 
-从2026-10-02起，仓库改为三阶段：
-1. **内容覆盖**：先完成201项字段级内容与证据链；
-2. **图形与版式**：再统一处理矢量、逐笔示范、A4排版和PDF视觉检查；
-3. **归档与发布**：最后处理manifest、目标HEAD CI、release和全书终审。
+**v0.4.0 已于 2026-10-07 正式发布，P0—P7 全部完成。**
 
-这使单个PDF/CI问题不再阻塞后续批次内容编写。详见[内容优先工作流](docs/CONTENT_FIRST_WORKFLOW.md)。
+| 门槛 | 最终状态 |
+|---|---:|
+| 主部首内容终审 | 201/201 content_ready |
+| 逐笔图形审查 | 201/201 artwork_ready |
+| A4 版式审查 | 201/201 layout_ready |
+| P7 全书 QA / manifest / release | completed |
+| 正式发布 | v0.4.0 released |
 
-## PDF下载
+正式 PDF：
 
-**[最新合集：前言＋前两批20项，23页](deliverables/drafts/v0.2.1/B01-B02_with_preface_draft_A4.pdf)**
+**[《循序渐进汉字部首字帖》v0.4.0（276 页）](deliverables/releases/v0.4.0/B01-B21_with_preface_toc_appendices_v0.4.0_A4.pdf)**
 
-[第二批10页](deliverables/drafts/v0.2.1/B02_draft_A4.pdf) · [第一批10页](deliverables/drafts/v0.2.1/B01_draft_A4.pdf) · [前言3页](deliverables/drafts/v0.2.1/preface_v0.2.1.pdf) · [全部版本与校验清单](deliverables/README.md)
+发布校验信息：
 
-阶段1不会为了保持“每批同步制页”而强制生成新PDF。实际交付或送审PDF仍必须保存到仓库并登记manifest。
+- 文件大小：3,749,164 bytes
+- SHA256：`ab3c23d7547872f4d0e2c128de397e9e89ed6de97b681876e2dff017ff5c4894`
+- formal preflight source HEAD：`9149a6e9b751bfbc97e95c3bbfc64a5c8681f7fd`
+- final release PR：#55
+- final release target-HEAD Book integrity checks：run `37571448193`，success
+- 状态收口 PR：#56，已合入 `main`
+- 总控 Issue #1：completed / closed
 
-## 当前内容状态
+完整版本归档与校验信息见 [deliverables/README.md](deliverables/README.md) 和 [deliverables/manifest.json](deliverables/manifest.json)。
 
-| 范围 | 内容状态 | 图形/发布状态 |
-|---|---|---|
-| B01—B03（30项） | content_ready | 既有artwork/PDF资产保留，进入P6统一回归 |
-| B04—B21（171项） | content_ready | P6统一处理矢量、逐笔示范与版式 |
+## 已审计的 fail-closed 边界
 
-201个主部首已完成内容终审：**201/201 content_ready，0 content_in_progress**。内容层完成不等于artwork_ready、PDF已归档或release_eligible。
+正式发布不等于伪造无法从公开权威来源取得的字段。v0.4.0 明确保留以下 terminal fail-closed：
 
-### 最新阶段检查点
+- `fine_stroke_names`：14 项；
+- `position_migration`：3 项（屮、毋、瓦）；
+- GF0011—2022 逐项精确主形／附形／名称／编码：201 项 `source_blocked_fail_closed`。
 
-2026-10-05，阶段1工作已通过PR #9阶段性合入`main`，merge commit为：
+`data/coverage.json` 中的 `target_edition_status=fulltext_pending` 是这个来源边界的明确记录，不是普通待办。只有在 GF0011—2022 正式逐项表或等价官方数据能够稳定、可重复取得时才重开相关字段。
 
-`8b6213b0ec5f85ae26915aa6f823dcb2ba04c187`
+## 工程方法
 
-当前已不再停留在“建批次内容稿”阶段：B04—B21均有canonical内容记录。2026-10-05已完成B06—B13两轮各40项GF0013结构审读，并在本轮进一步完成B14—B20共70项structure审读；B04十项GF0023—2020笔顺目标行也已精确定位。未命中structure项保持fail-closed，不反推为合体字。B20的S03完整主体表视觉审读已登记来源台账，machine evidence仍待补。
+项目按三个解耦层推进并已经全部收口：
 
-阶段1已连续完成两轮80项采用读音复核；B04—B11完成GF0023派生笔顺码交叉，B12—B19完成secondary stroke-order locator。细笔名方面，B04—B11已完成一轮80项二次交叉/定位；B12—B19先完成cnchar locator，随后又用独立D04/cjklib对同80项做第二套二次交叉：22项完全一致、5项粒度兼容、8项二次源冲突、4项补缺、41项D04无条目。所有二次数据都不替代规范原页review。下一主吞吐集中到**GF0023/GF2001/S04原页笔顺与细笔名review**以及剩余位置迁移。常规单轮目标为80个不同主部首。
+1. **内容覆盖**：逐字段核验 201 个主部首的身份、笔顺、细笔名、采用读音、部件名称、结构、教学提示和整字语境；
+2. **图形与版式**：固定矢量来源，逐笔累计示范，A4 田字格和分层练习，复杂字分页，逐页视觉 QA；
+3. **归档与发布**：structured draft、RC1、目录／索引／附形和原 27 项回归、manifest、目标 HEAD CI、正式 release。
 
-GF0011—2022逐项全文、附形、名称和编码仍是全书级待核项，但不会阻止其它可独立核验字段继续推进。\n### 当前剩余阶段
-
-P0—P5均已完成。当前活动阶段为**P6 Artwork / 版式**。
-
-内容层最终状态：
-- P1：201/201 stroke_order reviewed；
-- P2：fine_stroke_names已收口，残余均为显式fail-closed；
-- P3：pronunciation/component_name/structure普通pending归零；
-- P4：201/201身份连续性与201/201位置迁移边界完成，GF0011—2022逐项精确字段按来源不可公开取得收口为source-blocked fail-closed；
-- P5：**201/201 content_ready**。
-
-P6只处理图形与版式：固定矢量来源、逐笔累计示范、田字格与分层练习、拼音/结构/教学说明布局、复杂字分页和逐项artwork QA。PDF归档、manifest、全书视觉QA与正式release属于P7。
+证据原则始终保持：secondary locator 只用于定位和交叉，不授予规范结论；机器检查不代替原页审读；不确定项必须 fail-closed。
 
 ## 项目入口
 
-[当前状态](docs/STATUS.md) · [剩余完书阶段计划](docs/REMAINING_PHASE_PLAN.md) · [内容优先工作流](docs/CONTENT_FIRST_WORKFLOW.md) · [编写计划](docs/EDITORIAL_PLAN.md) · [前言源稿](book/front-matter/preface.md) · [201项索引](data/coverage.json) · [批次计划](data/batches.json) · [附形候选](data/variants.json) · [来源台账](sources/catalog.json) · [质量门槛](docs/QUALITY_GATES.md) · [总控Issue](https://github.com/netplus/zitie/issues/1)
+- [当前权威状态](docs/STATUS.md)
+- [P0—P7 收口计划与最终状态](docs/REMAINING_PHASE_PLAN.md)
+- [内容优先工作流](docs/CONTENT_FIRST_WORKFLOW.md)
+- [编写计划](docs/EDITORIAL_PLAN.md)
+- [201 项覆盖与阶段证据](data/coverage.json)
+- [批次定义](data/batches.json)
+- [附形／位置变体候选](data/variants.json)
+- [来源台账](sources/catalog.json)
+- [质量门槛](docs/QUALITY_GATES.md)
+- [PDF 版本归档](deliverables/README.md)
 
-## 阶段1内容标准
+## 本地检查
 
-每个主项优先完成：
-- 主项ID和目标规范身份状态；
-- 结构；
-- 笔数、笔顺、细笔名；
-- 采用读音；
-- 部首／部件名称；
-- 两条教学提示与自查句；
-- 整字语境和迁移边界；
-- 字段级来源、实际页码／字条、冲突和未决。
-
-阶段1的content_ready**不等于**artwork_ready或release_eligible。
-
-## 重建与检查
-
-现有构建链仍可用于B01/B02和B03工程尾项：
+安装依赖：
 
 ```sh
 python -m pip install -r requirements.txt
-python scripts/validate_project.py --batch B01
-python scripts/validate_project.py --batch B02
+```
+
+常用一致性检查：
+
+```sh
 python scripts/test_validation.py
 python scripts/test_deliverables.py
 python scripts/verify_deliverables.py
-python scripts/acquire_vectors.py --batches B01 B02
-python scripts/test_artwork.py
-python scripts/build_batch.py --draft --batch B01
-python scripts/build_batch.py --draft --batch B02
-python scripts/build_collection.py
+python scripts/verify_formal_release_gate.py
 ```
 
-第一阶段原则上保持生成/CI脚本稳定，优先更新`data/`、`reviews/`和`sources/`。工程重构集中处理，不再要求每个内容批次都修改workflow。
+正式发布验证脚本同时接受发布后的仓库状态，并检查 201 项 content/artwork/layout、RC1、manifest、正式 PDF 元数据以及 terminal fail-closed 披露。
 
-字体由使用者在自己的系统安装，本仓库不提供字体文件。
+## 维护模式
 
-每批10个主项，最后1项，共21批；单次内容运行常规目标80项，无真实阻塞时至少推进60项。附形和复习另计，不重复计算主项覆盖。
+当前工程进入发布后维护状态。后续只处理：
+
+- 明确勘误；
+- 构建、CI、文档或归档维护；
+- 新权威来源出现后，对对应 fail-closed 字段按证据链重开；
+- 新版本需求明确后再建立新的版本阶段。
+
+历史 draft/RC/PDF 和原审读记录不覆盖、不改写来源口径。仓库不提供字体文件，也不公开许可不明的商业规范全文。
