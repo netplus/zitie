@@ -1,16 +1,18 @@
 # PDF版本归档
 
-## 最新正式版 v0.4.1
+## 最新正式勘误修订版 v0.4.1
 
-[276页正式勘误修订版](releases/v0.4.1/B01-B21_v0.4.1_A4.pdf)：3,748,910 bytes；SHA256 `7270104b8698603fcce4eec14037a0194c31e33b868669d0a8dd0307a090a7e7`。
+[276页正式PDF](releases/v0.4.1/B01-B21_v0.4.1_A4.pdf)：3,748,910 bytes；SHA256 `7270104b8698603fcce4eec14037a0194c31e33b868669d0a8dd0307a090a7e7`。
 
-PR #61最终HEAD CI run `37588926485`成功并合入main，E001—E004修复完成。manifest为released、release_eligible=true；精确生成与QA记录保持。M1已退出，M2进行中；M3/Q1尚未开始，不将补丁影响复核算作最终全书排版验收。
+E001五项变体/七处显示、E002统计范围和E004正式前言修正已进入正式版；E003文档已修正。PR #61最终HEAD CI run `37588926485`成功并合入，M1完成。详细记录：[正式影响复核](../reviews/M1-v0.4.1-formal-review-20261007.md) · [M1完成](../reviews/M1-completion-20261007.md)。
+
+本修订不改变规范字段结论，不代替未来v0.5.0的Q1排版验收。下列候选及旧版本保留其历史状态和原字节。
 
 ## M1勘误候选 v0.4.1-rc1
 
 [276页勘误候选PDF](drafts/v0.4.1-rc1/B01-B21_v0.4.1-rc1_A4.pdf)：修复5项变体索引缺字，并明确细笔名统计的171项范围。3,754,409 bytes；SHA256 `581101ba2b744f4cba32291731c35d391c3a1df13b5cc11c1abdd7ade2bb4895`。
 
-此历史候选保持release_candidate、release_eligible=false，不修改原状态；其后的正式v0.4.1见上方。来源及受影响页记录见[候选复核](../reviews/M1-v0.4.1-rc1-review-20261007.md)。原正式版及历史稿不覆盖。
+此历史候选继续保持release_candidate、release_eligible=false；对应正式v0.4.1见上，不将候选条目直接改为released。来源及受影响页记录见[候选复核](../reviews/M1-v0.4.1-rc1-review-20261007.md)。原正式版及历史稿不覆盖。
 
 ## 正式发布 v0.4.0
 
@@ -57,7 +59,7 @@ B01已完成本批笔顺、笔名、结构与采用读音的来源对照；B02�
 ## 版本与校验
 
 - `drafts/<version>/`保存已交付或送审的阶段性PDF，新版本用新目录，旧PDF不覆盖。
-- `releases/<version>/`仅用于达到正式门槛后的版本。最新正式版为`releases/v0.4.1/`，`releases/v0.4.0/`保留。
+- `releases/<version>/`仅用于达到正式门槛后的版本。最新正式版为`releases/v0.4.1/`，v0.4.0原字节保留。
 - [manifest.json](manifest.json)逐文件记录页数、字节数、SHA256、源提交、审稿记录和发布状态。
 - [v0.2版面与字形检查](../reviews/v0.2-layout.md)记录实际看过的页面、修订及未决问题。
 - CI检查二进制、目录及历史清单一致性；机器检查不授予内容审定结论。

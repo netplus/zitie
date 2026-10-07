@@ -18,8 +18,8 @@
       "name": "v0.4.x勘误维护",
       "status": "completed",
       "exit_evidence": [
-        "reviews/M1-v0.4.1-formal-review-20261007.md",
-        "reviews/M1-completion-20261007.md"
+        "reviews/M1-completion-20261007.md",
+        "data/evidence/M1-v0.4.1-formal-QA-20261007.json"
       ],
       "completed_at": "2026-10-07"
     },
@@ -51,14 +51,14 @@
       "id": "E001",
       "phase": "M1",
       "status": "resolved",
-      "blocks_phase_exit": true,
+      "blocks_phase_exit": false,
       "pages": [
         270,
         271,
         272,
         273
       ],
-      "summary": "V007/V026/V029/V031/V032共5项变体、7处索引缺字；已由正式v0.4.1修复",
+      "summary": "V007/V026/V029/V031/V032共5项变体、7处索引缺字；已在正式v0.4.1修复",
       "review": "reviews/M1-baseline-audit-20261007.md",
       "candidate_resolution": {
         "version": "0.4.1-rc1",
@@ -69,17 +69,17 @@
       "formal_release_pending": false,
       "formal_resolution": {
         "version": "0.4.1",
-        "status": "fixed_reviewed_released_final_CI_passed",
+        "status": "released_and_verified",
         "sha256": "7270104b8698603fcce4eec14037a0194c31e33b868669d0a8dd0307a090a7e7",
         "review": "reviews/M1-v0.4.1-formal-review-20261007.md"
       },
-      "resolved_in": "0.4.1"
+      "resolution": "reviews/M1-completion-20261007.md"
     },
     {
       "id": "E002",
       "phase": "M1",
       "status": "resolved",
-      "blocks_phase_exit": true,
+      "blocks_phase_exit": false,
       "pages": [
         274
       ],
@@ -94,11 +94,11 @@
       "formal_release_pending": false,
       "formal_resolution": {
         "version": "0.4.1",
-        "status": "fixed_reviewed_released_final_CI_passed",
+        "status": "released_and_verified",
         "sha256": "7270104b8698603fcce4eec14037a0194c31e33b868669d0a8dd0307a090a7e7",
         "review": "reviews/M1-v0.4.1-formal-review-20261007.md"
       },
-      "resolved_in": "0.4.1"
+      "resolution": "reviews/M1-completion-20261007.md"
     },
     {
       "id": "E003",
@@ -113,25 +113,25 @@
       "id": "E004",
       "phase": "M1",
       "status": "resolved",
-      "blocks_phase_exit": true,
+      "blocks_phase_exit": false,
       "pages": [
         3
       ],
-      "summary": "旧v0.4.0正式前言正文仍称本候选版本/不等同于正式release；正式v0.4.1须按模式修正",
+      "summary": "旧v0.4.0正式前言正文误称候选；新正式v0.4.1已按模式修正",
       "review": "reviews/M1-v0.4.1-rc1-review-20261007.md",
       "formal_resolution": {
         "version": "0.4.1",
-        "status": "fixed_reviewed_released_final_CI_passed",
+        "status": "released_and_verified",
         "sha256": "7270104b8698603fcce4eec14037a0194c31e33b868669d0a8dd0307a090a7e7",
         "review": "reviews/M1-v0.4.1-formal-review-20261007.md"
       },
       "formal_release_pending": false,
-      "resolved_in": "0.4.1"
+      "resolution": "reviews/M1-completion-20261007.md"
     }
   ],
   "candidate": null,
   "final_release_eligible": false,
-  "next_work": "M2按固定六类字段队列审计新增权威来源；先查GF0011—2022正式逐项数据，再处理细笔名14项等精确残余。入口探查不是完整来源审计，本轮0项规范字段升级；M3/Q1未开始。",
+  "next_work": "M2固定六类字段队列已核对，入口来源初探未取得可升级的2022逐项原件；继续审计GF0011—2022正式表及细笔名14项等残余，取得新适用原页证据才重开。M2未完成，0项规范字段升级，M3/Q1未开始。",
   "tracking_issue": 58,
   "patch_candidate": {
     "path": "deliverables/drafts/v0.4.1-rc1/B01-B21_v0.4.1-rc1_A4.pdf",
@@ -191,13 +191,12 @@
       "basis": "v0.4.0 reviewed baseline + M1 byte-bound impact review; no new normative review"
     }
   },
-  "patch_archive_ci_status": "success_merged",
-  "patch_archive_ci": {
+  "patch_archive_ci_status": "passed",
+  "patch_final_ci": {
+    "pr": 61,
     "head_sha": "21f317f822a436470bc4e3e0421a3bcea4d3caf6",
     "workflow_run_id": 37588926485,
-    "status": "completed",
     "conclusion": "success",
-    "pr_number": 61,
     "merge_commit": "e22d2075c1cc6728b60d3580ec9aaa9bb4873354"
   }
 }
