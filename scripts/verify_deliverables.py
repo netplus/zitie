@@ -39,6 +39,11 @@ def verify(root=ROOT, base_ref=None):
         if item['status'] == 'draft':
             if 'drafts' not in relative.parts or item['release_eligible'] is not False:
                 raise ValueError('Draft status cannot be promoted by archiving')
+        elif item['status'] == 'release_candidate':
+            if 'drafts' not in relative.parts or item['release_eligible'] is not False:
+                raise ValueError('Release candidate must remain under drafts and release_eligible=false')
+            if '-rc' not in item.get('version',''):
+                raise ValueError('Release candidate requires an rc version')
         elif item['status'] == 'released':
             if 'releases' not in relative.parts or item['release_eligible'] is not True:
                 raise ValueError('Invalid release location/status')
@@ -60,7 +65,14 @@ def verify(root=ROOT, base_ref=None):
                     raise ValueError('Historical delivery was removed or rewritten: '+item['path'])
         elif 'does not exist' not in old.stderr and 'exists on disk, but not in' not in old.stderr:
             raise ValueError('Unable to read base manifest: '+old.stderr)
-    return {'registered_pdfs':len(seen),'stored_bytes':sum(i['bytes'] for i in seen.values()),'draft_pdfs':sum(i['status']=='draft' for i in seen.values()),'released_pdfs':sum(i['status']=='released' for i in seen.values()),'note':'Byte, format and status checks only; editorial review remains separate.'}
+    return {
+        'registered_pdfs':len(seen),
+        'stored_bytes':sum(i['bytes'] for i in seen.values()),
+        'draft_pdfs':sum(i['status']=='draft' for i in seen.values()),
+        'candidate_pdfs':sum(i['status']=='release_candidate' for i in seen.values()),
+        'released_pdfs':sum(i['status']=='released' for i in seen.values()),
+        'note':'Byte, format and status checks only; editorial review remains separate.'
+    }
 
 if __name__ == '__main__':
     parser=argparse.ArgumentParser();parser.add_argument('--base-ref')
