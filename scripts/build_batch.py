@@ -167,7 +167,7 @@ def make_page(c,e,data,page_number,draft,batch,step_start,step_end,part,total_pa
         for col in range(8):
             x=LEFT+col*(cell+6); grid(c,x,y,cell)
             if row<2 or col==0: glyph(c,data,x,y,cell,['trace','pale','ink','ink'][row])
-    text(c,LEFT,89,'写完检查：'+e['check'],10,color='muted',width=RIGHT-LEFT)
+    wrapped_text(c,LEFT,94,'写完检查：'+e['check'],10,color='muted',width=RIGHT-LEFT,leading=12,max_lines=2)
     c.setStrokeColor(HexColor(COL['guide'])); c.line(LEFT,74,RIGHT,74)
     label=batch.get('draft_label','编写稿') if draft else '已通过本工程发布门槛。'
     text(c,LEFT,58,label,8,color='red' if draft else 'muted')
