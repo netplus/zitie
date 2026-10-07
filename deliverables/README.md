@@ -1,5 +1,14 @@
 # PDF版本归档
 
+## 正式发布 v0.4.0
+
+[《循序渐进汉字部首字帖》v0.4.0，276页](releases/v0.4.0/B01-B21_with_preface_toc_appendices_v0.4.0_A4.pdf)
+
+本版已通过正式发布门槛并永久归档：3,749,164 bytes，SHA256 `ab3c23d7547872f4d0e2c128de397e9e89ed6de97b681876e2dff017ff5c4894`。最终PR #55 的 Book integrity checks run `37571448193` 成功，release manifest 标记为 `status=released`、`release_eligible=true`。
+
+正式版继续披露已审计的 terminal fail-closed：细笔名14项、位置迁移3项、GF0011—2022逐项精确字段201项 source-blocked。发布不等于伪造这些未公开规范字段。
+
+
 ## v0.3.0：全书201主项编写稿
 
 [全书编写稿，261页](drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf)
@@ -36,7 +45,7 @@ B01已完成本批笔顺、笔名、结构与采用读音的来源对照；B02�
 ## 版本与校验
 
 - `drafts/<version>/`保存已交付或送审的阶段性PDF，新版本用新目录，旧PDF不覆盖。
-- `releases/<version>/`仅用于达到正式门槛后的版本。目前无正式PDF。
+- `releases/<version>/`仅用于达到正式门槛后的版本。当前正式版为`releases/v0.4.0/`。
 - [manifest.json](manifest.json)逐文件记录页数、字节数、SHA256、源提交、审稿记录和发布状态。
 - [v0.2版面与字形检查](../reviews/v0.2-layout.md)记录实际看过的页面、修订及未决问题。
 - CI检查二进制、目录及历史清单一致性；机器检查不授予内容审定结论。
