@@ -125,7 +125,8 @@ def make_page(c,e,data,page_number,draft,batch,step_start,step_end,part,total_pa
     names=reviewed_stroke_names(e,n)
     continuation=part>1
     suffix='' if total_parts==1 else f'（第{part}/{total_parts}页）'
-    text(c,LEFT,H-49,e['character']+'｜笔顺练字帖'+suffix,25)
+    glyph(c,data,LEFT,H-61,31,color='ink')
+    text(c,LEFT+39,H-49,'笔顺练字帖'+suffix,25)
     text(c,RIGHT-150,H-46,batch['batch_id']+' / A4 / 田字格',10,color='muted',font='CJK')
     text(c,LEFT,H-80,'姓名：________________',11,color='muted')
     text(c,RIGHT-200,H-80,'日期：______年____月____日',11,color='muted')
