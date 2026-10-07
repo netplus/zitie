@@ -45,18 +45,39 @@
       "phase": "M1",
       "status": "open",
       "blocks_phase_exit": true,
-      "pages": [270, 272],
-      "summary": "V007龵未正确显示；文本可提取不能替代实际渲染",
-      "review": "reviews/M1-baseline-audit-20261007.md"
+      "pages": [
+        270,
+        271,
+        272,
+        273
+      ],
+      "summary": "V007/V026/V029/V031/V032共5项变体、7处索引缺字；候选已修复，正式补丁未发布",
+      "review": "reviews/M1-baseline-audit-20261007.md",
+      "candidate_resolution": {
+        "version": "0.4.1-rc1",
+        "status": "fixed_and_verified",
+        "review": "reviews/M1-v0.4.1-rc1-review-20261007.md",
+        "sha256": "581101ba2b744f4cba32291731c35d391c3a1df13b5cc11c1abdd7ade2bb4895"
+      },
+      "formal_release_pending": true
     },
     {
       "id": "E002",
       "phase": "M1",
       "status": "open",
       "blocks_phase_exit": true,
-      "pages": [274],
+      "pages": [
+        274
+      ],
       "summary": "157 reviewed + 14 fail-closed缺少B04—B21/171项范围",
-      "review": "reviews/M1-baseline-audit-20261007.md"
+      "review": "reviews/M1-baseline-audit-20261007.md",
+      "candidate_resolution": {
+        "version": "0.4.1-rc1",
+        "status": "fixed_and_verified",
+        "review": "reviews/M1-v0.4.1-rc1-review-20261007.md",
+        "sha256": "581101ba2b744f4cba32291731c35d391c3a1df13b5cc11c1abdd7ade2bb4895"
+      },
+      "formal_release_pending": true
     },
     {
       "id": "E003",
@@ -66,10 +87,38 @@
       "summary": "BUILD.md仅B01/不超过6笔的说明已过期",
       "resolution": "docs/BUILD.md",
       "review": "reviews/M1-baseline-audit-20261007.md"
+    },
+    {
+      "id": "E004",
+      "phase": "M1",
+      "status": "open",
+      "blocks_phase_exit": true,
+      "pages": [
+        3
+      ],
+      "summary": "旧v0.4.0正式前言正文仍称本候选版本/不等同于正式release；正式v0.4.1须按模式修正",
+      "review": "reviews/M1-v0.4.1-rc1-review-20261007.md"
     }
   ],
   "candidate": null,
   "final_release_eligible": false,
-  "next_work": "修复E001/E002并完成v0.4.1候选版本标识、字体覆盖及受影响页回归；本轮未修订或发布新PDF。",
-  "tracking_issue": 58
+  "next_work": "修复E004正式前言措辞，生成并验收正式v0.4.1，归档及最终HEAD CI通过后才能关闭M1；当前只有RC1候选归档。",
+  "tracking_issue": 58,
+  "patch_candidate": {
+    "path": "deliverables/drafts/v0.4.1-rc1/B01-B21_v0.4.1-rc1_A4.pdf",
+    "title": "《循序渐进汉字部首字帖》v0.4.1 RC1勘误候选",
+    "version": "0.4.1-rc1",
+    "status": "release_candidate",
+    "batch": "B01-B21",
+    "pages": 276,
+    "bytes": 3754409,
+    "sha256": "581101ba2b744f4cba32291731c35d391c3a1df13b5cc11c1abdd7ade2bb4895",
+    "source_commit": "bee6953a6b367082b312ed07e5fbb76fdea1e025",
+    "workflow_run_id": 37582786085,
+    "artifact_id": 11464939841,
+    "review_record": "reviews/M1-v0.4.1-rc1-review-20261007.md",
+    "release_eligible": false,
+    "evidence": "data/evidence/M1-v0.4.1-rc1-QA-20261007.json",
+    "git_blob_sha": "0b8048bf53c3bbd87d6112fd05725bd1f3c6e65f"
+  }
 }

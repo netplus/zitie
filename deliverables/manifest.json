@@ -234,6 +234,21 @@
         },
         "gf0011_2022_item_level_fulltext": "source_blocked_fail_closed"
       }
+    },
+    {
+      "path": "deliverables/drafts/v0.4.1-rc1/B01-B21_v0.4.1-rc1_A4.pdf",
+      "title": "《循序渐进汉字部首字帖》v0.4.1 RC1勘误候选",
+      "version": "0.4.1-rc1",
+      "status": "release_candidate",
+      "batch": "B01-B21",
+      "pages": 276,
+      "bytes": 3754409,
+      "sha256": "581101ba2b744f4cba32291731c35d391c3a1df13b5cc11c1abdd7ade2bb4895",
+      "source_commit": "bee6953a6b367082b312ed07e5fbb76fdea1e025",
+      "workflow_run_id": 37582786085,
+      "artifact_id": 11464939841,
+      "review_record": "reviews/M1-v0.4.1-rc1-review-20261007.md",
+      "release_eligible": false
     }
   ]
 }

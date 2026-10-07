@@ -43,3 +43,17 @@ python scripts/verify_book_matter.py
 `--candidate`/`--formal`属于现有全书构建路径；不带模式的旧逐批release仍受独立门禁限制。不要只改文件名或配置版本便宣称得到v0.4.1/v0.5.0：版本参数化、标题页脚、目录、校验器和归档都需要同步。完整旧流水线见`.github/workflows/book-checks.yml`。
 
 正式归档PDF的精确字节由manifest固定。重建产物需要新的视觉记录；字体环境或PDF元数据可能影响字节哈希。M1/M3新PDF使用新版本目录，Q1绑定最终候选SHA256，历史PDF和manifest旧条目不可覆盖。
+
+## M1隔离候选构建
+
+在既有矢量缓存准备后，安装本机TrueType字体AR PL UMing CN（fonts-arphic-uming）并执行：
+
+```sh
+python scripts/build_patch_candidate.py --version 0.4.1
+python scripts/verify_patch_candidate.py
+python scripts/test_patch_candidate.py
+```
+
+输出`build/v0.4.1-rc1/`，不覆盖旧v0.4.0构建路径；`--font`、`--latin-font`、`--variant-font`可指定已安装字体路径，TTC索引用`--variant-subfont`。全部32项form必须通过cmap预检，当前5个缺字token实际用嵌入子集绘制。字体文件不导出。
+
+此CLI只构建RC候选。正式补丁路径仍需E004前言正文模式处理及正式门禁，不能改名冒充发布。候选页数/字节/source_commit等写入generation.json；CI产物须按实际哈希归档，而不是从本地合成提交推断来源。

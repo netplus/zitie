@@ -96,7 +96,7 @@ def build_navigation():
         batch_ranges[b['id']]={'start':start,'end':current-1,'title':b['title'],'glyphs':b['main_glyphs']}
     return batches,batch_ranges,item_ranges,current
 
-def build_toc(path,font,formal=False):
+def build_toc(path,font,formal=False,edition=None):
     batches,ranges,items,back_start=build_navigation()
     c=canvas.Canvas(str(path),pagesize=A4,pageCompression=1,invariant=1)
     c.setTitle('循序渐进汉字部首字帖｜目录与导航')
@@ -104,6 +104,8 @@ def build_toc(path,font,formal=False):
     for p,rows in enumerate(halves,1):
         subtitle=('正式发布版 v0.4.0｜页码基于当前正式结构生成' if formal
                   else 'P7全书编排；页码基于当前release-candidate结构生成')
+        if edition is not None:
+            subtitle=edition.label+'｜页码基于本次勘误结构生成'
         header(c,'目录与学习导航',subtitle,f'目录 {p}/2')
         y=H-110
         for b in rows:
@@ -125,7 +127,7 @@ def build_toc(path,font,formal=False):
     if len(PdfReader(str(path)).pages)!=2: raise ValueError('TOC must be exactly 2 pages')
     return 2
 
-def build_backmatter(path,font,formal=False):
+def build_backmatter(path,font,formal=False,edition=None,variant_font=None):
     coverage=load('data/coverage.json')
     variants=load('data/variants.json')
     sources=load('sources/catalog.json')
@@ -134,6 +136,21 @@ def build_backmatter(path,font,formal=False):
     c=canvas.Canvas(str(path),pagesize=A4,pageCompression=1,invariant=1)
     c.setTitle('循序渐进汉字部首字帖｜卷末索引与复核说明')
     page_no=0
+    if edition is not None and not variant_font:
+        raise ValueError('New editions require an embedded, coverage-checked variant font')
+
+    def form_label(x,y,parent,separator,form,suffix='',size=12):
+        # Preserve all non-form typography; only the variant token uses fallback.
+        if edition is None or form not in ('龵', '⻊', '⺮', '⺌', '⺶'):
+            txt(c,x,y,parent+separator+form+suffix,size)
+            return
+        prefix=parent+separator
+        txt(c,x,y,prefix,size)
+        x+=pdfmetrics.stringWidth(prefix,font,size)
+        txt(c,x,y,form,size,font=variant_font)
+        x+=pdfmetrics.stringWidth(form,variant_font,size)
+        if suffix:
+            txt(c,x,y,suffix,size)
 
     # 201 main-radical index: 34 rows/page => 6 pages.
     rows_per=34
@@ -163,7 +180,7 @@ def build_backmatter(path,font,formal=False):
         y=H-104
         for v in chunk:
             txt(c,L,y,v['id'],8,RED)
-            txt(c,L+44,y,f"{v['parent']} → {v['form']}",12)
+            form_label(L+44,y,v['parent'],' → ',v['form'],size=12)
             txt(c,L+145,y,f"例：{v['example']} / {v['position']}",9)
             txt(c,L+300,y,'教学候选',8,MUTED)
             y-=38
@@ -179,7 +196,7 @@ def build_backmatter(path,font,formal=False):
         y=H-104
         for v in chunk:
             txt(c,L,y,v['id'],8,RED)
-            txt(c,L+44,y,f"{v['parent']} / {v['form']} / {v['example']} / {v['position']}",10)
+            form_label(L+44,y,v['parent'],' / ',v['form'],f" / {v['example']} / {v['position']}",size=10)
             y-=39
         footer(c,'原27项是重点回归集合，不等于全书附形/位置变体的完整规范清单。')
         c.showPage()
@@ -198,8 +215,17 @@ def build_backmatter(path,font,formal=False):
         ('P5 内容','201/201 content_ready'),
         ('P6 artwork/layout','201/201 artwork_ready + layout_ready')
     ]
+    if edition is not None:
+        p2=progress['p2_fine_stroke_names']
+        summary[1]=('P2 细笔名',f"{p2['reviewed']} reviewed + {p2['conflict_fail_closed']} conflict_fail_closed")
     for k,v in summary:
         txt(c,L,y,k,10,RED); txt(c,L+170,y,v,9); y-=31
+    if edition is not None:
+        p2=progress['p2_fine_stroke_names']
+        if p2['scope']!='B04-B21' or p2['target_count']!=171:
+            raise ValueError('P2 scope changed; reassess the scoped summary')
+        txt(c,L,y,f"P2统计范围：B04—B21，共171项；上述{p2['reviewed']}+{p2['conflict_fail_closed']}不是全书201项合计。",9,MUTED)
+        y-=22
     y-=10
     txt(c,L,y,'来源边界',11,RED); y-=24
     lines=[
@@ -234,6 +260,8 @@ def build_backmatter(path,font,formal=False):
     page_no+=1
     version_subtitle=('正式发布版 v0.4.0；字段边界与重开条件继续保留' if formal
                       else '本页记录当前候选结构；正式release另需P7最终门槛')
+    if edition is not None:
+        version_subtitle=edition.label+'；历史版保留，字段边界不变'
     header(c,'版本、勘误与发布状态',version_subtitle,f'索引 {page_no}/13')
     y=H-110
     records=[
@@ -243,6 +271,12 @@ def build_backmatter(path,font,formal=False):
       ('v0.3.0','201主项全书draft；历史归档'),
       ('当前release',('v0.4.0；正式发布，字段边界见来源说明' if formal else '0；deliverables/releases/仍为空'))
     ]
+    if edition is not None:
+        records=records[:-1]+[
+            ('v0.4.0','276页正式基线；保留原PDF字节和既有审读记录'),
+            ('本次版本',edition.identifier+'；'+('候选；正式发布另需M1终审' if edition.mode=='candidate' else '勘误修订，发布状态以manifest为准')),
+            ('本次勘误','E001：修复5项变体索引缺字；E002：明确细笔名统计范围')
+        ]
     for ver,note in records:
         txt(c,L,y,ver,10,RED); txt(c,L+95,y,note,9); y-=34
     y-=10
@@ -251,6 +285,8 @@ def build_backmatter(path,font,formal=False):
     y-=32
     status_line=('本正式PDF的发布状态以deliverables/manifest.json、目标HEAD CI与release记录共同为准。' if formal
                  else '正式PDF不得由本页状态文字自动升级；以deliverables/manifest.json、目标HEAD CI和最终release记录共同为准。')
+    if edition is not None:
+        status_line='本次候选不改变既有规范字段；正式发布须完成M1验收、归档清单与目标HEAD CI。'
     txt(c,L,y,status_line,8.5)
     footer(c,'历史draft不覆盖；新修订使用新版本目录并保留旧字节。')
     c.showPage()
