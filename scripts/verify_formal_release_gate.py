@@ -83,22 +83,64 @@ assert len(raw)==rc["bytes"]
 assert hashlib.sha256(raw).hexdigest()==rc["sha256"]
 assert len(PdfReader(str(pdf)).pages)==276
 
-assert not any(x.get("status")=="released" for x in manifest["artifacts"])
+released=[x for x in manifest["artifacts"] if x.get("status")=="released"]
 release_dir=ROOT/"deliverables/releases"
-if release_dir.exists():
-    assert not any(release_dir.rglob("*.pdf")), "Formal release directory already contains PDF(s)"
 
-assert p7["formal_release"]=="pending"
+if not released:
+    if release_dir.exists():
+        assert not any(release_dir.rglob("*.pdf")), "Formal release directory already contains unregistered PDF(s)"
+    assert p7["formal_release"]=="pending"
+    status="formal_release_preflight_passed"
+    formal_release=False
+    release_entry=None
+else:
+    assert len(released)==1, released
+    release_entry=released[0]
+    assert release_entry["version"]=="0.4.0"
+    assert release_entry["path"]=="deliverables/releases/v0.4.0/B01-B21_with_preface_toc_appendices_v0.4.0_A4.pdf"
+    assert release_entry["pages"]==276
+    assert release_entry["bytes"]==3749164
+    assert release_entry["sha256"]=="ab3c23d7547872f4d0e2c128de397e9e89ed6de97b681876e2dff017ff5c4894"
+    assert release_entry["source_commit"]=="9149a6e9b751bfbc97e95c3bbfc64a5c8681f7fd"
+    assert release_entry["workflow_run_id"]==37570965306
+    assert release_entry["artifact_id"]==11460761965
+    assert release_entry["review_record"]=="reviews/P7-formal-v0.4.0-visual-QA-20261007.md"
+    assert release_entry["release_eligible"] is True
+    gate=release_entry["release_gate_snapshot"]
+    for key in ("scope","primary","cross","metadata","artwork","layout"):
+        assert gate[key]=="passed", key
+    assert gate["unresolved_conflicts"]==0
+    assert gate["terminal_fail_closed_disclosed"] is True
+    assert gate["terminal_fail_closed"]=={
+        "fine_stroke_names":14,
+        "position_migration":3,
+        "exact_GF0011_2022_item_fields":201
+    }
+    assert gate["gf0011_2022_item_level_fulltext"]=="source_blocked_fail_closed"
+    released_pdf=ROOT/release_entry["path"]
+    released_raw=released_pdf.read_bytes()
+    assert len(released_raw)==release_entry["bytes"]
+    assert hashlib.sha256(released_raw).hexdigest()==release_entry["sha256"]
+    assert len(PdfReader(str(released_pdf)).pages)==276
+    formal=p7["formal_release"]
+    assert isinstance(formal,dict)
+    assert formal["status"]=="released"
+    assert formal["path"]==release_entry["path"]
+    assert formal["sha256"]==release_entry["sha256"]
+    assert formal["release_eligible"] is True
+    status="formal_release_state_verified"
+    formal_release=True
 
 print(json.dumps({
-    "status":"formal_release_preflight_passed",
-    "formal_pdf_generated":False,
-    "formal_release":False,
+    "status":status,
+    "formal_pdf_generated":formal_release,
+    "formal_release":formal_release,
     "main_count":201,
     "content_ready":201,
     "artwork_ready":201,
     "layout_ready":201,
     "release_candidate":rc,
+    "release_entry":release_entry,
     "terminal_fail_closed":{
         "fine_stroke_names":14,
         "position_migration":3,
