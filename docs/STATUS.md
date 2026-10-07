@@ -1,8 +1,43 @@
 # 当前编写状态
 
-更新：2026-10-07。P1—P6均已完成，P0—P7已全部完成；当前为v0.4.0正式发布后的维护状态。
+更新：2026-10-07。
 
-## 最新阶段检查点：P6完成并进入P7（2026-10-07）
+## 当前权威状态：v0.4.0 已正式发布
+
+P0—P7 已全部完成，仓库已经从“编写/收口”切换为**发布后维护状态**。
+
+- 内容：**201/201 content_ready，0 content_in_progress**；
+- artwork：**201/201 artwork_ready**；
+- layout：**201/201 layout_ready**；
+- 正式 PDF：`deliverables/releases/v0.4.0/B01-B21_with_preface_toc_appendices_v0.4.0_A4.pdf`；
+- 正式 PDF：**276 页 / 3,749,164 bytes**；
+- SHA256：`ab3c23d7547872f4d0e2c128de397e9e89ed6de97b681876e2dff017ff5c4894`；
+- manifest：正式条目 `status=released`、`release_eligible=true`；
+- formal preflight HEAD：`9149a6e9b751bfbc97e95c3bbfc64a5c8681f7fd`，run `37570965306` success；
+- final release PR #55 HEAD：`61ab933143137766f3fb00e5f946e7897d2e2349`，Book integrity checks run `37571448193` success；
+- PR #55 已合入 main，merge `576812fec7cc681df45ed85b36f51a1abe5ad4bb`；
+- 状态收口 PR #56 已通过 run `37575667710` 并合入 main，merge `aca67ef31c6c556827be8b0537f90716620bd770`；
+- 总控 Issue #1 已按 `completed` 关闭。
+
+### Terminal fail-closed
+
+正式发布继续保留并披露经过审计的终态边界：
+
+- `fine_stroke_names`：14 项；
+- `position_migration`：3 项（屮、毋、瓦）；
+- GF0011—2022 逐项精确主形／附形／名称／编码：**201/201 source_blocked_fail_closed**。
+
+`target_edition_status=fulltext_pending` 表示 GF0011—2022 正式逐项数据尚无稳定、可重复的公开取得通道；它不是普通 pending，也不影响已经完成的 v0.4.0 发布。只有正式逐项表或等价官方数据可重复取得时才重开。
+
+### 当前维护口径
+
+后续仅做勘误、工程维护、归档/CI修复，或由新权威来源触发的精确字段重开。不得为了“清零”而把 fail-closed 改写成未经证实的 reviewed。
+
+## 历史阶段推进记录（保留）
+
+以下记录按当时工作阶段原样保留，用于追溯决策和证据链。其中“当前阶段”“下一步”“正式 release=0”等表述均是**对应历史检查点当时的状态**；若与上面的“当前权威状态”冲突，以上面的最终状态为准。
+
+### 最新阶段检查点：P6完成并进入P7（2026-10-07）
 
 - 内容：**201/201 content_ready，0 content_in_progress**；
 - artwork：**201/201 artwork_ready**；
@@ -16,7 +51,7 @@
 
 P7下一步：先生成并真实归档全书draft到`deliverables/drafts/`，登记manifest，再做全书PDF目录/页码/索引/附形回归视觉QA，最后以目标HEAD CI和release gate收口。
 
-## P7最新检查点：v0.3.0全书draft已归档（2026-10-07）
+### P7最新检查点：v0.3.0全书draft已归档（2026-10-07）
 
 - 全书draft：`deliverables/drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf`
 - 页数：**261**
@@ -30,11 +65,11 @@ P7下一步：先生成并真实归档全书draft到`deliverables/drafts/`，登
 
 这只关闭P7的“全书draft真实归档+manifest登记”门槛；正式release仍为0。下一步继续全书PDF/目录/页码/索引/附形及原27项回归QA、manifest终审、目标HEAD CI、release candidate和正式release。
 
-## 当前阶段
+### 当前阶段
 
 阶段1目标是先完成201个主部首的字段级内容和证据链；artwork、PDF、manifest和CI尾项不再阻塞后续内容字段推进。阶段2统一处理图形与版式，阶段3处理归档与发布。阶段1的`content_ready`不等于`artwork_ready`或`release_eligible`。
 
-## 阶段检查点
+### 阶段检查点
 
 PR #9 已于2026-10-05阶段性合入 `main`，合并提交：
 
@@ -42,7 +77,7 @@ PR #9 已于2026-10-05阶段性合入 `main`，合并提交：
 
 该次合入保留阶段1内容优先重构、B03内容成果、B04—B21内容稿以及已真实入库的字段级review/evidence。合入前PR HEAD `45f90049496445206bbd2a265dc43be700c5ccfa` 的 `Book integrity checks` 已成功。该阶段合入不表示全书内容完成、artwork完成或正式发布。
 
-## 范围与计数
+### 范围与计数
 
 - 主部首范围：**201/201已分配**，B01—B20各10项，B21为龠1项。
 - `content_ready`：**201项**，B01—B21全部完成。
@@ -52,7 +87,7 @@ PR #9 已于2026-10-05阶段性合入 `main`，合并提交：
 - 正式release：0。
 - GF0011—2022逐项精确主形/附形/名称/编码已在P4按公开来源审计收口为`source_blocked_fail_closed`；正式逐项数据可重复取得后再重开，不在P6伪造补值。
 
-## 当前字段闭合进展
+### 当前字段闭合进展
 
 阶段1已经从“批次范围分配”进入“既有批次字段级证据闭合”。截至本检查点，仓库中的进展至少包括：
 
@@ -71,7 +106,7 @@ PR #9 已于2026-10-05阶段性合入 `main`，合并提交：
 
 以上只表示对应字段的证据链进展，不表示各批次已经达到`content_ready`。
 
-## 最新40项结构推进（2026-10-05）
+### 最新40项结构推进（2026-10-05）
 
 B06—B09共40个不同主部首完成GF0013—2009《现代常用独体字表》结构适用性原页审读并入库专用evidence：
 - B06：5项精确命中（厂、卜、儿、匕、几），5项S07不适用；
@@ -81,7 +116,7 @@ B06—B09共40个不同主部首完成GF0013—2009《现代常用独体字表�
 
 精确命中项的structure已同步为\`reviewed_S07_GF0013_2009_undecomposable\`；未命中项只标记为“S07已审读但不能关闭结构，等待其它适用权威来源”，不反推为合体字。对应evidence为\`data/evidence/B06-structure.json\`至\`B09-structure.json\`，原页审读已登记\`sources/catalog.json\`。
 
-## 最新40项结构推进：B10—B13（2026-10-05）
+### 最新40项结构推进：B10—B13（2026-10-05）
 
 B10—B13共40个不同主部首完成GF0013—2009《现代常用独体字表》原印2—3页/PDF 5—6页结构适用性原页审读，并入库专用evidence：
 
@@ -94,7 +129,7 @@ B10—B13共40个不同主部首完成GF0013—2009《现代常用独体字表�
 
 本轮还把B12/B13既有S03名称与教学evidence同步回canonical：B12为7项名称精确命中+3项S03无精确独立整形条目；B13十项名称全部精确命中。教学文本与整字语境只升级为非权威编辑review，不替代正式位置迁移核验。
 
-## 最新80项推进（2026-10-05）
+### 最新80项推进（2026-10-05）
 
 本轮实际推进80个不同主部首：
 
@@ -103,7 +138,7 @@ B10—B13共40个不同主部首完成GF0013—2009《现代常用独体字表�
 
 本轮80项对应证据已经真实入库；content_ready总数未因此自动提升，因为细笔名、采用读音、剩余structure和位置迁移等字段仍有未决。
 
-## 最新80项采用读音推进（2026-10-05）
+### 最新80项采用读音推进（2026-10-05）
 
 B10—B17共80个不同主部首完成GF0014—2009《现代常用字部件及部件名称规范》原印7—20页／PDF 10—23页采用读音适用性原页复核。判定规则为：只有S03精确目标部件名称栏以目标字形自身开头并直接给出该目标自身括号拼音时，才关闭`pronunciation`。
 
@@ -119,7 +154,7 @@ B10—B17共80个不同主部首完成GF0014—2009《现代常用字部件及�
 
 合计**60/80项采用读音关闭，20/80项保持pending**。对应machine evidence为`data/evidence/B10-pronunciation.json`至`B17-pronunciation.json`，人工复核摘要为`reviews/B10-B17-pronunciation.md`。名称型标签中的其它字读音不得替代目标主形读音。
 
-## 最新80项采用读音推进（二）（2026-10-05）
+### 最新80项采用读音推进（二）（2026-10-05）
 
 B04、B05、B06、B07、B09、B18、B19、B20共80个不同主部首完成S03采用读音适用性复核。
 
@@ -135,7 +170,7 @@ B04、B05、B06、B07、B09、B18、B19、B20共80个不同主部首完成S03采
 
 合计**52/80项pronunciation关闭，28/80项保持pending**。B20同时补齐`data/evidence/B20-component-name.json`，高、黄、鹿、鼎、黑精确目标行重新核对；麻、黍、鼓、鼠、鼻继续保持S03无精确独立整形条目。
 
-## 最新80项笔顺码交叉核验（2026-10-05）
+### 最新80项笔顺码交叉核验（2026-10-05）
 
 B04—B11共80个不同主部首完成GF0023派生TSV逐字交叉核验。数据源为公开项目`takushun-wu/han-ideographs-stroke-order`的`order.tsv`（blob `ecf422f0bb9d1d07d661250796269bfa752ebd`），该项目声明其数据来源包括GF0023—2020等资料。
 
@@ -143,7 +178,7 @@ B04—B11共80个不同主部首完成GF0023派生TSV逐字交叉核验。数据
 
 证据边界：该TSV属于二次数字化材料，因此本轮只把`stroke_order`推进到`crosschecked`，**不替代GF0023—2020规范原页视觉review，不提前标最终reviewed**。B05“牙”的第2笔细笔名冲突继续独立保持`conflict_fail_closed`。
 
-## 最新80项笔顺二次定位：B12—B19（2026-10-05）
+### 最新80项笔顺二次定位：B12—B19（2026-10-05）
 
 B12—B19共80个不同主部首完成GF0023派生TSV二次定位。固定数据源为`takushun-wu/han-ideographs-stroke-order/order.tsv`（blob `ecf422f0bb9d1d07d661250796269bfa752ebd`）。
 
@@ -156,7 +191,7 @@ B12—B19共80个不同主部首完成GF0023派生TSV二次定位。固定数据
 
 证据边界：该TSV是二次数字化材料，**不替代GF0023—2020规范原页视觉review**；`fine_stroke_names`也不能由五类笔顺码反推，继续独立pending。
 
-## 最新80项细笔名二次交叉核验（2026-10-05）
+### 最新80项细笔名二次交叉核验（2026-10-05）
 
 B04—B11共80个不同主部首完成`cnchar-order`二次逐笔细分类定位/交叉。固定来源为`theajack/cnchar` pinned ref `b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550`，使用固定`stroke-order-jian.json`和`stroke-table.json` blob。
 
@@ -169,7 +204,7 @@ B04—B11共80个不同主部首完成`cnchar-order`二次逐笔细分类定位/
 
 cnchar文档明确存在五组同码双名，因此本轮**只推进secondary crosscheck/locator，不替代GF2001、GF0023或S04规范原页**。牙第2笔“撇折/竖折”继续原有`conflict_fail_closed`。
 
-## 最新80项细笔名二次定位：B12—B19（2026-10-05）
+### 最新80项细笔名二次定位：B12—B19（2026-10-05）
 
 B12—B19共80个不同主部首完成`cnchar-order`二次逐笔细分类定位。固定来源为`theajack/cnchar` pinned ref `b8397db3e08e88ebbf8acf92b5cbab1a7e4c1550`。
 
@@ -183,7 +218,7 @@ B12—B19此前没有逐笔细笔名candidate，因此本轮只形成secondary l
 
 同名分支早期并行推进曾因B19写路径触发tooling_write_blocker而切换到B20；随后B19已经恢复成功。B20额外locator evidence保留，但不计入本轮80项主吞吐。
 
-## 最新80项细笔名独立二次交叉：B12—B19（2026-10-06）
+### 最新80项细笔名独立二次交叉：B12—B19（2026-10-06）
 
 B12—B19共80个不同主部首新增第二套独立二次源D04/cjklib，与既有D03/cnchar逐笔比较。
 
@@ -196,7 +231,7 @@ B12—B19共80个不同主部首新增第二套独立二次源D04/cjklib，与�
 
 两套二次源即使一致也不替代规范原页；8个冲突必须回GF2001/GF0023/S04原页裁决。
 
-## 剩余阶段状态（2026-10-06）
+### 剩余阶段状态（2026-10-06）
 
 剩余工作已改为P0—P7阶段化收口，详见`docs/REMAINING_PHASE_PLAN.md`。
 
@@ -206,7 +241,7 @@ B12—B19共80个不同主部首新增第二套独立二次源D04/cjklib，与�
 
 从P1开始不再主动扩D05/D06等secondary数据源，除非规范原件出现真实无法定位缺口。
 
-## P1第一轮：B04—B11笔顺规范原页收口（2026-10-06）
+### P1第一轮：B04—B11笔顺规范原页收口（2026-10-06）
 
 已从通过SHA256校验的GF0023—2020原件实际渲染/查看PDF物理页9—21（原印3—15页），并对精确目标行生成放大裁图逐项核对。
 
@@ -228,7 +263,7 @@ B12—B19共80个不同主部首新增第二套独立二次源D04/cjklib，与�
 
 人工记录：`reviews/P1-B04-B11-GF0023-original-page.md`。
 
-## P1第二轮：B12—B19笔顺规范原页收口（2026-10-06）
+### P1第二轮：B12—B19笔顺规范原页收口（2026-10-06）
 
 已从通过SHA256校验的GF0023—2020原件实际渲染目标原页。对68个精确目标生成放大裁图逐项查看；对12个未精确定位目标，按secondary locator的数字笔顺码回到排序邻接区间原页，实际查看目标码前后边界。
 
@@ -250,7 +285,7 @@ B12—B19共80个不同主部首新增第二套独立二次源D04/cjklib，与�
 
 人工记录：`reviews/P1-B12-B19-GF0023-original-page.md`。
 
-## P1第三轮：B20—B21笔顺规范原页收口（2026-10-06）
+### P1第三轮：B20—B21笔顺规范原页收口（2026-10-06）
 
 B20—B21共11个主部首已逐项回GF0023—2020原页视觉复核，**11/11精确命中，0 pending，0 conflict**：
 
@@ -270,13 +305,13 @@ B20—B21共11个主部首已逐项回GF0023—2020原页视觉复核，**11/11�
 
 人工记录：`reviews/P1-B20-B21-GF0023-original-page.md`。
 
-## P2第一轮：B04—B11细笔名规范原页收口（2026-10-06）
+### P2第一轮：B04—B11细笔名规范原页收口（2026-10-06）
 
 B04—B11共80个主部首已完成GF2001—2001折笔规范与目标整字规范原页逐项复核。结果：**79项 fine_stroke_names reviewed，1项牙保持 conflict_fail_closed，0普通pending**。关键裁决：几=撇、横折弯钩；凵=竖折、竖；欠第2笔=横撇；风第2笔=横斜钩；心第2笔=卧钩。secondary D03/D04只作locator/crosscheck，不参与多数投票。
 
 证据：`data/evidence/P2-B04-B11-fine-stroke-names-original-page.json`；人工摘要：`reviews/P2-B04-B11-fine-stroke-names.md`。canonical `data/B04.json`—`data/B11.json`已同步；牙仍保留精确冲突和解决路径。P1保持201/201 stroke_order reviewed。
 
-## P2第二轮：B12—B19细笔名规范原页收口（2026-10-06）
+### P2第二轮：B12—B19细笔名规范原页收口（2026-10-06）
 
 B12—B19共80个主部首完成GF2001—2001术语/折笔分类与GF0023目标原页复核。结果：**67项 fine_stroke_names reviewed，12项 alternative-source pending，1项矛 conflict_fail_closed**。12项pending：屮、巛、疒、疋、癶、覀、虍、糸、釆、龺、髟、鬥；这些目标在GF0023主表没有精确行，GF2001也无直接目标字例，secondary locator不得升级。
 
@@ -284,7 +319,7 @@ B12—B19共80个主部首完成GF2001—2001术语/折笔分类与GF0023目标�
 
 B12—B15、B17—B19 canonical已同步；B16十项evidence为10/10 reviewed，但`data/B16.json`更新触发tooling_write_blocker，保留canonical状态债。证据：`data/evidence/P2-B12-B15-fine-stroke-names-original-page.json`、`data/evidence/P2-B16-B19-fine-stroke-names-original-page.json`、`reviews/P2-B12-B19-fine-stroke-names.md`。
 
-## 当前主要未决字段
+### 当前主要未决字段
 
 1. GF0011—2022精确主项字形、附形、名称和编码；
 2. B04以后大量批次的正式结构、逐笔笔顺、细笔名和采用读音；
@@ -294,11 +329,11 @@ B12—B15、B17—B19 canonical已同步；B16十项evidence为10/10 reviewed，
 
 GitHub部分写入路径曾间歇触发 `This tool call was blocked by OpenAI's safety checks...`。该类情况统一记为 `tooling_write_blocker`，不是来源阻塞或内容冲突；单一路径失败不得停止整体阶段1推进。
 
-## B03阶段2/3尾项
+### B03阶段2/3尾项
 
 B03内容层视为`content_ready`。artwork/layout人工记录已存在；PDF归档、manifest、通用hard-gate和最终发布属于阶段2/3尾项，不阻塞阶段1内容吞吐。
 
-## PDF状态
+### PDF状态
 
 最新仓库合集仍为：
 
@@ -306,7 +341,7 @@ B03内容层视为`content_ready`。artwork/layout人工记录已存在；PDF归
 
 23页；当前阶段1没有新增或修改PDF。
 
-## 下一内容工作
+### 下一内容工作
 
 1. 继续清理少量review/状态同步债；B20 component-name machine evidence已补齐；
 2. **P1的GF0023主表阶段已完成到B21：B04—B21为134/171 reviewed，37/171 residual；全书为164/201 reviewed。** 下一步只对固定37项使用S04/其它适用规范做P1 residual closure，关闭后进入P2细笔名原页收口。
@@ -314,7 +349,7 @@ B03内容层视为`content_ready`。artwork/layout人工记录已存在；PDF归
 4. 位置迁移继续回目标整字核验；
 5. GF0011—2022逐项精确字段继续由Issue #4并行追踪。
 
-## P1 residual来源审计：GF3002—1999（2026-10-06）
+### P1 residual来源审计：GF3002—1999（2026-10-06）
 
 为37项固定stroke-order residual尝试引入GF3002—1999《GB 13000.1字符集汉字笔顺规范》。PR #26 合入后，source-probe run `37410985779` 成功取得镜像，artifact `11389595541`；文件6,730,497字节，SHA256为 `cb5cb74f108dafed41a3583bc8d33d8dd318d1a21d714923c0f1ced89443cf3e`。
 
@@ -323,7 +358,7 @@ B03内容层视为`content_ready`。artwork/layout人工记录已存在；PDF归
 随后对该8页原件中实际可见的主表序号1—134继续逐项视觉复核，精确关闭丨、丿、丶、乛、丬5项，0冲突；只允许使用真实显示且已审读的精确字条，“（略）”之后的未显示条目不得外推。全书stroke_order由164/201推进为**169/201 reviewed，32/201 residual**。下一步获取完整GF3002—1999、GB/T 25741—2010附录C或其它适用权威原件，对固定32项继续集中收口。
 
 
-## P1完成：GB/T 25741—2010附录C关闭最后32项（2026-10-06）
+### P1完成：GB/T 25741—2010附录C关闭最后32项（2026-10-06）
 
 已从固定公开Git blob经Actions临时reference artifact恢复GB/T 25741—2010《信息技术 汉字编码字符集 汉字部首序和笔顺序》附录C，文件43,054,573字节、323个PDF物理页、SHA256 `0514f50e310ae2eb32a743a3813d2630be9accec28b8bf244b06499d1d737baf`。附录C首页明确标注“规范性附录 汉字笔顺序”，并说明对27,533个汉字按笔顺序规则排序。
 
@@ -335,7 +370,7 @@ B03内容层视为`content_ready`。artwork/layout人工记录已存在；PDF归
 当前活动阶段正式切换为**P2：fine_stroke_names规范原页收口**。P2优先集合仍按阶段计划：牙、几、凵、风、心、毋、鸟、臣、虫、缶、舟、里、角及D03/D04源歧义项；优先GF2001—2001，再用GF0023/S04整字原页裁决。P1完成不改变content_ready总数，也不表示artwork/PDF/manifest/CI/release完成。
 
 
-## P2完成并切换P3（2026-10-06）
+### P2完成并切换P3（2026-10-06）
 
 P2细笔名规范原页收口已达到阶段退出条件。B04—B21共171项最终为：**157 reviewed、14 conflict_fail_closed、0普通pending**。14项fail-closed为牙、矛、屮、巛、疒、疋、癶、覀、虍、糸、釆、龺、髟、鬥。
 
@@ -349,7 +384,7 @@ P2细笔名规范原页收口已达到阶段退出条件。B04—B21共171项最
 **当前活动阶段正式切换为P3：pronunciation / component_name / structure扫尾。** P1仍为201/201 stroke_order reviewed；P2完成不改变content_ready统计，也不表示artwork、PDF、manifest、CI或release完成。
 
 
-## P3第一轮：component_name状态债与P4路由（2026-10-06）
+### P3第一轮：component_name状态债与P4路由（2026-10-06）
 
 本轮实际推进47个不同主部首的component_name：B08十项恢复既有S03原页证据并同步canonical，B14十项把已在库的S03精确目标行同步canonical，共20项正式`reviewed_S03_GF0014_2009`。另27项此前已完成S03原页审读且明确无精确独立主形条目，本轮不再作为P3普通pending，而按阶段职责路由至P4的GF0011—2022精确名称门槛；这些27项**不标reviewed**。
 
@@ -358,7 +393,7 @@ P2细笔名规范原页收口已达到阶段退出条件。B04—B21共171项最
 证据：`data/evidence/B08-component-name.json`、`data/evidence/B14-component-name.json`、`data/evidence/P3-component-name-S03-no-exact-route-P4.json`、`reviews/P3-round1-component-name-20261006.md`。
 
 
-## P3第二轮：structure规范集合收口（2026-10-06）
+### P3第二轮：structure规范集合收口（2026-10-06）
 
 本轮实际推进**100个不同主部首**的structure，全部来自此前S07未直接关闭的项目。
 
@@ -381,7 +416,7 @@ P2细笔名规范原页收口已达到阶段退出条件。B04—B21共171项最
 P3当前剩余主吞吐：pronunciation；component_name普通缺口仅B21龠1项。P4路由项不计作P3普通pending，也不冒充reviewed。
 
 
-## P3完成并切换P4（2026-10-06）
+### P3完成并切换P4（2026-10-06）
 
 P3 `pronunciation / component_name / structure` 已达到阶段退出条件，B04—B21三个字段普通pending全部归零：
 
@@ -398,7 +433,7 @@ B21龠完成S03主体表序号1—514全表排除审读，未见精确独立名�
 当前活动阶段正式切换为 **P4：GF0011—2022精确身份、主形/附形、名称、编码与位置迁移**。P1/P2/P3完成不改变content_ready总数，也不表示artwork、PDF、manifest、CI或release完成。
 
 
-## P4第一轮：B04—B11主部首身份连续性（2026-10-06）
+### P4第一轮：B04—B11主部首身份连续性（2026-10-06）
 
 本轮实际推进**80个不同主部首**。教育部/国家语委2022年发布说明明确GF0011—2022为2009版修订，并“保持原有201个主部首”，修订重点包括附形部首增补微调、部分常用部首名称与信息处理国际编码。
 
@@ -419,7 +454,7 @@ B21龠完成S03主体表序号1—514全表排除审读，未见精确独立名�
 P4下一轮按计划推进B12—B19 80项；同时可独立处理位置迁移，不等待2022全文。
 
 
-## P4第二轮：B12—B21主部首身份连续性（2026-10-06）
+### P4第二轮：B12—B21主部首身份连续性（2026-10-06）
 
 本轮实际推进**91个不同主部首**：B12—B19八批80项，再顺带完成B20/B21 11项。全部按与第一轮相同的证据边界，只关闭GF0011—2022官方发布说明明确支持的“201主部首集合连续性 + 项目main_id连续性”，不把发布说明冒充逐项正文。
 
@@ -437,7 +472,7 @@ P4下一轮按计划推进B12—B19 80项；同时可独立处理位置迁移，
 P4的身份连续性下一步只剩B01—B03既有30项回归；P4主工作将逐步转向位置迁移和2022精确逐项字段。
 
 
-## P4身份连续性里程碑：201/201（2026-10-06）
+### P4身份连续性里程碑：201/201（2026-10-06）
 
 完成B01—B03既有30项P4回归后，全书201个主部首均已完成GF0011—2022“主部首集合成员身份 + 项目main_id连续性”复核：
 
@@ -456,7 +491,7 @@ P4现在的主工作从“主项是否仍在201集合中”转为：
 证据：`data/evidence/P4-B01-B03-main-radical-identity-continuity.json`、`reviews/P4-B01-B03-main-identity-continuity.md`。
 
 
-## P4 position_migration 第一轮：B06—B11（2026-10-06）
+### P4 position_migration 第一轮：B06—B11（2026-10-06）
 
 本轮实际推进**60个不同主部首**的位置迁移整字核验。由于B04/B05当前main没有可复用的权威整字语境evidence，没有为凑80而使用编辑例字升级状态。
 
@@ -476,7 +511,7 @@ P4现在的主工作从“主项是否仍在201集合中”转为：
 边界：本轮只关闭记录的代表整字语境，不把它提升为GF0011—2022正式附形认定；2022精确附形/名称/编码仍受全文访问门槛约束。B04/B05 20项下一轮补权威整字目标后继续。
 
 
-## P4 position_migration 第二轮：B12—B19（2026-10-06）
+### P4 position_migration 第二轮：B12—B19（2026-10-06）
 
 本轮实际推进**80个不同主部首**的完整整字位置迁移核验，全部使用GF0023—2020代表整字原页并保存部件在整字中的笔画索引、位置、映射类型、改笔及是否必须保留完整整字时序。
 
@@ -499,7 +534,7 @@ P4现在的主工作从“主项是否仍在201集合中”转为：
 下一步：B20/B21 11项整字迁移、B04/B05 20项补权威整字语境，以及B01—B03既有30项位置迁移回归。
 
 
-## P4 position_migration 全书收口（2026-10-06）
+### P4 position_migration 全书收口（2026-10-06）
 
 P4位置迁移已完成全书201项收口：
 
@@ -522,7 +557,7 @@ P4位置迁移已完成全书201项收口：
 P4尚未退出：**GF0011—2022正式全文/官方逐项数据仍是独立source blocker**。当前201/201主部首集合连续性已reviewed，201/201 position_migration也已reviewed/fail-closed；但2022逐项精确主形、正式附形、常用名称和国际编码仍pending，不能冒充完成。
 
 
-## P4完成并切换P5（2026-10-06）
+### P4完成并切换P5（2026-10-06）
 
 P4已满足阶段退出条件。
 
@@ -551,7 +586,7 @@ P4完成检查点：
 当前content_ready仍为30（B01—B03），content_in_progress仍为171（B04—B21），只有P5逐批验收通过后才增加content_ready。P4完成不表示artwork、PDF、manifest、CI发布门槛或正式release完成。
 
 
-## P5完成：201/201 content_ready（2026-10-07）
+### P5完成：201/201 content_ready（2026-10-07）
 
 P5逐批内容终审已经完成。B04—B21共171项逐项检查身份、结构、笔数、笔顺、细笔名、读音、部件名称、教学提示、自查句、整字语境、位置迁移与field-level evidence；普通pending全部清零。
 
@@ -575,7 +610,7 @@ P5逐批内容终审已经完成。B04—B21共171项逐项检查身份、结构
 这只表示内容层完成，不表示artwork、PDF、manifest、CI发布门槛或正式release完成。当前活动阶段正式切换为**P6 Artwork / 版式**。
 
 
-## P6启动：201项矢量材料覆盖与B03正规化（2026-10-07）
+### P6启动：201项矢量材料覆盖与B03正规化（2026-10-07）
 
 P6已完成全书绘图材料覆盖审计。固定Hanzi Writer / Make Me a Hanzi revision `68d10a4b21150cae5e1ebbd223eed289cf32d90c`，workflow run `37513572597` 实际遍历B01—B21全部201项：
 
@@ -592,7 +627,7 @@ B03此前已在2026-09-30完成真实逐笔矢量人工复核（`data/evidence/B
 当前artwork_ready：**30/201（B01—B03）**。B04—B21共171项下一步必须逐项做累计笔画视觉QA，不能从本次材料覆盖审计自动升级。
 
 
-## P6第一轮：B04—B11 artwork视觉复核（2026-10-07）
+### P6第一轮：B04—B11 artwork视觉复核（2026-10-07）
 
 本轮使用固定Hanzi Writer revision `68d10a4b21150cae5e1ebbd223eed289cf32d90c`，由workflow run `37548434948`生成B04—B11 80项临时累计笔画审图包（artifact `11452390328`）。8个批次PDF全部渲染为120dpi PNG后逐批实际查看；牙、瓦、廴、心、罒额外做单页第二遍复核。
 
@@ -613,7 +648,7 @@ B03此前已在2026-09-30完成真实逐笔矢量人工复核（`data/evidence/B
 注意：artwork_ready不等于layout_ready或PDF/release完成；最终A4版式与P7归档仍独立。
 
 
-## P6第二轮：B12—B21 artwork视觉复核与201/201里程碑（2026-10-07）
+### P6第二轮：B12—B21 artwork视觉复核与201/201里程碑（2026-10-07）
 
 本轮对B12—B21共**91个主部首**完成累计笔画artwork视觉QA。workflow run `37549583534` 成功生成临时审图artifact `11452452267 p6-artwork-review-b12-b21`；91页全部渲染为120dpi PNG，10个批次contact sheet全部实际查看，屮、毋、鬥、龠另做单页放大复核。
 
@@ -636,7 +671,7 @@ B03此前已在2026-09-30完成真实逐笔矢量人工复核（`data/evidence/B
 
 **P6仍未完成。** 下一门槛是全书统一A4版式、练习层级以及复杂字分页策略；实际PDF归档、manifest、全书PDF视觉QA和正式release仍属于P7。
 
-## P7 v0.4.0 structured draft archive（2026-10-07）
+### P7 v0.4.0 structured draft archive（2026-10-07）
 
 PR #49 已合入 main，merge commit `81c6c6b9bb282966b29a9c96c1c8bb016e54ab76`。该 PR 完成了 P7 结构化全书导航：2 页目录、201 主部首索引、32 项教学附形/位置变体索引、原 V001—V027 回归表、来源/字段复核说明与版本/勘误页。
 
@@ -662,7 +697,7 @@ P7 新增页面已完成实际视觉 QA：
 
 当前 P7 尚未完成：归档 PR 的目标 HEAD CI、全书级 release gate、release candidate 和正式 `deliverables/releases/` 仍保持 pending。GF0011—2022 逐项精确字段仍按 P4 既有结论 source-blocked fail-closed，不因归档 PDF 而升级。
 
-## P7 v0.4.0 RC1 archive（2026-10-07）
+### P7 v0.4.0 RC1 archive（2026-10-07）
 
 PR #52 已完成候选渲染能力并合入 main，merge commit `c29574180e1a3f11324313be7e5179c208077d46`。RC1 使用独立 `--candidate` 模式，不复用正式 `--release`，因此不会把旧逐批 `release_eligible=false` 强行改真。
 
@@ -692,7 +727,7 @@ RC1已通过一次性feature-branch归档流程真实写入：
 
 当前P7仅剩：RC1归档PR目标HEAD CI、最终formal-release gate、正式PDF生成/终审、`deliverables/releases/`归档与release记录。GF0011—2022逐项精确字段继续保持201项source_blocked fail-closed，不因候选归档而升级。
 
-## P7 v0.4.0正式发布归档候选（2026-10-07）
+### P7 v0.4.0正式发布归档候选（2026-10-07）
 
 正式发布版已由PR #54目标HEAD `9149a6e9b751bfbc97e95c3bbfc64a5c8681f7fd`生成并完成formal gate与视觉QA。对应Book integrity checks run `37570965306`成功，artifact `11460761965 zitie-p7-draft-rc1-formal-preflight`。
 
@@ -711,7 +746,7 @@ RC1已通过一次性feature-branch归档流程真实写入：
 
 
 
-## P7完成：v0.4.0正式发布（2026-10-07）
+### P7完成：v0.4.0正式发布（2026-10-07）
 
 全书正式发布门槛已全部通过。
 
@@ -747,3 +782,4 @@ RC1已通过一次性feature-branch归档流程真实写入：
 这些是有明确重开条件的终态边界，不是未分类普通pending；正式发布不伪造GF0011—2022未公开逐项数据。
 
 后续仅进入维护/勘误模式；若GF0011—2022正式逐项数据出现可重复公开通道，再按现有reopen_condition开启新版本修订。
+
