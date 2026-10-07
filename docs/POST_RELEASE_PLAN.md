@@ -1,8 +1,8 @@
 # 发布后修订计划：M1 → M2 → M3 → Q1
 
-更新：2026-10-07。P0—P7作为v0.4.0历史里程碑保留，不回退、不重新计数。当前活动阶段：**M2**。机器状态入口：`data/post_release.json`。
+更新：2026-10-07。当前活动阶段为**M3**；M1完成，M2本周期按`completed_with_source_blocks`结束。累计实际采用3个字段，残余保留，来源Issue #4继续open。M3范围见`M3_SCOPE.md`，五个功能包未完成；Q1未开始。机器状态：`data/post_release.json`。
 
-最新检查点：正式v0.4.1已归档并发布，PR61最终HEAD CI run `37588926485`成功；M1完成，E001—E004resolved。M2开始新权威来源审计，尚未新增规范reviewed，M3/Q1仍未开始。完成证据：`reviews/M1-completion-20261007.md`。
+M2退出证据为`reviews/M2-completion-20261007.md`及对应closeout/source审计；不是全部字段已证实，未决用途受`data/teaching-source-policy.json`限制。下列M2数量表保留启动时范围，当前剩余数为201/14/2/9/28/37，分属六类重叠集合。
 
 ## M1：v0.4.x勘误维护（已完成）
 

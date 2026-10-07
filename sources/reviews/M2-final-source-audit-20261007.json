@@ -1,0 +1,216 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-07",
+  "kind": "M2_final_bounded_source_admissibility_audit",
+  "baseline_commit": "5d41d24977d9aab76bbd5b212013b0360c241826",
+  "not_an_exhaustive_search": true,
+  "new_normative_promotions_this_round": 0,
+  "sources": [
+    {
+      "id": "A2022",
+      "scope": "GF0011—2022逐项身份；名称/结构前置证据",
+      "queries": [
+        "\"汉字部首表\" \"2022\" (moe.gov.cn)",
+        "\"GF0011—2022\"",
+        "\"GF 0011-2022\"",
+        "\"汉字部首表\" \"修订\""
+      ],
+      "attempted_urls": [
+        "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202211/t20221118_995332.html",
+        "https://hudong.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202211/t20221118_995332.html",
+        "https://www.moe.gov.cn/s78/A19/A19_ztzl/ztzl_yywzgfbz/",
+        "https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/201001/t20100115_75694.html"
+      ],
+      "access_result": "本轮页面打开超时或工具内部取回失败；搜索定位到官方发布说明，但未取得完整适用逐项表。",
+      "fulltext_acquired": false,
+      "claim_never_published": false,
+      "prior_audits": [
+        "sources/reviews/P4-GF0011-2022-exact-fields-source-blocked-20261006.json",
+        "sources/reviews/M2-entry-source-audit-20261007.json"
+      ],
+      "decision": "保留来源阻塞；不把访问失败、检索未命中或书目介绍当作不存在证明。"
+    },
+    {
+      "id": "A2001",
+      "publication": "GF2001—2001",
+      "acquisition": "restored_existing_verified_artifact_not_new_publication",
+      "pdf_sha256": "68a1420580a7eedde79eeb55b91b6b2ff10ef9155d98633ccc712838f04e9b14",
+      "physical_pages_actually_viewed": [
+        4,
+        5,
+        6,
+        7,
+        8,
+        9
+      ],
+      "printed_pages": [
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ],
+      "sections": [
+        "3 术语",
+        "4 折笔分类",
+        "6 命名",
+        "7 表说明",
+        "折笔笔形表5.1—5.25"
+      ],
+      "findings": [
+        "本规范给折笔分类、全称/简称/俗称及代表例字，不能从数字5直接恢复任意目标的细分名称。",
+        "表5.4仍列牙为竖折类例字；本项目教学手写候选的分型争议未由此次复看得到新桥接。",
+        "矛不是所见代表例字中的直接命名证明；需把GF0023目标细笔形与命名规则可靠对应。"
+      ],
+      "decision": "14项细笔名均不升级；12项精确目标缺口引用既有逐项目标审计，牙/矛保留具体争议。",
+      "prior_target_gap": "data/evidence/P2-normative-target-gap-failclosed.json"
+    },
+    {
+      "id": "A0023",
+      "publication": "GF0023—2020",
+      "pdf_sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
+      "physical_pages_actually_viewed": [
+        13,
+        17,
+        25,
+        51
+      ],
+      "rows_reviewed": [
+        {
+          "physical_page": 13,
+          "printed_page": 7,
+          "target": "牙",
+          "table_no": "0102",
+          "order_code": "1523"
+        },
+        {
+          "physical_page": 13,
+          "printed_page": 7,
+          "target": "屯",
+          "table_no": "0103",
+          "order_code": "1525"
+        },
+        {
+          "physical_page": 17,
+          "printed_page": 11,
+          "target": "毋",
+          "table_no": "3527",
+          "order_code": "5531"
+        },
+        {
+          "physical_page": 25,
+          "printed_page": 19,
+          "target": "矛",
+          "table_no": "0343",
+          "order_code": "54523"
+        },
+        {
+          "physical_page": 25,
+          "printed_page": 19,
+          "target": "母",
+          "table_no": "0345",
+          "order_code": "55414"
+        },
+        {
+          "physical_page": 51,
+          "printed_page": 45,
+          "target": "每",
+          "table_no": "0767",
+          "order_code": "3155414"
+        }
+      ],
+      "decision": "毋4笔5531与每内5笔55414不能直接视作无改笔的一一对应；屮→屯也无新适用变形桥接。牙/矛细笔名不由粗粒度数字码裁决。保持现有2项迁移和14项细笔名阻塞。"
+    },
+    {
+      "id": "A0014",
+      "publication": "GF0014—2009",
+      "url": "https://www.unicode.org/irg/docs/n2739-GF0014-2009.pdf",
+      "host_role": "原出版物转载，不增加一套独立规范",
+      "physical_pages_actually_viewed": [
+        1,
+        4,
+        5
+      ],
+      "sections": [
+        "封面",
+        "1 范围",
+        "3.1—3.10 术语",
+        "4.1—4.2.3 拆分规则"
+      ],
+      "raw_sha256": null,
+      "raw_bytes_archived_this_round": false,
+      "method": "web PDF screenshots",
+      "decision": "原页区分部件、成字/非成字部件及结构；不推出未核目标的官方名称或独体/合体分类。本轮只重审适用范围，未重称完整41页审读。"
+    },
+    {
+      "id": "ATW",
+      "publisher": "台湾教育部／国家教育研究院",
+      "title": "國語小字典—部首字音讀表",
+      "url": "https://dict.mini.moe.edu.tw/SearchIndex/RadicalsTable",
+      "method": "实际读取页面文字和目标行；不来自搜索摘要",
+      "raw_sha256": null,
+      "raw_bytes_archived_this_round": false,
+      "observed_entries": [
+        {
+          "project_target": "尢",
+          "source_form": "尢",
+          "bopomofo": "ㄨㄤ"
+        },
+        {
+          "project_target": "弋",
+          "source_form": "弋",
+          "bopomofo": "ㄧˋ"
+        },
+        {
+          "project_target": "彳",
+          "source_form": "彳",
+          "bopomofo": "ㄔˋ"
+        },
+        {
+          "project_target": "毋",
+          "source_form": "毋",
+          "bopomofo": "ㄨˊ"
+        },
+        {
+          "project_target": "邑",
+          "source_form": "邑",
+          "bopomofo": "ㄧˋ"
+        },
+        {
+          "project_target": "黾",
+          "source_form": "黽",
+          "bopomofo": "ㄇㄧㄣˇ"
+        },
+        {
+          "project_target": "阜",
+          "source_form": "阜",
+          "bopomofo": "ㄈㄨˋ"
+        },
+        {
+          "project_target": "黍",
+          "source_form": "黍",
+          "bopomofo": "ㄕㄨˇ"
+        },
+        {
+          "project_target": "龠",
+          "source_form": "龠",
+          "bopomofo": "ㄩㄝˋ"
+        }
+      ],
+      "admissibility": "cross_system_reference_not_direct_mainland_adoption",
+      "not_a_low_quality_source": true,
+      "decision": "该权威来源具有交叉定位价值，但不是本工程大陆简体目标的直接采用依据；尤其尢的部首读法、黽/黾字形需要逐项桥接。保留9项，不称没有读音或来源未收录。"
+    },
+    {
+      "id": "AGF0025",
+      "publication": "GF0025—2021",
+      "prior_item_audit": "sources/reviews/M2-GF0025-pronunciation-audit-20261007.json",
+      "prior_adopted_evidence": "data/evidence/M2-GF0025-pronunciation-20261007.json",
+      "new_pages_read_this_round": [],
+      "decision": "沿用PR65的麦/齿两项采用和其余9项有限范围探查，不重复计数或外推整本未收录。"
+    }
+  ],
+  "reader_identity": "same_agent_not_independent_expert_review",
+  "source_PDFs_or_fonts_committed": false
+}

@@ -2,7 +2,7 @@
 
 ## 发布后新周期接续（2026-10-07）
 
-当前以`docs/STATUS.md`和`data/post_release.json`为准：M1已完成，正式v0.4.1保留；M2已据完整GF0023原页关闭瓦→瓶位置映射，当前工作数据为199 reviewed + 2 fail-closed，旧P4/release快照仍198+3。GF0025原件已支持麦mài/齿chǐ两个明确目标语素读音；剩余9项只做了有限范围探查，未证明全书无条目。先读最新M2读音证据/影响复核，不重复M1或瓦映射，不升级其它字段。其后M3增强→Q1全书排版复核。E001—E004均已正式闭环，勿重复RC/正式归档工作。下述P0—P7为既有v0.4.0历史规则，不覆盖新周期断点。
+当前以`docs/STATUS.md`、`data/post_release.json`为准。M1完成、正式v0.4.1保留；M2本周期按`completed_with_source_blocks`结束，累计采用瓦位置映射及麦/齿读音3个字段，来源#4仍open。当前M3已启动，先读`docs/M3_SCOPE.md`和`data/teaching-source-policy.json`，不要重复M1发布或将M2结束理解为残余已证实。五个功能包尚未完成，Q1仍planned；按字段限制出题/展示，不禁用无关已核字段，不补造精确2022结论。下列P0—P7是历史基线规则。
 
 ## 当前工作模式：内容优先
 
