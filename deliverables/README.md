@@ -1,5 +1,11 @@
 # PDF版本归档
 
+## v0.3.0：全书201主项编写稿
+
+[全书编写稿，261页](drafts/v0.3.0/B01-B21_with_preface_draft_A4.pdf)
+
+本版首次把B01—B21全部201个主部首汇总为单一A4全书draft。文件已由CI实际生成并永久归档，精确页数、字节数、SHA256和source commit见`manifest.json`。P6已完成201/201 artwork_ready与全书layout review；本PDF仍为**编写稿**，P7的目录/索引/附形与原27项回归、全书最终视觉QA、目标HEAD CI、release candidate和正式release尚未全部关闭。
+
 ## v0.2.1：第二批收尾修订
 
 [前言＋前20项，23页](drafts/v0.2.1/B01-B02_with_preface_draft_A4.pdf) · [B02十页](drafts/v0.2.1/B02_draft_A4.pdf) · [前言三页](drafts/v0.2.1/preface_v0.2.1.pdf)
