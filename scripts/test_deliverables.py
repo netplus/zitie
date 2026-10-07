@@ -23,6 +23,14 @@ class ArchiveTests(unittest.TestCase):
     def test_missing_review(self):self.data['artifacts'][0]['review_record']='reviews/missing.md';self.reject()
     def test_promotion(self):self.data['artifacts'][0]['release_eligible']=True;self.reject()
     def test_unaudited_release(self):self.data['artifacts'][0]['status']='released';self.reject()
+    def test_candidate_cannot_be_release_eligible(self):
+        item=next(x for x in self.data['artifacts'] if x.get('status')=='release_candidate')
+        item['release_eligible']=True
+        self.reject()
+    def test_candidate_requires_rc_version(self):
+        item=next(x for x in self.data['artifacts'] if x.get('status')=='release_candidate')
+        item['version']='0.4.0'
+        self.reject()
     def test_unregistered(self):self.data['artifacts'].pop();self.reject()
     def test_corrupt(self):
         (self.root/self.data['artifacts'][0]['path']).write_bytes(b'not a pdf');self.reject()

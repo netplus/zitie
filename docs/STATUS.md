@@ -662,3 +662,33 @@ P7 新增页面已完成实际视觉 QA：
 
 当前 P7 尚未完成：归档 PR 的目标 HEAD CI、全书级 release gate、release candidate 和正式 `deliverables/releases/` 仍保持 pending。GF0011—2022 逐项精确字段仍按 P4 既有结论 source-blocked fail-closed，不因归档 PDF 而升级。
 
+## P7 v0.4.0 RC1 archive（2026-10-07）
+
+PR #52 已完成候选渲染能力并合入 main，merge commit `c29574180e1a3f11324313be7e5179c208077d46`。RC1 使用独立 `--candidate` 模式，不复用正式 `--release`，因此不会把旧逐批 `release_eligible=false` 强行改真。
+
+最终候选构建：
+- source HEAD：`5ab536f32ac7f1c2909236e0261d3f8db745f6a5`
+- workflow run：`37569826763`
+- artifact：`11460128190 zitie-p7-draft-and-rc1-research`
+- artifact digest：`sha256:e518eec768e5a72f6d82581d87e31b4e9afb67aba2c7b8eed33088d04eca888e`
+- RC1 PDF：276页，3,756,330 bytes，SHA256 `fb88257a792c39aa147bb6074fd00656bd7c3c7458dd12c4b6750ddb65498bff`
+
+RC1全文机器预检：
+- `编写中` / `编写稿` / `前言初稿`：0；
+- 3个前言页均显示“发布候选稿 RC1”；
+- 258个练习页均显示“发布候选稿 RC1”；
+- 合计261个候选标记；
+- GF0011—2022 source-blocked / conflict fail-closed披露继续保留；
+- 正式release仍为0。
+
+RC1视觉QA实际查看16个代表页，并继承P6对258个练习页完整layout review及P7对15个导航/卷末新增页完整视觉review。证据：
+- `data/evidence/P7-RC1-visual-QA-20261007.json`
+- `reviews/P7-RC1-visual-QA-20261007.md`
+
+RC1已通过一次性feature-branch归档流程真实写入：
+`deliverables/drafts/v0.4.0-rc1/B01-B21_with_preface_toc_appendices_rc1_A4.pdf`
+
+`deliverables/manifest.json`已登记为`status=release_candidate`、`release_eligible=false`。这表示候选稿已归档，但仍不是`deliverables/releases/`正式稿。
+
+当前P7仅剩：RC1归档PR目标HEAD CI、最终formal-release gate、正式PDF生成/终审、`deliverables/releases/`归档与release记录。GF0011—2022逐项精确字段继续保持201项source_blocked fail-closed，不因候选归档而升级。
+
