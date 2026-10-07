@@ -18,7 +18,12 @@ texts=[p.extract_text() or '' for p in reader.pages]
 joined='\n'.join(texts)
 
 for forbidden in ('编写稿','前言初稿','编写中'):
-    assert forbidden not in joined, f'RC1 still contains draft label: {forbidden}'
+    hits=[]
+    for page_no,text in enumerate(texts,1):
+        if forbidden in text:
+            pos=text.index(forbidden)
+            hits.append({'page':page_no,'context':text[max(0,pos-40):pos+80].replace('\\n',' / ')})
+    assert not hits, f'RC1 still contains draft label {forbidden}: {hits}'
 
 candidate_markers=sum('发布候选稿 RC1' in t for t in texts)
 assert candidate_markers==258, candidate_markers
