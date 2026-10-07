@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "record_kind": "P6_cumulative_vector_artwork_review",
+  "batch_id": "B14",
+  "reviewed_at": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "vector_revision": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+  "workflow_run_id": 37549583534,
+  "workflow_head_sha": "9a421a34b6db37c991fd0f8a45f807cead083ea3",
+  "artifact_id": 11452452267,
+  "artifact_name": "p6-artwork-review-b12-b21",
+  "artifact_digest": "sha256:c6d536587de540e2c9cb0a2ff7ff5c61ae607fc9b538a7d81f8f2e37a3e10519",
+  "review_pdf": "B14-artwork-review.pdf",
+  "review_pdf_sha256": "11997e4864402162c7da918028414b70c4e3639a86e49c856d60417e3abcfbd1",
+  "review_method": "rendered cumulative-stroke PDF -> 120dpi PNG -> full batch contact-sheet visual inspection",
+  "targeted_single_page_second_pass": [],
+  "fail_closed_label_policy": "If fine_stroke_names is fail-closed and no adjudicated sequence exists, the review sheet uses reviewed stroke count/order steps without inventing stroke-name labels.",
+  "entries": [
+    {
+      "character": "虫",
+      "main_id": 131,
+      "order_code": "251214",
+      "stroke_count": 6,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "肉",
+      "main_id": 132,
+      "order_code": "253434",
+      "stroke_count": 6,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "缶",
+      "main_id": 133,
+      "order_code": "311252",
+      "stroke_count": 6,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "舌",
+      "main_id": 134,
+      "order_code": "312251",
+      "stroke_count": 6,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "竹",
+      "main_id": 135,
+      "order_code": "312312",
+      "stroke_count": 6,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "臼",
+      "main_id": 136,
+      "order_code": "321511",
+      "stroke_count": 6,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "自",
+      "main_id": 137,
+      "order_code": "325111",
+      "stroke_count": 6,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "血",
+      "main_id": 138,
+      "order_code": "325221",
+      "stroke_count": 6,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "舟",
+      "main_id": 139,
+      "order_code": "335414",
+      "stroke_count": 6,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "色",
+      "main_id": 140,
+      "order_code": "355215",
+      "stroke_count": 6,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "reviewed": 10,
+    "artwork_conflicts": 0,
+    "ordinary_pending": 0
+  },
+  "limits": "Drawing-material approval only. Inherited content fail-closed states remain unchanged. Final A4 layout/PDF/manifest/release are independent."
+}
