@@ -31,10 +31,10 @@ def register_font(_path=None):
     pdfmetrics.registerFont(UnicodeCIDFont('STSong-Light'))
     return 'STSong-Light'
 
-def txt(c,x,y,s,size=9,color=INK,font='APPENDIX_CJK'):
+def txt(c,x,y,s,size=9,color=INK,font='STSong-Light'):
     c.setFillColor(color); c.setFont(font,size); c.drawString(x,y,str(s))
 
-def right(c,x,y,s,size=9,color=INK,font='APPENDIX_CJK'):
+def right(c,x,y,s,size=9,color=INK,font='STSong-Light'):
     c.setFillColor(color); c.setFont(font,size); c.drawRightString(x,y,str(s))
 
 def header(c,title,subtitle,page_label):
