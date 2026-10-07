@@ -1,0 +1,28 @@
+{
+  "schema_version": 1,
+  "record_kind": "P7_formal_release_preflight_policy",
+  "review_date": "2026-10-07",
+  "status": "formal_preflight_defined_release_archive_pending",
+  "prerequisites": {
+    "content_ready": "201/201",
+    "artwork_ready": "201/201",
+    "layout_ready": "201/201",
+    "release_candidate": "v0.4.0-rc1 archived and QA passed",
+    "ordinary_pending": 0
+  },
+  "terminal_disclosures": {
+    "fine_stroke_names_conflict_fail_closed": 14,
+    "position_migration_conflict_fail_closed": 3,
+    "exact_GF0011_2022_item_fields_source_blocked_fail_closed": 201,
+    "boundary": "These are terminal, disclosed states with evidence/reopen conditions; they are not promoted to reviewed."
+  },
+  "formal_generation_rules": [
+    "Formal mode is separate from legacy per-batch --release and from --candidate.",
+    "Formal PDF must contain no draft/candidate labels.",
+    "Formal practice pages and preface must be explicitly labeled v0.4.0 formal release.",
+    "Back matter must retain source-blocked/fail-closed disclosure and identify current release as v0.4.0.",
+    "Generated formal artifact is not considered repository-released until final visual QA, manifest registration, deliverables/releases archival, target-HEAD CI, and release record all pass."
+  ],
+  "gate": "scripts/verify_formal_release_gate.py",
+  "pdf_preflight": "scripts/verify_formal_release_pdf.py"
+}
