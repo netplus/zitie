@@ -854,7 +854,7 @@
     "batches_content_in_progress": [],
     "next_assignment_starts_at": null,
     "next_work": "P6_artwork_layout_full_book",
-    "note": "P6 active. Vector material coverage is 201/201 compatible. B04-B11 80 cumulative-stroke artwork sheets were manually visually reviewed with 0 artwork conflicts; artwork_ready is now 110/201 (B01-B11). B12-B21 91 remain for artwork QA. Final A4 layout/PDF/manifest/release remain independent.",
+    "note": "P6 active. Artwork QA is complete: 201/201 main radicals artwork_ready after manual cumulative-stroke visual review. Remaining P6 gate is unified A4 layout/practice hierarchy/complex-character pagination review. PDF archival/manifest/full-book visual QA/release remain P7.",
     "stroke_order_reviewed_main_count": 201,
     "stroke_order_pending_main_count": 0,
     "active_remaining_phase": "P6",
@@ -1096,7 +1096,7 @@
         "artifact_id": 11435744872
       },
       "artwork_ready": {
-        "main_count": 110,
+        "main_count": 201,
         "batches": [
           "B01",
           "B02",
@@ -1108,9 +1108,20 @@
           "B08",
           "B09",
           "B10",
-          "B11"
+          "B11",
+          "B12",
+          "B13",
+          "B14",
+          "B15",
+          "B16",
+          "B17",
+          "B18",
+          "B19",
+          "B20",
+          "B21"
         ],
-        "remaining_main_count": 91
+        "remaining_main_count": 0,
+        "status": "complete"
       },
       "artwork_round1": {
         "batches": [
@@ -1140,7 +1151,31 @@
           "data/evidence/P6-B11-artwork-review.json"
         ],
         "review": "reviews/P6-B04-B11-artwork-review-20261007.md"
-      }
+      },
+      "artwork_round2": {
+        "batches": [
+          "B12",
+          "B13",
+          "B14",
+          "B15",
+          "B16",
+          "B17",
+          "B18",
+          "B19",
+          "B20",
+          "B21"
+        ],
+        "target_count": 91,
+        "reviewed": 91,
+        "conflicts": 0,
+        "ordinary_pending": 0,
+        "workflow_run_id": 37549583534,
+        "artifact_id": 11452452267,
+        "fail_closed_label_policy": "reviewed step count/order only; no invented fine-stroke labels",
+        "review": "reviews/P6-B12-B21-artwork-review-20261007.md",
+        "evidence_range": "data/evidence/P6-B12-artwork-review.json through P6-B21-artwork-review.json"
+      },
+      "next_gate": "full_book_A4_layout_and_complex_character_pagination_review"
     }
   }
 }

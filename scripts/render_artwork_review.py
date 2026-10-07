@@ -34,15 +34,24 @@ class Pen(BasePen):
     def _closePath(self): self.path.close()
     def _endPath(self): pass
 
-def expected_names(entry: dict) -> list[str]:
+def expected_stroke_count(entry: dict) -> tuple[int, list[str] | None]:
+    """Return a reviewed drawing-step count without inventing fail-closed stroke names."""
     if isinstance(entry.get("stroke_names"), list):
-        return entry["stroke_names"]
+        return len(entry["stroke_names"]), entry["stroke_names"]
     review = entry.get("fine_stroke_names_review") or {}
     if isinstance(review.get("adjudicated_names"), list):
-        return review["adjudicated_names"]
+        return len(review["adjudicated_names"]), review["adjudicated_names"]
     if isinstance(entry.get("stroke_names_candidate"), list):
-        return entry["stroke_names_candidate"]
-    raise ValueError(entry["character"] + ": no stroke-name sequence")
+        return len(entry["stroke_names_candidate"]), entry["stroke_names_candidate"]
+    stroke_review = entry.get("stroke_order_review") or {}
+    if isinstance(stroke_review.get("stroke_count"), int):
+        return stroke_review["stroke_count"], None
+    if isinstance(entry.get("stroke_count"), int):
+        return entry["stroke_count"], None
+    code = order_code(entry)
+    if code:
+        return len(code), None
+    raise ValueError(entry["character"] + ": no reviewed stroke-count source")
 
 def order_code(entry: dict) -> str:
     return (
@@ -119,15 +128,15 @@ def render_batch(batch_id: str, outdir: Path) -> dict:
 
     for entry_index, entry in enumerate(batch["entries"], 1):
         ch = entry["character"]
-        names = expected_names(entry)
+        expected_count, names = expected_stroke_count(entry)
         raw = vector_path(ch).read_bytes()
-        obj, strokes, box = prepare(raw, len(names))
+        obj, strokes, box = prepare(raw, expected_count)
         code = order_code(entry)
         c.setFillColor(COLORS["ink"])
         c.setFont("Helvetica-Bold", 13)
         c.drawString(margin_x, H - 24, f"{batch_id}  item={entry_index:02d}  main_id={entry.get('main_id')}  U+{ord(ch):04X}")
         c.setFont("Helvetica", 9)
-        c.drawString(margin_x, H - 39, f"strokes={len(names)}  order_code={code}  vector_sha256={hashlib.sha256(raw).hexdigest()[:16]}...")
+        c.drawString(margin_x, H - 39, f"strokes={expected_count}  order_code={code}  vector_sha256={hashlib.sha256(raw).hexdigest()[:16]}...")
         c.setFont("Helvetica", 8)
         c.drawRightString(W - margin_x, H - 39, "FULL + cumulative steps; current=red previous=gray")
 
@@ -153,6 +162,7 @@ def render_batch(batch_id: str, outdir: Path) -> dict:
             "main_id": entry.get("main_id"),
             "order_code": code,
             "stroke_names": names,
+            "stroke_name_labels_available": names is not None,
             "vector_file": vector_path(ch).name,
             "vector_sha256": hashlib.sha256(raw).hexdigest(),
             "vector_stroke_count": len(strokes),

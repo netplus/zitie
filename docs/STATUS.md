@@ -583,3 +583,27 @@ B03此前已在2026-09-30完成真实逐笔矢量人工复核（`data/evidence/B
 证据：`reviews/P6-B04-B11-artwork-review-20261007.md`及`data/evidence/P6-B04-artwork-review.json`至`P6-B11-artwork-review.json`。
 
 注意：artwork_ready不等于layout_ready或PDF/release完成；最终A4版式与P7归档仍独立。
+
+
+## P6第二轮：B12—B21 artwork视觉复核与201/201里程碑（2026-10-07）
+
+本轮对B12—B21共**91个主部首**完成累计笔画artwork视觉QA。workflow run `37549583534` 成功生成临时审图artifact `11452452267 p6-artwork-review-b12-b21`；91页全部渲染为120dpi PNG，10个批次contact sheet全部实际查看，屮、毋、鬥、龠另做单页放大复核。
+
+为保持前序fail-closed边界，P6审图器对没有权威细笔名序列的目标只按已reviewed的笔数/笔顺生成STEP 1…N，不伪造笔画名称。
+
+结果：
+- **91/91 artwork reviewed**
+- 0 artwork conflict
+- 0 ordinary artwork pending
+- B20复杂字与B21龠17画累计示范完整，无明显裁切/重叠
+- 前序语义fail-closed全部保持，不由绘图材料解除
+
+至此全书：
+- B01—B03：30 artwork_ready
+- B04—B11：80 artwork_ready
+- B12—B21：91 artwork_ready
+- **累计201/201 artwork_ready**
+
+证据：`reviews/P6-B12-B21-artwork-review-20261007.md`、`data/evidence/P6-B12-artwork-review.json`至`P6-B21-artwork-review.json`。
+
+**P6仍未完成。** 下一门槛是全书统一A4版式、练习层级以及复杂字分页策略；实际PDF归档、manifest、全书PDF视觉QA和正式release仍属于P7。

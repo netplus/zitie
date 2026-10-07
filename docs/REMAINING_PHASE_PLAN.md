@@ -208,9 +208,10 @@ P5清理的主要状态债：
 - 全书201项固定revision矢量材料已审计：201 compatible / 0 missing / 0 stroke-count mismatch；
 - 该机器审计只关闭材料覆盖，不授予artwork_ready；
 - B01/B02沿用既有artwork_ready，B03将2026-09-30已真实完成的逐笔矢量人工复核正规化为artwork_ready；
-- 第一轮B04—B11 80项累计笔画审图已实际完成，80/80通过，0 artwork conflict；
-- 当前 **110/201 artwork_ready（B01—B11）**；
-- 剩余B12—B21 91项继续逐项累计笔画视觉QA；之后进入全书A4版式/练习层级与复杂字分页统一。
+- 第一轮B04—B11 80项累计笔画审图完成，80/80通过；
+- 第二轮B12—B21 91项累计笔画审图完成，91/91通过；对细笔名fail-closed项只使用reviewed步数/顺序，不伪造笔名标签；
+- 当前 **201/201 artwork_ready**；
+- P6剩余唯一主门槛：全书A4版式/练习层级/复杂字分页统一与layout review。达到layout_ready后才进入P7。
 
 证据：`data/evidence/P6-vector-material-coverage-20261007.json`、`reviews/P6-vector-coverage-and-B03-promotion-20261007.md`。
 

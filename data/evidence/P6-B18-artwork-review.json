@@ -1,0 +1,118 @@
+{
+  "schema_version": 1,
+  "record_kind": "P6_cumulative_vector_artwork_review",
+  "batch_id": "B18",
+  "reviewed_at": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "vector_revision": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+  "workflow_run_id": 37549583534,
+  "workflow_head_sha": "9a421a34b6db37c991fd0f8a45f807cead083ea3",
+  "artifact_id": 11452452267,
+  "artifact_name": "p6-artwork-review-b12-b21",
+  "artifact_digest": "sha256:c6d536587de540e2c9cb0a2ff7ff5c61ae607fc9b538a7d81f8f2e37a3e10519",
+  "review_pdf": "B18-artwork-review.pdf",
+  "review_pdf_sha256": "6b210ea042583a1f8568d67b954dc1a67ac593955d2e4323b9818ba7aea6b688",
+  "review_method": "rendered cumulative-stroke PDF -> 120dpi PNG -> full batch contact-sheet visual inspection",
+  "targeted_single_page_second_pass": [],
+  "fail_closed_label_policy": "If fine_stroke_names is fail-closed and no adjudicated sequence exists, the review sheet uses reviewed stroke count/order steps without inventing stroke-name labels.",
+  "entries": [
+    {
+      "character": "非",
+      "main_id": 171,
+      "order_code": "21112111",
+      "stroke_count": 8,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "齿",
+      "main_id": 172,
+      "order_code": "21213452",
+      "stroke_count": 8,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "黾",
+      "main_id": 173,
+      "order_code": "25125115",
+      "stroke_count": 8,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "隹",
+      "main_id": 174,
+      "order_code": "32411121",
+      "stroke_count": 8,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "阜",
+      "main_id": 175,
+      "order_code": "32515112",
+      "stroke_count": 8,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "金",
+      "main_id": 176,
+      "order_code": "34112431",
+      "stroke_count": 8,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "鱼",
+      "main_id": 177,
+      "order_code": "35251211",
+      "stroke_count": 8,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "隶",
+      "main_id": 178,
+      "order_code": "51124134",
+      "stroke_count": 8,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "革",
+      "main_id": 179,
+      "order_code": "122125112",
+      "stroke_count": 9,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "面",
+      "main_id": 180,
+      "order_code": "132522111",
+      "stroke_count": 9,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "reviewed": 10,
+    "artwork_conflicts": 0,
+    "ordinary_pending": 0
+  },
+  "limits": "Drawing-material approval only. Inherited content fail-closed states remain unchanged. Final A4 layout/PDF/manifest/release are independent."
+}

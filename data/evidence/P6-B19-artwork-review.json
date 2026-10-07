@@ -1,0 +1,120 @@
+{
+  "schema_version": 1,
+  "record_kind": "P6_cumulative_vector_artwork_review",
+  "batch_id": "B19",
+  "reviewed_at": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "vector_revision": "68d10a4b21150cae5e1ebbd223eed289cf32d90c",
+  "workflow_run_id": 37549583534,
+  "workflow_head_sha": "9a421a34b6db37c991fd0f8a45f807cead083ea3",
+  "artifact_id": 11452452267,
+  "artifact_name": "p6-artwork-review-b12-b21",
+  "artifact_digest": "sha256:c6d536587de540e2c9cb0a2ff7ff5c61ae607fc9b538a7d81f8f2e37a3e10519",
+  "review_pdf": "B19-artwork-review.pdf",
+  "review_pdf_sha256": "48d295a540694f96a855952ad2578eeb4ceff4e7de9a9f39b4d304f7360e996d",
+  "review_method": "rendered cumulative-stroke PDF -> 120dpi PNG -> full batch contact-sheet visual inspection",
+  "targeted_single_page_second_pass": [
+    "鬥"
+  ],
+  "fail_closed_label_policy": "If fine_stroke_names is fail-closed and no adjudicated sequence exists, the review sheet uses reviewed stroke count/order steps without inventing stroke-name labels.",
+  "entries": [
+    {
+      "character": "韭",
+      "main_id": 181,
+      "order_code": "211121111",
+      "stroke_count": 9,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "骨",
+      "main_id": 182,
+      "order_code": "255452511",
+      "stroke_count": 9,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "香",
+      "main_id": 183,
+      "order_code": "312342511",
+      "stroke_count": 9,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "鬼",
+      "main_id": 184,
+      "order_code": "325113554",
+      "stroke_count": 9,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "食",
+      "main_id": 185,
+      "order_code": "344511534",
+      "stroke_count": 9,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "音",
+      "main_id": 186,
+      "order_code": "414312511",
+      "stroke_count": 9,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "首",
+      "main_id": 187,
+      "order_code": "431325111",
+      "stroke_count": 9,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "髟",
+      "main_id": 188,
+      "order_code": "1211154333",
+      "stroke_count": 10,
+      "stroke_name_labels_available": false,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "鬲",
+      "main_id": 189,
+      "order_code": "1251254312",
+      "stroke_count": 10,
+      "stroke_name_labels_available": true,
+      "review_pass": "batch_contact_sheet_full_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    },
+    {
+      "character": "鬥",
+      "main_id": 190,
+      "order_code": "2112111212",
+      "stroke_count": 10,
+      "stroke_name_labels_available": false,
+      "review_pass": "contact_sheet_plus_single_page_second_pass",
+      "result": "reviewed_P6_cumulative_vector_visual_match"
+    }
+  ],
+  "summary": {
+    "target_count": 10,
+    "reviewed": 10,
+    "artwork_conflicts": 0,
+    "ordinary_pending": 0
+  },
+  "limits": "Drawing-material approval only. Inherited content fail-closed states remain unchanged. Final A4 layout/PDF/manifest/release are independent."
+}
