@@ -175,8 +175,11 @@ def make_page(c,e,data,page_number,mode,batch,step_start,step_end,part,total_par
     elif mode=='candidate':
         label='发布候选稿 RC1｜已通过候选门槛；正式 release 尚未完成。'
         label_color='red'
+    elif mode=='formal':
+        label='正式发布版 v0.4.0｜保留卷末披露的 fail-closed/source-blocked 边界。'
+        label_color='muted'
     else:
-        label='已通过本工程正式发布门槛。'
+        label='已通过旧逐批正式发布门槛。'
         label_color='muted'
     text(c,LEFT,58,label,8,color=label_color)
     artnote='；横折收笔已整理。' if e.get('artwork_override') else '。'
@@ -219,9 +222,12 @@ def frontmatter(path,mode):
         elif mode=='draft':
             text(c,42,H-29,'循序渐进汉字部首字帖 · 前言初稿',9,color='muted')
             text(c,42,29,'编写中 v'+BOOK['version']+'｜201主项为全书目标，不代表正文已全部审定。',8,color='muted')
+        elif mode=='formal':
+            text(c,42,H-29,'循序渐进汉字部首字帖 · 前言｜正式发布版 v'+BOOK['version'],9,color='muted')
+            text(c,42,29,'正式发布版｜保留卷末披露的 fail-closed/source-blocked 边界。',8,color='muted')
         else:
             text(c,42,H-29,'循序渐进汉字部首字帖 · 前言',9,color='muted')
-            text(c,42,29,'正式发布版 v'+BOOK['version'],8,color='muted')
+            text(c,42,29,'旧逐批正式发布模式',8,color='muted')
         text(c,W-68,29,str(doc.page),9,color='muted',font='Latin')
     SimpleDocTemplate(str(path),pagesize=A4,leftMargin=42,rightMargin=42,topMargin=57,bottomMargin=55).build(story,onFirstPage=page,onLaterPages=page)
 
@@ -230,6 +236,7 @@ def main():
     modes=p.add_mutually_exclusive_group()
     modes.add_argument('--draft',action='store_true')
     modes.add_argument('--candidate',action='store_true')
+    modes.add_argument('--formal',action='store_true')
     batch_plan=load('data/batches.json')
     valid_batches=[item['id'] for item in batch_plan['frozen_batches']]
     p.add_argument('--batch',choices=valid_batches,default='B01')
@@ -238,13 +245,15 @@ def main():
     args=p.parse_args()
     cat,batches,variants,batch=(load(n) for n in ['data/coverage.json','data/batches.json','data/variants.json',f'data/{args.batch}.json'])
     validate(cat,batches,variants,batch)
-    mode='candidate' if args.candidate else ('draft' if args.draft else 'release')
+    mode='formal' if args.formal else ('candidate' if args.candidate else ('draft' if args.draft else 'release'))
     if mode=='release' and not batch['release_eligible']:
         raise SystemExit('Formal publication blocked; use --draft or --candidate as appropriate.')
     setup_fonts(args.font,args.latin_font)
     out=ROOT/'build'; out.mkdir(exist_ok=True)
     pdf=out/f'{args.batch}_{mode}_A4.pdf'; c=canvas.Canvas(str(pdf),pagesize=A4,pageCompression=1,invariant=1)
-    title_suffix='（编写稿）' if mode=='draft' else ('（发布候选稿 RC1）' if mode=='candidate' else '')
+    title_suffix=('（编写稿）' if mode=='draft' else
+                  ('（发布候选稿 RC1）' if mode=='candidate' else
+                   ('（正式发布版 v0.4.0）' if mode=='formal' else '')))
     c.setTitle(args.batch+'笔顺练字帖'+title_suffix)
     checks=[]; page_number=1
     for e in batch['entries']:
@@ -257,14 +266,16 @@ def main():
         checks.append({'character':e['character'],'stroke_count':len(d[0]),'sha256':hashlib.sha256(raw).hexdigest(),'artwork_audit':audit,'practice_cells':32*pages,'entry_pages':pages})
         page_number+=pages
     c.save()
-    pre_name=BOOK['preface_file'] if mode=='draft' else ('preface_v0.4.0_rc1.pdf' if mode=='candidate' else 'preface_v0.4.0_release.pdf')
+    pre_name=(BOOK['preface_file'] if mode=='draft' else
+              ('preface_v0.4.0_rc1.pdf' if mode=='candidate' else
+               ('preface_v0.4.0_release.pdf' if mode=='formal' else 'preface_v0.4.0_legacy_release.pdf')))
     pre=out/pre_name
     frontmatter(pre,mode)
     writer=PdfWriter()
     for file in [pre,pdf]: writer.append(str(file))
     combined=out/f'{args.batch}_with_preface_{mode}_A4.pdf'
     with combined.open('wb') as stream: writer.write(stream)
-    (out/f'generation_{args.batch}.json').write_text(json.dumps({'mode':mode,'draft':mode=='draft','candidate':mode=='candidate','entries':checks,'practice_pages':page_number-1,'preface_pages':len(PdfReader(str(pre)).pages),'visual_review':'pending'},ensure_ascii=False,indent=2),encoding='utf-8')
+    (out/f'generation_{args.batch}.json').write_text(json.dumps({'mode':mode,'draft':mode=='draft','candidate':mode=='candidate','formal':mode=='formal','entries':checks,'practice_pages':page_number-1,'preface_pages':len(PdfReader(str(pre)).pages),'visual_review':'pending'},ensure_ascii=False,indent=2),encoding='utf-8')
     print(combined)
 
 if __name__=='__main__':main()

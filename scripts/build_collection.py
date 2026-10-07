@@ -9,15 +9,18 @@ ROOT=Path(__file__).resolve().parents[1]
 book=json.loads((ROOT/'data/book-config.json').read_text(encoding='utf-8'))
 
 parser=argparse.ArgumentParser()
-parser.add_argument('--candidate',action='store_true')
+modes=parser.add_mutually_exclusive_group()
+modes.add_argument('--candidate',action='store_true')
+modes.add_argument('--formal',action='store_true')
 args=parser.parse_args()
-mode='candidate' if args.candidate else 'draft'
+mode='formal' if args.formal else ('candidate' if args.candidate else 'draft')
 
 batches=book['built_batches']
 if batches != [f'B{i:02d}' for i in range(1,22)]:
     raise ValueError('P7 full-book draft requires configured B01-B21 coverage')
 
-preface = 'preface_v0.4.0_rc1.pdf' if mode=='candidate' else book['preface_file']
+preface = ('preface_v0.4.0_release.pdf' if mode=='formal' else
+           ('preface_v0.4.0_rc1.pdf' if mode=='candidate' else book['preface_file']))
 files=[
     preface,
     book['toc_file'],
@@ -36,7 +39,8 @@ for name in files:
     expected_pages += pages
     writer.append(str(path))
 
-out_name='B01-B21_with_preface_toc_appendices_rc1_A4.pdf' if mode=='candidate' else book['collection_file']
+out_name=('B01-B21_with_preface_toc_appendices_v0.4.0_A4.pdf' if mode=='formal' else
+          ('B01-B21_with_preface_toc_appendices_rc1_A4.pdf' if mode=='candidate' else book['collection_file']))
 out=ROOT/'build'/out_name
 with out.open('wb') as stream:
     writer.write(stream)
@@ -54,7 +58,8 @@ summary={
     'parts':page_parts,
     'collection_file':out_name,
     'pages':actual_pages,
-    'status':'release_candidate_generated_not_archived' if mode=='candidate' else 'structured_research_draft_not_archived',
+    'status':('formal_release_generated_not_archived' if mode=='formal' else
+              ('release_candidate_generated_not_archived' if mode=='candidate' else 'structured_research_draft_not_archived')),
     'mode':mode,
     'release_eligible':False
 }

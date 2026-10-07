@@ -1,0 +1,76 @@
+{
+  "schema_version": 1,
+  "record_kind": "P7_formal_v0.4.0_visual_QA",
+  "review_date": "2026-10-07",
+  "reviewer": "ChatGPT",
+  "independent_reviewers": false,
+  "source_commit": "c52ce98fc80a598de9daa2654a0f51181eb7d072",
+  "workflow_run": 37570728721,
+  "artifact": {
+    "id": 11460508300,
+    "name": "zitie-p7-draft-rc1-formal-preflight",
+    "digest": "sha256:366c07f3177d86b3c1b7f0c8a0b3489c539dedbf90f0494158a51c6b99b42f18"
+  },
+  "formal_pdf": {
+    "file": "B01-B21_with_preface_toc_appendices_v0.4.0_A4.pdf",
+    "pages": 276,
+    "bytes": 3749164,
+    "sha256": "ab3c23d7547872f4d0e2c128de397e9e89ed6de97b681876e2dff017ff5c4894",
+    "status": "formal_preflight_QA_passed_not_yet_archived"
+  },
+  "text_preflight": {
+    "forbidden_labels_zero": [
+      "编写中",
+      "编写稿",
+      "前言初稿",
+      "发布候选稿 RC1"
+    ],
+    "formal_preface_pages": 3,
+    "formal_practice_pages": 258,
+    "version_page_current_release": "v0.4.0 formal release",
+    "source_blocked_disclosure_retained": true
+  },
+  "visual_review": {
+    "dpi": 150,
+    "sampled_pages": [
+      1,
+      3,
+      4,
+      5,
+      6,
+      238,
+      259,
+      260,
+      261,
+      263,
+      264,
+      269,
+      270,
+      273,
+      275,
+      276
+    ],
+    "sampled_count": 16,
+    "result": "passed",
+    "checks": [
+      "formal preface first/last pages",
+      "both TOC pages",
+      "ordinary practice page",
+      "B20 complex continuation pages",
+      "B21 龠 17-stroke continuation pages",
+      "201-main-radical index first/last pages",
+      "variant and legacy27 tables",
+      "source ledger",
+      "version/current-release page"
+    ]
+  },
+  "inherited_review_boundary": {
+    "practice_pages": "258 pages already fully reviewed in P6 layout evidence; formal mode changes publication labels/status text, not stroke artwork geometry",
+    "navigation_backmatter": "15 navigation/back-matter pages already fully reviewed in P7 structured-draft QA; formal mode changes release-status wording while keeping layout structure"
+  },
+  "non_claims": [
+    "Does not upgrade source_blocked_fail_closed or conflict_fail_closed fields.",
+    "Does not claim an independent second reviewer.",
+    "Does not create deliverables/releases/ until repository archival/manifest gates pass."
+  ]
+}
