@@ -1208,8 +1208,24 @@
       "final_pdf_visual_QA": "passed_P6_practice_layout_plus_P7_new_navigation_backmatter",
       "toc_index_page_QA": "passed",
       "variants_and_legacy27_regression": "passed",
-      "target_HEAD_CI": "pending_archive_PR_HEAD",
-      "release_candidate": "pending",
+      "target_HEAD_CI": {
+        "status": "passed",
+        "merge_commit": "c29574180e1a3f11324313be7e5179c208077d46",
+        "note": "RC1 rendering capability merged after target-HEAD CI; candidate archive PR still requires its own target-HEAD CI."
+      },
+      "release_candidate": {
+        "version": "0.4.0-rc1",
+        "path": "deliverables/drafts/v0.4.0-rc1/B01-B21_with_preface_toc_appendices_rc1_A4.pdf",
+        "pages": 276,
+        "bytes": 3756330,
+        "sha256": "fb88257a792c39aa147bb6074fd00656bd7c3c7458dd12c4b6750ddb65498bff",
+        "source_commit": "5ab536f32ac7f1c2909236e0261d3f8db745f6a5",
+        "workflow_run_id": 37569826763,
+        "artifact_id": 11460128190,
+        "review": "reviews/P7-RC1-visual-QA-20261007.md",
+        "status": "candidate_archived",
+        "release_eligible": false
+      },
       "formal_release": "pending"
     }
   }
