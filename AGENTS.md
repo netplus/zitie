@@ -1,8 +1,10 @@
-# 正式发布接续约定（v0.5.0）
+# 当前接续：v0.5.0 已正式发布（2026-10-08）
 
-当前最新版PDF `deliverables/releases/v0.5.0/zitie-v0.5.0-A4.pdf` 的发布提交仅在其最终目标HEAD CI成功并合入后生效。新版本采用已接受RC3终检PDF的**可重建文字层派生**；必须保留其独立source_commit=null的真实来源，不冒称M3原RC1编译来源。脚本`scripts/build_v050_formal.py`，发布验证`scripts/verify_v050_final.py`，审计证据`data/evidence/Q1-v0.5.0-final-derivation-20261008.json`。不得更改旧21份PDF或旧manifest条目。
+以 `data/post_release.json`、`deliverables/manifest.json`、`docs/STATUS.md` 为当前状态依据。PR #73 的目标 HEAD CI 已通过，正式 PDF `deliverables/releases/v0.5.0/zitie-v0.5.0-A4.pdf`（299页，SHA256 `10f5177221ff4817ea412f9e5f187e68d59eabfce8f94e2ebf4179f4398f6880`）已合入 `main`；总控 #58 已关闭。
 
-后续工作转为v0.5.0维护/勘误，以及Issue #4新权威证据触发的定点重开。无外部来源时不解除已记录的精确来源限制，不重做不受影响的299页审读。不使用chn-ops。本阶段不得保留临时GitHub Actions写入工作流。
+**接下来仅进行有依据的勘误、构建/CI/文档维护或来源 #4 的新证据定点复查**。不要重复 M1/M2/M3/Q1、299页逐页审读、已归档PDF入库或先前 PR 操作。没有新的适用正式规范逐项原件，不解除 `data/teaching-source-policy.json` 的 fail-closed 限制。
+
+保持已有22份 PDF 的版本独立性与原字节；不得覆盖历史、删除 Git 记录、强推、发布原始字体或许可不明规范材料。每次修订使用分支＋PR、目标 HEAD CI 校验；区分 GitHub 提交、CI、合入和正式 PDF 生成。没有实物打印证据时不声称已完成实物打印。该工程不使用 `chn-ops`。
 
 ## 历史接续记录
 

@@ -1,6 +1,6 @@
 # 循序渐进汉字部首字帖 · v0.5.0
 
-**[正式 v0.5.0 PDF（A4，299页）](deliverables/releases/v0.5.0/zitie-v0.5.0-A4.pdf)** — 仅在最终发布PR目标提交CI通过及合入后生效。全书201主部首及教学比较/回忆/整字迁移，沿用已完成的Q1版式验收；保留2022来源限制。
+**[正式 v0.5.0 PDF（A4，299页）](deliverables/releases/v0.5.0/zitie-v0.5.0-A4.pdf)** — 已通过 [PR #73](https://github.com/netplus/zitie/pull/73) 的最终目标 HEAD CI 并合入 `main`，正式发布生效。全书201主部首及教学比较/回忆/整字迁移，沿用已完成的Q1版式验收；保留2022来源限制。
 
 SHA256 `10f5177221ff4817ea412f9e5f187e68d59eabfce8f94e2ebf4179f4398f6880`；可重复构建：`python scripts/build_v050_formal.py`，输入为已归档的RC3终检候选PDF（不是最初RC1生成源码）。238书签、50跳转、299页A4；推荐彩色打印，未进行实物打印测试。
 
