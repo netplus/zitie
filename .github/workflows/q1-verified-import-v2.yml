@@ -68,7 +68,7 @@ jobs:
           subprocess.run(['git','add','--',*[e['path'] for e in entries if e['path']!='.github/workflows/book-checks.yml']],check=True)
           PY
           TREE="$(git write-tree)"
-          test "$TREE" = 'ac7aac8c4c07ae0969c7bbaee3a2edfefcb1d10d'
+          test "$TREE" = '3cef627c6fbcd0eea3829c730bb60ac66b008538'
           git -c user.name='Q1 Import Automation' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Q1: import exact reviewed RC2/RC3 PDFs and provenance'
           git push origin "HEAD:refs/heads/$TARGET"
           mkdir -p "$RUNNER_TEMP/q1-result"
