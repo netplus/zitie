@@ -45,6 +45,10 @@ jobs:
           else
             python scripts/verify_deliverables.py
           fi
+      - name: Audit v0.5.1 remaining horizontal punctuation
+        run: |
+          python scripts/test_v051_remaining_punctuation.py
+          python scripts/audit_v051_remaining_punctuation.py
       - name: Build explicitly labelled research output
         run: |
           BATCHES="$(printf 'B%02d ' {1..21})"
