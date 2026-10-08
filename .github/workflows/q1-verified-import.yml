@@ -1,0 +1,83 @@
+name: Q1 verified PDF import (temporary)
+on:
+  push:
+    branches: [maintenance/q1-rc3-stage-20261008]
+    paths: [.github/workflows/q1-verified-import.yml]
+permissions:
+  contents: read
+jobs:
+  import-exact-blobs:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    permissions:
+      contents: write
+      actions: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: true
+      - uses: actions/download-artifact@v4
+        with:
+          name: q1-rc3-blob-stage-report
+          run-id: 37766467241
+          github-token: ${{ github.token }}
+          path: q1-staged-report
+      - name: Retrieve exact staged objects from the Git database
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import base64, hashlib, json, os, pathlib, urllib.request
+          report=json.loads(pathlib.Path('q1-staged-report/q1-stage-report.json').read_text())
+          assert report['staged'] is True and report['refs_modified'] is False
+          assert report['target_tree']=='3cef627c6fbcd0eea3829c730bb60ac66b008538'
+          records=report['entries']; assert len(records)==25
+          root=pathlib.Path(os.environ['RUNNER_TEMP'])/'q1-exact-import'
+          for rec in records:
+              path=pathlib.PurePosixPath(rec['path'])
+              assert not path.is_absolute() and '..' not in path.parts
+              sha=rec['sha']
+              req=urllib.request.Request('https://api.github.com/repos/netplus/zitie/git/blobs/'+sha,
+                    headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],
+                             'Accept':'application/vnd.github+json','X-GitHub-Api-Version':'2022-11-28'})
+              with urllib.request.urlopen(req,timeout=90) as response: item=json.load(response)
+              raw=base64.b64decode(item['content'])
+              assert len(raw)==rec['bytes']
+              assert hashlib.sha256(raw).hexdigest()==rec['sha256']
+              assert hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest()==sha
+              out=root.joinpath(*path.parts);out.parent.mkdir(parents=True,exist_ok=True);out.write_bytes(raw)
+              print('Verified object:',rec['path'],sha)
+          print('Verified staged objects:',len(records))
+          PY
+      - name: Create clean import commit and push a new branch
+        run: |
+          set -euo pipefail
+          TARGET='maintenance/q1-rc3-reviewed-binaries-20261008'
+          if git ls-remote --exit-code --heads origin "refs/heads/$TARGET"; then
+            echo 'Target branch exists; refusing overwrite.' >&2
+            exit 1
+          fi
+          git switch -c "$TARGET" cbdd1108de3816703a773252e10040cf4a4757c6
+          cp -a "$RUNNER_TEMP/q1-exact-import/." .
+          git restore -- .github/workflows/book-checks.yml
+          # Only stage the 25 reviewed files, never the downloaded CI artifact.
+          python - <<'PY'
+          import json,subprocess
+          entries=json.load(open('q1-staged-report/q1-stage-report.json'))['entries']
+          subprocess.run(['git','add','--',*[e['path'] for e in entries if e['path']!='.github/workflows/book-checks.yml']],check=True)
+          PY
+          TREE="$(git write-tree)"
+          test "$TREE" = 'ac7aac8c4c07ae0969c7bbaee3a2edfefcb1d10d'
+          git -c user.name='Q1 Import Automation' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Q1: import exact reviewed RC2/RC3 PDFs and provenance'
+          git push origin "HEAD:refs/heads/$TARGET"
+          mkdir -p "$RUNNER_TEMP/q1-result"
+          git rev-parse HEAD > "$RUNNER_TEMP/q1-result/import-commit.txt"
+          echo "$TREE" > "$RUNNER_TEMP/q1-result/import-tree.txt"
+          echo "Pushed $TARGET at $(git rev-parse HEAD)"
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: q1-rc3-exact-import-receipt
+          path: ${{ runner.temp }}/q1-result/
+          retention-days: 7
