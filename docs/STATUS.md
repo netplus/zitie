@@ -1,13 +1,16 @@
-# 当前工程状态
+# 当前工程状态：v0.5.0 正式发布完成
 
-更新：2026-10-08。**《循序渐进汉字部首字帖》v0.5.0正式版归档候选已制作，须以发布PR最终目标HEAD CI通过并合入为最终生效条件。**
+更新：2026-10-08。**《循序渐进汉字部首字帖》v0.5.0 已通过 PR #73 正式归档并合入 `main`**；合并提交 `32e874ec60dad28cc46e5d8ee1e3cd2f3724fc31`。该 PR 最终 HEAD `a85f569d4cea36c1d05fbee61f6bc47d0d0fe109` 的 [Book integrity checks](https://github.com/netplus/zitie/actions/runs/37782153674) 已成功，非临时生成任务的替代结果。
 
-- [v0.5.0完整正式版（299页）](../deliverables/releases/v0.5.0/zitie-v0.5.0-A4.pdf)，SHA256 `10f5177221ff4817ea412f9e5f187e68d59eabfce8f94e2ebf4179f4398f6880`；源为RC3终检的已接受字节，经仓库内确定性脚本派生，不假称从RC1源码生成。
-- Q1版式验收已通过PR #72（CI 37776620071），原299页逐页证据、41页第二渲染器、4页灰度模拟不重复计数；正式版限定文字区域外299页RGB96像素无差异。238书签、50链接保持。
-- 保留全部旧21份PDF及旧台账。规范源Issue #4继续开放；无新来源结论，不上传字体文件；建议彩色打印，实物打印未做。
-- 实际发布须再核本PR target-HEAD CI success及merge；生成或本地证据不代替最终CI。
+- **当前正式 PDF**：[v0.5.0 A4（299页）](../deliverables/releases/v0.5.0/zitie-v0.5.0-A4.pdf)；7,481,279 bytes；SHA256 `10f5177221ff4817ea412f9e5f187e68d59eabfce8f94e2ebf4179f4398f6880`；manifest 状态 `released`，`final_release_eligible=true`。
+- **审读**：Q1 已通过 [PR #72](https://github.com/netplus/zitie/pull/72) 完成验收；RC3 终检 299/299 页复核、41个第二渲染器风险页与4页灰度模拟；正式版仅限文字与版本说明更动，299页非文字区域差异验证通过。
+- **可重复性与来源**：从精确哈希绑定的 RC3 终检版使用 `scripts/build_v050_formal.py` 派生；原有238书签、50个内部链接保留。没有将其冒称为 RC1 编译输出。
+- **历史完整性**：旧21份 PDF 与 manifest 历史条目均保留；没有上传字体、许可不明规范原文或临时提权工作流。实物打印仍未做，建议彩色打印。
+- **后续**：总控 [Issue #58](https://github.com/netplus/zitie/issues/58) 已关闭；仅 [规范来源 Issue #4](https://github.com/netplus/zitie/issues/4) 继续在取得适用权威新证据时定点重开。未决字段维持 fail-closed，不因发布自动提升为已审定。
 
-[正式版来源与QA](../reviews/Q1-v0.5.0-formal-QA-20261008.md) · [Q1验收](../reviews/Q1-acceptance-20261008.md)
+[正式版来源与 QA](../reviews/Q1-v0.5.0-formal-QA-20261008.md) · [Q1验收记录](../reviews/Q1-acceptance-20261008.md) · [发布 PR #73](https://github.com/netplus/zitie/pull/73)
+
+---
 
 ## 下文为Q1阶段验收记录（历史）
 

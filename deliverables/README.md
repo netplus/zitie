@@ -1,3 +1,11 @@
+# PDF 版本归档（当前正式版）
+
+最新正式版：[《循序渐进汉字部首字帖》v0.5.0（A4，299页）](releases/v0.5.0/zitie-v0.5.0-A4.pdf)，7,481,279 bytes，SHA256 `10f5177221ff4817ea412f9e5f187e68d59eabfce8f94e2ebf4179f4398f6880`。经 [PR #73](https://github.com/netplus/zitie/pull/73) 的最终 CI 验收并合入 `main`，在 `manifest.json` 中登记为 `released`。旧21份 PDF 字节和条目保留。
+
+正式版基于已通过 Q1 的 RC3 终检版进行可重复派生；并非把候选文件简单改名。余下来源限制见 [Issue #4](https://github.com/netplus/zitie/issues/4)，不因正式发布而解除。建议彩色打印；未做实物打印验收。
+
+## 以下为归档过程中的历史记录（不是最新状态）
+
 # PDF版本归档
 
 ## 最新完整候选 v0.5.0-rc1
