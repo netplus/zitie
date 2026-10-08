@@ -1,0 +1,25 @@
+name: Q1 handoff loader checks
+on:
+  push:
+    paths:
+      - scripts/import_q1_handoff.py
+      - scripts/test_q1_handoff_loader.py
+  pull_request:
+    paths:
+      - scripts/import_q1_handoff.py
+      - scripts/test_q1_handoff_loader.py
+permissions:
+  contents: read
+jobs:
+  loader:
+    runs-on: ubuntu-latest
+    timeout-minutes: 3
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate loader without executing embedded scripts or network writes
+        run: |
+          python -m py_compile scripts/import_q1_handoff.py
+          python scripts/test_q1_handoff_loader.py
