@@ -102,3 +102,18 @@ python scripts/verify_m3_archive.py
 复用已核的主项和六例整字矢量缓存与本机字体，输出`build/v0.5.0-rc1/`。候选使用独立配置`data/m3_candidate.json`和分层说明，不改默认dev2预览模式。生成须clean checkout，metadata绑定实际commit/tree、配置/代码/证据输入、字体、依赖环境和导航。生成metadata保持未归档/未冻结，归档freeze记录另述后续状态。
 
 重建产物不能覆盖已归档候选。新增归档门禁核对原始生成JSON、PDF字节及当前输入哈希，不允许保留旧哈希却替换内容。`data/m3_scope.json`是已冻结的生成输入快照；当前阶段和候选状态在post_release/manifest/freeze记录，不反向改写生成输入。Q1只审指定SHA256的归档候选，计划见`Q1_REVIEW.md`。
+
+## 本地Q1修订导入检查（不授予发布）
+
+```sh
+python -m pip install PyMuPDF==1.26.7
+python scripts/test_q1_import.py
+python scripts/verify_q1_import.py
+python scripts/verify_q1_import.py --render --start 1 --end 100 --output build/q1-import-1-100.json
+python scripts/verify_q1_import.py --render --start 101 --end 200 --output build/q1-import-101-200.json
+python scripts/verify_q1_import.py --render --start 201 --end 299 --output build/q1-import-201-299.json
+```
+
+RC2/RC3是对PDF进行的本地修订，编译来源没有对应Git提交；不将RC1的生成提交反填成RC3生成来源。
+manifest使用显式本地派生来源，固定PDF字节与原始审读附件校验。原M3 RC1的冻结输入要求不变，
+新增导入不能绕过正式发布门槛。使用的是被动附件脚本，打开PDF不会自动运行。

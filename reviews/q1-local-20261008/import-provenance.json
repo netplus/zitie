@@ -1,0 +1,128 @@
+{
+  "schema_version": 1,
+  "kind": "Q1_local_derivative_import_not_remote_build",
+  "date": "2026-10-08",
+  "repository": "netplus/zitie",
+  "observed_upstream": {
+    "commit": "4a01bb99b08e85bbe01036eda88bf34e986ef6cf",
+    "tree": "12a1d1170ffd83ec01874795067fa0f237abb4be",
+    "meaning": "Context and historical base only; not the generator of RC2 or RC3."
+  },
+  "base_rc1": {
+    "version": "0.5.0-rc1",
+    "pages": 299,
+    "bytes": 4252161,
+    "sha256": "3b26fd0a85b063b83f7090f9b38735908b6e64dc763614c12f17e4f727ef556a",
+    "source_commit": "35e4c2a7123cb9d51d5426fda3a945506946d48c",
+    "source_tree": "d9b8d8af43bf41c3692ca50255ed59c456312933"
+  },
+  "artifacts": [
+    {
+      "path": "deliverables/drafts/v0.5.0-rc2/zitie-v0.5.0-rc2.pdf",
+      "version": "0.5.0-rc2",
+      "pages": 299,
+      "bytes": 4430739,
+      "sha256": "f3337350919580de3d768864c58fcce5f69965b9fc2b86edc592f06ea181c03e",
+      "variant_kind": "render_revision"
+    },
+    {
+      "path": "deliverables/drafts/v0.5.0-rc3/zitie-v0.5.0-rc3.pdf",
+      "version": "0.5.0-rc3",
+      "pages": 299,
+      "bytes": 4691990,
+      "sha256": "f3f46458d24776834691dc0525b335569ea558a717d987e0dd3440efee8342af",
+      "variant_kind": "render_revision"
+    },
+    {
+      "path": "deliverables/drafts/v0.5.0-rc3/zitie-v0.5.0-rc3-finalcheck.pdf",
+      "version": "0.5.0-rc3",
+      "pages": 299,
+      "bytes": 4747107,
+      "sha256": "d54184705c6849d6617c7ea201a659d77796cad9b05792782032b320127bbb27",
+      "variant_kind": "integrity_attachment_variant"
+    }
+  ],
+  "review_attachment": {
+    "path": "reviews/q1-local-20261008/Q1-page-review-rc3.json",
+    "sha256": "5bb54b7b91dec99e6d645a14f15c9bb881c4764ae91b8873c4ee83f94b0167ac"
+  },
+  "integrity_attachment": {
+    "path": "reviews/q1-local-20261008/Q1-final-integrity.json",
+    "sha256": "fafcec04bec06657b0be479470f9f07e619b793529a2bd1f9fd8c399cf68047d"
+  },
+  "historical_verifier": {
+    "path": "reviews/q1-local-20261008/verify_rc3.py",
+    "sha256": "cc027c32d209c5ed02756231bc913f789064b2df8c062eb22f5d2fb19780d620"
+  },
+  "history_readme": {
+    "path": "reviews/q1-local-20261008/Q1-readme.txt",
+    "sha256": "b966c13359c7ef1926f33b0788077840457e91b410abfe1b5866a91999aa0b88"
+  },
+  "provenance_boundary": "RC2/RC3 were PDF-level local revisions; no Git source commit or Actions generation run exists for those operations. Exact imported bytes, the baseline RC1 and the preserved per-page evidence are the provenance. Local preparation is not remote archival.",
+  "local_visual_review": {
+    "complete": true,
+    "page_count": 299,
+    "evidence_is_inherited_not_new_visual_work": true,
+    "second_renderer_pages": [
+      1,
+      2,
+      34,
+      49,
+      74,
+      119,
+      142,
+      154,
+      200,
+      217,
+      236,
+      253,
+      263,
+      264,
+      265,
+      266,
+      267,
+      268,
+      269,
+      270,
+      271,
+      272,
+      273,
+      274,
+      275,
+      276,
+      277,
+      278,
+      279,
+      280,
+      281,
+      282,
+      283,
+      284,
+      285,
+      286,
+      292,
+      293,
+      294,
+      295,
+      299
+    ],
+    "grayscale_pages": [
+      34,
+      263,
+      265,
+      284
+    ],
+    "physical_print_test_performed": false,
+    "blocking_findings_remaining": 0
+  },
+  "source_rebuild_of_RC2_RC3_available": false,
+  "pending": [
+    "review_and_commit_import_patch",
+    "remote_target_HEAD_CI",
+    "reconcile_final_candidate_and_formal_publication_gate"
+  ],
+  "remote_archive_completed": false,
+  "remote_CI_completed": false,
+  "formal_publication_completed": false,
+  "release_eligible": false
+}
