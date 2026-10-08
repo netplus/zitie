@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "kind": "v051_remaining_cjk_punctuation_preventive_audit",
+  "release_path": "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf",
+  "release_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+  "release_bytes": 7478502,
+  "pages": 299,
+  "read_only_audit": true,
+  "scope": "Full PDF text occurrence scan; strict UMingCN embedded-glyph audit of U+FF0C, U+FF1B, U+FF1A. Other font families retained from previous review, not freshly shape-certified.",
+  "characters": {
+    "，": {
+      "code_point": "U+FF0C",
+      "total_occurrences": 2464,
+      "fonts": {
+        "GBZenKai-Medium": 2291,
+        "UMingCN-0": 173
+      },
+      "distinct_pages": 289,
+      "uming_subset_count": 16,
+      "uming_bbox_1024_em": [
+        171,
+        -109,
+        277,
+        108
+      ],
+      "uming_advance": 1024,
+      "off_center_glyphs_found": 0
+    },
+    "；": {
+      "code_point": "U+FF1B",
+      "total_occurrences": 1404,
+      "fonts": {
+        "GBZenKai-Medium": 1321,
+        "UMingCN-0": 83
+      },
+      "distinct_pages": 295,
+      "uming_subset_count": 17,
+      "uming_bbox_1024_em": [
+        138,
+        -109,
+        251,
+        362
+      ],
+      "uming_advance": 1024,
+      "off_center_glyphs_found": 0
+    },
+    "：": {
+      "code_point": "U+FF1A",
+      "total_occurrences": 2403,
+      "fonts": {
+        "GBZenKai-Medium": 2201,
+        "UMingCN-0": 202
+      },
+      "distinct_pages": 287,
+      "uming_subset_count": 16,
+      "uming_bbox_1024_em": [
+        130,
+        15,
+        230,
+        362
+      ],
+      "uming_advance": 1024,
+      "off_center_glyphs_found": 0
+    }
+  },
+  "finding": "No analogous UMingCN centering defect for the audited comma, semicolon or colon; retain published v0.5.1 bytes.",
+  "remaining_limitations": [
+    "A virtual/PDF outline audit does not replace a physical paper print test.",
+    "This audit does not certify all typography in all font families or all punctuation characters."
+  ],
+  "physical_print_test_performed": false,
+  "reissue_required_by_this_audit": false
+}
