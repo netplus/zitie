@@ -17,7 +17,7 @@ from pypdf.annotations import Link
 from apply_artwork import apply_artwork
 from build_batch import LEFT, RIGHT, setup_fonts, prepare, make_entry_pages, grid, glyph, reviewed_stroke_names
 from build_book_matter import page_count, stroke_count
-from m3_model import ROOT, CONFIG, M3Edition, authorize, digest, display_entry, read_model
+from m3_model import ROOT, CONFIG, M3Edition, authorize, digest, display_entry, read_model, validate_config
 from m3_migration import RECORD as MIGRATION_RECORD, read_migrations
 from verify_m2_closeout import load, require
 
@@ -190,7 +190,9 @@ def migration_pages(path, record, whole_art, timeline, component_art):
     require(len(PdfReader(path).pages)==len(timeline),'Migration continuation mismatch')
 
 
-def appendix(path, by_id, nav, variants, sources, policy, config):
+def appendix(path, by_id, nav, variants, sources, policy, config, edition=None):
+    edition = edition or M3Edition()
+    is_candidate = edition.identifier == '0.5.0-rc1'
     c = new_canvas(path); labels = []
     def start(title, subtitle=''):
         labels.append(title); header(c, title, subtitle)
@@ -217,7 +219,7 @@ def appendix(path, by_id, nav, variants, sources, policy, config):
     y-=8
     paragraph(c,L,y,'规范原页审读、绘图材料核对和版式检查分别进行。Hanzi Writer只提供绘图材料；机器检查不能代替原件阅读。转载同一文献不算另一份独立出版物。',size=11,leading=18)
     c.showPage()
-    start('当前工作数据与未决范围', '这是本次工程预览的数据，不反向改写旧PDF的发布快照。')
+    start('当前工作数据与未决范围', '这是本次'+('候选' if is_candidate else '工程预览')+'的数据，不反向改写旧PDF的发布快照。')
     y=H-133
     names={'exact_2022_item_fields':'2022精确身份字段','fine_stroke_names':'细笔画名称','position_migration':'位置迁移','pronunciation':'采用读音','component_name':'部件名称','structure':'结构'}
     for rule in policy['rules']:
@@ -239,24 +241,35 @@ def appendix(path, by_id, nav, variants, sources, policy, config):
            ('名称与结构','28项名称、37项结构保留限制；不能用一般定义或外形猜测补成标准答案。')]
     for heading,text in notes:
         line(c,L,y,heading,15);y-=25;y=paragraph(c,L,y,text,size=12,leading=21)-25
-    paragraph(c,L,y,'儿童页面中简化的技术说明在这里集中保留；原教学提示与审读记录仍存于各批数据。这个预览没有删除或升级任何规范结论。',size=11,leading=19)
+    paragraph(c,L,y,'儿童页面中简化的技术说明在这里集中保留；原教学提示与审读记录仍存于各批数据。本版没有删除或升级任何规范结论。' if is_candidate else '儿童页面中简化的技术说明在这里集中保留；原教学提示与审读记录仍存于各批数据。这个预览没有删除或升级任何规范结论。',size=11,leading=19)
     c.showPage()
-    start('版本与待完成验收', M3Edition().label+'；不是冻结候选，不是正式交付。')
+    start('版本与候选验收' if is_candidate else '版本与待完成验收', edition.label+('；尚待全书排版复核，不是正式版。' if is_candidate else '；不是冻结候选，不是正式交付。'))
     y=H-133
-    for text in ['历史v0.4.0、v0.4.1及所有候选稿保留原字节、清单和审读记录。',
+    version_notes = (['历史v0.4.0、v0.4.1及所有候选稿保留原字节、清单和审读记录。',
+                     '本发布候选包含201主项练习、六组比较与回忆，以及六例完整整字迁移。',
+                     '全部功能已实现；本候选有299页，新增模块不增加201主项的覆盖数。',
+                     '冻结记录绑定实际生成提交、配置、字体环境、页码映射和PDF哈希。',
+                     'Q1尚未完成。必须对最终同一份PDF逐页复核；修改后更新哈希并重新检查。',
+                     '本次未做实物打印。候选归档不等于正式发布，不能仅改名升级为正式版。']
+                     if is_candidate else ['历史v0.4.0、v0.4.1及所有候选稿保留原字节、清单和审读记录。',
                  '本预览包含分层说明、201主项练习、六组比较／回忆及六例整字迁移。',
                  '六例迁移共10页，均保留完整整字步骤；它们另计，不增加201主项覆盖数。',
                  'M3结束须冻结完整候选及其源码、配置、字体环境、页码映射和PDF哈希。',
                  'Q1尚未开始。未来须对最终同一份PDF逐页复核，修改后更新哈希并检查受影响页。',
-                 '本次检查不代表实物打印，不允许由工程预览自动升级为正式v0.5.0。']:
+                 '本次检查不代表实物打印，不允许由工程预览自动升级为正式v0.5.0。'])
+    for text in version_notes:
         y=paragraph(c,L,y,text,size=13,leading=23)-28
     c.showPage(); c.save()
     return labels
 
 
-def build(args):
-    model = read_model(); config, scope, policy, batches, by_id = model
-    edition=M3Edition(); out=ROOT/'build'/('v'+edition.identifier);out.mkdir(parents=True,exist_ok=True)
+def build(args, *, edition=None, config_path=CONFIG, config_validator=validate_config):
+    model = read_model(config_path=config_path, config_validator=config_validator); config, scope, policy, batches, by_id = model
+    edition=edition or M3Edition(); is_candidate=edition.identifier=='0.5.0-rc1'
+    if is_candidate:
+        from m3_candidate import validate_ready
+        validate_ready(scope)
+    out=ROOT/'build'/('v'+edition.identifier);out.mkdir(parents=True,exist_ok=True)
     setup_fonts(args.font,args.latin_font)
     pdfmetrics.registerFont(TTFont('M3Body',args.variant_font,subfontIndex=0))
     art={}; decisions=[]; records=[]; files=[]
@@ -300,7 +313,7 @@ def build(args):
             title=label+'  '+record['component']+' → '+record['whole_character']+'：完整整字迁移'
         toc.append((title,cursor));section.append({'kind':kind,'id':label,'start':cursor,'pages':count});cursor+=count
     back_start=cursor
-    labels=appendix(out/'appendix.pdf',by_id,nav,load(ROOT,'data/variants.json'),load(ROOT,'sources/catalog.json'),policy,config)
+    labels=appendix(out/'appendix.pdf',by_id,nav,load(ROOT,'data/variants.json'),load(ROOT,'sources/catalog.json'),policy,config,edition=edition)
     require(len(PdfReader(out/'appendix.pdf').pages)==len(labels),'Appendix labels mismatch')
     toc.append(('卷末索引与来源说明',back_start)); files.append(('appendix',out/'appendix.pdf'))
     links=[];c=new_canvas(out/'contents.pdf')
@@ -367,20 +380,23 @@ def build(args):
             dest=annotation.get_object().get('/Dest')
             if dest is not None and isinstance(dest[0], int):
                 dest[0]=writer.pages[int(dest[0])].indirect_reference
-    writer.add_metadata({'/Title':'循序渐进汉字部首字帖｜'+edition.label,'/Subject':'All M3 modules integrated; candidate freeze and Q1 pending'})
+    writer.add_metadata({'/Title':'循序渐进汉字部首字帖｜'+edition.label,'/Subject':('M3 complete release candidate; Q1 pending; not a formal release' if is_candidate else 'All M3 modules integrated; candidate freeze and Q1 pending')})
     pdf=out/f'zitie-v{edition.identifier}.pdf'
     for page in writer.pages:
         page.compress_content_streams()
     writer.compress_identical_objects(remove_identicals=True, remove_orphans=True)
     with pdf.open('wb') as f:writer.write(f)
-    input_paths=[CONFIG,config['guidance'],'data/m3_scope.json','data/teaching-source-policy.json','sources/catalog.json']
+    input_paths=[config_path,config['guidance'],'data/m3_scope.json','data/teaching-source-policy.json','sources/catalog.json']
     input_paths += [f'data/{bid}.json' for bid in config['batches']]
     input_paths += ['scripts/m3_model.py','scripts/build_m3_preview.py','scripts/build_batch.py',
                     'scripts/m3_migration.py',MIGRATION_RECORD]
     input_paths += list(dict.fromkeys(r['evidence'] for r,_,_ in migrations))
+    if is_candidate:
+        input_paths += ['scripts/m3_candidate.py','scripts/build_m3_candidate.py',
+                        'scripts/apply_artwork.py','scripts/build_book_matter.py']
     source=subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip()
     dirty=bool(subprocess.check_output(['git','status','--porcelain'],cwd=ROOT,text=True).strip())
-    meta={'schema_version':1,'version':edition.identifier,'status':'engineering_preview','candidate_frozen':False,
+    meta={'schema_version':1,'version':edition.identifier,'status':('candidate_generated_not_archived' if is_candidate else 'engineering_preview'),'candidate_frozen':False,
           'release_eligible':False,'Q1_completed':False,'source_commit':source,'source_dirty':dirty,
           'pdf':pdf.name,'sha256':digest(pdf),'bytes':pdf.stat().st_size,'pages':total,
           'main_count':len(records),'practice_pages':sum(r['pages'] for r in records),'comparison_pages':6,'recall_pages':6,
@@ -394,6 +410,13 @@ def build(args):
           'input_sha256':{p:digest(ROOT/p) for p in input_paths},
           'fonts':[{'name':Path(p).name,'sha256':digest(p)} for p in (args.font,args.latin_font,args.variant_font)],
           'visual_review':'pending','physical_print_test':False}
+    if is_candidate:
+        import importlib.metadata, platform
+        require(not dirty, 'Candidate generation requires a clean source checkout')
+        meta['source_tree']=subprocess.check_output(['git','rev-parse','HEAD^{tree}'],cwd=ROOT,text=True).strip()
+        meta['environment']={'python':platform.python_version(),
+            'packages':{name:importlib.metadata.version(name) for name in ('reportlab','pypdf','fonttools')}}
+        meta['config_path']=config_path
     (out/'generation.json').write_text(json.dumps(meta,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
     print(json.dumps({k:meta[k] for k in ('version','pages','main_count','comparison_pages','recall_pages','missing_modules','sha256')},ensure_ascii=False,indent=2))
     return meta

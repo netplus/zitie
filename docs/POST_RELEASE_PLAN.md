@@ -1,6 +1,6 @@
 # 发布后修订计划：M1 → M2 → M3 → Q1
 
-更新：2026-10-07。当前活动阶段为**M3**；M1完成，M2本周期按`completed_with_source_blocks`结束。累计实际采用3个字段，残余保留，来源Issue #4继续open。M3范围见`M3_SCOPE.md`，五个功能包未完成；Q1未开始。机器状态：`data/post_release.json`。
+更新：2026-10-08。M1完成，M2本周期completed_with_source_blocks，M3五包已实现且完整v0.5.0-rc1已冻结归档。当前阶段为**Q1**，独立队列0/299；阶段切换以最终归档PR #69的目标HEAD CI及合入为准。来源#4继续开放，机器生命周期见`data/post_release.json`，排版计划见`Q1_REVIEW.md`。
 
 M2退出证据为`reviews/M2-completion-20261007.md`及对应closeout/source审计；不是全部字段已证实，未决用途受`data/teaching-source-policy.json`限制。下列M2数量表保留启动时范围，当前剩余数为201/14/2/9/28/37，分属六类重叠集合。
 

@@ -92,6 +92,12 @@ jobs:
           python scripts/test_m3_migration.py
           python scripts/verify_m3_preview.py --self-test
           python scripts/verify_m3_preview.py
+      - name: Build and check complete M3 release candidate
+        run: |
+          python scripts/build_m3_candidate.py
+          python scripts/test_m3_candidate.py
+          python scripts/verify_m3_candidate.py
+          python scripts/verify_m3_archive.py
       - name: Check formal publication separately
         run: |
           for N in $(seq -w 1 21); do

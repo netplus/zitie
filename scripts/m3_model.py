@@ -141,10 +141,10 @@ def display_entry(root, policy, batch, entry):
     return e, decisions
 
 
-def read_model(root=ROOT):
+def read_model(root=ROOT, config_path=CONFIG, config_validator=validate_config):
     root = Path(root)
     verify_policy(root)
-    config = validate_config(load(root, CONFIG))
+    config = config_validator(load(root, config_path))
     scope = load(root, 'data/m3_scope.json')
     policy = load(root, scope['normative_policy'])
     batches, by_id = [], {}

@@ -35,9 +35,14 @@ def validate_metadata(m):
     return True
 
 
-def verify(directory=OUT):
-    directory=Path(directory); m=json.loads((directory/'generation.json').read_text())
-    validate_metadata(m)
+def verify(directory=OUT, *, metadata=None, edition=None):
+    directory=Path(directory); m=metadata if metadata is not None else json.loads((directory/'generation.json').read_text())
+    edition=edition or M3Edition(); is_candidate=edition.identifier=='0.5.0-rc1'
+    if is_candidate:
+        from m3_candidate import validate_metadata as validate_candidate
+        validate_candidate(m)
+    else:
+        validate_metadata(m)
     require(digest(directory/m['pdf'])==m['sha256'],'PDF bytes changed')
     require((directory/m['pdf']).stat().st_size==m['bytes'],'PDF size changed')
     require(m['bytes']<10_000_000,'Unexpected PDF bloat')
@@ -47,9 +52,15 @@ def verify(directory=OUT):
     require(len(texts)==m['pages']==299,'Unannounced page count change')
     for i,p in enumerate(r.pages):
         require(abs(float(p.mediabox.width)-595.2756)<.1 and abs(float(p.mediabox.height)-841.8898)<.1,'Not A4')
-        require(f'{i+1}/{len(texts)}' in texts[i] and M3Edition().label in texts[i],'Missing real folio/preview label')
+        require(f'{i+1}/{len(texts)}' in texts[i] and edition.label in texts[i],'Missing real folio/preview label')
     require('看一笔，写一笔' in texts[0] and '陪孩子看懂，再练稳' in texts[1],'Guidance missing')
-    require('候选也尚未冻结' in ''.join(texts[1].split()) and 'Q1尚未开始' in ''.join(texts[-1].split()),'Publication limits hidden')
+    if is_candidate:
+        require('通过最后验收前不作为正式版' in ''.join(texts[1].split())
+                and 'Q1尚未完成' in ''.join(texts[-1].split()), 'Candidate publication limits hidden')
+        require(not any(bad in '\n'.join(texts) for bad in ('工程预览','-dev2','候选也尚未冻结','不是冻结候选')),
+                'Stale engineering wording in candidate')
+    else:
+        require('候选也尚未冻结' in ''.join(texts[1].split()) and 'Q1尚未开始' in ''.join(texts[-1].split()),'Publication limits hidden')
     expected_bookmarks={x['title']:x['page'] for x in m['bookmarks']}
     actual={}
     def walk(items):
@@ -120,7 +131,7 @@ def verify(directory=OUT):
         require(any(destination_page(a.get_object())==rec['target'] for a in r.pages[rec['page']].get('/Annots',[])),
                 'Migration return destination wrong')
     require('199项已核' in texts[-3] and '128项已核' in texts[-3],'Current statistics missing')
-    return {'kind':'M3_engineering_preflight_not_visual_QA','pages':len(texts),'main_items':201,
+    return {'kind':('M3_candidate_preflight_not_visual_QA' if is_candidate else 'M3_engineering_preflight_not_visual_QA'),'pages':len(texts),'main_items':201,
             'practice_pages':258,'comparison_pages':6,'recall_pages':6,'bookmarks':len(actual),
             'toc_links':len(m['toc_links']),'migration_pages':m['migration_pages'],
             'migration_cases':m['migration_case_count'],'migration_return_links':len(m['migration_links']),'candidate_frozen':False,'Q1_completed':False}

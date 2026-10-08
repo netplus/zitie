@@ -94,6 +94,8 @@ def verify(root=ROOT):
     if state['phases'][1]['status'] in DONE:
         from verify_m2_closeout import verify as verify_m2_closeout
         verify_m2_closeout(root)
+    from verify_m3_archive import verify as verify_m3_archive
+    verify_m3_archive(root)
     candidate = state.get('candidate')
     if candidate:
         require(re.fullmatch(r'[0-9a-f]{40}', candidate['source_commit']), 'Exact candidate source required')
