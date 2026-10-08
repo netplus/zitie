@@ -60,7 +60,12 @@ jobs:
           fi
           git switch -c "$TARGET" cbdd1108de3816703a773252e10040cf4a4757c6
           cp -a "$RUNNER_TEMP/q1-exact-import/." .
-          git add -A
+          # Only stage the 25 reviewed files, never the downloaded CI artifact.
+          python - <<'PY'
+          import json,subprocess
+          entries=json.load(open('q1-staged-report/q1-stage-report.json'))['entries']
+          subprocess.run(['git','add','--',*[e['path'] for e in entries]],check=True)
+          PY
           TREE="$(git write-tree)"
           test "$TREE" = 'ac7aac8c4c07ae0969c7bbaee3a2edfefcb1d10d'
           git -c user.name='Q1 Import Automation' -c user.email='41898282+github-actions[bot]@users.noreply.github.com' commit -m 'Q1: import exact reviewed RC2/RC3 PDFs and provenance'
