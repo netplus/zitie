@@ -1,0 +1,53 @@
+name: M3 temporary source object staging
+on:
+  push:
+    branches: [release/m3-rc1-freeze-20261008]
+    paths: [.github/rc-source-patch.json]
+permissions:
+  contents: write
+jobs:
+  stage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Apply exact tested patch and stage unreferenced objects only
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          python - <<'PY'
+          import base64,hashlib,json,os,pathlib,subprocess,urllib.request,zlib
+          spec=json.loads(pathlib.Path('.github/rc-source-patch.json').read_text())
+          encoded=''.join(pathlib.Path('.github/rc-stage/chunk'+str(i)+'.txt').read_text().strip() for i in range(4))
+          raw=zlib.decompress(base64.b64decode(encoded))
+          assert hashlib.sha256(raw).hexdigest()==spec['patch_sha256']
+          subprocess.run(['git','checkout','--detach','3d2860ad36e46ec5acf1edf1b29186fd8a7cdb2f'],check=True)
+          subprocess.run(['git','apply','--index','-'],input=raw,check=True)
+          actual=subprocess.check_output(['git','write-tree'],text=True).strip()
+          assert actual==spec['tree']
+          names=subprocess.check_output(['git','diff','--cached','--name-only'],text=True).splitlines()
+          assert names==spec['files']
+          def post(endpoint,obj):
+              req=urllib.request.Request('https://api.github.com/repos/netplus/zitie/git/'+endpoint,
+                data=json.dumps(obj).encode(),headers={'Authorization':'Bearer '+os.environ['GH_TOKEN'],'Accept':'application/vnd.github+json','Content-Type':'application/json'})
+              with urllib.request.urlopen(req,timeout=60) as response:return json.load(response)
+          entries=[]
+          for name in names:
+              path=pathlib.Path(name)
+              assert path.suffix in ('.py','.json','.yml') and not path.is_symlink()
+              data=path.read_bytes();sha=hashlib.sha1(b'blob '+str(len(data)).encode()+b'\0'+data).hexdigest()
+              assert post('blobs',{'content':base64.b64encode(data).decode(),'encoding':'base64'})['sha']==sha
+              entries.append({'path':name,'type':'blob','mode':'100644','sha':sha})
+          value=post('trees',{'base_tree':'5d314222b6d602b3b69838b65479744862449505','tree':entries})
+          assert value['sha']==actual
+          out=pathlib.Path('stage-result');out.mkdir()
+          record={'tree':actual,'files':entries,'status':'unreferenced_source_objects_only_no_ref_changed'}
+          (out/'tree.json').write_text(json.dumps(record,indent=2)+'\n')
+          print(json.dumps(record))
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: m3-source-tree-reference
+          path: stage-result/
+          retention-days: 3
