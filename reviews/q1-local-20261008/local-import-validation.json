@@ -1,0 +1,41 @@
+{
+  "date": "2026-10-08",
+  "kind": "offline_import_patch_validation_not_remote_CI",
+  "basis_upstream_commit": "4a01bb99b08e85bbe01036eda88bf34e986ef6cf",
+  "basis_upstream_tree": "12a1d1170ffd83ec01874795067fa0f237abb4be",
+  "unique_unit_tests": 292,
+  "test_groups": {
+    "data": 32,
+    "delivery": 13,
+    "phase": 9,
+    "artwork": 10,
+    "M2_migration": 16,
+    "M2_pronunciation": 22,
+    "M2_closeout_policy": 32,
+    "M3_preview": 35,
+    "M3_migration": 34,
+    "M3_candidate": 30,
+    "M1_candidate": 18,
+    "M1_formal_archive": 16,
+    "local_Q1_import": 25
+  },
+  "batch_structure_checks": 21,
+  "local_manifest_pdf_count": 21,
+  "historical_manifest_count_preserved": 18,
+  "source_fields_promoted": 0,
+  "old_pdf_bytes_modified": 0,
+  "current_machine_render_pages": 299,
+  "current_machine_render_failures": 0,
+  "prior_visual_pages_repeated_this_turn": 0,
+  "unchanged_frozen_RC1_inputs": true,
+  "base_pdf": {
+    "file": "zitie-v0.5.0-rc3-finalcheck.pdf",
+    "sha256": "d54184705c6849d6617c7ea201a659d77796cad9b05792782032b320127bbb27"
+  },
+  "remote_write_performed": false,
+  "remote_CI_run": null,
+  "PR_created": false,
+  "published": false,
+  "source_rebuild_claim": "None for RC2/RC3 PDF-level edits; cached historical build outputs used by pre-existing regression tests.",
+  "formal_tests": "The 16-test suite executed in disjoint 7+9 groups; no repeated test counted twice."
+}

@@ -31,7 +31,11 @@ def verify(root=ROOT, base_ref=None):
         for page in reader.pages:
             if abs(float(page.mediabox.width)-595.2756) > 1 or abs(float(page.mediabox.height)-841.8898) > 1:
                 raise ValueError('Not portrait A4: ' + str(relative))
-        if not re.fullmatch(r'[0-9a-f]{40}', item['source_commit']):
+        if item.get('provenance_kind') == 'locally_reviewed_pdf_derivative':
+            # PDF-level local revisions are imported, not attributed to the RC1 build.
+            from verify_q1_import import validate_entry
+            validate_entry(root, item)
+        elif not isinstance(item.get('source_commit'), str) or not re.fullmatch(r'[0-9a-f]{40}', item['source_commit']):
             raise ValueError('An exact source commit is required')
         review = Path(item['review_record'])
         if review.is_absolute() or '..' in review.parts or not (root / review).is_file():

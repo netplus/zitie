@@ -26,6 +26,13 @@ def verify(root=ROOT):
         require(state['phases'][2]['status'] != 'completed', 'M3 cannot exit without an archive')
         return {'status': 'not_archived', 'candidate_frozen': False}
     require(candidate['path'] == PATH and candidate['version'] == VERSION, 'Unexpected frozen candidate')
+    # Retain the immutable compiled RC1 gate. Separately validate exact local
+    # derivative imports; these cannot replace the frozen candidate or release it.
+    derivatives = [a for a in entries if a.get('provenance_kind') == 'locally_reviewed_pdf_derivative']
+    if derivatives:
+        from verify_q1_import import verify as verify_q1_import
+        verify_q1_import(root)
+    entries = [a for a in entries if a not in derivatives]
     require(len(entries) == 1, 'Unverified v0.5 artifact')
     item = entries[0]
     for k in ('path', 'version', 'status', 'pages', 'bytes', 'sha256', 'source_commit',
