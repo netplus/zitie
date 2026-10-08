@@ -127,8 +127,9 @@ def main():
    blob=post_git('blobs',{'content':base64.b64encode(content).decode('ascii'),'encoding':'base64'},token)
    need(blob.get('sha')==sha,'GitHub returned mismatched SHA for '+name)
    tree.append({'path':name,'mode':'100644','type':'blob','sha':sha})
-  made=post_git('trees',{'base_tree':MAIN_TREE,'tree':tree},token)
-  need(made.get('sha')==EXPECTED_TREE,'GitHub tree mismatch')
+  # GitHub Actions stages immutable blobs only; the authorized connector
+  # assembles/verifies the expected tree after the staging job.
+  need(len(tree)==25,'Incomplete blob staging')
   audit['staged']=True
  out=ROOT/'build/q1-stage';out.mkdir(parents=True,exist_ok=True)
  (out/'q1-stage-report.json').write_text(json.dumps(audit,ensure_ascii=False,indent=2)+'\n')
