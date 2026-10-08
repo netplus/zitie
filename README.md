@@ -1,3 +1,13 @@
+# 循序渐进汉字部首字帖 · v0.5.0
+
+**[正式 v0.5.0 PDF（A4，299页）](deliverables/releases/v0.5.0/zitie-v0.5.0-A4.pdf)** — 仅在最终发布PR目标提交CI通过及合入后生效。全书201主部首及教学比较/回忆/整字迁移，沿用已完成的Q1版式验收；保留2022来源限制。
+
+SHA256 `10f5177221ff4817ea412f9e5f187e68d59eabfce8f94e2ebf4179f4398f6880`；可重复构建：`python scripts/build_v050_formal.py`，输入为已归档的RC3终检候选PDF（不是最初RC1生成源码）。238书签、50跳转、299页A4；推荐彩色打印，未进行实物打印测试。
+
+[发布审计与版本来源](reviews/Q1-v0.5.0-formal-QA-20261008.md) · [当前状态](docs/STATUS.md) · [历史候选记录](reviews/Q1-acceptance-20261008.md)。以下条目均为旧阶段历史，不覆盖当前状态。
+
+---
+
 # 本地逐页复核成果待归档
 
 RC2、RC3及终检文件已有逐页复核与精确来源记录；当前准备导入本地修订，不代表远端CI或正式发布完成。最新状态见[STATUS](docs/STATUS.md)，导入详情见[Q1记录](reviews/Q1-local-import-20261008.md)。原M3 RC1记录和全部旧文件保留。

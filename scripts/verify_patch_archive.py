@@ -21,7 +21,13 @@ def verify(root=ROOT):
     root = Path(root)
     state = read(root, 'data/post_release.json')
     manifest = read(root, 'deliverables/manifest.json')['artifacts']
-    extra = [e for e in manifest if e['status'] == 'released' and e['version'] != '0.4.0']
+    extra = [e for e in manifest if e['status'] == 'released' and e['version'] == '0.4.1']
+    later = [e for e in manifest if e['status'] == 'released' and e['version'] not in ('0.4.0', '0.4.1')]
+    if later:
+        from verify_v050_final import check_manifest_entry
+        require(len(later) == 1 and later[0].get('provenance_kind') ==
+                'reproducible_edition_from_reviewed_RC3', 'Unrecognized later formal release')
+        check_manifest_entry(later[0])
     patch = state.get('patch_release')
     if not patch:
         require(not extra, 'Undeclared additional release')

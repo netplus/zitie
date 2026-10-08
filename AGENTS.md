@@ -1,3 +1,11 @@
+# 正式发布接续约定（v0.5.0）
+
+当前最新版PDF `deliverables/releases/v0.5.0/zitie-v0.5.0-A4.pdf` 的发布提交仅在其最终目标HEAD CI成功并合入后生效。新版本采用已接受RC3终检PDF的**可重建文字层派生**；必须保留其独立source_commit=null的真实来源，不冒称M3原RC1编译来源。脚本`scripts/build_v050_formal.py`，发布验证`scripts/verify_v050_final.py`，审计证据`data/evidence/Q1-v0.5.0-final-derivation-20261008.json`。不得更改旧21份PDF或旧manifest条目。
+
+后续工作转为v0.5.0维护/勘误，以及Issue #4新权威证据触发的定点重开。无外部来源时不解除已记录的精确来源限制，不重做不受影响的299页审读。不使用chn-ops。本阶段不得保留临时GitHub Actions写入工作流。
+
+## 历史接续记录
+
 # 当前接续：Q1终检候选接受，正式PDF待制作
 
 PR #71已归档RC2/RC3/RC3-finalcheck及299页逐页复核证据；当前PR以RC3终检精确字节

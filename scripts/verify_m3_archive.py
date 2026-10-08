@@ -32,8 +32,13 @@ def verify(root=ROOT):
     if derivatives:
         from verify_q1_import import verify as verify_q1_import
         verify_q1_import(root)
-    entries = [a for a in entries if a not in derivatives]
-    require(len(entries) == 1, 'Unverified v0.5 artifact')
+    editions = [a for a in entries if a.get('provenance_kind') == 'reproducible_edition_from_reviewed_RC3']
+    if editions:
+        from verify_v050_final import check_manifest_entry
+        require(len(editions) == 1, 'Unexpected number of published v0.5 editions')
+        check_manifest_entry(editions[0])
+    entries = [a for a in entries if a not in derivatives and a not in editions]
+    require(len(entries) == 1, 'Unverified frozen M3 v0.5 artifact')
     item = entries[0]
     for k in ('path', 'version', 'status', 'pages', 'bytes', 'sha256', 'source_commit',
               'source_tree', 'workflow_run_id', 'artifact_id', 'review_record', 'generation_record',
