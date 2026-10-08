@@ -29,6 +29,8 @@ jobs:
           python scripts/test_deliverables.py
           python scripts/verify_post_release.py --self-test
           python scripts/verify_post_release.py
+          python scripts/verify_q1_acceptance.py --self-test
+          python scripts/verify_q1_acceptance.py
           python scripts/verify_m2_reopens.py --self-test
           python scripts/verify_m2_reopens.py
           python scripts/verify_m2_pronunciation.py --self-test
