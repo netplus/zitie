@@ -116,6 +116,12 @@ jobs:
           python scripts/build_v050_formal.py --edit-log build/v0.5.0/edits.json
           cmp build/v0.5.0/zitie-v0.5.0-A4.pdf deliverables/releases/v0.5.0/zitie-v0.5.0-A4.pdf
           python scripts/verify_v050_final.py --render --edits build/v0.5.0/edits.json
+      - name: Reproduce v0.5.1 punctuation erratum and check all 299 pages
+        run: |
+          python scripts/test_v051_punctuation.py
+          python scripts/build_v051_punctuation.py --output build/v0.5.1/zitie-v0.5.1-A4.pdf --edit-log build/v0.5.1/edits.json
+          cmp build/v0.5.1/zitie-v0.5.1-A4.pdf deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf
+          python scripts/verify_v051_punctuation.py --render
       - name: Check formal publication separately
         run: |
           for N in $(seq -w 1 21); do

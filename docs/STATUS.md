@@ -1,3 +1,16 @@
+# 当前正式版本：v0.5.1 标点位置勘误版
+
+2026-10-08。根据读者报告，v0.5.0 中一部分 UMingCN 字体的横排句号（。）与顿号（、）落点偏中。本版遵照 [GB/T 15834—2011 第5.1.1条](https://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/13/20150113091548267.pdf) 将它们校正到字格左下位置。
+
+- [**v0.5.1 正式 A4 PDF（299页）**](../deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf)：7,478,502 bytes；SHA256 `7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90`。
+- 修正201处句号与82处顿号，共41页受影响；同时更新全书558处版本标识。299页精确像素比较中修改范围外差异0，238书签和50内部链接不变。
+- 从已接受的 RC3 终检 PDF 确定性重建，两次输出逐字节一致。原 v0.5.0 等22份PDF全部保留；现有规范来源 fail-closed 边界、201主项、练习格和笔顺矢量不改。
+- 在 `main` 上，该正式归档应已通过本次发布 PR 的目标 HEAD CI；仅有 staging blob、分支或本地构建不代表正式发布。没有实物打印，建议彩色打印。
+
+[详细勘误与QA](../reviews/v051-punctuation-erratum-20261008.md) · [来源限制Issue #4](https://github.com/netplus/zitie/issues/4)
+
+## 下文为历史 v0.5.0 及其之前的发布记录
+
 # 当前工程状态：v0.5.0 正式发布完成
 
 更新：2026-10-08。**《循序渐进汉字部首字帖》v0.5.0 已通过 PR #73 正式归档并合入 `main`**；合并提交 `32e874ec60dad28cc46e5d8ee1e3cd2f3724fc31`。该 PR 最终 HEAD `a85f569d4cea36c1d05fbee61f6bc47d0d0fe109` 的 [Book integrity checks](https://github.com/netplus/zitie/actions/runs/37782153674) 已成功，非临时生成任务的替代结果。

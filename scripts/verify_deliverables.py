@@ -38,6 +38,9 @@ def verify(root=ROOT, base_ref=None):
         elif item.get('provenance_kind') == 'reproducible_edition_from_reviewed_RC3':
             from verify_v050_final import check_manifest_entry
             check_manifest_entry(item)
+        elif item.get('provenance_kind') == 'reproducible_punctuation_erratum_from_reviewed_RC3':
+            from verify_v051_punctuation import check_manifest_entry
+            check_manifest_entry(item)
         elif not isinstance(item.get('source_commit'), str) or not re.fullmatch(r'[0-9a-f]{40}', item['source_commit']):
             raise ValueError('An exact source commit is required')
         review = Path(item['review_record'])

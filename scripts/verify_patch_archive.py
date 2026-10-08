@@ -24,10 +24,15 @@ def verify(root=ROOT):
     extra = [e for e in manifest if e['status'] == 'released' and e['version'] == '0.4.1']
     later = [e for e in manifest if e['status'] == 'released' and e['version'] not in ('0.4.0', '0.4.1')]
     if later:
-        from verify_v050_final import check_manifest_entry
-        require(len(later) == 1 and later[0].get('provenance_kind') ==
-                'reproducible_edition_from_reviewed_RC3', 'Unrecognized later formal release')
-        check_manifest_entry(later[0])
+        from verify_v050_final import check_manifest_entry as check_v050
+        by_version = {e['version']: e for e in later}
+        require(len(by_version) == len(later) and set(by_version) <= {'0.5.0', '0.5.1'},
+                'Unrecognized later formal release')
+        require('0.5.0' in by_version, 'v0.5.1 cannot replace the historical v0.5.0 release')
+        check_v050(by_version['0.5.0'])
+        if '0.5.1' in by_version:
+            from verify_v051_punctuation import check_manifest_entry as check_v051
+            check_v051(by_version['0.5.1'])
     patch = state.get('patch_release')
     if not patch:
         require(not extra, 'Undeclared additional release')
