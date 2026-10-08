@@ -88,3 +88,17 @@ python scripts/verify_m3_preview.py
 metadata记录输入及字体哈希、真实checkout与dirty状态、逐项证据判定、完整时序、页码/书签/链接。无阻塞仍须有正面证据；不通过字体的radStrokes或外形推导新规范结论。35项新版测试与34项迁移测试分别运行。
 
 该入口只构建内部工程预览，没有candidate/formal升级参数。五包实现后仍需真实冻结和归档完整候选，绑定实际源码提交与PDF字节，再做独立Q1。旧构建路径、17份历史PDF和manifest保持不变。
+
+
+## 完整v0.5.0-rc1候选
+
+```sh
+python scripts/build_m3_candidate.py
+python scripts/test_m3_candidate.py
+python scripts/verify_m3_candidate.py
+python scripts/verify_m3_archive.py
+```
+
+复用已核的主项和六例整字矢量缓存与本机字体，输出`build/v0.5.0-rc1/`。候选使用独立配置`data/m3_candidate.json`和分层说明，不改默认dev2预览模式。生成须clean checkout，metadata绑定实际commit/tree、配置/代码/证据输入、字体、依赖环境和导航。生成metadata保持未归档/未冻结，归档freeze记录另述后续状态。
+
+重建产物不能覆盖已归档候选。新增归档门禁核对原始生成JSON、PDF字节及当前输入哈希，不允许保留旧哈希却替换内容。`data/m3_scope.json`是已冻结的生成输入快照；当前阶段和候选状态在post_release/manifest/freeze记录，不反向改写生成输入。Q1只审指定SHA256的归档候选，计划见`Q1_REVIEW.md`。

@@ -1,5 +1,11 @@
 # PDF版本归档
 
+## 最新完整候选 v0.5.0-rc1
+
+[299页完整发布候选](drafts/v0.5.0-rc1/zitie-v0.5.0-rc1.pdf)：4,252,161 bytes，SHA256 `3b26fd0a85b063b83f7090f9b38735908b6e64dc763614c12f17e4f727ef556a`。真实生成HEAD `35e4c2a7123cb9d51d5426fda3a945506946d48c`、run `37707956206`、artifact `11520662343`；原始generation、配置/字体哈希和页码映射保留。
+
+状态release_candidate，已冻结但release_eligible=false。M3退出依最终归档PR #69成功合入；Q1单独逐页复核，当前0/299页。此候选不是正式v0.5.0，最新正式版仍v0.4.1。旧17份文件和历史条目不覆盖。详见[冻结复核](../reviews/M3-candidate-freeze-20261008.md)。
+
 ## 最新正式勘误修订版 v0.4.1
 
 [276页正式PDF](releases/v0.4.1/B01-B21_v0.4.1_A4.pdf)：3,748,910 bytes；SHA256 `7270104b8698603fcce4eec14037a0194c31e33b868669d0a8dd0307a090a7e7`。

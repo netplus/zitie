@@ -290,6 +290,24 @@
         ],
         "basis": "v0.4.0 reviewed baseline + M1 byte-bound impact review; no new normative review"
       }
+    },
+    {
+      "path": "deliverables/drafts/v0.5.0-rc1/zitie-v0.5.0-rc1.pdf",
+      "title": "《循序渐进汉字部首字帖》v0.5.0 RC1完整发布候选",
+      "version": "0.5.0-rc1",
+      "status": "release_candidate",
+      "batch": "B01-B21+M3",
+      "pages": 299,
+      "bytes": 4252161,
+      "sha256": "3b26fd0a85b063b83f7090f9b38735908b6e64dc763614c12f17e4f727ef556a",
+      "source_commit": "35e4c2a7123cb9d51d5426fda3a945506946d48c",
+      "source_tree": "d9b8d8af43bf41c3692ca50255ed59c456312933",
+      "workflow_run_id": 37707956206,
+      "artifact_id": 11520662343,
+      "review_record": "reviews/M3-candidate-freeze-20261008.md",
+      "generation_record": "data/evidence/M3-v0.5.0-rc1-generation-20261008.json",
+      "freeze_record": "data/evidence/M3-candidate-freeze-20261008.json",
+      "release_eligible": false
     }
   ]
 }

@@ -1,0 +1,6901 @@
+{
+  "schema_version": 1,
+  "version": "0.5.0-rc1",
+  "status": "candidate_generated_not_archived",
+  "candidate_frozen": false,
+  "release_eligible": false,
+  "Q1_completed": false,
+  "source_commit": "35e4c2a7123cb9d51d5426fda3a945506946d48c",
+  "source_dirty": false,
+  "pdf": "zitie-v0.5.0-rc1.pdf",
+  "sha256": "3b26fd0a85b063b83f7090f9b38735908b6e64dc763614c12f17e4f727ef556a",
+  "bytes": 4252161,
+  "pages": 299,
+  "main_count": 201,
+  "practice_pages": 258,
+  "comparison_pages": 6,
+  "recall_pages": 6,
+  "migration_pages": 10,
+  "migration_case_count": 6,
+  "migration_records": [
+    {
+      "id": "T01",
+      "main_id": 7,
+      "whole_character": "原",
+      "indices": [
+        1,
+        2
+      ],
+      "vector_sha256": "67b69a0c119fe4adba151ee33daccc381e05ad9ea83045afc5e1160659e3510b",
+      "timeline": [
+        [
+          {
+            "step": 1,
+            "visible_indices": [
+              1
+            ],
+            "new_stroke": 1,
+            "is_target_component": true
+          },
+          {
+            "step": 2,
+            "visible_indices": [
+              1,
+              2
+            ],
+            "new_stroke": 2,
+            "is_target_component": true
+          },
+          {
+            "step": 3,
+            "visible_indices": [
+              1,
+              2,
+              3
+            ],
+            "new_stroke": 3,
+            "is_target_component": false
+          },
+          {
+            "step": 4,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "new_stroke": 4,
+            "is_target_component": false
+          },
+          {
+            "step": 5,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "new_stroke": 5,
+            "is_target_component": false
+          },
+          {
+            "step": 6,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "new_stroke": 6,
+            "is_target_component": false
+          }
+        ],
+        [
+          {
+            "step": 7,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "new_stroke": 7,
+            "is_target_component": false
+          },
+          {
+            "step": 8,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "new_stroke": 8,
+            "is_target_component": false
+          },
+          {
+            "step": 9,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "new_stroke": 9,
+            "is_target_component": false
+          },
+          {
+            "step": 10,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "new_stroke": 10,
+            "is_target_component": false
+          }
+        ]
+      ]
+    },
+    {
+      "id": "T02",
+      "main_id": 47,
+      "whole_character": "们",
+      "indices": [
+        3,
+        4,
+        5
+      ],
+      "vector_sha256": "0a25764ae60803a9958ae3cade375c57d8743d7db0e0bf2031e73b0d0449609e",
+      "timeline": [
+        [
+          {
+            "step": 1,
+            "visible_indices": [
+              1
+            ],
+            "new_stroke": 1,
+            "is_target_component": false
+          },
+          {
+            "step": 2,
+            "visible_indices": [
+              1,
+              2
+            ],
+            "new_stroke": 2,
+            "is_target_component": false
+          },
+          {
+            "step": 3,
+            "visible_indices": [
+              1,
+              2,
+              3
+            ],
+            "new_stroke": 3,
+            "is_target_component": true
+          },
+          {
+            "step": 4,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "new_stroke": 4,
+            "is_target_component": true
+          },
+          {
+            "step": 5,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "new_stroke": 5,
+            "is_target_component": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "T03",
+      "main_id": 72,
+      "whole_character": "瓶",
+      "indices": [
+        7,
+        8,
+        9,
+        10
+      ],
+      "vector_sha256": "303c7727b9298ff65aca6ef0ff6693a361fb3df6492f0437c3423a2ced2457ef",
+      "timeline": [
+        [
+          {
+            "step": 1,
+            "visible_indices": [
+              1
+            ],
+            "new_stroke": 1,
+            "is_target_component": false
+          },
+          {
+            "step": 2,
+            "visible_indices": [
+              1,
+              2
+            ],
+            "new_stroke": 2,
+            "is_target_component": false
+          },
+          {
+            "step": 3,
+            "visible_indices": [
+              1,
+              2,
+              3
+            ],
+            "new_stroke": 3,
+            "is_target_component": false
+          },
+          {
+            "step": 4,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "new_stroke": 4,
+            "is_target_component": false
+          },
+          {
+            "step": 5,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "new_stroke": 5,
+            "is_target_component": false
+          },
+          {
+            "step": 6,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "new_stroke": 6,
+            "is_target_component": false
+          }
+        ],
+        [
+          {
+            "step": 7,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "new_stroke": 7,
+            "is_target_component": true
+          },
+          {
+            "step": 8,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "new_stroke": 8,
+            "is_target_component": true
+          },
+          {
+            "step": 9,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9
+            ],
+            "new_stroke": 9,
+            "is_target_component": true
+          },
+          {
+            "step": 10,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10
+            ],
+            "new_stroke": 10,
+            "is_target_component": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "T04",
+      "main_id": 49,
+      "whole_character": "近",
+      "indices": [
+        5,
+        6,
+        7
+      ],
+      "vector_sha256": "5548b4cabaeeb00b23b3c0b5134cdc9190b825c50c6eac1937ad3ee7df61d886",
+      "timeline": [
+        [
+          {
+            "step": 1,
+            "visible_indices": [
+              1
+            ],
+            "new_stroke": 1,
+            "is_target_component": false
+          },
+          {
+            "step": 2,
+            "visible_indices": [
+              1,
+              2
+            ],
+            "new_stroke": 2,
+            "is_target_component": false
+          },
+          {
+            "step": 3,
+            "visible_indices": [
+              1,
+              2,
+              3
+            ],
+            "new_stroke": 3,
+            "is_target_component": false
+          },
+          {
+            "step": 4,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "new_stroke": 4,
+            "is_target_component": false
+          },
+          {
+            "step": 5,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "new_stroke": 5,
+            "is_target_component": true
+          },
+          {
+            "step": 6,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "new_stroke": 6,
+            "is_target_component": true
+          }
+        ],
+        [
+          {
+            "step": 7,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "new_stroke": 7,
+            "is_target_component": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "T05",
+      "main_id": 38,
+      "whole_character": "国",
+      "indices": [
+        1,
+        2,
+        8
+      ],
+      "vector_sha256": "40b46b7cbe5c292abcf79507dc544c5424c9cfa4df0376aa3b8fa42e535c2f7f",
+      "timeline": [
+        [
+          {
+            "step": 1,
+            "visible_indices": [
+              1
+            ],
+            "new_stroke": 1,
+            "is_target_component": true
+          },
+          {
+            "step": 2,
+            "visible_indices": [
+              1,
+              2
+            ],
+            "new_stroke": 2,
+            "is_target_component": true
+          },
+          {
+            "step": 3,
+            "visible_indices": [
+              1,
+              2,
+              3
+            ],
+            "new_stroke": 3,
+            "is_target_component": false
+          },
+          {
+            "step": 4,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "new_stroke": 4,
+            "is_target_component": false
+          },
+          {
+            "step": 5,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5
+            ],
+            "new_stroke": 5,
+            "is_target_component": false
+          },
+          {
+            "step": 6,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6
+            ],
+            "new_stroke": 6,
+            "is_target_component": false
+          }
+        ],
+        [
+          {
+            "step": 7,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7
+            ],
+            "new_stroke": 7,
+            "is_target_component": false
+          },
+          {
+            "step": 8,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8
+            ],
+            "new_stroke": 8,
+            "is_target_component": true
+          }
+        ]
+      ]
+    },
+    {
+      "id": "T06",
+      "main_id": 8,
+      "whole_character": "区",
+      "indices": [
+        1,
+        4
+      ],
+      "vector_sha256": "d7c3f283870ace9e8cd726a08086cb50704eb002d1e0d9c2a502a67c6d85b9ba",
+      "timeline": [
+        [
+          {
+            "step": 1,
+            "visible_indices": [
+              1
+            ],
+            "new_stroke": 1,
+            "is_target_component": true
+          },
+          {
+            "step": 2,
+            "visible_indices": [
+              1,
+              2
+            ],
+            "new_stroke": 2,
+            "is_target_component": false
+          },
+          {
+            "step": 3,
+            "visible_indices": [
+              1,
+              2,
+              3
+            ],
+            "new_stroke": 3,
+            "is_target_component": false
+          },
+          {
+            "step": 4,
+            "visible_indices": [
+              1,
+              2,
+              3,
+              4
+            ],
+            "new_stroke": 4,
+            "is_target_component": true
+          }
+        ]
+      ]
+    }
+  ],
+  "migration_links": [
+    {
+      "page": 275,
+      "target": 55,
+      "case": "T01",
+      "rect": [
+        42,
+        22,
+        553.2755905511812,
+        39
+      ]
+    },
+    {
+      "page": 276,
+      "target": 55,
+      "case": "T01",
+      "rect": [
+        42,
+        22,
+        553.2755905511812,
+        39
+      ]
+    },
+    {
+      "page": 277,
+      "target": 39,
+      "case": "T02",
+      "rect": [
+        42,
+        22,
+        553.2755905511812,
+        39
+      ]
+    },
+    {
+      "page": 278,
+      "target": 51,
+      "case": "T03",
+      "rect": [
+        42,
+        22,
+        553.2755905511812,
+        39
+      ]
+    },
+    {
+      "page": 279,
+      "target": 51,
+      "case": "T03",
+      "rect": [
+        42,
+        22,
+        553.2755905511812,
+        39
+      ]
+    },
+    {
+      "page": 280,
+      "target": 73,
+      "case": "T04",
+      "rect": [
+        42,
+        22,
+        553.2755905511812,
+        39
+      ]
+    },
+    {
+      "page": 281,
+      "target": 73,
+      "case": "T04",
+      "rect": [
+        42,
+        22,
+        553.2755905511812,
+        39
+      ]
+    },
+    {
+      "page": 282,
+      "target": 81,
+      "case": "T05",
+      "rect": [
+        42,
+        22,
+        553.2755905511812,
+        39
+      ]
+    },
+    {
+      "page": 283,
+      "target": 81,
+      "case": "T05",
+      "rect": [
+        42,
+        22,
+        553.2755905511812,
+        39
+      ]
+    },
+    {
+      "page": 284,
+      "target": 56,
+      "case": "T06",
+      "rect": [
+        42,
+        22,
+        553.2755905511812,
+        39
+      ]
+    }
+  ],
+  "missing_modules": [],
+  "guide_pages": 2,
+  "toc_pages": 3,
+  "appendix_start": 286,
+  "appendix_labels": [
+    "201主项索引 1/6",
+    "201主项索引 2/6",
+    "201主项索引 3/6",
+    "201主项索引 4/6",
+    "201主项索引 5/6",
+    "201主项索引 6/6",
+    "教学附形与位置变体",
+    "教学附形与位置变体",
+    "原27项对应表",
+    "原27项对应表",
+    "来源与采用范围",
+    "当前工作数据与未决范围",
+    "按字段限制教学用途",
+    "版本与候选验收"
+  ],
+  "main_navigation": {
+    "1": [
+      6,
+      6
+    ],
+    "6": [
+      7,
+      7
+    ],
+    "12": [
+      8,
+      8
+    ],
+    "11": [
+      9,
+      9
+    ],
+    "33": [
+      10,
+      10
+    ],
+    "28": [
+      11,
+      11
+    ],
+    "29": [
+      12,
+      12
+    ],
+    "37": [
+      13,
+      13
+    ],
+    "39": [
+      14,
+      14
+    ],
+    "40": [
+      15,
+      15
+    ],
+    "77": [
+      16,
+      16
+    ],
+    "95": [
+      17,
+      17
+    ],
+    "64": [
+      18,
+      18
+    ],
+    "75": [
+      19,
+      19
+    ],
+    "88": [
+      20,
+      20
+    ],
+    "106": [
+      21,
+      21
+    ],
+    "105": [
+      22,
+      22
+    ],
+    "80": [
+      23,
+      23
+    ],
+    "79": [
+      24,
+      24
+    ],
+    "82": [
+      25,
+      25
+    ],
+    "22": [
+      26,
+      26
+    ],
+    "23": [
+      27,
+      27
+    ],
+    "24": [
+      28,
+      28
+    ],
+    "54": [
+      29,
+      29
+    ],
+    "56": [
+      30,
+      30
+    ],
+    "36": [
+      31,
+      31
+    ],
+    "61": [
+      32,
+      32
+    ],
+    "102": [
+      33,
+      33
+    ],
+    "112": [
+      34,
+      34
+    ],
+    "116": [
+      35,
+      35
+    ],
+    "27": [
+      36,
+      36
+    ],
+    "31": [
+      37,
+      37
+    ],
+    "43": [
+      38,
+      38
+    ],
+    "46": [
+      39,
+      39
+    ],
+    "47": [
+      40,
+      40
+    ],
+    "51": [
+      41,
+      41
+    ],
+    "52": [
+      42,
+      42
+    ],
+    "53": [
+      43,
+      43
+    ],
+    "57": [
+      44,
+      44
+    ],
+    "58": [
+      45,
+      45
+    ],
+    "62": [
+      46,
+      46
+    ],
+    "66": [
+      47,
+      47
+    ],
+    "67": [
+      48,
+      48
+    ],
+    "68": [
+      49,
+      49
+    ],
+    "69": [
+      50,
+      50
+    ],
+    "70": [
+      51,
+      51
+    ],
+    "72": [
+      52,
+      52
+    ],
+    "73": [
+      53,
+      53
+    ],
+    "76": [
+      54,
+      54
+    ],
+    "78": [
+      55,
+      55
+    ],
+    "7": [
+      56,
+      56
+    ],
+    "8": [
+      57,
+      57
+    ],
+    "9": [
+      58,
+      58
+    ],
+    "10": [
+      59,
+      59
+    ],
+    "13": [
+      60,
+      60
+    ],
+    "14": [
+      61,
+      61
+    ],
+    "15": [
+      62,
+      62
+    ],
+    "16": [
+      63,
+      63
+    ],
+    "17": [
+      64,
+      64
+    ],
+    "18": [
+      65,
+      65
+    ],
+    "19": [
+      66,
+      66
+    ],
+    "20": [
+      67,
+      67
+    ],
+    "21": [
+      68,
+      68
+    ],
+    "25": [
+      69,
+      69
+    ],
+    "26": [
+      70,
+      70
+    ],
+    "30": [
+      71,
+      71
+    ],
+    "32": [
+      72,
+      72
+    ],
+    "48": [
+      73,
+      73
+    ],
+    "49": [
+      74,
+      74
+    ],
+    "50": [
+      75,
+      75
+    ],
+    "2": [
+      76,
+      76
+    ],
+    "3": [
+      77,
+      77
+    ],
+    "4": [
+      78,
+      78
+    ],
+    "5": [
+      79,
+      79
+    ],
+    "34": [
+      80,
+      80
+    ],
+    "35": [
+      81,
+      81
+    ],
+    "38": [
+      82,
+      82
+    ],
+    "41": [
+      83,
+      83
+    ],
+    "42": [
+      84,
+      84
+    ],
+    "44": [
+      85,
+      85
+    ],
+    "63": [
+      86,
+      86
+    ],
+    "65": [
+      87,
+      87
+    ],
+    "71": [
+      88,
+      88
+    ],
+    "81": [
+      89,
+      89
+    ],
+    "83": [
+      90,
+      90
+    ],
+    "84": [
+      91,
+      91
+    ],
+    "85": [
+      92,
+      92
+    ],
+    "86": [
+      93,
+      93
+    ],
+    "87": [
+      94,
+      94
+    ],
+    "93": [
+      95,
+      95
+    ],
+    "45": [
+      96,
+      96
+    ],
+    "59": [
+      97,
+      97
+    ],
+    "74": [
+      98,
+      98
+    ],
+    "89": [
+      99,
+      99
+    ],
+    "90": [
+      100,
+      100
+    ],
+    "91": [
+      101,
+      101
+    ],
+    "94": [
+      102,
+      102
+    ],
+    "96": [
+      103,
+      103
+    ],
+    "97": [
+      104,
+      104
+    ],
+    "98": [
+      105,
+      105
+    ],
+    "100": [
+      106,
+      106
+    ],
+    "101": [
+      107,
+      107
+    ],
+    "103": [
+      108,
+      108
+    ],
+    "104": [
+      109,
+      109
+    ],
+    "107": [
+      110,
+      110
+    ],
+    "108": [
+      111,
+      111
+    ],
+    "109": [
+      112,
+      112
+    ],
+    "110": [
+      113,
+      113
+    ],
+    "111": [
+      114,
+      114
+    ],
+    "113": [
+      115,
+      115
+    ],
+    "55": [
+      116,
+      116
+    ],
+    "60": [
+      117,
+      117
+    ],
+    "92": [
+      118,
+      118
+    ],
+    "99": [
+      119,
+      119
+    ],
+    "114": [
+      120,
+      120
+    ],
+    "115": [
+      121,
+      121
+    ],
+    "117": [
+      122,
+      122
+    ],
+    "118": [
+      123,
+      123
+    ],
+    "119": [
+      124,
+      124
+    ],
+    "120": [
+      125,
+      125
+    ],
+    "121": [
+      126,
+      126
+    ],
+    "122": [
+      127,
+      127
+    ],
+    "123": [
+      128,
+      128
+    ],
+    "124": [
+      129,
+      129
+    ],
+    "125": [
+      130,
+      130
+    ],
+    "126": [
+      131,
+      131
+    ],
+    "127": [
+      132,
+      132
+    ],
+    "128": [
+      133,
+      133
+    ],
+    "129": [
+      134,
+      134
+    ],
+    "130": [
+      135,
+      135
+    ],
+    "131": [
+      136,
+      136
+    ],
+    "132": [
+      137,
+      137
+    ],
+    "133": [
+      138,
+      138
+    ],
+    "134": [
+      139,
+      139
+    ],
+    "135": [
+      140,
+      140
+    ],
+    "136": [
+      141,
+      141
+    ],
+    "137": [
+      142,
+      142
+    ],
+    "138": [
+      143,
+      143
+    ],
+    "139": [
+      144,
+      144
+    ],
+    "140": [
+      145,
+      145
+    ],
+    "141": [
+      146,
+      146
+    ],
+    "142": [
+      147,
+      147
+    ],
+    "143": [
+      148,
+      148
+    ],
+    "144": [
+      149,
+      149
+    ],
+    "145": [
+      150,
+      150
+    ],
+    "146": [
+      151,
+      151
+    ],
+    "147": [
+      152,
+      152
+    ],
+    "148": [
+      153,
+      153
+    ],
+    "149": [
+      154,
+      155
+    ],
+    "150": [
+      156,
+      157
+    ],
+    "151": [
+      158,
+      159
+    ],
+    "152": [
+      160,
+      161
+    ],
+    "153": [
+      162,
+      163
+    ],
+    "154": [
+      164,
+      165
+    ],
+    "155": [
+      166,
+      167
+    ],
+    "156": [
+      168,
+      169
+    ],
+    "157": [
+      170,
+      171
+    ],
+    "158": [
+      172,
+      173
+    ],
+    "159": [
+      174,
+      175
+    ],
+    "160": [
+      176,
+      177
+    ],
+    "161": [
+      178,
+      179
+    ],
+    "162": [
+      180,
+      181
+    ],
+    "163": [
+      182,
+      183
+    ],
+    "164": [
+      184,
+      185
+    ],
+    "165": [
+      186,
+      187
+    ],
+    "166": [
+      188,
+      189
+    ],
+    "167": [
+      190,
+      191
+    ],
+    "168": [
+      192,
+      193
+    ],
+    "169": [
+      194,
+      195
+    ],
+    "170": [
+      196,
+      197
+    ],
+    "171": [
+      198,
+      199
+    ],
+    "172": [
+      200,
+      201
+    ],
+    "173": [
+      202,
+      203
+    ],
+    "174": [
+      204,
+      205
+    ],
+    "175": [
+      206,
+      207
+    ],
+    "176": [
+      208,
+      209
+    ],
+    "177": [
+      210,
+      211
+    ],
+    "178": [
+      212,
+      213
+    ],
+    "179": [
+      214,
+      215
+    ],
+    "180": [
+      216,
+      217
+    ],
+    "181": [
+      218,
+      219
+    ],
+    "182": [
+      220,
+      221
+    ],
+    "183": [
+      222,
+      223
+    ],
+    "184": [
+      224,
+      225
+    ],
+    "185": [
+      226,
+      227
+    ],
+    "186": [
+      228,
+      229
+    ],
+    "187": [
+      230,
+      231
+    ],
+    "188": [
+      232,
+      233
+    ],
+    "189": [
+      234,
+      235
+    ],
+    "190": [
+      236,
+      237
+    ],
+    "191": [
+      238,
+      239
+    ],
+    "192": [
+      240,
+      241
+    ],
+    "193": [
+      242,
+      243
+    ],
+    "194": [
+      244,
+      245
+    ],
+    "195": [
+      246,
+      247
+    ],
+    "196": [
+      248,
+      249
+    ],
+    "197": [
+      250,
+      251
+    ],
+    "198": [
+      252,
+      254
+    ],
+    "199": [
+      255,
+      257
+    ],
+    "200": [
+      258,
+      260
+    ],
+    "201": [
+      261,
+      263
+    ]
+  },
+  "sections": [
+    {
+      "kind": "batch",
+      "id": "B01",
+      "start": 6,
+      "pages": 10
+    },
+    {
+      "kind": "batch",
+      "id": "B02",
+      "start": 16,
+      "pages": 10
+    },
+    {
+      "kind": "batch",
+      "id": "B03",
+      "start": 26,
+      "pages": 10
+    },
+    {
+      "kind": "batch",
+      "id": "B04",
+      "start": 36,
+      "pages": 10
+    },
+    {
+      "kind": "batch",
+      "id": "B05",
+      "start": 46,
+      "pages": 10
+    },
+    {
+      "kind": "batch",
+      "id": "B06",
+      "start": 56,
+      "pages": 10
+    },
+    {
+      "kind": "batch",
+      "id": "B07",
+      "start": 66,
+      "pages": 10
+    },
+    {
+      "kind": "batch",
+      "id": "B08",
+      "start": 76,
+      "pages": 10
+    },
+    {
+      "kind": "batch",
+      "id": "B09",
+      "start": 86,
+      "pages": 10
+    },
+    {
+      "kind": "batch",
+      "id": "B10",
+      "start": 96,
+      "pages": 10
+    },
+    {
+      "kind": "batch",
+      "id": "B11",
+      "start": 106,
+      "pages": 10
+    },
+    {
+      "kind": "batch",
+      "id": "B12",
+      "start": 116,
+      "pages": 10
+    },
+    {
+      "kind": "batch",
+      "id": "B13",
+      "start": 126,
+      "pages": 10
+    },
+    {
+      "kind": "batch",
+      "id": "B14",
+      "start": 136,
+      "pages": 10
+    },
+    {
+      "kind": "batch",
+      "id": "B15",
+      "start": 146,
+      "pages": 12
+    },
+    {
+      "kind": "batch",
+      "id": "B16",
+      "start": 158,
+      "pages": 20
+    },
+    {
+      "kind": "batch",
+      "id": "B17",
+      "start": 178,
+      "pages": 20
+    },
+    {
+      "kind": "batch",
+      "id": "B18",
+      "start": 198,
+      "pages": 20
+    },
+    {
+      "kind": "batch",
+      "id": "B19",
+      "start": 218,
+      "pages": 20
+    },
+    {
+      "kind": "batch",
+      "id": "B20",
+      "start": 238,
+      "pages": 23
+    },
+    {
+      "kind": "batch",
+      "id": "B21",
+      "start": 261,
+      "pages": 3
+    },
+    {
+      "kind": "pair",
+      "id": "C01",
+      "start": 264,
+      "pages": 2
+    },
+    {
+      "kind": "pair",
+      "id": "C02",
+      "start": 266,
+      "pages": 2
+    },
+    {
+      "kind": "pair",
+      "id": "C03",
+      "start": 268,
+      "pages": 2
+    },
+    {
+      "kind": "pair",
+      "id": "C04",
+      "start": 270,
+      "pages": 2
+    },
+    {
+      "kind": "pair",
+      "id": "C05",
+      "start": 272,
+      "pages": 2
+    },
+    {
+      "kind": "pair",
+      "id": "C06",
+      "start": 274,
+      "pages": 2
+    },
+    {
+      "kind": "migration",
+      "id": "T01",
+      "start": 276,
+      "pages": 2
+    },
+    {
+      "kind": "migration",
+      "id": "T02",
+      "start": 278,
+      "pages": 1
+    },
+    {
+      "kind": "migration",
+      "id": "T03",
+      "start": 279,
+      "pages": 2
+    },
+    {
+      "kind": "migration",
+      "id": "T04",
+      "start": 281,
+      "pages": 2
+    },
+    {
+      "kind": "migration",
+      "id": "T05",
+      "start": 283,
+      "pages": 2
+    },
+    {
+      "kind": "migration",
+      "id": "T06",
+      "start": 285,
+      "pages": 1
+    }
+  ],
+  "bookmarks": [
+    {
+      "title": "学生说明",
+      "page": 1
+    },
+    {
+      "title": "辅导者说明",
+      "page": 2
+    },
+    {
+      "title": "目录",
+      "page": 3
+    },
+    {
+      "title": "B01  一十人八大工土口山巾",
+      "page": 6
+    },
+    {
+      "title": "ID001 一",
+      "page": 6
+    },
+    {
+      "title": "ID006 十",
+      "page": 7
+    },
+    {
+      "title": "ID012 人",
+      "page": 8
+    },
+    {
+      "title": "ID011 八",
+      "page": 9
+    },
+    {
+      "title": "ID033 大",
+      "page": 10
+    },
+    {
+      "title": "ID028 工",
+      "page": 11
+    },
+    {
+      "title": "ID029 土",
+      "page": 12
+    },
+    {
+      "title": "ID037 口",
+      "page": 13
+    },
+    {
+      "title": "ID039 山",
+      "page": 14
+    },
+    {
+      "title": "ID040 巾",
+      "page": 15
+    },
+    {
+      "title": "B02  水火木日月田目手牛毛",
+      "page": 16
+    },
+    {
+      "title": "ID077 水",
+      "page": 16
+    },
+    {
+      "title": "ID095 火",
+      "page": 17
+    },
+    {
+      "title": "ID064 木",
+      "page": 18
+    },
+    {
+      "title": "ID075 日",
+      "page": 19
+    },
+    {
+      "title": "ID088 月",
+      "page": 20
+    },
+    {
+      "title": "ID106 田",
+      "page": 21
+    },
+    {
+      "title": "ID105 目",
+      "page": 22
+    },
+    {
+      "title": "ID080 手",
+      "page": 23
+    },
+    {
+      "title": "ID079 牛",
+      "page": 24
+    },
+    {
+      "title": "ID082 毛",
+      "page": 25
+    },
+    {
+      "title": "B03  刀力又子女小王石白立",
+      "page": 26
+    },
+    {
+      "title": "ID022 刀",
+      "page": 26
+    },
+    {
+      "title": "ID023 力",
+      "page": 27
+    },
+    {
+      "title": "ID024 又",
+      "page": 28
+    },
+    {
+      "title": "ID054 子",
+      "page": 29
+    },
+    {
+      "title": "ID056 女",
+      "page": 30
+    },
+    {
+      "title": "ID036 小",
+      "page": 31
+    },
+    {
+      "title": "ID061 王",
+      "page": 32
+    },
+    {
+      "title": "ID102 石",
+      "page": 33
+    },
+    {
+      "title": "ID112 白",
+      "page": 34
+    },
+    {
+      "title": "ID116 立",
+      "page": 35
+    },
+    {
+      "title": "B04  干寸夕广门尸己弓飞马",
+      "page": 36
+    },
+    {
+      "title": "ID027 干",
+      "page": 36
+    },
+    {
+      "title": "ID031 寸",
+      "page": 37
+    },
+    {
+      "title": "ID043 夕",
+      "page": 38
+    },
+    {
+      "title": "ID046 广",
+      "page": 39
+    },
+    {
+      "title": "ID047 门",
+      "page": 40
+    },
+    {
+      "title": "ID051 尸",
+      "page": 41
+    },
+    {
+      "title": "ID052 己",
+      "page": 42
+    },
+    {
+      "title": "ID053 弓",
+      "page": 43
+    },
+    {
+      "title": "ID057 飞",
+      "page": 44
+    },
+    {
+      "title": "ID058 马",
+      "page": 45
+    },
+    {
+      "title": "B05  无犬歹车牙戈瓦止贝见",
+      "page": 46
+    },
+    {
+      "title": "ID062 无",
+      "page": 46
+    },
+    {
+      "title": "ID066 犬",
+      "page": 47
+    },
+    {
+      "title": "ID067 歹",
+      "page": 48
+    },
+    {
+      "title": "ID068 车",
+      "page": 49
+    },
+    {
+      "title": "ID069 牙",
+      "page": 50
+    },
+    {
+      "title": "ID070 戈",
+      "page": 51
+    },
+    {
+      "title": "ID072 瓦",
+      "page": 52
+    },
+    {
+      "title": "ID073 止",
+      "page": 53
+    },
+    {
+      "title": "ID076 贝",
+      "page": 54
+    },
+    {
+      "title": "ID078 见",
+      "page": 55
+    },
+    {
+      "title": "B06  厂匚卜冂勹儿匕几亠冫",
+      "page": 56
+    },
+    {
+      "title": "ID007 厂",
+      "page": 56
+    },
+    {
+      "title": "ID008 匚",
+      "page": 57
+    },
+    {
+      "title": "ID009 卜",
+      "page": 58
+    },
+    {
+      "title": "ID010 冂",
+      "page": 59
+    },
+    {
+      "title": "ID013 勹",
+      "page": 60
+    },
+    {
+      "title": "ID014 儿",
+      "page": 61
+    },
+    {
+      "title": "ID015 匕",
+      "page": 62
+    },
+    {
+      "title": "ID016 几",
+      "page": 63
+    },
+    {
+      "title": "ID017 亠",
+      "page": 64
+    },
+    {
+      "title": "ID018 冫",
+      "page": 65
+    },
+    {
+      "title": "B07  冖凵卩厶廴艹廾宀辶彐",
+      "page": 66
+    },
+    {
+      "title": "ID019 冖",
+      "page": 66
+    },
+    {
+      "title": "ID020 凵",
+      "page": 67
+    },
+    {
+      "title": "ID021 卩",
+      "page": 68
+    },
+    {
+      "title": "ID025 厶",
+      "page": 69
+    },
+    {
+      "title": "ID026 廴",
+      "page": 70
+    },
+    {
+      "title": "ID030 艹",
+      "page": 71
+    },
+    {
+      "title": "ID032 廾",
+      "page": 72
+    },
+    {
+      "title": "ID048 宀",
+      "page": 73
+    },
+    {
+      "title": "ID049 辶",
+      "page": 74
+    },
+    {
+      "title": "ID050 彐",
+      "page": 75
+    },
+    {
+      "title": "B08  丨丿丶乛尢弋囗彳彡夂",
+      "page": 76
+    },
+    {
+      "title": "ID002 丨",
+      "page": 76
+    },
+    {
+      "title": "ID003 丿",
+      "page": 77
+    },
+    {
+      "title": "ID004 丶",
+      "page": 78
+    },
+    {
+      "title": "ID005 乛",
+      "page": 79
+    },
+    {
+      "title": "ID034 尢",
+      "page": 80
+    },
+    {
+      "title": "ID035 弋",
+      "page": 81
+    },
+    {
+      "title": "ID038 囗",
+      "page": 82
+    },
+    {
+      "title": "ID041 彳",
+      "page": 83
+    },
+    {
+      "title": "ID042 彡",
+      "page": 84
+    },
+    {
+      "title": "ID044 夂",
+      "page": 85
+    },
+    {
+      "title": "B09  韦支比气长片斤爪父文",
+      "page": 86
+    },
+    {
+      "title": "ID063 韦",
+      "page": 86
+    },
+    {
+      "title": "ID065 支",
+      "page": 87
+    },
+    {
+      "title": "ID071 比",
+      "page": 88
+    },
+    {
+      "title": "ID081 气",
+      "page": 89
+    },
+    {
+      "title": "ID083 长",
+      "page": 90
+    },
+    {
+      "title": "ID084 片",
+      "page": 91
+    },
+    {
+      "title": "ID085 斤",
+      "page": 92
+    },
+    {
+      "title": "ID086 爪",
+      "page": 93
+    },
+    {
+      "title": "ID087 父",
+      "page": 94
+    },
+    {
+      "title": "ID093 文",
+      "page": 95
+    },
+    {
+      "title": "B10  丬幺攴氏欠风方斗户心",
+      "page": 96
+    },
+    {
+      "title": "ID045 丬",
+      "page": 96
+    },
+    {
+      "title": "ID059 幺",
+      "page": 97
+    },
+    {
+      "title": "ID074 攴",
+      "page": 98
+    },
+    {
+      "title": "ID089 氏",
+      "page": 99
+    },
+    {
+      "title": "ID090 欠",
+      "page": 100
+    },
+    {
+      "title": "ID091 风",
+      "page": 101
+    },
+    {
+      "title": "ID094 方",
+      "page": 102
+    },
+    {
+      "title": "ID096 斗",
+      "page": 103
+    },
+    {
+      "title": "ID097 户",
+      "page": 104
+    },
+    {
+      "title": "ID098 心",
+      "page": 105
+    },
+    {
+      "title": "B11  示甘龙业罒皿生矢禾瓜",
+      "page": 106
+    },
+    {
+      "title": "ID100 示",
+      "page": 106
+    },
+    {
+      "title": "ID101 甘",
+      "page": 107
+    },
+    {
+      "title": "ID103 龙",
+      "page": 108
+    },
+    {
+      "title": "ID104 业",
+      "page": 109
+    },
+    {
+      "title": "ID107 罒",
+      "page": 110
+    },
+    {
+      "title": "ID108 皿",
+      "page": 111
+    },
+    {
+      "title": "ID109 生",
+      "page": 112
+    },
+    {
+      "title": "ID110 矢",
+      "page": 113
+    },
+    {
+      "title": "ID111 禾",
+      "page": 114
+    },
+    {
+      "title": "ID113 瓜",
+      "page": 115
+    },
+    {
+      "title": "B12  屮巛殳毋鸟疒穴疋皮癶",
+      "page": 116
+    },
+    {
+      "title": "ID055 屮",
+      "page": 116
+    },
+    {
+      "title": "ID060 巛",
+      "page": 117
+    },
+    {
+      "title": "ID092 殳",
+      "page": 118
+    },
+    {
+      "title": "ID099 毋",
+      "page": 119
+    },
+    {
+      "title": "ID114 鸟",
+      "page": 120
+    },
+    {
+      "title": "ID115 疒",
+      "page": 121
+    },
+    {
+      "title": "ID117 穴",
+      "page": 122
+    },
+    {
+      "title": "ID118 疋",
+      "page": 123
+    },
+    {
+      "title": "ID119 皮",
+      "page": 124
+    },
+    {
+      "title": "ID120 癶",
+      "page": 125
+    },
+    {
+      "title": "B13  矛耒老耳臣覀而页至虍",
+      "page": 126
+    },
+    {
+      "title": "ID121 矛",
+      "page": 126
+    },
+    {
+      "title": "ID122 耒",
+      "page": 127
+    },
+    {
+      "title": "ID123 老",
+      "page": 128
+    },
+    {
+      "title": "ID124 耳",
+      "page": 129
+    },
+    {
+      "title": "ID125 臣",
+      "page": 130
+    },
+    {
+      "title": "ID126 覀",
+      "page": 131
+    },
+    {
+      "title": "ID127 而",
+      "page": 132
+    },
+    {
+      "title": "ID128 页",
+      "page": 133
+    },
+    {
+      "title": "ID129 至",
+      "page": 134
+    },
+    {
+      "title": "ID130 虍",
+      "page": 135
+    },
+    {
+      "title": "B14  虫肉缶舌竹臼自血舟色",
+      "page": 136
+    },
+    {
+      "title": "ID131 虫",
+      "page": 136
+    },
+    {
+      "title": "ID132 肉",
+      "page": 137
+    },
+    {
+      "title": "ID133 缶",
+      "page": 138
+    },
+    {
+      "title": "ID134 舌",
+      "page": 139
+    },
+    {
+      "title": "ID135 竹",
+      "page": 140
+    },
+    {
+      "title": "ID136 臼",
+      "page": 141
+    },
+    {
+      "title": "ID137 自",
+      "page": 142
+    },
+    {
+      "title": "ID138 血",
+      "page": 143
+    },
+    {
+      "title": "ID139 舟",
+      "page": 144
+    },
+    {
+      "title": "ID140 色",
+      "page": 145
+    },
+    {
+      "title": "B15  齐衣羊米聿艮羽糸麦走",
+      "page": 146
+    },
+    {
+      "title": "ID141 齐",
+      "page": 146
+    },
+    {
+      "title": "ID142 衣",
+      "page": 147
+    },
+    {
+      "title": "ID143 羊",
+      "page": 148
+    },
+    {
+      "title": "ID144 米",
+      "page": 149
+    },
+    {
+      "title": "ID145 聿",
+      "page": 150
+    },
+    {
+      "title": "ID146 艮",
+      "page": 151
+    },
+    {
+      "title": "ID147 羽",
+      "page": 152
+    },
+    {
+      "title": "ID148 糸",
+      "page": 153
+    },
+    {
+      "title": "ID149 麦",
+      "page": 154
+    },
+    {
+      "title": "ID150 走",
+      "page": 156
+    },
+    {
+      "title": "B16  赤豆酉辰豕卤里足邑身",
+      "page": 158
+    },
+    {
+      "title": "ID151 赤",
+      "page": 158
+    },
+    {
+      "title": "ID152 豆",
+      "page": 160
+    },
+    {
+      "title": "ID153 酉",
+      "page": 162
+    },
+    {
+      "title": "ID154 辰",
+      "page": 164
+    },
+    {
+      "title": "ID155 豕",
+      "page": 166
+    },
+    {
+      "title": "ID156 卤",
+      "page": 168
+    },
+    {
+      "title": "ID157 里",
+      "page": 170
+    },
+    {
+      "title": "ID158 足",
+      "page": 172
+    },
+    {
+      "title": "ID159 邑",
+      "page": 174
+    },
+    {
+      "title": "ID160 身",
+      "page": 176
+    },
+    {
+      "title": "B17  釆谷豸龟角言辛青龺雨",
+      "page": 178
+    },
+    {
+      "title": "ID161 釆",
+      "page": 178
+    },
+    {
+      "title": "ID162 谷",
+      "page": 180
+    },
+    {
+      "title": "ID163 豸",
+      "page": 182
+    },
+    {
+      "title": "ID164 龟",
+      "page": 184
+    },
+    {
+      "title": "ID165 角",
+      "page": 186
+    },
+    {
+      "title": "ID166 言",
+      "page": 188
+    },
+    {
+      "title": "ID167 辛",
+      "page": 190
+    },
+    {
+      "title": "ID168 青",
+      "page": 192
+    },
+    {
+      "title": "ID169 龺",
+      "page": 194
+    },
+    {
+      "title": "ID170 雨",
+      "page": 196
+    },
+    {
+      "title": "B18  非齿黾隹阜金鱼隶革面",
+      "page": 198
+    },
+    {
+      "title": "ID171 非",
+      "page": 198
+    },
+    {
+      "title": "ID172 齿",
+      "page": 200
+    },
+    {
+      "title": "ID173 黾",
+      "page": 202
+    },
+    {
+      "title": "ID174 隹",
+      "page": 204
+    },
+    {
+      "title": "ID175 阜",
+      "page": 206
+    },
+    {
+      "title": "ID176 金",
+      "page": 208
+    },
+    {
+      "title": "ID177 鱼",
+      "page": 210
+    },
+    {
+      "title": "ID178 隶",
+      "page": 212
+    },
+    {
+      "title": "ID179 革",
+      "page": 214
+    },
+    {
+      "title": "ID180 面",
+      "page": 216
+    },
+    {
+      "title": "B19  韭骨香鬼食音首髟鬲鬥",
+      "page": 218
+    },
+    {
+      "title": "ID181 韭",
+      "page": 218
+    },
+    {
+      "title": "ID182 骨",
+      "page": 220
+    },
+    {
+      "title": "ID183 香",
+      "page": 222
+    },
+    {
+      "title": "ID184 鬼",
+      "page": 224
+    },
+    {
+      "title": "ID185 食",
+      "page": 226
+    },
+    {
+      "title": "ID186 音",
+      "page": 228
+    },
+    {
+      "title": "ID187 首",
+      "page": 230
+    },
+    {
+      "title": "ID188 髟",
+      "page": 232
+    },
+    {
+      "title": "ID189 鬲",
+      "page": 234
+    },
+    {
+      "title": "ID190 鬥",
+      "page": 236
+    },
+    {
+      "title": "B20  高黄麻鹿鼎黑黍鼓鼠鼻",
+      "page": 238
+    },
+    {
+      "title": "ID191 高",
+      "page": 238
+    },
+    {
+      "title": "ID192 黄",
+      "page": 240
+    },
+    {
+      "title": "ID193 麻",
+      "page": 242
+    },
+    {
+      "title": "ID194 鹿",
+      "page": 244
+    },
+    {
+      "title": "ID195 鼎",
+      "page": 246
+    },
+    {
+      "title": "ID196 黑",
+      "page": 248
+    },
+    {
+      "title": "ID197 黍",
+      "page": 250
+    },
+    {
+      "title": "ID198 鼓",
+      "page": 252
+    },
+    {
+      "title": "ID199 鼠",
+      "page": 255
+    },
+    {
+      "title": "ID200 鼻",
+      "page": 258
+    },
+    {
+      "title": "B21  龠",
+      "page": 261
+    },
+    {
+      "title": "ID201 龠",
+      "page": 261
+    },
+    {
+      "title": "C01  日 / 目：比较与回忆",
+      "page": 264
+    },
+    {
+      "title": "C02  木 / 禾：比较与回忆",
+      "page": 266
+    },
+    {
+      "title": "C03  刀 / 力：比较与回忆",
+      "page": 268
+    },
+    {
+      "title": "C04  大 / 犬：比较与回忆",
+      "page": 270
+    },
+    {
+      "title": "C05  人 / 八：比较与回忆",
+      "page": 272
+    },
+    {
+      "title": "C06  白 / 自：比较与回忆",
+      "page": 274
+    },
+    {
+      "title": "T01  厂 → 原：完整整字迁移",
+      "page": 276
+    },
+    {
+      "title": "T02  门 → 们：完整整字迁移",
+      "page": 278
+    },
+    {
+      "title": "T03  瓦 → 瓶：完整整字迁移",
+      "page": 279
+    },
+    {
+      "title": "T04  辶 → 近：完整整字迁移",
+      "page": 281
+    },
+    {
+      "title": "T05  囗 → 国：完整整字迁移",
+      "page": 283
+    },
+    {
+      "title": "T06  匚 → 区：完整整字迁移",
+      "page": 285
+    },
+    {
+      "title": "卷末索引与来源说明",
+      "page": 286
+    }
+  ],
+  "toc_links": [
+    {
+      "page": 2,
+      "target": 5,
+      "rect": [
+        42,
+        708.8897637795277,
+        553.2755905511812,
+        727.8897637795277
+      ]
+    },
+    {
+      "page": 2,
+      "target": 15,
+      "rect": [
+        42,
+        675.8897637795277,
+        553.2755905511812,
+        694.8897637795277
+      ]
+    },
+    {
+      "page": 2,
+      "target": 25,
+      "rect": [
+        42,
+        642.8897637795277,
+        553.2755905511812,
+        661.8897637795277
+      ]
+    },
+    {
+      "page": 2,
+      "target": 35,
+      "rect": [
+        42,
+        609.8897637795277,
+        553.2755905511812,
+        628.8897637795277
+      ]
+    },
+    {
+      "page": 2,
+      "target": 45,
+      "rect": [
+        42,
+        576.8897637795277,
+        553.2755905511812,
+        595.8897637795277
+      ]
+    },
+    {
+      "page": 2,
+      "target": 55,
+      "rect": [
+        42,
+        543.8897637795277,
+        553.2755905511812,
+        562.8897637795277
+      ]
+    },
+    {
+      "page": 2,
+      "target": 65,
+      "rect": [
+        42,
+        510.8897637795277,
+        553.2755905511812,
+        529.8897637795277
+      ]
+    },
+    {
+      "page": 2,
+      "target": 75,
+      "rect": [
+        42,
+        477.8897637795277,
+        553.2755905511812,
+        496.8897637795277
+      ]
+    },
+    {
+      "page": 2,
+      "target": 85,
+      "rect": [
+        42,
+        444.8897637795277,
+        553.2755905511812,
+        463.8897637795277
+      ]
+    },
+    {
+      "page": 2,
+      "target": 95,
+      "rect": [
+        42,
+        411.8897637795277,
+        553.2755905511812,
+        430.8897637795277
+      ]
+    },
+    {
+      "page": 2,
+      "target": 105,
+      "rect": [
+        42,
+        378.8897637795277,
+        553.2755905511812,
+        397.8897637795277
+      ]
+    },
+    {
+      "page": 3,
+      "target": 115,
+      "rect": [
+        42,
+        708.8897637795277,
+        553.2755905511812,
+        727.8897637795277
+      ]
+    },
+    {
+      "page": 3,
+      "target": 125,
+      "rect": [
+        42,
+        675.8897637795277,
+        553.2755905511812,
+        694.8897637795277
+      ]
+    },
+    {
+      "page": 3,
+      "target": 135,
+      "rect": [
+        42,
+        642.8897637795277,
+        553.2755905511812,
+        661.8897637795277
+      ]
+    },
+    {
+      "page": 3,
+      "target": 145,
+      "rect": [
+        42,
+        609.8897637795277,
+        553.2755905511812,
+        628.8897637795277
+      ]
+    },
+    {
+      "page": 3,
+      "target": 157,
+      "rect": [
+        42,
+        576.8897637795277,
+        553.2755905511812,
+        595.8897637795277
+      ]
+    },
+    {
+      "page": 3,
+      "target": 177,
+      "rect": [
+        42,
+        543.8897637795277,
+        553.2755905511812,
+        562.8897637795277
+      ]
+    },
+    {
+      "page": 3,
+      "target": 197,
+      "rect": [
+        42,
+        510.8897637795277,
+        553.2755905511812,
+        529.8897637795277
+      ]
+    },
+    {
+      "page": 3,
+      "target": 217,
+      "rect": [
+        42,
+        477.8897637795277,
+        553.2755905511812,
+        496.8897637795277
+      ]
+    },
+    {
+      "page": 3,
+      "target": 237,
+      "rect": [
+        42,
+        444.8897637795277,
+        553.2755905511812,
+        463.8897637795277
+      ]
+    },
+    {
+      "page": 3,
+      "target": 260,
+      "rect": [
+        42,
+        411.8897637795277,
+        553.2755905511812,
+        430.8897637795277
+      ]
+    },
+    {
+      "page": 4,
+      "target": 263,
+      "rect": [
+        42,
+        708.8897637795277,
+        553.2755905511812,
+        727.8897637795277
+      ]
+    },
+    {
+      "page": 4,
+      "target": 265,
+      "rect": [
+        42,
+        675.8897637795277,
+        553.2755905511812,
+        694.8897637795277
+      ]
+    },
+    {
+      "page": 4,
+      "target": 267,
+      "rect": [
+        42,
+        642.8897637795277,
+        553.2755905511812,
+        661.8897637795277
+      ]
+    },
+    {
+      "page": 4,
+      "target": 269,
+      "rect": [
+        42,
+        609.8897637795277,
+        553.2755905511812,
+        628.8897637795277
+      ]
+    },
+    {
+      "page": 4,
+      "target": 271,
+      "rect": [
+        42,
+        576.8897637795277,
+        553.2755905511812,
+        595.8897637795277
+      ]
+    },
+    {
+      "page": 4,
+      "target": 273,
+      "rect": [
+        42,
+        543.8897637795277,
+        553.2755905511812,
+        562.8897637795277
+      ]
+    },
+    {
+      "page": 4,
+      "target": 275,
+      "rect": [
+        42,
+        510.8897637795277,
+        553.2755905511812,
+        529.8897637795277
+      ]
+    },
+    {
+      "page": 4,
+      "target": 277,
+      "rect": [
+        42,
+        477.8897637795277,
+        553.2755905511812,
+        496.8897637795277
+      ]
+    },
+    {
+      "page": 4,
+      "target": 278,
+      "rect": [
+        42,
+        444.8897637795277,
+        553.2755905511812,
+        463.8897637795277
+      ]
+    },
+    {
+      "page": 4,
+      "target": 280,
+      "rect": [
+        42,
+        411.8897637795277,
+        553.2755905511812,
+        430.8897637795277
+      ]
+    },
+    {
+      "page": 4,
+      "target": 282,
+      "rect": [
+        42,
+        378.8897637795277,
+        553.2755905511812,
+        397.8897637795277
+      ]
+    },
+    {
+      "page": 4,
+      "target": 284,
+      "rect": [
+        42,
+        345.8897637795277,
+        553.2755905511812,
+        364.8897637795277
+      ]
+    },
+    {
+      "page": 4,
+      "target": 285,
+      "rect": [
+        42,
+        312.8897637795277,
+        553.2755905511812,
+        331.8897637795277
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "main_id": 1,
+      "character": "一",
+      "evidence": {
+        "stroke_order": "reviews/B01-cross.md",
+        "fine_stroke_names": "reviews/B01-cross.md",
+        "pronunciation": "reviews/B01-cross.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 6,
+      "character": "十",
+      "evidence": {
+        "stroke_order": "reviews/B01-cross.md",
+        "fine_stroke_names": "reviews/B01-cross.md",
+        "pronunciation": "reviews/B01-cross.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 12,
+      "character": "人",
+      "evidence": {
+        "stroke_order": "reviews/B01-cross.md",
+        "fine_stroke_names": "reviews/B01-cross.md",
+        "pronunciation": "reviews/B01-cross.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 11,
+      "character": "八",
+      "evidence": {
+        "stroke_order": "reviews/B01-cross.md",
+        "fine_stroke_names": "reviews/B01-cross.md",
+        "pronunciation": "reviews/B01-cross.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 33,
+      "character": "大",
+      "evidence": {
+        "stroke_order": "reviews/B01-cross.md",
+        "fine_stroke_names": "reviews/B01-cross.md",
+        "pronunciation": "reviews/B01-cross.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 28,
+      "character": "工",
+      "evidence": {
+        "stroke_order": "reviews/B01-cross.md",
+        "fine_stroke_names": "reviews/B01-cross.md",
+        "pronunciation": "reviews/B01-cross.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 29,
+      "character": "土",
+      "evidence": {
+        "stroke_order": "reviews/B01-cross.md",
+        "fine_stroke_names": "reviews/B01-cross.md",
+        "pronunciation": "reviews/B01-cross.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 37,
+      "character": "口",
+      "evidence": {
+        "stroke_order": "reviews/B01-cross.md",
+        "fine_stroke_names": "reviews/B01-cross.md",
+        "pronunciation": "reviews/B01-cross.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 39,
+      "character": "山",
+      "evidence": {
+        "stroke_order": "reviews/B01-cross.md",
+        "fine_stroke_names": "reviews/B01-cross.md",
+        "pronunciation": "reviews/B01-cross.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 40,
+      "character": "巾",
+      "evidence": {
+        "stroke_order": "reviews/B01-cross.md",
+        "fine_stroke_names": "reviews/B01-cross.md",
+        "pronunciation": "reviews/B01-cross.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 77,
+      "character": "水",
+      "evidence": {
+        "stroke_order": "reviews/B02-completion.md",
+        "fine_stroke_names": "reviews/B02-completion.md",
+        "pronunciation": "reviews/B02-completion.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 95,
+      "character": "火",
+      "evidence": {
+        "stroke_order": "reviews/B02-completion.md",
+        "fine_stroke_names": "reviews/B02-completion.md",
+        "pronunciation": "reviews/B02-completion.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 64,
+      "character": "木",
+      "evidence": {
+        "stroke_order": "reviews/B02-completion.md",
+        "fine_stroke_names": "reviews/B02-completion.md",
+        "pronunciation": "reviews/B02-completion.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 75,
+      "character": "日",
+      "evidence": {
+        "stroke_order": "reviews/B02-completion.md",
+        "fine_stroke_names": "reviews/B02-completion.md",
+        "pronunciation": "reviews/B02-completion.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 88,
+      "character": "月",
+      "evidence": {
+        "stroke_order": "reviews/B02-completion.md",
+        "fine_stroke_names": "reviews/B02-completion.md",
+        "pronunciation": "reviews/B02-completion.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 106,
+      "character": "田",
+      "evidence": {
+        "stroke_order": "reviews/B02-completion.md",
+        "fine_stroke_names": "reviews/B02-completion.md",
+        "pronunciation": "reviews/B02-completion.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 105,
+      "character": "目",
+      "evidence": {
+        "stroke_order": "reviews/B02-completion.md",
+        "fine_stroke_names": "reviews/B02-completion.md",
+        "pronunciation": "reviews/B02-completion.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 80,
+      "character": "手",
+      "evidence": {
+        "stroke_order": "reviews/B02-completion.md",
+        "fine_stroke_names": "reviews/B02-completion.md",
+        "pronunciation": "reviews/B02-completion.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 79,
+      "character": "牛",
+      "evidence": {
+        "stroke_order": "reviews/B02-completion.md",
+        "fine_stroke_names": "reviews/B02-completion.md",
+        "pronunciation": "reviews/B02-completion.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 82,
+      "character": "毛",
+      "evidence": {
+        "stroke_order": "reviews/B02-completion.md",
+        "fine_stroke_names": "reviews/B02-completion.md",
+        "pronunciation": "reviews/B02-completion.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 22,
+      "character": "刀",
+      "evidence": {
+        "stroke_order": "reviews/B03-metadata.md",
+        "fine_stroke_names": "reviews/B03-metadata.md",
+        "pronunciation": "reviews/B03-metadata.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 23,
+      "character": "力",
+      "evidence": {
+        "stroke_order": "reviews/B03-metadata.md",
+        "fine_stroke_names": "reviews/B03-metadata.md",
+        "pronunciation": "reviews/B03-metadata.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 24,
+      "character": "又",
+      "evidence": {
+        "stroke_order": "reviews/B03-metadata.md",
+        "fine_stroke_names": "reviews/B03-metadata.md",
+        "pronunciation": "reviews/B03-metadata.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 54,
+      "character": "子",
+      "evidence": {
+        "stroke_order": "reviews/B03-metadata.md",
+        "fine_stroke_names": "reviews/B03-metadata.md",
+        "pronunciation": "reviews/B03-metadata.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 56,
+      "character": "女",
+      "evidence": {
+        "stroke_order": "reviews/B03-metadata.md",
+        "fine_stroke_names": "reviews/B03-metadata.md",
+        "pronunciation": "reviews/B03-metadata.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 36,
+      "character": "小",
+      "evidence": {
+        "stroke_order": "reviews/B03-metadata.md",
+        "fine_stroke_names": "reviews/B03-metadata.md",
+        "pronunciation": "reviews/B03-metadata.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 61,
+      "character": "王",
+      "evidence": {
+        "stroke_order": "reviews/B03-metadata.md",
+        "fine_stroke_names": "reviews/B03-metadata.md",
+        "pronunciation": "reviews/B03-metadata.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 102,
+      "character": "石",
+      "evidence": {
+        "stroke_order": "reviews/B03-metadata.md",
+        "fine_stroke_names": "reviews/B03-metadata.md",
+        "pronunciation": "reviews/B03-metadata.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 112,
+      "character": "白",
+      "evidence": {
+        "stroke_order": "reviews/B03-metadata.md",
+        "fine_stroke_names": "reviews/B03-metadata.md",
+        "pronunciation": "reviews/B03-metadata.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 116,
+      "character": "立",
+      "evidence": {
+        "stroke_order": "reviews/B03-metadata.md",
+        "fine_stroke_names": "reviews/B03-metadata.md",
+        "pronunciation": "reviews/B03-metadata.md"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 27,
+      "character": "干",
+      "evidence": {
+        "stroke_order": "data/evidence/B04-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B04-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 31,
+      "character": "寸",
+      "evidence": {
+        "stroke_order": "data/evidence/B04-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B04-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 43,
+      "character": "夕",
+      "evidence": {
+        "stroke_order": "data/evidence/B04-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B04-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 46,
+      "character": "广",
+      "evidence": {
+        "stroke_order": "data/evidence/B04-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B04-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 47,
+      "character": "门",
+      "evidence": {
+        "stroke_order": "data/evidence/B04-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B04-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 51,
+      "character": "尸",
+      "evidence": {
+        "stroke_order": "data/evidence/B04-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B04-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 52,
+      "character": "己",
+      "evidence": {
+        "stroke_order": "data/evidence/B04-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B04-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 53,
+      "character": "弓",
+      "evidence": {
+        "stroke_order": "data/evidence/B04-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B04-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 57,
+      "character": "飞",
+      "evidence": {
+        "stroke_order": "data/evidence/B04-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B04-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 58,
+      "character": "马",
+      "evidence": {
+        "stroke_order": "data/evidence/B04-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B04-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 62,
+      "character": "无",
+      "evidence": {
+        "stroke_order": "data/evidence/B05-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B05-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 66,
+      "character": "犬",
+      "evidence": {
+        "stroke_order": "data/evidence/B05-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B05-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 67,
+      "character": "歹",
+      "evidence": {
+        "stroke_order": "data/evidence/B05-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B05-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 68,
+      "character": "车",
+      "evidence": {
+        "stroke_order": "data/evidence/B05-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B05-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 69,
+      "character": "牙",
+      "evidence": {
+        "stroke_order": "data/evidence/B05-stroke-order-original-page.json",
+        "pronunciation": "data/evidence/B05-pronunciation.json"
+      },
+      "fine_names": "ordinal_only",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 70,
+      "character": "戈",
+      "evidence": {
+        "stroke_order": "data/evidence/B05-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B05-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 72,
+      "character": "瓦",
+      "evidence": {
+        "stroke_order": "data/evidence/B05-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B05-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 73,
+      "character": "止",
+      "evidence": {
+        "stroke_order": "data/evidence/B05-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B05-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 76,
+      "character": "贝",
+      "evidence": {
+        "stroke_order": "data/evidence/B05-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B05-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 78,
+      "character": "见",
+      "evidence": {
+        "stroke_order": "data/evidence/B05-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B05-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 7,
+      "character": "厂",
+      "evidence": {
+        "stroke_order": "data/evidence/B06-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B06-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 8,
+      "character": "匚",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 9,
+      "character": "卜",
+      "evidence": {
+        "stroke_order": "data/evidence/B06-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B06-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 10,
+      "character": "冂",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 13,
+      "character": "勹",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 14,
+      "character": "儿",
+      "evidence": {
+        "stroke_order": "data/evidence/B06-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B06-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 15,
+      "character": "匕",
+      "evidence": {
+        "stroke_order": "data/evidence/B06-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B06-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 16,
+      "character": "几",
+      "evidence": {
+        "stroke_order": "data/evidence/B06-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B06-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 17,
+      "character": "亠",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 18,
+      "character": "冫",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 19,
+      "character": "冖",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 20,
+      "character": "凵",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 21,
+      "character": "卩",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B07-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 25,
+      "character": "厶",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B07-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 26,
+      "character": "廴",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 30,
+      "character": "艹",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 32,
+      "character": "廾",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 48,
+      "character": "宀",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 49,
+      "character": "辶",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 50,
+      "character": "彐",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 2,
+      "character": "丨",
+      "evidence": {
+        "stroke_order": "data/evidence/B08-stroke-order-gf3002-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 3,
+      "character": "丿",
+      "evidence": {
+        "stroke_order": "data/evidence/B08-stroke-order-gf3002-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 4,
+      "character": "丶",
+      "evidence": {
+        "stroke_order": "data/evidence/B08-stroke-order-gf3002-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 5,
+      "character": "乛",
+      "evidence": {
+        "stroke_order": "data/evidence/B08-stroke-order-gf3002-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 34,
+      "character": "尢",
+      "evidence": {
+        "stroke_order": "data/evidence/B08-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "blocked"
+    },
+    {
+      "main_id": 35,
+      "character": "弋",
+      "evidence": {
+        "stroke_order": "data/evidence/B08-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "blocked"
+    },
+    {
+      "main_id": 38,
+      "character": "囗",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 41,
+      "character": "彳",
+      "evidence": {
+        "stroke_order": "data/evidence/B08-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "blocked"
+    },
+    {
+      "main_id": 42,
+      "character": "彡",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 44,
+      "character": "夂",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 63,
+      "character": "韦",
+      "evidence": {
+        "stroke_order": "data/evidence/B09-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B09-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 65,
+      "character": "支",
+      "evidence": {
+        "stroke_order": "data/evidence/B09-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/P3-pronunciation-GF0015-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 71,
+      "character": "比",
+      "evidence": {
+        "stroke_order": "data/evidence/B09-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/P3-pronunciation-GF0015-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 81,
+      "character": "气",
+      "evidence": {
+        "stroke_order": "data/evidence/B09-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B09-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 83,
+      "character": "长",
+      "evidence": {
+        "stroke_order": "data/evidence/B09-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B09-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 84,
+      "character": "片",
+      "evidence": {
+        "stroke_order": "data/evidence/B09-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B09-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 85,
+      "character": "斤",
+      "evidence": {
+        "stroke_order": "data/evidence/B09-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B09-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 86,
+      "character": "爪",
+      "evidence": {
+        "stroke_order": "data/evidence/B09-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B09-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 87,
+      "character": "父",
+      "evidence": {
+        "stroke_order": "data/evidence/B09-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B09-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 93,
+      "character": "文",
+      "evidence": {
+        "stroke_order": "data/evidence/B09-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B09-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 45,
+      "character": "丬",
+      "evidence": {
+        "stroke_order": "data/evidence/B10-stroke-order-gf3002-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 59,
+      "character": "幺",
+      "evidence": {
+        "stroke_order": "data/evidence/B10-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B10-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 74,
+      "character": "攴",
+      "evidence": {
+        "stroke_order": "data/evidence/B10-stroke-order-gbt25741-appendix-c.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B10-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 89,
+      "character": "氏",
+      "evidence": {
+        "stroke_order": "data/evidence/B10-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B10-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 90,
+      "character": "欠",
+      "evidence": {
+        "stroke_order": "data/evidence/B10-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B10-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 91,
+      "character": "风",
+      "evidence": {
+        "stroke_order": "data/evidence/B10-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B10-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 94,
+      "character": "方",
+      "evidence": {
+        "stroke_order": "data/evidence/B10-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B10-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 96,
+      "character": "斗",
+      "evidence": {
+        "stroke_order": "data/evidence/B10-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B10-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 97,
+      "character": "户",
+      "evidence": {
+        "stroke_order": "data/evidence/B10-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B10-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 98,
+      "character": "心",
+      "evidence": {
+        "stroke_order": "data/evidence/B10-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B10-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 100,
+      "character": "示",
+      "evidence": {
+        "stroke_order": "data/evidence/B11-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B11-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 101,
+      "character": "甘",
+      "evidence": {
+        "stroke_order": "data/evidence/B11-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B11-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 103,
+      "character": "龙",
+      "evidence": {
+        "stroke_order": "data/evidence/B11-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B11-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 104,
+      "character": "业",
+      "evidence": {
+        "stroke_order": "data/evidence/B11-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B11-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 107,
+      "character": "罒",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 108,
+      "character": "皿",
+      "evidence": {
+        "stroke_order": "data/evidence/B11-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B11-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 109,
+      "character": "生",
+      "evidence": {
+        "stroke_order": "data/evidence/B11-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B11-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 110,
+      "character": "矢",
+      "evidence": {
+        "stroke_order": "data/evidence/B11-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B11-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 111,
+      "character": "禾",
+      "evidence": {
+        "stroke_order": "data/evidence/B11-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B11-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 113,
+      "character": "瓜",
+      "evidence": {
+        "stroke_order": "data/evidence/B11-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B04-B11-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B11-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 55,
+      "character": "屮",
+      "evidence": {
+        "stroke_order": "data/evidence/B12-stroke-order-gbt25741-appendix-c.json"
+      },
+      "fine_names": "ordinal_only",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 60,
+      "character": "巛",
+      "evidence": {
+        "stroke_order": "data/evidence/B12-stroke-order-gbt25741-appendix-c.json"
+      },
+      "fine_names": "ordinal_only",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 92,
+      "character": "殳",
+      "evidence": {
+        "stroke_order": "data/evidence/B12-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B12-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 99,
+      "character": "毋",
+      "evidence": {
+        "stroke_order": "data/evidence/B12-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "blocked"
+    },
+    {
+      "main_id": 114,
+      "character": "鸟",
+      "evidence": {
+        "stroke_order": "data/evidence/B12-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B12-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 115,
+      "character": "疒",
+      "evidence": {
+        "stroke_order": "data/evidence/B12-stroke-order-gbt25741-appendix-c.json"
+      },
+      "fine_names": "ordinal_only",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 117,
+      "character": "穴",
+      "evidence": {
+        "stroke_order": "data/evidence/B12-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B12-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 118,
+      "character": "疋",
+      "evidence": {
+        "stroke_order": "data/evidence/B12-stroke-order-gbt25741-appendix-c.json"
+      },
+      "fine_names": "ordinal_only",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 119,
+      "character": "皮",
+      "evidence": {
+        "stroke_order": "data/evidence/B12-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B12-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 120,
+      "character": "癶",
+      "evidence": {
+        "stroke_order": "data/evidence/B12-stroke-order-gbt25741-appendix-c.json"
+      },
+      "fine_names": "ordinal_only",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 121,
+      "character": "矛",
+      "evidence": {
+        "stroke_order": "data/evidence/B13-stroke-order-original-page.json",
+        "pronunciation": "data/evidence/B13-pronunciation.json"
+      },
+      "fine_names": "ordinal_only",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 122,
+      "character": "耒",
+      "evidence": {
+        "stroke_order": "data/evidence/B13-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B13-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 123,
+      "character": "老",
+      "evidence": {
+        "stroke_order": "data/evidence/B13-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B13-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 124,
+      "character": "耳",
+      "evidence": {
+        "stroke_order": "data/evidence/B13-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B13-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 125,
+      "character": "臣",
+      "evidence": {
+        "stroke_order": "data/evidence/B13-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B13-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 126,
+      "character": "覀",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json"
+      },
+      "fine_names": "ordinal_only",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 127,
+      "character": "而",
+      "evidence": {
+        "stroke_order": "data/evidence/B13-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B13-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 128,
+      "character": "页",
+      "evidence": {
+        "stroke_order": "data/evidence/B13-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B13-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 129,
+      "character": "至",
+      "evidence": {
+        "stroke_order": "data/evidence/B13-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B13-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 130,
+      "character": "虍",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json"
+      },
+      "fine_names": "ordinal_only",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 131,
+      "character": "虫",
+      "evidence": {
+        "stroke_order": "data/evidence/B14-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B14-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 132,
+      "character": "肉",
+      "evidence": {
+        "stroke_order": "data/evidence/B14-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B14-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 133,
+      "character": "缶",
+      "evidence": {
+        "stroke_order": "data/evidence/B14-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B14-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 134,
+      "character": "舌",
+      "evidence": {
+        "stroke_order": "data/evidence/B14-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B14-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 135,
+      "character": "竹",
+      "evidence": {
+        "stroke_order": "data/evidence/B14-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B14-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 136,
+      "character": "臼",
+      "evidence": {
+        "stroke_order": "data/evidence/B14-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B14-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 137,
+      "character": "自",
+      "evidence": {
+        "stroke_order": "data/evidence/B14-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B14-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 138,
+      "character": "血",
+      "evidence": {
+        "stroke_order": "data/evidence/B14-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B14-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 139,
+      "character": "舟",
+      "evidence": {
+        "stroke_order": "data/evidence/B14-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B14-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 140,
+      "character": "色",
+      "evidence": {
+        "stroke_order": "data/evidence/B14-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B14-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 141,
+      "character": "齐",
+      "evidence": {
+        "stroke_order": "data/evidence/B15-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/P3-pronunciation-GF0015-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 142,
+      "character": "衣",
+      "evidence": {
+        "stroke_order": "data/evidence/B15-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B15-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 143,
+      "character": "羊",
+      "evidence": {
+        "stroke_order": "data/evidence/B15-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B15-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 144,
+      "character": "米",
+      "evidence": {
+        "stroke_order": "data/evidence/B15-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B15-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 145,
+      "character": "聿",
+      "evidence": {
+        "stroke_order": "data/evidence/B15-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B15-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 146,
+      "character": "艮",
+      "evidence": {
+        "stroke_order": "data/evidence/B15-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B15-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 147,
+      "character": "羽",
+      "evidence": {
+        "stroke_order": "data/evidence/B15-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/P3-pronunciation-GF0015-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 148,
+      "character": "糸",
+      "evidence": {
+        "stroke_order": "data/evidence/B15-stroke-order-gbt25741-appendix-c.json"
+      },
+      "fine_names": "ordinal_only",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 149,
+      "character": "麦",
+      "evidence": {
+        "stroke_order": "data/evidence/B15-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/M2-GF0025-pronunciation-20261007.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 150,
+      "character": "走",
+      "evidence": {
+        "stroke_order": "data/evidence/B15-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B12-B15-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/P3-pronunciation-GF0015-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 151,
+      "character": "赤",
+      "evidence": {
+        "stroke_order": "data/evidence/B16-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B16-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 152,
+      "character": "豆",
+      "evidence": {
+        "stroke_order": "data/evidence/B16-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B16-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 153,
+      "character": "酉",
+      "evidence": {
+        "stroke_order": "data/evidence/B16-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B16-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 154,
+      "character": "辰",
+      "evidence": {
+        "stroke_order": "data/evidence/B16-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B16-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 155,
+      "character": "豕",
+      "evidence": {
+        "stroke_order": "data/evidence/B16-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B16-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 156,
+      "character": "卤",
+      "evidence": {
+        "stroke_order": "data/evidence/B16-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B16-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 157,
+      "character": "里",
+      "evidence": {
+        "stroke_order": "data/evidence/B16-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B16-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 158,
+      "character": "足",
+      "evidence": {
+        "stroke_order": "data/evidence/B16-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/P3-pronunciation-GF0015-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 159,
+      "character": "邑",
+      "evidence": {
+        "stroke_order": "data/evidence/B16-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "blocked"
+    },
+    {
+      "main_id": 160,
+      "character": "身",
+      "evidence": {
+        "stroke_order": "data/evidence/B16-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B16-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 161,
+      "character": "釆",
+      "evidence": {
+        "stroke_order": "data/evidence/B17-stroke-order-gbt25741-appendix-c.json"
+      },
+      "fine_names": "ordinal_only",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 162,
+      "character": "谷",
+      "evidence": {
+        "stroke_order": "data/evidence/B17-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B17-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 163,
+      "character": "豸",
+      "evidence": {
+        "stroke_order": "data/evidence/B17-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B17-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 164,
+      "character": "龟",
+      "evidence": {
+        "stroke_order": "data/evidence/B17-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B17-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 165,
+      "character": "角",
+      "evidence": {
+        "stroke_order": "data/evidence/B17-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B17-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 166,
+      "character": "言",
+      "evidence": {
+        "stroke_order": "data/evidence/B17-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B17-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 167,
+      "character": "辛",
+      "evidence": {
+        "stroke_order": "data/evidence/B17-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B17-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 168,
+      "character": "青",
+      "evidence": {
+        "stroke_order": "data/evidence/B17-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/P3-pronunciation-GF0015-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 169,
+      "character": "龺",
+      "evidence": {
+        "stroke_order": "data/evidence/B17-stroke-order-gbt25741-appendix-c.json"
+      },
+      "fine_names": "ordinal_only",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 170,
+      "character": "雨",
+      "evidence": {
+        "stroke_order": "data/evidence/B17-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B17-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 171,
+      "character": "非",
+      "evidence": {
+        "stroke_order": "data/evidence/B18-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B18-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 172,
+      "character": "齿",
+      "evidence": {
+        "stroke_order": "data/evidence/B18-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/M2-GF0025-pronunciation-20261007.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 173,
+      "character": "黾",
+      "evidence": {
+        "stroke_order": "data/evidence/B18-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "blocked"
+    },
+    {
+      "main_id": 174,
+      "character": "隹",
+      "evidence": {
+        "stroke_order": "data/evidence/B18-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B18-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 175,
+      "character": "阜",
+      "evidence": {
+        "stroke_order": "data/evidence/B18-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "blocked",
+      "technical_note_moved_to_appendix": true
+    },
+    {
+      "main_id": 176,
+      "character": "金",
+      "evidence": {
+        "stroke_order": "data/evidence/B18-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B18-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 177,
+      "character": "鱼",
+      "evidence": {
+        "stroke_order": "data/evidence/B18-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B18-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 178,
+      "character": "隶",
+      "evidence": {
+        "stroke_order": "data/evidence/B18-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B18-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 179,
+      "character": "革",
+      "evidence": {
+        "stroke_order": "data/evidence/B18-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B18-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 180,
+      "character": "面",
+      "evidence": {
+        "stroke_order": "data/evidence/B18-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B18-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 181,
+      "character": "韭",
+      "evidence": {
+        "stroke_order": "data/evidence/B19-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B19-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 182,
+      "character": "骨",
+      "evidence": {
+        "stroke_order": "data/evidence/B19-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/P3-pronunciation-GF0015-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 183,
+      "character": "香",
+      "evidence": {
+        "stroke_order": "data/evidence/B19-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/P3-pronunciation-GF0015-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 184,
+      "character": "鬼",
+      "evidence": {
+        "stroke_order": "data/evidence/B19-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B19-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 185,
+      "character": "食",
+      "evidence": {
+        "stroke_order": "data/evidence/B19-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B19-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted",
+      "technical_note_moved_to_appendix": true
+    },
+    {
+      "main_id": 186,
+      "character": "音",
+      "evidence": {
+        "stroke_order": "data/evidence/B19-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/P3-pronunciation-GF0015-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 187,
+      "character": "首",
+      "evidence": {
+        "stroke_order": "data/evidence/B19-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B19-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 188,
+      "character": "髟",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json"
+      },
+      "fine_names": "ordinal_only",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 189,
+      "character": "鬲",
+      "evidence": {
+        "stroke_order": "data/evidence/B19-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B16-B19-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B19-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "evidence": {
+        "stroke_order": "sources/reviews/P1-GBT25741-appendix-C-residual-original-page-20261006.json"
+      },
+      "fine_names": "ordinal_only",
+      "pronunciation": "not_applicable"
+    },
+    {
+      "main_id": 191,
+      "character": "高",
+      "evidence": {
+        "stroke_order": "data/evidence/B20-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B20-B21-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B20-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted",
+      "technical_note_moved_to_appendix": true
+    },
+    {
+      "main_id": 192,
+      "character": "黄",
+      "evidence": {
+        "stroke_order": "data/evidence/B20-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B20-B21-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B20-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted",
+      "technical_note_moved_to_appendix": true
+    },
+    {
+      "main_id": 193,
+      "character": "麻",
+      "evidence": {
+        "stroke_order": "data/evidence/B20-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B20-B21-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/P3-pronunciation-GF0015-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 194,
+      "character": "鹿",
+      "evidence": {
+        "stroke_order": "data/evidence/B20-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B20-B21-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B20-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted",
+      "technical_note_moved_to_appendix": true
+    },
+    {
+      "main_id": 195,
+      "character": "鼎",
+      "evidence": {
+        "stroke_order": "data/evidence/B20-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B20-B21-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B20-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted",
+      "technical_note_moved_to_appendix": true
+    },
+    {
+      "main_id": 196,
+      "character": "黑",
+      "evidence": {
+        "stroke_order": "data/evidence/B20-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B20-B21-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/B20-pronunciation.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted",
+      "technical_note_moved_to_appendix": true
+    },
+    {
+      "main_id": 197,
+      "character": "黍",
+      "evidence": {
+        "stroke_order": "data/evidence/B20-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B20-B21-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "blocked",
+      "technical_note_moved_to_appendix": true
+    },
+    {
+      "main_id": 198,
+      "character": "鼓",
+      "evidence": {
+        "stroke_order": "data/evidence/B20-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B20-B21-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/P3-pronunciation-GF0015-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 199,
+      "character": "鼠",
+      "evidence": {
+        "stroke_order": "data/evidence/B20-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B20-B21-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/P3-pronunciation-GF0015-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 200,
+      "character": "鼻",
+      "evidence": {
+        "stroke_order": "data/evidence/B20-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B20-B21-fine-stroke-names-original-page.json",
+        "pronunciation": "data/evidence/P3-pronunciation-GF0015-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "adopted"
+    },
+    {
+      "main_id": 201,
+      "character": "龠",
+      "evidence": {
+        "stroke_order": "data/evidence/B21-stroke-order-original-page.json",
+        "fine_stroke_names": "data/evidence/P2-B20-B21-fine-stroke-names-original-page.json"
+      },
+      "fine_names": "reviewed_names",
+      "pronunciation": "blocked",
+      "technical_note_moved_to_appendix": true
+    }
+  ],
+  "entries": [
+    {
+      "main_id": 1,
+      "character": "一",
+      "batch": "B01",
+      "local_start": 1,
+      "pages": 1,
+      "vector_sha256": "ed728673d86fb9aa559c5b150e59ffbee666b085d4a55597c524079a91ebc8ce"
+    },
+    {
+      "main_id": 6,
+      "character": "十",
+      "batch": "B01",
+      "local_start": 2,
+      "pages": 1,
+      "vector_sha256": "257a0939af5742ca31a980adfa1421d0302d5e90491ab3215c1934bea9a59bef"
+    },
+    {
+      "main_id": 12,
+      "character": "人",
+      "batch": "B01",
+      "local_start": 3,
+      "pages": 1,
+      "vector_sha256": "18ffb9fb727576b0c3e7dc44914be7ffd43164de9ba121710824b83f27bd3bb1"
+    },
+    {
+      "main_id": 11,
+      "character": "八",
+      "batch": "B01",
+      "local_start": 4,
+      "pages": 1,
+      "vector_sha256": "650e961eefa88d95cc119146ff6606275ecad54c3f8ad1442c08889f928ec5af"
+    },
+    {
+      "main_id": 33,
+      "character": "大",
+      "batch": "B01",
+      "local_start": 5,
+      "pages": 1,
+      "vector_sha256": "83c82950e903c915aa50d0d62b084a2d31c85fe68dce21e0acf39e2f9607e611"
+    },
+    {
+      "main_id": 28,
+      "character": "工",
+      "batch": "B01",
+      "local_start": 6,
+      "pages": 1,
+      "vector_sha256": "a1d8521d2b9c64ed6818fc9314dea0b59499b2652dad15a4cf361d37893c4bcb"
+    },
+    {
+      "main_id": 29,
+      "character": "土",
+      "batch": "B01",
+      "local_start": 7,
+      "pages": 1,
+      "vector_sha256": "f1f7bfa95a5821fa27573560d3c88552a9e70a3fd3816724cbd441b5c07d17ee"
+    },
+    {
+      "main_id": 37,
+      "character": "口",
+      "batch": "B01",
+      "local_start": 8,
+      "pages": 1,
+      "vector_sha256": "ac208865e3166fc35214cec326f00a4b6788a8cac9b4c5a6a37745077e32ddab"
+    },
+    {
+      "main_id": 39,
+      "character": "山",
+      "batch": "B01",
+      "local_start": 9,
+      "pages": 1,
+      "vector_sha256": "c1e58c4b20cba28ae9778dfb280a93dc18fdccd3ecbec00bece20ce739c9f459"
+    },
+    {
+      "main_id": 40,
+      "character": "巾",
+      "batch": "B01",
+      "local_start": 10,
+      "pages": 1,
+      "vector_sha256": "e1c1ed3205109a87671ba5bee21a2af2f1e46f0b60d1f39a07c511e45fa7e508"
+    },
+    {
+      "main_id": 77,
+      "character": "水",
+      "batch": "B02",
+      "local_start": 1,
+      "pages": 1,
+      "vector_sha256": "46e262a80f2b7da72ea04788d1c19c40339e18beaba16987cc84d55fc257c9e3"
+    },
+    {
+      "main_id": 95,
+      "character": "火",
+      "batch": "B02",
+      "local_start": 2,
+      "pages": 1,
+      "vector_sha256": "09fc0a54adb11753319f5750dcdc127698dfb8a453f1a57b5f11b6a1ee3c64e0"
+    },
+    {
+      "main_id": 64,
+      "character": "木",
+      "batch": "B02",
+      "local_start": 3,
+      "pages": 1,
+      "vector_sha256": "2b5bb221b4403a303a567756304545a104d915117cc0f1b3fdea71e7928dfc50"
+    },
+    {
+      "main_id": 75,
+      "character": "日",
+      "batch": "B02",
+      "local_start": 4,
+      "pages": 1,
+      "vector_sha256": "5c6bad210149abac8bd645cb12b1394edea5681f224154c27f422134299520fb"
+    },
+    {
+      "main_id": 88,
+      "character": "月",
+      "batch": "B02",
+      "local_start": 5,
+      "pages": 1,
+      "vector_sha256": "441949321eb706def6e8d0c1eeca6b461141703dcc07619939a32d681e08fc46"
+    },
+    {
+      "main_id": 106,
+      "character": "田",
+      "batch": "B02",
+      "local_start": 6,
+      "pages": 1,
+      "vector_sha256": "d2441470ac4a6c9ea680389bc770cb60f9c29b6819863ebcc39df2b89cea7f04"
+    },
+    {
+      "main_id": 105,
+      "character": "目",
+      "batch": "B02",
+      "local_start": 7,
+      "pages": 1,
+      "vector_sha256": "f5392f6be0cba05d57c6b9cdb111ad402415e57e886e491a18fbeda6d0206a6b"
+    },
+    {
+      "main_id": 80,
+      "character": "手",
+      "batch": "B02",
+      "local_start": 8,
+      "pages": 1,
+      "vector_sha256": "7964eac3bced473343f5741f98fea3eb2dd842eecd57ec20b4369912570964a7"
+    },
+    {
+      "main_id": 79,
+      "character": "牛",
+      "batch": "B02",
+      "local_start": 9,
+      "pages": 1,
+      "vector_sha256": "cb0c578ebb919ca2ad759cc8a79159f1eff623ae7f57dacca26a1bbbc523ab98"
+    },
+    {
+      "main_id": 82,
+      "character": "毛",
+      "batch": "B02",
+      "local_start": 10,
+      "pages": 1,
+      "vector_sha256": "3c8090a06192de74be5f07b8fe2cf9d1da5f4e76baa21af64cc6f9e67db6f000"
+    },
+    {
+      "main_id": 22,
+      "character": "刀",
+      "batch": "B03",
+      "local_start": 1,
+      "pages": 1,
+      "vector_sha256": "aac96a5e729080db1d551df5cb73f179ebb0081796a833f7aae32a182e59d483"
+    },
+    {
+      "main_id": 23,
+      "character": "力",
+      "batch": "B03",
+      "local_start": 2,
+      "pages": 1,
+      "vector_sha256": "c51740470368f15b32d3f8ee1d7b0c93b6aa92c015f286c27137adfb2d7844a3"
+    },
+    {
+      "main_id": 24,
+      "character": "又",
+      "batch": "B03",
+      "local_start": 3,
+      "pages": 1,
+      "vector_sha256": "f69d714f3a4822dbc02c31969dafdf034307e3747f496e5b48b6004ee3e4ad49"
+    },
+    {
+      "main_id": 54,
+      "character": "子",
+      "batch": "B03",
+      "local_start": 4,
+      "pages": 1,
+      "vector_sha256": "f5b7ff9aa3de64ec676e3f06e7c22795aa834eb11eec43b9423f355db5f46474"
+    },
+    {
+      "main_id": 56,
+      "character": "女",
+      "batch": "B03",
+      "local_start": 5,
+      "pages": 1,
+      "vector_sha256": "8a17d3644493617f0090476873c0e01c25d83271e586c097e40ef0256ced5ac8"
+    },
+    {
+      "main_id": 36,
+      "character": "小",
+      "batch": "B03",
+      "local_start": 6,
+      "pages": 1,
+      "vector_sha256": "72bf769c8c3426bffa578502eb8b1532fb1e622ddb6f40ded04e484290c0fe8c"
+    },
+    {
+      "main_id": 61,
+      "character": "王",
+      "batch": "B03",
+      "local_start": 7,
+      "pages": 1,
+      "vector_sha256": "0cae737cee78a605967be1c36bd978fa68bd54c75799992f3f230d941e2327a4"
+    },
+    {
+      "main_id": 102,
+      "character": "石",
+      "batch": "B03",
+      "local_start": 8,
+      "pages": 1,
+      "vector_sha256": "ee18a323fc63c0f4dd0f00477102c547a670c75ae2e3f38c9cb5b1985609b2b3"
+    },
+    {
+      "main_id": 112,
+      "character": "白",
+      "batch": "B03",
+      "local_start": 9,
+      "pages": 1,
+      "vector_sha256": "a3858cdfb3a8d08b8046aa4e8c9161dac017119c8f7986e52c9e6752d1721f2e"
+    },
+    {
+      "main_id": 116,
+      "character": "立",
+      "batch": "B03",
+      "local_start": 10,
+      "pages": 1,
+      "vector_sha256": "be3a3135457203801eccfc357d620b742aa025938766395a3944c4f18ebbd295"
+    },
+    {
+      "main_id": 27,
+      "character": "干",
+      "batch": "B04",
+      "local_start": 1,
+      "pages": 1,
+      "vector_sha256": "5e3b240f9a912cd4c0f5bc6c9b9f8e15d93a0dd2e33055ac2d3cc08f2ef61822"
+    },
+    {
+      "main_id": 31,
+      "character": "寸",
+      "batch": "B04",
+      "local_start": 2,
+      "pages": 1,
+      "vector_sha256": "f4604c426c945dd104619650a7a54935c033fcb24f2c6c741906faf0a8f09397"
+    },
+    {
+      "main_id": 43,
+      "character": "夕",
+      "batch": "B04",
+      "local_start": 3,
+      "pages": 1,
+      "vector_sha256": "bb36e8aadf206af6f24a57a25fbbf4ffc7d9d3457ab747ab1c5aeb2d066a3490"
+    },
+    {
+      "main_id": 46,
+      "character": "广",
+      "batch": "B04",
+      "local_start": 4,
+      "pages": 1,
+      "vector_sha256": "0c11f22d3152ff319f3cabeb80c4045034e558e76b58509f8487dc7c5872b5c9"
+    },
+    {
+      "main_id": 47,
+      "character": "门",
+      "batch": "B04",
+      "local_start": 5,
+      "pages": 1,
+      "vector_sha256": "d37eeb35aa87a9862da22248e0818b203af85258f05c67f9023dfc0d7498ca3c"
+    },
+    {
+      "main_id": 51,
+      "character": "尸",
+      "batch": "B04",
+      "local_start": 6,
+      "pages": 1,
+      "vector_sha256": "d2ddb620148a45e1ba92721cec1ac449dacb15e837aeb02b3c655fb5c4734479"
+    },
+    {
+      "main_id": 52,
+      "character": "己",
+      "batch": "B04",
+      "local_start": 7,
+      "pages": 1,
+      "vector_sha256": "318727d2358115b813a9ac45b8b26033df9cdc5faa6e6042f641d3e92fbf8caf"
+    },
+    {
+      "main_id": 53,
+      "character": "弓",
+      "batch": "B04",
+      "local_start": 8,
+      "pages": 1,
+      "vector_sha256": "4239bd8f41b6f0971061566023b4c64e713ec24a1e70e53d4d878bb4131ae239"
+    },
+    {
+      "main_id": 57,
+      "character": "飞",
+      "batch": "B04",
+      "local_start": 9,
+      "pages": 1,
+      "vector_sha256": "dbc770bc5fa91957ce1b1b171a493dcff730f430c1df765c1ce59cf7d3496ba4"
+    },
+    {
+      "main_id": 58,
+      "character": "马",
+      "batch": "B04",
+      "local_start": 10,
+      "pages": 1,
+      "vector_sha256": "451304b0187c080bcf62115dbd75f19f6306f44e955df59236484e13e031bfc5"
+    },
+    {
+      "main_id": 62,
+      "character": "无",
+      "batch": "B05",
+      "local_start": 1,
+      "pages": 1,
+      "vector_sha256": "d9f4dce9455d8747047d9633761ccb89bbaa600ccf04288d59710070f3caf281"
+    },
+    {
+      "main_id": 66,
+      "character": "犬",
+      "batch": "B05",
+      "local_start": 2,
+      "pages": 1,
+      "vector_sha256": "a12a742cfa64cd2f54bea0d6beb84eb09dbd574bb11c27d3b05440af4b086ea5"
+    },
+    {
+      "main_id": 67,
+      "character": "歹",
+      "batch": "B05",
+      "local_start": 3,
+      "pages": 1,
+      "vector_sha256": "f40fe85f991ec0c7ed04feac4611d8649e9279fd48b8013691e3c2238ac425f2"
+    },
+    {
+      "main_id": 68,
+      "character": "车",
+      "batch": "B05",
+      "local_start": 4,
+      "pages": 1,
+      "vector_sha256": "7f863fb9a5d558ea337928cdd50c65be932c4a35fbde2cf28bfda48f8a438ac8"
+    },
+    {
+      "main_id": 69,
+      "character": "牙",
+      "batch": "B05",
+      "local_start": 5,
+      "pages": 1,
+      "vector_sha256": "9e6edbc8741cfc6d0e36e7e354091f02052b77f7a40bf218c74e241812e342b3"
+    },
+    {
+      "main_id": 70,
+      "character": "戈",
+      "batch": "B05",
+      "local_start": 6,
+      "pages": 1,
+      "vector_sha256": "0108a1e01261934646136dbdfcb861d650a336487c2e0222ea330e3aff10e71f"
+    },
+    {
+      "main_id": 72,
+      "character": "瓦",
+      "batch": "B05",
+      "local_start": 7,
+      "pages": 1,
+      "vector_sha256": "442e596c82fb95a8e52552378ff86cbb8ff54f70cd13e0cfae40435632012a7d"
+    },
+    {
+      "main_id": 73,
+      "character": "止",
+      "batch": "B05",
+      "local_start": 8,
+      "pages": 1,
+      "vector_sha256": "a44ceb736f7010d23d72e1290f766c8af69a139a451bba1f74dcdd0b5b722278"
+    },
+    {
+      "main_id": 76,
+      "character": "贝",
+      "batch": "B05",
+      "local_start": 9,
+      "pages": 1,
+      "vector_sha256": "01a852cf0c38d7f054c83b9007bcdcf876127352aa595267aa0600bfd26bcb6f"
+    },
+    {
+      "main_id": 78,
+      "character": "见",
+      "batch": "B05",
+      "local_start": 10,
+      "pages": 1,
+      "vector_sha256": "38f248a32907c2061fe800b7217847f07181ec6ecfa421e194e020426b79ec3d"
+    },
+    {
+      "main_id": 7,
+      "character": "厂",
+      "batch": "B06",
+      "local_start": 1,
+      "pages": 1,
+      "vector_sha256": "2313e9675adefdeacccef76ac9df3dc895eee2759b65a1e711cf8e39f2b3dd45"
+    },
+    {
+      "main_id": 8,
+      "character": "匚",
+      "batch": "B06",
+      "local_start": 2,
+      "pages": 1,
+      "vector_sha256": "c7ccc786b2c03474e48e61ff4f140e56f5de836de83339f6f6edae32439ca2b5"
+    },
+    {
+      "main_id": 9,
+      "character": "卜",
+      "batch": "B06",
+      "local_start": 3,
+      "pages": 1,
+      "vector_sha256": "f7b4fbb51535afe702d2511c35b4621c667e41afbb4a73a0649148b77b875cc4"
+    },
+    {
+      "main_id": 10,
+      "character": "冂",
+      "batch": "B06",
+      "local_start": 4,
+      "pages": 1,
+      "vector_sha256": "59b8347986721caf12e5887294c31a9e57f4bc401e80b552d14f4141bbaec346"
+    },
+    {
+      "main_id": 13,
+      "character": "勹",
+      "batch": "B06",
+      "local_start": 5,
+      "pages": 1,
+      "vector_sha256": "d3da2339d1ffe90479eaa852f6703a29fb9a50884eccdd7e43c596ce513b9cc6"
+    },
+    {
+      "main_id": 14,
+      "character": "儿",
+      "batch": "B06",
+      "local_start": 6,
+      "pages": 1,
+      "vector_sha256": "9f1e8515ba0fbf39f3b03e0fdd2342771f0c7197fff7c2ceee64674b95bf2c68"
+    },
+    {
+      "main_id": 15,
+      "character": "匕",
+      "batch": "B06",
+      "local_start": 7,
+      "pages": 1,
+      "vector_sha256": "c3a3ed15b3eb83995574b857d87a03d97ed230f49b9730906b4ea10ed4ca4e09"
+    },
+    {
+      "main_id": 16,
+      "character": "几",
+      "batch": "B06",
+      "local_start": 8,
+      "pages": 1,
+      "vector_sha256": "b730f3432a2e0697863f512fe5fbf8bef705a296fe657be4c7433102e1961a37"
+    },
+    {
+      "main_id": 17,
+      "character": "亠",
+      "batch": "B06",
+      "local_start": 9,
+      "pages": 1,
+      "vector_sha256": "d29f4a5c5945a0183110769c381915d5e65c3bea15106918e6c3e837ade94728"
+    },
+    {
+      "main_id": 18,
+      "character": "冫",
+      "batch": "B06",
+      "local_start": 10,
+      "pages": 1,
+      "vector_sha256": "4a30fa8448511e2b7f85a72d8e21160765244be5963da9870e83fd241ecc0a46"
+    },
+    {
+      "main_id": 19,
+      "character": "冖",
+      "batch": "B07",
+      "local_start": 1,
+      "pages": 1,
+      "vector_sha256": "9b7860b3fcbc82bfad5963d5f55ba1ac3ec4fbfc689db7e02a128c9de20b9033"
+    },
+    {
+      "main_id": 20,
+      "character": "凵",
+      "batch": "B07",
+      "local_start": 2,
+      "pages": 1,
+      "vector_sha256": "2a5389dbe0edcf6c863c1ecbd589c5de4eb137e31af52853a8caa11057e08972"
+    },
+    {
+      "main_id": 21,
+      "character": "卩",
+      "batch": "B07",
+      "local_start": 3,
+      "pages": 1,
+      "vector_sha256": "d3ffae15212d8c1bdf1b6e2fb544ff9b4623632c093c093028b0de65f37e48a5"
+    },
+    {
+      "main_id": 25,
+      "character": "厶",
+      "batch": "B07",
+      "local_start": 4,
+      "pages": 1,
+      "vector_sha256": "cf2e998505885326b71234b95aeaa4e7ac829270f4c13b53ec7b6e07cee165a5"
+    },
+    {
+      "main_id": 26,
+      "character": "廴",
+      "batch": "B07",
+      "local_start": 5,
+      "pages": 1,
+      "vector_sha256": "7a2367ffc19746fdd1fd3fd6b59a0cfe182e17eb76ca8e52240972390b5a93d7"
+    },
+    {
+      "main_id": 30,
+      "character": "艹",
+      "batch": "B07",
+      "local_start": 6,
+      "pages": 1,
+      "vector_sha256": "6c31d7b009c958fa588f02b5e53be6777f8efd978d394a1c187009fc793471d5"
+    },
+    {
+      "main_id": 32,
+      "character": "廾",
+      "batch": "B07",
+      "local_start": 7,
+      "pages": 1,
+      "vector_sha256": "c47a99cab3a07430aea7e784ede933649f534824a96c3c405da7ff6577404b4a"
+    },
+    {
+      "main_id": 48,
+      "character": "宀",
+      "batch": "B07",
+      "local_start": 8,
+      "pages": 1,
+      "vector_sha256": "12bdbd0678187ba9a66a7cba4e9fe07273e0d2f6eed58abeceff73e328733e3e"
+    },
+    {
+      "main_id": 49,
+      "character": "辶",
+      "batch": "B07",
+      "local_start": 9,
+      "pages": 1,
+      "vector_sha256": "0ea0babb3c970be25c16da08e3e64ba7261f9dafbdbaeeb83fa08fcdb30a2171"
+    },
+    {
+      "main_id": 50,
+      "character": "彐",
+      "batch": "B07",
+      "local_start": 10,
+      "pages": 1,
+      "vector_sha256": "dc973ed0464e5174cffee0d8352cc685cb137a3ca28a1c49379e4a6f1bd127b6"
+    },
+    {
+      "main_id": 2,
+      "character": "丨",
+      "batch": "B08",
+      "local_start": 1,
+      "pages": 1,
+      "vector_sha256": "6775ba9b97a69b42d57fc4496cdef117a842b96006742f330e96c7c141f9d8ff"
+    },
+    {
+      "main_id": 3,
+      "character": "丿",
+      "batch": "B08",
+      "local_start": 2,
+      "pages": 1,
+      "vector_sha256": "4669a78a486210e071d3d50f0a1eaa8b116417b5b24e390082d0364a9e418fc4"
+    },
+    {
+      "main_id": 4,
+      "character": "丶",
+      "batch": "B08",
+      "local_start": 3,
+      "pages": 1,
+      "vector_sha256": "87376601fd1002b74ad136626e119e81a96d610fcfccac746c62b80deecab8f9"
+    },
+    {
+      "main_id": 5,
+      "character": "乛",
+      "batch": "B08",
+      "local_start": 4,
+      "pages": 1,
+      "vector_sha256": "1a22fd5553d6bad39dce2bc170fedbfca422dfcd25e2902752d70fcaa7c6e148"
+    },
+    {
+      "main_id": 34,
+      "character": "尢",
+      "batch": "B08",
+      "local_start": 5,
+      "pages": 1,
+      "vector_sha256": "d353691a1aa36693cc18153f1704fe822dd5c0b8d9a4781413df5130678bdd63"
+    },
+    {
+      "main_id": 35,
+      "character": "弋",
+      "batch": "B08",
+      "local_start": 6,
+      "pages": 1,
+      "vector_sha256": "48f1958e38190456d7e7c551e74feee5e2c6a60e6cd84ac0f7b6be2a116bd06d"
+    },
+    {
+      "main_id": 38,
+      "character": "囗",
+      "batch": "B08",
+      "local_start": 7,
+      "pages": 1,
+      "vector_sha256": "5328313a2bd8e8b718f1dc1652083a7d99c23a49dbc2e18dec34eadc8042b9be"
+    },
+    {
+      "main_id": 41,
+      "character": "彳",
+      "batch": "B08",
+      "local_start": 8,
+      "pages": 1,
+      "vector_sha256": "e437abab24610c2c38df47263dc118d7097eb1c9e3d1be25a6d9168da9613fb6"
+    },
+    {
+      "main_id": 42,
+      "character": "彡",
+      "batch": "B08",
+      "local_start": 9,
+      "pages": 1,
+      "vector_sha256": "1e472ae1cdabcc38ee1c816ebc331ea8220b6dec895c16b370cde7d323a4d276"
+    },
+    {
+      "main_id": 44,
+      "character": "夂",
+      "batch": "B08",
+      "local_start": 10,
+      "pages": 1,
+      "vector_sha256": "27f8bcd78403b55b8e6971add1444dff6a3d23494a7d5781806717f3c7feafd2"
+    },
+    {
+      "main_id": 63,
+      "character": "韦",
+      "batch": "B09",
+      "local_start": 1,
+      "pages": 1,
+      "vector_sha256": "0b571391f80bb0902e3d3c912f7d64e027096cace1b300ac24400f8c80b5e05e"
+    },
+    {
+      "main_id": 65,
+      "character": "支",
+      "batch": "B09",
+      "local_start": 2,
+      "pages": 1,
+      "vector_sha256": "eedb382470dfe005c782caea7475a49bf07830d101467e2e7070b5a8b34cdfa8"
+    },
+    {
+      "main_id": 71,
+      "character": "比",
+      "batch": "B09",
+      "local_start": 3,
+      "pages": 1,
+      "vector_sha256": "4dc980796f5251417cd1a2ebf706e94bfcabb05d1b275cff28721aeb190fd12e"
+    },
+    {
+      "main_id": 81,
+      "character": "气",
+      "batch": "B09",
+      "local_start": 4,
+      "pages": 1,
+      "vector_sha256": "32ebb998c7bd7165e10e781ff52db83e5a3413f01cb70438e2271e99773abf56"
+    },
+    {
+      "main_id": 83,
+      "character": "长",
+      "batch": "B09",
+      "local_start": 5,
+      "pages": 1,
+      "vector_sha256": "c99fe3d6a862b82befc528e49164b6bf80d461aa6a4b9c9258f4d3debbc49b81"
+    },
+    {
+      "main_id": 84,
+      "character": "片",
+      "batch": "B09",
+      "local_start": 6,
+      "pages": 1,
+      "vector_sha256": "6952beb0745e6dc5a1d56ea31a80c271986d2af59e0cda16c7e478ea6c2de640"
+    },
+    {
+      "main_id": 85,
+      "character": "斤",
+      "batch": "B09",
+      "local_start": 7,
+      "pages": 1,
+      "vector_sha256": "87283ed709ff54f401fb8bb60f9242bd35ac4184c2c47b46580ce0456cd578d8"
+    },
+    {
+      "main_id": 86,
+      "character": "爪",
+      "batch": "B09",
+      "local_start": 8,
+      "pages": 1,
+      "vector_sha256": "fffe24791281e95c13002d70b400abe7731a6d1df207fb74c156fc008ba482ad"
+    },
+    {
+      "main_id": 87,
+      "character": "父",
+      "batch": "B09",
+      "local_start": 9,
+      "pages": 1,
+      "vector_sha256": "7a5ff74de6fcb7dcbd8c8673bebe17b239eab65534abc235e68944b1500f7fd5"
+    },
+    {
+      "main_id": 93,
+      "character": "文",
+      "batch": "B09",
+      "local_start": 10,
+      "pages": 1,
+      "vector_sha256": "da58df874e176b10cbda075bb800aaa486fc716476a563fcc83f8f06b2169dbe"
+    },
+    {
+      "main_id": 45,
+      "character": "丬",
+      "batch": "B10",
+      "local_start": 1,
+      "pages": 1,
+      "vector_sha256": "c7541c9f0618a7475aafe0637a91483b72068ce413778d1552d2a8e63e86ffdd"
+    },
+    {
+      "main_id": 59,
+      "character": "幺",
+      "batch": "B10",
+      "local_start": 2,
+      "pages": 1,
+      "vector_sha256": "e5ffa04c600f3fa50f927de31b8ee70cf58216f8e09ddab8e0d4c63adc3289b8"
+    },
+    {
+      "main_id": 74,
+      "character": "攴",
+      "batch": "B10",
+      "local_start": 3,
+      "pages": 1,
+      "vector_sha256": "c9526cd0e4d32dc1264f7d334b8f23a48929b3023ae5c19d624b98de326b50fa"
+    },
+    {
+      "main_id": 89,
+      "character": "氏",
+      "batch": "B10",
+      "local_start": 4,
+      "pages": 1,
+      "vector_sha256": "a72168f552b076ccb6d8137ea897040be8e94febed0a1bd86f9b4a70683e4582"
+    },
+    {
+      "main_id": 90,
+      "character": "欠",
+      "batch": "B10",
+      "local_start": 5,
+      "pages": 1,
+      "vector_sha256": "159c36ee7bdcacdcdc77db5c23b0f259d8915c158a58a0122d255fae24d4dec7"
+    },
+    {
+      "main_id": 91,
+      "character": "风",
+      "batch": "B10",
+      "local_start": 6,
+      "pages": 1,
+      "vector_sha256": "64177681c0214a2908853526000dc3bb8fd8d9489da7fe373a0330c38d0aee0d"
+    },
+    {
+      "main_id": 94,
+      "character": "方",
+      "batch": "B10",
+      "local_start": 7,
+      "pages": 1,
+      "vector_sha256": "d643e7b430d9ecf2a81676aa4fae8b06981a4cd811d3b035f0278a72362e3a6a"
+    },
+    {
+      "main_id": 96,
+      "character": "斗",
+      "batch": "B10",
+      "local_start": 8,
+      "pages": 1,
+      "vector_sha256": "28dbf765b6db0ae55b14c43c247bed9430c5e4993dc64108c2096c7ab11df8e5"
+    },
+    {
+      "main_id": 97,
+      "character": "户",
+      "batch": "B10",
+      "local_start": 9,
+      "pages": 1,
+      "vector_sha256": "7eb536b593113e847ba72052c0414958cbb2dcfafefb22b07a420343b5c41e89"
+    },
+    {
+      "main_id": 98,
+      "character": "心",
+      "batch": "B10",
+      "local_start": 10,
+      "pages": 1,
+      "vector_sha256": "24b00ca173bbf7403181af1a4f9414f3b9175ed04b17108055c7d9e3fe6d6215"
+    },
+    {
+      "main_id": 100,
+      "character": "示",
+      "batch": "B11",
+      "local_start": 1,
+      "pages": 1,
+      "vector_sha256": "a3fe0df5914370d9251b503ce088e7adde89c60a64b72bdbb3de82300b05c5e5"
+    },
+    {
+      "main_id": 101,
+      "character": "甘",
+      "batch": "B11",
+      "local_start": 2,
+      "pages": 1,
+      "vector_sha256": "d2fc3d37ab57ba8ac80166e2764615b154378742861be49dcd3d3fbee7878297"
+    },
+    {
+      "main_id": 103,
+      "character": "龙",
+      "batch": "B11",
+      "local_start": 3,
+      "pages": 1,
+      "vector_sha256": "a4885011d03b3980605502ba36c53a6e2945651756fbd0db1f705f066120bb4b"
+    },
+    {
+      "main_id": 104,
+      "character": "业",
+      "batch": "B11",
+      "local_start": 4,
+      "pages": 1,
+      "vector_sha256": "5af383964161810b3b08f1b4a287a7d385046eb0a857834fec00907e74031edb"
+    },
+    {
+      "main_id": 107,
+      "character": "罒",
+      "batch": "B11",
+      "local_start": 5,
+      "pages": 1,
+      "vector_sha256": "cd90e38d7888b54251eccb781f210485f3a017734f0eef2f298a1dddae37089f"
+    },
+    {
+      "main_id": 108,
+      "character": "皿",
+      "batch": "B11",
+      "local_start": 6,
+      "pages": 1,
+      "vector_sha256": "f822985f3359b565efce5f84acbcf458217d165b228e69457e944c5483045ea8"
+    },
+    {
+      "main_id": 109,
+      "character": "生",
+      "batch": "B11",
+      "local_start": 7,
+      "pages": 1,
+      "vector_sha256": "dbe556919f5c0a95448c40997dfce35ad56ebf26d874218e7076d8c12374cfd8"
+    },
+    {
+      "main_id": 110,
+      "character": "矢",
+      "batch": "B11",
+      "local_start": 8,
+      "pages": 1,
+      "vector_sha256": "67a256d1a1c0d2b0318f03799b4dfe9c865acaba9120252e863b469f9a12822b"
+    },
+    {
+      "main_id": 111,
+      "character": "禾",
+      "batch": "B11",
+      "local_start": 9,
+      "pages": 1,
+      "vector_sha256": "74d7e9274a9b3d02fbb353f424a40988a3f8760bb9f465d834d048eceb7451ae"
+    },
+    {
+      "main_id": 113,
+      "character": "瓜",
+      "batch": "B11",
+      "local_start": 10,
+      "pages": 1,
+      "vector_sha256": "cebc4c9aba61f4fa5f9cac84c83617cdcd738fb1b91446f9396a32b245423903"
+    },
+    {
+      "main_id": 55,
+      "character": "屮",
+      "batch": "B12",
+      "local_start": 1,
+      "pages": 1,
+      "vector_sha256": "ec408b5cd5d6ce60ba02d621aa2a8db8109bdbf4b1fb74a2f65d16dc0e606d37"
+    },
+    {
+      "main_id": 60,
+      "character": "巛",
+      "batch": "B12",
+      "local_start": 2,
+      "pages": 1,
+      "vector_sha256": "3a66cb5b29f28a93836473ea04d3342246f2b8f95d95c7e59e68406ff25e2ded"
+    },
+    {
+      "main_id": 92,
+      "character": "殳",
+      "batch": "B12",
+      "local_start": 3,
+      "pages": 1,
+      "vector_sha256": "c6646babb9158f131fc979defa9173558c82e5b946f644f2d8c58873fa54d38c"
+    },
+    {
+      "main_id": 99,
+      "character": "毋",
+      "batch": "B12",
+      "local_start": 4,
+      "pages": 1,
+      "vector_sha256": "c44122bd9603c2fc9d78977b8e6ce450919f8e8bfb47724d78d54983faf4daed"
+    },
+    {
+      "main_id": 114,
+      "character": "鸟",
+      "batch": "B12",
+      "local_start": 5,
+      "pages": 1,
+      "vector_sha256": "2d62bee9f3dce68cead54e04298b7ca9be109f8ebe9c59d356d2f89c38184a33"
+    },
+    {
+      "main_id": 115,
+      "character": "疒",
+      "batch": "B12",
+      "local_start": 6,
+      "pages": 1,
+      "vector_sha256": "9958313d45cbf8ac47892a7ea4c9b688a21c8e97de7b145ee13126cd3f283874"
+    },
+    {
+      "main_id": 117,
+      "character": "穴",
+      "batch": "B12",
+      "local_start": 7,
+      "pages": 1,
+      "vector_sha256": "6a07dfe14d15e66456f2793ae74e29fc83c751bd5f9f26067e3bd9b4f0489c25"
+    },
+    {
+      "main_id": 118,
+      "character": "疋",
+      "batch": "B12",
+      "local_start": 8,
+      "pages": 1,
+      "vector_sha256": "a01352236f1a7df6fc88151b0cda614a5b5f6c0760b9f92ce1e30e015ef317e7"
+    },
+    {
+      "main_id": 119,
+      "character": "皮",
+      "batch": "B12",
+      "local_start": 9,
+      "pages": 1,
+      "vector_sha256": "0a18effe9f6f9fa7facd4e1abac5dc1f2b05a88dfd882532cfd5e717e660e46d"
+    },
+    {
+      "main_id": 120,
+      "character": "癶",
+      "batch": "B12",
+      "local_start": 10,
+      "pages": 1,
+      "vector_sha256": "2e58ae590b6ef50d1028cc858993c7c610a5c47ce48c889cb59295e5f3c77709"
+    },
+    {
+      "main_id": 121,
+      "character": "矛",
+      "batch": "B13",
+      "local_start": 1,
+      "pages": 1,
+      "vector_sha256": "1f9b73afd34d0bb248c2fca5cea838cfaf619a8c8508cb6ac3ee2bac694b4608"
+    },
+    {
+      "main_id": 122,
+      "character": "耒",
+      "batch": "B13",
+      "local_start": 2,
+      "pages": 1,
+      "vector_sha256": "fb636b65acbc4b331affd42db16988fe22291097b2afc9a77032d36cfec5bcf1"
+    },
+    {
+      "main_id": 123,
+      "character": "老",
+      "batch": "B13",
+      "local_start": 3,
+      "pages": 1,
+      "vector_sha256": "f3130d50e757c65792633c581be89788d963819ed0df23380b6c94d5e31bf9d1"
+    },
+    {
+      "main_id": 124,
+      "character": "耳",
+      "batch": "B13",
+      "local_start": 4,
+      "pages": 1,
+      "vector_sha256": "87d23fce6860c1b5600982e241b3ed486e7bededf8d78a674c55ccd8479e4c10"
+    },
+    {
+      "main_id": 125,
+      "character": "臣",
+      "batch": "B13",
+      "local_start": 5,
+      "pages": 1,
+      "vector_sha256": "fecbce50e22e38e81d7a7094e6b18e9596b5e5fa54d5c6be39a19519a4830d03"
+    },
+    {
+      "main_id": 126,
+      "character": "覀",
+      "batch": "B13",
+      "local_start": 6,
+      "pages": 1,
+      "vector_sha256": "8ec25df2255eac0373c7c521f9a28396753277831435d2afe2790320966b145a"
+    },
+    {
+      "main_id": 127,
+      "character": "而",
+      "batch": "B13",
+      "local_start": 7,
+      "pages": 1,
+      "vector_sha256": "a957f94a3ab8c0609edce0b27cec24a6d321eb9e332d342bee09c7d6379c0b5c"
+    },
+    {
+      "main_id": 128,
+      "character": "页",
+      "batch": "B13",
+      "local_start": 8,
+      "pages": 1,
+      "vector_sha256": "1464f7a8269fd481338e489a82222e3c83616ee233f66b3c70466d16ba62bd37"
+    },
+    {
+      "main_id": 129,
+      "character": "至",
+      "batch": "B13",
+      "local_start": 9,
+      "pages": 1,
+      "vector_sha256": "f923aa97bdf2ab2a7dea03a380a0c37b70758d9a89ced9ee87acc48b87dd0a79"
+    },
+    {
+      "main_id": 130,
+      "character": "虍",
+      "batch": "B13",
+      "local_start": 10,
+      "pages": 1,
+      "vector_sha256": "97ba6b6814112907734b7817a0a0557964021e83b319876adfcd940858837778"
+    },
+    {
+      "main_id": 131,
+      "character": "虫",
+      "batch": "B14",
+      "local_start": 1,
+      "pages": 1,
+      "vector_sha256": "7fe903f045c6a90e401b81b859f6aa78a833a62e862110331bfc6d8c0f9a7e2e"
+    },
+    {
+      "main_id": 132,
+      "character": "肉",
+      "batch": "B14",
+      "local_start": 2,
+      "pages": 1,
+      "vector_sha256": "05c46b453d470ad79c4e38743b0f9e7afa746eacd3793d518b97f18ba0d43c3c"
+    },
+    {
+      "main_id": 133,
+      "character": "缶",
+      "batch": "B14",
+      "local_start": 3,
+      "pages": 1,
+      "vector_sha256": "414f9a176ec2621317d7e83c5dd02b693ba348eca08c04c861e248dd385ad937"
+    },
+    {
+      "main_id": 134,
+      "character": "舌",
+      "batch": "B14",
+      "local_start": 4,
+      "pages": 1,
+      "vector_sha256": "b2ed3b5dc48c556b378212a0b67b2d4b6e452a7adc4d2cc2b0b385a9247def16"
+    },
+    {
+      "main_id": 135,
+      "character": "竹",
+      "batch": "B14",
+      "local_start": 5,
+      "pages": 1,
+      "vector_sha256": "038ede060ba5a500666f4c34051cdd760a3f7f122f04c4f4b040046a0a02e39d"
+    },
+    {
+      "main_id": 136,
+      "character": "臼",
+      "batch": "B14",
+      "local_start": 6,
+      "pages": 1,
+      "vector_sha256": "abc6e126cd50f75288a5268a4a0ea5ea25c12b4e8c88e5e9f1729296a06dffd8"
+    },
+    {
+      "main_id": 137,
+      "character": "自",
+      "batch": "B14",
+      "local_start": 7,
+      "pages": 1,
+      "vector_sha256": "440fa4d045ea9dad8643485ae45df8c446e03d91296923ece78e07695739ba90"
+    },
+    {
+      "main_id": 138,
+      "character": "血",
+      "batch": "B14",
+      "local_start": 8,
+      "pages": 1,
+      "vector_sha256": "a0cce905555ccf8f135f4f8037d2abb2e00707debec33eb47a27deae3426db06"
+    },
+    {
+      "main_id": 139,
+      "character": "舟",
+      "batch": "B14",
+      "local_start": 9,
+      "pages": 1,
+      "vector_sha256": "fdd5bbaa11dd49e66e459cca9a869b3f3fe0bff4b5ee7d1abee15791be27db48"
+    },
+    {
+      "main_id": 140,
+      "character": "色",
+      "batch": "B14",
+      "local_start": 10,
+      "pages": 1,
+      "vector_sha256": "42da4bb8eb6b22d796e73b226c71c1ceb5486d1cd31df3d1963c31e712f80ab3"
+    },
+    {
+      "main_id": 141,
+      "character": "齐",
+      "batch": "B15",
+      "local_start": 1,
+      "pages": 1,
+      "vector_sha256": "9f8dc5fcbe4c2a7a5caa25d997ba03fa3c03bdd47980c2a44d3d75bc5bf1a40d"
+    },
+    {
+      "main_id": 142,
+      "character": "衣",
+      "batch": "B15",
+      "local_start": 2,
+      "pages": 1,
+      "vector_sha256": "bb83d26ab543feaf262f3da5622aa5d7d35591f36286ad0ef5072ee96d73b7ad"
+    },
+    {
+      "main_id": 143,
+      "character": "羊",
+      "batch": "B15",
+      "local_start": 3,
+      "pages": 1,
+      "vector_sha256": "9f9f43158c9af7617b092a0f9946e3191fb206dced2aa5a3b19c180244362422"
+    },
+    {
+      "main_id": 144,
+      "character": "米",
+      "batch": "B15",
+      "local_start": 4,
+      "pages": 1,
+      "vector_sha256": "105847e8be1741677145b1e7b7168ba883e9ca3ae1abb7b60a476d430117e88e"
+    },
+    {
+      "main_id": 145,
+      "character": "聿",
+      "batch": "B15",
+      "local_start": 5,
+      "pages": 1,
+      "vector_sha256": "6d2b42fb79869850069eaf15dbfe9b2cfbd76a6bc278d1125a1d07b9e647d97f"
+    },
+    {
+      "main_id": 146,
+      "character": "艮",
+      "batch": "B15",
+      "local_start": 6,
+      "pages": 1,
+      "vector_sha256": "d1c1a84e5923b69e172c4f791ff7d4d54c8464bf104fb2fa6bf7549f6cc2eca1"
+    },
+    {
+      "main_id": 147,
+      "character": "羽",
+      "batch": "B15",
+      "local_start": 7,
+      "pages": 1,
+      "vector_sha256": "65a2a3c1e79111665e8e92b0733fd221618e957df25508467d955cf01faa9e0c"
+    },
+    {
+      "main_id": 148,
+      "character": "糸",
+      "batch": "B15",
+      "local_start": 8,
+      "pages": 1,
+      "vector_sha256": "e5ece9785bc296f0a56fc81bc89fbfb229637942c0d3c0b5c2d2a351708d7271"
+    },
+    {
+      "main_id": 149,
+      "character": "麦",
+      "batch": "B15",
+      "local_start": 9,
+      "pages": 2,
+      "vector_sha256": "7ed9942f7fd3ab275912f42dddf47b3c3d6e8488e3b7b96b0c84c5c46af79bcf"
+    },
+    {
+      "main_id": 150,
+      "character": "走",
+      "batch": "B15",
+      "local_start": 11,
+      "pages": 2,
+      "vector_sha256": "2d73ebc4b90cdf561408b3deb5948509048f2c7a49fb005c80c6bdc001ff24a7"
+    },
+    {
+      "main_id": 151,
+      "character": "赤",
+      "batch": "B16",
+      "local_start": 1,
+      "pages": 2,
+      "vector_sha256": "14cc4ab2d73ef4f932d61c1e64a215bc50d6c3df8e30d40c5566c7480b34abc5"
+    },
+    {
+      "main_id": 152,
+      "character": "豆",
+      "batch": "B16",
+      "local_start": 3,
+      "pages": 2,
+      "vector_sha256": "cbe442dcce7675f367fdc0c193e610bd5a8a6c55e9c7e015b4589bb8f7a4301a"
+    },
+    {
+      "main_id": 153,
+      "character": "酉",
+      "batch": "B16",
+      "local_start": 5,
+      "pages": 2,
+      "vector_sha256": "6cd9553242a0962532c64c9a8c60819b12c350a8a3534391f1917d90e1d0d278"
+    },
+    {
+      "main_id": 154,
+      "character": "辰",
+      "batch": "B16",
+      "local_start": 7,
+      "pages": 2,
+      "vector_sha256": "4c8dead0f3ff298ee8ae58481c844310037c69b28eba676a425bea47cfff0108"
+    },
+    {
+      "main_id": 155,
+      "character": "豕",
+      "batch": "B16",
+      "local_start": 9,
+      "pages": 2,
+      "vector_sha256": "82031436e8230be6494aca52df69894058023e3f0ee5f162b93782bd36f60899"
+    },
+    {
+      "main_id": 156,
+      "character": "卤",
+      "batch": "B16",
+      "local_start": 11,
+      "pages": 2,
+      "vector_sha256": "e043b12a2236b45184457f20220436d0d3696d9e2d785c7d4e011096ce9121ea"
+    },
+    {
+      "main_id": 157,
+      "character": "里",
+      "batch": "B16",
+      "local_start": 13,
+      "pages": 2,
+      "vector_sha256": "5f0d84aa3b6f871759148b105314fd01c4a9019d3234afac345cbbf1ca263d5d"
+    },
+    {
+      "main_id": 158,
+      "character": "足",
+      "batch": "B16",
+      "local_start": 15,
+      "pages": 2,
+      "vector_sha256": "5261cef041c9bcca1db60469259e7f033ae7fc5a86b6a929ba5ddb15010e0742"
+    },
+    {
+      "main_id": 159,
+      "character": "邑",
+      "batch": "B16",
+      "local_start": 17,
+      "pages": 2,
+      "vector_sha256": "1855d6ac4f2bd35cfe6e1e6fa7420fe83158b3f2ca42d16d58da0cfbee7a3393"
+    },
+    {
+      "main_id": 160,
+      "character": "身",
+      "batch": "B16",
+      "local_start": 19,
+      "pages": 2,
+      "vector_sha256": "a7ca66f13f6d4885442641f1eb3bd4b07c603f7dbb238791f62eb842cfe18baf"
+    },
+    {
+      "main_id": 161,
+      "character": "釆",
+      "batch": "B17",
+      "local_start": 1,
+      "pages": 2,
+      "vector_sha256": "a43913172f83864ad6f40bf1e815a388695085a050fb3f52058f54c2396b05be"
+    },
+    {
+      "main_id": 162,
+      "character": "谷",
+      "batch": "B17",
+      "local_start": 3,
+      "pages": 2,
+      "vector_sha256": "077a4c49a13992af2aa3a48d69670cff26b8bb716a1cb8c1449e369b44f233db"
+    },
+    {
+      "main_id": 163,
+      "character": "豸",
+      "batch": "B17",
+      "local_start": 5,
+      "pages": 2,
+      "vector_sha256": "871cf7cf6fbfdde5dbe2aca33723429c32879a687a4e12ed589ad00ae4480d2c"
+    },
+    {
+      "main_id": 164,
+      "character": "龟",
+      "batch": "B17",
+      "local_start": 7,
+      "pages": 2,
+      "vector_sha256": "63b6e517f7b568661d4ee20bc0fc017afebbdfe4e34983ac75f9cd4225f5ec14"
+    },
+    {
+      "main_id": 165,
+      "character": "角",
+      "batch": "B17",
+      "local_start": 9,
+      "pages": 2,
+      "vector_sha256": "96fb28d9a0587f6961a6ee1ef964e30b9dbdc206b7e4374b6067a949cffd07ba"
+    },
+    {
+      "main_id": 166,
+      "character": "言",
+      "batch": "B17",
+      "local_start": 11,
+      "pages": 2,
+      "vector_sha256": "f816e180e084d7108648203ba5fdab37bbf1b9684524b4ab1fa90dcfebafd58c"
+    },
+    {
+      "main_id": 167,
+      "character": "辛",
+      "batch": "B17",
+      "local_start": 13,
+      "pages": 2,
+      "vector_sha256": "8327972d75273471ab3990380e4007f3b546d984ccbd57897c5ac8ea13fc31c5"
+    },
+    {
+      "main_id": 168,
+      "character": "青",
+      "batch": "B17",
+      "local_start": 15,
+      "pages": 2,
+      "vector_sha256": "cea73597fcae7b6896e4902c574cf2dbfd1b30db6e1d60f17188cb72afd21089"
+    },
+    {
+      "main_id": 169,
+      "character": "龺",
+      "batch": "B17",
+      "local_start": 17,
+      "pages": 2,
+      "vector_sha256": "282e10b1d921611f23b7729db50f30e4e3bfe0da3983f093a88fad24a6207977"
+    },
+    {
+      "main_id": 170,
+      "character": "雨",
+      "batch": "B17",
+      "local_start": 19,
+      "pages": 2,
+      "vector_sha256": "0e249bab348c40874b194b2ba75aa185961bd190ca2e09c9a4c303aa34f62e2c"
+    },
+    {
+      "main_id": 171,
+      "character": "非",
+      "batch": "B18",
+      "local_start": 1,
+      "pages": 2,
+      "vector_sha256": "cb6dd22e1c2410f3d7edf71987173f4bc9b2737308a1433975c1993aa6f2b69f"
+    },
+    {
+      "main_id": 172,
+      "character": "齿",
+      "batch": "B18",
+      "local_start": 3,
+      "pages": 2,
+      "vector_sha256": "7871560dab1d5bd5dacc5b30ca86be0b7b425282913a5743301e09c413a2da61"
+    },
+    {
+      "main_id": 173,
+      "character": "黾",
+      "batch": "B18",
+      "local_start": 5,
+      "pages": 2,
+      "vector_sha256": "6ff7ce134dcb9a75ae538632d0389eeaab0ebfdf0d65131f2d4e0ee70d4733ee"
+    },
+    {
+      "main_id": 174,
+      "character": "隹",
+      "batch": "B18",
+      "local_start": 7,
+      "pages": 2,
+      "vector_sha256": "8d6a488e4187bcf1eb1b77b789ee4ed2d9a7c807b45b2d260d70e88ff845cf73"
+    },
+    {
+      "main_id": 175,
+      "character": "阜",
+      "batch": "B18",
+      "local_start": 9,
+      "pages": 2,
+      "vector_sha256": "4430c994ef8971a89395aaca1bd5077c0ba304e1fae14c3a4142543b54bc1f6e"
+    },
+    {
+      "main_id": 176,
+      "character": "金",
+      "batch": "B18",
+      "local_start": 11,
+      "pages": 2,
+      "vector_sha256": "4a193b0afb63f9c79a939cb2304362569e9de18d67fb2ecf2cade484e09bb7c7"
+    },
+    {
+      "main_id": 177,
+      "character": "鱼",
+      "batch": "B18",
+      "local_start": 13,
+      "pages": 2,
+      "vector_sha256": "1f1d05821b3338075b2bb7e29687b51a70945786556799e8700a200073ba18eb"
+    },
+    {
+      "main_id": 178,
+      "character": "隶",
+      "batch": "B18",
+      "local_start": 15,
+      "pages": 2,
+      "vector_sha256": "7b1170350783f53f50bb0df87bd7d08b89b10cae42b3baf52cc3b98155865b34"
+    },
+    {
+      "main_id": 179,
+      "character": "革",
+      "batch": "B18",
+      "local_start": 17,
+      "pages": 2,
+      "vector_sha256": "664cd7aef0dd8df7eea5087bdd78df9ee65ac4a08c5c6c036f113145c2f86755"
+    },
+    {
+      "main_id": 180,
+      "character": "面",
+      "batch": "B18",
+      "local_start": 19,
+      "pages": 2,
+      "vector_sha256": "720049f194a8d51d6cc01669f1319bed7510650a584d7185f0fa289d9f487ca2"
+    },
+    {
+      "main_id": 181,
+      "character": "韭",
+      "batch": "B19",
+      "local_start": 1,
+      "pages": 2,
+      "vector_sha256": "9ed19b301cfee08327929364c6f0716a9a5d162214f97909ce155f8e672461b4"
+    },
+    {
+      "main_id": 182,
+      "character": "骨",
+      "batch": "B19",
+      "local_start": 3,
+      "pages": 2,
+      "vector_sha256": "ee9689819d40660cc3057ceb9c07521d03b7c3c6beab91d57d6e5e02e025a70b"
+    },
+    {
+      "main_id": 183,
+      "character": "香",
+      "batch": "B19",
+      "local_start": 5,
+      "pages": 2,
+      "vector_sha256": "dcde03c089100ff6bfb6ef4b2ee8b234c2b2fc54cbc511a449fc61ebd50db24b"
+    },
+    {
+      "main_id": 184,
+      "character": "鬼",
+      "batch": "B19",
+      "local_start": 7,
+      "pages": 2,
+      "vector_sha256": "1f1c9563137fad6a7e54349dd2f6f91babad44471293f31d5b838cf702b24f1b"
+    },
+    {
+      "main_id": 185,
+      "character": "食",
+      "batch": "B19",
+      "local_start": 9,
+      "pages": 2,
+      "vector_sha256": "7089ce03df07185a663771e71e4d615a22455d59af670b1810accb6b925ea73e"
+    },
+    {
+      "main_id": 186,
+      "character": "音",
+      "batch": "B19",
+      "local_start": 11,
+      "pages": 2,
+      "vector_sha256": "146e65609cb73e155c02fed48cb2eefe20a6f559af3fcbd4f7ecb20c52f0bc93"
+    },
+    {
+      "main_id": 187,
+      "character": "首",
+      "batch": "B19",
+      "local_start": 13,
+      "pages": 2,
+      "vector_sha256": "197fefd85084b496c38c447e80652d2a290534319ff6c46e02baee52ee1e720a"
+    },
+    {
+      "main_id": 188,
+      "character": "髟",
+      "batch": "B19",
+      "local_start": 15,
+      "pages": 2,
+      "vector_sha256": "68cf3b70ebad6de8700fadada2ad64370f9787da12eb18a5807573404bac9871"
+    },
+    {
+      "main_id": 189,
+      "character": "鬲",
+      "batch": "B19",
+      "local_start": 17,
+      "pages": 2,
+      "vector_sha256": "faa06125d40b8335bde5af6bbda89f6907d69c35846ed90c962ad0c8ef4a33c4"
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "batch": "B19",
+      "local_start": 19,
+      "pages": 2,
+      "vector_sha256": "1be039c9cf631436be80faa25290ec7e5f001753c457dd84ead6fef948d76a7a"
+    },
+    {
+      "main_id": 191,
+      "character": "高",
+      "batch": "B20",
+      "local_start": 1,
+      "pages": 2,
+      "vector_sha256": "99d078f0a742511e3225a994169678c2b35ed42d4a39e4f5c41946c1e4c04567"
+    },
+    {
+      "main_id": 192,
+      "character": "黄",
+      "batch": "B20",
+      "local_start": 3,
+      "pages": 2,
+      "vector_sha256": "44aadf91995fab44d399eb60408faa5431244ee46d1fc26a3f7c31a7ea83de72"
+    },
+    {
+      "main_id": 193,
+      "character": "麻",
+      "batch": "B20",
+      "local_start": 5,
+      "pages": 2,
+      "vector_sha256": "e117a6df9c37fe758e5ff22316f95fdb88b1eb93fa2579846148488102755caf"
+    },
+    {
+      "main_id": 194,
+      "character": "鹿",
+      "batch": "B20",
+      "local_start": 7,
+      "pages": 2,
+      "vector_sha256": "83e6dabb8e229bb7b6efdc9cf1e816a42cef1e72388a7a76df1ad8aac171e56d"
+    },
+    {
+      "main_id": 195,
+      "character": "鼎",
+      "batch": "B20",
+      "local_start": 9,
+      "pages": 2,
+      "vector_sha256": "fcee8f53a91633b7953a254403dd9a568cae612059bc7789c23be36b5e94f709"
+    },
+    {
+      "main_id": 196,
+      "character": "黑",
+      "batch": "B20",
+      "local_start": 11,
+      "pages": 2,
+      "vector_sha256": "5bd1451a45e6781326726ce7d2d30352f8495993e4aeef2f7af32afaf45f3cda"
+    },
+    {
+      "main_id": 197,
+      "character": "黍",
+      "batch": "B20",
+      "local_start": 13,
+      "pages": 2,
+      "vector_sha256": "beb23dc20e371a243a045955c478b42b9f00eb3107287157a31d54f3bed78e89"
+    },
+    {
+      "main_id": 198,
+      "character": "鼓",
+      "batch": "B20",
+      "local_start": 15,
+      "pages": 3,
+      "vector_sha256": "5489240986476d1cf36662afd5c0fcb2015d602268177cad272f28c44253434d"
+    },
+    {
+      "main_id": 199,
+      "character": "鼠",
+      "batch": "B20",
+      "local_start": 18,
+      "pages": 3,
+      "vector_sha256": "180a95537e64f9c749102e2341ef9e1b9fff345d9373fcc236cff9eb5ced1f8e"
+    },
+    {
+      "main_id": 200,
+      "character": "鼻",
+      "batch": "B20",
+      "local_start": 21,
+      "pages": 3,
+      "vector_sha256": "21d278948c2605d22adf1edf6cecc7c35727971cbcd6087863a81231084a0286"
+    },
+    {
+      "main_id": 201,
+      "character": "龠",
+      "batch": "B21",
+      "local_start": 1,
+      "pages": 3,
+      "vector_sha256": "97119fbecc5b0e49026615b426d757522c460429d6d0ef40a05b66e39dbd32ff"
+    }
+  ],
+  "input_sha256": {
+    "data/m3_candidate.json": "3c0a5cd96636cc85c11ed79e6909292735c0d50efc560335e8f1c2d8c8a7214a",
+    "book/front-matter/m3-candidate-guidance.json": "ed37d1e09c50b84711024634715153d02878d813d7381eb4fca3ba0cbc3fb604",
+    "data/m3_scope.json": "8dbab3bb9e982ce1d909d6fee904c3f68bda395be1894c516ca57d45a933eb35",
+    "data/teaching-source-policy.json": "389342c012061c76b7b5956a3d844b8e347a181c6b5a381ce14f56c8676e8af5",
+    "sources/catalog.json": "b8c6ada7a6369b3a2a0d133241e197b20ea984258a651de71e20694214890100",
+    "data/B01.json": "967a1d702ed85337c0237bfd65c9321d9c333ac6aa566d74839735d97f0687ab",
+    "data/B02.json": "3e1a60627d93ad49355cf9525ffde1237ebf7bcae68bb49925775fe6f621b656",
+    "data/B03.json": "7aba3cb36c139236356d8cf7a601897e140b68d1febe4bf418058124ed03405c",
+    "data/B04.json": "3830732458a9f25016b6df9379009a3cb262b277ec0b533aa6fcdfcfc295dba0",
+    "data/B05.json": "ada91032c077a2425e9066b93b15466afcd5cbe747856d1d4aa031a5fcd17fa4",
+    "data/B06.json": "24f063fee9d9d99e2d03d0f7e90d02fdf08f4a2d735772f7fc3a237f9d41593c",
+    "data/B07.json": "193ca181340ca63bb688fa39bf67972776ae328c740efecb673c6ab2b84ca358",
+    "data/B08.json": "36253cdfd99c19a9631d7c80e1357889dbb238ee1265e2331b05aea186a72f2d",
+    "data/B09.json": "ba9f443392d8b3baf2a647d640c87d5d844159e47b2852e9f0fe41060dc7a0ec",
+    "data/B10.json": "b7c45827b6633e3b34d15fd92864d17dfde0a59dabbac004518e71456f9b7a66",
+    "data/B11.json": "2c742c83b448fd2d9279b4ff3263eea903e6adfec34ed0339b6197dcb0f7a1b5",
+    "data/B12.json": "45f4b19f5b1528ab40b74205126e438906e94ee1c1c46b3460da2b001c8409a1",
+    "data/B13.json": "f7591971769578339a8ca394527fdfd07fee8a76c6bd994d5a0eeed15eb5dbae",
+    "data/B14.json": "0e7d103870dab8b0e27d864daebff0ed6e8bf3c46e7b322d5a231e80c570f584",
+    "data/B15.json": "7f1577e54531725f460d024b9d239de56c1c2d3912f1e8561885e8f0557f2847",
+    "data/B16.json": "4f1128c0e0055498222ad72d5578a6bb8bbecfc35c1baf5a8c51317319f7e773",
+    "data/B17.json": "c9cb19da66bede7bcbfdb928101021162ee9c622bd6cf9b3a44133f355ffdebd",
+    "data/B18.json": "1f173d53aff61bfbe3848b282c62c6d84ec57132065d26dab180e74bf5a7c76b",
+    "data/B19.json": "b12f603fda758a85018803d13784195c8b7a7dfb6b5a2dd4e0e71bcebcbd4ea6",
+    "data/B20.json": "a56a690f0c234c8955b48e72619be9067339992c1b53a5c29b43424fec4ba2a3",
+    "data/B21.json": "7d5de09715de9b84417b3cc91e05a4e1566c99752236e011a6316800e9d0e1c4",
+    "scripts/m3_model.py": "2f78424b109a0f9cdb2f1add7067fa3208fcfb4435bd5e0ef06f025908449396",
+    "scripts/build_m3_preview.py": "9464522efaacfb8bc955a100cbb9c12ef5c735d935ddc8f0cebfd494ec6aa4de",
+    "scripts/build_batch.py": "4682c47e9f8babe69fcd86888c57822cc57d24e3e448ce0474759a525940eccc",
+    "scripts/m3_migration.py": "471d9be608e53fb6fae5cbb5f61c59a1fc5f6c86edb7dc37c41508debdbf7ab6",
+    "data/artwork/m3-migration.json": "780896dbcb8a0b2e0c841346a0c59a08f0b8d15542042334416f181486e75759",
+    "data/evidence/P4-B06-B11-position-migration-whole-character.json": "9823f4d5a63da69525ec083f886ef645e101f31e116a0efa38d17bc15bd0b8c9",
+    "data/evidence/P4-B04-B05-position-migration-final.json": "cc2f897cbe386e344ffeab2afd2c000f86db253342a25992577528d185e03947",
+    "data/evidence/M2-wa-ping-position-20261007.json": "bd4493ccf985be3eb442fa829f4419cd4d1d0e826e675e6e6a78f658fba3011f",
+    "scripts/m3_candidate.py": "4cbdd175f12395cb74b633c40568641bcb24b602788a47f598f73f86a6a378d4",
+    "scripts/build_m3_candidate.py": "59a78b690e0b01f3d640a0af0592730fc1193b4cc838319727659f474f3cf76c",
+    "scripts/apply_artwork.py": "97a7c4e0ae6b53d4bb7113d4233d52a49c7685eb0d4de8e67a469a7276790756",
+    "scripts/build_book_matter.py": "5382d135a7edb6bdcdc6f512c3dfc50e9bce652e11e9c8293c1e1cecaf2d3547"
+  },
+  "fonts": [
+    {
+      "name": "gkai00mp.ttf",
+      "sha256": "61519fb9bdda4a1a3aa02a12cbb76c2ef897ce879775d7ea2265d0a65fe54d16"
+    },
+    {
+      "name": "DejaVuSans.ttf",
+      "sha256": "ae7b7855e115a5966d8b1b3f80f254ccc117ec86f9965e202ee2940453837280"
+    },
+    {
+      "name": "uming.ttc",
+      "sha256": "fe952e55617275142d9cefd4d79eade4df446517b0478b2567d9bc7df49f70e2"
+    }
+  ],
+  "visual_review": "pending",
+  "physical_print_test": false,
+  "source_tree": "d9b8d8af43bf41c3692ca50255ed59c456312933",
+  "environment": {
+    "python": "3.11.16",
+    "packages": {
+      "reportlab": "4.4.9",
+      "pypdf": "5.9.0",
+      "fonttools": "4.63.0"
+    }
+  },
+  "config_path": "data/m3_candidate.json"
+}
