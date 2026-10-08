@@ -1,3 +1,11 @@
+# 最新正式归档 v0.5.1（句号/顿号左下定位勘误）
+
+[299页正式 PDF](releases/v0.5.1/zitie-v0.5.1-A4.pdf) · 7,478,502 bytes · SHA256 `7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90`。新版本从字节绑定的RC3终检版重建，修正201处句号及82处顿号，保留全部教学矢量和导航；历史v0.5.0仍原样留存。
+
+独立的新版本目录与 `manifest.json` 项须在发布PR最终CI成功及合入后才构成正式归档。审读边界、差异回归和实物打印限制见 [本轮记录](../reviews/v051-punctuation-erratum-20261008.md)。
+
+## 以下为历史正式版和候选归档记录
+
 # PDF 版本归档（当前正式版）
 
 最新正式版：[《循序渐进汉字部首字帖》v0.5.0（A4，299页）](releases/v0.5.0/zitie-v0.5.0-A4.pdf)，7,481,279 bytes，SHA256 `10f5177221ff4817ea412f9e5f187e68d59eabfce8f94e2ebf4179f4398f6880`。经 [PR #73](https://github.com/netplus/zitie/pull/73) 的最终 CI 验收并合入 `main`，在 `manifest.json` 中登记为 `released`。旧21份 PDF 字节和条目保留。

@@ -1,3 +1,11 @@
+# 当前接续：v0.5.1 标点勘误发布后维护（2026-10-08）
+
+以 `docs/STATUS.md`、`data/post_release.json.current_release`、`deliverables/manifest.json` 为当前版本权威入口。最新PDF为 `deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf`，299页；SHA256 `7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90`。本补丁修复 UMingCN 横排201处“。”及82处“、”的字形左下定位。旧22份PDF的路径/原字节与来源材料保持不变；不重复重建已经关闭的 M1/M2/M3/Q1 内容。
+
+后续仅处理明确勘误、CI维护或来源 Issue #4 的新权威逐项证据；不得以旧版2022规范发布说明解除任何字段的fail-closed限制。本次新增代码须保持字形轮廓修补为**字体子集内局部字节修改**，不改变文本内容流、间距、笔顺矢量及导航。所有正式发布以目标 HEAD CI success 且通过PR合入为门槛。禁止强推、覆盖历史、提交字体源文件/商业规范全文；该工程不使用 `chn-ops`。
+
+## 下文保留 v0.5.0 及早期断点记录
+
 # 当前接续：v0.5.0 已正式发布（2026-10-08）
 
 以 `data/post_release.json`、`deliverables/manifest.json`、`docs/STATUS.md` 为当前状态依据。PR #73 的目标 HEAD CI 已通过，正式 PDF `deliverables/releases/v0.5.0/zitie-v0.5.0-A4.pdf`（299页，SHA256 `10f5177221ff4817ea412f9e5f187e68d59eabfce8f94e2ebf4179f4398f6880`）已合入 `main`；总控 #58 已关闭。

@@ -303,7 +303,7 @@
     "candidate_frozen": true
   },
   "final_release_eligible": true,
-  "next_work": "Maintained v0.5.0, with new authoritative source only through issue #4 and new versioned releases; preserve previous artifacts.",
+  "next_work": "Maintain v0.5.1; source issue #4 remains open. Future errata require new versioned immutable PDFs and exact CI. Do not repeat closed M1/M2/M3/Q1.",
   "tracking_issue": 58,
   "patch_candidate": {
     "path": "deliverables/drafts/v0.4.1-rc1/B01-B21_v0.4.1-rc1_A4.pdf",
@@ -703,5 +703,22 @@
     "release_eligible": true,
     "physical_print_test_performed": false,
     "publication_ci_gate": "final target HEAD CI plus merge"
+  },
+  "current_release": {
+    "version": "0.5.1",
+    "status": "released",
+    "path": "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf",
+    "sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+    "bytes": 7478502,
+    "pages": 299,
+    "basis": "bounded_font_glyph_punctuation_correction_from_reviewed_RC3",
+    "source_pdf": "deliverables/drafts/v0.5.0-rc3/zitie-v0.5.0-rc3-finalcheck.pdf",
+    "source_sha256": "d54184705c6849d6617c7ea201a659d77796cad9b05792782032b320127bbb27",
+    "previous_release": "deliverables/releases/v0.5.0/zitie-v0.5.0-A4.pdf",
+    "previous_sha256": "10f5177221ff4817ea412f9e5f187e68d59eabfce8f94e2ebf4179f4398f6880",
+    "evidence": "data/evidence/v051-punctuation-derivation-20261008.json",
+    "review": "reviews/v051-punctuation-erratum-20261008.md",
+    "release_eligible": true,
+    "physical_print_test_performed": false
   }
 }

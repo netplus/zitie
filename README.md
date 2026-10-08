@@ -1,3 +1,15 @@
+# 循序渐进汉字部首字帖 · v0.5.1
+
+**[最新正式版 PDF：v0.5.1（A4、299页）](deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf)** — 修正简体横排句号/顿号字格左下位置。SHA256：`7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90`。
+
+以 v0.5.0 的Q1验收范围为依据，只对已确认的283处标点做轮廓位置微调，并同步558处版本标识；201主部首和教学内容、299页A4、238书签及50链接完全保留。规范字段未决按原fail-closed规则继续保留；实物打印未做。
+
+- [本轮勘误证据](reviews/v051-punctuation-erratum-20261008.md)
+- [发布与历史状态](docs/STATUS.md)
+- [仍开放的规范来源Issue #4](https://github.com/netplus/zitie/issues/4)
+
+## 以下为此前正式 v0.5.0 及历史阶段记录
+
 # 循序渐进汉字部首字帖 · v0.5.0
 
 **[正式 v0.5.0 PDF（A4，299页）](deliverables/releases/v0.5.0/zitie-v0.5.0-A4.pdf)** — 已通过 [PR #73](https://github.com/netplus/zitie/pull/73) 的最终目标 HEAD CI 并合入 `main`，正式发布生效。全书201主部首及教学比较/回忆/整字迁移，沿用已完成的Q1版式验收；保留2022来源限制。

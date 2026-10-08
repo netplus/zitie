@@ -120,6 +120,9 @@ def verify(root=ROOT):
                 require(state['final_release_eligible'] is True,
                         'Final publication state lacks release eligibility')
                 verify_formal(root=root)
+                if state.get('current_release'):
+                    from verify_v051_punctuation import validate as verify_v051
+                    verify_v051(root=root, render=False)
             else:
                 require(state['final_release_eligible'] is False,
                         'Accepted layout alone does not approve a final edition')
