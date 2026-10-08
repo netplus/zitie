@@ -1,6 +1,12 @@
-# 当前接续：本地Q1复核导入
+# 当前接续：Q1终检候选接受，正式PDF待制作
 
-RC3终检已完成，逐页证据与本地导入记录在data/q1_local_review.json及reviews/Q1-local-import-20261008.md。原RC1冻结及q1_review保留历史语义；不要将其0页状态冒充RC3进度，也不要重复人工审读299页。下一步为实际归档CI、最终候选和正式发布门禁衔接。当前补丁本地准备完成不代表已推送或合入。
+PR #71已归档RC2/RC3/RC3-finalcheck及299页逐页复核证据；当前PR以RC3终检精确字节
+关闭Q1版式验收，证据见`data/evidence/Q1-RC3-acceptance-20261008.json`。
+旧RC1冻结及RC1的0/299队列保持历史事实；旧RC3本地导入快照 Q1_completed=false 仍保持原字节。
+Q1本轮必须等待目标HEAD CI成功再合入；不要重复人工审读299页。
+**正式v0.5.0尚未发布，final_release_eligible=false。** 下阶段制作真正的正式版PDF，
+不得简单复制/改名RC3；需要对更改区域和目录跳转做终验、登记manifest、通过发布PR目标HEAD CI。
+规范来源#4阻塞继续保留。避免`chn-ops`和再生成交接PDF。
 
 ## 以下为此前记录（保留）
 

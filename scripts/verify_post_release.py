@@ -97,22 +97,29 @@ def verify(root=ROOT):
     from verify_m3_archive import verify as verify_m3_archive
     verify_m3_archive(root)
     if state.get('q1_local_review_record'):
-        # A local PDF derivative is not the clean-build RC1 frozen at M3 exit.
+        # Historical PDF derivative record remains immutable, even after Q1 acceptance.
         from verify_q1_import import verify as verify_q1_import
         verify_q1_import(root)
         local_review = json.loads(safe_file(root, state['q1_local_review_record']).read_text(encoding='utf-8'))
         require(local_review['Q1_completed'] is False and local_review['release_eligible'] is False,
-                'Local import record cannot authorize publication')
+                'Historical local import snapshot has changed')
         require(local_review['reviewed_pdf'] ==
                 'deliverables/drafts/v0.5.0-rc3/zitie-v0.5.0-rc3-finalcheck.pdf'
                 and local_review['sha256'] == 'd54184705c6849d6617c7ea201a659d77796cad9b05792782032b320127bbb27',
-                'Local Q1 state must refer to the imported finalcheck bytes, not RC1')
+                'Local Q1 state must refer to imported RC3 finalcheck bytes')
         require(local_review['checked_pages'] == list(range(1,300))
                 and local_review['pending_visual_pages'] == []
                 and local_review['inherited_from_actual_previous_review'] is True,
                 'Local Q1 evidence coverage was altered')
-        require(state['phases'][3]['status'] not in DONE and state['final_release_eligible'] is False,
-                'Q1 derivative acceptance/final CI must be implemented before closing publication')
+        if state['phases'][3]['status'] in DONE:
+            # Q1 acceptance uses a newer PDF than the immutable RC1 M3 freeze.
+            from verify_q1_acceptance import verify as verify_q1_acceptance
+            verify_q1_acceptance(root)
+            require(state['final_release_eligible'] is False,
+                    'Accepted layout is not a final-edition publication')
+        else:
+            require(state['final_release_eligible'] is False,
+                    'Q1 derivative acceptance/CI incomplete')
     candidate = state.get('candidate')
     if candidate:
         require(re.fullmatch(r'[0-9a-f]{40}', candidate['source_commit']), 'Exact candidate source required')
@@ -121,9 +128,19 @@ def verify(root=ROOT):
         require(len(PdfReader(root / candidate['path']).pages) == candidate['pages'], 'Candidate pages changed')
     if state['phases'][3]['status'] in DONE:
         review = state['q1_review']
-        require(review['sha256'] == candidate['sha256'], 'QA is not bound to final candidate bytes')
-        require(review['checked_pages'] == list(range(1, candidate['pages'] + 1)), 'Incomplete Q1 page coverage')
-        require(review['blocking_findings'] == 0, 'Q1 blocking findings remain')
+        # RC1 is M3's frozen source checkpoint, not the later visually reviewed RC3.
+        require(review['path'] == 'deliverables/drafts/v0.5.0-rc3/zitie-v0.5.0-rc3-finalcheck.pdf'
+                and review['sha256'] == 'd54184705c6849d6617c7ea201a659d77796cad9b05792782032b320127bbb27',
+                'Q1 acceptance must bind the newer reviewed candidate, never historical RC1')
+        require(review['record'] == 'data/evidence/Q1-RC3-acceptance-20261008.json'
+                and review['provenance_kind'] == 'locally_reviewed_pdf_derivative',
+                'Missing Q1 acceptance provenance')
+        require(review['checked_pages'] == list(range(1, 300))
+                and review['blocking_findings'] == 0
+                and review['second_renderer_pages'] == 41
+                and review['grayscale_pages'] == 4
+                and review['physical_print_test_performed'] is False,
+                'Q1 acceptance review incomplete or physical print falsely claimed')
         safe_file(root, review['record'])
     result.update(baseline_sha256=baseline['sha256'],
                   kind='workflow_consistency_not_editorial_approval',
