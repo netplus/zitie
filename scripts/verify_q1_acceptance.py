@@ -128,7 +128,7 @@ def verify(root=ROOT):
     return {'kind':'verified_Q1_RC3_layout_acceptance_not_formal_release',
             'pages':299,'second_renderer_pages':41,'grayscale_simulation_pages':4,
             'blocking_layout_findings':0,'finalcheck_sha256':SHA,
-            'formal_v0_5_0_released':False}
+            'formal_publication_is_outside_this_Q1_gate':True}
 
 
 class AcceptanceTests(unittest.TestCase):

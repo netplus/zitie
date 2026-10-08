@@ -35,6 +35,9 @@ def verify(root=ROOT, base_ref=None):
             # PDF-level local revisions are imported, not attributed to the RC1 build.
             from verify_q1_import import validate_entry
             validate_entry(root, item)
+        elif item.get('provenance_kind') == 'reproducible_edition_from_reviewed_RC3':
+            from verify_v050_final import check_manifest_entry
+            check_manifest_entry(item)
         elif not isinstance(item.get('source_commit'), str) or not re.fullmatch(r'[0-9a-f]{40}', item['source_commit']):
             raise ValueError('An exact source commit is required')
         review = Path(item['review_record'])

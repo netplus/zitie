@@ -115,8 +115,14 @@ def verify(root=ROOT):
             # Q1 acceptance uses a newer PDF than the immutable RC1 M3 freeze.
             from verify_q1_acceptance import verify as verify_q1_acceptance
             verify_q1_acceptance(root)
-            require(state['final_release_eligible'] is False,
-                    'Accepted layout is not a final-edition publication')
+            if state.get('formal_release'):
+                from verify_v050_final import verify as verify_formal
+                require(state['final_release_eligible'] is True,
+                        'Final publication state lacks release eligibility')
+                verify_formal(root=root)
+            else:
+                require(state['final_release_eligible'] is False,
+                        'Accepted layout alone does not approve a final edition')
         else:
             require(state['final_release_eligible'] is False,
                     'Q1 derivative acceptance/CI incomplete')
