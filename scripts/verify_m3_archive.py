@@ -37,7 +37,12 @@ def verify(root=ROOT):
         from verify_v050_final import check_manifest_entry
         require(len(editions) == 1, 'Unexpected number of published v0.5 editions')
         check_manifest_entry(editions[0])
-    entries = [a for a in entries if a not in derivatives and a not in editions]
+    patches = [a for a in entries if a.get('provenance_kind') == 'reproducible_punctuation_erratum_from_reviewed_RC3']
+    if patches:
+        from verify_v051_punctuation import check_manifest_entry
+        require(len(patches) == 1, 'Unexpected number of v0.5.1 punctuation releases')
+        check_manifest_entry(patches[0])
+    entries = [a for a in entries if a not in derivatives and a not in editions and a not in patches]
     require(len(entries) == 1, 'Unverified frozen M3 v0.5 artifact')
     item = entries[0]
     for k in ('path', 'version', 'status', 'pages', 'bytes', 'sha256', 'source_commit',
