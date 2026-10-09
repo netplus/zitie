@@ -1,3 +1,9 @@
+## A1.4 独立笔尖 A/B 实验（不替换稳定播放器）
+
+另有[六个部首的可变接触椭圆笔尖实验](experiments/pen-lab.html)，左侧直接使用 A1.2.3 稳定渲染器，右侧采用合成笔压/倾角与明确标注的折前驻留、短促出钩微时序；两个版本使用相同原始中心线、笔顺、最终原轮廓和统一 elapsed time。详见[实验说明与测试](../docs/A1_PEN_CONTACT_EXPERIMENT.md)和 [Issue #88](https://github.com/netplus/zitie/issues/88)。仅当独立 CI 与 Pages 部署完成后才认为线上可用；**合成动作参数不代表真实笔压或教学审核。**
+
+---
+
 ## A1.4 工程研究，不更改当前播放器
 
 已检查 [2014 静态书法恢复动画、2000 虚拟笔刷、Sigma–lognormal 手写动力学、2026 中文手写研究，以及 Tegaki/Perfect Freehand 的真实实现](../docs/A1_PEN_CONTACT_RESEARCH.md)，提出“笔内子动作规划 → 压力/接触状态 → 椭圆笔尖印迹累积”的实验架构。该设计尚未部署、参数未经实测，不改写 source medians、normative order 或已发布页面。详见 [Issue #88](https://github.com/netplus/zitie/issues/88)。

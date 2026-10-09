@@ -1,0 +1,75 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>A1.4 baseline versus contact impression frame gallery</title>
+<style>body{margin:0;padding:15px;background:#f7f8fa;font:13px system-ui,"Microsoft YaHei",sans-serif}
+h1{font-size:23px;margin:0 0 8px}p{font-size:12px;color:#687580}
+#frames{display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.card{border:1px solid #d9dde1;background:white;border-radius:8px;padding:5px}
+.head{font-weight:650;margin:0 0 4px;display:flex;justify-content:space-between;gap:5px}
+pair{display:flex}.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:4px}
+.pane{min-width:0}.pane small{color:#687580;font-size:10px;display:block}
+.pane canvas{display:block;width:100%;aspect-ratio:1;height:auto}
+iframe{position:absolute;top:0;left:-99999px;width:1100px;height:1600px}
+#state{font-size:12px;color:#196b44}
+</style></head><body>
+<h1>A1.4 独立实验 · 笔迹与笔尖 A/B 关键帧</h1>
+<p>左 A：已发布的稳定圆头笔刷；右 B：实验性压力、转锋与椭圆接触印迹。每格共用一个中心线、笔顺及播放时刻。</p>
+<div id="state">CREATING</div><section id="frames"></section>
+<iframe id="lab" src="../experiments/pen-lab.html" title="offscreen source experiment"></iframe>
+<script>
+function capture(svg,tip){
+ return new Promise((resolve,reject)=>{
+  const old=tip.style.display;tip.style.display='none';
+  const raw=new XMLSerializer().serializeToString(svg);
+  const uri=URL.createObjectURL(new Blob([raw],{type:'image/svg+xml;charset=utf-8'}));
+  const img=new Image();
+  img.onload=()=>{
+    const c=document.createElement('canvas');c.width=c.height=160;
+    c.getContext('2d').drawImage(img,0,0,160,160);
+    tip.style.display=old;URL.revokeObjectURL(uri);resolve(c);
+  };
+  img.onerror=()=>{tip.style.display=old;URL.revokeObjectURL(uri);reject(Error('SVG capture failed'));};
+  img.src=uri;
+ });
+}
+document.getElementById('lab').addEventListener('load',async function(){
+ const output=document.getElementById('state');
+ try{
+   const lab=this.contentWindow.ZITIE_A14_LAB;
+   if(!lab)throw Error('Lab failed to initialize');
+   const selected={一:0,口:1,水:0,月:1,火:0,龠:13};
+   const fractions=[.02,.25,.50,.85,.995];
+   let frames=0;
+   for(const glyph of lab.glyphs){
+     lab.select(glyph);
+     const si=selected[glyph.character];
+     const step=lab.experimental.timeline.strokes[si];
+     for(const f of fractions){
+       lab.seek(step.startMs+step.durationMs*f);
+       const card=document.createElement('div');card.className='card';
+       const heading=document.createElement('div');heading.className='head';
+       const left=document.createElement('span');
+       left.textContent=glyph.character+' · 第'+(si+1)+'笔';
+       const right=document.createElement('span');right.textContent=Math.round(f*1000)/10+'%';
+       heading.append(left,right);card.append(heading);
+       const pair=document.createElement('div');pair.className='pair';
+       for(const [title,engine] of [['A 基线',lab.baseline],['B 接触实验',lab.experimental]]){
+         const pane=document.createElement('div');pane.className='pane';
+         const caption=document.createElement('small');caption.textContent=title;
+         pane.append(caption);
+         pane.append(await capture(engine.svg,engine.tip));
+         pair.append(pane);
+       }
+       card.append(pair);
+       document.getElementById('frames').append(card);
+       frames++;
+     }
+   }
+   if(frames!==30)throw Error('Expected 30 paired source-backed frame checkpoints');
+   document.documentElement.setAttribute('data-result','PASS');
+   output.textContent='PASS · 六个真实样例 × 五个时间进度 × 左右对照';
+ }catch(err){
+   document.documentElement.setAttribute('data-result','FAIL');
+   output.textContent='FAIL: '+(err.stack||String(err));
+ }
+});
+</script></body></html>
