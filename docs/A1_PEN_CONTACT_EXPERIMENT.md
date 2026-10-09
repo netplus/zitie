@@ -107,3 +107,65 @@ This is a deliberately tunable phenomenological model, **not a fitted sigma-logn
 To support expert inspection, the A/B page shows a chart on the same normalized time axis with **stable spatial progress** (gray), **experimental spatial progress** (red), and **independently synthesized pressure** (cyan). Curves should differ on curated folds/hooks. A shared cursor marks the selected moment.
 
 New unit tests assert 40/40 original stroke trajectories remain unmodified, strict time→distance monotonicity, locally longer fold residence, hook release acceleration and finite pressure/orientation. Chrome A/B tests quantify pixel-set monotonicity and clipping, compare both engines with the same elapsed time, verify timing differences, provide frame-sheet artifacts and record the largest remaining terminal contour mismatch. Performance is measured as wall-time per local render call but not converted into an unverified universal FPS claim.
+
+
+## A1.4.2：椭圆笔尖“一”字描迹填充不足修复（2026-10-09）
+
+用户在线反馈：在 **B 椭圆笔尖接触模型** 书写“一”时，已经经过的笔画仍保留灰边和未填满部分。历史 A/B 测试采样显示：一的99.5%时间点与完整原始轮廓面积相差 **2.30%**，六个样例最大差距 **6.55%（火，第1笔）**。面积指标不能反映所有中间时刻的灰边，不能把曾经“0个像素倒退”的结果当成“笔画填满”。
+
+### 确认的原因
+
+原始 `pen-contact.js` 使用合成压力 `p(s)` 决定每个椭圆印迹实际尺寸：
+`contactFactor(s)=0.12+0.88p(s)`。起笔约 `p(0)=0.18`，
+所以首笔尖有效尺寸缩小到 **27.84%**；
+一旦印迹绘制便不会重新加粗。随着中心线继续前行，这一部分原始
+SVG 笔画会**永久未显露**，直至100%时把整个 mask 移除，
+形成视觉上的灰色空缺和最后一帧的补齐跳变。
+
+这是**显示层覆盖不足**，不是规范笔画轮廓或中心线数据错误。
+直接永久加大椭圆、抹平合成压力或提前揭示整笔，均会使
+真实起落笔实验失去研究意义。
+
+### 已实现的修复
+
+- **椭圆印迹不变**：`E_k` 的压强、旋转、长度和时间到达顺序都保留；
+  合成压力只描述接触模型，不再独占“原轮廓是否必须覆盖”的责任。
+- 在同一 source-constrained alpha mask 内增加**延时轮廓补全轨迹**，
+  它复用 `brush-union.makeProfile` 已经按原 SVG 轮廓法向测得的
+  笔刷宽度，以彼此独立的 round stroke fragments 递增生成。
+  这些补全片段的几何中心**永远在目前笔尖位置之后**。
+  圆头面积可能延伸到局部接触区域，但所有最终可见像素仍严格裁剪
+  在原始 `stroke.outline` 以内。
+- 令 \(u\in[0,1]\) 为**空间弧长进度**，
+  \(L\) 为原始中心线总弧长，
+  \(\ell_0=\max(18,\min(48,0.055L))\)，
+  末段回收函数
+  \(q(u)=\operatorname{smoothstep}((u-0.82)/0.18)\)。
+  补全走到的弧长定义为：
+
+  \[
+  d_{\rm repair}(u)=\max(0,Lu-\ell_0[1-q(u)]).
+  \]
+
+  其距离和已完成片段个数都随 \(u\) **严格单调不减**；
+  早期只补齐笔尖已经经过的区域，82%之后逐渐追上笔尖，
+  到100%时才达到原始中心线终点，不另开快闪的全轮廓补丁。
+- 最终绘制仍来自原样 SVG `path d`；原始 `medians`、
+  `order_code`、笔画数量与规范来源版本均未变更。
+  **默认 A1.2.3 播放器完全不受影响**。
+
+### 定量验收（真实 Chrome，384×384，工程样例）
+
+与合并前相同的6个真实来源部首（60个 A/B 进度采样）运行：
+- 一的99.5%末帧缺口：**2.30% → 0.00%**；
+- 六样例最大99.5%至原始完整轮廓差：**6.55% → 0.00%**；
+- 在“一”的7个中间时刻，逐像素核对“比笔尖早走过10%原始弧长”
+  的**稳定参考填充**，此前已写区域未覆盖红色像素 **0**；
+- 以前已经显露的像素消失 **0**；原始轮廓外红色像素 **0**；
+  规范中心线、SVG完成轮廓和39项几何/运动学 Node 测试保持通过。
+- 这些结果必须来自对应分支**最终目标 HEAD** 的 GitHub CI；
+  未部署到 Pages 前不能标记新版本已上线。
+
+**限制：** 只说明样例与本测试分辨率下的绘制覆盖改善。
+不同浏览器的 SVG mask 抗锯齿、触控采样、真正握笔姿势和
+物理压力仍需独立验证。“修复覆盖”不等于实验模型已获得教学审定。
