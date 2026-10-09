@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>A1.4 responsive high-DPI nib layout smoke</title></head>
+<body><h1>Pen lab 390 CSS-pixel responsive viewport</h1>
+<pre id="result">RUNNING</pre>
+<iframe id="lab" src="../experiments/pen-lab.html" title="responsive pen lab"
+  style="width:390px;height:2200px;border:0"></iframe>
+<script>
+const check=(ok,message)=>{if(!ok)throw Error(message);};
+document.getElementById('lab').addEventListener('load',function(){
+ const out=document.getElementById('result');
+ try{
+  const w=this.contentWindow,doc=w.document,lab=w.ZITIE_A14_LAB;
+  check(!!lab&&!!lab.experimental,'A/B lab unavailable at narrow viewport');
+  check(Math.abs(w.innerWidth-390)<2,'Iframe CSS viewport is not 390px');
+  const panels=doc.querySelector('.panels');
+  const a=panels.children[0].getBoundingClientRect();
+  const b=panels.children[1].getBoundingClientRect();
+  check(b.top>=a.bottom-1,'Responsive A/B panels must stack vertically');
+  check(a.width<=390&&b.width<=390,'SVG panel overflows 390px viewport');
+  check(doc.documentElement.scrollWidth<=w.innerWidth+1,
+    'Unexpected horizontal scroll at mobile viewport');
+  check(doc.getElementById('toggleNib').getAttribute('aria-pressed')==='true',
+    'Dark visible pen is not the default at mobile width');
+  const stage=lab.experimental.timeline.strokes[0];
+  lab.seek(stage.startMs+stage.durationMs*.018);
+  check(lab.experimental.tip.style.display!=='none',
+    'Experimental pen disappears while touching the paper');
+  const row=lab.experimental.rows[0];
+  check(row.startCap&&row.sourceSweep.getAttribute('d').startsWith('M '),
+    'Directional onset absent at narrow viewport');
+  const guide=lab.experimental.tip.querySelectorAll('path');
+  check([...guide].every(x=>!/white|#fff|rgb\\(255/i.test(
+    (x.getAttribute('fill')||'')+' '+(x.getAttribute('stroke')||''))),
+    'White cursor obscures the written stroke');
+  doc.documentElement.setAttribute('data-mobile-audit','PASS');
+  document.documentElement.setAttribute('data-result','PASS');
+  out.textContent=JSON.stringify({result:'PASS',cssViewport:w.innerWidth,
+    devicePixelRatio:w.devicePixelRatio,panelsStacked:true,
+    noHorizontalOverflow:true,sourceOnset:true,penVisible:true});
+ }catch(error){
+  document.documentElement.setAttribute('data-result','FAIL');
+  out.textContent='FAIL: '+(error.stack||String(error));
+ }
+});
+</script></body></html>
