@@ -176,8 +176,10 @@ document.getElementById('demo').addEventListener('load',async function(){
   check(w.ZITIE_A1_GALLERY.getSelectedId()===40,'next glyph');
   $('previousGlyph').click();
   check(w.ZITIE_A1_GALLERY.getSelectedId()===37,'previous glyph');
-  tile('37').focus();
-  tile('37').dispatchEvent(new KeyboardEvent('keydown',{key:'r',bubbles:true}));
+  // Global shortcut applies only to noninteractive stage surfaces; focused
+  // buttons correctly retain their own keyboard activation semantics.
+  d.querySelector('.paperFrame').dispatchEvent(
+    new KeyboardEvent('keydown',{key:'r',bubbles:true}));
   check(app.playing&&app.elapsed===0,'keyboard replay');
   app.pause();
 
