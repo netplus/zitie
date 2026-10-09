@@ -46,18 +46,19 @@ $('player').addEventListener('load',async function(){
       {character:'月',index:1,label:'横折钩 · 连续运笔'},
       {character:'龠',index:13,label:'复杂多段折钩'}
     ];
-    const steps=[0.05,0.15,0.35,0.55,0.80,0.97];
+    const steps=[0.05,0.20,0.50,0.80,0.97,1];
     for(const obj of cases){
       const glyph=w.ZITIE_SAMPLES.glyphs.find(g=>g.character===obj.character);
       if(!glyph)throw Error('Missing demo '+obj.character);
       player.setGlyph(glyph);
       const stage=player.timeline.strokes[obj.index];
       for(const progress of steps){
-        player.seekElapsed(stage.startMs+stage.durationMs*progress);
+        if(progress===1)player.showAll();
+        else player.seekElapsed(stage.startMs+stage.durationMs*progress);
         const card=document.createElement('section');card.className='panel';
         const head=document.createElement('div');head.className='head';
         const left=document.createElement('span');left.textContent=obj.character+' · 第'+(obj.index+1)+'笔';
-        const right=document.createElement('span');right.textContent=Math.round(progress*100)+'% 时间';
+        const right=document.createElement('span');right.textContent=progress===1?'完整字形':Math.round(progress*100)+'% 时间';
         head.append(left,right);card.append(head);
         card.append(await capture(w.document.getElementById('glyphStage'),player.tip));
         $('frames').append(card);
