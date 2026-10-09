@@ -194,6 +194,58 @@ jobs:
           grep -q 'data-result="PASS"' build/a1/pen-lab-frames-dom.html
           timeout 120 "$CHROME_BIN" "${options[@]}" --window-size=1850,1620 --screenshot="$(pwd)/build/a1/pen-lab-ab-frames.png" "http://127.0.0.1:18768/animation/tests/pen-lab-frames.html" >/dev/null
           test -s build/a1/pen-lab-ab-frames.png
+      - name: Verify 2x DPI onset coverage and mobile pen visibility in Chromium
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/a1
+          python3 -m http.server 18769 --bind 127.0.0.1 > build/a1/hidpi-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18769/animation/experiments/pen-lab.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          dpi=(--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --disable-background-timer-throttling --force-device-scale-factor=2 --virtual-time-budget=90000)
+          timeout 160 "$CHROME_BIN" "${dpi[@]}" --window-size=1400,1750 \
+            --dump-dom 'http://127.0.0.1:18769/animation/tests/yi-start-contact.html?mode=hidpi' \
+            > build/a1/yi-start-contact-hidpi-dom.html
+          grep -q 'data-result="PASS"' build/a1/yi-start-contact-hidpi-dom.html
+          python3 - <<'PY'
+          from pathlib import Path
+          import html, json, re
+          raw = Path('build/a1/yi-start-contact-hidpi-dom.html').read_text(encoding='utf-8')
+          match = re.search(r'<pre id="result">(\{.*?\})</pre>', raw, re.S)
+          if not match:
+              raise SystemExit('Missing structured 2x retina raster audit')
+          data = json.loads(html.unescape(match.group(1)))
+          assert data['result'] == 'PASS' and data['mode'] == 'hidpi'
+          assert abs(data['devicePixelRatio'] - 2) < .06
+          assert data['cssSizes'] == [310, 410, 520]
+          assert data['resolutions'] == [620, 820, 1040] and data['frames'] == 72
+          assert data['earlySourceComparisons'] >= 33
+          assert data['projectedComparisons'] >= 25
+          assert data['projectedMissingPixels'] == 0
+          assert data['vanishedPixels'] == 0 and data['outsideSourcePixels'] == 0
+          assert data['sourceMissingPixels'] == 0 and data['upperLeftMissingPixels'] == 0
+          Path('build/a1/yi-start-contact-hidpi-metrics.json').write_text(
+              json.dumps(data, ensure_ascii=False, indent=2) + '\n', encoding='utf-8')
+          print('PASS: actual 2x Chrome DPR, 72 frames, 0 source-cap underfill')
+          PY
+          timeout 80 "$CHROME_BIN" "${dpi[@]}" --window-size=450,1000 \
+            --dump-dom 'http://127.0.0.1:18769/animation/tests/pen-lab-mobile.html' \
+            > build/a1/pen-lab-mobile-dom.html
+          if ! grep -q 'data-result="PASS"' build/a1/pen-lab-mobile-dom.html; then
+            echo 'FAIL: A1.4 responsive mobile DPI smoke' >&2
+            grep -o 'FAIL:[^<]*' build/a1/pen-lab-mobile-dom.html | head -n 8 >&2 || true
+            exit 1
+          fi
+          timeout 80 "$CHROME_BIN" "${dpi[@]}" --window-size=1400,1450 \
+            --screenshot="$(pwd)/build/a1/yi-directional-start-cap-hidpi.png" \
+            'http://127.0.0.1:18769/animation/tests/yi-directional-frame-sheet.html' >/dev/null
+          test -s build/a1/yi-directional-start-cap-hidpi.png
       - uses: actions/upload-artifact@v4
         if: always()
         with:
