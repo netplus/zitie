@@ -1,4 +1,4 @@
-/* A1 offline SVG pen player: median-driven reveal of the exact audited outline. */
+/* A1 offline SVG pen player: median-stroke mask reveals exact audited outline. */
 (function (root, factory) {
   const Timeline = typeof module === 'object' && module.exports ?
     require('./timeline.js') : root.ZitieTimeline;
@@ -58,16 +58,18 @@
       const group = create('g', { transform: 'translate(0 900) scale(1 -1)' });
       this.rows = glyph.strokes.map((s, i) => {
         const id = this.prefix + i;
-        const clip = create('clipPath', { id, clipPathUnits: 'userSpaceOnUse' });
+        const mask = create('mask', { id, maskUnits: 'userSpaceOnUse',
+          maskContentUnits: 'userSpaceOnUse', x:-240, y:-240, width:1504, height:1504,
+          'mask-type': 'alpha' });
         const brush = create('path', { d: linePath(s.median), fill: 'none',
           stroke: '#FFFFFF', 'stroke-width': 170, 'stroke-linejoin': 'round',
           'stroke-linecap': 'round', 'stroke-dasharray': '0 999999' });
-        clip.appendChild(brush);
-        defs.appendChild(clip);
+        mask.appendChild(brush);
+        defs.appendChild(mask);
         const hint = create('path', { d: s.outline, fill:'#E1E4E7' });
         const solid = create('path', { d: s.outline, fill:'#5C6269' });
         const reveal = create('path', { d: s.outline, fill:'#BD3945',
-          'clip-path':'url(#' + id + ')' });
+          mask:'url(#' + id + ')' });
         return { hint, solid, reveal, brush, length: tl.strokes[i].length, id };
       });
       // Layer by paint role, NOT by stroke index: future gray strokes must
@@ -102,9 +104,9 @@
           // The unmodified outline is always the final geometry. The median
           // only controls which part of its fill is uncovered at a given time.
           if (frame.progress >= 1) {
-            r.reveal.removeAttribute('clip-path');
+            r.reveal.removeAttribute('mask');
           } else {
-            r.reveal.setAttribute('clip-path', 'url(#' + r.id + ')');
+            r.reveal.setAttribute('mask', 'url(#' + r.id + ')');
             const drawn = Math.max(0, r.length * frame.progress);
             r.brush.setAttribute('stroke-dasharray', drawn + ' ' + (r.length + 1000));
           }
