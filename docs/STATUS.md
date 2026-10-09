@@ -1,6 +1,6 @@
-# A1.3 稳定版圆圈同步（2026-10-09，分支开发）
+# A1.3 稳定版圆圈同步已合入并部署（2026-10-09）
 
-根据用户明确反馈，椭圆笔尖 A1.4 仅保留独立 A/B 实验，后续重点是 **A1.2.3 稳定版**。当前阶段解决“竖钩等笔画填充快于圆圈”现象：原墨迹遮罩是按源字形宽度生成的 round-cap 笔刷并集，实际颜色可超前于位于 median 中心的8单位圆圈，不属于计时器不同步。曾尝试端帽受限的全面填充变更，真实Chrome回归发现短点画与复杂折画终端缺口，因此已撤回该方案。改为保持原填充算法与帧时序字节一致，**只为已核名称的折/钩计算来源笔刷驱动的单调视觉前缘圆圈**。工程说明见 [A1_STABLE_FRONTIER.md](A1_STABLE_FRONTIER.md) 与 [Issue #98](https://github.com/netplus/zitie/issues/98)。目前只有分支候选，须待精确 HEAD A1/Book CI、PR合入与Pages部署成功才能称上线，正式PDF/manifest和201来源数据不变。
+根据用户明确反馈，椭圆笔尖 A1.4 仅保留独立 A/B 实验，后续重点是 **A1.2.3 稳定版**。当前阶段解决“竖钩等笔画填充快于圆圈”现象：原墨迹遮罩是按源字形宽度生成的 round-cap 笔刷并集，实际颜色可超前于位于 median 中心的8单位圆圈，不属于计时器不同步。曾尝试端帽受限的全面填充变更，真实Chrome回归发现短点画与复杂折画终端缺口，因此已撤回该方案。改为保持原填充算法与帧时序字节一致，**只为已核名称的折/钩计算来源笔刷驱动的单调视觉前缘圆圈**。工程说明见 [A1_STABLE_FRONTIER.md](A1_STABLE_FRONTIER.md) 与 [Issue #98](https://github.com/netplus/zitie/issues/98)。[PR #99](https://github.com/netplus/zitie/pull/99) 已合入 `main`（提交 `1ec9afb8b9f03657089cf61dd5551ed1fc0952ed`）。最终 PR HEAD `40c5b9d43fdb622c132e0ed393f709b24ba0bde6` 的 [A1 CI #37936426827](https://github.com/netplus/zitie/actions/runs/37936426827) 与 [Book CI #37936426822](https://github.com/netplus/zitie/actions/runs/37936426822) 均通过；合并提交的 [GitHub Pages #37937065049](https://github.com/netplus/zitie/actions/runs/37937065049) 已实际完成 Configure/Upload/Deploy。512/1024px 各50帧旧/新墨迹领先圆圈得分分别为1388→429.51、1370→411.51，笔尖落在未填色区域计数均为0。可打开[稳定版在线播放器](https://netplus.github.io/zitie/animation/)验收。正式PDF/manifest和201来源数据不变；教学主观自然度审核依然独立待办。
 
 ---
 
