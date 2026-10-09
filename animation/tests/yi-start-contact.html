@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>A1.4.3 start-cap ink arrival and source-coverage regression</title></head>
+<body><h1>一: no delayed upper-left start-cap filling</h1>
+<pre id="result">RUNNING</pre>
+<iframe id="lab" src="../experiments/pen-lab.html"
+ title="source-backed virtual nib comparison" style="width:1200px;height:1400px"></iframe>
+<script>
+const fractions=[0,.001,.005,.01,.02,.03,.04,.05,.06,.07,.08,.10,.12,.15,.20,.25,.35,.60,.995];
+function check(ok,why){if(!ok)throw Error(why);}
+function invert(profile,p){
+  if(p===0)return 0;
+  let lo=0,hi=1;
+  for(let i=0;i<42;i++){
+    const mid=(lo+hi)*.5;
+    if(profile.progressAt(mid)<p)lo=mid;else hi=mid;
+  }
+  return (lo+hi)*.5;
+}
+async function raster(stage,tip,resolution){
+  const previous=tip.style.display;tip.style.display='none';
+  try{
+    const svg=new XMLSerializer().serializeToString(stage);
+    const url=URL.createObjectURL(new Blob([svg],{type:'image/svg+xml;charset=utf-8'}));
+    try{
+      const image=new Image();
+      await new Promise((yes,no)=>{
+        image.onload=yes;image.onerror=()=>no(Error('SVG decode failed'));
+        image.src=url;
+      });
+      const canvas=document.createElement('canvas');
+      canvas.width=canvas.height=resolution;
+      const ctx=canvas.getContext('2d',{willReadFrequently:true});
+      ctx.drawImage(image,0,0,resolution,resolution);
+      const rgba=ctx.getImageData(0,0,resolution,resolution).data;
+      const flags=new Uint8Array(resolution*resolution);
+      let count=0;
+      for(let i=0,j=0;i<rgba.length;i+=4,j++)
+        if(rgba[i]>137&&rgba[i+1]<115&&rgba[i+2]<124&&
+           rgba[i]>rgba[i+1]*1.48&&rgba[i+3]>190){flags[j]=1;count++;}
+      return {flags,count};
+    }finally{URL.revokeObjectURL(url);}
+  }finally{tip.style.display=previous;}
+}
+function missing(a,b,resolution,upperLeftOnly=false){
+  let count=0;
+  for(let i=0;i<a.length;i++){
+    if(!a[i]||b[i])continue;
+    if(upperLeftOnly){
+      const x=i%resolution,y=Math.floor(i/resolution);
+      // Source x=104..246, source y=324..411. SVG y=900-source y.
+      if(x<resolution*104/1024||x>resolution*246/1024||
+         y<resolution*489/1024||y>resolution*576/1024)continue;
+    }
+    count++;
+  }
+  return count;
+}
+document.getElementById('lab').addEventListener('load',async function(){
+  const output=document.getElementById('result');
+  try{
+    const w=this.contentWindow,lab=w.ZITIE_A14_LAB;
+    check(lab&&lab.baseline&&lab.experimental,'Cannot load offline A/B lab');
+    const glyph=lab.glyphs.find(g=>g.character==='一');
+    lab.select(glyph);
+    check(lab.experimental.rows.length===1,'Source 一 is not one stroke');
+    const stage=lab.experimental.timeline.strokes[0];
+    const row=lab.experimental.rows[0];
+    const original=glyph.strokes[0];
+    check(row.reveal.getAttribute('d')===original.outline,'Changed canonical SVG path');
+    check(row.plan.sourceDirectionModified===false,'Changed canonical centerline');
+    check(row.repairFragments.length===row.profile.segments.length,
+      'Missing source-width cap repair fragments');
+    let frames=0,checks=0,totalMissing=0,upperLeftMissing=0,
+      erased=0,outside=0;
+    const samples=[];
+    for(const resolution of [512,768]){
+      lab.seek(stage.startMs+stage.durationMs*.995);
+      const saved=row.reveal.getAttribute('mask');
+      row.reveal.removeAttribute('mask');row.reveal.style.display='';
+      const source=await raster(lab.experimental.svg,lab.experimental.tip,resolution);
+      row.reveal.setAttribute('mask',saved);
+      lab.experimental.renderAt(lab.elapsed);
+      check(source.count>1000,'Original silhouette empty');
+      let previous=new Uint8Array(resolution*resolution);
+      for(const spatial of fractions){
+        const clock=stage.startMs+stage.durationMs*invert(row.motionWarp,spatial);
+        lab.seek(clock);
+        const b=await raster(lab.experimental.svg,lab.experimental.tip,resolution);
+        const disappeared=missing(previous,b.flags,resolution);
+        const extraneous=missing(b.flags,source.flags,resolution);
+        erased+=disappeared;outside+=extraneous;
+        check(disappeared===0,'Paint disappeared at '+spatial+
+          ', resolution '+resolution+': '+disappeared);
+        check(extraneous===0,'Paint outside original stroke at '+spatial+
+          ', resolution '+resolution+': '+extraneous);
+        if(spatial===0)check(b.count===0,'Flash before first pen contact');
+        if(spatial===.005)
+          check(b.count<source.count*.025,'Overlarge first contact ink blot');
+        if(spatial>=.03&&spatial<=.25){
+          // Re-render the stable source-fitted reference two percent of
+          // TOTAL ARC LENGTH behind the virtual pen, not at equal wall time.
+          const previousSpatial=Math.max(0,spatial-.02);
+          lab.baseline.seekElapsed(stage.startMs+stage.durationMs*
+            invert(stage.motion,previousSpatial));
+          const reference=await raster(lab.baseline.svg,lab.baseline.tip,resolution);
+          const gap=missing(reference.flags,b.flags,resolution);
+          const leftGap=missing(reference.flags,b.flags,resolution,true);
+          totalMissing+=gap;upperLeftMissing+=leftGap;checks++;
+          check(gap===0,'Delayed gray fill behind 一 nib at '+spatial+
+            ', resolution '+resolution+': '+gap+' source pixels missing ('+
+            leftGap+' in upper-left cap)');
+        }
+        if(spatial===.995)
+          check((source.count-b.count)/source.count<.0125,
+            'Unfilled terminal source outline at resolution '+resolution);
+        samples.push({resolution,spatial,redPixels:b.count});
+        previous=b.flags;frames++;
+      }
+    }
+    check(checks>=16,'Too few early arrival comparisons');
+    const audit={result:'PASS',glyph:'一',canonicalSourceUnchanged:true,
+      resolutions:[512,768],frames,earlySourceComparisons:checks,
+      upperLeftMissingPixels:upperLeftMissing,sourceMissingPixels:totalMissing,
+      vanishedPixels:erased,outsideSourcePixels:outside,
+      zeroProgressEmpty:true,samples};
+    document.documentElement.setAttribute('data-result','PASS');
+    output.textContent=JSON.stringify(audit,null,2);
+  }catch(error){
+    document.documentElement.setAttribute('data-result','FAIL');
+    output.textContent='FAIL: '+(error.stack||String(error));
+  }
+});
+</script></body></html>
