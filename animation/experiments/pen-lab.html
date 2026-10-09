@@ -68,6 +68,7 @@ margin-top:14px;padding:13px 15px}
 <script defer src="../player.js"></script>
 <script defer src="./gesture-data.js"></script>
 <script defer src="./pen-contact.js"></script>
+<script defer src="./pen-kinematics.js"></script>
 <script defer src="./pen-lab-engine.js"></script>
 </head>
 <body><main class="page">
@@ -78,7 +79,7 @@ margin-top:14px;padding:13px 15px}
 <a class="back" href="../index.html">← 返回正式工程播放器</a>
 </header>
 <div class="banner"><strong>独立研发原型，未经教学审定。</strong>
-右侧压力、笔尖倾角、顿笔、出钩节奏为工程合成参数，不是测量获得的真实手写数据；
+右侧压力、笔尖倾角、转锋驻留与出钩节奏为工程合成参数，不是测量获得的真实手写数据；
 此页不会修改规范笔顺，也不会替换正式播放器。
 </div>
 <div class="toolbar">
@@ -107,7 +108,7 @@ margin-top:14px;padding:13px 15px}
     <div class="panelHead"><h2>B · 椭圆笔尖接触模型</h2><span class="tag">A1.4 实验</span></div>
     <svg id="nibStage" class="svgStage" viewBox="0 0 1024 1024"
          role="img" aria-label="椭圆形可变笔尖接触实验"></svg>
-    <div class="caption">多个可旋转的椭圆接触印迹累积，接触强度与位置单独建模；不生成新笔顺。</div>
+    <div class="caption">多个可旋转的椭圆接触印迹累积；转锋微时序、出钩短促加速独立于基线，仅作实验假设。</div>
   </section>
 </div>
 <section class="seekBox">
@@ -179,6 +180,7 @@ window.addEventListener('DOMContentLoaded',function(){
     $('renderTime').textContent=ms.toFixed(1)+' ms';
     $('motion').textContent=glyph.character+' · 第 '+(lastResult.index+1)+' / '+
       glyph.expected_stroke_count+'笔 · '+lastResult.gesture.label+
+      ' · 笔尖进度 '+Math.round(lastResult.progress*100)+'%'+
       ' · 动作仅为实验性推断';
     return lastResult;
   }
