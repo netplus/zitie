@@ -75,20 +75,27 @@
           (x, y) => contour.isPointInFill(new DOMPoint(x, y)) : null;
         const profile=Brush.makeProfile(s.median,contains);
         contour.remove();
-        // Paint independent local cross-section cells, not radius-sized
-        // round-ended segments that reveal future ink far ahead of the tip.
-        // A single cell is short and the already written prefix accumulates
-        // by alpha union; the canonical SVG silhouette remains unchanged.
+        // Only named folds/hooks use constrained arrival cells in A1.3.
+        // A complete switch would regress short dot terminal coverage, so
+        // the original proven roundcap brush remains for ordinary strokes.
+        const frontLimited=s.name_status==='reviewed'&&/折|钩/.test(s.name);
         const fragments=profile.segments.map((part,j)=>{
-          const path=create('path',{
-            d:Brush.ribbonSegment(profile,j,1),
-            fill:'#FFFFFF','pointer-events':'none'});
+          const attrs=frontLimited?{
+            d:Brush.ribbonSegment(profile,j,1),fill:'#FFFFFF'
+          }:{
+            d:part.d,fill:'none',stroke:'#FFFFFF',
+            'stroke-width':part.width,'stroke-linecap':'round',
+            'stroke-linejoin':'round'
+          };
+          const path=create('path',{...attrs,'pointer-events':'none'});
           path.style.display='none';
           mask.appendChild(path);
           return path;
         });
-        const activeInk=create('path',{d:'',fill:'#FFFFFF',
-          'pointer-events':'none'});
+        const activeInk=create('path',frontLimited?
+          {d:'',fill:'#FFFFFF','pointer-events':'none'}:
+          {d:'',fill:'none',stroke:'#FFFFFF','stroke-linecap':'round',
+            'stroke-linejoin':'round','pointer-events':'none'});
         activeInk.style.display='none';
         mask.appendChild(activeInk);
         // No extra terminal circle: that arbitrary patch caused large,
@@ -99,7 +106,7 @@
         const reveal=create('path',{d:s.outline,fill:'#BD3945',
           mask:'url(#'+id+')'});
         return {hint,solid,reveal,profile,fragments,activeInk,
-          previousVisibleCount:0,id};
+          previousVisibleCount:0,id,frontLimited};
       });
       // Layer by paint role, NOT by stroke index: future gray strokes must
       // never obscure the currently written red stroke at intersections.
@@ -147,28 +154,39 @@
                 r.fragments[j].style.display='none';
             }
             r.previousVisibleCount=state.visibleCount;
-            // Progressive contact is an ALPHA ramp, not a scale of
-            // divergent corner normals. Scaling offset polygons can make
-            // an already red cap pixel disappear as the pen advances.
-            // Geometry always remains the nested full-width arrival cell;
-            // increasing alpha makes the initial impression settle without
-            // showing a fully opaque, full-width blot at the first tick.
-            // Fast optical contact settles before the fifth-percent time
-            // frame, while preserving a mathematically increasing alpha.
-            // Narrow swept geometry, not a full-radius cap, controls area.
-            const opacity=1-Math.pow(1-state.contactScale,9);
-            for(let j=0;j<r.profile.segments.length;j++){
-              const segment=r.profile.segments[j];
-              if(segment.start>=r.profile.onsetDistance)break;
-              r.fragments[j].setAttribute('opacity',opacity);
-            }
-            if(state.active>=0&&state.partial>0) {
-              r.activeInk.style.display='';
-              r.activeInk.setAttribute('d',
-                Brush.ribbonSegment(r.profile,state.active,state.partial));
-              r.activeInk.setAttribute('opacity',opacity);
-            } else {
-              r.activeInk.style.display='none';
+            if(r.frontLimited){
+              // Restrict the writing front to a nested cross-section cell.
+              // Alpha ramps rather than rotating the geometry at contact.
+              const opacity=1-Math.pow(1-state.contactScale,9);
+              for(let j=0;j<r.profile.segments.length;j++){
+                const segment=r.profile.segments[j];
+                if(segment.start>=r.profile.onsetDistance)break;
+                r.fragments[j].setAttribute('opacity',opacity);
+              }
+              if(state.active>=0&&state.partial>0){
+                r.activeInk.style.display='';
+                r.activeInk.setAttribute('d',
+                  Brush.ribbonSegment(r.profile,state.active,state.partial));
+                r.activeInk.setAttribute('opacity',opacity);
+              } else r.activeInk.style.display='none';
+            }else{
+              // Original A1.2.3 geometry for non-hook/non-fold strokes:
+              // keep proven onset/terminal coverage and monotone pixels.
+              for(let j=0;j<r.profile.segments.length;j++){
+                const segment=r.profile.segments[j];
+                if(segment.start>=r.profile.onsetDistance)break;
+                r.fragments[j].setAttribute('stroke-width',
+                  Math.max(0,segment.width*state.contactScale));
+              }
+              if(state.active>=0&&state.partial>0){
+                const seg=r.profile.segments[state.active];
+                r.activeInk.style.display='';
+                r.activeInk.setAttribute('d',
+                  'M '+seg.x0+' '+seg.y0+
+                  ' L '+state.tip[0]+' '+state.tip[1]);
+                r.activeInk.setAttribute('stroke-width',
+                  Math.max(0,seg.width*state.contactScale));
+              }else r.activeInk.style.display='none';
             }
           }
         }
