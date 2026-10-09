@@ -1,3 +1,9 @@
+## A1.5 模拟笔压研究及稳定版 A/B（候选实验）
+
+根据用户反馈，继续以 A1.3 稳定圆头笔迹为准，不用椭圆笔尖代替。独立增加[稳定版 vs 模拟用力 A/B 预览](experiments/pressure-lab.html)：A、B 两侧使用同一真实SVG原轮廓、原始中心线、原填充并集和同一时间轴；**只有 B 的小圆圈接触程度、可选无白圈轮廓和压力曲线变化**，对照原墨迹必须逐像素完全一致。模拟压力是 0–1 合成强度，非力传感器实测/人体标定，且不把速度误当压力。研究数据授权边界、论文和算法详见 [A1.5研究记录](../docs/A1_PRESSURE_RESEARCH.md)、[Issue #101](https://github.com/netplus/zitie/issues/101)。实际发布要经过最终 A1 Chrome/Book CI、PR 合入与 Pages 部署；当前不要称上线。
+
+---
+
 ## A1.3 稳定版圆圈与墨迹前缘同步（已合入并部署）
 
 用户明确更偏好稳定版 A1.2.3 的圆头笔迹，后续不以椭圆笔尖取代它。本轮仅修复折、钩等笔画中“墨迹已经向前写，圆圈却仍落后”的视觉不同步：使用原圆头笔刷已经落墨的几何范围，计算单调递增的 **显示圆圈前缘**；中心线、笔速、原SVG填充、原始笔顺、墨迹逐帧测试全部保持稳定版原样。其几何是视觉指示而非真实笔尖压力和教学审核。详见[设计与回归](../docs/A1_STABLE_FRONTIER.md)、[Issue #98](https://github.com/netplus/zitie/issues/98)。[PR #99](https://github.com/netplus/zitie/pull/99) 已合入 `main`（`1ec9afb8b9f03657089cf61dd5551ed1fc0952ed`），最终 A1+Book CI 双通过，合并后的[GitHub Pages #37937065049](https://github.com/netplus/zitie/actions/runs/37937065049)已完成真实部署。[稳定版在线体验](https://netplus.github.io/zitie/animation/)已包含此修复。数值测试不等于独立教师审定。
