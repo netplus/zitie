@@ -160,5 +160,37 @@
     return {visibleCount,active,partial,contactScale,distance:dist,tip};
   }
 
-  return {sampleMedian,widthToContour,makeProfile,stateAt};
+  // Stable A1.3: source-clipped *arrival ribbon* for the visible writing front.
+  // Each adjacent pair of source median stations supplies one independent
+  // cross-section cell. A partially arrived cell terminates exactly at the
+  // current median arclength instead of painting a giant round end-cap AHEAD
+  // of the small pen-location marker. Union avoids the old single self-
+  // intersecting outline; the immutable glyph outline is still the clip.
+  function ribbonSegment(profile,index,fraction=1,contactScale=1){
+    if(!profile||!Array.isArray(profile.stations)||
+       !Number.isInteger(index)||index<0||index>=profile.stations.length-1||
+       !finite(fraction)||!finite(contactScale))
+      throw Error('Invalid stable stroke arrival ribbon');
+    const t=clamp(fraction,0,1),scale=clamp(contactScale,0,1);
+    if(t<=0||scale<=0)return '';
+    const a=profile.stations[index],b=profile.stations[index+1];
+    const point=(s,side)=>[
+      round(s.x+s.nx*(side>0?s.left:-s.right)*scale),
+      round(s.y+s.ny*(side>0?s.left:-s.right)*scale)
+    ];
+    // The partial section interpolates BOTH normal and measured width, so
+    // the front never inherits a completed fragment's round leading cap.
+    const v={x:lerp(a.x,b.x,t),y:lerp(a.y,b.y,t),
+      nx:lerp(a.nx,b.nx,t),ny:lerp(a.ny,b.ny,t),
+      left:lerp(a.left,b.left,t),right:lerp(a.right,b.right,t)};
+    const magnitude=hypot(v.nx,v.ny);
+    if(magnitude>1e-8){v.nx/=magnitude;v.ny/=magnitude;}
+    else{v.nx=a.nx;v.ny=a.ny;}
+    const coordinates=[point(a,1),point(v,1),point(v,-1),point(a,-1)];
+    if(coordinates.some(p=>p.some(x=>!finite(x))))
+      throw Error('Nonfinite stable stroke ribbon boundary');
+    return coordinates.map((p,i)=>(i?' L ':'M ')+p[0]+' '+p[1]).join('')+' Z';
+  }
+
+  return {sampleMedian,widthToContour,makeProfile,stateAt,ribbonSegment};
 });
