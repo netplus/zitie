@@ -1,11 +1,13 @@
-/* A1 offline SVG pen player: median-stroke mask reveals exact audited outline. */
+/* A1.2.1 SVG writing: original glyph contours plus locally fitted progressive median ribbons. */
 (function (root, factory) {
   const Timeline = typeof module === 'object' && module.exports ?
     require('./timeline.js') : root.ZitieTimeline;
-  const api = factory(Timeline);
+  const Brush = typeof module === 'object' && module.exports ?
+    require('./ink-brush.js') : root.ZitieInkBrush;
+  const api = factory(Timeline, Brush);
   if (typeof module === 'object' && module.exports) module.exports = api;
   if (root) root.ZitiePlayer = api;
-})(typeof window !== 'undefined' ? window : null, function (T) {
+})(typeof window !== 'undefined' ? window : null, function (T, Brush) {
   'use strict';
   const NS = 'http://www.w3.org/2000/svg';
   const create = (tag, attrs = {}) => {
@@ -56,21 +58,31 @@
           'stroke-width':2, 'stroke-dasharray':'12 12' }));
       }
       const group = create('g', { transform: 'translate(0 900) scale(1 -1)' });
+      // Geometry APIs require a connected element; detached <defs> return false.
+      this.svg.append(defs, group);
       this.rows = glyph.strokes.map((s, i) => {
         const id = this.prefix + i;
         const mask = create('mask', { id, maskUnits: 'userSpaceOnUse',
           maskContentUnits: 'userSpaceOnUse', x:-240, y:-240, width:1504, height:1504,
           'mask-type': 'alpha' });
-        const brush = create('path', { d: linePath(s.median), fill: 'none',
-          stroke: '#FFFFFF', 'stroke-width': 170, 'stroke-linejoin': 'round',
-          'stroke-linecap': 'round', 'stroke-dasharray': '0 999999' });
-        mask.appendChild(brush);
+        // A transparent SVG stroke path is NOT a painted SVG clip. Reveal
+        // narrow, local cross-sections instead of a fixed 170-unit round pen.
+        const contour = create('path', { d: s.outline, fill: '#000', opacity: 0,
+          'pointer-events':'none' });
+        group.appendChild(contour); // connected but optically invisible
+        const contains = typeof contour.isPointInFill === 'function' &&
+          typeof DOMPoint !== 'undefined' ?
+          (x, y) => contour.isPointInFill(new DOMPoint(x, y)) : null;
+        const profile = Brush.makeProfile(s.median, contains);
+        contour.remove(); // do not ship an invisible extra outline to the mask
+        const nib = create('path', { d: '', fill: '#FFFFFF', 'fill-rule': 'nonzero' });
+        mask.appendChild(nib);
         defs.appendChild(mask);
         const hint = create('path', { d: s.outline, fill:'#E1E4E7' });
         const solid = create('path', { d: s.outline, fill:'#5C6269' });
         const reveal = create('path', { d: s.outline, fill:'#BD3945',
           mask:'url(#' + id + ')' });
-        return { hint, solid, reveal, brush, length: tl.strokes[i].length, id };
+        return { hint, solid, reveal, nib, profile, length: tl.strokes[i].length, id };
       });
       // Layer by paint role, NOT by stroke index: future gray strokes must
       // never obscure the currently written red stroke at intersections.
@@ -80,7 +92,6 @@
       this.tip = create('circle', { cx:0,cy:0,r:12,fill:'#BD3945',
         stroke:'#FFFFFF','stroke-width':4, 'pointer-events':'none' });
       group.appendChild(this.tip);
-      this.svg.append(defs, group);
       this.render();
     }
 
@@ -107,8 +118,7 @@
             r.reveal.removeAttribute('mask');
           } else {
             r.reveal.setAttribute('mask', 'url(#' + r.id + ')');
-            const drawn = Math.max(0, r.length * frame.progress);
-            r.brush.setAttribute('stroke-dasharray', drawn + ' ' + (r.length + 1000));
+            r.nib.setAttribute('d', Brush.revealPath(r.profile, frame.progress));
           }
         }
       });
@@ -178,6 +188,14 @@
       this.pause();
       this.singleEnd = null;
       this.elapsed = T.strokeStart(this.timeline, index);
+      this.render();
+    }
+    seekElapsed(milliseconds) {
+      if (!this.timeline) return;
+      if (!Number.isFinite(milliseconds)) throw new Error('Invalid playback position');
+      this.pause();
+      this.singleEnd = null;
+      this.elapsed = T.clamp(milliseconds, 0, this.timeline.totalMs);
       this.render();
     }
     previous() {

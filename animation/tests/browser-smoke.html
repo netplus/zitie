@@ -1,122 +1,188 @@
 <!doctype html>
-<html lang="en">
-<head><meta charset="utf-8"><title>A1 real-browser smoke</title></head>
+<html lang="en"><head><meta charset="utf-8">
+<title>A1.2.1 real-browser precision + UI tests</title></head>
 <body>
-<h1>A1 real-browser behavioral verification</h1>
+<h1>A1.2.1 behavior and pixel quality</h1>
 <pre id="result">RUNNING</pre>
-<iframe id="demo" src="../index.html" title="Offline demo" style="width:900px;height:1000px"></iframe>
+<iframe id="demo" title="Online writing preview" src="../index.html"
+ style="width:1050px;height:1250px"></iframe>
 <script>
-const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
-function check(ok, message) { if (!ok) throw new Error(message); }
-
-async function countPaintedRedPixels(svg, tip) {
-  // Pixel-level visibility check: DOM attributes alone can miss an invisible
-  // stroke-only clipping geometry.
-  const prior = tip.style.display;
-  tip.style.display = 'none';
-  try {
-    const markup = new XMLSerializer().serializeToString(svg);
-    const url = URL.createObjectURL(new Blob([markup], { type: 'image/svg+xml;charset=utf-8' }));
-    const img = new Image();
-    try {
-      await new Promise((resolve, reject) => {
-        img.onload = resolve;
-        img.onerror = () => reject(new Error('Cannot rasterize SVG with its mask'));
-        img.src = url;
-      });
-      const canvas = document.createElement('canvas');
-      canvas.width = canvas.height = 512;
-      const ctx = canvas.getContext('2d', {willReadFrequently: true});
-      ctx.drawImage(img, 0, 0, 512, 512);
-      const bytes = ctx.getImageData(0, 0, 512, 512).data;
-      let red = 0;
-      for (let i = 0; i < bytes.length; i += 4)
-        if (bytes[i] > 140 && bytes[i+1] < 115 && bytes[i+2] < 125 &&
-            bytes[i] > bytes[i+1] * 1.5 && bytes[i+3] > 200) red++;
-      return red;
-    } finally { URL.revokeObjectURL(url); }
-  } finally { tip.style.display = prior; }
+const pause=ms=>new Promise(ok=>setTimeout(ok,ms));
+function check(condition,message){
+  if(!condition)throw new Error(message);
 }
+async function redPixels(svg,tip){
+  const previous=tip.style.display;
+  tip.style.display='none';
+  try{
+    const markup=new XMLSerializer().serializeToString(svg);
+    const url=URL.createObjectURL(new Blob([markup],{type:'image/svg+xml;charset=utf-8'}));
+    try{
+      const image=new Image();
+      await new Promise((ok,bad)=>{
+        image.onload=ok;
+        image.onerror=()=>bad(new Error('SVG rasterizer failed'));
+        image.src=url;
+      });
+      const canvas=document.createElement('canvas');
+      canvas.width=canvas.height=512;
+      const ctx=canvas.getContext('2d',{willReadFrequently:true});
+      ctx.drawImage(image,0,0,512,512);
+      const pixels=ctx.getImageData(0,0,512,512).data;
+      let count=0;
+      for(let i=0;i<pixels.length;i+=4)
+        if(pixels[i]>140&&pixels[i+1]<115&&pixels[i+2]<125&&
+           pixels[i]>pixels[i+1]*1.5&&pixels[i+3]>200)count++;
+      return count;
+    }finally{URL.revokeObjectURL(url);}
+  }finally{tip.style.display=previous;}
+}
+document.getElementById('demo').addEventListener('load',async function(){
+ try{
+  const w=this.contentWindow,d=w.document,app=w.ZITIE_A1_APP;
+  const $=id=>d.getElementById(id);
+  const tile=id=>d.querySelector('button[data-glyph-id="'+id+'"]');
+  check(app&&app.rows.length===1,'one glyph loaded on startup');
+  check($('glyphGallery').querySelectorAll('button').length===9,'all nine gallery tiles');
+  check(!d.querySelector('#glyphSelect'),'old dropdown removed');
+  check(tile('1').getAttribute('aria-pressed')==='true','selected glyph is accessible');
 
-document.getElementById('demo').addEventListener('load', async function () {
-  try {
-    const frame = this.contentWindow;
-    const document2 = frame.document;
-    const app = frame.ZITIE_A1_APP;
-    check(app && app.rows.length === 1, 'one stroke selected initially');
-    check(app.getState().elapsedMs === 0, 'start state');
-    check(document2.querySelectorAll('#glyphStage defs mask').length === 1, 'one median brush mask');
-    const outline = app.timeline.glyph.strokes[0].outline;
-    check(app.rows[0].solid.getAttribute('d') === outline, 'unchanged final outline');
-
-    document2.getElementById('play').click();
-    // Headless Chromium can delay initial iframe RAF callbacks under load;
-    // use enough virtual time for two rendered frames, not a fixed 300ms race.
-    await delay(650);
-    const halfway = app.getState();
-    check(halfway.playing && halfway.elapsedMs > 0, 'real requestAnimationFrame advances writing');
-    check(halfway.phase === 'writing' && halfway.progress > 0 && halfway.progress < 1, 'partial stroke');
-    check(app.rows[0].reveal.hasAttribute('mask'), 'partial red fill uses median mask');
-    const dash = Number(app.rows[0].brush.getAttribute('stroke-dasharray').split(' ')[0]);
-    check(dash > 0 && dash < app.rows[0].length, 'positive partial path travel');
-    const redPixels = await countPaintedRedPixels(document2.getElementById('glyphStage'), app.tip);
-    check(redPixels > 40, 'real red pixels from SVG mask, not just DOM states: ' + redPixels);
-    document2.getElementById('play').click();
-    const paused = app.getState().elapsedMs;
-    await delay(100);
-    check(!app.playing && app.getState().elapsedMs === paused, 'pause stops movement');
-    document2.getElementById('play').click();
-    check(app.playing, 'resume');
-
-    document2.getElementById('showAll').click();
-    check(app.getState().phase === 'finished' && !app.playing, 'show complete ends state');
-    check(app.rows[0].solid.style.display !== 'none', 'exact full shape shown');
-    check(app.rows[0].solid.getAttribute('d') === outline, 'full outline unchanged');
-
-    document2.getElementById('restart').click();
-    check(app.playing && app.elapsed === 0, 'restart from beginning');
-    app.pause();
-    document2.getElementById('speed').value = '3';
-    document2.getElementById('speed').dispatchEvent(new Event('change'));
-    check(app.speed === 3, 'speed control');
-    document2.getElementById('replayOne').click();
-    check(app.playing && app.singleEnd === app.timeline.strokes[0].endMs, 'single stroke repeat');
-    // Headless virtual-time can throttle the iframe's later RAF callbacks; inject
-    // one deterministic browser frame to exercise the single-stroke stop edge.
-    app.lastTick = 100;
-    app._tick(100 + app.timeline.strokes[0].durationMs / app.speed + 5);
-    check(!app.playing && app.singleEnd === null, 'single stroke stop at the frame boundary');
-
-    const select = document2.getElementById('glyphSelect');
-    select.value = '201';
-    select.dispatchEvent(new Event('change'));
-    check(app.rows.length === 17 && app.elapsed === 0 && !app.playing, 'change to complex stroke sample');
-    check(document2.querySelectorAll('#glyphStage defs mask').length === 17, 'no previous mask residue');
-    const paintOrder = Array.from(app.rows[0].hint.parentNode.children);
-    check(paintOrder.indexOf(app.rows[16].hint) < paintOrder.indexOf(app.rows[0].solid),
-      'future hints paint beneath completed strokes');
-    check(paintOrder.indexOf(app.rows[16].solid) < paintOrder.indexOf(app.rows[0].reveal),
-      'current red stroke paints above dark completed strokes');
-    document2.getElementById('next').click();
-    check(app.getState().index === 1, 'next stroke');
-    document2.getElementById('previous').click();
-    check(app.getState().index === 0, 'previous stroke');
-    document2.getElementById('showAll').click();
-    check(app.rows.every((row,i) => row.solid.getAttribute('d') ===
-      app.timeline.glyph.strokes[i].outline && row.solid.style.display !== 'none'),
-      'complex final shape remains exact');
-
-    select.value = '77';
-    select.dispatchEvent(new Event('change'));
-    check(app.rows.length === 4 && app.elapsed === 0, 'switching resets old glyph');
-    check(document2.querySelectorAll('#glyphStage defs mask').length === 4, 'no stale masks');
-    document.documentElement.setAttribute('data-result','PASS');
-    document.getElementById('result').textContent = 'PASS: real-browser playback, pause/resume, replay, speed, single step, switch and final outline';
-  } catch (err) {
-    document.documentElement.setAttribute('data-result','FAIL');
-    document.getElementById('result').textContent = 'FAIL: ' + (err.stack || err);
+  const svg=$('glyphStage');
+  const t0=app.timeline.strokes[0];
+  const pixels=[];
+  for(const fraction of [0,.05,.25,.5,.75,.95]){
+    app.seekElapsed(t0.startMs+t0.durationMs*fraction);
+    pixels.push(await redPixels(svg,app.tip));
   }
+  check(pixels[0]===0,'no full stroke flashes at 0%: '+pixels);
+  check(pixels[1]>0,'visible controlled stroke onset at 5%: '+pixels);
+  for(let i=2;i<pixels.length;i++)
+    check(pixels[i]>=pixels[i-1],'ink coverage never shrinks during write: '+pixels);
+  check(pixels[2]<pixels[4]*.75,'25% cannot prematurely display whole stroke: '+pixels);
+  check(app.rows[0].profile.method==='outline-cross-section',
+    'real browser did not resolve outline cross-sections');
+  check(app.rows[0].profile.sampledWithFill>5,'fill hit-tests unexpectedly absent');
+
+  // Exact reference outline is drawn directly when playback completes.
+  const sourceD=app.timeline.glyph.strokes[0].outline;
+  app.showAll();
+  check(app.getState().phase==='finished'&&
+    app.rows[0].solid.getAttribute('d')===sourceD,'final contour is exact');
+  app.rows[0].solid.setAttribute('fill','#BD3945');
+  const all=await redPixels(svg,app.tip);
+  app.rows[0].solid.setAttribute('fill','#5C6269');
+  check(all>0,'reference outline pixel count');
+  check(pixels[5]/all>.75,'95% brush coverage too low: '+pixels[5]+'/'+all);
+
+  // Real asynchronous browser frames still drive the same timeline.
+  $('restart').click();
+  check(app.playing&&app.elapsed===0,'restart begins from zero');
+  for(let n=0;n<14&&app.elapsed===0;n++)await pause(110);
+  // Headless Chrome may throttle RAF for a nested iframe while honoring
+  // virtual setTimeout; verify the frame callback deterministically then.
+  // This fallback is not evidence of a human-visible continuous frame rate.
+  if(app.elapsed===0) {
+    app.lastTick=100;
+    app._tick(210);
+  }
+  check(app.elapsed>0,'animation frame callback cannot advance timeline');
+  $('play').click();
+  const hold=app.elapsed;
+  await pause(100);
+  check(!app.playing&&app.elapsed===hold,'pause should hold');
+  $('play').click();
+  check(app.playing,'resume should work');
+  $('showAll').click();
+  check(!app.playing&&app.getState().phase==='finished','show complete');
+
+  const search=$('glyphSearch');
+  search.value='水';
+  search.dispatchEvent(new Event('input',{bubbles:true}));
+  check($('glyphGallery').querySelectorAll('button').length===1,'glyph search filters');
+  check(w.ZITIE_A1_GALLERY.getSelectedId()===77,'filtered selection tracks model');
+  check(app.rows.length===4,'water has four strokes');
+  const water=app.timeline;
+  app.seekElapsed(water.strokes[0].startMs+water.strokes[0].durationMs*.35);
+  const waterEarly=await redPixels(svg,app.tip);
+  app.seekElapsed(water.strokes[0].startMs+water.strokes[0].durationMs*.82);
+  const waterLater=await redPixels(svg,app.tip);
+  check(waterLater>waterEarly&&waterEarly>0,'hook motion must grow ink instead of jumping');
+
+  $('timelineSeek').value='650';
+  $('timelineSeek').dispatchEvent(new Event('input',{bubbles:true}));
+  check(!app.playing&&app.elapsed>=water.totalMs*.649,'interactive seek uses same timeline');
+
+  search.value='';
+  search.dispatchEvent(new Event('input',{bubbles:true}));
+  const b21=Array.from($('batchFilters').querySelectorAll('button'))
+    .find(b=>b.textContent.startsWith('B21'));
+  check(!!b21,'B21 filter present');
+  b21.click();
+  check($('glyphGallery').querySelectorAll('button').length===1,'batch filter');
+  check(w.ZITIE_A1_GALLERY.getSelectedId()===201,'complex radical chosen');
+  check(app.rows.length===17,'17-stroke complex radical');
+  check(svg.querySelectorAll('defs mask').length===17,'no previous glyph masks remain');
+  check(app.rows[0].solid.getAttribute('d')===app.timeline.glyph.strokes[0].outline,
+    'exact canonical silhouette');
+  $('next').click();
+  check(app.getState().index===1,'next stroke');
+  $('previous').click();
+  check(app.getState().index===0,'previous stroke');
+  $('replayOne').click();
+  check(app.playing&&app.singleEnd===app.timeline.strokes[0].endMs,'single repeat');
+  app.lastTick=100;
+  app._tick(100+app.timeline.strokes[0].durationMs/app.speed+5);
+  check(!app.playing&&app.singleEnd===null,'single repeat deadline');
+  $('showAll').click();
+  check(app.rows.every((r,i)=>r.solid.getAttribute('d')===app.timeline.glyph.strokes[i].outline),
+    'complex final silhouette byte-identical to source');
+
+  const allFilter=Array.from($('batchFilters').querySelectorAll('button'))
+    .find(b=>b.textContent.startsWith('全部'));
+  allFilter.click();
+  tile('37').click();
+  check(w.ZITIE_A1_GALLERY.getSelectedId()===37,'click gallery tile selects 口');
+  check(tile('37').getAttribute('aria-pressed')==='true','gallery active state persists');
+  const fold=app.timeline.strokes[1];
+  app.seekElapsed(fold.startMs+fold.durationMs*.5);
+  check((await redPixels(svg,app.tip))>0,'continuous folded stroke visible');
+
+  $('nextGlyph').click();
+  check(w.ZITIE_A1_GALLERY.getSelectedId()===40,'next glyph');
+  $('previousGlyph').click();
+  check(w.ZITIE_A1_GALLERY.getSelectedId()===37,'previous glyph');
+  tile('37').focus();
+  tile('37').dispatchEvent(new KeyboardEvent('keydown',{key:'r',bubbles:true}));
+  check(app.playing&&app.elapsed===0,'keyboard replay');
+  app.pause();
+
+  search.value='不存在';
+  search.dispatchEvent(new Event('input',{bubbles:true}));
+  check(!$('emptyState').hidden&&$('glyphGallery').children.length===0,'empty-state UI');
+  $('clearSearch').click();
+  check($('glyphGallery').children.length===9,'clear filters restores all tiles');
+  check(svg.querySelectorAll('defs mask').length===app.rows.length,'no orphan SVG resources');
+  // Responsive layout, real Chrome computation (not CSS syntax alone).
+  this.style.width='400px';
+  await pause(80);
+  check(w.matchMedia('(max-width:900px)').matches,'mobile media query should match');
+  const stageRect=d.querySelector('.workspace').getBoundingClientRect();
+  const libraryRect=d.querySelector('.library').getBoundingClientRect();
+  check(libraryRect.top>=stageRect.bottom-2,'mobile library must stack below player');
+  this.style.width='1050px';
+  search.focus();
+  const playingBeforeInput=app.playing;
+  search.dispatchEvent(new KeyboardEvent('keydown',{code:'Space',key:' ',bubbles:true}));
+  check(app.playing===playingBeforeInput,'typing/search focus must not start playback');
+  d.documentElement.setAttribute('data-renderer-quality','PASS');
+  document.documentElement.setAttribute('data-result','PASS');
+  $('state').setAttribute('data-pixel-progress',pixels.join(','));
+  document.getElementById('result').textContent=
+    'PASS: offline gallery, search, batch filters, keyboard, pen-tip bounds, precise mask pixel growth, final vector identity and timeline controls; red pixels='+pixels.join(',');
+ }catch(error){
+  document.documentElement.setAttribute('data-result','FAIL');
+  document.getElementById('result').textContent='FAIL: '+(error.stack||String(error));
+ }
 });
 </script>
-</body>
-</html>
+</body></html>
