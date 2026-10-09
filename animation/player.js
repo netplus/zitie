@@ -147,7 +147,7 @@
     _tick(timestamp) {
       if (!this.playing) return;
       if (this.lastTick !== null) {
-        const delta = Math.max(0, Math.min(120, timestamp - this.lastTick));
+        const delta = Math.max(0, timestamp - this.lastTick);
         this.elapsed = Math.min(this.elapsed + delta * this.speed,
           this.singleEnd === null ? this.timeline.totalMs : this.singleEnd);
       }
