@@ -1,6 +1,6 @@
 # A1.3 — Optical cursor follows the stable round-brush ink frontier
 
-2026-10-09 · [Issue #98](https://github.com/netplus/zitie/issues/98)
+**Release verification 2026-10-09:** [PR #99](https://github.com/netplus/zitie/pull/99) merged as `1ec9afb8b9f03657089cf61dd5551ed1fc0952ed`. Final proposed HEAD `40c5b9d43fdb622c132e0ed393f709b24ba0bde6` passed [A1 CI #37936426827](https://github.com/netplus/zitie/actions/runs/37936426827) and [Book CI #37936426822](https://github.com/netplus/zitie/actions/runs/37936426822); [Pages #37937065049](https://github.com/netplus/zitie/actions/runs/37937065049) completed Configure, Upload and Deploy on the merge SHA. At 512/1024 true SVG raster, 50 frames each: old red-ahead 1388/1370, new 429.51/411.51, no circle-on-gray samples, 40-stroke original ink suite unchanged. [Stable player](https://netplus.github.io/zitie/animation/). Human naturalness review is still open.\n\n2026-10-09 · [Issue #98](https://github.com/netplus/zitie/issues/98)
 
 ## User-visible problem and selection
 
