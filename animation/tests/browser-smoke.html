@@ -58,6 +58,11 @@ document.getElementById('demo').addEventListener('load', async function () {
     select.dispatchEvent(new Event('change'));
     check(app.rows.length === 17 && app.elapsed === 0 && !app.playing, 'change to complex stroke sample');
     check(document2.querySelectorAll('#glyphStage defs clipPath').length === 17, 'no previous clip residue');
+    const paintOrder = Array.from(app.rows[0].hint.parentNode.children);
+    check(paintOrder.indexOf(app.rows[16].hint) < paintOrder.indexOf(app.rows[0].solid),
+      'future hints paint beneath completed strokes');
+    check(paintOrder.indexOf(app.rows[16].solid) < paintOrder.indexOf(app.rows[0].reveal),
+      'current red stroke paints above dark completed strokes');
     document2.getElementById('next').click();
     check(app.getState().index === 1, 'next stroke');
     document2.getElementById('previous').click();
