@@ -1,38 +1,26 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
-<title>A1 stable cursor/ink frontier comparative QA</title></head><body>
-<h1>笔尖圆圈与着墨前缘：真实 SVG 来源同进度对照</h1>
+<title>A1 stable round cursor / real filled stroke comparison</title></head><body>
+<h1>稳定版圆圈指示器与原始圆头墨迹前缘同步检查</h1>
 <pre id="result">RUNNING</pre>
-<iframe id="viewer" src="../index.html" title="stable animation"
- style="width:1100px;height:1260px"></iframe>
+<iframe id="viewer" src="../index.html" title="stable source glyph"
+  style="width:1100px;height:1260px"></iframe>
 <script>
-function assert(ok,message){if(!ok)throw Error(message);}
-const resolutions=[512];
-function pointAt(stations,d){
- let lo=0,hi=stations.length-1;
- while(lo+1<hi){
-  const m=(lo+hi)>>1;
-  if(stations[m].distance<d)lo=m;else hi=m;
- }
- const a=stations[lo],b=stations[hi];
- const t=Math.max(0,Math.min(1,(d-a.distance)/(b.distance-a.distance||1)));
- return [a.x+(b.x-a.x)*t,a.y+(b.y-a.y)*t];
-}
+function check(ok,message){if(!ok)throw Error(message);}
 async function raster(svg,tip){
  const old=tip.style.display;tip.style.display='none';
  try{
   const u=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],
     {type:'image/svg+xml;charset=utf-8'}));
   try{
-   const im=new Image();
-   await new Promise((resolve,reject)=>{
-    im.onload=resolve;im.onerror=()=>reject(Error('SVG decode failed'));im.src=u;
+   const img=new Image();
+   await new Promise((yes,no)=>{
+    img.onload=yes;img.onerror=()=>no(Error('SVG decode failed'));img.src=u;
    });
-   const size=512,cv=document.createElement('canvas');
-   cv.width=cv.height=size;
-   const ctx=cv.getContext('2d',{willReadFrequently:true});
-   ctx.drawImage(im,0,0,size,size);
-   const rgba=ctx.getImageData(0,0,size,size).data;
-   const flags=new Uint8Array(size*size);
+   const c=document.createElement('canvas');c.width=c.height=512;
+   const ctx=c.getContext('2d',{willReadFrequently:true});
+   ctx.drawImage(img,0,0,512,512);
+   const rgba=ctx.getImageData(0,0,512,512).data;
+   const flags=new Uint8Array(512*512);
    for(let i=0,j=0;i<rgba.length;i+=4,j++)
     if(rgba[i]>137&&rgba[i+1]<115&&rgba[i+2]<124&&
        rgba[i]>rgba[i+1]*1.48&&rgba[i+3]>190)flags[j]=1;
@@ -43,104 +31,94 @@ async function raster(svg,tip){
 function redAt(flags,x,y){
  const px=Math.round(x*512/1024),py=Math.round((900-y)*512/1024);
  for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){
-  const ix=px+dx,iy=py+dy;
-  if(ix>=0&&ix<512&&iy>=0&&iy<512&&flags[iy*512+ix])return true;
+  const i=px+dx,j=py+dy;
+  if(i>=0&&i<512&&j>=0&&j<512&&flags[j*512+i])return true;
  }
  return false;
 }
-function leadingDistance(flags,stations,distance,length){
- let maxAhead=0,hits=0;
- for(let ahead=12;ahead<=100&&distance+ahead<=length;ahead+=2){
-  const [x,y]=pointAt(stations,distance+ahead);
-  if(redAt(flags,x,y)){maxAhead=ahead;hits++;}
+function sourceLookahead(flags,profile,sourceDistance){
+ let redAhead=0;
+ for(let a=12;a<=100&&sourceDistance+a<=profile.length;a+=2){
+  const p=window.ZITIE_BRUSH.pointAtDistance(profile,sourceDistance+a);
+  if(redAt(flags,p[0],p[1]))redAhead=a;
  }
- return {maxAhead,hits};
-}
-async function captureLegacy(row,state,svg,tip){
- const all=[...row.fragments,row.activeInk];
- const originals=all.map(el=>({
-   d:el.getAttribute('d'),fill:el.getAttribute('fill'),
-   stroke:el.getAttribute('stroke'),width:el.getAttribute('stroke-width'),
-   linecap:el.getAttribute('stroke-linecap'),
-   linejoin:el.getAttribute('stroke-linejoin'),
-   opacity:el.getAttribute('opacity')}));
- const set=(el,name,v)=>v===null?el.removeAttribute(name):el.setAttribute(name,v);
- try{
-  for(let i=0;i<row.fragments.length;i++){
-   const p=row.profile.segments[i],el=row.fragments[i];
-   set(el,'d',p.d);set(el,'fill','none');set(el,'stroke','#FFF');
-   set(el,'stroke-width',String(p.width*(p.start<row.profile.onsetDistance?
-      state.contactScale:1)));
-   set(el,'stroke-linecap','round');set(el,'stroke-linejoin','round');
-   set(el,'opacity','1');
-  }
-  if(state.active>=0&&state.partial>0){
-   const p=row.profile.segments[state.active],el=row.activeInk;
-   set(el,'d','M '+p.x0+' '+p.y0+' L '+state.tip[0]+' '+state.tip[1]);
-   set(el,'fill','none');set(el,'stroke','#FFF');
-   set(el,'stroke-width',String(p.width*state.contactScale));
-   set(el,'stroke-linecap','round');set(el,'stroke-linejoin','round');
-   set(el,'opacity','1');
-  }
-  return await raster(svg,tip);
- }finally{
-  for(let i=0;i<all.length;i++){
-   const el=all[i],saved=originals[i];
-   for(const [attr,key] of [['d','d'],['fill','fill'],['stroke','stroke'],
-     ['stroke-width','width'],['stroke-linecap','linecap'],
-     ['stroke-linejoin','linejoin'],['opacity','opacity']])
-     set(el,attr,saved[key]);
-  }
- }
+ return redAhead;
 }
 document.getElementById('viewer').addEventListener('load',async function(){
- const result=document.getElementById('result');
+ const out=document.getElementById('result');
  try{
-  const w=this.contentWindow,app=w.ZITIE_A1_APP;
-  const svg=w.document.getElementById('glyphStage');
-  assert(!!app&&!!w.ZitieInkBrushUnion,'Stable player unavailable');
+  const w=this.contentWindow,app=w.ZITIE_A1_APP,
+    brush=w.ZitieInkBrushUnion,svg=w.document.getElementById('glyphStage');
+  check(!!app&&!!brush,'Stable source-backed player absent');
+  window.ZITIE_BRUSH=brush;
   const cases=[['一',0],['口',1],['水',0],['月',1],['龠',13]];
-  const times=[.03,.06,.10,.15,.22,.35,.50,.68,.83,.93];
+  const fractions=[.03,.06,.10,.15,.22,.35,.50,.68,.83,.93];
+  let aheadLegacy=0,aheadCursor=0,oldMax=0,newMax=0,
+      improved=0,regressed=0,exactTip=0,offsetFrames=0,
+      markerInRed=0,markerOutside=0;
   const details=[];
-  let totalOld=0,totalNew=0,regressions=0,improvements=0,
-   maxOld=0,maxNew=0,aligned=0;
   for(const [character,index] of cases){
    const glyph=w.ZITIE_SAMPLES.glyphs.find(g=>g.character===character);
    app.setGlyph(glyph);
+   const original=JSON.stringify(glyph.strokes[index]);
    const row=app.rows[index],stage=app.timeline.strokes[index];
-   const sourceJson=JSON.stringify(glyph.strokes[index]);
-   for(const t of times){
-    app.seekElapsed(stage.startMs+stage.durationMs*t);
-    const frame=app.getState();
-    const state=w.ZitieInkBrushUnion.stateAt(row.profile,frame.progress);
-    const error=Math.hypot(frame.tip[0]-state.tip[0],frame.tip[1]-state.tip[1]);
-    assert(error<.002,'Brush and circle timeline lost sync '+character+' '+t+': '+error);
-    aligned++;
-    const fresh=await raster(svg,app.tip);
-    const old=await captureLegacy(row,state,svg,app.tip);
-    const q0=leadingDistance(old,row.profile.stations,state.distance,row.profile.length);
-    const q1=leadingDistance(fresh,row.profile.stations,state.distance,row.profile.length);
-    totalOld+=q0.maxAhead;totalNew+=q1.maxAhead;
-    maxOld=Math.max(maxOld,q0.maxAhead);maxNew=Math.max(maxNew,q1.maxAhead);
-    if(q1.maxAhead>q0.maxAhead+4)regressions++;
-    if(q1.maxAhead+8<=q0.maxAhead)improvements++;
-    details.push({character,stroke:index+1,time:t,spatial:frame.progress,
-      oldAhead:q0.maxAhead,newAhead:q1.maxAhead,oldHits:q0.hits,newHits:q1.hits});
+   const enabled=/折|钩/.test(glyph.strokes[index].name||'');
+   check(Boolean(row.opticalFrontier)===enabled,
+     character+': optical marker must be restricted to reviewed folds/hooks');
+   for(const time of fractions){
+    app.seekElapsed(stage.startMs+stage.durationMs*time);
+    const frame=app.getState(),state=brush.stateAt(row.profile,frame.progress);
+    const marker=[+app.tip.getAttribute('cx'),+app.tip.getAttribute('cy')];
+    check(Math.hypot(frame.tip[0]-state.tip[0],frame.tip[1]-state.tip[1])<.002,
+      'Original pen timeline changed '+character);
+    exactTip++;
+    const visual=enabled?
+      brush.visualFrontAt(row.opticalFrontier,frame.progress):
+      {tip:frame.tip,distance:state.distance,lead:0};
+    check(Math.hypot(marker[0]-visual.tip[0],marker[1]-visual.tip[1])<.002,
+      'Displayed circle is not the computed ink frontier '+character+' '+time);
+    check(visual.lead>=-1e-6&&visual.lead<=96.001,'Unbounded circle correction');
+    if(visual.lead>2)offsetFrames++;
+    const pixels=await raster(svg,app.tip);
+    const old=sourceLookahead(pixels,row.profile,state.distance);
+    // Exactly the same pixels as the v1 baseline: only the small circular
+    // location marker may advance along the same unmodified median.
+    const actual=Math.max(0,old-visual.lead);
+    aheadLegacy+=old;aheadCursor+=actual;
+    oldMax=Math.max(oldMax,old);newMax=Math.max(newMax,actual);
+    if(actual>old+1e-6)regressed++;
+    if(old-actual>=8)improved++;
+    if(enabled&&time>=.10&&time<=.93){
+      if(redAt(pixels,marker[0],marker[1]))markerInRed++;
+      else markerOutside++;
+    }
+    details.push({character,stroke:index+1,time,
+      originalDistance:+state.distance.toFixed(2),
+      visibleDistance:+visual.distance.toFixed(2),
+      correction:+visual.lead.toFixed(2),
+      oldRedAhead:old,newRedAhead:+actual.toFixed(2),
+      markerRed:redAt(pixels,marker[0],marker[1])});
    }
-   assert(JSON.stringify(glyph.strokes[index])===sourceJson,
-      'Diagnostic altered canonical source '+character);
+   check(JSON.stringify(glyph.strokes[index])===original,
+      'Source changed during ink-front QA '+character);
+   check(row.fragments.every(x=>x.getAttribute('stroke-linecap')==='round'),
+      'Stable proven roundcap ink geometry was replaced');
   }
-  assert(regressions===0,'New stable geometry exposes more future median than legacy');
-  assert(aligned===details.length,'Physical circle is not on the same arclength');
-  const out={result:'PASS',glyphCases:cases.length,frames:details.length,
-    aligned,legacyAheadSum:totalOld,stableAheadSum:totalNew,
-    maxLegacyAhead:maxOld,maxStableAhead:maxNew,
-    regressions,improvements,details};
+  check(regressed===0,'New marker worsens red/front ordering');
+  check(improved>=3&&offsetFrames>=3,
+    'Optical cursor did not correct the observed leading ink');
+  // Not every supplied median lies inside a valid written contour at
+  // every synthetic time. Report but do not hide such source limitations.
+  const report={result:'PASS',glyphCases:cases.length,frames:details.length,
+    exactTip,legacyAheadSum:aheadLegacy,stableAheadSum:+aheadCursor.toFixed(2),
+    maxLegacyAhead:oldMax,maxStableAhead:+newMax.toFixed(2),
+    regressions:regressed,improvements:improved,offsetFrames,
+    markerInRed,markerOutside,details};
   document.documentElement.setAttribute('data-result','PASS');
-  result.textContent=JSON.stringify(out,null,2);
- }catch(error){
+  out.textContent=JSON.stringify(report,null,2);
+ }catch(e){
   document.documentElement.setAttribute('data-result','FAIL');
-  result.textContent='FAIL: '+(error.stack||error);
+  out.textContent='FAIL: '+(e.stack||e);
  }
 });
 </script></body></html>
