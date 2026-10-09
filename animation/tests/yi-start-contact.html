@@ -7,6 +7,13 @@
  title="source-backed virtual nib comparison" style="width:1200px;height:1400px"></iframe>
 <script>
 const fractions=[0,.0001,.0005,.001,.002,.003,.005,.0075,.01,.02,.03,.04,.05,.06,.07,.08,.10,.12,.15,.20,.25,.35,.60,.995];
+// A physical high-DPI sweep uses CSS-equivalent sizes mapped to the
+// actual browser devicePixelRatio. This varies SVG raster AA edges instead
+// of merely relabeling the same 512/768/1024 backing buffers.
+const mode=new URLSearchParams(location.search).get('mode')||'standard';
+const dpr=window.devicePixelRatio;
+const cssSizes=mode==='hidpi'?[310,410,520]:null;
+const resolutions=cssSizes?cssSizes.map(v=>Math.round(v*dpr)):[512,768,1024];
 function check(ok,why){if(!ok)throw Error(why);}
 function invert(profile,p){
   if(p===0)return 0;
@@ -77,6 +84,9 @@ function projectedMissing(source,painted,cap,front,resolution){
 document.getElementById('lab').addEventListener('load',async function(){
   const output=document.getElementById('result');
   try{
+    check(mode==='standard'||mode==='hidpi','Unsupported raster QA mode');
+    if(mode==='hidpi')check(Math.abs(dpr-2)<.06,
+      'Actual browser DPR must be 2, got '+dpr);
     const w=this.contentWindow,lab=w.ZITIE_A14_LAB;
     check(lab&&lab.baseline&&lab.experimental,'Cannot load offline A/B lab');
     const glyph=lab.glyphs.find(g=>g.character==='一');
@@ -100,7 +110,7 @@ document.getElementById('lab').addEventListener('load',async function(){
       erased=0,outside=0,projectedComparisons=0,
       projectedMissingPixels=0,projectedSourcePixels=0;
     const samples=[];
-    for(const resolution of [512,768,1024]){
+    for(const resolution of resolutions){
       lab.seek(stage.startMs+stage.durationMs*.995);
       const saved=row.reveal.getAttribute('mask');
       row.reveal.removeAttribute('mask');row.reveal.style.display='';
@@ -166,7 +176,7 @@ document.getElementById('lab').addEventListener('load',async function(){
       'Actual filled-source support was not independently checked');
     check(projectedMissingPixels===0,'Source support pixels still fill late');
     const audit={result:'PASS',glyph:'一',canonicalSourceUnchanged:true,
-      resolutions:[512,768,1024],frames,earlySourceComparisons:checks,
+      mode,devicePixelRatio:dpr,cssSizes,resolutions,frames,earlySourceComparisons:checks,
       projectedComparisons,projectedSourcePixels,projectedMissingPixels,
       sourceSupportOrigin:cap.sourceStartPoint,
       sourceOriginProjection:cap.sourceStart,
