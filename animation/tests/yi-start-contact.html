@@ -74,7 +74,7 @@ document.getElementById('lab').addEventListener('load',async function(){
     let frames=0,checks=0,totalMissing=0,upperLeftMissing=0,
       erased=0,outside=0;
     const samples=[];
-    for(const resolution of [512,768]){
+    for(const resolution of [512,768,1024]){
       lab.seek(stage.startMs+stage.durationMs*.995);
       const saved=row.reveal.getAttribute('mask');
       row.reveal.removeAttribute('mask');row.reveal.style.display='';
@@ -120,7 +120,7 @@ document.getElementById('lab').addEventListener('load',async function(){
     }
     check(checks>=16,'Too few early arrival comparisons');
     const audit={result:'PASS',glyph:'一',canonicalSourceUnchanged:true,
-      resolutions:[512,768],frames,earlySourceComparisons:checks,
+      resolutions:[512,768,1024],frames,earlySourceComparisons:checks,
       upperLeftMissingPixels:upperLeftMissing,sourceMissingPixels:totalMissing,
       vanishedPixels:erased,outsideSourcePixels:outside,
       zeroProgressEmpty:true,samples};
