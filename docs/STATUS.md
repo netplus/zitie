@@ -1,3 +1,9 @@
+# A1.5 稳定版笔压可视化研究与实验（2026-10-10，开发候选）
+
+根据用户明确要求已调研实测笔压资料与算法：CASIA-onDo/OHFC 的 X/Y/F/S/T、DCOH-120K 的压力与倾斜数据（均有限制性学术研究许可，不将原始样本放入公开仓库）；Schomaker/Plamondon 和 Gatouillat 等研究说明不能直接从笔速唯一推断笔压。详见 [研究记录](A1_PRESSURE_RESEARCH.md) 与 [Issue #101](https://github.com/netplus/zitie/issues/101)。现正以 A1.3 稳定圆头播放器双实例研发独立 A/B：B 侧仅根据未经标定的笔画语义平滑控制显示压力环/力度曲线，红色墨迹完全按原算法填充并需逐像素一致；不采用 A1.4 椭圆笔尖，不修改 v0.5.1 PDF、manifest、201来源与教学审核状态。CI、PR和 Pages 成功前仅为候选实验，真实数据标定仍待许可和样本匹配。
+
+---
+
 # A1.3 稳定版圆圈同步已合入并部署（2026-10-09）
 
 根据用户明确反馈，椭圆笔尖 A1.4 仅保留独立 A/B 实验，后续重点是 **A1.2.3 稳定版**。当前阶段解决“竖钩等笔画填充快于圆圈”现象：原墨迹遮罩是按源字形宽度生成的 round-cap 笔刷并集，实际颜色可超前于位于 median 中心的8单位圆圈，不属于计时器不同步。曾尝试端帽受限的全面填充变更，真实Chrome回归发现短点画与复杂折画终端缺口，因此已撤回该方案。改为保持原填充算法与帧时序字节一致，**只为已核名称的折/钩计算来源笔刷驱动的单调视觉前缘圆圈**。工程说明见 [A1_STABLE_FRONTIER.md](A1_STABLE_FRONTIER.md) 与 [Issue #98](https://github.com/netplus/zitie/issues/98)。[PR #99](https://github.com/netplus/zitie/pull/99) 已合入 `main`（提交 `1ec9afb8b9f03657089cf61dd5551ed1fc0952ed`）。最终 PR HEAD `40c5b9d43fdb622c132e0ed393f709b24ba0bde6` 的 [A1 CI #37936426827](https://github.com/netplus/zitie/actions/runs/37936426827) 与 [Book CI #37936426822](https://github.com/netplus/zitie/actions/runs/37936426822) 均通过；合并提交的 [GitHub Pages #37937065049](https://github.com/netplus/zitie/actions/runs/37937065049) 已实际完成 Configure/Upload/Deploy。512/1024px 各50帧旧/新墨迹领先圆圈得分分别为1388→429.51、1370→411.51，笔尖落在未填色区域计数均为0。可打开[稳定版在线播放器](https://netplus.github.io/zitie/animation/)验收。正式PDF/manifest和201来源数据不变；教学主观自然度审核依然独立待办。
