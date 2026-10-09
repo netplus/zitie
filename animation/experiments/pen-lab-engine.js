@@ -164,12 +164,22 @@
             row.repairFragments[j].style.display='none';
         }
         row.repairCount=repair.visibleCount;
+        // Synchronize the start cap with early pen contact. Repair widths
+        // grow smoothly for the first 12-22 source units; already painted
+        // fragments only gain coverage and can never shrink during playback.
+        for(let j=0;j<row.profile.segments.length;j++){
+          const segment=row.profile.segments[j];
+          if(segment.start>=repairDistance.contactRampDistance)break;
+          row.repairFragments[j].setAttribute('stroke-width',String(
+            segment.width*repairDistance.contactScale));
+        }
         if(repair.active>=0&&repair.partial>0){
           const segment=row.profile.segments[repair.active];
           row.repairFront.setAttribute('d',
             'M '+segment.x0+' '+segment.y0+
             ' L '+repair.tip[0]+' '+repair.tip[1]);
-          row.repairFront.setAttribute('stroke-width',String(segment.width));
+          row.repairFront.setAttribute('stroke-width',String(
+            segment.width*repairDistance.contactScale));
           row.repairFront.style.display='';
         }else{
           row.repairFront.style.display='none';
