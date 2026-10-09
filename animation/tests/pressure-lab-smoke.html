@@ -55,7 +55,7 @@ document.getElementById('lab').addEventListener('load',async function(){
   const target={一:0,口:1,水:0,月:1,火:0,龠:13};
   let frames=0,differentPixels=0,pressureChanges=0,markerSyncErrors=0,
       glyphs=0,nonzero=0,zeroOnset=0,invalid=0;
-  const reports=[];
+  const reports=[],markerMismatchSamples=[];
   for(const g of lab.glyphs){
    const source=JSON.stringify(g);
    lab.select(g);
@@ -89,7 +89,13 @@ document.getElementById('lab').addEventListener('load',async function(){
       const ax=+lab.baseline.tip.getAttribute('cx');
       const ay=+lab.baseline.tip.getAttribute('cy');
       const bx=+marker.getAttribute('cx'),by=+marker.getAttribute('cy');
-      if(Math.hypot(ax-bx,ay-by)>1e-6)markerSyncErrors++;
+      if(Math.hypot(ax-bx,ay-by)>1e-6){
+        markerSyncErrors++;
+        if(markerMismatchSamples.length<8)markerMismatchSamples.push({
+          character:g.character,time:t,ax,ay,bx,by,
+          phase:aState.phase,progress:aState.progress
+        });
+      }
     }
     const a=await redRaster(lab.baseline.svg,lab.baseline.tip,null);
     const b=await redRaster(lab.experimental.svg,lab.experimental.tip,ring);
@@ -104,7 +110,7 @@ document.getElementById('lab').addEventListener('load',async function(){
    glyphs++;
   }
   check(invalid===0&&differentPixels===0&&markerSyncErrors===0,
-    'Measured pressure or cursor geometry invalid');
+    'Measured pressure or cursor geometry invalid: '+JSON.stringify({invalid,differentPixels,markerSyncErrors,markerMismatchSamples}));
   check(nonzero>=30&&zeroOnset===6&&pressureChanges>=12,
     'Synthetic force lacks meaningful micro-variation');
   // No speed-dependent pressure: compare the very same spatial state.
