@@ -1,4 +1,4 @@
-/* A1.2.1 precision ink-reveal geometry, separate from the canonical timeline.
+/* A1.2.2 precision ink-reveal geometry, separate from the canonical timeline.
  * Profiles approximate painting only; they never modify or approve stroke medians.
  */
 (function (root, factory) {
@@ -12,7 +12,7 @@
   const round=v=>Number(v.toFixed(2));
   const lerp=(a,b,t)=>a+(b-a)*t;
 
-  function sampleMedian(points,spacing=13) {
+  function sampleMedian(points,spacing=7) {
     if (!Array.isArray(points)||points.length<2||
         !Number.isFinite(spacing)||spacing<2||spacing>80)
       throw new Error('Invalid median or sample spacing');
@@ -57,9 +57,9 @@
   }
 
   function makeProfile(points,contains,options={}) {
-    const stations=sampleMedian(points,options.spacing||13);
+    const stations=sampleMedian(points,options.spacing||7);
     const max=options.maxRadius||154;
-    const margin=options.margin===undefined ? 8:options.margin;
+    const margin=options.margin===undefined ? 6:options.margin;
     const fallback=options.fallbackRadius||72;
     let probed=0,misses=0;
     for(const s of stations){
@@ -90,18 +90,39 @@
       s.left=best?best.left:fallback;
       s.right=best?best.right:fallback;
     }
+    // Smooth measured brush-width jitter only on locally aligned sections.
+    // Never smooth median coordinates or join a genuine sharp fold/hook.
+    const original=stations.map(p=>({left:p.left,right:p.right}));
+    for(let i=1;i<stations.length-1;i++){
+      const a=stations[i-1],b=stations[i],c=stations[i+1];
+      const aligned=(a.nx*b.nx+a.ny*b.ny>0.96) &&
+                    (b.nx*c.nx+b.ny*c.ny>0.96);
+      if(!aligned)continue;
+      b.left=original[i-1].left*0.2+original[i].left*0.6+
+        original[i+1].left*0.2;
+      b.right=original[i-1].right*0.2+original[i].right*0.6+
+        original[i+1].right*0.2;
+    }
     return {stations,length:stations[stations.length-1].distance,
+      fullSegments:stations.slice(1).map((b,i)=>segmentGeometry(stations[i],b)),
       method:typeof contains==='function'?'outline-cross-section':'fallback-no-fill-API',
       sampledWithFill:probed,fallbackSamples:misses};
   }
 
-  function segmentGeometry(a,b){
+  function segmentGeometry(a,b,softTip=false){
     const A=[round(a.x+a.nx*a.left),round(a.y+a.ny*a.left)];
     const B=[round(b.x+b.nx*b.left),round(b.y+b.ny*b.left)];
     const C=[round(b.x-b.nx*b.right),round(b.y-b.ny*b.right)];
-    const D=[round(a.x-a.nx*a.right),round(a.y-a.ny*a.right)];
-    if(hypot(b.x-a.x,b.y-a.y)<0.001)return '';
-    return 'M '+A.join(' ')+' L '+B.join(' ')+' L '+C.join(' ')+' L '+D.join(' ')+' Z';
+    const D=[round(a.x-a.nx*a.left),round(a.y-a.ny*a.left)];
+    const distance=hypot(b.x-a.x,b.y-a.y);
+    if(distance<0.001)return '';
+    if(!softTip)return 'M '+A.join(' ')+' L '+B.join(' ')+' L '+C.join(' ')+' L '+D.join(' ')+' Z';
+    // At a partially written front, use a softly curved inward nib. The
+    // control point lies *behind* the median tip; never unveil future ink.
+    const retreat=Math.min(3.5,distance*0.34);
+    const tip=[round(b.x-(b.x-a.x)*retreat/distance),
+               round(b.y-(b.y-a.y)*retreat/distance)];
+    return 'M '+A.join(' ')+' L '+B.join(' ')+' Q '+tip.join(' ')+' '+C.join(' ')+' L '+D.join(' ')+' Z';
   }
 
   function interpolateStation(a,b,distance){
@@ -123,7 +144,8 @@
       const a=all[i-1],b=all[i];
       if(a.distance>=cutoff)break;
       const end=b.distance<=cutoff?b:interpolateStation(a,b,cutoff);
-      chunks.push(segmentGeometry(a,end));
+      chunks.push(end===b && profile.fullSegments ?
+        profile.fullSegments[i-1] : segmentGeometry(a,end,true));
       if(b.distance>=cutoff)break;
     }
     return chunks.filter(Boolean).join(' ');
