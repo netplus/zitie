@@ -29,7 +29,8 @@ out="$(mktemp)"
 trap 'kill "$server_pid" 2>/dev/null || true; rm -f "$out"' EXIT
 timeout 55 "$BROWSER" --headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage \
   --disable-background-timer-throttling --disable-renderer-backgrounding \
-  --virtual-time-budget=7000 --dump-dom \
+  --window-size=1280,1400 --disable-backgrounding-occluded-windows \
+  --virtual-time-budget=16000 --dump-dom \
   "http://127.0.0.1:$PORT/animation/tests/browser-smoke.html" > "$out"
 if ! grep -q 'data-result="PASS"' "$out"; then
   echo "A1 real-browser playback smoke failed; final result:" >&2
