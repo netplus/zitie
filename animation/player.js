@@ -77,20 +77,30 @@
         contour.remove(); // do not ship an invisible extra outline to the mask
         const nib = create('path', { d: '', fill: '#FFFFFF', 'fill-rule': 'nonzero' });
         mask.appendChild(nib);
+        // Bounded terminal contact patch reduces the final filled-contour
+        // snap when a vendor median stops inside a naturally wider brush tip.
+        // It only expands within the last 1.8% of *distance*, is clipped by
+        // the unchanged source outline, and adds NO trajectory points.
+        const end=s.median[s.median.length-1];
+        const last=profile.stations[profile.stations.length-1];
+        const terminalRadius=Math.min(74,Math.max(13,
+          9+0.62*Math.max(last.left,last.right)));
+        const contact=create('circle',{cx:end[0],cy:end[1],r:0,fill:'#FFFFFF'});
+        mask.appendChild(contact);
         defs.appendChild(mask);
         const hint = create('path', { d: s.outline, fill:'#E1E4E7' });
         const solid = create('path', { d: s.outline, fill:'#5C6269' });
         const reveal = create('path', { d: s.outline, fill:'#BD3945',
           mask:'url(#' + id + ')' });
-        return { hint, solid, reveal, nib, profile, length: tl.strokes[i].length, id };
+        return { hint, solid, reveal, nib, contact, terminalRadius, profile, length: tl.strokes[i].length, id };
       });
       // Layer by paint role, NOT by stroke index: future gray strokes must
       // never obscure the currently written red stroke at intersections.
       for (const row of this.rows) group.appendChild(row.hint);
       for (const row of this.rows) group.appendChild(row.solid);
       for (const row of this.rows) group.appendChild(row.reveal);
-      this.tip = create('circle', { cx:0,cy:0,r:12,fill:'#BD3945',
-        stroke:'#FFFFFF','stroke-width':4, 'pointer-events':'none' });
+      this.tip = create('circle', { cx:0,cy:0,r:8,fill:'#BD3945',
+        stroke:'#FFFFFF','stroke-width':2.5, 'pointer-events':'none' });
       group.appendChild(this.tip);
       this.render();
     }
@@ -119,6 +129,10 @@
           } else {
             r.reveal.setAttribute('mask', 'url(#' + r.id + ')');
             r.nib.setAttribute('d', Brush.revealPath(r.profile, frame.progress));
+            const endPhase=Math.max(0,Math.min(1,
+              (frame.progress-0.982)/0.018));
+            const gradual=endPhase*endPhase*(3-2*endPhase);
+            r.contact.setAttribute('r',String(r.terminalRadius*gradual));
           }
         }
       });
