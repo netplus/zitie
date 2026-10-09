@@ -9,11 +9,12 @@
     typeof module==='object'&&module.exports?require('../timeline.js'):root.ZitieTimeline,
     typeof module==='object'&&module.exports?require('../brush-union.js'):root.ZitieInkBrushUnion,
     typeof module==='object'&&module.exports?require('./pen-contact.js'):root.ZitiePenContact,
-    typeof module==='object'&&module.exports?require('./gesture-data.js'):root.ZitieGestureCandidates
+    typeof module==='object'&&module.exports?require('./gesture-data.js'):root.ZitieGestureCandidates,
+    typeof module==='object'&&module.exports?require('./pen-kinematics.js'):root.ZitiePenKinematics
   );
   if(typeof module==='object'&&module.exports)module.exports=api;
   if(root)root.ZitiePenLab=api;
-})(typeof window!=='undefined'?window:null,function(T,Brush,Pen,Gestures){
+})(typeof window!=='undefined'?window:null,function(T,Brush,Pen,Gestures,Kinematics){
   'use strict';
   const NS='http://www.w3.org/2000/svg';
   let instance=0;
@@ -64,6 +65,7 @@
         reference.remove();
         const gesture=Gestures.lookup(glyph,index);
         const plan=Pen.makePlan(stroke,profile,tl.strokes[index].motion,gesture);
+        const motionWarp=Kinematics.makeTimeWarp(plan,tl.strokes[index].motion);
         const mask=element('mask',{id,maskUnits:'userSpaceOnUse',
           maskContentUnits:'userSpaceOnUse',x:-240,y:-240,width:1504,height:1504,
           'mask-type':'alpha'});
@@ -80,7 +82,7 @@
         const solid=element('path',{d:stroke.outline,fill:'#5C6269'});
         const reveal=element('path',{d:stroke.outline,
           fill:'#BD3945',mask:'url(#'+id+')'});
-        return {hint,solid,reveal,stamps,plan,profile,id,count:0};
+        return {hint,solid,reveal,stamps,plan,profile,motionWarp,id,count:0};
       });
       for(const row of this.rows)group.append(row.hint);
       for(const row of this.rows)group.append(row.solid);
@@ -102,7 +104,14 @@
     }
     renderAt(elapsed){
       if(!this.timeline)return null;
-      const frame=T.frameAt(this.timeline,elapsed);
+      const baseline=T.frameAt(this.timeline,elapsed);
+      const activeRow=this.rows[baseline.index];
+      const experimentProgress=baseline.phase==='writing'?
+        activeRow.motionWarp.progressAt(baseline.timeProgress):baseline.progress;
+      const frame=baseline.phase==='writing'?
+        {...baseline,progress:experimentProgress,
+          tip:T.pointAt(this.timeline.glyph.strokes[baseline.index].median,
+            experimentProgress)}:baseline;
       this.rows.forEach((row,i)=>{
         const finished=frame.phase==='finished';
         const done=finished||i<frame.index;
@@ -144,6 +153,9 @@
         Pen.snapshot(current.plan,frame.progress):
         {state:frame.phase==='finished'?'finished':'pause',pressure:0,count:0};
       return {...frame,contact,gesture:current.plan.gesture,
+        motionWarp:current.motionWarp.kind,
+        experimentPace:baseline.phase==='writing'?
+          current.motionWarp.normalizedPace(baseline.timeProgress):0,
         glyph:this.timeline.glyph.character,stats:this.stats};
     }
   }
