@@ -58,6 +58,8 @@
           'stroke-width':2, 'stroke-dasharray':'12 12' }));
       }
       const group = create('g', { transform: 'translate(0 900) scale(1 -1)' });
+      // Geometry APIs require a connected element; detached <defs> return false.
+      this.svg.append(defs, group);
       this.rows = glyph.strokes.map((s, i) => {
         const id = this.prefix + i;
         const mask = create('mask', { id, maskUnits: 'userSpaceOnUse',
@@ -65,12 +67,14 @@
           'mask-type': 'alpha' });
         // A transparent SVG stroke path is NOT a painted SVG clip. Reveal
         // narrow, local cross-sections instead of a fixed 170-unit round pen.
-        const contour = create('path', { d: s.outline });
-        defs.appendChild(contour); // fill hit-testing, never painted
+        const contour = create('path', { d: s.outline, fill: '#000', opacity: 0,
+          'pointer-events':'none' });
+        group.appendChild(contour); // connected but optically invisible
         const contains = typeof contour.isPointInFill === 'function' &&
           typeof DOMPoint !== 'undefined' ?
           (x, y) => contour.isPointInFill(new DOMPoint(x, y)) : null;
         const profile = Brush.makeProfile(s.median, contains);
+        contour.remove(); // do not ship an invisible extra outline to the mask
         const nib = create('path', { d: '', fill: '#FFFFFF', 'fill-rule': 'nonzero' });
         mask.appendChild(nib);
         defs.appendChild(mask);
@@ -88,7 +92,6 @@
       this.tip = create('circle', { cx:0,cy:0,r:12,fill:'#BD3945',
         stroke:'#FFFFFF','stroke-width':4, 'pointer-events':'none' });
       group.appendChild(this.tip);
-      this.svg.append(defs, group);
       this.render();
     }
 
