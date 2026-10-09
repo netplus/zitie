@@ -91,6 +91,17 @@ document.getElementById('viewer').addEventListener('load',async function(){
         throw new Error(g.character+': legacy polygon mask not eliminated');
       if(row.fragments.length!==row.profile.segments.length)
         throw new Error(g.character+': brush mask fragments missing');
+      // Rasterize the exact reference outline BEFORE intermediate frames:
+      // every visible red pixel must lie inside the source stroke, not just
+      // match its appearance at the end.
+      app.seekElapsed(stage.startMs+stage.durationMs*.995);
+      const originalMask=row.reveal.getAttribute('mask');
+      row.reveal.removeAttribute('mask');
+      row.reveal.style.display='';
+      const full=await raster(svg,app.tip);
+      row.reveal.setAttribute('mask',originalMask);
+      app.render();
+      if(!full.count)throw new Error(g.character+' stroke '+(i+1)+': empty source outline');
       let before=new Uint8Array(sizes.width*sizes.height),previousCount=0;
       let nearFull=0;
       for(const t of fractions){
@@ -98,8 +109,13 @@ document.getElementById('viewer').addEventListener('load',async function(){
         const out=await raster(svg,app.tip);
         captures++;
         const diff=countLoss(before,out.flags);
-        const allowance=clamp(Math.round(previousCount*.0002),1,4);
-        if(diff.lost>allowance){
+        const outsideSource=countLoss(out.flags,full.flags).lost;
+        if(outsideSource){
+          outside+=outsideSource;
+          throw new Error(g.character+' stroke '+(i+1)+' at '+t+
+            ': painted outside canonical filled outline='+outsideSource+' pixels');
+        }
+        if(diff.lost>0){
           lost+=diff.lost;
           byGlyph[g.character].worstLost=Math.max(byGlyph[g.character].worstLost,diff.lost);
           throw new Error(g.character+' stroke '+(i+1)+' at '+t+
@@ -108,7 +124,7 @@ document.getElementById('viewer').addEventListener('load',async function(){
         if(t===0 && out.count!==0)throw new Error(g.character+' stroke '+(i+1)+': red onset flash');
         if((t===.35||t===.65||t===.92)&&out.count>=25){
           const c=detachedPixels(out.flags,sizes.width,sizes.height);
-          if(c.detached>Math.max(10,out.count*.04)){
+          if(c.detached>Math.max(6,out.count*.02)){
             isolated+=c.detached;
             throw new Error(g.character+' stroke '+(i+1)+' at '+t+
               ': detached ink '+c.detached+' pixels');
@@ -119,21 +135,11 @@ document.getElementById('viewer').addEventListener('load',async function(){
         previousCount=out.count;
         byGlyph[g.character].samples++;
       }
-      // Reference = actual same stroke filled SVG path, not a font or guessed
-      // polygon. Existing previous strokes are gray; temporarily unmask only
-      // this stroke for a pixel-perfect source-shape comparison.
-      const original=row.reveal.getAttribute('mask');
-      row.reveal.removeAttribute('mask');
-      row.reveal.style.display='';
-      const full=await raster(svg,app.tip);
-      row.reveal.setAttribute('mask',original);
-      app.render();
-      if(!full.count)throw new Error(g.character+' stroke '+(i+1)+': empty reference shape');
       const gap=Math.max(0,full.count-nearFull)/full.count;
       if(gap>worstMissing){worstMissing=gap;worst=g.character+' stroke '+(i+1);}
       byGlyph[g.character].worstTerminalGap=Math.max(
         byGlyph[g.character].worstTerminalGap,gap);
-      if(gap>.12)throw new Error(g.character+' stroke '+(i+1)+
+      if(gap>.035)throw new Error(g.character+' stroke '+(i+1)+
         ': abrupt near-final shape jump='+Math.round(1000*gap)/10+'%');
       // Exact terminal d and old source/median remain intact.
       if(row.solid.getAttribute('d')!==g.strokes[i].outline)
@@ -143,7 +149,7 @@ document.getElementById('viewer').addEventListener('load',async function(){
   }
   const ms=Math.round(performance.now()-start);
   const audit={status:'PASS',glyphs:cases.length,strokes,captures,
-    resolution:'384x384',pixelLoss:lost,detachedPixels:isolated,
+    resolution:'384x384',pixelLoss:lost,outsideSourcePixels:outside,detachedPixels:isolated,
     worstTerminalGapPercent:+(worstMissing*100).toFixed(3),worst,
     elapsedMs:ms,details:byGlyph,scope:'engineering geometry only; medians not teaching-approved'};
   d.documentElement.setAttribute('data-fill-integrity','PASS');
