@@ -69,9 +69,9 @@
 
   function pressureAt(plan,d){
     const L=plan.length;
-    const onset=smooth(d/Math.max(8,L*.055));
+    const onset=smooth(d/Math.max(26,L*.055));
     const kind=plan.gesture.kind;
-    const exitLength=Math.min(125,Math.max(18,L*(kind==='hook'?.10:kind==='dot'?.13:.09)));
+    const exitLength=Math.min(125,Math.max(36,L*(kind==='hook' ? .10 : kind==='dot' ? .13 : .09)));
     const exitStart=L-exitLength;
     const terminal=smooth((d-exitStart)/exitLength);
     const exitLoss=kind==='hook'?.88:kind==='sweep'?.76:kind==='dot'?.79:.61;
