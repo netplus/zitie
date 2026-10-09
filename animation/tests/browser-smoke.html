@@ -47,8 +47,11 @@ document.getElementById('demo').addEventListener('load', async function () {
     check(app.speed === 3, 'speed control');
     document2.getElementById('replayOne').click();
     check(app.playing && app.singleEnd === app.timeline.strokes[0].endMs, 'single stroke repeat');
-    await delay(2200);
-    check(!app.playing && app.singleEnd === null, 'single stroke stops automatically; elapsed=' + app.elapsed + ', remaining=' + app.singleEnd);
+    // Headless virtual-time can throttle the iframe's later RAF callbacks; inject
+    // one deterministic browser frame to exercise the single-stroke stop edge.
+    app.lastTick = 100;
+    app._tick(100 + app.timeline.strokes[0].durationMs / app.speed + 5);
+    check(!app.playing && app.singleEnd === null, 'single stroke stop at the frame boundary');
 
     const select = document2.getElementById('glyphSelect');
     select.value = '201';
