@@ -1,3 +1,9 @@
+# A1.2.1 新界面与精细运笔优化（2026-10-09）
+
+已新建独立改进阶段，见 [设计与已知限制](A1_UX_PRECISION.md)、[用户反馈 Issue #82](https://github.com/netplus/zitie/issues/82)。9个已存在部首原型改为卡片搜索、批次筛选、可拖动时间轴；渲染改为依据实际轮廓的中心线局部宽度遮罩，避免统一170单位圆头笔刷过早显露。**原始轮廓/medians/规范笔顺数据不改，教学方向仍需独立验收。** 合入和CI状态以 PR 为准，不预先称完成。
+
+---
+
 # A1 独立动画研发阶段（2026-10-09）
 
 - 分支 `feat/a1-svg-stroke-animation` 开发离线 SVG+JS 笔顺动态书写；独立审计及原型成果以 [A1文档](A1_ANIMATION.md)、[动画目录](../animation/README.md) 和 [Issue #79](https://github.com/netplus/zitie/issues/79) 为准。
