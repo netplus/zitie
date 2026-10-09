@@ -1,5 +1,7 @@
 # A1 experimental offline SVG stroke animation
 
+**Browser preview:** [Open engineering demo via third-party static proxy](https://raw.githack.com/netplus/zitie/main/animation/index.html). The [GitHub Pages publication plan](../docs/A1_PREVIEW.md) is configured for future activation but the official site is not yet live. This demo remains unapproved for pedagogical correctness.
+
 **Open `animation/index.html` directly in a modern browser**, including via `file://`. No server, npm dependency, internet access or separate font is needed. Choose from nine authentic primary radicals, play/pause, replay, previous/next, single-stroke repeat, speed adjustment and show-full-shape.
 
 The red stroke is the **actual existing filled SVG outline** revealed along the vendor's ordered **median writing path**; the final full silhouette is never approximated by the mask. Future outlines are pale gray, earlier strokes dark gray. One deterministic timeline drives all controls.
