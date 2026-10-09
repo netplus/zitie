@@ -44,27 +44,50 @@
     const backward=clamp(span*1.15,48,126);
     const project=(s,t)=>[p0[0]+u[0]*s+n[0]*t,p0[1]+u[1]*s+n[1]*t];
     let first=null,hits=0,behind=Infinity;
-    // Find the genuine source-supported beginning in a bounded transverse
-    // neighborhood, not the interior medial start P0.
-    for(let s=-backward;s<=0;s+=scanStep){
-      for(let t=-span;t<=span;t+=lateralStep){
-        const [x,y]=project(s,t);
-        if(!contains(x,y))continue;
+    const outlinePath=options.outlinePath;
+    const hasBoundarySampler=outlinePath&&
+      typeof outlinePath.getTotalLength==='function'&&
+      typeof outlinePath.getPointAtLength==='function';
+    if(hasBoundarySampler){
+      // Sampling the REAL SVG Bézier outline is much cheaper than making
+      // thousands of isPointInFill requests across a 2D interior grid.
+      // The boundary is the right place to measure the start support.
+      const outlineLength=outlinePath.getTotalLength();
+      if(!finite(outlineLength)||outlineLength<=0)
+        throw Error('Invalid source SVG outline length');
+      const count=Math.min(950,Math.max(90,Math.ceil(outlineLength/4.2)));
+      for(let i=0;i<=count;i++){
+        const p=outlinePath.getPointAtLength(outlineLength*i/count);
+        const x=p.x,y=p.y;
+        if(!finite(x)||!finite(y))continue;
+        const px=x-p0[0],py=y-p0[1];
+        const along=px*u[0]+py*u[1];
+        const sideways=px*n[0]+py*n[1];
+        if(along< -backward||along>0||Math.abs(sideways)>span)continue;
         hits++;
-        if(s<behind){
-          behind=s;
-          first={x,y,s,normal:t};
+        if(along<behind){behind=along;first={x,y,s:along,normal:sideways};}
+      }
+    }else{
+      // Geometry-library-independent unit-test fallback; browsers use
+      // the outline sampler above to avoid blocking iframe init.
+      for(let s=-backward;s<=0;s+=scanStep){
+        for(let t=-span;t<=span;t+=lateralStep){
+          const [x,y]=project(s,t);
+          if(!contains(x,y))continue;
+          hits++;
+          if(s<behind){behind=s;first={x,y,s,normal:t};}
         }
       }
     }
     if(!first||!finite(behind))return null;
-    const sourceStart=clamp(behind-scanStep*1.6,-backward-3,0);
+    const sourceStart=clamp(behind-(hasBoundarySampler?3:scanStep*1.6),-backward-3,0);
     const cap={
       kind:'source_contour_probed_directional_contact',
       sourceMedianStart:p0.slice(),
       sourceStartPoint:[first.x,first.y],
       sourceStart,capLength,span,landingTime,
       tangent:u,normal:n,hitSamples:hits,scanStep,
+      supportMethod:hasBoundarySampler?'source-svg-boundary-arclength':'test-fill-grid',
       sourceDirectionModified:false,
       referenceMaskClipped:true
     };
