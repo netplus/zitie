@@ -53,8 +53,15 @@ $('lab').addEventListener('load',async function(){
      check(Array.from(speeds).filter(b=>b.getAttribute('aria-pressed')==='true').length===1,
        'Exactly one A/B speed should be active');
    }
+   const chart=w.document.getElementById('dynamicsChart');
+   check(chart&&chart.width===1000,'A/B physical-state chart is missing');
+   const image=chart.getContext('2d').getImageData(0,0,1000,200).data;
+   let nonwhite=0;
+   for(let i=0;i<image.length;i+=4)
+     if(image[i+3]&&image[i]<230&&image[i+1]<230&&image[i+2]<230)nonwhite++;
+   check(nonwhite>80,'Synthetic pressure and motion charts did not render');
    const target={一:0,口:1,水:0,月:1,火:0,龠:13};
-   let checks=0,priorLost=0,outside=0,sourceMismatch=0,invalidStates=0;
+   let checks=0,priorLost=0,outside=0,sourceMismatch=0,invalidStates=0,retimedFrames=0;
    let worstNearFinalGap=0,worstLabel='';
    const outcomes=[];
    const start=performance.now();
@@ -89,6 +96,11 @@ $('lab').addEventListener('load',async function(){
        lab.seek(time);
        check(Math.abs(lab.baseline.elapsed-lab.elapsed)<1e-5,
          'Experiment and baseline no longer share the same elapsed time');
+       if(fraction>.02&&fraction<.995){
+         const baselineProgress=lab.baseline.getState().progress;
+         const penProgress=lab.lastResult.progress;
+         if(Math.abs(baselineProgress-penProgress)>.002)retimedFrames++;
+       }
        const a=await raster(lab.baseline.svg,lab.baseline.tip);
        const b=await raster(lab.experimental.svg,lab.experimental.tip);
        if(fraction===0)check(b.count===0,'Unexpected red blob at zero percent');
@@ -122,6 +134,7 @@ $('lab').addEventListener('load',async function(){
        'Baseline reference geometry diverged');
    }
    check(invalidStates===0,'Nonfinite or invalid synthetic pen state');
+   check(retimedFrames>=3,'Experimental gesture retiming did not actually change spatial timing');
    // The experiment is not promoted to the default renderer, so a residual
    // gap is reported as calibration debt, not silently called perfect.
    check(worstNearFinalGap<.40,'Virtual footprint geometry misses excessive contour area');
@@ -137,7 +150,7 @@ $('lab').addEventListener('load',async function(){
    check(lab.lastResult.phase==='finished','Experiment cannot finish at reference outline');
    const stats={
      result:'PASS',engine:'A1.4_elliptical_virtual_nib_unreviewed',
-     glyphs:lab.glyphs.length,sampledFrames:checks,sourcePixelLoss:priorLost,
+     glyphs:lab.glyphs.length,sampledFrames:checks,retimedFrames,sourcePixelLoss:priorLost,
      outsideOriginalContourPixels:outside,invalidContactStates:invalidStates,
      worstExperimentalTerminalGapPercent:+(worstNearFinalGap*100).toFixed(2),
      worstExperimentalTerminalGapGlyph:worstLabel,
