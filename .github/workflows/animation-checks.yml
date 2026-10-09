@@ -145,6 +145,36 @@ jobs:
                   'yiComparedFrames','yiTrailingUnfilledPixels','yiTerminalGapPercent')
           }))
           PY
+          # The previous A1.4.2 coverage QA compared only ~10% behind
+          # the pen and missed upper-left gray gaps at 3-5% spatial travel.
+          # Guard source-aligned start-cap pixels at both 512 and 768 px.
+          timeout 120 "$CHROME_BIN" "${options[@]}" --dump-dom "http://127.0.0.1:18768/animation/tests/yi-start-contact.html" > build/a1/yi-start-contact-result.html
+          if ! grep -q 'data-result="PASS"' build/a1/yi-start-contact-result.html; then
+            echo 'FAIL: delayed 一 upper-left start-cap fill regression' >&2
+            grep -o 'FAIL:[^<]*' build/a1/yi-start-contact-result.html | head -n 8 >&2 || true
+            exit 1
+          fi
+          python3 - <<'PY'
+          import html, json, re
+          from pathlib import Path
+          raw=Path('build/a1/yi-start-contact-result.html').read_text(encoding='utf-8')
+          match=re.search(r'<pre id="result">(\{.*?\})</pre>',raw,re.S)
+          if not match:
+              raise SystemExit('Missing structured early pen cap report')
+          data=json.loads(html.unescape(match.group(1)))
+          assert data['result']=='PASS'
+          assert data['resolutions']==[512,768]
+          assert data['frames']==38
+          assert data['earlySourceComparisons']>=16
+          assert data['upperLeftMissingPixels']==0
+          assert data['sourceMissingPixels']==0
+          assert data['vanishedPixels']==0
+          assert data['outsideSourcePixels']==0
+          Path('build/a1/yi-start-contact-metrics.json').write_text(
+              json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('PASS: A1.4.3 一 start-cap source coverage, 512px and 768px,',
+                data['earlySourceComparisons'],'comparisons, 0 delayed pixels')
+          PY
           timeout 120 "$CHROME_BIN" "${options[@]}" --dump-dom "http://127.0.0.1:18768/animation/tests/pen-lab-frames.html" > build/a1/pen-lab-frames-dom.html
           grep -q 'data-result="PASS"' build/a1/pen-lab-frames-dom.html
           timeout 120 "$CHROME_BIN" "${options[@]}" --window-size=1850,1620 --screenshot="$(pwd)/build/a1/pen-lab-ab-frames.png" "http://127.0.0.1:18768/animation/tests/pen-lab-frames.html" >/dev/null
