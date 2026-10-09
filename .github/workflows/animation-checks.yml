@@ -31,7 +31,7 @@ jobs:
           node --check animation/motion.js
           node --check animation/timeline.js
           node --check animation/player.js
-          node --check animation/ink-brush.js
+          node --check animation/brush-union.js
           node --check animation/gallery.js
           node --check animation/ui.js
           node --check animation/samples.js
@@ -67,10 +67,38 @@ jobs:
           grep -q 'data-result="PASS"' build/a1/gallery-dom.html
           timeout 75 "$CHROME_BIN" "${options[@]}" --screenshot="$(pwd)/build/a1/motion-frame-gallery.png" "$url" >/dev/null
           test -s build/a1/motion-frame-gallery.png
+      - name: Verify pixel-by-pixel monotone ink growth on all sampled strokes
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/a1
+          python3 -m http.server 18767 --bind 127.0.0.1 > build/a1/fill-integrity-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 35); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18767/animation/index.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          options=(--headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage --disable-background-timer-throttling --disable-renderer-backgrounding --window-size=1300,1500 --virtual-time-budget=90000)
+          timeout 180 "$CHROME_BIN" "${options[@]}" --dump-dom "http://127.0.0.1:18767/animation/tests/fill-integrity.html" > build/a1/fill-integrity-result.html
+          if ! grep -q 'data-result="PASS"' build/a1/fill-integrity-result.html; then
+            echo "A1 fill pixel-integrity check failed" >&2
+            grep -o 'FAIL:[^<]*' build/a1/fill-integrity-result.html | head -n 8 >&2 || true
+            exit 1
+          fi
+          echo "PASS: pixel-by-pixel monotone ink fill, no disconnected artifacts, original contour preserved"
       - uses: actions/upload-artifact@v4
         if: always()
         with:
           name: a1-motion-frame-qa
-          path: build/a1/
+          path: |
+            build/a1/
+            animation/
+            data/B01.json
+            data/B02.json
+            data/B21.json
+            data/teaching-source-policy.json
           if-no-files-found: warn
           retention-days: 14
