@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8">
 <title>A1.2.1 real-browser precision + UI tests</title></head>
 <body>
-<h1>A1.2.1 behavior and pixel quality</h1>
+<h1>A1.2.2 motion-aware browser behavior and pixel quality</h1>
 <pre id="result">RUNNING</pre>
 <iframe id="demo" title="Online writing preview" src="../index.html"
  style="width:1050px;height:1250px"></iframe>
@@ -46,6 +46,21 @@ document.getElementById('demo').addEventListener('load',async function(){
   check($('glyphGallery').querySelectorAll('button').length===9,'all nine gallery tiles');
   check(!d.querySelector('#glyphSelect'),'old dropdown removed');
   check(tile('1').getAttribute('aria-pressed')==='true','selected glyph is accessible');
+  check(!$('speed'),'speed dropdown must not exist');
+  const buttons=Array.from($('speedButtons').querySelectorAll('button[data-speed]'));
+  check(buttons.length===5,'five instantly clickable speed presets');
+  check(buttons.filter(b=>b.getAttribute('aria-pressed')==='true').length===1,
+    'only one speed preset active');
+  const pressSpeed=value=>{
+    const b=buttons.find(b=>Number(b.dataset.speed)===value);
+    if(!b)throw new Error('Missing speed '+value);
+    b.click();
+    check(app.speed===value,'player speed mismatch '+value);
+    check(b.getAttribute('aria-pressed')==='true','ARIA speed selection mismatch');
+    check(buttons.every(other=>other===b||
+      other.getAttribute('aria-pressed')==='false'),'multiple active speed buttons');
+  };
+  for(const value of [0.5,1.5,2,3,1])pressSpeed(value);
 
   const svg=$('glyphStage');
   const t0=app.timeline.strokes[0];
@@ -59,6 +74,12 @@ document.getElementById('demo').addEventListener('load',async function(){
   for(let i=2;i<pixels.length;i++)
     check(pixels[i]>=pixels[i-1],'ink coverage never shrinks during write: '+pixels);
   check(pixels[2]<pixels[4]*.75,'25% cannot prematurely display whole stroke: '+pixels);
+  const model=app.timeline.strokes[0].motion;
+  check(model.kind==='inferred_kinematic_heuristic_not_measured','unlabeled speed inference');
+  check(model.progressAt(.1)<.1&&model.progressAt(.9)>.9,'motion lacks start/end acceleration');
+  check(app.rows[0].profile.stations.length>40,'fine brush sampling unexpectedly coarse');
+  app.seekElapsed(t0.durationMs*.05);
+  check($('strokePhase').textContent.includes('起笔渐快'),'local pace label not shown');
   check(app.rows[0].profile.method==='outline-cross-section',
     'real browser did not resolve outline cross-sections');
   check(app.rows[0].profile.sampledWithFill>5,'fill hit-tests unexpectedly absent');
@@ -107,6 +128,8 @@ document.getElementById('demo').addEventListener('load',async function(){
   app.seekElapsed(water.strokes[0].startMs+water.strokes[0].durationMs*.82);
   const waterLater=await redPixels(svg,app.tip);
   check(waterLater>waterEarly&&waterEarly>0,'hook motion must grow ink instead of jumping');
+  check(water.strokes[0].motion.turns.length>0,
+    'hook must retain local curvature/turning metadata');
 
   $('timelineSeek').value='650';
   $('timelineSeek').dispatchEvent(new Event('input',{bubbles:true}));
@@ -146,6 +169,8 @@ document.getElementById('demo').addEventListener('load',async function(){
   const fold=app.timeline.strokes[1];
   app.seekElapsed(fold.startMs+fold.durationMs*.5);
   check((await redPixels(svg,app.tip))>0,'continuous folded stroke visible');
+  check(app.timeline.strokes[1].motion.turns.length>=1,
+    'folded pen direction must slow without splitting into a new stroke');
 
   $('nextGlyph').click();
   check(w.ZITIE_A1_GALLERY.getSelectedId()===40,'next glyph');
@@ -174,6 +199,17 @@ document.getElementById('demo').addEventListener('load',async function(){
   const playingBeforeInput=app.playing;
   search.dispatchEvent(new KeyboardEvent('keydown',{code:'Space',key:' ',bubbles:true}));
   check(app.playing===playingBeforeInput,'typing/search focus must not start playback');
+  const speedButton=buttons.find(b=>b.dataset.speed==='2');
+  speedButton.focus();
+  speedButton.dispatchEvent(new KeyboardEvent('keydown',
+    {code:'Space',key:' ',bubbles:true}));
+  check(app.playing===playingBeforeInput,'space on focused speed button must not toggle writing');
+  pressSpeed(2);
+  const currentId=w.ZITIE_A1_GALLERY.getSelectedId();
+  $('nextGlyph').click();
+  check(app.speed===2,'speed multiplier must persist when switching glyphs');
+  check(w.ZITIE_A1_GALLERY.getSelectedId()!==currentId,'glyph navigation broken');
+  pressSpeed(1);
   d.documentElement.setAttribute('data-renderer-quality','PASS');
   document.documentElement.setAttribute('data-result','PASS');
   $('state').setAttribute('data-pixel-progress',pixels.join(','));
