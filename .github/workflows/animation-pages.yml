@@ -35,8 +35,9 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          mkdir -p _site/animation
-          cp animation/index.html animation/player.js animation/timeline.js animation/samples.js _site/animation/
+          mkdir -p _site/animation _site/data/artwork
+          cp animation/index.html animation/player.js animation/timeline.js animation/samples.js animation/NOTICE.md _site/animation/
+          cp data/artwork/ARPHICPL.TXT _site/data/artwork/ARPHICPL.TXT
           cat > _site/index.html <<'HTML'
           <!doctype html>
           <html lang="zh-CN"><head>
@@ -53,6 +54,7 @@ jobs:
           test -s _site/animation/player.js
           test -s _site/animation/timeline.js
           test -s _site/animation/samples.js
+          test -s _site/data/artwork/ARPHICPL.TXT
           if grep -R -E '(https?:)?//(cdn\.|unpkg\.|fonts\.googleapis)' _site/animation; then
             echo 'Unexpected runtime CDN dependency' >&2
             exit 1
