@@ -1,5 +1,7 @@
 # A1 动态笔顺工程预览（独立于 v0.5.1 正式 PDF）
 
+**在线查看动画（第三方临时预览）：**[直接打开](https://raw.githack.com/netplus/zitie/main/animation/index.html)。GitHub Pages 官方自动发布工作流已准备，但站点尚待首次启用，不能将 `https://netplus.github.io/zitie/` 视作当前已上线。详见 [在线预览和 Pages 设置](docs/A1_PREVIEW.md)。
+
 新增 A1 动画研发阶段：已归档 [9个主部首的离线 SVG 动态书写原型](animation/index.html)、[动画控制与复核说明](animation/README.md)、[A1 技术设计和独立验收门槛](docs/A1_ANIMATION.md)。可以下载仓库并在浏览器直接打开 `animation/index.html`；不会联网。**这些 medians 仅为工程预览，尚未完成独立教学轨迹审定**，已有201主部首矢量笔顺审核不能视为动画方向审核。正式 PDF 仍是 v0.5.1，历史不变。A1任务见 [Issue #79](https://github.com/netplus/zitie/issues/79)。
 
 ---
