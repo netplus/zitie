@@ -61,8 +61,16 @@ h1{font-size:clamp(20px,2.4vw,27px);line-height:1.3;margin:0;font-weight:700;let
   color:#fff;font-weight:650;padding:10px 18px}
 .control.primary:hover{background:var(--accent-dark)}
 .toolbar .fill{flex:1}
-.speedWrap{display:flex;align-items:center;gap:7px;font-size:12px;color:var(--muted)}
-#speed{border-radius:9px;border:1px solid #dbe0e3;padding:8px;background:white;color:var(--ink)}
+.speedWrap{display:flex;align-items:center;gap:8px;flex-wrap:wrap;font-size:12px;color:var(--muted)}
+.speedButtons{display:flex;gap:3px;padding:3px;border:1px solid #e2e4e6;background:#f2f4f5;border-radius:11px;flex-wrap:wrap}
+.speedOption{background:transparent;border:1px solid transparent;color:#5b6871;
+  padding:6px 9px;border-radius:8px;font-size:12px;min-height:34px;min-width:42px;
+  font-variant-numeric:tabular-nums;transition:color .15s,background .15s}
+.speedOption:hover{background:#fff5f5;color:var(--accent-dark)}
+.speedOption.active,.speedOption[aria-pressed="true"]{
+  border-color:#e4cbd0;background:white;color:var(--accent-dark);
+  box-shadow:0 1px 4px #1e2a3518;font-weight:750}
+.rhythmNote{font-size:12px;color:#78848b;margin:10px 0 0}
 .shortcuts{font-size:12px;color:#89939b;margin-top:13px}
 .library{padding:21px 19px 23px}
 .libraryTitle{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
@@ -121,6 +129,7 @@ h1{font-size:clamp(20px,2.4vw,27px);line-height:1.3;margin:0;font-weight:700;let
 }
 </style>
 <script defer src="./samples.js"></script>
+<script defer src="./motion.js"></script>
 <script defer src="./timeline.js"></script>
 <script defer src="./ink-brush.js"></script>
 <script defer src="./player.js"></script>
@@ -134,7 +143,7 @@ h1{font-size:clamp(20px,2.4vw,27px);line-height:1.3;margin:0;font-weight:700;let
       <div class="brandSeal" aria-hidden="true">书</div>
       <div>
         <h1>循序 · 笔顺练习</h1>
-        <p class="subtitle">逐笔观察起、行、收 · 演示笔迹沿中心轨迹自然生长</p>
+        <p class="subtitle">逐笔观察起、行、收 · 笔速随起笔、转折和收笔位置动态调整</p>
       </div>
     </div>
     <div class="topnote">A1 工程试播 · 静态字帖 v0.5.1 仍独立保留</div>
@@ -180,16 +189,18 @@ h1{font-size:clamp(20px,2.4vw,27px);line-height:1.3;margin:0;font-weight:700;let
         <button id="replayOne" class="control" type="button" title="单独重播当前笔">↻ 这一笔</button>
         <button id="showAll" class="control" type="button">完整字形</button>
         <span class="fill"></span>
-        <label class="speedWrap" for="speed">速度
-          <select id="speed">
-            <option value="0.5">0.5×</option>
-            <option value="1" selected>1×</option>
-            <option value="1.5">1.5×</option>
-            <option value="2">2×</option>
-            <option value="3">3×</option>
-          </select>
-        </label>
+        <div class="speedWrap">
+          <span id="speedLabel">速度</span>
+          <div class="speedButtons" id="speedButtons" role="group" aria-labelledby="speedLabel">
+            <button type="button" class="speedOption" data-speed="0.5" aria-pressed="false">0.5×</button>
+            <button type="button" class="speedOption active" data-speed="1" aria-pressed="true">1×</button>
+            <button type="button" class="speedOption" data-speed="1.5" aria-pressed="false">1.5×</button>
+            <button type="button" class="speedOption" data-speed="2" aria-pressed="false">2×</button>
+            <button type="button" class="speedOption" data-speed="3" aria-pressed="false">3×</button>
+          </div>
+        </div>
       </div>
+      <p class="rhythmNote" id="rhythmNote">笔内采用非匀速教学节奏：起笔渐快、转折减速、行笔提速、收笔渐慢。倍率按钮只调节整体快慢。</p>
       <div class="shortcuts">快捷键：空格播放/暂停 · A / D 切换字形 · R 从头重播</div>
     </section>
     <aside class="library" aria-label="可选择的笔顺样例">
@@ -218,7 +229,7 @@ h1{font-size:clamp(20px,2.4vw,27px);line-height:1.3;margin:0;font-weight:700;let
   <div class="notice">
     <strong>动画工程预览（非教学正式版）。</strong>
     笔顺、填充轮廓保持与已核数据一致；中线来源的起笔、内部转折及钩笔方向尚需独立教学复核。
-    本页使用局部宽度的渐进遮罩，不额外改变原始笔画。
+    本页采用局部精细遮罩和研究启发的非匀速时间映射；速度是教学演示参数，不是实测笔压/手写速度。
     <a href="https://github.com/netplus/zitie/blob/main/docs/A1_ANIMATION.md">查看审计与质量门槛</a>
   </div>
 </main>

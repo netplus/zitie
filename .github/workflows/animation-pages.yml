@@ -30,13 +30,13 @@ jobs:
         with:
           node-version: '22'
       - name: Check source-backed animation examples
-        run: node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs
+        run: node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs
       - name: Assemble minimal offline-compatible static site
         shell: bash
         run: |
           set -euo pipefail
           mkdir -p _site/animation _site/data/artwork
-          cp animation/index.html animation/player.js animation/timeline.js animation/samples.js animation/ink-brush.js animation/gallery.js animation/ui.js animation/NOTICE.md _site/animation/
+          cp animation/index.html animation/player.js animation/timeline.js animation/motion.js animation/samples.js animation/ink-brush.js animation/gallery.js animation/ui.js animation/NOTICE.md _site/animation/
           cp data/artwork/ARPHICPL.TXT _site/data/artwork/ARPHICPL.TXT
           cat > _site/index.html <<'HTML'
           <!doctype html>
@@ -53,6 +53,7 @@ jobs:
           test -s _site/animation/index.html
           test -s _site/animation/player.js
           test -s _site/animation/timeline.js
+          test -s _site/animation/motion.js
           test -s _site/animation/samples.js
           test -s _site/animation/ink-brush.js
           test -s _site/animation/gallery.js

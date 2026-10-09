@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8"><title>A1.2.2 Writing frame QA</title>
+<style>
+body{font:15px system-ui,"Microsoft YaHei",sans-serif;margin:0;padding:22px;background:#f7f8fa;color:#263138}
+h1{font-size:25px;margin:0 0 6px}.desc{color:#65727c;font-size:13px;margin:0 0 16px}
+#frames{display:grid;grid-template-columns:repeat(6,225px);gap:11px}
+.panel{background:#fff;border:1px solid #ddd;border-radius:12px;overflow:hidden;padding:8px}
+.head{display:flex;justify-content:space-between;color:#47525b;font-size:12px;margin-bottom:3px}
+.panel canvas{width:205px;height:205px}
+#result{font-weight:650;color:#20544c;margin:8px 0}
+iframe{position:absolute;left:-10000px;top:0;width:1000px;height:1000px}
+</style></head>
+<body>
+<h1>A1 · 笔迹生长关键帧检查</h1>
+<p class="desc">真实 Chromium SVG rasterization · 原始轮廓 × 中心线局部速度；未获得教学方向审定</p>
+<div id="result">RENDERING</div><main id="frames"></main>
+<iframe id="player" src="../index.html" title="Local source-backed animation"></iframe>
+<script>
+const $=x=>document.getElementById(x);
+function capture(svg,tip){
+  return new Promise(async(resolve,reject)=>{
+    const prior=tip.style.display;tip.style.display='none';
+    try{
+      const content=new XMLSerializer().serializeToString(svg);
+      const url=URL.createObjectURL(new Blob([content],{type:'image/svg+xml;charset=utf-8'}));
+      const image=new Image();
+      image.onload=()=>{
+        const canvas=document.createElement('canvas');
+        canvas.width=canvas.height=410;
+        canvas.getContext('2d').drawImage(image,0,0,410,410);
+        URL.revokeObjectURL(url);tip.style.display=prior;resolve(canvas);
+      };
+      image.onerror=()=>{URL.revokeObjectURL(url);tip.style.display=prior;reject(Error('SVG capture failed'));};
+      image.src=url;
+    }catch(e){tip.style.display=prior;reject(e);}
+  });
+}
+$('player').addEventListener('load',async function(){
+  try{
+    const w=this.contentWindow;
+    const player=w.ZITIE_A1_APP;
+    const cases=[
+      {character:'一',index:0,label:'横 · 起行收'},
+      {character:'口',index:1,label:'横折 · 转折'},
+      {character:'水',index:0,label:'竖钩 · 钩尖'},
+      {character:'月',index:1,label:'横折钩 · 连续运笔'},
+      {character:'龠',index:13,label:'复杂多段折钩'}
+    ];
+    const steps=[0.05,0.20,0.50,0.80,0.97,1];
+    for(const obj of cases){
+      const glyph=w.ZITIE_SAMPLES.glyphs.find(g=>g.character===obj.character);
+      if(!glyph)throw Error('Missing demo '+obj.character);
+      player.setGlyph(glyph);
+      const stage=player.timeline.strokes[obj.index];
+      for(const progress of steps){
+        if(progress===1)player.showAll();
+        else player.seekElapsed(stage.startMs+stage.durationMs*progress);
+        const card=document.createElement('section');card.className='panel';
+        const head=document.createElement('div');head.className='head';
+        const left=document.createElement('span');left.textContent=obj.character+' · 第'+(obj.index+1)+'笔';
+        const right=document.createElement('span');right.textContent=progress===1?'完整字形':Math.round(progress*100)+'% 时间';
+        head.append(left,right);card.append(head);
+        card.append(await capture(w.document.getElementById('glyphStage'),player.tip));
+        $('frames').append(card);
+      }
+    }
+    document.documentElement.setAttribute('data-result','PASS');
+    $('result').textContent='PASS · 5 笔×6 时间进度，真实 SVG 浏览器栅格截图，帧数 '+$('frames').children.length;
+  }catch(err){
+    document.documentElement.setAttribute('data-result','FAIL');
+    $('result').textContent='FAIL: '+String(err.stack||err);
+  }
+});
+</script></body></html>
