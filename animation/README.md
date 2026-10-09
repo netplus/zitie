@@ -1,3 +1,14 @@
+## A1.4.3 起笔覆盖修复（实验版）
+
+对“一”左上笔头延迟填红的反馈，实验性 source-fitted 补全由起笔固定延迟
+改为初段随笔尖同步，笔刷宽度平滑压下，再逐渐切换正常行笔延迟；
+新增早期3–5%空间进度的双分辨率逐像素源轮廓检验。
+详见 [A1.4 实验说明](../docs/A1_PEN_CONTACT_EXPERIMENT.md) 与
+[Issue #93](https://github.com/netplus/zitie/issues/93)。
+仅影响独立实验 B 模型，默认 A1.2.3 保持不变。
+
+---
+
 ## A1.4 独立笔尖 A/B 实验（不替换稳定播放器）
 
 另有[六个部首的可变接触椭圆笔尖实验](experiments/pen-lab.html)，左侧直接使用 A1.2.3 稳定渲染器，右侧采用合成笔压/倾角与明确标注的折前驻留、短促出钩微时序；两个版本使用相同原始中心线、笔顺、最终原轮廓和统一 elapsed time。详见[实验说明与测试](../docs/A1_PEN_CONTACT_EXPERIMENT.md)和 [Issue #88](https://github.com/netplus/zitie/issues/88)。仅当独立 CI 与 Pages 部署完成后才认为线上可用；**合成动作参数不代表真实笔压或教学审核。**
