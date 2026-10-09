@@ -120,6 +120,9 @@ jobs:
           python scripts/build_v050_formal.py --edit-log build/v0.5.0/edits.json
           cmp build/v0.5.0/zitie-v0.5.0-A4.pdf deliverables/releases/v0.5.0/zitie-v0.5.0-A4.pdf
           python scripts/verify_v050_final.py --render --edits build/v0.5.0/edits.json
+      - name: Validate 11-page v0.5.1 print QA packet (digital checks, not a paper test)
+        run: |
+          python scripts/test_v051_print_qa.py
       - name: Reproduce v0.5.1 punctuation erratum and check all 299 pages
         run: |
           python scripts/test_v051_punctuation.py
