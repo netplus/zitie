@@ -1,4 +1,4 @@
-/* A1.2.1 offline gallery + playback controls; no alternative animation timeline. */
+/* A1.2.2 offline gallery + motion-aware playback controls; one timeline. */
 window.addEventListener('DOMContentLoaded', function () {
   'use strict';
   const pack=window.ZITIE_SAMPLES;
@@ -8,7 +8,8 @@ window.addEventListener('DOMContentLoaded', function () {
   const glyphs=pack.glyphs;
   const gallery=window.ZitieGallery;
   const selector=$('glyphGallery'),filterRow=$('batchFilters');
-  const play=$('play'),speed=$('speed'),seek=$('timelineSeek');
+  const play=$('play'),speedButtons=$('speedButtons'),seek=$('timelineSeek');
+  let speed=1;
   let query='',batch='all',selectedId=null,visibleGlyphs=[];
   const player=new window.ZitiePlayer.StrokePlayer({
     svg:$('glyphStage'),status:$('state'),
@@ -21,8 +22,11 @@ window.addEventListener('DOMContentLoaded', function () {
       $('strokeIndex').textContent='第 '+(state.index+1)+' / '+state.count+' 笔';
       const stroke=player.timeline.glyph.strokes[state.index];
       $('strokeName').textContent=stroke.name_status==='reviewed'?stroke.name:'第'+(state.index+1)+'笔';
+      const motionLabel=state.motion&&state.motion.label;
       $('strokePhase').textContent=state.phase==='finished'?'已完成':
-        state.phase==='pause'?'观察笔形':state.playing?'正在书写':'待播放';
+        state.phase==='pause'?'观察笔形':
+        (motionLabel ? motionLabel+' · '+(state.playing?'运笔中':'预览位置') :
+         (state.playing?'正在书写':'待播放'));
     }
   });
   const formatTime=ms=>{
@@ -35,7 +39,7 @@ window.addEventListener('DOMContentLoaded', function () {
     if(!g)return;
     selectedId=g.main_id;
     player.setGlyph(g);
-    player.setSpeed(Number(speed.value));
+    player.setSpeed(speed);
     $('selectedGlyph').textContent=g.character;
     $('selectedMeta').textContent=g.expected_stroke_count+' 画 · '+g.batch_id+
       ' · 主部首 #'+g.main_id;
@@ -104,7 +108,22 @@ window.addEventListener('DOMContentLoaded', function () {
   $('next').addEventListener('click',()=>player.next());
   $('replayOne').addEventListener('click',()=>player.replayStroke());
   $('showAll').addEventListener('click',()=>player.showAll());
-  speed.addEventListener('change',e=>player.setSpeed(Number(e.target.value)));
+  function setSpeed(value){
+    const num=Number(value);
+    if(!Number.isFinite(num)||![0.5,1,1.5,2,3].includes(num))
+      throw new Error('Invalid playback speed button');
+    speed=num;
+    player.setSpeed(num);
+    speedButtons.querySelectorAll('button[data-speed]').forEach(button=>{
+      const selected=Number(button.dataset.speed)===num;
+      button.classList.toggle('active',selected);
+      button.setAttribute('aria-pressed',String(selected));
+    });
+  }
+  speedButtons.addEventListener('click',event=>{
+    const button=event.target.closest('button[data-speed]');
+    if(button) setSpeed(button.dataset.speed);
+  });
   seek.addEventListener('input',e=>{
     if(player.timeline)player.seekElapsed(Number(e.target.value)/1000*player.timeline.totalMs);
   });
@@ -112,7 +131,7 @@ window.addEventListener('DOMContentLoaded', function () {
     const target=e.target;
     if(e.altKey||e.ctrlKey||e.metaKey||
        (target&&typeof target.closest==='function'&&
-        target.closest('input,textarea,select,[contenteditable]')))return;
+        target.closest('input,textarea,select,button,[contenteditable]')))return;
     const lower=e.key.toLowerCase();
     if(e.code==='Space'){e.preventDefault();player.playing?player.pause():player.play();}
     else if(lower==='a'){e.preventDefault();navigate(-1);}
@@ -123,6 +142,7 @@ window.addEventListener('DOMContentLoaded', function () {
   visibleGlyphs=glyphs.slice();
   selectGlyph(glyphs[0]);
   window.ZITIE_A1_APP=player; // Stable embedding/browser-QA interface.
+  window.ZITIE_A1_SPEED={get:()=>speed,set:setSpeed};
   window.ZITIE_A1_GALLERY={getVisible:()=>visibleGlyphs.slice(),
     getSelectedId:()=>selectedId, selectGlyph, navigate};
 });
