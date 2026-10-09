@@ -124,3 +124,40 @@ test('folds, hooks and complex strokes stay continuous without sub-stroke multip
     }
   }
 });
+
+
+test('stable flat-front ribbon never draws past the live cursor on a straight stroke',()=>{
+  const fill=(x,y)=>x>=0&&x<=400&&Math.abs(y)<=25;
+  const profile=Brush.makeProfile([[2,0],[398,0]],fill,{spacing:8});
+  const i=Math.floor(profile.segments.length/2);
+  const a=profile.stations[i],b=profile.stations[i+1];
+  for(const f of [0,.001,.02,.10,.30,.50,.75,.995,1]){
+    const d=Brush.ribbonSegment(profile,i,f);
+    if(f===0){assert.equal(d,'');continue;}
+    assert.match(d,/^M [-.\d]+ [-.\d]+ L [-.\d]+ [-.\d]+ L [-.\d]+ [-.\d]+ L [-.\d]+ [-.\d]+ Z$/);
+    const nums=(d.match(/-?\d+(?:\.\d+)?/g)||[]).map(Number);
+    const tipX=a.x+(b.x-a.x)*f;
+    const inkFront=Math.max(nums[0],nums[2],nums[4],nums[6]);
+    assert.ok(inkFront<=tipX+.002,
+      'brush mask projected ink ahead of the median cursor at '+f+
+      ', lead='+ (inkFront-tipX));
+  }
+});
+
+test('stable ribbon leaves the original hooked source data and sample order untouched',()=>{
+  for(const [character,index] of [['一',0],['水',0],['月',1],['口',1],['龠',13]]){
+    const original=find(character).strokes[index];
+    const before=JSON.stringify(original);
+    const profile=Brush.makeProfile(original.median,null);
+    assert.equal(Brush.ribbonSegment(profile,0,0),'');
+    for(let j=0;j<profile.segments.length;j++){
+      for(const f of [.25,.5,.75,1]){
+        const path=Brush.ribbonSegment(profile,j,f);
+        assert.ok(path.startsWith('M ')&&path.endsWith(' Z'),
+          character+': invalid independent frontage quad');
+        assert.ok(!path.includes('NaN')&&!path.includes('Infinity'));
+      }
+    }
+    assert.equal(JSON.stringify(original),before);
+  }
+});
