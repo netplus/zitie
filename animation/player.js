@@ -153,16 +153,20 @@
             // Geometry always remains the nested full-width arrival cell;
             // increasing alpha makes the initial impression settle without
             // showing a fully opaque, full-width blot at the first tick.
+            // Fast optical contact settles before the fifth-percent time
+            // frame, while preserving a mathematically increasing alpha.
+            // Narrow swept geometry, not a full-radius cap, controls area.
+            const opacity=1-Math.pow(1-state.contactScale,9);
             for(let j=0;j<r.profile.segments.length;j++){
               const segment=r.profile.segments[j];
               if(segment.start>=r.profile.onsetDistance)break;
-              r.fragments[j].setAttribute('opacity',state.contactScale);
+              r.fragments[j].setAttribute('opacity',opacity);
             }
             if(state.active>=0&&state.partial>0) {
               r.activeInk.style.display='';
               r.activeInk.setAttribute('d',
                 Brush.ribbonSegment(r.profile,state.active,state.partial));
-              r.activeInk.setAttribute('opacity',state.contactScale);
+              r.activeInk.setAttribute('opacity',opacity);
             } else {
               r.activeInk.style.display='none';
             }
