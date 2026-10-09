@@ -115,6 +115,32 @@ jobs:
             exit 1
           fi
           echo 'PASS: A1.4 six-glyph source-clipped synthetic nib A/B audit'
+          python3 - <<'PY'
+          import html
+          import json
+          from pathlib import Path
+          import re
+          raw = Path('build/a1/pen-lab-smoke-dom.html').read_text(encoding='utf-8')
+          match = re.search(r'<pre id="result">(\{.*?\})</pre>', raw, re.S)
+          if not match:
+              raise SystemExit('Missing structured pen laboratory metrics')
+          data = json.loads(html.unescape(match.group(1)))
+          assert data['result'] == 'PASS'
+          assert data['glyphs'] == 6 and data['sampledFrames'] == 60
+          assert data['sourcePixelLoss'] == 0
+          assert data['outsideOriginalContourPixels'] == 0
+          assert data['invalidContactStates'] == 0
+          assert data['retimedFrames'] >= 3
+          assert data['worstExperimentalTerminalGapPercent'] < 10
+          Path('build/a1/pen-lab-metrics.json').write_text(
+              json.dumps(data, ensure_ascii=False, indent=2) + '\n',
+              encoding='utf-8')
+          print('A1.4 metric gate:', json.dumps({
+              key: data[key] for key in (
+                  'sampledFrames','retimedFrames','sourcePixelLoss',
+                  'outsideOriginalContourPixels','worstExperimentalTerminalGapPercent')
+          }))
+          PY
           timeout 120 "$CHROME_BIN" "${options[@]}" --dump-dom "http://127.0.0.1:18768/animation/tests/pen-lab-frames.html" > build/a1/pen-lab-frames-dom.html
           grep -q 'data-result="PASS"' build/a1/pen-lab-frames-dom.html
           timeout 120 "$CHROME_BIN" "${options[@]}" --window-size=1850,1620 --screenshot="$(pwd)/build/a1/pen-lab-ab-frames.png" "http://127.0.0.1:18768/animation/tests/pen-lab-frames.html" >/dev/null
