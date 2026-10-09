@@ -54,6 +54,13 @@ margin-top:14px;padding:13px 15px}
 .metric small{display:block;color:var(--muted);font-size:11px}
 .metric strong{font-size:16px}
 #motion{font-size:13px;color:var(--muted);margin:10px 2px}
+.chartBox{background:#fff;border:1px solid var(--line);border-radius:12px;
+  margin-top:14px;padding:13px 15px}
+.chartHeading{display:flex;justify-content:space-between;align-items:center;gap:12px;
+  margin-bottom:6px}
+.chartHeading h3{margin:0;font-size:14px}
+.chartLegend{font-size:11px;color:var(--muted)}
+#dynamicsChart{display:block;width:100%;height:auto;max-height:200px}
 .foot{color:var(--muted);font-size:12px;margin:18px 0 5px}
 .foot a{color:var(--red-dark)}
 @media(max-width:850px){.panels{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}}
@@ -126,6 +133,14 @@ margin-top:14px;padding:13px 15px}
     <div class="metric"><small>模拟帧开销</small><strong id="renderTime">–</strong></div>
   </div>
 </section>
+<section class="chartBox" aria-label="实验性笔内进度与接触曲线">
+  <div class="chartHeading">
+    <h3>笔内微时序对照</h3>
+    <span class="chartLegend">灰：基线进度 · 红：实验进度 · 青：合成接触强度</span>
+  </div>
+  <canvas id="dynamicsChart" width="1000" height="200" role="img"
+    aria-label="当前笔画：共同时间轴上的基线进度、实验进度和虚拟接触强度三条曲线"></canvas>
+</section>
 <p class="foot">说明：所有显示图形均使用原项目9个真实来源部首中的6个，
 并严格裁剪到原始矢量轮廓。算法、文献及验收边界见
 <a href="https://github.com/netplus/zitie/blob/main/docs/A1_PEN_CONTACT_RESEARCH.md">
@@ -159,6 +174,45 @@ window.addEventListener('DOMContentLoaded',function(){
     });
     render();
   }
+  function drawDynamics(){
+    if(!experimental.timeline)return;
+    const canvas=$('dynamicsChart'),ctx=canvas.getContext('2d');
+    const W=canvas.width,H=canvas.height,pad=34,sw=W-2*pad,sh=H-2*pad;
+    const segment=experimental.timeline.strokes[lastResult.index];
+    const entry=experimental.rows[lastResult.index];
+    ctx.clearRect(0,0,W,H);
+    ctx.fillStyle='#ffffff';ctx.fillRect(0,0,W,H);
+    ctx.strokeStyle='#e8edf0';ctx.lineWidth=1;
+    for(let k=0;k<=4;k++){
+      const y=pad+(sh*k)/4;
+      ctx.beginPath();ctx.moveTo(pad,y);ctx.lineTo(W-pad,y);ctx.stroke();
+    }
+    function path(color,sampler){
+      ctx.strokeStyle=color;ctx.lineWidth=2.6;
+      ctx.beginPath();
+      for(let i=0;i<=110;i++){
+        const t=i/110,raw=sampler(t),v=Math.max(0,Math.min(1,raw));
+        const x=pad+sw*t,y=pad+sh*(1-v);
+        if(i===0)ctx.moveTo(x,y);else ctx.lineTo(x,y);
+      }
+      ctx.stroke();
+    }
+    path('#7c858d',t=>segment.motion.progressAt(t));
+    path('#b73c49',t=>entry.motionWarp.progressAt(t));
+    path('#26989d',t=>{
+      const traveled=entry.motionWarp.progressAt(t)*entry.plan.length;
+      return window.ZitiePenContact.pressureAt(entry.plan,traveled);
+    });
+    const t=lastResult.timeProgress===undefined?
+      (lastResult.phase==='finished'?1:0):lastResult.timeProgress;
+    ctx.strokeStyle='#3f4750';ctx.lineWidth=1.6;
+    ctx.setLineDash([5,4]);ctx.beginPath();
+    ctx.moveTo(pad+sw*t,pad);ctx.lineTo(pad+sw*t,H-pad);ctx.stroke();
+    ctx.setLineDash([]);
+    ctx.fillStyle='#6b7580';ctx.font='12px system-ui,sans-serif';
+    ctx.fillText('0%',7,H-pad+4);ctx.fillText('100%',W-pad-1,14);
+    ctx.fillText('同一笔内时间 0% → 100%',W/2-85,H-7);
+  }
   function render(){
     if(!glyph)return null;
     const start=performance.now();
@@ -178,6 +232,7 @@ window.addEventListener('DOMContentLoaded',function(){
     $('pressure').textContent=Math.round(lastResult.contact.pressure*100)+'%';
     $('stampCount').textContent=String(lastResult.contact.count);
     $('renderTime').textContent=ms.toFixed(1)+' ms';
+    drawDynamics();
     $('motion').textContent=glyph.character+' · 第 '+(lastResult.index+1)+' / '+
       glyph.expected_stroke_count+'笔 · '+lastResult.gesture.label+
       ' · 笔尖进度 '+Math.round(lastResult.progress*100)+'%'+
