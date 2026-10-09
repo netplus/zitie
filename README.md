@@ -1,3 +1,9 @@
+# A1 动态笔顺工程预览（独立于 v0.5.1 正式 PDF）
+
+新增 A1 动画研发阶段：已归档 [9个主部首的离线 SVG 动态书写原型](animation/index.html)、[动画控制与复核说明](animation/README.md)、[A1 技术设计和独立验收门槛](docs/A1_ANIMATION.md)。可以下载仓库并在浏览器直接打开 `animation/index.html`；不会联网。**这些 medians 仅为工程预览，尚未完成独立教学轨迹审定**，已有201主部首矢量笔顺审核不能视为动画方向审核。正式 PDF 仍是 v0.5.1，历史不变。A1任务见 [Issue #79](https://github.com/netplus/zitie/issues/79)。
+
+---
+
 # 循序渐进汉字部首字帖 · v0.5.1
 
 **[最新正式版 PDF：v0.5.1（A4、299页）](deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf)** — 修正简体横排句号/顿号字格左下位置。SHA256：`7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90`。
