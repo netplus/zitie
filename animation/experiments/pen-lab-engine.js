@@ -69,7 +69,7 @@
         // first INSIDE medial vertex (一 starts at [121,393]).
         // Probe the connected source shape before detaching its path.
         const startCap=gesture.kind==='horizontal'&&contains?
-          Onset.makeStartCap(stroke,profile,contains):null;
+          Onset.makeStartCap(stroke,profile,contains,{outlinePath:reference}):null;
         reference.remove();
         const plan=Pen.makePlan(stroke,profile,tl.strokes[index].motion,gesture);
         const motionWarp=Kinematics.makeTimeWarp(plan,tl.strokes[index].motion);
