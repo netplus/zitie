@@ -71,6 +71,12 @@ jobs:
         if: always()
         with:
           name: a1-motion-frame-qa
-          path: build/a1/
+          path: |
+            build/a1/
+            animation/
+            data/B01.json
+            data/B02.json
+            data/B21.json
+            data/teaching-source-policy.json
           if-no-files-found: warn
           retention-days: 14
