@@ -278,9 +278,9 @@ jobs:
               raise SystemExit('Missing structured cursor/frontier audit')
           report=json.loads(html.unescape(match.group(1)))
           assert report['result']=='PASS' and report['frames']==50
-          assert report['aligned']==50 and report['regressions']==0
+          assert report['exactTip']==50 and report['regressions']==0
           assert report['stableAheadSum']<=report['legacyAheadSum']
-          assert report['improvements']>=1, 'No stroke improved its lookahead at any frame'
+          assert report['improvements']>=3 and report['offsetFrames']>=3, 'No hook/fold marker synchronization effect'
           Path('build/a1/stable-tip-frontier-metrics.json').write_text(
             json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
           print('PASS: stable cursor matches brush timeline; old lookahead sum',
