@@ -68,10 +68,12 @@ $('lab').addEventListener('load',async function(){
    check(lab.experimental.tip.style.display!=='none','Pen marker did not follow the stroke');
    const guideElements=lab.experimental.tip.querySelectorAll('*');
    check(guideElements.length>=2,'The visible pen no longer has a discernible nib silhouette');
-   check(Array.from(guideElements).every(node=>
-     !/white|#fff|#ffffff|rgb\\(255/i.test(
-       String(node.getAttribute('fill'))+' '+String(node.getAttribute('stroke')))),
-     'Visible guide must not draw a moving WHITE hole over original red ink');
+   check(Array.from(guideElements).every(node=>{
+     const palette=(String(node.getAttribute('fill'))+' '+
+       String(node.getAttribute('stroke'))).toLowerCase();
+     return !palette.includes('white')&&!palette.includes('#fff')&&
+       !palette.includes('rgb(255');
+   }), 'Visible guide must not draw a moving WHITE hole over original red ink');
    guide.click();
    check(lab.experimental.showTip===false&&guide.getAttribute('aria-pressed')==='false'&&
      lab.experimental.tip.style.display==='none','Optional pen guide did not hide');
