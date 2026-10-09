@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><title>A1.4 virtual nib A/B browser verification</title></head>
+<body><h1>A1.4 isolated pen-contact A/B smoke</h1><pre id="result">RUNNING</pre>
+<iframe id="lab" src="../experiments/pen-lab.html"
+ style="width:1260px;height:1800px" title="source-backed nib comparison"></iframe>
+<script>
+const $=x=>document.getElementById(x);
+function check(v,message){if(!v)throw Error(message);}
+const fractions=[0,.02,.05,.15,.25,.5,.75,.90,.98,.995];
+async function raster(svg,tip){
+  const old=tip.style.display;tip.style.display='none';
+  try{
+    const raw=new XMLSerializer().serializeToString(svg);
+    const u=URL.createObjectURL(new Blob([raw],{type:'image/svg+xml;charset=utf-8'}));
+    try{
+      const img=new Image();
+      await new Promise((resolve,reject)=>{
+        img.onload=resolve;img.onerror=()=>reject(Error('SVG decode failed'));img.src=u;
+      });
+      const can=document.createElement('canvas');can.width=can.height=384;
+      const ctx=can.getContext('2d',{willReadFrequently:true});
+      ctx.drawImage(img,0,0,384,384);
+      const px=ctx.getImageData(0,0,384,384).data;
+      const flags=new Uint8Array(384*384);
+      let count=0;
+      for(let i=0,j=0;i<px.length;i+=4,j++){
+        if(px[i]>137&&px[i+1]<115&&px[i+2]<124&&
+           px[i]>px[i+1]*1.48&&px[i+3]>190){flags[j]=1;count++;}
+      }
+      return {flags,count};
+    }finally{URL.revokeObjectURL(u);}
+  }finally{tip.style.display=old;}
+}
+function lostPixels(a,b){
+  let loss=0;
+  for(let i=0;i<a.length;i++)if(a[i]&&!b[i])loss++;
+  return loss;
+}
+function delta(a,b){return Math.max(0,a-b);}
+$('lab').addEventListener('load',async function(){
+ try{
+   const w=this.contentWindow,lab=w.ZITIE_A14_LAB;
+   check(lab&&lab.baseline&&lab.experimental,
+     'Cannot find independently initialized A/B engines');
+   check(lab.glyphs.length===6,'Expected six source-backed experimental radicals');
+   const selectors=w.document.querySelectorAll('#glyphButtons button');
+   check(selectors.length===6,'Six glyph buttons not displayed');
+   const speeds=w.document.querySelectorAll('#speedButtons button[data-speed]');
+   check(speeds.length===5,'A/B speed presets missing');
+   for(const val of [.5,1,1.5,2,3,1]){
+     lab.setSpeed(val);
+     check(lab.speed===val,'Speed setter incorrect');
+     check(Array.from(speeds).filter(b=>b.getAttribute('aria-pressed')==='true').length===1,
+       'Exactly one A/B speed should be active');
+   }
+   const target={一:0,口:1,水:0,月:1,火:0,龠:13};
+   let checks=0,priorLost=0,outside=0,sourceMismatch=0,invalidStates=0;
+   let worstNearFinalGap=0,worstLabel='';
+   const outcomes=[];
+   const start=performance.now();
+   for(const glyph of lab.glyphs){
+     lab.select(glyph);
+     check(lab.experimental.rows.length===glyph.expected_stroke_count,
+       glyph.character+': experimental stroke count changed');
+     check(lab.baseline.rows.length===glyph.expected_stroke_count,
+       glyph.character+': stable source stroke count changed');
+     check(lab.experimental.stats.stamps>0,
+       glyph.character+': no nib impressions were prepared');
+     const index=target[glyph.character];
+     const row=lab.experimental.rows[index],ref=glyph.strokes[index];
+     const stage=lab.experimental.timeline.strokes[index];
+     check(row.plan.kind==='synthetic_contact_experiment_not_measured',
+       'Synthetic contact incorrectly presented as measured');
+     check(row.plan.sourceDirectionModified===false,
+       'Virtual nib changed source direction');
+     check(row.reveal.getAttribute('d')===ref.outline,'Experimental outline mutated');
+     check(row.plan.gesture.source==='engineering_heuristic_only',
+       'Candidate gesture not labeled engineering-only');
+     lab.seek(stage.startMs+stage.durationMs*.995);
+     const originalMask=row.reveal.getAttribute('mask');
+     row.reveal.removeAttribute('mask');row.reveal.style.display='';
+     const full=await raster(lab.experimental.svg,lab.experimental.tip);
+     row.reveal.setAttribute('mask',originalMask);
+     lab.experimental.renderAt(lab.elapsed);
+     check(full.count>0,'Source reference has no red pixels');
+     let before=new Uint8Array(384*384),count99=0;
+     for(const fraction of fractions){
+       const time=stage.startMs+stage.durationMs*fraction;
+       lab.seek(time);
+       check(Math.abs(lab.baseline.elapsed-lab.elapsed)<1e-5,
+         'Experiment and baseline no longer share the same elapsed time');
+       const a=await raster(lab.baseline.svg,lab.baseline.tip);
+       const b=await raster(lab.experimental.svg,lab.experimental.tip);
+       if(fraction===0)check(b.count===0,'Unexpected red blob at zero percent');
+       if(fraction>=.5)check(a.count>0&&b.count>0,'Invisible pen paint mid-stroke');
+       const vanished=lostPixels(before,b.flags);
+       if(vanished>0){priorLost+=vanished;throw Error(glyph.character+
+         ' at '+fraction+': '+vanished+' previously deposited red pixels vanished');}
+       const leak=lostPixels(b.flags,full.flags);
+       if(leak>0){outside+=leak;throw Error(glyph.character+
+         ' at '+fraction+': '+leak+' red pixels lie outside original outline');}
+       const sample=lab.lastResult.contact;
+       if(sample.count<0||!Number.isFinite(sample.pressure)||sample.pressure<0||
+          sample.pressure>1)invalidStates++;
+       if(fraction===.995)count99=b.count;
+       before=b.flags;
+       checks++;
+     }
+     const gap=(full.count-count99)/full.count;
+     if(gap>worstNearFinalGap){worstNearFinalGap=gap;worstLabel=glyph.character;}
+     outcomes.push({glyph:glyph.character,strokes:glyph.expected_stroke_count,
+       preparedImpressions:lab.experimental.stats.stamps,
+       baselineSegments:lab.baseline.rows.reduce((sum,r)=>sum+r.profile.segments.length,0),
+       sourceContourFallbackSamples:lab.experimental.stats.fallbackContourSamples,
+       terminalGapPercent:+(gap*100).toFixed(2)});
+     lab.seek(lab.total);
+     check(lab.experimental.rows.every((r,i)=>
+       r.solid.getAttribute('d')===glyph.strokes[i].outline),
+       'Final source geometry diverged');
+     check(lab.baseline.rows.every((r,i)=>
+       r.solid.getAttribute('d')===glyph.strokes[i].outline),
+       'Baseline reference geometry diverged');
+   }
+   check(invalidStates===0,'Nonfinite or invalid synthetic pen state');
+   // The experiment is not promoted to the default renderer, so a residual
+   // gap is reported as calibration debt, not silently called perfect.
+   check(worstNearFinalGap<.40,'Virtual footprint geometry misses excessive contour area');
+   lab.select(lab.glyphs[2]);
+   const stage=lab.experimental.timeline.strokes[0];
+   lab.seek(stage.startMs+stage.durationMs*.60);
+   const hold=lab.elapsed;
+   speeds[3].click();
+   check(lab.speed===2&&Math.abs(lab.elapsed-hold)<1e-5,
+     'Direct speed selection changed shared timeline position');
+   lab.setSpeed(1);
+   lab.seek(lab.total);
+   check(lab.lastResult.phase==='finished','Experiment cannot finish at reference outline');
+   const stats={
+     result:'PASS',engine:'A1.4_elliptical_virtual_nib_unreviewed',
+     glyphs:lab.glyphs.length,sampledFrames:checks,sourcePixelLoss:priorLost,
+     outsideOriginalContourPixels:outside,invalidContactStates:invalidStates,
+     worstExperimentalTerminalGapPercent:+(worstNearFinalGap*100).toFixed(2),
+     worstExperimentalTerminalGapGlyph:worstLabel,
+     elapsedWallMs:Math.round(performance.now()-start),
+     outcomes
+   };
+   document.documentElement.setAttribute('data-result','PASS');
+   $('result').textContent=JSON.stringify(stats,null,2);
+ }catch(error){
+   document.documentElement.setAttribute('data-result','FAIL');
+   $('result').textContent='FAIL: '+(error.stack||String(error));
+ }
+});
+</script></body></html>
