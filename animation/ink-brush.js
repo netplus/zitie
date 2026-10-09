@@ -113,7 +113,7 @@
     const A=[round(a.x+a.nx*a.left),round(a.y+a.ny*a.left)];
     const B=[round(b.x+b.nx*b.left),round(b.y+b.ny*b.left)];
     const C=[round(b.x-b.nx*b.right),round(b.y-b.ny*b.right)];
-    const D=[round(a.x-a.nx*a.left),round(a.y-a.ny*a.left)];
+    const D=[round(a.x-a.nx*a.right),round(a.y-a.ny*a.right)];
     const distance=hypot(b.x-a.x,b.y-a.y);
     if(distance<0.001)return '';
     if(!softTip)return 'M '+A.join(' ')+' L '+B.join(' ')+' L '+C.join(' ')+' L '+D.join(' ')+' Z';
