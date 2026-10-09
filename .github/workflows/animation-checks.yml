@@ -43,3 +43,30 @@ jobs:
         env:
           CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
         run: bash scripts/a1_browser_smoke.sh
+      - name: Render visual QA frame sheet (source-backed, no pedagogical approval)
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/a1
+          python3 -m http.server 18766 --bind 127.0.0.1 > build/a1/server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18766/animation/index.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep 0.2
+          done
+          options=(--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --disable-background-timer-throttling --window-size=1550,1620 --virtual-time-budget=16000)
+          url="http://127.0.0.1:18766/animation/tests/frame-gallery.html"
+          timeout 75 "$CHROME_BIN" "${options[@]}" --dump-dom "$url" > build/a1/gallery-dom.html
+          grep -q 'data-result="PASS"' build/a1/gallery-dom.html
+          timeout 75 "$CHROME_BIN" "${options[@]}" --screenshot="$(pwd)/build/a1/motion-frame-gallery.png" "$url" >/dev/null
+          test -s build/a1/motion-frame-gallery.png
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: a1-motion-frame-qa
+          path: build/a1/
+          if-no-files-found: warn
+          retention-days: 14
