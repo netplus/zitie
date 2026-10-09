@@ -1,9 +1,9 @@
-/* A1.2.1 SVG writing: original glyph contours plus locally fitted progressive median ribbons. */
+/* A1.2.3 SVG handwriting: exact source outline masked by monotone union of round pen traces. */
 (function (root, factory) {
   const Timeline = typeof module === 'object' && module.exports ?
     require('./timeline.js') : root.ZitieTimeline;
   const Brush = typeof module === 'object' && module.exports ?
-    require('./ink-brush.js') : root.ZitieInkBrush;
+    require('./brush-union.js') : root.ZitieInkBrushUnion;
   const api = factory(Timeline, Brush);
   if (typeof module === 'object' && module.exports) module.exports = api;
   if (root) root.ZitiePlayer = api;
@@ -73,26 +73,33 @@
         const contains = typeof contour.isPointInFill === 'function' &&
           typeof DOMPoint !== 'undefined' ?
           (x, y) => contour.isPointInFill(new DOMPoint(x, y)) : null;
-        const profile = Brush.makeProfile(s.median, contains);
-        contour.remove(); // do not ship an invisible extra outline to the mask
-        const nib = create('path', { d: '', fill: '#FFFFFF', 'fill-rule': 'nonzero' });
-        mask.appendChild(nib);
-        // Bounded terminal contact patch reduces the final filled-contour
-        // snap when a vendor median stops inside a naturally wider brush tip.
-        // It only expands within the last 1.8% of *distance*, is clipped by
-        // the unchanged source outline, and adds NO trajectory points.
-        const end=s.median[s.median.length-1];
-        const last=profile.stations[profile.stations.length-1];
-        const terminalRadius=Math.min(74,Math.max(13,
-          9+0.62*Math.max(last.left,last.right)));
-        const contact=create('circle',{cx:end[0],cy:end[1],r:0,fill:'#FFFFFF'});
-        mask.appendChild(contact);
+        const profile=Brush.makeProfile(s.median,contains);
+        contour.remove();
+        // Every local brush fragment is painted as an INDEPENDENT stroked
+        // path. SVG alpha masks accumulate their union; no combined filled
+        // polygon can self-intersect/cancel at a sharp median corner.
+        const fragments=profile.segments.map(part=>{
+          const path=create('path',{d:part.d,fill:'none',stroke:'#FFFFFF',
+            'stroke-width':part.width,'stroke-linecap':'round',
+            'stroke-linejoin':'round','pointer-events':'none'});
+          path.style.display='none';
+          mask.appendChild(path);
+          return path;
+        });
+        const activeInk=create('path',{d:'',fill:'none',stroke:'#FFFFFF',
+          'stroke-linecap':'round','stroke-linejoin':'round',
+          'pointer-events':'none'});
+        activeInk.style.display='none';
+        mask.appendChild(activeInk);
+        // No extra terminal circle: that arbitrary patch caused large,
+        // premature triangular jumps on water/month hooked endings.
         defs.appendChild(mask);
-        const hint = create('path', { d: s.outline, fill:'#E1E4E7' });
-        const solid = create('path', { d: s.outline, fill:'#5C6269' });
-        const reveal = create('path', { d: s.outline, fill:'#BD3945',
-          mask:'url(#' + id + ')' });
-        return { hint, solid, reveal, nib, contact, terminalRadius, profile, length: tl.strokes[i].length, id };
+        const hint=create('path',{d:s.outline,fill:'#E1E4E7'});
+        const solid=create('path',{d:s.outline,fill:'#5C6269'});
+        const reveal=create('path',{d:s.outline,fill:'#BD3945',
+          mask:'url(#'+id+')'});
+        return {hint,solid,reveal,profile,fragments,activeInk,
+          previousVisibleCount:0,id};
       });
       // Layer by paint role, NOT by stroke index: future gray strokes must
       // never obscure the currently written red stroke at intersections.
@@ -128,11 +135,37 @@
             r.reveal.removeAttribute('mask');
           } else {
             r.reveal.setAttribute('mask', 'url(#' + r.id + ')');
-            r.nib.setAttribute('d', Brush.revealPath(r.profile, frame.progress));
-            const endPhase=Math.max(0,Math.min(1,
-              (frame.progress-0.982)/0.018));
-            const gradual=endPhase*endPhase*(3-2*endPhase);
-            r.contact.setAttribute('r',String(r.terminalRadius*gradual));
+            const state=Brush.stateAt(r.profile,frame.progress);
+            // Changes to a settled prefix are O(segments crossed), not
+            // O(total sample count), even at 60fps. Backward seek removes
+            // only newly excluded fragments.
+            if(state.visibleCount>r.previousVisibleCount) {
+              for(let j=r.previousVisibleCount;j<state.visibleCount;j++)
+                r.fragments[j].style.display='';
+            } else if(state.visibleCount<r.previousVisibleCount) {
+              for(let j=state.visibleCount;j<r.previousVisibleCount;j++)
+                r.fragments[j].style.display='none';
+            }
+            r.previousVisibleCount=state.visibleCount;
+            // An explicit contact ramp prevents a large instant circular
+            // blob at the very beginning. Earlier coverage only EXPANDS;
+            // the same static full fragments remain in place thereafter.
+            for(let j=0;j<r.profile.segments.length;j++){
+              const segment=r.profile.segments[j];
+              if(segment.start>=r.profile.onsetDistance)break;
+              r.fragments[j].setAttribute('stroke-width',
+                Math.max(0,segment.width*state.contactScale));
+            }
+            if(state.active>=0&&state.partial>0) {
+              const seg=r.profile.segments[state.active];
+              r.activeInk.style.display='';
+              r.activeInk.setAttribute('d',
+                'M '+seg.x0+' '+seg.y0+' L '+state.tip[0]+' '+state.tip[1]);
+              r.activeInk.setAttribute('stroke-width',
+                Math.max(0,seg.width*state.contactScale));
+            } else {
+              r.activeInk.style.display='none';
+            }
           }
         }
       });
