@@ -1,3 +1,9 @@
+# A1.2.1 交互与笔迹精细度改进
+
+播放器新增点击式主部首字形卡片、按批次筛选和搜索（汉字、规范已核细笔名、批次、主项ID）、逐字切换和可拖动时间轴，保持完整播放控制与离线部署。原固定170单位圆头遮罩已替换为根据原始填充轮廓测量局部左右宽度、沿未经修改的中心线推进的 SVG 渐进遮罩；最终完成状态严格复用原矢量。**此项属于图形呈现优化，不提供新增的规范审核或真实毛笔力度数据。** 参见 [A1.2.1 设计与 QA](../docs/A1_UX_PRECISION.md)。
+
+---
+
 # A1 experimental offline SVG stroke animation
 
 **Browser preview:** [Open engineering demo via third-party static proxy](https://raw.githack.com/netplus/zitie/main/animation/index.html). The [GitHub Pages publication plan](../docs/A1_PREVIEW.md) is configured for future activation but the official site is not yet live. This demo remains unapproved for pedagogical correctness.
