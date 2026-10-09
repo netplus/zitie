@@ -246,6 +246,53 @@ jobs:
             --screenshot="$(pwd)/build/a1/yi-directional-start-cap-hidpi.png" \
             'http://127.0.0.1:18769/animation/tests/yi-directional-frame-sheet.html' >/dev/null
           test -s build/a1/yi-directional-start-cap-hidpi.png
+      - name: Compare stable round cursor against source-clipped ink frontier
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/a1
+          python3 -m http.server 18770 --bind 127.0.0.1 > build/a1/frontier-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18770/animation/index.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          options=(--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --disable-background-timer-throttling --virtual-time-budget=100000 --window-size=1300,1400)
+          for size in 512 1024; do
+            timeout 175 "$CHROME_BIN" "${options[@]}" --dump-dom \
+              "http://127.0.0.1:18770/animation/tests/stable-tip-frontier.html?raster=$size" \
+              > "build/a1/stable-tip-frontier-$size-dom.html"
+            if ! grep -q 'data-result="PASS"' "build/a1/stable-tip-frontier-$size-dom.html"; then
+              echo "FAIL: stable cursor/front comparison at $size px" >&2
+              grep -o 'FAIL:[^<]*' "build/a1/stable-tip-frontier-$size-dom.html" | head -n 8 >&2 || true
+              exit 1
+            fi
+          done
+          python3 - <<'PY'
+          import html,json,re
+          from pathlib import Path
+          for size in (512,1024):
+              raw=Path(f'build/a1/stable-tip-frontier-{size}-dom.html').read_text(encoding='utf-8')
+              match=re.search(r'<pre id="result">(\{.*?\})</pre>',raw,re.S)
+              if not match:
+                  raise SystemExit(f'Missing structured {size}px cursor/frontier audit')
+              report=json.loads(html.unescape(match.group(1)))
+              assert report['result']=='PASS' and report['frames']==50
+              assert report['resolution']==size
+              assert report['exactTip']==50 and report['regressions']==0
+              assert report['stableAheadSum']<=report['legacyAheadSum']
+              assert report['improvements']>=3 and report['offsetFrames']>=3
+              assert report['markerOutside']==0, 'Circle marker must stay on written red ink'
+              Path(f'build/a1/stable-tip-frontier-{size}-metrics.json').write_text(
+                json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+              print(f'PASS {size}px: old visible ink lead',
+                    report['legacyAheadSum'],'new',report['stableAheadSum'],
+                    'improved frames',report['improvements'],
+                    'marker gray gaps',report['markerOutside'])
+          PY
       - uses: actions/upload-artifact@v4
         if: always()
         with:

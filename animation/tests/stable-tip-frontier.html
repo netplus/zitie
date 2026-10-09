@@ -1,0 +1,126 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>A1 stable round cursor / real filled stroke comparison</title></head><body>
+<h1>稳定版圆圈指示器与原始圆头墨迹前缘同步检查</h1>
+<pre id="result">RUNNING</pre>
+<iframe id="viewer" src="../index.html" title="stable source glyph"
+  style="width:1100px;height:1260px"></iframe>
+<script>
+function check(ok,message){if(!ok)throw Error(message);}
+const rasterSize=Number(new URLSearchParams(location.search).get('raster')||512);
+if(![512,1024].includes(rasterSize))throw Error('Unsupported raster size');
+async function raster(svg,tip){
+ const old=tip.style.display;tip.style.display='none';
+ try{
+  const u=URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(svg)],
+    {type:'image/svg+xml;charset=utf-8'}));
+  try{
+   const img=new Image();
+   await new Promise((yes,no)=>{
+    img.onload=yes;img.onerror=()=>no(Error('SVG decode failed'));img.src=u;
+   });
+   const c=document.createElement('canvas');c.width=c.height=rasterSize;
+   const ctx=c.getContext('2d',{willReadFrequently:true});
+   ctx.drawImage(img,0,0,rasterSize,rasterSize);
+   const rgba=ctx.getImageData(0,0,rasterSize,rasterSize).data;
+   const flags=new Uint8Array(rasterSize*rasterSize);
+   for(let i=0,j=0;i<rgba.length;i+=4,j++)
+    if(rgba[i]>137&&rgba[i+1]<115&&rgba[i+2]<124&&
+       rgba[i]>rgba[i+1]*1.48&&rgba[i+3]>190)flags[j]=1;
+   return flags;
+  }finally{URL.revokeObjectURL(u);}
+ }finally{tip.style.display=old;}
+}
+function redAt(flags,x,y){
+ const px=Math.round(x*rasterSize/1024),py=Math.round((900-y)*rasterSize/1024);
+ for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){
+  const i=px+dx,j=py+dy;
+  if(i>=0&&i<rasterSize&&j>=0&&j<rasterSize&&flags[j*rasterSize+i])return true;
+ }
+ return false;
+}
+function sourceLookahead(flags,profile,sourceDistance){
+ let redAhead=0;
+ for(let a=12;a<=100&&sourceDistance+a<=profile.length;a+=2){
+  const p=window.ZITIE_BRUSH.pointAtDistance(profile,sourceDistance+a);
+  if(redAt(flags,p[0],p[1]))redAhead=a;
+ }
+ return redAhead;
+}
+document.getElementById('viewer').addEventListener('load',async function(){
+ const out=document.getElementById('result');
+ try{
+  const w=this.contentWindow,app=w.ZITIE_A1_APP,
+    brush=w.ZitieInkBrushUnion,svg=w.document.getElementById('glyphStage');
+  check(!!app&&!!brush,'Stable source-backed player absent');
+  window.ZITIE_BRUSH=brush;
+  const cases=[['一',0],['口',1],['水',0],['月',1],['龠',13]];
+  const fractions=[.03,.06,.10,.15,.22,.35,.50,.68,.83,.93];
+  let aheadLegacy=0,aheadCursor=0,oldMax=0,newMax=0,
+      improved=0,regressed=0,exactTip=0,offsetFrames=0,
+      markerInRed=0,markerOutside=0;
+  const details=[];
+  for(const [character,index] of cases){
+   const glyph=w.ZITIE_SAMPLES.glyphs.find(g=>g.character===character);
+   app.setGlyph(glyph);
+   const original=JSON.stringify(glyph.strokes[index]);
+   const row=app.rows[index],stage=app.timeline.strokes[index];
+   const enabled=/折|钩/.test(glyph.strokes[index].name||'');
+   check(Boolean(row.opticalFrontier)===enabled,
+     character+': optical marker must be restricted to reviewed folds/hooks');
+   for(const time of fractions){
+    app.seekElapsed(stage.startMs+stage.durationMs*time);
+    const frame=app.getState(),state=brush.stateAt(row.profile,frame.progress);
+    const marker=[+app.tip.getAttribute('cx'),+app.tip.getAttribute('cy')];
+    check(Math.hypot(frame.tip[0]-state.tip[0],frame.tip[1]-state.tip[1])<.002,
+      'Original pen timeline changed '+character);
+    exactTip++;
+    const visual=enabled?
+      brush.visualFrontAt(row.opticalFrontier,frame.progress):
+      {tip:frame.tip,distance:state.distance,lead:0};
+    check(Math.hypot(marker[0]-visual.tip[0],marker[1]-visual.tip[1])<.002,
+      'Displayed circle is not the computed ink frontier '+character+' '+time);
+    check(visual.lead>=-1e-6&&visual.lead<=96.001,'Unbounded circle correction');
+    if(visual.lead>2)offsetFrames++;
+    const pixels=await raster(svg,app.tip);
+    const old=sourceLookahead(pixels,row.profile,state.distance);
+    // Exactly the same pixels as the v1 baseline: only the small circular
+    // location marker may advance along the same unmodified median.
+    const actual=Math.max(0,old-visual.lead);
+    aheadLegacy+=old;aheadCursor+=actual;
+    oldMax=Math.max(oldMax,old);newMax=Math.max(newMax,actual);
+    if(actual>old+1e-6)regressed++;
+    if(old-actual>=8)improved++;
+    if(enabled&&time>=.10&&time<=.93){
+      if(redAt(pixels,marker[0],marker[1]))markerInRed++;
+      else markerOutside++;
+    }
+    details.push({character,stroke:index+1,time,
+      originalDistance:+state.distance.toFixed(2),
+      visibleDistance:+visual.distance.toFixed(2),
+      correction:+visual.lead.toFixed(2),
+      oldRedAhead:old,newRedAhead:+actual.toFixed(2),
+      markerRed:redAt(pixels,marker[0],marker[1])});
+   }
+   check(JSON.stringify(glyph.strokes[index])===original,
+      'Source changed during ink-front QA '+character);
+   check(row.fragments.every(x=>x.getAttribute('stroke-linecap')==='round'),
+      'Stable proven roundcap ink geometry was replaced');
+  }
+  check(regressed===0,'New marker worsens red/front ordering');
+  check(improved>=3&&offsetFrames>=3,
+    'Optical cursor did not correct the observed leading ink');
+  // Not every supplied median lies inside a valid written contour at
+  // every synthetic time. Report but do not hide such source limitations.
+  const report={result:'PASS',resolution:rasterSize,glyphCases:cases.length,frames:details.length,
+    exactTip,legacyAheadSum:aheadLegacy,stableAheadSum:+aheadCursor.toFixed(2),
+    maxLegacyAhead:oldMax,maxStableAhead:+newMax.toFixed(2),
+    regressions:regressed,improvements:improved,offsetFrames,
+    markerInRed,markerOutside,details};
+  document.documentElement.setAttribute('data-result','PASS');
+  out.textContent=JSON.stringify(report,null,2);
+ }catch(e){
+  document.documentElement.setAttribute('data-result','FAIL');
+  out.textContent='FAIL: '+(e.stack||e);
+ }
+});
+</script></body></html>

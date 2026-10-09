@@ -124,3 +124,39 @@ test('folds, hooks and complex strokes stay continuous without sub-stroke multip
     }
   }
 });
+
+
+test('optical front cursor advances with ink but preserves the canonical median timeline',()=>{
+  for(const [char,index] of [['口',1],['水',0],['月',1],['龠',13]]){
+    const stroke=find(char).strokes[index],before=JSON.stringify(stroke);
+    const profile=Brush.makeProfile(stroke.median,null);
+    const guide=Brush.makeVisualFrontier(profile);
+    assert.equal(guide.sourceMedianUntouched,true);
+    assert.equal(guide.kind,'optical_ink_frontier_cursor_not_normative_or_physical_pen');
+    assert.equal(Brush.visualFrontAt(guide,0).lead,0);
+    let previous=-1;
+    for(let i=0;i<=250;i++){
+      const t=i/250,f=Brush.visualFrontAt(guide,t);
+      assert.ok(f.distance>=previous-1e-8,
+        char+': optical cursor travelled backwards');
+      assert.ok(f.distance+1e-8>=profile.length*t,
+        char+': marker lags its own canonical median');
+      assert.ok(f.lead<=guide.maxLead+1e-8,
+        char+': unbounded optical anticipation');
+      assert.ok(f.tip.every(Number.isFinite));
+      previous=f.distance;
+    }
+    assert.ok(Math.abs(Brush.visualFrontAt(guide,1).distance-profile.length)<1e-6);
+    assert.equal(JSON.stringify(stroke),before,'Optical guide changed source medians');
+  }
+});
+
+test('normal short strokes keep the original cursor and drawing semantics',()=>{
+  const glyph=find('一'),stroke=glyph.strokes[0],raw=JSON.stringify(stroke);
+  const profile=Brush.makeProfile(stroke.median,null);
+  assert.deepEqual(Brush.pointAtDistance(profile,0),stroke.median[0]);
+  assert.deepEqual(Brush.pointAtDistance(profile,profile.length),stroke.median.at(-1));
+  assert.equal(JSON.stringify(stroke),raw);
+  assert.throws(()=>Brush.makeVisualFrontier(profile,{probeStep:0}),/Invalid/);
+  assert.throws(()=>Brush.visualFrontAt(null,.5),/Invalid/);
+});
