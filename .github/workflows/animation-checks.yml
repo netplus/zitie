@@ -32,10 +32,13 @@ jobs:
           node --check animation/timeline.js
           node --check animation/player.js
           node --check animation/brush-union.js
+          node --check animation/experiments/gesture-data.js
+          node --check animation/experiments/pen-contact.js
+          node --check animation/experiments/pen-lab-engine.js
           node --check animation/gallery.js
           node --check animation/ui.js
           node --check animation/samples.js
-          node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs
+          node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs
       - name: Install CJK fallback solely for screenshot QA (never bundle font)
         run: |
           sudo apt-get update -qq
@@ -89,6 +92,32 @@ jobs:
             exit 1
           fi
           echo "PASS: pixel-by-pixel monotone ink fill, no disconnected artifacts, original contour preserved"
+      - name: Verify isolated A1.4 pen-contact A/B laboratory in Chromium
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/a1
+          python3 -m http.server 18768 --bind 127.0.0.1 > build/a1/pen-lab-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 35); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18768/animation/experiments/pen-lab.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          options=(--headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage --disable-background-timer-throttling --disable-renderer-backgrounding --window-size=1400,1750 --virtual-time-budget=60000)
+          timeout 160 "$CHROME_BIN" "${options[@]}" --dump-dom "http://127.0.0.1:18768/animation/tests/pen-lab-smoke.html" > build/a1/pen-lab-smoke-dom.html
+          if ! grep -q 'data-result="PASS"' build/a1/pen-lab-smoke-dom.html; then
+            echo 'FAIL: A1.4 pen-contact browser audit' >&2
+            grep -o 'FAIL:[^<]*' build/a1/pen-lab-smoke-dom.html | head -n 12 >&2 || true
+            exit 1
+          fi
+          echo 'PASS: A1.4 six-glyph source-clipped synthetic nib A/B audit'
+          timeout 120 "$CHROME_BIN" "${options[@]}" --dump-dom "http://127.0.0.1:18768/animation/tests/pen-lab-frames.html" > build/a1/pen-lab-frames-dom.html
+          grep -q 'data-result="PASS"' build/a1/pen-lab-frames-dom.html
+          timeout 120 "$CHROME_BIN" "${options[@]}" --window-size=1850,1620 --screenshot="$(pwd)/build/a1/pen-lab-ab-frames.png" "http://127.0.0.1:18768/animation/tests/pen-lab-frames.html" >/dev/null
+          test -s build/a1/pen-lab-ab-frames.png
       - uses: actions/upload-artifact@v4
         if: always()
         with:
