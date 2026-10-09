@@ -227,9 +227,10 @@
     const sampleStep=options.sampleStep??7;
     const probeStep=options.probeStep??2;
     const maxLead=options.maxLead??96;
-    if(![sampleStep,probeStep,maxLead].every(finite)||
+    const edgeSafety=options.edgeSafety??4;
+    if(![sampleStep,probeStep,maxLead,edgeSafety].every(finite)||
        sampleStep<3||sampleStep>32||probeStep<1||probeStep>10||
-       maxLead<8||maxLead>140)
+       maxLead<8||maxLead>140||edgeSafety<0||edgeSafety>16)
       throw Error('Invalid optical frontier settings');
     const n=Math.max(2,Math.ceil(profile.length/sampleStep));
     const entries=[];
@@ -246,7 +247,7 @@
     return {
       kind:'optical_ink_frontier_cursor_not_normative_or_physical_pen',
       sourceProfile:profile,entries,sourceMedianUntouched:true,
-      maxLead,probeStep,sourceStrokeDurationUntouched:true
+      maxLead,probeStep,edgeSafety,sourceStrokeDurationUntouched:true
     };
   }
   function visualFrontAt(frontier,progress){
@@ -262,7 +263,13 @@
     }
     const a=samples[lo],b=samples[hi],t=clamp(
       (d-a.distance)/(b.distance-a.distance||1),0,1);
-    const visualDistance=clamp(lerp(a.front,b.front,t),d,frontier.sourceProfile.length);
+    // The geometric capsule boundary can be ~1-2 SVG units ahead of
+    // the actually red, antialiased source-clipped pixels. A small
+    // BEHIND-front safety inset keeps the dot on already deposited ink.
+    // max(d,monotoneFront-safety) is itself nondecreasing.
+    const visualDistance=clamp(
+      Math.max(d,lerp(a.front,b.front,t)-frontier.edgeSafety),
+      d,frontier.sourceProfile.length);
     return {distance:visualDistance,lead:visualDistance-d,
       tip:pointAtDistance(frontier.sourceProfile,visualDistance)};
   }
