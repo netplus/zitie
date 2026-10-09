@@ -74,6 +74,13 @@
           typeof DOMPoint !== 'undefined' ?
           (x, y) => contour.isPointInFill(new DOMPoint(x, y)) : null;
         const profile=Brush.makeProfile(s.median,contains);
+        // The tiny round dot is an OPTICAL marker for the visible ink
+        // front. Round source-width brush caps can reveal future median
+        // sections at a fold/hook before the canonical center reaches them.
+        // We never change the established mask or motor timing. Only
+        // independently named hook/fold strokes use this visual offset.
+        const opticalFrontier=s.name_status==='reviewed'&&/折|钩/.test(s.name)?
+          Brush.makeVisualFrontier(profile):null;
         contour.remove();
         // Every local brush fragment is painted as an INDEPENDENT stroked
         // path. SVG alpha masks accumulate their union; no combined filled
@@ -99,7 +106,7 @@
         const reveal=create('path',{d:s.outline,fill:'#BD3945',
           mask:'url(#'+id+')'});
         return {hint,solid,reveal,profile,fragments,activeInk,
-          previousVisibleCount:0,id};
+          previousVisibleCount:0,id,opticalFrontier};
       });
       // Layer by paint role, NOT by stroke index: future gray strokes must
       // never obscure the currently written red stroke at intersections.
@@ -170,8 +177,11 @@
         }
       });
       if (frame.phase === 'writing' && frame.progress > 0 && frame.progress < 1) {
-        this.tip.setAttribute('cx', frame.tip[0]);
-        this.tip.setAttribute('cy', frame.tip[1]);
+        const row=this.rows[frame.index];
+        const visual=row.opticalFrontier?
+          Brush.visualFrontAt(row.opticalFrontier,frame.progress).tip:frame.tip;
+        this.tip.setAttribute('cx',visual[0]);
+        this.tip.setAttribute('cy',visual[1]);
         this.tip.style.display = '';
       } else this.tip.style.display = 'none';
       if (this.progress) this.progress.value = this.timeline.totalMs === 0 ?
