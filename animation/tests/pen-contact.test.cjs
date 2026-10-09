@@ -159,7 +159,7 @@ nodeTest('invalid model options and candidate source vertices fail closed',()=>{
 nodeTest('source-fit repair catches up smoothly behind the synthetic nib; zero onset and no mid-stroke gray tail',()=>{
   for(const [character,index] of [['一',0],['口',1],['水',0],['月',1],['火',0],['龠',13]]){
     const p=plan(character,index);
-    let previous=-1,lagPrevious=Infinity;
+    let previous=-1,previousScale=-1;
     assert.equal(Pen.repairDistanceAt(p,0).distance,0);
     for(let i=0;i<=1000;i++){
       const t=i/1000;
@@ -167,9 +167,13 @@ nodeTest('source-fit repair catches up smoothly behind the synthetic nib; zero o
       const tip=p.length*t;
       assert.ok(state.distance>=previous,'repair unexpectedly erased ink at '+t);
       assert.ok(state.distance<=tip+1e-8,'reference repair painted ahead of pen at '+t);
-      assert.ok(state.lag<=lagPrevious+1e-8,'trailing ink repair moved backward at '+t);
+      assert.ok(state.lag>=0&&state.lag<=Math.max(18,Math.min(48,p.length*.055))+1e-8,
+        'source repair lag is out of bounds at '+t);
+      assert.ok(state.contactScale>=previousScale-1e-8,
+        'onset coverage pressure unexpectedly shrank at '+t);
+      assert.ok(state.contactScale>=0&&state.contactScale<=1);
       assert.ok(state.spatialProgress>=0&&state.spatialProgress<=1);
-      previous=state.distance;lagPrevious=state.lag;
+      previous=state.distance;previousScale=state.contactScale;
     }
     assert.equal(Pen.repairDistanceAt(p,1).distance,p.length);
     assert.ok(Pen.repairDistanceAt(p,.995).spatialProgress>.993,
@@ -193,4 +197,38 @@ nodeTest('pressure and local ellipse remain independent from source-outline cove
   assert.throws(()=>Pen.repairDistanceAt(p,-Infinity),/Invalid/);
   assert.throws(()=>Pen.repairDistanceAt(p,.25,{lag:-1}),/Unsupported/);
   assert.throws(()=>Pen.repairDistanceAt(p,.25,{settleAt:1}),/Unsupported/);
+});
+
+nodeTest('horizontal 一 start cap stays spatially synchronous instead of filling gray holes later',()=>{
+  const p=plan('一');
+  assert.equal(Pen.repairDistanceAt(p,0).distance,0);
+  assert.equal(Pen.repairDistanceAt(p,0).contactScale,0);
+  for(const fraction of [.005,.01,.02,.03,.04,.05,.07,.10,.12,.14]){
+    const state=Pen.repairDistanceAt(p,fraction);
+    assert.ok(Math.abs(state.distance-p.length*fraction)<1e-7,
+      'upper-left cap source width lag must remain zero through initial 14%: '+fraction);
+    assert.equal(state.lag,0);
+  }
+  assert.ok(Pen.repairDistanceAt(p,.005).contactScale<.5);
+  assert.equal(Pen.repairDistanceAt(p,.03).contactScale,1);
+  assert.ok(Pen.repairDistanceAt(p,.35).lag>0);
+  assert.ok(Pen.repairDistanceAt(p,.995).spatialProgress>.993);
+});
+nodeTest('source-contact ramp and delayed coverage stay monotone for all 40 source strokes',()=>{
+  for(const glyph of glyphs){
+    const timeline=Timeline.buildTimeline(glyph);
+    for(let i=0;i<glyph.strokes.length;i++){
+      const profile=Brush.makeProfile(glyph.strokes[i].median,null);
+      const p=Pen.makePlan(glyph.strokes[i],profile,timeline.strokes[i].motion,
+        Gesture.lookup(glyph,i));
+      let old=-1,scale=-1;
+      for(let k=0;k<=1000;k++){
+        const state=Pen.repairDistanceAt(p,k/1000);
+        assert.ok(state.distance>=old-1e-8);
+        assert.ok(state.contactScale>=scale-1e-8);
+        assert.ok(state.distance<=p.length*k/1000+1e-6);
+        old=state.distance;scale=state.contactScale;
+      }
+    }
+  }
 });

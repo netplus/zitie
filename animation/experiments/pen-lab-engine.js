@@ -32,6 +32,7 @@
       this.rows=[];
       this.timeline=null;
       this.tip=null;
+      this.showTip=false; // Hide the white-edged guide ring over actual red ink.
       this.stats={segments:0,stamps:0,buildMs:0};
     }
     setGlyph(glyph){
@@ -123,6 +124,10 @@
       };
       return this.renderAt(0);
     }
+    setTipIndicator(enabled){
+      this.showTip=Boolean(enabled);
+      return this.showTip;
+    }
     renderAt(elapsed){
       if(!this.timeline)return null;
       const baseline=T.frameAt(this.timeline,elapsed);
@@ -164,19 +169,29 @@
             row.repairFragments[j].style.display='none';
         }
         row.repairCount=repair.visibleCount;
+        // Synchronize the start cap with early pen contact. Repair widths
+        // grow smoothly for the first 12-22 source units; already painted
+        // fragments only gain coverage and can never shrink during playback.
+        for(let j=0;j<row.profile.segments.length;j++){
+          const segment=row.profile.segments[j];
+          if(segment.start>=repairDistance.contactRampDistance)break;
+          row.repairFragments[j].setAttribute('stroke-width',String(
+            segment.width*repairDistance.contactScale));
+        }
         if(repair.active>=0&&repair.partial>0){
           const segment=row.profile.segments[repair.active];
           row.repairFront.setAttribute('d',
             'M '+segment.x0+' '+segment.y0+
             ' L '+repair.tip[0]+' '+repair.tip[1]);
-          row.repairFront.setAttribute('stroke-width',String(segment.width));
+          row.repairFront.setAttribute('stroke-width',String(
+            segment.width*repairDistance.contactScale));
           row.repairFront.style.display='';
         }else{
           row.repairFront.style.display='none';
         }
       });
       const visible=frame.phase==='writing'&&frame.progress>0&&frame.progress<1;
-      if(visible){
+      if(visible&&this.showTip){
         const penState=Pen.snapshot(this.rows[frame.index].plan,frame.progress);
         const head=penState.head;
         this.tip.setAttribute('cx',frame.tip[0]);

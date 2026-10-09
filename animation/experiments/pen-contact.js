@@ -148,9 +148,10 @@
 
   // Source-contour coverage is a separate drawing correctness constraint;
   // synthetic pressure is *not* a license to leave permanent gray strips.
-  // A delayed reference-width brush repairs only ink the nib has passed.
-  // The delay smoothly approaches zero in the final 18% of the stroke,
-  // so no hard "unmask everything" completion jump is required.
+  // At initial contact the source-width brush follows the pen tip,
+  // preventing gray start-cap holes. Afterwards a bounded lag can grow
+  // smoothly, and falls back to zero near the source end. Never modify
+  // the ellipse contact pressure or canonical median.
   function repairDistanceAt(plan,progress,options={}){
     if(!plan||!finite(plan.length)||plan.length<=0||!finite(progress))
       throw Error('Invalid reference coverage distance');
@@ -160,11 +161,26 @@
     if(!finite(settleAt)||settleAt<=0||settleAt>=.99||
        !finite(nominalLag)||nominalLag<0||nominalLag>140)
       throw Error('Unsupported source coverage recovery parameters');
-    if(fraction===0)return {distance:0,lag:nominalLag,spatialProgress:0};
-    const ramp=smooth((fraction-settleAt)/(1-settleAt));
-    const lag=nominalLag*(1-ramp);
-    const distance=Math.max(0,plan.length*fraction-lag);
-    return {distance,lag,spatialProgress:distance/plan.length};
+    const contactRampDistance=Math.min(22,Math.max(12,plan.length*.023));
+    if(fraction===0)return {distance:0,lag:0,spatialProgress:0,
+      contactScale:0,contactRampDistance};
+    const traveled=plan.length*fraction;
+    // For the initial 14% of a horizontal stroke, source-width coverage
+    // must never lag behind the nib. The start cap lies above/behind the
+    // source median, and early synthetic pressure shrinks the ellipses.
+    const onsetSyncDistance=Math.min(plan.length*.24,Math.max(38,
+      plan.length*(plan.gesture.kind==='horizontal'?.14:.07)));
+    // Grow lag over >=2.25*lag spatial distance; derivative <1, so the
+    // repair front remains monotone even as lag is introduced.
+    const lagRise=smooth((traveled-onsetSyncDistance)/Math.max(48,nominalLag*2.25));
+    const lagFall=1-smooth((fraction-settleAt)/(1-settleAt));
+    const lag=nominalLag*lagRise*lagFall;
+    const distance=Math.max(0,traveled-lag);
+    // The reference-shaped start cap presses gradually instead of flashing
+    // a full-radius disk at the first infinitesimal movement.
+    const contactScale=smooth(traveled/contactRampDistance);
+    return {distance,lag,spatialProgress:distance/plan.length,
+      contactScale,contactRampDistance};
   }
 
   function snapshot(plan,progress){
