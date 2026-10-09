@@ -137,7 +137,7 @@ $('lab').addEventListener('load',async function(){
    check(retimedFrames>=3,'Experimental gesture retiming did not actually change spatial timing');
    // The experiment is not promoted to the default renderer, so a residual
    // gap is reported as calibration debt, not silently called perfect.
-   check(worstNearFinalGap<.40,'Virtual footprint geometry misses excessive contour area');
+   check(worstNearFinalGap<.10,'Virtual footprint geometry misses excessive contour area');
    lab.select(lab.glyphs[2]);
    const stage=lab.experimental.timeline.strokes[0];
    lab.seek(stage.startMs+stage.durationMs*.60);
