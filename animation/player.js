@@ -68,9 +68,13 @@
         const solid = create('path', { d: s.outline, fill:'#5C6269' });
         const reveal = create('path', { d: s.outline, fill:'#BD3945',
           'clip-path':'url(#' + id + ')' });
-        group.append(hint, solid, reveal);
         return { hint, solid, reveal, brush, length: tl.strokes[i].length, id };
       });
+      // Layer by paint role, NOT by stroke index: future gray strokes must
+      // never obscure the currently written red stroke at intersections.
+      for (const row of this.rows) group.appendChild(row.hint);
+      for (const row of this.rows) group.appendChild(row.solid);
+      for (const row of this.rows) group.appendChild(row.reveal);
       this.tip = create('circle', { cx:0,cy:0,r:12,fill:'#BD3945',
         stroke:'#FFFFFF','stroke-width':4, 'pointer-events':'none' });
       group.appendChild(this.tip);
