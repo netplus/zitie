@@ -32,6 +32,7 @@
       this.rows=[];
       this.timeline=null;
       this.tip=null;
+      this.showTip=false; // Hide the white-edged guide ring over actual red ink.
       this.stats={segments:0,stamps:0,buildMs:0};
     }
     setGlyph(glyph){
@@ -123,6 +124,10 @@
       };
       return this.renderAt(0);
     }
+    setTipIndicator(enabled){
+      this.showTip=Boolean(enabled);
+      return this.showTip;
+    }
     renderAt(elapsed){
       if(!this.timeline)return null;
       const baseline=T.frameAt(this.timeline,elapsed);
@@ -186,7 +191,7 @@
         }
       });
       const visible=frame.phase==='writing'&&frame.progress>0&&frame.progress<1;
-      if(visible){
+      if(visible&&this.showTip){
         const penState=Pen.snapshot(this.rows[frame.index].plan,frame.progress);
         const head=penState.head;
         this.tip.setAttribute('cx',frame.tip[0]);

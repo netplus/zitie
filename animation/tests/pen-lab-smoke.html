@@ -60,6 +60,18 @@ $('lab').addEventListener('load',async function(){
    for(let i=0;i<image.length;i+=4)
      if(image[i+3]&&image[i]<230&&image[i+1]<230&&image[i+2]<230)nonwhite++;
    check(nonwhite>80,'Synthetic pressure and motion charts did not render');
+   const guide=w.document.getElementById('toggleNib');
+   check(!!guide&&guide.getAttribute('aria-pressed')==='false',
+     'Experimental nib overlay should default to hidden');
+   check(lab.experimental.showTip===false,'White nib guide must not make visual gaps');
+   lab.seek(lab.experimental.timeline.strokes[0].durationMs*.30);
+   check(lab.experimental.tip.style.display==='none','White pen-guide ring leaked into visible ink');
+   guide.click();
+   check(lab.experimental.showTip===true&&guide.getAttribute('aria-pressed')==='true'&&
+     lab.experimental.tip.style.display!=='none','Opt-in nib guide did not appear');
+   guide.click();
+   check(lab.experimental.showTip===false&&guide.getAttribute('aria-pressed')==='false'&&
+     lab.experimental.tip.style.display==='none','Pen guide failed to hide again');
    const target={一:0,口:1,水:0,月:1,火:0,龠:13};
    let checks=0,priorLost=0,outside=0,sourceMismatch=0,invalidStates=0,retimedFrames=0;
    let yiTrailingUnfilledPixels=0,yiComparedFrames=0,yiTerminalGapPercent=null;

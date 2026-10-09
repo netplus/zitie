@@ -95,6 +95,8 @@ margin-top:14px;padding:13px 15px}
     <button id="play" class="control primary" type="button">▶ 播放对照</button>
     <button id="restart" class="control" type="button">↺ 重播</button>
     <button id="showAll" class="control" type="button">显示原始字形</button>
+    <button id="toggleNib" class="control" type="button"
+      aria-pressed="false">显示实验笔尖</button>
   </div>
   <div class="speedButtons" id="speedButtons" role="group" aria-label="同时调节两个播放器的速度">
     <button type="button" data-speed="0.5" aria-pressed="false">0.5×</button>
@@ -115,7 +117,7 @@ margin-top:14px;padding:13px 15px}
     <div class="panelHead"><h2>B · 椭圆笔尖接触模型</h2><span class="tag">A1.4 实验</span></div>
     <svg id="nibStage" class="svgStage" viewBox="0 0 1024 1024"
          role="img" aria-label="椭圆形可变笔尖接触实验"></svg>
-    <div class="caption">旋转椭圆印迹＋笔尖后方的渐进原轮廓补全；转锋与出钩微时序仍为实验假设。</div>
+    <div class="caption">旋转椭圆印迹＋起笔同步源轮廓接触；默认只显示真实累积墨迹。可选择显示笔尖辅助标记。</div>
   </section>
 </div>
 <section class="seekBox">
@@ -279,6 +281,12 @@ window.addEventListener('DOMContentLoaded',function(){
   $('play').addEventListener('click',toggle);
   $('restart').addEventListener('click',()=>{seek(0);toggle();});
   $('showAll').addEventListener('click',()=>seek(total));
+  $('toggleNib').addEventListener('click',()=>{
+    const show=experimental.setTipIndicator(!experimental.showTip);
+    $('toggleNib').setAttribute('aria-pressed',String(show));
+    $('toggleNib').textContent=show?'隐藏实验笔尖':'显示实验笔尖';
+    render();
+  });
   $('seek').addEventListener('input',e=>seek(Number(e.target.value)*total/1000));
   $('speedButtons').addEventListener('click',e=>{
     const button=e.target.closest('button[data-speed]');
