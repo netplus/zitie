@@ -1,6 +1,6 @@
-## A1.3 稳定版圆圈与墨迹前缘同步（候选，待CI及合入）
+## A1.3 稳定版圆圈与墨迹前缘同步（已合入并部署）
 
-用户明确更偏好稳定版 A1.2.3 的圆头笔迹，后续不以椭圆笔尖取代它。本轮仅修复折、钩等笔画中“墨迹已经向前写，圆圈却仍落后”的视觉不同步：使用原圆头笔刷已经落墨的几何范围，计算单调递增的 **显示圆圈前缘**；中心线、笔速、原SVG填充、原始笔顺、墨迹逐帧测试全部保持稳定版原样。其几何是视觉指示而非真实笔尖压力和教学审核。详见[设计与回归](../docs/A1_STABLE_FRONTIER.md)、[Issue #98](https://github.com/netplus/zitie/issues/98)。CI成功及正式合入前不得称为上线。
+用户明确更偏好稳定版 A1.2.3 的圆头笔迹，后续不以椭圆笔尖取代它。本轮仅修复折、钩等笔画中“墨迹已经向前写，圆圈却仍落后”的视觉不同步：使用原圆头笔刷已经落墨的几何范围，计算单调递增的 **显示圆圈前缘**；中心线、笔速、原SVG填充、原始笔顺、墨迹逐帧测试全部保持稳定版原样。其几何是视觉指示而非真实笔尖压力和教学审核。详见[设计与回归](../docs/A1_STABLE_FRONTIER.md)、[Issue #98](https://github.com/netplus/zitie/issues/98)。[PR #99](https://github.com/netplus/zitie/pull/99) 已合入 `main`（`1ec9afb8b9f03657089cf61dd5551ed1fc0952ed`），最终 A1+Book CI 双通过，合并后的[GitHub Pages #37937065049](https://github.com/netplus/zitie/actions/runs/37937065049)已完成真实部署。[稳定版在线体验](https://netplus.github.io/zitie/animation/)已包含此修复。数值测试不等于独立教师审定。
 
 ---
 
