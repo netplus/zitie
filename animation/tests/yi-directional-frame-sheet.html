@@ -76,13 +76,13 @@ document.getElementById('lab').addEventListener('load',async function(){
     const timeLabel=document.createElement('span');
     timeLabel.textContent=(time*100).toFixed(2)+'% 笔时';
     title.append(label,timeLabel);card.append(title);
-    const row=document.createElement('div');row.className='row';
+    const comparison=document.createElement('div');comparison.className='row';
     for(const [caption,canvas] of [['A：旧几何',a],['B：新轮廓＋笔尖',b]]){
       const pane=document.createElement('div');pane.className='pane';
       const text=document.createElement('small');text.textContent=caption;
-      pane.append(text,canvas);row.append(pane);
+      pane.append(text,canvas);comparison.append(pane);
     }
-    card.append(row);document.getElementById('frames').append(card);
+    card.append(comparison);document.getElementById('frames').append(card);
     frames++;
   }
   if(frames!==11)throw Error('Incomplete onset frame sheet');
