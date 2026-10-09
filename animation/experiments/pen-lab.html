@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>循序 · 虚拟笔尖 A/B 实验室（未经教学审核）</title>
+<style>
+:root{--red:#b73c49;--red-dark:#8b2935;--ink:#25343d;--muted:#61727e;
+--line:#e0e4e7;--bg:#f6f7f8}
+*{box-sizing:border-box}
+body{margin:0;font:14px/1.55 system-ui,"PingFang SC","Microsoft YaHei",sans-serif;
+color:var(--ink);background:var(--bg)}
+.page{max-width:1280px;margin:0 auto;padding:26px 22px}
+header{display:flex;align-items:center;justify-content:space-between;gap:20px;margin:0 0 16px}
+h1{font-size:clamp(21px,2.7vw,30px);line-height:1.3;margin:0}
+.subtitle{color:var(--muted);margin:5px 0 0}
+.back{color:var(--red-dark);font-size:13px;text-decoration:none}
+.back:hover{text-decoration:underline}
+.banner{border-radius:11px;padding:12px 16px;background:#fff2ea;
+border:1px solid #f4d8c8;color:#825334;margin-bottom:18px;font-size:13px}
+.banner strong{color:#683f2b}
+.toolbar{display:flex;align-items:center;flex-wrap:wrap;gap:11px;margin-bottom:16px;
+background:white;border:1px solid var(--line);border-radius:14px;padding:14px}
+.glyphs{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+.glyph{width:49px;height:48px;background:white;border:1px solid #d6dce0;border-radius:10px;
+font-family:"KaiTi","STKaiti",serif;font-size:25px;color:var(--ink);cursor:pointer}
+.glyph.active{border:2px solid var(--red);color:var(--red);background:#fff4f4}
+.controls{display:flex;gap:7px;align-items:center;flex-wrap:wrap}
+button{cursor:pointer;font:inherit}
+button:focus-visible,input:focus-visible{outline:3px solid #d9a0a8;outline-offset:3px}
+.control{background:#fff;border:1px solid #d8dfe3;border-radius:9px;padding:9px 12px}
+.control.primary{background:var(--red);border-color:var(--red);color:white;font-weight:700}
+.speedButtons{display:flex;gap:3px;background:#f0f2f4;border-radius:9px;padding:3px}
+.speedButtons button{background:none;border:1px solid transparent;border-radius:7px;
+padding:7px 9px;min-height:35px}
+.speedButtons button[aria-pressed="true"]{background:#fff;color:var(--red);
+border-color:#e5cdd1;font-weight:750}
+.panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.panel{border:1px solid var(--line);background:white;border-radius:16px;overflow:hidden;
+box-shadow:0 5px 18px #1d27300a}
+.panelHead{padding:15px 18px 5px;display:flex;align-items:baseline;
+justify-content:space-between;gap:12px}
+.panelHead h2{font-size:17px;margin:0}
+.tag{color:var(--muted);font-size:12px}
+.svgStage{width:100%;max-width:520px;aspect-ratio:1;height:auto;display:block;margin:auto}
+.caption{border-top:1px solid var(--line);padding:12px 17px;font-size:12px;
+color:var(--muted);min-height:52px}
+.seekBox{background:#fff;border:1px solid var(--line);border-radius:13px;
+margin-top:14px;padding:13px 15px}
+.seekrow{display:flex;gap:13px;align-items:center}
+#seek{width:100%;accent-color:var(--red);height:12px;cursor:pointer}
+#clock{font-variant-numeric:tabular-nums;min-width:92px;text-align:right;color:var(--muted)}
+.metrics{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:15px}
+.metric{background:white;border:1px solid var(--line);border-radius:12px;padding:10px 12px}
+.metric small{display:block;color:var(--muted);font-size:11px}
+.metric strong{font-size:16px}
+#motion{font-size:13px;color:var(--muted);margin:10px 2px}
+.foot{color:var(--muted);font-size:12px;margin:18px 0 5px}
+.foot a{color:var(--red-dark)}
+@media(max-width:850px){.panels{grid-template-columns:1fr}.metrics{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:550px){.page{padding:14px 11px}header{align-items:start;flex-direction:column}
+.toolbar{gap:10px}.panelHead{padding:12px}.glyph{width:43px;height:43px}}
+@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+<script defer src="../samples.js"></script>
+<script defer src="../motion.js"></script>
+<script defer src="../timeline.js"></script>
+<script defer src="../brush-union.js"></script>
+<script defer src="../player.js"></script>
+<script defer src="./gesture-data.js"></script>
+<script defer src="./pen-contact.js"></script>
+<script defer src="./pen-lab-engine.js"></script>
+</head>
+<body><main class="page">
+<header><div>
+<h1>虚拟笔尖 · A/B 运笔实验室</h1>
+<p class="subtitle">同一原始笔顺、同一时间轴、同一最终字形 · 比较“圆头遮罩”和“接触印迹”</p>
+</div>
+<a class="back" href="../index.html">← 返回正式工程播放器</a>
+</header>
+<div class="banner"><strong>独立研发原型，未经教学审定。</strong>
+右侧压力、笔尖倾角、顿笔、出钩节奏为工程合成参数，不是测量获得的真实手写数据；
+此页不会修改规范笔顺，也不会替换正式播放器。
+</div>
+<div class="toolbar">
+  <div class="glyphs" role="group" id="glyphButtons" aria-label="选择对比部首"></div>
+  <div class="controls">
+    <button id="play" class="control primary" type="button">▶ 播放对照</button>
+    <button id="restart" class="control" type="button">↺ 重播</button>
+    <button id="showAll" class="control" type="button">显示原始字形</button>
+  </div>
+  <div class="speedButtons" id="speedButtons" role="group" aria-label="同时调节两个播放器的速度">
+    <button type="button" data-speed="0.5" aria-pressed="false">0.5×</button>
+    <button type="button" data-speed="1" aria-pressed="true">1×</button>
+    <button type="button" data-speed="1.5" aria-pressed="false">1.5×</button>
+    <button type="button" data-speed="2" aria-pressed="false">2×</button>
+    <button type="button" data-speed="3" aria-pressed="false">3×</button>
+  </div>
+</div>
+<div class="panels">
+  <section class="panel" aria-label="A 现有笔刷基线">
+    <div class="panelHead"><h2>A · 当前稳定基线</h2><span class="tag">A1.2.3</span></div>
+    <svg id="baselineStage" class="svgStage" viewBox="0 0 1024 1024"
+         role="img" aria-label="圆头笔迹遮罩基线"></svg>
+    <div class="caption">原始 SVG 轮廓内，由沿中心线的圆头笔迹并集逐步显露。</div>
+  </section>
+  <section class="panel" aria-label="B 实验性虚拟笔尖">
+    <div class="panelHead"><h2>B · 椭圆笔尖接触模型</h2><span class="tag">A1.4 实验</span></div>
+    <svg id="nibStage" class="svgStage" viewBox="0 0 1024 1024"
+         role="img" aria-label="椭圆形可变笔尖接触实验"></svg>
+    <div class="caption">多个可旋转的椭圆接触印迹累积，接触强度与位置单独建模；不生成新笔顺。</div>
+  </section>
+</div>
+<section class="seekBox">
+  <div class="seekrow">
+    <label for="seek">共同时间轴</label>
+    <input id="seek" type="range" min="0" max="1000" value="0"
+           aria-label="同时拖动左右笔迹进度">
+    <output id="clock" for="seek">00:00 / 00:00</output>
+  </div>
+  <div id="motion" role="status" aria-live="polite">准备字形</div>
+  <div class="metrics">
+    <div class="metric"><small>接触阶段</small><strong id="phase">待落笔</strong></div>
+    <div class="metric"><small>合成接触强度</small><strong id="pressure">0%</strong></div>
+    <div class="metric"><small>已显露的笔尖印迹</small><strong id="stampCount">0</strong></div>
+    <div class="metric"><small>模拟帧开销</small><strong id="renderTime">–</strong></div>
+  </div>
+</section>
+<p class="foot">说明：所有显示图形均使用原项目9个真实来源部首中的6个，
+并严格裁剪到原始矢量轮廓。算法、文献及验收边界见
+<a href="https://github.com/netplus/zitie/blob/main/docs/A1_PEN_CONTACT_RESEARCH.md">
+虚拟笔尖技术研究</a>。源笔画的书写方向尚未经过此实验独立核验。
+</p>
+</main>
+<script>
+window.addEventListener('DOMContentLoaded',function(){
+  'use strict';
+  const $=id=>document.getElementById(id);
+  const selectedChars=['一','口','水','月','火','龠'];
+  const glyphs=selectedChars.map(ch=>window.ZITIE_SAMPLES.glyphs.find(g=>g.character===ch));
+  if(glyphs.some(g=>!g))throw Error('Missing offline canonical A1 experiment sample');
+  const baseline=new window.ZitiePlayer.StrokePlayer({svg:$('baselineStage')});
+  const experimental=new window.ZitiePenLab.FootprintRenderer({svg:$('nibStage')});
+  let elapsed=0,total=0,playing=false,lastTick=null,speed=1,glyph=null,lastResult=null;
+  const frameTimes=[];
+  const format=ms=>{
+    const s=Math.floor(ms/1000);
+    return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0');
+  };
+  function select(g){
+    playing=false;lastTick=null;glyph=g;
+    baseline.setGlyph(g);
+    experimental.setGlyph(g);
+    total=baseline.timeline.totalMs;elapsed=0;
+    $('glyphButtons').querySelectorAll('button').forEach(button=>{
+      const active=Number(button.dataset.glyphId)===g.main_id;
+      button.classList.toggle('active',active);
+      button.setAttribute('aria-pressed',String(active));
+    });
+    render();
+  }
+  function render(){
+    if(!glyph)return null;
+    const start=performance.now();
+    baseline.seekElapsed(elapsed);
+    lastResult=experimental.renderAt(elapsed);
+    const ms=performance.now()-start;
+    frameTimes.push(ms);
+    if(frameTimes.length>120)frameTimes.shift();
+    $('play').textContent=playing?'Ⅱ 暂停':'▶ 播放对照';
+    $('seek').value=String(Math.round(elapsed/Math.max(total,1)*1000));
+    $('clock').textContent=format(elapsed)+' / '+format(total);
+    $('phase').textContent={
+      pending:'待落笔',touch:'起笔接触',travel:'行笔',
+      brake:'折前制动',pivot:'转锋',flick:'出钩',
+      lift:'提笔',finished:'字形完成',pause:'笔间停顿'
+    }[lastResult.contact.state]??lastResult.contact.state;
+    $('pressure').textContent=Math.round(lastResult.contact.pressure*100)+'%';
+    $('stampCount').textContent=String(lastResult.contact.count);
+    $('renderTime').textContent=ms.toFixed(1)+' ms';
+    $('motion').textContent=glyph.character+' · 第 '+(lastResult.index+1)+' / '+
+      glyph.expected_stroke_count+'笔 · '+lastResult.gesture.label+
+      ' · 动作仅为实验性推断';
+    return lastResult;
+  }
+  function seek(ms){
+    if(!Number.isFinite(ms))throw Error('Nonfinite lab seek');
+    playing=false;lastTick=null;
+    elapsed=Math.max(0,Math.min(total,ms));
+    return render();
+  }
+  function setSpeed(num){
+    if(![.5,1,1.5,2,3].includes(num))throw Error('Unsupported speed');
+    speed=num;
+    $('speedButtons').querySelectorAll('button').forEach(b=>{
+      const active=Number(b.dataset.speed)===num;
+      b.setAttribute('aria-pressed',String(active));
+    });
+    return speed;
+  }
+  const tick=now=>{
+    if(!playing)return;
+    if(lastTick!==null)elapsed=Math.min(total,elapsed+(now-lastTick)*speed);
+    lastTick=now;
+    if(elapsed>=total){playing=false;lastTick=null;}
+    render();
+    if(playing)requestAnimationFrame(tick);
+  };
+  function toggle(){
+    if(playing){playing=false;lastTick=null;render();return;}
+    if(elapsed>=total)elapsed=0;
+    playing=true;lastTick=null;render();
+    requestAnimationFrame(tick);
+  }
+  for(const g of glyphs){
+    const b=document.createElement('button');
+    b.type='button';b.className='glyph';b.dataset.glyphId=String(g.main_id);
+    b.setAttribute('aria-label',g.character+'的接触实验');
+    b.textContent=g.character;
+    b.addEventListener('click',()=>select(g));
+    $('glyphButtons').appendChild(b);
+  }
+  $('play').addEventListener('click',toggle);
+  $('restart').addEventListener('click',()=>{seek(0);toggle();});
+  $('showAll').addEventListener('click',()=>seek(total));
+  $('seek').addEventListener('input',e=>seek(Number(e.target.value)*total/1000));
+  $('speedButtons').addEventListener('click',e=>{
+    const button=e.target.closest('button[data-speed]');
+    if(button)setSpeed(Number(button.dataset.speed));
+  });
+  document.addEventListener('visibilitychange',()=>{
+    if(document.hidden&&playing){playing=false;lastTick=null;render();}
+  });
+  select(glyphs[0]);
+  window.ZITIE_A14_LAB={
+    baseline,experimental,get glyph(){return glyph;},
+    get elapsed(){return elapsed;},get total(){return total;},
+    get playing(){return playing;},get speed(){return speed;},
+    get lastResult(){return lastResult;},get frameTimes(){return frameTimes.slice();},
+    select,seek,setSpeed,toggle,glyphs
+  };
+});
+</script>
+</body></html>
