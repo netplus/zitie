@@ -50,7 +50,9 @@ document.getElementById('demo').addEventListener('load', async function () {
     check(app.rows[0].solid.getAttribute('d') === outline, 'unchanged final outline');
 
     document2.getElementById('play').click();
-    await delay(300);
+    // Headless Chromium can delay initial iframe RAF callbacks under load;
+    // use enough virtual time for two rendered frames, not a fixed 300ms race.
+    await delay(650);
     const halfway = app.getState();
     check(halfway.playing && halfway.elapsedMs > 0, 'real requestAnimationFrame advances writing');
     check(halfway.phase === 'writing' && halfway.progress > 0 && halfway.progress < 1, 'partial stroke');
