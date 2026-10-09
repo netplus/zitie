@@ -6,6 +6,8 @@
   style="width:1100px;height:1260px"></iframe>
 <script>
 function check(ok,message){if(!ok)throw Error(message);}
+const rasterSize=Number(new URLSearchParams(location.search).get('raster')||512);
+if(![512,1024].includes(rasterSize))throw Error('Unsupported raster size');
 async function raster(svg,tip){
  const old=tip.style.display;tip.style.display='none';
  try{
@@ -16,11 +18,11 @@ async function raster(svg,tip){
    await new Promise((yes,no)=>{
     img.onload=yes;img.onerror=()=>no(Error('SVG decode failed'));img.src=u;
    });
-   const c=document.createElement('canvas');c.width=c.height=512;
+   const c=document.createElement('canvas');c.width=c.height=rasterSize;
    const ctx=c.getContext('2d',{willReadFrequently:true});
-   ctx.drawImage(img,0,0,512,512);
-   const rgba=ctx.getImageData(0,0,512,512).data;
-   const flags=new Uint8Array(512*512);
+   ctx.drawImage(img,0,0,rasterSize,rasterSize);
+   const rgba=ctx.getImageData(0,0,rasterSize,rasterSize).data;
+   const flags=new Uint8Array(rasterSize*rasterSize);
    for(let i=0,j=0;i<rgba.length;i+=4,j++)
     if(rgba[i]>137&&rgba[i+1]<115&&rgba[i+2]<124&&
        rgba[i]>rgba[i+1]*1.48&&rgba[i+3]>190)flags[j]=1;
@@ -29,10 +31,10 @@ async function raster(svg,tip){
  }finally{tip.style.display=old;}
 }
 function redAt(flags,x,y){
- const px=Math.round(x*512/1024),py=Math.round((900-y)*512/1024);
+ const px=Math.round(x*rasterSize/1024),py=Math.round((900-y)*rasterSize/1024);
  for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){
   const i=px+dx,j=py+dy;
-  if(i>=0&&i<512&&j>=0&&j<512&&flags[j*512+i])return true;
+  if(i>=0&&i<rasterSize&&j>=0&&j<rasterSize&&flags[j*rasterSize+i])return true;
  }
  return false;
 }
@@ -109,7 +111,7 @@ document.getElementById('viewer').addEventListener('load',async function(){
     'Optical cursor did not correct the observed leading ink');
   // Not every supplied median lies inside a valid written contour at
   // every synthetic time. Report but do not hide such source limitations.
-  const report={result:'PASS',glyphCases:cases.length,frames:details.length,
+  const report={result:'PASS',resolution:rasterSize,glyphCases:cases.length,frames:details.length,
     exactTip,legacyAheadSum:aheadLegacy,stableAheadSum:+aheadCursor.toFixed(2),
     maxLegacyAhead:oldMax,maxStableAhead:+newMax.toFixed(2),
     regressions:regressed,improvements:improved,offsetFrames,
