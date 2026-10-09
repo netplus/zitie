@@ -30,8 +30,12 @@ document.getElementById('lab').addEventListener('load',function(){
   check(row.startCap&&row.sourceSweep.getAttribute('d').startsWith('M '),
     'Directional onset absent at narrow viewport');
   const guide=lab.experimental.tip.querySelectorAll('path');
-  check([...guide].every(x=>!/white|#fff|rgb\\(255/i.test(
-    (x.getAttribute('fill')||'')+' '+(x.getAttribute('stroke')||''))),
+  check([...guide].every(x=>{
+    const palette=((x.getAttribute('fill')||'')+' '+
+      (x.getAttribute('stroke')||'')).toLowerCase();
+    return !palette.includes('white')&&!palette.includes('#fff')&&
+      !palette.includes('rgb(255');
+  }),
     'White cursor obscures the written stroke');
   doc.documentElement.setAttribute('data-mobile-audit','PASS');
   document.documentElement.setAttribute('data-result','PASS');
