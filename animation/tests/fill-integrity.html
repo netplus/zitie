@@ -118,8 +118,16 @@ document.getElementById('viewer').addEventListener('load',async function(){
         if(diff.lost>0){
           lost+=diff.lost;
           byGlyph[g.character].worstLost=Math.max(byGlyph[g.character].worstLost,diff.lost);
+          const coords=[];
+          for(let pixel=0;pixel<out.flags.length&&coords.length<8;pixel++)
+            if(before[pixel]&&!out.flags[pixel])
+              coords.push([pixel%sizes.width,Math.floor(pixel/sizes.width)]);
+          const brush=w.ZitieInkBrushUnion.stateAt(row.profile,app.getState().progress);
           throw new Error(g.character+' stroke '+(i+1)+' at '+t+
-            ': previously inked pixels vanished='+diff.lost);
+            ': previously inked pixels vanished='+diff.lost+
+            '; lost raster XY='+JSON.stringify(coords)+
+            '; current profile segment='+brush.active+
+            '; brush spatial distance='+brush.distance.toFixed(2));
         }
         if(t===0 && out.count!==0)throw new Error(g.character+' stroke '+(i+1)+': red onset flash');
         if((t===.35||t===.65||t===.92)&&out.count>=25){
