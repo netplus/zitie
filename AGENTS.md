@@ -1,3 +1,9 @@
+# 当前新增开发：A1 汉字笔顺交互动画（2026-10-09）
+
+用户已明确授权在 v0.5.1 之后启动**独立** A1 动画阶段。先读 `docs/A1_ANIMATION.md`、`animation/README.md` 和 `docs/STATUS.md`；只在 A1 路径或必要CI中新增，不把既有发布后 PDF 维护规则理解为禁止本次经过授权的新阶段。永久保持 v0.5.1 及历史正式 PDF、manifest、规范数据/审核记录字节不变；动画轨迹与原矢量审查须分开统计，未经审定的 medians 只能是工程原型。延续 branch/PR/最终HEAD CI 合入流程，来源 #4、纸张 #77 仍独立；不使用 chn-ops。
+
+---
+
 # 当前接续：v0.5.1 标点勘误发布后维护（2026-10-08）
 
 以 `docs/STATUS.md`、`data/post_release.json.current_release`、`deliverables/manifest.json` 为当前版本权威入口。最新PDF为 `deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf`，299页；SHA256 `7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90`。本补丁修复 UMingCN 横排201处“。”及82处“、”的字形左下定位。旧22份PDF的路径/原字节与来源材料保持不变；不重复重建已经关闭的 M1/M2/M3/Q1 内容。
