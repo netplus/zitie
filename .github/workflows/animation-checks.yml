@@ -1,0 +1,41 @@
+name: A1 animation checks
+on:
+  push:
+    paths:
+      - 'animation/**'
+      - 'scripts/a1_audit.py'
+      - 'scripts/a1_browser_smoke.sh'
+      - '.github/workflows/animation-checks.yml'
+  pull_request:
+    paths:
+      - 'animation/**'
+      - 'scripts/a1_audit.py'
+      - 'scripts/a1_browser_smoke.sh'
+      - '.github/workflows/animation-checks.yml'
+permissions:
+  contents: read
+jobs:
+  svg-browser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Check JavaScript syntax and canonical stroke data
+        run: |
+          node --check animation/timeline.js
+          node --check animation/player.js
+          node --check animation/samples.js
+          node --test animation/tests/timeline.test.cjs
+      - name: Prepare headless Chrome
+        id: chrome
+        uses: browser-actions/setup-chrome@v1
+      - name: Exercise true animated reveal and controller in a browser
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        run: bash scripts/a1_browser_smoke.sh

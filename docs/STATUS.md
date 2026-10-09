@@ -1,3 +1,12 @@
+# A1 独立动画研发阶段（2026-10-09）
+
+- 分支 `feat/a1-svg-stroke-animation` 开发离线 SVG+JS 笔顺动态书写；独立审计及原型成果以 [A1文档](A1_ANIMATION.md)、[动画目录](../animation/README.md) 和 [Issue #79](https://github.com/netplus/zitie/issues/79) 为准。
+- 既有 201/201 主部首的笔画数量与最终矢量轮廓已经审核；固定版上游 Hanzi Writer 数据含 `medians`，独立轨迹教学审定仍为 **0/201**。当前工程原型 **9/201 可播放**，但都标记 `engineering_preview_unreviewed`；全面数据结构审计以 A1 CI `build/a1/coverage-report.json` 为准，不提前声称201项轨迹完全可用。
+- 第一次 A1 开发不修改任何既有 PDF、release、manifest 或规范审核记录。来源 Issue #4 及纸张 Issue #77 继续保持原状态。
+- 下列 v0.5.1 历史正文和数字不作修改。
+
+---
+
 # 当前正式版本：v0.5.1 标点位置勘误版
 
 2026-10-08。根据读者报告，v0.5.0 中一部分 UMingCN 字体的横排句号（。）与顿号（、）落点偏中。本版遵照 [GB/T 15834—2011 第5.1.1条](https://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/13/20150113091548267.pdf) 将它们校正到字格左下位置。

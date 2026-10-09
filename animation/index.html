@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>笔顺动态书写 · zitie A1 工程预览</title>
+<style>
+  :root { --red:#bd3945; --ink:#25313a; --muted:#64717b; --line:#e6eaee; --paper:#fff; --bg:#f4f5f5; }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:28px 20px 40px; background:var(--bg); color:var(--ink);
+    font:16px/1.6 system-ui, "PingFang SC", "Microsoft YaHei", sans-serif; }
+  main { max-width:1030px; margin:auto; }
+  h1 { font-size:clamp(1.35rem,3vw,1.9rem); margin:0 0 4px; letter-spacing:.015em; }
+  p { margin:0 0 14px; }
+  .description { color:var(--muted); font-size:.92rem; }
+  .workspace { display:grid; grid-template-columns:minmax(0, 1fr) 320px; gap:22px; align-items:start; }
+  .paper,.panel { background:var(--paper); border:1px solid #e3e5e7; border-radius:14px; }
+  .paper { padding:clamp(10px,2vw,23px); }
+  svg { display:block; width:100%; max-width:640px; margin:auto; height:auto; aspect-ratio:1; }
+  .paper footer { color:var(--muted); font-size:.83rem; text-align:center; margin-top:10px; }
+  .panel { padding:20px; }
+  .section-title { font-size:.86rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin:0 0 7px; }
+  select,button { font:inherit; }
+  select { display:block; width:100%; border-radius:8px; border:1px solid #cbd3d9; background:white;
+    color:var(--ink); padding:9px 10px; margin-bottom:16px; }
+  .controls { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:10px; margin:9px 0 16px; }
+  button { cursor:pointer; border:1px solid #cbd3d9; border-radius:8px; padding:10px 6px; background:#fff;
+    color:var(--ink); font-size:.94rem; transition:background .15s; }
+  button:hover { background:#f2f3f4; }
+  button:focus-visible,select:focus-visible { outline:3px solid #d68b94; outline-offset:2px; }
+  button.primary { background:var(--red); border-color:var(--red); color:#fff; }
+  button.primary:hover { background:#9f2f3a; }
+  #state { min-height:4.5em; font-size:.9rem; margin:6px 0 9px; }
+  progress { display:block; width:100%; height:11px; accent-color:var(--red); margin-bottom:16px; }
+  .legend { border-top:1px solid var(--line); padding-top:14px; font-size:.82rem; color:var(--muted); }
+  .swatch { display:inline-block; width:11px; height:11px; border-radius:2px; margin:0 4px 0 9px; vertical-align:middle; }
+  .swatch:first-child { margin-left:0; }
+  .warning { margin-top:20px; padding:12px 15px; border-left:3px solid var(--red);
+    background:#fff; border-radius:0 8px 8px 0; color:#555e66; font-size:.85rem; }
+  code { font-size:.9em; overflow-wrap:anywhere; }
+  @media (max-width:810px) { .workspace { grid-template-columns:1fr; } .panel { max-width:none; } }
+  @media (prefers-reduced-motion:reduce) { button { transition:none; } }
+</style>
+<script defer src="./samples.js"></script>
+<script defer src="./timeline.js"></script>
+<script defer src="./player.js"></script>
+</head>
+<body>
+<main>
+  <header>
+    <h1>汉字笔顺 · 动态书写</h1>
+    <p class="description">zitie / A1.2 工程预览 · 离线 SVG · 真正沿运笔轨迹逐渐生成笔画</p>
+  </header>
+  <div class="workspace">
+    <section class="paper" aria-label="动态书写演示">
+      <svg id="glyphStage" role="img" viewBox="0 0 1024 1024"></svg>
+      <footer>田字格坐标与参考矢量保持独立；完整字形取自原有轮廓，而不是沿轮廓边界描边。</footer>
+    </section>
+    <section class="panel" aria-label="播放控制">
+      <label for="glyphSelect" class="section-title">选择主部首</label>
+      <select id="glyphSelect"></select>
+      <div class="section-title">播放与导航</div>
+      <div class="controls">
+        <button id="play" class="primary" type="button">▶ 自动播放</button>
+        <button id="restart" type="button">↺ 从头重播</button>
+        <button id="previous" type="button">← 上一笔</button>
+        <button id="next" type="button">下一笔 →</button>
+        <button id="replayOne" type="button">↻ 单笔重播</button>
+        <button id="showAll" type="button">查看完整字形</button>
+      </div>
+      <label for="speed" class="section-title">播放速度</label>
+      <select id="speed">
+        <option value="0.5">0.5× 慢速</option>
+        <option value="1" selected>1× 标准</option>
+        <option value="1.5">1.5×</option>
+        <option value="2">2×</option>
+        <option value="3">3× 快速</option>
+      </select>
+      <div class="section-title">当前笔画与进度</div>
+      <div id="state" role="status" aria-live="polite"></div>
+      <progress id="progress" max="1000" value="0" aria-label="整体笔顺播放进度"></progress>
+      <div class="legend">
+        <span class="swatch" style="background:#bd3945"></span>当前笔
+        <span class="swatch" style="background:#5c6269"></span>已完成
+        <span class="swatch" style="background:#e1e4e7"></span>未书写
+      </div>
+    </section>
+  </div>
+  <aside class="warning">
+    <strong>工程预览，暂不作为正式教学动画发布。</strong>
+    当前中心线来自已固定版本的 Hanzi Writer / Make Me a Hanzi 数据。
+    既有轮廓与笔顺审核结果可以复用，但各笔起收、转折及轨迹方向仍需独立动画复核。
+    未审核的细笔名称不得显示。源码、绘图许可和独立质量门槛见
+    <code>animation/README.md</code>。
+  </aside>
+</main>
+<script>
+window.addEventListener('DOMContentLoaded', function () {
+  'use strict';
+  const samples = window.ZITIE_SAMPLES;
+  const select = document.getElementById('glyphSelect');
+  const playButton = document.getElementById('play');
+  if (!samples || samples.schema_version !== 1 || !Array.isArray(samples.glyphs))
+    throw new Error('Offline glyph dataset unavailable');
+  const app = new window.ZitiePlayer.StrokePlayer({
+    svg: document.getElementById('glyphStage'),
+    status: document.getElementById('state'),
+    progress: document.getElementById('progress'),
+    onUpdate: function (state) {
+      playButton.textContent = state && state.playing ? 'Ⅱ 暂停' : '▶ 自动播放';
+    }
+  });
+  for (const glyph of samples.glyphs) {
+    window.ZitieTimeline.validateGlyph(glyph);
+    const o = document.createElement('option');
+    o.value = String(glyph.main_id);
+    o.textContent = glyph.character + ' · ' + glyph.expected_stroke_count +
+      ' 画 · ' + glyph.batch_id;
+    select.appendChild(o);
+  }
+  function loadSelected() {
+    const glyph = samples.glyphs.find(g => String(g.main_id) === select.value);
+    if (!glyph) throw new Error('Unknown main radical');
+    app.setGlyph(glyph);
+    app.setSpeed(Number(document.getElementById('speed').value));
+  }
+  select.addEventListener('change', loadSelected);
+  document.getElementById('speed').addEventListener('change',
+    e => app.setSpeed(Number(e.target.value)));
+  playButton.addEventListener('click', () => app.playing ? app.pause() : app.play());
+  document.getElementById('restart').addEventListener('click', () => app.restart());
+  document.getElementById('previous').addEventListener('click', () => app.previous());
+  document.getElementById('next').addEventListener('click', () => app.next());
+  document.getElementById('replayOne').addEventListener('click', () => app.replayStroke());
+  document.getElementById('showAll').addEventListener('click', () => app.showAll());
+  loadSelected();
+  window.ZITIE_A1_APP = app; // Stable adapter for embedding and browser smoke tests.
+});
+</script>
+</body>
+</html>

@@ -53,6 +53,7 @@ jobs:
         run: |
           BATCHES="$(printf 'B%02d ' {1..21})"
           python scripts/acquire_vectors.py --batches $BATCHES
+          python scripts/a1_audit.py --require-all --source-dir build/vectors --output build/a1/coverage-report.json
           python scripts/test_artwork.py
           FONT="$(fc-match -f '%{file}' 'AR PL KaitiM GB')"
           LATIN="$(fc-match -f '%{file}' 'DejaVu Sans')"
