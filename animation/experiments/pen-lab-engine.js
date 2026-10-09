@@ -77,12 +77,31 @@
           mask.appendChild(e);
           return e;
         });
+        // Delayed reference-width coverage: each source-probed segment is
+        // added only once the pen has travelled BEYOND it. This fixes
+        // permanent edge gaps caused by pressure-scaled elliptical impressions,
+        // without exposing any ink ahead of the current pen or editing path d.
+        const repairFragments=profile.segments.map(part=>{
+          const ink=element('path',{d:part.d,fill:'none',
+            stroke:'#FFFFFF','stroke-width':part.width,
+            'stroke-linecap':'round','stroke-linejoin':'round',
+            'pointer-events':'none'});
+          ink.style.display='none';
+          mask.appendChild(ink);
+          return ink;
+        });
+        const repairFront=element('path',{d:'',fill:'none',
+          stroke:'#FFFFFF','stroke-linecap':'round',
+          'stroke-linejoin':'round','pointer-events':'none'});
+        repairFront.style.display='none';
+        mask.appendChild(repairFront);
         defs.append(mask);
         const hint=element('path',{d:stroke.outline,fill:'#E1E4E7'});
         const solid=element('path',{d:stroke.outline,fill:'#5C6269'});
         const reveal=element('path',{d:stroke.outline,
           fill:'#BD3945',mask:'url(#'+id+')'});
-        return {hint,solid,reveal,stamps,plan,profile,motionWarp,id,count:0};
+        return {hint,solid,reveal,stamps,plan,profile,motionWarp,id,
+          repairFragments,repairFront,repairCount:0,count:0};
       });
       for(const row of this.rows)group.append(row.hint);
       for(const row of this.rows)group.append(row.solid);
@@ -98,6 +117,8 @@
         stamps:this.rows.reduce((n,r)=>n+r.stamps.length,0),
         measuredContourSamples:this.rows.reduce((n,r)=>n+r.profile.sampledWithFill,0),
         fallbackContourSamples:this.rows.reduce((n,r)=>n+r.profile.fallbackSamples,0),
+        sourceCoverageRepairFragments:this.rows.reduce((n,r)=>n+r.repairFragments.length,0),
+        sourceCoverageModel:'source_outline_delayed_reference_width_not_pressure',
         buildMs:+(performance.now()-start).toFixed(1)
       };
       return this.renderAt(0);
@@ -133,6 +154,26 @@
             row.stamps[j].style.display='none';
         }
         row.count=snapshot.count;
+        const repairDistance=Pen.repairDistanceAt(row.plan,frame.progress);
+        const repair=Brush.stateAt(row.profile,repairDistance.spatialProgress);
+        if(repair.visibleCount>row.repairCount){
+          for(let j=row.repairCount;j<repair.visibleCount;j++)
+            row.repairFragments[j].style.display='';
+        }else if(repair.visibleCount<row.repairCount){
+          for(let j=repair.visibleCount;j<row.repairCount;j++)
+            row.repairFragments[j].style.display='none';
+        }
+        row.repairCount=repair.visibleCount;
+        if(repair.active>=0&&repair.partial>0){
+          const segment=row.profile.segments[repair.active];
+          row.repairFront.setAttribute('d',
+            'M '+segment.x0+' '+segment.y0+
+            ' L '+repair.tip[0]+' '+repair.tip[1]);
+          row.repairFront.setAttribute('stroke-width',String(segment.width));
+          row.repairFront.style.display='';
+        }else{
+          row.repairFront.style.display='none';
+        }
       });
       const visible=frame.phase==='writing'&&frame.progress>0&&frame.progress<1;
       if(visible){
