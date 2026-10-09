@@ -103,7 +103,8 @@ $('lab').addEventListener('load',async function(){
          'Start support was guessed rather than measured from original SVG');
        check(row.startCap.sourceStart < -7,
          'Original source ink begins before the first median coordinate');
-       check(row.startCap.hitSamples>20,'SVG silhouette did not get probed');
+       check(row.startCap.supportMethod==='source-svg-boundary-arclength'&&row.startCap.hitSamples>=3,
+         'Expected direct SVG Bézier boundary samples: '+row.startCap.hitSamples);
        lab.seek(stage.startMs+stage.durationMs*.005);
        check(lab.experimental.tip.style.display!=='none',
          'Source-guided pen missing during the initial contact gesture');
