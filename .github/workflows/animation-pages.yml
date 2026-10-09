@@ -36,7 +36,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site/animation _site/data/artwork
-          cp animation/index.html animation/player.js animation/timeline.js animation/motion.js animation/samples.js animation/ink-brush.js animation/gallery.js animation/ui.js animation/NOTICE.md _site/animation/
+          cp animation/index.html animation/player.js animation/timeline.js animation/motion.js animation/samples.js animation/brush-union.js animation/gallery.js animation/ui.js animation/NOTICE.md _site/animation/
           cp data/artwork/ARPHICPL.TXT _site/data/artwork/ARPHICPL.TXT
           cat > _site/index.html <<'HTML'
           <!doctype html>
@@ -55,7 +55,7 @@ jobs:
           test -s _site/animation/timeline.js
           test -s _site/animation/motion.js
           test -s _site/animation/samples.js
-          test -s _site/animation/ink-brush.js
+          test -s _site/animation/brush-union.js
           test -s _site/animation/gallery.js
           test -s _site/animation/ui.js
           test -s _site/data/artwork/ARPHICPL.TXT

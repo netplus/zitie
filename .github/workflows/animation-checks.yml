@@ -31,7 +31,7 @@ jobs:
           node --check animation/motion.js
           node --check animation/timeline.js
           node --check animation/player.js
-          node --check animation/ink-brush.js
+          node --check animation/brush-union.js
           node --check animation/gallery.js
           node --check animation/ui.js
           node --check animation/samples.js
