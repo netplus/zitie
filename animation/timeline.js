@@ -1,9 +1,11 @@
 /* A1 offline, deterministic stroke timeline. MIT-style project logic; drawing data separately licensed. */
 (function (root, factory) {
-  const api = factory();
+  const Motion = typeof module === 'object' && module.exports ?
+    require('./motion.js') : root.ZitieMotion;
+  const api = factory(Motion);
   if (typeof module === 'object' && module.exports) module.exports = api;
   if (root) root.ZitieTimeline = api;
-})(typeof window !== 'undefined' ? window : null, function () {
+})(typeof window !== 'undefined' ? window : null, function (Motion) {
   'use strict';
   const finite = n => typeof n === 'number' && Number.isFinite(n);
   const clamp = (x, lo, hi) => Math.max(lo, Math.min(hi, x));
@@ -68,10 +70,12 @@
       const durationMs = finite(s.duration_ms) ?
         s.duration_ms : clamp(300 + length * 1.25, 550, 2600);
       if (durationMs < 100 || durationMs > 10000) throw new Error('Invalid duration');
+      const motion = Motion.buildMotionProfile(s.median);
       const startMs = cursor, endMs = startMs + durationMs;
       const gapMs = i === glyph.strokes.length - 1 ? 0 : pauseMs;
       cursor = endMs + gapMs;
-      return { index: i, startMs, endMs, durationMs, pauseMs: gapMs, length };
+      return { index: i, startMs, endMs, durationMs, pauseMs: gapMs,
+        length, motion };
     });
     return { strokes, totalMs: cursor, glyph };
   }
@@ -82,8 +86,10 @@
       return { elapsedMs, index: timeline.strokes.length - 1, progress: 1, phase: 'finished', tip: null };
     for (const s of timeline.strokes) {
       if (elapsedMs < s.endMs) {
-        const progress = clamp((elapsedMs - s.startMs) / s.durationMs, 0, 1);
-        return { elapsedMs, index: s.index, progress, phase: 'writing',
+        const timeProgress = clamp((elapsedMs - s.startMs) / s.durationMs, 0, 1);
+        const progress = Motion.progressAt(s.motion, timeProgress);
+        return { elapsedMs, index: s.index, progress, timeProgress,
+          motion: Motion.phaseAt(s.motion, timeProgress), phase: 'writing',
           tip: pointAt(timeline.glyph.strokes[s.index].median, progress) };
       }
       if (elapsedMs < s.endMs + s.pauseMs)
