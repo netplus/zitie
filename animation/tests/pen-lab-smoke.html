@@ -61,17 +61,23 @@ $('lab').addEventListener('load',async function(){
      if(image[i+3]&&image[i]<230&&image[i+1]<230&&image[i+2]<230)nonwhite++;
    check(nonwhite>80,'Synthetic pressure and motion charts did not render');
    const guide=w.document.getElementById('toggleNib');
-   check(!!guide&&guide.getAttribute('aria-pressed')==='false',
-     'Experimental nib overlay should default to hidden');
-   check(lab.experimental.showTip===false,'White nib guide must not make visual gaps');
+   check(!!guide&&guide.getAttribute('aria-pressed')==='true',
+     'Visible pen must be restored by default');
+   check(lab.experimental.showTip===true,'Source-guided pen is unexpectedly hidden');
    lab.seek(lab.experimental.timeline.strokes[0].durationMs*.30);
-   check(lab.experimental.tip.style.display==='none','White pen-guide ring leaked into visible ink');
-   guide.click();
-   check(lab.experimental.showTip===true&&guide.getAttribute('aria-pressed')==='true'&&
-     lab.experimental.tip.style.display!=='none','Opt-in nib guide did not appear');
+   check(lab.experimental.tip.style.display!=='none','Pen marker did not follow the stroke');
+   const guideElements=lab.experimental.tip.querySelectorAll('*');
+   check(guideElements.length>=2,'The visible pen no longer has a discernible nib silhouette');
+   check(Array.from(guideElements).every(node=>
+     !/white|#fff|#ffffff|rgb\\(255/i.test(
+       String(node.getAttribute('fill'))+' '+String(node.getAttribute('stroke')))),
+     'Visible guide must not draw a moving WHITE hole over original red ink');
    guide.click();
    check(lab.experimental.showTip===false&&guide.getAttribute('aria-pressed')==='false'&&
-     lab.experimental.tip.style.display==='none','Pen guide failed to hide again');
+     lab.experimental.tip.style.display==='none','Optional pen guide did not hide');
+   guide.click();
+   check(lab.experimental.showTip===true&&guide.getAttribute('aria-pressed')==='true'&&
+     lab.experimental.tip.style.display!=='none','Restored pen guide failed to reappear');
    const target={一:0,口:1,水:0,月:1,火:0,龠:13};
    let checks=0,priorLost=0,outside=0,sourceMismatch=0,invalidStates=0,retimedFrames=0;
    let yiTrailingUnfilledPixels=0,yiComparedFrames=0,yiTerminalGapPercent=null;
@@ -89,6 +95,19 @@ $('lab').addEventListener('load',async function(){
      const index=target[glyph.character];
      const row=lab.experimental.rows[index],ref=glyph.strokes[index];
      const stage=lab.experimental.timeline.strokes[index];
+     if(glyph.character==='一'){
+       check(row.startCap&&row.sourceSweep,'一 requires a source-derived start-cap sweep');
+       check(row.startCap.kind==='source_contour_probed_directional_contact',
+         'Start support was guessed rather than measured from original SVG');
+       check(row.startCap.sourceStart < -7,
+         'Original source ink begins before the first median coordinate');
+       check(row.startCap.hitSamples>20,'SVG silhouette did not get probed');
+       lab.seek(stage.startMs+stage.durationMs*.005);
+       check(lab.experimental.tip.style.display!=='none',
+         'Source-guided pen missing during the initial contact gesture');
+       check(row.sourceSweep.getAttribute('d').startsWith('M '),
+         'Directional onset mask does not grow from the original shape');
+     }
      check(row.plan.kind==='synthetic_contact_experiment_not_measured',
        'Synthetic contact incorrectly presented as measured');
      check(row.plan.sourceDirectionModified===false,
