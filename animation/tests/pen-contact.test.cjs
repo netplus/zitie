@@ -174,8 +174,10 @@ nodeTest('source-fit repair catches up smoothly behind the synthetic nib; zero o
     assert.equal(Pen.repairDistanceAt(p,1).distance,p.length);
     assert.ok(Pen.repairDistanceAt(p,.995).spatialProgress>.993,
       'tail recovery must nearly complete by 99.5% of pen distance');
-    assert.ok(Pen.repairDistanceAt(p,.5).distance>p.length*.4,
-      'mid-stroke source width must settle behind active pen');
+    const lagBound=Math.max(18,Math.min(48,p.length*.055));
+    assert.ok(Pen.repairDistanceAt(p,.5).distance>=
+      Math.max(0,p.length*.5-lagBound)-1e-6,
+      'reference-width repair must stay within its documented absolute lag');
   }
 });
 
