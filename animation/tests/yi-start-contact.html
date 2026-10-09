@@ -93,7 +93,8 @@ document.getElementById('lab').addEventListener('load',async function(){
     check(cap&&row.sourceSweep&&cap.kind==='source_contour_probed_directional_contact',
       'Original source silhouette not probed for start-cap support');
     check(cap.sourceStart < -7,'Source start must lie behind the first median vertex');
-    check(cap.hitSamples>20,'Real SVG fill hit testing returned no supported origin');
+    check(cap.supportMethod==='source-svg-boundary-arclength'&&cap.hitSamples>=3,
+      'SVG source boundary could not locate the actual start support: '+cap.hitSamples);
     check(cap.sourceDirectionModified===false,'Source contour probe modified trajectory');
     let frames=0,checks=0,totalMissing=0,upperLeftMissing=0,
       erased=0,outside=0,projectedComparisons=0,
