@@ -36,10 +36,11 @@ jobs:
           node --check animation/experiments/pen-contact.js
           node --check animation/experiments/pen-lab-engine.js
           node --check animation/experiments/pen-kinematics.js
+          node --check animation/experiments/source-onset.js
           node --check animation/gallery.js
           node --check animation/ui.js
           node --check animation/samples.js
-          node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs animation/tests/pen-kinematics.test.cjs
+          node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs animation/tests/pen-kinematics.test.cjs animation/tests/source-onset.test.cjs
       - name: Install CJK fallback solely for screenshot QA (never bundle font)
         run: |
           sudo apt-get update -qq
@@ -164,17 +165,31 @@ jobs:
           data=json.loads(html.unescape(match.group(1)))
           assert data['result']=='PASS'
           assert data['resolutions']==[512,768,1024]
-          assert data['frames']==57
+          assert data['frames']==72
           assert data['earlySourceComparisons']>=33
+          assert data['projectedComparisons']>=25
+          assert data['projectedMissingPixels']==0
+          assert data['projectedSourcePixels']>160
+          assert data['sourceOriginProjection'] < -7
           assert data['upperLeftMissingPixels']==0
           assert data['sourceMissingPixels']==0
           assert data['vanishedPixels']==0
           assert data['outsideSourcePixels']==0
           Path('build/a1/yi-start-contact-metrics.json').write_text(
               json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-          print('PASS: A1.4.3 一 start-cap source coverage, 512/768/1024px,',
+          print('PASS: A1.4.4 directional source-probed 一 start cap 512/768/1024px,',
                 data['earlySourceComparisons'],'comparisons, 0 delayed pixels')
           PY
+          onset_sheet="http://127.0.0.1:18768/animation/tests/yi-directional-frame-sheet.html"
+          timeout 120 "$CHROME_BIN" "${options[@]}" --dump-dom "$onset_sheet" > build/a1/yi-directional-frames-dom.html
+          if ! grep -q 'data-result="PASS"' build/a1/yi-directional-frames-dom.html; then
+            echo 'FAIL: source-derived 一 pen-tip visual sheet did not fully render' >&2
+            grep -o 'FAIL:[^<]*' build/a1/yi-directional-frames-dom.html | head -n 8 >&2 || true
+            exit 1
+          fi
+          timeout 120 "$CHROME_BIN" "${options[@]}" --window-size=1850,1600 \
+            --screenshot="$(pwd)/build/a1/yi-directional-start-cap.png" "$onset_sheet" >/dev/null
+          test -s build/a1/yi-directional-start-cap.png
           timeout 120 "$CHROME_BIN" "${options[@]}" --dump-dom "http://127.0.0.1:18768/animation/tests/pen-lab-frames.html" > build/a1/pen-lab-frames-dom.html
           grep -q 'data-result="PASS"' build/a1/pen-lab-frames-dom.html
           timeout 120 "$CHROME_BIN" "${options[@]}" --window-size=1850,1620 --screenshot="$(pwd)/build/a1/pen-lab-ab-frames.png" "http://127.0.0.1:18768/animation/tests/pen-lab-frames.html" >/dev/null

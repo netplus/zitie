@@ -10,11 +10,12 @@
     typeof module==='object'&&module.exports?require('../brush-union.js'):root.ZitieInkBrushUnion,
     typeof module==='object'&&module.exports?require('./pen-contact.js'):root.ZitiePenContact,
     typeof module==='object'&&module.exports?require('./gesture-data.js'):root.ZitieGestureCandidates,
-    typeof module==='object'&&module.exports?require('./pen-kinematics.js'):root.ZitiePenKinematics
+    typeof module==='object'&&module.exports?require('./pen-kinematics.js'):root.ZitiePenKinematics,
+    typeof module==='object'&&module.exports?require('./source-onset.js'):root.ZitieSourceOnset
   );
   if(typeof module==='object'&&module.exports)module.exports=api;
   if(root)root.ZitiePenLab=api;
-})(typeof window!=='undefined'?window:null,function(T,Brush,Pen,Gestures,Kinematics){
+})(typeof window!=='undefined'?window:null,function(T,Brush,Pen,Gestures,Kinematics,Onset){
   'use strict';
   const NS='http://www.w3.org/2000/svg';
   let instance=0;
@@ -32,7 +33,7 @@
       this.rows=[];
       this.timeline=null;
       this.tip=null;
-      this.showTip=false; // Hide the white-edged guide ring over actual red ink.
+      this.showTip=true; // Show a dark nib silhouette without white ink-occluding edges.
       this.stats={segments:0,stamps:0,buildMs:0};
     }
     setGlyph(glyph){
@@ -63,8 +64,13 @@
           typeof DOMPoint!=='undefined'?
           (x,y)=>reference.isPointInFill(new DOMPoint(x,y)):null;
         const profile=Brush.makeProfile(stroke.median,contains);
-        reference.remove();
         const gesture=Gestures.lookup(glyph,index);
+        // The visible start of the source silhouette need not be the
+        // first INSIDE medial vertex (一 starts at [121,393]).
+        // Probe the connected source shape before detaching its path.
+        const startCap=gesture.kind==='horizontal'&&contains?
+          Onset.makeStartCap(stroke,profile,contains,{outlinePath:reference}):null;
+        reference.remove();
         const plan=Pen.makePlan(stroke,profile,tl.strokes[index].motion,gesture);
         const motionWarp=Kinematics.makeTimeWarp(plan,tl.strokes[index].motion);
         const mask=element('mask',{id,maskUnits:'userSpaceOnUse',
@@ -96,20 +102,37 @@
           'stroke-linejoin':'round','pointer-events':'none'});
         repairFront.style.display='none';
         mask.appendChild(repairFront);
+        // Fill the source-supported start cap from its actual first
+        // projected support point, sweeping across the initial tangent.
+        // This is unioned and clipped with the exact original outline.
+        const sourceSweep=startCap?element('path',{
+          d:'',fill:'#FFFFFF','pointer-events':'none'}):null;
+        if(sourceSweep)mask.appendChild(sourceSweep);
         defs.append(mask);
         const hint=element('path',{d:stroke.outline,fill:'#E1E4E7'});
         const solid=element('path',{d:stroke.outline,fill:'#5C6269'});
         const reveal=element('path',{d:stroke.outline,
           fill:'#BD3945',mask:'url(#'+id+')'});
         return {hint,solid,reveal,stamps,plan,profile,motionWarp,id,
-          repairFragments,repairFront,repairCount:0,count:0};
+          repairFragments,repairFront,repairCount:0,count:0,
+          startCap,sourceSweep};
       });
       for(const row of this.rows)group.append(row.hint);
       for(const row of this.rows)group.append(row.solid);
       for(const row of this.rows)group.append(row.reveal);
-      this.tip=element('ellipse',{cx:0,cy:0,rx:1,ry:1,
-        fill:'#BD3945',stroke:'#FFFFFF','stroke-width':2.4,
-        'pointer-events':'none'});
+      // A visible pen-shaped silhouette, not an opaque white-ringed
+      // ellipse painted over the red stroke. The nib POINT is local 0,0.
+      // No white fill/stroke is present anywhere in this guide.
+      this.tip=element('g',{'pointer-events':'none'});
+      this.tip.append(
+        element('path',{d:'M 0 0 L -8 10 L -39 43 L -49 34 L -17 0 Z',
+          fill:'#40505B',stroke:'#253742','stroke-width':1.7,
+          'pointer-events':'none'}),
+        element('path',{d:'M -15 3 L -38 35 L -44 30 L -20 0 Z',
+          fill:'#84949B','pointer-events':'none'}),
+        element('path',{d:'M -5 3 L 0 0 L -2 7 Z',
+          fill:'#9F3442','pointer-events':'none'})
+      );
       group.append(this.tip);
       this.timeline=tl;
       this.stats={
@@ -120,6 +143,7 @@
         fallbackContourSamples:this.rows.reduce((n,r)=>n+r.profile.fallbackSamples,0),
         sourceCoverageRepairFragments:this.rows.reduce((n,r)=>n+r.repairFragments.length,0),
         sourceCoverageModel:'source_outline_delayed_reference_width_not_pressure',
+        sourceDerivedStartCaps:this.rows.filter(r=>r.startCap!==null).length,
         buildMs:+(performance.now()-start).toFixed(1)
       };
       return this.renderAt(0);
@@ -169,6 +193,11 @@
             row.repairFragments[j].style.display='none';
         }
         row.repairCount=repair.visibleCount;
+        if(row.startCap){
+          const contact=Onset.sweepAt(row.startCap,
+            row.plan.length*frame.progress,frame.timeProgress);
+          row.sourceSweep.setAttribute('d',contact.d);
+        }
         // Synchronize the start cap with early pen contact. Repair widths
         // grow smoothly for the first 12-22 source units; already painted
         // fragments only gain coverage and can never shrink during playback.
@@ -192,14 +221,18 @@
       });
       const visible=frame.phase==='writing'&&frame.progress>0&&frame.progress<1;
       if(visible&&this.showTip){
-        const penState=Pen.snapshot(this.rows[frame.index].plan,frame.progress);
-        const head=penState.head;
-        this.tip.setAttribute('cx',frame.tip[0]);
-        this.tip.setAttribute('cy',frame.tip[1]);
-        this.tip.setAttribute('rx',Math.min(25,head.rx*.27));
-        this.tip.setAttribute('ry',Math.min(20,head.ry*.27));
-        this.tip.setAttribute('transform','rotate('+(180/Math.PI*head.angle)+
-          ' '+frame.tip[0]+' '+frame.tip[1]+')');
+        const row=this.rows[frame.index];
+        const penState=Pen.snapshot(row.plan,frame.progress);
+        let tipPosition=frame.tip;
+        if(row.startCap&&frame.timeProgress<row.startCap.landingTime){
+          // The cursor travels from the actual filled-outline contact
+          // edge to the first medial vertex before ordinary line motion.
+          tipPosition=Onset.sweepAt(row.startCap,
+            row.plan.length*frame.progress,frame.timeProgress).tip;
+        }
+        const degrees=(penState.head.angle-Math.PI/2)*180/Math.PI;
+        this.tip.setAttribute('transform','translate('+
+          tipPosition[0]+' '+tipPosition[1]+') rotate('+degrees+')');
         this.tip.style.display='';
       }else{
         this.tip.style.display='none';

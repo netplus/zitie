@@ -76,6 +76,7 @@ margin-top:14px;padding:13px 15px}
 <script defer src="./gesture-data.js"></script>
 <script defer src="./pen-contact.js"></script>
 <script defer src="./pen-kinematics.js"></script>
+<script defer src="./source-onset.js"></script>
 <script defer src="./pen-lab-engine.js"></script>
 </head>
 <body><main class="page">
@@ -86,7 +87,7 @@ margin-top:14px;padding:13px 15px}
 <a class="back" href="../index.html">← 返回正式工程播放器</a>
 </header>
 <div class="banner"><strong>独立研发原型，未经教学审定。</strong>
-右侧压力、笔尖倾角、转锋驻留与出钩节奏为工程合成参数，不是测量获得的真实手写数据。笔尖后方的填充补足只保证源轮廓，不等于实测笔压；
+右侧压力、笔尖倾角、转锋驻留与出钩节奏为工程合成参数，不是测量获得的真实手写数据。横笔起点由原始 SVG 轮廓而非中心线第一个点计算，先落笔再沿原笔势推进；黑色笔尖形状仅作位置指示，不是墨迹；
 此页不会修改规范笔顺，也不会替换正式播放器。
 </div>
 <div class="toolbar">
@@ -96,7 +97,7 @@ margin-top:14px;padding:13px 15px}
     <button id="restart" class="control" type="button">↺ 重播</button>
     <button id="showAll" class="control" type="button">显示原始字形</button>
     <button id="toggleNib" class="control" type="button"
-      aria-pressed="false">显示实验笔尖</button>
+      aria-pressed="true">隐藏实验笔尖</button>
   </div>
   <div class="speedButtons" id="speedButtons" role="group" aria-label="同时调节两个播放器的速度">
     <button type="button" data-speed="0.5" aria-pressed="false">0.5×</button>
@@ -117,7 +118,7 @@ margin-top:14px;padding:13px 15px}
     <div class="panelHead"><h2>B · 椭圆笔尖接触模型</h2><span class="tag">A1.4 实验</span></div>
     <svg id="nibStage" class="svgStage" viewBox="0 0 1024 1024"
          role="img" aria-label="椭圆形可变笔尖接触实验"></svg>
-    <div class="caption">旋转椭圆印迹＋起笔同步源轮廓接触；默认只显示真实累积墨迹。可选择显示笔尖辅助标记。</div>
+    <div class="caption">旋转椭圆印迹＋从 SVG 轮廓实际起点沿书写方向渐进着墨。默认显示深色笔尖，无遮住红字的白色圆圈，可手动隐藏。</div>
   </section>
 </div>
 <section class="seekBox">
