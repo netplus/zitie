@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "date": "2026-10-09",
+  "kind": "digital_preflight_for_future_physical_print_qa",
+  "source_pdf": "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf",
+  "source_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+  "packet_path": "qa/print/v0.5.1/v051-print-acceptance-samples-A4.pdf",
+  "packet_sha256": "b1261d047c7ecff1d253e8b5196eacb28d2491aeeb848d09b76123e3d55b9bfa",
+  "packet_pages": 11,
+  "source_pages": [1, 2, 6, 34, 263, 264, 265, 284, 292, 299],
+  "calibration_sheet": {
+    "position": 1,
+    "reference_line_mm": 100,
+    "print_scale_percent": 100,
+    "observed_physical_length_mm": null,
+    "printed": false
+  },
+  "verification": {
+    "source_pages_unchanged_at_72dpi": true,
+    "source_pages_text_equal": true,
+    "pages_source_geometry_equal": true,
+    "all_packet_pages_A4": true,
+    "rebuild_byte_identical": true,
+    "no_source_version_replacement": true
+  },
+  "physical_print_test_performed": false,
+  "paper_results": [],
+  "paper_conclusion": "pending_real_print_environment",
+  "release_manifest_changes": 0,
+  "normative_field_changes": 0,
+  "issue": 77,
+  "note": "The extra calibration page is newly authored. Other ten pages contain unmodified extracted page artwork from the already published v0.5.1 PDF. This sample package is not a new published edition. No paper inspection was performed."
+}
