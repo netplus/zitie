@@ -7,7 +7,7 @@
 (function(root,factory) {
   const api=factory();
   if(typeof module==='object' && module.exports)module.exports=api;
-  if(root)root.ZitieInkBrush=api;
+  if(root)root.ZitieInkBrushUnion=api;
 })(typeof window!=='undefined'?window:null,function(){
   'use strict';
   const hypot=(x,y)=>Math.hypot(x,y);
