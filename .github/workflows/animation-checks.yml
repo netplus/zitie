@@ -35,10 +35,11 @@ jobs:
           node --check animation/experiments/gesture-data.js
           node --check animation/experiments/pen-contact.js
           node --check animation/experiments/pen-lab-engine.js
+          node --check animation/experiments/pen-kinematics.js
           node --check animation/gallery.js
           node --check animation/ui.js
           node --check animation/samples.js
-          node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs
+          node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs animation/tests/pen-kinematics.test.cjs
       - name: Install CJK fallback solely for screenshot QA (never bundle font)
         run: |
           sudo apt-get update -qq
