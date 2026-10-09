@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>A1.2.3 pixel-level monotone ink integrity</title></head>
+<body><h1>Stroke fill integrity</h1><pre id="result">RUNNING</pre>
+<iframe id="viewer" src="../index.html" title="source-backed stroke animation"
+ style="width:1050px;height:1280px"></iframe>
+<script>
+const sizes={width:384,height:384};
+const fractions=[0,.01,.03,.05,.10,.20,.35,.50,.65,.80,.92,.98,.995];
+const isRed=(p,i)=>p[i]>137&&p[i+1]<115&&p[i+2]<124&&p[i]>p[i+1]*1.48&&p[i+3]>190;
+const clamp=(v,a,b)=>Math.max(a,Math.min(b,v));
+async function raster(svg,tip){
+ const old=tip.style.display;
+ tip.style.display='none';
+ try {
+   const markup=new XMLSerializer().serializeToString(svg);
+   const blob=URL.createObjectURL(new Blob([markup],{type:'image/svg+xml;charset=utf-8'}));
+   const image=new Image();
+   try{
+     await new Promise((resolve,reject)=>{
+       image.onload=resolve;
+       image.onerror=()=>reject(new Error('SVG image decoding failed'));
+       image.src=blob;
+     });
+     const canvas=document.createElement('canvas');
+     canvas.width=sizes.width;canvas.height=sizes.height;
+     const ctx=canvas.getContext('2d',{willReadFrequently:true});
+     ctx.drawImage(image,0,0,sizes.width,sizes.height);
+     const pixels=ctx.getImageData(0,0,sizes.width,sizes.height).data;
+     const flags=new Uint8Array(sizes.width*sizes.height);
+     let count=0;
+     for(let i=0,j=0;i<pixels.length;i+=4,j++){
+       if(isRed(pixels,i)){flags[j]=1;count++;}
+     }
+     return {flags,count};
+   }finally{URL.revokeObjectURL(blob);}
+ }finally{tip.style.display=old;}
+}
+function countLoss(a,b){
+ let lost=0,extra=0;
+ for(let i=0;i<a.length;i++){
+   if(a[i]&&!b[i])lost++;
+   if(!a[i]&&b[i])extra++;
+ }
+ return {lost,extra};
+}
+function detachedPixels(flags,width,height){
+ let total=0,biggest=0,parts=0;
+ const copy=flags.slice();
+ const stack=[];
+ for(let p=0;p<copy.length;p++){
+   if(!copy[p])continue;
+   copy[p]=0;stack.push(p);
+   let size=0;
+   while(stack.length){
+     const at=stack.pop(),y=Math.floor(at/width),x=at-y*width;
+     size++;
+     for(let dy=-1;dy<=1;dy++)for(let dx=-1;dx<=1;dx++){
+       if(!dx&&!dy)continue;
+       const xx=x+dx,yy=y+dy;
+       if(xx<0||xx>=width||yy<0||yy>=height)continue;
+       const idx=yy*width+xx;
+       if(copy[idx]){copy[idx]=0;stack.push(idx);}
+     }
+   }
+   if(size>3)parts++;
+   if(size>biggest)biggest=size;
+   total+=size;
+ }
+ return {parts,detached:total-biggest,total};
+}
+document.getElementById('viewer').addEventListener('load',async function(){
+ const output=document.getElementById('result');
+ try{
+  const w=this.contentWindow,d=w.document,app=w.ZITIE_A1_APP;
+  const svg=d.getElementById('glyphStage');
+  if(!app||!svg)throw new Error('Offline source-backed player not initialized');
+  const cases=w.ZITIE_SAMPLES.glyphs;
+  let strokes=0,captures=0,lost=0,outside=0,isolated=0,worstMissing=0,worst='none';
+  const byGlyph={};
+  const start=performance.now();
+  for(const g of cases){
+    app.setGlyph(g);
+    byGlyph[g.character]={strokes:g.strokes.length,samples:0,worstLost:0,worstTerminalGap:0};
+    if(app.rows.length!==g.expected_stroke_count)throw new Error(g.character+': stroke count mismatch');
+    for(let i=0;i<g.strokes.length;i++){
+      const row=app.rows[i],stage=app.timeline.strokes[i];
+      if(row.reveal.getAttribute('d')!==g.strokes[i].outline)
+        throw new Error(g.character+': changed original stroke path');
+      if(!row.profile||row.profile.coverage!=='independent-round-stroke-union')
+        throw new Error(g.character+': legacy polygon mask not eliminated');
+      if(row.fragments.length!==row.profile.segments.length)
+        throw new Error(g.character+': brush mask fragments missing');
+      let before=new Uint8Array(sizes.width*sizes.height),previousCount=0;
+      let nearFull=0;
+      for(const t of fractions){
+        app.seekElapsed(stage.startMs+stage.durationMs*t);
+        const out=await raster(svg,app.tip);
+        captures++;
+        const diff=countLoss(before,out.flags);
+        const allowance=clamp(Math.round(previousCount*.0002),1,4);
+        if(diff.lost>allowance){
+          lost+=diff.lost;
+          byGlyph[g.character].worstLost=Math.max(byGlyph[g.character].worstLost,diff.lost);
+          throw new Error(g.character+' stroke '+(i+1)+' at '+t+
+            ': previously inked pixels vanished='+diff.lost);
+        }
+        if(t===0 && out.count!==0)throw new Error(g.character+' stroke '+(i+1)+': red onset flash');
+        if((t===.35||t===.65||t===.92)&&out.count>=25){
+          const c=detachedPixels(out.flags,sizes.width,sizes.height);
+          if(c.detached>Math.max(10,out.count*.04)){
+            isolated+=c.detached;
+            throw new Error(g.character+' stroke '+(i+1)+' at '+t+
+              ': detached ink '+c.detached+' pixels');
+          }
+        }
+        if(t===.995)nearFull=out.count;
+        before=out.flags;
+        previousCount=out.count;
+        byGlyph[g.character].samples++;
+      }
+      // Reference = actual same stroke filled SVG path, not a font or guessed
+      // polygon. Existing previous strokes are gray; temporarily unmask only
+      // this stroke for a pixel-perfect source-shape comparison.
+      const original=row.reveal.getAttribute('mask');
+      row.reveal.removeAttribute('mask');
+      row.reveal.style.display='';
+      const full=await raster(svg,app.tip);
+      row.reveal.setAttribute('mask',original);
+      app.render();
+      if(!full.count)throw new Error(g.character+' stroke '+(i+1)+': empty reference shape');
+      const gap=Math.max(0,full.count-nearFull)/full.count;
+      if(gap>worstMissing){worstMissing=gap;worst=g.character+' stroke '+(i+1);}
+      byGlyph[g.character].worstTerminalGap=Math.max(
+        byGlyph[g.character].worstTerminalGap,gap);
+      if(gap>.12)throw new Error(g.character+' stroke '+(i+1)+
+        ': abrupt near-final shape jump='+Math.round(1000*gap)/10+'%');
+      // Exact terminal d and old source/median remain intact.
+      if(row.solid.getAttribute('d')!==g.strokes[i].outline)
+        throw new Error(g.character+': final silhouette was mutated');
+      strokes++;
+    }
+  }
+  const ms=Math.round(performance.now()-start);
+  const audit={status:'PASS',glyphs:cases.length,strokes,captures,
+    resolution:'384x384',pixelLoss:lost,detachedPixels:isolated,
+    worstTerminalGapPercent:+(worstMissing*100).toFixed(3),worst,
+    elapsedMs:ms,details:byGlyph,scope:'engineering geometry only; medians not teaching-approved'};
+  d.documentElement.setAttribute('data-fill-integrity','PASS');
+  document.documentElement.setAttribute('data-result','PASS');
+  output.textContent=JSON.stringify(audit,null,2);
+ }catch(err){
+  document.documentElement.setAttribute('data-result','FAIL');
+  output.textContent='FAIL: '+(err.stack||err);
+ }
+});
+</script></body></html>
