@@ -109,7 +109,10 @@ window.addEventListener('DOMContentLoaded', function () {
     if(player.timeline)player.seekElapsed(Number(e.target.value)/1000*player.timeline.totalMs);
   });
   document.addEventListener('keydown',e=>{
-    if(e.altKey||e.ctrlKey||e.metaKey||e.target.closest('input,textarea,select,[contenteditable]'))return;
+    const target=e.target;
+    if(e.altKey||e.ctrlKey||e.metaKey||
+       (target&&typeof target.closest==='function'&&
+        target.closest('input,textarea,select,[contenteditable]')))return;
     const lower=e.key.toLowerCase();
     if(e.code==='Space'){e.preventDefault();player.playing?player.pause():player.play();}
     else if(lower==='a'){e.preventDefault();navigate(-1);}
