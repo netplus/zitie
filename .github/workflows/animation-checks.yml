@@ -30,8 +30,11 @@ jobs:
         run: |
           node --check animation/timeline.js
           node --check animation/player.js
+          node --check animation/ink-brush.js
+          node --check animation/gallery.js
+          node --check animation/ui.js
           node --check animation/samples.js
-          node --test animation/tests/timeline.test.cjs
+          node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs
       - name: Prepare headless Chrome
         id: chrome
         uses: browser-actions/setup-chrome@v1
