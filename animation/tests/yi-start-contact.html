@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8">
-<title>A1.4.3 start-cap ink arrival and source-coverage regression</title></head>
-<body><h1>一: no delayed upper-left start-cap filling</h1>
+<title>A1.4.4 start-cap support projection and directional first-contact regression</title></head>
+<body><h1>一: original-outline projected starting location and monotone forward ink</h1>
 <pre id="result">RUNNING</pre>
 <iframe id="lab" src="../experiments/pen-lab.html"
  title="source-backed virtual nib comparison" style="width:1200px;height:1400px"></iframe>
 <script>
-const fractions=[0,.001,.005,.01,.02,.03,.04,.05,.06,.07,.08,.10,.12,.15,.20,.25,.35,.60,.995];
+const fractions=[0,.0001,.0005,.001,.002,.003,.005,.0075,.01,.02,.03,.04,.05,.06,.07,.08,.10,.12,.15,.20,.25,.35,.60,.995];
 function check(ok,why){if(!ok)throw Error(why);}
 function invert(profile,p){
   if(p===0)return 0;
@@ -56,6 +56,24 @@ function missing(a,b,resolution,upperLeftOnly=false){
   }
   return count;
 }
+function projectedMissing(source,painted,cap,front,resolution){
+  let missingCount=0,eligible=0;
+  for(let i=0;i<source.length;i++){
+    if(!source[i])continue;
+    const px=i%resolution,py=Math.floor(i/resolution);
+    const x=(px+.5)*1024/resolution,y=900-(py+.5)*1024/resolution;
+    const dx=x-cap.sourceMedianStart[0],dy=y-cap.sourceMedianStart[1];
+    const along=dx*cap.tangent[0]+dy*cap.tangent[1];
+    const across=dx*cap.normal[0]+dy*cap.normal[1];
+    // Ignore a 3-source-unit strip near both moving and starting
+    // support planes to avoid classifying antialiased boundary pixels.
+    if(along<cap.sourceStart+3||along>front-3||
+       along>=cap.capLength-3||Math.abs(across)>cap.span-3)continue;
+    eligible++;
+    if(!painted[i])missingCount++;
+  }
+  return {missingCount,eligible};
+}
 document.getElementById('lab').addEventListener('load',async function(){
   const output=document.getElementById('result');
   try{
@@ -71,8 +89,15 @@ document.getElementById('lab').addEventListener('load',async function(){
     check(row.plan.sourceDirectionModified===false,'Changed canonical centerline');
     check(row.repairFragments.length===row.profile.segments.length,
       'Missing source-width cap repair fragments');
+    const cap=row.startCap;
+    check(cap&&row.sourceSweep&&cap.kind==='source_contour_probed_directional_contact',
+      'Original source silhouette not probed for start-cap support');
+    check(cap.sourceStart < -7,'Source start must lie behind the first median vertex');
+    check(cap.hitSamples>20,'Real SVG fill hit testing returned no supported origin');
+    check(cap.sourceDirectionModified===false,'Source contour probe modified trajectory');
     let frames=0,checks=0,totalMissing=0,upperLeftMissing=0,
-      erased=0,outside=0;
+      erased=0,outside=0,projectedComparisons=0,
+      projectedMissingPixels=0,projectedSourcePixels=0;
     const samples=[];
     for(const resolution of [512,768,1024]){
       lab.seek(stage.startMs+stage.durationMs*.995);
@@ -95,8 +120,25 @@ document.getElementById('lab').addEventListener('load',async function(){
         check(extraneous===0,'Paint outside original stroke at '+spatial+
           ', resolution '+resolution+': '+extraneous);
         if(spatial===0)check(b.count===0,'Flash before first pen contact');
+        if(spatial===.0001)
+          check(b.count<source.count*.02,'Full start cap flashed too early');
         if(spatial===.005)
-          check(b.count<source.count*.025,'Overlarge first contact ink blot');
+          check(b.count<source.count*.065,'Overlarge first contact ink blot');
+        if(spatial>=.001&&spatial<=.12){
+          const timeProgress=(clock-stage.startMs)/stage.durationMs;
+          const front=Math.min(cap.capLength,row.plan.length*spatial);
+          if(timeProgress>=cap.landingTime){
+            // Independent per-pixel source-plane coverage audit, rather
+            // than only a circular-brush comparison farther behind.
+            const projected=projectedMissing(source.flags,b.flags,cap,front,resolution);
+            projectedComparisons++;
+            projectedMissingPixels+=projected.missingCount;
+            projectedSourcePixels+=projected.eligible;
+            check(projected.missingCount===0,
+              'Unpainted upper-left contour INSIDE already-reached source support at '+
+              spatial+', resolution '+resolution+': '+projected.missingCount);
+          }
+        }
         if(spatial>=.03&&spatial<=.25){
           // Re-render the stable source-fitted reference two percent of
           // TOTAL ARC LENGTH behind the virtual pen, not at equal wall time.
@@ -118,9 +160,15 @@ document.getElementById('lab').addEventListener('load',async function(){
         previous=b.flags;frames++;
       }
     }
-    check(checks>=16,'Too few early arrival comparisons');
+    check(checks>=33,'Too few early arrival comparisons');
+    check(projectedComparisons>=25&&projectedSourcePixels>160,
+      'Actual filled-source support was not independently checked');
+    check(projectedMissingPixels===0,'Source support pixels still fill late');
     const audit={result:'PASS',glyph:'一',canonicalSourceUnchanged:true,
       resolutions:[512,768,1024],frames,earlySourceComparisons:checks,
+      projectedComparisons,projectedSourcePixels,projectedMissingPixels,
+      sourceSupportOrigin:cap.sourceStartPoint,
+      sourceOriginProjection:cap.sourceStart,
       upperLeftMissingPixels:upperLeftMissing,sourceMissingPixels:totalMissing,
       vanishedPixels:erased,outsideSourcePixels:outside,
       zeroProgressEmpty:true,samples};
