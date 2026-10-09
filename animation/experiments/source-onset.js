@@ -92,10 +92,6 @@
     const fmt=p=>round(p[0])+' '+round(p[1]);
     const path='M '+fmt(a)+' L '+fmt(b)+' L '+fmt(c)+
       ' L '+fmt(e)+' Z';
-    const tip=[
-      lerp(cap.sourceStartPoint[0],cap.sourceMedianStart[0],1-contact),
-      lerp(cap.sourceStartPoint[1],cap.sourceMedianStart[1],1-contact)
-    ];
     // The marker starts on the actual support point and approaches the
     // canonical first median point during the initial contact gesture.
     const markerTip=[
