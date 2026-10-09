@@ -39,3 +39,4 @@ if ! grep -q 'data-result="PASS"' "$out"; then
   exit 1
 fi
 echo "PASS: real Chrome SVG playback/controller smoke"
+grep -o 'PASS: offline gallery[^<]*' "$out" | head -n 1 || true

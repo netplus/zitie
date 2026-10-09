@@ -162,6 +162,18 @@ document.getElementById('demo').addEventListener('load',async function(){
   $('clearSearch').click();
   check($('glyphGallery').children.length===9,'clear filters restores all tiles');
   check(svg.querySelectorAll('defs mask').length===app.rows.length,'no orphan SVG resources');
+  // Responsive layout, real Chrome computation (not CSS syntax alone).
+  this.style.width='400px';
+  await pause(80);
+  check(w.matchMedia('(max-width:900px)').matches,'mobile media query should match');
+  const stageRect=d.querySelector('.workspace').getBoundingClientRect();
+  const libraryRect=d.querySelector('.library').getBoundingClientRect();
+  check(libraryRect.top>=stageRect.bottom-2,'mobile library must stack below player');
+  this.style.width='1050px';
+  search.focus();
+  const playingBeforeInput=app.playing;
+  search.dispatchEvent(new KeyboardEvent('keydown',{code:'Space',key:' ',bubbles:true}));
+  check(app.playing===playingBeforeInput,'typing/search focus must not start playback');
   d.documentElement.setAttribute('data-renderer-quality','PASS');
   document.documentElement.setAttribute('data-result','PASS');
   $('state').setAttribute('data-pixel-progress',pixels.join(','));
