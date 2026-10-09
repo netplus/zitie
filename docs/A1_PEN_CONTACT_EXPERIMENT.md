@@ -97,3 +97,13 @@
 
 安全回退：即使实验路径渲染失败或得到较差主观评价，
 线上 `animation/index.html` 继续保持 A1.2.3 正式工程演示，不启用新 renderer。
+
+## A1.4.1: independent gesture microtiming experiment
+
+The opt-in experiment additionally computes a separate **gesture-aware time→arclength warp** (source `animation/experiments/pen-kinematics.js`). It reweights the stable profile's strictly positive time-density by a local Gaussian **dwell** around explicitly annotated fold/hook pivot source vertices; for annotated hook types only, it adds a bounded post-pivot **flick acceleration**. Dot strokes receive a short opening delay. Unlike the default player, B-side nib and contact positions can be at a **different position at the same elapsed wall time**, which is the intended A/B comparison; the global stroke start/end, inter-stroke pause, total animation time, final outline and canonical stroke count remain identical.
+
+This is a deliberately tunable phenomenological model, **not a fitted sigma-lognormal model** or force recording. Time-density remains positive; each stroke remains monotone and cannot reverse. The model cannot assert real pivots or validated source directions solely from vendor geometry.
+
+To support expert inspection, the A/B page shows a chart on the same normalized time axis with **stable spatial progress** (gray), **experimental spatial progress** (red), and **independently synthesized pressure** (cyan). Curves should differ on curated folds/hooks. A shared cursor marks the selected moment.
+
+New unit tests assert 40/40 original stroke trajectories remain unmodified, strict time→distance monotonicity, locally longer fold residence, hook release acceleration and finite pressure/orientation. Chrome A/B tests quantify pixel-set monotonicity and clipping, compare both engines with the same elapsed time, verify timing differences, provide frame-sheet artifacts and record the largest remaining terminal contour mismatch. Performance is measured as wall-time per local render call but not converted into an unverified universal FPS claim.

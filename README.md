@@ -1,3 +1,9 @@
+## A1.4 虚拟笔尖 A/B 对照实验（独立工程路线）
+
+依据[虚拟笔尖研究报告](docs/A1_PEN_CONTACT_RESEARCH.md)实现[独立 A/B 实验](docs/A1_PEN_CONTACT_EXPERIMENT.md)：六个真实来源部首在同一时间轴上并排比较 **A1.2.3 稳定基线** 与 **实验性椭圆接触印迹＋转锋微时序**，支持倍率按钮、进度拖动和笔内运动/接触曲线。**新实验不改变现有教学播放器、笔顺、最终轮廓或正式 PDF。** PR [#90](https://github.com/netplus/zitie/pull/90) 完成最终 CI 与部署后，可通过[独立实验网页](https://netplus.github.io/zitie/animation/experiments/pen-lab.html)观看；未完成部署前不得宣称该链接已上线。
+
+---
+
 ## A1.4 仿真笔尖与自然运笔研究（尚未上线）
 
 针对“起笔、落笔、折、钩衔接不像真实写字”的反馈，已开展[虚拟笔尖、运动学、汉字笔迹重建与开源实现研究](docs/A1_PEN_CONTACT_RESEARCH.md)（Issue [#88](https://github.com/netplus/zitie/issues/88)）。研究的核心结论是：现有 A1.2.3 保证源码轮廓内的墨迹递增，但缺少笔尖接触力度、朝向、笔锋印迹和不同动作语义。后续先建立与现有播放器隔离的对照实验，再决定是否切换正式预览；**当前在线动画、201个主部首与 v0.5.1 PDF 不变**。
