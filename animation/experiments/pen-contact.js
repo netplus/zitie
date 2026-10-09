@@ -146,6 +146,27 @@
     return plan;
   }
 
+  // Source-contour coverage is a separate drawing correctness constraint;
+  // synthetic pressure is *not* a license to leave permanent gray strips.
+  // A delayed reference-width brush repairs only ink the nib has passed.
+  // The delay smoothly approaches zero in the final 18% of the stroke,
+  // so no hard "unmask everything" completion jump is required.
+  function repairDistanceAt(plan,progress,options={}){
+    if(!plan||!finite(plan.length)||plan.length<=0||!finite(progress))
+      throw Error('Invalid reference coverage distance');
+    const fraction=clamp(progress,0,1);
+    const settleAt=options.settleAt??.82;
+    const nominalLag=options.lag??Math.max(18,Math.min(48,plan.length*.055));
+    if(!finite(settleAt)||settleAt<=0||settleAt>=.99||
+       !finite(nominalLag)||nominalLag<0||nominalLag>140)
+      throw Error('Unsupported source coverage recovery parameters');
+    if(fraction===0)return {distance:0,lag:nominalLag,spatialProgress:0};
+    const ramp=smooth((fraction-settleAt)/(1-settleAt));
+    const lag=nominalLag*(1-ramp);
+    const distance=Math.max(0,plan.length*fraction-lag);
+    return {distance,lag,spatialProgress:distance/plan.length};
+  }
+
   function snapshot(plan,progress){
     if(!plan||!Array.isArray(plan.samples)||!finite(progress))
       throw Error('Invalid pen snapshot');
@@ -170,5 +191,5 @@
   }
 
   return {smooth,pointAt,pivotDistance,tangentAt,phaseAtDistance,
-    pressureAt,makePlan,snapshot};
+    pressureAt,makePlan,snapshot,repairDistanceAt};
 });

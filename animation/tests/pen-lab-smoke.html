@@ -62,6 +62,7 @@ $('lab').addEventListener('load',async function(){
    check(nonwhite>80,'Synthetic pressure and motion charts did not render');
    const target={一:0,口:1,水:0,月:1,火:0,龠:13};
    let checks=0,priorLost=0,outside=0,sourceMismatch=0,invalidStates=0,retimedFrames=0;
+   let yiTrailingUnfilledPixels=0,yiComparedFrames=0,yiTerminalGapPercent=null;
    let worstNearFinalGap=0,worstLabel='';
    const outcomes=[];
    const start=performance.now();
@@ -103,6 +104,31 @@ $('lab').addEventListener('load',async function(){
        }
        const a=await raster(lab.baseline.svg,lab.baseline.tip);
        const b=await raster(lab.experimental.svg,lab.experimental.tip);
+       // Regression for user-reported 一 gray gaps: at each spatial point
+       // already TEN PERCENT behind the experimental nib, the reference
+       // contour must be fully deposited. Compare at the *same arclength*,
+       // not equal wall time (experimental fold/hook retiming intentionally
+       // differs from the stable time mapping).
+       if(glyph.character==='一'&&fraction>=.15){
+         const experimentalDistance=lab.lastResult.progress;
+         const trailingSource=Math.max(0,experimentalDistance-.10);
+         const baselineProfile=lab.baseline.timeline.strokes[index].motion;
+         let lo=0,hi=1;
+         for(let iter=0;iter<38;iter++){
+           const mid=(lo+hi)/2;
+           if(baselineProfile.progressAt(mid)<trailingSource)lo=mid;
+           else hi=mid;
+         }
+         lab.baseline.seekElapsed(stage.startMs+stage.durationMs*(lo+hi)/2);
+         const targetOutline=await raster(lab.baseline.svg,lab.baseline.tip);
+         const missing=lostPixels(targetOutline.flags,b.flags);
+         yiTrailingUnfilledPixels+=missing;
+         yiComparedFrames++;
+         if(missing)throw Error('一 at '+fraction+
+           ': '+missing+' source-shape pixels still gray behind virtual nib');
+         // Restore shared-clock UI state for subsequent samples.
+         lab.seek(time);
+       }
        if(fraction===0)check(b.count===0,'Unexpected red blob at zero percent');
        if(fraction>=.5)check(a.count>0&&b.count>0,'Invisible pen paint mid-stroke');
        const vanished=lostPixels(before,b.flags);
@@ -119,6 +145,11 @@ $('lab').addEventListener('load',async function(){
        checks++;
      }
      const gap=(full.count-count99)/full.count;
+     if(glyph.character==='一'){
+       yiTerminalGapPercent=+(gap*100).toFixed(3);
+       check(gap<.0125,'一 still has unfilled original contour at 99.5%: '+
+         (100*gap).toFixed(3)+'%');
+     }
      if(gap>worstNearFinalGap){worstNearFinalGap=gap;worstLabel=glyph.character;}
      outcomes.push({glyph:glyph.character,strokes:glyph.expected_stroke_count,
        preparedImpressions:lab.experimental.stats.stamps,
@@ -135,6 +166,8 @@ $('lab').addEventListener('load',async function(){
    }
    check(invalidStates===0,'Nonfinite or invalid synthetic pen state');
    check(retimedFrames>=3,'Experimental gesture retiming did not actually change spatial timing');
+   check(yiComparedFrames>=5&&yiTrailingUnfilledPixels===0,
+     '一 did not pass trailing reference-coverage comparisons');
    // The experiment is not promoted to the default renderer, so a residual
    // gap is reported as calibration debt, not silently called perfect.
    check(worstNearFinalGap<.10,'Virtual footprint geometry misses excessive contour area');
@@ -150,7 +183,8 @@ $('lab').addEventListener('load',async function(){
    check(lab.lastResult.phase==='finished','Experiment cannot finish at reference outline');
    const stats={
      result:'PASS',engine:'A1.4_elliptical_virtual_nib_unreviewed',
-     glyphs:lab.glyphs.length,sampledFrames:checks,retimedFrames,sourcePixelLoss:priorLost,
+     glyphs:lab.glyphs.length,sampledFrames:checks,retimedFrames,
+     yiComparedFrames,yiTrailingUnfilledPixels,yiTerminalGapPercent,sourcePixelLoss:priorLost,
      outsideOriginalContourPixels:outside,invalidContactStates:invalidStates,
      worstExperimentalTerminalGapPercent:+(worstNearFinalGap*100).toFixed(2),
      worstExperimentalTerminalGapGlyph:worstLabel,
