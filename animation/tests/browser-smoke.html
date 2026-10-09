@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>A1 real-browser smoke</title></head>
+<body>
+<h1>A1 real-browser behavioral verification</h1>
+<pre id="result">RUNNING</pre>
+<iframe id="demo" src="../index.html" title="Offline demo" style="width:900px;height:1000px"></iframe>
+<script>
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+function check(ok, message) { if (!ok) throw new Error(message); }
+document.getElementById('demo').addEventListener('load', async function () {
+  try {
+    const frame = this.contentWindow;
+    const document2 = frame.document;
+    const app = frame.ZITIE_A1_APP;
+    check(app && app.rows.length === 1, 'one stroke selected initially');
+    check(app.getState().elapsedMs === 0, 'start state');
+    check(document2.querySelectorAll('#glyphStage defs clipPath').length === 1, 'one median clip');
+    const outline = app.timeline.glyph.strokes[0].outline;
+    check(app.rows[0].solid.getAttribute('d') === outline, 'unchanged final outline');
+
+    document2.getElementById('play').click();
+    await delay(300);
+    const halfway = app.getState();
+    check(halfway.playing && halfway.elapsedMs > 0, 'real requestAnimationFrame advances writing');
+    check(halfway.phase === 'writing' && halfway.progress > 0 && halfway.progress < 1, 'partial stroke');
+    check(app.rows[0].reveal.hasAttribute('clip-path'), 'partial red fill uses median clip');
+    const dash = Number(app.rows[0].brush.getAttribute('stroke-dasharray').split(' ')[0]);
+    check(dash > 0 && dash < app.rows[0].length, 'positive partial path travel');
+    document2.getElementById('play').click();
+    const paused = app.getState().elapsedMs;
+    await delay(100);
+    check(!app.playing && app.getState().elapsedMs === paused, 'pause stops movement');
+    document2.getElementById('play').click();
+    check(app.playing, 'resume');
+
+    document2.getElementById('showAll').click();
+    check(app.getState().phase === 'finished' && !app.playing, 'show complete ends state');
+    check(app.rows[0].solid.style.display !== 'none', 'exact full shape shown');
+    check(app.rows[0].solid.getAttribute('d') === outline, 'full outline unchanged');
+
+    document2.getElementById('restart').click();
+    check(app.playing && app.elapsed === 0, 'restart from beginning');
+    app.pause();
+    document2.getElementById('speed').value = '3';
+    document2.getElementById('speed').dispatchEvent(new Event('change'));
+    check(app.speed === 3, 'speed control');
+    document2.getElementById('replayOne').click();
+    check(app.playing && app.singleEnd === app.timeline.strokes[0].endMs, 'single stroke repeat');
+    await delay(850);
+    check(!app.playing && app.singleEnd === null, 'single stroke stops automatically');
+
+    const select = document2.getElementById('glyphSelect');
+    select.value = '201';
+    select.dispatchEvent(new Event('change'));
+    check(app.rows.length === 17 && app.elapsed === 0 && !app.playing, 'change to complex stroke sample');
+    check(document2.querySelectorAll('#glyphStage defs clipPath').length === 17, 'no previous clip residue');
+    document2.getElementById('next').click();
+    check(app.getState().index === 1, 'next stroke');
+    document2.getElementById('previous').click();
+    check(app.getState().index === 0, 'previous stroke');
+    document2.getElementById('showAll').click();
+    check(app.rows.every((row,i) => row.solid.getAttribute('d') ===
+      app.timeline.glyph.strokes[i].outline && row.solid.style.display !== 'none'),
+      'complex final shape remains exact');
+
+    select.value = '77';
+    select.dispatchEvent(new Event('change'));
+    check(app.rows.length === 4 && app.elapsed === 0, 'switching resets old glyph');
+    check(document2.querySelectorAll('#glyphStage defs clipPath').length === 4, 'no stale definitions');
+    document.documentElement.setAttribute('data-result','PASS');
+    document.getElementById('result').textContent = 'PASS: real-browser playback, pause/resume, replay, speed, single step, switch and final outline';
+  } catch (err) {
+    document.documentElement.setAttribute('data-result','FAIL');
+    document.getElementById('result').textContent = 'FAIL: ' + (err.stack || err);
+  }
+});
+</script>
+</body>
+</html>
