@@ -43,9 +43,10 @@ document.getElementById('lab').addEventListener('load',async function(){
   check(lab&&lab.baseline&&lab.experimental&&lab.plans,
    'Independent pressure lab not initialized');
   check(lab.glyphs.length===6,'Not six reviewed source-backed demo glyphs');
-  const marker=lab.experimental.tip;
+  // setGlyph recreates the SVG cursor: fetch the LIVE marker per frame.
+  const marker=()=>lab.experimental.tip;
   const ring=lab.ring;
-  check(marker&&ring,'Pressure visual indicator missing');
+  check(marker()&&ring,'Pressure visual indicator missing');
   check(ring.getAttribute('fill')==='none','Pressure indicator must be unfilled');
   check(!String(ring.getAttribute('stroke')).toLowerCase().includes('#fff'),
    'Pressure ring must not hide ink with a white rim');
@@ -84,11 +85,11 @@ document.getElementById('lab').addEventListener('load',async function(){
     previousPressure=p;
     rangeMin=Math.min(rangeMin,p);rangeMax=Math.max(rangeMax,p);
     if(t>0&&t<.985&&lab.showPressure){
-      if(ring.style.display==='none'||Number(marker.getAttribute('r'))<7.2)
+      if(ring.style.display==='none'||Number(marker().getAttribute('r'))<7.2)
         throw Error('Synthetic contact circle not following pen');
       const ax=+lab.baseline.tip.getAttribute('cx');
       const ay=+lab.baseline.tip.getAttribute('cy');
-      const bx=+marker.getAttribute('cx'),by=+marker.getAttribute('cy');
+      const bx=+marker().getAttribute('cx'),by=+marker().getAttribute('cy');
       if(Math.hypot(ax-bx,ay-by)>1e-6){
         markerSyncErrors++;
         if(markerMismatchSamples.length<8)markerMismatchSamples.push({
