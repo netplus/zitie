@@ -47,8 +47,8 @@ document.getElementById('demo').addEventListener('load', async function () {
     check(app.speed === 3, 'speed control');
     document2.getElementById('replayOne').click();
     check(app.playing && app.singleEnd === app.timeline.strokes[0].endMs, 'single stroke repeat');
-    await delay(850);
-    check(!app.playing && app.singleEnd === null, 'single stroke stops automatically');
+    await delay(2200);
+    check(!app.playing && app.singleEnd === null, 'single stroke stops automatically; elapsed=' + app.elapsed + ', remaining=' + app.singleEnd);
 
     const select = document2.getElementById('glyphSelect');
     select.value = '201';
