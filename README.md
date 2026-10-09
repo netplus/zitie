@@ -1,3 +1,9 @@
+# A1.2.1 在线交互改进（工程预览）
+
+根据线上反馈，**已实现可搜索字形卡片＋批次筛选**，取代原生下拉选字；动画以原轮廓宽度为依据生成沿笔顺中心线推进的局部 SVG 遮罩，降低固定粗画刷导致的提前显露。增加可拖动时间轴及键盘操作，所有9个样例保持离线可用、原笔顺与原轮廓不变。质量门槛、尚未完成的教学审定见 [A1.2.1 实施与限制](docs/A1_UX_PRECISION.md) 和 [Issue #82](https://github.com/netplus/zitie/issues/82)。通过 PR 和最终HEAD CI 前不计正式教学验收。
+
+---
+
 # A1 动态笔顺工程预览（独立于 v0.5.1 正式 PDF）
 
 **在线查看动画（第三方临时预览）：**[直接打开](https://raw.githack.com/netplus/zitie/main/animation/index.html)。GitHub Pages 官方自动发布工作流已准备，但站点尚待首次启用，不能将 `https://netplus.github.io/zitie/` 视作当前已上线。详见 [在线预览和 Pages 设置](docs/A1_PREVIEW.md)。
