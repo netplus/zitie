@@ -1,4 +1,4 @@
-/* A1.2.3 SVG handwriting: exact source outline masked by monotone union of round pen traces. */
+/* A1.3 stable handwriting: exact SVG outline clipped by cursor-synchronous arrival ribbons. */
 (function (root, factory) {
   const Timeline = typeof module === 'object' && module.exports ?
     require('./timeline.js') : root.ZitieTimeline;
@@ -75,19 +75,19 @@
           (x, y) => contour.isPointInFill(new DOMPoint(x, y)) : null;
         const profile=Brush.makeProfile(s.median,contains);
         contour.remove();
-        // Every local brush fragment is painted as an INDEPENDENT stroked
-        // path. SVG alpha masks accumulate their union; no combined filled
-        // polygon can self-intersect/cancel at a sharp median corner.
-        const fragments=profile.segments.map(part=>{
-          const path=create('path',{d:part.d,fill:'none',stroke:'#FFFFFF',
-            'stroke-width':part.width,'stroke-linecap':'round',
-            'stroke-linejoin':'round','pointer-events':'none'});
+        // Paint independent local cross-section cells, not radius-sized
+        // round-ended segments that reveal future ink far ahead of the tip.
+        // A single cell is short and the already written prefix accumulates
+        // by alpha union; the canonical SVG silhouette remains unchanged.
+        const fragments=profile.segments.map((part,j)=>{
+          const path=create('path',{
+            d:Brush.ribbonSegment(profile,j,1),
+            fill:'#FFFFFF','pointer-events':'none'});
           path.style.display='none';
           mask.appendChild(path);
           return path;
         });
-        const activeInk=create('path',{d:'',fill:'none',stroke:'#FFFFFF',
-          'stroke-linecap':'round','stroke-linejoin':'round',
+        const activeInk=create('path',{d:'',fill:'#FFFFFF',
           'pointer-events':'none'});
         activeInk.style.display='none';
         mask.appendChild(activeInk);
@@ -147,22 +147,20 @@
                 r.fragments[j].style.display='none';
             }
             r.previousVisibleCount=state.visibleCount;
-            // An explicit contact ramp prevents a large instant circular
-            // blob at the very beginning. Earlier coverage only EXPANDS;
-            // the same static full fragments remain in place thereafter.
+            // Same monotone first-contact ramp as before: the early
+            // cross-sections expand smoothly from the trajectory without
+            // exposing a full-width stationary cap at the first time tick.
             for(let j=0;j<r.profile.segments.length;j++){
               const segment=r.profile.segments[j];
               if(segment.start>=r.profile.onsetDistance)break;
-              r.fragments[j].setAttribute('stroke-width',
-                Math.max(0,segment.width*state.contactScale));
+              r.fragments[j].setAttribute('d',
+                Brush.ribbonSegment(r.profile,j,1,state.contactScale));
             }
             if(state.active>=0&&state.partial>0) {
-              const seg=r.profile.segments[state.active];
               r.activeInk.style.display='';
               r.activeInk.setAttribute('d',
-                'M '+seg.x0+' '+seg.y0+' L '+state.tip[0]+' '+state.tip[1]);
-              r.activeInk.setAttribute('stroke-width',
-                Math.max(0,seg.width*state.contactScale));
+                Brush.ribbonSegment(r.profile,state.active,
+                  state.partial,state.contactScale));
             } else {
               r.activeInk.style.display='none';
             }
