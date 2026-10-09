@@ -160,5 +160,113 @@
     return {visibleCount,active,partial,contactScale,distance:dist,tip};
   }
 
-  return {sampleMedian,widthToContour,makeProfile,stateAt};
+  // A1.3: The RED round-capped ink trace is intentionally wider than the
+  // source median. A small 8-unit cursor at the median can therefore lag
+  // behind ALREADY VISIBLE INK on hooks, even though both share one clock.
+  // Do not replace the stable ink algorithm or modify normative medians:
+  // derive a distinct, deterministic *optical frontier indicator* position
+  // from the exact source-width union stamps already used by the mask.
+  function pointAtDistance(profile,distance){
+    if(!profile?.stations?.length||!finite(distance))
+      throw Error('Invalid stable frontier distance');
+    const a=profile.stations,d=clamp(distance,0,profile.length);
+    let lo=0,hi=a.length-1;
+    while(lo+1<hi){
+      const m=(lo+hi)>>1;
+      if(a[m].distance<d)lo=m;else hi=m;
+    }
+    const p=a[lo],q=a[hi];
+    const t=clamp((d-p.distance)/(q.distance-p.distance||1),0,1);
+    return [lerp(p.x,q.x,t),lerp(p.y,q.y,t)];
+  }
+  function pointSegmentSquared(x,y,ax,ay,bx,by){
+    const vx=bx-ax,vy=by-ay;
+    const fraction=clamp(((x-ax)*vx+(y-ay)*vy)/(vx*vx+vy*vy||1),0,1);
+    const dx=x-ax-fraction*vx,dy=y-ay-fraction*vy;
+    return dx*dx+dy*dy;
+  }
+  function insideCurrentBrush(profile,state,x,y){
+    // A settled local segment contributes its complete round cap. The active
+    // partial contributes only through the current canonical median tip.
+    // The same source-derived widths and starting-pressure scale are used
+    // for the real SVG ink mask; future segments do not contribute.
+    for(let j=state.visibleCount-1;j>=0;j--){
+      const s=profile.segments[j];
+      const scale=s.start<profile.onsetDistance?state.contactScale:1;
+      const radius=s.width*.5*scale;
+      if(x<Math.min(s.x0,s.x1)-radius||x>Math.max(s.x0,s.x1)+radius||
+         y<Math.min(s.y0,s.y1)-radius||y>Math.max(s.y0,s.y1)+radius)
+        continue;
+      if(pointSegmentSquared(x,y,s.x0,s.y0,s.x1,s.y1)<=radius*radius)
+        return true;
+    }
+    if(state.active>=0&&state.partial>0){
+      const s=profile.segments[state.active],radius=s.width*.5*state.contactScale;
+      if(pointSegmentSquared(x,y,s.x0,s.y0,state.tip[0],state.tip[1])<=radius*radius)
+        return true;
+    }
+    return false;
+  }
+  function visibleFrontAtDistance(profile,distance,probeStep,maxLead){
+    if(distance<=0)return 0; // No red at t=0.
+    const state=stateAt(profile,distance/profile.length);
+    const limit=Math.min(profile.length,distance+maxLead);
+    let front=distance;
+    // Only advance along CONTIGUOUS already-inked median points. This
+    // prevents jumping across a gray segment to a later overlapping stroke.
+    for(let next=distance+probeStep;next<=limit+1e-7;next+=probeStep){
+      const [x,y]=pointAtDistance(profile,Math.min(next,limit));
+      if(!insideCurrentBrush(profile,state,x,y))break;
+      front=Math.min(next,limit);
+    }
+    return front;
+  }
+  function makeVisualFrontier(profile,options={}){
+    if(!profile?.segments?.length||!finite(profile.length)||profile.length<=0)
+      throw Error('Invalid optical frontier brush');
+    const sampleStep=options.sampleStep??7;
+    const probeStep=options.probeStep??2;
+    const maxLead=options.maxLead??96;
+    if(![sampleStep,probeStep,maxLead].every(finite)||
+       sampleStep<3||sampleStep>32||probeStep<1||probeStep>10||
+       maxLead<8||maxLead>140)
+      throw Error('Invalid optical frontier settings');
+    const n=Math.max(2,Math.ceil(profile.length/sampleStep));
+    const entries=[];
+    let last=0;
+    for(let i=0;i<=n;i++){
+      const distance=profile.length*i/n;
+      const visible=i===0?0:i===n?profile.length:
+        visibleFrontAtDistance(profile,distance,probeStep,maxLead);
+      // The real rasterized union is append-only. A monotone envelope also
+      // absorbs sub-sample aliasing around sharp source median pivots.
+      last=clamp(Math.max(last,distance,visible),0,profile.length);
+      entries.push({distance,front:last});
+    }
+    return {
+      kind:'optical_ink_frontier_cursor_not_normative_or_physical_pen',
+      sourceProfile:profile,entries,sourceMedianUntouched:true,
+      maxLead,probeStep,sourceStrokeDurationUntouched:true
+    };
+  }
+  function visualFrontAt(frontier,progress){
+    if(!frontier?.entries?.length||!finite(progress))
+      throw Error('Invalid optical cursor progression');
+    const p=clamp(progress,0,1),d=frontier.sourceProfile.length*p;
+    if(p===0)return {distance:0,lead:0,tip:pointAtDistance(frontier.sourceProfile,0)};
+    const samples=frontier.entries;
+    let lo=0,hi=samples.length-1;
+    while(lo+1<hi){
+      const mid=(lo+hi)>>1;
+      if(samples[mid].distance<d)lo=mid;else hi=mid;
+    }
+    const a=samples[lo],b=samples[hi],t=clamp(
+      (d-a.distance)/(b.distance-a.distance||1),0,1);
+    const visualDistance=clamp(lerp(a.front,b.front,t),d,frontier.sourceProfile.length);
+    return {distance:visualDistance,lead:visualDistance-d,
+      tip:pointAtDistance(frontier.sourceProfile,visualDistance)};
+  }
+
+  return {sampleMedian,widthToContour,makeProfile,stateAt,
+    pointAtDistance,makeVisualFrontier,visualFrontAt};
 });
