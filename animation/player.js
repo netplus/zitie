@@ -147,20 +147,22 @@
                 r.fragments[j].style.display='none';
             }
             r.previousVisibleCount=state.visibleCount;
-            // Same monotone first-contact ramp as before: the early
-            // cross-sections expand smoothly from the trajectory without
-            // exposing a full-width stationary cap at the first time tick.
+            // Progressive contact is an ALPHA ramp, not a scale of
+            // divergent corner normals. Scaling offset polygons can make
+            // an already red cap pixel disappear as the pen advances.
+            // Geometry always remains the nested full-width arrival cell;
+            // increasing alpha makes the initial impression settle without
+            // showing a fully opaque, full-width blot at the first tick.
             for(let j=0;j<r.profile.segments.length;j++){
               const segment=r.profile.segments[j];
               if(segment.start>=r.profile.onsetDistance)break;
-              r.fragments[j].setAttribute('d',
-                Brush.ribbonSegment(r.profile,j,1,state.contactScale));
+              r.fragments[j].setAttribute('opacity',state.contactScale);
             }
             if(state.active>=0&&state.partial>0) {
               r.activeInk.style.display='';
               r.activeInk.setAttribute('d',
-                Brush.ribbonSegment(r.profile,state.active,
-                  state.partial,state.contactScale));
+                Brush.ribbonSegment(r.profile,state.active,state.partial));
+              r.activeInk.setAttribute('opacity',state.contactScale);
             } else {
               r.activeInk.style.display='none';
             }
