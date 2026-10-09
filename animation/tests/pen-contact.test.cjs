@@ -154,3 +154,41 @@ nodeTest('invalid model options and candidate source vertices fail closed',()=>{
   assert.throws(()=>Pen.snapshot(null,.5),/Invalid/);
   assert.throws(()=>Pen.snapshot(plan('一'),NaN),/Invalid/);
 });
+
+
+nodeTest('source-fit repair catches up smoothly behind the synthetic nib; zero onset and no mid-stroke gray tail',()=>{
+  for(const [character,index] of [['一',0],['口',1],['水',0],['月',1],['火',0],['龠',13]]){
+    const p=plan(character,index);
+    let previous=-1,lagPrevious=Infinity;
+    assert.equal(Pen.repairDistanceAt(p,0).distance,0);
+    for(let i=0;i<=1000;i++){
+      const t=i/1000;
+      const state=Pen.repairDistanceAt(p,t);
+      const tip=p.length*t;
+      assert.ok(state.distance>=previous,'repair unexpectedly erased ink at '+t);
+      assert.ok(state.distance<=tip+1e-8,'reference repair painted ahead of pen at '+t);
+      assert.ok(state.lag<=lagPrevious+1e-8,'trailing ink repair moved backward at '+t);
+      assert.ok(state.spatialProgress>=0&&state.spatialProgress<=1);
+      previous=state.distance;lagPrevious=state.lag;
+    }
+    assert.equal(Pen.repairDistanceAt(p,1).distance,p.length);
+    assert.ok(Pen.repairDistanceAt(p,.995).spatialProgress>.993,
+      'tail recovery must nearly complete by 99.5% of pen distance');
+    assert.ok(Pen.repairDistanceAt(p,.5).distance>p.length*.4,
+      'mid-stroke source width must settle behind active pen');
+  }
+});
+
+nodeTest('pressure and local ellipse remain independent from source-outline coverage recovery',()=>{
+  const p=plan('一');
+  const probe=.25;
+  const original=Pen.snapshot(p,probe);
+  const repair=Pen.repairDistanceAt(p,probe);
+  assert.equal(original.distance,p.length*probe);
+  assert.ok(repair.distance<original.distance);
+  assert.equal(original.head.rx,p.samples[original.stampIndex].rx);
+  assert.equal(p.kind,'synthetic_contact_experiment_not_measured');
+  assert.throws(()=>Pen.repairDistanceAt(p,-Infinity),/Invalid/);
+  assert.throws(()=>Pen.repairDistanceAt(p,.25,{lag:-1}),/Unsupported/);
+  assert.throws(()=>Pen.repairDistanceAt(p,.25,{settleAt:1}),/Unsupported/);
+});
