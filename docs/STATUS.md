@@ -1,8 +1,8 @@
-# A2.3 硬笔楷书结构规整与笔形实验（2026-10-10，待CI/发布）
+# A2.3 楷书规整 A/B 已独立部署（2026-10-11，仍需人工书法审核）
 
 用户指出 A2.2 硬笔过于入门、不工整，明确要求以专业**楷书**为目标。已经查明根因：当前普通硬笔只是把来源带毛笔特征的 `median` 逐段画成固定宽度的线，例如「一」原中心线存在明显上下波浪；速度、模拟压力和均匀线宽均不能修复字形骨架。当前开发 **独立 A2.3 楷书 A/B**：通过 `regular-kaishu-model.js` 构建只读工程候选骨架，对横画抑制波浪、轻微向右上，对竖画强化垂直，对口/月/水等折钩约束转向与短钩，对撇捺控制平顺且有适量末段收尖；`regular-kaishu-ink.js` 用不可回缩的短段圆头并集保证逐像素落墨单调，保留原笔画笔顺和字形数据。结构原则参考 [河西学院硬笔书法28条](https://yywzw.hxu.edu.cn/info/1155/1097.htm) 等书写教学材料，但几何参数与个别锚点是**未经教师核验的工程设定**，不把任何来源升级为规范笔顺证据。设计及验收见 [A2.3楷书几何研究](A23_KAISHU_GEOMETRY.md)、[Issue #113](https://github.com/netplus/zitie/issues/113)。
 
-先使用 9字40笔的 Node 结构审核和72帧 Chrome 双侧落墨/候选提示验收，制作九字完整 A/B 对照图供自然度检查。**不能凭几何指标宣称已达到专业楷书**，也不在未经视觉与教学审核前替换线上硬笔默认。A1.6原硬笔/毛笔切换、模拟笔压、v0.5.1正式299页PDF、manifest及201来源证据字节不改。候选实验须最终PR HEAD A1+Book双CI成功且Pages实际部署成功后才称独立上线。
+[PR #114](https://github.com/netplus/zitie/pull/114) 已成功合入 `main`（`ab096bc36f0e8664efa453355e746df3746ac6fa`）。其精确最终候选 HEAD `17669b2dad0c5c1b1875e3b251bd7fa48e5c4669` 的 [动画 CI #38053296972](https://github.com/netplus/zitie/actions/runs/38053296972) 和 [Book integrity #38053296950](https://github.com/netplus/zitie/actions/runs/38053296950) 均 completed/success，合并提交对应的 [Pages #38094108471](https://github.com/netplus/zitie/actions/runs/38094108471) 的 Configure/Upload/Deploy 均成功。独立[楷书 A/B 实验](https://netplus.github.io/zitie/animation/experiments/regular-kaishu-lab.html) 可体验。**77项Node测试全部通过**，9字40笔及72帧Chrome累积墨迹0回退，63帧与旧硬笔外观不同，390px窄屏通过。[九字实际截图](https://github.com/netplus/zitie/actions/runs/38053296972/artifacts/11669897740)已制作；新增跨笔画结构门槛修复「口」右下封口、「月」两内横端点与侧笔连接。**这只代表楷书候选实验部署，不表示已达专业字帖质量**：水、龠等复杂字结体仍需专业书法人工校验，未经专家评估前不改线上硬笔默认；原硬笔/毛笔切换、模拟笔压和v0.5.1 PDF/manifest/201原审核证据均未修改。
 
 ---
 
