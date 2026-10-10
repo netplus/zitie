@@ -1,8 +1,8 @@
-# A2.2 主页面改为硬笔默认、毛笔原版保留（2026-10-10，候选待CI）
+# A2.2 硬笔默认、毛笔原版保留：主页面正式上线（2026-10-10）
 
 用户进一步明确：**不删除当前毛笔风格动画，但主页面默认呈现钢笔／硬笔 UI**。新增「书写工具」选项 **硬笔（默认）/ 毛笔（原版）**，与原有「笔压风格」**稳定版/模拟笔压版**相互独立。硬笔使用原始 median 经有限幅度的曲线细化、短促折钩减速及统一窄线宽圆形硬笔着墨；毛笔保持 A1.3 原始 SVG 艺术轮廓及全套传统动画算法不变。两套动画由唯一原播放器时间线驱动，切换不暂停、不清空进度与倍率，压力模式对两种书写工具只改变显示笔尖与提示，不改变实际成墨宽度。工程文档见 [A2_HARDPEN_SCOPE.md](A2_HARDPEN_SCOPE.md)、[Issue #110](https://github.com/netplus/zitie/issues/110)。
 
-本阶段须真实Chromium检验 7笔画63帧硬笔恒线宽且笔迹单调不丢失、9字63帧主站笔工具切换、原毛笔SVG完整保持、390px移动视图、正式PDF/manifest/201审核数据不改。**当前为候选提交，只有最终PR HEAD A1/Book CI双通过、合入main并确认Pages完整部署后才称正式上线。** 源medians仍未经真实硬笔轨迹或教学审定，宽度以SVG单位而非实测毫米计量。
+本阶段须真实Chromium检验 7笔画63帧硬笔恒线宽且笔迹单调不丢失、9字63帧主站笔工具切换、原毛笔SVG完整保持、390px移动视图、正式PDF/manifest/201审核数据不改。[PR #111](https://github.com/netplus/zitie/pull/111) 已合入主分支（`ddd360f95872264fe74131c37b8275901fece769`）。其精确最终 HEAD `9f8d3e9947f0aeefda8910797cb6d752874d5ce8` 的 [动画 CI #38040209141](https://github.com/netplus/zitie/actions/runs/38040209141) 和 [全书完整性 CI #38040209229](https://github.com/netplus/zitie/actions/runs/38040209229) 双通过；正式合入后的 [Pages #38040703826](https://github.com/netplus/zitie/actions/runs/38040703826) 在同一merge SHA上完成 Configure/Upload/Deploy，确认主站已上线。[打开主页面](https://netplus.github.io/zitie/animation/)；默认硬笔、毛笔原版可随时切回。69项Node测试通过；7组硬笔63帧恒线宽无墨迹回退，主站9字63帧硬笔墨迹0回退、原毛笔墨迹0变化、模拟笔压切换正常，390px窄屏通过。已写短线段累计圆头并集修复过「口」折角1像素回退。**此处的“上线”仅指UI与工程演示上线：原medians未经真人硬笔轨迹/教学审核，笔迹宽度为SVG坐标单位而非实测毫米值。**
 
 ---
 

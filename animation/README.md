@@ -1,8 +1,8 @@
-## A2.2 钢笔／硬笔默认，毛笔原版保留（开发候选）
+## A2.2 主站硬笔默认，毛笔原版保留（已部署）
 
 用户指定[主动画页面](index.html)默认使用**硬笔**；当前偏毛笔笔形的原字帖SVG动画**作为「毛笔（原版）」保留并可直接切换**。硬笔由独立 `hardpen-stage.js` 渲染近乎恒线宽的圆头中心线笔迹，不再填满原毛笔粗细轮廓；主播放控制唯一，工具切换时保持同一时间点、原字形、倍率和播放状态。A1.6「稳定版／模拟笔压版」继续作为另一项独立风格设置，两种工具均可选择。对照的[硬笔独立研究页面](experiments/hardpen-lab.html)可用于进一步观察。
 
-本版不使用毛笔的夸张蓄势、藏锋、逆锋，也不将模拟力度与钢笔线宽直接挂钩；来源骨架仍未通过教学审核。实现依据及限制见 [A2_HARDPEN_SCOPE](../docs/A2_HARDPEN_SCOPE.md)、[Issue #110](https://github.com/netplus/zitie/issues/110)。当前等待真实浏览器测试、最终 A1+Book 双CI、PR 与 Pages 部署，原稳定毛笔填充、v0.5.1 PDF/manifest 均保持不变。
+本版不使用毛笔的夸张蓄势、藏锋、逆锋，也不将模拟力度与钢笔线宽直接挂钩；来源骨架仍未通过教学审核。实现依据及限制见 [A2_HARDPEN_SCOPE](../docs/A2_HARDPEN_SCOPE.md)、[Issue #110](https://github.com/netplus/zitie/issues/110)。[PR #111](https://github.com/netplus/zitie/pull/111) 已合并为 `ddd360f95872264fe74131c37b8275901fece769`，精确最终HEAD的 [A1 CI #38040209141](https://github.com/netplus/zitie/actions/runs/38040209141) 与 [Book #38040209229](https://github.com/netplus/zitie/actions/runs/38040209229) 均成功，合并后 [Pages #38040703826](https://github.com/netplus/zitie/actions/runs/38040703826) 实际部署成功。现在访问[主页面](https://netplus.github.io/zitie/animation/)即可默认观看硬笔，并随时切回完整保留的毛笔原版；69项Node测试、7字硬笔63帧、9字主站63帧、0已写墨迹回退、原毛笔红色墨迹0变化以及390px布局均通过。原 v0.5.1 PDF/manifest 未改，硬笔轨迹仍属未经专家验证的工程骨架。
 
 ---
 
