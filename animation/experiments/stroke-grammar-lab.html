@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A2 · 汉字基本笔画动作实验室</title>
+<style>
+:root{--red:#b83e4b;--ink:#25343d;--muted:#697782;--line:#dfe4e8;--teal:#167e8a}
+*{box-sizing:border-box}
+body{margin:0;background:#f5f6f7;color:var(--ink);font:14px/1.58 system-ui,"Microsoft YaHei","PingFang SC",sans-serif}
+main{max-width:1260px;margin:auto;padding:23px 18px 37px}
+h1{font-size:clamp(22px,3vw,30px);margin:6px 0 0}
+h2{font-size:17px;margin:0}
+a{color:#a13440}
+.subtitle{color:var(--muted);margin:5px 0 14px}
+.banner{padding:11px 14px;background:#fff8e9;color:#665338;border:1px solid #e8dfc5;border-radius:11px;margin-bottom:14px;font-size:13px}
+.toolbar,.timeline,.chartBox,.insight{border:1px solid var(--line);background:#fff;border-radius:13px;padding:12px 14px;margin:12px 0}
+.toolbar{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.glyphButtons,.controls,.speeds{display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+button{font:inherit;border-radius:9px;border:1px solid #d7dde1;background:#fff;cursor:pointer;padding:7px 11px}
+button:focus-visible,input:focus-visible{outline:3px solid #d89da6;outline-offset:3px}
+button[aria-pressed="true"]{background:#fff1f3;border-color:#b34c58;color:#96313d;font-weight:750}
+.glyphButtons button{min-width:53px;font-size:14px}
+.primary{background:#b83e4b;border-color:#b83e4b;color:#fff}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.paperPanel{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:white}
+.paperPanel header{padding:12px 15px 2px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.paperPanel header span{font-size:11px;color:var(--muted)}
+.paperPanel svg{display:block;margin:auto;width:100%;max-width:540px;aspect-ratio:1}
+.paperPanel footer{border-top:1px solid var(--line);padding:10px 15px;color:var(--muted);font-size:12px;min-height:57px}
+#seek{width:100%;accent-color:var(--red)}
+.seekrow{display:flex;align-items:center;gap:9px}
+.seekrow label{font-weight:650;white-space:nowrap}
+#clock{min-width:105px;color:var(--muted);text-align:right;font-variant-numeric:tabular-nums}
+.insight{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:9px}
+.stat{border-right:1px solid #e2e6e8;padding-right:8px}
+.stat:last-child{border:0}
+.stat small{display:block;color:var(--muted)}
+.stat strong{display:block;font-size:16px}
+#velocityChart{width:100%;display:block;height:auto;max-height:220px}
+.notes{font-size:12px;color:var(--muted);margin:10px 0}
+.legend{font-size:12px;color:var(--muted)}
+.legend b{color:var(--teal)}
+@media(max-width:820px){.pair{grid-template-columns:1fr}.insight{grid-template-columns:repeat(2,1fr)}.stat:nth-child(2){border:0}}
+@media(max-width:490px){main{padding:13px 9px}.insight{gap:12px}.toolbar{gap:8px}.glyphButtons button{min-width:45px}.seekrow{flex-wrap:wrap}#clock{text-align:left}}
+</style>
+<script defer src="../samples.js"></script>
+<script defer src="../motion.js"></script>
+<script defer src="../timeline.js"></script>
+<script defer src="../brush-union.js"></script>
+<script defer src="../player.js"></script>
+<script defer src="./stroke-primitives.js"></script>
+<script defer src="./stroke-grammar-lab.js"></script>
+</head><body><main>
+<a href="../index.html">← 返回已发布的稳定版（原有笔压风格设置不变）</a>
+<h1>基本笔画 · 动作建模 A/B 实验</h1>
+<p class="subtitle">横、竖、撇、折、钩：原始笔画轮廓不变，对比“中心线匀质动作”与“基本笔画语义分段及受轮廓约束轨迹”</p>
+<div class="banner"><strong>A2 独立工程实验，未经教学动作审核。</strong> B 侧的绿色虚线是从原始中心线拟合的候选运动轨迹，刻意保留折角、钩位等源顶点；红色墨迹依然使用与 A 完全相同的正式稳定版 SVG 原轮廓和圆头填充，仅改变笔画内部的时间分配。拟合动作及转折时序不是采集到的真人手写数据。</div>
+<section class="toolbar">
+  <div class="glyphButtons" id="glyphButtons" role="group" aria-label="选择基本笔画"></div>
+  <div class="controls">
+    <button id="play" class="primary" type="button">▶ 同步播放</button>
+    <button id="replay" type="button">↺ 重播当前笔</button>
+    <button id="showPath" type="button" aria-pressed="true">隐藏候选轨迹</button>
+    <button id="showAll" type="button">显示完整字形</button>
+  </div>
+  <div class="speeds" role="group" id="speedButtons" aria-label="播放速度">
+    <button type="button" data-speed="0.5" aria-pressed="false">0.5×</button>
+    <button type="button" data-speed="1" aria-pressed="true">1×</button>
+    <button type="button" data-speed="1.5" aria-pressed="false">1.5×</button>
+    <button type="button" data-speed="2" aria-pressed="false">2×</button>
+    <button type="button" data-speed="3" aria-pressed="false">3×</button>
+  </div>
+</section>
+<div class="pair">
+  <section class="paperPanel"><header><h2>A · 当前稳定版</h2><span>原始 median + 通用起承收节奏</span></header>
+    <svg id="baselineStage" role="img" aria-label="稳定版真实SVG笔迹与中心线运动"></svg>
+    <footer>保持当前 A1.3 轨迹/填充算法，用来对比真实笔迹的进度和折钩处的运笔节奏。</footer>
+  </section>
+  <section class="paperPanel"><header><h2>B · 基本笔画动作模型</h2><span>A2.1 候选（未教学审核）</span></header>
+    <svg id="gestureStage" role="img" aria-label="折钩语义分段与受轮廓约束的新轨迹"></svg>
+    <footer>同样的 SVG 字形轮廓，候选曲线通过原始骨架点，在折角/钩点保留明确拐点；不同动作控制写字过程的空间进度。</footer>
+  </section>
+</div>
+<section class="timeline">
+  <div class="seekrow"><label for="seek">共同时间进度</label>
+    <input id="seek" type="range" min="0" max="1000" value="0" aria-label="A/B 两侧共同时间轴">
+    <output id="clock">00:00 / 00:00</output>
+  </div>
+</section>
+<section class="insight" aria-label="动作模型实时状态">
+  <div class="stat"><small>当前动作阶段</small><strong id="phase">待落笔</strong></div>
+  <div class="stat"><small>稳定版笔距</small><strong id="baselineProgress">0%</strong></div>
+  <div class="stat"><small>新模型笔距</small><strong id="gestureProgress">0%</strong></div>
+  <div class="stat"><small>几何轮廓检验</small><strong id="geometryStatus">未运行</strong></div>
+</section>
+<section class="chartBox">
+  <h2>笔画内部动态速度（同一时钟）</h2>
+  <p class="legend">灰线：稳定版中心线进度变化率；<b>青线：A2 笔画语义模型</b>。曲线为归一化速度，非真人记录。</p>
+  <canvas id="velocityChart" width="1100" height="220" role="img"
+    aria-label="旧与新的笔画内归一化速度曲线对照"></canvas>
+  <p class="notes" id="geometryNote">正在读取真实笔画源轮廓。</p>
+</section>
+<p class="notes">参考方法、折钩锚点和验收限制：[A2研究与动作模型](https://github.com/netplus/zitie/blob/main/docs/A2_BASIC_STROKE_MODEL.md)。本实验不会修改 299 页字帖 PDF、201 项规范数据或线上稳定播放器。</p>
+</main></body></html>
