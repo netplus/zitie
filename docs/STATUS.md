@@ -1,6 +1,6 @@
-# A1.6 主动画页面两档笔压风格（2026-10-10，待CI与发布）
+# A1.6 主动画页面两档笔压风格正式上线（2026-10-10）
 
-用户要求在已部署的稳定版主页面直接选择「稳定版」或「模拟笔压版」，不再仅依靠独立 A/B 研究页。实现上新增 **笔压风格** 两个直接点击按钮，默认稳定版；模拟笔压复用 A1.5 的独立合成压力和接触圈、归一化力度与曲线，只作用于显示笔尖，与 A1.3 原始圆头填充和按源轮廓修正的圆圈位置共用同一时间轴。模式切换不清零播放位置、不暂停、不改变速度、当前汉字或原始SVG轮廓。全部9个试播字、45个选定时间点和竖钩、横折钩纳入逐像素/掩码回归，另检查窄屏可用性。见 [A1.6方案](A1_PEN_STYLE_SELECTOR.md)、[Issue #104](https://github.com/netplus/zitie/issues/104)。此处为分支候选，须最终 PR HEAD 动画/全书 CI 通过、合入并确认 Pages 实际部署后才称上线；合成压力非实测，正式 v0.5.1 PDF/manifest/201笔顺证据保持不变。
+用户要求在已部署的稳定版主页面直接选择「稳定版」或「模拟笔压版」，不再仅依靠独立 A/B 研究页。实现上新增 **笔压风格** 两个直接点击按钮，默认稳定版；模拟笔压复用 A1.5 的独立合成压力和接触圈、归一化力度与曲线，只作用于显示笔尖，与 A1.3 原始圆头填充和按源轮廓修正的圆圈位置共用同一时间轴。模式切换不清零播放位置、不暂停、不改变速度、当前汉字或原始SVG轮廓。全部9个试播字、45个选定时间点和竖钩、横折钩纳入逐像素/掩码回归，另检查窄屏可用性。见 [A1.6方案](A1_PEN_STYLE_SELECTOR.md)、[Issue #104](https://github.com/netplus/zitie/issues/104)。[PR #105](https://github.com/netplus/zitie/pull/105) 已合入 `main`，合并提交 `d055e2d05fcd6c39635e8ec9d15fc234451e7327`。最终 PR HEAD `f0c9605c5bb71adfc8b356ea02441c0891115743` 的 [动画 CI #38030438772](https://github.com/netplus/zitie/actions/runs/38030438772) 与 [全书 CI #38030438681](https://github.com/netplus/zitie/actions/runs/38030438681) 均 completed/success；合入后的 [GitHub Pages #38030935433](https://github.com/netplus/zitie/actions/runs/38030935433) 在目标提交上完成 Configure、Upload、Deploy 并成功。可直接打开[主播放器](https://netplus.github.io/zitie/animation/)选择两种笔压风格。57/57 Node 测试，9字×5时点的45帧原始红色墨迹差异0、掩码差异0、圆圈轨迹一致，无暂停/重置，390px 窄屏检查通过。合成压力非实测，正式 v0.5.1 PDF/manifest/201笔顺证据保持不变。
 
 ---
 
