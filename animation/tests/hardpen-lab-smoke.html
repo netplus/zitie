@@ -1,0 +1,180 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<title>A2.2 real-Chromium ordinary hardpen / no brush silhouette QA</title></head><body>
+<h1>Rigid-nib hardpen semantics, near-constant line width and monotone ink</h1>
+<pre id="result">RUNNING</pre>
+<iframe id="app" src="../experiments/hardpen-lab.html" title="real hardpen experiment"
+ style="width:1240px;height:1700px"></iframe>
+<script>
+const frames=[0,.001,.03,.10,.28,.48,.69,.86,.97];
+function check(ok,why){if(!ok)throw Error(why);}
+const isRed=(p,i)=>p[i]>137&&p[i+1]<115&&p[i+2]<124&&
+  p[i]>p[i+1]*1.48&&p[i+3]>190;
+async function redFlags(svg,tip,n=384){
+ const state=tip.style.display;tip.style.display='none';
+ try{
+  const raw=new XMLSerializer().serializeToString(svg);
+  const url=URL.createObjectURL(new Blob([raw],{type:'image/svg+xml;charset=utf-8'}));
+  try{
+   const img=new Image();
+   await new Promise((ok,fail)=>{img.onload=ok;
+     img.onerror=()=>fail(Error('SVG failed'));img.src=url;});
+   const c=document.createElement('canvas');c.width=c.height=n;
+   const ctx=c.getContext('2d',{willReadFrequently:true});
+   ctx.drawImage(img,0,0,n,n);
+   const rgba=ctx.getImageData(0,0,n,n).data,flags=new Uint8Array(n*n);
+   let count=0;
+   for(let i=0,j=0;i<rgba.length;i+=4,j++)
+    if(isRed(rgba,i)){flags[j]=1;count++;}
+   return {flags,count};
+  }finally{URL.revokeObjectURL(url);}
+ }finally{tip.style.display=state;}
+}
+function compare(a,b){
+ let lost=0,grown=0;
+ for(let j=0;j<a.length;j++){
+  if(a[j]&&!b[j])lost++;
+  if(!a[j]&&b[j])grown++;
+ }
+ return {lost,grown};
+}
+document.getElementById('app').addEventListener('load',async function(){
+ const out=document.getElementById('result');
+ try{
+  const w=this.contentWindow,lab=w.ZITIE_A22_HARDPEN;
+  check(lab&&lab.plans.length>0,'Independent hardpen engine not loaded');
+  check(lab.examples.length===7,'Seven hardpen archetypes required');
+  check(lab.width===26,'Normal fixed-width nib should be default');
+  check(lab.svg.querySelectorAll('mask').length===0,
+    'Hardpen B must not use source brush silhouette fill masks');
+  const source=JSON.stringify(w.ZITIE_SAMPLES.glyphs);
+  const reports=[];
+  let painted=0,lost=0,past=0,brushDifferent=0,
+    samples=0,stablePreserved=0,hardWidths=0,marked=0;
+  for(const entry of lab.examples){
+    lab.select(entry);
+    const g=lab.glyph,stage=lab.baseline.timeline.strokes[entry.stroke],
+      row=lab.rows[entry.stroke],plan=lab.plans[entry.stroke];
+    check(lab.svg.querySelectorAll('defs mask').length===0,
+      'Hardpen B must not mask original source brush artwork');
+    check(lab.svg.querySelectorAll('g[transform] path').length>=
+      g.strokes.length*3,'Custom nib sketch did not render all glyph strokes');
+    check(lab.baseline.rows.every((r,i)=>
+      r.solid.getAttribute('d')===g.strokes[i].outline),
+      'Comparison stable page lost original SVG outline');
+    check(lab.rows.every((r,i)=>
+      r.finished.getAttribute('d')===lab.plans[i].completePath&&
+      r.active.getAttribute('stroke-width')==='26'&&
+      r.finished.getAttribute('stroke-width')==='26'&&
+      r.finished.getAttribute('fill')==='none'&&
+      r.active.getAttribute('fill')==='none'),
+      'Hard nib lines have variable width or filled brush areas');
+    hardWidths+=g.strokes.length;
+    let previous=new Uint8Array(384*384),early=-1,late=0;
+    for(const fraction of frames){
+      lab.seek(stage.startMs+stage.durationMs*fraction);
+      const now=lab.state;
+      check(now.selected===entry,'Glyph selection changed during original stroke');
+      check(now.hardState.physicalPressureMeasured===false,
+        'Unmeasured hardpen was misrepresented as genuine force');
+      check(Number.isFinite(now.hardState.point.x)&&
+        Number.isFinite(now.hardState.point.y),
+        'The hardpen candidate is not finite');
+      check(now.hardProgress>=0&&now.hardProgress<=1,
+        'Hardpen clock moved off the source stroke');
+      const B=await redFlags(lab.svg,lab.tip);
+      const A=await redFlags(lab.baseline.svg,lab.baseline.tip);
+      const compareOld=compare(A.flags,B.flags);
+      if(B.count&&compareOld.lost+compareOld.grown>0)brushDifferent++;
+      const change=compare(previous,B.flags);
+      lost+=change.lost;
+      check(change.lost===0,entry.char+' at '+fraction+
+        ': hardpen earlier red ink disappeared '+change.lost);
+      if(fraction===0)check(B.count===0,'Hardpen starts with instant circle blob');
+      if(fraction===.03)early=B.count;
+      if(fraction===.97)late=B.count;
+      if(fraction>.001&&fraction<.97&&now.active){
+        const x=+lab.tip.getAttribute('cx'),y=+lab.tip.getAttribute('cy');
+        const expected=now.hardState.point;
+        check(Math.hypot(x-expected.x,y-expected.y)<.00002,
+          'Hardpen dot not on exact modeled path');
+        marked++;
+      }
+      previous=B.flags;past++;samples++;
+    }
+    check(early>=0&&late>early*1.8,
+      entry.char+': thin line should grow naturally without start flash');
+    check(row.plan.sourceInkOutlineUsed===false,'Old calligraphy silhouette leaked to B');
+    check(row.plan.reviewed===false,'Unreviewed skeleton claimed authentic');
+    check(plan.width===26,'Hardpen width drifted across glyphs');
+    lab.seek(lab.total);
+    check(lab.rows.every(r=>r.finished.style.display!=='none'),
+      'Hardpen complete glyph does not show all finished thin strokes');
+    stablePreserved++;
+    reports.push({character:g.character,stroke:entry.stroke+1,
+      motionFamily:plan.semantics.kind,
+      fixedWidth:row.active.getAttribute('stroke-width'),
+      smoothed:plan.geometry.smoothedSegments,
+      sourceOutlineUsed:plan.sourceInkOutlineUsed,
+      startRed:0,midRed:early,endRed:late});
+    painted+=late;
+  }
+  check(lost===0&&samples===63&&hardWidths>28,
+    'Rigid ink growth or sample coverage failed');
+  check(brushDifferent>=40,'Right panel still looks like old brush-source silhouettes');
+  check(marked>=28,'Rigidbody pen contact location not tracked enough');
+  check(JSON.stringify(w.ZITIE_SAMPLES.glyphs)===source,
+    'Original source records changed by A2.2');
+  // Direct geometry/control coupling survives a nib width switch.
+  lab.select('水');
+  const t=lab.baseline.timeline.strokes[0];
+  lab.seek(t.startMs+t.durationMs*.55);
+  const clock=lab.elapsed,spatial=lab.state.hardProgress;
+  lab.setWidth(21);
+  check(lab.width===21&&lab.elapsed===clock,
+    'Switching nib thickness reset main clock');
+  check(lab.rows.every(row=>row.active.getAttribute('stroke-width')==='21'));
+  check(Math.abs(lab.state.hardProgress-spatial)<1e-12,
+    'Nib thickness changed the motor trajectory');
+  lab.setWidth(26);
+  for(const v of [.5,1,1.5,2]){
+    lab.setSpeed(v);
+    lab.seek(clock);
+    check(lab.state.hardProgress===spatial,
+      'Playback speed mutated hardpen intrinsic time map');
+  }
+  lab.setSpeed(1);
+  const toggle=w.document.getElementById('showGuide');
+  toggle.click();
+  check(lab.svg.querySelectorAll('path[stroke="#237d8a"]').length===1,
+    'Source-knot skeleton visualization disappeared');
+  toggle.click();
+  lab.seek(t.startMs+t.durationMs*.52);
+  lab.play();
+  check(lab.playing,'Hardpen movie cannot play');
+  lab.pause();
+  check(!lab.playing,'Pause control cannot stop pen');
+  const chart=w.document.getElementById('velocityChart');
+  const data=chart.getContext('2d').getImageData(0,0,chart.width,chart.height).data;
+  let colored=0;
+  for(let i=0;i<data.length;i+=4)
+    if(data[i]<135&&data[i+1]<190&&data[i+2]<210&&data[i+3]>180)colored++;
+  check(colored>50,'No motor-speed chart pixels');
+  this.style.width='390px';
+  await new Promise(r=>setTimeout(r,100));
+  check(w.document.documentElement.scrollWidth<=w.innerWidth+2,
+    'Hardpen lab horizontally overflows 390px screen');
+  const report={status:'PASS',glyphs:7,frames:samples,
+    brushDifferentFrames:brushDifferent,redPixelLoss:lost,
+    uniformNibRows:hardWidths,cursorTrackedFrames:marked,
+    historicSourceOutlinesPreserved:stablePreserved,
+    originalSamplesUnchanged:true,
+    defaultWidth:26,physicallyCalibrated:false,
+    brushInkOutlineUsed:false,mobile390:true,details:reports};
+  document.documentElement.setAttribute('data-result','PASS');
+  out.textContent=JSON.stringify(report,null,2);
+ }catch(e){
+  document.documentElement.setAttribute('data-result','FAIL');
+  out.textContent='FAIL: '+(e.stack||e);
+ }
+});
+</script></body></html>

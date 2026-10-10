@@ -1,0 +1,234 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>A2.2 main hardpen default and legacy brush fallback</title></head><body>
+<h1>Production player pen tools QA</h1><pre id="result">RUNNING</pre>
+<iframe id="demo" src="../index.html" title="Published pen tool selector"
+ style="width:1070px;height:1480px"></iframe>
+<script>
+const fractions=[0,.015,.08,.22,.50,.78,.96];
+function check(ok,msg){if(!ok)throw Error(msg);}
+function compare(a,b){if(a.length!==b.length)throw Error('Rasters differ');
+ let different=0,loss=0;
+ for(let i=0;i<a.length;i++){
+   if(a[i]!==b[i])different++;
+   if(a[i]&&!b[i])loss++;
+ }
+ return {different,loss};
+}
+async function raster(svg,tip,pressure,width=384){
+ const initial=tip.style.display,ring=pressure.getRing();
+ const priorRing=ring?ring.style.display:null;
+ tip.style.display='none';if(ring)ring.style.display='none';
+ try{
+  const markup=new XMLSerializer().serializeToString(svg);
+  const u=URL.createObjectURL(new Blob([markup],{type:'image/svg+xml;charset=utf-8'}));
+  try{
+   const image=new Image();
+   await new Promise((yes,no)=>{
+     image.onload=yes;image.onerror=()=>no(Error('SVG raster failure'));
+     image.src=u;
+   });
+   const canvas=document.createElement('canvas');canvas.width=canvas.height=width;
+   const ctx=canvas.getContext('2d',{willReadFrequently:true});
+   ctx.drawImage(image,0,0,width,width);
+   const px=ctx.getImageData(0,0,width,width).data;
+   const out=new Uint8Array(width*width);
+   for(let i=0,j=0;i<px.length;i+=4,j++){
+     if(px[i]>137&&px[i+1]<115&&px[i+2]<124&&
+        px[i]>px[i+1]*1.48&&px[i+3]>190)out[j]=1;
+   }
+   return out;
+  }finally{URL.revokeObjectURL(u);}
+ }finally{
+  tip.style.display=initial;
+  if(ring)ring.style.display=priorRing;
+ }
+}
+document.getElementById('demo').addEventListener('load',async function(){
+ const result=document.getElementById('result');
+ try{
+  const w=this.contentWindow,d=w.document;
+  const app=w.ZITIE_A1_APP,hard=w.ZITIE_A1_HARDPEN,
+    tool=w.ZITIE_A1_PEN_TOOL,style=w.ZITIE_A1_PEN_STYLE,
+    speeds=w.ZITIE_A1_SPEED;
+  check(app&&hard&&tool&&style&&speeds,'One-clock dual tool UI missing');
+  const buttons=[...d.querySelectorAll('#penToolOptions button')];
+  check(buttons.length===2,'There must be exactly two pen-tool options');
+  check(buttons.map(b=>b.textContent.trim()).join('|')===
+    '硬笔（默认）|毛笔（原版）','Incorrect pen tool labels');
+  check(tool.get()==='hardpen'&&tool.getDefault()==='hardpen',
+    'Ordinary hardpen must be the actual initial default');
+  check(style.get()==='stable','Force style must remain stable by default');
+  check(d.getElementById('hardpenStage').classList.contains('active')&&
+    !d.getElementById('glyphStage').classList.contains('active'),
+    'Initial visible stage is not hardpen');
+  check(d.getElementById('hardpenStage').getAttribute('aria-hidden')==='false'&&
+    d.getElementById('glyphStage').getAttribute('aria-hidden')==='true',
+    'Hidden source brush should not take accessibility priority');
+  check(hard.svg.querySelectorAll('defs mask').length===0,
+    'Rigid nib still uses the old source-painting mask');
+  const glyphs=w.ZITIE_SAMPLES.glyphs;
+  check(glyphs.length===9,'All nine original source examples required');
+  const source=JSON.stringify(glyphs);
+  const chosen={'口':1,'水':0,'月':1,'龠':13};
+  const outputs=[];
+  let frames=0,loss=0,brushDifferences=0,
+    widthRows=0,sourceInkMutations=0,restoreFailures=0,
+    pressureCorrect=0,preservedTransitions=0;
+  for(const g of glyphs){
+    w.ZITIE_A1_GALLERY.selectGlyph(g);
+    check(tool.get()==='hardpen','Glyph selection lost hardpen choice');
+    check(hard.glyph===g&&app.timeline.glyph===g,
+      'Original source order and hardpen diverged');
+    check(app.rows.length===hard.rows.length&&
+      hard.rows.length===g.expected_stroke_count,
+      'Hardpen omitted or inserted strokes');
+    for(const row of hard.rows){
+      check(row.plan.sourceInkOutlineUsed===false&&
+        row.plan.reviewed===false,'Hardpen model claims unsupported source approval');
+      check(row.active.getAttribute('stroke-width')==='26'&&
+        row.finished.getAttribute('stroke-width')==='26'&&
+        row.finished.getAttribute('fill')==='none',
+        'Hardpen no longer draws continuous uniform-width line');
+      widthRows++;
+    }
+    const idx=chosen[g.character]??0,stage=app.timeline.strokes[idx];
+    let previous=new Uint8Array(384*384);
+    for(const t of fractions){
+      app.seekElapsed(stage.startMs+stage.durationMs*t);
+      const record=hard.state;
+      check(record.strokeIndex===idx&&record.penWidth===26&&
+        !record.brushSilhouetteUsed&&!record.physicalPressureMeasured,
+        'Rigid ink state invalid');
+      check(Math.abs(app.elapsed-record.frame.elapsedMs)<.00001,
+        'Dual-stage clock not synchronized');
+      check(Number.isFinite(record.point.x)&&Number.isFinite(record.point.y),
+        'Hardpen tip geometric path is nonfinite');
+      const hardPixels=await raster(hard.svg,hard.tip,style);
+      const brushPixels=await raster(app.svg,app.tip,style);
+      const growth=compare(previous,hardPixels);
+      loss+=growth.loss;
+      check(growth.loss===0,
+        g.character+' at '+t+': visible hardpen red pixels disappeared '+growth.loss);
+      const different=compare(brushPixels,hardPixels).different;
+      if(different>0)brushDifferences++;
+      if(t===0)check(hardPixels.every(p=>p===0),
+        g.character+' has red ink visible without contact');
+      if(t>=.015&&t<.96){
+        const tipPoint=[
+          +hard.tip.getAttribute('cx'),+hard.tip.getAttribute('cy')];
+        check(hard.tip.style.display!=='none'&&
+          Math.hypot(tipPoint[0]-record.point.x,
+            tipPoint[1]-record.point.y)<.0001,
+          'Hardpen marker detached from rigid-nib line');
+      }
+      previous=hardPixels;
+      frames++;
+    }
+    check(app.rows.every((r,i)=>r.solid.getAttribute('d')===
+      g.strokes[i].outline),'Legacy brush original vector changed');
+    outputs.push({character:g.character,strokes:g.strokes.length});
+  }
+  check(frames===63&&loss===0&&brushDifferences>35,
+    'Hardpen is not distinct from brush or trace has ink regression');
+  check(JSON.stringify(glyphs)===source,'Canonical glyph sources mutated');
+  // Verify brush is still the EXACT original current renderer, and
+  // switching while PLAYING leaves one original time and speed untouched.
+  const water=glyphs.find(g=>g.character==='水');
+  w.ZITIE_A1_GALLERY.selectGlyph(water);
+  const step=app.timeline.strokes[0];
+  app.seekElapsed(step.startMs+step.durationMs*.54);
+  speeds.set(2);
+  const clock=app.elapsed,record=app.getState();
+  const existing=await raster(app.svg,app.tip,style);
+  tool.set('brush');
+  check(tool.get()==='brush'&&
+    d.getElementById('glyphStage').classList.contains('active')&&
+    !d.getElementById('hardpenStage').classList.contains('active')&&
+    app.elapsed===clock&&app.speed===2,
+    'Legacy brush switch reset time/rate or showed wrong stage');
+  check(app.tip.getAttribute('r')==='8'&&
+    app.tip.getAttribute('stroke')==='#FFFFFF',
+    'Original brush cursor was not restored');
+  const paintedLegacy=await raster(app.svg,app.tip,style);
+  sourceInkMutations+=compare(existing,paintedLegacy).different;
+  check(sourceInkMutations===0,
+    'Legacy source-backed brush ink changed on tool selection');
+  tool.set('hardpen');
+  check(hard.tip.getAttribute('r')==='5'&&
+    hard.tip.getAttribute('stroke')==='#BD3945',
+    'Default hardpen has old white brush circle');
+  const beforeHard=await raster(hard.svg,hard.tip,style);
+  style.set('simulated');
+  const forced=style.getState(),ring=style.getRing();
+  check(forced.mode==='simulated'&&forced.pressure>0&&
+    forced.measured===false&&ring&&ring.isConnected&&
+    ring.parentNode===hard.tip.parentNode,
+    'Simulated force does not apply to default hardpen marker');
+  check(hard.tip.getAttribute('stroke')!=='#FFFFFF',
+    'Synthetic hardpen uses forbidden white tip outline');
+  const forcedPixels=await raster(hard.svg,hard.tip,style);
+  pressureCorrect+=compare(beforeHard,forcedPixels).different;
+  check(pressureCorrect===0,
+    'Contact-pressure style modified rigid-nib ink itself');
+  tool.set('brush');
+  check(style.get()==='simulated'&&
+    style.getRing().parentNode===app.tip.parentNode,
+    'Pressure style was lost rather than moved to retained brush');
+  tool.set('hardpen');
+  check(style.get()==='simulated'&&
+    style.getRing().parentNode===hard.tip.parentNode,
+    'Switching back failed to restore hardpen force marker');
+  style.set('stable');
+  check(!style.getRing()?.isConnected&&hard.tip.getAttribute('r')==='5',
+    'Stable hardpen contact marker was not restored');
+  // Prove the tool switch does not disrupt playback.
+  app.play();
+  check(app.playing,'Source timeline did not start');
+  const hold=app.elapsed;
+  for(const mode of ['brush','hardpen','brush','hardpen']){
+    tool.set(mode);
+    check(app.playing&&app.elapsed===hold&&app.speed===2&&
+      app.getState().index===record.index,
+      'Tool switch interrupted active playback');
+    preservedTransitions++;
+  }
+  app.pause();
+  app.seekElapsed(step.startMs+step.durationMs*.2);
+  tool.set('brush');
+  app.replayStroke();app.pause();
+  check(tool.get()==='brush'&&app.speed===2,
+    'Replay unexpectedly forgot selected brush tool');
+  tool.set('hardpen');
+  app.showAll();
+  check(hard.rows.every(row=>row.finished.style.display!=='none')&&
+    !hard.tip.style.display.includes('initial'),
+    'Completed hardpen glyph missing finished strokes');
+  speeds.set(1);
+  this.style.width='390px';
+  await new Promise(resolve=>setTimeout(resolve,110));
+  check(w.document.documentElement.scrollWidth<=w.innerWidth+2,
+    'Dual-stage selector overflows 390px device');
+  const rectA=d.getElementById('glyphStage').getBoundingClientRect();
+  const rectB=d.getElementById('hardpenStage').getBoundingClientRect();
+  check(Math.abs(rectA.width-rectB.width)<.5&&
+    Math.abs(rectA.left-rectB.left)<.5&&
+    Math.abs(rectA.top-rectB.top)<.5,
+    'Rigid/brush SVG stages do not align on mobile');
+  const report={result:'PASS',glyphs:glyphs.length,frames,
+    originalSourceUnchanged:true,sourceInkMutations,
+    hardpenPixelLoss:loss,hardpenVsBrushDifferenceFrames:brushDifferences,
+    verifiedUniformWidthRows:widthRows,defaultTool:'hardpen',
+    retainedTool:'brush',pressureInkMismatch:pressureCorrect,
+    simulatedPressureStillWorks:true,
+    sourceClockPreserved:true,playingToolSwitches:preservedTransitions,
+    mobile390:true,originalStylePreserved:true,
+    physicallyCalibrated:false,details:outputs};
+  d.documentElement.setAttribute('data-main-hardpen-default','PASS');
+  document.documentElement.setAttribute('data-result','PASS');
+  result.textContent=JSON.stringify(report,null,2);
+ }catch(e){
+  document.documentElement.setAttribute('data-result','FAIL');
+  result.textContent='FAIL: '+(e.stack||e);
+ }
+});
+</script></body></html>

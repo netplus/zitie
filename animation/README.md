@@ -1,3 +1,11 @@
+## A2.2 钢笔／硬笔默认，毛笔原版保留（开发候选）
+
+用户指定[主动画页面](index.html)默认使用**硬笔**；当前偏毛笔笔形的原字帖SVG动画**作为「毛笔（原版）」保留并可直接切换**。硬笔由独立 `hardpen-stage.js` 渲染近乎恒线宽的圆头中心线笔迹，不再填满原毛笔粗细轮廓；主播放控制唯一，工具切换时保持同一时间点、原字形、倍率和播放状态。A1.6「稳定版／模拟笔压版」继续作为另一项独立风格设置，两种工具均可选择。对照的[硬笔独立研究页面](experiments/hardpen-lab.html)可用于进一步观察。
+
+本版不使用毛笔的夸张蓄势、藏锋、逆锋，也不将模拟力度与钢笔线宽直接挂钩；来源骨架仍未通过教学审核。实现依据及限制见 [A2_HARDPEN_SCOPE](../docs/A2_HARDPEN_SCOPE.md)、[Issue #110](https://github.com/netplus/zitie/issues/110)。当前等待真实浏览器测试、最终 A1+Book 双CI、PR 与 Pages 部署，原稳定毛笔填充、v0.5.1 PDF/manifest 均保持不变。
+
+---
+
 ## A2.1 汉字基本笔画动作语法实验（已独立部署）
 
 用户要求从横、竖、撇、折、钩本身研究真实动作，而不再把重点仅放在笔速或模拟笔压上。新增 [独立的基本笔画 A/B 实验](experiments/stroke-grammar-lab.html)：A侧使用原发布稳定版，B侧同一原始SVG字形与圆头填充，但按基本笔画语义重分配笔内进度，笔尖沿原轮廓约束/保留折角的细采样曲线移动，并可查看分段动作、候选中心线和速度变化图。该方案不改变主页面正式默认动作，也不重新声称medians教学有效。详细实现/论文和风险见 [A2_BASIC_STROKE_MODEL](../docs/A2_BASIC_STROKE_MODEL.md)、[Issue #107](https://github.com/netplus/zitie/issues/107)。[PR #108](https://github.com/netplus/zitie/pull/108) 已合并 `13d0f8ae1ea37149f9dd4305c168b87e7b7b5c80`；精确 PR HEAD `206fa730038d7b7e9fb0378b5d11016d6d2f1aea` 的 [动画 CI](https://github.com/netplus/zitie/actions/runs/38036907848) 和 [Book CI](https://github.com/netplus/zitie/actions/runs/38036907780) 双通过，合入后的 [Pages #38037395286](https://github.com/netplus/zitie/actions/runs/38037395286) 真正部署成功。可访问[在线A2.1基本笔画动作实验](https://netplus.github.io/zitie/animation/experiments/stroke-grammar-lab.html)：63项Node测试、7个范例×8帧、原红色墨迹差异0、54段曲线细化、1段源回退、0越源轮廓。轨迹语义仍未教学审核，不替换稳定播放器与正式v0.5.1 PDF。

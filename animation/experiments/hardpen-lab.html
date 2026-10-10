@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A2.2 · 钢笔／硬笔楷书动作研究</title>
+<style>
+:root{--red:#b63b48;--ink:#26343f;--line:#dde3e7;--sub:#667780}
+*{box-sizing:border-box}
+body{margin:0;background:#f5f6f7;color:var(--ink);font:14px/1.56 system-ui,"PingFang SC","Microsoft YaHei",sans-serif}
+main{max-width:1230px;margin:auto;padding:22px 18px 34px}
+h1{font-size:clamp(22px,3vw,30px);margin:6px 0 4px}
+h2{font-size:17px;margin:0}
+a{color:#a03645}
+.subtitle,.hint{font-size:12px;color:var(--sub)}
+.banner{padding:12px 15px;margin:13px 0;background:#fefaf0;border:1px solid #e8dec7;border-radius:12px;font-size:13px}
+.controls,.stagebar,.plot{margin:12px 0;background:#fff;border:1px solid var(--line);border-radius:12px;padding:13px 15px}
+.controls{display:flex;gap:10px 18px;align-items:center;flex-wrap:wrap}
+.glyphs,.actions,.widths,.speeds{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+button{font:inherit;background:white;border:1px solid #d9dfe2;border-radius:8px;padding:7px 11px;cursor:pointer;min-height:35px}
+button[aria-pressed="true"]{color:#a13240;border-color:#cfa2aa;background:#fff2f4;font-weight:700}
+button:focus-visible,input:focus-visible{outline:3px solid #cf969e;outline-offset:2px}
+.primary{background:var(--red);color:#fff;border-color:var(--red)}
+.compare{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.panel{background:white;border-radius:13px;overflow:hidden;border:1px solid var(--line)}
+.panel header{padding:12px 16px 0;display:flex;gap:8px;justify-content:space-between;align-items:center}
+.panel header small{font-size:11px;color:var(--sub)}
+.panel svg{display:block;width:100%;max-width:520px;aspect-ratio:1;margin:auto}
+.panel footer{border-top:1px solid var(--line);padding:10px 15px;color:var(--sub);font-size:12px;min-height:58px}
+.seekrow{display:flex;gap:12px;align-items:center}
+#seek{flex:1;width:100%;accent-color:var(--red)}
+#clock{min-width:104px;text-align:right;font-variant-numeric:tabular-nums;color:var(--sub)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:13px}
+.stat{background:#fff;border:1px solid var(--line);border-radius:11px;padding:10px}
+.stat small{display:block;color:var(--sub)}
+.stat strong{font-size:17px;display:block}
+#velocityChart{display:block;width:100%;max-height:180px;height:auto}
+#explain{font-size:12px;color:var(--sub)}
+@media(max-width:860px){.compare{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:500px){main{padding:13px 9px}.controls{gap:8px}.seekrow{flex-wrap:wrap}#clock{text-align:left}.panel{min-width:0}}
+</style>
+<script defer src="../samples.js"></script>
+<script defer src="../motion.js"></script>
+<script defer src="../timeline.js"></script>
+<script defer src="../brush-union.js"></script>
+<script defer src="../player.js"></script>
+<script defer src="./stroke-primitives.js"></script>
+<script defer src="./hardpen-model.js"></script>
+<script defer src="../hardpen-ink-union.js"></script>
+<script defer src="./hardpen-lab.js"></script>
+</head><body><main>
+<a href="../index.html">← 稳定版笔顺播放器（保持不变）</a>
+<h1>钢笔／硬笔楷书 · 基本笔画运动实验</h1>
+<p class="subtitle">A2.2：横、竖、撇、折、钩。研究普通硬笔的笔尖运动与相对稳定的线宽，不模拟毛笔和弹性软笔尖。</p>
+<div class="banner"><strong>这是研究原型，不是已经审核的标准硬笔字帖。</strong> 左侧沿用现有书法风格 SVG 字形作对照；右侧不填充它的大幅粗细变化轮廓，而由原始中心线的候选连续轨迹用相对固定线宽画出硬笔线条。轨迹仍继承未经教学审核的源节点，笔尖宽度按 SVG 单位定义，非实测毫米数。没有毛笔式藏锋、蓄墨或夸张的转锋停顿。</div>
+<section class="controls">
+  <div class="glyphs" id="glyphs" role="group" aria-label="选择硬笔基本笔画"></div>
+  <div class="actions">
+    <button class="primary" type="button" id="play">▶ 同步播放</button>
+    <button type="button" id="restart">↺ 重播这一笔</button>
+    <button type="button" id="showAll">完成全字</button>
+    <button type="button" id="showGuide" aria-pressed="false">显示骨架轨迹</button>
+  </div>
+  <div class="widths" id="penWidths" role="group" aria-label="硬笔线条宽度">
+    <span>线宽</span><button data-width="21" aria-pressed="false">较细</button>
+    <button data-width="26" aria-pressed="true">常规</button>
+  </div>
+  <div class="speeds" id="speedButtons" role="group" aria-label="播放速度">
+    <span>速度</span>
+    <button data-speed="0.5" aria-pressed="false">0.5×</button>
+    <button data-speed="1" aria-pressed="true">1×</button>
+    <button data-speed="1.5" aria-pressed="false">1.5×</button>
+    <button data-speed="2" aria-pressed="false">2×</button>
+  </div>
+</section>
+<div class="compare">
+  <section class="panel">
+    <header><h2>A · 现有来源字形</h2><small>保留原书法轮廓及稳定播放器</small></header>
+    <svg id="baselineStage" role="img" aria-label="带书法粗细轮廓的当前笔顺动画"></svg>
+    <footer>此侧供对照，某些起收笔及轮廓本身具有毛笔式特征，因此不能作为硬笔线宽的物理依据。</footer>
+  </section>
+  <section class="panel">
+    <header><h2>B · 普通硬笔（候选）</h2><small>细圆笔尖、连续均匀墨迹</small></header>
+    <svg id="hardpenStage" role="img" aria-label="近乎恒定线宽的硬笔中心线书写动画"></svg>
+    <footer>候选运动轨迹保留原始转折节点；笔迹采用单一硬笔线宽，不施加宽圆刷、毛笔粗细轮廓、藏锋或逆锋动作。</footer>
+  </section>
+</div>
+<section class="stagebar"><div class="seekrow">
+  <label for="seek">共同时间轴</label><input type="range" id="seek" min="0" max="1000" value="0">
+  <output id="clock">0.00 / 0.00s</output>
+</div></section>
+<div class="stats">
+  <div class="stat"><small>硬笔当前动作</small><strong id="phase">待落笔</strong></div>
+  <div class="stat"><small>旧版行笔进度</small><strong id="oldProgress">0%</strong></div>
+  <div class="stat"><small>硬笔行笔进度</small><strong id="newProgress">0%</strong></div>
+  <div class="stat"><small>宽度变化（模型）</small><strong id="widthStatus">固定线宽</strong></div>
+</div>
+<section class="plot">
+  <h2>运动速度对比（归一化，不是实测笔速）</h2>
+  <p class="hint">灰色：当前来源播放器；蓝绿色：硬笔短促减速与自然提笔模型。</p>
+  <canvas id="velocityChart" width="1000" height="165"></canvas>
+  <p id="explain"></p>
+</section>
+<p class="hint">方法与限制：<a href="https://github.com/netplus/zitie/blob/main/docs/A2_HARDPEN_SCOPE.md">硬笔实验的事实依据和研发基线</a>。现有A1.6稳定版／模拟笔压主站未改，201项审定数据与字帖PDF不变。</p>
+</main></body></html>

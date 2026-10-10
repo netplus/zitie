@@ -44,6 +44,12 @@ document.getElementById('demo').addEventListener('load',async function(){
  const output=document.getElementById('result');
  try{
   const w=this.contentWindow,d=w.document;
+  // This A1.6 historical regression remains about the original stable
+  // brush-shaped renderer. A2.2 now defaults to hardpen; explicitly select
+  // the retained brush so its legacy 45-frame baseline stays meaningful.
+  check(w.ZITIE_A1_PEN_TOOL?.get()==='hardpen',
+    'The main default should now be ordinary hardpen');
+  w.ZITIE_A1_PEN_TOOL.set('brush');
   const app=w.ZITIE_A1_APP,style=w.ZITIE_A1_PEN_STYLE;
   const speed=w.ZITIE_A1_SPEED;
   check(app&&style&&speed,'Main page did not initialize stable A1 player');
