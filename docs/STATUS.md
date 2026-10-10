@@ -1,3 +1,9 @@
+# A1.6 主动画页面两档笔压风格（2026-10-10，待CI与发布）
+
+用户要求在已部署的稳定版主页面直接选择「稳定版」或「模拟笔压版」，不再仅依靠独立 A/B 研究页。实现上新增 **笔压风格** 两个直接点击按钮，默认稳定版；模拟笔压复用 A1.5 的独立合成压力和接触圈、归一化力度与曲线，只作用于显示笔尖，与 A1.3 原始圆头填充和按源轮廓修正的圆圈位置共用同一时间轴。模式切换不清零播放位置、不暂停、不改变速度、当前汉字或原始SVG轮廓。全部9个试播字、45个选定时间点和竖钩、横折钩纳入逐像素/掩码回归，另检查窄屏可用性。见 [A1.6方案](A1_PEN_STYLE_SELECTOR.md)、[Issue #104](https://github.com/netplus/zitie/issues/104)。此处为分支候选，须最终 PR HEAD 动画/全书 CI 通过、合入并确认 Pages 实际部署后才称上线；合成压力非实测，正式 v0.5.1 PDF/manifest/201笔顺证据保持不变。
+
+---
+
 # A1.5 稳定版合成笔压独立实验已合入并部署（2026-10-10）
 
 根据用户明确要求已调研实测笔压资料与算法：CASIA-onDo/OHFC 的 X/Y/F/S/T、DCOH-120K 的压力与倾斜数据（均有限制性学术研究许可，不将原始样本放入公开仓库）；Schomaker/Plamondon 和 Gatouillat 等研究说明不能直接从笔速唯一推断笔压。详见 [研究记录](A1_PRESSURE_RESEARCH.md) 与 [Issue #101](https://github.com/netplus/zitie/issues/101)。[PR #102](https://github.com/netplus/zitie/pull/102) 已合入 `main`，合并 SHA `c2c77a911aaba88b665ca6d2e20062d75fb199d7`。最终 PR HEAD `7cb6895e80a2612c6fc9ee7bca00a5ff3f96fa9e` 的 [动画 CI #38007144993](https://github.com/netplus/zitie/actions/runs/38007144993) 与 [全书 CI #38007144972](https://github.com/netplus/zitie/actions/runs/38007144972) 均 completed/success；合入后 [Pages #38007775010](https://github.com/netplus/zitie/actions/runs/38007775010) 已完成 Configure/Upload/Deploy。[线上笔压 A/B 实验](https://netplus.github.io/zitie/animation/experiments/pressure-lab.html) 独立上线，默认[稳定播放器](https://netplus.github.io/zitie/animation/)保持原样。53/53 Node 测试、6字×10帧 Chrome 双侧红色墨迹差异0像素、圆圈位置不同步0、合成力度变化30次。B 侧仅用未标定笔画语义平滑控制显示压力环与压力曲线；既不替换 A1.4 椭圆模型，也不修改 v0.5.1 PDF、manifest、201来源数据与教学审核。**尚未取得或拟合任何受限真实压力样本；实验不属于真人笔压或规范教学认证。**

@@ -70,6 +70,26 @@ h1{font-size:clamp(20px,2.4vw,27px);line-height:1.3;margin:0;font-weight:700;let
 .speedOption.active,.speedOption[aria-pressed="true"]{
   border-color:#e4cbd0;background:white;color:var(--accent-dark);
   box-shadow:0 1px 4px #1e2a3518;font-weight:750}
+.penStyleBox{margin-top:14px;padding:12px 14px;background:#fafbfb;border:1px solid #e6e9ea;border-radius:12px}
+.penStyleChoice{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.penStyleLabel{font-size:13px;font-weight:700;color:#3c4b54}
+.penStyleOptions{display:flex;gap:4px;padding:3px;border:1px solid #e2e4e6;
+  border-radius:10px;background:#f0f2f3}
+.penStyleOption{padding:7px 14px;border:1px solid transparent;background:transparent;
+  border-radius:8px;font-size:13px;color:#58656e;min-height:36px}
+.penStyleOption:hover{background:#fff7f8;color:var(--accent-dark)}
+.penStyleOption[aria-pressed="true"]{border-color:#e0b9c0;background:#fff;
+  color:var(--accent-dark);box-shadow:0 1px 4px #1e2a3516;font-weight:750}
+.penStyleHint{margin:7px 0 0;font-size:12px;color:#76818a}
+.pressureDetails{display:grid;grid-template-columns:minmax(175px,.8fr) minmax(0,1fr);
+  align-items:center;gap:12px;margin-top:12px;padding-top:10px;border-top:1px solid #e4e8e9}
+.pressureDetails[hidden]{display:none}
+.pressureTelemetry{display:flex;flex-direction:column;gap:6px;font-size:12px;color:#64717b}
+.pressureTelemetry strong{color:var(--accent-dark);font-size:20px;font-variant-numeric:tabular-nums}
+.pressureMeter{height:9px;border-radius:6px;background:#e7eaec;overflow:hidden}
+#pressureFill{display:block;height:100%;width:0;background:var(--accent)}
+#pressurePhase{font-weight:600;color:#52606a}
+#pressureCurve{display:block;width:100%;max-width:100%;min-width:0;height:auto;max-height:94px}
 .rhythmNote{font-size:12px;color:#78848b;margin:10px 0 0}
 .shortcuts{font-size:12px;color:#89939b;margin-top:13px}
 .library{padding:21px 19px 23px}
@@ -122,6 +142,9 @@ h1{font-size:clamp(20px,2.4vw,27px);line-height:1.3;margin:0;font-weight:700;let
   .glyphPaging{gap:4px}
   .paging{padding:7px;font-size:12px}
   .stageLegend{gap:9px;font-size:11px}
+  .pressureDetails{grid-template-columns:minmax(0,1fr);gap:5px}
+  .penStyleBox{padding:11px}
+  .penStyleOption{padding:7px 10px}
   .shortcuts{display:none}
 }
 @media(prefers-reduced-motion:reduce){
@@ -133,6 +156,9 @@ h1{font-size:clamp(20px,2.4vw,27px);line-height:1.3;margin:0;font-weight:700;let
 <script defer src="./timeline.js"></script>
 <script defer src="./brush-union.js"></script>
 <script defer src="./player.js"></script>
+<script defer src="./experiments/gesture-data.js"></script>
+<script defer src="./experiments/pressure-model.js"></script>
+<script defer src="./pressure-style.js"></script>
 <script defer src="./gallery.js"></script>
 <script defer src="./ui.js"></script>
 </head>
@@ -200,6 +226,28 @@ h1{font-size:clamp(20px,2.4vw,27px);line-height:1.3;margin:0;font-weight:700;let
           </div>
         </div>
       </div>
+      <section class="penStyleBox" aria-label="书写笔压风格">
+        <div class="penStyleChoice">
+          <span class="penStyleLabel" id="penStyleLabel">笔压风格</span>
+          <div class="penStyleOptions" id="penStyleOptions" role="group" aria-labelledby="penStyleLabel">
+            <button type="button" class="penStyleOption" data-pen-style="stable"
+              aria-pressed="true">稳定版</button>
+            <button type="button" class="penStyleOption" data-pen-style="simulated"
+              aria-pressed="false">模拟笔压版</button>
+          </div>
+        </div>
+        <p class="penStyleHint" id="penStyleHint">稳定版 · 原有圆头笔尖与书写节奏</p>
+        <div class="pressureDetails" id="pressureDetails" hidden>
+          <div class="pressureTelemetry">
+            <span>模拟接触力度 <strong id="pressureValue">0%</strong></span>
+            <div class="pressureMeter" aria-hidden="true"><span id="pressureFill"></span></div>
+            <span id="pressurePhase">尚未落笔</span>
+            <span>合成教学效果，不是实测笔压</span>
+          </div>
+          <canvas id="pressureCurve" width="640" height="114"
+            role="img" aria-label="当前笔画模拟力度随空间位置变化"></canvas>
+        </div>
+      </section>
       <p class="rhythmNote" id="rhythmNote">笔内采用非匀速教学节奏：起笔渐快、转折减速、行笔提速、收笔渐慢。倍率按钮只调节整体快慢。</p>
       <div class="shortcuts">快捷键：空格播放/暂停 · A / D 切换字形 · R 从头重播</div>
     </section>
@@ -229,7 +277,7 @@ h1{font-size:clamp(20px,2.4vw,27px);line-height:1.3;margin:0;font-weight:700;let
   <div class="notice">
     <strong>动画工程预览（非教学正式版）。</strong>
     笔顺、填充轮廓保持与已核数据一致；中线来源的起笔、内部转折及钩笔方向尚需独立教学复核。
-    本页采用防自交的独立圆头笔刷并集遮罩与非匀速时间映射；速度是教学演示参数，不是实测笔压/手写速度。
+    两种笔压风格复用同一套防自交圆头笔迹和非匀速时间映射；模拟笔压力度为未标定的教学启发式，不是实测笔压或手写速度。
     <a href="https://github.com/netplus/zitie/blob/main/docs/A1_ANIMATION.md">查看审计与质量门槛</a>
     · <a href="./experiments/pen-lab.html">虚拟笔尖 A/B 实验室（未审定，不替代本播放器）</a>
     · <a href="./experiments/pressure-lab.html">用力大小 A/B 实验（合成笔压，不改稳定版墨迹）</a>
