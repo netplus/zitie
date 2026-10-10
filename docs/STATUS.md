@@ -1,6 +1,6 @@
-# A1.5 稳定版笔压可视化研究与实验（2026-10-10，开发候选）
+# A1.5 稳定版合成笔压独立实验已合入并部署（2026-10-10）
 
-根据用户明确要求已调研实测笔压资料与算法：CASIA-onDo/OHFC 的 X/Y/F/S/T、DCOH-120K 的压力与倾斜数据（均有限制性学术研究许可，不将原始样本放入公开仓库）；Schomaker/Plamondon 和 Gatouillat 等研究说明不能直接从笔速唯一推断笔压。详见 [研究记录](A1_PRESSURE_RESEARCH.md) 与 [Issue #101](https://github.com/netplus/zitie/issues/101)。现正以 A1.3 稳定圆头播放器双实例研发独立 A/B：B 侧仅根据未经标定的笔画语义平滑控制显示压力环/力度曲线，红色墨迹完全按原算法填充并需逐像素一致；不采用 A1.4 椭圆笔尖，不修改 v0.5.1 PDF、manifest、201来源与教学审核状态。CI、PR和 Pages 成功前仅为候选实验，真实数据标定仍待许可和样本匹配。
+根据用户明确要求已调研实测笔压资料与算法：CASIA-onDo/OHFC 的 X/Y/F/S/T、DCOH-120K 的压力与倾斜数据（均有限制性学术研究许可，不将原始样本放入公开仓库）；Schomaker/Plamondon 和 Gatouillat 等研究说明不能直接从笔速唯一推断笔压。详见 [研究记录](A1_PRESSURE_RESEARCH.md) 与 [Issue #101](https://github.com/netplus/zitie/issues/101)。[PR #102](https://github.com/netplus/zitie/pull/102) 已合入 `main`，合并 SHA `c2c77a911aaba88b665ca6d2e20062d75fb199d7`。最终 PR HEAD `7cb6895e80a2612c6fc9ee7bca00a5ff3f96fa9e` 的 [动画 CI #38007144993](https://github.com/netplus/zitie/actions/runs/38007144993) 与 [全书 CI #38007144972](https://github.com/netplus/zitie/actions/runs/38007144972) 均 completed/success；合入后 [Pages #38007775010](https://github.com/netplus/zitie/actions/runs/38007775010) 已完成 Configure/Upload/Deploy。[线上笔压 A/B 实验](https://netplus.github.io/zitie/animation/experiments/pressure-lab.html) 独立上线，默认[稳定播放器](https://netplus.github.io/zitie/animation/)保持原样。53/53 Node 测试、6字×10帧 Chrome 双侧红色墨迹差异0像素、圆圈位置不同步0、合成力度变化30次。B 侧仅用未标定笔画语义平滑控制显示压力环与压力曲线；既不替换 A1.4 椭圆模型，也不修改 v0.5.1 PDF、manifest、201来源数据与教学审核。**尚未取得或拟合任何受限真实压力样本；实验不属于真人笔压或规范教学认证。**
 
 ---
 
