@@ -78,7 +78,7 @@ test('十 口 巾: supporting verticals, regular corners and square enclosure',(
   assert.ok(p.at(-1)[1]-p[1][1]<-250);
   assert.ok(Math.abs(p.at(-1)[0]-p[1][0])<40);
   assert.ok(trial('口',0).geometry.samples[0].x+350<
-    fold.geometry.samples[0].x);
+    fold.revisedControlPoints[1][0]);
 });
 
 test('水 月 巾 hooks are short, directed and end in fine hardpen point',()=>{
