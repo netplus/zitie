@@ -1,3 +1,9 @@
+## A1.6 主页面稳定版／模拟笔压版双风格（研发候选）
+
+用户可以在[主笔顺播放页](index.html)的「笔压风格」中直接选 **稳定版**（默认）或 **模拟笔压版**。两种风格同用稳定 A1.3 圆头墨迹遮罩、笔画时序与纠偏圆圈轨迹；模拟笔压只改变圆形笔尖接触幅度、无白色遮挡的力度环，并显示合成力度和弧长位置曲线。切换时不重置播放位置，选择在切换字形、倍率、重播时持续生效。已增加针对9字27帧的双风格墨迹/掩码一致性、控制状态与移动端的阻断测试。详见 [设计边界](../docs/A1_PEN_STYLE_SELECTOR.md)、[Issue #104](https://github.com/netplus/zitie/issues/104)。当前待最终 CI、PR 和 Pages 验收，不修改 v0.5.1 PDF/原始字形，合成压力不应冒称真实笔压。
+
+---
+
 ## A1.5 合成笔压 A/B 实验已独立上线（2026-10-10）
 
 根据用户反馈，继续以 A1.3 稳定圆头笔迹为准，不用椭圆笔尖代替。独立增加[稳定版 vs 模拟用力 A/B 预览](experiments/pressure-lab.html)：A、B 两侧使用同一真实SVG原轮廓、原始中心线、原填充并集和同一时间轴；**只有 B 的小圆圈接触程度、可选无白圈轮廓和压力曲线变化**，对照原墨迹必须逐像素完全一致。模拟压力是 0–1 合成强度，非力传感器实测/人体标定，且不把速度误当压力。研究数据授权边界、论文和算法详见 [A1.5研究记录](../docs/A1_PRESSURE_RESEARCH.md)、[Issue #101](https://github.com/netplus/zitie/issues/101)。[PR #102](https://github.com/netplus/zitie/pull/102) 已合并为 `c2c77a911aaba88b665ca6d2e20062d75fb199d7`，最终精确提交的 [动画 CI](https://github.com/netplus/zitie/actions/runs/38007144993) 与 [Book integrity](https://github.com/netplus/zitie/actions/runs/38007144972) 双通过；合入的 [GitHub Pages #38007775010](https://github.com/netplus/zitie/actions/runs/38007775010) 已实际部署。可直接打开[合成笔压在线实验](https://netplus.github.io/zitie/animation/experiments/pressure-lab.html)。6字×10帧真实浏览器 A/B 原始墨迹差异0像素，圆圈位置错误0；这不代表获得了真实笔压数据或教学审批。
