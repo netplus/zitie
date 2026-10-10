@@ -1,3 +1,9 @@
+## A2.1 汉字基本笔画动作语法实验（研发候选）
+
+用户要求从横、竖、撇、折、钩本身研究真实动作，而不再把重点仅放在笔速或模拟笔压上。新增 [独立的基本笔画 A/B 实验](experiments/stroke-grammar-lab.html)：A侧使用原发布稳定版，B侧同一原始SVG字形与圆头填充，但按基本笔画语义重分配笔内进度，笔尖沿原轮廓约束/保留折角的细采样曲线移动，并可查看分段动作、候选中心线和速度变化图。该方案不改变主页面正式默认动作，也不重新声称medians教学有效。详细实现/论文和风险见 [A2_BASIC_STROKE_MODEL](../docs/A2_BASIC_STROKE_MODEL.md)、[Issue #107](https://github.com/netplus/zitie/issues/107)。现为开发候选，待真实Chromium逐像素、源轮廓核验、PR最终CI及Pages部署。
+
+---
+
 ## A1.6 主页面稳定版／模拟笔压版双风格（已合入并部署）
 
 用户可以在[主笔顺播放页](index.html)的「笔压风格」中直接选 **稳定版**（默认）或 **模拟笔压版**。两种风格同用稳定 A1.3 圆头墨迹遮罩、笔画时序与纠偏圆圈轨迹；模拟笔压只改变圆形笔尖接触幅度、无白色遮挡的力度环，并显示合成力度和弧长位置曲线。切换时不重置播放位置，选择在切换字形、倍率、重播时持续生效。已增加针对9字45帧的双风格墨迹/掩码一致性、控制状态与移动端的阻断测试。详见 [设计边界](../docs/A1_PEN_STYLE_SELECTOR.md)、[Issue #104](https://github.com/netplus/zitie/issues/104)。[PR #105](https://github.com/netplus/zitie/pull/105) 已合并为 `d055e2d05fcd6c39635e8ec9d15fc234451e7327`，最终 [动画 CI](https://github.com/netplus/zitie/actions/runs/38030438772) 与 [全书 CI](https://github.com/netplus/zitie/actions/runs/38030438681) 双通过，合入后的 [Pages #38030935433](https://github.com/netplus/zitie/actions/runs/38030935433) 已实际部署成功。当前可直接在[主播放页](https://netplus.github.io/zitie/animation/)切换风格。原始墨迹/轮廓保持不变，合成压力不应冒称真实笔压；正式 v0.5.1 PDF 不修改。

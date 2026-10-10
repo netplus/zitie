@@ -1,3 +1,9 @@
+# 当前研发：A2.1 横竖撇折钩基本笔画动作语法（2026-10-10）
+
+用户认为现有轨迹建模不足以表现横、竖、撇、折、钩的真实书写动作。新阶段按 `docs/A2_BASIC_STROKE_MODEL.md`、[Issue #107](https://github.com/netplus/zitie/issues/107) 与 `animation/experiments/stroke-primitives.js`、`stroke-grammar-lab.js/html` 接续。A2.1 必须区分基本笔画的动作语义、受原SVG填充轮廓约束的分段曲线与运动学时序。折角和出钩顶点必须保留原始median，曲线禁止出原轮廓，违约时回退原线段并记录；不准只把全笔画平滑成单曲线。当前新动作轨迹未经教学/真人数据审核，只能作独立A/B研究实验。A/B两侧仍用原A1.3稳定SVG墨迹填充，B只改变笔内语义化时序和显示轨迹；任何时刻不能修改正式 `animation/player.js`、`motion.js`、`brush-union.js`、`timeline.js`、`samples.js`、A1.6两档笔压风格、v0.5.1 299页PDF/manifest、201主项来源审核记录。必须完成Node、真实Chrome轮廓内采样与同空间笔画红墨逐像素对照、最终PR HEAD 动画和Book integrity双CI、真实Pages部署后才可声称实验上线；不得将7个工程例子的通过偷换成201项真实手写已审核。
+
+---
+
 # 当前接续：A1.6 主播放器双笔压风格已上线（2026-10-10）
 
 用户明确要求在已部署的 `animation/index.html` 直接提供两档笔压风格：「稳定版」（默认）、「模拟笔压版」；不用离开主页面。当前实现见 `animation/pressure-style.js`、`animation/ui.js`、`docs/A1_PEN_STYLE_SELECTOR.md`、[Issue #104](https://github.com/netplus/zitie/issues/104)。压力模型仅复用 A1.5 的合成归一化力度和已标识未审定的手势，真实字形源、原稳定 A1.3 圆头墨迹、源轮廓、光学纠偏圆圈位置、按位置变速和201规范数据不动。切换风格必须不暂停、不重置时间或倍率，稳定版恢复精确原始标记。原官方 v0.5.1 PDF/manifest 不动；新增9字×5时间点45帧 Chromium 墨迹/掩码逐像素检查、Node、移动端布局及双CI门槛。[PR #105](https://github.com/netplus/zitie/pull/105) 已合并到 `main`（`d055e2d05fcd6c39635e8ec9d15fc234451e7327`），最终 PR HEAD 动画 CI #38030438772 与全书 CI #38030438681 均 success；合并后 Pages #38030935433 Configure/Upload/Deploy 真正成功，[主页面](https://netplus.github.io/zitie/animation/)可直接切换两档。未有真实笔压授权或标定，不能冒称实际受力。
