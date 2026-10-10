@@ -1,6 +1,6 @@
-## A2.3 楷书字形与骨架规整 A/B（候选实验）
+## A2.3 楷书字形与骨架规整 A/B（已独立上线、待书法复核）
 
-目标从 A2.2 基础等宽硬笔升级为**专业硬笔楷书形态**。现有中心线从毛笔艺术字形派生，不天然符合硬笔楷书结构；仅改笔压和运笔速度不会使横画平直或结构端正。新 [九字楷书对照实验](experiments/regular-kaishu-lab.html) 将当前基础硬笔作为 A，经过横竖方向约束、折钩节点规整、撇捺受控收尖的候选作为 B；两者共用来源汉字笔顺与时间轴。新增 `regular-kaishu-model.js`（形态）和 `regular-kaishu-ink.js`（不可回缩的局部变宽圆头着墨），保留原官方SVG字形和书写顺序不变。详细设计见 [docs/A23_KAISHU_GEOMETRY.md](../docs/A23_KAISHU_GEOMETRY.md)、[Issue #113](https://github.com/netplus/zitie/issues/113)。当前未经真人硬笔轨迹与书法教师审定，**主页面的硬笔默认与毛笔原版尚未改变**，等A/B视觉复核及全部CI过关后再决定是否推广。
+目标从 A2.2 基础等宽硬笔升级为**专业硬笔楷书形态**。现有中心线从毛笔艺术字形派生，不天然符合硬笔楷书结构；仅改笔压和运笔速度不会使横画平直或结构端正。新 [九字楷书对照实验](experiments/regular-kaishu-lab.html) 将当前基础硬笔作为 A，经过横竖方向约束、折钩节点规整、撇捺受控收尖的候选作为 B；两者共用来源汉字笔顺与时间轴。新增 `regular-kaishu-model.js`（形态）和 `regular-kaishu-ink.js`（不可回缩的局部变宽圆头着墨），保留原官方SVG字形和书写顺序不变。详细设计见 [docs/A23_KAISHU_GEOMETRY.md](../docs/A23_KAISHU_GEOMETRY.md)、[Issue #113](https://github.com/netplus/zitie/issues/113)。[PR #114](https://github.com/netplus/zitie/pull/114) 已合并至 `main`（`ab096bc36f0e8664efa453355e746df3746ac6fa`），精确候选 HEAD 的 [动画 CI #38053296972](https://github.com/netplus/zitie/actions/runs/38053296972) 与 [Book CI #38053296950](https://github.com/netplus/zitie/actions/runs/38053296950) 双成功，合并后 [Pages #38094108471](https://github.com/netplus/zitie/actions/runs/38094108471) 真正 Deploy 成功。打开[九字楷书 A/B 研究页面](https://netplus.github.io/zitie/animation/experiments/regular-kaishu-lab.html)查看。77项Node测试、9字40笔、72帧Chrome的墨迹已绘部分0回退、63帧确有形态差异；口封口、月两内横连接已加入阻断测试。**专业楷书笔形与结体尚待人工审核**，特别是水、龠等复杂字；此前部署的主页面默认硬笔/毛笔原版切换和模拟笔压，以及正式PDF/规范数据均不变。
 
 ---
 
