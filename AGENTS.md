@@ -1,6 +1,6 @@
-# 当前开发阶段：A1.6 主播放器双笔压风格（2026-10-10）
+# 当前接续：A1.6 主播放器双笔压风格已上线（2026-10-10）
 
-用户明确要求在已部署的 `animation/index.html` 直接提供两档笔压风格：「稳定版」（默认）、「模拟笔压版」；不用离开主页面。当前实现见 `animation/pressure-style.js`、`animation/ui.js`、`docs/A1_PEN_STYLE_SELECTOR.md`、[Issue #104](https://github.com/netplus/zitie/issues/104)。压力模型仅复用 A1.5 的合成归一化力度和已标识未审定的手势，真实字形源、原稳定 A1.3 圆头墨迹、源轮廓、光学纠偏圆圈位置、按位置变速和201规范数据不动。切换风格必须不暂停、不重置时间或倍率，稳定版恢复精确原始标记。原官方 v0.5.1 PDF/manifest 不动；新增9字×5时间点45帧 Chromium 墨迹/掩码逐像素检查、Node、移动端布局及双CI门槛。仅在最终 PR HEAD 动画和 Book integrity 均 success、完成合入并核实 Pages Configure/Upload/Deploy 后称新主页面正式上线。未有真实笔压授权或标定，不能冒称实际受力。
+用户明确要求在已部署的 `animation/index.html` 直接提供两档笔压风格：「稳定版」（默认）、「模拟笔压版」；不用离开主页面。当前实现见 `animation/pressure-style.js`、`animation/ui.js`、`docs/A1_PEN_STYLE_SELECTOR.md`、[Issue #104](https://github.com/netplus/zitie/issues/104)。压力模型仅复用 A1.5 的合成归一化力度和已标识未审定的手势，真实字形源、原稳定 A1.3 圆头墨迹、源轮廓、光学纠偏圆圈位置、按位置变速和201规范数据不动。切换风格必须不暂停、不重置时间或倍率，稳定版恢复精确原始标记。原官方 v0.5.1 PDF/manifest 不动；新增9字×5时间点45帧 Chromium 墨迹/掩码逐像素检查、Node、移动端布局及双CI门槛。[PR #105](https://github.com/netplus/zitie/pull/105) 已合并到 `main`（`d055e2d05fcd6c39635e8ec9d15fc234451e7327`），最终 PR HEAD 动画 CI #38030438772 与全书 CI #38030438681 均 success；合并后 Pages #38030935433 Configure/Upload/Deploy 真正成功，[主页面](https://netplus.github.io/zitie/animation/)可直接切换两档。未有真实笔压授权或标定，不能冒称实际受力。
 
 ---
 
