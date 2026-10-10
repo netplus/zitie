@@ -1,3 +1,9 @@
+# 当前接续：A1.5 稳定版合成笔压 A/B 实验已独立部署（2026-10-10）
+
+以 `docs/STATUS.md`、`docs/A1_PRESSURE_RESEARCH.md`、`animation/README.md` 和 [Issue #101](https://github.com/netplus/zitie/issues/101) 为入口。[PR #102](https://github.com/netplus/zitie/pull/102) 已合入 `main`，GitHub Pages #38007775010 真实部署成功；独立在线实验 `animation/experiments/pressure-lab.html`。用户明确更偏好 A1.3 稳定圆头笔迹，不推广椭圆笔尖为默认。合成笔压曲线独立于速度、只改变视觉接触圈与力度图表；不能称实测、不能从笔速直接推力。CASIA-onDo/OHFC 与 DCOH-120K 有学术/非商业许可限制，未获授权时禁止下载、加入仓库、用于标定或公开训练。稳定版原SVG字形/medians/墨迹填充、v0.5.1 正式PDF/manifest/201规范数据均保持不变；下一阶段应先做人工自然度复核与数据来源合法性、设备标定，再考虑进一步模型改进。仓库修改继续采用分支、PR、最终HEAD动画与Book CI、实际Pages核实；不使用 chn-ops。
+
+---
+
 # 当前新增开发：A1 汉字笔顺交互动画（2026-10-09）
 
 用户已明确授权在 v0.5.1 之后启动**独立** A1 动画阶段。先读 `docs/A1_ANIMATION.md`、`animation/README.md` 和 `docs/STATUS.md`；只在 A1 路径或必要CI中新增，不把既有发布后 PDF 维护规则理解为禁止本次经过授权的新阶段。永久保持 v0.5.1 及历史正式 PDF、manifest、规范数据/审核记录字节不变；动画轨迹与原矢量审查须分开统计，未经审定的 medians 只能是工程原型。延续 branch/PR/最终HEAD CI 合入流程，来源 #4、纸张 #77 仍独立；不使用 chn-ops。
