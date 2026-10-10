@@ -9,12 +9,16 @@ window.addEventListener('DOMContentLoaded', function () {
   const gallery=window.ZitieGallery;
   const selector=$('glyphGallery'),filterRow=$('batchFilters');
   const play=$('play'),speedButtons=$('speedButtons'),seek=$('timelineSeek');
+  const penStyleButtons=$('penStyleOptions');
+  const penStyle=new window.ZitiePressureStyle.StyleController();
   let speed=1;
   let query='',batch='all',selectedId=null,visibleGlyphs=[];
   const player=new window.ZitiePlayer.StrokePlayer({
     svg:$('glyphStage'),status:$('state'),
     onUpdate(state){
       if(!state)return;
+      const force=penStyle.apply(player,state);
+      updatePressureView(force);
       play.textContent=state.playing?'Ⅱ 暂停':'▶ 播放笔顺';
       play.setAttribute('aria-label',state.playing?'暂停书写动画':'播放书写动画');
       seek.value=String(Math.round(state.elapsedMs/state.totalMs*1000));
@@ -29,6 +33,51 @@ window.addEventListener('DOMContentLoaded', function () {
          (state.playing?'正在书写':'待播放'));
     }
   });
+  const phaseLabels={
+    hover:'未落笔',touch:'轻触起笔',travel:'匀力行笔',
+    pivot:'转锋顿笔',flick:'出钩提笔',lift:'收锋提笔',released:'已离纸'
+  };
+  function drawPressureTrace(force){
+    const canvas=$('pressureCurve'),ctx=canvas.getContext('2d');
+    if(!ctx)return;
+    const w=canvas.width,h=canvas.height;
+    const left=22,right=w-13,top=10,bottom=h-22;
+    ctx.clearRect(0,0,w,h);
+    ctx.fillStyle='#fafbfb';ctx.fillRect(0,0,w,h);
+    ctx.strokeStyle='#e4e8ea';ctx.lineWidth=1;
+    for(const p of [0,.5,1]){
+      const y=bottom-p*(bottom-top);
+      ctx.beginPath();ctx.moveTo(left,y);ctx.lineTo(right,y);ctx.stroke();
+    }
+    ctx.strokeStyle='#b63b48';ctx.lineWidth=3;ctx.lineJoin='round';
+    ctx.beginPath();
+    force.curve.forEach((sample,i)=>{
+      const x=left+(right-left)*sample.progress;
+      const y=bottom-(bottom-top)*sample.pressure;
+      if(i)ctx.lineTo(x,y);else ctx.moveTo(x,y);
+    });
+    ctx.stroke();
+    const at=left+(right-left)*force.progress;
+    ctx.strokeStyle='#287c8d';ctx.lineWidth=1.6;ctx.beginPath();
+    ctx.moveTo(at,top);ctx.lineTo(at,bottom);ctx.stroke();
+    ctx.fillStyle='#287c8d';ctx.beginPath();
+    ctx.arc(at,bottom-force.pressure*(bottom-top),5,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='#6a7780';ctx.font='12px system-ui';
+    ctx.fillText('起',left,bottom+16);ctx.textAlign='right';
+    ctx.fillText('收',right,bottom+16);ctx.textAlign='start';
+  }
+  function updatePressureView(force){
+    const simulated=force.mode==='simulated';
+    $('pressureDetails').hidden=!simulated;
+    $('penStyleHint').textContent=simulated?
+      '模拟笔压版 · 力度随起笔、转锋和收笔渐变；不改变原始墨迹与笔速':
+      '稳定版 · 原有圆头笔尖与书写节奏';
+    if(!simulated)return;
+    $('pressureValue').textContent=Math.round(force.pressure*100)+'%';
+    $('pressureFill').style.width=(force.pressure*100).toFixed(2)+'%';
+    $('pressurePhase').textContent=phaseLabels[force.phase]||force.phase;
+    drawPressureTrace(force);
+  }
   const formatTime=ms=>{
     const seconds=Math.floor(ms/1000);
     return String(Math.floor(seconds/60)).padStart(2,'0')+':'+
@@ -120,6 +169,22 @@ window.addEventListener('DOMContentLoaded', function () {
       button.setAttribute('aria-pressed',String(selected));
     });
   }
+  function setPenStyle(value){
+    const selected=penStyle.setMode(value);
+    penStyleButtons.querySelectorAll('button[data-pen-style]').forEach(button=>{
+      const active=button.dataset.penStyle===selected;
+      button.setAttribute('aria-pressed',String(active));
+    });
+    // Changing the *visual* mode must not call pause(), seek() or
+    // change the selected glyph, elapsed time, speed or active stroke.
+    player.render();
+    return selected;
+  }
+  penStyleButtons.addEventListener('click',event=>{
+    const button=event.target.closest('button[data-pen-style]');
+    if(button&&penStyleButtons.contains(button))
+      setPenStyle(button.dataset.penStyle);
+  });
   speedButtons.addEventListener('click',event=>{
     const button=event.target.closest('button[data-speed]');
     if(button) setSpeed(button.dataset.speed);
@@ -143,6 +208,8 @@ window.addEventListener('DOMContentLoaded', function () {
   selectGlyph(glyphs[0]);
   window.ZITIE_A1_APP=player; // Stable embedding/browser-QA interface.
   window.ZITIE_A1_SPEED={get:()=>speed,set:setSpeed};
+  window.ZITIE_A1_PEN_STYLE={get:()=>penStyle.mode,set:setPenStyle,
+    getState:()=>penStyle.state,getRing:()=>penStyle.ring};
   window.ZITIE_A1_GALLERY={getVisible:()=>visibleGlyphs.slice(),
     getSelectedId:()=>selectedId, selectGlyph, navigate};
 });
