@@ -178,5 +178,10 @@ window.addEventListener('DOMContentLoaded',function(){
     get total(){return total;},get playing(){return playing;},
     get showPressure(){return showPressure;},get state(){return mostRecent;}
   };
-  select(glyphs[0]);
+  // Start with a useful vertical-hook contact frame, not an empty t=0
+  // screenshot. The real source and ink are still unchanged; Replay goes
+  // back to the beginning for full viewing.
+  select('水');
+  const demo=a.timeline.strokes[0];
+  seek(demo.startMs+demo.durationMs*.73);
 });
