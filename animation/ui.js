@@ -10,14 +10,34 @@ window.addEventListener('DOMContentLoaded', function () {
   const selector=$('glyphGallery'),filterRow=$('batchFilters');
   const play=$('play'),speedButtons=$('speedButtons'),seek=$('timelineSeek');
   const penStyleButtons=$('penStyleOptions');
+  const penToolButtons=$('penToolOptions');
   const penStyle=new window.ZitiePressureStyle.StyleController();
+  // One canonical clock: original legacy StrokePlayer owns time/actions;
+  // rigid hardpen renders passively from those same source stroke timestamps.
+  const hardpen=new window.ZitieHardpenStage.HardpenStage({
+    svg:$('hardpenStage'),width:26});
+  let penTool='hardpen'; // User-chosen default is ordinary rigid hardpen.
   let speed=1;
   let query='',batch='all',selectedId=null,visibleGlyphs=[];
   const player=new window.ZitiePlayer.StrokePlayer({
     svg:$('glyphStage'),status:$('state'),
     onUpdate(state){
       if(!state)return;
-      const force=penStyle.apply(player,state);
+      let activePlayer=player,visualState=state;
+      let hardState=null;
+      if(hardpen.glyph===player.timeline?.glyph){
+        hardState=hardpen.render(state);
+        if(penTool==='hardpen'){
+          // Keep hidden legacy renderer unmodified and remove any old halo.
+          penStyle.resetTip(player.tip);
+          activePlayer=hardpen.getAdapter();
+          visualState={...state,progress:hardState.progress};
+        }else{
+          // A1.3 brush remains selectable, byte-for-byte original ink/pen.
+          penStyle.resetTip(hardpen.tip);
+        }
+      }
+      const force=penStyle.apply(activePlayer,visualState);
       updatePressureView(force);
       play.textContent=state.playing?'Ⅱ 暂停':'▶ 播放笔顺';
       play.setAttribute('aria-label',state.playing?'暂停书写动画':'播放书写动画');
@@ -26,7 +46,8 @@ window.addEventListener('DOMContentLoaded', function () {
       $('strokeIndex').textContent='第 '+(state.index+1)+' / '+state.count+' 笔';
       const stroke=player.timeline.glyph.strokes[state.index];
       $('strokeName').textContent=stroke.name_status==='reviewed'?stroke.name:'第'+(state.index+1)+'笔';
-      const motionLabel=state.motion&&state.motion.label;
+      const motionLabel=penTool==='hardpen'&&hardState?
+        hardState.label:state.motion&&state.motion.label;
       $('strokePhase').textContent=state.phase==='finished'?'已完成':
         state.phase==='pause'?'观察笔形':
         (motionLabel ? motionLabel+' · '+(state.playing?'运笔中':'预览位置') :
@@ -88,6 +109,7 @@ window.addEventListener('DOMContentLoaded', function () {
     if(!g)return;
     selectedId=g.main_id;
     player.setGlyph(g);
+    hardpen.setGlyph(g,player.timeline);
     player.setSpeed(speed);
     $('selectedGlyph').textContent=g.character;
     $('selectedMeta').textContent=g.expected_stroke_count+' 画 · '+g.batch_id+
@@ -169,6 +191,32 @@ window.addEventListener('DOMContentLoaded', function () {
       button.setAttribute('aria-pressed',String(selected));
     });
   }
+  function setPenTool(value){
+    if(value!=='hardpen'&&value!=='brush')
+      throw Error('Unsupported writing pen tool');
+    penTool=value;
+    penToolButtons.querySelectorAll('button[data-pen-tool]').forEach(btn=>{
+      btn.setAttribute('aria-pressed',String(btn.dataset.penTool===penTool));
+    });
+    for(const [kind,stage] of [
+      ['hardpen',$('hardpenStage')],['brush',$('glyphStage')]]){
+      const visible=kind===penTool;
+      stage.classList.toggle('active',visible);
+      stage.setAttribute('aria-hidden',String(!visible));
+    }
+    $('penToolHint').textContent=penTool==='hardpen'?
+      '普通硬笔 · 近乎恒定线宽、短促转折、自然提笔；轨迹仍属工程预览':
+      '毛笔（原版）· 保留既有SVG书法轮廓和稳定圆头墨迹';
+    // A visual-only tool choice: elapsed, playing, speed, selected glyph,
+    // and same old timeline must remain identical.
+    if(player.timeline)player.render();
+    return penTool;
+  }
+  penToolButtons.addEventListener('click',event=>{
+    const button=event.target.closest('button[data-pen-tool]');
+    if(button&&penToolButtons.contains(button))
+      setPenTool(button.dataset.penTool);
+  });
   function setPenStyle(value){
     const selected=penStyle.setMode(value);
     penStyleButtons.querySelectorAll('button[data-pen-style]').forEach(button=>{
@@ -206,8 +254,11 @@ window.addEventListener('DOMContentLoaded', function () {
   renderFilters();
   visibleGlyphs=glyphs.slice();
   selectGlyph(glyphs[0]);
-  window.ZITIE_A1_APP=player; // Stable embedding/browser-QA interface.
+  window.ZITIE_A1_APP=player; // Legacy A1.3 source SVG remains accessible for QA.
   window.ZITIE_A1_SPEED={get:()=>speed,set:setSpeed};
+  window.ZITIE_A1_HARDPEN=hardpen;
+  window.ZITIE_A1_PEN_TOOL={get:()=>penTool,set:setPenTool,
+    getState:()=>hardpen.state,getDefault:()=> 'hardpen'};
   window.ZITIE_A1_PEN_STYLE={get:()=>penStyle.mode,set:setPenStyle,
     getState:()=>penStyle.state,getRing:()=>penStyle.ring};
   window.ZITIE_A1_GALLERY={getVisible:()=>visibleGlyphs.slice(),
