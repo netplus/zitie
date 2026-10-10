@@ -1,3 +1,11 @@
+# 当前优先事项：A2.2 钢笔/硬笔默认、保留原毛笔工具（2026-10-10）
+
+用户对A2.1毛笔式效果提出纠正：下阶段研究方向为普通钢笔/硬笔楷书，而**毛笔原版本身仍须保留并可切换**，主页面「书写工具」默认硬笔。设计/真实来源限制见 `docs/A2_HARDPEN_SCOPE.md`、[Issue #110](https://github.com/netplus/zitie/issues/110)。A2.2 的独立 `animation/hardpen-stage.js` 与 `animation/experiments/hardpen-model.js` 沿着受限幅度细化的原median中心线，以恒线宽圆头着墨；原毛笔 `animation/player.js` 的 source-outline mask、brush-union、A1.3笔尖纠偏、时序均不覆盖。二工具同步唯一 A1 时间轴，切换不暂停、不重置字形/倍率/笔画；A1.6笔压风格稳定版/模拟版在两工具上仍可切换，但它只调小笔尖接触提示而不改变硬笔墨迹粗细。由来源毛笔字形抽取的medians仍为未经教学审核的工程骨架，不得因几何测试通过称为真实硬笔规范。
+
+候选合入门槛：Node、原毛笔回归、7字硬笔63帧单调填充、主站9字63帧双工具切换/压感、390px视图；最终PR HEAD A1+Book integrity双CI成功、再合入main并确认Pages实际Configure/Upload/Deploy。绝不修改正式v0.5.1 299页PDF、manifest、201规范来源记录/审核或将A2实验直接扩展成全字库验证；不使用chn-ops。
+
+---
+
 # 当前接续：A2.1 基本笔画动作语法实验已部署（2026-10-10）
 
 用户认为现有轨迹建模不足以表现横、竖、撇、折、钩的真实书写动作。新阶段按 `docs/A2_BASIC_STROKE_MODEL.md`、[Issue #107](https://github.com/netplus/zitie/issues/107) 与 `animation/experiments/stroke-primitives.js`、`stroke-grammar-lab.js/html` 接续。A2.1 必须区分基本笔画的动作语义、受原SVG填充轮廓约束的分段曲线与运动学时序。折角和出钩顶点必须保留原始median，曲线禁止出原轮廓，违约时回退原线段并记录；不准只把全笔画平滑成单曲线。当前新动作轨迹未经教学/真人数据审核，只能作独立A/B研究实验。A/B两侧仍用原A1.3稳定SVG墨迹填充，B只改变笔内语义化时序和显示轨迹；任何时刻不能修改正式 `animation/player.js`、`motion.js`、`brush-union.js`、`timeline.js`、`samples.js`、A1.6两档笔压风格、v0.5.1 299页PDF/manifest、201主项来源审核记录。[PR #108](https://github.com/netplus/zitie/pull/108) 已合入 `main`，真实合并提交 `13d0f8ae1ea37149f9dd4305c168b87e7b7b5c80`，最终 PR HEAD `206fa730038d7b7e9fb0378b5d11016d6d2f1aea` 的动画 CI #38036907848、Book CI #38036907780 双通过，合入后 Pages #38037395286 完成 Configure/Upload/Deploy。[独立线上A2.1实验](https://netplus.github.io/zitie/animation/experiments/stroke-grammar-lab.html) 可直接试用，7字56帧、源SVG红墨0差异、54段曲线细化、1段回退、0越界，63项Node测试通过。这个结果仅是工程几何与可复现动作检查，不准冒称201项已真人教学审核。接下来A2.2要对横竖撇折钩逐笔做专家自然度复核和合法采集的真实轨迹标定，再讨论改动默认A1.6稳定播放器。
