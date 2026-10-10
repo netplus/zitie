@@ -31,6 +31,7 @@ jobs:
           node --check animation/motion.js
           node --check animation/timeline.js
           node --check animation/player.js
+          node --check animation/hardpen-ink-union.js
           node --check animation/hardpen-stage.js
           node --check animation/brush-union.js
           node --check animation/pressure-style.js
