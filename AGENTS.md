@@ -1,3 +1,9 @@
+# 当前研发：A2.3 专业硬笔楷书规整（2026-10-10）
+
+用户拒绝把 A2.2 基础等宽描线称为专业硬笔书法，要求楷书结构、基本笔画形态和整字工整性。真实根因是 source `median` 继承毛笔风格，横画「一」就有不必要波浪。新候选见 `docs/A23_KAISHU_GEOMETRY.md`、`animation/experiments/regular-kaishu-model.js`、`regular-kaishu-ink.js`、`regular-kaishu-lab.js/html` 和 [Issue #113](https://github.com/netplus/zitie/issues/113)。A2.3 以结构/方向为先，轻度右仰的横画、坚挺竖画、折的单拐点、短小出尖钩、撇捺末段收尖与跨笔画平行间距作质量门槛。新的九字示范点**全部是未教学审批的工程骨架**，不可代替真人书写轨迹或导入来源原SVG。先独立A/B 9字40笔、72帧 Chrome 原墨累积不回退和长短横/垂直/短钩 Node 门槛；认真人工看九字缩略图后才讨论默认推广。保留 A2.2 现有硬笔、A1.3 毛笔可切换、A1.6笔压双风格、v0.5.1 299页PDF/manifest/201来源审核状态；不提交第三方字体/商业字帖。GitHub 只能分支-PR-最终HEAD动画/Book CI双成功后合入，核实 Pages 实际部署；无验证不可宣称专业楷书完成。不用 chn-ops。
+
+---
+
 # 当前接续：A2.2 硬笔默认、毛笔原版可切换，均已主站部署（2026-10-10）
 
 用户对A2.1毛笔式效果提出纠正：下阶段研究方向为普通钢笔/硬笔楷书，而**毛笔原版本身仍须保留并可切换**，主页面「书写工具」默认硬笔。设计/真实来源限制见 `docs/A2_HARDPEN_SCOPE.md`、[Issue #110](https://github.com/netplus/zitie/issues/110)。A2.2 的独立 `animation/hardpen-stage.js` 与 `animation/experiments/hardpen-model.js` 沿着受限幅度细化的原median中心线，以恒线宽圆头着墨；原毛笔 `animation/player.js` 的 source-outline mask、brush-union、A1.3笔尖纠偏、时序均不覆盖。二工具同步唯一 A1 时间轴，切换不暂停、不重置字形/倍率/笔画；A1.6笔压风格稳定版/模拟版在两工具上仍可切换，但它只调小笔尖接触提示而不改变硬笔墨迹粗细。由来源毛笔字形抽取的medians仍为未经教学审核的工程骨架，不得因几何测试通过称为真实硬笔规范。
