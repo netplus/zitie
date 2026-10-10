@@ -63,7 +63,7 @@ document.getElementById('demo').addEventListener('load',async function(){
   check(source.length===9,'Nine source-backed glyphs required');
   const original=JSON.stringify(source);
   const indexByChar={'口':1,'水':0,'月':1,'龠':13};
-  const fractions=[.06,.45,.91];
+  const fractions=[.06,.24,.45,.70,.91];
   let frames=0,pixelMismatch=0,maskMismatch=0,markerMismatch=0,
     meaningfulPressure=0,backToStable=0,activeStyleFrames=0,
     restoredTime=0,restoredGlyphs=0;
@@ -147,7 +147,7 @@ document.getElementById('demo').addEventListener('load',async function(){
    restoredGlyphs++;
   }
   check(frames===source.length*fractions.length&&pixelMismatch===0&&
-    maskMismatch===0&&markerMismatch===0&&meaningfulPressure>10,
+    maskMismatch===0&&markerMismatch===0&&meaningfulPressure>=27,
     'Incomplete or nonidentical pressure styles');
   check(restoredTime===frames&&backToStable===frames&&restoredGlyphs===9,
     'Style switching lost time or glyph state');
