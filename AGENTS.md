@@ -1,6 +1,6 @@
-# 当前研发：A2.3 专业硬笔楷书规整（2026-10-10）
+# 当前接续：A2.3 楷书 A/B 研究实验已部署、主站硬笔待专业复核（2026-10-11）
 
-用户拒绝把 A2.2 基础等宽描线称为专业硬笔书法，要求楷书结构、基本笔画形态和整字工整性。真实根因是 source `median` 继承毛笔风格，横画「一」就有不必要波浪。新候选见 `docs/A23_KAISHU_GEOMETRY.md`、`animation/experiments/regular-kaishu-model.js`、`regular-kaishu-ink.js`、`regular-kaishu-lab.js/html` 和 [Issue #113](https://github.com/netplus/zitie/issues/113)。A2.3 以结构/方向为先，轻度右仰的横画、坚挺竖画、折的单拐点、短小出尖钩、撇捺末段收尖与跨笔画平行间距作质量门槛。新的九字示范点**全部是未教学审批的工程骨架**，不可代替真人书写轨迹或导入来源原SVG。先独立A/B 9字40笔、72帧 Chrome 原墨累积不回退和长短横/垂直/短钩 Node 门槛；认真人工看九字缩略图后才讨论默认推广。保留 A2.2 现有硬笔、A1.3 毛笔可切换、A1.6笔压双风格、v0.5.1 299页PDF/manifest/201来源审核状态；不提交第三方字体/商业字帖。GitHub 只能分支-PR-最终HEAD动画/Book CI双成功后合入，核实 Pages 实际部署；无验证不可宣称专业楷书完成。不用 chn-ops。
+用户拒绝把 A2.2 基础等宽描线称为专业硬笔书法，要求楷书结构、基本笔画形态和整字工整性。真实根因是 source `median` 继承毛笔风格，横画「一」就有不必要波浪。新候选见 `docs/A23_KAISHU_GEOMETRY.md`、`animation/experiments/regular-kaishu-model.js`、`regular-kaishu-ink.js`、`regular-kaishu-lab.js/html` 和 [Issue #113](https://github.com/netplus/zitie/issues/113)。A2.3 以结构/方向为先，轻度右仰的横画、坚挺竖画、折的单拐点、短小出尖钩、撇捺末段收尖与跨笔画平行间距作质量门槛。新的九字示范点**全部是未教学审批的工程骨架**，不可代替真人书写轨迹或导入来源原SVG。[PR #114](https://github.com/netplus/zitie/pull/114) 已合入 `main`（`ab096bc36f0e8664efa453355e746df3746ac6fa`）。其最终 HEAD `17669b2dad0c5c1b1875e3b251bd7fa48e5c4669` 的 A1 CI #38053296972、Book CI #38053296950 双成功，Pages #38094108471 在合并提交上实际Deploy成功。[九字 A/B 实验](https://netplus.github.io/zitie/animation/experiments/regular-kaishu-lab.html) 已上线：77 Node，9字40笔，72帧0已写墨迹回退，63帧新旧形态确不同，口/月底部与内部横画已做跨笔画结构连接验证。此仅表示实验可用，**水/龠等复杂字仍不能当作专业硬笔楷书规范**；不能以自动指标通过代替教师人工鉴定，不能直接改主播放器的默认硬笔，原始A1.3毛笔、A1.6压力和v0.5.1 PDF/manifest/201教案审核记录继续保持原样。保留 A2.2 现有硬笔、A1.3 毛笔可切换、A1.6笔压双风格、v0.5.1 299页PDF/manifest/201来源审核状态；不提交第三方字体/商业字帖。GitHub 只能分支-PR-最终HEAD动画/Book CI双成功后合入，核实 Pages 实际部署；无验证不可宣称专业楷书完成。不用 chn-ops。
 
 ---
 
