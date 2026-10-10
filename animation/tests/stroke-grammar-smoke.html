@@ -1,0 +1,213 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<title>A2.1 source-backed basic-stroke action geometry, ink and time QA</title></head>
+<body><h1>A2.1 tested source medians, constrained curves and phase-aligned inks</h1>
+<pre id="result">RUNNING</pre>
+<iframe id="lab" src="../experiments/stroke-grammar-lab.html"
+ style="width:1230px;height:1550px" title="A2 basic stroke research demo"></iframe>
+<script>
+const fractions=[0,.025,.10,.26,.45,.63,.82,.97];
+function check(v,why){if(!v)throw Error(why);}
+async function raster(svg,tip,guide,resolution){
+ const old=tip.style.display,oldGuide=guide?guide.style.display:null;
+ tip.style.display='none';if(guide)guide.style.display='none';
+ try{
+  const source=new XMLSerializer().serializeToString(svg);
+  const u=URL.createObjectURL(new Blob([source],{type:'image/svg+xml;charset=utf-8'}));
+  try{
+   const img=new Image();
+   await new Promise((yes,no)=>{
+     img.onload=yes;img.onerror=()=>no(Error('SVG failed to rasterize'));img.src=u;
+   });
+   const cv=document.createElement('canvas');cv.width=cv.height=resolution;
+   const ctx=cv.getContext('2d',{willReadFrequently:true});
+   ctx.drawImage(img,0,0,resolution,resolution);
+   const pixels=ctx.getImageData(0,0,resolution,resolution).data;
+   const flags=new Uint8Array(resolution*resolution);
+   let count=0;
+   for(let i=0,j=0;i<pixels.length;i+=4,j++){
+    if(pixels[i]>137&&pixels[i+1]<115&&pixels[i+2]<124&&
+      pixels[i]>pixels[i+1]*1.48&&pixels[i+3]>190){flags[j]=1;count++;}
+   }
+   return {flags,count};
+  }finally{URL.revokeObjectURL(u);}
+ }finally{tip.style.display=old;if(guide)guide.style.display=oldGuide;}
+}
+function diff(a,b){
+ check(a.length===b.length,'Raster extents differ');
+ let mismatches=0;
+ for(let i=0;i<a.length;i++)if(a[i]!==b[i])mismatches++;
+ return mismatches;
+}
+function invert(profile,p){
+ if(p<=0)return 0;if(p>=1)return 1;
+ let lo=0,hi=1;
+ for(let i=0;i<42;i++){
+  const t=(lo+hi)*.5;
+  if(profile.progressAt(t)<p)lo=t;else hi=t;
+ }
+ return (lo+hi)*.5;
+}
+function actualContainment(svg,stroke,plan){
+ const group=svg.querySelector('g[transform]');
+ const path=svg.ownerDocument.createElementNS('http://www.w3.org/2000/svg','path');
+ path.setAttribute('d',stroke.outline);
+ path.setAttribute('fill','#000');path.setAttribute('opacity','0');
+ group.append(path);
+ try{
+  check(typeof path.isPointInFill==='function','SVG fill probe absent');
+  let invalid=0,inspected=0;
+  for(const p of plan.geometry.samples){
+   inspected++;
+   if(!path.isPointInFill(new DOMPoint(p.x,p.y)))invalid++;
+  }
+  return {inspected,invalid};
+ }finally{path.remove();}
+}
+document.getElementById('lab').addEventListener('load',async function(){
+ const out=document.getElementById('result');
+ try{
+  const w=this.contentWindow,lab=w.ZITIE_A2_LAB;
+  check(lab&&lab.baseline&&lab.experimental,'Cannot initialize A2 offline demo');
+  check(lab.examples.length===7,'Missing five basic stroke family examples');
+  const source=JSON.stringify(w.ZITIE_SAMPLES.glyphs);
+  check(w.document.querySelectorAll('#glyphButtons button').length===7,
+    'Missing direct basic stroke choices');
+  check(lab.speed===1,'Global speed must default to 1x');
+  const reports=[];
+  let frames=0,zeroInkDifferences=0,
+    sourceOutside=0,smoothed=0,rejected=0,retimed=0,
+    tracked=0,exactOutlines=0,invalidMotion=0;
+  const resolution=384;
+  for(const item of lab.examples){
+   lab.select(item);
+   const g=lab.glyph,p=lab.plan,idx=item.index,
+     stage=lab.baseline.timeline.strokes[idx];
+   const row=lab.experimental.rows[idx],stroke=g.strokes[idx];
+   check(p.sem.reviewedTeachingTrajectory===false,
+     'A2 guessing has been mislabeled teacher-reviewed');
+   check(p.sourceMedianUnchanged&&p.sourceOutlineUnchanged&&
+      p.canonicalStrokeOrderUnchanged,'A2 changed original teaching data');
+   check(p.geometry.verification==='source_svg_fill_probe',
+     'Connected source SVG fill must validate the proposed path');
+   check(row.solid.getAttribute('d')===stroke.outline&&
+      lab.baseline.rows[idx].solid.getAttribute('d')===stroke.outline,
+      'A/B did not use byte-identical original filled strokes');
+   check(p.geometry.samples.length>stroke.median.length,
+     'A2 path was not sampled at fine spatial precision');
+   const contour=actualContainment(lab.experimental.svg,stroke,p);
+   check(contour.invalid===p.geometry.outsideSourceSamples,
+     'Geometry source containment metadata is inconsistent');
+   sourceOutside+=contour.invalid;
+   smoothed+=p.geometry.smoothedSegments;
+   rejected+=p.geometry.rejectedSegments;
+   check(lab.pathGuide?.getAttribute('d').startsWith('M '),
+     'Experimental curve was not drawn');
+   // 0-to-1 times belong to the SAME original stroke clock; B is retimed
+   // by the semantic velocity profile but still paints only source ink.
+   for(const t of fractions){
+    const time=stage.startMs+stage.durationMs*t;
+    lab.seek(time);
+    const now=lab.state;
+    check(now.glyph===item.character&&now.sourceStroke===idx,
+      'Stroke selection or timeline changed unexpectedly');
+    check(now.state.source==='engineering_preview_not_teaching_reviewed',
+      'Unreviewed trajectory was given false teaching status');
+    check(Number.isFinite(now.state.point.x)&&
+      Number.isFinite(now.state.point.y)&&
+      Number.isFinite(now.experimentalProgress),
+      'Invalid experimental point or position');
+    const elapsed=lab.experimental.elapsed;
+    check(elapsed>=stage.startMs-1e-3&&elapsed<=stage.endMs+1e-3,
+      'Experimental time extrapolated outside original source stroke');
+    if(t>.10&&t<.97&&Math.abs(now.experimentalProgress-now.sourceProgress)>.003)
+      retimed++;
+    const pA=w.ZitieTimeline.frameAt(lab.baseline.timeline,time);
+    const pB=w.ZitieTimeline.frameAt(lab.experimental.timeline,
+      lab.experimental.elapsed);
+    check(Math.abs(pB.progress-now.experimentalProgress)<.00003,
+      'Semantic time remapping diverged from stable mask space');
+    if(t>.02&&t<.97){
+      check(lab.experimental.tip.style.display!=='none',
+        'A2 visible cursor missing');
+      const cursorError=Math.hypot(
+        +lab.experimental.tip.getAttribute('cx')-now.state.point.x,
+        +lab.experimental.tip.getAttribute('cy')-now.state.point.y);
+      check(cursorError<.002,'A2 marker diverged from constrained trajectory');
+      tracked++;
+    }
+    // Compare the SAME spatial percent, not the same wall-clock time.
+    const referenceTime=stage.startMs+stage.durationMs*
+      invert(stage.motion,now.experimentalProgress);
+    lab.baseline.elapsed=referenceTime;
+    lab.baseline.render();
+    const a=await raster(lab.baseline.svg,lab.baseline.tip,null,resolution);
+    const b=await raster(lab.experimental.svg,lab.experimental.tip,
+      lab.pathGuide,resolution);
+    const difference=diff(a.flags,b.flags);
+    zeroInkDifferences+=difference;
+    check(difference===0,item.character+' t='+t+
+      ' mismatched original red source contour pixels: '+difference);
+    // Restore baseline shared-clock position after this independent
+    // spatially-aligned test; the next lab.seek resets both.
+    lab.baseline.elapsed=time;
+    lab.baseline.render();
+    frames++;
+   }
+   lab.seek(lab.total);
+   check(lab.baseline.rows.every((r,i)=>
+     r.solid.getAttribute('d')===g.strokes[i].outline),
+     'Baseline final original SVG silhouette mutated');
+   check(lab.experimental.rows.every((r,i)=>
+     r.solid.getAttribute('d')===g.strokes[i].outline),
+     'Experimental final original SVG silhouette mutated');
+   exactOutlines+=g.strokes.length;
+   reports.push({glyph:item.character,stroke:idx+1,
+     primitive:p.sem.kind,smoothed:p.geometry.smoothedSegments,
+     rejected:p.geometry.rejectedSegments,
+     sourceOutside:p.geometry.outsideSourceSamples,
+     maxDeviation:+p.geometry.maxDeviation.toFixed(3),
+     folded:p.sem.foldVertex??null,hooked:p.sem.hookVertex??null});
+  }
+  check(retimed>=12,
+    'Semantic timing showed no meaningful fold/hook motion difference');
+  check(tracked>20&&zeroInkDifferences===0,
+    'New virtual marker violated source ink identity');
+  check(smoothed>8,'No actual geometric curve refinement detected');
+  check(JSON.stringify(w.ZITIE_SAMPLES.glyphs)===source,
+    'Source characters/medians were mutated by the experimental engine');
+  lab.select('水');
+  const before=JSON.stringify(lab.glyph.strokes);
+  const stage=lab.baseline.timeline.strokes[0];
+  lab.seek(stage.startMs+stage.durationMs*.6);
+  const keep=lab.state.experimentalProgress,at=lab.elapsed;
+  for(const v of [.5,1,1.5,2,3]){
+    lab.setSpeed(v);
+    lab.seek(at);
+    check(Math.abs(lab.state.experimentalProgress-keep)<1e-12,
+      'Global multiplier changed intrinsic movement geometry');
+  }
+  check(before===JSON.stringify(lab.glyph.strokes),
+    'Global speed mutated original median');
+  check(lab.speed===3,'Five shared speed choices unavailable');
+  const chart=w.document.getElementById('velocityChart'),
+    ctx=chart.getContext('2d'),pix=ctx.getImageData(0,0,chart.width,chart.height).data;
+  let colored=0;
+  for(let i=0;i<pix.length;i+=4)
+    if(pix[i]<120&&pix[i+1]<180&&pix[i+2]<205&&pix[i+3]>170)colored++;
+  check(colored>120,'A2 velocity chart not drawn');
+  const report={result:'PASS',glyphs:lab.examples.length,frames,
+    redInkDifferences:zeroInkDifferences,semanticRetimedFrames:retimed,
+    candidateGeomSmoothedSegments:smoothed,
+    sourceFallbackSegments:rejected,sourceOutsideSamples:sourceOutside,
+    trackedCursorFrames:tracked,exactOriginalStrokeOutlines:exactOutlines,
+    sourceGlyphsUnchanged:true,teachingTrajectoryReviewed:false,
+    humanTimeMeasurements:false,resolution,
+    details:reports};
+  document.documentElement.setAttribute('data-result','PASS');
+  out.textContent=JSON.stringify(report,null,2);
+ }catch(e){
+  document.documentElement.setAttribute('data-result','FAIL');
+  out.textContent='FAIL: '+(e.stack||String(e));
+ }
+});
+</script></body></html>
