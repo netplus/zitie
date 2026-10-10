@@ -1,6 +1,6 @@
-## A1.5 模拟笔压研究及稳定版 A/B（候选实验）
+## A1.5 合成笔压 A/B 实验已独立上线（2026-10-10）
 
-根据用户反馈，继续以 A1.3 稳定圆头笔迹为准，不用椭圆笔尖代替。独立增加[稳定版 vs 模拟用力 A/B 预览](experiments/pressure-lab.html)：A、B 两侧使用同一真实SVG原轮廓、原始中心线、原填充并集和同一时间轴；**只有 B 的小圆圈接触程度、可选无白圈轮廓和压力曲线变化**，对照原墨迹必须逐像素完全一致。模拟压力是 0–1 合成强度，非力传感器实测/人体标定，且不把速度误当压力。研究数据授权边界、论文和算法详见 [A1.5研究记录](../docs/A1_PRESSURE_RESEARCH.md)、[Issue #101](https://github.com/netplus/zitie/issues/101)。实际发布要经过最终 A1 Chrome/Book CI、PR 合入与 Pages 部署；当前不要称上线。
+根据用户反馈，继续以 A1.3 稳定圆头笔迹为准，不用椭圆笔尖代替。独立增加[稳定版 vs 模拟用力 A/B 预览](experiments/pressure-lab.html)：A、B 两侧使用同一真实SVG原轮廓、原始中心线、原填充并集和同一时间轴；**只有 B 的小圆圈接触程度、可选无白圈轮廓和压力曲线变化**，对照原墨迹必须逐像素完全一致。模拟压力是 0–1 合成强度，非力传感器实测/人体标定，且不把速度误当压力。研究数据授权边界、论文和算法详见 [A1.5研究记录](../docs/A1_PRESSURE_RESEARCH.md)、[Issue #101](https://github.com/netplus/zitie/issues/101)。[PR #102](https://github.com/netplus/zitie/pull/102) 已合并为 `c2c77a911aaba88b665ca6d2e20062d75fb199d7`，最终精确提交的 [动画 CI](https://github.com/netplus/zitie/actions/runs/38007144993) 与 [Book integrity](https://github.com/netplus/zitie/actions/runs/38007144972) 双通过；合入的 [GitHub Pages #38007775010](https://github.com/netplus/zitie/actions/runs/38007775010) 已实际部署。可直接打开[合成笔压在线实验](https://netplus.github.io/zitie/animation/experiments/pressure-lab.html)。6字×10帧真实浏览器 A/B 原始墨迹差异0像素，圆圈位置错误0；这不代表获得了真实笔压数据或教学审批。
 
 ---
 

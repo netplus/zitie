@@ -2,6 +2,13 @@
 
 2026-10-10 · [Issue #101](https://github.com/netplus/zitie/issues/101)
 
+## Reproducible experiment result and deployment (2026-10-10)
+
+[PR #102](https://github.com/netplus/zitie/pull/102) was merged as `c2c77a911aaba88b665ca6d2e20062d75fb199d7`; candidate HEAD `7cb6895e80a2612c6fc9ee7bca00a5ff3f96fa9e` passed [A1 Chromium #38007144993](https://github.com/netplus/zitie/actions/runs/38007144993) and [Book integrity #38007144972](https://github.com/netplus/zitie/actions/runs/38007144972). The actual merge SHA completed [GitHub Pages Configure/Upload/Deploy #38007775010](https://github.com/netplus/zitie/actions/runs/38007775010).
+
+**[Open opt-in pressure A/B lab](https://netplus.github.io/zitie/animation/experiments/pressure-lab.html)**. The 6 selected source glyphs × 10 frames yielded `inkPixelDifferences = 0`, `markerSyncErrors = 0`, 30 meaningful synthetic pressure changes, 36 nonzero contact frames and 53 passing Node tests. A 水 vertical-hook Chrome screenshot is included in the A1 CI artifact. The standard A1.3 stable player remains unchanged and unreviewed original medians retain their status. Those results are limited to deterministic synthetic contact, **not** licensed real measurements or a fit to physical force.
+
+
 ## Decision and scope
 
 User prefers the **A1.3 stable round-brush/player** over the A1.4 ellipse-contact experiment. Keep the stable painter, its source outlines, medians, stroke order, kinematic timeline and source-front-aligned round cursor unchanged. Add a separate pressure **demonstration** in an opt-in A/B page only. Synthetic normalized intensity is **not** measured pressure, absolute force, an empirically fitted coefficient, or teaching approval.
