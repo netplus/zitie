@@ -113,9 +113,9 @@ test('action timings are monotone with distinct fold/hook dynamics',()=>{
 });
 
 test('straight, fall-off, fold and hook profiles have distinct time-density signatures',()=>{
-  const plan=name=>{const {g,stroke,index}=pick(name,0);
+  const plan=(name,index=0)=>{const {g,stroke}=pick(name,index);
     return P.makePlan(stroke,P.semantics(g,index));};
-  const horizontal=plan('一'),vertical=plan('十'),sweep=plan('人'),hook=plan('水');
+  const horizontal=plan('一'),vertical=plan('十',1),sweep=plan('人'),hook=plan('水');
   assert.notDeepEqual(horizontal.timing.timeTable,vertical.timing.timeTable);
   assert.ok(sweep.timing.speedDensityAt(.95)<sweep.timing.speedDensityAt(.30),
     'Falling stroke should gain relative speed toward release');
