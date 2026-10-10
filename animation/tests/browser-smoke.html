@@ -40,6 +40,11 @@ async function redPixels(svg,tip){
 document.getElementById('demo').addEventListener('load',async function(){
  try{
   const w=this.contentWindow,d=w.document,app=w.ZITIE_A1_APP;
+  // A2.2 defaults to a physically more rigid hardpen. Keep this original
+  // A1 source SVG/controller regression on its retained brush mode.
+  check(w.ZITIE_A1_PEN_TOOL?.get()==='hardpen',
+    'Main page should initially show the new rigid hardpen renderer');
+  w.ZITIE_A1_PEN_TOOL.set('brush');
   const $=id=>d.getElementById(id);
   const tile=id=>d.querySelector('button[data-glyph-id="'+id+'"]');
   check(app&&app.rows.length===1,'one glyph loaded on startup');
