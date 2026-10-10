@@ -1,6 +1,6 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8">
 <title>A2.3 Kaishu regular geometry / immutable hardpen ink QA</title>
-<style>body{font:14px system-ui;margin:12px}#gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:7px;max-width:900px}#gallery article{display:flex;align-items:center;gap:7px;height:148px;border:1px solid #ddd}#gallery article strong{width:45px}#gallery article svg{height:140px;width:140px}</style>
+<style>body{font:15px system-ui;margin:12px}#result{position:absolute;left:-99999px;top:-99999px}#gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;max-width:1100px}#gallery article{display:flex;align-items:center;gap:10px;height:205px;border:1px solid #ddd;border-radius:8px}#gallery article strong{width:80px;padding-left:8px}#gallery article svg{height:196px;width:196px}</style>
 </head><body>
 <h1>A2.3 original hardpen against regular-script structural candidate</h1>
 <pre id="result">RUNNING</pre><div id="gallery"></div>
@@ -54,7 +54,7 @@ function preview(svg,pen,name){
  const clone=svg.cloneNode(true);
  const cTip=clone.querySelector('circle[data-pen-tool]');
  if(cTip)cTip.style.display='none';
- clone.style.width='140px';clone.style.height='140px';
+ clone.style.width='196px';clone.style.height='196px';
  card.append(clone);
  document.getElementById('gallery').append(card);
 }
