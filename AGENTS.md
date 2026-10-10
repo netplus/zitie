@@ -1,8 +1,8 @@
-# 当前优先事项：A2.2 钢笔/硬笔默认、保留原毛笔工具（2026-10-10）
+# 当前接续：A2.2 硬笔默认、毛笔原版可切换，均已主站部署（2026-10-10）
 
 用户对A2.1毛笔式效果提出纠正：下阶段研究方向为普通钢笔/硬笔楷书，而**毛笔原版本身仍须保留并可切换**，主页面「书写工具」默认硬笔。设计/真实来源限制见 `docs/A2_HARDPEN_SCOPE.md`、[Issue #110](https://github.com/netplus/zitie/issues/110)。A2.2 的独立 `animation/hardpen-stage.js` 与 `animation/experiments/hardpen-model.js` 沿着受限幅度细化的原median中心线，以恒线宽圆头着墨；原毛笔 `animation/player.js` 的 source-outline mask、brush-union、A1.3笔尖纠偏、时序均不覆盖。二工具同步唯一 A1 时间轴，切换不暂停、不重置字形/倍率/笔画；A1.6笔压风格稳定版/模拟版在两工具上仍可切换，但它只调小笔尖接触提示而不改变硬笔墨迹粗细。由来源毛笔字形抽取的medians仍为未经教学审核的工程骨架，不得因几何测试通过称为真实硬笔规范。
 
-候选合入门槛：Node、原毛笔回归、7字硬笔63帧单调填充、主站9字63帧双工具切换/压感、390px视图；最终PR HEAD A1+Book integrity双CI成功、再合入main并确认Pages实际Configure/Upload/Deploy。绝不修改正式v0.5.1 299页PDF、manifest、201规范来源记录/审核或将A2实验直接扩展成全字库验证；不使用chn-ops。
+[PR #111](https://github.com/netplus/zitie/pull/111) 已合并 `ddd360f95872264fe74131c37b8275901fece769`；其最终精确HEAD `9f8d3e9947f0aeefda8910797cb6d752874d5ce8` 的 A1 CI #38040209141 和 Book CI #38040209229 双成功，合并后 Pages #38040703826 完成实际 Configure/Upload/Deploy。主站[硬笔默认 / 毛笔可切换](https://netplus.github.io/zitie/animation/)真实上线；69 Node、7字硬笔63帧、9字主站63帧、硬笔已写墨迹0回退、毛笔原字形0修改、4次连续播放中的工具切换、390px布局均成功。今后硬笔研发在此双工具架构上研究起笔、折角、撇钩与真实压感标定，不直接覆写毛笔A1.3源轮廓与原正式v0.5.1 PDF或201来源审核记录。硬笔当前仍是未教学批准的工程演示。绝不修改正式v0.5.1 299页PDF、manifest、201规范来源记录/审核或将A2实验直接扩展成全字库验证；不使用chn-ops。
 
 ---
 
