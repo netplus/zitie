@@ -1,3 +1,9 @@
+# 当前开发阶段：A1.6 主播放器双笔压风格（2026-10-10）
+
+用户明确要求在已部署的 `animation/index.html` 直接提供两档笔压风格：「稳定版」（默认）、「模拟笔压版」；不用离开主页面。当前实现见 `animation/pressure-style.js`、`animation/ui.js`、`docs/A1_PEN_STYLE_SELECTOR.md`、[Issue #104](https://github.com/netplus/zitie/issues/104)。压力模型仅复用 A1.5 的合成归一化力度和已标识未审定的手势，真实字形源、原稳定 A1.3 圆头墨迹、源轮廓、光学纠偏圆圈位置、按位置变速和201规范数据不动。切换风格必须不暂停、不重置时间或倍率，稳定版恢复精确原始标记。原官方 v0.5.1 PDF/manifest 不动；新增9字×5时间点45帧 Chromium 墨迹/掩码逐像素检查、Node、移动端布局及双CI门槛。仅在最终 PR HEAD 动画和 Book integrity 均 success、完成合入并核实 Pages Configure/Upload/Deploy 后称新主页面正式上线。未有真实笔压授权或标定，不能冒称实际受力。
+
+---
+
 # 当前接续：A1.5 稳定版合成笔压 A/B 实验已独立部署（2026-10-10）
 
 以 `docs/STATUS.md`、`docs/A1_PRESSURE_RESEARCH.md`、`animation/README.md` 和 [Issue #101](https://github.com/netplus/zitie/issues/101) 为入口。[PR #102](https://github.com/netplus/zitie/pull/102) 已合入 `main`，GitHub Pages #38007775010 真实部署成功；独立在线实验 `animation/experiments/pressure-lab.html`。用户明确更偏好 A1.3 稳定圆头笔迹，不推广椭圆笔尖为默认。合成笔压曲线独立于速度、只改变视觉接触圈与力度图表；不能称实测、不能从笔速直接推力。CASIA-onDo/OHFC 与 DCOH-120K 有学术/非商业许可限制，未获授权时禁止下载、加入仓库、用于标定或公开训练。稳定版原SVG字形/medians/墨迹填充、v0.5.1 正式PDF/manifest/201规范数据均保持不变；下一阶段应先做人工自然度复核与数据来源合法性、设备标定，再考虑进一步模型改进。仓库修改继续采用分支、PR、最终HEAD动画与Book CI、实际Pages核实；不使用 chn-ops。
