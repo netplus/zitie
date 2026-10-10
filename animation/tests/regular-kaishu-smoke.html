@@ -1,0 +1,188 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<title>A2.3 Kaishu regular geometry / immutable hardpen ink QA</title>
+<style>body{font:15px system-ui;margin:12px}#result{position:absolute;left:-99999px;top:-99999px}#gallery{display:grid;grid-template-columns:repeat(2,1fr);gap:9px;max-width:1100px}#gallery article{display:flex;align-items:center;gap:10px;height:205px;border:1px solid #ddd;border-radius:8px}#gallery article strong{width:80px;padding-left:8px}#gallery article svg{height:196px;width:196px}</style>
+</head><body>
+<h1>A2.3 original hardpen against regular-script structural candidate</h1>
+<pre id="result">RUNNING</pre><div id="gallery"></div>
+<iframe id="demo" src="../experiments/regular-kaishu-lab.html"
+ title="Kaishu live research" style="width:1160px;height:1650px"></iframe>
+<script>
+function check(v,why){if(!v)throw Error(why);}
+const frames=[0,.02,.08,.19,.43,.69,.91,.995];
+async function raster(svg,tip,n=384){
+ const original=tip.style.display;
+ tip.style.display='none';
+ try{
+  const serialized=new XMLSerializer().serializeToString(svg);
+  const url=URL.createObjectURL(new Blob([serialized],{type:'image/svg+xml;charset=utf-8'}));
+  try{
+   const img=new Image();
+   await new Promise((ok,fail)=>{
+    img.onload=ok;img.onerror=()=>fail(Error('Cannot rasterize Kaishu SVG'));
+    img.src=url;
+   });
+   const canvas=document.createElement('canvas');
+   canvas.width=canvas.height=n;
+   const ctx=canvas.getContext('2d',{willReadFrequently:true});
+   ctx.drawImage(img,0,0,n,n);
+   const pixels=ctx.getImageData(0,0,n,n).data;
+   const flags=new Uint8Array(n*n);
+   let count=0;
+   for(let i=0,j=0;i<pixels.length;i+=4,j++){
+    if(pixels[i]>137&&pixels[i+1]<115&&pixels[i+2]<124&&
+      pixels[i]>pixels[i+1]*1.48&&pixels[i+3]>190){
+      flags[j]=1;count++;
+    }
+   }
+   return {flags,count};
+  }finally{URL.revokeObjectURL(url);}
+ }finally{tip.style.display=original;}
+}
+function compare(a,b){
+ check(a.length===b.length,'Raster extents differ');
+ let lost=0,different=0;
+ for(let i=0;i<a.length;i++){
+  if(a[i]&&!b[i])lost++;
+  if(a[i]!==b[i])different++;
+ }
+ return {lost,different};
+}
+function preview(svg,pen,name){
+ const card=document.createElement('article');
+ const title=document.createElement('strong');title.textContent=name+' / '+pen;
+ card.append(title);
+ const clone=svg.cloneNode(true);
+ const cTip=clone.querySelector('circle[data-pen-tool]');
+ if(cTip)cTip.style.display='none';
+ clone.style.width='196px';clone.style.height='196px';
+ card.append(clone);
+ document.getElementById('gallery').append(card);
+}
+document.getElementById('demo').addEventListener('load',async function(){
+ const out=document.getElementById('result');
+ try{
+  const w=this.contentWindow,d=w.document,lab=w.ZITIE_A23_KAISHU;
+  check(lab&&lab.entries.length===9,'Nine Kaishu exemplar selectors missing');
+  check(lab.old&&lab.candidate&&lab.old!==lab.candidate,
+    'Kaishu A/B used the same physical renderer');
+  check(lab.glyph.character==='一','Initial glyph must expose source wobble');
+  const original=JSON.stringify(w.ZITIE_SAMPLES.glyphs),K=w.ZitieKaishuModel;
+  let inkLoss=0,redDifferenceFrames=0,framesDone=0,
+    activeTipCorrect=0,smoothInkWidthRows=0,sourceChanged=0;
+  const details=[];
+  for(const item of lab.entries){
+    lab.select(item);
+    const g=lab.glyph,prev=new Uint8Array(384*384);
+    check(lab.candidate.rows.length===g.strokes.length&&
+      lab.old.rows.length===g.strokes.length,'Missing source strokes');
+    check(lab.candidate.svg.querySelectorAll('mask').length===0,
+      'Kaishu hardpen is a copied traditional source contour mask');
+    for(const row of lab.candidate.rows){
+      check(row.isImmutableKaishuUnion,'No irreversible capsule ink');
+      check(row.hint.children.length===row.fragments.length&&
+        row.finished.children.length===row.fragments.length,
+        'Kaishu gray guide width is not source-aligned');
+      check(row.plan.sourceInkOutlineUsed===false&&
+        row.plan.kaishuStandardClaim===false,
+        'Unreviewed geometry is misrepresented as normative');
+      const widths=row.fragmentWidths;
+      check(widths.every(v=>Number.isFinite(v)&&v>0&&v<=34),
+        'Kaishu width became nonfinite or brush-wide');
+      check(Math.max(...widths)/Math.min(...widths)<=10,
+        'Kaishu nib is deforming like a traditional brush');
+      smoothInkWidthRows++;
+    }
+    const stage=lab.timeline.strokes[item.index],candidate=lab.candidate,
+      old=lab.old;
+    let prevCount=0,changed=0,maxRed=0;
+    for(const frac of frames){
+      lab.seek(stage.startMs+stage.durationMs*frac);
+      const state=lab.state;
+      check(state.frame.index===item.index,
+        'Spatially aligned original timelines selected different stroke');
+      check(state.new.frame.elapsedMs===state.old.frame.elapsedMs,
+        'Source clock diverged between Kaishu and baseline');
+      const a=await raster(old.svg,old.tip),
+        b=await raster(candidate.svg,candidate.tip);
+      const change=compare(prev,b.flags);
+      inkLoss+=change.lost;
+      check(change.lost===0,g.character+' frame '+frac+
+        ': already painted Kaishu red ink vanished '+change.lost);
+      const visual=compare(a.flags,b.flags);
+      if(visual.different>0)changed++;
+      maxRed=Math.max(maxRed,b.count);
+      if(frac===0)check(b.count===0,
+        g.character+' begins writing with flash/large ink blob');
+      if(frac>.02&&frac<.995){
+        check(candidate.tip.style.display!=='none',
+          'Kaishu visible nib cursor unexpectedly missing');
+        const px=+candidate.tip.getAttribute('cx'),
+          py=+candidate.tip.getAttribute('cy');
+        const m=state.new.point;
+        check(Math.hypot(px-m.x,py-m.y)<.0001,
+          'Kaishu marker detached from its true reconstructed path');
+        activeTipCorrect++;
+      }
+      prev.set(b.flags);prevCount=b.count;framesDone++;
+    }
+    redDifferenceFrames+=changed;
+    check(maxRed>20,'Kaishu source was never painted');
+    lab.seek(lab.total);
+    check(lab.candidate.rows.every(r=>r.finished.style.display!=='none'),
+      'Completed Kaishu source glyph did not appear');
+    preview(lab.old.svg,'基础硬笔',g.character);
+    preview(lab.candidate.svg,'楷书候选',g.character);
+    const current=lab.candidate.rows[item.index].plan;
+    let metric=null;
+    if(current.semantics.kind==='heng'){
+      metric=K.horizontalMetrics(current);
+      check(metric.maxNormalDeviation<=5,'Horizontal still wavering');
+    }
+    if(current.semantics.kind==='shu'){
+      metric=K.verticalMetrics(current);
+      check(metric.maxNormalDeviation<=9,'Vertical still wandering');
+    }
+    details.push({glyph:g.character,index:item.index+1,
+      morphology:current.semantics.kind,method:current.revisedSource,
+      oldNewDifferentFrames:changed,
+      axisMetric:metric});
+  }
+  check(framesDone===72&&inkLoss===0,'Kaishu 72-frame ink regression');
+  check(redDifferenceFrames>=53,
+    'New Kaishu was not materially different from the amateur baseline');
+  check(activeTipCorrect>=45,'Kaishu tip not source-aligned');
+  check(smoothInkWidthRows===40,'Forty source strokes not covered');
+  check(JSON.stringify(w.ZITIE_SAMPLES.glyphs)===original,
+    'Legacy stroke order/source data changed');
+  lab.select('水');
+  const stage=lab.timeline.strokes[0];
+  lab.seek(stage.startMs+stage.durationMs*.52);
+  const progress=lab.state.new.progress,pos=lab.elapsed;
+  for(const speed of [.5,1,1.5,2]){
+    lab.setSpeed(speed);lab.seek(pos);
+    check(Math.abs(lab.state.new.progress-progress)<1e-12,
+      'Changing global speed changed spatial Kaishu trajectory');
+  }
+  lab.setSpeed(1);
+  lab.play();
+  check(lab.playing,'Kaishu playback failed');
+  lab.pause();
+  lab.seek(0);check(lab.state.frame.index===0,'Can not rewind glyph');
+  this.style.width='390px';
+  await new Promise(resolve=>setTimeout(resolve,110));
+  check(w.document.documentElement.scrollWidth<=w.innerWidth+2,
+    'Kaishu A/B page overflows 390px display');
+  const result={result:'PASS',glyphs:9,sourceStrokes:smoothInkWidthRows,
+    frames:framesDone,redPixelLoss:inkLoss,
+    redVisualDifferentFrames:redDifferenceFrames,
+    cursorMatchedFrames:activeTipCorrect,sourceModified:false,
+    expertCertified:false,physicallyMeasured:false,mobile390:true,
+    details};
+  document.documentElement.setAttribute('data-result','PASS');
+  out.textContent=JSON.stringify(result,null,2);
+ }catch(err){
+  document.documentElement.setAttribute('data-result','FAIL');
+  out.textContent='FAIL: '+(err.stack||String(err));
+ }
+});
+</script></body></html>

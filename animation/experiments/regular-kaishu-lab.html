@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A2.3 · 硬笔楷书规范形态实验</title>
+<style>
+:root{--ink:#28343d;--red:#b23c48;--muted:#69767e;--line:#e1e5e8;--teal:#287c8a}
+*{box-sizing:border-box}
+body{margin:0;background:#f5f6f6;color:var(--ink);
+  font:14px/1.58 system-ui,"PingFang SC","Microsoft YaHei",sans-serif}
+main{max-width:1230px;margin:auto;padding:24px 18px 36px}
+a{color:#9b3442}
+h1{font-size:clamp(22px,3vw,29px);letter-spacing:.01em;margin:7px 0 4px}
+h2{font-size:17px;margin:0}
+.subtle{color:var(--muted);font-size:13px;margin:0 0 16px}
+.warning{border-radius:12px;background:#fff9ef;border:1px solid #e8dfc6;
+  padding:12px 15px;margin:13px 0;font-size:13px}
+.bar,.seekPanel,.diagnostic{padding:12px 14px;background:#fff;
+  border:1px solid var(--line);border-radius:13px;margin:12px 0}
+.bar{display:flex;align-items:center;gap:11px;flex-wrap:wrap}
+.glyphs,.actions,.speeds{display:flex;gap:5px;flex-wrap:wrap;align-items:center}
+button{background:#fff;border:1px solid #dce0e2;border-radius:9px;
+  padding:7px 11px;font:inherit;cursor:pointer}
+button:focus-visible,input:focus-visible{outline:3px solid #deabb1;outline-offset:2px}
+button[aria-pressed="true"]{background:#fff0f2;border-color:#ba7481;
+  font-weight:750;color:#9f3442}
+button.primary{background:var(--red);color:white;border-color:var(--red)}
+.pair{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.panel{border:1px solid var(--line);background:#fff;border-radius:15px;overflow:hidden}
+.panel header{display:flex;justify-content:space-between;gap:10px;align-items:baseline;padding:13px 15px 0}
+.panel header small{color:var(--muted);font-size:11px}
+.panel svg{display:block;width:100%;max-width:510px;aspect-ratio:1;margin:auto}
+.panel footer{font-size:12px;color:var(--muted);
+  border-top:1px solid var(--line);padding:11px 15px;min-height:61px}
+.seekRow{display:flex;align-items:center;gap:10px}
+#seek{width:100%;flex:1;accent-color:var(--red)}
+#clock{min-width:107px;text-align:right;font-variant-numeric:tabular-nums;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;margin-top:12px}
+.stat{padding:11px 12px;background:#fff;border:1px solid var(--line);border-radius:12px}
+.stat small{display:block;color:var(--muted)}
+.stat strong{font-size:17px;display:block}
+.diagnostic p{font-size:12px;color:var(--muted)}
+#comparisonChart{display:block;width:100%;height:auto;max-height:190px}
+.verdict{color:#9e4050;font-weight:600}
+@media(max-width:850px){.pair{grid-template-columns:1fr}.stats{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:520px){main{padding:12px 9px}.bar{gap:8px}
+  .seekRow{flex-wrap:wrap}.stat{padding:9px}.panel{min-width:0}}
+</style>
+<script defer src="../samples.js"></script>
+<script defer src="../motion.js"></script>
+<script defer src="../timeline.js"></script>
+<script defer src="../brush-union.js"></script>
+<script defer src="../player.js"></script>
+<script defer src="../hardpen-ink-union.js"></script>
+<script defer src="./stroke-primitives.js"></script>
+<script defer src="./hardpen-model.js"></script>
+<script defer src="../hardpen-stage.js"></script>
+<script defer src="./regular-kaishu-model.js"></script>
+<script defer src="./regular-kaishu-ink.js"></script>
+<script defer src="./regular-kaishu-stage.js"></script>
+<script defer src="./regular-kaishu-lab.js"></script>
+</head><body><main>
+<a href="../index.html">← 返回已发布的硬笔／毛笔主页面（当前版本不变）</a>
+<h1>硬笔楷书 · 结构与笔形规整实验</h1>
+<p class="subtle">A2.3｜先纠正骨架与比例，再讨论运笔自然度：横平而略仰、竖直、折角克制、撇捺舒展、钩小且明确</p>
+<div class="warning"><strong>楷书标准是目标，不是已获得的教学认证。</strong>
+ A 为现有普通硬笔：照原毛笔来源的中线描绘，容易出现横画波浪、竖画摆动和钩过长。
+ B 为候选的楷书结构规整层：重建轻微上仰的横画、挺直的竖画、正确转折与有限度的收尖；<strong>不采用毛笔式重按或大幅胀墨</strong>。
+ 部分节点为未审定的工程校正，正式笔顺来源、线条数据和现有主站均未修改。</div>
+<section class="bar">
+  <div class="glyphs" id="glyphs" role="group" aria-label="选择硬笔楷书实验字"></div>
+  <div class="actions">
+    <button id="play" class="primary" type="button">▶ 同步播放</button>
+    <button id="replay" type="button">↺ 重新写</button>
+    <button id="showAll" type="button">完整字形</button>
+  </div>
+  <div id="speeds" class="speeds" role="group" aria-label="播放速度">
+    <button data-speed="0.5" aria-pressed="false" type="button">0.5×</button>
+    <button data-speed="1" aria-pressed="true" type="button">1×</button>
+    <button data-speed="1.5" aria-pressed="false" type="button">1.5×</button>
+    <button data-speed="2" aria-pressed="false" type="button">2×</button>
+  </div>
+</section>
+<div class="pair">
+  <section class="panel">
+    <header><h2>A · 当前硬笔</h2><small>旧中心线、单一固定线宽</small></header>
+    <svg id="oldStage" role="img" aria-label="当前硬笔骨架笔迹"></svg>
+    <footer>粗细基本一样，但继承原毛笔中心线的起伏；这是目前“不工整”的主要来源。</footer>
+  </section>
+  <section class="panel">
+    <header><h2>B · 楷书形态候选</h2><small>姿态约束、局部收尖、结构主次</small></header>
+    <svg id="newStage" role="img" aria-label="规范楷书形态候选笔迹"></svg>
+    <footer>按笔画类别修复异常波动，给横竖建立结构方向；撇捺与钩使用克制的末段收尖，避免画成简单直管。</footer>
+  </section>
+</div>
+<section class="seekPanel"><div class="seekRow">
+  <label for="seek">同一书写时刻</label><input id="seek" type="range" min="0" max="1000" value="1000">
+  <output id="clock">0.00 / 0.00s</output>
+</div></section>
+<div class="stats">
+  <div class="stat"><small>当前汉字</small><strong id="glyphName">一</strong></div>
+  <div class="stat"><small>书写阶段</small><strong id="phase">完整字形</strong></div>
+  <div class="stat"><small>选定笔画几何</small><strong id="shapeQuality">待检查</strong></div>
+  <div class="stat"><small>字形复核状态</small><strong id="reviewState">未经教学审核</strong></div>
+</div>
+<section class="diagnostic">
+  <h2>楷书几何检查</h2>
+  <p id="diagnosticText">加载七项基础几何检查与改进说明。</p>
+  <canvas id="comparisonChart" width="1060" height="180"
+    aria-label="旧骨架与楷书候选的对应笔画空间偏移曲线"></canvas>
+  <p><span class="verdict">重要：</span>自动化可以验证横竖方向、墨迹累积和端部收尖，却不能判定字是否具有成熟楷书风骨。需要用户视觉审查以及专业教师逐字确认。</p>
+</section>
+<p class="subtle">工程依据与限制：
+<a href="https://github.com/netplus/zitie/blob/main/docs/A23_KAISHU_GEOMETRY.md">A2.3 设计与楷书质量门槛</a>。
+此页面和原毛笔/硬笔主站独立，现有 299 页 PDF、笔顺规范数据不变。</p>
+</main></body></html>

@@ -30,7 +30,7 @@ jobs:
         with:
           node-version: '22'
       - name: Check source-backed animation examples
-        run: node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs animation/tests/pen-kinematics.test.cjs animation/tests/source-onset.test.cjs animation/tests/pressure-model.test.cjs animation/tests/pressure-style.test.cjs animation/tests/stroke-primitives.test.cjs animation/tests/hardpen-model.test.cjs
+        run: node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs animation/tests/pen-kinematics.test.cjs animation/tests/source-onset.test.cjs animation/tests/pressure-model.test.cjs animation/tests/pressure-style.test.cjs animation/tests/stroke-primitives.test.cjs animation/tests/hardpen-model.test.cjs animation/tests/regular-kaishu-model.test.cjs
       - name: Assemble minimal offline-compatible static site
         shell: bash
         run: |
@@ -38,7 +38,7 @@ jobs:
           mkdir -p _site/animation _site/data/artwork
           cp animation/index.html animation/player.js animation/timeline.js animation/motion.js animation/samples.js animation/brush-union.js animation/pressure-style.js animation/hardpen-ink-union.js animation/hardpen-stage.js animation/gallery.js animation/ui.js animation/NOTICE.md _site/animation/
           mkdir -p _site/animation/experiments
-          cp animation/experiments/gesture-data.js animation/experiments/pen-contact.js animation/experiments/pen-lab-engine.js animation/experiments/pen-kinematics.js animation/experiments/source-onset.js animation/experiments/pen-lab.html animation/experiments/pressure-model.js animation/experiments/pressure-lab.js animation/experiments/pressure-lab.html animation/experiments/stroke-primitives.js animation/experiments/stroke-grammar-lab.js animation/experiments/stroke-grammar-lab.html animation/experiments/hardpen-model.js animation/experiments/hardpen-lab.js animation/experiments/hardpen-lab.html _site/animation/experiments/
+          cp animation/experiments/gesture-data.js animation/experiments/pen-contact.js animation/experiments/pen-lab-engine.js animation/experiments/pen-kinematics.js animation/experiments/source-onset.js animation/experiments/pen-lab.html animation/experiments/pressure-model.js animation/experiments/pressure-lab.js animation/experiments/pressure-lab.html animation/experiments/stroke-primitives.js animation/experiments/stroke-grammar-lab.js animation/experiments/stroke-grammar-lab.html animation/experiments/hardpen-model.js animation/experiments/hardpen-lab.js animation/experiments/hardpen-lab.html animation/experiments/regular-kaishu-model.js animation/experiments/regular-kaishu-ink.js animation/experiments/regular-kaishu-stage.js animation/experiments/regular-kaishu-lab.js animation/experiments/regular-kaishu-lab.html _site/animation/experiments/
           cp data/artwork/ARPHICPL.TXT _site/data/artwork/ARPHICPL.TXT
           cat > _site/index.html <<'HTML'
           <!doctype html>
@@ -78,6 +78,11 @@ jobs:
           test -s _site/animation/experiments/hardpen-model.js
           test -s _site/animation/experiments/hardpen-lab.js
           test -s _site/animation/experiments/hardpen-lab.html
+          test -s _site/animation/experiments/regular-kaishu-model.js
+          test -s _site/animation/experiments/regular-kaishu-ink.js
+          test -s _site/animation/experiments/regular-kaishu-stage.js
+          test -s _site/animation/experiments/regular-kaishu-lab.js
+          test -s _site/animation/experiments/regular-kaishu-lab.html
           test -s _site/data/artwork/ARPHICPL.TXT
           if grep -R -E '(https?:)?//(cdn\.|unpkg\.|fonts\.googleapis)' _site/animation; then
             echo 'Unexpected runtime CDN dependency' >&2
