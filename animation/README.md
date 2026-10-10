@@ -1,6 +1,6 @@
-## A1.6 主页面稳定版／模拟笔压版双风格（研发候选）
+## A1.6 主页面稳定版／模拟笔压版双风格（已合入并部署）
 
-用户可以在[主笔顺播放页](index.html)的「笔压风格」中直接选 **稳定版**（默认）或 **模拟笔压版**。两种风格同用稳定 A1.3 圆头墨迹遮罩、笔画时序与纠偏圆圈轨迹；模拟笔压只改变圆形笔尖接触幅度、无白色遮挡的力度环，并显示合成力度和弧长位置曲线。切换时不重置播放位置，选择在切换字形、倍率、重播时持续生效。已增加针对9字45帧的双风格墨迹/掩码一致性、控制状态与移动端的阻断测试。详见 [设计边界](../docs/A1_PEN_STYLE_SELECTOR.md)、[Issue #104](https://github.com/netplus/zitie/issues/104)。当前待最终 CI、PR 和 Pages 验收，不修改 v0.5.1 PDF/原始字形，合成压力不应冒称真实笔压。
+用户可以在[主笔顺播放页](index.html)的「笔压风格」中直接选 **稳定版**（默认）或 **模拟笔压版**。两种风格同用稳定 A1.3 圆头墨迹遮罩、笔画时序与纠偏圆圈轨迹；模拟笔压只改变圆形笔尖接触幅度、无白色遮挡的力度环，并显示合成力度和弧长位置曲线。切换时不重置播放位置，选择在切换字形、倍率、重播时持续生效。已增加针对9字45帧的双风格墨迹/掩码一致性、控制状态与移动端的阻断测试。详见 [设计边界](../docs/A1_PEN_STYLE_SELECTOR.md)、[Issue #104](https://github.com/netplus/zitie/issues/104)。[PR #105](https://github.com/netplus/zitie/pull/105) 已合并为 `d055e2d05fcd6c39635e8ec9d15fc234451e7327`，最终 [动画 CI](https://github.com/netplus/zitie/actions/runs/38030438772) 与 [全书 CI](https://github.com/netplus/zitie/actions/runs/38030438681) 双通过，合入后的 [Pages #38030935433](https://github.com/netplus/zitie/actions/runs/38030935433) 已实际部署成功。当前可直接在[主播放页](https://netplus.github.io/zitie/animation/)切换风格。原始墨迹/轮廓保持不变，合成压力不应冒称真实笔压；正式 v0.5.1 PDF 不修改。
 
 ---
 
