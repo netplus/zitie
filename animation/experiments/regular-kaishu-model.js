@@ -208,7 +208,10 @@
         weight*=1-.86*smooth((t-.83)/.17);
       }else if(kind==='gou'||kind==='zhe-gou'){
         weight=1+(hook!==null?.10*Math.exp(-Math.pow((t-hook)/.035,2)):0);
-        if(hook!==null)weight*=1-.84*smooth((t-hook)/Math.max(.06,1-hook));
+        if(hook!==null){
+          const releaseStart=Math.max(.57,hook-.12);
+          weight*=1-.84*smooth((t-releaseStart)/(1-releaseStart));
+        }
       }else if(kind==='dian'){
         weight=.64+.44*smooth(t/.62);
         weight*=1-.22*smooth((t-.78)/.22);
