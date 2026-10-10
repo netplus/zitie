@@ -139,6 +139,43 @@ test('all positions and widths finite, and motion monotone/deterministic',()=>{
   assert.equal(JSON.stringify(glyphs),before);
 });
 
+test('whole-character closure: 口 is closed, 月 bars meet both sides',()=>{
+  const minDistance=(xy,plan)=>{
+    let best=Infinity;
+    for(const p of plan.geometry.samples)
+      best=Math.min(best,Math.hypot(xy[0]-p.x,xy[1]-p.y));
+    return best;
+  };
+  const left=trial('口',0),fold=trial('口',1),base=trial('口',2);
+  const lowerLeft=left.revisedControlPoints.at(-1);
+  const lowerRight=fold.revisedControlPoints.at(-1);
+  const bottomLeft=base.revisedControlPoints[0];
+  assert.ok(Math.hypot(lowerLeft[0]-bottomLeft[0],
+    lowerLeft[1]-bottomLeft[1])<20,
+    '口 bottom-left is not a joined endpoint');
+  assert.ok(minDistance(lowerRight,base)<15,
+    '口 bottom-right remains visibly open');
+  const topLeft=left.revisedControlPoints[0];
+  const topHorizontalStart=fold.revisedControlPoints[0];
+  assert.ok(Math.hypot(topLeft[0]-topHorizontalStart[0],
+    topLeft[1]-topHorizontalStart[1])<26,
+    '口 top-left is disconnected');
+  const monthLeft=trial('月',0),monthRight=trial('月',1);
+  for(const index of [2,3]){
+    const bar=trial('月',index);
+    const start=bar.revisedControlPoints[0];
+    const end=bar.revisedControlPoints.at(-1);
+    assert.ok(minDistance(start,monthLeft)<18,
+      '月 bar '+index+' left endpoint detached from left structure');
+    assert.ok(minDistance(end,monthRight)<18,
+      '月 bar '+index+' right endpoint detached from right structure');
+  }
+  const upper=K.horizontalMetrics(trial('月',2));
+  const lower=K.horizontalMetrics(trial('月',3));
+  assert.ok(Math.abs(upper.angleDeg-lower.angleDeg)<1,
+    '月 repeated interior horizontals are not parallel');
+});
+
 test('bad source IDs and nonfinite morphology are rejected',()=>{
   const g=find('一'),s=g.strokes[0];
   assert.throws(()=>K.makePlan(null,g,0),/mismatch/);
