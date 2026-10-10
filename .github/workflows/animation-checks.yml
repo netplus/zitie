@@ -42,10 +42,12 @@ jobs:
           node --check animation/experiments/pressure-lab.js
           node --check animation/experiments/stroke-primitives.js
           node --check animation/experiments/stroke-grammar-lab.js
+          node --check animation/experiments/hardpen-model.js
+          node --check animation/experiments/hardpen-lab.js
           node --check animation/gallery.js
           node --check animation/ui.js
           node --check animation/samples.js
-          node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs animation/tests/pen-kinematics.test.cjs animation/tests/source-onset.test.cjs animation/tests/pressure-model.test.cjs animation/tests/pressure-style.test.cjs animation/tests/stroke-primitives.test.cjs
+          node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs animation/tests/pen-kinematics.test.cjs animation/tests/source-onset.test.cjs animation/tests/pressure-model.test.cjs animation/tests/pressure-style.test.cjs animation/tests/stroke-primitives.test.cjs animation/tests/hardpen-model.test.cjs
       - name: Install CJK fallback solely for screenshot QA (never bundle font)
         run: |
           sudo apt-get update -qq
@@ -442,6 +444,61 @@ jobs:
             --screenshot="$(pwd)/build/a1/a2-basic-stroke-gesture-lab.png" \
             'http://127.0.0.1:18773/animation/experiments/stroke-grammar-lab.html' >/dev/null
           test -s build/a1/a2-basic-stroke-gesture-lab.png
+      - name: Audit A2.2 ordinary rigid hardpen ink in Chromium
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/a1
+          python3 -m http.server 18774 --bind 127.0.0.1 > build/a1/a22-hardpen-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18774/animation/experiments/hardpen-lab.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          timeout 185 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu \
+            --disable-background-timer-throttling --virtual-time-budget=120000 \
+            --window-size=1450,1600 --dump-dom \
+            'http://127.0.0.1:18774/animation/tests/hardpen-lab-smoke.html' \
+            > build/a1/a22-hardpen-browser-dom.html
+          if ! grep -q 'data-result="PASS"' build/a1/a22-hardpen-browser-dom.html; then
+            echo 'FAIL: hardpen normal-width ink, control or mobile invariant' >&2
+            grep -o 'FAIL:[^<]*' build/a1/a22-hardpen-browser-dom.html | head -n 8 >&2 || true
+            exit 1
+          fi
+          python3 - <<'PY'
+          import re,html,json
+          from pathlib import Path
+          raw=Path('build/a1/a22-hardpen-browser-dom.html').read_text(encoding='utf-8')
+          match=re.search(r'<pre id="result">(\{.*?\})</pre>',raw,re.S)
+          if not match:raise SystemExit('A2.2 browser metrics are missing')
+          report=json.loads(html.unescape(match.group(1)))
+          assert report['status']=='PASS'
+          assert report['glyphs']==7 and report['frames']==63
+          assert report['redPixelLoss']==0
+          assert report['brushDifferentFrames']>=40
+          assert report['uniformNibRows']>28
+          assert report['cursorTrackedFrames']>=28
+          assert report['historicSourceOutlinesPreserved']==7
+          assert report['originalSamplesUnchanged'] is True
+          assert report['physicallyCalibrated'] is False
+          assert report['brushInkOutlineUsed'] is False
+          assert report['mobile390'] is True
+          Path('build/a1/a22-hardpen-model-report.json').write_text(
+            json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('PASS: 7 rigid-nib examples and 63 Chrome frames,',
+                'old/new form differs in',report['brushDifferentFrames'],
+                'frames, zero vanishing ink and uniformly wide traced strokes')
+          PY
+          timeout 80 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --virtual-time-budget=20000 \
+            --window-size=1500,1550 \
+            --screenshot="$(pwd)/build/a1/a22-hardpen-live-preview.png" \
+            'http://127.0.0.1:18774/animation/experiments/hardpen-lab.html' >/dev/null
+          test -s build/a1/a22-hardpen-live-preview.png
       - uses: actions/upload-artifact@v4
         if: always()
         with:
