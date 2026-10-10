@@ -89,7 +89,7 @@ h1{font-size:clamp(20px,2.4vw,27px);line-height:1.3;margin:0;font-weight:700;let
 .pressureMeter{height:9px;border-radius:6px;background:#e7eaec;overflow:hidden}
 #pressureFill{display:block;height:100%;width:0;background:var(--accent)}
 #pressurePhase{font-weight:600;color:#52606a}
-#pressureCurve{display:block;width:100%;height:auto;max-height:94px}
+#pressureCurve{display:block;width:100%;max-width:100%;min-width:0;height:auto;max-height:94px}
 .rhythmNote{font-size:12px;color:#78848b;margin:10px 0 0}
 .shortcuts{font-size:12px;color:#89939b;margin-top:13px}
 .library{padding:21px 19px 23px}
@@ -142,7 +142,7 @@ h1{font-size:clamp(20px,2.4vw,27px);line-height:1.3;margin:0;font-weight:700;let
   .glyphPaging{gap:4px}
   .paging{padding:7px;font-size:12px}
   .stageLegend{gap:9px;font-size:11px}
-  .pressureDetails{grid-template-columns:1fr;gap:5px}
+  .pressureDetails{grid-template-columns:minmax(0,1fr);gap:5px}
   .penStyleBox{padding:11px}
   .penStyleOption{padding:7px 10px}
   .shortcuts{display:none}
