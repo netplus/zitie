@@ -376,17 +376,17 @@ jobs:
               raise SystemExit('Missing structured primary-page style metrics')
           d=json.loads(html.unescape(match.group(1)))
           assert d['result']=='PASS'
-          assert d['glyphs']==9 and d['frames']==27
+          assert d['glyphs']==9 and d['frames']==45
           assert d['pixelMismatch']==0 and d['maskMismatch']==0
           assert d['markerMismatch']==0
-          assert d['restoredTime']==27 and d['backToStable']==27
-          assert d['meaningfulPressure']>10
+          assert d['restoredTime']==45 and d['backToStable']==45
+          assert d['meaningfulPressure']>=27
           assert d['stableDefault'] and d['mobile390']
           assert d['playingStatePreserved'] and d['sourceGlyphsUnchanged']
           assert d['pressureMeasured'] is False
           Path('build/a1/pressure-style-metrics.json').write_text(
               json.dumps(d,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-          print('PASS: main-page stable/simulated selector, 9 glyphs / 27 frames,',
+          print('PASS: main-page stable/simulated selector, 9 glyphs / 45 frames,',
                 'zero original red ink change, no playback reset, mobile layout valid')
           PY
       - uses: actions/upload-artifact@v4
