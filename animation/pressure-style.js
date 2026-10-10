@@ -17,12 +17,19 @@
   const NS='http://www.w3.org/2000/svg';
   const styles=Object.freeze(['stable','simulated']);
   const finite=n=>typeof n==='number'&&Number.isFinite(n);
-  function markerGeometry(pressure){
+  function markerGeometry(pressure,penTool='brush'){
     if(!finite(pressure)||pressure<0||pressure>1)
       throw Error('Invalid normalized contact pressure');
-    const radius=7.2+8.8*pressure;
-    return {radius,ringRadius:radius+4+5*pressure,
-      markerFill:'#9F3342',markerStroke:'#712B37',
+    if(penTool!=='brush'&&penTool!=='hardpen')
+      throw Error('Unknown writing pen tool');
+    // A firm nib cannot flex into a wide paintbrush. The independent
+    // pressure curve changes only the visual contact cue, never ink width.
+    const rigid=penTool==='hardpen';
+    const radius=rigid?4.5+3.5*pressure:7.2+8.8*pressure;
+    return {radius,ringRadius:rigid?radius+3+2*pressure:
+      radius+4+5*pressure,
+      markerFill:rigid?'#BD3945':'#9F3342',
+      markerStroke:rigid?'#A32F3D':'#712B37',
       ringStroke:'#883542',ringFill:'none'};
   }
   class StyleController{
@@ -61,11 +68,12 @@
       return this.ring;
     }
     resetTip(tip){
-      tip.setAttribute('r','8');
+      const hardpen=tip.getAttribute('data-pen-tool')==='hardpen';
+      tip.setAttribute('r',hardpen?'5':'8');
       tip.setAttribute('fill','#BD3945');
-      tip.setAttribute('stroke','#FFFFFF');
-      tip.setAttribute('stroke-width','2.5');
-      if(this.ring)this.ring.remove(); // No overlay in the stable SVG.
+      tip.setAttribute('stroke',hardpen?'#BD3945':'#FFFFFF');
+      tip.setAttribute('stroke-width',hardpen?'.7':'2.5');
+      if(this.ring)this.ring.remove(); // Stable style has no overlay.
     }
     apply(player,frame){
       if(!player?.timeline||!player.tip||!frame)
@@ -86,7 +94,8 @@
         {pressure:0,phase:frame.phase==='finished'?'released':'hover',
           progress:frame.progress,measured:false};
       if(active){
-        const geo=markerGeometry(sample.pressure);
+        const geo=markerGeometry(sample.pressure,
+          tip.getAttribute('data-pen-tool')==='hardpen'?'hardpen':'brush');
         tip.setAttribute('r',geo.radius.toFixed(3));
         tip.setAttribute('fill',geo.markerFill);
         tip.setAttribute('stroke',geo.markerStroke);
