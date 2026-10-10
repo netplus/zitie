@@ -37,10 +37,12 @@ jobs:
           node --check animation/experiments/pen-lab-engine.js
           node --check animation/experiments/pen-kinematics.js
           node --check animation/experiments/source-onset.js
+          node --check animation/experiments/pressure-model.js
+          node --check animation/experiments/pressure-lab.js
           node --check animation/gallery.js
           node --check animation/ui.js
           node --check animation/samples.js
-          node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs animation/tests/pen-kinematics.test.cjs animation/tests/source-onset.test.cjs
+          node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs animation/tests/pen-kinematics.test.cjs animation/tests/source-onset.test.cjs animation/tests/pressure-model.test.cjs
       - name: Install CJK fallback solely for screenshot QA (never bundle font)
         run: |
           sudo apt-get update -qq
@@ -293,6 +295,54 @@ jobs:
                     'improved frames',report['improvements'],
                     'marker gray gaps',report['markerOutside'])
           PY
+      - name: Audit A1.5 synthetic pressure A/B with original stable ink
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/a1
+          python3 -m http.server 18771 --bind 127.0.0.1 > build/a1/pressure-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18771/animation/experiments/pressure-lab.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          options=(--headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --disable-background-timer-throttling --virtual-time-budget=120000 --window-size=1350,1700)
+          timeout 180 "$CHROME_BIN" "${options[@]}" --dump-dom \
+            'http://127.0.0.1:18771/animation/tests/pressure-lab-smoke.html' \
+            > build/a1/pressure-lab-smoke-dom.html
+          if ! grep -q 'data-result="PASS"' build/a1/pressure-lab-smoke-dom.html; then
+            echo 'FAIL: pressure experiment changed original stable ink or pen states' >&2
+            grep -o 'FAIL:[^<]*' build/a1/pressure-lab-smoke-dom.html | head -n 10 >&2 || true
+            exit 1
+          fi
+          python3 - <<'PY'
+          import html,json,re
+          from pathlib import Path
+          raw=Path('build/a1/pressure-lab-smoke-dom.html').read_text(encoding='utf-8')
+          hit=re.search(r'<pre id="result">(\{.*?\})</pre>',raw,re.S)
+          if not hit:
+              raise SystemExit('Missing pressure laboratory JSON report')
+          data=json.loads(html.unescape(hit.group(1)))
+          assert data['result']=='PASS'
+          assert data['glyphs']==6 and data['frames']==60
+          assert data['inkPixelDifferences']==0
+          assert data['markerSyncErrors']==0 and data['zeroOnset']==6
+          assert data['pressureChanges']>=12 and data['nonzeroFrames']>=30
+          assert data['pressureMeasured'] is False
+          assert data['pressureCalibrated'] is False
+          assert data['sourceGlyphsUnchanged'] and data['curvesVisible']
+          Path('build/a1/pressure-lab-metrics.json').write_text(
+            json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('PASS: six source-backed glyphs, 60 real-browser ink-identical',
+                'A/B frames, independent synthetic pressure and pressure chart')
+          PY
+          timeout 75 "$CHROME_BIN" "${options[@]}" --window-size=1440,1750 \
+            --screenshot="$(pwd)/build/a1/pressure-lab-ab.png" \
+            'http://127.0.0.1:18771/animation/experiments/pressure-lab.html' >/dev/null
+          test -s build/a1/pressure-lab-ab.png
       - uses: actions/upload-artifact@v4
         if: always()
         with:

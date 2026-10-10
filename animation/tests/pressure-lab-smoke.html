@@ -1,0 +1,152 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<title>A1.5 same-ink A/B synthetic pressure browser test</title></head>
+<body><h1>A1.5 pressure must not change stable red ink</h1><pre id="result">RUNNING</pre>
+<iframe id="lab" src="../experiments/pressure-lab.html"
+ title="offline synthetic pressure laboratory" style="width:1200px;height:1750px"></iframe>
+<script>
+function check(value,message){if(!value)throw Error(message);}
+const fractions=[0,.025,.055,.11,.21,.38,.57,.77,.91,.985];
+async function redRaster(svg,tip,ring,resolution=384){
+ const a=tip.style.display, b=ring?ring.style.display:null;
+ tip.style.display='none';if(ring)ring.style.display='none';
+ try{
+  const markup=new XMLSerializer().serializeToString(svg);
+  const u=URL.createObjectURL(new Blob([markup],{type:'image/svg+xml;charset=utf-8'}));
+  try{
+   const img=new Image();
+   await new Promise((resolve,reject)=>{
+    img.onload=resolve;img.onerror=()=>reject(Error('SVG decode failure'));
+    img.src=u;
+   });
+   const canvas=document.createElement('canvas');
+   canvas.width=canvas.height=resolution;
+   const ctx=canvas.getContext('2d',{willReadFrequently:true});
+   ctx.drawImage(img,0,0,resolution,resolution);
+   const px=ctx.getImageData(0,0,resolution,resolution).data;
+   const out=new Uint8Array(resolution*resolution);
+   for(let i=0,j=0;i<px.length;i+=4,j++){
+    if(px[i]>137&&px[i+1]<115&&px[i+2]<124&&
+       px[i]>px[i+1]*1.48&&px[i+3]>190)out[j]=1;
+   }
+   return out;
+  }finally{URL.revokeObjectURL(u);}
+ }finally{tip.style.display=a;if(ring)ring.style.display=b;}
+}
+function mismatch(a,b){
+ check(a.length===b.length,'Different raster extents');
+ let n=0;for(let i=0;i<a.length;i++)if(a[i]!==b[i])n++;return n;
+}
+document.getElementById('lab').addEventListener('load',async function(){
+ const out=document.getElementById('result');
+ try{
+  const w=this.contentWindow,lab=w.ZITIE_PRESSURE_LAB,d=w.document;
+  check(lab&&lab.baseline&&lab.experimental&&lab.plans,
+   'Independent pressure lab not initialized');
+  check(lab.glyphs.length===6,'Not six reviewed source-backed demo glyphs');
+  // setGlyph recreates the SVG cursor: fetch the LIVE marker per frame.
+  const marker=()=>lab.experimental.tip;
+  const ring=lab.ring;
+  check(marker()&&ring,'Pressure visual indicator missing');
+  check(ring.getAttribute('fill')==='none','Pressure indicator must be unfilled');
+  check(!String(ring.getAttribute('stroke')).toLowerCase().includes('#fff'),
+   'Pressure ring must not hide ink with a white rim');
+  check(d.querySelectorAll('#glyphs button').length===6,'Pressure gallery missing');
+  check(d.querySelectorAll('#speeds button[data-speed]').length===5,
+   'Shared playback multipliers missing');
+  const target={一:0,口:1,水:0,月:1,火:0,龠:13};
+  let frames=0,differentPixels=0,pressureChanges=0,markerSyncErrors=0,
+      glyphs=0,nonzero=0,zeroOnset=0,invalid=0;
+  const reports=[],markerMismatchSamples=[];
+  for(const g of lab.glyphs){
+   const source=JSON.stringify(g);
+   lab.select(g);
+   check(lab.baseline.rows.length===g.expected_stroke_count&&
+     lab.experimental.rows.length===g.expected_stroke_count,
+     'Pressure model changed stroke count '+g.character);
+   const index=target[g.character],stage=lab.baseline.timeline.strokes[index];
+   let previousPressure=null,rangeMin=1,rangeMax=0;
+   for(const t of fractions){
+    lab.seek(stage.startMs+stage.durationMs*t);
+    const aState=lab.baseline.getState(),bState=lab.experimental.getState();
+    check(aState.phase===bState.phase&&aState.index===bState.index,
+      'A/B timelines diverged');
+    check(Math.abs(aState.progress-bState.progress)<1e-9,
+      'A/B spatial progress diverged');
+    check(lab.baseline.rows[index].reveal.getAttribute('d')===
+      g.strokes[index].outline,'Original A stroke contour mutated');
+    check(lab.experimental.rows[index].reveal.getAttribute('d')===
+      g.strokes[index].outline,'Original B stroke contour mutated');
+    const p=lab.state.pressure.pressure;
+    if(!Number.isFinite(p)||p<0||p>1)invalid++;
+    if(p>0.03)nonzero++;
+    if(t===0&&p===0)zeroOnset++;
+    if(previousPressure!==null&&Math.abs(previousPressure-p)>.035)
+      pressureChanges++;
+    previousPressure=p;
+    rangeMin=Math.min(rangeMin,p);rangeMax=Math.max(rangeMax,p);
+    if(t>0&&t<.985&&lab.showPressure){
+      if(ring.style.display==='none'||Number(marker().getAttribute('r'))<7.2)
+        throw Error('Synthetic contact circle not following pen');
+      const ax=+lab.baseline.tip.getAttribute('cx');
+      const ay=+lab.baseline.tip.getAttribute('cy');
+      const bx=+marker().getAttribute('cx'),by=+marker().getAttribute('cy');
+      if(Math.hypot(ax-bx,ay-by)>1e-6){
+        markerSyncErrors++;
+        if(markerMismatchSamples.length<8)markerMismatchSamples.push({
+          character:g.character,time:t,ax,ay,bx,by,
+          phase:aState.phase,progress:aState.progress
+        });
+      }
+    }
+    const a=await redRaster(lab.baseline.svg,lab.baseline.tip,null);
+    const b=await redRaster(lab.experimental.svg,lab.experimental.tip,ring);
+    const diff=mismatch(a,b);
+    differentPixels+=diff;
+    check(diff===0,g.character+' at '+t+': pressure altered real stable ink pixels '+diff);
+    frames++;
+   }
+   check(rangeMax-rangeMin>.20,'Pressure is visually constant '+g.character);
+   check(JSON.stringify(g)===source,'Model mutated canonical glyph '+g.character);
+   reports.push({character:g.character,index:index+1,low:rangeMin,high:rangeMax});
+   glyphs++;
+  }
+  check(invalid===0&&differentPixels===0&&markerSyncErrors===0,
+    'Measured pressure or cursor geometry invalid: '+JSON.stringify({invalid,differentPixels,markerSyncErrors,markerMismatchSamples}));
+  check(nonzero>=30&&zeroOnset===6&&pressureChanges>=12,
+    'Synthetic force lacks meaningful micro-variation');
+  // No speed-dependent pressure: compare the very same spatial state.
+  lab.select('水');const stage=lab.baseline.timeline.strokes[0];
+  lab.seek(stage.startMs+stage.durationMs*.4);
+  const hold=lab.elapsed,p0=lab.state.pressure.pressure;
+  for(const rate of [.5,1,1.5,2,3]){
+   lab.setSpeed(rate);
+   lab.seek(hold);
+   check(Math.abs(lab.state.pressure.pressure-p0)<1e-12,
+      'Speed preset changed normalized pen pressure');
+  }
+  lab.setSpeed(1);
+  check(lab.setIndicator(false)===false,'Cannot disable force halo');
+  check(ring.style.display==='none','Pressure ring did not turn off');
+  check(lab.setIndicator(true)===true,'Cannot reenable force halo');
+  check(ring.style.display!=='none','Pressure ring missing after toggle');
+  const chart=d.getElementById('pressureCurve');
+  const pixels=chart.getContext('2d').getImageData(0,0,chart.width,chart.height).data;
+  let colored=0;
+  for(let i=0;i<pixels.length;i+=4)
+   if(pixels[i]<200&&pixels[i+1]<180&&pixels[i+2]<190&&pixels[i+3]>170)colored++;
+  check(colored>50,'Pressure curve not actually drawn');
+  lab.seek(lab.total);
+  check(lab.state.pressure.pressure===0,'Pen must release to zero contact');
+  check(lab.ring.style.display==='none','No pressure halo after complete');
+  const report={result:'PASS',glyphs,frames,inkPixelDifferences:differentPixels,
+    markerSyncErrors,zeroOnset,pressureChanges,nonzeroFrames:nonzero,
+    pressureMeasured:false,pressureCalibrated:false,
+    sourceGlyphsUnchanged:true,curvesVisible:true,details:reports};
+  document.documentElement.setAttribute('data-result','PASS');
+  out.textContent=JSON.stringify(report,null,2);
+ }catch(error){
+  document.documentElement.setAttribute('data-result','FAIL');
+  out.textContent='FAIL: '+(error.stack||error);
+ }
+});
+</script></body></html>
