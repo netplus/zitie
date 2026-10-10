@@ -1,5 +1,7 @@
 # A1.6 — Two pressure styles on the deployed stable animation page
 
+**Deployed 2026-10-10:** [PR #105](https://github.com/netplus/zitie/pull/105) merged to `main` as `d055e2d05fcd6c39635e8ec9d15fc234451e7327`. The exact final PR HEAD `f0c9605c5bb71adfc8b356ea02441c0891115743` passed [animation CI #38030438772](https://github.com/netplus/zitie/actions/runs/38030438772) and [Book integrity #38030438681](https://github.com/netplus/zitie/actions/runs/38030438681). [Pages #38030935433](https://github.com/netplus/zitie/actions/runs/38030935433) completed actual Configure, Upload and Deploy on the merged SHA. [Open the single-player two-style page](https://netplus.github.io/zitie/animation/). This is synthetic contact visualization, not measured pressure or approved pen technique.
+
 2026-10-10 · [Issue #104](https://github.com/netplus/zitie/issues/104)
 
 ## Product behavior
