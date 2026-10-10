@@ -1,3 +1,11 @@
+# A2.2 主页面改为硬笔默认、毛笔原版保留（2026-10-10，候选待CI）
+
+用户进一步明确：**不删除当前毛笔风格动画，但主页面默认呈现钢笔／硬笔 UI**。新增「书写工具」选项 **硬笔（默认）/ 毛笔（原版）**，与原有「笔压风格」**稳定版/模拟笔压版**相互独立。硬笔使用原始 median 经有限幅度的曲线细化、短促折钩减速及统一窄线宽圆形硬笔着墨；毛笔保持 A1.3 原始 SVG 艺术轮廓及全套传统动画算法不变。两套动画由唯一原播放器时间线驱动，切换不暂停、不清空进度与倍率，压力模式对两种书写工具只改变显示笔尖与提示，不改变实际成墨宽度。工程文档见 [A2_HARDPEN_SCOPE.md](A2_HARDPEN_SCOPE.md)、[Issue #110](https://github.com/netplus/zitie/issues/110)。
+
+本阶段须真实Chromium检验 7笔画63帧硬笔恒线宽且笔迹单调不丢失、9字63帧主站笔工具切换、原毛笔SVG完整保持、390px移动视图、正式PDF/manifest/201审核数据不改。**当前为候选提交，只有最终PR HEAD A1/Book CI双通过、合入main并确认Pages完整部署后才称正式上线。** 源medians仍未经真实硬笔轨迹或教学审定，宽度以SVG单位而非实测毫米计量。
+
+---
+
 # A2.1 基本笔画轨迹动作实验已独立部署（2026-10-10）
 
 用户指出横、竖、撇、折、钩缺乏真正的书写动作。当前工程以 `motion.js` 通用缓动+median折线为基础，缺少明确的触纸、稳笔、折前减速、转锋、钩前蓄势、短促出钩、提笔等语义事件。已启动独立 A2.1：使用原SVG轮廓约束的分段三次曲线，保留原median全部节点与折钩顶点，对每类基本笔画建立严格正值的空间时间密度和独立的分段动作事件；已建立独立 A/B 实验页面 `animation/experiments/stroke-grammar-lab.html`。详见 [A2运动模型研究](A2_BASIC_STROKE_MODEL.md)、[Issue #107](https://github.com/netplus/zitie/issues/107)。[PR #108](https://github.com/netplus/zitie/pull/108) 已合入 `main`（提交 `13d0f8ae1ea37149f9dd4305c168b87e7b7b5c80`）。其最终 PR HEAD `206fa730038d7b7e9fb0378b5d11016d6d2f1aea` 的 [动画 CI #38036907848](https://github.com/netplus/zitie/actions/runs/38036907848) 与 [Book integrity #38036907780](https://github.com/netplus/zitie/actions/runs/38036907780) 均 completed/success；合入后的 [GitHub Pages #38037395286](https://github.com/netplus/zitie/actions/runs/38037395286) 在真实合并提交完成 Configure/Upload/Deploy。在线 [7组笔画A/B实验](https://netplus.github.io/zitie/animation/experiments/stroke-grammar-lab.html) 可用：63项Node测试成功，56帧Chromium对照原墨迹差异0像素，54段曲线细化、1段回退原轨迹，0候选点越出真实SVG轮廓，27帧运笔节奏确有变化。**仍属未经教学审核的人体动作工程原型**，不覆盖稳定版A1.6双笔压功能、v0.5.1正式PDF/manifest或201规范记录。
