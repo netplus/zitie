@@ -1,5 +1,7 @@
 # A2 — Basic-stroke grammar, motion geometry and cinematic handwriting
 
+**A2.1 opt-in deployment (2026-10-10):** [PR #108](https://github.com/netplus/zitie/pull/108) merged to `main` as `13d0f8ae1ea37149f9dd4305c168b87e7b7b5c80`. Proposed final head `206fa730038d7b7e9fb0378b5d11016d6d2f1aea` passed [A1 animation #38036907848](https://github.com/netplus/zitie/actions/runs/38036907848) and [full Book integrity #38036907780](https://github.com/netplus/zitie/actions/runs/38036907780); actual [GitHub Pages #38037395286](https://github.com/netplus/zitie/actions/runs/38037395286) completed Configure, Upload and Deploy on the merged SHA. [**Try the independent A2 basic stroke A/B lab**](https://netplus.github.io/zitie/animation/experiments/stroke-grammar-lab.html). In real Chromium: 7 source-backed archetypes ×8 frames = 56; original red SVG ink mismatch 0 pixels at the same source spatial progress; 54 accepted cubic pieces; 1 rejected and restored source segment; 0 experimental samples outside the actual SVG fill; 27 frames retimed; exact 33 canonical stroke outlines and source JSON untouched. 63 Node tests passed. All reconstructed movements remain **unreviewed engineering hypotheses**; quantitative acceptance is not evidence of human calligraphy or pedagogy.
+
 2026-10-10 · [Issue #107](https://github.com/netplus/zitie/issues/107)
 
 ## Why A1 is not enough
