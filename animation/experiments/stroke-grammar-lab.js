@@ -245,4 +245,6 @@ window.addEventListener('DOMContentLoaded',function(){
     get speed(){return speed;},get playing(){return playing;}
   };
   select(examples[4]); // 水竖钩 is the most useful fold/flick demonstration.
+  const demo=baseline.timeline.strokes[examples[4].index];
+  seek(demo.startMs+demo.durationMs*.81); // Show the hook approach on first open.
 });
