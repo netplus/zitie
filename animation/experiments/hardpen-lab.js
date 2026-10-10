@@ -10,6 +10,7 @@ window.addEventListener('DOMContentLoaded',function(){
   const T=window.ZitieTimeline;
   const M=window.ZitieHardpenModel;
   const P=window.ZitieStrokePrimitives;
+  const Ink=window.ZitieHardpenInkUnion;
   const Old=window.ZitiePlayer.StrokePlayer;
   const examples=[
     {char:'一',stroke:0,label:'横 · 一'},
@@ -48,24 +49,12 @@ window.addEventListener('DOMContentLoaded',function(){
     plans=glyph.strokes.map((s,i)=>M.makePlan(s,P.semantics(glyph,i),{width}));
     if(JSON.stringify(glyph.strokes)!==old)
       throw Error('Hardpen projection must not modify source glyph');
-    rows=plans.map(plan=>{
-      const hint=tag('path',{d:plan.completePath,fill:'none',
-        stroke:'#DCE0E3','stroke-width':width,'stroke-linecap':'round',
-        'stroke-linejoin':'round','pointer-events':'none'});
-      const finished=tag('path',{d:plan.completePath,fill:'none',
-        stroke:'#626972','stroke-width':width,'stroke-linecap':'round',
-        'stroke-linejoin':'round','pointer-events':'none'});
-      const active=tag('path',{d:'',fill:'none',stroke:'#BD3945',
-        'stroke-width':width,'stroke-linecap':'round',
-        'stroke-linejoin':'round','pointer-events':'none'});
-      finished.style.display='none';
-      active.style.display='none';
-      return {hint,finished,active,plan};
-    });
-    // Paint by ROLE so a completed stroke is not hidden by future hints.
+    rows=plans.map(plan=>Ink.createRow(plan,width));
+    // Preserve role layering: gray future traces below finished traces
+    // and all red incremental capsule segments.
     for(const row of rows)group.append(row.hint);
     for(const row of rows)group.append(row.finished);
-    for(const row of rows)group.append(row.active);
+    for(const row of rows)group.append(row.redGroup);
     geometryGuide=tag('path',{d:plans[current.stroke].completePath,
       stroke:'#237d8a','stroke-width':2,fill:'none',
       opacity:'.57','stroke-dasharray':'7 10','pointer-events':'none'});
@@ -121,13 +110,12 @@ window.addEventListener('DOMContentLoaded',function(){
       const finished=frame.phase==='finished'||before;
       const inProgress=!finished&&!after;
       row.finished.style.display=finished?'':'none';
-      row.active.style.display=inProgress?'':'none';
+      row.redGroup.style.display=inProgress?'':'none';
       if(inProgress){
         const clock=Math.max(0,Math.min(1,
           (elapsed-stage.startMs)/stage.durationMs));
         const state=row.plan.stateAt(clock);
-        row.active.setAttribute('d',row.plan.pathAt(state.progress));
-        row.active.style.display=state.progress>0?'':'none';
+        Ink.progressAt(row,state.progress);
         if(i===current.stroke)activeState=state;
       }
     }
