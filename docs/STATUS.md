@@ -1,8 +1,8 @@
-# A2.4 整字交接和结体图第一阶段（2026-10-11，PR 待验收）
+# A2.4 整字交接和结体图第一阶段（2026-10-11，独立上线、仍待专业复核）
 
-用户目标依然是「专业、工整、规范的硬笔楷书」，当前已上线 A2.3 只是**独立未审定候选**，不是主站默认。A2.4 [Issue #116](https://github.com/netplus/zitie/issues/116) 首轮通过只读跨笔画图谱、连接负例和位移限幅改善整字衔接。[PR #117](https://github.com/netplus/zitie/pull/117) 开发分支新增 `kaishu-composition.js`、独立 [A2.3/A2.4 A/B](../animation/experiments/kaishu-composition-lab.html)、Node 和 72 帧 Chromium 测试入口、Pages 打包规则。九字40笔中仅「水」的捺与主竖有一处显式候选连接，中心线缝隙 37→15（移动22 SVG单元）；「龠」等尚未有可靠结构标注，因此不能靠自动吸附。参见 [算法与范围](A24_KAISHU_COMPOSITION.md)。
+用户目标依然是「专业、工整、规范的硬笔楷书」，当前已上线 A2.3 只是**独立未审定候选**，不是主站默认。A2.4 [Issue #116](https://github.com/netplus/zitie/issues/116) 首轮通过只读跨笔画图谱、连接负例和位移限幅改善整字衔接。[PR #117](https://github.com/netplus/zitie/pull/117) 已正式新增 `kaishu-composition.js`、独立 [A2.3/A2.4 A/B](../animation/experiments/kaishu-composition-lab.html)、Node 和 72 帧 Chromium 测试入口、Pages 打包规则。九字40笔中仅「水」的捺与主竖有一处显式候选连接，中心线缝隙 37→15（移动22 SVG单元）；「龠」等尚未有可靠结构标注，因此不能靠自动吸附。参见 [算法与范围](A24_KAISHU_COMPOSITION.md)。
 
-**当前仅为待 PR 最终双 CI / Pages 验证的候选，不宣称合并、部署成功或已获教学专家认可。** A2.2 主站硬笔默认/毛笔可切换、A1.6 稳定版/模拟笔压、A2.3 独立研究、v0.5.1 299页 PDF/manifest 和 201 笔顺审核证据均保持不变。后续须实际看九字/水/龠截图，进行合法参考比对和人审，继续处理结构比例与书写自然度。
+最终 PR HEAD `0a936967c06177a2834847a6a5345cabb6c11eba` 的 [A1 动画 CI #38101554487](https://github.com/netplus/zitie/actions/runs/38101554487) 和 [Book integrity CI #38101554455](https://github.com/netplus/zitie/actions/runs/38101554455) 双 completed/success；[PR #117](https://github.com/netplus/zitie/pull/117) 已合入 `main`，合并 SHA `cc90c7f4fd1591b9eebd56e2d6eea628ce732e61`，此提交的 [GitHub Pages #38102023812](https://github.com/netplus/zitie/actions/runs/38102023812) 已实际完成 Configure、Upload、Deploy（均 success、未跳过）。**83项 Node 测试全部通过**，9字40笔/72帧 Chromium 实际写字中0已绘红墨丢失、45帧笔尖轨迹匹配、7帧 A2.3 与 A2.4 真实差异，390px 窄屏通过。九字与水字的真实截图见 [A1 QA artifact #11688261422](https://github.com/netplus/zitie/actions/runs/38101554487/artifacts/11688261422)。独立[已上线 A2.4 楷书整字结构 A/B 实验](https://netplus.github.io/zitie/animation/experiments/kaishu-composition-lab.html)可体验。**仍是未教学审批的工程实验，水和龠整体专业度待人工复核，不替换主站。** **已部署的只是研究候选，未获教学专家认可。** A2.2 主站硬笔默认/毛笔可切换、A1.6 稳定版/模拟笔压、A2.3 独立研究、v0.5.1 299页 PDF/manifest 和 201 笔顺审核证据均保持不变。后续须实际看九字/水/龠截图，进行合法参考比对和人审，继续处理结构比例与书写自然度。
 
 ---
 
