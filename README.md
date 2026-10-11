@@ -1,6 +1,6 @@
-## A3.8：写字时实时可见“笔压风格”
+## A3.8：写字时实时可见“笔压风格”（已上线）
 
-[201字毛笔播放器](animation/book.html)的笔压栏从播放器下方重新布局到字格附近：宽屏与字格并排、手机在字格上方并保持滚动可见，因此可以在写字时观察当前模拟力度和曲线。保留稳定版默认、模拟力度非实测、SVG源墨迹/笔顺及A3.6防超前算法不变。参见 [布局设计与多视口测试](docs/A38_PRESSURE_VISIBLE_LAYOUT.md)。
+[201字毛笔播放器](animation/book.html)的笔压栏从播放器下方重新布局到字格附近：宽屏与字格并排、手机在字格上方并保持滚动可见，因此可以在写字时观察当前模拟力度和曲线。**A3.8 已上线（2026-10-11）**：[布局 PR #132](https://github.com/netplus/zitie/pull/132) 与 [1020px 画布宽度修复 PR #133](https://github.com/netplus/zitie/pull/133) 均已合入；最终 `main` SHA [`f4ae83e`](https://github.com/netplus/zitie/commit/f4ae83e338cff68bc9460d3f0eacfaef919d949a) 的 [A1 Chromium](https://github.com/netplus/zitie/actions/runs/38145041178)、[Book](https://github.com/netplus/zitie/actions/runs/38145041109) 及 [Pages 实际 Deploy](https://github.com/netplus/zitie/actions/runs/38145041123) 均成功。保留稳定版默认、模拟力度非实测、SVG源墨迹/笔顺及A3.6防超前算法不变。参见 [布局设计、多视口测试与发布记录](docs/A38_PRESSURE_VISIBLE_LAYOUT.md)。
 
 ---
 
