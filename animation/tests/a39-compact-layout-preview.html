@@ -1,0 +1,27 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A3.9 201 glyph calligraphy viewport snapshot</title>
+<style>
+body{margin:0;background:#f4f2ef;color:#2b3941;font:13px system-ui,"Microsoft YaHei",sans-serif}
+h1{font-size:16px;margin:8px 12px 4px}p{font-size:12px;margin:0 12px 6px}
+iframe{display:block;border:1px solid #e5dede;background:#fff;margin:0 auto}
+</style></head><body>
+<h1>A3.9 · 紧凑字格、实时力度与播放控件同屏</h1>
+<p>真实发布页 iframe；仅通过既有接口启用模拟笔压，没有重建墨迹。</p>
+<iframe id="demo" title="正式201字书写播放器" src="../book.html?id=77"
+ style="width:1366px;height:768px"></iframe>
+<script>
+const mobile=new URLSearchParams(location.search).has('mobile');
+const frame=document.getElementById('demo');
+if(mobile){frame.style.width='390px';frame.style.height='844px';}
+frame.addEventListener('load',function(){
+ const w=this.contentWindow,app=w.ZITIE_A3_BOOK;
+ if(!app||w.document.documentElement.dataset.a3Ready!=='201'){
+  document.documentElement.dataset.result='FAIL';return;
+ }
+ app.setPressureStyle('simulated');
+ const stroke=app.player.timeline.strokes[1];
+ app.player.seekElapsed(stroke.startMs+stroke.durationMs*.51);
+ document.documentElement.dataset.result='PASS';
+});
+</script></body></html>
