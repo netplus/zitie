@@ -938,6 +938,65 @@ jobs:
             'http://127.0.0.1:18781/animation/tests/a37-book-pressure-preview.html' >/dev/null
           test -s build/a1/a37-book-pressure-stable.png
           test -s build/a1/a37-book-pressure-simulated.png
+      - name: Audit A3.8 pressure telemetry visible during handwriting, desktop to 390px
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --test animation/tests/a38-pressure-layout.test.cjs
+          test -s animation/book-pack.js
+          mkdir -p build/a1
+          python3 -m http.server 18782 --bind 127.0.0.1 > build/a1/a38-pressure-layout-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 50); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18782/animation/book.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          timeout 190 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --disable-background-timer-throttling \
+            --window-size=1510,1140 --virtual-time-budget=90000 --dump-dom \
+            'http://127.0.0.1:18782/animation/tests/a38-pressure-viewport-smoke.html' \
+            > build/a1/a38-pressure-layout-browser-dom.html
+          if ! grep -q 'data-result="PASS"' build/a1/a38-pressure-layout-browser-dom.html; then
+            echo 'FAIL: A3.8 pressure control/telemetry left writing viewport' >&2
+            grep -o 'FAIL:[^<]*' build/a1/a38-pressure-layout-browser-dom.html | head -n 12 >&2 || true
+            exit 1
+          fi
+          python3 - <<'PY'
+          import html,json,re
+          from pathlib import Path
+          data=Path('build/a1/a38-pressure-layout-browser-dom.html').read_text(encoding='utf-8')
+          m=re.search(r'<pre id="result">(\{.*?\})</pre>',data,re.S)
+          if not m:raise SystemExit('A3.8 real-browser layout metrics missing')
+          x=json.loads(html.unescape(m.group(1)))
+          assert x['result']=='PASS' and x['characters']==201
+          assert x['sourceStrokes']==1045
+          for name in ('wideSideBySide','laptopAbove','mobileAbove',
+                       'desktopScrollVisible','mobileScrollVisible',
+                       'noDuplicateControls','mobile390',
+                       'pressureCurveVisible','pressureStyleStatePreserved',
+                       'pdfSourceImmutable','originalPigmentGuard'):
+              assert x[name] is True,name
+          assert len(x['layoutProof'])==4
+          Path('build/a1/a38-pressure-layout-metrics.json').write_text(
+              json.dumps(x,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('PASS A3.8: live force visible beside desktop handwriting,',
+                'above & sticky for narrow/mobile, untouched source/pressure')
+          PY
+          timeout 90 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --virtual-time-budget=17000 \
+            --window-size=1500,1110 \
+            --screenshot="$(pwd)/build/a1/a38-pressure-beside-writing-desktop.png" \
+            'http://127.0.0.1:18782/animation/tests/a38-pressure-layout-preview.html' >/dev/null
+          timeout 90 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --virtual-time-budget=17000 \
+            --window-size=470,1030 \
+            --screenshot="$(pwd)/build/a1/a38-pressure-above-writing-mobile.png" \
+            'http://127.0.0.1:18782/animation/tests/a38-pressure-layout-preview.html?mobile=1' >/dev/null
+          test -s build/a1/a38-pressure-beside-writing-desktop.png
+          test -s build/a1/a38-pressure-above-writing-mobile.png
       - uses: actions/upload-artifact@v4
         if: always()
         with:

@@ -1,3 +1,9 @@
+## A3.8：写字时实时可见“笔压风格”
+
+[201字毛笔播放器](animation/book.html)的笔压栏从播放器下方重新布局到字格附近：宽屏与字格并排、手机在字格上方并保持滚动可见，因此可以在写字时观察当前模拟力度和曲线。保留稳定版默认、模拟力度非实测、SVG源墨迹/笔顺及A3.6防超前算法不变。参见 [布局设计与多视口测试](docs/A38_PRESSURE_VISIBLE_LAYOUT.md)。
+
+---
+
 ## A3.7：恢复201字主播放器的稳定版 / 模拟笔压版（已上线）
 
 用户指出截图中的「笔压风格　稳定版｜模拟笔压版」在 A3 完整201字界面消失。已在 `animation/book.html` 和 `book-ui.js` 接回原 A1.6 压力控制器，默认稳定版，模拟版恢复笔尖圆环、百分比、接触阶段与曲线。**不修改原始墨迹、笔速、1045笔前缘屏障、PDF、规范数据或旧九字实验。** 新增全201字/1045笔模型完整性及真实Chromium两档切换/12帧等墨迹/390px测试，**A3.7 已上线（2026-10-11）。** [PR #129](https://github.com/netplus/zitie/pull/129) 最终 HEAD `2252d3de3df7ef9f9aa1eec3deb5d21572d52b5b` 的 [A1/Chromium CI #38138069650](https://github.com/netplus/zitie/actions/runs/38138069650) 与 [Book CI #38138069687](https://github.com/netplus/zitie/actions/runs/38138069687) 双 completed/success；合并 `main` SHA 为 `e8b4b8adefcf2381e8b0ed9a2fcd701794280c93`，对应的 [Pages #38138652608](https://github.com/netplus/zitie/actions/runs/38138652608) Configure、Upload、实际 Deploy 全 completed/success。**201字/1045笔**均生成模拟笔压曲线，14个细笔名受限主项不泄漏，12组真实 Chromium 稳定/模拟模式红墨光栅 **0 像素差异**，力环与当前笔尖100%对齐，风格切换不改变进度、倍率、播放、笔顺或源SVG墨迹；390px手机视口通过，A3.6原2090帧防超前回归不受影响。 [真实稳定/模拟截图与 QA metrics artifact #11702002988](https://github.com/netplus/zitie/actions/runs/38138069650/artifacts/11702002988)。[正式201字播放器](https://netplus.github.io/zitie/animation/book.html?id=77) 可直接使用。**模拟力值不是实测笔压，仅影响笔尖和提示，不改变墨迹宽度。**详见 [回归与修复说明](docs/A37_PRESSURE_STYLE_RESTORE.md)、[Issue #128](https://github.com/netplus/zitie/issues/128)。

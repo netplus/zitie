@@ -48,7 +48,7 @@ jobs:
           node --check animation/book-ui.js
           node --check animation/experiments/brush-gesture-model.js
           node --check animation/experiments/brush-motion-lab.js
-          node --test animation/tests/a3-book.test.cjs animation/tests/a35-brush-motion.test.cjs animation/tests/a36-front-guard.test.cjs animation/tests/a37-book-pressure.test.cjs
+          node --test animation/tests/a3-book.test.cjs animation/tests/a35-brush-motion.test.cjs animation/tests/a36-front-guard.test.cjs animation/tests/a37-book-pressure.test.cjs animation/tests/a38-pressure-layout.test.cjs
       - name: Check source-backed animation examples
         run: node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs animation/tests/pen-kinematics.test.cjs animation/tests/source-onset.test.cjs animation/tests/pressure-model.test.cjs animation/tests/pressure-style.test.cjs animation/tests/stroke-primitives.test.cjs animation/tests/hardpen-model.test.cjs animation/tests/regular-kaishu-model.test.cjs animation/tests/kaishu-composition.test.cjs
       - name: Assemble minimal offline-compatible static site
@@ -90,6 +90,8 @@ jobs:
           test -s _site/animation/experiments/gesture-data.js
           grep -q 'data-pen-style="simulated"' _site/animation/book.html
           grep -q 'data-pen-style="stable"' _site/animation/book.html
+          grep -q 'id="writingStage"' _site/animation/book.html
+          grep -q 'class="pressureBox"' _site/animation/book.html
           test -s _site/animation/hardpen-ink-union.js
           test -s _site/animation/hardpen-stage.js
           test -s _site/animation/gallery.js
