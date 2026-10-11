@@ -1,6 +1,10 @@
 # A2.4 — 整字结构图与受约束交接实验（未教学审核）
 
-状态：独立候选，**不替换 A2.2 主站默认硬笔，也不修改 A2.3 对照侧**。跟踪 [Issue #116](https://github.com/netplus/zitie/issues/116)。此 PR **仅完成 A2.4 第一阶段**；完整范围还包括楷书字形专家验收及更广泛字库。
+状态：**已独立上线的非规范工程候选**，**不替换 A2.2 主站默认硬笔，也不修改 A2.3 对照侧**。跟踪 [Issue #116](https://github.com/netplus/zitie/issues/116)。[PR #117](https://github.com/netplus/zitie/pull/117) **仅完成 A2.4 第一阶段**；完整范围还包括楷书字形专家验收及更广泛字库。
+
+## 已验证上线情况（2026-10-11）
+
+最终 PR HEAD `0a936967c06177a2834847a6a5345cabb6c11eba` 的 [A1 动画 CI #38101554487](https://github.com/netplus/zitie/actions/runs/38101554487) 和 [Book integrity CI #38101554455](https://github.com/netplus/zitie/actions/runs/38101554455) 双 completed/success；[PR #117](https://github.com/netplus/zitie/pull/117) 已合入 `main`，合并 SHA `cc90c7f4fd1591b9eebd56e2d6eea628ce732e61`，此提交的 [GitHub Pages #38102023812](https://github.com/netplus/zitie/actions/runs/38102023812) 已实际完成 Configure、Upload、Deploy（均 success、未跳过）。**83项 Node 测试全部通过**，9字40笔/72帧 Chromium 实际写字中0已绘红墨丢失、45帧笔尖轨迹匹配、7帧 A2.3 与 A2.4 真实差异，390px 窄屏通过。九字与水字的真实截图见 [A1 QA artifact #11688261422](https://github.com/netplus/zitie/actions/runs/38101554487/artifacts/11688261422)。独立[已上线 A2.4 楷书整字结构 A/B 实验](https://netplus.github.io/zitie/animation/experiments/kaishu-composition-lab.html)可体验。**仍是未教学审批的工程实验，水和龠整体专业度待人工复核，不替换主站。**
 
 ## 根因与边界
 
@@ -29,7 +33,7 @@ A 为已上线的 **A2.3 楷书形态候选**；B 为 A2.4 **显式端点约束�
 
 1. kaishu-composition.test.cjs：9 字/40 笔只读、唯一明确调整、阈值拒绝、留白负例、质心与角度、时间严格非降、端点/线宽安全。
 2. kaishu-composition-smoke.html：Chromium 9 字 × 8 帧，已写红墨不消失、笔尖与候选轨迹同步、笔画齐全、390px 无溢出；必须出现有限的「水」字视觉差异，「龠」不误吸附。
-3. 最终 PR HEAD 的 A1 animation 与 Book integrity CI 双成功后合并；Pages 在 merge SHA 上实际完成 Configure、Upload 和 **Deploy** 后才称上线。
+3. A1 animation 与 Book integrity 在最终 PR HEAD 上已全部成功；Pages 在实际合并 SHA 上完成 Configure/Upload/**Deploy**。详细证据见上文；后续任何代码变更仍须重走这一门槛。
 4. 后续扩展按部件尺度/留白约束、独立复核样本、专业硬笔合法参考与用户/专家视觉评判。**目前不能声称已经实现工整专业楷书**。
 
 安全不变量：正式 v0.5.1（299 页）PDF、manifest、201 条来源审核、已发布 A2.2 硬笔/毛笔双工具、A1.6 稳定版/模拟笔压版和 A2.3 入口均不得更改。
