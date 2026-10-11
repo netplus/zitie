@@ -1,0 +1,201 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>A3.6 complete-book ink versus nib Chromium pixel QA</title></head><body>
+<h1>201 glyphs / 1045 source-front guards / true ink pixel audit</h1>
+<pre id="result">RUNNING</pre>
+<iframe id="book" src="../book.html" title="Original source-PDF brush"
+ style="width:1210px;height:1500px"></iframe>
+<iframe id="lab" src="../experiments/brush-motion-lab.html?id=77" title="A3.5 same-clock comparison"
+ style="width:1190px;height:1280px"></iframe>
+<script>
+const check=(x,m)=>{if(!x)throw Error(m);};
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function raster(svg,tip,size=384){
+ const saved=tip.style.display;tip.style.display='none';
+ try{
+  const u=URL.createObjectURL(new Blob([
+    new XMLSerializer().serializeToString(svg)],
+    {type:'image/svg+xml;charset=utf-8'}));
+  try{
+   const image=new Image();
+   await new Promise((ok,bad)=>{
+    image.onload=ok;image.onerror=()=>bad(Error('SVG decode failed'));
+    image.src=u;
+   });
+   const canvas=document.createElement('canvas');
+   canvas.width=canvas.height=size;
+   const ctx=canvas.getContext('2d',{willReadFrequently:true});
+   ctx.drawImage(image,0,0,size,size);
+   const pixels=ctx.getImageData(0,0,size,size).data;
+   const red=new Uint8Array(size*size);let count=0;
+   for(let i=0,j=0;i<pixels.length;i+=4,j++){
+    if(pixels[i]>137&&pixels[i+1]<118&&pixels[i+2]<126&&
+       pixels[i]>pixels[i+1]*1.44&&pixels[i+3]>187){red[j]=1;count++;}
+   }
+   return {red,count};
+  }finally{URL.revokeObjectURL(u);}
+ }finally{tip.style.display=saved;}
+}
+function redAt(pixels,x,y,size=384){
+ const px=Math.round(x*size/1024),py=Math.round((900-y)*size/1024);
+ for(let j=-1;j<=1;j++)for(let i=-1;i<=1;i++){
+  const u=px+i,v=py+j;
+  if(u>=0&&v>=0&&u<size&&v<size&&pixels[v*size+u])return true;
+ }
+ return false;
+}
+function aheadInk(brush,pixels,profile,d){
+ let last=0;
+ for(let offset=12;offset<=195&&d+offset<profile.length;offset+=3){
+  const p=brush.pointAtDistance(profile,d+offset);
+  if(redAt(pixels,p[0],p[1]))last=offset;
+ }
+ return last;
+}
+function inkLost(a,b){let n=0;for(let i=0;i<a.length;i++)if(a[i]&&!b[i])n++;return n;}
+async function run(){
+ const windowA=document.getElementById('book').contentWindow;
+ const windowB=document.getElementById('lab').contentWindow;
+ const docA=windowA.document,app=windowA.ZITIE_A3_BOOK,
+  ab=windowB.ZITIE_A35,brush=windowA.ZitieInkBrushUnion,
+  guard=windowA.ZitieInkFrontGuard;
+ check(docA.documentElement.dataset.a3Ready==='201','Full book did not initialize');
+ check(app&&ab&&guard&&brush,'Guarded production A3 and A/B are required');
+ check(app.player.frontGuard,'Production 201-book ink-front guard was not enabled');
+ const source=JSON.stringify(app.pack.glyphs);
+ let sourceStrokes=0,liveClips=0,maxStationGap=0;
+ for(const glyph of app.pack.glyphs){
+  app.selectGlyph(glyph.main_id);
+  const rows=app.player.rows,tl=app.player.timeline;
+  check(rows.length===glyph.strokes.length,'Lost strokes: '+glyph.character);
+  for(let i=0;i<rows.length;i++){
+   const row=rows[i],step=tl.strokes[i];sourceStrokes++;
+   check(row.guard&&row.guard.kind==='source_arc_voronoi_progress_gate',
+     'Ungated full-book brush: '+glyph.character+'/'+(i+1));
+   check(row.guardCells.length===row.guard.cells.length&&row.guardCells.length>5,
+     'Incomplete source-front cells '+glyph.character);
+   check(row.reveal.getAttribute('d')===glyph.strokes[i].outline,
+     'Published SVG outline changed '+glyph.character);
+   check(row.guard.maxStationGap<=4.001,'Source sample spacing exceeded 4 SVG');
+   maxStationGap=Math.max(maxStationGap,row.guard.maxStationGap);
+   app.player.seekElapsed(step.startMs+step.durationMs*.42);
+   const frame=app.player.getState();
+   const count=guard.visibleCount(row.guard,row.profile.length*frame.progress);
+   check(row.previousGuardCount===count&&count>0&&count<row.guardCells.length,
+     'Clip cell prefix not tied to nib position');
+   check(row.reveal.getAttribute('clip-path')?.startsWith('url(#'),
+     'Live ink path has no source-front clip');
+   check(row.guardCells.filter(x=>x.style.display!=='none').length===count,
+     'Visible clip cells do not match source travel');
+   liveClips++;
+  }
+ }
+ check(sourceStrokes===1045&&liveClips===1045,
+   'Not all 1045 strokes passed live guard check');
+ // True raster for ALL 201 characters: high-risk folds/hook and original
+ // water, mouth, moon, complex glyphs receive denser temporal sampling.
+ const risk=new Set([26,16,67,43,172,44,200,81,54,92,121,120,
+  129,149,152,195,53,55,165,177,178,52,164,39,72,91,48,77,37,88,201]);
+ let frames=0,lost=0,maxLead=0,over12=0,painted=0,riskGlyphs=0;
+ const details=[];
+ for(const glyph of app.pack.glyphs){
+  app.selectGlyph(glyph.main_id);
+  const timeline=app.player.timeline;
+  let selected={i:0,score:-1};
+  glyph.strokes.forEach((s,i)=>{
+   const segment=timeline.strokes[i];
+   const score=segment.length*(s.name_status==='reviewed'&&/折|钩/.test(s.name)?1.5:1);
+   if(score>selected.score)selected={i,score};
+  });
+  const pinned={77:1,37:1,88:1,201:13};
+  const index=pinned[glyph.main_id]??selected.i;
+  const row=app.player.rows[index],part=timeline.strokes[index];
+  const fractions=risk.has(glyph.main_id)?[.09,.27,.53,.78,.92]:[.23,.63];
+  if(risk.has(glyph.main_id))riskGlyphs++;
+  let previous=null;
+  for(const fraction of fractions){
+   app.player.seekElapsed(part.startMs+part.durationMs*fraction);
+   const motion=app.player.getState();
+   const img=await raster(app.player.svg,app.player.tip);
+   if(previous)lost+=inkLost(previous,img.red);
+   previous=img.red;
+   const sourceDistance=brush.stateAt(row.profile,motion.progress).distance;
+   const leading=aheadInk(brush,img.red,row.profile,sourceDistance);
+   maxLead=Math.max(maxLead,leading);
+   if(leading>12)over12++;
+   if(img.count>0)painted++;
+   if([77,37,88,201].includes(glyph.main_id)||leading>12)
+    details.push({char:glyph.character,id:glyph.main_id,
+      stroke:index+1,fraction,leadingRed:leading,painted:img.count});
+   frames++;
+  }
+ }
+ check(frames>=430&&riskGlyphs===risk.size,
+   'All 201 source characters were not visually rasterized');
+ check(painted>=frames*.92,'Clipping erased brush ink prematurely');
+ check(lost===0,'Previously painted red ink disappeared');
+ check(maxLead<=12&&over12===0,'Ink runs ahead of source nib');
+ check(JSON.stringify(app.pack.glyphs)===source,'Original PDF glyph data mutated');
+ // Explicitly verify all four water strokes, not only the hooked first.
+ let waterFrames=0;
+ app.selectGlyph(77);
+ for(let i=0;i<4;i++){
+  const segment=app.player.timeline.strokes[i],row=app.player.rows[i];
+  for(const f of [.13,.37,.68,.9]){
+   app.player.seekElapsed(segment.startMs+segment.durationMs*f);
+   const frame=app.player.getState(),img=await raster(app.player.svg,app.player.tip);
+   const d=brush.stateAt(row.profile,frame.progress).distance;
+   check(aheadInk(brush,img.red,row.profile,d)<=12,
+     'Water stroke '+(i+1)+' red front outran source nib');
+   waterFrames++;
+  }
+ }
+ // Both original and synthetic-timing A3.5 must use same source arc guard.
+ check(ab.baseline.frontGuard&&ab.candidate.frontGuard,
+   'A3.5 A/B remains vulnerable to premature ink');
+ let retimedFrames=0,maxRetimedLead=0;
+ for(const [id,index] of [[77,0],[77,1],[37,1],[88,1],[201,13]]){
+  ab.select(id);
+  const step=ab.baseline.timeline.strokes[index];
+  for(const f of [.09,.3,.56,.85]){
+   ab.baseline.seekElapsed(step.startMs+step.durationMs*f);
+   check(Math.abs(ab.baseline.elapsed-ab.candidate.elapsed)<1e-6,
+     'A3.5 single-clock design changed');
+   for(const renderer of [ab.baseline,ab.candidate]){
+    const state=renderer.getState();
+    const row=renderer.rows[index],p=brush.stateAt(row.profile,state.progress);
+    const img=await raster(renderer.svg,renderer.tip);
+    const lead=aheadInk(brush,img.red,row.profile,p.distance);
+    maxRetimedLead=Math.max(maxRetimedLead,lead);
+    check(lead<=12,'A3.5 synthetic motion still reveals future ink');
+    retimedFrames++;
+   }
+  }
+ }
+ check(retimedFrames===40&&waterFrames===16,'Named complex regression coverage changed');
+ document.getElementById('book').style.width='390px';
+ document.getElementById('lab').style.width='390px';
+ await sleep(100);
+ check(docA.documentElement.scrollWidth<=windowA.innerWidth+2,'A3 mobile overflow');
+ check(windowB.document.documentElement.scrollWidth<=windowB.innerWidth+2,
+   'A3.5 mobile overflow');
+ return {result:'PASS',glyphs:201,sourceStrokes,liveFrontGuards:liveClips,
+   maxStationGap,actualPixelFrames:frames,riskGlyphs,
+   positiveInkFrames:painted,sourceRedPixelsLost:lost,
+   maxSourceRedLead:maxLead,framesWithLeadOver12:over12,
+   waterStrokeFrames:waterFrames,retimedActualFrames:retimedFrames,
+   maxA35SourceRedLead:maxRetimedLead,sourcePDFUnmodified:true,
+   originalNibClockUnmodified:true,mobile390:true,
+   representativeCases:details.slice(0,55)};
+}
+const first=document.getElementById('book'),second=document.getElementById('lab');
+Promise.all([
+ new Promise(ok=>first.addEventListener('load',ok)),
+ new Promise(ok=>second.addEventListener('load',ok))
+]).then(run).then(report=>{
+ document.documentElement.setAttribute('data-result','PASS');
+ document.getElementById('result').textContent=JSON.stringify(report,null,2);
+}).catch(error=>{
+ document.documentElement.setAttribute('data-result','FAIL');
+ document.getElementById('result').textContent='FAIL: '+(error.stack||error);
+});
+</script></body></html>
