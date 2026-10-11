@@ -4,10 +4,12 @@
     require('./timeline.js') : root.ZitieTimeline;
   const Brush = typeof module === 'object' && module.exports ?
     require('./brush-union.js') : root.ZitieInkBrushUnion;
-  const api = factory(Timeline, Brush);
+  const FrontGuard = typeof module === 'object' && module.exports ?
+    require('./ink-front-guard.js') : root.ZitieInkFrontGuard;
+  const api = factory(Timeline, Brush, FrontGuard);
   if (typeof module === 'object' && module.exports) module.exports = api;
   if (root) root.ZitiePlayer = api;
-})(typeof window !== 'undefined' ? window : null, function (T, Brush) {
+})(typeof window !== 'undefined' ? window : null, function (T, Brush, FrontGuard) {
   'use strict';
   const NS = 'http://www.w3.org/2000/svg';
   const create = (tag, attrs = {}) => {
@@ -21,8 +23,11 @@
   }
 
   class StrokePlayer {
-    constructor({ svg, status, progress, onUpdate } = {}) {
+    constructor({ svg, status, progress, onUpdate, frontGuard=false } = {}) {
       if (!svg || svg.namespaceURI !== NS) throw new Error('An SVG stage is required');
+      if (typeof frontGuard !== 'boolean' || (frontGuard && !FrontGuard))
+        throw Error('Missing or invalid source-front guard');
+      this.frontGuard = frontGuard;
       this.svg = svg;
       this.status = status || null;
       this.progress = progress || null;
@@ -79,8 +84,27 @@
         // sections at a fold/hook before the canonical center reaches them.
         // We never change the established mask or motor timing. Only
         // independently named hook/fold strokes use this visual offset.
-        const opticalFrontier=s.name_status==='reviewed'&&/折|钩/.test(s.name)?
+        const opticalFrontier=!this.frontGuard&&
+          s.name_status==='reviewed'&&/折|钩/.test(s.name)?
           Brush.makeVisualFrontier(profile):null;
+        // Unlike a roundcap which can reach around a bend before the nib,
+        // each source-nearest spatial cell becomes visible only after the
+        // nib traverses its own canonical station (4 SVG units spacing).
+        // Original source outlines, masks, velocity and stroke order are
+        // not altered. The historical opt-out renderer remains unchanged.
+        const guard=this.frontGuard?FrontGuard.buildCells({
+          stations:Brush.sampleMedian(s.median,4)}):null;
+        let guardCells=null;
+        if(guard){
+          const clip=create('clipPath',{id:id+'-front',clipPathUnits:'userSpaceOnUse'});
+          guardCells=guard.cells.map(cell=>{
+            const shape=create('path',{d:cell.outline});
+            shape.style.display='none';
+            clip.appendChild(shape);
+            return shape;
+          });
+          defs.appendChild(clip);
+        }
         contour.remove();
         // Every local brush fragment is painted as an INDEPENDENT stroked
         // path. SVG alpha masks accumulate their union; no combined filled
@@ -105,8 +129,10 @@
         const solid=create('path',{d:s.outline,fill:'#5C6269'});
         const reveal=create('path',{d:s.outline,fill:'#BD3945',
           mask:'url(#'+id+')'});
+        if(guard)reveal.setAttribute('clip-path','url(#'+id+'-front)');
         return {hint,solid,reveal,profile,fragments,activeInk,
-          previousVisibleCount:0,id,opticalFrontier};
+          previousVisibleCount:0,id,opticalFrontier,
+          guard,guardCells,previousGuardCount:0};
       });
       // Layer by paint role, NOT by stroke index: future gray strokes must
       // never obscure the currently written red stroke at intersections.
@@ -140,8 +166,18 @@
           // only controls which part of its fill is uncovered at a given time.
           if (frame.progress >= 1) {
             r.reveal.removeAttribute('mask');
+            if(r.guard)r.reveal.removeAttribute('clip-path');
           } else {
             r.reveal.setAttribute('mask', 'url(#' + r.id + ')');
+            if(r.guard){
+              r.reveal.setAttribute('clip-path','url(#'+r.id+'-front)');
+              const cap=FrontGuard.visibleCount(r.guard,
+                r.profile.length*frame.progress);
+              for(let j=Math.min(cap,r.previousGuardCount);
+                  j<Math.max(cap,r.previousGuardCount);j++)
+                r.guardCells[j].style.display=j<cap?'':'none';
+              r.previousGuardCount=cap;
+            }
             const state=Brush.stateAt(r.profile,frame.progress);
             // Changes to a settled prefix are O(segments crossed), not
             // O(total sample count), even at 60fps. Backward seek removes
