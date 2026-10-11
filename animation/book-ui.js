@@ -32,7 +32,10 @@ window.addEventListener('DOMContentLoaded', function(){
     onUpdate(s){
       if(!s||!state.current)return;
       state.lastFrame=s;
-      const g=state.current;
+      // StrokePlayer.setGlyph() calls pause() on the OLD timeline before
+      // installing its next glyph. Always use the clock-owned glyph, never
+      // a selection that may already refer to the next character.
+      const g=player.timeline.glyph;
       $('stepLabel').textContent='第 '+(s.index+1)+' / '+
         s.count+' 笔 · '+(g.strokes[s.index].name_status==='reviewed'?
           g.strokes[s.index].name:'第'+(s.index+1)+'笔');
