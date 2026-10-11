@@ -45,7 +45,9 @@ jobs:
           python scripts/acquire_vectors.py --batches $BATCHES
           python scripts/build_a3_animation.py --vectors build/vectors --output build/a3/book-pack.js
           node --check animation/book-ui.js
-          node --test animation/tests/a3-book.test.cjs
+          node --check animation/experiments/brush-gesture-model.js
+          node --check animation/experiments/brush-motion-lab.js
+          node --test animation/tests/a3-book.test.cjs animation/tests/a35-brush-motion.test.cjs
       - name: Check source-backed animation examples
         run: node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs animation/tests/pen-kinematics.test.cjs animation/tests/source-onset.test.cjs animation/tests/pressure-model.test.cjs animation/tests/pressure-style.test.cjs animation/tests/stroke-primitives.test.cjs animation/tests/hardpen-model.test.cjs animation/tests/regular-kaishu-model.test.cjs animation/tests/kaishu-composition.test.cjs
       - name: Assemble minimal offline-compatible static site
@@ -57,7 +59,7 @@ jobs:
           cp build/a3/book-pack.js _site/animation/book-pack.js
           cp deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf _site/book/zitie-v0.5.1-A4.pdf
           mkdir -p _site/animation/experiments
-          cp animation/experiments/gesture-data.js animation/experiments/pen-contact.js animation/experiments/pen-lab-engine.js animation/experiments/pen-kinematics.js animation/experiments/source-onset.js animation/experiments/pen-lab.html animation/experiments/pressure-model.js animation/experiments/pressure-lab.js animation/experiments/pressure-lab.html animation/experiments/stroke-primitives.js animation/experiments/stroke-grammar-lab.js animation/experiments/stroke-grammar-lab.html animation/experiments/hardpen-model.js animation/experiments/hardpen-lab.js animation/experiments/hardpen-lab.html animation/experiments/regular-kaishu-model.js animation/experiments/regular-kaishu-ink.js animation/experiments/regular-kaishu-stage.js animation/experiments/regular-kaishu-lab.js animation/experiments/regular-kaishu-lab.html animation/experiments/kaishu-composition.js animation/experiments/kaishu-composition-stage.js animation/experiments/kaishu-composition-lab.js animation/experiments/kaishu-composition-lab.html _site/animation/experiments/
+          cp animation/experiments/brush-gesture-model.js animation/experiments/brush-motion-lab.js animation/experiments/brush-motion-lab.html animation/experiments/gesture-data.js animation/experiments/pen-contact.js animation/experiments/pen-lab-engine.js animation/experiments/pen-kinematics.js animation/experiments/source-onset.js animation/experiments/pen-lab.html animation/experiments/pressure-model.js animation/experiments/pressure-lab.js animation/experiments/pressure-lab.html animation/experiments/stroke-primitives.js animation/experiments/stroke-grammar-lab.js animation/experiments/stroke-grammar-lab.html animation/experiments/hardpen-model.js animation/experiments/hardpen-lab.js animation/experiments/hardpen-lab.html animation/experiments/regular-kaishu-model.js animation/experiments/regular-kaishu-ink.js animation/experiments/regular-kaishu-stage.js animation/experiments/regular-kaishu-lab.js animation/experiments/regular-kaishu-lab.html animation/experiments/kaishu-composition.js animation/experiments/kaishu-composition-stage.js animation/experiments/kaishu-composition-lab.js animation/experiments/kaishu-composition-lab.html _site/animation/experiments/
           cp data/artwork/ARPHICPL.TXT _site/data/artwork/ARPHICPL.TXT
           cat > _site/index.html <<'HTML'
           <!doctype html>
@@ -86,6 +88,9 @@ jobs:
           test -s _site/animation/hardpen-stage.js
           test -s _site/animation/gallery.js
           test -s _site/animation/ui.js
+          test -s _site/animation/experiments/brush-gesture-model.js
+          test -s _site/animation/experiments/brush-motion-lab.js
+          test -s _site/animation/experiments/brush-motion-lab.html
           test -s _site/animation/experiments/pen-lab.html
           test -s _site/animation/experiments/pen-contact.js
           test -s _site/animation/experiments/pen-lab-engine.js

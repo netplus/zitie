@@ -1,0 +1,193 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>A3.5 real-browser 201-glyph immutable PDF brush motion A/B</title></head><body>
+<h1>A3.5 original-vs-retimed brush motion test</h1>
+<pre id="result">RUNNING</pre>
+<iframe id="lab" title="PDF-sourced brush motion A/B" src="../experiments/brush-motion-lab.html?id=77"
+ style="width:1310px;height:1890px;border:0"></iframe>
+<script>
+const check=(ok,msg)=>{if(!ok)throw Error(msg);};
+const wait=ms=>new Promise(done=>setTimeout(done,ms));
+function countChanges(a,b){
+ check(a.length===b.length,'Raster sizes disagree');
+ let change=0,lost=0;
+ for(let i=0;i<a.length;i++){
+  if(a[i]!==b[i])change++;
+  if(a[i]&&!b[i])lost++;
+ }
+ return {change,lost};
+}
+async function raster(svg,tip,dim=352){
+ const initial=tip.style.display;
+ tip.style.display='none';
+ try{
+  const markup=new XMLSerializer().serializeToString(svg);
+  const url=URL.createObjectURL(new Blob([markup],{type:'image/svg+xml;charset=utf-8'}));
+  try{
+   const image=new Image();
+   await new Promise((yes,no)=>{
+    image.onload=yes;
+    image.onerror=()=>no(Error('SVG snapshot did not decode'));
+    image.src=url;
+   });
+   const canvas=document.createElement('canvas');
+   canvas.width=canvas.height=dim;
+   const ctx=canvas.getContext('2d',{willReadFrequently:true});
+   ctx.drawImage(image,0,0,dim,dim);
+   const pixel=ctx.getImageData(0,0,dim,dim).data,red=new Uint8Array(dim*dim);
+   let ink=0;
+   for(let i=0,j=0;i<pixel.length;i+=4,j++){
+    if(pixel[i]>135&&pixel[i+1]<118&&pixel[i+2]<126&&
+       pixel[i]>pixel[i+1]*1.43&&pixel[i+3]>180){
+      red[j]=1;ink++;
+    }
+   }
+   return {red,ink};
+  }finally{URL.revokeObjectURL(url);}
+ }finally{tip.style.display=initial;}
+}
+function inverse(motion,position){
+ let lo=0,hi=1;
+ for(let i=0;i<38;i++){
+  const t=(lo+hi)/2;
+  if(motion.progressAt(t)<position)lo=t;else hi=t;
+ }
+ return (lo+hi)/2;
+}
+document.getElementById('lab').addEventListener('load',async function(){
+ const out=document.getElementById('result');
+ try{
+  const w=this.contentWindow,d=w.document,lab=w.ZITIE_A35;
+  check(d.documentElement.getAttribute('data-a35-ready')==='201',
+    'A3.5 complete PDF asset or lab not ready');
+  check(lab.pack.glyphs.length===201,'Not 201 book glyphs');
+  check(lab.baseline!==lab.candidate,'A/B must have separate original StrokePlayers');
+  check(lab.getGlyph().character==='水','Deep-link default water missing');
+  const source=JSON.stringify(lab.pack.glyphs);
+  const originalTimeline=lab.baseline.timeline;
+  check(originalTimeline.glyph===lab.candidate.timeline.glyph,
+    'A/B source glyph is different');
+  check(lab.getPlans().length===4,'Water plans wrong');
+  let all=0,changed=0,ambiguous=0,events=0;
+  for(const g of lab.pack.glyphs){
+   lab.select(g.main_id);
+   check(lab.getGlyph()===g,'Source selection lost ID');
+   const a=lab.baseline,b=lab.candidate,plans=lab.getPlans();
+   check(a.timeline.totalMs===b.timeline.totalMs,
+     g.character+' has different duration across A/B');
+   check(a.timeline.strokes.length===b.timeline.strokes.length,
+     g.character+' lost/reordered source strokes');
+   check(plans.length===g.strokes.length,g.character+' incomplete plan');
+   for(let k=0;k<plans.length;k++){
+    const p=plans[k],old=a.timeline.strokes[k],newStroke=b.timeline.strokes[k];
+    check(old.startMs===newStroke.startMs&&old.endMs===newStroke.endMs&&
+      old.durationMs===newStroke.durationMs,g.character+' pause/duration was changed');
+    check(a.rows[k].reveal.getAttribute('d')===g.strokes[k].outline&&
+      b.rows[k].reveal.getAttribute('d')===g.strokes[k].outline,
+      'A3.5 altered original PDF silhouette at '+g.character+' '+k);
+    if(g.strokes[k].name_status==='ordinal_only')
+      check(!p.enabled,'Unreviewed fine stroke was motion-semantically guessed');
+    if(p.enabled)changed++;else ambiguous++;
+    events+=p.events.length;
+    all++;
+   }
+   check(a.elapsed===0&&b.elapsed===0,'Selecting glyph did not reset linked clock');
+  }
+  check(all===lab.pack.summary.strokes,
+    'A3.5 did not visit all 1045 PDF stroke timings');
+  check(changed>100,'A3.5 changed too few stroke movements to compare');
+  check(ambiguous>0,'No conservative fallback observed');
+  check(events>10,'No source-located fold/hook events observed');
+  check(JSON.stringify(lab.pack.glyphs)===source,'201 source pack was modified');
+  // Nine anchor strokes at equal TIME: both SVGs produce append-only red
+  // source ink, while the B current nib position sometimes genuinely differs.
+  const samples=[
+    [1,0],[6,0],[12,0],[95,0],[37,1],
+    [40,1],[77,0],[88,1],[201,13]
+  ];
+  const fractions=[0,.025,.12,.36,.70,.96];
+  let frames=0,lostA=0,lostB=0,differentTimeFrames=0,cursorVisible=0;
+  for(const [id,k] of samples){
+   lab.select(id);
+   const old=lab.baseline.timeline.strokes[k];
+   let previousA=new Uint8Array(352*352),previousB=new Uint8Array(352*352);
+   for(const fraction of fractions){
+    lab.baseline.seekElapsed(old.startMs+old.durationMs*fraction);
+    check(Math.abs(lab.baseline.elapsed-lab.candidate.elapsed)<1e-6,
+      'A and B clock no longer synchronized');
+    const a=await raster(lab.baseline.svg,lab.baseline.tip);
+    const b=await raster(lab.candidate.svg,lab.candidate.tip);
+    lostA+=countChanges(previousA,a.red).lost;
+    lostB+=countChanges(previousB,b.red).lost;
+    if(fraction===0)check(!a.ink&&!b.ink,
+      'A3.5 source ink flashed at zero contact');
+    if(fraction>.025&&fraction<.96){
+      check(lab.baseline.tip.style.display!=='none'&&
+        lab.candidate.tip.style.display!=='none','Brush nib vanished');
+      cursorVisible++;
+    }
+    if(fraction>.025&&fraction<.96&&
+       countChanges(a.red,b.red).change>3)differentTimeFrames++;
+    previousA=a.red;previousB=b.red;frames++;
+   }
+  }
+  check(frames===54,'Wrong number of real SVG frame pairs');
+  check(lostA===0&&lostB===0,'A/B released ink lost already-painted red pixels');
+  check(differentTimeFrames>=3,'A3.5 retiming has no visible A/B motion effect');
+  // At exactly the SAME *spatial progress*, the immutable brush paint
+  // must be raster-identical — clock retiming is the ONLY allowed change.
+  let sameSpacePairs=0,maxInkMismatch=0;
+  for(const [id,k] of samples.slice(0,7)){
+   lab.select(id);
+   const a=lab.baseline.timeline.strokes[k];
+   const b=lab.candidate.timeline.strokes[k];
+   for(const progress of [.11,.36,.72]){
+    lab.baseline.seekElapsed(a.startMs+a.durationMs*inverse(a.motion,progress));
+    lab.candidate.seekElapsed(b.startMs+b.durationMs*inverse(b.motion,progress));
+    const picA=await raster(lab.baseline.svg,lab.baseline.tip);
+    const picB=await raster(lab.candidate.svg,lab.candidate.tip);
+    const mismatch=countChanges(picA.red,picB.red).change;
+    maxInkMismatch=Math.max(maxInkMismatch,mismatch);
+    check(mismatch<=7,'A3.5 ink differs at equal source spatial position: '+id+'/'+k+'/'+mismatch);
+    sameSpacePairs++;
+   }
+  }
+  check(sameSpacePairs===21,'Matched space source raster crosscheck incomplete');
+  // Re-sync to a shared millisecond clock after deliberate space comparison.
+  lab.baseline.seekElapsed(lab.baseline.timeline.totalMs*.34);
+  check(lab.baseline.elapsed===lab.candidate.elapsed,'Same-clock restoration failed');
+  lab.select(201);
+  lab.baseline.seekStroke(16);
+  check(lab.getSelectedStroke()===16,'Direct 17th stroke does not work');
+  check(d.querySelectorAll('#stepButtons button').length===17,
+    '17 original strokes no longer navigable');
+  check(d.getElementById('bookLink').getAttribute('href').includes('#page='),
+    'Source PDF page deep link not updated');
+  const time=lab.getTime();
+  for(const rate of [.5,1,1.5,2]){
+   lab.setSpeed(rate);
+   check(lab.getTime()===time&&lab.baseline.speed===rate,
+     'Playback rate interrupted time synchronization');
+  }
+  lab.setSpeed(1);
+  this.style.width='390px';
+  await wait(100);
+  check(d.documentElement.scrollWidth<=w.innerWidth+2,
+    'A3.5 two-panel layout causes horizontal overflow at 390px');
+  check(JSON.stringify(lab.pack.glyphs)===source,
+    'A3.5 browsing or moving altered the exact PDF source');
+  const report={result:'PASS',glyphs:201,sourceStrokes:all,
+    motionCandidates:changed,conservativeFallbacks:ambiguous,
+    locatedCandidateEvents:events,framePairs:frames,
+    lostRedPixelsA:lostA,lostRedPixelsB:lostB,
+    differentTimeFrames,cursorVisibleFrames:cursorVisible,
+    matchedSpaceInkPairs:sameSpacePairs,maxMatchedSpaceRasterDifference:maxInkMismatch,
+    immutablePDFSource:true,oneClock:true,mobile390:true,
+    actualHumanMotorCapture:false,defaultA3Unchanged:true};
+  document.documentElement.setAttribute('data-result','PASS');
+  out.textContent=JSON.stringify(report,null,2);
+ }catch(err){
+  document.documentElement.setAttribute('data-result','FAIL');
+  out.textContent='FAIL: '+(err.stack||err);
+ }
+});
+</script></body></html>

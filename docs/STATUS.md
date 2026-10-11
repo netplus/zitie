@@ -1,3 +1,9 @@
+# A3.5 毛笔运笔自然度 A/B（2026-10-11，独立研究候选，未推广默认）
+
+用户已确定继续 A3.5，要求提升起笔、行笔、转折、出钩与收笔的自然感，但**严格保留正式PDF已发布201字/1045笔原轮廓及笔顺**。当前新增只读运笔时间密度模型 `animation/experiments/brush-gesture-model.js`、完整201字同源的 [A3.5 左右对照](../animation/experiments/brush-motion-lab.html)、Node与 Chromium 两层测试。A/B 始终同一播放时钟和两份原毛笔SVG，B仅修改独立时间映射，来源不支持明确折钩或细笔名审核受限时 fail closed。对照验证要求“同一时间看差异、同一中线位置落墨一样”；研究速率不代表已测真人手写参数。正式 `animation/book.html` 的A3毛笔动画**仍保持原版默认**，硬笔研究继续冻结；详见 [算法/质量门槛](A35_BRUSH_MOTION_AB.md) 与 [A3 #120](https://github.com/netplus/zitie/issues/120)。此时未核实最终双CI或部署，不能称上线。
+
+---
+
 # A3 正式 PDF 同源201字毛笔动画已独立部署（2026-10-11）
 
 用户决定：**默认回到毛笔**，硬笔路线暂停、不再开展 A2.5 美学修正。新主线 [Issue #120](https://github.com/netplus/zitie/issues/120) 以正式 v0.5.1 299页 PDF 及其构建输入为准，建立独立201字毛笔笔顺网页，并保留原9字页面的毛笔默认/历史硬笔可选。

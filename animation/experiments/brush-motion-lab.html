@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="zh-CN"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>A3.5 毛笔运笔 A/B · PDF 同源201字</title>
+<style>
+:root{--accent:#ad3d4b;--text:#29343a;--line:#e9e4e2;--muted:#65737a}
+*{box-sizing:border-box}body{margin:0;background:#f4f2ef;color:var(--text);
+ font:14px/1.55 system-ui,"PingFang SC","Microsoft YaHei",sans-serif}
+button,input{font:inherit}button{cursor:pointer}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #d9a0a7;outline-offset:3px}
+a{color:#943541}.page{max-width:1300px;margin:auto;padding:21px}
+header{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px;margin-bottom:16px}
+h1{font-size:24px;line-height:1.35;margin:0}p{margin:7px 0}
+.muted{color:var(--muted);font-size:12px}
+.back{font-size:12px;padding:8px 11px;border:1px solid var(--line);border-radius:8px;background:white}
+.panes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.pane,.controls,.catalog,.explain{border:1px solid var(--line);border-radius:13px;background:white;overflow:hidden}
+.pane{padding:15px}
+.pane h2{font-size:16px;margin:0 0 4px;display:flex;gap:8px;align-items:center}
+.a,.b{padding:2px 7px;border-radius:6px;color:#fff;font-size:12px}
+.a{background:#6e7880}.b{background:#af3a4b}
+.stage{border:1px solid #eee9e8;border-radius:9px;background:#fff}
+.stage svg{display:block;width:100%;height:auto;aspect-ratio:1}
+.readout{font-size:12px;min-height:44px;padding-top:8px;color:var(--muted)}
+.controls{margin:14px 0;padding:14px}
+.controls .head{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:12px}
+#glyphName{font:37px/1.1 "KaiTi","STKaiti","SimKai",serif}
+#glyphMeta{font-size:12px;color:var(--muted)}
+.toolbar{display:flex;gap:7px;flex-wrap:wrap;align-items:center}
+.toolbar button,.speed button,.filter button,.tile{border:1px solid #e3dfe0;background:white;border-radius:8px;padding:8px 11px}
+.toolbar button.primary{color:white;border-color:var(--accent);background:var(--accent)}
+.toolbar button:hover,.speed button:hover{background:#fcf0f2}.toolbar button.primary:hover{background:#912c3b}
+.speed{display:flex;align-items:center;gap:4px;margin-left:auto}
+.speed button{font-size:12px;padding:6px 9px}
+.speed button[aria-pressed=true]{background:#f8e9eb;border-color:#c4989f;font-weight:700}
+.seek{display:flex;align-items:center;gap:11px;margin:12px 0}
+.seek input{width:100%;flex:1;accent-color:var(--accent)}
+#time{font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums}
+.bottom{display:grid;grid-template-columns:minmax(270px,1fr) minmax(0,1.25fr);gap:14px}
+.catalog,.explain{padding:16px}
+.catalog h2,.explain h2{margin:0 0 9px;font-size:15px}
+#search{width:100%;border:1px solid #dcd9d7;border-radius:8px;padding:9px}
+.filter{display:flex;gap:5px;flex-wrap:wrap;margin:9px 0;max-height:83px;overflow:auto}
+.filter button{padding:4px 7px;font-size:11px}
+.filter button[aria-pressed=true]{background:#fff1f3;color:#9a3743;border-color:#d9adb3}
+.tiles{display:grid;grid-template-columns:repeat(9,minmax(0,1fr));gap:5px;max-height:172px;overflow:auto}
+.tile{padding:6px 0;min-width:0;display:flex;flex-direction:column;align-items:center}
+.tile strong{font:24px/1.15 "KaiTi","STKaiti","SimKai",serif}
+.tile small{font-size:9px;color:var(--muted)}
+.tile[aria-pressed=true]{background:#fff1f2;border:2px solid #ac4653}
+#notes{font-size:12px;color:#525f64}
+#stepButtons{display:flex;gap:5px;flex-wrap:wrap;margin:10px 0}
+#stepButtons button{padding:5px 8px;font-size:12px;border:1px solid #e4e0de;background:white;border-radius:7px}
+#stepButtons button[aria-current=step]{border-color:#ae515d;background:#fff1f2;color:#9c3442}
+.notice{font-size:12px;color:#657078;margin-top:14px}
+@media(max-width:790px){.page{padding:11px}.pane{padding:7px}.panes{gap:8px}.bottom{grid-template-columns:1fr}}
+@media(max-width:540px){header h1{font-size:18px}.panes{grid-template-columns:1fr}.stage svg{max-height:400px}.toolbar button{padding:6px 8px}.speed{margin-left:0;width:100%}.tiles{grid-template-columns:repeat(7,minmax(0,1fr))}}
+</style>
+<script defer src="../book-pack.js"></script>
+<script defer src="../motion.js"></script>
+<script defer src="../timeline.js"></script>
+<script defer src="../brush-union.js"></script>
+<script defer src="../player.js"></script>
+<script defer src="./brush-gesture-model.js"></script>
+<script defer src="./brush-motion-lab.js"></script>
+</head><body>
+<main class="page">
+<header>
+ <div><h1>A3.5 · 毛笔运笔节奏 A/B 实验室</h1>
+ <p class="muted">与正式 v0.5.1 PDF 同源的 201 个字 · 完全相同的书法墨迹与中心线 · 仅比较笔尖移动节奏</p></div>
+ <a class="back" href="../book.html">返回已发布的201字毛笔播放器 ↗</a>
+</header>
+<div class="panes">
+ <section class="pane" aria-label="A3已发布运动基线">
+  <h2><span class="a">A</span> A3 原版运笔</h2>
+  <div class="muted">已上线：通用起收笔缓动、按折角减速</div>
+  <div class="stage"><svg id="baseline" role="img" viewBox="0 0 1024 1024" aria-label="原版毛笔书写轨迹"></svg></div>
+  <div class="readout" id="baselineStatus">基线准备中…</div>
+ </section>
+ <section class="pane" aria-label="A3.5运笔候选">
+  <h2><span class="b">B</span> A3.5 运笔候选</h2>
+  <div class="muted">研究中：起笔接触、折前制动、钩后出锋、提笔收锋；不改变单笔总时长</div>
+  <div class="stage"><svg id="candidate" role="img" viewBox="0 0 1024 1024" aria-label="同字形毛笔动作候选，未教学审核"></svg></div>
+  <div class="readout" id="candidateStatus">候选准备中…</div>
+ </section>
+</div>
+<section class="controls" aria-label="同一时钟上的A/B播放控制">
+ <div class="head">
+  <span id="glyphName">水</span>
+  <div><strong id="glyphMeta">同字形 A/B</strong><div class="muted" id="reviewFlag">同一笔画、同一来源</div></div>
+ </div>
+ <div class="seek"><input id="seek" type="range" min="0" max="1000" value="0" aria-label="同步拖动两种运笔的时间轴">
+  <output id="time" for="seek">00:00 / 00:00</output></div>
+ <div class="toolbar">
+  <button class="primary" id="play">▶ 同步播放</button>
+  <button id="restart">↺ 从头重播</button>
+  <button id="prevStroke">← 上一笔</button>
+  <button id="nextStroke">下一笔 →</button>
+  <button id="replayStroke">↻ 仅这一笔</button>
+  <button id="complete">查看完整字形</button>
+  <div class="speed" id="rates" aria-label="整体播放倍率">
+   <span class="muted">倍率</span>
+   <button data-speed="0.5" aria-pressed="false">0.5×</button>
+   <button data-speed="1" aria-pressed="true">1×</button>
+   <button data-speed="1.5" aria-pressed="false">1.5×</button>
+   <button data-speed="2" aria-pressed="false">2×</button>
+  </div>
+ </div>
+ <div id="stepButtons" aria-label="直接定位原字帖笔画"></div>
+</section>
+<div class="bottom">
+ <section class="catalog">
+  <h2>选择字帖中的字</h2>
+  <input id="search" type="search" placeholder="水、口、龠、横折、B02…">
+  <div class="filter" id="batchFilters" aria-label="选择字帖批次"></div>
+  <div class="muted" id="count">201个主部首</div>
+  <div class="tiles" id="tiles" aria-label="PDF同源字库"></div>
+ </section>
+ <section class="explain">
+  <h2>差异诊断</h2>
+  <div id="notes">请选择一笔比较其节奏。</div>
+  <p class="muted">左右两侧使用完全相同的毛笔 SVG 轮廓、局部墨迹并集、田字格、总时长和笔顺。A3.5 只改变已审定名称笔画中的时间—空间映射；若来源不支持可靠拐点，自动退回原版。</p>
+  <p class="muted">不宣称它是真人运笔、真实笔压、教师认证轨迹。若候选视觉并不自然，应继续保留原版，不推广到正式 A3。</p>
+ </section>
+</div>
+<footer class="notice"><a id="bookLink" href="../book.html?id=77">查看该字正式字帖页 ↗</a> · 源数据和已发行299页PDF原字节保持不变 · <a href="../../data/artwork/ARPHICPL.TXT">Arphic PL 笔画许可</a></footer>
+</main></body></html>

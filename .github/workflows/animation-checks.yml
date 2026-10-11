@@ -55,11 +55,13 @@ jobs:
           node --check animation/experiments/kaishu-composition.js
           node --check animation/experiments/kaishu-composition-stage.js
           node --check animation/experiments/kaishu-composition-lab.js
+          node --check animation/experiments/brush-gesture-model.js
+          node --check animation/experiments/brush-motion-lab.js
           node --check animation/gallery.js
           node --check animation/ui.js
           node --check animation/book-ui.js
           node --check animation/samples.js
-          node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs animation/tests/pen-kinematics.test.cjs animation/tests/source-onset.test.cjs animation/tests/pressure-model.test.cjs animation/tests/pressure-style.test.cjs animation/tests/stroke-primitives.test.cjs animation/tests/hardpen-model.test.cjs animation/tests/regular-kaishu-model.test.cjs animation/tests/kaishu-composition.test.cjs
+          node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs animation/tests/pen-kinematics.test.cjs animation/tests/source-onset.test.cjs animation/tests/pressure-model.test.cjs animation/tests/pressure-style.test.cjs animation/tests/stroke-primitives.test.cjs animation/tests/hardpen-model.test.cjs animation/tests/regular-kaishu-model.test.cjs animation/tests/kaishu-composition.test.cjs animation/tests/a35-brush-motion.test.cjs
       - name: Install CJK fallback solely for screenshot QA (never bundle font)
         run: |
           sudo apt-get update -qq
@@ -750,6 +752,69 @@ jobs:
             'http://127.0.0.1:18778/animation/book.html?id=201' >/dev/null
           test -s build/a1/a3-book-water.png
           test -s build/a1/a3-book-complex.png
+      - name: Audit A3.5 PDF-immutable brush gesture retiming A/B in Chrome
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s animation/book-pack.js
+          node --test animation/tests/a35-brush-motion.test.cjs
+          mkdir -p build/a1
+          python3 -m http.server 18779 --bind 127.0.0.1 > build/a1/a35-browser-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 50); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18779/animation/experiments/brush-motion-lab.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          timeout 315 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --disable-background-timer-throttling \
+            --window-size=1450,1960 --virtual-time-budget=220000 --dump-dom \
+            'http://127.0.0.1:18779/animation/tests/a35-brush-motion-smoke.html' \
+            > build/a1/a35-brush-motion-browser-dom.html
+          if ! grep -q 'data-result="PASS"' build/a1/a35-brush-motion-browser-dom.html; then
+            echo 'FAIL: A3.5 201-glyph A/B source identity or motion continuity' >&2
+            grep -o 'FAIL:[^<]*' build/a1/a35-brush-motion-browser-dom.html | head -n 12 >&2 || true
+            exit 1
+          fi
+          python3 - <<'PY'
+          import html,json,re
+          from pathlib import Path
+          raw=Path('build/a1/a35-brush-motion-browser-dom.html').read_text(encoding='utf-8')
+          match=re.search(r'<pre id="result">(\{.*?\})</pre>',raw,re.S)
+          if not match:raise SystemExit('Missing A3.5 A/B Chrome metrics')
+          report=json.loads(html.unescape(match.group(1)))
+          assert report['result']=='PASS'
+          assert report['glyphs']==201 and report['sourceStrokes']==1045
+          assert report['motionCandidates']>100
+          assert report['conservativeFallbacks']>0
+          assert report['locatedCandidateEvents']>10
+          assert report['framePairs']==54
+          assert report['lostRedPixelsA']==0 and report['lostRedPixelsB']==0
+          assert report['differentTimeFrames']>=3
+          assert report['matchedSpaceInkPairs']==21
+          assert report['maxMatchedSpaceRasterDifference']<=7
+          for key in ['immutablePDFSource','oneClock','mobile390','defaultA3Unchanged']:
+              assert report[key] is True,key
+          assert report['actualHumanMotorCapture'] is False
+          Path('build/a1/a35-brush-motion-metrics.json').write_text(
+            json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('PASS A3.5: 201/1045 independent research, 54 A/B frame pairs,',
+            '0 ink loss, identical source ink at equal spatial positions')
+          PY
+          timeout 115 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --virtual-time-budget=26000 \
+            --window-size=1490,1750 \
+            --screenshot="$(pwd)/build/a1/a35-water-compare.png" \
+            'http://127.0.0.1:18779/animation/experiments/brush-motion-lab.html?id=77&stroke=1&fraction=0.47' >/dev/null
+          timeout 115 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --virtual-time-budget=26000 \
+            --window-size=1490,1750 \
+            --screenshot="$(pwd)/build/a1/a35-mouth-fold-compare.png" \
+            'http://127.0.0.1:18779/animation/experiments/brush-motion-lab.html?id=37&stroke=2&fraction=0.57' >/dev/null
+          test -s build/a1/a35-water-compare.png
+          test -s build/a1/a35-mouth-fold-compare.png
       - uses: actions/upload-artifact@v4
         if: always()
         with:
