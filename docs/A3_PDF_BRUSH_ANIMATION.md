@@ -1,6 +1,10 @@
 # A3 — 正式 zitie PDF 同源毛笔笔顺动画
 
-状态：2026-10-11 工程开发候选；跟踪 [Issue #120](https://github.com/netplus/zitie/issues/120)。用户决定**恢复毛笔默认**，冻结硬笔改良，仅保留过去的可选硬笔实验。
+状态：2026-10-11 **201字毛笔动画已独立部署，仍是运笔轨迹工程预览**；跟踪 [Issue #120](https://github.com/netplus/zitie/issues/120)。用户决定**恢复毛笔默认**，冻结硬笔改良，仅保留过去的可选硬笔实验。
+
+## 发布记录与实测结果
+
+最终功能 PR HEAD `b66a51dd31be7d06a2fcdbccd7e106f891617997` 的 [A1 动画 CI #38122954997](https://github.com/netplus/zitie/actions/runs/38122954997) 与 [Book 完整性 CI #38122955056](https://github.com/netplus/zitie/actions/runs/38122955056) 双 completed/success；[PR #121](https://github.com/netplus/zitie/pull/121) 合入 `main` 为 `452e79f078b3d80a515e3a2290f6489a37925760`，同一 merge SHA 的 [GitHub Pages #38123374018](https://github.com/netplus/zitie/actions/runs/38123374018) Configure、Upload、实际 Deploy 全部 completed/success。A1 83 项历史 Node 与 A3 5 项新 Node 全通过；**201 字/1045 笔/21 批次**及正式 v0.5.1 299页 PDF SHA256 `7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90` 已核对；A3 54 帧 Chromium 落墨 0 像素消失，27 帧可见笔尖，龠第17笔进入本字 PDF 第3张累计示范页，390px 适配通过。截图见 [A3 QA artifact #11696336104](https://github.com/netplus/zitie/actions/runs/38122954997/artifacts/11696336104)。[完整201字毛笔播放器](https://netplus.github.io/zitie/animation/book.html)及[只读正式 PDF](https://netplus.github.io/zitie/book/zitie-v0.5.1-A4.pdf)已发布。**这是工程动画的完整源一致性验证，未获得真人运笔轨迹的教学认证；硬笔仍冻结。**
 
 ## 什么叫 PDF 是源
 
@@ -23,7 +27,7 @@
 
 检查书签和 B01—B21 完整性、201个唯一主项、各笔 SVG/median 数量、笔画编码、六步一页、已登记覆写与14个细笔名限制、读音限制。任何不一致 fail closed。
 
-A3 独立页面是 animation/book.html：201字搜索、按批次过滤、逐笔步骤、暂停/快慢/跳笔/进度拖动、PDF页码直接跳转，以及原书的书写提示与写完检查。GitHub Pages 根路径将指向这一完整字帖页面，并提供 v0.5.1 原 PDF 只读副本；不要求学员运行时联网下载字形。
+A3 独立页面是 animation/book.html：201字搜索、按批次过滤、逐笔步骤、暂停/快慢/跳笔/进度拖动、PDF页码直接跳转，以及原书的书写提示与写完检查。GitHub Pages 根路径已经指向这一完整字帖页面，并提供 v0.5.1 原 PDF 只读副本；不要求学员运行时联网下载字形。
 
 历史 animation/index.html 仍保留9字 A1.3毛笔回归及模拟笔压、可选硬笔实验，不过毛笔恢复默认，不再以硬笔作为主方向。
 

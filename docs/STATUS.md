@@ -1,8 +1,8 @@
-# A3 开发候选：正式 PDF 同源201字毛笔笔顺（2026-10-11）
+# A3 正式 PDF 同源201字毛笔动画已独立部署（2026-10-11）
 
 用户决定：**默认回到毛笔**，硬笔路线暂停、不再开展 A2.5 美学修正。新主线 [Issue #120](https://github.com/netplus/zitie/issues/120) 以正式 v0.5.1 299页 PDF 及其构建输入为准，建立独立201字毛笔笔顺网页，并保留原9字页面的毛笔默认/历史硬笔可选。
 
-开发分支新增 scripts/build_a3_animation.py，从与正式 PDF 同源的 B01—B21 已核数据、Arphic PL 固定SVG、已登记覆写和正式PDF ID书签生成201字动画包；不从PDF图片OCR造轨迹。发布包需要与正式PDF SHA、书签及各种证据政策完全匹配。全201字播放器在 animation/book.html，PDF支持按当前第1—6、7—12、13—18笔的对应教学页跳转；深链ID、搜索、笔画列表和控制均已规划。**在完整 CI / 页面审核完成并真正合入部署以前只能称为开发候选。** 原v0.5.1 PDF/manifest和201教案审核记录没有修改，运动medians仍属未经教师审核的工程来源。详细说明见 [docs/A3_PDF_BRUSH_ANIMATION.md](A3_PDF_BRUSH_ANIMATION.md)。
+A3 功能实现新增 scripts/build_a3_animation.py，从与正式 PDF 同源的 B01—B21 已核数据、Arphic PL 固定SVG、已登记覆写和正式PDF ID书签生成201字动画包；不从PDF图片OCR造轨迹。发布包需要与正式PDF SHA、书签及各种证据政策完全匹配。全201字播放器在 animation/book.html，PDF支持按第1—6、7—12、13—18笔对应教学页跳转；深链ID、搜索、笔画列表、控制和毛笔默认均已完成并上线。最终功能 PR HEAD `b66a51dd31be7d06a2fcdbccd7e106f891617997` 的 [A1 动画 CI #38122954997](https://github.com/netplus/zitie/actions/runs/38122954997) 与 [Book 完整性 CI #38122955056](https://github.com/netplus/zitie/actions/runs/38122955056) 双 completed/success；[PR #121](https://github.com/netplus/zitie/pull/121) 合入 `main` 为 `452e79f078b3d80a515e3a2290f6489a37925760`，同一 merge SHA 的 [GitHub Pages #38123374018](https://github.com/netplus/zitie/actions/runs/38123374018) Configure、Upload、实际 Deploy 全部 completed/success。A1 83 项历史 Node 与 A3 5 项新 Node 全通过；**201 字/1045 笔/21 批次**及正式 v0.5.1 299页 PDF SHA256 `7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90` 已核对；A3 54 帧 Chromium 落墨 0 像素消失，27 帧可见笔尖，龠第17笔进入本字 PDF 第3张累计示范页，390px 适配通过。截图见 [A3 QA artifact #11696336104](https://github.com/netplus/zitie/actions/runs/38122954997/artifacts/11696336104)。[完整201字毛笔播放器](https://netplus.github.io/zitie/animation/book.html)及[只读正式 PDF](https://netplus.github.io/zitie/book/zitie-v0.5.1-A4.pdf)已发布。**这是工程动画的完整源一致性验证，未获得真人运笔轨迹的教学认证；硬笔仍冻结。** 原v0.5.1 PDF/manifest和201教案审核记录没有修改，运动medians仍属未经教师审核的工程来源。详细说明见 [docs/A3_PDF_BRUSH_ANIMATION.md](A3_PDF_BRUSH_ANIMATION.md)。
 
 ---
 
