@@ -94,16 +94,30 @@
         // not altered. The historical opt-out renderer remains unchanged.
         const guard=this.frontGuard?FrontGuard.buildCells({
           stations:Brush.sampleMedian(s.median,4)}):null;
-        let guardCells=null;
+        let guardCells=null,guardInk=null;
         if(guard){
-          const clip=create('clipPath',{id:id+'-front',clipPathUnits:'userSpaceOnUse'});
+          // FIX: A dynamically re-rasterized *compound* clipPath caused
+          // a handful of previously red pixels to disappear in Chromium
+          // whenever a neighboring Voronoi polygon appeared. Instead,
+          // retain each arrived polygon as an INDEPENDENT red ink element.
+          // Their parent has a STATIC source-outline clip plus the SAME
+          // original monotone wide-cap brush mask. Newly arrived cells can
+          // only add paint; previous cells are never retessellated as a
+          // different compound clip-path.
+          const sourceClip=create('clipPath',{
+            id:id+'-source',clipPathUnits:'userSpaceOnUse'});
+          sourceClip.appendChild(create('path',{d:s.outline}));
+          defs.appendChild(sourceClip);
+          guardInk=create('g',{
+            'clip-path':'url(#'+id+'-source)',
+            mask:'url(#'+id+')'});
           guardCells=guard.cells.map(cell=>{
-            const shape=create('path',{d:cell.outline});
+            const shape=create('path',{d:cell.outline,fill:'#BD3945',
+              'pointer-events':'none'});
             shape.style.display='none';
-            clip.appendChild(shape);
+            guardInk.appendChild(shape);
             return shape;
           });
-          defs.appendChild(clip);
         }
         contour.remove();
         // Every local brush fragment is painted as an INDEPENDENT stroked
@@ -129,16 +143,18 @@
         const solid=create('path',{d:s.outline,fill:'#5C6269'});
         const reveal=create('path',{d:s.outline,fill:'#BD3945',
           mask:'url(#'+id+')'});
-        if(guard)reveal.setAttribute('clip-path','url(#'+id+'-front)');
         return {hint,solid,reveal,profile,fragments,activeInk,
           previousVisibleCount:0,id,opticalFrontier,
-          guard,guardCells,previousGuardCount:0};
+          guard,guardInk,guardCells,previousGuardCount:0};
       });
       // Layer by paint role, NOT by stroke index: future gray strokes must
       // never obscure the currently written red stroke at intersections.
       for (const row of this.rows) group.appendChild(row.hint);
       for (const row of this.rows) group.appendChild(row.solid);
-      for (const row of this.rows) group.appendChild(row.reveal);
+      for (const row of this.rows) {
+        if(row.guardInk)group.appendChild(row.guardInk);
+        group.appendChild(row.reveal);
+      }
       this.tip = create('circle', { cx:0,cy:0,r:8,fill:'#BD3945',
         stroke:'#FFFFFF','stroke-width':2.5, 'pointer-events':'none' });
       group.appendChild(this.tip);
@@ -160,17 +176,19 @@
         const old = i < frame.index;
         const current = !finished && i === frame.index;
         r.solid.style.display = finished || old ? '' : 'none';
-        r.reveal.style.display = current ? '' : 'none';
+        r.reveal.style.display = current &&
+          (!r.guard || frame.progress>=1) ? '' : 'none';
+        if(r.guardInk)r.guardInk.style.display =
+          current && frame.progress<1 ? '' : 'none';
         if (current) {
           // The unmodified outline is always the final geometry. The median
           // only controls which part of its fill is uncovered at a given time.
           if (frame.progress >= 1) {
             r.reveal.removeAttribute('mask');
-            if(r.guard)r.reveal.removeAttribute('clip-path');
+
           } else {
             r.reveal.setAttribute('mask', 'url(#' + r.id + ')');
             if(r.guard){
-              r.reveal.setAttribute('clip-path','url(#'+r.id+'-front)');
               const cap=FrontGuard.visibleCount(r.guard,
                 r.profile.length*frame.progress);
               for(let j=Math.min(cap,r.previousGuardCount);
