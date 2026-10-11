@@ -1,0 +1,217 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>A3.7 201-glyph PDF-book pressure-style restoration regression</title></head>
+<body>
+<h1>A3.7 PDF同源201字 稳定版 / 模拟笔压版 浏览器复测</h1>
+<pre id="result">RUNNING</pre>
+<iframe id="demo" src="../book.html?id=77" title="201字毛笔正式播放器"
+ style="width:1120px;height:1750px;border:0"></iframe>
+<script>
+const check=(v,msg)=>{if(!v)throw Error(msg);};
+const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+async function redPixels(svg,player,getRing,dim=384){
+ const tip=player.tip,prev=tip.style.display;
+ const ring=getRing(),prevRing=ring?.style.display;
+ tip.style.display='none';
+ if(ring)ring.style.display='none';
+ try{
+  const url=URL.createObjectURL(new Blob([
+    new XMLSerializer().serializeToString(svg)],{type:'image/svg+xml;charset=utf-8'}));
+  try{
+   const img=new Image();
+   await new Promise((yes,no)=>{
+    img.onload=yes;img.onerror=()=>no(Error('Book SVG did not rasterize'));img.src=url;
+   });
+   const c=document.createElement('canvas');
+   c.width=c.height=dim;
+   const ctx=c.getContext('2d',{willReadFrequently:true});
+   ctx.drawImage(img,0,0,dim,dim);
+   const pixels=ctx.getImageData(0,0,dim,dim).data;
+   const bitmap=new Uint8Array(dim*dim);
+   for(let i=0,j=0;i<pixels.length;i+=4,j++)
+    if(pixels[i]>137&&pixels[i+1]<115&&pixels[i+2]<124&&
+       pixels[i]>pixels[i+1]*1.48&&pixels[i+3]>190)bitmap[j]=1;
+   return bitmap;
+  }finally{URL.revokeObjectURL(url);}
+ }finally{
+  tip.style.display=prev;
+  if(ring)ring.style.display=prevRing;
+ }
+}
+const delta=(a,b)=>{
+ check(a.length===b.length,'Source bitmap sizes disagree');
+ let n=0;for(let i=0;i<a.length;i++)if(a[i]!==b[i])n++;
+ return n;
+};
+document.getElementById('demo').addEventListener('load',async function(){
+ const out=document.getElementById('result');
+ try{
+  const w=this.contentWindow,d=w.document,app=w.ZITIE_A3_BOOK;
+  check(app&&app.pack.glyphs.length===201&&
+    d.documentElement.dataset.a3Ready==='201',
+    'The 201-glyph released book failed to load');
+  check(app.player.frontGuard===true,'A3.6 pigment-front protection was lost');
+  const group=d.getElementById('pressureStyleOptions');
+  const buttons=[...group.querySelectorAll('button[data-pen-style]')];
+  check(buttons.length===2&&buttons.map(b=>b.textContent.trim()).join('|')===
+    '稳定版|模拟笔压版','Screenshot pressure style choices not restored');
+  check(buttons[0].getAttribute('aria-pressed')==='true'&&
+    buttons[1].getAttribute('aria-pressed')==='false'&&
+    app.getPressureStyle()==='stable'&&
+    d.getElementById('pressureDetails').hidden,
+    'Stable must remain actual default (including ARIA/UI)');
+  check(app.player.tip.getAttribute('r')==='8'&&
+    app.player.tip.getAttribute('stroke')==='#FFFFFF'&&
+    !app.getPressureRing()?.isConnected,
+    'Original stable cursor was changed');
+  const source=JSON.stringify(app.pack.glyphs);
+  const cases=[
+    [77,0,.18],[77,1,.56],[77,3,.84],
+    [37,1,.58],[88,1,.51],[95,0,.36],
+    [201,13,.65],[201,16,.48],
+    [1,0,.38],[6,0,.62],[12,0,.55],[40,1,.72]
+  ];
+  let frames=0,inkMismatch=0,changedMarkers=0,activePressure=0,
+      plansCorrect=0,ringPositionMismatch=0,maskChanges=0;
+  for(const [id,index,fraction] of cases){
+    app.selectGlyph(id);
+    check(app.getPressureStyle()==='stable',
+      'Stable style was lost on book glyph navigation');
+    const g=app.getGlyph(),entry=app.player.timeline.strokes[index];
+    check(g.strokes.length===app.player.rows.length,
+      'Old pressure player lost canonical stroke count');
+    app.player.seekElapsed(entry.startMs+entry.durationMs*fraction);
+    const old=app.player.getState(),t=app.player.elapsed;
+    const masks=[...app.player.svg.querySelectorAll('defs mask')].map(m=>m.outerHTML).join('');
+    const sourceD=app.player.rows.map(r=>r.reveal.getAttribute('d')).join('|');
+    const bitmap=await redPixels(app.player.svg,app.player,()=>app.getPressureRing());
+    buttons[1].click();
+    const now=app.player.getState(),force=app.getPressureState();
+    check(app.getPressureStyle()==='simulated'&&
+      buttons[1].getAttribute('aria-pressed')==='true'&&
+      buttons[0].getAttribute('aria-pressed')==='false',
+      'Simulated pressure button did not switch state');
+    check(t===app.player.elapsed&&old.index===now.index&&
+      old.progress===now.progress&&old.phase===now.phase,
+      'Switching pressure style changed the source timeline');
+    check(force.mode==='simulated'&&!force.measured&&force.active&&
+      force.pressure>=0&&force.pressure<=1&&Number.isFinite(force.pressure),
+      'Pressure mode misrepresents measured force or gives invalid pressure');
+    check(force.curve?.length>=97&&
+      d.getElementById('pressureDetails').hidden===false&&
+      /^\d+%$/.test(d.getElementById('pressureValue').textContent),
+      'Simulated pressure telemetry/curve not shown');
+    const ring=app.getPressureRing();
+    check(ring&&ring.parentNode===app.player.tip.parentNode&&
+      ring.getAttribute('fill')==='none'&&ring.isConnected,
+      'Simulation ring missing or covering source ink');
+    if(ring.getAttribute('cx')!==app.player.tip.getAttribute('cx')||
+       ring.getAttribute('cy')!==app.player.tip.getAttribute('cy'))
+      ringPositionMismatch++;
+    check(ringPositionMismatch===0,'Contact halo is not nib-aligned');
+    check(+app.player.tip.getAttribute('r')!==8,'Simulated nib has stable radius');
+    changedMarkers++;
+    const pressureImage=await redPixels(app.player.svg,app.player,()=>app.getPressureRing());
+    const difference=delta(bitmap,pressureImage);inkMismatch+=difference;
+    check(difference===0,g.character+'/'+(index+1)+
+      ': synthetic pressure changed '+difference+' source ink pixels');
+    check([...app.player.svg.querySelectorAll('defs mask')]
+      .map(m=>m.outerHTML).join('')===masks,
+      'Pressure style changed source roundcap masks');
+    check(app.player.rows.map(r=>r.reveal.getAttribute('d')).join('|')===sourceD,
+      'Pressure style changed published SVG outlines');
+    if(force.pressure>.08)activePressure++;
+    if(force.plan?.sourceMedianModified===false&&
+       force.plan?.sourceInkModified===false)plansCorrect++;
+    const pixels=d.getElementById('pressureCurve').getContext('2d')
+      .getImageData(0,0,640,114).data;
+    check(pixels.some((v,i)=>i%4===0&&v<190),
+      'Pressure curve is not actually drawn');
+    buttons[0].click();
+    check(app.getPressureStyle()==='stable'&&
+      !app.getPressureRing()?.isConnected&&
+      app.player.tip.getAttribute('r')==='8'&&
+      app.player.tip.getAttribute('stroke')==='#FFFFFF'&&
+      d.getElementById('pressureDetails').hidden,
+      'Stable mode cannot restore exact cursor and hide details');
+    check(app.player.elapsed===t,'Returning to stable reset the clock');
+    frames++;
+  }
+  check(frames===cases.length&&changedMarkers===frames&&
+    plansCorrect===frames&&inkMismatch===0&&
+    maskChanges===0&&activePressure>=8,
+    'Insufficient source-immutable simulated contact verification');
+  // All 201 glyphs must prepare a valid synthetic plan on the source index,
+  // including 14 fine-name-restricted glyphs (generic, NOT inferred names).
+  app.setPressureStyle('simulated');
+  let visited=0,strokes=0,ordinalOnly=0,plans=0;
+  for(const g of app.pack.glyphs){
+    app.selectGlyph(g.main_id);
+    check(app.getPressureStyle()==='simulated',
+      'Selecting a new character dropped user-chosen pressure mode');
+    check(app.getPressureState()?.plan&&
+      app.getPressureState().mode==='simulated',
+      'Pressure plans are missing on source character '+g.character);
+    visited++;
+    strokes+=g.strokes.length;
+    const restricted=g.strokes.every(s=>s.name_status==='ordinal_only');
+    if(restricted){
+      ordinalOnly++;
+      check(g.strokes.every(s=>s.name===null),
+        'Source restrictions exposed unreviewed fine stroke names');
+    }
+    plans+=app.getPressureState().curve.length>0?1:0;
+  }
+  check(visited===201&&strokes===1045&&ordinalOnly===14&&plans===201,
+    'Synthetic pressure must cover complete 201/1045 source corpus');
+  // While playing, switching modes must preserve clock, index and rate.
+  app.selectGlyph(77);
+  const segment=app.player.timeline.strokes[0];
+  app.player.seekElapsed(segment.startMs+segment.durationMs*.48);
+  app.setSpeed(2);
+  const hold=app.player.elapsed,strokeIndex=app.player.getState().index;
+  app.player.play();
+  check(app.player.playing,'Source player failed to play');
+  app.setPressureStyle('stable');
+  check(app.player.playing&&app.player.elapsed===hold&&
+    app.player.speed===2&&app.player.getState().index===strokeIndex,
+    'Switching to stable interrupted actual playback');
+  app.setPressureStyle('simulated');
+  check(app.player.playing&&app.player.elapsed===hold&&
+    app.player.speed===2,'Switching simulation interrupted playback');
+  app.player.pause();
+  app.player.seekElapsed(segment.startMs+segment.durationMs*.12);
+  check(app.getPressureState().pressure>0,'Backward seek lost current pressure');
+  app.player.showAll();
+  check(app.getPressureStyle()==='simulated'&&
+    app.getPressureState().pressure===0&&
+    !app.getPressureRing()?.isConnected,
+    'Pressure ring should clear at full-glyph completion');
+  app.player.restart();app.player.pause();
+  check(app.getPressureStyle()==='simulated','Restart changed pressure mode');
+  app.setSpeed(1);
+  this.style.width='390px';
+  await sleep(120);
+  check(d.documentElement.scrollWidth<=w.innerWidth+2,
+    'Pressure style addition overflows 390px mobile viewport');
+  const graph=d.getElementById('pressureCurve').getBoundingClientRect();
+  const detail=d.getElementById('pressureDetails').getBoundingClientRect();
+  check(graph.width<=detail.width+2,'Pressure plot overflows mobile container');
+  app.setPressureStyle('stable');
+  check(JSON.stringify(app.pack.glyphs)===source,
+    'Pressure preview changed immutable PDF-book source data');
+  const result={result:'PASS',characters:201,strokes:1045,
+    restrictedGlyphs:ordinalOnly,simulatedPlans:plans,
+    baselineComparisonFrames:frames,bitmapInkMismatch:inkMismatch,
+    ringPositionMismatch,simulatedMarkerFrames:changedMarkers,
+    activePressureFrames:activePressure,defaultStyle:'stable',
+    simulatedPressureMeasured:false,controlsRestored:true,
+    sourceGuardUnchanged:true,playbackPositionPreserved:true,
+    glyphSelectionPreservesMode:true,sourcePDFImmutable:true,mobile390:true};
+  document.documentElement.setAttribute('data-result','PASS');
+  out.textContent=JSON.stringify(result,null,2);
+ }catch(e){
+  document.documentElement.setAttribute('data-result','FAIL');
+  out.textContent='FAIL: '+(e.stack||e);
+ }
+});
+</script></body></html>

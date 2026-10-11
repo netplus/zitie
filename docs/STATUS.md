@@ -1,3 +1,9 @@
+# A3.7 字帖主播放器恢复原A1.6笔压风格切换（2026-10-11，待双CI）
+
+用户提供历史界面截图指出：「笔压风格　稳定版｜模拟笔压版」在新版201字主播放器里丢失。A3.6墨迹同步功能保留，但此前从九字主页面迁移时漏接了A1.6 pressure-style.js / gesture-data.js / pressure-model.js与UI。现恢复两个按钮、默认稳定、模拟力度曲线/力环；选择保持跨字、seek和播放。两档均只改变笔尖/接触视觉指示，不改已发行299页PDF原字形、1045笔alpha-mask及前缘屏障，不改时钟。新Node覆盖201字/1045笔、Chromium至少12帧等墨迹/手机/17笔复杂字，仍须最终HEAD A1与Book双success、主分支合入和实际Pages Deploy才称上线。参见 [A3.7](A37_PRESSURE_STYLE_RESTORE.md)及 [Issue #128](https://github.com/netplus/zitie/issues/128)。A3.5仍仅为运动A/B研究，硬笔继续冻结。
+
+---
+
 # A3.6 全201字墨迹前缘防超前（2026-10-11，已修复上线）
 
 用户发现水等笔画“填充速度快于笔尖”。旧宽圆头墨迹会提前跨越折、钩，且光标前缘补偿仅覆盖部分笔画。新增完整 [原因/几何模型/验收门槛](A36_INK_FRONT_AUDIT.md)、[Issue #125](https://github.com/netplus/zitie/issues/125)：对201字1045笔的原始中线每4SVG单位构建有序近邻分区，只允许笔尖已到达的source区显墨，并与旧已验证的圆头遮罩及原PDF轮廓求交；不更改字形、笔顺、真实书写时间轴或v0.5.1 PDF。新Node全1045笔+Chromium全201字像素检测与2090帧逐笔真实栅格均已在最终HEAD确认合格。A3默认毛笔与A3.5双侧都启用屏障，旧九字历史试验保持作可复现参照，硬笔继续冻结。**A3.6 已上线（2026-10-11）。** [PR #126](https://github.com/netplus/zitie/pull/126) 最终精确 HEAD `d410e398c6d94bfcd7d309cdd58372ff542ac2d1` 的 [A1 Chromium #38134493046](https://github.com/netplus/zitie/actions/runs/38134493046) 与 [Book integrity #38134493075](https://github.com/netplus/zitie/actions/runs/38134493075) 均 completed/success；合并 `main` 提交 `ea4a76e868cf9f9dbe3469fc0028604d4b5265b8` 对应的 [Pages #38135010764](https://github.com/netplus/zitie/actions/runs/38135010764) Configure、Upload、实际 Deploy 全 completed/success。

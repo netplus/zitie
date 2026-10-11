@@ -1,3 +1,9 @@
+# 当前接续：A3.7 恢复201字播放器的两档笔压（2026-10-11，修复候选）
+
+用户指出历史截图中的「笔压风格　稳定版｜模拟笔压版」在正式 animation/book.html 缺失。旧九字 animation/index.html 保留原A1.6完整模块，故直接在新主页面重新引入 script gesture-data.js、pressure-model.js、pressure-style.js；在 book-ui.js复用StyleController，不新设计压力算法。UI默认稳定版，模拟版恢复圆环、力度百分比/阶段、曲线，风格跨字、跳笔、倍速、pause/play保留；不应出现墨迹变化。新A3.7测试需完整201/1045压力模型、12帧等红墨实际Chromium测试、A3.6 2090逐笔前缘测试、390px；PR最终HEAD A1/Book双成功→merge→Pages实际Deploy才放行。正式 v0.5.1 PDF、manifest、来源审读数据、原SVG、1045笔笔顺、A3.6 source-arc guard及A3.5研究路线都保持不变。详见 docs/A37_PRESSURE_STYLE_RESTORE.md、Issue #128。硬笔仍冻结；禁止使用 chn-ops。
+
+---
+
 # 当前接续：A3.6 201字墨迹前缘领先笔尖问题（2026-10-11，已修复部署）
 
 用户明确指出水等字有“墨迹填充快于笔尖位置”，要求逐字全量复查。正式source仍为v0.5.1 299页PDF以及21批201字1045笔，禁止改笔顺、轮廓、median、PDF/manifest、Arphic许可。新增 animation/ink-front-guard.js 源中线4SVG单位Voronoi按时显墨区域；最终用**独立持久红色SVG片段**在静态原字形clipPath/既有宽圆头mask内叠加，防止宽圆头提前染到未到达的后段且避免复合动态clipPath引起的已绘像素回退。启用在正式 animation/book.html 的201字毛笔和A3.5实验两侧，旧9字历史回归保留原版以便对照。详见 docs/A36_INK_FRONT_AUDIT.md、Issue #125。单靠不掉红墨素CI不够，必须201/1045 Node空间不超前、Chromium真实多字多帧与水4笔、390px以及原201 A3/A3.5基线回归。**A3.6 已上线（2026-10-11）。** [PR #126](https://github.com/netplus/zitie/pull/126) 最终精确 HEAD `d410e398c6d94bfcd7d309cdd58372ff542ac2d1` 的 [A1 Chromium #38134493046](https://github.com/netplus/zitie/actions/runs/38134493046) 与 [Book integrity #38134493075](https://github.com/netplus/zitie/actions/runs/38134493075) 均 completed/success；合并 `main` 提交 `ea4a76e868cf9f9dbe3469fc0028604d4b5265b8` 对应的 [Pages #38135010764](https://github.com/netplus/zitie/actions/runs/38135010764) Configure、Upload、实际 Deploy 全 completed/success。

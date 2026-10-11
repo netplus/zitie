@@ -1,0 +1,23 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>A3.7 201字稳定/模拟笔压视觉验收</title>
+<style>body{margin:0;background:#f5f2f1;color:#35434d;font:15px system-ui,"Microsoft YaHei",sans-serif}
+main{max-width:1350px;margin:auto;padding:17px}
+h1{margin:0 0 11px;font-size:23px}
+p{font-size:13px;color:#67757c}
+iframe{width:100%;height:1430px;border:1px solid #e0d7d9;border-radius:12px;background:white}
+</style></head><body>
+<main><h1>A3.7 · PDF 同源 201 字毛笔播放器 / 模拟笔压版</h1>
+<p>真实 Chromium 截图，展示「水」第 2 笔的合成力度、圆环及曲线；不改变原墨迹。</p>
+<iframe id="book" src="../book.html?id=77" title="PDF 201字毛笔模拟笔压版"></iframe>
+</main>
+<script>
+document.getElementById('book').addEventListener('load',function(){
+ const w=this.contentWindow,app=w.ZITIE_A3_BOOK;
+ if(!app||w.document.documentElement.dataset.a3Ready!=='201')return;
+ app.setPressureStyle('simulated');
+ const part=app.player.timeline.strokes[1];
+ app.player.seekElapsed(part.startMs+part.durationMs*.51);
+ document.documentElement.setAttribute('data-preview-ready','PASS');
+});
+</script>
+</body></html>
