@@ -875,6 +875,69 @@ jobs:
             --screenshot="$(pwd)/build/a1/a36-water-source-front.png" \
             'http://127.0.0.1:18780/animation/book.html?id=77' >/dev/null
           test -s build/a1/a36-water-source-front.png
+      - name: Verify restored stable/simulated pressure controls on PDF 201-glyph production player
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s animation/book-pack.js
+          node --test animation/tests/a37-book-pressure.test.cjs
+          mkdir -p build/a1
+          python3 -m http.server 18781 --bind 127.0.0.1 > build/a1/a37-pressure-book-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 60); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18781/animation/book.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          timeout 260 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --disable-background-timer-throttling \
+            --window-size=1420,1900 --virtual-time-budget=160000 --dump-dom \
+            'http://127.0.0.1:18781/animation/tests/a37-book-pressure-smoke.html' \
+            > build/a1/a37-pressure-book-browser-dom.html
+          if ! grep -q 'data-result="PASS"' build/a1/a37-pressure-book-browser-dom.html; then
+            echo 'FAIL: missing pressure-style UI or source brush / nib continuity regression' >&2
+            grep -o 'FAIL:[^<]*' build/a1/a37-pressure-book-browser-dom.html | head -n 14 >&2 || true
+            exit 1
+          fi
+          python3 - <<'PY'
+          import html,json,re
+          from pathlib import Path
+          raw=Path('build/a1/a37-pressure-book-browser-dom.html').read_text(encoding='utf-8')
+          match=re.search(r'<pre id="result">(\{.*?\})</pre>',raw,re.S)
+          if not match:raise SystemExit('A3.7 pressure book JSON report missing')
+          result=json.loads(html.unescape(match.group(1)))
+          assert result['result']=='PASS'
+          assert result['characters']==201 and result['strokes']==1045
+          assert result['restrictedGlyphs']==14 and result['simulatedPlans']==201
+          assert result['baselineComparisonFrames']==12
+          assert result['bitmapInkMismatch']==0 and result['ringPositionMismatch']==0
+          assert result['simulatedMarkerFrames']==12
+          assert result['activePressureFrames']>=8
+          assert result['defaultStyle']=='stable'
+          assert result['simulatedPressureMeasured'] is False
+          for key in ['controlsRestored','sourceGuardUnchanged',
+                      'playbackPositionPreserved','glyphSelectionPreservesMode',
+                      'sourcePDFImmutable','mobile390']:
+              assert result[key] is True,key
+          Path('build/a1/a37-pressure-book-metrics.json').write_text(
+            json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('PASS A3.7: stable/simulated 201 glyphs / 1045 strokes,',
+                '12 identical ink rasters, retained motion and front guard')
+          PY
+          timeout 110 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --virtual-time-budget=20000 \
+            --window-size=1450,1710 \
+            --screenshot="$(pwd)/build/a1/a37-book-pressure-stable.png" \
+            'http://127.0.0.1:18781/animation/book.html?id=77' >/dev/null
+          timeout 110 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --virtual-time-budget=20000 \
+            --window-size=1450,1710 \
+            --screenshot="$(pwd)/build/a1/a37-book-pressure-simulated.png" \
+            'http://127.0.0.1:18781/animation/tests/a37-book-pressure-preview.html' >/dev/null
+          test -s build/a1/a37-book-pressure-stable.png
+          test -s build/a1/a37-book-pressure-simulated.png
       - uses: actions/upload-artifact@v4
         if: always()
         with:
