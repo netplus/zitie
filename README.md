@@ -1,3 +1,9 @@
+## A3（开发候选）｜PDF同源201字毛笔笔顺
+
+新主线 [A3 #120](https://github.com/netplus/zitie/issues/120)：默认改回毛笔，硬笔研究暂停；基于正式 v0.5.1 299页《循序渐进汉字部首字帖》及其建书输入生成201字逐笔SVG动画，建立 PDF 书签页码联动。见 [A3 技术边界](docs/A3_PDF_BRUSH_ANIMATION.md)、[201字动画入口](animation/book.html)。此入口只有通过最终 A1/Book CI 并完成实际 GitHub Pages 部署后才可称上线；正式PDF与201规范记录不变，SVG中线不代表已审核真人运笔。
+
+---
+
 ## A1.4 虚拟笔尖 A/B 对照实验（独立工程路线）
 
 依据[虚拟笔尖研究报告](docs/A1_PEN_CONTACT_RESEARCH.md)实现[独立 A/B 实验](docs/A1_PEN_CONTACT_EXPERIMENT.md)：六个真实来源部首在同一时间轴上并排比较 **A1.2.3 稳定基线** 与 **实验性椭圆接触印迹＋转锋微时序**，支持倍率按钮、进度拖动和笔内运动/接触曲线。**新实验不改变现有教学播放器、笔顺、最终轮廓或正式 PDF。** PR [#90](https://github.com/netplus/zitie/pull/90) 完成最终 CI 与部署后，可通过[独立实验网页](https://netplus.github.io/zitie/animation/experiments/pen-lab.html)观看；未完成部署前不得宣称该链接已上线。
