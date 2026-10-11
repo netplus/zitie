@@ -6,7 +6,9 @@ const path=require('node:path');
 const B=require('../brush-union.js');
 const Front=require('../ink-front-guard.js');
 const root=path.resolve(__dirname,'../..');
-const raw=fs.readFileSync(path.join(root,'animation/book-pack.js'),'utf8');
+const generated=path.join(root,'build/a3/book-pack.js');
+const legacy=path.join(root,'animation/book-pack.js');
+const raw=fs.readFileSync(fs.existsSync(generated)?generated:legacy,'utf8');
 assert.ok(raw.startsWith('window.ZITIE_BOOK_PACK = '));
 const pack=JSON.parse(raw.split(' = ',2)[1].replace(/;\s*$/,''));
 const nearest=(stations,pt)=>{
