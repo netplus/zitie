@@ -1,3 +1,9 @@
+## A3.7：恢复201字主播放器的稳定版 / 模拟笔压版（修复候选）
+
+用户指出截图中的「笔压风格　稳定版｜模拟笔压版」在 A3 完整201字界面消失。已在 `animation/book.html` 和 `book-ui.js` 接回原 A1.6 压力控制器，默认稳定版，模拟版恢复笔尖圆环、百分比、接触阶段与曲线。**不修改原始墨迹、笔速、1045笔前缘屏障、PDF、规范数据或旧九字实验。** 新增全201字/1045笔模型完整性及真实Chromium两档切换/12帧等墨迹/390px测试，PR/Pages待验收。详见 [回归与修复说明](docs/A37_PRESSURE_STYLE_RESTORE.md)、[Issue #128](https://github.com/netplus/zitie/issues/128)。
+
+---
+
 ## A3.6 201字墨迹前缘与笔尖同步（已发布）
 
 针对水等字的提前填墨问题，在原PDF矢量和原圆头并集上新增按源中线行程开放墨迹区域的剪裁，目标是**墨迹不能跑到笔尖前面**。已建立1045笔几何守卫及真实Chromium全201字逐笔/逐帧质量门槛。详见 [算法审计](docs/A36_INK_FRONT_AUDIT.md)、[Issue #125](https://github.com/netplus/zitie/issues/125)。最终CI与Pages均已实际完成验证，不改任何v0.5.1 PDF或规范笔顺数据。
