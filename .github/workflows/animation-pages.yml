@@ -44,10 +44,11 @@ jobs:
           BATCHES="$(printf 'B%02d ' {1..21})"
           python scripts/acquire_vectors.py --batches $BATCHES
           python scripts/build_a3_animation.py --vectors build/vectors --output build/a3/book-pack.js
+          node --check animation/ink-front-guard.js
           node --check animation/book-ui.js
           node --check animation/experiments/brush-gesture-model.js
           node --check animation/experiments/brush-motion-lab.js
-          node --test animation/tests/a3-book.test.cjs animation/tests/a35-brush-motion.test.cjs
+          node --test animation/tests/a3-book.test.cjs animation/tests/a35-brush-motion.test.cjs animation/tests/a36-front-guard.test.cjs
       - name: Check source-backed animation examples
         run: node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs animation/tests/pen-kinematics.test.cjs animation/tests/source-onset.test.cjs animation/tests/pressure-model.test.cjs animation/tests/pressure-style.test.cjs animation/tests/stroke-primitives.test.cjs animation/tests/hardpen-model.test.cjs animation/tests/regular-kaishu-model.test.cjs animation/tests/kaishu-composition.test.cjs
       - name: Assemble minimal offline-compatible static site
@@ -55,7 +56,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site/animation _site/data/artwork _site/book
-          cp animation/index.html animation/book.html animation/book-ui.js animation/player.js animation/timeline.js animation/motion.js animation/samples.js animation/brush-union.js animation/pressure-style.js animation/hardpen-ink-union.js animation/hardpen-stage.js animation/gallery.js animation/ui.js animation/NOTICE.md _site/animation/
+          cp animation/index.html animation/book.html animation/book-ui.js animation/player.js animation/timeline.js animation/motion.js animation/samples.js animation/brush-union.js animation/ink-front-guard.js animation/pressure-style.js animation/hardpen-ink-union.js animation/hardpen-stage.js animation/gallery.js animation/ui.js animation/NOTICE.md _site/animation/
           cp build/a3/book-pack.js _site/animation/book-pack.js
           cp deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf _site/book/zitie-v0.5.1-A4.pdf
           mkdir -p _site/animation/experiments
@@ -83,6 +84,7 @@ jobs:
           test -s _site/animation/motion.js
           test -s _site/animation/samples.js
           test -s _site/animation/brush-union.js
+          test -s _site/animation/ink-front-guard.js
           test -s _site/animation/pressure-style.js
           test -s _site/animation/hardpen-ink-union.js
           test -s _site/animation/hardpen-stage.js
