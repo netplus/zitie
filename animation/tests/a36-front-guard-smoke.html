@@ -63,6 +63,9 @@ async function run(){
  check(app.player.frontGuard,'Production 201-book ink-front guard was not enabled');
  const source=JSON.stringify(app.pack.glyphs);
  let sourceStrokes=0,liveClips=0,maxStationGap=0;
+ let fullStrokeRasterFrames=0,fullStrokesWithInk=0,
+  fullStrokeRedPixelsLost=0,maxFullStrokeRedLead=0,fullStrokeLeadOver12=0;
+ const fullStrokeFailures=[];
  for(const glyph of app.pack.glyphs){
   app.selectGlyph(glyph.main_id);
   const rows=app.player.rows,tl=app.player.timeline;
@@ -91,8 +94,43 @@ async function run(){
    check(row.guardCells.filter(x=>x.style.display!=='none').length===count,
      'Visible clip cells do not match source travel');
    liveClips++;
+   // Real Chromium raster audit for EVERY SINGLE SOURCE STROKE, not
+   // merely one representative stroke in each of the 201 glyphs.
+   // We are still inside this stroke's unchanged original time interval.
+   const snapA=await raster(app.player.svg,app.player.tip);
+   const dA=brush.stateAt(row.profile,frame.progress).distance;
+   const leadA=aheadInk(brush,snapA.red,row.profile,dA);
+   maxFullStrokeRedLead=Math.max(maxFullStrokeRedLead,leadA);
+   if(leadA>12){
+     fullStrokeLeadOver12++;
+     fullStrokeFailures.push({glyph:glyph.character,id:glyph.main_id,
+       stroke:i+1,phase:.42,lead:leadA});
+   }
+   app.player.seekElapsed(step.startMs+step.durationMs*.78);
+   const frameB=app.player.getState();
+   const snapB=await raster(app.player.svg,app.player.tip);
+   const dB=brush.stateAt(row.profile,frameB.progress).distance;
+   const leadB=aheadInk(brush,snapB.red,row.profile,dB);
+   maxFullStrokeRedLead=Math.max(maxFullStrokeRedLead,leadB);
+   if(leadB>12){
+     fullStrokeLeadOver12++;
+     fullStrokeFailures.push({glyph:glyph.character,id:glyph.main_id,
+       stroke:i+1,phase:.78,lead:leadB});
+   }
+   const lost=inkLost(snapA.red,snapB.red);
+   fullStrokeRedPixelsLost+=lost;
+   if(lost)fullStrokeFailures.push({glyph:glyph.character,id:glyph.main_id,
+     stroke:i+1,reason:'pixel-regression',lost});
+   if(snapA.count>0&&snapB.count>snapA.count)
+     fullStrokesWithInk++;
+   fullStrokeRasterFrames+=2;
   }
  }
+ check(fullStrokeRasterFrames===2090&&fullStrokesWithInk===1045,
+   'Real pixel coverage missing any of 1045 source strokes: '+
+   fullStrokesWithInk);
+ check(fullStrokeRedPixelsLost===0&&fullStrokeLeadOver12===0,
+   'All-stroke raster failure '+JSON.stringify(fullStrokeFailures.slice(0,20)));
  check(sourceStrokes===1045&&liveClips===1045,
    'Not all 1045 strokes passed live guard check');
  // True raster for ALL 201 characters: high-risk folds/hook and original
@@ -183,6 +221,8 @@ async function run(){
  check(windowB.document.documentElement.scrollWidth<=windowB.innerWidth+2,
    'A3.5 mobile overflow');
  return {result:'PASS',glyphs:201,sourceStrokes,liveFrontGuards:liveClips,
+   fullStrokeRasterFrames,fullStrokesWithInk,fullStrokeRedPixelsLost,
+   maxFullStrokeRedLead,fullStrokeLeadOver12,
    maxStationGap,actualPixelFrames:frames,riskGlyphs,
    positiveInkFrames:painted,sourceRedPixelsLost:lost,
    maxSourceRedLead:maxLead,framesWithLeadOver12:over12,
