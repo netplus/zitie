@@ -41,6 +41,22 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
 .speed{display:flex;align-items:center;gap:4px;margin-left:auto;font-size:12px;color:var(--muted)}
 .speed button{font-size:12px;padding:7px 8px}
 .speed button[aria-pressed="true"]{background:#fbeaec;border-color:#c9979d;color:#9d3540;font-weight:750}
+.pressureBox{margin-top:15px;padding:13px 15px;border:1px solid #e8e5ed;border-radius:13px;background:#fbf9fc}
+.pressureChoice{display:flex;align-items:center;gap:13px;flex-wrap:wrap}
+.pressureLabel{color:#34485d;font-size:15px;font-weight:750;white-space:nowrap}
+.pressureButtons{display:flex;align-items:center;gap:5px;padding:5px;background:#f3eff7;border:1px solid #e4dfea;border-radius:13px;flex-wrap:wrap}
+.pressureButtons button{border:1px solid transparent;background:transparent;color:#a13744;border-radius:11px;padding:9px 15px;min-height:39px;font-size:14px}
+.pressureButtons button[aria-pressed="true"]{border-color:#daa4b2;background:#fff;color:#992c3a;font-weight:750;box-shadow:0 1px 4px #26344612}
+.pressureButtons button:hover{background:#fff7f8}
+.pressureHint{margin:7px 0 0;color:var(--muted);font-size:12px}
+.pressureDetails{display:grid;grid-template-columns:minmax(150px,.8fr) minmax(0,1fr);gap:12px;align-items:center;margin-top:12px;padding-top:12px;border-top:1px solid #ece3e7}
+.pressureDetails[hidden]{display:none}
+.pressureTelemetry{display:flex;flex-direction:column;gap:5px;font-size:12px;color:#68747c}
+.pressureTelemetry strong{color:#aa3544;font-size:20px;font-variant-numeric:tabular-nums}
+.pressureMeter{height:9px;overflow:hidden;border-radius:8px;background:#e4e7ea}
+#pressureFill{display:block;background:#b43c48;width:0;height:100%;transition:width .12s}
+#pressurePhase{font-weight:650;color:#435762}
+#pressureCurve{display:block;width:100%;max-width:100%;min-width:0;height:auto;max-height:105px}
 .block{margin-top:17px;border-top:1px solid #efebe9;padding-top:14px}
 .block h2{font-size:15px;margin:0 0 8px}
 #steps{display:flex;gap:6px;flex-wrap:wrap}
@@ -65,7 +81,7 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
 #empty{font-size:13px;color:var(--muted)}
 .notice{margin-top:17px;font-size:12px;color:#697177;line-height:1.7}
 @media(max-width:860px){.layout{grid-template-columns:1fr}.tiles{max-height:300px;grid-template-columns:repeat(8,minmax(0,1fr))}}
-@media(max-width:510px){.page{padding:12px 9px 26px}.main{padding:12px}.side{padding:12px}.char{font-size:43px}.tiles{grid-template-columns:repeat(5,minmax(0,1fr))}.controls{gap:5px}.controls button{padding:7px 9px}.speed{margin-left:0;width:100%}.pager button{padding:6px 8px}}
+@media(max-width:510px){.page{padding:12px 9px 26px}.main{padding:12px}.side{padding:12px}.char{font-size:43px}.tiles{grid-template-columns:repeat(5,minmax(0,1fr))}.controls{gap:5px}.controls button{padding:7px 9px}.speed{margin-left:0;width:100%}.pager button{padding:6px 8px}.pressureBox{padding:10px 11px}.pressureDetails{grid-template-columns:minmax(0,1fr)}.pressureButtons button{padding:8px 11px}}
 </style>
 <script defer src="./book-pack.js"></script>
 <script defer src="./motion.js"></script>
@@ -73,6 +89,9 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
 <script defer src="./brush-union.js"></script>
 <script defer src="./ink-front-guard.js"></script>
 <script defer src="./player.js"></script>
+<script defer src="./experiments/gesture-data.js"></script>
+<script defer src="./experiments/pressure-model.js"></script>
+<script defer src="./pressure-style.js"></script>
 <script defer src="./book-ui.js"></script>
 </head>
 <body>
@@ -125,6 +144,29 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
           <button type="button" data-speed="2" aria-pressed="false">2×</button>
         </div>
       </div>
+      <section class="pressureBox" aria-label="笔压风格">
+        <div class="pressureChoice">
+          <strong class="pressureLabel" id="pressureStyleLabel">笔压风格</strong>
+          <div class="pressureButtons" id="pressureStyleOptions"
+               role="group" aria-labelledby="pressureStyleLabel">
+            <button type="button" data-pen-style="stable"
+                    aria-pressed="true">稳定版</button>
+            <button type="button" data-pen-style="simulated"
+                    aria-pressed="false">模拟笔压版</button>
+          </div>
+        </div>
+        <p class="pressureHint" id="pressureStyleHint">稳定版 · 保持原有毛笔笔尖和 PDF 同源墨迹</p>
+        <div class="pressureDetails" id="pressureDetails" hidden>
+          <div class="pressureTelemetry">
+            <span>模拟接触力度 <strong id="pressureValue">0%</strong></span>
+            <div class="pressureMeter" aria-hidden="true"><span id="pressureFill"></span></div>
+            <span id="pressurePhase">尚未落笔</span>
+            <span>仅合成教学展示，并非实测笔压力度</span>
+          </div>
+          <canvas id="pressureCurve" width="640" height="114"
+                  role="img" aria-label="当前笔画模拟力度随行程变化"></canvas>
+        </div>
+      </section>
       <div class="block">
         <h2>01 看笔顺 · 点按笔画跳转</h2>
         <div id="steps"></div>
@@ -139,7 +181,7 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
       </div>
       <div class="source">
         <p><strong>字形一致性：</strong>使用与正式 PDF 相同的源笔画 SVG、审定的字形覆写和 B01–B21 教学笔顺；PDF 页面和动画步骤可以互相定位。</p>
-        <p><strong>动作证据边界：</strong>逐笔先后与名称按书中已核证据展示；运笔中线、笔速和笔尖位置属于工程推演，不是实测书写动作或教师认可的运笔轨迹。</p>
+        <p><strong>动作证据边界：</strong>逐笔先后与名称按书中已核证据展示；运笔中线、笔速和笔尖位置属于工程推演，不是实测书写动作或教师认可的运笔轨迹。模拟笔压只改变笔尖标记及其力度辅助指示，不改变 PDF 字形或原始墨迹。</p>
       </div>
     </section>
     <aside class="side" aria-label="201 字主部首目录">
