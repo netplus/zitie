@@ -1,3 +1,11 @@
+# A3 开发候选：正式 PDF 同源201字毛笔笔顺（2026-10-11）
+
+用户决定：**默认回到毛笔**，硬笔路线暂停、不再开展 A2.5 美学修正。新主线 [Issue #120](https://github.com/netplus/zitie/issues/120) 以正式 v0.5.1 299页 PDF 及其构建输入为准，建立独立201字毛笔笔顺网页，并保留原9字页面的毛笔默认/历史硬笔可选。
+
+开发分支新增 scripts/build_a3_animation.py，从与正式 PDF 同源的 B01—B21 已核数据、Arphic PL 固定SVG、已登记覆写和正式PDF ID书签生成201字动画包；不从PDF图片OCR造轨迹。发布包需要与正式PDF SHA、书签及各种证据政策完全匹配。全201字播放器在 animation/book.html，PDF支持按当前第1—6、7—12、13—18笔的对应教学页跳转；深链ID、搜索、笔画列表和控制均已规划。**在完整 CI / 页面审核完成并真正合入部署以前只能称为开发候选。** 原v0.5.1 PDF/manifest和201教案审核记录没有修改，运动medians仍属未经教师审核的工程来源。详细说明见 [docs/A3_PDF_BRUSH_ANIMATION.md](A3_PDF_BRUSH_ANIMATION.md)。
+
+---
+
 # A2.4 整字交接和结体图第一阶段（2026-10-11，独立上线、仍待专业复核）
 
 用户目标依然是「专业、工整、规范的硬笔楷书」，当前已上线 A2.3 只是**独立未审定候选**，不是主站默认。A2.4 [Issue #116](https://github.com/netplus/zitie/issues/116) 首轮通过只读跨笔画图谱、连接负例和位移限幅改善整字衔接。[PR #117](https://github.com/netplus/zitie/pull/117) 已正式新增 `kaishu-composition.js`、独立 [A2.3/A2.4 A/B](../animation/experiments/kaishu-composition-lab.html)、Node 和 72 帧 Chromium 测试入口、Pages 打包规则。九字40笔中仅「水」的捺与主竖有一处显式候选连接，中心线缝隙 37→15（移动22 SVG单元）；「龠」等尚未有可靠结构标注，因此不能靠自动吸附。参见 [算法与范围](A24_KAISHU_COMPOSITION.md)。
