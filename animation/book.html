@@ -16,7 +16,7 @@ button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #dca5
 .top h1{font-size:clamp(21px,3vw,29px);margin:0;line-height:1.3}
 .sub{font-size:13px;color:var(--muted);margin:6px 0 0}
 a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
-.toplink{font-size:13px;background:white;border:1px solid var(--line);border-radius:9px;padding:9px 13px}
+.toplink{font-size:13px;background:white;border:1px solid var(--line);border-radius:9px;padding:9px 13px}.toplinks{display:flex;gap:8px;flex-wrap:wrap}
 .layout{display:grid;grid-template-columns:minmax(0,1.54fr) minmax(285px,.94fr);gap:17px;align-items:start}
 .main,.side{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 6px 23px #1c2b3310}
 .main{padding:22px}.side{padding:17px}
@@ -79,7 +79,7 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
   <header class="top">
     <div><h1>循序渐进 · PDF 同源笔顺动画</h1>
       <p class="sub">《循序渐进汉字部首字帖》v0.5.1 · 201 个主部首 · 21 批次 · 毛笔原始轮廓</p></div>
-    <a class="toplink" href="./index.html">九字旧播放器 / 实验功能</a>
+    <div class="toplinks"><a class="toplink" href="./experiments/brush-motion-lab.html">A3.5 运笔 A/B 研究（未审定）</a><a class="toplink" href="./index.html">九字旧播放器 / 实验功能</a></div>
   </header>
   <div class="layout">
     <section class="main" aria-label="字帖同源毛笔动画">
