@@ -21,11 +21,11 @@ test('one pressure controller stays physically attached to handwriting stage',()
    'No duplicate pressure control '+id);
  }
 });
-test('desktop side-by-side and narrow-screen above/sticky layout are explicit',()=>{
+test('desktop and laptop side-by-side; mobile above/sticky layouts are explicit',()=>{
  assert.match(html,/\.writingStage\{display:grid;grid-template-columns:minmax\(0,1fr\) 220px/);
  assert.match(html,/\.pressureBox\{position:sticky;top:10px/);
- assert.match(html,/@media\(max-width:1150px\)\{/);
- assert.match(html,/\.pressureBox\{order:-1;width:100%;top:7px/);
+ assert.match(html,/@media\(max-width:720px\)\{/);
+ assert.match(html,/\.pressureBox\{order:-1;width:100%;top:5px/);
  assert.match(html,/@media\(max-width:510px\)/);
  assert.match(html,/\.main\{overflow:visible\}/);
  assert.match(html,/role="group" aria-labelledby="pressureStyleLabel"/);
@@ -39,4 +39,13 @@ test('layout did not replace source-immutable A1.6 pressure or A3.6 renderer',()
  assert.match(html,/src="\.\/ink-front-guard\.js"/);
  for(const mode of ['stable','simulated'])
   assert.match(html,new RegExp('data-pen-style="'+mode+'"'));
+});
+
+test('A3.9: source paper is sized by viewport height, not width alone',()=>{
+ assert.match(html,/--board-size:clamp\(250px,calc\(100svh - 450px\),410px\)/);
+ assert.match(html,/\.writingStage\{display:grid;grid-template-columns:minmax\(0,1fr\) 220px;gap:12px;align-items:start;max-width:calc\(var\(--board-size\) \+ 232px\)/);
+ assert.match(html,/\.paper\{[^}]*width:min\(100%,var\(--board-size\)\);aspect-ratio:1/);
+ assert.match(html,/@media\(max-width:510px\)\{[\s\S]*?--board-size:clamp\(230px,calc\(100svh - 505px\),300px\)/);
+ assert.match(html,/\.controls\{display:grid;grid-template-columns:repeat\(3,minmax\(0,1fr\)\);gap:4px\}/);
+ assert.doesNotMatch(html,/#paperSvg\{[^}]*max-width:535px/);
 });
