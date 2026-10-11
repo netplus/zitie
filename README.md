@@ -1,6 +1,6 @@
-## A3（开发候选）｜PDF同源201字毛笔笔顺
+## A3（已上线）｜PDF同源201字毛笔笔顺
 
-新主线 [A3 #120](https://github.com/netplus/zitie/issues/120)：默认改回毛笔，硬笔研究暂停；基于正式 v0.5.1 299页《循序渐进汉字部首字帖》及其建书输入生成201字逐笔SVG动画，建立 PDF 书签页码联动。见 [A3 技术边界](docs/A3_PDF_BRUSH_ANIMATION.md)、[201字动画入口](animation/book.html)。此入口只有通过最终 A1/Book CI 并完成实际 GitHub Pages 部署后才可称上线；正式PDF与201规范记录不变，SVG中线不代表已审核真人运笔。
+新主线 [A3 #120](https://github.com/netplus/zitie/issues/120)：默认改回毛笔，硬笔研究暂停；基于正式 v0.5.1 299页《循序渐进汉字部首字帖》及其建书输入生成201字逐笔SVG动画，建立 PDF 书签页码联动。见 [A3 技术边界](docs/A3_PDF_BRUSH_ANIMATION.md)、[201字动画入口](animation/book.html)。最终功能 PR HEAD `b66a51dd31be7d06a2fcdbccd7e106f891617997` 的 [A1 动画 CI #38122954997](https://github.com/netplus/zitie/actions/runs/38122954997) 与 [Book 完整性 CI #38122955056](https://github.com/netplus/zitie/actions/runs/38122955056) 双 completed/success；[PR #121](https://github.com/netplus/zitie/pull/121) 合入 `main` 为 `452e79f078b3d80a515e3a2290f6489a37925760`，同一 merge SHA 的 [GitHub Pages #38123374018](https://github.com/netplus/zitie/actions/runs/38123374018) Configure、Upload、实际 Deploy 全部 completed/success。A1 83 项历史 Node 与 A3 5 项新 Node 全通过；**201 字/1045 笔/21 批次**及正式 v0.5.1 299页 PDF SHA256 `7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90` 已核对；A3 54 帧 Chromium 落墨 0 像素消失，27 帧可见笔尖，龠第17笔进入本字 PDF 第3张累计示范页，390px 适配通过。截图见 [A3 QA artifact #11696336104](https://github.com/netplus/zitie/actions/runs/38122954997/artifacts/11696336104)。[完整201字毛笔播放器](https://netplus.github.io/zitie/animation/book.html)及[只读正式 PDF](https://netplus.github.io/zitie/book/zitie-v0.5.1-A4.pdf)已发布。**这是工程动画的完整源一致性验证，未获得真人运笔轨迹的教学认证；硬笔仍冻结。**
 
 ---
 
