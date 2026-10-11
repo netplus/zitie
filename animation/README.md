@@ -1,6 +1,6 @@
-## A3.7：恢复完整201字的「稳定版 / 模拟笔压版」选择（修复候选）
+## A3.7：恢复完整201字的「稳定版 / 模拟笔压版」选择（已上线）
 
-用户提供截图指出旧A1.6笔压风格在新 [201字字帖播放器](book.html) 遗失。现直接复用原本的`pressure-style.js`、`pressure-model.js`和`gesture-data.js`，恢复两档按钮、合成力度圆环/百分比/曲线；稳定版默认，模拟版只影响笔尖视觉，不改变已核墨迹、SVG轮廓/中心线、A3.6显墨守卫或PDF发布哈希。全201字/1045笔压力曲线及真实浏览器逐帧同墨测试新增CI；正式部署前属候选。详细[说明与验收](../docs/A37_PRESSURE_STYLE_RESTORE.md)。
+用户提供截图指出旧A1.6笔压风格在新 [201字字帖播放器](book.html) 遗失。现直接复用原本的`pressure-style.js`、`pressure-model.js`和`gesture-data.js`，恢复两档按钮、合成力度圆环/百分比/曲线；稳定版默认，模拟版只影响笔尖视觉，不改变已核墨迹、SVG轮廓/中心线、A3.6显墨守卫或PDF发布哈希。全201字/1045笔压力曲线及真实浏览器逐帧同墨测试新增CI；**A3.7 已上线（2026-10-11）。** [PR #129](https://github.com/netplus/zitie/pull/129) 最终 HEAD `2252d3de3df7ef9f9aa1eec3deb5d21572d52b5b` 的 [A1/Chromium CI #38138069650](https://github.com/netplus/zitie/actions/runs/38138069650) 与 [Book CI #38138069687](https://github.com/netplus/zitie/actions/runs/38138069687) 双 completed/success；合并 `main` SHA 为 `e8b4b8adefcf2381e8b0ed9a2fcd701794280c93`，对应的 [Pages #38138652608](https://github.com/netplus/zitie/actions/runs/38138652608) Configure、Upload、实际 Deploy 全 completed/success。**201字/1045笔**均生成模拟笔压曲线，14个细笔名受限主项不泄漏，12组真实 Chromium 稳定/模拟模式红墨光栅 **0 像素差异**，力环与当前笔尖100%对齐，风格切换不改变进度、倍率、播放、笔顺或源SVG墨迹；390px手机视口通过，A3.6原2090帧防超前回归不受影响。 [真实稳定/模拟截图与 QA metrics artifact #11702002988](https://github.com/netplus/zitie/actions/runs/38138069650/artifacts/11702002988)。[正式201字播放器](https://netplus.github.io/zitie/animation/book.html?id=77) 可直接使用。**模拟力值不是实测笔压，仅影响笔尖和提示，不改变墨迹宽度。**详细[说明与验收](../docs/A37_PRESSURE_STYLE_RESTORE.md)。
 
 ---
 
