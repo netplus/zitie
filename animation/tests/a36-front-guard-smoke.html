@@ -82,8 +82,12 @@ async function run(){
    const count=guard.visibleCount(row.guard,row.profile.length*frame.progress);
    check(row.previousGuardCount===count&&count>0&&count<row.guardCells.length,
      'Clip cell prefix not tied to nib position');
-   check(row.reveal.getAttribute('clip-path')?.startsWith('url(#'),
-     'Live ink path has no source-front clip');
+   check(row.guardInk?.getAttribute('clip-path')?.startsWith('url(#')&&
+     row.guardInk?.getAttribute('mask')?.startsWith('url(#'),
+     'Live independent ink cells lack source-outline and roundcap clipping');
+   check(row.reveal.style.display==='none'&&
+     row.guardInk.style.display!=='none',
+     'Active guarded stroke did not preserve immutable ink cells');
    check(row.guardCells.filter(x=>x.style.display!=='none').length===count,
      'Visible clip cells do not match source travel');
    liveClips++;
