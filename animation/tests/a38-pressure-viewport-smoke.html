@@ -72,18 +72,19 @@ document.getElementById('demo').addEventListener('load',async function(){
     pressureVisible:true});
   check(app.player.elapsed===clock,
     'Moving the pressure UI changed original player time');
-  // 1020px laptop: preserve the canvas width; move the small pressure
-  // toolbar ABOVE the source square and keep telemetry laid out flat.
+  // A3.9: at 1020px the smaller, height-aware paper permits a side
+  // pressure panel without sacrificing visible player controls.
   this.style.width='1020px';w.scrollTo(0,0);
   await wait(170);
   const tp=bounds(paper),ts=bounds(panel),tc=bounds(chart);
-  check(ts.bottom<=tp.top+1&&Math.abs(ts.width-tp.width)<2&&tp.width>=490,
-    'Laptop writing paper shrank instead of filling its stage');
+  check(ts.left>=tp.right+5&&Math.abs(ts.top-tp.top)<14&&
+    tp.width>=300&&tp.width<=412,
+    'Laptop must show reduced height-aware paper BESIDE pressure panel');
   check(tc.bottom<=ts.bottom+2&&tc.width>=100,
-    'Tablet graph is missing or outside visible pressure toolbar');
+    'Laptop graph is missing or outside visible pressure panel');
   check(d.documentElement.scrollWidth<=w.innerWidth+2,
     'Tablet layout forces horizontal scrolling');
-  screenshots.push({viewport:'laptop1020',pressureAbove:true,
+  screenshots.push({viewport:'laptop1020',pressureBeside:true,
     paperW:tp.width,panelW:ts.width});
   // Phone viewport: compact strip remains visible while the user
   // is looking at the middle of the animated square.
@@ -124,7 +125,7 @@ document.getElementById('demo').addEventListener('load',async function(){
   check(JSON.stringify(app.pack.glyphs)===glyphs,
     'Layout rearrangement altered PDF source glyphs');
   const result={result:'PASS',characters:201,sourceStrokes:1045,
-    wideSideBySide:true,laptopAbove:true,mobileAbove:true,
+    wideSideBySide:true,laptopBeside:true,mobileAbove:true,
     desktopScrollVisible:true,mobileScrollVisible:true,
     noDuplicateControls:true,mobile390:true,pressureCurveVisible:true,
     pressureStyleStatePreserved:true,pdfSourceImmutable:true,
