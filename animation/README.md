@@ -1,6 +1,6 @@
-## A3.8 笔压风格与动画同屏（桌面右侧 / 手机上方）
+## A3.8 笔压风格与动画同屏（已上线）
 
-原[完整201字毛笔播放器](book.html)的“笔压风格”被排到全部播放控制下方，不方便在书写时观察。现将其**移到与 SVG 书写画布同一个区域**：宽屏放在画布右侧，较窄屏幕放在画布上方并在滚动书写时保留可见读数。稳定版默认、模拟笔压版圆环/力度曲线保持原A1.6行为，不创建第二份控件，不改PDF笔顺、墨迹或A3.6前缘防超前。详细布局与Chrome视口测试见 [A3.8设计](../docs/A38_PRESSURE_VISIBLE_LAYOUT.md)。
+原[完整201字毛笔播放器](book.html)的“笔压风格”被排到全部播放控制下方，不方便在书写时观察。现将其**移到与 SVG 书写画布同一个区域**：宽屏放在画布右侧，较窄屏幕放在画布上方并在滚动书写时保留可见读数。**A3.8 已上线（2026-10-11）**：[#132](https://github.com/netplus/zitie/pull/132) 完成布局，[#133](https://github.com/netplus/zitie/pull/133) 修复 1020px 笔记本字格缩水；合并 SHA [f4ae83e](https://github.com/netplus/zitie/commit/f4ae83e338cff68bc9460d3f0eacfaef919d949a) 的 [真实 Chromium 检查](https://github.com/netplus/zitie/actions/runs/38145041178)、[Book](https://github.com/netplus/zitie/actions/runs/38145041109) 与 [Pages 实际 Deploy](https://github.com/netplus/zitie/actions/runs/38145041123) 全部成功。稳定版默认、模拟笔压版圆环/力度曲线保持原A1.6行为，不创建第二份控件，不改PDF笔顺、墨迹或A3.6前缘防超前。详细布局、QA 与发布记录见 [A3.8](../docs/A38_PRESSURE_VISIBLE_LAYOUT.md)。
 
 ---
 
