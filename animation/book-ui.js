@@ -98,8 +98,8 @@ window.addEventListener('DOMContentLoaded', function(){
     const simulated=force.mode==='simulated';
     $('pressureDetails').hidden=!simulated;
     $('pressureStyleHint').textContent=simulated?
-      '模拟笔压版 · 起笔、转锋、收笔的力度变化仅用于笔尖与曲线提示，不改变墨迹':
-      '稳定版 · 保持原有毛笔笔尖和 PDF 同源墨迹';
+      '模拟版 · 笔尖及曲线提示力度，墨迹不变':
+      '稳定版 · 原有笔尖，墨迹不变';
     if(!simulated)return;
     $('pressureValue').textContent=Math.round(force.pressure*100)+'%';
     $('pressureFill').style.width=(force.pressure*100).toFixed(2)+'%';
