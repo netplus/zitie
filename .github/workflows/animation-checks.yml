@@ -5,19 +5,21 @@ on:
       - 'animation/**'
       - 'scripts/a1_audit.py'
       - 'scripts/a1_browser_smoke.sh'
+      - 'scripts/build_a3_animation.py'
       - '.github/workflows/animation-checks.yml'
   pull_request:
     paths:
       - 'animation/**'
       - 'scripts/a1_audit.py'
       - 'scripts/a1_browser_smoke.sh'
+      - 'scripts/build_a3_animation.py'
       - '.github/workflows/animation-checks.yml'
 permissions:
   contents: read
 jobs:
   svg-browser:
     runs-on: ubuntu-latest
-    timeout-minutes: 12
+    timeout-minutes: 19
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -55,6 +57,7 @@ jobs:
           node --check animation/experiments/kaishu-composition-lab.js
           node --check animation/gallery.js
           node --check animation/ui.js
+          node --check animation/book-ui.js
           node --check animation/samples.js
           node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs animation/tests/pen-kinematics.test.cjs animation/tests/source-onset.test.cjs animation/tests/pressure-model.test.cjs animation/tests/pressure-style.test.cjs animation/tests/stroke-primitives.test.cjs animation/tests/hardpen-model.test.cjs animation/tests/regular-kaishu-model.test.cjs animation/tests/kaishu-composition.test.cjs
       - name: Install CJK fallback solely for screenshot QA (never bundle font)
@@ -542,7 +545,7 @@ jobs:
           report=json.loads(html.unescape(match.group(1)))
           assert report['result']=='PASS'
           assert report['glyphs']==9 and report['frames']==63
-          assert report['defaultTool']=='hardpen' and report['retainedTool']=='brush'
+          assert report['defaultTool']=='brush' and report['retainedTool']=='brush'
           assert report['hardpenPixelLoss']==0 and report['sourceInkMutations']==0
           assert report['pressureInkMismatch']==0
           assert report['verifiedUniformWidthRows']>=35
@@ -554,7 +557,7 @@ jobs:
           assert report['physicallyCalibrated'] is False
           Path('build/a1/a22-main-hardpen-metrics.json').write_text(
             json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-          print('PASS: hardpen default, historical brush selectable,',
+          print('PASS: original brush default, historical hardpen selectable,',
                 '63 real-browser frames, zero ink loss, true speed/seek continuity')
           PY
           timeout 80 "$CHROME_BIN" --headless=new --no-sandbox \
@@ -683,6 +686,70 @@ jobs:
             --screenshot="$(pwd)/build/a1/a24-composition-nine-glyphs.png" \
             'http://127.0.0.1:18777/animation/tests/kaishu-composition-smoke.html' >/dev/null
           test -s build/a1/a24-composition-nine-glyphs.png
+      - name: Audit A3 released PDF to 201 brush animations in real Chrome
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install -r requirements.txt
+          BATCHES="$(printf 'B%02d ' {1..21})"
+          python scripts/acquire_vectors.py --batches $BATCHES
+          python scripts/build_a3_animation.py --vectors build/vectors --output build/a3/book-pack.js
+          node --test animation/tests/a3-book.test.cjs
+          cp build/a3/book-pack.js animation/book-pack.js
+          mkdir -p build/a1
+          python3 -m http.server 18778 --bind 127.0.0.1 > build/a1/a3-book-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 50); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18778/animation/book.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          timeout 300 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu \
+            --disable-background-timer-throttling --virtual-time-budget=180000 \
+            --window-size=1350,1900 --dump-dom \
+            'http://127.0.0.1:18778/animation/tests/a3-book-smoke.html' \
+            > build/a1/a3-book-browser-dom.html
+          if ! grep -q 'data-result="PASS"' build/a1/a3-book-browser-dom.html; then
+            echo 'FAIL: A3 released PDF / 201-glyph brush regression' >&2
+            grep -o 'FAIL:[^<]*' build/a1/a3-book-browser-dom.html | head -n 12 >&2 || true
+            exit 1
+          fi
+          python3 - <<'PY'
+          import html,json,re
+          from pathlib import Path
+          raw=Path('build/a1/a3-book-browser-dom.html').read_text(encoding='utf-8')
+          match=re.search(r'<pre id="result">(\{.*?\})</pre>',raw,re.S)
+          if not match:raise SystemExit('Missing A3 browser JSON report')
+          result=json.loads(html.unescape(match.group(1)))
+          assert result['result']=='PASS'
+          assert result['characters']==201 and result['pdfPages']==299
+          assert result['batches']==21 and result['actualRasterFrames']==54
+          assert result['vanishedRedPixels']==0
+          for key in ['thirdPageNavigationFor17StrokeGlyph',
+                      'policyRestrictionsPreserved','bookSourceImmutable',
+                      'brushDefault','mobile390']:
+              assert result[key] is True,key
+          assert result['calibratedTrajectory'] is False
+          Path('build/a1/a3-book-metrics.json').write_text(
+            json.dumps(result,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('PASS: 201 PDF-derived brush animations, 299 page mapping,',
+                '54 Chromium frames, 0 vanished red pixels')
+          PY
+          timeout 110 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --virtual-time-budget=25000 \
+            --window-size=1360,1780 \
+            --screenshot="$(pwd)/build/a1/a3-book-water.png" \
+            'http://127.0.0.1:18778/animation/book.html?id=77' >/dev/null
+          timeout 110 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --virtual-time-budget=25000 \
+            --window-size=1360,1780 \
+            --screenshot="$(pwd)/build/a1/a3-book-complex.png" \
+            'http://127.0.0.1:18778/animation/book.html?id=201' >/dev/null
+          test -s build/a1/a3-book-water.png
+          test -s build/a1/a3-book-complex.png
       - uses: actions/upload-artifact@v4
         if: always()
         with:
