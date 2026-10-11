@@ -48,4 +48,6 @@ test('A3.9: source paper is sized by viewport height, not width alone',()=>{
  assert.match(html,/@media\(max-width:510px\)\{[\s\S]*?--board-size:clamp\(230px,calc\(100svh - 505px\),270px\)/);
  assert.match(html,/\.controls\{display:grid;grid-template-columns:repeat\(3,minmax\(0,1fr\)\);gap:4px\}/);
  assert.doesNotMatch(html,/#paperSvg\{[^}]*max-width:535px/);
+ assert.match(html,/\.pressureHint\{display:none\}/);
+ assert.match(html,/id="pressureDetails"/);
 });
