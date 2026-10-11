@@ -973,7 +973,7 @@ jobs:
           x=json.loads(html.unescape(m.group(1)))
           assert x['result']=='PASS' and x['characters']==201
           assert x['sourceStrokes']==1045
-          for name in ('wideSideBySide','laptopAbove','mobileAbove',
+          for name in ('wideSideBySide','laptopBeside','mobileAbove',
                        'desktopScrollVisible','mobileScrollVisible',
                        'noDuplicateControls','mobile390',
                        'pressureCurveVisible','pressureStyleStatePreserved',
@@ -982,8 +982,8 @@ jobs:
           assert len(x['layoutProof'])==4
           Path('build/a1/a38-pressure-layout-metrics.json').write_text(
               json.dumps(x,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-          print('PASS A3.8: live force visible beside desktop handwriting,',
-                'above & sticky for narrow/mobile, untouched source/pressure')
+          print('PASS A3.8/A3.9: live force beside desktop/laptop handwriting,',
+                'above & sticky on mobile, untouched source/pressure')
           PY
           timeout 90 "$CHROME_BIN" --headless=new --no-sandbox \
             --disable-dev-shm-usage --disable-gpu --virtual-time-budget=17000 \
@@ -997,6 +997,69 @@ jobs:
             'http://127.0.0.1:18782/animation/tests/a38-pressure-layout-preview.html?mobile=1' >/dev/null
           test -s build/a1/a38-pressure-beside-writing-desktop.png
           test -s build/a1/a38-pressure-above-writing-mobile.png
+      - name: Audit A3.9 compact board with full controls in height-constrained Chrome
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s animation/book-pack.js
+          mkdir -p build/a1
+          python3 -m http.server 18783 --bind 127.0.0.1 > build/a1/a39-compact-layout-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 50); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18783/animation/book.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          timeout 190 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --disable-background-timer-throttling \
+            --window-size=1550,1220 --virtual-time-budget=90000 --dump-dom \
+            'http://127.0.0.1:18783/animation/tests/a39-compact-viewport-smoke.html' \
+            > build/a1/a39-compact-layout-browser-dom.html
+          if ! grep -q 'data-result="PASS"' build/a1/a39-compact-layout-browser-dom.html; then
+            echo 'FAIL: A3.9 board or primary controls outside laptop/mobile viewport' >&2
+            grep -o 'FAIL:[^<]*' build/a1/a39-compact-layout-browser-dom.html | head -n 12 >&2 || true
+            exit 1
+          fi
+          python3 - <<'PY'
+          import html,json,re
+          from pathlib import Path
+          data=Path('build/a1/a39-compact-layout-browser-dom.html').read_text(encoding='utf-8')
+          m=re.search(r'<pre id="result">(\{.*?\})</pre>',data,re.S)
+          if not m:raise SystemExit('A3.9 browser layout evidence missing')
+          x=json.loads(html.unescape(m.group(1)))
+          assert x['result']=='PASS' and x['characters']==201
+          assert x['sourceStrokes']==1045 and len(x['layoutProof'])==6
+          assert x['laptopOneScreen'] and x['mobileTallOneScreen']
+          assert x['sourceImmutable'] and x['pressureModesPreserved'] and x['originalPigmentGuard']
+          for record in x['layoutProof']:
+              assert not record['horizontalOverflow'],record['viewport']
+              if record['screenHeight']>=768:
+                  assert record['allControlsInView'],record
+          Path('build/a1/a39-compact-layout-metrics.json').write_text(
+              json.dumps(x,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          for record in x['layoutProof']:
+              print('A3.9 layout proof:',record['viewport'],
+                    'paper_px='+str(record['paperWidth']),
+                    'paper_bottom='+str(record['paperBottom']),
+                    'controls_bottom='+str(record['controlsBottom']),
+                    'viewport_height='+str(record['screenHeight']))
+          print('PASS A3.9: source paper, active force and all playback controls',
+                'within one 1366x768 / 1020x768 / 390x844 browser viewport')
+          PY
+          timeout 90 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --virtual-time-budget=17000 \
+            --window-size=1490,900 \
+            --screenshot="$(pwd)/build/a1/a39-compact-laptop-1366x768.png" \
+            'http://127.0.0.1:18783/animation/tests/a39-compact-layout-preview.html' >/dev/null
+          timeout 90 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --virtual-time-budget=17000 \
+            --window-size=490,980 \
+            --screenshot="$(pwd)/build/a1/a39-compact-mobile-390x844.png" \
+            'http://127.0.0.1:18783/animation/tests/a39-compact-layout-preview.html?mobile=1' >/dev/null
+          test -s build/a1/a39-compact-laptop-1366x768.png
+          test -s build/a1/a39-compact-mobile-390x844.png
       - uses: actions/upload-artifact@v4
         if: always()
         with:
