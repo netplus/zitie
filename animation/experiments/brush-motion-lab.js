@@ -19,7 +19,7 @@ window.addEventListener('DOMContentLoaded',function(){
   const state={glyph:null,plans:[],query:'',batch:'all',visible:glyphs.slice(),
     speed:1,last:null};
   const baseline=new window.ZitiePlayer.StrokePlayer({
-    svg:$('baseline'),onUpdate(s){
+    svg:$('baseline'),frontGuard:true,onUpdate(s){
       if(!s||!state.glyph||baseline.timeline?.glyph!==state.glyph||
          candidate.timeline?.glyph!==state.glyph)return;
       // Candidate never starts a requestAnimationFrame loop of its own.
@@ -49,7 +49,7 @@ window.addEventListener('DOMContentLoaded',function(){
       renderNotes(state.glyph,s.index,s);
     }
   });
-  const candidate=new window.ZitiePlayer.StrokePlayer({svg:$('candidate')});
+  const candidate=new window.ZitiePlayer.StrokePlayer({svg:$('candidate'),frontGuard:true});
   function format(ms){
     const sec=Math.floor(ms/1000);
     return String(Math.floor(sec/60)).padStart(2,'0')+':'+
