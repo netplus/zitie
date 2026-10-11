@@ -106,7 +106,9 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
   #reading{font-size:13px}
   .pager{gap:4px}.pager button{font-size:11px;padding:4px 5px}
   .writingStage{margin-top:6px}
-  .legend{font-size:11px;gap:8px;padding-top:5px}
+  .legend{font-size:11px;gap:8px;padding-top:3px}
+  .progressHead{margin:4px 0 2px}
+  .seek{margin:2px 0 7px}
   .controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
   .controls button{font-size:12px;padding:5px 3px;min-height:32px}
   .speed{grid-column:1/-1;display:flex;justify-content:center;width:100%;gap:3px;margin:0;font-size:11px}
@@ -116,10 +118,10 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
   .pressureChoice{gap:6px}.pressureLabel{font-size:12px}
   .pressureButtons{gap:2px;padding:2px}
   .pressureButtons button{padding:5px 7px;font-size:12px;min-height:30px}
-  .pressureHint{margin-top:3px}
+  .pressureHint{display:none} /* The visible telemetry itself states synthetic/not measured. */
   .pressureDetails{grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:7px;margin-top:5px;padding-top:5px}
   .pressureTelemetry{font-size:10px;gap:3px}.pressureTelemetry strong{font-size:19px}
-  #pressureCurve{height:56px;max-height:56px}
+  #pressureCurve{height:52px;max-height:52px}
 }
 @media(max-width:350px){.head{grid-template-columns:1fr}.pager{justify-content:flex-start}}
 </style>
