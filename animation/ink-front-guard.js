@@ -30,10 +30,11 @@
     return result;
   };
   const round=v=>+v.toFixed(4);
-  function buildCells(profile,{bounds=[-256,-256,1280,1280]}={}){
+  function buildCells(profile,{bounds=[-256,-256,1280,1280],edgeOverlap=3}={}){
     if(!profile||!Array.isArray(profile.stations)||profile.stations.length<2||
        !Array.isArray(bounds)||bounds.length!==4||!bounds.every(finite)||
-       !(bounds[0]<bounds[2]&&bounds[1]<bounds[3]))
+       !(bounds[0]<bounds[2]&&bounds[1]<bounds[3])||
+       !finite(edgeOverlap)||edgeOverlap<0||edgeOverlap>3.5)
       throw Error('Invalid source-front guard input');
     const stations=profile.stations;
     if(stations.length>900)throw Error('Unsafe source-front station count');
@@ -58,8 +59,16 @@
           if(j<i){polygon=[];break;}
           continue;
         }
+        // Independent SVG clipPath children are each rasterized with
+        // antialiasing. Without a tiny overlap, clip seams can cause
+        // 2–12 previously red pixels to disappear when a new adjacent
+        // cell is enabled, even though the mathematical union only grows.
+        // 3 SVG units (~1 screen pixel at 384px) create an AA-safe
+        // overlap; source stations are 4 SVG units apart. This never
+        // extends ahead to source stations >=12 units away.
         const c=(other.x*other.x+other.y*other.y-
-                 site.x*site.x-site.y*site.y)/2;
+                 site.x*site.x-site.y*site.y)/2+
+                 edgeOverlap*Math.sqrt(sq);
         polygon=clip(polygon,a,b,c);
         if(polygon.length<3)break;
       }
@@ -68,6 +77,7 @@
       cells.push({distance:site.distance,outline:d,vertices:polygon.length});
     }
     return {kind:'source_arc_voronoi_progress_gate',cells,
+      edgeOverlap,
       sourceMedianModified:false,sourceOutlineModified:false,
       nibClockModified:false,
       maxStationGap:Math.max(...stations.slice(1).map((s,i)=>
