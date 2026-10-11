@@ -1,3 +1,9 @@
+## A3.5 正式字帖毛笔运笔 A/B（独立研究候选，默认A3不变）
+
+新 [毛笔运笔对照实验](experiments/brush-motion-lab.html) 使用与已发布 v0.5.1 PDF完全同源的201主部首、1045笔。两侧原SVG墨迹与中线不变；A为已发布的A3节奏，B按已核细笔名建立可解释的起笔、折钩、收笔时间重映射；不通过原中线回溯推断笔画名称、真实笔压力度或真人运动。不确定折钩和未核名称严格回退。Node验证轨迹单调，Chromium要求54对同步帧、同空间进度一致墨迹、390px；该页仍为未教学审定实验，须双CI与Pages验证后才可访问。见 [算法与来源限制](../docs/A35_BRUSH_MOTION_AB.md)、[A3 #120](https://github.com/netplus/zitie/issues/120)。已上线 [完整201字默认毛笔播放器](book.html) 不变，硬笔方向继续冻结。
+
+---
+
 ## A3 PDF同源201字毛笔播放器（已正式部署；毛笔恢复默认）
 
 用户已确定不再继续硬笔方向，现以正式 v0.5.1 PDF 为视觉与教学源。新的 [201字毛笔播放器](book.html) 从与 299 页正式PDF同源的 B01—B21 教学记录、固定上游SVG笔画、已核覆写以及 PDF 201条书签生成离线字库，按当前笔画自动关联真实 PDF 页码，支持17笔龠的3页连读、批次/字/笔画查询、逐笔时间轴和练习提示。原 [9字工程播放器](index.html) 恢复毛笔默认，硬笔暂保留为冻结实验选项。生成器和证据/许可边界见 [A3设计](../docs/A3_PDF_BRUSH_ANIMATION.md)、[Issue #120](https://github.com/netplus/zitie/issues/120)。最终功能 PR HEAD `b66a51dd31be7d06a2fcdbccd7e106f891617997` 的 [A1 动画 CI #38122954997](https://github.com/netplus/zitie/actions/runs/38122954997) 与 [Book 完整性 CI #38122955056](https://github.com/netplus/zitie/actions/runs/38122955056) 双 completed/success；[PR #121](https://github.com/netplus/zitie/pull/121) 合入 `main` 为 `452e79f078b3d80a515e3a2290f6489a37925760`，同一 merge SHA 的 [GitHub Pages #38123374018](https://github.com/netplus/zitie/actions/runs/38123374018) Configure、Upload、实际 Deploy 全部 completed/success。A1 83 项历史 Node 与 A3 5 项新 Node 全通过；**201 字/1045 笔/21 批次**及正式 v0.5.1 299页 PDF SHA256 `7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90` 已核对；A3 54 帧 Chromium 落墨 0 像素消失，27 帧可见笔尖，龠第17笔进入本字 PDF 第3张累计示范页，390px 适配通过。截图见 [A3 QA artifact #11696336104](https://github.com/netplus/zitie/actions/runs/38122954997/artifacts/11696336104)。[完整201字毛笔播放器](https://netplus.github.io/zitie/animation/book.html)及[只读正式 PDF](https://netplus.github.io/zitie/book/zitie-v0.5.1-A4.pdf)已发布。**这是工程动画的完整源一致性验证，未获得真人运笔轨迹的教学认证；硬笔仍冻结。**
