@@ -6,12 +6,15 @@ window.addEventListener('DOMContentLoaded', function(){
   'use strict';
   const pack=window.ZITIE_BOOK_PACK,T=window.ZitieTimeline;
   const $=id=>document.getElementById(id);
-  const required=['paperSvg','status','search','tiles','steps','pdfLink'];
+  const required=['paperSvg','status','search','tiles','steps','pdfLink',
+    'pressureStyleOptions','pressureDetails','pressureCurve','pressureValue',
+    'pressureFill','pressurePhase','pressureStyleHint'];
   if(!pack||pack.schema_version!==1||
      pack.publication?.version!=='0.5.1'||
      pack.publication?.pages!==299||
      !Array.isArray(pack.glyphs)||pack.glyphs.length!==201||
-     required.some(id=>!$(id))){
+     !window.ZitiePressureStyle||!window.ZitiePressureModel||
+     !window.ZitieGestureCandidates||required.some(id=>!$(id))){
     $('status').textContent='字帖资源不可用：必须通过 PDF 同源数据验证后生成。';
     document.documentElement.setAttribute('data-a3-error','pack');
     return;
@@ -27,6 +30,9 @@ window.addEventListener('DOMContentLoaded', function(){
   const state={current:null,query:'',batch:'all',visible:glyphs.slice(),
     speed:1,lastFrame:null};
   const $steps=$('steps'),$tiles=$('tiles'),$filters=$('filters');
+  // Reuse A1.6's original, proven brush-contact visualization controller.
+  // It changes ONLY the nib marker / force ring, never A3.6 source ink.
+  const penStyle=new window.ZitiePressureStyle.StyleController();
   const player=new window.ZitiePlayer.StrokePlayer({
     svg:$('paperSvg'),status:$('status'),frontGuard:true,
     onUpdate(s){
@@ -36,6 +42,8 @@ window.addEventListener('DOMContentLoaded', function(){
       // installing its next glyph. Always use the clock-owned glyph, never
       // a selection that may already refer to the next character.
       const g=player.timeline.glyph;
+      const force=penStyle.apply(player,s);
+      updatePressureView(force);
       $('stepLabel').textContent='第 '+(s.index+1)+' / '+
         s.count+' 笔 · '+(g.strokes[s.index].name_status==='reviewed'?
           g.strokes[s.index].name:'第'+(s.index+1)+'笔');
@@ -53,6 +61,60 @@ window.addEventListener('DOMContentLoaded', function(){
       setPdfPage(g,s.index);
     }
   });
+  const pressurePhaseLabels={
+    hover:'未落笔',touch:'轻触起笔',travel:'匀力行笔',
+    pivot:'转锋顿笔',flick:'出钩提笔',lift:'收锋提笔',released:'已离纸'
+  };
+  function drawPressureTrace(force){
+    const canvas=$('pressureCurve'),ctx=canvas.getContext('2d');
+    if(!ctx||!force.curve)return;
+    const w=canvas.width,h=canvas.height;
+    const left=22,right=w-13,top=10,bottom=h-22;
+    ctx.clearRect(0,0,w,h);
+    ctx.fillStyle='#fbf9fc';ctx.fillRect(0,0,w,h);
+    ctx.strokeStyle='#e4e8ea';ctx.lineWidth=1;
+    for(const p of [0,.5,1]){
+      const y=bottom-p*(bottom-top);
+      ctx.beginPath();ctx.moveTo(left,y);ctx.lineTo(right,y);ctx.stroke();
+    }
+    ctx.strokeStyle='#b43c48';ctx.lineWidth=3;ctx.lineJoin='round';
+    ctx.beginPath();
+    force.curve.forEach((sample,i)=>{
+      const x=left+(right-left)*sample.progress;
+      const y=bottom-(bottom-top)*sample.pressure;
+      if(i)ctx.lineTo(x,y);else ctx.moveTo(x,y);
+    });
+    ctx.stroke();
+    const at=left+(right-left)*force.progress;
+    ctx.strokeStyle='#287c8d';ctx.lineWidth=1.6;ctx.beginPath();
+    ctx.moveTo(at,top);ctx.lineTo(at,bottom);ctx.stroke();
+    ctx.fillStyle='#287c8d';ctx.beginPath();
+    ctx.arc(at,bottom-force.pressure*(bottom-top),5,0,Math.PI*2);ctx.fill();
+    ctx.fillStyle='#697680';ctx.font='12px system-ui';
+    ctx.fillText('起',left,bottom+16);ctx.textAlign='right';
+    ctx.fillText('收',right,bottom+16);ctx.textAlign='start';
+  }
+  function updatePressureView(force){
+    const simulated=force.mode==='simulated';
+    $('pressureDetails').hidden=!simulated;
+    $('pressureStyleHint').textContent=simulated?
+      '模拟笔压版 · 起笔、转锋、收笔的力度变化仅用于笔尖与曲线提示，不改变墨迹':
+      '稳定版 · 保持原有毛笔笔尖和 PDF 同源墨迹';
+    if(!simulated)return;
+    $('pressureValue').textContent=Math.round(force.pressure*100)+'%';
+    $('pressureFill').style.width=(force.pressure*100).toFixed(2)+'%';
+    $('pressurePhase').textContent=pressurePhaseLabels[force.phase]||force.phase;
+    drawPressureTrace(force);
+  }
+  function setPressureStyle(mode){
+    const next=penStyle.setMode(mode);
+    $('pressureStyleOptions').querySelectorAll('button[data-pen-style]')
+      .forEach(button=>button.setAttribute('aria-pressed',
+        String(button.dataset.penStyle===next)));
+    // Render the same millisecond frame; never pause/seek/change the mask.
+    if(player.timeline)player.render();
+    return next;
+  }
   function formatTime(ms){
     const n=Math.floor(ms/1000);
     return String(Math.floor(n/60)).padStart(2,'0')+':'+
@@ -173,6 +235,11 @@ window.addEventListener('DOMContentLoaded', function(){
   $('complete').addEventListener('click',()=>player.showAll());
   $('seek').addEventListener('input',e=>player.seekElapsed(
     +e.target.value/1000*player.timeline.totalMs));
+  $('pressureStyleOptions').addEventListener('click',e=>{
+    const button=e.target.closest('button[data-pen-style]');
+    if(button&&$('pressureStyleOptions').contains(button))
+      setPressureStyle(button.dataset.penStyle);
+  });
   $('speedButtons').addEventListener('click',e=>{
     const b=e.target.closest('button[data-speed]');
     if(!b)return;
@@ -198,6 +265,8 @@ window.addEventListener('DOMContentLoaded', function(){
   window.ZITIE_A3_BOOK={
     pack,player,selectGlyph:(id)=>selectGlyph(byId.get(+id)),
     getGlyph:()=>state.current,getVisible:()=>state.visible.slice(),
+    getPressureStyle:()=>penStyle.mode,setPressureStyle,
+    getPressureState:()=>penStyle.state,getPressureRing:()=>penStyle.ring,
     getPdfPage:()=>Number($('pdfLink').href.match(/#page=(\d+)$/)?.[1]),
     setSpeed(value){
       const b=$('speedButtons').querySelector('button[data-speed="'+value+'"]');
