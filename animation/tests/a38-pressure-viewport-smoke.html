@@ -77,8 +77,8 @@ document.getElementById('demo').addEventListener('load',async function(){
   this.style.width='1020px';w.scrollTo(0,0);
   await wait(170);
   const tp=bounds(paper),ts=bounds(panel),tc=bounds(chart);
-  check(ts.bottom<=tp.top+1&&ts.width>=tp.width-2,
-    'Tablet pressure controls should appear ABOVE writing paper');
+  check(ts.bottom<=tp.top+1&&Math.abs(ts.width-tp.width)<2&&tp.width>=490,
+    'Laptop writing paper shrank instead of filling its stage');
   check(tc.bottom<=ts.bottom+2&&tc.width>=100,
     'Tablet graph is missing or outside visible pressure toolbar');
   check(d.documentElement.scrollWidth<=w.innerWidth+2,
@@ -90,8 +90,8 @@ document.getElementById('demo').addEventListener('load',async function(){
   this.style.width='390px';w.scrollTo(0,0);
   await wait(180);
   const mp=bounds(paper),ms=bounds(panel),mc=bounds(chart);
-  check(ms.bottom<=mp.top+1,
-    'Mobile strip not above handwriting canvas');
+  check(ms.bottom<=mp.top+1&&Math.abs(ms.width-mp.width)<2,
+    'Mobile pressure strip and handwriting paper must span the same width');
   check(ms.height<=205,'Mobile pressure strip is too tall');
   check(mc.width>90&&mc.bottom<=ms.bottom+2,
     'Mobile graph is clipped or too small');
