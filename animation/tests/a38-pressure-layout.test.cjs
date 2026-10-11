@@ -45,7 +45,7 @@ test('A3.9: source paper is sized by viewport height, not width alone',()=>{
  assert.match(html,/--board-size:clamp\(250px,calc\(100svh - 450px\),410px\)/);
  assert.match(html,/\.writingStage\{display:grid;grid-template-columns:minmax\(0,1fr\) 220px;gap:12px;align-items:start;max-width:calc\(var\(--board-size\) \+ 232px\)/);
  assert.match(html,/\.paper\{[^}]*width:min\(100%,var\(--board-size\)\);aspect-ratio:1/);
- assert.match(html,/@media\(max-width:510px\)\{[\s\S]*?--board-size:clamp\(230px,calc\(100svh - 505px\),300px\)/);
+ assert.match(html,/@media\(max-width:510px\)\{[\s\S]*?--board-size:clamp\(230px,calc\(100svh - 505px\),270px\)/);
  assert.match(html,/\.controls\{display:grid;grid-template-columns:repeat\(3,minmax\(0,1fr\)\);gap:4px\}/);
  assert.doesNotMatch(html,/#paperSvg\{[^}]*max-width:535px/);
 });
