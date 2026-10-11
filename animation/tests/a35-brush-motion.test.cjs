@@ -58,8 +58,8 @@ test('ambiguous hook with no late source turn fails closed instead of inventing 
   assert.equal(plan.enabled,false);
   assert.equal(plan.events.length,0);
   assert.equal(plan.reason,'ambiguous_turn_no_forced_semantic_pivot');
-  assert.equal(plan.motion,M.buildMotionProfile(s.median).kind===plan.motion.kind?
-    plan.motion:plan.motion); // no synthetic confidence promotion
+  assert.equal(plan.motion.kind,'inferred_kinematic_heuristic_not_measured');
+  assert.equal(plan.calibrated,false);
 });
 
 test('all 9 canonical source samples keep 40 stroke outlines and immutable medians',()=>{
