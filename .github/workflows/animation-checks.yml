@@ -852,6 +852,10 @@ jobs:
           assert v['result']=='PASS'
           assert v['glyphs']==201 and v['sourceStrokes']==1045
           assert v['liveFrontGuards']==1045 and v['maxStationGap']<=4.001
+          assert v['fullStrokeRasterFrames']==2090
+          assert v['fullStrokesWithInk']==1045
+          assert v['fullStrokeRedPixelsLost']==0
+          assert v['maxFullStrokeRedLead']<=12 and v['fullStrokeLeadOver12']==0
           assert v['actualPixelFrames']>=430 and v['riskGlyphs']>=30
           assert v['positiveInkFrames']>=v['actualPixelFrames']*.92
           assert v['sourceRedPixelsLost']==0
@@ -862,8 +866,8 @@ jobs:
           assert v['originalNibClockUnmodified'] is True
           Path('build/a1/a36-front-guard-metrics.json').write_text(
             json.dumps(v,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
-          print('PASS A3.6: 1045 live source arc-front guards, >430 true raster frames,',
-                'zero nib-front leaks >12 SVG units, no already deposited red loss')
+          print('PASS A3.6: 1045 live source guards + 2090 all-stroke raster frames,',
+                '201-glyph temporal samples, zero nib-front leaks or red loss')
           PY
           timeout 100 "$CHROME_BIN" --headless=new --no-sandbox \
             --disable-dev-shm-usage --disable-gpu --virtual-time-budget=20000 \
