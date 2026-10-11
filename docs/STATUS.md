@@ -1,6 +1,12 @@
-# A3.6 全201字墨迹前缘防超前（2026-10-11，修复候选，待CI/部署）
+# A3.6 全201字墨迹前缘防超前（2026-10-11，已修复上线）
 
-用户发现水等笔画“填充速度快于笔尖”。旧宽圆头墨迹会提前跨越折、钩，且光标前缘补偿仅覆盖部分笔画。新增完整 [原因/几何模型/验收门槛](A36_INK_FRONT_AUDIT.md)、[Issue #125](https://github.com/netplus/zitie/issues/125)：对201字1045笔的原始中线每4SVG单位构建有序近邻分区，只允许笔尖已到达的source区显墨，并与旧已验证的圆头遮罩及原PDF轮廓求交；不更改字形、笔顺、真实书写时间轴或v0.5.1 PDF。新Node全1045笔+Chromium全201字像素检测尚须在最终HEAD确认合格。A3默认毛笔与A3.5双侧都启用屏障，旧九字历史试验保持作可复现参照，硬笔继续冻结。**未通过真实Chrome前不可宣称修复完成。**
+用户发现水等笔画“填充速度快于笔尖”。旧宽圆头墨迹会提前跨越折、钩，且光标前缘补偿仅覆盖部分笔画。新增完整 [原因/几何模型/验收门槛](A36_INK_FRONT_AUDIT.md)、[Issue #125](https://github.com/netplus/zitie/issues/125)：对201字1045笔的原始中线每4SVG单位构建有序近邻分区，只允许笔尖已到达的source区显墨，并与旧已验证的圆头遮罩及原PDF轮廓求交；不更改字形、笔顺、真实书写时间轴或v0.5.1 PDF。新Node全1045笔+Chromium全201字像素检测与2090帧逐笔真实栅格均已在最终HEAD确认合格。A3默认毛笔与A3.5双侧都启用屏障，旧九字历史试验保持作可复现参照，硬笔继续冻结。**A3.6 已上线（2026-10-11）。** [PR #126](https://github.com/netplus/zitie/pull/126) 最终精确 HEAD `d410e398c6d94bfcd7d309cdd58372ff542ac2d1` 的 [A1 Chromium #38134493046](https://github.com/netplus/zitie/actions/runs/38134493046) 与 [Book integrity #38134493075](https://github.com/netplus/zitie/actions/runs/38134493075) 均 completed/success；合并 `main` 提交 `ea4a76e868cf9f9dbe3469fc0028604d4b5265b8` 对应的 [Pages #38135010764](https://github.com/netplus/zitie/actions/runs/38135010764) Configure、Upload、实际 Deploy 全 completed/success。
+
+实测：**201 个字、1045 个笔画**全部有有效 source-arc 前缘守卫；**每笔两个 Chromium 像素帧，2090/2090 帧**，所有1045笔都显墨且笔内红墨回退为 **0 像素**，任一后续中线红墨领先 **超过12 SVG单位的帧为0**（所采样最大领先12单位）；另 **201字495帧**（31个高风险字加密），**水四笔16帧**、A3.5 A/B两时序40帧均合格，390px手机视口合格，旧 A3/A3.5 原始笔迹回归继续成功。 [截图及完整metrics artifact #11700378299](https://github.com/netplus/zitie/actions/runs/38134493046/artifacts/11700378299)。
+
+根因与修复：旧宽圆头在折角附近会在未来中线上提前显墨；首次复合动态clipPath虽能限制前缘却导致Chromium抗锯齿重算时2—12已绘红像素消失，单纯加约3 SVG单位边缘重叠仍不够。**最终方案是每个已到达的Voronoi显墨区保留为独立红色SVG元素，在同一静态原轮廓clipPath及旧圆头alpha-mask内叠加**，不再反复修改复合裁剪轮廓。旧9字历史回归保持原渲染以便复现，A3默认201字及A3.5左右侧采用修复版；PDF的字形、笔顺、原median、计时、许可和299页正文均未修改。
+
+边界：这是**采样位置与阈值内的工程验证**，不等于真实毛笔接触面每个边缘绝对不超前，也不代表运动学/书法教师已认可；A3.5新节奏仍只可选，硬笔仍冻结。
 
 ---
 
