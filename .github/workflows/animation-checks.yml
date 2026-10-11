@@ -1039,6 +1039,12 @@ jobs:
                   assert record['allControlsInView'],record
           Path('build/a1/a39-compact-layout-metrics.json').write_text(
               json.dumps(x,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          for record in x['layoutProof']:
+              print('A3.9 layout proof:',record['viewport'],
+                    'paper_px='+str(record['paperWidth']),
+                    'paper_bottom='+str(record['paperBottom']),
+                    'controls_bottom='+str(record['controlsBottom']),
+                    'viewport_height='+str(record['screenHeight']))
           print('PASS A3.9: source paper, active force and all playback controls',
                 'within one 1366x768 / 1020x768 / 390x844 browser viewport')
           PY
