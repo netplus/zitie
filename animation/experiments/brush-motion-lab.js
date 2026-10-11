@@ -199,6 +199,17 @@ window.addEventListener('DOMContentLoaded',function(){
   filter();
   const id=+(new URLSearchParams(window.location.search).get('id')||77);
   select(byId.has(id)?id:77);
+  // Optional deep link for reproducible A/B screenshots, never autoplay.
+  const params=new URLSearchParams(window.location.search);
+  const stroke=Number(params.get('stroke'));
+  const fraction=Number(params.get('fraction'));
+  if(params.has('stroke')&&params.has('fraction')&&
+     Number.isInteger(stroke)&&stroke>=1&&
+     stroke<=state.glyph.strokes.length&&Number.isFinite(fraction)&&
+     fraction>=0&&fraction<=1){
+    const s=baseline.timeline.strokes[stroke-1];
+    baseline.seekElapsed(s.startMs+s.durationMs*fraction);
+  }
   window.ZITIE_A35={
     pack,baseline,candidate,select,step,getGlyph:()=>state.glyph,
     getPlans:()=>state.plans.slice(),
