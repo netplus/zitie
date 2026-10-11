@@ -1,6 +1,10 @@
-# A3.5 — PDF同源毛笔运笔 A/B（工程研究候选）
+# A3.5 — PDF同源毛笔运笔 A/B（独立研究版已部署，未教学认可）
 
 **用户决策（2026-10-11）**：A3 主线继续使用已发布 201 主部首、1045 笔、299 页正式 v0.5.1 字帖及毛笔默认。此前硬笔优化已冻结。A3.5 需要让起笔、折、钩、撇捺、收笔动作更自然，但**不擅自重写源字形、笔顺、PDF 及来源审核字段，也不直接切换已发布的默认播放器**。本轮独立实验页面为 animation/experiments/brush-motion-lab.html。
+
+## 实际发布与可复核证据
+
+实际独立研究版 [A3.5 201字 A/B](https://netplus.github.io/zitie/animation/experiments/brush-motion-lab.html) 已上线：[PR #123](https://github.com/netplus/zitie/pull/123) 最终 HEAD `e7938b29725488dcf9491d143cf746391808533e` 的 [A1 Chrome #38125276874](https://github.com/netplus/zitie/actions/runs/38125276874) 与 [Book #38125276827](https://github.com/netplus/zitie/actions/runs/38125276827) 双 completed/success，合并至main SHA `0da37d5c1965a4f9d798b228de8d081263c1d81c`，其 [Pages #38125707083](https://github.com/netplus/zitie/actions/runs/38125707083) Configure、Upload和实际Deploy 全 success。**201字、1045笔**全部加载；960个有界运动候选、85个保守回退、193处来源中线角点候选事件；54对真实Chromium A/B 帧（两侧红墨不消失）、其中21对有时间运动差异，另21对相同空间位置的实际像素对照 **0 差异**，390px通过。截图/metrics见 [A1 QA artifact #11697280799](https://github.com/netplus/zitie/actions/runs/38125276874/artifacts/11697280799)。**人工审美/真实书法运笔教学审核仍待完成，绝不自动推广B为默认**；正式 [A3毛笔播放器](https://netplus.github.io/zitie/animation/book.html)、原PDF及硬笔冻结决策不变。
 
 ## 源模型与严格边界
 
