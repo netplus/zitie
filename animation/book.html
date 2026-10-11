@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light">
+<title>zitie v0.5.1 · 201字笔顺动画</title>
+<style>
+:root{--red:#b43c48;--dark:#28343b;--muted:#67757c;--line:#e7e3e2;--soft:#f8f7f4}
+*{box-sizing:border-box}
+body{margin:0;background:#f4f2ee;color:var(--dark);font:15px/1.58 system-ui,"PingFang SC","Microsoft YaHei",sans-serif}
+button,input{font:inherit}button{cursor:pointer}
+button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #dca5ac;outline-offset:2px}
+.page{max-width:1270px;margin:auto;padding:25px 20px 40px}
+.top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;margin-bottom:19px}
+.top h1{font-size:clamp(21px,3vw,29px);margin:0;line-height:1.3}
+.sub{font-size:13px;color:var(--muted);margin:6px 0 0}
+a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
+.toplink{font-size:13px;background:white;border:1px solid var(--line);border-radius:9px;padding:9px 13px}
+.layout{display:grid;grid-template-columns:minmax(0,1.54fr) minmax(285px,.94fr);gap:17px;align-items:start}
+.main,.side{background:#fff;border:1px solid var(--line);border-radius:15px;overflow:hidden;box-shadow:0 6px 23px #1c2b3310}
+.main{padding:22px}.side{padding:17px}
+.head{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}
+.char{font:54px/1.1 "KaiTi","STKaiti","SimKai",serif}
+.titleGroup{display:flex;align-items:center;gap:12px}
+#meta{font-size:12px;color:var(--muted)}
+#reading{font-size:15px;color:#7d3540}
+.pager{display:flex;gap:7px}.pager button,.controls button,.speed button{border:1px solid #e2dede;border-radius:8px;background:#fff;color:#414b51;padding:8px 11px}
+.pager button:hover,.controls button:hover,.speed button:hover{background:#fff6f7}
+.paper{margin-top:12px;background:#fff;border:1px solid #eddddf;border-radius:12px;display:grid;place-items:center}
+#paperSvg{display:block;width:100%;max-width:535px;aspect-ratio:1}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-size:12px;color:var(--muted);padding:10px 0 0}
+.dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:5px;vertical-align:-1px}
+.progressHead{display:flex;align-items:center;justify-content:space-between;margin:12px 0 4px;font-size:13px;gap:8px}
+#phase{color:var(--muted)}
+.seek{display:flex;gap:10px;align-items:center;margin:9px 0 17px}
+.seek input{flex:1;width:100%;accent-color:var(--red)}
+#clock{font-size:12px;white-space:nowrap;font-variant-numeric:tabular-nums;color:var(--muted)}
+.controls{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.controls button.primary{background:var(--red);color:white;border-color:var(--red);font-weight:650}
+.speed{display:flex;align-items:center;gap:4px;margin-left:auto;font-size:12px;color:var(--muted)}
+.speed button{font-size:12px;padding:7px 8px}
+.speed button[aria-pressed="true"]{background:#fbeaec;border-color:#c9979d;color:#9d3540;font-weight:750}
+.block{margin-top:17px;border-top:1px solid #efebe9;padding-top:14px}
+.block h2{font-size:15px;margin:0 0 8px}
+#steps{display:flex;gap:6px;flex-wrap:wrap}
+.step{border:1px solid #e5dfde;border-radius:8px;background:#fff;padding:6px 11px;font-size:13px}
+.step[aria-current="step"]{color:#9e2c39;background:#fff1f2;border-color:#c7959c;font-weight:750}
+#tipText{font-size:13px;color:#4e5960}
+#tipText p{margin:6px 0}
+.source{border:1px solid #e6e7e2;background:#fafaf8;border-radius:9px;padding:11px 13px;margin-top:12px;font-size:12px;color:#677078}
+.source p{margin:0 0 7px}.source p:last-child{margin:0}
+.pdfline{display:flex;align-items:center;flex-wrap:wrap;gap:9px;padding:10px 12px;background:#fff9f8;border:1px solid #f1d9db;border-radius:9px;margin-top:14px;font-size:13px}
+.pdfline a{font-weight:700}
+.search{width:100%;padding:11px 12px;border:1px solid #d9dfe1;border-radius:9px;background:#fff}
+.filter{display:flex;gap:5px;flex-wrap:wrap;max-height:105px;overflow:auto;margin:12px 0}
+.filter button{background:white;border:1px solid #e4e4e1;border-radius:6px;font-size:12px;padding:5px 7px}
+.filter button[aria-pressed="true"]{background:#f9edef;color:#9d3440;border-color:#ca9fa7;font-weight:750}
+#count{font-size:12px;color:var(--muted);margin:10px 0}
+.tiles{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px;max-height:550px;overflow:auto;align-content:start}
+.tile{padding:7px 0 5px;min-height:69px;border:1px solid #ece8e7;background:white;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.tile strong{font:28px/1.12 "KaiTi","STKaiti","SimKai",serif}
+.tile small{font-size:10px;color:var(--muted)}
+.tile[aria-pressed="true"]{border:2px solid var(--red);background:#fff5f5}
+#empty{font-size:13px;color:var(--muted)}
+.notice{margin-top:17px;font-size:12px;color:#697177;line-height:1.7}
+@media(max-width:860px){.layout{grid-template-columns:1fr}.tiles{max-height:300px;grid-template-columns:repeat(8,minmax(0,1fr))}}
+@media(max-width:510px){.page{padding:12px 9px 26px}.main{padding:12px}.side{padding:12px}.char{font-size:43px}.tiles{grid-template-columns:repeat(5,minmax(0,1fr))}.controls{gap:5px}.controls button{padding:7px 9px}.speed{margin-left:0;width:100%}.pager button{padding:6px 8px}}
+</style>
+<script defer src="./book-pack.js"></script>
+<script defer src="./motion.js"></script>
+<script defer src="./timeline.js"></script>
+<script defer src="./brush-union.js"></script>
+<script defer src="./player.js"></script>
+<script defer src="./book-ui.js"></script>
+</head>
+<body>
+<main class="page">
+  <header class="top">
+    <div><h1>循序渐进 · PDF 同源笔顺动画</h1>
+      <p class="sub">《循序渐进汉字部首字帖》v0.5.1 · 201 个主部首 · 21 批次 · 毛笔原始轮廓</p></div>
+    <a class="toplink" href="./index.html">九字旧播放器 / 实验功能</a>
+  </header>
+  <div class="layout">
+    <section class="main" aria-label="字帖同源毛笔动画">
+      <div class="head">
+        <div class="titleGroup">
+          <span class="char" id="selectedChar" aria-hidden="true">一</span>
+          <div><strong id="meta">读取字帖资料…</strong><div id="reading"></div></div>
+        </div>
+        <div class="pager">
+          <button type="button" id="prevChar">‹ 上一字</button>
+          <button type="button" id="nextChar">下一字 ›</button>
+        </div>
+      </div>
+      <div class="paper">
+        <svg id="paperSvg" role="img" viewBox="0 0 1024 1024" aria-label="来自字帖同一笔画矢量的毛笔书写演示"></svg>
+      </div>
+      <div class="legend">
+        <span><i class="dot" style="background:#bd3945"></i>正在书写</span>
+        <span><i class="dot" style="background:#5c6269"></i>已完成</span>
+        <span><i class="dot" style="background:#e1e4e7"></i>待书写</span>
+      </div>
+      <div class="progressHead">
+        <strong id="stepLabel">第 1 笔</strong><span id="phase">待播放</span>
+      </div>
+      <div id="status" role="status" aria-live="polite"></div>
+      <div class="seek">
+        <input type="range" id="seek" min="0" max="1000" value="0" aria-label="拖动书写进度">
+        <output id="clock" for="seek">00:00 / 00:00</output>
+      </div>
+      <div class="controls">
+        <button class="primary" id="play" type="button">▶ 播放</button>
+        <button id="restart" type="button">↺ 重播</button>
+        <button id="prevStroke" type="button">← 上一笔</button>
+        <button id="nextStroke" type="button">下一笔 →</button>
+        <button id="replayStroke" type="button">↻ 这一笔</button>
+        <button id="complete" type="button">完整字形</button>
+        <div class="speed" id="speedButtons" aria-label="播放速度">
+          <span>速度</span>
+          <button type="button" data-speed="0.5" aria-pressed="false">0.5×</button>
+          <button type="button" data-speed="1" aria-pressed="true">1×</button>
+          <button type="button" data-speed="1.5" aria-pressed="false">1.5×</button>
+          <button type="button" data-speed="2" aria-pressed="false">2×</button>
+        </div>
+      </div>
+      <div class="block">
+        <h2>01 看笔顺 · 点按笔画跳转</h2>
+        <div id="steps"></div>
+        <div class="pdfline">
+          <a id="pdfLink" href="../book/zitie-v0.5.1-A4.pdf#page=6" target="_blank" rel="noopener">在 PDF 打开对应字帖页 ↗</a>
+          <span id="pdfPage">第 1 页</span>
+        </div>
+      </div>
+      <div class="block">
+        <h2>02 字帖原有书写提示</h2>
+        <div id="tipText"></div>
+      </div>
+      <div class="source">
+        <p><strong>字形一致性：</strong>使用与正式 PDF 相同的源笔画 SVG、审定的字形覆写和 B01–B21 教学笔顺；PDF 页面和动画步骤可以互相定位。</p>
+        <p><strong>动作证据边界：</strong>逐笔先后与名称按书中已核证据展示；运笔中线、笔速和笔尖位置属于工程推演，不是实测书写动作或教师认可的运笔轨迹。</p>
+      </div>
+    </section>
+    <aside class="side" aria-label="201 字主部首目录">
+      <h2 style="font-size:17px;margin:0 0 7px">从字帖选字</h2>
+      <p class="sub">按主部首、拼音、笔画名称或 B01–B21 批次搜索</p>
+      <input class="search" id="search" type="search" placeholder="例如：水、横折、B02、201" aria-label="搜索字帖">
+      <div class="filter" id="filters" role="group" aria-label="按字帖批次筛选"></div>
+      <div id="count">正在读取…</div>
+      <div class="tiles" id="tiles" role="group" aria-label="字帖201字目录"></div>
+      <p id="empty" hidden>当前筛选下没有匹配主部首。</p>
+      <p class="notice">字帖书中不标注的读音或细笔画名称，动画也不会强行补写。复杂字每页最多六步，动画按原连续笔顺呈现。</p>
+    </aside>
+  </div>
+  <footer class="notice">工程状态：A3 PDF 同源动画。整套字帖及规范证据保持只读；本页不修改已发布的 v0.5.1 PDF。字体文件不会作为网页资源分发。</footer>
+</main>
+</body>
+</html>

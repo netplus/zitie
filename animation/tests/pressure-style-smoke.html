@@ -45,10 +45,10 @@ document.getElementById('demo').addEventListener('load',async function(){
  try{
   const w=this.contentWindow,d=w.document;
   // This A1.6 historical regression remains about the original stable
-  // brush-shaped renderer. A2.2 now defaults to hardpen; explicitly select
-  // the retained brush so its legacy 45-frame baseline stays meaningful.
-  check(w.ZITIE_A1_PEN_TOOL?.get()==='hardpen',
-    'The main default should now be ordinary hardpen');
+  // brush-shaped renderer. A3 restores brush as the default, keeping
+  // the 45-frame original ink baseline meaningful.
+  check(w.ZITIE_A1_PEN_TOOL?.get()==='brush',
+    'The main default should now be the original brush');
   w.ZITIE_A1_PEN_TOOL.set('brush');
   const app=w.ZITIE_A1_APP,style=w.ZITIE_A1_PEN_STYLE;
   const speed=w.ZITIE_A1_SPEED;

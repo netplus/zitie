@@ -1,3 +1,9 @@
+## A3 PDF同源201字毛笔播放器（开发候选；毛笔恢复默认）
+
+用户已确定不再继续硬笔方向，现以正式 v0.5.1 PDF 为视觉与教学源。新的 [201字毛笔播放器](book.html) 从与 299 页正式PDF同源的 B01—B21 教学记录、固定上游SVG笔画、已核覆写以及 PDF 201条书签生成离线字库，按当前笔画自动关联真实 PDF 页码，支持17笔龠的3页连读、批次/字/笔画查询、逐笔时间轴和练习提示。原 [9字工程播放器](index.html) 恢复毛笔默认，硬笔暂保留为冻结实验选项。生成器和证据/许可边界见 [A3设计](../docs/A3_PDF_BRUSH_ANIMATION.md)、[Issue #120](https://github.com/netplus/zitie/issues/120)。页面不得在双CI与实际Pages Deploy之前宣称正式上线；SVG中线与笔速仍是未经教学审核的工程推演，而不是PDF已校准的真实动作。
+
+---
+
 ## A2.4 整字结构关系与限幅端点连接（独立 A/B 已上线、待教师审查）
 
 继续 [Issue #116](https://github.com/netplus/zitie/issues/116)，新增 [整字结构 A/B 研究页](experiments/kaishu-composition-lab.html)：A 为原 A2.3 楷书规整实验、B 为仅在声明了跨笔画关系且距离/局部方向均满足约束时才修正的 A2.4。初版检查交叉、端点相邻、按线宽近似的视觉质心及重复横画角度；九字40笔中仅对「水」捺画与主竖接头作一次 **22 SVG 单位** 的候选移动（线间距 37→15），「龠」与其余笔画不自动修改，保留故意留白。处理器对超距、锐角与负例拒绝自动更改。代码/局限见 [A24_KAISHU_COMPOSITION.md](../docs/A24_KAISHU_COMPOSITION.md) 和 [PR #117](https://github.com/netplus/zitie/pull/117)。原 A2.3、主站硬笔/毛笔与双笔压，以及 v0.5.1 PDF/manifest/201规范记录均不变。最终 PR HEAD `0a936967c06177a2834847a6a5345cabb6c11eba` 的 [A1 动画 CI #38101554487](https://github.com/netplus/zitie/actions/runs/38101554487) 和 [Book integrity CI #38101554455](https://github.com/netplus/zitie/actions/runs/38101554455) 双 completed/success；[PR #117](https://github.com/netplus/zitie/pull/117) 已合入 `main`，合并 SHA `cc90c7f4fd1591b9eebd56e2d6eea628ce732e61`，此提交的 [GitHub Pages #38102023812](https://github.com/netplus/zitie/actions/runs/38102023812) 已实际完成 Configure、Upload、Deploy（均 success、未跳过）。**83项 Node 测试全部通过**，9字40笔/72帧 Chromium 实际写字中0已绘红墨丢失、45帧笔尖轨迹匹配、7帧 A2.3 与 A2.4 真实差异，390px 窄屏通过。九字与水字的真实截图见 [A1 QA artifact #11688261422](https://github.com/netplus/zitie/actions/runs/38101554487/artifacts/11688261422)。独立[已上线 A2.4 楷书整字结构 A/B 实验](https://netplus.github.io/zitie/animation/experiments/kaishu-composition-lab.html)可体验。**仍是未教学审批的工程实验，水和龠整体专业度待人工复核，不替换主站。**

@@ -1,5 +1,5 @@
 <!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
-<title>A2.2 main hardpen default and legacy brush fallback</title></head><body>
+<title>A3 brush default with optional historical A2.2 hardpen</title></head><body>
 <h1>Production player pen tools QA</h1><pre id="result">RUNNING</pre>
 <iframe id="demo" src="../index.html" title="Published pen tool selector"
  style="width:1070px;height:1480px"></iframe>
@@ -54,18 +54,19 @@ document.getElementById('demo').addEventListener('load',async function(){
   const buttons=[...d.querySelectorAll('#penToolOptions button')];
   check(buttons.length===2,'There must be exactly two pen-tool options');
   check(buttons.map(b=>b.textContent.trim()).join('|')===
-    '硬笔（默认）|毛笔（原版）','Incorrect pen tool labels');
-  check(tool.get()==='hardpen'&&tool.getDefault()==='hardpen',
-    'Ordinary hardpen must be the actual initial default');
+    '硬笔（实验保留）|毛笔（默认）','Incorrect pen tool labels');
+  check(tool.get()==='brush'&&tool.getDefault()==='brush',
+    'Original brush must be the actual initial default');
   check(style.get()==='stable','Force style must remain stable by default');
-  check(d.getElementById('hardpenStage').classList.contains('active')&&
-    !d.getElementById('glyphStage').classList.contains('active'),
-    'Initial visible stage is not hardpen');
-  check(d.getElementById('hardpenStage').getAttribute('aria-hidden')==='false'&&
-    d.getElementById('glyphStage').getAttribute('aria-hidden')==='true',
-    'Hidden source brush should not take accessibility priority');
+  check(!d.getElementById('hardpenStage').classList.contains('active')&&
+    d.getElementById('glyphStage').classList.contains('active'),
+    'Initial visible stage is not brush');
+  check(d.getElementById('hardpenStage').getAttribute('aria-hidden')==='true'&&
+    d.getElementById('glyphStage').getAttribute('aria-hidden')==='false',
+    'Default brush must take accessibility priority');
   check(hard.svg.querySelectorAll('defs mask').length===0,
     'Rigid nib still uses the old source-painting mask');
+  tool.set('hardpen'); // Verify frozen optional renderer without changing the default.
   const glyphs=w.ZITIE_SAMPLES.glyphs;
   check(glyphs.length===9,'All nine original source examples required');
   const source=JSON.stringify(glyphs);
@@ -217,13 +218,13 @@ document.getElementById('demo').addEventListener('load',async function(){
   const report={result:'PASS',glyphs:glyphs.length,frames,
     originalSourceUnchanged:true,sourceInkMutations,
     hardpenPixelLoss:loss,hardpenVsBrushDifferenceFrames:brushDifferences,
-    verifiedUniformWidthRows:widthRows,defaultTool:'hardpen',
+    verifiedUniformWidthRows:widthRows,defaultTool:'brush',
     retainedTool:'brush',pressureInkMismatch:pressureCorrect,
     simulatedPressureStillWorks:true,
     sourceClockPreserved:true,playingToolSwitches:preservedTransitions,
     mobile390:true,originalStylePreserved:true,
     physicallyCalibrated:false,details:outputs};
-  d.documentElement.setAttribute('data-main-hardpen-default','PASS');
+  d.documentElement.setAttribute('data-main-brush-default','PASS');
   document.documentElement.setAttribute('data-result','PASS');
   result.textContent=JSON.stringify(report,null,2);
  }catch(e){

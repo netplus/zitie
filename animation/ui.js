@@ -16,7 +16,7 @@ window.addEventListener('DOMContentLoaded', function () {
   // rigid hardpen renders passively from those same source stroke timestamps.
   const hardpen=new window.ZitieHardpenStage.HardpenStage({
     svg:$('hardpenStage'),width:26});
-  let penTool='hardpen'; // User-chosen default is ordinary rigid hardpen.
+  let penTool='brush'; // A3: brush is the explicit user-selected default.
   let speed=1;
   let query='',batch='all',selectedId=null,visibleGlyphs=[];
   const player=new window.ZitiePlayer.StrokePlayer({
@@ -206,7 +206,7 @@ window.addEventListener('DOMContentLoaded', function () {
     }
     $('penToolHint').textContent=penTool==='hardpen'?
       '普通硬笔 · 近乎恒定线宽、短促转折、自然提笔；轨迹仍属工程预览':
-      '毛笔（原版）· 保留既有SVG书法轮廓和稳定圆头墨迹';
+      '毛笔（默认）· 保留既有SVG书法轮廓和稳定圆头墨迹';
     // A visual-only tool choice: elapsed, playing, speed, selected glyph,
     // and same old timeline must remain identical.
     if(player.timeline)player.render();
@@ -258,7 +258,7 @@ window.addEventListener('DOMContentLoaded', function () {
   window.ZITIE_A1_SPEED={get:()=>speed,set:setSpeed};
   window.ZITIE_A1_HARDPEN=hardpen;
   window.ZITIE_A1_PEN_TOOL={get:()=>penTool,set:setPenTool,
-    getState:()=>hardpen.state,getDefault:()=> 'hardpen'};
+    getState:()=>hardpen.state,getDefault:()=> 'brush'};
   window.ZITIE_A1_PEN_STYLE={get:()=>penStyle.mode,set:setPenStyle,
     getState:()=>penStyle.state,getRing:()=>penStyle.ring};
   window.ZITIE_A1_GALLERY={getVisible:()=>visibleGlyphs.slice(),

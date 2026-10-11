@@ -1,0 +1,143 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>A3 full PDF-sourced 201-character brush browser verification</title></head>
+<body>
+<h1>A3 published book UI / 201 glyphs / original brush ink</h1>
+<pre id="result">RUNNING</pre>
+<iframe id="demo" title="A3 201 brush app" src="../book.html"
+ style="width:1200px;height:1550px;border:0"></iframe>
+<script>
+const check=(x,m)=>{if(!x)throw Error(m);};
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+async function raster(svg,tip,dim=384){
+ const saved=tip.style.display;tip.style.display='none';
+ try{
+  const image=new Image();
+  const u=URL.createObjectURL(new Blob([
+    new XMLSerializer().serializeToString(svg)],
+    {type:'image/svg+xml;charset=utf-8'}));
+  try{
+   await new Promise((ok,fail)=>{
+    image.onload=ok;image.onerror=()=>fail(Error('A3 SVG raster failure'));
+    image.src=u;
+   });
+   const canvas=document.createElement('canvas');canvas.width=canvas.height=dim;
+   const ctx=canvas.getContext('2d',{willReadFrequently:true});
+   ctx.drawImage(image,0,0,dim,dim);
+   const px=ctx.getImageData(0,0,dim,dim).data;
+   const red=new Uint8Array(dim*dim);
+   let count=0;
+   for(let k=0,j=0;k<px.length;k+=4,j++){
+    if(px[k]>135&&px[k+1]<118&&px[k+2]<126&&
+       px[k]>px[k+1]*1.43&&px[k+3]>185){red[j]=1;count++;}
+   }
+   return {red,count};
+  }finally{URL.revokeObjectURL(u);}
+ }finally{tip.style.display=saved;}
+}
+document.getElementById('demo').addEventListener('load',async function(){
+ const out=document.getElementById('result');
+ try{
+  const w=this.contentWindow,d=w.document,app=w.ZITIE_A3_BOOK;
+  check(d.documentElement.getAttribute('data-a3-ready')==='201',
+    '201 book asset was not loaded');
+  check(app&&app.pack.glyphs.length===201,'A3 complete book not exposed');
+  check(app.pack.publication.pages===299,'PDF record is not 299 pages');
+  check(app.getGlyph().main_id===1,'Default should be PDF first glyph');
+  check(d.getElementById('paperSvg')===app.player.svg,
+    'Production player is not the original brush SVG');
+  check(app.player.rows[0].reveal.getAttribute('mask')?.startsWith('url(#'),
+    'A3 uses an unrelated hardpen line renderer');
+  check(app.getPdfPage()===app.getGlyph().pdf_page_start,
+    'Default PDF page bookmark mismatch');
+  check(d.querySelectorAll('#tiles button').length===201,
+    'Full canonical book not shown by default');
+  const source=JSON.stringify(app.pack.glyphs);
+  // All 201 SVG plans must load without dropping or reordering strokes.
+  for(const g of app.pack.glyphs){
+    app.selectGlyph(g.main_id);
+    check(app.player.rows.length===g.expected_stroke_count,
+      'Glyph '+g.character+' stroke count disagrees with PDF');
+    check(app.getPdfPage()===g.pdf_page_start,
+      'Glyph '+g.character+' PDF bookmark out of sync');
+  }
+  check(d.querySelectorAll('#tiles button').length===201,
+    'Navigation silently reduced full corpus');
+  const complex=app.pack.glyphs.at(-1);
+  check(complex.main_id===201&&complex.strokes.length===17,
+    'Failed to reach final character 龠');
+  check(d.querySelectorAll('#steps button').length===17,
+    '17-step name/ordinal navigation omitted');
+  const last=d.querySelector('button[data-stroke="16"]');
+  last.click();
+  check(app.player.getState().index===16,'Direct stroke seeking failed');
+  check(app.getPdfPage()===complex.pdf_page_start+2,
+    'Third PDF teaching page is missing for 龠');
+  const policy=app.pack.glyphs.find(g=>g.fine_name_policy==='ordinal_only');
+  check(policy,'Expected a fine-name blocked example');
+  app.selectGlyph(policy.main_id);
+  check([...d.querySelectorAll('#steps button')].every(b=>
+    b.textContent.includes('第')&&b.textContent.includes('笔')),
+    'Source-blocked stroke name leaked into lesson');
+  check(JSON.stringify(app.pack.glyphs)===source,
+    'Selecting or seeking mutated canonical PDF source records');
+  // Intentional and source-backed raster samples: first stroke of each
+  // previous preview glyph, now sourced via the formal PDF adapter.
+  const ids=[1,6,12,95,37,40,77,88,201];
+  const fractions=[0,.04,.18,.43,.75,.98];
+  let frames=0,lost=0,active=0,visualInk=0;
+  for(const id of ids){
+    app.selectGlyph(id);
+    const g=app.getGlyph(),segment=app.player.timeline.strokes[0];
+    let previous=new Uint8Array(384*384);
+    for(const f of fractions){
+      app.player.seekElapsed(segment.startMs+segment.durationMs*f);
+      const picture=await raster(app.player.svg,app.player.tip);
+      for(let k=0;k<previous.length;k++)
+        if(previous[k]&&!picture.red[k])lost++;
+      if(f===0)check(picture.count===0,g.character+' initial ink flash');
+      if(f>.04&&f<.98){
+        check(app.player.tip.style.display!=='none',
+          'Original brush cursor disappeared');
+        active++;
+      }
+      visualInk+=picture.count;
+      previous=picture.red;
+      frames++;
+    }
+  }
+  check(lost===0,'A3 PDF source brush erased red ink');
+  check(frames===54&&visualInk>1000,'No actual source strokes painted');
+  app.selectGlyph(77);
+  const t=app.player.timeline.strokes[0],clock=t.startMs+t.durationMs*.52;
+  app.player.seekElapsed(clock);
+  for(const value of [.5,1,1.5,2]){
+    app.setSpeed(value);
+    check(app.player.elapsed===clock,'Speed changed position');
+    check(app.player.speed===value,'Rate button did not reach brush clock');
+  }
+  app.setSpeed(1);
+  const before=app.player.elapsed;
+  app.player.play();check(app.player.playing,'Play control broken');
+  app.player.pause();check(app.player.elapsed>=before,'Pause rewound time');
+  this.style.width='390px';
+  await sleep(100);
+  check(w.document.documentElement.scrollWidth<=w.innerWidth+2,
+    'A3 full book overflows 390px screen');
+  check(JSON.stringify(app.pack.glyphs)===source,
+    'A3 browsing changed PDF source book data');
+  const result={result:'PASS',characters:201,sourceStrokes:
+    app.pack.summary.strokes,pdfPages:299,batches:21,
+    actualRasterFrames:frames,vanishedRedPixels:lost,activeCursorFrames:active,
+    thirdPageNavigationFor17StrokeGlyph:true,
+    policyRestrictionsPreserved:true,bookSourceImmutable:true,
+    brushDefault:true,mobile390:true,calibratedTrajectory:false};
+  d.documentElement.setAttribute('data-a3-browser-result','PASS');
+  document.documentElement.setAttribute('data-result','PASS');
+  out.textContent=JSON.stringify(result,null,2);
+ }catch(e){
+  document.documentElement.setAttribute('data-result','FAIL');
+  out.textContent='FAIL: '+(e.stack||e);
+ }
+});
+</script>
+</body></html>
