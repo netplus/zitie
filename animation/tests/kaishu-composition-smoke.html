@@ -172,7 +172,6 @@ document.getElementById('demo').addEventListener('load',async function(){
   await new Promise(resolve=>setTimeout(resolve,110));
   check(w.document.documentElement.scrollWidth<=w.innerWidth+2,
     'Kaishu A/B page overflows 390px display');
-  const changedWater=lab.candidate.rows[3];
   lab.select('水');
   const report=w.ZitieKaishuComposition.compare(lab.glyph,
     lab.candidate.rows.map(r=>r.plan));
@@ -180,7 +179,7 @@ document.getElementById('demo').addEventListener('load',async function(){
   check(report.applied[0].afterDistance<=15.01,
     'Water stem-to-sweep contact still disconnected');
   lab.select('龠');
-  check(lab.candidate.rows.every(r=>r.compositionAdjustments.length===0),
+  check(lab.candidate.rows.every(r=>r.plan.compositionAdjustments.length===0),
     'Unreviewed 龠 components were silently auto-snapped');
   const result={result:'PASS',glyphs:9,sourceStrokes:smoothInkWidthRows,
     frames:framesDone,redPixelLoss:inkLoss,
