@@ -53,7 +53,7 @@ document.getElementById('demo').addEventListener('load',async function(){
    const narrow=width<=720;
    check(width===v.width&&height===v.height,
      v.name+': iframe viewport dimensions diverged');
-   check(p.width>= (width<=510?225:245)&&p.width<= (width<=510?302:412),
+   check(p.width>= (width<=510?225:245)&&p.width<= (width<=510?272:412),
      v.name+': board missing or too large/small: '+p.width);
    check(Math.abs(p.width-p.height)<3,
      v.name+': source 1:1 calligraphy paper distorted');
