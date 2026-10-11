@@ -28,7 +28,7 @@ window.addEventListener('DOMContentLoaded', function(){
     speed:1,lastFrame:null};
   const $steps=$('steps'),$tiles=$('tiles'),$filters=$('filters');
   const player=new window.ZitiePlayer.StrokePlayer({
-    svg:$('paperSvg'),status:$('status'),
+    svg:$('paperSvg'),status:$('status'),frontGuard:true,
     onUpdate(s){
       if(!s||!state.current)return;
       state.lastFrame=s;
