@@ -4,10 +4,12 @@
     require('./timeline.js') : root.ZitieTimeline;
   const Brush = typeof module === 'object' && module.exports ?
     require('./brush-union.js') : root.ZitieInkBrushUnion;
-  const api = factory(Timeline, Brush);
+  const FrontGuard = typeof module === 'object' && module.exports ?
+    require('./ink-front-guard.js') : root.ZitieInkFrontGuard;
+  const api = factory(Timeline, Brush, FrontGuard);
   if (typeof module === 'object' && module.exports) module.exports = api;
   if (root) root.ZitiePlayer = api;
-})(typeof window !== 'undefined' ? window : null, function (T, Brush) {
+})(typeof window !== 'undefined' ? window : null, function (T, Brush, FrontGuard) {
   'use strict';
   const NS = 'http://www.w3.org/2000/svg';
   const create = (tag, attrs = {}) => {
@@ -21,8 +23,11 @@
   }
 
   class StrokePlayer {
-    constructor({ svg, status, progress, onUpdate } = {}) {
+    constructor({ svg, status, progress, onUpdate, frontGuard=false } = {}) {
       if (!svg || svg.namespaceURI !== NS) throw new Error('An SVG stage is required');
+      if (typeof frontGuard !== 'boolean' || (frontGuard && !FrontGuard))
+        throw Error('Missing or invalid source-front guard');
+      this.frontGuard = frontGuard;
       this.svg = svg;
       this.status = status || null;
       this.progress = progress || null;
@@ -79,8 +84,41 @@
         // sections at a fold/hook before the canonical center reaches them.
         // We never change the established mask or motor timing. Only
         // independently named hook/fold strokes use this visual offset.
-        const opticalFrontier=s.name_status==='reviewed'&&/折|钩/.test(s.name)?
+        const opticalFrontier=!this.frontGuard&&
+          s.name_status==='reviewed'&&/折|钩/.test(s.name)?
           Brush.makeVisualFrontier(profile):null;
+        // Unlike a roundcap which can reach around a bend before the nib,
+        // each source-nearest spatial cell becomes visible only after the
+        // nib traverses its own canonical station (4 SVG units spacing).
+        // Original source outlines, masks, velocity and stroke order are
+        // not altered. The historical opt-out renderer remains unchanged.
+        const guard=this.frontGuard?FrontGuard.buildCells({
+          stations:Brush.sampleMedian(s.median,4)}):null;
+        let guardCells=null,guardInk=null;
+        if(guard){
+          // FIX: A dynamically re-rasterized *compound* clipPath caused
+          // a handful of previously red pixels to disappear in Chromium
+          // whenever a neighboring Voronoi polygon appeared. Instead,
+          // retain each arrived polygon as an INDEPENDENT red ink element.
+          // Their parent has a STATIC source-outline clip plus the SAME
+          // original monotone wide-cap brush mask. Newly arrived cells can
+          // only add paint; previous cells are never retessellated as a
+          // different compound clip-path.
+          const sourceClip=create('clipPath',{
+            id:id+'-source',clipPathUnits:'userSpaceOnUse'});
+          sourceClip.appendChild(create('path',{d:s.outline}));
+          defs.appendChild(sourceClip);
+          guardInk=create('g',{
+            'clip-path':'url(#'+id+'-source)',
+            mask:'url(#'+id+')'});
+          guardCells=guard.cells.map(cell=>{
+            const shape=create('path',{d:cell.outline,fill:'#BD3945',
+              'pointer-events':'none'});
+            shape.style.display='none';
+            guardInk.appendChild(shape);
+            return shape;
+          });
+        }
         contour.remove();
         // Every local brush fragment is painted as an INDEPENDENT stroked
         // path. SVG alpha masks accumulate their union; no combined filled
@@ -106,13 +144,17 @@
         const reveal=create('path',{d:s.outline,fill:'#BD3945',
           mask:'url(#'+id+')'});
         return {hint,solid,reveal,profile,fragments,activeInk,
-          previousVisibleCount:0,id,opticalFrontier};
+          previousVisibleCount:0,id,opticalFrontier,
+          guard,guardInk,guardCells,previousGuardCount:0};
       });
       // Layer by paint role, NOT by stroke index: future gray strokes must
       // never obscure the currently written red stroke at intersections.
       for (const row of this.rows) group.appendChild(row.hint);
       for (const row of this.rows) group.appendChild(row.solid);
-      for (const row of this.rows) group.appendChild(row.reveal);
+      for (const row of this.rows) {
+        if(row.guardInk)group.appendChild(row.guardInk);
+        group.appendChild(row.reveal);
+      }
       this.tip = create('circle', { cx:0,cy:0,r:8,fill:'#BD3945',
         stroke:'#FFFFFF','stroke-width':2.5, 'pointer-events':'none' });
       group.appendChild(this.tip);
@@ -134,14 +176,26 @@
         const old = i < frame.index;
         const current = !finished && i === frame.index;
         r.solid.style.display = finished || old ? '' : 'none';
-        r.reveal.style.display = current ? '' : 'none';
+        r.reveal.style.display = current &&
+          (!r.guard || frame.progress>=1) ? '' : 'none';
+        if(r.guardInk)r.guardInk.style.display =
+          current && frame.progress<1 ? '' : 'none';
         if (current) {
           // The unmodified outline is always the final geometry. The median
           // only controls which part of its fill is uncovered at a given time.
           if (frame.progress >= 1) {
             r.reveal.removeAttribute('mask');
+
           } else {
             r.reveal.setAttribute('mask', 'url(#' + r.id + ')');
+            if(r.guard){
+              const cap=FrontGuard.visibleCount(r.guard,
+                r.profile.length*frame.progress);
+              for(let j=Math.min(cap,r.previousGuardCount);
+                  j<Math.max(cap,r.previousGuardCount);j++)
+                r.guardCells[j].style.display=j<cap?'':'none';
+              r.previousGuardCount=cap;
+            }
             const state=Brush.stateAt(r.profile,frame.progress);
             // Changes to a settled prefix are O(segments crossed), not
             // O(total sample count), even at 60fps. Backward seek removes

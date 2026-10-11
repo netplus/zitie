@@ -85,15 +85,24 @@ document.getElementById('demo').addEventListener('load',async function(){
   const ids=[1,6,12,95,37,40,77,88,201];
   const fractions=[0,.04,.18,.43,.75,.98];
   let frames=0,lost=0,active=0,visualInk=0;
+  const inkLossDetails=[];
   for(const id of ids){
     app.selectGlyph(id);
     const g=app.getGlyph(),segment=app.player.timeline.strokes[0];
-    let previous=new Uint8Array(384*384);
+    let previous=new Uint8Array(384*384),previousFraction=0;
     for(const f of fractions){
       app.player.seekElapsed(segment.startMs+segment.durationMs*f);
       const picture=await raster(app.player.svg,app.player.tip);
-      for(let k=0;k<previous.length;k++)
-        if(previous[k]&&!picture.red[k])lost++;
+      let lostFrame=0,firstLost=null;
+      for(let k=0;k<previous.length;k++){
+        if(previous[k]&&!picture.red[k]){
+          lost++;lostFrame++;
+          if(firstLost===null)firstLost=[k%384,Math.floor(k/384)];
+        }
+      }
+      if(lostFrame)inkLossDetails.push({char:g.character,id:g.main_id,
+        stroke:1,from:previousFraction,to:f,loss:lostFrame,firstLost});
+      previousFraction=f;
       if(f===0)check(picture.count===0,g.character+' initial ink flash');
       if(f>.04&&f<.98){
         check(app.player.tip.style.display!=='none',
@@ -105,7 +114,7 @@ document.getElementById('demo').addEventListener('load',async function(){
       frames++;
     }
   }
-  check(lost===0,'A3 PDF source brush erased red ink');
+  check(lost===0,'A3 PDF source brush erased red ink: '+JSON.stringify(inkLossDetails.slice(0,25)));
   check(frames===54&&visualInk>1000,'No actual source strokes painted');
   app.selectGlyph(77);
   const t=app.player.timeline.strokes[0],clock=t.startMs+t.durationMs*.52;

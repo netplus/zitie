@@ -19,7 +19,7 @@ permissions:
 jobs:
   svg-browser:
     runs-on: ubuntu-latest
-    timeout-minutes: 19
+    timeout-minutes: 28
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
@@ -36,6 +36,7 @@ jobs:
           node --check animation/hardpen-ink-union.js
           node --check animation/hardpen-stage.js
           node --check animation/brush-union.js
+          node --check animation/ink-front-guard.js
           node --check animation/pressure-style.js
           node --check animation/experiments/gesture-data.js
           node --check animation/experiments/pen-contact.js
@@ -698,7 +699,7 @@ jobs:
           BATCHES="$(printf 'B%02d ' {1..21})"
           python scripts/acquire_vectors.py --batches $BATCHES
           python scripts/build_a3_animation.py --vectors build/vectors --output build/a3/book-pack.js
-          node --test animation/tests/a3-book.test.cjs
+          node --test animation/tests/a3-book.test.cjs animation/tests/a36-front-guard.test.cjs
           cp build/a3/book-pack.js animation/book-pack.js
           mkdir -p build/a1
           python3 -m http.server 18778 --bind 127.0.0.1 > build/a1/a3-book-server.log 2>&1 &
@@ -815,6 +816,65 @@ jobs:
             'http://127.0.0.1:18779/animation/experiments/brush-motion-lab.html?id=37&stroke=2&fraction=0.57' >/dev/null
           test -s build/a1/a35-water-compare.png
           test -s build/a1/a35-mouth-fold-compare.png
+      - name: Audit A3.6 full 201-glyph ink front versus nib in true Chromium
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s animation/book-pack.js
+          node --test animation/tests/a36-front-guard.test.cjs
+          mkdir -p build/a1
+          python3 -m http.server 18780 --bind 127.0.0.1 > build/a1/a36-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 60); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18780/animation/book.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          timeout 520 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --disable-background-timer-throttling \
+            --window-size=1550,1960 --virtual-time-budget=420000 --dump-dom \
+            'http://127.0.0.1:18780/animation/tests/a36-front-guard-smoke.html' \
+            > build/a1/a36-front-guard-browser-dom.html
+          if ! grep -q 'data-result="PASS"' build/a1/a36-front-guard-browser-dom.html; then
+            echo 'FAIL: A3.6 source ink outruns nib or 201-glyph frame regression' >&2
+            grep -o 'FAIL:[^<]*' build/a1/a36-front-guard-browser-dom.html | head -n 14 >&2 || true
+            exit 1
+          fi
+          python3 - <<'PY'
+          import html,json,re
+          from pathlib import Path
+          raw=Path('build/a1/a36-front-guard-browser-dom.html').read_text(encoding='utf-8')
+          m=re.search(r'<pre id="result">(\{.*?\})</pre>',raw,re.S)
+          if not m:raise SystemExit('A3.6 metrics JSON absent')
+          v=json.loads(html.unescape(m.group(1)))
+          assert v['result']=='PASS'
+          assert v['glyphs']==201 and v['sourceStrokes']==1045
+          assert v['liveFrontGuards']==1045 and v['maxStationGap']<=4.001
+          assert v['fullStrokeRasterFrames']==2090
+          assert v['fullStrokesWithInk']==1045
+          assert v['fullStrokeRedPixelsLost']==0
+          assert v['maxFullStrokeRedLead']<=12 and v['fullStrokeLeadOver12']==0
+          assert v['actualPixelFrames']>=430 and v['riskGlyphs']>=30
+          assert v['positiveInkFrames']>=v['actualPixelFrames']*.92
+          assert v['sourceRedPixelsLost']==0
+          assert v['maxSourceRedLead']<=12 and v['framesWithLeadOver12']==0
+          assert v['waterStrokeFrames']==16
+          assert v['retimedActualFrames']==40 and v['maxA35SourceRedLead']<=12
+          assert v['sourcePDFUnmodified'] is True and v['mobile390'] is True
+          assert v['originalNibClockUnmodified'] is True
+          Path('build/a1/a36-front-guard-metrics.json').write_text(
+            json.dumps(v,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('PASS A3.6: 1045 live source guards + 2090 all-stroke raster frames,',
+                '201-glyph temporal samples, zero nib-front leaks or red loss')
+          PY
+          timeout 100 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --virtual-time-budget=20000 \
+            --window-size=1400,1500 \
+            --screenshot="$(pwd)/build/a1/a36-water-source-front.png" \
+            'http://127.0.0.1:18780/animation/book.html?id=77' >/dev/null
+          test -s build/a1/a36-water-source-front.png
       - uses: actions/upload-artifact@v4
         if: always()
         with:

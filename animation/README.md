@@ -1,3 +1,9 @@
+## A3.6 201字/1045笔：防止墨迹前缘跑在笔尖前方（修复候选）
+
+针对[Issue #125](https://github.com/netplus/zitie/issues/125)中「水」等折、钩和宽笔画提前着墨，新增 source arc Voronoi 可见区域守卫：保留原圆头墨迹并集但禁止提前绘出未来中线区域，沿每个源笔画按4 SVG单位划分可达区域；在100%保留原始PDF精确字形。新 [算法与全量验收说明](../docs/A36_INK_FRONT_AUDIT.md)。**默认201字 A3**和 A3.5 A/B 两侧使用该屏障，硬笔和九字旧回归不动。CI对201/1045几何及真实Chromium逐字像素验证；当前尚是候选，不等于已发布。
+
+---
+
 ## A3.5 正式字帖毛笔运笔 A/B（研究版已上线，默认A3不变）
 
 新 [毛笔运笔对照实验](experiments/brush-motion-lab.html) 使用与已发布 v0.5.1 PDF完全同源的201主部首、1045笔。两侧原SVG墨迹与中线不变；A为已发布的A3节奏，B按已核细笔名建立可解释的起笔、折钩、收笔时间重映射；不通过原中线回溯推断笔画名称、真实笔压力度或真人运动。不确定折钩和未核名称严格回退。Node验证轨迹单调，Chromium要求54对同步帧、同空间进度一致墨迹、390px；实际独立研究版 [A3.5 201字 A/B](https://netplus.github.io/zitie/animation/experiments/brush-motion-lab.html) 已上线：[PR #123](https://github.com/netplus/zitie/pull/123) 最终 HEAD `e7938b29725488dcf9491d143cf746391808533e` 的 [A1 Chrome #38125276874](https://github.com/netplus/zitie/actions/runs/38125276874) 与 [Book #38125276827](https://github.com/netplus/zitie/actions/runs/38125276827) 双 completed/success，合并至main SHA `0da37d5c1965a4f9d798b228de8d081263c1d81c`，其 [Pages #38125707083](https://github.com/netplus/zitie/actions/runs/38125707083) Configure、Upload和实际Deploy 全 success。**201字、1045笔**全部加载；960个有界运动候选、85个保守回退、193处来源中线角点候选事件；54对真实Chromium A/B 帧（两侧红墨不消失）、其中21对有时间运动差异，另21对相同空间位置的实际像素对照 **0 差异**，390px通过。截图/metrics见 [A1 QA artifact #11697280799](https://github.com/netplus/zitie/actions/runs/38125276874/artifacts/11697280799)。**人工审美/真实书法运笔教学审核仍待完成，绝不自动推广B为默认**；正式 [A3毛笔播放器](https://netplus.github.io/zitie/animation/book.html)、原PDF及硬笔冻结决策不变。见 [算法与来源限制](../docs/A35_BRUSH_MOTION_AB.md)、[A3 #120](https://github.com/netplus/zitie/issues/120)。已上线 [完整201字默认毛笔播放器](book.html) 不变，硬笔方向继续冻结。
