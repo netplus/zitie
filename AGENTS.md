@@ -1,6 +1,12 @@
-# 当前接续：A3.6 201字墨迹前缘领先笔尖问题（2026-10-11，修复候选）
+# 当前接续：A3.6 201字墨迹前缘领先笔尖问题（2026-10-11，已修复部署）
 
-用户明确指出水等字有“墨迹填充快于笔尖位置”，要求逐字全量复查。正式source仍为v0.5.1 299页PDF以及21批201字1045笔，禁止改笔顺、轮廓、median、PDF/manifest、Arphic许可。新增 animation/ink-front-guard.js 源中线4SVG单位Voronoi按时显墨区域，并在StrokePlayer前景墨迹额外clip，防止宽圆头早已染到未到达的后段。启用在正式 animation/book.html 的201字毛笔和A3.5实验两侧，旧9字历史回归保留原版以便对照。详见 docs/A36_INK_FRONT_AUDIT.md、Issue #125。单靠不掉红墨素CI不够，必须201/1045 Node空间不超前、Chromium真实多字多帧与水4笔、390px以及原201 A3/A3.5基线回归。精确 PR HEAD A1和Book双success→merge SHA→Pages实际Deploy success之后才可宣布修复上线。硬笔继续冻结，A3.5运动模型仍独立候选。
+用户明确指出水等字有“墨迹填充快于笔尖位置”，要求逐字全量复查。正式source仍为v0.5.1 299页PDF以及21批201字1045笔，禁止改笔顺、轮廓、median、PDF/manifest、Arphic许可。新增 animation/ink-front-guard.js 源中线4SVG单位Voronoi按时显墨区域；最终用**独立持久红色SVG片段**在静态原字形clipPath/既有宽圆头mask内叠加，防止宽圆头提前染到未到达的后段且避免复合动态clipPath引起的已绘像素回退。启用在正式 animation/book.html 的201字毛笔和A3.5实验两侧，旧9字历史回归保留原版以便对照。详见 docs/A36_INK_FRONT_AUDIT.md、Issue #125。单靠不掉红墨素CI不够，必须201/1045 Node空间不超前、Chromium真实多字多帧与水4笔、390px以及原201 A3/A3.5基线回归。**A3.6 已上线（2026-10-11）。** [PR #126](https://github.com/netplus/zitie/pull/126) 最终精确 HEAD `d410e398c6d94bfcd7d309cdd58372ff542ac2d1` 的 [A1 Chromium #38134493046](https://github.com/netplus/zitie/actions/runs/38134493046) 与 [Book integrity #38134493075](https://github.com/netplus/zitie/actions/runs/38134493075) 均 completed/success；合并 `main` 提交 `ea4a76e868cf9f9dbe3469fc0028604d4b5265b8` 对应的 [Pages #38135010764](https://github.com/netplus/zitie/actions/runs/38135010764) Configure、Upload、实际 Deploy 全 completed/success。
+
+实测：**201 个字、1045 个笔画**全部有有效 source-arc 前缘守卫；**每笔两个 Chromium 像素帧，2090/2090 帧**，所有1045笔都显墨且笔内红墨回退为 **0 像素**，任一后续中线红墨领先 **超过12 SVG单位的帧为0**（所采样最大领先12单位）；另 **201字495帧**（31个高风险字加密），**水四笔16帧**、A3.5 A/B两时序40帧均合格，390px手机视口合格，旧 A3/A3.5 原始笔迹回归继续成功。 [截图及完整metrics artifact #11700378299](https://github.com/netplus/zitie/actions/runs/38134493046/artifacts/11700378299)。
+
+根因与修复：旧宽圆头在折角附近会在未来中线上提前显墨；首次复合动态clipPath虽能限制前缘却导致Chromium抗锯齿重算时2—12已绘红像素消失，单纯加约3 SVG单位边缘重叠仍不够。**最终方案是每个已到达的Voronoi显墨区保留为独立红色SVG元素，在同一静态原轮廓clipPath及旧圆头alpha-mask内叠加**，不再反复修改复合裁剪轮廓。旧9字历史回归保持原渲染以便复现，A3默认201字及A3.5左右侧采用修复版；PDF的字形、笔顺、原median、计时、许可和299页正文均未修改。
+
+边界：这是**采样位置与阈值内的工程验证**，不等于真实毛笔接触面每个边缘绝对不超前，也不代表运动学/书法教师已认可；A3.5新节奏仍只可选，硬笔仍冻结。 **已完成修复发布；后续提交仍须重新过全量门槛**。硬笔继续冻结，A3.5运动模型仍独立候选。
 
 ---
 
