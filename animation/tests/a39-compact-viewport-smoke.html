@@ -1,0 +1,112 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>A3.9 height-aware main handwriting viewport QA</title></head><body>
+<h1>A3.9 · source paper and primary controls within the viewport</h1>
+<pre id="result">RUNNING</pre>
+<iframe id="demo" title="201-glyph production handwriting and controls"
+ src="../book.html?id=77" style="display:block;width:1440px;height:900px;border:0"></iframe>
+<script>
+const wait=ms=>new Promise(done=>setTimeout(done,ms));
+const bounds=el=>el.getBoundingClientRect();
+const check=(ok,msg)=>{if(!ok)throw Error(msg);};
+document.getElementById('demo').addEventListener('load',async function(){
+ const out=document.getElementById('result');
+ try{
+  const w=this.contentWindow,d=w.document,app=w.ZITIE_A3_BOOK;
+  check(d.documentElement.dataset.a3Ready==='201'&&app?.pack.glyphs.length===201,
+    'Formal PDF-backed animation failed to load');
+  check(app.player.frontGuard===true,'Original source-arc guard lost');
+  const before=JSON.stringify(app.pack.glyphs);
+  app.setPressureStyle('simulated');
+  const active=app.player.timeline.strokes[1];
+  app.player.seekElapsed(active.startMs+active.durationMs*.51);
+  const initialElapsed=app.player.elapsed;
+  check(app.getPressureState().pressure>.05,'Simulated pressure must be active');
+  const paper=d.querySelector('.writingStage > .paper');
+  const panel=d.querySelector('.writingStage > .pressureBox');
+  const curve=d.getElementById('pressureCurve');
+  const meter=d.getElementById('pressureValue');
+  const progress=d.getElementById('seek');
+  const buttons=[...d.querySelectorAll('.controls button')];
+  const step=d.querySelector('#steps .step');
+  check(paper&&panel&&curve&&meter&&progress&&buttons.length>=10&&step,
+    'Production primary operation elements missing');
+  const proof=[];
+  const viewports=[
+   {name:'desktop1440x900',width:1440,height:900,allControls:true,steps:true},
+   {name:'laptop1366x768',width:1366,height:768,allControls:true,steps:false},
+   {name:'laptop1020x768',width:1020,height:768,allControls:true,steps:false},
+   {name:'tablet800x900',width:800,height:900,allControls:true,steps:false},
+   {name:'mobile390x844',width:390,height:844,allControls:true,steps:false},
+   {name:'mobile390x667',width:390,height:667,allControls:false,steps:false}
+  ];
+  for(const v of viewports){
+   this.style.width=v.width+'px';
+   this.style.height=v.height+'px';
+   w.scrollTo(0,0);
+   await wait(150);
+   const p=bounds(paper),s=bounds(panel),c=bounds(curve);
+   const seek=bounds(progress), force=bounds(meter);
+   const controlBounds=buttons.map(bounds);
+   const actionTop=Math.min(...controlBounds.map(b=>b.top));
+   const actionBottom=Math.max(...controlBounds.map(b=>b.bottom));
+   const height=w.innerHeight,width=w.innerWidth;
+   const narrow=width<=720;
+   check(width===v.width&&height===v.height,
+     v.name+': iframe viewport dimensions diverged');
+   check(p.width>= (width<=510?225:245)&&p.width<= (width<=510?302:412),
+     v.name+': board missing or too large/small: '+p.width);
+   check(Math.abs(p.width-p.height)<3,
+     v.name+': source 1:1 calligraphy paper distorted');
+   check(p.top>=0&&p.bottom<=height+2,
+     v.name+': handwriting paper outside a single initial screen');
+   check(force.top>=0&&force.bottom<=height&&
+     c.width>=90&&c.bottom<=height,
+     v.name+': active force and its curve outside writing viewport');
+   if(narrow){
+    check(s.bottom<=p.top+2&&Math.abs(p.width-s.width)<2,
+      v.name+': narrow pressure band should align above the compact paper');
+   }else{
+    check(s.left>=p.right+5&&Math.abs(s.top-p.top)<16,
+      v.name+': force panel should be BESIDE the compact paper');
+   }
+   check(d.documentElement.scrollWidth<=width+2,
+     v.name+': horizontal overflow');
+   if(v.allControls){
+    check(seek.top>=0&&seek.bottom<=height-4&&
+      actionTop>=0&&actionBottom<=height-4,
+      v.name+': play/restart/stroke/speed actions cannot all fit: bottom='+actionBottom+' height='+height);
+   }
+   if(v.steps){
+    check(bounds(step).top>=0&&bounds(step).bottom<=height-4,
+      v.name+': step-jump controls should fit on a tall desktop screen');
+   }
+   check(app.player.elapsed===initialElapsed&&app.getPressureStyle()==='simulated'&&
+     app.getGlyph().main_id===77,
+     v.name+': resizing changed live stroke or simulated pressure mode');
+   proof.push({viewport:v.name,screenWidth:width,screenHeight:height,
+     paperWidth:Math.round(p.width),paperTop:Math.round(p.top),
+     paperBottom:Math.round(p.bottom),pressureBeside:!narrow,
+     pressureBottom:Math.round(s.bottom),curveBottom:Math.round(c.bottom),
+     seekBottom:Math.round(seek.bottom),controlsBottom:Math.round(actionBottom),
+     stepsBottom:Math.round(bounds(step).bottom),
+     allControlsInView:actionBottom<=height-4,
+     horizontalOverflow:d.documentElement.scrollWidth>width+2});
+  }
+  check(JSON.stringify(app.pack.glyphs)===before,'Original PDF source changed');
+  app.setPressureStyle('stable');
+  check(app.getPressureStyle()==='stable'&&
+    d.getElementById('pressureDetails').hidden,
+    'Compact layout broke stable/simulated pressure switching');
+  const result={result:'PASS',characters:201,sourceStrokes:1045,
+   laptopOneScreen:true,mobileTallOneScreen:true,
+   sourceImmutable:true,pressureModesPreserved:true,
+   originalPigmentGuard:true,layoutProof:proof};
+  d.documentElement.dataset.a39Ready='PASS';
+  document.documentElement.dataset.result='PASS';
+  out.textContent=JSON.stringify(result,null,2);
+ }catch(e){
+  document.documentElement.dataset.result='FAIL';
+  out.textContent='FAIL: '+(e.stack||e);
+ }
+});
+</script></body></html>
