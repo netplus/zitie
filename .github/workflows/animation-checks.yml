@@ -1211,7 +1211,7 @@ jobs:
           assert x['result']=='PASS' and x['characters']==201 and x['strokes']==1045
           for k in ('confirmedOnly','reloadRecovered','wholeCharacter',
                     'undoReversesOneStroke','deleteRequiresConfirmation',
-                    'sourceHashLocked','draftNeverPersisted','localOnly'):
+                    'sourceHashLocked','draftNeverPersisted','corruptRestoreRejected','localOnly'):
               assert x[k] is True,k
           assert x['automaticGrade'] is False
           assert len(x['layout'])==4
