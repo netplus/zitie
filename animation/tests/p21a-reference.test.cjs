@@ -82,5 +82,6 @@ test('P2.1a modal has exactly one accessible trigger and independent source stag
  assert.match(bridge,/noAutomaticScore:true,noPersistentWritingStorage:false/);
  assert.match(html,/src="\.\/practice\/progress-controller\.js"/);
  assert.match(html,/src="\.\/practice\/storage\.js"/);
- assert.doesNotMatch(bridge,/indexedDB|localStorage|fetch\(/i);
+ assert.doesNotMatch(bridge,/XMLHttpRequest|fetch\(/i);
+ assert.match(bridge,/Storage\.LocalPracticeStore\(\)/);
 });
