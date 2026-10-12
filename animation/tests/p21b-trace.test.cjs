@@ -112,6 +112,8 @@ test('P2.1b browser and source stay separated with no remote/cloud persistence',
  assert.match(bridge,/noAutomaticScore:true,noPersistentWritingStorage:true/);
  for(const f of ['trace-session.js','trace-canvas.js','pointer-input.js','practice-bridge.js']){
    const src=fs.readFileSync(path.join(ROOT,'animation/practice',f),'utf8');
-   assert.doesNotMatch(src,/\bfetch\s*\(|\bindexedDB\b|\blocalStorage\b|XMLHttpRequest/i);
+   const executable=src.replace(/\/\*[\s\S]*?\*\//g,'')
+     .replace(/^\s*\/\/.*$/gm,'');
+   assert.doesNotMatch(executable,/\bfetch\s*\(|\bindexedDB\b|\blocalStorage\b|XMLHttpRequest/i);
  }
 });
