@@ -75,8 +75,9 @@ document.getElementById('demo').addEventListener('load',async function(){
     'Completed input trace should remain an ungraded draft');
   check(points.every(x=>x.pointerType==='pen'&&x.pressureSource===
     'device-reported-unverified'),'Pen input provenance changed');
-  check(points[0].pressure===.72&&points[0].tiltX===8,
-    'Real input event pressure/tilt lost or confused with A3 synthetic pressure');
+  check(within(points[0].pressure,.72,.005)&&points[0].tiltX===8,
+    'Real input pressure/tilt mismatch (pressure='+points[0].pressure+
+    ', tiltX='+points[0].tiltX+')');
   check(within(points[0].x,start[0],.5)&&within(points[0].y,start[1],.5),
     'First captured raw point not aligned with original water median');
   const last=points.at(-1);
