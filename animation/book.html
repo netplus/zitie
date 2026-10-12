@@ -124,7 +124,12 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
   #pressureCurve{height:52px;max-height:52px}
 }
 @media(max-width:350px){.head{grid-template-columns:1fr}.pager{justify-content:flex-start}}
+.paper[role="button"]{cursor:pointer}
+.paper[role="button"]:focus-visible{outline:3px solid #a83d52;outline-offset:4px}
+.pager #practiceLaunch{background:#fff0f2;border-color:#c8a1a9;color:#932c44;font-weight:700}
+@media(max-width:510px){.pager #practiceLaunch{font-size:11px;padding:4px 5px}}
 </style>
+<link rel="stylesheet" href="./practice/practice.css">
 <script defer src="./book-pack.js"></script>
 <script defer src="./motion.js"></script>
 <script defer src="./timeline.js"></script>
@@ -135,6 +140,8 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
 <script defer src="./experiments/pressure-model.js"></script>
 <script defer src="./pressure-style.js"></script>
 <script defer src="./book-ui.js"></script>
+<script defer src="./practice/reference-stage.js"></script>
+<script defer src="./practice/practice-bridge.js"></script>
 </head>
 <body>
 <main class="page">
@@ -151,12 +158,14 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
           <div><strong id="meta">读取字帖资料…</strong><div id="reading"></div></div>
         </div>
         <div class="pager">
+          <button type="button" id="practiceLaunch" title="进入逐笔临摹准备界面">✎ 临摹</button>
           <button type="button" id="prevChar">‹ 上一字</button>
           <button type="button" id="nextChar">下一字 ›</button>
         </div>
       </div>
       <div class="writingStage" id="writingStage" aria-label="同步书写与笔压观察区">
-      <div class="paper">
+      <div class="paper" role="button" tabindex="0"
+           aria-label="点击字格进入逐笔临摹准备界面">
         <svg id="paperSvg" role="img" viewBox="0 0 1024 1024" aria-label="来自字帖同一笔画矢量的毛笔书写演示"></svg>
       </div>
       <section class="pressureBox" aria-label="笔压风格">
@@ -242,5 +251,42 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
   </div>
   <footer class="notice">工程状态：A3 PDF 同源动画。整套字帖及规范证据保持只读；本页不修改已发布的 v0.5.1 PDF。字体文件不会作为网页资源分发。</footer>
 </main>
+<section id="practiceOverlay" class="practiceOverlay" role="dialog"
+         aria-modal="true" aria-labelledby="practiceTitle"
+         aria-describedby="practiceIntro" hidden>
+  <div class="practiceShell">
+    <header class="practiceHeader">
+      <button type="button" id="practiceExit">← 返回笔顺教学</button>
+      <div class="practiceHeadings">
+        <strong id="practiceTitle">逐笔临摹 · 参考预览</strong>
+        <p id="practiceIntro">P2.1a 临摹准备界面 · 真实触屏书写将在下一阶段接入</p>
+      </div>
+      <div id="practiceProgress" aria-live="polite">笔顺参考 1 / 1</div>
+    </header>
+    <div class="practiceWorkspace">
+      <section class="practicePaperCard" aria-label="放大字帖临摹参考区">
+        <div class="practiceBoard" id="practiceBoard">
+          <svg id="practiceSvg" role="img" viewBox="0 0 1024 1024"
+               aria-label="与正式字帖同源的逐笔参考轮廓"></svg>
+        </div>
+        <p class="practiceBoardCaption">笔画轮廓与正式 PDF 同源 · 起收笔参考来自未经教学审定的工程中线</p>
+      </section>
+      <aside class="practiceTools" aria-label="当前笔画参考和操作">
+        <p class="practiceEyebrow">逐笔引导 · 笔画参考预览</p>
+        <p id="practiceGlyphMeta"></p>
+        <strong id="practiceStrokeTitle">第 1 笔</strong>
+        <p id="practiceStrokeHint">当前笔画淡红高亮，圆点标注参考起收笔。</p>
+        <div class="practiceActions">
+          <button type="button" id="practicePrev" disabled>← 上一笔参考</button>
+          <button type="button" id="practiceNext">下一笔参考 →</button>
+        </div>
+        <p id="practicePreviewStatus" role="status" aria-live="polite">
+          仅预览笔顺参考，未记录练习成绩
+        </p>
+        <p class="practiceNotice">本页尚不能接收手写输入，不会自动计为完成。下一阶段将加入手指、触控笔的实时蓝色笔迹与逐笔确认。</p>
+      </aside>
+    </div>
+  </div>
+</section>
 </body>
 </html>
