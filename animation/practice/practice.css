@@ -77,14 +77,10 @@
   margin:12px 0 10px;line-height:1.35;color:#2d3b44}
 #practiceStrokeHint{font-size:13px;color:#4e5d66;line-height:1.65;margin:0 0 14px}
 .practiceActions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.practiceActions #practiceReset{grid-column:1/-1;
-  border-color:#aac0d6;color:#235c92;background:#f5faff}
-.practiceActions #practiceReset:disabled{background:#f5f7f8}
+
 .practiceActions button{min-width:0;padding:8px 6px;font-size:13px}
-.practiceActions #practiceReset{grid-column:auto}
-.practiceActions #practiceAccept{order:-1;grid-column:1/-1;
-  background:#1964ae;border-color:#1964ae;color:#fff;font-weight:750}
-.practiceActions #practiceAccept:disabled{background:#e7ebef;color:#6c777f}
+.practiceActions #practiceUndo{background:#f5faff;
+  border-color:#c7d8e8;color:#275e8e}
 .practiceActions #practiceReturnCurrent:not([hidden]){grid-column:1/-1}
 .practicePrompt{margin:9px 0 0;padding:10px;
   background:#fff6f4;border:1px solid #e2c0bf;border-radius:10px;
@@ -99,6 +95,16 @@
 .practiceCompletion{margin:10px 0 0;padding:12px;border-radius:9px;
   background:#f3f8ff;border:1px solid #bed3e6;
   color:#235987;font-weight:700;font-size:13px}
+.practiceOrderResult{margin:8px 0 0;padding:12px;border-radius:10px;
+  background:#f7f9fb;border:1px solid #b9cadc;color:#294b67;
+  font-size:13px;font-weight:700;line-height:1.65}
+.practiceOrderResult[hidden]{display:none!important}
+.practiceOrderResult[data-outcome="consistent"]{
+  border-color:#a6cad1;color:#235b64;background:#eff8f7}
+.practiceOrderResult[data-outcome="reordered"]{
+  border-color:#d7a5aa;color:#8b3445;background:#fff5f5}
+.practiceOrderResult[data-outcome="uncertain"]{
+  border-color:#dbceac;color:#705a34;background:#fffcf1}
 .practiceNotice{
   margin:15px 0 0;padding-top:12px;border-top:1px solid #eee7e5;
   font-size:12px;color:#66737c;line-height:1.7;
@@ -142,9 +148,10 @@
   #practicePreviewStatus{font-size:11px;margin-top:4px}
   .practiceActions{gap:5px}
   .practiceActions button{min-height:44px;padding:5px 4px;font-size:11px}
-  .practiceActions #practiceAccept{min-height:44px;font-size:13px}
+
   .practiceSaved{font-size:11px;margin-top:5px}
   .practiceCompletion{font-size:11px;margin:5px 0 0;padding:7px}
+  .practiceOrderResult{font-size:11px;margin:5px 0 0;padding:8px}
   .practicePrompt{margin:5px 0 0;padding:7px}
 }
 @media(max-height:570px) and (orientation:landscape){
