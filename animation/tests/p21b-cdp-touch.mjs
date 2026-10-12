@@ -101,7 +101,7 @@ try{
      s.activePointerId)};
  });
  check(capture.phase==='drawing'&&capture.captured&&
-   capture.captureFailures===0,'True touch pointer capture failed');
+   capture.captureFailures===0,'True touch pointer capture failed: '+JSON.stringify(capture));
  for(const pt of setup.points.slice(1))await touch('touchMove',[pt]);
  await touch('touchEnd',[]);
  await sleep(100);
@@ -126,10 +126,10 @@ try{
    blueStart:blueAt(points[0]),blueEnd:blueAt(points.at(-1))};
  });
  check(trace.phase==='review'&&trace.points>=2&&trace.painted===trace.points,
-  'Real CDP touch failed to produce source-space ink');
+  'Real CDP touch failed to produce source-space ink: '+JSON.stringify(trace));
  check(trace.pointerType==='touch'&&trace.pressure===null&&
-  trace.accepted===0,'Touch data falsely measured/grading completed');
- check(trace.blueStart&&trace.blueEnd,'No real ink at CDP touched endpoints');
+  trace.accepted===0,'Touch data falsely measured/grading completed: '+JSON.stringify(trace));
+ check(trace.blueStart&&trace.blueEnd,'No real ink at CDP touched endpoints: '+JSON.stringify(trace));
  await call('Emulation.setDeviceMetricsOverride',{
   width:390,height:844,deviceScaleFactor:2,mobile:true});
  await sleep(270);
@@ -150,7 +150,7 @@ try{
  });
  check(resized.width===390&&resized.dpr===2&&
   resized.points===trace.points&&resized.painted===trace.points&&resized.blue,
-  'Mobile DPR/resize lost actual touch ink or model points');
+  'Mobile DPR/resize lost actual touch ink or model points: '+JSON.stringify(resized));
  mkdirSync(resolve('build/a1'),{recursive:true});
  const screenshot=await call('Page.captureScreenshot',{format:'png'});
  writeFileSync(resolve('build/a1/p21b-real-cdp-touch-mobile.png'),
@@ -174,7 +174,7 @@ try{
  });
  check(canceled.phase==='ready'&&canceled.count===0&&
   canceled.cancellations>0&&canceled.accepted===0,
-  'Native browser touchCancel incorrectly committed partial stroke');
+  'Native browser touchCancel incorrectly committed partial stroke: '+JSON.stringify(canceled));
  const result={result:'PASS',input:'CDP Input.dispatchTouchEvent',
   sourceHash:setup.sourceHash,boardCSSPixels:setup.boardWidth,
   capture,trace,resized,canceled,
