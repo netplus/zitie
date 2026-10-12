@@ -77,9 +77,10 @@ try{
  await call('Emulation.setTouchEmulationEnabled',{enabled:true,maxTouchPoints:2});
  await until(()=>onPage(()=>document.documentElement.dataset.p21bReady===
   'raw-pointer-canvas'&&ZITIE_A3_BOOK?.pack?.glyphs.length===201));
- const setup=await onPage(()=>{
+ const setup=await onPage(async()=>{
   const book=ZITIE_A3_BOOK;book.selectGlyph(77);
   if(!ZITIE_P21B.open())throw Error('Immersive practice refused to open');
+  await ZITIE_P21B.whenReady();
   const group=document.querySelector('[data-practice-source-transform]');
   const canvas=document.getElementById('practiceInk');
   const median=book.getGlyph().strokes[0].median;
