@@ -61,6 +61,8 @@ test('P2.1a modal has exactly one accessible trigger and independent source stag
    assert.equal([...html.matchAll(new RegExp('id="'+id+'"','g'))].length,1,id);
  }
  assert.match(html,/<div class="paper" role="button" tabindex="0"/);
+ assert.match(html,/aria-label="开始逐笔临摹"/);
+ assert.match(html,/\.pager \.practiceLaunchText\{display:none\}/);
  assert.match(html,/id="practiceOverlay" class="practiceOverlay" role="dialog"/);
  assert.match(html,/aria-modal="true"/);
  assert.match(html,/id="practiceOverlay"[\s\S]{0,150}hidden>/);
