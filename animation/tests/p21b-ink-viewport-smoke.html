@@ -70,10 +70,11 @@ document.getElementById('demo').addEventListener('load',async function(){
   for(let i=1;i<median.length;i++)ev('pointermove',5,median[i],i*12);
   ev('pointerup',5,finish,median.length*12);
   await wait(150);
-  const points=p.getTrace();
-  check(points.length>=2&&p.getState().input.phase==='review'&&
-    p.getState().input.acceptedStrokes===0,
-    'Completed input trace should remain an ungraded draft');
+  const points=p.getWritten()[0]?.samples||[];
+  check(points.length>=2&&p.getState().input.phase==='ready'&&
+    p.getState().input.acceptedStrokes===0&&
+    p.getState().progress.currentIndex===1,
+    'Pointerup should retain genuine input as the first automatic, ungraded stroke');
   check(points.every(x=>x.pointerType==='pen'&&x.pressureSource===
     'device-reported-unverified'),'Pen input provenance changed');
   check(within(points[0].pressure,.72,.005)&&points[0].tiltX===8,
@@ -87,8 +88,9 @@ document.getElementById('demo').addEventListener('load',async function(){
   check(points.every((x,i)=>i===0||x.tMs>=points[i-1].tMs),
     'Contact sample clock went backwards');
   const metrics=p.getInkMetrics();
-  check(metrics.paintedSamples===points.length&&metrics.backingWidth>100,
-    'Blue Canvas did not render all recorded real input points');
+  check(metrics.confirmedSamples===points.length&&
+    metrics.confirmedStrokes===1&&metrics.backingWidth>100,
+    'Blue Canvas did not retain all automatically recorded real input points');
   const pixel=(source)=>{
     const c=pointClient(source),r=canvas.getBoundingClientRect();
     const x=Math.max(0,Math.min(canvas.width-1,Math.round(
@@ -110,12 +112,12 @@ document.getElementById('demo').addEventListener('load',async function(){
      {name:'shortPhone390x667',width:390,height:667}]){
     this.style.width=v.width+'px';this.style.height=v.height+'px';
     await wait(220);
-    const oldPoints=JSON.stringify(p.getTrace());
+    const oldPoints=JSON.stringify(p.getWritten()[0].samples);
     // Force a high-DPI backing update even when ResizeObserver batches.
     w.dispatchEvent(new w.Event('resize'));await wait(95);
-    check(JSON.stringify(p.getTrace())===oldPoints,
+    check(JSON.stringify(p.getWritten()[0].samples)===oldPoints,
       v.name+': raw source samples mutated after orientation/resize');
-    check(p.getInkMetrics().paintedSamples===points.length,
+    check(p.getInkMetrics().confirmedSamples===points.length,
       v.name+': user ink disappeared after backing-store resize');
     check(blue(pixel(start))&&blue(pixel(finish)),
       v.name+': ink shifted from physical input position after resize');
@@ -126,13 +128,15 @@ document.getElementById('demo').addEventListener('load',async function(){
     check(d.documentElement.scrollWidth<=w.innerWidth+2,
       v.name+': mobile horizontal overflow');
     proof.push({viewport:v.name,paperWidth:Math.round(a.width),
-      canvasPx:canvas.width,inkSamples:p.getInkMetrics().paintedSamples,
+      canvasPx:canvas.width,inkSamples:p.getInkMetrics().confirmedSamples,
       actualBlueOnInput:true,acceptedStrokes:0});
   }
-  // Clearing a draft removes user blue ink but cannot change SOURCE SVG.
-  d.getElementById('practiceReset').click();await wait(90);
-  check(p.getTrace().length===0&&p.getState().input.phase==='ready'&&
-    !blue(pixel(start)),'Rewrite must actually remove temporary ink');
+  // Undo removes the last automatically recorded user stroke, but never
+  // modifies a single PDF source outline or the original A3 animation.
+  check(p.undo(),'Undo of naturally lifted stroke failed');
+  await p.whenSaved();await wait(90);
+  check(p.getWritten().length===0&&p.getState().input.phase==='ready'&&
+    !blue(pixel(start)),'Undo must remove the previous real-ink stroke');
   ev('pointerdown',9,start,1);
   ev('pointermove',9,finish,2);
   ev('pointercancel',9,finish,3);
@@ -152,11 +156,13 @@ document.getElementById('demo').addEventListener('load',async function(){
   ev('pointermove',11,finish,7,'touch');
   ev('pointerup',11,finish,8,'touch');
   await wait(80);
-  check(p.getTrace().every(x=>x.pressure===null&&x.tiltX===null),
+  check(p.getWritten()[0].samples.every(x=>x.pressure===null&&x.tiltX===null),
     'Generic touch pressure must not masquerade as a real sensor');
-  p.reference(1);
-  check(p.getTrace().length===0&&p.getState().referenceIndex===1,
-    'Preview navigation should reset unconfirmed stroke draft');
+  check(p.reference(2),'Must be able to preview later source strokes');
+  check(p.getWritten().length===1&&p.getState().referenceIndex===2,
+    'Reference preview must not erase already recorded real strokes');
+  check(p.returnToCurrent(),'Cannot return to required next stroke');
+  await p.whenSaved();
   p.close();
   check(!p.getState().active&&p.getTrace().length===0&&
     !b.player.playing&&b.player.elapsed===initialElapsed&&
@@ -171,7 +177,7 @@ document.getElementById('demo').addEventListener('load',async function(){
   out.textContent=JSON.stringify({result:'PASS',characters:201,sourceStrokes:1045,
     rawOnly:true,sourceUnchanged:true,buttonClear:true,noAutoGrade:true,
     tracePoints:points.length,canvasPixelProof:true,
-    cancellationSafe:true,noPersistentStorage:true,layoutProof:proof},null,2);
+    cancellationSafe:true,localOnlyPersistence:true,layoutProof:proof},null,2);
  }catch(err){
   document.documentElement.dataset.result='FAIL';
   out.textContent='FAIL: '+(err.stack||err);

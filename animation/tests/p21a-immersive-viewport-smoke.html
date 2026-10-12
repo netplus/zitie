@@ -75,7 +75,7 @@ document.getElementById('demo').addEventListener('load',async function(){
   // The next button previews source order, but creates no user-accepted stroke.
   next.click();
   check(p.getState().referenceIndex===1&&
-    d.getElementById('practicePreviewStatus').textContent.includes('不推进笔顺')&&
+    d.getElementById('practicePreviewStatus').textContent.includes('不会改变已写笔画')&&
     svg.querySelector('[data-reference-current="true"]')?.getAttribute(
       'data-practice-stroke-index')==='1',
     'Reference navigation must not count as a confirmed learner stroke');

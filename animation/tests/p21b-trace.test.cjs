@@ -103,7 +103,8 @@ test('P2.1b browser and source stay separated with no remote/cloud persistence',
  assert.match(html,/src="\.\/practice\/trace-session\.js"/);
  assert.match(html,/src="\.\/practice\/pointer-input\.js"/);
  assert.match(html,/src="\.\/practice\/trace-canvas\.js"/);
- assert.match(html,/id="practiceReset"/);
+ assert.match(html,/id="practiceUndo"/);
+ assert.doesNotMatch(html,/id="practiceAccept"/);
  assert.match(css,/#practiceInk\{[^}]*touch-action:none/);
  assert.doesNotMatch(css,/body\{[^}]*touch-action:none/);
  assert.match(bridge,/new Trace\.TraceSession\(\)/);

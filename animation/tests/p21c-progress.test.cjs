@@ -123,7 +123,7 @@ test('P2.1c UI carries manual confirmation, safe exit, undo and no teacher scori
  const html=fs.readFileSync(path.join(ROOT,'animation/book.html'),'utf8');
  const bridge=fs.readFileSync(path.join(ROOT,'animation/practice/practice-bridge.js'),'utf8');
  const canvas=fs.readFileSync(path.join(ROOT,'animation/practice/trace-canvas.js'),'utf8');
- for(const name of ['practiceAccept','practiceUndo','practiceRestart',
+ for(const name of ['practiceOrderResult','practiceUndo','practiceRestart',
    'practiceClearPrompt','practiceClearYes','practiceClearNo',
    'practiceLeavePrompt','practiceLeaveYes','practiceLeaveNo',
    'practiceSaved','practiceCompletion','practiceReturnCurrent']){
@@ -131,7 +131,7 @@ test('P2.1c UI carries manual confirmation, safe exit, undo and no teacher scori
  }
  for(const script of ['progress-controller.js','storage.js'])
    assert.ok(html.includes('src="./practice/'+script+'"'));
- assert.match(bridge,/progress\.accept\(session\?\.draft\)/);
+ assert.match(bridge,/progress\.append\(session\.draft\)/);
  assert.match(bridge,/store\.save\(captured\)/);
  assert.match(bridge,/store\.load\(identity\(\)\)/);
  assert.match(bridge,/store\.remove\(identity\(\)\)/);
