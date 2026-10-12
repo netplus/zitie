@@ -8,7 +8,7 @@ const html=fs.readFileSync(path.join(root,'animation/book.html'),'utf8');
 const js=fs.readFileSync(path.join(root,'animation/book-ui.js'),'utf8');
 test('one pressure controller stays physically attached to handwriting stage',()=>{
  const stage=html.indexOf('<div class="writingStage"');
- const paper=html.indexOf('<div class="paper">',stage);
+ const paper=html.indexOf('<div class="paper" role="button"',stage);
  const svg=html.indexOf('id="paperSvg"',paper);
  const panel=html.indexOf('<section class="pressureBox"',svg);
  const closing=html.indexOf('<!-- A3.8 handwriting stage end -->',panel);
