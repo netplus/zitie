@@ -43,6 +43,7 @@ document.getElementById('demo').addEventListener('load',async function(){
   const originalWidth=rect(sourceBoard).width;
   sourceBoard.focus();
   sourceBoard.click();
+  await p.whenReady();
   check(!modal.hidden&&main.inert&&
     d.activeElement===exit&&w.getComputedStyle(modal).position==='fixed',
     'Clicking the old writing square must enter an accessible immersive dialog');
@@ -67,14 +68,14 @@ document.getElementById('demo').addEventListener('load',async function(){
     'First stroke navigation status is wrong');
   check(modal.querySelector('#practiceInk')&&
     p.getState().liveInkEnabled&&p.getState().noAutomaticScore&&
-    p.getState().noPersistentWritingStorage,
+    p.getState().localOnlyPersistence,
     'P2.1b must provide temporary live ink without a grader or remote storage');
   check(rect(board).width>=originalWidth+130,
     'Immersive reference square was not appreciably enlarged from A3.9');
   // The next button previews source order, but creates no user-accepted stroke.
   next.click();
   check(p.getState().referenceIndex===1&&
-    d.getElementById('practicePreviewStatus').textContent.includes('未记录练习成绩')&&
+    d.getElementById('practicePreviewStatus').textContent.includes('不推进笔顺')&&
     svg.querySelector('[data-reference-current="true"]')?.getAttribute(
       'data-practice-stroke-index')==='1',
     'Reference navigation must not count as a confirmed learner stroke');
@@ -134,6 +135,7 @@ document.getElementById('demo').addEventListener('load',async function(){
   check(p.close()&&modal.hidden&&!main.inert,'Exit must restore original book focus');
   book.selectGlyph(201);
   launcher.click();
+  await p.whenReady();
   check(p.getState().glyphId===201&&p.getState().strokeCount===17&&
     svg.querySelectorAll('[data-practice-stroke-index]').length===17,
     'The full 17-stroke source reference for 龠 was truncated');
@@ -149,6 +151,7 @@ document.getElementById('demo').addEventListener('load',async function(){
   check(pack.glyphs[54].strokes.every(s=>s.name_status==='ordinal_only'),
     'Test fixture #55 must be a genuinely restricted-name glyph');
   launcher.click();
+  await p.whenReady();
   check(p.getState().glyphId===55&&
     d.getElementById('practiceStrokeTitle').textContent.includes('第1笔')&&
     svg.querySelectorAll('[data-practice-stroke-index]').length===pack.glyphs[54].strokes.length,
@@ -161,6 +164,7 @@ document.getElementById('demo').addEventListener('load',async function(){
   sourceBoard.focus();
   sourceBoard.dispatchEvent(new w.KeyboardEvent('keydown',{
     key:'Enter',bubbles:true,cancelable:true}));
+  await p.whenReady();
   check(p.getState().active&&d.activeElement===exit,
     'Keyboard user cannot enter practice from the focused SVG paper');
   exit.dispatchEvent(new w.KeyboardEvent('keydown',{
