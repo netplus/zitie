@@ -72,14 +72,18 @@
       const confirmed=this.getConfirmed();
       const signature=confirmed.map(s=>s.index+':'+s.samples.length+
         ':'+s.samples.at(-1).x+','+s.samples.at(-1).y).join('|');
-      if(force||points.length<this.lastPainted||
-         signature!==this.confirmedSignature){
+      // A full repaint is mandatory after resize/forced redraw, even
+      // when the live draft is empty and the accepted strokes are unchanged.
+      // Earlier logic returned here with a freshly CLEARED canvas, erasing
+      // the confirmed ink on iPad portrait/landscape or DPR changes.
+      const rebuild=force||points.length<this.lastPainted||
+        signature!==this.confirmedSignature;
+      if(rebuild){
         ctx.setTransform(1,0,0,1,0,0);
         ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
         this.lastPainted=0;
       }
-      if(points.length===this.lastPainted&&
-         signature===this.confirmedSignature)return true;
+      if(!rebuild&&points.length===this.lastPainted)return true;
       // The screen CTM includes SVG viewBox, source transform, CSS layout,
       // page translation and rotation. Compose device px relative to canvas.
       ctx.setTransform(m.a*sx,m.b*sy,m.c*sx,m.d*sy,
@@ -90,7 +94,7 @@
       ctx.lineWidth=7.5/logicalScale; // fixed visual 7.5 CSS pixels
       ctx.lineCap='round';ctx.lineJoin='round';
       ctx.strokeStyle='#1964ae';ctx.fillStyle='#1964ae';
-      if(force||signature!==this.confirmedSignature){
+      if(rebuild){
         this.confirmedPainted=0;
         for(const stroke of confirmed){
           const sequence=stroke.samples;
