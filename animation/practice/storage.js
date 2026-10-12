@@ -73,9 +73,10 @@
     }
     save(snapshot){
       const key=makeKey(snapshot);
-      if(!snapshot||snapshot.schemaVersion!==1||
-         !Number.isSafeInteger(snapshot.revision)||
-         !Array.isArray(snapshot.accepted))
+      if(!snapshot||
+         !(snapshot.schemaVersion===1&&Array.isArray(snapshot.accepted)||
+           snapshot.schemaVersion===2&&Array.isArray(snapshot.written))||
+         !Number.isSafeInteger(snapshot.revision))
         return Promise.reject(Error('Refuse to save unversioned practice data'));
       const immutable=JSON.parse(JSON.stringify(snapshot));
       return this.enqueue(async()=>{
