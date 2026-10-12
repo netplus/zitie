@@ -23,6 +23,7 @@ document.getElementById('demo').addEventListener('load',async function(){
   const firstGlyph=b.getGlyph().strokes[0],referenceSource=b.getGlyph().strokes;
   const sourceSVG=d.getElementById('paperSvg'),sourcePaths=sourceSVG.innerHTML;
   check(p.open(),'Cannot enter immersive source stage');
+  await p.whenReady();
   const canvas=d.getElementById('practiceInk');
   const board=d.getElementById('practiceBoard');
   const ref=d.getElementById('practiceSvg');
@@ -99,7 +100,7 @@ document.getElementById('demo').addEventListener('load',async function(){
   const blue=px=>px[2]>px[0]+65&&px[2]>px[1]+32&&px[3]>80;
   check(blue(pixel(start))&&blue(pixel(finish)),
     'Real blue ink missing from actual contact endpoints');
-  check(p.getState().noAutomaticScore&&p.getState().noPersistentWritingStorage,
+  check(p.getState().noAutomaticScore&&p.getState().localOnlyPersistence,
     'P2.1b must never mark the trace as learned or persisted');
   const proof=[];
   for(const v of [{name:'desktop1366x820',width:1366,height:820},

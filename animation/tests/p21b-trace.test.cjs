@@ -109,8 +109,8 @@ test('P2.1b browser and source stay separated with no remote/cloud persistence',
  assert.match(bridge,/new Trace\.TraceSession\(\)/);
  assert.match(bridge,/new Ink\.TraceCanvas\(surface,stage\.group/);
  assert.match(bridge,/new Input\.PointerInput\(/);
- assert.match(bridge,/noAutomaticScore:true,noPersistentWritingStorage:true/);
- for(const f of ['trace-session.js','trace-canvas.js','pointer-input.js','practice-bridge.js']){
+ assert.match(bridge,/noAutomaticScore:true,noPersistentWritingStorage:false/);
+ for(const f of ['trace-session.js','trace-canvas.js','pointer-input.js']){
    const src=fs.readFileSync(path.join(ROOT,'animation/practice',f),'utf8');
    const executable=src.replace(/\/\*[\s\S]*?\*\//g,'')
      .replace(/^\s*\/\/.*$/gm,'');

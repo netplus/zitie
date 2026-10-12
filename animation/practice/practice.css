@@ -80,7 +80,25 @@
 .practiceActions #practiceReset{grid-column:1/-1;
   border-color:#aac0d6;color:#235c92;background:#f5faff}
 .practiceActions #practiceReset:disabled{background:#f5f7f8}
-.practiceActions button{min-width:0;padding:10px 6px;font-size:13px}
+.practiceActions button{min-width:0;padding:8px 6px;font-size:13px}
+.practiceActions #practiceReset{grid-column:auto}
+.practiceActions #practiceAccept{order:-1;grid-column:1/-1;
+  background:#1964ae;border-color:#1964ae;color:#fff;font-weight:750}
+.practiceActions #practiceAccept:disabled{background:#e7ebef;color:#6c777f}
+.practiceActions #practiceReturnCurrent:not([hidden]){grid-column:1/-1}
+.practicePrompt{margin:9px 0 0;padding:10px;
+  background:#fff6f4;border:1px solid #e2c0bf;border-radius:10px;
+  font-size:12px;line-height:1.5}
+.practicePrompt[hidden],.practiceCompletion[hidden]{display:none!important}
+.practicePrompt p{margin:0 0 8px}
+.practicePrompt button{border:1px solid #ce9ea4;border-radius:9px;
+  min-height:44px;background:#fff;padding:6px 11px;margin-right:5px}
+.practicePrompt button:focus-visible{outline:3px solid #b44556}
+.practiceSaved{margin:9px 0 0;font-size:12px;line-height:1.45;color:#536978}
+.practiceSaved[data-status="error"]{color:#a63144}
+.practiceCompletion{margin:10px 0 0;padding:12px;border-radius:9px;
+  background:#f3f8ff;border:1px solid #bed3e6;
+  color:#235987;font-weight:700;font-size:13px}
 .practiceNotice{
   margin:15px 0 0;padding-top:12px;border-top:1px solid #eee7e5;
   font-size:12px;color:#66737c;line-height:1.7;
@@ -122,6 +140,12 @@
   .practiceActions button{min-height:44px;padding:7px 5px;font-size:12px}
   .practiceNotice{font-size:11px;line-height:1.45;margin-top:5px;padding-top:6px}
   #practicePreviewStatus{font-size:11px;margin-top:4px}
+  .practiceActions{gap:5px}
+  .practiceActions button{min-height:44px;padding:5px 4px;font-size:11px}
+  .practiceActions #practiceAccept{min-height:44px;font-size:13px}
+  .practiceSaved{font-size:11px;margin-top:5px}
+  .practiceCompletion{font-size:11px;margin:5px 0 0;padding:7px}
+  .practicePrompt{margin:5px 0 0;padding:7px}
 }
 @media(max-height:570px) and (orientation:landscape){
   .practiceBoard{width:min(100%,calc(100dvh - 105px),610px)}
