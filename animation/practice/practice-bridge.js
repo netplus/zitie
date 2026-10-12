@@ -30,13 +30,13 @@
     const store=new Storage.LocalPracticeStore();
     let active=false,saved=null,priorFocus=null,priorOverflow='',priorInert=false;
     let session=null,renderer=null,input=null,progress=null,ready=false;
-    let saveStatus='loading',storageUsable=true,storageMessage='';
+    let saveStatus='loading',storageUsable=true,storageMessage='',restoreBlocked=false;
     let generation=0,loadingPromise=Promise.resolve(false),savingPromise=Promise.resolve();
     let lastFeedback='',closeQueued=false;
     const identity=()=>({glyphId:progress.glyphId,
       sourceHash:progress.sourceHash,pdfHash:progress.pdfHash});
     const drawingAllowed=()=>active&&ready&&!progress.complete&&
-      stage.currentIndex===progress.currentIndex;
+      stage.currentIndex===progress.currentIndex&&!restoreBlocked;
     const hasDraft=()=>!!session&&(!!session.draft||!!session.active);
     const closeWarning=()=>hasDraft()||(!storageUsable&&
       progress&&progress.currentIndex>0);
@@ -161,7 +161,7 @@
       document.documentElement.dataset.p21bActive='true';
       document.documentElement.dataset.p21cActive='true';
       document.body.style.overflow='hidden';main.inert=true;
-      saveStatus='loading';storageUsable=true;storageMessage='';
+      saveStatus='loading';storageUsable=true;storageMessage='';restoreBlocked=false;
       lastFeedback='';closeQueued=false;hidePrompts();
       session=new Trace.TraceSession();
       renderer=new Ink.TraceCanvas(surface,stage.group,
@@ -178,8 +178,8 @@
           const savedRecord=await store.load(identity());
           if(!active||g!==generation)return false;
           if(savedRecord&&!progress.restore(savedRecord)){
-            storageUsable=false;saveStatus='error';
-            storageMessage='检测到不兼容的历史记录；请先选择「重新练习整字」清空';
+            storageUsable=false;saveStatus='error';restoreBlocked=true;
+            storageMessage='历史记录格式或来源不匹配；必须先手动「重新练习整字」清除才可继续';
             input.enabled=false;
           }else{
             saveStatus=savedRecord?'restored':'new';
@@ -231,6 +231,11 @@
       if(!discardDraft&&closeWarning()){
         $('practiceLeavePrompt').hidden=false;
         $('practiceClearPrompt').hidden=true;
+        if(!storageUsable&&progress?.accepted.length)
+          $('practiceLeavePrompt').querySelector('p').textContent=
+            '本机保存失败：退出将丢失本次尚未保存的练习进度和草稿，确定离开吗？';
+        else $('practiceLeavePrompt').querySelector('p').textContent=
+          '当前笔有未确认的草稿，离开将舍弃草稿；已本地保存的确认笔画可以恢复。';
         $('practiceLeaveYes').focus();
         return false;
       }
@@ -304,7 +309,7 @@
     function restartAll(){
       if(!active||!ready)return false;
       hidePrompts();
-      input.reset();progress.restart();
+      input.reset();progress.restart();restoreBlocked=false;
       lastFeedback='已清空这一个字的已确认笔迹；请从第一笔重新开始。';
       renderCurrent();
       // Clear only this precise PDF/glyph ID/source-hash record.
@@ -394,7 +399,7 @@
           originalElapsedMs:saved?.elapsedMs??null,
           input:{...s,acceptedStrokes:progress?.currentIndex??0},
           progress:progress?.getState()||null,
-          ready,saveStatus,storageUsable,
+          ready,saveStatus,storageUsable,restoreBlocked,
           liveInkEnabled:true,noHandwritingInput:false,
           noAutomaticScore:true,noPersistentWritingStorage:false,
           localOnlyPersistence:true};
