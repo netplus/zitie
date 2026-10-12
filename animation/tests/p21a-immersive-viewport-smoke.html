@@ -125,6 +125,9 @@ document.getElementById('demo').addEventListener('load',async function(){
       actionsBottom:Math.round(actions.bottom),
       viewportHeight:w.innerHeight,sourceBoardPx:Math.round(originalWidth)});
   }
+  // Verify stage isolation *before* we intentionally call A3.selectGlyph below.
+  check(oldNodes.every(node=>node.isConnected),
+    'Opening practice must not replace the original A3 SVG DOM');
   // Inspect an ordinal-only 17-stroke source, not fabricated stroke names.
   check(p.close()&&modal.hidden&&!main.inert,'Exit must restore original book focus');
   book.selectGlyph(201);
@@ -140,6 +143,9 @@ document.getElementById('demo').addEventListener('load',async function(){
   check(book.getGlyph().main_id===201&&!book.player.playing,
     'Closing overlay failed to restore background source glyph');
   book.selectGlyph(77);
+  book.setPressureStyle(savedStyle);
+  book.setSpeed(1.5);
+  book.player.seekElapsed(savedElapsed);
   sourceBoard.focus();
   sourceBoard.dispatchEvent(new w.KeyboardEvent('keydown',{
     key:'Enter',bubbles:true,cancelable:true}));
@@ -152,9 +158,9 @@ document.getElementById('demo').addEventListener('load',async function(){
     book.player.elapsed===savedElapsed&&
     book.getPressureStyle()===savedStyle&&book.player.speed===1.5,
     'Escape should restore original play time, pressure style, focus and speed');
-  check(oldNodes.every(node=>node.isConnected)&&
-    sourceSvg.querySelectorAll('g').length>=1,
-    'Opening immersive SVG replaced the original A3 source player DOM');
+  check(sourceSvg.querySelectorAll('g').length>=1&&
+    book.player.rows.length===4,
+    'Restored original A3 source player was corrupted');
   check(JSON.stringify(pack.glyphs)===before,
     'Practice preview mutated the PDF-backed canonical 201 glyph pack');
   document.documentElement.dataset.result='PASS';
