@@ -58,7 +58,8 @@
      $('practiceProgress').textContent='已写 '+s.writtenStrokes+' / '+s.strokeCount+' 笔';
      $('practiceStrokeTitle').textContent=s.completed?
        '整字书写完成 · '+s.strokeCount+' 笔':
-       '第 '+(s.currentIndex+1)+' / '+s.strokeCount+' 次落笔';
+       '第 '+(s.currentIndex+1)+' / '+s.strokeCount+
+       ' 次落笔 · 参考：'+frame.label;
      $('practiceStrokeHint').textContent=s.completed?
        '蓝墨是你实际写出的每一笔；下方显示参考笔顺工程检查结果。':
        preview?'正在查看参考笔画；点「返回当前待写笔」即可继续写。':
