@@ -240,7 +240,10 @@
         if(!closeQueued){
           closeQueued=true;
           savingPromise.finally(()=>{
-            if(active){closeQueued=false;reallyClose();}
+            closeQueued=false;
+            // A failed write changes storageUsable. Re-evaluate the
+            // destructive-exit warning instead of silently losing ink.
+            if(active)close({discardDraft});
           });
         }
         return false;
