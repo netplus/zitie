@@ -1,0 +1,32 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P2.1a immersive read-only stroke reference screenshot QA</title>
+<style>
+body{margin:0;background:#ece8e4;color:#33414a;
+font:14px system-ui,"Microsoft YaHei",sans-serif}
+h1{margin:8px 12px 4px;font-size:16px}
+p{margin:0 12px 8px;font-size:12px;color:#65717a}
+iframe{display:block;margin:0 auto;border:1px solid #d9cfd0;background:#fff}
+</style></head><body>
+<h1>P2.1a · PDF 同源临摹准备界面（只读参考）</h1>
+<p>第二笔的淡红轮廓及起收笔提示；真实笔迹输入将在 P2.1b 接入。</p>
+<iframe id="demo" title="正式 PDF 同源逐笔参考"
+ src="../book.html?id=77" style="width:1366px;height:768px"></iframe>
+<script>
+const frame=document.getElementById('demo');
+if(new URLSearchParams(location.search).has('mobile')){
+ frame.style.width='390px';frame.style.height='844px';
+}
+frame.addEventListener('load',function(){
+ const w=this.contentWindow;
+ if(w.document.documentElement.dataset.p21aReady!=='reference-only'){
+  document.documentElement.dataset.result='FAIL';return;
+ }
+ w.ZITIE_A3_BOOK.selectGlyph(77);
+ const practice=w.ZITIE_P21A;
+ if(!practice.open()||!practice.reference(1)){
+  document.documentElement.dataset.result='FAIL';return;
+ }
+ document.documentElement.dataset.result='PASS';
+});
+</script></body></html>

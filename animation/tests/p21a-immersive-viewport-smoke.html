@@ -1,0 +1,187 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>P2.1a true Chromium immersive reference scene verification</title></head>
+<body>
+<h1>Guided practice P2.1a — real PDF source SVG; no ink capture</h1>
+<pre id="result">RUNNING</pre>
+<iframe id="demo" title="Formal 201-glyph PDF book" src="../book.html?id=77"
+ style="border:0;display:block;width:1366px;height:768px"></iframe>
+<script>
+const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const check=(predicate,reason)=>{if(!predicate)throw Error(reason);};
+const rect=el=>el.getBoundingClientRect();
+document.getElementById('demo').addEventListener('load',async function(){
+ const out=document.getElementById('result');
+ try{
+  const w=this.contentWindow,d=w.document,book=w.ZITIE_A3_BOOK;
+  const p=w.ZITIE_P21A,pack=w.ZITIE_BOOK_PACK;
+  check(d.documentElement.dataset.a3Ready==='201'&&
+    d.documentElement.dataset.p21aReady==='reference-only',
+    'A3 and P2.1a did not initialize from the formal PDF-backed book');
+  check(pack.glyphs.length===201&&pack.summary.strokes===1045&&
+    book.player.frontGuard===true,'Immutable original PDF source/front-guard missing');
+  const before=JSON.stringify(pack.glyphs);
+  const modal=d.getElementById('practiceOverlay');
+  const board=d.getElementById('practiceBoard');
+  const svg=d.getElementById('practiceSvg');
+  const sourceBoard=d.querySelector('.writingStage > .paper');
+  const exit=d.getElementById('practiceExit');
+  const next=d.getElementById('practiceNext');
+  const prev=d.getElementById('practicePrev');
+  const launcher=d.getElementById('practiceLaunch');
+  const main=d.querySelector('main.page');
+  check(modal.hidden&&sourceBoard&&launcher&&svg&&next&&prev,
+    'Not initially hidden or missing entry controls');
+  book.selectGlyph(77);
+  book.setPressureStyle('simulated');
+  book.setSpeed(1.5);
+  const second=book.player.timeline.strokes[1];
+  book.player.seekElapsed(second.startMs+second.durationMs*.35);
+  const savedElapsed=book.player.elapsed;
+  const savedGlyph=book.getGlyph().main_id,savedStyle=book.getPressureStyle();
+  const sourceSvg=d.getElementById('paperSvg');
+  const oldNodes=[...sourceSvg.children];
+  const originalWidth=rect(sourceBoard).width;
+  sourceBoard.focus();
+  sourceBoard.click();
+  check(!modal.hidden&&main.inert&&
+    d.activeElement===exit&&w.getComputedStyle(modal).position==='fixed',
+    'Clicking the old writing square must enter an accessible immersive dialog');
+  check(book.player.playing===false&&book.player.elapsed===savedElapsed,
+    'Opening practice must pause A3 without changing the source player clock');
+  check(p.getState().active&&p.getState().glyphId===77&&
+    p.getState().strokeCount===4&&p.getState().referenceIndex===0,
+    'Water practice starts from first reference stroke without counting it as written');
+  const group=svg.querySelector('g[data-practice-source-transform]');
+  check(group?.getAttribute('transform')==='translate(0 900) scale(1 -1)',
+    'PDF reference coordinate transform was changed');
+  const water=pack.glyphs[76];
+  for(let i=0;i<water.strokes.length;i++){
+    const path=svg.querySelector('[data-practice-stroke-index="'+i+'"]');
+    check(path?.getAttribute('d')===water.strokes[i].outline,
+      'Water SVG source differs from formal PDF stroke '+(i+1));
+  }
+  const current=svg.querySelectorAll('[data-reference-current="true"]');
+  check(current.length===1&&current[0].getAttribute('data-practice-stroke-index')==='0',
+    'Exactly one current PDF stroke should be highlighted');
+  check(prev.disabled&&!next.disabled,
+    'First stroke navigation status is wrong');
+  check(!modal.querySelector('canvas')&&!modal.querySelector('input[type=file]')&&
+    p.getState().noHandwritingInput&&p.getState().noAutomaticScore,
+    'P2.1a must not falsely expose writing ink, persistence, or automatic scoring');
+  check(rect(board).width>=originalWidth+130,
+    'Immersive reference square was not appreciably enlarged from A3.9');
+  // The next button previews source order, but creates no user-accepted stroke.
+  next.click();
+  check(p.getState().referenceIndex===1&&
+    d.getElementById('practicePreviewStatus').textContent.includes('未记录练习成绩')&&
+    svg.querySelector('[data-reference-current="true"]')?.getAttribute(
+      'data-practice-stroke-index')==='1',
+    'Reference navigation must not count as a confirmed learner stroke');
+  prev.click();
+  check(p.getState().referenceIndex===0,'Reference previous action failed');
+  // A pointer gesture here must not deposit any blue ink until P2.1b.
+  const beforeMarkup=svg.innerHTML;
+  svg.dispatchEvent(new w.PointerEvent('pointerdown',
+    {pointerId:5,pointerType:'touch',bubbles:true,clientX:210,clientY:280}));
+  svg.dispatchEvent(new w.PointerEvent('pointermove',
+    {pointerId:5,pointerType:'touch',bubbles:true,clientX:300,clientY:310}));
+  svg.dispatchEvent(new w.PointerEvent('pointerup',
+    {pointerId:5,pointerType:'touch',bubbles:true,clientX:360,clientY:340}));
+  check(svg.innerHTML===beforeMarkup,
+    'Read-only reference layer unexpectedly wrote gesture ink');
+  const proofs=[];
+  for(const v of [
+    {name:'desktop1366x768',width:1366,height:768},
+    {name:'padLandscape1180x820',width:1180,height:820},
+    {name:'padPortrait820x1180',width:820,height:1180},
+    {name:'phone390x844',width:390,height:844},
+    {name:'shortPhone390x667',width:390,height:667}
+  ]){
+    this.style.width=v.width+'px';this.style.height=v.height+'px';
+    await wait(150);
+    const square=rect(board),canvas=rect(svg),
+      top=rect(exit),actions=rect(next),modalRect=rect(modal);
+    check(Math.abs(square.width-square.height)<3&&
+      Math.abs(canvas.width-canvas.height)<3,
+      v.name+': source board distorted by responsive CSS');
+    check(square.width<=w.innerWidth+2&&square.width>=220&&
+      square.left>=-2&&square.right<=w.innerWidth+2,
+      v.name+': source board clipped in immersive mode');
+    check(square.width>Math.min(w.innerWidth*.63,450),
+      v.name+': immersion did not prioritize the large square');
+    check(d.documentElement.scrollWidth<=w.innerWidth+2&&
+      modal.scrollWidth<=modal.clientWidth+2,
+      v.name+': horizontal scroll overflow');
+    check(top.top>=0&&top.bottom<=w.innerHeight&&
+      actions.width>=44&&actions.height>=44,
+      v.name+': return or stroke-reference controls unavailable');
+    if(v.height>=768)
+      check(actions.bottom<=w.innerHeight+2,
+        v.name+': operation bar falls below first viewport ('+actions.bottom+')');
+    check(p.getState().glyphId===77&&p.getState().referenceIndex===0,
+      v.name+': resizing changed immutable source or reference stroke');
+    proofs.push({viewport:v.name,boardPx:Math.round(square.width),
+      boardBottom:Math.round(square.bottom),
+      actionsBottom:Math.round(actions.bottom),
+      viewportHeight:w.innerHeight,sourceBoardPx:Math.round(originalWidth)});
+  }
+  // Verify stage isolation *before* we intentionally call A3.selectGlyph below.
+  check(oldNodes.every(node=>node.isConnected),
+    'Opening practice must not replace the original A3 SVG DOM');
+  // Test two INDEPENDENT publication policies. 龠 has reviewed fine
+  // stroke names but its PRONUNCIATION is blocked; #55 has restricted names.
+  check(p.close()&&modal.hidden&&!main.inert,'Exit must restore original book focus');
+  book.selectGlyph(201);
+  launcher.click();
+  check(p.getState().glyphId===201&&p.getState().strokeCount===17&&
+    svg.querySelectorAll('[data-practice-stroke-index]').length===17,
+    'The full 17-stroke source reference for 龠 was truncated');
+  check(d.getElementById('practiceStrokeTitle').textContent.includes('撇')&&
+    !pack.glyphs[200].pinyin,
+    '龠 has reviewed fine stroke names but source-blocked pronunciation');
+  // Replacing background selection cannot destroy the saved original state.
+  book.selectGlyph(1);
+  exit.click();
+  check(book.getGlyph().main_id===201&&!book.player.playing,
+    'Closing overlay failed to restore background source glyph');
+  book.selectGlyph(55);
+  check(pack.glyphs[54].strokes.every(s=>s.name_status==='ordinal_only'),
+    'Test fixture #55 must be a genuinely restricted-name glyph');
+  launcher.click();
+  check(p.getState().glyphId===55&&
+    d.getElementById('practiceStrokeTitle').textContent.includes('第1笔')&&
+    svg.querySelectorAll('[data-practice-stroke-index]').length===pack.glyphs[54].strokes.length,
+    'Restricted fine stroke names must not leak through the practice preview');
+  exit.click();
+  book.selectGlyph(77);
+  book.setPressureStyle(savedStyle);
+  book.setSpeed(1.5);
+  book.player.seekElapsed(savedElapsed);
+  sourceBoard.focus();
+  sourceBoard.dispatchEvent(new w.KeyboardEvent('keydown',{
+    key:'Enter',bubbles:true,cancelable:true}));
+  check(p.getState().active&&d.activeElement===exit,
+    'Keyboard user cannot enter practice from the focused SVG paper');
+  exit.dispatchEvent(new w.KeyboardEvent('keydown',{
+    key:'Escape',bubbles:true,cancelable:true}));
+  check(!p.getState().active&&modal.hidden&&
+    d.activeElement===sourceBoard&&
+    book.player.elapsed===savedElapsed&&
+    book.getPressureStyle()===savedStyle&&book.player.speed===1.5,
+    'Escape should restore original play time, pressure style, focus and speed');
+  check(sourceSvg.querySelectorAll('g').length>=1&&
+    book.player.rows.length===4,
+    'Restored original A3 source player was corrupted');
+  check(JSON.stringify(pack.glyphs)===before,
+    'Practice preview mutated the PDF-backed canonical 201 glyph pack');
+  document.documentElement.dataset.result='PASS';
+  out.textContent=JSON.stringify({result:'PASS',characters:201,sourceStrokes:1045,
+    noInkCapture:true,sourceImmutable:true,
+    originalAnimationPreserved:true,sourceCoordinateTransform:true,
+    focusReturn:true,padAndPhoneReady:true,proofs},null,2);
+ }catch(err){
+  document.documentElement.dataset.result='FAIL';
+  out.textContent='FAIL: '+(err.stack||err);
+ }
+});
+</script></body></html>

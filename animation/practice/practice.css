@@ -1,0 +1,127 @@
+/* P2.1a read-only guided-reference overlay. Scoped: never resize A3 player. */
+.practiceOverlay{
+  position:fixed;inset:0;z-index:1000;
+  overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;
+  height:100vh;height:100dvh;
+  background:linear-gradient(150deg,#f4f0eb 0%,#f8f7f4 55%,#eee8e6 100%);
+  color:#29353d;
+  padding:max(12px,env(safe-area-inset-top))
+          max(12px,env(safe-area-inset-right))
+          max(14px,env(safe-area-inset-bottom))
+          max(12px,env(safe-area-inset-left));
+}
+.practiceOverlay[hidden]{display:none!important}
+.practiceOverlay *{box-sizing:border-box}
+.practiceShell{max-width:1500px;min-height:100%;margin:auto;
+  display:grid;grid-template-rows:auto minmax(0,1fr);gap:12px}
+.practiceHeader{
+  display:grid;grid-template-columns:auto minmax(0,1fr) auto;
+  align-items:center;gap:16px;padding:8px 4px 12px;
+  border-bottom:1px solid #ddd3d0;
+}
+.practiceHeader button,.practiceActions button{
+  font:600 14px/1.35 system-ui,"PingFang SC","Microsoft YaHei",sans-serif;
+  border:1px solid #c9c4c2;border-radius:11px;
+  background:#fff;color:#34424a;
+  min-height:44px;min-width:44px;padding:9px 13px;
+  cursor:pointer;
+}
+.practiceHeader button:hover,.practiceActions button:hover:not(:disabled){
+  background:#fff2f3;border-color:#b47c87}
+.practiceHeader button:focus-visible,.practiceActions button:focus-visible{
+  outline:3px solid #b44556;outline-offset:3px}
+.practiceHeader button:disabled,.practiceActions button:disabled{
+  opacity:.43;cursor:not-allowed}
+.practiceHeadings{min-width:0}
+#practiceTitle{font:700 clamp(19px,2.3vw,27px)/1.3 system-ui,
+  "PingFang SC","Microsoft YaHei",sans-serif}
+#practiceIntro{margin:2px 0 0;font-size:12px;color:#64717a;line-height:1.45}
+#practiceProgress{font-size:13px;font-variant-numeric:tabular-nums;
+  font-weight:650;color:#965061;white-space:nowrap}
+.practiceWorkspace{
+  min-width:0;width:100%;display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(240px,290px);
+  gap:clamp(12px,2.2vw,26px);align-items:center;
+  justify-items:center;
+}
+.practicePaperCard{
+  width:100%;min-width:0;display:grid;justify-items:center;
+  align-content:center;gap:8px;
+}
+.practiceBoard{
+  display:grid;place-items:center;
+  width:min(100%,calc(100dvh - 155px),820px);
+  aspect-ratio:1;border:1px solid #dcced0;
+  border-radius:17px;overflow:hidden;background:white;
+  box-shadow:0 14px 45px #46384112,0 1px 3px #44333312;
+}
+#practiceSvg{display:block;width:100%;height:100%;aspect-ratio:1}
+.practiceBoardCaption{
+  margin:0;text-align:center;font-size:12px;
+  line-height:1.55;color:#69737a;max-width:640px;
+}
+.practiceTools{
+  width:100%;align-self:center;justify-self:stretch;
+  background:#fff;border:1px solid #e2d8d6;border-radius:17px;
+  box-shadow:0 8px 28px #4433330b;padding:22px;
+}
+.practiceEyebrow{
+  margin:0 0 9px;font-size:12px;line-height:1.4;
+  color:#9e5566;font-weight:700;
+}
+#practiceGlyphMeta{margin:0;color:#5d676f;font-size:14px;line-height:1.6}
+#practiceStrokeTitle{display:block;font-size:clamp(21px,2.2vw,28px);
+  margin:12px 0 10px;line-height:1.35;color:#2d3b44}
+#practiceStrokeHint{font-size:13px;color:#4e5d66;line-height:1.65;margin:0 0 14px}
+.practiceActions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.practiceActions button{min-width:0;padding:10px 6px;font-size:13px}
+.practiceNotice{
+  margin:15px 0 0;padding-top:12px;border-top:1px solid #eee7e5;
+  font-size:12px;color:#66737c;line-height:1.7;
+}
+#practicePreviewStatus{font-size:12px;color:#a13f55;font-weight:650;margin:12px 0 0}
+@media(max-width:900px), (orientation:portrait) and (max-width:1100px){
+  .practiceShell{gap:7px;grid-template-rows:auto 1fr}
+  .practiceWorkspace{
+    grid-template-columns:1fr;grid-template-rows:auto auto;
+    align-content:start;gap:12px;
+  }
+  .practiceBoard{width:min(100%,calc(100dvh - 330px),720px)}
+  .practiceTools{width:min(100%,720px);padding:14px 16px}
+  .practiceEyebrow{margin:0 0 5px}
+  #practiceStrokeTitle{font-size:20px;margin:5px 0}
+  #practiceStrokeHint{margin:3px 0 10px}
+  .practiceNotice{margin-top:8px;padding-top:8px}
+  #practicePreviewStatus{margin:7px 0 0}
+}
+@media(max-width:600px){
+  .practiceOverlay{padding:max(7px,env(safe-area-inset-top))
+    max(9px,env(safe-area-inset-right))
+    max(9px,env(safe-area-inset-bottom))
+    max(9px,env(safe-area-inset-left))}
+  .practiceHeader{gap:8px;grid-template-columns:auto minmax(0,1fr);
+    padding:5px 0 7px}
+  .practiceHeader button{padding:7px;font-size:12px;min-height:42px}
+  #practiceTitle{font-size:18px}
+  #practiceIntro{font-size:11px}
+  #practiceProgress{grid-column:2;grid-row:2;font-size:11px}
+  .practiceWorkspace{gap:7px}
+  .practiceBoard{width:min(100%,calc(100dvh - 275px),560px);
+    border-radius:12px}
+  .practiceBoardCaption{font-size:10px;line-height:1.4}
+  .practiceTools{padding:10px 12px;border-radius:12px}
+  #practiceGlyphMeta{font-size:12px}
+  #practiceStrokeTitle{font-size:18px}
+  #practiceStrokeHint{font-size:11px;line-height:1.45;margin:2px 0 7px}
+  .practiceActions button{min-height:44px;padding:7px 5px;font-size:12px}
+  .practiceNotice{font-size:11px;line-height:1.45;margin-top:5px;padding-top:6px}
+  #practicePreviewStatus{font-size:11px;margin-top:4px}
+}
+@media(max-height:570px) and (orientation:landscape){
+  .practiceBoard{width:min(100%,calc(100dvh - 105px),610px)}
+  .practiceHeader{padding:0 3px 5px}
+  .practiceTools{padding:11px}
+}
+@media(prefers-reduced-motion:reduce){
+  .practiceOverlay *{scroll-behavior:auto}
+}
