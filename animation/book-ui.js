@@ -253,6 +253,9 @@ window.addEventListener('DOMContentLoaded', function(){
     state.query=e.target.value;applyFilter();
   });
   document.addEventListener('keydown',e=>{
+    // P2.1a is an independent, modal *reference* stage. Never let
+    // the background player consume its keyboard shortcuts.
+    if(document.getElementById('practiceOverlay')?.hidden===false)return;
     if(e.altKey||e.metaKey||e.ctrlKey||e.target.closest?.(
       'input,button,select,textarea,[contenteditable]'))return;
     if(e.code==='Space'){e.preventDefault();player.playing?player.pause():player.play();}
