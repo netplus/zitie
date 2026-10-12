@@ -1,0 +1,187 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>P2.1c guided handwriting and IndexedDB restore — real Chrome</title></head><body>
+<h1>P2.1c · 逐笔确认／撤销／本地存储</h1><pre id="result">RUNNING</pre>
+<iframe id="demo" title="201-PDF-glyph handwriting practice" src="../book.html?id=77"
+ style="width:1366px;height:820px;border:0;display:block"></iframe>
+<script>
+const check=(ok,why)=>{if(!ok)throw Error(why)};
+const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const demo=document.getElementById('demo'),out=document.getElementById('result');
+demo.addEventListener('load',async function start(){
+ demo.removeEventListener('load',start);
+ try{
+  const w=this.contentWindow,d=w.document,p=w.ZITIE_P21C,b=w.ZITIE_A3_BOOK;
+  check(p&&b&&d.documentElement.dataset.p21cReady==='guided-local-v1',
+    'Guided controller did not initialize');
+  const canonical=JSON.stringify(b.pack.glyphs),formal=b.pack.publication.sha256;
+  const status=()=>p.getState();
+  const canvas=d.getElementById('practiceInk'),svg=d.getElementById('practiceSvg');
+  check(p.open(),'Unable to enter guided practice');
+  await p.whenReady();
+  check(status().progress.currentIndex===0&&
+    !status().progress.completed&&status().localOnlyPersistence&&
+    d.getElementById('practiceAccept').disabled,
+    'Must start in practice-ready state with no automatic stroke approval');
+  const source=b.getGlyph(),hash=source.source_sha256;
+  const group=()=>svg.querySelector('g[data-practice-source-transform]');
+  function inputStroke(index,ptype='pen'){
+    const median=source.strokes[index].median;
+    const coords=[median[0],median[Math.floor(median.length/2)],median.at(-1)];
+    let pointerId=21+index;
+    function send(type,point){
+      const xy=new w.DOMPoint(point[0],point[1])
+        .matrixTransform(group().getScreenCTM());
+      canvas.dispatchEvent(new w.PointerEvent(type,{
+        pointerId,pointerType:ptype,bubbles:true,cancelable:true,
+        isPrimary:true,button:0,clientX:xy.x,clientY:xy.y,
+        pressure:ptype==='pen'?.73:.5,tiltX:7,tiltY:-4
+      }));
+    }
+    send('pointerdown',coords[0]);
+    send('pointermove',coords[1]);
+    send('pointerup',coords[2]);
+  }
+  function isBlueAt(sourcePoint){
+    const pos=new w.DOMPoint(...sourcePoint).matrixTransform(group().getScreenCTM());
+    const r=canvas.getBoundingClientRect();
+    const px=Math.max(0,Math.min(canvas.width-1,
+      Math.round((pos.x-r.left)*canvas.width/r.width)));
+    const py=Math.max(0,Math.min(canvas.height-1,
+      Math.round((pos.y-r.top)*canvas.height/r.height)));
+    const rgb=canvas.getContext('2d').getImageData(px,py,1,1).data;
+    return rgb[2]>rgb[0]+65&&rgb[2]>rgb[1]+32&&rgb[3]>80;
+  }
+  inputStroke(0);
+  await wait(55);
+  check(status().progress.currentIndex===0&&
+    !d.getElementById('practiceAccept').disabled&&p.getTrace().length>=2,
+    'Touch lift must not advance before human confirmation');
+  check(p.accept(),'Manual confirmation of first touch draft failed');
+  await p.whenSaved();
+  check(status().progress.currentIndex===1&&
+    status().input.acceptedStrokes===1&&
+    status().saveStatus==='saved'&&
+    p.getInkMetrics().confirmedStrokes===1&&
+    isBlueAt(source.strokes[0].median[0]),
+    'First actual stroke lost after acceptance/local storage');
+  const firstPoints=JSON.stringify(p.getAccepted()[0].samples);
+  // Browsing a future source stroke must not allow writing or bypass order.
+  check(p.reference(3),'Cannot preview a future stroke');
+  inputStroke(3);
+  check(p.getTrace().length===0&&status().progress.currentIndex===1,
+    'Future-stroke preview must be read-only and cannot change ordinal');
+  check(p.returnToCurrent()&&status().referenceIndex===1,
+    'Cannot return to the next required stroke');
+  inputStroke(1,'touch');
+  check(p.accept(),'Second user-confirmed stroke failed');
+  await p.whenSaved();
+  check(status().progress.currentIndex===2&&
+    p.getInkMetrics().confirmedStrokes===2&&
+    p.getAccepted()[1].samples[0].pressure===null,
+    'Second accepted real touch stroke is missing');
+  const layout=[];
+  for(const v of [{name:'padPortrait820x1180',w:820,h:1180},
+      {name:'padLandscape1180x820',w:1180,h:820},
+      {name:'phone390x844',w:390,h:844},
+      {name:'shortPhone390x667',w:390,h:667}]){
+    demo.style.width=v.w+'px';demo.style.height=v.h+'px';
+    await wait(170);
+    w.dispatchEvent(new w.Event('resize'));await wait(70);
+    const ink=p.getInkMetrics(),bounds=canvas.getBoundingClientRect();
+    check(ink.confirmedStrokes===2&&ink.confirmedSamples>=4&&
+      isBlueAt(source.strokes[0].median[0]),
+      v.name+': confirmed handwriting vanished/shifted on resize');
+    check(d.documentElement.scrollWidth<=w.innerWidth+2,
+      v.name+': practice viewport forces horizontal scroll');
+    layout.push({viewport:v.name,boardPx:Math.round(bounds.width),
+      confirmedStrokes:ink.confirmedStrokes,blueVisible:true});
+  }
+  // Draft not confirmed is NOT durable and must prompt before exit.
+  inputStroke(2);
+  check(p.getTrace().length>=2,'Expected unconfirmed third-stroke draft');
+  d.getElementById('practiceExit').click();
+  check(!d.getElementById('practiceLeavePrompt').hidden&&status().active,
+    'Exiting with an unconfirmed draft must request a choice');
+  d.getElementById('practiceLeaveNo').click();
+  check(status().active&&p.getTrace().length>=2,
+    'Continue practice should preserve the current draft');
+  d.getElementById('practiceExit').click();
+  d.getElementById('practiceLeaveYes').click();
+  await wait(40);
+  check(!status().active&&!p.getTrace().length,
+    'Explicit exit must clear only the unconfirmed draft');
+  check(p.open(),'Could not reopen same source');
+  await p.whenReady();
+  check(status().progress.currentIndex===2&&
+    p.getInkMetrics().confirmedStrokes===2&&
+    JSON.stringify(p.getAccepted()[0].samples)===firstPoints,
+    'Browser IndexedDB must restore exactly two accepted genuine strokes');
+  inputStroke(2);check(p.accept(),'Third stroke confirmation failed');
+  await p.whenSaved();
+  inputStroke(3);check(p.accept(),'Fourth stroke confirmation failed');
+  await p.whenSaved();
+  check(status().progress.completed&&status().progress.currentIndex===4&&
+    p.getInkMetrics().confirmedStrokes===4&&
+    !d.getElementById('practiceCompletion').hidden&&
+    !d.getElementById('practiceUndo').disabled&&
+    d.getElementById('practiceAccept').disabled,
+    'Water four-stroke completion and user-ink compare failed');
+  const completeRecord=p.getAccepted().map(x=>x.samples.length);
+  p.close();
+  check(!status().active,'Completed whole-character session could not exit');
+  // Force a full page reload, and read IndexedDB from a NEW JS context.
+  const loaded=new Promise(resolve=>demo.addEventListener('load',resolve,{once:true}));
+  demo.src='../book.html?id=77&reload=p21c';
+  await loaded;
+  const w2=demo.contentWindow,b2=w2.ZITIE_A3_BOOK,p2=w2.ZITIE_P21C;
+  check(p2.open(),'New document failed to open saved source');
+  await p2.whenReady();
+  check(p2.getState().progress.completed&&
+    p2.getState().progress.acceptedStrokes===4&&
+    JSON.stringify(p2.getAccepted().map(x=>x.samples.length))===
+      JSON.stringify(completeRecord)&&
+    p2.getInkMetrics().confirmedStrokes===4,
+    'Hard reload must restore the complete four-stroke source-locked result');
+  check(p2.undo(),'Undo after full completion failed');
+  await p2.whenSaved();
+  check(!p2.getState().progress.completed&&
+    p2.getState().progress.currentIndex===3&&
+    p2.getInkMetrics().confirmedStrokes===3,
+    'Undo must remove only last accepted stroke and return to its ordinal');
+  const d2=w2.document;
+  d2.getElementById('practiceRestart').click();
+  check(!d2.getElementById('practiceClearPrompt').hidden,
+    'Whole-character deletion requires confirmation');
+  d2.getElementById('practiceClearNo').click();
+  check(p2.getState().progress.currentIndex===3,
+    'Cancel restart must not destroy accepted ink');
+  d2.getElementById('practiceRestart').click();
+  d2.getElementById('practiceClearYes').click();
+  await p2.whenSaved();
+  check(p2.getState().progress.currentIndex===0&&
+    p2.getInkMetrics().confirmedStrokes===0&&
+    p2.getState().saveStatus==='cleared',
+    'Confirmed restart must empty actual ink and delete local record');
+  p2.close();
+  check(p2.open(),'Restart verification reopen failed');
+  await p2.whenReady();
+  check(p2.getState().progress.currentIndex===0&&
+    p2.getState().saveStatus==='new',
+    'Deleted browser record reappeared unexpectedly');
+  check(JSON.stringify(b2.pack.glyphs)===canonical&&
+    b2.pack.publication.sha256===formal&&
+    b2.getGlyph().source_sha256===hash,
+    'Official 299-page PDF/201 glyphs/1045 strokes were modified');
+  p2.close();
+  document.documentElement.dataset.result='PASS';
+  out.textContent=JSON.stringify({result:'PASS',characters:201,strokes:1045,
+    confirmedOnly:true,reloadRecovered:true,wholeCharacter:true,
+    undoReversesOneStroke:true,deleteRequiresConfirmation:true,
+    sourceHashLocked:true,draftNeverPersisted:true,automaticGrade:false,
+    localOnly:true,layout},null,2);
+ }catch(error){
+  document.documentElement.dataset.result='FAIL';
+  out.textContent='FAIL: '+(error.stack||error);
+ }
+});
+</script></body></html>
