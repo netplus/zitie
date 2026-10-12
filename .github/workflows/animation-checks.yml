@@ -898,7 +898,7 @@ jobs:
           m=re.search(r'<pre id="result">(\{.*?\})</pre>',p.read_text(encoding='utf-8'),re.S)
           if not m:raise SystemExit('Missing P2.2a whole-character browser evidence')
           x=json.loads(html.unescape(m.group(1)))
-          assert x['result']=='PASS' and x['characters']==201 and x['strokes']==1045
+          assert x['result']=='PASS' and x['characters']==201 and x['sourceStrokes']==1045
           for k in ('continuousNoConfirmation','genuineStrokeAutoCapture',
                     'restoredFullWord','undoClearsVerdict','cancelSafe',
                     'noRemoteStorage','exactSourcePreserved'):
