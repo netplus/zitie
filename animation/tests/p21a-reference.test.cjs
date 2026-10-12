@@ -75,5 +75,10 @@ test('P2.1a modal has exactly one accessible trigger and independent source stag
  assert.match(css,/\.practiceOverlay\[hidden\]\{display:none!important\}/);
  assert.match(css,/height:100vh;height:100dvh/);
  assert.doesNotMatch(bridge,/pointerdown|pointermove|getCoalescedEvents|indexedDB|fetch\(/i);
- assert.doesNotMatch(html,/<canvas[^>]*id="practice/i);
+ assert.match(html,/<canvas id="practiceInk"/);
+ assert.match(html,/src="\.\/practice\/trace-session\.js"/);
+ assert.match(html,/src="\.\/practice\/trace-canvas\.js"/);
+ assert.match(html,/src="\.\/practice\/pointer-input\.js"/);
+ assert.match(bridge,/noAutomaticScore:true,noPersistentWritingStorage:true/);
+ assert.doesNotMatch(bridge,/indexedDB|localStorage|fetch\(/i);
 });

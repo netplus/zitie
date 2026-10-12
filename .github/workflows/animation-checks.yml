@@ -1119,6 +1119,59 @@ jobs:
             'http://127.0.0.1:18784/animation/tests/p21a-immersive-preview.html?mobile=1' >/dev/null
           test -s build/a1/p21a-immersive-pad-landscape.png
           test -s build/a1/p21a-immersive-mobile.png
+      - name: Audit P2.1b real pointer ink, DPR, input cancel and native CDP touch
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check animation/practice/trace-session.js
+          node --check animation/practice/pointer-input.js
+          node --check animation/practice/trace-canvas.js
+          node --check animation/practice/practice-bridge.js
+          node --test animation/tests/p21b-trace.test.cjs
+          test -s animation/book-pack.js
+          mkdir -p build/a1
+          python3 -m http.server 18786 --bind 127.0.0.1 > build/a1/p21b-http.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 50); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18786/animation/book.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          timeout 160 "$CHROME_BIN" --headless=new --no-sandbox \
+            --disable-dev-shm-usage --disable-gpu --disable-background-timer-throttling \
+            --window-size=1550,1270 --virtual-time-budget=50000 --dump-dom \
+            'http://127.0.0.1:18786/animation/tests/p21b-ink-viewport-smoke.html' \
+            > build/a1/p21b-ink-browser-dom.html
+          if ! grep -q 'data-result="PASS"' build/a1/p21b-ink-browser-dom.html; then
+            echo 'FAIL: P2.1b transient trace DPR / SVG coordinate browser QA' >&2
+            grep -o 'FAIL:[^<]*' build/a1/p21b-ink-browser-dom.html | head -n 8 >&2 || true
+            exit 1
+          fi
+          python3 - <<'PY'
+          import html,json,re
+          from pathlib import Path
+          data=Path('build/a1/p21b-ink-browser-dom.html').read_text(encoding='utf-8')
+          m=re.search(r'<pre id="result">(\{.*?\})</pre>',data,re.S)
+          if not m:raise SystemExit('P2.1b ink browser metrics missing')
+          x=json.loads(html.unescape(m.group(1)))
+          assert x['result']=='PASS' and x['characters']==201
+          assert x['sourceStrokes']==1045
+          assert x['rawOnly'] and x['sourceUnchanged'] and x['buttonClear']
+          assert x['noAutoGrade'] and x['cancellationSafe']
+          assert x['noPersistentStorage'] and x['canvasPixelProof']
+          assert len(x['layoutProof'])==5
+          for v in x['layoutProof']:
+              assert v['actualBlueOnInput'] and v['acceptedStrokes']==0,v
+              print('P2.1b source ink QA:',v)
+          Path('build/a1/p21b-ink-viewport-metrics.json').write_text(
+              json.dumps(x,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          PY
+          P21B_TARGET='http://127.0.0.1:18786/animation/book.html?id=77' \
+            timeout 170 node animation/tests/p21b-cdp-touch.mjs
+          test -s build/a1/p21b-real-cdp-touch.json
+          test -s build/a1/p21b-real-cdp-touch-mobile.png
       - uses: actions/upload-artifact@v4
         if: always()
         with:

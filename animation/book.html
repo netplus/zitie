@@ -147,6 +147,9 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
 <script defer src="./pressure-style.js"></script>
 <script defer src="./book-ui.js"></script>
 <script defer src="./practice/reference-stage.js"></script>
+<script defer src="./practice/trace-session.js"></script>
+<script defer src="./practice/trace-canvas.js"></script>
+<script defer src="./practice/pointer-input.js"></script>
 <script defer src="./practice/practice-bridge.js"></script>
 </head>
 <body>
@@ -266,7 +269,7 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
       <button type="button" id="practiceExit">← 返回笔顺教学</button>
       <div class="practiceHeadings">
         <strong id="practiceTitle">逐笔临摹 · 参考预览</strong>
-        <p id="practiceIntro">P2.1a 临摹准备界面 · 真实触屏书写将在下一阶段接入</p>
+        <p id="practiceIntro">P2.1b 实时手写试验 · 蓝墨记录实际触点，逐笔确认将在下一阶段接入</p>
       </div>
       <div id="practiceProgress" aria-live="polite">笔顺参考 1 / 1</div>
     </header>
@@ -275,22 +278,24 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
         <div class="practiceBoard" id="practiceBoard">
           <svg id="practiceSvg" role="img" viewBox="0 0 1024 1024"
                aria-label="与正式字帖同源的逐笔参考轮廓"></svg>
+          <canvas id="practiceInk" aria-label="用手指、手写笔或鼠标沿当前笔画练习，蓝色为本人实际笔迹"></canvas>
         </div>
         <p class="practiceBoardCaption">笔画轮廓与正式 PDF 同源 · 起收笔参考来自未经教学审定的工程中线</p>
       </section>
       <aside class="practiceTools" aria-label="当前笔画参考和操作">
-        <p class="practiceEyebrow">逐笔引导 · 笔画参考预览</p>
+        <p class="practiceEyebrow">逐笔临摹 · 实时蓝墨笔迹</p>
         <p id="practiceGlyphMeta"></p>
         <strong id="practiceStrokeTitle">第 1 笔</strong>
         <p id="practiceStrokeHint">当前笔画淡红高亮，圆点标注参考起收笔。</p>
         <div class="practiceActions">
           <button type="button" id="practicePrev" disabled>← 上一笔参考</button>
           <button type="button" id="practiceNext">下一笔参考 →</button>
+          <button type="button" id="practiceReset" disabled>↺ 重写本笔</button>
         </div>
         <p id="practicePreviewStatus" role="status" aria-live="polite">
           仅预览笔顺参考，未记录练习成绩
         </p>
-        <p class="practiceNotice">本页尚不能接收手写输入，不会自动计为完成。下一阶段将加入手指、触控笔的实时蓝色笔迹与逐笔确认。</p>
+        <p class="practiceNotice">蓝墨只来自你的实际触点，暂存内存、不上传；退出或切换参考笔画会清除本次草稿。当前仍不自动判断笔顺正确性或推进学习进度；逐笔确认、本地保存将在 P2.1c 加入。</p>
       </aside>
     </div>
   </div>

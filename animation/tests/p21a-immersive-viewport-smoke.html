@@ -65,9 +65,10 @@ document.getElementById('demo').addEventListener('load',async function(){
     'Exactly one current PDF stroke should be highlighted');
   check(prev.disabled&&!next.disabled,
     'First stroke navigation status is wrong');
-  check(!modal.querySelector('canvas')&&!modal.querySelector('input[type=file]')&&
-    p.getState().noHandwritingInput&&p.getState().noAutomaticScore,
-    'P2.1a must not falsely expose writing ink, persistence, or automatic scoring');
+  check(modal.querySelector('#practiceInk')&&
+    p.getState().liveInkEnabled&&p.getState().noAutomaticScore&&
+    p.getState().noPersistentWritingStorage,
+    'P2.1b must provide temporary live ink without a grader or remote storage');
   check(rect(board).width>=originalWidth+130,
     'Immersive reference square was not appreciably enlarged from A3.9');
   // The next button previews source order, but creates no user-accepted stroke.
