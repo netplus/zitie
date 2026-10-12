@@ -270,8 +270,12 @@ try{
  const swappedMapping=[1,0,2,3];
  for(const expected of swappedMapping){
    const tracePath=await onPage(()=>{
+     // A CDP evaluation has a new global scope: use browser state, not
+     // lexical variables from the Node-side test runner.
+     const step=window.ZITIE_P22A.getState().progress.currentIndex;
+     const referenceIndex=[1,0,2,3][step];
      const g=document.querySelector('[data-practice-source-transform]');
-     const s=ZITIE_A3_BOOK.getGlyph().strokes[expected];
+     const s=ZITIE_A3_BOOK.getGlyph().strokes[referenceIndex];
      return s.median.map(([x,y])=>{
        const pt=new DOMPoint(x,y).matrixTransform(g.getScreenCTM());
        return {x:pt.x,y:pt.y,id:1};
