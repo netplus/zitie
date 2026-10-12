@@ -10,14 +10,17 @@
   'use strict';
   const finite=n=>typeof n==='number'&&Number.isFinite(n);
   class TraceCanvas{
-    constructor(canvas,referenceGroup,getSamples){
+    constructor(canvas,referenceGroup,getSamples,getConfirmed=()=>[]){
       if(!canvas||typeof canvas.getContext!=='function'||
          !referenceGroup||typeof referenceGroup.getScreenCTM!=='function'||
-         typeof getSamples!=='function')
+         typeof getSamples!=='function'||typeof getConfirmed!=='function')
         throw Error('Canvas, SVG source group and actual trace samples required');
       this.canvas=canvas;
       this.group=referenceGroup;
       this.getSamples=getSamples;
+      this.getConfirmed=getConfirmed;
+      this.confirmedSignature='';
+      this.confirmedPainted=0;
       this.ctx=canvas.getContext('2d',{alpha:true});
       if(!this.ctx)throw Error('2D ink context unavailable');
       this.lastPainted=0;
@@ -56,6 +59,8 @@
       this.ctx.setTransform(1,0,0,1,0,0);
       this.ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
       this.lastPainted=0;
+      this.confirmedSignature='';
+      this.confirmedPainted=0;
     }
     paint(force=false){
       const rect=this.canvas.getBoundingClientRect();
@@ -64,12 +69,17 @@
       const sx=this.canvas.width/rect.width,sy=this.canvas.height/rect.height;
       const ctx=this.ctx;
       const points=this.getSamples();
-      if(force||points.length<this.lastPainted){
+      const confirmed=this.getConfirmed();
+      const signature=confirmed.map(s=>s.index+':'+s.samples.length+
+        ':'+s.samples.at(-1).x+','+s.samples.at(-1).y).join('|');
+      if(force||points.length<this.lastPainted||
+         signature!==this.confirmedSignature){
         ctx.setTransform(1,0,0,1,0,0);
         ctx.clearRect(0,0,this.canvas.width,this.canvas.height);
         this.lastPainted=0;
       }
-      if(points.length===this.lastPainted)return true;
+      if(points.length===this.lastPainted&&
+         signature===this.confirmedSignature)return true;
       // The screen CTM includes SVG viewBox, source transform, CSS layout,
       // page translation and rotation. Compose device px relative to canvas.
       ctx.setTransform(m.a*sx,m.b*sy,m.c*sx,m.d*sy,
@@ -80,6 +90,26 @@
       ctx.lineWidth=7.5/logicalScale; // fixed visual 7.5 CSS pixels
       ctx.lineCap='round';ctx.lineJoin='round';
       ctx.strokeStyle='#1964ae';ctx.fillStyle='#1964ae';
+      if(force||signature!==this.confirmedSignature){
+        this.confirmedPainted=0;
+        for(const stroke of confirmed){
+          const sequence=stroke.samples;
+          if(!sequence?.length)continue;
+          // Independent paths: never connect pen lifts or replace a
+          // learner's true points with the canonical source outline.
+          ctx.beginPath();
+          ctx.moveTo(sequence[0].x,sequence[0].y);
+          for(let i=1;i<sequence.length;i++)
+            ctx.lineTo(sequence[i].x,sequence[i].y);
+          ctx.stroke();
+          ctx.beginPath();
+          ctx.arc(sequence[0].x,sequence[0].y,ctx.lineWidth/2,
+            0,Math.PI*2);
+          ctx.fill();
+          this.confirmedPainted+=sequence.length;
+        }
+        this.confirmedSignature=signature;
+      }
       if(this.lastPainted===0&&points.length){
         const p=points[0];
         ctx.beginPath();ctx.arc(p.x,p.y,ctx.lineWidth/2,0,Math.PI*2);ctx.fill();
@@ -100,6 +130,8 @@
     }
     getMetrics(){
       return {paintedSamples:this.lastPainted,
+        confirmedSamples:this.confirmedPainted,
+        confirmedStrokes:this.getConfirmed().length,
         backingWidth:this.canvas.width,backingHeight:this.canvas.height,
         redraws:this.redrawCount,logicalCssUnit:this.scale};
     }
