@@ -1,4 +1,4 @@
-/* P2.1a read-only guided-reference overlay. Scoped: never resize A3 player. */
+/* P2.1b isolated drawing overlay. Never resize or modify original A3 player. */
 .practiceOverlay{
   position:fixed;inset:0;z-index:1000;
   overflow-x:hidden;overflow-y:auto;overscroll-behavior:contain;
@@ -49,13 +49,16 @@
   align-content:center;gap:8px;
 }
 .practiceBoard{
-  display:grid;place-items:center;
+  position:relative;display:grid;place-items:center;
   width:min(100%,calc(100dvh - 155px),820px);
   aspect-ratio:1;border:1px solid #dcced0;
   border-radius:17px;overflow:hidden;background:white;
   box-shadow:0 14px 45px #46384112,0 1px 3px #44333312;
 }
 #practiceSvg{display:block;width:100%;height:100%;aspect-ratio:1}
+#practiceInk{position:absolute;inset:0;width:100%;height:100%;
+  display:block;touch-action:none;cursor:crosshair;
+  -webkit-user-select:none;user-select:none;overscroll-behavior:contain}
 .practiceBoardCaption{
   margin:0;text-align:center;font-size:12px;
   line-height:1.55;color:#69737a;max-width:640px;
@@ -74,6 +77,9 @@
   margin:12px 0 10px;line-height:1.35;color:#2d3b44}
 #practiceStrokeHint{font-size:13px;color:#4e5d66;line-height:1.65;margin:0 0 14px}
 .practiceActions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.practiceActions #practiceReset{grid-column:1/-1;
+  border-color:#aac0d6;color:#235c92;background:#f5faff}
+.practiceActions #practiceReset:disabled{background:#f5f7f8}
 .practiceActions button{min-width:0;padding:10px 6px;font-size:13px}
 .practiceNotice{
   margin:15px 0 0;padding-top:12px;border-top:1px solid #eee7e5;
