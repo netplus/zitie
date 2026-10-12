@@ -127,7 +127,13 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
 .paper[role="button"]{cursor:pointer}
 .paper[role="button"]:focus-visible{outline:3px solid #a83d52;outline-offset:4px}
 .pager #practiceLaunch{background:#fff0f2;border-color:#c8a1a9;color:#932c44;font-weight:700}
-@media(max-width:510px){.pager #practiceLaunch{font-size:11px;padding:4px 5px}}
+@media(max-width:510px){
+  .pager #practiceLaunch{font-size:15px;min-width:30px;padding:4px 6px}
+  .pager .practiceLaunchText{display:none}
+  .head .titleGroup{white-space:nowrap}
+  .head #meta{font-size:10px}
+  .head #reading{font-size:12px}
+}
 </style>
 <link rel="stylesheet" href="./practice/practice.css">
 <script defer src="./book-pack.js"></script>
@@ -158,7 +164,8 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
           <div><strong id="meta">读取字帖资料…</strong><div id="reading"></div></div>
         </div>
         <div class="pager">
-          <button type="button" id="practiceLaunch" title="进入逐笔临摹准备界面">✎ 临摹</button>
+          <button type="button" id="practiceLaunch" aria-label="开始逐笔临摹"
+             title="进入逐笔临摹准备界面"><span aria-hidden="true">✎</span><span class="practiceLaunchText" aria-hidden="true"> 临摹</span></button>
           <button type="button" id="prevChar">‹ 上一字</button>
           <button type="button" id="nextChar">下一字 ›</button>
         </div>
