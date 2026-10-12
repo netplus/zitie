@@ -128,20 +128,31 @@ document.getElementById('demo').addEventListener('load',async function(){
   // Verify stage isolation *before* we intentionally call A3.selectGlyph below.
   check(oldNodes.every(node=>node.isConnected),
     'Opening practice must not replace the original A3 SVG DOM');
-  // Inspect an ordinal-only 17-stroke source, not fabricated stroke names.
+  // Test two INDEPENDENT publication policies. 龠 has reviewed fine
+  // stroke names but its PRONUNCIATION is blocked; #55 has restricted names.
   check(p.close()&&modal.hidden&&!main.inert,'Exit must restore original book focus');
   book.selectGlyph(201);
   launcher.click();
   check(p.getState().glyphId===201&&p.getState().strokeCount===17&&
     svg.querySelectorAll('[data-practice-stroke-index]').length===17,
-    'Full 17-stroke ordinal-only source reference was truncated');
-  check(d.getElementById('practiceStrokeTitle').textContent.includes('第1笔'),
-    'Restricted stroke fine names must remain ordinal-only');
+    'The full 17-stroke source reference for 龠 was truncated');
+  check(d.getElementById('practiceStrokeTitle').textContent.includes('撇')&&
+    !pack.glyphs[200].pinyin,
+    '龠 has reviewed fine stroke names but source-blocked pronunciation');
   // Replacing background selection cannot destroy the saved original state.
   book.selectGlyph(1);
   exit.click();
   check(book.getGlyph().main_id===201&&!book.player.playing,
     'Closing overlay failed to restore background source glyph');
+  book.selectGlyph(55);
+  check(pack.glyphs[54].strokes.every(s=>s.name_status==='ordinal_only'),
+    'Test fixture #55 must be a genuinely restricted-name glyph');
+  launcher.click();
+  check(p.getState().glyphId===55&&
+    d.getElementById('practiceStrokeTitle').textContent.includes('第1笔')&&
+    svg.querySelectorAll('[data-practice-stroke-index]').length===pack.glyphs[54].strokes.length,
+    'Restricted fine stroke names must not leak through the practice preview');
+  exit.click();
   book.selectGlyph(77);
   book.setPressureStyle(savedStyle);
   book.setSpeed(1.5);
