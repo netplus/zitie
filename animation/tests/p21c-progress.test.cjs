@@ -140,3 +140,53 @@ test('P2.1c UI carries manual confirmation, safe exit, undo and no teacher scori
  assert.match(canvas,/for\(const stroke of confirmed\)/);
  assert.doesNotMatch(bridge,/XMLHttpRequest|\bfetch\s*\(/);
 });
+
+test('P2.1c fixed Canvas rebuild preserves accepted ink when no draft exists',()=>{
+ const {TraceCanvas}=require('../practice/trace-canvas.js');
+ const priorWindow=globalThis.window;
+ const priorObserver=globalThis.ResizeObserver;
+ globalThis.window={devicePixelRatio:2};
+ globalThis.ResizeObserver=undefined;
+ const calls={clear:0,stroke:0,fill:0};
+ const ctx={
+   setTransform(){},clearRect(){calls.clear++;},
+   beginPath(){},moveTo(){},lineTo(){},
+   stroke(){calls.stroke++;},arc(){},fill(){calls.fill++;}
+ };
+ const canvas={width:0,height:0,getContext:()=>ctx,
+   getBoundingClientRect:()=>({left:10,top:15,width:300,height:300})};
+ const group={getScreenCTM:()=>({a:0.3,b:0,c:0,d:-0.3,e:10,f:285})};
+ const confirmed=[{index:0,samples:[
+   {x:100,y:300},{x:160,y:305},{x:210,y:330}
+ ]}];
+ let live=[];
+ try{
+   const render=new TraceCanvas(canvas,group,()=>live,()=>confirmed);
+   assert.equal(render.getMetrics().confirmedSamples,3);
+   assert.equal(render.getMetrics().confirmedStrokes,1);
+   assert.equal(calls.stroke,1);
+   assert.equal(canvas.width,600,'Expected DPR=2 backing canvas');
+   // Same backing size; forced resize must still repaint ALL accepted strokes.
+   const first=calls.stroke;
+   render.resize();
+   assert.equal(calls.stroke,first+1,
+     'A resize with no live draft must not clear/erase confirmed strokes');
+   assert.equal(render.getMetrics().confirmedSamples,3);
+   live=[{x:270,y:200},{x:290,y:190}];
+   render.paint();
+   assert.equal(render.getMetrics().paintedSamples,2);
+   const withDraft=calls.stroke;
+   live=[];
+   render.paint();
+   assert.equal(render.getMetrics().paintedSamples,0);
+   assert.equal(render.getMetrics().confirmedSamples,3);
+   assert.equal(calls.stroke,withDraft+1,
+     'Clearing a live draft must reconstruct prior accepted ink');
+   render.destroy();
+ }finally{
+   if(priorWindow===undefined)delete globalThis.window;
+   else globalThis.window=priorWindow;
+   if(priorObserver===undefined)delete globalThis.ResizeObserver;
+   else globalThis.ResizeObserver=priorObserver;
+ }
+});
