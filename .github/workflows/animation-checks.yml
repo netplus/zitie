@@ -66,7 +66,7 @@ jobs:
           node --check animation/practice/order-check.js
           node --check animation/tests/cdp-wait-result.mjs
           node --check animation/practice/storage.js
-          node --test animation/tests/p21c-progress.test.cjs animation/tests/p22a-whole-writing.test.cjs
+          node --test animation/tests/p21c-progress.test.cjs
           node --check animation/samples.js
           node --test animation/tests/timeline.test.cjs animation/tests/precision.test.cjs animation/tests/motion.test.cjs animation/tests/pen-contact.test.cjs animation/tests/pen-kinematics.test.cjs animation/tests/source-onset.test.cjs animation/tests/pressure-model.test.cjs animation/tests/pressure-style.test.cjs animation/tests/stroke-primitives.test.cjs animation/tests/hardpen-model.test.cjs animation/tests/regular-kaishu-model.test.cjs animation/tests/kaishu-composition.test.cjs animation/tests/a35-brush-motion.test.cjs
       - name: Install CJK fallback solely for screenshot QA (never bundle font)
@@ -873,6 +873,7 @@ jobs:
         run: |
           set -euo pipefail
           node --test animation/tests/p21c-progress.test.cjs
+          node --test animation/tests/p22a-whole-writing.test.cjs
           test -s animation/book-pack.js
           mkdir -p build/a1
           python3 -m http.server 18788 --bind 127.0.0.1 > build/a1/p21c-http.log 2>&1 &
