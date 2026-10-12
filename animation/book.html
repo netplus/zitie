@@ -151,6 +151,8 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
 <script defer src="./practice/trace-canvas.js"></script>
 <script defer src="./practice/pointer-input.js"></script>
 <script defer src="./practice/progress-controller.js"></script>
+<script defer src="./practice/whole-progress.js"></script>
+<script defer src="./practice/order-check.js"></script>
 <script defer src="./practice/storage.js"></script>
 <script defer src="./practice/practice-bridge.js"></script>
 </head>
@@ -271,7 +273,7 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
       <button type="button" id="practiceExit">← 返回笔顺教学</button>
       <div class="practiceHeadings">
         <strong id="practiceTitle">逐笔临摹 · 参考预览</strong>
-        <p id="practiceIntro">P2.1c 逐笔练习 · 蓝墨真实书写，人工确认，不进行专业书法评分</p>
+        <p id="practiceIntro">连续写完整个字 · 每次提笔自动记录，写完后提示参考笔顺</p>
       </div>
       <div id="practiceProgress" aria-live="polite">笔顺参考 1 / 1</div>
     </header>
@@ -285,15 +287,13 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
         <p class="practiceBoardCaption">笔画轮廓与正式 PDF 同源 · 起收笔参考来自未经教学审定的工程中线</p>
       </section>
       <aside class="practiceTools" aria-label="当前笔画参考和操作">
-        <p class="practiceEyebrow">逐笔引导 · 学习者真实蓝墨</p>
+        <p class="practiceEyebrow">整字临摹 · 连续书写，无须逐笔确认</p>
         <p id="practiceGlyphMeta"></p>
         <strong id="practiceStrokeTitle">第 1 笔</strong>
         <p id="practiceStrokeHint">当前笔画淡红高亮，圆点标注参考起收笔。</p>
         <div class="practiceActions">
           <button type="button" id="practicePrev" disabled>← 上一笔参考</button>
           <button type="button" id="practiceNext">下一笔参考 →</button>
-          <button type="button" id="practiceReset" disabled>↺ 重写本笔</button>
-          <button type="button" id="practiceAccept" class="practicePrimary" disabled>确认这一笔 →</button>
           <button type="button" id="practiceUndo" disabled>↶ 撤销上一笔</button>
           <button type="button" id="practiceRestart">重新练习整字</button>
           <button type="button" id="practiceReturnCurrent" hidden>返回当前待写笔</button>
@@ -304,16 +304,17 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
           <button type="button" id="practiceClearNo">取消</button>
         </div>
         <div id="practiceLeavePrompt" class="practicePrompt" hidden>
-          <p>这一笔还有未确认的蓝色草稿，离开后会舍弃。已确认笔迹将保留在本机。</p>
+          <p>还有正在写的未完成一笔，退出会舍弃该笔；已经自然提笔的轨迹保存在本机。</p>
           <button type="button" id="practiceLeaveYes">舍弃草稿并返回</button>
           <button type="button" id="practiceLeaveNo">继续练习</button>
         </div>
         <p id="practiceSaved" class="practiceSaved" role="status" aria-live="polite">正在读取本地练习记录…</p>
         <p id="practiceCompletion" class="practiceCompletion" hidden></p>
+        <p id="practiceOrderResult" class="practiceOrderResult" role="status" aria-live="polite" hidden></p>
         <p id="practicePreviewStatus" role="status" aria-live="polite">
           仅预览笔顺参考，未记录练习成绩
         </p>
-        <p class="practiceNotice">本次蓝墨只来自真实触点。人工确认后按已核笔顺进入下一笔，并尝试使用浏览器 IndexedDB 保存已确认笔迹；未确认草稿不会持久保存。全部记录仅在当前设备浏览器内，不上传、不代表书法评分。起收笔引导仍是未经教师运动学审核的工程参考。</p>
+        <p class="practiceNotice">每次自然提笔自动记录一笔，无需逐笔确认；写完该字标准笔画数量后系统自动比对实际轨迹与 PDF 同源参考，提示笔顺是否一致或无法可靠判断。蓝墨及进度仅保存在本机浏览器，不上传。参考中线未经真人书法动作审核，结论仅为工程辅助提示。</p>
       </aside>
     </div>
   </div>
