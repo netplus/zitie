@@ -183,7 +183,7 @@ try{
  const nativeConfirmed=[];
  for(let expected=0;expected<4;expected++){
    const tracePath=await onPage(()=>{
-     const p=ZITIE_P21C;
+     const p=window.ZITIE_P22A;
      const stroke=ZITIE_A3_BOOK.getGlyph().strokes[p.getState().progress.currentIndex];
      const group=document.querySelector('[data-practice-source-transform]');
      return stroke.median.map(([x,y])=>{
@@ -209,7 +209,7 @@ try{
    nativeConfirmed.push(accepted);
  }
  const finished=await onPage(()=>{
-   const p=ZITIE_P21C;
+   const p=window.ZITIE_P22A;
    return {complete:p.getState().progress.completed,
      strokes:p.getState().progress.writtenStrokes,
      order:p.getOrderCheck()?.status,
@@ -222,11 +222,18 @@ try{
  const full=await call('Page.captureScreenshot',{format:'png'});
  writeFileSync(resolve('build/a1/p22a-cdp-full-water.png'),
    Buffer.from(full.data,'base64'));
+ await onPage(()=>{
+   // A temporary mark on the old document distinguishes it from the
+   // fully initialized NEW document after Page.reload returns.
+   document.documentElement.dataset.p22aBeforeReload='1';
+ });
  await call('Page.reload',{ignoreCache:true});
- await until(()=>onPage(()=>document.documentElement.dataset.p21cReady===
-   'guided-local-v1'&&ZITIE_A3_BOOK?.pack?.glyphs.length===201));
+ await until(()=>onPage(()=>document.documentElement.dataset.p22aReady===
+   'whole-word-v1'&&!document.documentElement.dataset.p22aBeforeReload&&
+   typeof window.ZITIE_P22A?.open==='function'&&
+   window.ZITIE_A3_BOOK?.pack?.glyphs.length===201));
  const restored=await onPage(async()=>{
-   const p=ZITIE_P21C;
+   const p=window.ZITIE_P22A;
    if(!p.open())throw Error('Practice failed to open after reload');
    await p.whenReady();
    return {count:p.getState().progress.writtenStrokes,
@@ -243,7 +250,7 @@ try{
    JSON.stringify(restored.lengths)===JSON.stringify(finished.lengths),
    'Reload lost genuine touch traces: '+JSON.stringify(restored));
  const undone=await onPage(async()=>{
-   const p=ZITIE_P21C;
+   const p=window.ZITIE_P22A;
    if(!p.undo())throw Error('Undo unavailable');
    await p.whenSaved();
    return {count:p.getState().progress.writtenStrokes,
