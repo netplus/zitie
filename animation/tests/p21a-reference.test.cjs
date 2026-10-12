@@ -50,7 +50,7 @@ test('P2.1a source rejects invalid/unapproved data without modifying original',(
  const src=pack.glyphs[76];
  assert.throws(()=>prepareReference({...src,source_sha256:'bad'}),/hash/);
  assert.throws(()=>prepareReference({...src,strokes:src.strokes.slice(1)}),/source|metadata|Invalid|Missing/i);
- assert.throws(()=>prepareReference({...src,trajectory_review_status:'teacher_verified'}),/review status/);
+ assert.throws(()=>prepareReference({...src,trajectory_review_status:'teacher_verified'}),/Trajectory audit status required|Unrecognized source motion review status/);
  const snapshot=prepareReference(src);
  assert.throws(()=>{snapshot.strokes[0].median[0][0]=NaN;},TypeError);
  assert.notEqual(src.strokes[0].median[0][0],NaN);
