@@ -173,11 +173,44 @@ demo.addEventListener('load',async function start(){
     b2.getGlyph().source_sha256===hash,
     'Official 299-page PDF/201 glyphs/1045 strokes were modified');
   p2.close();
+  // Reconstruct a malformed *same-key* record; a source-locked
+  // browser must fail closed, never partially accept forged ordinals.
+  const storage=w2.ZitiePracticeLocalStore;
+  const identity={glyphId:77,sourceHash:hash,pdfHash:formal};
+  const db=await new Promise((yes,no)=>{
+    const req=w2.indexedDB.open(storage.DB,1);
+    req.onsuccess=()=>yes(req.result);
+    req.onerror=()=>no(req.error);
+  });
+  await new Promise((yes,no)=>{
+    const tx=db.transaction(storage.STORE,'readwrite');
+    tx.objectStore(storage.STORE).put({
+      key:storage.makeKey(identity),updatedAt:Date.now(),
+      snapshot:{schemaVersion:1,glyphId:77,sourceHash:hash,
+        pdfHash:formal,strokeCount:4,revision:3,
+        accepted:[{index:2,status:'userConfirmed'}]}
+    });
+    tx.oncomplete=yes;tx.onerror=()=>no(tx.error);
+  });
+  db.close();
+  check(p2.open(),'Malformed record test could not open practice');
+  await p2.whenReady();
+  check(p2.getState().restoreBlocked&&
+    p2.getState().progress.currentIndex===0&&
+    d2.getElementById('practiceAccept').disabled,
+    'Malformed matching-key IndexedDB record must fail closed without writing');
+  d2.getElementById('practiceRestart').click();
+  d2.getElementById('practiceClearYes').click();
+  await p2.whenSaved();
+  check(!p2.getState().restoreBlocked&&
+    p2.getState().saveStatus==='cleared',
+    'Explicit user reset must safely clear malformed local record');
+  p2.close();
   document.documentElement.dataset.result='PASS';
   out.textContent=JSON.stringify({result:'PASS',characters:201,strokes:1045,
     confirmedOnly:true,reloadRecovered:true,wholeCharacter:true,
     undoReversesOneStroke:true,deleteRequiresConfirmation:true,
-    sourceHashLocked:true,draftNeverPersisted:true,automaticGrade:false,
+    sourceHashLocked:true,draftNeverPersisted:true,corruptRestoreRejected:true,automaticGrade:false,
     localOnly:true,layout},null,2);
  }catch(error){
   document.documentElement.dataset.result='FAIL';
