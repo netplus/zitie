@@ -886,15 +886,15 @@ jobs:
           timeout 145 node animation/tests/cdp-wait-result.mjs \
             'http://127.0.0.1:18788/animation/tests/p22a-continuous-browser-smoke.html' \
             build/a1/p22a-continuous-browser-dom.html 120000
-          if ! grep -q 'data-result="PASS"' build/a1/p21c-guided-browser-dom.html; then
+          if ! grep -q 'data-result="PASS"' build/a1/p22a-continuous-browser-dom.html; then
             echo 'FAIL: P2.2a whole-character order matching / continuous recording / IndexedDB' >&2
-            grep -o 'FAIL:[^<]*' build/a1/p21c-guided-browser-dom.html | head -n 9 >&2 || true
+            grep -o 'FAIL:[^<]*' build/a1/p22a-continuous-browser-dom.html | head -n 9 >&2 || true
             exit 1
           fi
           python3 - <<'PY'
           import html,json,re
           from pathlib import Path
-          p=Path('build/a1/p21c-guided-browser-dom.html')
+          p=Path('build/a1/p22a-continuous-browser-dom.html')
           m=re.search(r'<pre id="result">(\{.*?\})</pre>',p.read_text(encoding='utf-8'),re.S)
           if not m:raise SystemExit('Missing P2.2a whole-character browser evidence')
           x=json.loads(html.unescape(m.group(1)))
