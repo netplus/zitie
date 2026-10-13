@@ -87,6 +87,45 @@ iframe.addEventListener('load',async function(){
   say(w.ZitieFoundations.compose('O').strokes[0].d.startsWith('M53 20'),
       'O starts near upper right of rounded body');
 
+  // F2.5: compare four independently reviewed publisher letter formations.
+  checkModel('J',0,'M58 17 V64 C58 85 48 83 35 83 C24 83 17 78 17 71');
+  checkModel('J',1,'M20 17 H61');
+  checkModel('T',0,'M37 17 V83'); // identical to prior source
+  checkModel('T',1,'M10 17 H64');
+  checkModel('b',0,'M16 17 V83 V49 C22 47 28 47 38 47 C53 47 61 56 61 66 C61 78 49 83 35 83 C26 83 20 82 16 83');
+  checkModel('q',0,'M56 50 C44 44 18 46 15 64 C12 79 27 87 43 83 C52 81 56 73 56 64 C56 57 56 52 56 49 V106 C56 116 69 116 69 105');
+  // J's lower curve must meet, but not cross, the guide's y=83 baseline.
+  red=checkLetter(d,9);
+  say(red[0].getBBox().y+red[0].getBBox().height<=83.25,
+      'J curve exceeds writing baseline');
+  // Letters B/b and Q/q are consecutive in the selected pair;
+  // verify the two lowercase bowls really implement the source's motion.
+  red=checkLetter(d,1);
+  say(red[capitals[1]].getAttribute('d').startsWith('M16 17 V83 V49'),
+      'b must go down then retrace the exact same vertical stem');
+  red=checkLetter(d,16);
+  say(red[capitals[16]].getAttribute('d').endsWith('V106 C56 116 69 116 69 105'),
+      'q descender must U-turn to the RIGHT, unlike g');
+  // Verify the same lowercase b and q are reused for Pinyin initials.
+  api.selectGroup('initials');
+  const initialButtons=[...d.querySelectorAll('#items button')];
+  for(const letter of ['b','q']){
+    const tile=initialButtons.find(button=>button.textContent===letter);
+    say(Boolean(tile),'Missing Pinyin initial '+letter);
+    tile?.click();
+    const lines=redPaths(d);
+    say(lines.length===1&&lines[0].getAttribute('d')===
+      w.ZitieFoundations.compose(letter).strokes[0].d,
+      'Pinyin initial '+letter+' must use corrected lowercase trajectory');
+  }
+  say(api.getPrintedPageCount()===6,
+      'Pinyin initials retain six A4 pages and corrected SVG source');
+  const printRed=[...d.querySelectorAll('#printRoot .printLine path[stroke="#b03a49"]')];
+  for(const letter of ['b','q'])say(printRed.some(p=>p.getAttribute('d')===
+    w.ZitieFoundations.compose(letter).strokes[0].d),
+    'Printed practice must reuse corrected '+letter+' geometry');
+  api.selectGroup('letters');
+
   const caps=w.ZitieFoundations.compose('ABCDEFGHIJKLMNOPQRSTUVWXYZ').strokes.length;
   const lowercase=w.ZitieFoundations.compose('abcdefghijklmnopqrstuvwxyz').strokes.length;
   say(caps===capitals.reduce((a,b)=>a+b,0),'all capital parts match source scheme');

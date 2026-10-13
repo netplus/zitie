@@ -229,7 +229,19 @@
       "movementSummary": [
         "竖向下并向左弯",
         "顶横向右"
-      ]
+      ],
+      "focused20261013": {
+        "selectedSourcePdfPage": 1,
+        "contactSequence": [
+          "1 — 从顶部右侧垂直下行，接底部向左的 J 形圆转，最左侧略上挑；整笔保持接触",
+          "2 — 抬笔回到顶端左侧，横向右书写"
+        ],
+        "direction": "down_then_left_turn_then_up; top_crossbar_left_to_right",
+        "notes": "原顺序正确，但旧 SVG 的底部圆弧越过基线，几何上收回基线；不更改提笔数",
+        "primaryChartUrl": "https://www.lwtears.com/sites/default/files/2022-01/English_print_letterCharts.pdf",
+        "noteOnCoordinates": "SVG 数字坐标为本项目原创建模，不是出版方的原图像素坐标",
+        "evidenceStatus": "publisher-diagram visual and formation-language corroboration"
+      }
     },
     "K": {
       "kind": "capital",
@@ -404,7 +416,19 @@
       "movementSummary": [
         "先中竖向下",
         "后顶横向右"
-      ]
+      ],
+      "focused20261013": {
+        "selectedSourcePdfPage": 1,
+        "contactSequence": [
+          "1 — 顶端中央竖画下行到基线",
+          "2 — 抬笔，顶端左侧横向右书写"
+        ],
+        "direction": "vertical_down_then_top_horizontal_left_to_right",
+        "notes": "原 SVG 已与此出版方示范的两笔顺序、方向一致，保留原字节",
+        "primaryChartUrl": "https://www.lwtears.com/sites/default/files/2022-01/English_print_letterCharts.pdf",
+        "noteOnCoordinates": "SVG 数字坐标为本项目原创建模，不是出版方的原图像素坐标",
+        "evidenceStatus": "publisher-diagram visual and formation-language corroboration"
+      }
     },
     "U": {
       "kind": "capital",
@@ -526,7 +550,18 @@
       ],
       "movementSummary": [
         "上部长竖下行、回上绕右圆"
-      ]
+      ],
+      "focused20261013": {
+        "selectedSourcePdfPage": 2,
+        "contactSequence": [
+          "1 — 顶端左竖下行至基线，沿原竖线向上回行到中线，向右越过并绕圆，回到基线；全程不抬笔"
+        ],
+        "direction": "dive_down_retrace_up_same_stem_swim_right_and_around_bump",
+        "notes": "原 SVG 从底线以对角线穿过字腹，未沿竖笔回行，且最后没有回到底线",
+        "primaryChartUrl": "https://www.lwtears.com/sites/default/files/2022-01/English_print_letterCharts.pdf",
+        "noteOnCoordinates": "SVG 数字坐标为本项目原创建模，不是出版方的原图像素坐标",
+        "evidenceStatus": "publisher-diagram visual and formation-language corroboration"
+      }
     },
     "c": {
       "kind": "lowercase",
@@ -756,7 +791,18 @@
       ],
       "movementSummary": [
         "c形后沿右竖下伸再回钩"
-      ]
+      ],
+      "focused20261013": {
+        "selectedSourcePdfPage": 3,
+        "contactSequence": [
+          "1 — 中线附近 Magic c 左绕成圆、右侧向上回行，再沿右竖下伸到下格，底部 U 形向右回转；全程不抬笔"
+        ],
+        "direction": "magic_c_up_down_and_u_turn_to_right",
+        "notes": "旧 SVG 的 U-turn 错误向左；需向右回转，使 q 与 g 尾部区分",
+        "primaryChartUrl": "https://www.lwtears.com/sites/default/files/2022-01/English_print_letterCharts.pdf",
+        "noteOnCoordinates": "SVG 数字坐标为本项目原创建模，不是出版方的原图像素坐标",
+        "evidenceStatus": "publisher-diagram visual and formation-language corroboration"
+      }
     },
     "r": {
       "kind": "lowercase",

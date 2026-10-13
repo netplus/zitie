@@ -66,6 +66,7 @@ jobs:
           node --test animation/foundations/f1.test.cjs
           node --test animation/foundations/f2-geometry.test.cjs
           node --test animation/foundations/formation.test.cjs
+          node --test animation/foundations/f25-four-letters.test.cjs
           node --check animation/practice/progress-controller.js
           node --check animation/practice/whole-progress.js
           node --check animation/practice/order-check.js
