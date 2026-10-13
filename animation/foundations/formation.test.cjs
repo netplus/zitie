@@ -65,7 +65,7 @@ test('F2.4 remains source- and storage-compatible with 113 Pinyin entries',()=>{
  assert.deepEqual(model.validate(),{groups:7,items:113});
  const total=model.groups.reduce((a,g)=>a+g.entries.reduce((b,e)=>
    b+model.compose(e.text,g.kind).strokes.length,0),0);
- assert.equal(total,369);
+ assert.equal(total,366);
  for(const ch of LOWER)
    assert.equal(trace(ch).length,ref.glyphs[ch].numberedPenDown);
  for(const word of ['zhi','ch','sh','üe','nǐ hǎo']){

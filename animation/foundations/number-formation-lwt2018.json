@@ -1,0 +1,68 @@
+{
+  "schema": "lwt-numeral-manuscript-2018-v1",
+  "source": {
+    "publisher": "Learning Without Tears",
+    "title": "Letter and Number Formation Charts / Number Stories",
+    "pdfPage": 4,
+    "url": "https://www.lwtears.com/sites/default/files/2022-01/English_print_letterCharts.pdf",
+    "corroboration": "https://www.lwtears.com/sites/default/files/2022-01/HWT_Number%20Formation%20Chart.pdf"
+  },
+  "note": "The original SVG paths are original model centerlines. Their exact coordinates are NOT digitized or copied from publisher artworks. Only movement semantics follow the publisher's image.",
+  "numerals": {
+    "1": {
+      "contacts": 1,
+      "steps": [
+        "从顶端向下，沿一条直竖停在基线"
+      ],
+      "start": [
+        37,
+        17
+      ],
+      "firstDirection": "down",
+      "end": [
+        37,
+        83
+      ],
+      "reference": "one big line down (p4)"
+    },
+    "4": {
+      "contacts": 2,
+      "steps": [
+        "从左上向下至中线，再向右转折，不提笔",
+        "提笔到右上，沿长竖向下至基线"
+      ],
+      "start": [
+        17,
+        17
+      ],
+      "firstDirection": "down",
+      "end": [
+        52,
+        83
+      ],
+      "reference": "little line down to middle, walk across, jump to top big line down (p4)"
+    },
+    "8": {
+      "contacts": 1,
+      "steps": [
+        "顶部中央开始，先按 S 状轨迹穿越中部，再绕底部和上部回到起点，一笔连续"
+      ],
+      "start": [
+        37,
+        17
+      ],
+      "firstDirection": "left-curve",
+      "end": [
+        37,
+        17
+      ],
+      "reference": "starts top center, begins with S and then goes home (p4)"
+    }
+  },
+  "rejectedPrevious": {
+    "1": "extra baseline foot",
+    "4": "first stroke from bottom to top",
+    "8": "two separate closed circles"
+  },
+  "limits": "These are selected publisher methods for beginner numerals; not a unique nationally mandated number-stroke standard."
+}

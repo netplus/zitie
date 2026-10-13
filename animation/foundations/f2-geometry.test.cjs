@@ -88,9 +88,9 @@ test('F2 samples ALL glyphs and keeps their vectors inside printable/canvas cell
     }
   }
   // F2.4 fixes falsely split capital movements as well as lowercase forms:
-  // source paths 470 (F2.1) -> 383 (F2.3) -> 369 (F2.4).
+  // source paths 470 (F2.1) -> 383 (F2.3) -> 369 (F2.4) -> 366 (F2.6b).
   // Fewer paths is expected and audited, not a loss of letter content.
-  assert.equal(strokes,369,'F2.4 source-anchored independent pen-down paths');
+  assert.equal(strokes,366,'F2.6b adds 2018 sourced child number corrections without deleting entries');
 });
 test('F2 distinguish 4 pinyin tones, mark-less i, and ü two dots in source geometry',()=>{
   const tones=category('tones');
