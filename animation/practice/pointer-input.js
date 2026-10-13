@@ -175,6 +175,31 @@
          e.pointerId!==this.session.active.pointerId)return;
       this.abort(reason);
     }
+    // Edge can occasionally resume a real pointer-started finger as native
+    // touchmove/touchend without delivering touchstart to this element.
+    // Adopt the SAME trace once, never synthesize an extra stroke.
+    adoptEdgeTouch(touch,event){
+      const active=this.session.active;
+      if(!this.preferTouchInput||this.activeSource!=='pointer'||
+         active?.pointerType!=='touch'||!touch||
+         !Number.isInteger(touch.identifier)||touch.identifier<0)return false;
+      let point;
+      try{point=sourceTouch(touch,event,this.group);}
+      catch(_){return false;}
+      const id=active.pointerId;
+      this.activeSource='touch';
+      this.touchIdentifier=touch.identifier;
+      this.touchHandoffs++;
+      this.release(id);
+      try{
+        const last=active.points.at(-1);
+        if(!last||Math.hypot(last.x-point.x,last.y-point.y)>0.25)
+          this.session.append(id,point);
+      }catch(_){this.abort('invalid-coordinate');return false;}
+      if(event.cancelable)event.preventDefault();
+      this.onChange('move');
+      return true;
+    }
     touchStart(e){
       if(!this.enabled||this.session.draft)return;
       if(e.touches?.length>1){
@@ -196,24 +221,7 @@
       if(this.session.active&&!handoff)return;
       let point;
       try{point=sourceTouch(touch,e,this.group);}catch(_){return;}
-      if(handoff){
-        const id=this.session.active.pointerId;
-        this.activeSource='touch';
-        this.touchIdentifier=touch.identifier;
-        this.touchHandoffs++;
-        this.release(id);
-        try{
-          const last=this.session.active.points.at(-1);
-          // Some engines emit pointerdown and touchstart at the identical
-          // contact position with different timestamps: one real contact,
-          // not two separate ink samples.
-          if(!last||Math.hypot(last.x-point.x,last.y-point.y)>0.25)
-            this.session.append(id,point);
-        }catch(_){this.abort('invalid-coordinate');return;}
-        if(e.cancelable)e.preventDefault();
-        this.onChange('move');
-        return;
-      }
+      if(handoff){this.adoptEdgeTouch(touch,e);return;}
       if(!this.session.begin(touch.identifier,'touch',point))return;
       this.activeSource='touch';
       this.touchIdentifier=touch.identifier;
@@ -223,6 +231,20 @@
       this.onChange('down');
     }
     touchMove(e){
+      if(this.preferTouchInput&&this.activeSource==='pointer'&&
+         this.session.active?.pointerType==='touch'){
+        // Missing touchstart: the finger is already genuinely down via
+        // Pointer Events, so a single native touchmove can take over.
+        if(e.touches?.length>1){
+          this.abort('multitouch');
+        }else if(e.touches?.length===1&&e.changedTouches?.length===1){
+          this.adoptEdgeTouch(e.changedTouches[0],e);
+        }
+        // Prevent WKWebView from taking over page scrolling while pointer
+        // remains authoritative (touch-action:none alone is not sufficient).
+        if(e.cancelable)e.preventDefault();
+        return;
+      }
       if(this.activeSource!=='touch'||!this.session.active)return;
       if(e.touches?.length>1){this.abort('multitouch');return;}
       const touch=changedTouch(e,this.touchIdentifier);
@@ -234,9 +256,21 @@
       this.onChange('move');
     }
     touchEnd(e){
+      if(this.preferTouchInput&&this.activeSource==='pointer'&&
+         this.session.active?.pointerType==='touch'&&
+         e.touches?.length===0&&e.changedTouches?.length===1){
+        // A final native lift can close a pointer-started stroke even when
+        // neither touchstart nor pointerup was delivered.
+        this.adoptEdgeTouch(e.changedTouches[0],e);
+      }
       if(this.activeSource!=='touch'||!this.session.active)return;
       const touch=changedTouch(e,this.touchIdentifier);
       if(!touch)return;
+      if(e.touches?.length){
+        this.abort('multitouch');
+        if(e.cancelable)e.preventDefault();
+        return;
+      }
       try{this.session.end(this.session.active.pointerId,
         sourceTouch(touch,e,this.group));}
       catch(_){this.abort('invalid-coordinate');return;}
@@ -246,6 +280,12 @@
       this.onChange('up');
     }
     touchCancel(e){
+      if(this.preferTouchInput&&this.activeSource==='pointer'&&
+         this.session.active?.pointerType==='touch'&&
+         e.touches?.length===0&&e.changedTouches?.length===1){
+        this.abort('touchcancel');
+        return;
+      }
       if(this.activeSource!=='touch'||!this.session.active)return;
       if(changedTouch(e,this.touchIdentifier))this.abort('touchcancel');
     }

@@ -225,9 +225,26 @@ window.addEventListener('DOMContentLoaded',()=>{
   canvas.addEventListener('lostpointercapture',e=>{
     if(state.active?.kind==='pointer'&&state.active.id===e.pointerId)cancel();
   });
-  // EdgiOS may emit pointerdown followed by native touchmove/end, or may
-  // emit Pointer Events only. Start with Pointer Events, and hand off the SAME
-  // active trace only when genuine one-finger Touch Events appear.
+  // The iOS Edge channel may start as a Pointer Event but resume with
+  // touchstart, touchmove, or touchend. All routes reuse the same real trace.
+  function adoptNativeTouch(t){
+    if(!preferNativeTouch()||state.active?.kind!=='pointer'||
+       state.active.pointerType!=='touch'||!Number.isInteger(t?.identifier))return false;
+    const p=point(t.clientX,t.clientY);
+    if(!p)return false;
+    const previousId=state.active.id;
+    const last=state.active.points[state.active.points.length-1];
+    state.active.kind='touch';
+    state.active.id=t.identifier;
+    if(Math.hypot(p[0]-last[0],p[1]-last[1])>=.0015)
+      state.active.points.push(p);
+    try{
+      if(canvas.hasPointerCapture(previousId))
+        canvas.releasePointerCapture(previousId);
+    }catch(_){}
+    drawInk();
+    return true;
+  }
   canvas.addEventListener('touchstart',e=>{
     if(e.touches?.length>1||e.changedTouches.length!==1){
       if(state.active?.pointerType==='touch')cancel();
@@ -237,36 +254,28 @@ window.addEventListener('DOMContentLoaded',()=>{
     const t=e.changedTouches[0];
     if(!Number.isInteger(t.identifier))return;
     if(!state.active)begin('touch',t.identifier,t.clientX,t.clientY);
-    else if(preferNativeTouch()&&state.active.kind==='pointer'&&
-            state.active.pointerType==='touch'){
-      const p=point(t.clientX,t.clientY);
-      if(p){
-        const previousId=state.active.id;
-        const last=state.active.points[state.active.points.length-1];
-        state.active.kind='touch';
-        state.active.id=t.identifier;
-        // Do not duplicate the start contact when both APIs report it.
-        if(Math.hypot(p[0]-last[0],p[1]-last[1])>=.0015)
-          state.active.points.push(p);
-        try{
-          if(canvas.hasPointerCapture(previousId))
-            canvas.releasePointerCapture(previousId);
-        }catch(_){}
-        drawInk();
-      }
-    }
+    else adoptNativeTouch(t);
     if(e.cancelable)e.preventDefault();
   },{passive:false});
   canvas.addEventListener('touchmove',e=>{
-    if(state.active?.kind==='touch'){
-      if(e.touches?.length>1)cancel();
-      else for(const t of e.changedTouches)
+    if(state.active?.pointerType==='touch'&&e.touches?.length>1)cancel();
+    else if(state.active?.kind==='pointer'&&
+            e.touches?.length===1&&e.changedTouches?.length===1){
+      // EdgiOS can omit the canvas touchstart but still deliver native moves.
+      adoptNativeTouch(e.changedTouches[0]);
+    }
+    if(state.active?.kind==='touch')
+      for(const t of e.changedTouches)
         if(state.active?.kind==='touch'&&t.identifier===state.active.id)
           extend(t.clientX,t.clientY);
-    }
     if(e.cancelable)e.preventDefault();
   },{passive:false});
   canvas.addEventListener('touchend',e=>{
+    if(state.active?.kind==='pointer'&&state.active.pointerType==='touch'&&
+       preferNativeTouch()&&e.touches?.length===0&&e.changedTouches?.length===1)
+      adoptNativeTouch(e.changedTouches[0]);
+    else if(state.active?.kind==='pointer'&&state.active.pointerType==='touch'&&
+            preferNativeTouch()&&e.touches?.length>0)cancel();
     if(state.active?.kind==='touch'){
       for(const t of e.changedTouches)if(t.identifier===state.active?.id){
         // The tracked finger lifting while another remains is not a valid
@@ -279,6 +288,9 @@ window.addEventListener('DOMContentLoaded',()=>{
     if(e.cancelable)e.preventDefault();
   },{passive:false});
   canvas.addEventListener('touchcancel',e=>{
+    if(state.active?.kind==='pointer'&&state.active.pointerType==='touch'&&
+       preferNativeTouch()&&e.touches?.length===0&&e.changedTouches?.length===1)
+      cancel();
     if(state.active?.kind==='touch')
       for(const t of e.changedTouches)
         if(t.identifier===state.active?.id){cancel();break;}

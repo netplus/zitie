@@ -85,7 +85,29 @@ function run(){
   d.getElementById('clear').click();
   if(existingUA)Object.defineProperty(w.navigator,'userAgent',existingUA);
   else delete w.navigator.userAgent;
-  // 6: Browser toolbar resize without board geometry change keeps the stroke.
+  // 6: In iOS Edge the native touchstart may be missing while
+  // touchmove/touchend still arrive. Recover the SAME pointer-started ink.
+  Object.defineProperty(w.navigator,'userAgent',{
+    configurable:true,value:'Mozilla/5.0 (iPhone) EdgiOS/135.0.0'
+  });
+  p('pointerdown',x,y,95,'touch');
+  event('touchmove',[touch(35,8,5)],[touch(35,8,5)]);
+  p('pointerup',x+12,y+7,95,'touch'); // stale after handoff
+  event('touchend',[touch(35,17,11)],[]);
+  ok(app.getSavedStrokeCount()===1,'Edge touchmove handoff without touchstart commits once');
+  d.getElementById('clear').click();
+  // 7: No native move either: the real native touchend can finish the ink.
+  p('pointerdown',x,y,96,'touch');
+  event('touchend',[touch(36,15,10)],[]);
+  ok(app.getSavedStrokeCount()===1,'Edge touchend-only handoff commits once');
+  d.getElementById('clear').click();
+  // 8: A canceled native gesture must never become a pen-up.
+  p('pointerdown',x,y,97,'touch');
+  event('touchcancel',[touch(37)],[]);
+  ok(app.getSavedStrokeCount()===0,'Edge partial touchcancel must not save ink');
+  if(existingUA)Object.defineProperty(w.navigator,'userAgent',existingUA);
+  else delete w.navigator.userAgent;
+  // 9: Browser toolbar resize without board geometry change keeps the stroke.
   p('pointerdown',x,y,94,'pen');
   w.dispatchEvent(new w.Event('resize'));
   p('pointerup',x+10,y+7,94,'pen');

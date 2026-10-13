@@ -45,3 +45,32 @@ The revised approach starts actual Pointer Events immediately (including on Edge
 Additional tests must exercise all three event-order families: pointer-only, pointer-first-then-touch, and touch-first-then-pointer; both duplicate suppression and the source geometry are unchanged. The native CDP touch verification is kept, and a separate **synthetic DOM PointerEvent** test under Edge UA covers pointer-only integration. The latter is deliberately not described as physical native iPhone Edge input.
 
 Issue #163 remains open until the actual affected iPhone Edge (OS and Edge version recorded) confirms that ink appears and pen-up commits. If not, add on-device non-telemetric diagnostic output before any further speculative browser workarounds.
+
+## P2.2j follow-up: missing touchstart or pointerup in a mixed event stream
+
+A source-only audit identified a fourth, previously untested event ordering:
+`pointerdown → touchmove → touchend` with **no `touchstart` reaching the
+ink canvas and no subsequent usable `pointerup`**. P2.2i waited to adopt
+native Touch Events until `touchstart`, leaving this pointer session active
+forever if the browser instead continued with touchmove/touchend. The same
+hole existed in the F1 foundations book. This is a demonstrable logic gap,
+**not proof that physical iPhone Edge follows this event sequence**.
+
+The EdgiOS-only route now allows a single actual native `touchmove` or final
+`touchend` to adopt the already-active touch-pointer trace, retaining actual
+model-space coordinates and the original pointer-start timestamp without
+inventing any pen data. Duplicate pointerup cannot save a second stroke.
+A native `touchcancel` without touchstart still drops the unfinished
+stroke; another finger remaining at touchend never counts as a successful
+lift. Native `touchmove` is explicitly made non-scrollable during the
+transitional Edge touch-pointer stream.
+
+Node and actual Chromium browser tests cover these synthetic event
+orders, alongside prior pointer-only, touch-first, ordinary Safari/Chrome,
+cancel, resize and storage cases. No PDF, glyph, animation, grading, canvas
+style, storage schema, saved records, network telemetry or fonts change.
+
+**Validation boundary remains unchanged:** Chromium with an EdgiOS UA
+does not implement the exact native Edge WKWebView. Issue #163 should remain
+open until a physical affected iPhone Edge test confirms whether practice
+opens, actual blue ink appears, and pen-up persists one stroke.
