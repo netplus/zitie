@@ -90,6 +90,8 @@
       this.touchIdentifier=null;
       this.activeGeometry=null;
       this.touchFallbackStarts=0;
+      this.touchHandoffs=0;
+      this.edgePointerFallbackStarts=0;
       this.handlers={
         down:e=>this.down(e),
         move:e=>this.move(e),
@@ -121,7 +123,10 @@
     }
     point(e){return sourcePoint(e,this.group);}
     down(e){
-      if(this.preferTouchInput&&e.pointerType==='touch')return;
+      // Do not discard pointerdown merely because the UA says "EdgiOS".
+      // Some WKWebViews dispatch Pointer Events without Touch Events.
+      // If touchstart also arrives for this finger, touchStart() can adopt
+      // this same session without creating a second stroke or losing ink.
       if(!this.enabled||this.session.active||this.session.draft||
          e.isPrimary===false||e.pointerType==='mouse'&&e.button!==0)return;
       const b=this.surface.getBoundingClientRect();
@@ -131,6 +136,8 @@
       try{point=this.point(e);}catch(_){return;}
       if(!this.session.begin(e.pointerId,e.pointerType,point))return;
       this.activeSource='pointer';
+      if(this.preferTouchInput&&e.pointerType==='touch')
+        this.edgePointerFallbackStarts++;
       this.activeGeometry=geometry(this.surface);
       try{this.surface.setPointerCapture(e.pointerId);}
       catch(_){this.captureFailures++;} // Fallback: window move/up.
@@ -170,15 +177,43 @@
     }
     touchStart(e){
       if(!this.enabled||this.session.draft)return;
-      if(this.activeSource==='touch'&&e.touches?.length>1){
-        this.abort('multitouch');return;
+      if(e.touches?.length>1){
+        if(this.activeSource==='touch'||
+           (this.preferTouchInput&&this.activeSource==='pointer'&&
+             this.session.active?.pointerType==='touch'))
+          this.abort('multitouch');
+        return;
       }
-      if(this.session.active||e.touches?.length!==1||
-         e.changedTouches?.length!==1)return;
+      if(e.touches?.length!==1||e.changedTouches?.length!==1)return;
       const touch=e.changedTouches[0];
       if(!Number.isInteger(touch.identifier)||touch.identifier<0)return;
+      // If the same EdgiOS finger emitted pointerdown first, use that
+      // already-active, real source-coordinate session and switch its
+      // remaining events to Touch Events. Releasing pointer capture after
+      // switching source makes lostpointercapture harmless.
+      const handoff=this.preferTouchInput&&this.activeSource==='pointer'&&
+        this.session.active?.pointerType==='touch';
+      if(this.session.active&&!handoff)return;
       let point;
       try{point=sourceTouch(touch,e,this.group);}catch(_){return;}
+      if(handoff){
+        const id=this.session.active.pointerId;
+        this.activeSource='touch';
+        this.touchIdentifier=touch.identifier;
+        this.touchHandoffs++;
+        this.release(id);
+        try{
+          const last=this.session.active.points.at(-1);
+          // Some engines emit pointerdown and touchstart at the identical
+          // contact position with different timestamps: one real contact,
+          // not two separate ink samples.
+          if(!last||Math.hypot(last.x-point.x,last.y-point.y)>0.25)
+            this.session.append(id,point);
+        }catch(_){this.abort('invalid-coordinate');return;}
+        if(e.cancelable)e.preventDefault();
+        this.onChange('move');
+        return;
+      }
       if(!this.session.begin(touch.identifier,'touch',point))return;
       this.activeSource='touch';
       this.touchIdentifier=touch.identifier;
@@ -192,7 +227,7 @@
       if(e.touches?.length>1){this.abort('multitouch');return;}
       const touch=changedTouch(e,this.touchIdentifier);
       if(!touch)return;
-      try{this.session.append(this.touchIdentifier,
+      try{this.session.append(this.session.active.pointerId,
         sourceTouch(touch,e,this.group));}
       catch(_){this.abort('invalid-coordinate');return;}
       if(e.cancelable)e.preventDefault();
@@ -202,7 +237,7 @@
       if(this.activeSource!=='touch'||!this.session.active)return;
       const touch=changedTouch(e,this.touchIdentifier);
       if(!touch)return;
-      try{this.session.end(this.touchIdentifier,
+      try{this.session.end(this.session.active.pointerId,
         sourceTouch(touch,e,this.group));}
       catch(_){this.abort('invalid-coordinate');return;}
       this.activeSource=null;this.touchIdentifier=null;
@@ -273,6 +308,8 @@
       return {lastCancel:this.lastCancel,captureFailures:this.captureFailures,
         inputSource:this.activeSource,
         touchFallbackStarts:this.touchFallbackStarts,
+        touchHandoffs:this.touchHandoffs,
+        edgePointerFallbackStarts:this.edgePointerFallbackStarts,
         edgeIOSNativeTouch:this.preferTouchInput,
         ...this.session.getState()};
     }

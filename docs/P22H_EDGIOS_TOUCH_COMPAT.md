@@ -35,3 +35,13 @@ Microsoft documents Edge for iOS historically using system WebKit/WKWebView (htt
 ## Still required
 
 After deployment, on the affected **physical iPhone Edge**, collect (without uploading raw writing data) the iOS version, Edge version, whether entering the overlay succeeds, whether the first touch produces a blue dot/line, whether the Saved status ever changes, and whether switching Safari/Edge on the same device reproduces. No physical Edge/WKWebView claim until this step passes.
+
+## P2.2i follow-up: pointer-only coverage gap found on code retry
+
+A subsequent source review found that the #164 EdgiOS user-agent branch dropped **every** finger `pointerdown` before checking whether any native `touchstart` actually arrived. If the real WKWebView supplies Pointer Events but not Touch Events, no stroke can start. This is a **proven logic dead zone**, not a proven explanation of the original physical-device report.
+
+The revised approach starts actual Pointer Events immediately (including on Edge). If `touchstart` for that finger subsequently arrives, the in-progress source-coordinate session transitions in place to Touch Events; the original pointer capture is released, duplicate pointer move/up is ignored, and no second accepted stroke or cancellation is generated. If Touch Events never arrive, pointermove/up still finishes the existing stroke. If touchstart arrives first, the existing Touch Events route remains. Non-Edge Safari/Chrome, pen and mouse keep their previous channel choice. Multitouch still cancels.
+
+Additional tests must exercise all three event-order families: pointer-only, pointer-first-then-touch, and touch-first-then-pointer; both duplicate suppression and the source geometry are unchanged. The native CDP touch verification is kept, and a separate **synthetic DOM PointerEvent** test under Edge UA covers pointer-only integration. The latter is deliberately not described as physical native iPhone Edge input.
+
+Issue #163 remains open until the actual affected iPhone Edge (OS and Edge version recorded) confirms that ink appears and pen-up commits. If not, add on-device non-telemetric diagnostic output before any further speculative browser workarounds.

@@ -67,16 +67,41 @@ function fixture(preferTouchInput){
   resize:(next)=>{rect=next;input.onResize();},
   layout:()=>layoutCalls};
 }
-test('P2.2h: Edge preferred native touch records one stroke and rejects duplicate pointer events',()=>{
+test('P2.2i: Edge Pointer Events work alone when Touch Events never arrive',()=>{
+ const f=fixture(true);
+ try{
+  f.input.down(f.pe('touch',10,12,100,8));
+  assert.equal(f.input.getState().inputSource,'pointer');
+  assert.equal(f.input.getState().edgePointerFallbackStarts,1);
+  f.input.move(f.pe('touch',18,28,110,8));
+  f.input.up(f.pe('touch',40,44,130,8));
+  assert.equal(f.session.active,null);
+  assert.ok(f.session.draft);
+  assert.equal(f.session.draft.samples.length,3);
+  assert.equal(f.session.draft.pointerType,'touch');
+  assert.equal(f.input.getState().touchHandoffs,0);
+  assert.equal(f.input.getState().touchFallbackStarts,0);
+  assert.equal(f.session.cancellations,0);
+  assert.deepEqual(f.changes,['down','move','up']);
+ }finally{f.restore();}
+});
+test('P2.2i: Edge pointerdown then touchstart hands off exactly once',()=>{
  const f=fixture(true);
  try{
   assert.ok(f.hooks.some(([at,name])=>at==='surface'&&name==='touchstart'));
   assert.ok(f.hooks.some(([at,name])=>at==='window'&&name==='touchmove'));
   f.input.down(f.pe('touch',10,12,100,8));
-  assert.equal(f.session.active,null,'Edge touch PointerEvent should not preempt Touch Events');
+  assert.equal(f.input.getState().inputSource,'pointer');
+  assert.ok(f.pressed.has(8));
   const start=f.ev(1,10,12,102);
   f.input.touchStart(start);assert.ok(start.prevented);
-  assert.equal(f.session.active.pointerType,'touch');
+  assert.equal(f.input.getState().inputSource,'touch');
+  assert.equal(f.session.active.pointerId,8,
+    'Touch handoff must reuse the same active source session');
+  assert.ok(!f.pressed.has(8),'Handoff releases the original pointer capture');
+  assert.equal(f.input.getState().edgePointerFallbackStarts,1);
+  assert.equal(f.input.getState().touchHandoffs,1);
+  assert.equal(f.input.getState().touchFallbackStarts,0);
   f.input.move(f.pe('touch',15,16,108,8)); // duplicate pointer ignored
   const move=f.ev(1,20,24,114);f.input.touchMove(move);
   assert.ok(move.prevented);
@@ -85,12 +110,39 @@ test('P2.2h: Edge preferred native touch records one stroke and rejects duplicat
   f.input.touchEnd(end);
   assert.ok(end.prevented);
   assert.ok(f.session.draft);
-  assert.equal(f.session.draft.samples.length,3);
+  assert.equal(f.session.draft.samples.length,3,
+    'No double point is recorded at pointerdown -> touchstart transition');
   assert.equal(f.session.draft.pointerType,'touch');
   assert.equal(f.session.draft.samples.at(-1).x,40);
   assert.equal(f.session.draft.samples.at(-1).pressure,null);
+  assert.equal(f.session.cancellations,0);
+  assert.deepEqual(f.changes,['down','move','move','up']);
+ }finally{f.restore();}
+});
+test('P2.2i: Touch Events arriving first remain authoritative in Edge',()=>{
+ const f=fixture(true);
+ try{
+  f.input.touchStart(f.ev(2,10,12,100));
+  assert.equal(f.input.getState().inputSource,'touch');
+  f.input.down(f.pe('touch',10,12,102,8)); // duplicate pointerdown ignored
+  f.input.touchMove(f.ev(2,20,24,110));
+  f.input.touchEnd(f.ev(2,40,44,140));
+  assert.equal(f.session.draft.samples.length,3);
   assert.equal(f.input.getState().touchFallbackStarts,1);
+  assert.equal(f.input.getState().touchHandoffs,0);
+  assert.equal(f.input.getState().edgePointerFallbackStarts,0);
   assert.deepEqual(f.changes,['down','move','up']);
+ }finally{f.restore();}
+});
+test('P2.2i: multi-finger during provisional Edge pointer cancels the whole stroke',()=>{
+ const f=fixture(true);
+ try{
+  f.input.down(f.pe('touch',10,12,100,8));
+  f.input.touchStart(f.ev(9,20,24,110,'multi'));
+  assert.equal(f.session.active,null);
+  assert.equal(f.session.draft,null);
+  assert.equal(f.input.getState().lastCancel,'multitouch');
+  assert.equal(f.session.cancellations,1);
  }finally{f.restore();}
 });
 test('P2.2h: Edge touch cancel, second finger and orientation never commit ghost ink',()=>{
