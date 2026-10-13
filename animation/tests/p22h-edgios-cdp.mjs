@@ -195,7 +195,7 @@ try{
   toolbarResizeSurvived:true,canceledStrokeNotCommitted:true,
   blockedIndexedDBFailsOpen:true,actualBlueInk:true,
   sourceReadOnly:true,sourceCount:201,strokeCount:1045,
-  initial,began,result,canceled,failedStorage};
+  initial,began,firstStroke:result,canceled,failedStorage};
  mkdirSync(resolve('build/a1'),{recursive:true});
  writeFileSync(resolve('build/a1/p22h-edgios-touch-metrics.json'),
   JSON.stringify(metrics,null,2)+'\n');
