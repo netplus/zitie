@@ -54,6 +54,7 @@ test('F1 is opt-in, has independent pointer practice, A4 print and explicit disc
   assert.match(html,/不自动评分/);
   assert.match(css,/@page\{size:A4 portrait/);
   assert.match(css,/#ink\{touch-action:none/);
+  assert.match(app,/width:64,height:66/);
   assert.match(app,/touchstart/);
   assert.match(app,/pointerdown/);
   assert.match(app,/localStorage\.setItem/);
