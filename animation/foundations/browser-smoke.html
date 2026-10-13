@@ -45,7 +45,10 @@ function run(){
   const tab=[...d.querySelectorAll('#tabs button')].find(b=>b.dataset.group==='numbers');
   tab.click();
   ok(app.getCategory()==='numbers','switch category');
-  ok(d.getElementById('guide').querySelector('rect')!==null,'number square grid');
+  const square=d.getElementById('guide').querySelector('rect');
+  ok(square!==null,'number square grid');
+  ok(Math.abs(square.width.baseVal.value-square.height.baseVal.value)<=2,
+     'number guide remains square rather than stretched');
   ok(app.getPrintedPageCount()===3,'10 number items print to 3 A4 pages');
   app.selectGroup('initials');
   ok(app.getPrintedPageCount()===6,'23 initials to 6 A4 pages');
