@@ -152,6 +152,7 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
 }
 </style>
 <link rel="stylesheet" href="./practice/practice.css">
+<link rel="stylesheet" href="./main-layout.css">
 <script defer src="./book-pack.js"></script>
 <script defer src="./motion.js"></script>
 <script defer src="./timeline.js"></script>
@@ -175,12 +176,17 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
 <body>
 <main class="page">
   <header class="top">
-    <div><h1>循序渐进 · PDF 同源笔顺动画</h1>
-      <p class="sub">《循序渐进汉字部首字帖》v0.5.1 · 201 个主部首 · 21 批次 · 毛笔原始轮廓</p></div>
-    <div class="toplinks"><a class="toplink" href="./experiments/brush-motion-lab.html">A3.5 运笔 A/B 研究（未审定）</a><a class="toplink" href="./index.html">九字旧播放器 / 实验功能</a></div>
+    <div><h1>循序渐进 · 笔顺课堂</h1>
+      <p class="sub">v0.5.1 · 201 字 · 21 批次 · PDF 同源毛笔演示</p></div>
+    <details class="resourceNav"><summary>更多资源</summary>
+      <nav class="resourceLinks" aria-label="更多字帖教学资源">
+        <a class="toplink" href="./experiments/brush-motion-lab.html">A3.5 运笔 A/B 研究（未审定）</a>
+        <a class="toplink" href="./index.html">九字旧播放器 / 实验功能</a>
+      </nav>
+    </details>
   </header>
   <div class="layout">
-    <section class="main" aria-label="字帖同源毛笔动画">
+    <section class="main" id="lessonHero" aria-label="字帖同源毛笔动画">
       <div class="head">
         <div class="titleGroup">
           <span class="char" id="selectedChar" aria-hidden="true">一</span>
@@ -188,9 +194,10 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
         </div>
         <div class="pager">
           <button type="button" id="practiceLaunch" aria-label="开始逐笔临摹"
-             title="进入逐笔临摹准备界面"><span aria-hidden="true">✎</span><span class="practiceLaunchText" aria-hidden="true"> 临摹</span></button>
+             title="进入逐笔临摹准备界面"><span aria-hidden="true">✎</span><span class="practiceLaunchText" aria-hidden="true"> 开始临摹</span></button>
           <button type="button" id="prevChar">‹ 上一字</button>
           <button type="button" id="nextChar">下一字 ›</button>
+          <a class="chooseGlyph" href="#characterLibrary" aria-label="跳转到选字目录">选字</a>
         </div>
       </div>
       <div class="writingStage" id="writingStage" aria-label="同步书写与笔压观察区">
@@ -275,8 +282,8 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
         <p><strong>动作证据边界：</strong>逐笔先后与名称按书中已核证据展示；运笔中线、笔速和笔尖位置属于工程推演，不是实测书写动作或教师认可的运笔轨迹。模拟笔压只改变笔尖标记及其力度辅助指示，不改变 PDF 字形或原始墨迹。</p>
       </div>
     </section>
-    <aside class="side" aria-label="201 字主部首目录">
-      <h2 style="font-size:17px;margin:0 0 7px">从字帖选字</h2>
+    <aside class="side" id="characterLibrary" aria-label="201 字主部首目录">
+      <div class="catalogHeading"><h2>选择汉字</h2><span>201 字字帖</span></div>
       <p class="sub">按主部首、拼音、笔画名称或 B01–B21 批次搜索</p>
       <input class="search" id="search" type="search" placeholder="例如：水、横折、B02、201" aria-label="搜索字帖">
       <div class="filter" id="filters" role="group" aria-label="按字帖批次筛选"></div>

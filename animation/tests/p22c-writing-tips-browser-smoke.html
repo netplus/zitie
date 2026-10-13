@@ -43,10 +43,15 @@ frame.addEventListener('load',async function initial(){
    const a=bounds(tip),b=bounds(paper),left=bounds(step),right=bounds(phase);
    const btnBottom=Math.max(...buttons.map(x=>bounds(x).bottom));
    check(w.innerWidth===v.w&&w.innerHeight===v.h,v.n+': bad viewport geometry');
-   check(a.width>=85&&a.height>=24&&a.top>=b.bottom-2&&a.bottom<=v.h-3,
-     v.n+': writing-tip preview not conspicuous beside the drawing controls');
-   check(a.left>=0&&a.right<=v.w+2&&left.right<=a.left+2&&a.right<=right.left+2,
-     v.n+': current step/tip/motion phase overlap');
+   // P2.2d: the complete teaching cue now occupies its own readable row,
+   // beneath the live stroke/phase, instead of being squeezed between them.
+   check(a.width>=Math.min(260,v.w*.6)&&a.height>=34&&
+     a.top>=Math.max(left.bottom,right.bottom)-2&&
+     a.top>=b.bottom-2&&a.bottom<=v.h-3,
+     v.n+': the full-width teaching cue must be readable near the drawing area');
+   check(a.left>=0&&a.right<=v.w+2&&
+     left.right<=right.left+2&&a.top>=left.bottom-2,
+     v.n+': teaching cue overlaps the live stroke and phase');
    check(bounds(lead).width>0&&lead.textContent===glyph.tips[0],
      v.n+': visible writing advice is missing/stale');
    check(d.documentElement.scrollWidth<=v.w+2,v.n+': horizontal page overflow');
