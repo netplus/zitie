@@ -104,9 +104,11 @@ try{
  await touch('touchStart',[initial.path[0]]);
  const began=await onPage(()=>{
   const s=ZITIE_P22A.getState().input;
-  return {phase:s.phase,source:s.inputSource,fallback:s.touchFallbackStarts};
+  return {phase:s.phase,source:s.inputSource,fallback:s.touchFallbackStarts,
+   handoffs:s.touchHandoffs,pointerStarts:s.edgePointerFallbackStarts};
  });
- check(began.phase==='drawing'&&began.source==='touch'&&began.fallback===1,
+ check(began.phase==='drawing'&&began.source==='touch'&&
+  began.fallback+began.handoffs===1,
   'Native CDP Edge touch never started: '+JSON.stringify(began));
  // The address bar may resize the visual viewport; unchanged drawing surface
  // geometry should not cancel this real touch.
@@ -162,6 +164,38 @@ try{
  check(canceled.written===1&&canceled.phase==='ready'&&
   canceled.cancel==='touchcancel'&&canceled.blue===1,
   'Canceled real touch incorrectly committed ghost stroke: '+JSON.stringify(canceled));
+ // Integration check: the EdgiOS UA may emit ONLY Pointer Events (no
+ // Touch Events). These synthetic DOM PointerEvents test that code path,
+ // while the preceding CDP touch test uses genuine native touch injection.
+ const pointerOnly=await onPage(async()=>{
+  const practice=ZITIE_P22A,book=ZITIE_A3_BOOK;
+  if(!practice.restart())throw Error('Cannot reset after native touch QA');
+  await practice.whenSaved();
+  const g=document.querySelector('[data-practice-source-transform]');
+  const m=g.getScreenCTM(),canvas=document.getElementById('practiceInk');
+  const pts=book.getGlyph().strokes[0].median.map(([x,y])=>({
+   x:m.a*x+m.c*y+m.e,y:m.b*x+m.d*y+m.f
+  }));
+  const dispatch=(type,pt)=>canvas.dispatchEvent(new PointerEvent(type,{
+   bubbles:true,cancelable:true,pointerType:'touch',pointerId:922,
+   isPrimary:true,button:0,clientX:pt.x,clientY:pt.y
+  }));
+  dispatch('pointerdown',pts[0]);
+  for(const pt of pts.slice(1))dispatch('pointermove',pt);
+  dispatch('pointerup',pts.at(-1));
+  await practice.whenSaved();
+  const s=practice.getState(),written=practice.getWritten();
+  return {written:s.progress.writtenStrokes,
+   starts:s.input.edgePointerFallbackStarts,
+   handoffs:s.input.touchHandoffs,
+   samples:written[0]?.samples.length,
+   ink:practice.getInkMetrics().confirmedStrokes};
+ });
+ check(pointerOnly.written===1&&pointerOnly.ink===1&&
+  pointerOnly.samples>=2&&pointerOnly.starts>=1&&
+  pointerOnly.handoffs===0,
+  'EdgiOS pointer-only channel was silently discarded: '+
+    JSON.stringify(pointerOnly));
  // Simulate Edge InPrivate/blocked IndexedDB *without fake pen data*. The
  // loader must report no persistence but keep the drawing Canvas usable.
  const failedStorage=await onPage(async()=>{
@@ -194,8 +228,9 @@ try{
   nativeSingleTouch:true,preferredTouchWithoutDuplicates:true,
   toolbarResizeSurvived:true,canceledStrokeNotCommitted:true,
   blockedIndexedDBFailsOpen:true,actualBlueInk:true,
+  pointerOnlyFallbackRecovered:true,
   sourceReadOnly:true,sourceCount:201,strokeCount:1045,
-  initial,began,firstStroke:result,canceled,failedStorage};
+  initial,began,firstStroke:result,canceled,pointerOnly,failedStorage};
  mkdirSync(resolve('build/a1'),{recursive:true});
  writeFileSync(resolve('build/a1/p22h-edgios-touch-metrics.json'),
   JSON.stringify(metrics,null,2)+'\n');
