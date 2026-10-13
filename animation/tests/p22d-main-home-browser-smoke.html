@@ -1,0 +1,138 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>P2.2d normal lesson layout / visual hierarchy QA</title></head>
+<body><h1>非练习状态·教学主页布局/选字/笔顺/笔压 回归</h1>
+<pre id="result">RUNNING</pre>
+<iframe id="demo" src="../book.html?id=77" title="Production 201-glyph teaching page"
+ style="width:1366px;height:768px;border:0;display:block"></iframe>
+<script>
+const wait=ms=>new Promise(done=>setTimeout(done,ms));
+const bounds=el=>el.getBoundingClientRect();
+const check=(ok,msg)=>{if(!ok)throw Error(msg)};
+const frame=document.getElementById('demo'),out=document.getElementById('result');
+frame.addEventListener('load',async function initial(){
+ frame.removeEventListener('load',initial);
+ try{
+  const w=this.contentWindow,d=w.document,app=w.ZITIE_A3_BOOK;
+  check(d.documentElement.dataset.a3Ready==='201'&&app?.pack.glyphs.length===201,
+    'P2.2d production teaching screen failed to initialize');
+  const snapshots=JSON.stringify(app.pack.glyphs);
+  check(app.pack.glyphs.reduce((n,g)=>n+g.strokes.length,0)===1045,
+    'Source source count changed');
+  const paper=d.querySelector('.writingStage>.paper'),
+    pressure=d.querySelector('.writingStage>.pressureBox'),
+    note=d.getElementById('writingTipJump'),
+    noteText=d.getElementById('writingTipLead'),
+    step=d.getElementById('stepLabel'),
+    phase=d.getElementById('phase'),
+    heading=d.getElementById('lessonHero'),
+    practiceButton=d.getElementById('practiceLaunch'),
+    chooser=d.querySelector('.pager .chooseGlyph'),
+    catalog=d.getElementById('characterLibrary'),
+    filters=d.getElementById('filters'),
+    tiles=d.getElementById('tiles'),
+    resource=d.querySelector('details.resourceNav'),
+    progress=d.getElementById('seek'),
+    controls=[...d.querySelectorAll('.controls button')];
+  check(paper&&pressure&&note&&noteText&&step&&phase&&heading&&
+    chooser&&catalog&&filters&&tiles&&resource&&controls.length===10,
+    'Redesigned lesson missing core source-backed controls');
+  check(!resource.open&&resource.querySelectorAll('.toplink').length===2,
+    'Historical reference links were removed or menu is initially expanded');
+  resource.open=true;
+  check(resource.querySelectorAll('.toplink').length===2,
+    'Resource menu must preserve both prior destinations');
+  resource.open=false;
+  app.selectGlyph(77);
+  const g=app.getGlyph(),pdf=app.pack.publication.sha256;
+  check(noteText.textContent===g.tips[0]&&
+    d.getElementById('tipText').textContent.includes('写完检查：'+g.check),
+    'New prominent hint must use exactly authored PDF-derived text');
+  app.setPressureStyle('simulated');
+  const stroke=app.player.timeline.strokes[1];
+  app.player.seekElapsed(stroke.startMs+stroke.durationMs*.51);
+  const elapsed=app.player.elapsed;
+  const summary=[];
+  for(const v of [
+    {n:'desktop1440x900',w:1440,h:900,controls:true},
+    {n:'laptop1366x768',w:1366,h:768,controls:true},
+    {n:'laptop1020x768',w:1020,h:768,controls:true},
+    {n:'pad800x900',w:800,h:900,controls:true},
+    {n:'phone390x844',w:390,h:844,controls:true},
+    {n:'shortPhone390x667',w:390,h:667,controls:false}
+  ]){
+    frame.style.width=v.w+'px';frame.style.height=v.h+'px';
+    w.scrollTo(0,0);await wait(170);
+    const p=bounds(paper),n=bounds(note),s=bounds(step),m=bounds(phase),
+      c=bounds(practiceButton),pr=bounds(pressure);
+    const bottom=Math.max(...controls.map(x=>bounds(x).bottom));
+    check(w.innerWidth===v.w&&w.innerHeight===v.h,v.n+': viewport mismatch');
+    check(p.width>=225&&p.width<=412&&Math.abs(p.width-p.height)<3&&
+      p.top>=0&&p.bottom<=v.h+2,v.n+': calligraphy paper distorted/clipped');
+    check(pr.top>=0&&pr.bottom<=v.h+2,
+      v.n+': live pressure controls scrolled out of the initial viewport');
+    check(n.top>=Math.max(s.bottom,m.bottom)-2&&n.top>=p.bottom-2&&
+      n.height>=34&&n.width>=Math.min(260,v.w*.6)&&n.bottom<=v.h-2,
+      v.n+': prominent two-line source tip is too small, clipped or misplaced');
+    check(w.getComputedStyle(noteText).webkitLineClamp==='2'&&
+      noteText.textContent===g.tips[0],
+      v.n+': tip card must preserve original text and max-two-line reading');
+    check(c.width>=v.w<=510?70:40,
+      v.n+': start-tracing button too narrow');
+    check(d.documentElement.scrollWidth<=v.w+2,
+      v.n+': horizontal overflow');
+    check(bounds(progress).bottom<=v.h-3,
+      v.n+': animated progress hidden');
+    if(v.controls)check(bottom<=v.h-3,
+      v.n+': first-screen playback/stroke controls lost: '+bottom);
+    if(v.w<=510){
+      check(bounds(chooser).width>=40&&bounds(chooser).bottom<=v.h&&
+        practiceButton.textContent.includes('开始临摹'),
+        v.n+': mobile start/practice or choose glyph label missing');
+      check(w.getComputedStyle(filters).flexWrap==='nowrap',
+        v.n+': multi-row batch filters waste mobile space');
+    }
+    summary.push({viewport:v.n,paperWidth:Math.round(p.width),
+      paperBottom:Math.round(p.bottom),tipBottom:Math.round(n.bottom),
+      tipHeight:Math.round(n.height),actionBottom:Math.round(bottom),
+      horizontalOverflow:false});
+  }
+  // Real phone library flows: choose a glyph then return to its visible lesson.
+  frame.style.width='390px';frame.style.height='844px';await wait(170);
+  catalog.scrollIntoView({block:'start',behavior:'auto'});await wait(55);
+  check(w.scrollY>30,'Phone should reach the dictionary via a real anchor');
+  const search=d.getElementById('search');
+  search.value='鼻';search.dispatchEvent(new w.Event('input',{bubbles:true}));
+  check(app.getVisible().length>=1&&
+    [...tiles.querySelectorAll('button')].some(b=>b.dataset.glyphId==='200'),
+    'Search/source-linked catalog missing complex glyph');
+  const tile=tiles.querySelector('button[data-glyph-id="200"]');
+  tile.click();await wait(120);
+  check(app.getGlyph().main_id===200&&
+    noteText.textContent===app.getGlyph().tips[0]&&
+    bounds(heading).top>=-4&&bounds(heading).top<120,
+    'Choosing a mobile glyph should restore its lesson at the top');
+  check(d.getElementById('pdfLink').getAttribute('href').includes('#page='),
+    'Original published PDF pagination missing after selection');
+  app.selectGlyph(77);
+  app.setPressureStyle('stable');
+  check(app.getPressureStyle()==='stable'&&
+    d.getElementById('pressureDetails').hidden,
+    'Teaching layout broke original stable mode');
+  app.setPressureStyle('simulated');
+  check(app.getPressureStyle()==='simulated'&&app.player.frontGuard===true,
+    'A3.6 front guard or simulated pressure is missing');
+  check(JSON.stringify(app.pack.glyphs)===snapshots&&
+    app.pack.publication.sha256===pdf,
+    'Source vectors or published PDF SHA modified');
+  document.documentElement.dataset.result='PASS';
+  out.textContent=JSON.stringify({result:'PASS',
+    glyphs:201,sourceStrokes:1045,sourceTipsExact:true,
+    originalPressureAndFrontGuard:true,originalPDF:true,
+    resourceLinksRetained:true,mobileCatalogReturnsToLesson:true,
+    viewports:summary},null,2);
+ }catch(e){
+  document.documentElement.dataset.result='FAIL';
+  out.textContent='FAIL: '+(e.stack||e);
+ }
+});
+</script></body></html>
