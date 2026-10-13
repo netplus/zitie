@@ -119,16 +119,23 @@ test('P2.1c storage key partitions PDF revisions / glyphs, no cloud fallback',as
  assert.doesNotMatch(code,/\blocalStorage\b/);
  assert.match(code,/this\.queue=result/);
 });
-test('P2.1c UI carries manual confirmation, safe exit, undo and no teacher scoring',()=>{
+test('Practice UI offers immediate whole-word restart, safe exit, undo and no teacher scoring',()=>{
  const html=fs.readFileSync(path.join(ROOT,'animation/book.html'),'utf8');
  const bridge=fs.readFileSync(path.join(ROOT,'animation/practice/practice-bridge.js'),'utf8');
  const canvas=fs.readFileSync(path.join(ROOT,'animation/practice/trace-canvas.js'),'utf8');
  for(const name of ['practiceOrderResult','practiceUndo','practiceRestart',
-   'practiceClearPrompt','practiceClearYes','practiceClearNo',
    'practiceLeavePrompt','practiceLeaveYes','practiceLeaveNo',
    'practiceSaved','practiceCompletion','practiceReturnCurrent']){
    assert.equal([...html.matchAll(new RegExp('id="'+name+'"','g'))].length,1,name);
  }
+ for(const absent of ['practiceClearPrompt','practiceClearYes','practiceClearNo']){
+   assert.doesNotMatch(html,new RegExp('id="'+absent+'"'),
+     'Whole-word restart must not need a confirmation dialog: '+absent);
+   assert.doesNotMatch(bridge,new RegExp("'"+absent+"'"),
+     'No dead handlers for deleted restart dialog: '+absent);
+ }
+ assert.match(bridge,/restart\.addEventListener\('click',restartAll\)/,
+   'A single restart tap should immediately reset the whole glyph');
  for(const script of ['progress-controller.js','storage.js'])
    assert.ok(html.includes('src="./practice/'+script+'"'));
  assert.match(bridge,/progress\.append\(session\.draft\)/);
