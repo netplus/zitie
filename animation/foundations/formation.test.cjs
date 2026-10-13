@@ -76,5 +76,5 @@ test('F2.4 remains source- and storage-compatible with 113 Pinyin entries',()=>{
    assert.equal(model.compose(v).strokes.filter(s=>s.part==='diaeresis').length,2);
  const d=fs.readFileSync(path.join(__dirname,'../../docs/F24_PUBLISHER_CHART_AUDIT.md'),'utf8');
  assert.match(d,/动作段数不等于/);
- assert.match(d,/不是国家统一/);
+ assert.match(d,/不等于国家统一/);
 });
