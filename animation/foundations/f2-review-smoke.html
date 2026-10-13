@@ -60,9 +60,21 @@ function audit(){
         view.name+'/'+group.key+': printed rows must fill A4 width');
       byGroup.push({group:group.key,entries:tiles.length,printedPages:pageCount});
     }
-    check(d.documentElement.scrollWidth<=view.width+2,
+    const actualScrollWidth=d.documentElement.scrollWidth;
+    const outliers=[...d.body.querySelectorAll('*')].filter(el=>{
+      const r=el.getBoundingClientRect();
+      return r.width>0&&r.right>view.width+2;
+    }).slice(0,20).map(el=>{
+      const r=el.getBoundingClientRect();
+      return {tag:el.tagName,id:el.id||'',className:String(el.className?.baseVal||el.className||'').slice(0,60),
+        right:Math.round(r.right),width:Math.round(r.width),
+        scrollWidth:el.scrollWidth};
+    });
+    check(actualScrollWidth<=view.width+2,
       view.name+': horizontal overflow');
     recorded.push({view:view.name,viewportWidth:view.width,
+      documentWidth:actualScrollWidth,
+      overflowElements:outliers,
       boardWidth:Math.round(d.getElementById('board').getBoundingClientRect().width),
       groups:byGroup});
   }
