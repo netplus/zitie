@@ -34,7 +34,7 @@ frame.addEventListener('load',async function initial(){
     progress=d.getElementById('seek'),
     controls=[...d.querySelectorAll('.controls button')];
   check(paper&&pressure&&note&&noteText&&step&&phase&&heading&&
-    chooser&&catalog&&filters&&tiles&&resource&&controls.length===10,
+    chooser&&catalog&&filters&&tiles&&resource&&controls.length===11,
     'Redesigned lesson missing core source-backed controls');
   check(!resource.open&&resource.querySelectorAll('.toplink').length===2,
     'Historical reference links were removed or menu is initially expanded');

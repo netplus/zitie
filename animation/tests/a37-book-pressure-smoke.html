@@ -54,15 +54,22 @@ document.getElementById('demo').addEventListener('load',async function(){
   const buttons=[...group.querySelectorAll('button[data-pen-style]')];
   check(buttons.length===2&&buttons.map(b=>b.textContent.trim()).join('|')===
     '稳定版|模拟笔压版','Screenshot pressure style choices not restored');
-  check(buttons[0].getAttribute('aria-pressed')==='true'&&
-    buttons[1].getAttribute('aria-pressed')==='false'&&
-    app.getPressureStyle()==='stable'&&
-    d.getElementById('pressureDetails').hidden,
-    'Stable must remain actual default (including ARIA/UI)');
-  check(app.player.tip.getAttribute('r')==='8'&&
+  check(buttons[0].getAttribute('aria-pressed')==='false'&&
+    buttons[1].getAttribute('aria-pressed')==='true'&&
+    app.getPressureStyle()==='simulated'&&
+    !d.getElementById('pressureDetails').hidden&&
+    app.getPressureState()?.mode==='simulated'&&
+    app.getPressureState()?.measured===false&&
+    app.player.speed===0.8,
+    'Teaching page must launch at 0.8× with non-measured simulated pressure');
+  // Still compare every source raster against the original stable contact.
+  buttons[0].click();
+  check(app.getPressureStyle()==='stable'&&
+    d.getElementById('pressureDetails').hidden&&
+    app.player.tip.getAttribute('r')==='8'&&
     app.player.tip.getAttribute('stroke')==='#FFFFFF'&&
     !app.getPressureRing()?.isConnected,
-    'Original stable cursor was changed');
+    'Switching to original stable cursor failed');
   const source=JSON.stringify(app.pack.glyphs);
   const cases=[
     [77,0,.18],[77,1,.56],[77,3,.84],
@@ -188,7 +195,7 @@ document.getElementById('demo').addEventListener('load',async function(){
     'Pressure ring should clear at full-glyph completion');
   app.player.restart();app.player.pause();
   check(app.getPressureStyle()==='simulated','Restart changed pressure mode');
-  app.setSpeed(1);
+  app.setSpeed(0.8);
   this.style.width='390px';
   await sleep(120);
   check(d.documentElement.scrollWidth<=w.innerWidth+2,
@@ -203,7 +210,8 @@ document.getElementById('demo').addEventListener('load',async function(){
     restrictedGlyphs:ordinalOnly,simulatedPlans:plans,
     baselineComparisonFrames:frames,bitmapInkMismatch:inkMismatch,
     ringPositionMismatch,simulatedMarkerFrames:changedMarkers,
-    activePressureFrames:activePressure,defaultStyle:'stable',
+    activePressureFrames:activePressure,defaultStyle:'simulated',
+    defaultRate:0.8,
     simulatedPressureMeasured:false,controlsRestored:true,
     sourceGuardUnchanged:true,playbackPositionPreserved:true,
     glyphSelectionPreservesMode:true,sourcePDFImmutable:true,mobile390:true};

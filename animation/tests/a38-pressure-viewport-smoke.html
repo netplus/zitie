@@ -28,10 +28,15 @@ document.getElementById('demo').addEventListener('load',async function(){
     'The responsive layout duplicated interactive pressure controls');
   check(buttons.map(b=>b.textContent.trim()).join('|')==='稳定版|模拟笔压版',
     'Original pressure style labels were changed');
-  check(buttons[0].getAttribute('aria-pressed')==='true'&&
-    app.getPressureStyle()==='stable','Stable default was lost');
+  check(buttons[0].getAttribute('aria-pressed')==='false'&&
+    buttons[1].getAttribute('aria-pressed')==='true'&&
+    app.getPressureStyle()==='simulated'&&!details.hidden,
+    'Simulated pressure must be the official book launch default');
   check(app.player.frontGuard===true,'A3.6 source pigment guard is missing');
   const glyphs=JSON.stringify(app.pack.glyphs);
+  app.setPressureStyle('stable');
+  check(details.hidden&&buttons[0].getAttribute('aria-pressed')==='true',
+    'Original stable mode is no longer selectable');
   app.setPressureStyle('simulated');
   const entry=app.player.timeline.strokes[1];
   app.player.seekElapsed(entry.startMs+entry.durationMs*.51);

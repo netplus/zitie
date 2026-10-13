@@ -1132,6 +1132,46 @@ jobs:
           test -s build/a1/p22e-stable-laptop.png
           test -s build/a1/p22e-simulated-laptop.png
           test -s build/a1/p22e-simulated-mobile.png
+      - name: Audit P2.2g 0.8x plus simulated pressure defaults in real Chromium
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check animation/book-ui.js
+          node --test animation/tests/p22g-defaults.test.cjs
+          test -s animation/book-pack.js
+          mkdir -p build/a1
+          python3 -m http.server 18793 --bind 127.0.0.1 > build/a1/p22g-default-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 50); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18793/animation/book.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          timeout 165 node animation/tests/cdp-wait-result.mjs \
+            'http://127.0.0.1:18793/animation/tests/p22g-defaults-browser-smoke.html' \
+            build/a1/p22g-defaults-browser-dom.html 120000
+          if ! grep -q 'data-result="PASS"' build/a1/p22g-defaults-browser-dom.html; then
+            echo 'FAIL: launch defaults, speed controls, simulated pressure, practice restore or responsive UI' >&2
+            grep -o 'FAIL:[^<]*' build/a1/p22g-defaults-browser-dom.html | head -n 14 >&2 || true
+            exit 1
+          fi
+          python3 - <<'PY'
+          import re,json,html
+          from pathlib import Path
+          raw=Path('build/a1/p22g-defaults-browser-dom.html').read_text(encoding='utf-8')
+          m=re.search(r'<pre id="result">(\{.*?\})</pre>',raw,re.S)
+          if not m:raise SystemExit('P2.2g Chromium metrics absent')
+          v=json.loads(html.unescape(m.group(1)))
+          assert v['result']=='PASS' and v['defaultSpeed']==0.8
+          assert v['defaultStyle']=='simulated' and v['sourceGlyphs']==201
+          assert v['sourceStrokes']==1045 and v['manualChoicesPersist']
+          assert v['practiceRestoresSettings'] and v['reloadResetsDefaults']
+          assert v['originalSourceUnchanged'] and v['notMeasured']
+          assert len(v['layout'])==5
+          Path('build/a1/p22g-defaults-metrics.json').write_text(
+              json.dumps(v,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('PASS: 0.8x and simulated default, manual overrides, reload and 5 screens')
+          PY
       - name: Audit A3.5 PDF-immutable brush gesture retiming A/B in Chrome
         env:
           CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
@@ -1294,7 +1334,8 @@ jobs:
           assert result['bitmapInkMismatch']==0 and result['ringPositionMismatch']==0
           assert result['simulatedMarkerFrames']==12
           assert result['activePressureFrames']>=8
-          assert result['defaultStyle']=='stable'
+          assert result['defaultStyle']=='simulated'
+          assert result['defaultRate']==0.8
           assert result['simulatedPressureMeasured'] is False
           for key in ['controlsRestored','sourceGuardUnchanged',
                       'playbackPositionPreserved','glyphSelectionPreservesMode',
@@ -1309,7 +1350,7 @@ jobs:
             --disable-dev-shm-usage --disable-gpu --virtual-time-budget=20000 \
             --window-size=1450,1710 \
             --screenshot="$(pwd)/build/a1/a37-book-pressure-stable.png" \
-            'http://127.0.0.1:18781/animation/book.html?id=77' >/dev/null
+            'http://127.0.0.1:18781/animation/tests/a37-book-pressure-preview.html?stable=1' >/dev/null
           timeout 110 "$CHROME_BIN" --headless=new --no-sandbox \
             --disable-dev-shm-usage --disable-gpu --virtual-time-budget=20000 \
             --window-size=1450,1710 \

@@ -211,13 +211,13 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
           <div class="pressureButtons" id="pressureStyleOptions"
                role="group" aria-labelledby="pressureStyleLabel">
             <button type="button" data-pen-style="stable"
-                    aria-pressed="true">稳定版</button>
+                    aria-pressed="false">稳定版</button>
             <button type="button" data-pen-style="simulated"
-                    aria-pressed="false">模拟笔压版</button>
+                    aria-pressed="true">模拟笔压版</button>
           </div>
         </div>
-        <p class="pressureHint" id="pressureStyleHint">稳定版 · 原有笔尖，墨迹不变</p>
-        <div class="pressureDetails" id="pressureDetails" hidden>
+        <p class="pressureHint" id="pressureStyleHint">模拟版 · 笔尖及曲线提示力度，墨迹不变</p>
+        <div class="pressureDetails" id="pressureDetails">
           <div class="pressureTelemetry">
             <span>模拟接触力度 <strong id="pressureValue">0%</strong></span>
             <div class="pressureMeter" aria-hidden="true"><span id="pressureFill"></span></div>
@@ -268,7 +268,8 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
         <div class="speed" id="speedButtons" aria-label="播放速度">
           <span>速度</span>
           <button type="button" data-speed="0.5" aria-pressed="false">0.5×</button>
-          <button type="button" data-speed="1" aria-pressed="true">1×</button>
+          <button type="button" data-speed="0.8" aria-pressed="true">0.8×</button>
+          <button type="button" data-speed="1" aria-pressed="false">1×</button>
           <button type="button" data-speed="1.5" aria-pressed="false">1.5×</button>
           <button type="button" data-speed="2" aria-pressed="false">2×</button>
         </div>

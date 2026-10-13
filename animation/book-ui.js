@@ -29,8 +29,12 @@ window.addEventListener('DOMContentLoaded', function(){
       throw Error('A3 indexed PDF glyph integrity error');
   });
   const byId=new Map(glyphs.map(g=>[g.main_id,g]));
+  // Per-open teaching defaults only; manual choices persist within this page.
+  // Keep the shared A1.6 controller's intrinsic stable default untouched.
+  const DEFAULT_RATE=0.8;
+  const DEFAULT_PEN_STYLE='simulated';
   const state={current:null,query:'',batch:'all',visible:glyphs.slice(),
-    speed:1,lastFrame:null};
+    speed:DEFAULT_RATE,lastFrame:null};
   const $steps=$('steps'),$tiles=$('tiles'),$filters=$('filters');
   // Reuse A1.6's original, proven brush-contact visualization controller.
   // It changes ONLY the nib marker / force ring, never A3.6 source ink.
@@ -279,7 +283,7 @@ window.addEventListener('DOMContentLoaded', function(){
     const b=e.target.closest('button[data-speed]');
     if(!b)return;
     const value=+b.dataset.speed;
-    if(![.5,1,1.5,2].includes(value))throw Error('Invalid A3 rate');
+    if(![.5,.8,1,1.5,2].includes(value))throw Error('Invalid A3 rate');
     state.speed=value;player.setSpeed(value);
     $('speedButtons').querySelectorAll('button[data-speed]').forEach(x=>
       x.setAttribute('aria-pressed',String(+x.dataset.speed===value)));
@@ -297,6 +301,9 @@ window.addEventListener('DOMContentLoaded', function(){
     else if(e.key.toLowerCase()==='r'){e.preventDefault();player.restart();}
   });
   window.addEventListener('resize',updateTipTarget);
+  // Apply the book-only presentation default before the source glyph starts.
+  // The first source-backed frame then initializes the simulated curve.
+  setPressureStyle(DEFAULT_PEN_STYLE);
   renderFilters();
   applyFilter();
   const id=+(new URLSearchParams(window.location.search).get('id')||1);

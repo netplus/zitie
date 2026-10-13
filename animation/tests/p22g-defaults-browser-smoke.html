@@ -1,0 +1,142 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>P2.2g real-browser 0.8x & simulated pressure default acceptance</title></head>
+<body><h1>正式字帖播放器：0.8× / 模拟笔压默认状态回归</h1>
+<pre id="result">RUNNING</pre>
+<iframe id="demo" title="Real PDF A3 player" src="../book.html?id=77"
+ style="display:block;border:0;width:1366px;height:768px"></iframe>
+<script>
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const check=(ok,msg)=>{if(!ok)throw Error(msg)};
+const box=e=>e.getBoundingClientRect();
+const iframe=document.getElementById('demo'),out=document.getElementById('result');
+iframe.addEventListener('load',async function initial(){
+ iframe.removeEventListener('load',initial);
+ try{
+  const w=this.contentWindow,d=w.document,app=w.ZITIE_A3_BOOK,p=w.ZITIE_P22A;
+  check(app&&p&&d.documentElement.dataset.a3Ready==='201',
+    'Full source-backed A3 player or practice overlay unavailable');
+  const original=JSON.stringify(app.pack.glyphs),hash=app.pack.publication.sha256;
+  const speedButtons=()=>[...d.querySelectorAll('#speedButtons button[data-speed]')];
+  const pressedSpeed=()=>speedButtons().filter(x=>x.getAttribute('aria-pressed')==='true');
+  const penButtons=()=>[...d.querySelectorAll('#pressureStyleOptions button[data-pen-style]')];
+  const pressedPen=()=>penButtons().filter(x=>x.getAttribute('aria-pressed')==='true');
+  const curve=d.getElementById('pressureCurve');
+  const details=d.getElementById('pressureDetails');
+  function assertDefaults(target,controller){
+    const speeds=[...target.querySelectorAll('#speedButtons button[data-speed]')];
+    const styles=[...target.querySelectorAll('#pressureStyleOptions button[data-pen-style]')];
+    check(speeds.map(x=>x.dataset.speed).join('|')==='0.5|0.8|1|1.5|2',
+      'Alternative playback speeds were lost');
+    check(speeds.filter(x=>x.getAttribute('aria-pressed')==='true').length===1&&
+      speeds.find(x=>x.dataset.speed==='0.8')?.getAttribute('aria-pressed')==='true'&&
+      controller.player.speed===0.8,'0.8× must be the live clock and selected rate');
+    check(styles.length===2&&styles.filter(x=>
+      x.getAttribute('aria-pressed')==='true').length===1&&
+      styles.find(x=>x.dataset.penStyle==='simulated')?.getAttribute('aria-pressed')==='true'&&
+      controller.getPressureStyle()==='simulated'&&
+      !target.getElementById('pressureDetails').hidden&&
+      controller.getPressureState()?.mode==='simulated'&&
+      controller.getPressureState()?.measured===false,
+      'Live initial pressure must be simulated, labelled and non-measured');
+  }
+  assertDefaults(d,app);
+  check(app.pack.glyphs.length===201&&
+    app.pack.glyphs.reduce((s,g)=>s+g.strokes.length,0)===1045&&
+    app.getGlyph().main_id===77&&app.player.frontGuard===true&&
+    d.getElementById('pressureDetails').textContent.includes('非实测笔压'),
+    'Canonical source/pressure disclosure damaged');
+  // Actual simulation after seeking into the second stroke, not just CSS.
+  const second=app.player.timeline.strokes[1];
+  app.player.seekElapsed(second.startMs+second.durationMs*.48);
+  check(app.getPressureState().pressure>.05&&
+    curve.getContext('2d').getImageData(0,0,640,114).data.some((v,i)=>
+      i%4===0&&v<192),
+    'No nonzero synthetic force or plotted curve at active 0.8× stroke');
+  const t=app.player.elapsed,svgBefore=app.getGlyph().source_sha256;
+  // User overrides: apply 1× + stable, then choose another character.
+  app.setSpeed(1);
+  app.setPressureStyle('stable');
+  check(app.player.elapsed===t&&app.player.speed===1&&
+    pressedSpeed().length===1&&pressedSpeed()[0].dataset.speed==='1'&&
+    pressedPen().length===1&&pressedPen()[0].dataset.penStyle==='stable'&&
+    details.hidden&&app.getPressureStyle()==='stable',
+    'Manual alternative selections do not update both UI and clock');
+  app.selectGlyph(200);
+  check(app.getGlyph().character==='鼻'&&app.player.speed===1&&
+    app.getPressureStyle()==='stable'&&
+    pressedSpeed()[0].dataset.speed==='1',
+    'Selecting another of 201 glyphs reset user-selected preferences');
+  // Restore new defaults manually and enter/exit handwriting without ink loss.
+  app.setSpeed(.8);app.setPressureStyle('simulated');app.selectGlyph(77);
+  app.player.restart();app.player.pause();
+  check(app.player.speed===.8&&app.getPressureStyle()==='simulated'&&
+    app.getGlyph().source_sha256===svgBefore,
+    'Restart/select source mutated original playback state or preference');
+  check(p.open(),'Whole-character practice entry broke');
+  await p.whenReady();
+  check(p.getState().progress.glyphId===77,
+    'Practice did not read the same source-backed glyph');
+  check(p.close(),'Cannot return to A3 from untouched practice');
+  check(app.player.speed===.8&&app.getPressureStyle()==='simulated'&&
+    pressedSpeed()[0].dataset.speed==='0.8'&&
+    pressedPen()[0].dataset.penStyle==='simulated',
+    'Practice return changed user-selected animation speed or pressure style');
+  const layout=[];
+  for(const v of [
+    {name:'laptop1366x768',width:1366,height:768,firstScreen:true},
+    {name:'laptop1020x768',width:1020,height:768,firstScreen:true},
+    {name:'pad800x900',width:800,height:900,firstScreen:true},
+    {name:'phone390x844',width:390,height:844,firstScreen:true},
+    {name:'shortPhone390x667',width:390,height:667,firstScreen:false}
+  ]){
+    iframe.style.width=v.width+'px';iframe.style.height=v.height+'px';
+    w.scrollTo(0,0);await sleep(160);
+    const paper=d.querySelector('.writingStage > .paper'),
+      buttons=[...d.querySelectorAll('.controls button')],
+      controlsBottom=Math.max(...buttons.map(x=>box(x).bottom));
+    const positions=speedButtons().map(x=>box(x));
+    check(w.innerWidth===v.width&&w.innerHeight===v.height,
+      v.name+': viewport dimensions diverged');
+    check(box(paper).width>=225&&Math.abs(box(paper).width-box(paper).height)<3&&
+      box(paper).bottom<=v.height+2,v.name+': source writing square clipped');
+    check(d.documentElement.scrollWidth<=v.width+2,
+      v.name+': 5 rate choices caused horizontal overflow');
+    check(positions.length===5&&positions.every(x=>
+      Math.abs(x.top-positions[0].top)<3&&x.width>=28),
+      v.name+': rate choices must remain readable on one control row');
+    if(v.firstScreen)check(controlsBottom<=v.height-3,
+      v.name+': pressure default or fifth speed button pushed controls off screen');
+    check(pressedSpeed().length===1&&pressedSpeed()[0].dataset.speed==='0.8'&&
+      app.getPressureStyle()==='simulated'&&!details.hidden,
+      v.name+': resize lost chosen default controls/graph');
+    layout.push({viewport:v.name,boardPx:Math.round(box(paper).width),
+      rateButtons:positions.length,controlsBottom:Math.round(controlsBottom),
+      simulatedGraphVisible:true,oneRateSelected:true});
+  }
+  // A fresh document MUST return to defaults even after manual overrides.
+  app.setSpeed(2);app.setPressureStyle('stable');
+  check(app.player.speed===2&&app.getPressureStyle()==='stable',
+    'Manual alternative was not selectable before reload');
+  const reloaded=new Promise(resolve=>iframe.addEventListener('load',resolve,{once:true}));
+  iframe.src='../book.html?id=77&p22g-default-reload=1';
+  await reloaded;await sleep(60);
+  const w2=iframe.contentWindow,d2=w2.document,b2=w2.ZITIE_A3_BOOK;
+  check(b2&&d2.documentElement.dataset.a3Ready==='201',
+    'Fresh A3 instance unavailable after hard reload');
+  assertDefaults(d2,b2);
+  check(JSON.stringify(b2.pack.glyphs)===original&&
+    b2.pack.publication.sha256===hash&&b2.getGlyph().main_id===77,
+    'Reload modified canonical PDF-source glyph data');
+  document.documentElement.dataset.result='PASS';
+  out.textContent=JSON.stringify({
+    result:'PASS',defaultSpeed:0.8,defaultStyle:'simulated',
+    sourceGlyphs:201,sourceStrokes:1045,notMeasured:true,
+    manualChoicesPersist:true,practiceRestoresSettings:true,
+    reloadResetsDefaults:true,originalSourceUnchanged:true,
+    layout},null,2);
+ }catch(error){
+  document.documentElement.dataset.result='FAIL';
+  out.textContent='FAIL: '+(error.stack||error);
+ }
+});
+</script></body></html>
