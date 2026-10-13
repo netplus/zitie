@@ -101,8 +101,9 @@ frame.addEventListener('load',async function initial(){
   }
   // Real phone library flows: choose a glyph then return to its visible lesson.
   frame.style.width='390px';frame.style.height='844px';await wait(170);
-  catalog.scrollIntoView({block:'start',behavior:'auto'});await wait(55);
-  check(w.scrollY>30,'Phone should reach the dictionary via a real anchor');
+  chooser.click();await wait(70);
+  check(w.location.hash==='#characterLibrary'&&w.scrollY>30,
+    'Phone choose-glyph shortcut must navigate to the actual source library');
   const search=d.getElementById('search');
   search.value='鼻';search.dispatchEvent(new w.Event('input',{bubbles:true}));
   check(app.getVisible().length>=1&&
