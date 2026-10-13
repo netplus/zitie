@@ -14,7 +14,7 @@ The 23/24/16 primary-school teaching groupings do not override the wording of th
 ## Measured geometry baseline
 
 - Published category counts are fixed at **26 letter pairs, 10 digits, 23 initials, 24 finals, 16 whole-reading syllables, six four-tone sets, eight words** = **113 stable IDs**.
-- The current vectors contain **470 discrete SVG paths** at this source revision. A dedicated Node path parser samples cubic curves (101 points / cubic) and validates full composition and path-cell bounds across *all* items, not only first-page examples.
+- The historical F2.1 baseline contained **470 discrete SVG paths**. Under the F2.3 corrected continuous-lowercase formation model this becomes **383 independently drawn paths**. The difference is intentional correction of unwanted pen lifts, not lost letters; see [52-letter review](F23_LATIN_LETTER_FORMATION_AUDIT.md). A dedicated Node path parser samples cubic curves (101 points / cubic) and validates full composition and path-cell bounds across *all* items, not only first-page examples.
 - Four-line guide coordinates are `14 / 47 / 83 / 117` on a 132-unit board. Engineering geometry uses up to 2.5 units tolerance near top/bottom; digital lettering overshoots are not interpreted as correct pedagogy. Numeral practice uses an approximately square 64-by-66 source grid; the separate A4 print grid spreads cells across the actual printable width.
 - The F2 real Chromium review iterates all **113 entries at 1200px, 800px, and 390px**, checks ink path and canvas sizes, and builds every category's A4 rows. This is *automated rendering evidence*, not measured penmanship.
 - Expected A4 classification: letters 7, numbers 3, initials 6, finals 6, syllables 4, tones 2, words 2 pages. Each item has three exercise rows; no user data is needed to print.
@@ -32,7 +32,7 @@ The 23/24/16 primary-school teaching groupings do not override the wording of th
 | Layout | desktop/tablet/mobile board and real A4 printed page scale | Chromium QA; physical A4 print pending |
 | Browser support | iOS Edge pointer/touch handoff, physical Safari/Chrome/Edge and touchscreen pen devices | F1.1 integration + device retest pending |
 
-## Why all 470 paths are not being rewritten
+## Why source paths should not be rewritten without teaching evidence
 
 Stroke paths currently have an **engineering-only** provenance, and the Ministry confirms no national Pinyin letter stroke-order sequence. Programmatically smoothing/reversing every path or changing glyph shapes without a named teaching style would produce *unjustified certainty*. We first establish stable geometry and explicit visual checks; any later geometry revision will have source rationale and side-by-side screenshots for human acceptance.
 
