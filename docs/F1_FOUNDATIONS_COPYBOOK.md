@@ -32,6 +32,7 @@ https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/195802/t19580201_186000.html
 - 分类选择与前后导航、直接链接 `?group=finals&item=finals-5` 等；
 - 默认 0.8× 的轨迹展示，允许暂停、重播和切换倍率；
 - 点击/触屏直接书写蓝色轨迹：Pointer Events 适配触笔/鼠标，触屏事件作为 iOS 引擎后备；自然提笔形成一次实际笔迹；
+- F1.1 对 EdgiOS 的同一根手指支持 pointer-only、touch-only 和 pointer→touch 原位接管（不产生重复笔迹），多指操作撤销未完成笔迹；无画布几何变化的浏览器地址栏 resize 不再中断书写。Chromium 事件序列测试属于模拟覆盖，不能代替 iPhone Edge 实机验收；
 - 不逐笔强制人工确认；撤销上一笔、直接清空整项，无二次确认框；
 - 使用独立键名 `zitie-foundations-f1:<item>` 的浏览器 localStorage 保存归一化坐标；不上传、不写入正式 201 字汉字练习 IndexedDB，失败时提醒本机存储不可用；
 - A4 打印当前类别的所有条目；打印对话框可选择另存 PDF。这是浏览器打印 PDF，而不是正式发布的固定 SHA 版本 PDF。

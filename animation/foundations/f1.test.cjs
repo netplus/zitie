@@ -59,6 +59,13 @@ test('F1 is opt-in, has independent pointer practice, A4 print and explicit disc
   assert.match(app,/cellWidth=W\/copies/);
   assert.match(app,/touchstart/);
   assert.match(app,/pointerdown/);
+  assert.match(app,/preferNativeTouch/);
+  assert.match(app,/state\.active\.kind='touch'/);
+  assert.match(app,/window\.addEventListener\('orientationchange',cancel\)/);
+  const smoke=fs.readFileSync(path.join(root,'browser-smoke.html'),'utf8');
+  for(const scenario of ['pointer-only stroke','pointer-to-touch handoff',
+    'touch-first has no duplicate','multitouch aborts','unchanged-size resize preserves'])
+    assert.ok(smoke.includes(scenario),scenario);
   assert.match(app,/localStorage\.setItem/);
   assert.match(app,/window\.print\(\)/);
   assert.match(app,/state\.strokes=\[\]/);

@@ -13,6 +13,9 @@ window.addEventListener('DOMContentLoaded',()=>{
     paths:[],elapsed:0,lastTime:0,raf:0,running:false,duration:0
   };
   const storagePrefix='zitie-foundations-f1:';
+  // Only EdgiOS prefers native Touch Events after an initial touch pointerdown.
+  // Other iOS browsers retain their existing Pointer Events behavior.
+  const preferNativeTouch=()=>/EdgiOS\//.test(navigator.userAgent);
   const guide=$('guide'),canvas=$('ink'),board=$('board');
   const ctx=canvas.getContext('2d');
   const node=(type,attrs={})=>{
@@ -160,11 +163,12 @@ window.addEventListener('DOMContentLoaded',()=>{
     }
     $('undo').disabled=!state.strokes.length;
   }
-  function begin(kind,id,x,y){
+  function begin(kind,id,x,y,pointerType='touch'){
     if(state.active)return false;
     const p=point(x,y);
     if(!p)return false;
-    state.active={kind,id,points:[p]};
+    const r=canvas.getBoundingClientRect();
+    state.active={kind,id,pointerType,geometry:{width:r.width,height:r.height},points:[p]};
     drawInk();
     return true;
   }
@@ -191,8 +195,13 @@ window.addEventListener('DOMContentLoaded',()=>{
   }
   function cancel(){if(state.active){state.active=null;drawInk();}}
   canvas.addEventListener('pointerdown',e=>{
+    if(e.pointerType==='touch'&&e.isPrimary===false){
+      // A second finger must not silently become part of a single-finger trace.
+      if(state.active?.pointerType==='touch')cancel();
+      return;
+    }
     if(e.isPrimary===false||(e.pointerType==='mouse'&&e.button!==0))return;
-    if(!begin('pointer',e.pointerId,e.clientX,e.clientY))return;
+    if(!begin('pointer',e.pointerId,e.clientX,e.clientY,e.pointerType))return;
     try{canvas.setPointerCapture(e.pointerId);}catch(_){}
     if(e.cancelable)e.preventDefault();
   });
@@ -216,36 +225,78 @@ window.addEventListener('DOMContentLoaded',()=>{
   canvas.addEventListener('lostpointercapture',e=>{
     if(state.active?.kind==='pointer'&&state.active.id===e.pointerId)cancel();
   });
-  // Some iOS embedded engines fail to deliver Pointer Events on a canvas.
-  // Ignore legacy Touch Events once a pointer session is active.
+  // EdgiOS may emit pointerdown followed by native touchmove/end, or may
+  // emit Pointer Events only. Start with Pointer Events, and hand off the SAME
+  // active trace only when genuine one-finger Touch Events appear.
   canvas.addEventListener('touchstart',e=>{
-    if(!state.active&&e.changedTouches.length===1){
-      const t=e.changedTouches[0];
-      begin('touch',t.identifier,t.clientX,t.clientY);
+    if(e.touches?.length>1||e.changedTouches.length!==1){
+      if(state.active?.pointerType==='touch')cancel();
+      if(e.cancelable)e.preventDefault();
+      return;
+    }
+    const t=e.changedTouches[0];
+    if(!Number.isInteger(t.identifier))return;
+    if(!state.active)begin('touch',t.identifier,t.clientX,t.clientY);
+    else if(preferNativeTouch()&&state.active.kind==='pointer'&&
+            state.active.pointerType==='touch'){
+      const p=point(t.clientX,t.clientY);
+      if(p){
+        const previousId=state.active.id;
+        const last=state.active.points[state.active.points.length-1];
+        state.active.kind='touch';
+        state.active.id=t.identifier;
+        // Do not duplicate the start contact when both APIs report it.
+        if(Math.hypot(p[0]-last[0],p[1]-last[1])>=.0015)
+          state.active.points.push(p);
+        try{
+          if(canvas.hasPointerCapture(previousId))
+            canvas.releasePointerCapture(previousId);
+        }catch(_){}
+        drawInk();
+      }
     }
     if(e.cancelable)e.preventDefault();
   },{passive:false});
   canvas.addEventListener('touchmove',e=>{
     if(state.active?.kind==='touch'){
-      for(const t of e.changedTouches)if(t.identifier===state.active.id)
-        extend(t.clientX,t.clientY);
+      if(e.touches?.length>1)cancel();
+      else for(const t of e.changedTouches)
+        if(state.active?.kind==='touch'&&t.identifier===state.active.id)
+          extend(t.clientX,t.clientY);
     }
     if(e.cancelable)e.preventDefault();
   },{passive:false});
   canvas.addEventListener('touchend',e=>{
     if(state.active?.kind==='touch'){
-      for(const t of e.changedTouches)if(t.identifier===state.active.id)
-        finish(t.clientX,t.clientY);
+      for(const t of e.changedTouches)if(t.identifier===state.active?.id){
+        // The tracked finger lifting while another remains is not a valid
+        // single-finger writing gesture.
+        if(e.touches?.length)cancel();
+        else finish(t.clientX,t.clientY);
+        break;
+      }
     }
     if(e.cancelable)e.preventDefault();
   },{passive:false});
-  canvas.addEventListener('touchcancel',cancel,{passive:false});
+  canvas.addEventListener('touchcancel',e=>{
+    if(state.active?.kind==='touch')
+      for(const t of e.changedTouches)
+        if(t.identifier===state.active?.id){cancel();break;}
+    if(e.cancelable)e.preventDefault();
+  },{passive:false});
   window.addEventListener('blur',cancel);
   document.addEventListener('visibilitychange',()=>{
     if(document.visibilityState==='hidden')cancel();
   });
+  window.addEventListener('orientationchange',cancel);
   window.addEventListener('resize',()=>{
-    cancel();drawInk();
+    // iOS address-bar changes can fire resize without changing this board.
+    // Only abort on a genuine drawing-geometry change.
+    if(state.active){
+      const r=canvas.getBoundingClientRect(),g=state.active.geometry;
+      if(Math.abs(r.width-g.width)>1||Math.abs(r.height-g.height)>1)cancel();
+    }
+    drawInk();
   });
   function selectEntry(item){
     if(!item)return;
