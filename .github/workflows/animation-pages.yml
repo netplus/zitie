@@ -48,6 +48,8 @@ jobs:
           node --check animation/book-ui.js
           node --check animation/foundations/data.js
           node --check animation/foundations/app.js
+          node --check animation/foundations/teaching.js
+          node --test animation/foundations/teaching.test.cjs
           node --test animation/foundations/f1.test.cjs
           node --test animation/foundations/f2-geometry.test.cjs
           node --check animation/experiments/brush-gesture-model.js
@@ -63,7 +65,7 @@ jobs:
           cp animation/index.html animation/book.html animation/book-ui.js animation/main-layout.css animation/player.js animation/timeline.js animation/motion.js animation/samples.js animation/brush-union.js animation/ink-front-guard.js animation/pressure-style.js animation/hardpen-ink-union.js animation/hardpen-stage.js animation/gallery.js animation/ui.js animation/NOTICE.md _site/animation/
           cp build/a3/book-pack.js _site/animation/book-pack.js
           mkdir -p _site/animation/foundations
-          cp animation/foundations/index.html animation/foundations/style.css animation/foundations/data.js animation/foundations/app.js _site/animation/foundations/
+          cp animation/foundations/index.html animation/foundations/style.css animation/foundations/data.js animation/foundations/teaching.js animation/foundations/app.js _site/animation/foundations/
           mkdir -p _site/animation/practice
           cp animation/practice/reference-stage.js animation/practice/practice-bridge.js animation/practice/practice.css animation/practice/trace-session.js animation/practice/trace-canvas.js animation/practice/pointer-input.js animation/practice/progress-controller.js animation/practice/whole-progress.js animation/practice/order-check.js animation/practice/storage.js _site/animation/practice/
           cp deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf _site/book/zitie-v0.5.1-A4.pdf
@@ -91,6 +93,8 @@ jobs:
           test -s _site/animation/foundations/index.html
           test -s _site/animation/foundations/style.css
           test -s _site/animation/foundations/data.js
+          test -s _site/animation/foundations/teaching.js
+          grep -q 'src="./teaching.js"' _site/animation/foundations/index.html
           test -s _site/animation/foundations/app.js
           grep -q 'href="./foundations/index.html"' _site/animation/book.html
           test -s _site/animation/practice/reference-stage.js
