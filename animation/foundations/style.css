@@ -26,6 +26,8 @@ button.primary:hover,.printButton:hover{background:#913440}
 button:disabled{opacity:.5;cursor:default}
 .studyTip{border:1px solid #e7bdc2;background:#fff2f3;border-radius:11px;display:flex;align-items:start;gap:10px;padding:9px 12px;margin:13px 0 11px;font-size:13px}
 .studyTip strong{white-space:nowrap;color:#9a3341}
+.tipCopy{display:flex;flex-direction:column;min-width:0;gap:2px;line-height:1.55}
+.tipCopy small{font-size:11px;color:#8d5b62;font-weight:600}
 .boardBox{width:100%;min-width:0;display:grid;grid-template-columns:minmax(0,1fr);place-items:center;min-height:190px}
 .board{position:relative;min-width:0;width:min(100%,280px);height:270px;max-width:100%;border:1px solid #ecdadd;border-radius:12px;background:#fff;overflow:hidden;isolation:isolate}
 #guide,#ink{position:absolute;display:block;inset:0;width:100%;height:100%}
