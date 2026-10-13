@@ -76,7 +76,7 @@ frame.addEventListener('load',async function initial(){
     check(w.getComputedStyle(noteText).webkitLineClamp==='2'&&
       noteText.textContent===g.tips[0],
       v.n+': tip card must preserve original text and max-two-line reading');
-    check(c.width>=v.w<=510?70:40,
+    check(c.width>=(v.w<=510?70:40),
       v.n+': start-tracing button too narrow');
     check(d.documentElement.scrollWidth<=v.w+2,
       v.n+': horizontal overflow');
