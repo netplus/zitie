@@ -25,7 +25,8 @@ frame.addEventListener('load',async function initial(){
   check(glyph.character==='水'&&glyph.tips.length>=2&&glyph.check&&
     tip.getAttribute('href')==='#writingTipsDetail'&&
     section.contains(full)&&lead.textContent===glyph.tips[0]&&
-    glyph.tips.every(s=>full.textContent.includes(s))&&
+    glyph.tips.slice(1).every(s=>full.textContent.includes(s))&&
+    !full.textContent.includes(glyph.tips[0])&&
     full.textContent.includes('写完检查：'+glyph.check),
     'Promoted hint and full notes/check must match exact PDF-sourced glyph');
   const paper=d.querySelector('.writingStage .paper');
@@ -64,7 +65,8 @@ frame.addEventListener('load',async function initial(){
   app.selectGlyph(200);
   const complex=app.getGlyph();
   check(complex.character==='鼻'&&lead.textContent===complex.tips[0]&&
-        complex.tips.every(x=>full.textContent.includes(x))&&
+        complex.tips.slice(1).every(x=>full.textContent.includes(x))&&
+    !full.textContent.includes(complex.tips[0])&&
         full.textContent.includes('写完检查：'+complex.check),
         'Long complex glyph tips/check did not update from PDF source');
   check(d.documentElement.scrollWidth<=w.innerWidth+2,

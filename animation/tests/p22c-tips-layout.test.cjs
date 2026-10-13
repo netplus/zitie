@@ -22,9 +22,9 @@ test('P2.2c shows exact source writing tips beside live stroke progress and reta
   assert.ok(progress<tip&&tip<controls,
     'Published tip must be visible by playback controls without scrolling past them');
   assert.match(html,/href="#writingTipsDetail"/);
-  assert.match(html,/<h2>02 字帖原有书写提示<\/h2>/);
+  assert.match(html,/<h2>补充要点 · 写完检查<\/h2>/);
   assert.match(ui,/\$\('writingTipLead'\)\.textContent=g\.tips\[0\]/);
-  assert.match(ui,/const notes=\[\.\.\.g\.tips,'写完检查：'\+g\.check\]/);
+  assert.match(ui,/const notes=\[\.\.\.g\.tips\.slice\(1\),'写完检查：'\+g\.check\]/);
   assert.match(ui,/\$\('tipText'\)\.append\(p\)/);
 });
 
