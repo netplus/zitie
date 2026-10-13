@@ -65,6 +65,7 @@ jobs:
           node --check animation/foundations/app.js
           node --test animation/foundations/f1.test.cjs
           node --test animation/foundations/f2-geometry.test.cjs
+          node --test animation/foundations/formation.test.cjs
           node --check animation/practice/progress-controller.js
           node --check animation/practice/whole-progress.js
           node --check animation/practice/order-check.js
@@ -99,6 +100,12 @@ jobs:
             timeout 65 "$CHROME_BIN" --headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --window-size="$size" --virtual-time-budget=13000 --dump-dom "http://127.0.0.1:18781/animation/foundations/browser-smoke.html" > "$result"
             grep -q 'data-result="PASS"' "$result" || { grep -E 'FAIL|timeout' "$result" | tail -10; exit 1; }
           done
+          # Source-driven formation animation requires real wall-clock
+          # requestAnimationFrame: virtual-time-budget is NOT valid here.
+          node animation/tests/cdp-wait-result.mjs \
+            "http://127.0.0.1:18781/animation/tests/f23-formation-cdp.html" \
+            build/f1/f23-formation-browser.html 65000
+          grep -q 'data-result="PASS"' build/f1/f23-formation-browser.html
           # Real Chromium: every vector in all 113 items and all seven printed categories.
           timeout 90 "$CHROME_BIN" --headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --window-size=1450,1080 --virtual-time-budget=28000 --dump-dom "http://127.0.0.1:18781/animation/foundations/f2-review-smoke.html" > build/f1/f2-review-browser.html
           if ! grep -q 'data-result="PASS"' build/f1/f2-review-browser.html; then
