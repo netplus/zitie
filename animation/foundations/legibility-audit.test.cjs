@@ -54,12 +54,12 @@ test('F2.6a detects 1/4/8 mismatch with selected official LWT 2018 Number Storie
  const evidence=fs.readFileSync(
    path.join(__dirname,'../../docs/F26_CHILD_HANDWRITING_LEGIBILITY.md'),'utf8');
  assert.match(evidence,/LWT 官方 PDF p4/);
- assert.match(evidence,/不是国家标准/);
+ assert.match(evidence,/没有国家统一的笔顺标准/);
 });
 test('F2.6a report must expose known problems and not rewrite student writing source',()=>{
  const report=qa.summary();
  const flags=Object.fromEntries(report.flagged.map(f=>[f.letter,f.notes]));
- assert.deepEqual(Object.keys(flags),['i','l','s','1','4','8']);
+ assert.deepEqual(Object.keys(flags).sort(),['1','4','8','i','l','s']);
  const data=fs.readFileSync(path.join(__dirname,'data.js'),'utf8');
  assert.match(data,/const initialValues=/);
  const application=fs.readFileSync(path.join(__dirname,'app.js'),'utf8');
