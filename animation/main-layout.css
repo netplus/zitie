@@ -128,3 +128,13 @@ body{background:#f6f4f1;color:#27343c}
  .tile{min-height:66px}
  .tile strong{font-size:26px}
 }
+
+/* Keep the first source-stroke jump chip in view on 1440×900 desktop.
+   Reclaim spacing, NOT writing-tip content or paper area. */
+@media(min-width:1100px) and (min-height:850px){
+ .writingStage{margin-top:7px}
+ .legend{padding-top:4px}
+ .block{margin-top:7px;padding-top:7px}
+ .controls .speed{padding-top:0}
+ .top{margin-bottom:9px}
+}
