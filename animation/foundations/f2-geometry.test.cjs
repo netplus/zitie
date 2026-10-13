@@ -66,7 +66,7 @@ test('F2 samples ALL glyphs and keeps their vectors inside printable/canvas cell
   let strokes=0;
   for(const group of source.groups){
     for(const entry of group.entries){
-      const composition=source.compose(entry.text,group.kind);
+      const composition=source.compose(entry.text,group.kind,group.script);
       assert.equal(composition.height,GRID.height,entry.id);
       assert.ok(composition.width>=GRID.advance&&composition.width<1000,entry.id);
       for(const [index,stroke] of composition.strokes.entries()){
@@ -88,16 +88,16 @@ test('F2 samples ALL glyphs and keeps their vectors inside printable/canvas cell
     }
   }
   // F2.4 fixes falsely split capital movements as well as lowercase forms:
-  // source paths 470 (F2.1) -> 383 (F2.3) -> 369 (F2.4) -> 366 (F2.6b).
+  // source paths 470 (F2.1) -> 383 (F2.3) -> 369 (F2.4) -> 366 (F2.6b) -> 447 (F2.6c).
   // Fewer paths is expected and audited, not a loss of letter content.
-  assert.equal(strokes,366,'F2.6b adds 2018 sourced child number corrections without deleting entries');
+  assert.equal(strokes,447,'F2.6c source-conditional Pinyin contact count across all 113 entries');
 });
 test('F2 distinguish 4 pinyin tones, mark-less i, and ü two dots in source geometry',()=>{
   const tones=category('tones');
   assert.equal(tones.entries.length,6);
   for(const entry of tones.entries){
     assert.equal(source.parts(entry.text).filter(x=>x.base!==' ').length,4);
-    const m=source.compose(entry.text);
+    const m=source.compose(entry.text,'lines',tones.script);
     assert.equal(m.strokes.filter(s=>s.part==='tone').length,4,entry.id);
   }
   const bareI=source.compose('i');

@@ -137,6 +137,34 @@ function run(){
   }
   ok(w.ZitieFoundations.compose('8','squares').strokes.length===1,
      '8 must never be two disconnected rings');
+  // F2.6c source separation: Pinyin b/q are TWO contacts, English b/q ONE.
+  const previousInk='zitie-foundations-f1:initials-0';
+  w.localStorage.setItem(previousInk,JSON.stringify({version:1,strokes:[[[.24,.28],[.42,.53]]]}));
+  app.selectGroup('initials');
+  ok(d.getElementById('writeStatus').textContent.includes('旧版拼音练习笔迹'),
+      'Old blue Pinyin ink retained with version mismatch warning');
+  d.getElementById('clear').click();
+  app.selectGroup('letters');app.selectGroup('initials');
+  ok(!d.getElementById('writeStatus').textContent.includes('旧版拼音练习笔迹'),
+      'Reset explicitly clears legacy reference warning without touching other entries');
+  const initialButtons=[...d.querySelectorAll('#items button')];
+  const initialGroup=w.ZitieFoundations.groups.find(g=>g.key==='initials');
+  for(const glyph of ['b','q']){
+    const index=initialGroup.entries.findIndex(e=>e.text===glyph);
+    initialButtons[index].click();
+    const red=[...d.querySelectorAll('#guide path[stroke="#b33b49"]')];
+    ok(red.length===2&&w.ZitieFoundations.compose(glyph).strokes.length===1,
+       'Pinyin '+glyph+' MUST differ from English manuscript');
+    ok(red.every((p,i)=>p.getAttribute('d')===
+       w.ZitieFoundations.compose(glyph,'lines','pinyin').strokes[i].d),
+       'Pinyin '+glyph+' rendered classroom source geometry');
+  }
+  app.selectGroup('finals');
+  const finalA=[...d.querySelectorAll('#guide path[stroke="#b33b49"]')];
+  ok(finalA.length===2&&w.ZitieFoundations.compose('a').strokes.length===1,
+     'Pinyin a uses 2 pen contacts while English a remains 1');
+  ok(w.ZitieFoundations.compose('ü','lines','pinyin').strokes.length===4,
+     'Pinyin ü is two u contacts plus two dots');
   app.selectGroup('initials');
   ok(app.getPrintedPageCount()===6,'23 initials to 6 A4 pages');
   ok(d.getElementById('printRoot').querySelectorAll('.printLine').length===69,'3 rows per initial');

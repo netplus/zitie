@@ -203,7 +203,7 @@ window.addEventListener('DOMContentLoaded',()=>{
     if(state.strokes.length<100)state.strokes.push(arr);
     const saved=saveStrokes();
     drawInk();
-    setStatus('已书写 '+state.strokes.length+' 笔'+
+    setStatus((state.legacyInk?'含旧版笔迹，建议重新练习 · ':'')+'已书写 '+state.strokes.length+' 笔'+
       (saved?' · 已保存在本机':' · 本机存储不可用，仅当前页面有效')+
       '；不自动判定笔顺。');
   }
