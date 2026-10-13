@@ -43,6 +43,14 @@ document.getElementById('demo').addEventListener('load',async function(){
   check(app&&app.pack.glyphs.length===201,'A3 complete book not exposed');
   check(app.pack.publication.pages===299,'PDF record is not 299 pages');
   check(app.getGlyph().main_id===1,'Default should be PDF first glyph');
+  check(app.player.speed===0.8&&app.getPressureStyle()==='simulated'&&
+    !d.getElementById('pressureDetails').hidden,
+    'Book initially selected the wrong 0.8× / simulated-pressure settings');
+  const speeds=[...d.querySelectorAll('#speedButtons button[data-speed]')];
+  check(speeds.map(x=>+x.dataset.speed).join('|')==='0.5|0.8|1|1.5|2'&&
+    speeds.filter(x=>x.getAttribute('aria-pressed')==='true').length===1&&
+    speeds.find(x=>x.dataset.speed==='0.8')?.getAttribute('aria-pressed')==='true',
+    'Exactly one active speed option, 0.8×, must be visible');
   check(d.getElementById('paperSvg')===app.player.svg,
     'Production player is not the original brush SVG');
   check(app.player.rows[0].reveal.getAttribute('mask')?.startsWith('url(#'),
@@ -119,12 +127,12 @@ document.getElementById('demo').addEventListener('load',async function(){
   app.selectGlyph(77);
   const t=app.player.timeline.strokes[0],clock=t.startMs+t.durationMs*.52;
   app.player.seekElapsed(clock);
-  for(const value of [.5,1,1.5,2]){
+  for(const value of [.5,.8,1,1.5,2]){
     app.setSpeed(value);
     check(app.player.elapsed===clock,'Speed changed position');
     check(app.player.speed===value,'Rate button did not reach brush clock');
   }
-  app.setSpeed(1);
+  app.setSpeed(.8);
   const before=app.player.elapsed;
   app.player.play();check(app.player.playing,'Play control broken');
   app.player.pause();check(app.player.elapsed>=before,'Pause rewound time');

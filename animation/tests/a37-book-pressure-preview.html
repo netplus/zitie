@@ -14,7 +14,10 @@ iframe{width:100%;height:1430px;border:1px solid #e0d7d9;border-radius:12px;back
 document.getElementById('book').addEventListener('load',function(){
  const w=this.contentWindow,app=w.ZITIE_A3_BOOK;
  if(!app||w.document.documentElement.dataset.a3Ready!=='201')return;
- app.setPressureStyle('simulated');
+ const stable=new URLSearchParams(location.search).has('stable');
+ app.setPressureStyle(stable?'stable':'simulated');
+ if(stable)document.querySelector('h1').textContent=
+   'A3.7 · PDF 同源 201 字毛笔播放器 / 稳定版';
  const part=app.player.timeline.strokes[1];
  app.player.seekElapsed(part.startMs+part.durationMs*.51);
  document.documentElement.setAttribute('data-preview-ready','PASS');

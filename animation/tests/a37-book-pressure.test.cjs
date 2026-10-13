@@ -25,8 +25,13 @@ test('production 201-glyph book loads the original A1.6 force model with correct
     pos=i;
   }
   assert.match(html,/笔压风格/);
-  assert.match(html,/data-pen-style="stable"[\s\S]*aria-pressed="true"/);
-  assert.match(html,/data-pen-style="simulated"[\s\S]*aria-pressed="false"/);
+  assert.match(html,/data-pen-style="stable"\s+aria-pressed="false"/);
+  assert.match(html,/data-pen-style="simulated"\s+aria-pressed="true"/);
+  assert.match(html,/data-speed="0\.8"\s+aria-pressed="true"/);
+  assert.match(html,/data-speed="1"\s+aria-pressed="false"/);
+  assert.match(js,/const DEFAULT_RATE=0\.8/);
+  assert.match(js,/const DEFAULT_PEN_STYLE='simulated'/);
+  assert.match(js,/setPressureStyle\(DEFAULT_PEN_STYLE\)/);
   for(const id of ['pressureStyleOptions','pressureDetails','pressureCurve',
                     'pressureValue','pressureFill','pressurePhase']){
     assert.match(html,new RegExp('id="'+id+'"'));
