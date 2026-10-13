@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded',()=>{
   const NS='http://www.w3.org/2000/svg';
   if(!model){$('lessonHint').textContent='基础字帖数据暂不可用。';return;}
   const state={
-    group:model.groups[0],entry:null,rate:0.8,strokes:[],active:null,
+    group:model.groups[0],entry:null,rate:0.8,strokes:[],active:null,legacyInk:false,
     paths:[],elapsed:0,lastTime:0,raf:0,running:false,duration:0
   };
   const storagePrefix='zitie-foundations-f1:';
@@ -26,10 +26,24 @@ window.addEventListener('DOMContentLoaded',()=>{
   function setStatus(text){$('writeStatus').textContent=text;}
   function groupIndex(){return model.groups.indexOf(state.group);}
   function currentIndex(){return state.group.entries.findIndex(x=>x.id===state.entry.id);}
+  // Source model version is metadata. It does not change localStorage keys or
+  // the normalized blue coordinates; older records must remain recoverable.
+  function sourceVersion(){
+    return state.group.script==='pinyin'?'pinyin-classroom-v1':
+      state.group.script==='numbers'?'lwt-numerals-v2':'latin-manuscript-v1';
+  }
+  function hasLegacyPinyinInk(entry){
+    if(state.group.script!=='pinyin')return false;
+    try{
+      const old=JSON.parse(localStorage.getItem(storagePrefix+entry.id)||'null');
+      return !!(old&&Array.isArray(old.strokes)&&old.strokes.length&&
+        (old.legacyInk||old.model!==sourceVersion()));
+    }catch(_){return false;}
+  }
   function saveStrokes(){
     try{
       localStorage.setItem(storagePrefix+state.entry.id,JSON.stringify({
-        version:1,strokes:state.strokes
+        version:1,strokes:state.strokes,model:sourceVersion(),legacyInk:state.legacyInk
       }));
       return true;
     }catch(_){return false;}
@@ -103,7 +117,7 @@ window.addEventListener('DOMContentLoaded',()=>{
   }
   function stage(item){
     stopAnimation();
-    const comp=model.compose(item.text,state.group.kind);
+    const comp=model.compose(item.text,state.group.kind,state.group.script);
     guide.replaceChildren();
     guide.setAttribute('viewBox','-24 0 '+(comp.width+48)+' 132');
     guide.setAttribute('aria-label',item.text+' 占格与书写工程示范');
@@ -315,9 +329,10 @@ window.addEventListener('DOMContentLoaded',()=>{
     stopAnimation();cancel();
     state.entry=item;
     state.strokes=loadStrokes(item);
+    state.legacyInk=hasLegacyPinyinInk(item);
     $('lessonHeading').textContent=item.text;
     $('groupLabel').textContent=state.group.name;
-    $('lessonHint').textContent=item.meaning?item.meaning+' · '+state.group.hint:state.group.hint;
+    $('lessonHint').textContent=(item.meaning?item.meaning+' · ':'')+state.group.hint+(state.group.script==='pinyin'?' · 小学拼音独立书写模型，未核对字母仍待教材复核':'');
     let tip=state.group.key==='numbers'?
       '数字置于方格内，先看比例，再描红并独立练习。':
       '四线三格：辨认字母高低和占格，再跟随示范描摹。';
@@ -327,11 +342,20 @@ window.addEventListener('DOMContentLoaded',()=>{
       tip+=' 从左到右依次为一、二、三、四声；标调 i 去点。';
     if(state.group.key==='initials'&&['zh','ch','sh'].includes(item.text))
       tip+=' 这是两个字母组合，注意间距。';
+    if(state.group.script==='pinyin'){
+      const letters=model.parts(item.text).filter(p=>p.base!==' ');
+      const mapped=letters.filter(p=>model.modelInfo(p.base,'pinyin')==='pinyin-classroom-source-mapped');
+      if(mapped.length===letters.length&&mapped.length)
+        tip+=' 本项按小学拼音课堂分笔示范，不直接沿用英文笔顺。';
+      else tip+=' 本项仍有部分字母沿用工程字形，笔顺待教材逐项核对。';
+    }
     $('tipText').textContent=tip;
     stage(item);
-    setStatus(state.strokes.length?
-      '已恢复本机 '+state.strokes.length+' 笔 · 可以继续写或重新练习。':
-      '在字格中直接书写；每次自然提笔记录一笔。');
+    setStatus(state.legacyInk?
+      '已保留旧版拼音练习笔迹；新版笔顺已调整，建议点击重新练习。旧笔迹不会自动清除。':
+      state.strokes.length?
+        '已恢复本机 '+state.strokes.length+' 笔 · 可以继续写或重新练习。':
+        '在字格中直接书写；每次自然提笔记录一笔。');
     updateEntries();
     try{
       const url=new URL(window.location.href);
@@ -447,7 +471,7 @@ window.addEventListener('DOMContentLoaded',()=>{
           lineTitle.append(small);
         }
         article.append(lineTitle);
-        const comp=model.compose(entry.text,state.group.kind);
+        const comp=model.compose(entry.text,state.group.kind,state.group.script);
         for(const mode of ['red','gray','blank'])
           article.append(worksheetSvg(comp,state.group.kind,mode));
         page.append(article);
@@ -471,12 +495,14 @@ window.addEventListener('DOMContentLoaded',()=>{
   });
   $('undo').addEventListener('click',()=>{
     cancel();
-    state.strokes.pop();const saved=saveStrokes();drawInk();
+    state.strokes.pop();if(!state.strokes.length)state.legacyInk=false;
+    const saved=saveStrokes();drawInk();
     setStatus('已保留 '+state.strokes.length+' 笔'+
       (saved?' · 本机自动保存':' · 本机存储不可用'));
   });
   $('clear').addEventListener('click',()=>{
-    cancel();state.strokes=[];const saved=saveStrokes();drawInk();
+    cancel();state.strokes=[];state.legacyInk=false;
+    const saved=saveStrokes();drawInk();
     setStatus(saved?'已清空当前内容，可以立即重新练习。':'已清空当前页面笔迹。');
   });
   $('prev').addEventListener('click',()=>{
