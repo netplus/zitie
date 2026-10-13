@@ -61,6 +61,9 @@ jobs:
           node --check animation/gallery.js
           node --check animation/ui.js
           node --check animation/book-ui.js
+          node --check animation/foundations/data.js
+          node --check animation/foundations/app.js
+          node --test animation/foundations/f1.test.cjs
           node --check animation/practice/progress-controller.js
           node --check animation/practice/whole-progress.js
           node --check animation/practice/order-check.js
@@ -76,6 +79,25 @@ jobs:
       - name: Prepare headless Chrome
         id: chrome
         uses: browser-actions/setup-chrome@v1
+      - name: F1 Chromium foundations copybook, tracing and A4 pagination
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/f1
+          python3 -m http.server 18781 --bind 127.0.0.1 > build/f1/server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 35); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18781/animation/foundations/index.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          for size in 1366,768 390,844; do
+            result="build/f1/chromium-$size.html"
+            timeout 65 "$CHROME_BIN" --headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --window-size="$size" --virtual-time-budget=13000 --dump-dom "http://127.0.0.1:18781/animation/foundations/browser-smoke.html" > "$result"
+            grep -q 'data-result="PASS"' "$result" || { grep -E 'FAIL|timeout' "$result" | tail -10; exit 1; }
+          done
       - name: Exercise true animated reveal and controller in a browser
         env:
           CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}

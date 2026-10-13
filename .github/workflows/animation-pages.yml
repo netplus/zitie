@@ -46,6 +46,9 @@ jobs:
           python scripts/build_a3_animation.py --vectors build/vectors --output build/a3/book-pack.js
           node --check animation/ink-front-guard.js
           node --check animation/book-ui.js
+          node --check animation/foundations/data.js
+          node --check animation/foundations/app.js
+          node --test animation/foundations/f1.test.cjs
           node --check animation/experiments/brush-gesture-model.js
           node --check animation/experiments/brush-motion-lab.js
           node --test animation/tests/a3-book.test.cjs animation/tests/a35-brush-motion.test.cjs animation/tests/a36-front-guard.test.cjs animation/tests/a37-book-pressure.test.cjs animation/tests/a38-pressure-layout.test.cjs animation/tests/p21a-reference.test.cjs animation/tests/p21b-trace.test.cjs animation/tests/p21c-progress.test.cjs animation/tests/p22a-whole-writing.test.cjs
@@ -58,6 +61,8 @@ jobs:
           mkdir -p _site/animation _site/data/artwork _site/book
           cp animation/index.html animation/book.html animation/book-ui.js animation/main-layout.css animation/player.js animation/timeline.js animation/motion.js animation/samples.js animation/brush-union.js animation/ink-front-guard.js animation/pressure-style.js animation/hardpen-ink-union.js animation/hardpen-stage.js animation/gallery.js animation/ui.js animation/NOTICE.md _site/animation/
           cp build/a3/book-pack.js _site/animation/book-pack.js
+          mkdir -p _site/animation/foundations
+          cp animation/foundations/index.html animation/foundations/style.css animation/foundations/data.js animation/foundations/app.js _site/animation/foundations/
           mkdir -p _site/animation/practice
           cp animation/practice/reference-stage.js animation/practice/practice-bridge.js animation/practice/practice.css animation/practice/trace-session.js animation/practice/trace-canvas.js animation/practice/pointer-input.js animation/practice/progress-controller.js animation/practice/whole-progress.js animation/practice/order-check.js animation/practice/storage.js _site/animation/practice/
           cp deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf _site/book/zitie-v0.5.1-A4.pdf
@@ -82,6 +87,11 @@ jobs:
           test -s _site/animation/main-layout.css
           grep -q 'href="./main-layout.css"' _site/animation/book.html
           test -s _site/animation/book-pack.js
+          test -s _site/animation/foundations/index.html
+          test -s _site/animation/foundations/style.css
+          test -s _site/animation/foundations/data.js
+          test -s _site/animation/foundations/app.js
+          grep -q 'href="./foundations/index.html"' _site/animation/book.html
           test -s _site/animation/practice/reference-stage.js
           test -s _site/animation/practice/practice-bridge.js
           test -s _site/animation/practice/practice.css
