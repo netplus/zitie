@@ -1,0 +1,129 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>P2.2e source-backed pressure sidebar space / sticky control QA</title></head>
+<body><h1>P2.2e · pressure styles + PDF source notes fit beside writing paper</h1>
+<pre id="result">RUNNING</pre>
+<iframe id="demo" src="../book.html?id=77" title="Live A3 PDF source player" style="width:1440px;height:900px;display:block;border:0"></iframe>
+<script>
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+const check=(yes,msg)=>{if(!yes)throw Error(msg)};
+const rect=e=>e.getBoundingClientRect();
+const iframe=document.getElementById('demo'),out=document.getElementById('result');
+iframe.addEventListener('load',async function(){
+ try{
+  const w=this.contentWindow,d=w.document,a=w.ZITIE_A3_BOOK;
+  check(d.documentElement.dataset.a3Ready==='201'&&a?.pack.glyphs.length===201,
+    'Original 201-glyph book failed to load');
+  check(a.pack.glyphs.reduce((s,g)=>s+g.strokes.length,0)===1045&&
+    a.player.frontGuard===true,'Original A3.6 source front guard lost');
+  const original=JSON.stringify(a.pack.glyphs),pdf=a.pack.publication.sha256;
+  const stage=d.querySelector('.writingStage'),
+    paper=stage.querySelector(':scope > .paper'),
+    pressure=stage.querySelector(':scope > .pressureBox'),
+    study=stage.querySelector(':scope > .pressureStudy'),
+    note=d.getElementById('pressureStudyTip'),
+    checkText=d.getElementById('pressureStudyCheck'),
+    link=study.querySelector('a[href="#writingTipsDetail"]'),
+    details=d.getElementById('pressureDetails'),
+    chart=d.getElementById('pressureCurve'),
+    originalHint=d.getElementById('writingTipLead'),
+    full=d.getElementById('tipText');
+  check(stage.children.length===3&&paper.nextElementSibling===pressure&&
+        pressure.nextElementSibling===study&&link,
+    'Expected one authentic pressure controller and one separate read-only source guide');
+  const glyph=a.getGlyph();
+  check(glyph.main_id===77&&glyph.tips.length===2&&
+    originalHint.textContent===glyph.tips[0]&&
+    note.textContent===glyph.tips[1]&&
+    checkText.textContent===glyph.check&&
+    glyph.tips.every(s=>full.textContent.includes(s)),
+    'Study guide text must come verbatim from the PDF-backed glyph');
+  const rows=[];
+  for(const v of [
+   {name:'desktop1440x900',w:1440,h:900,wide:true,controls:true},
+   {name:'laptop1366x768',w:1366,h:768,wide:true,controls:true},
+   {name:'laptop1020x768',w:1020,h:768,wide:true,controls:true},
+   {name:'pad800x900',w:800,h:900,wide:true,controls:true},
+   {name:'phone390x844',w:390,h:844,wide:false,controls:true},
+   {name:'shortPhone390x667',w:390,h:667,wide:false,controls:false}
+  ]){
+   iframe.style.width=v.w+'px';iframe.style.height=v.h+'px';
+   w.scrollTo(0,0);await sleep(155);
+   for(const mode of ['stable','simulated']){
+    a.setPressureStyle(mode);await sleep(85);
+    const p=rect(paper),s=rect(pressure),g=rect(study);
+    const buttons=[...d.querySelectorAll('.controls button')];
+    const controlBottom=Math.max(...buttons.map(b=>rect(b).bottom));
+    check(w.innerWidth===v.w&&w.innerHeight===v.h,v.name+': viewport mismatch');
+    check(Math.abs(p.width-p.height)<3&&
+      p.width>220&&p.bottom<=v.h+2,v.name+': original source paper resized incorrectly');
+    check(d.documentElement.scrollWidth<=v.w+2,v.name+': horizontal overflow');
+    if(v.controls)check(controlBottom<=v.h-3,
+      v.name+' / '+mode+': source-note sidecar pushed playback buttons off screen');
+    if(v.wide){
+     check(w.getComputedStyle(study).display!=='none'&&
+       s.left>=p.right+5&&Math.abs(s.top-p.top)<16,
+       v.name+' / '+mode+': pressure controls not beside source paper');
+     check(g.height>=15&&g.top>=s.bottom-2&&g.bottom<=p.bottom+2&&
+       Math.abs(g.width-s.width)<2,
+       v.name+' / '+mode+': guide should occupy ONLY the unused paper-side height');
+     check(note.textContent===glyph.tips[1]&&checkText.textContent===glyph.check,
+       v.name+': source study note changed on resizing');
+     if(mode==='stable'){
+      check(details.hidden&&g.height>=75,
+        v.name+': stable mode must use the large former blank space');
+      check(w.getComputedStyle(study.querySelector('.pressureStudyCheck')).display!=='none',
+        v.name+': original completion check should be visible beside stable pressure');
+     }else{
+      check(!details.hidden&&rect(chart).bottom<=s.bottom+2&&
+        w.getComputedStyle(study.querySelector('.pressureStudyCheck')).display==='none',
+        v.name+': retain full measured-pressure *simulation* with compact notes');
+     }
+    }else{
+     check(w.getComputedStyle(study).display==='none'&&
+       s.bottom<=p.top+2&&Math.abs(p.width-s.width)<2,
+       v.name+': mobile pressure band must remain unchanged above paper');
+     if(mode==='simulated')check(!details.hidden&&rect(chart).width>90,
+       v.name+': original simulated pressure chart missing');
+    }
+    rows.push({viewport:v.name,style:mode,boardPx:Math.round(p.width),
+      pressureHeight:Math.round(s.height),guideHeight:Math.round(g.height),
+      gapFilled:v.wide,controlsBottom:Math.round(controlBottom)});
+   }
+  }
+  // Switch to a longer licensed instruction without inventing teacher advice.
+  iframe.style.width='1440px';iframe.style.height='900px';await sleep(140);
+  a.setPressureStyle('stable');
+  a.selectGlyph(200);
+  const other=a.getGlyph();
+  check(other.character==='鼻'&&note.textContent===other.tips[1]&&
+    checkText.textContent===other.check&&
+    originalHint.textContent===other.tips[0]&&
+    d.getElementById('tipText').textContent.includes(other.check),
+    'Side study content did not follow glyph selection and full notes');
+  a.selectGlyph(77);
+  a.setPressureStyle('simulated');
+  const timeline=a.player.timeline.strokes[1];
+  a.player.seekElapsed(timeline.startMs+timeline.durationMs*.57);
+  const previous=a.player.elapsed;
+  check(a.getPressureState().pressure>.04,'Pressure telemetry lost');
+  const paperY=rect(paper).top+w.scrollY;
+  w.scrollTo(0,paperY+rect(paper).height*.2);await sleep(140);
+  check(rect(pressure).top>=-2&&rect(pressure).top<105&&
+    rect(d.getElementById('pressureValue')).bottom<=w.innerHeight,
+    'Pressure panel must REMAIN sticky, independently of the new note below');
+  check(a.player.elapsed===previous&&a.getPressureStyle()==='simulated'&&
+    a.player.frontGuard===true,
+    'Source clock/front guard or pressure mode changed when the page scrolled');
+  check(JSON.stringify(a.pack.glyphs)===original&&a.pack.publication.sha256===pdf,
+    'PDF source or canonical vector glyph data changed');
+  document.documentElement.dataset.result='PASS';
+  out.textContent=JSON.stringify({result:'PASS',glyphs:201,strokes:1045,
+    exactBookNotes:true,stickyPressurePreserved:true,
+    fixedSideSpace:true,mobileOriginalLayout:true,
+    a3SourceImmutable:true,layout:rows},null,2);
+ }catch(error){
+  document.documentElement.dataset.result='FAIL';
+  out.textContent='FAIL: '+(error.stack||error);
+ }
+});
+</script></body></html>

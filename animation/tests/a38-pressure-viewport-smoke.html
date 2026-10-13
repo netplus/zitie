@@ -17,11 +17,12 @@ document.getElementById('demo').addEventListener('load',async function(){
   const stage=d.getElementById('writingStage'),
     paper=d.querySelector('.writingStage > .paper'),
     panel=d.querySelector('.writingStage > .pressureBox'),
+    notes=d.querySelector('.writingStage > .pressureStudy'),
     details=d.getElementById('pressureDetails'),
     buttons=[...d.querySelectorAll('#pressureStyleOptions button')];
-  check(stage&&paper&&panel&&stage.children.length===2&&
-    paper.nextElementSibling===panel,
-    'Pressure section is not attached to the drawing stage');
+  check(stage&&paper&&panel&&notes&&stage.children.length===3&&
+    paper.nextElementSibling===panel&&panel.nextElementSibling===notes,
+    'Original pressure controller and new read-only notes must remain in the writing stage');
   check(d.querySelectorAll('#pressureStyleOptions').length===1&&
     d.querySelectorAll('#pressureCurve').length===1,
     'The responsive layout duplicated interactive pressure controls');
