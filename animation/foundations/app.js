@@ -5,9 +5,10 @@
 'use strict';
 window.addEventListener('DOMContentLoaded',()=>{
   const model=window.ZitieFoundations;
+  const teaching=window.ZitieFoundationTeaching;
   const $=id=>document.getElementById(id);
   const NS='http://www.w3.org/2000/svg';
-  if(!model){$('lessonHint').textContent='基础字帖数据暂不可用。';return;}
+  if(!model||!teaching){$('lessonHint').textContent='基础字帖或教学提示数据暂不可用。';return;}
   const state={
     group:model.groups[0],entry:null,rate:0.8,strokes:[],active:null,
     paths:[],elapsed:0,lastTime:0,raf:0,running:false,duration:0
@@ -306,16 +307,9 @@ window.addEventListener('DOMContentLoaded',()=>{
     $('lessonHeading').textContent=item.text;
     $('groupLabel').textContent=state.group.name;
     $('lessonHint').textContent=item.meaning?item.meaning+' · '+state.group.hint:state.group.hint;
-    let tip=state.group.key==='numbers'?
-      '数字置于方格内，先看比例，再描红并独立练习。':
-      '四线三格：辨认字母高低和占格，再跟随示范描摹。';
-    if(item.text.includes('ü')||/[ǖǘǚǜ]/.test(item.text))
-      tip+=' ü 的两个点要保留。';
-    if(state.group.key==='tones')
-      tip+=' 从左到右依次为一、二、三、四声；标调 i 去点。';
-    if(state.group.key==='initials'&&['zh','ch','sh'].includes(item.text))
-      tip+=' 这是两个字母组合，注意间距。';
-    $('tipText').textContent=tip;
+    const cue=teaching.tipFor(state.group,item);
+    $('tipText').textContent=cue.headline+' '+cue.detail;
+    $('tipBasis').textContent=cue.label;
     stage(item);
     setStatus(state.strokes.length?
       '已恢复本机 '+state.strokes.length+' 笔 · 可以继续写或重新练习。':
@@ -434,6 +428,10 @@ window.addEventListener('DOMContentLoaded',()=>{
           const small=document.createElement('small');small.textContent=entry.meaning;
           lineTitle.append(small);
         }
+        const cue=teaching.tipFor(state.group,entry);
+        const printCue=document.createElement('small');
+        printCue.textContent=cue.headline;
+        lineTitle.append(printCue);
         article.append(lineTitle);
         const comp=model.compose(entry.text,state.group.kind);
         for(const mode of ['red','gray','blank'])
@@ -497,6 +495,7 @@ window.addEventListener('DOMContentLoaded',()=>{
     getSavedStrokeCount:()=>state.strokes.length,
     getRate:()=>state.rate,
     getPrintedPageCount:makePrintPages,
+    getTeachingCue:()=>teaching.tipFor(state.group,state.entry),
     selectGroup:key=>selectGroup(model.groups.find(x=>x.key===key))
   };
   document.documentElement.dataset.foundationsReady='f1';

@@ -41,3 +41,23 @@ Stroke paths currently have an **engineering-only** provenance, and the Ministry
 F2 is strictly additive to `animation/foundations/` tests and the QA workflow. It does not change F1 learning text, draw order, localStorage keys, browser touch handlers, 299-page v0.5.1 PDF, or any of the 201 Hanzi/1045 brush animation references. Require exact-head A1+Book CI and post-merge same-SHA Pages Deploy for shipping.
 
 Related: [F2 issue #169](https://github.com/netplus/zitie/issues/169), [F1 design](F1_FOUNDATIONS_COPYBOOK.md).
+
+## F2.2 — Per-entry learning cues (pending release gate)
+
+F2.1 checked the physical geometry but did not tell learners *what to observe*. F2.2 supplies a **pure local, provenance-classified note** for each of the unchanged 113 entries. `animation/foundations/teaching.js` has three explicit cue categories: `spelling` (orthographic/tone rules), `recognition` (primary-school look-alike mnemonics), and `geometry` (non-certified engineering shape observations). A single concise tip appears beside the real practice grid; one short version is also included in each A4 printable item heading. No duplicate sidebar or persistent hint state.
+
+### Rule references
+
+- [MOE: 汉语拼音教学特色](https://www.moe.gov.cn/s78/A18/A18_ztzl/jnhypyfa/201805/t20180517_336341.html) — classroom b/d/p/q and n/m discrimination, omission of ü dots for specified y/j/q/x spellings, tone placement reminders.
+- [GB/T 16159—2012 §6.5, hosted by MOE](https://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/13/20150113091717604.pdf) — in `iu` / `ui`, tone mark is written over the **second letter**; tone on `i` removes the ordinary `i` dot. This is an orthographic rule, unlike the unregulated pen-motion stroke sequence.
+- [MOE's Latin/Pinyin stroke-order clarification](https://www.moe.gov.cn/moe_879/moe_1252/s8447/201412/t20141204_179361.html) — no national unified Pinyin handwriting stroke-order standard.
+
+### Coverage
+
+- b/d: left/right position of stem/circle, p/q: which side has the descender; n/m: count humps; zh/ch/sh: two-letter combos; y/w recognition.
+- Individual `ü`, `üe`, `ün`: retain double dots while practiced as final entries. `yu/yue/yuan/yun` whole syllables: explain y-related omission. `i` tone family `ī/í/ǐ/ì` omits i's dot; `ǖ/ǘ/ǚ/ǜ` retains ü diaeresis. `iu` and `ui` cue examples `liú` and `shuǐ` respectively.
+- Generic fallback notes for every other English letter, digit, Pinyin initial/final, whole syllable and basic word. **No change** to glyph path, animation ordering, item key, data storage format, iPhone Edge input compatibility, original Hanzi PDF or A3 stroke data.
+
+### Test gates
+
+`animation/foundations/teaching.test.cjs` checks 113/113 notes, evidence classifications, high-risk pairs, i/ü tone exceptions and y-spelling. F2 full Chromium review checks every entry's actual onscreen tip and its printed A4 heading in 1200px/800px/390px viewports. Pages must bundle teaching.js locally and reject a missing file; independent F1 and F2.1 tests remain mandatory. The notes still require educator-facing terminology review, and physical A4 and iPhone Edge acceptance remain outstanding.
