@@ -203,15 +203,23 @@
      restoreBlocked=false;lastFeedback='';closeQueued=false;
      invalidateVerdict();hidePrompts();
      session=new Trace.TraceSession();
-     renderer=new Ink.TraceCanvas(surface,stage.group,
-       ()=>session.getSamples(),()=>progress.getWritten());
-     input=new Input.PointerInput({surface,group:stage.group,session,
-       onChange:onInputChanged,onLayout:()=>renderer.resize()});
+     try{
+       renderer=new Ink.TraceCanvas(surface,stage.group,
+         ()=>session.getSamples(),()=>progress.getWritten());
+       input=new Input.PointerInput({surface,group:stage.group,session,
+         onChange:onInputChanged,onLayout:()=>renderer.resize()});
+     }catch(_){
+       // Never trap an Edge/WebKit learner in a broken input modal.
+       document.documentElement.dataset.p22aError='input-initialization';
+       reallyClose();
+       $('status').textContent='当前浏览器临摹画布初始化失败，请刷新页面后重试。';
+       return false;
+     }
      input.enabled=false;
      update();exit.focus({preventScroll:true});
      loadingPromise=(async()=>{
        try{
-         const value=await store.load(identity());
+         const value=await store.loadWithTimeout(identity());
          if(!active||g!==generation)return false;
          if(value&&!progress.restore(value)){
            storageUsable=false;saveStatus='error';restoreBlocked=true;
@@ -220,7 +228,7 @@
        }catch(_){
          if(!active||g!==generation)return false;
          storageUsable=false;saveStatus='error';
-         storageMessage='浏览器可能禁用 IndexedDB';
+         storageMessage='本地存储受限或读取超时，本次仅保留页面内笔迹，退出可能丢失';
        }
        if(!active||g!==generation)return false;
        ready=true;invalidateVerdict();renderCurrent();
