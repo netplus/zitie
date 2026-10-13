@@ -48,9 +48,21 @@
   width:100%;min-width:0;display:grid;justify-items:center;
   align-content:center;gap:8px;
 }
+/* P2.2c: current stroke, book-authored hint and completed verdict remain
+   ABOVE the touch canvas, not hidden beneath the action rail. */
+.practiceActiveGuide{
+  width:min(100%,calc(100dvh - 220px),820px);min-width:0;
+  padding:10px 14px;border:1px solid #ddbfc7;border-left:4px solid #aa4258;
+  border-radius:12px;background:#fffafa;box-shadow:0 3px 14px #43303a0a;
+}
+.practiceGuideHeading{display:flex;align-items:center;flex-wrap:wrap;
+  gap:4px 12px;margin-bottom:3px}
+.practiceGuideLabel{font-weight:800;color:#9c354c;font-size:12px;white-space:nowrap}
+.practiceBookTip{margin:2px 0 0;color:#654851;font-size:13px;
+  font-weight:650;line-height:1.4;overflow-wrap:anywhere}
 .practiceBoard{
   position:relative;display:grid;place-items:center;
-  width:min(100%,calc(100dvh - 155px),820px);
+  width:min(100%,calc(100dvh - 220px),820px);
   aspect-ratio:1;border:1px solid #dcced0;
   border-radius:17px;overflow:hidden;background:white;
   box-shadow:0 14px 45px #46384112,0 1px 3px #44333312;
@@ -73,9 +85,9 @@
   color:#9e5566;font-weight:700;
 }
 #practiceGlyphMeta{margin:0;color:#5d676f;font-size:14px;line-height:1.6}
-#practiceStrokeTitle{display:block;font-size:clamp(21px,2.2vw,28px);
-  margin:12px 0 10px;line-height:1.35;color:#2d3b44}
-#practiceStrokeHint{font-size:13px;color:#4e5d66;line-height:1.65;margin:0 0 14px}
+#practiceStrokeTitle{display:block;font-size:clamp(18px,2vw,23px);
+  margin:0;line-height:1.32;color:#2d3b44}
+#practiceStrokeHint{font-size:12px;color:#53636c;line-height:1.4;margin:3px 0 0}
 .practiceActions{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 
 .practiceActions button{min-width:0;padding:8px 6px;font-size:13px}
@@ -95,7 +107,7 @@
 .practiceCompletion{margin:10px 0 0;padding:12px;border-radius:9px;
   background:#f3f8ff;border:1px solid #bed3e6;
   color:#235987;font-weight:700;font-size:13px}
-.practiceOrderResult{margin:8px 0 0;padding:12px;border-radius:10px;
+.practiceOrderResult{margin:7px 0 0;padding:9px 11px;border-radius:10px;
   background:#f7f9fb;border:1px solid #b9cadc;color:#294b67;
   font-size:13px;font-weight:700;line-height:1.65}
 .practiceOrderResult[hidden]{display:none!important}
@@ -116,11 +128,12 @@
     grid-template-columns:1fr;grid-template-rows:auto auto;
     align-content:start;gap:12px;
   }
-  .practiceBoard{width:min(100%,calc(100dvh - 330px),720px)}
+  .practiceBoard,.practiceActiveGuide{width:min(100%,calc(100dvh - 330px),720px)}
+  .practiceActiveGuide{padding:8px 12px}
   .practiceTools{width:min(100%,720px);padding:14px 16px}
   .practiceEyebrow{margin:0 0 5px}
-  #practiceStrokeTitle{font-size:20px;margin:5px 0}
-  #practiceStrokeHint{margin:3px 0 10px}
+  #practiceStrokeTitle{font-size:19px}
+  #practiceStrokeHint{margin:3px 0 0}
   .practiceNotice{margin-top:8px;padding-top:8px}
   #practicePreviewStatus{margin:7px 0 0}
 }
@@ -136,13 +149,18 @@
   #practiceIntro{font-size:11px}
   #practiceProgress{grid-column:2;grid-row:2;font-size:11px}
   .practiceWorkspace{gap:7px}
-  .practiceBoard{width:min(100%,calc(100dvh - 275px),560px);
+  .practiceBoard,.practiceActiveGuide{width:min(100%,calc(100dvh - 275px),560px);
     border-radius:12px}
+  .practiceActiveGuide{padding:7px 9px;min-height:0}
+  .practiceGuideHeading{gap:2px 7px;margin-bottom:2px}
+  .practiceGuideLabel{font-size:11px}
+  .practiceBookTip{font-size:11px;line-height:1.35;margin:1px 0 0;
+    display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden}
   .practiceBoardCaption{font-size:10px;line-height:1.4}
   .practiceTools{padding:10px 12px;border-radius:12px}
   #practiceGlyphMeta{font-size:12px}
-  #practiceStrokeTitle{font-size:18px}
-  #practiceStrokeHint{font-size:11px;line-height:1.45;margin:2px 0 7px}
+  #practiceStrokeTitle{font-size:16px}
+  #practiceStrokeHint{font-size:11px;line-height:1.35;margin:2px 0 0}
   .practiceActions button{min-height:44px;padding:7px 5px;font-size:12px}
   .practiceNotice{font-size:11px;line-height:1.45;margin-top:5px;padding-top:6px}
   #practicePreviewStatus{font-size:11px;margin-top:4px}

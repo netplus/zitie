@@ -33,7 +33,19 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
 #paperSvg{display:block;width:100%;aspect-ratio:1}
 .legend{display:flex;gap:12px;flex-wrap:wrap;font-size:12px;color:var(--muted);padding:6px 0 0}
 .dot{width:10px;height:10px;border-radius:50%;display:inline-block;margin-right:5px;vertical-align:-1px}
-.progressHead{display:flex;align-items:center;justify-content:space-between;margin:6px 0 2px;font-size:13px;gap:8px}
+.progressHead{display:grid;grid-template-columns:max-content minmax(0,1fr) max-content;
+  align-items:center;gap:8px;margin:6px 0 2px;font-size:13px;min-width:0}
+#stepLabel,#phase{white-space:nowrap}
+.writingTipHighlight{display:flex;align-items:center;gap:6px;min-width:0;
+  min-height:26px;padding:2px 8px;text-decoration:none;border-radius:8px;
+  border:1px solid #dcb6bd;background:#fff4f5;color:#9d3449;
+  line-height:1.35;font-size:12px;box-shadow:0 1px 3px #402c340a}
+.writingTipHighlight:hover,.writingTipHighlight:focus-visible{background:#ffe8ed;border-color:#b75c6f}
+.writingTipLabel{flex-shrink:0;white-space:nowrap;font-weight:800}
+#writingTipLead{min-width:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;color:#473e40;font-weight:600}
+.writingTipArrow{flex-shrink:0;font-size:14px;font-weight:700}
+#writingTipsDetail{scroll-margin-top:14px}
+#writingTipsDetail:target{border-color:#d7abb5;background:#fffafa;border-radius:9px;padding:10px}
 #phase{color:var(--muted)}
 .seek{display:flex;gap:10px;align-items:center;margin:3px 0 9px}
 .seek input{flex:1;width:100%;accent-color:var(--red)}
@@ -107,7 +119,11 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
   .pager{gap:4px}.pager button{font-size:11px;padding:4px 5px}
   .writingStage{margin-top:6px}
   .legend{font-size:11px;gap:8px;padding-top:3px}
-  .progressHead{margin:4px 0 2px}
+  .progressHead{margin:4px 0 2px;gap:4px}
+  .writingTipHighlight{padding:2px 5px;min-height:26px;gap:3px;font-size:11px}
+  .writingTipLabel{font-size:11px}
+  .writingTipArrow{display:none}
+  #phase{max-width:56px;overflow:hidden;text-overflow:ellipsis;font-size:11px}
   .seek{margin:2px 0 7px}
   .controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4px}
   .controls button{font-size:12px;padding:5px 3px;min-height:32px}
@@ -213,7 +229,14 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
         <span><i class="dot" style="background:#e1e4e7"></i>待书写</span>
       </div>
       <div class="progressHead">
-        <strong id="stepLabel">第 1 笔</strong><span id="phase">待播放</span>
+        <strong id="stepLabel">第 1 笔</strong>
+        <a class="writingTipHighlight" id="writingTipJump" href="#writingTipsDetail"
+           aria-label="查看本字书写提示与写完检查">
+          <span class="writingTipLabel">✎ 书写提示</span>
+          <span id="writingTipLead">正在读取本字书写要点…</span>
+          <span class="writingTipArrow" aria-hidden="true">⌄</span>
+        </a>
+        <span id="phase">待播放</span>
       </div>
       <div id="status" role="status" aria-live="polite"></div>
       <div class="seek">
@@ -243,7 +266,7 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
           <span id="pdfPage">第 1 页</span>
         </div>
       </div>
-      <div class="block">
+      <div class="block" id="writingTipsDetail" tabindex="-1">
         <h2>02 字帖原有书写提示</h2>
         <div id="tipText"></div>
       </div>
@@ -279,6 +302,15 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
     </header>
     <div class="practiceWorkspace">
       <section class="practicePaperCard" aria-label="放大字帖临摹参考区">
+        <div class="practiceActiveGuide" aria-label="当前书写提示">
+          <div class="practiceGuideHeading">
+            <span class="practiceGuideLabel">✎ 当前书写提示</span>
+            <strong id="practiceStrokeTitle">第 1 笔</strong>
+          </div>
+          <p id="practiceBookTip" class="practiceBookTip">正在读取字帖书写要点…</p>
+          <p id="practiceStrokeHint">当前笔画淡红高亮，圆点标注参考起收笔。</p>
+          <p id="practiceOrderResult" class="practiceOrderResult" role="status" aria-live="polite" hidden></p>
+        </div>
         <div class="practiceBoard" id="practiceBoard">
           <svg id="practiceSvg" role="img" viewBox="0 0 1024 1024"
                aria-label="与正式字帖同源的逐笔参考轮廓"></svg>
@@ -289,8 +321,6 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
       <aside class="practiceTools" aria-label="当前笔画参考和操作">
         <p class="practiceEyebrow">整字临摹 · 连续书写，无须逐笔确认</p>
         <p id="practiceGlyphMeta"></p>
-        <strong id="practiceStrokeTitle">第 1 笔</strong>
-        <p id="practiceStrokeHint">当前笔画淡红高亮，圆点标注参考起收笔。</p>
         <div class="practiceActions">
           <button type="button" id="practicePrev" disabled>← 上一笔参考</button>
           <button type="button" id="practiceNext">下一笔参考 →</button>
@@ -305,7 +335,6 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
         </div>
         <p id="practiceSaved" class="practiceSaved" role="status" aria-live="polite">正在读取本地练习记录…</p>
         <p id="practiceCompletion" class="practiceCompletion" hidden></p>
-        <p id="practiceOrderResult" class="practiceOrderResult" role="status" aria-live="polite" hidden></p>
         <p id="practicePreviewStatus" role="status" aria-live="polite">
           仅预览笔顺参考，未记录练习成绩
         </p>

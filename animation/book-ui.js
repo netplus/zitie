@@ -8,7 +8,8 @@ window.addEventListener('DOMContentLoaded', function(){
   const $=id=>document.getElementById(id);
   const required=['paperSvg','status','search','tiles','steps','pdfLink',
     'pressureStyleOptions','pressureDetails','pressureCurve','pressureValue',
-    'pressureFill','pressurePhase','pressureStyleHint'];
+    'pressureFill','pressurePhase','pressureStyleHint',
+    'writingTipLead','writingTipJump','tipText'];
   if(!pack||pack.schema_version!==1||
      pack.publication?.version!=='0.5.1'||
      pack.publication?.pages!==299||
@@ -152,6 +153,10 @@ window.addEventListener('DOMContentLoaded', function(){
     $('meta').textContent=g.expected_stroke_count+' 画 · '+g.batch_id+
       ' · 主部首 #'+g.main_id;
     $('reading').textContent=g.pinyin||g.reading_note||'本页不单列读音';
+    // Surface the exact book-authored hint alongside live stroke progress.
+    // The unabridged tips/check remain in #tipText below; no advice is inferred.
+    $('writingTipLead').textContent=g.tips[0];
+    $('writingTipJump').title='本字书写提示：'+g.tips.join('；')+'；写完检查：'+g.check;
     $('tipText').replaceChildren();
     const notes=[...g.tips,'写完检查：'+g.check];
     for(const tip of notes){

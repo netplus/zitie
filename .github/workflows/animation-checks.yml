@@ -960,6 +960,66 @@ jobs:
             timeout 175 node animation/tests/p22a-cdp-whole.mjs
           test -s build/a1/p22a-cdp-whole-metrics.json
           test -s build/a1/p22a-cdp-full-water.png
+      - name: Audit P2.2c book writing tips and immersive guide in real Chromium
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check animation/book-ui.js
+          node --check animation/practice/practice-bridge.js
+          node --test animation/tests/p22c-tips-layout.test.cjs
+          mkdir -p build/a1
+          python3 -m http.server 18789 --bind 127.0.0.1 > build/a1/p22c-tips-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 50); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18789/animation/book.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          timeout 170 node animation/tests/cdp-wait-result.mjs \
+            'http://127.0.0.1:18789/animation/tests/p22c-writing-tips-browser-smoke.html' \
+            build/a1/p22c-writing-tips-browser-dom.html 120000
+          if ! grep -q 'data-result="PASS"' build/a1/p22c-writing-tips-browser-dom.html; then
+            echo 'FAIL: P2.2c writing-tip visibility, touch ink or responsive controls' >&2
+            grep -o 'FAIL:[^<]*' build/a1/p22c-writing-tips-browser-dom.html | head -n 15 >&2 || true
+            exit 1
+          fi
+          python3 - <<'PY'
+          import html,json,re
+          from pathlib import Path
+          raw=Path('build/a1/p22c-writing-tips-browser-dom.html').read_text(encoding='utf-8')
+          match=re.search(r'<pre id="result">(\{.*?\})</pre>',raw,re.S)
+          if not match:raise SystemExit('P2.2c Chromium metrics missing')
+          v=json.loads(html.unescape(match.group(1)))
+          assert v['result']=='PASS' and v['characters']==201 and v['strokes']==1045
+          for key in ('sourceHintsExact','fullCheckPreserved','currentHintAboveBoard',
+                      'completedVerdictAboveBoard','oneTapRestartPreserved',
+                      'originalA3Unmodified'):
+              assert v[key] is True,key
+          assert len(v['mainLayout'])==5 and len(v['practiceLayout'])==4
+          assert all(a['sourceHintVisible'] for a in v['mainLayout'])
+          assert all(a['guideAboveBoard'] and a['boardVisible']
+                     for a in v['practiceLayout'])
+          Path('build/a1/p22c-writing-tips-metrics.json').write_text(
+              json.dumps(v,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('PASS: source-authored hints prominent in 5 main + 4 practice viewports')
+          PY
+          options=(--headless=new --no-sandbox --disable-dev-shm-usage
+            --disable-gpu --disable-background-timer-throttling
+            --virtual-time-budget=20000)
+          timeout 90 "$CHROME_BIN" "${options[@]}" --window-size=1460,940 \
+            --screenshot="$(pwd)/build/a1/p22c-main-tips-laptop.png" \
+            'http://127.0.0.1:18789/animation/tests/p22c-writing-tips-preview.html' >/dev/null
+          timeout 90 "$CHROME_BIN" "${options[@]}" --window-size=480,980 \
+            --screenshot="$(pwd)/build/a1/p22c-main-tips-mobile.png" \
+            'http://127.0.0.1:18789/animation/tests/p22c-writing-tips-preview.html?mobile=1' >/dev/null
+          timeout 90 "$CHROME_BIN" "${options[@]}" --window-size=480,980 \
+            --screenshot="$(pwd)/build/a1/p22c-practice-tips-mobile.png" \
+            'http://127.0.0.1:18789/animation/tests/p22c-writing-tips-preview.html?mobile=1&practice=1' >/dev/null
+          test -s build/a1/p22c-main-tips-laptop.png
+          test -s build/a1/p22c-main-tips-mobile.png
+          test -s build/a1/p22c-practice-tips-mobile.png
       - name: Audit A3.5 PDF-immutable brush gesture retiming A/B in Chrome
         env:
           CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}

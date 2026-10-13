@@ -21,7 +21,8 @@
    if(!book||!Ref||!Trace||!Ink||!Input||!Whole||!Matcher||!Storage||
       !overlay||!source||!board||!surface||!launch||!paper||!main||
       !exit||!prev||!next||!undo||!restart||!returnCurrent||
-      !$('practiceOrderResult')){
+      !$('practiceOrderResult')||!$('practiceBookTip')||
+     !$('practiceStrokeTitle')||!$('practiceStrokeHint')){
      document.documentElement.dataset.p22aError='missing-dependency';return;
    }
    const stage=new Ref.ReferenceStage(board);
@@ -185,6 +186,11 @@
      $('practiceGlyphMeta').textContent=glyph.character+' · '+
        glyph.expected_stroke_count+'画 · '+glyph.batch_id+
        ' · '+(glyph.pinyin||glyph.reading_note||'读音不单列');
+     // Visible above the writing board, directly sourced from the book.
+     // This is whole-character advice, not a per-stroke correctness label.
+     const bookTips=Array.isArray(glyph.tips)?glyph.tips:[];
+     $('practiceBookTip').textContent=bookTips[0]||'按字帖参考顺序书写。';
+     $('practiceBookTip').title=bookTips.join('；');
      stage.showStroke(0);
      overlay.hidden=false;active=true;ready=false;generation++;
      const g=generation;
