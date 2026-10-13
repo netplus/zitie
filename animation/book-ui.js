@@ -207,8 +207,16 @@ window.addEventListener('DOMContentLoaded', function(){
         selectGlyph(g);
         // On narrow viewports the catalog is below the lesson. Return to
         // the newly selected source-backed glyph without extra navigation.
-        if(window.matchMedia('(max-width: 860px)').matches)
+        if(window.matchMedia('(max-width: 860px)').matches){
+          // Keep the bookmarkable ?id but drop the jump-to-directory hash.
+          // Otherwise reloading the newly selected glyph jumps to the tiles.
+          if(window.location.hash==='#characterLibrary'){
+            const url=new URL(window.location.href);
+            url.hash='';
+            window.history.replaceState(null,'',url.pathname+url.search);
+          }
           $('lessonHero').scrollIntoView({block:'start',behavior:'auto'});
+        }
       });
       fragment.append(btn);
     }
