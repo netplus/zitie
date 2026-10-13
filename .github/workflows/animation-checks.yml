@@ -866,6 +866,26 @@ jobs:
           # Actual CDP native-touch tests now run the stronger P2.2a
           # continuous whole-character workflow below, not the retired
           # P2.1b manual draft confirmation protocol.
+      - name: Audit P2.2b source-locked synthetic robustness (diagnostic, no teacher verdict)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s build/a3/book-pack.js
+          mkdir -p build/a1
+          P22B_REPORT_FILE=build/a1/p22b-robustness-metrics.json \
+            node --test animation/tests/p22b-robustness.test.cjs
+          node - <<'NODE'
+          const fs=require('node:fs');
+          const report=JSON.parse(fs.readFileSync('build/a1/p22b-robustness-metrics.json','utf8'));
+          if(report.sourceGlyphs!==201||report.sourceStrokes!==1045||
+             report.sourceKind!=='pdf_medians_synthetic_only'||
+             report.realLearnerSamples!==0||report.teacherLabels!==0||
+             report.scenarioCount!==12||
+             report.byCategory.find(x=>x.id==='source_exact')?.outcomes.consistent!==201)
+            throw Error('P2.2b synthetic audit source or report contract violated');
+          console.log('PASS P2.2b synthetic diagnostic:',report.caseCount,
+            'cases; full confusion matrix saved; not genuine learner validation');
+          NODE
       - name: Audit P2.2a continuous whole-word capture, stroke order and native CDP touch
         env:
           CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
