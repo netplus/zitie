@@ -63,6 +63,8 @@ jobs:
           node --check animation/book-ui.js
           node --check animation/foundations/data.js
           node --check animation/foundations/app.js
+          node --check animation/foundations/teaching.js
+          node --test animation/foundations/teaching.test.cjs
           node --test animation/foundations/f1.test.cjs
           node --test animation/foundations/f2-geometry.test.cjs
           node --check animation/practice/progress-controller.js
