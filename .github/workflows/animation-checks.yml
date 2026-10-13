@@ -866,6 +866,29 @@ jobs:
           # Actual CDP native-touch tests now run the stronger P2.2a
           # continuous whole-character workflow below, not the retired
           # P2.1b manual draft confirmation protocol.
+      - name: Audit P2.2b-2 offline direction-abstention A/B (no production change)
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -s build/a3/book-pack.js
+          node --check animation/experiments/stroke-direction-guard.js
+          node --check animation/tests/p22b-direction-lab.test.cjs
+          mkdir -p build/a1
+          P22B2_REPORT_FILE=build/a1/p22b2-direction-metrics.json \
+            node --test animation/tests/p22b-direction-lab.test.cjs
+          node - <<'NODE'
+          const fs=require('node:fs');
+          const x=JSON.parse(fs.readFileSync('build/a1/p22b2-direction-metrics.json','utf8'));
+          if(x.sourceGlyphs!==201||x.sourceStrokes!==1045||
+             x.mode!=='offline_synthetic_only'||x.realLearnerSamples!==0||
+             x.teacherLabels!==0||x.total!==2778||
+             x.byScenario.find(r=>r.scenario==='canonical')?.b.consistent!==201||
+             x.byScenario.find(r=>r.scenario==='reverseFirst')?.b.consistent!==0||
+             x.byScenario.find(r=>r.scenario==='swapFirst')?.b.reordered!==196)
+            throw Error('P2.2b-2 candidate violated synthetic diagnostic contract');
+          console.log('PASS P2.2b-2 isolated A/B: 2778 cases,',
+            x.additionalAbstentions,'synthetic extra abstentions, 0 real learners');
+          NODE
       - name: Audit P2.2b source-locked synthetic robustness (diagnostic, no teacher verdict)
         shell: bash
         run: |
