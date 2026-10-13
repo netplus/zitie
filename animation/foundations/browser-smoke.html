@@ -50,6 +50,7 @@ function run(){
   ok(Math.abs(square.width.baseVal.value-square.height.baseVal.value)<=2,
      'number guide remains square rather than stretched');
   ok(app.getPrintedPageCount()===3,'10 number items print to 3 A4 pages');
+  ok([...d.querySelectorAll('#printRoot svg.printLine')].every(s=>s.viewBox.baseVal.width===1600),'all print rows use full A4 width');
   app.selectGroup('initials');
   ok(app.getPrintedPageCount()===6,'23 initials to 6 A4 pages');
   ok(d.getElementById('printRoot').querySelectorAll('.printLine').length===69,'3 rows per initial');
