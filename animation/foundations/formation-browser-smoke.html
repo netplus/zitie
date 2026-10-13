@@ -10,7 +10,7 @@ pre{white-space:pre-wrap}</style></head>
 <pre id="result">RUNNING</pre>
 <script>
 const iframe=document.getElementById('book'),out=document.getElementById('result'),errors=[];
-const capitals=[3,3,1,2,4,3,3,3,3,2,3,2,4,3,1,2,2,3,1,2,1,2,4,2,2,3];
+const capitals=[3,2,1,2,4,3,2,3,3,2,2,1,2,2,1,2,2,2,1,2,1,1,1,2,2,1];
 const lower=[1,1,1,1,1,2,1,1,2,2,2,1,1,1,1,1,1,1,1,2,1,1,1,2,2,1];
 const say=(ok,message)=>{if(!ok)errors.push(message)};
 const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
@@ -66,6 +66,27 @@ iframe.addEventListener('load',async function(){
   red=checkLetter(d,3);
   say(red[capitals[3]].getAttribute('d').startsWith('M56 50 C'),
       'lowercase d must start circle before ascender');
+  // F2.4: check publisher figure arrows, not just geometric pen counts.
+  const checkModel=(letter,contact,d)=>{
+    const path=w.ZitieFoundations.compose(letter).strokes[contact]?.d;
+    say(path===d,letter+' source figure pen-down '+contact+' / direction mismatch');
+  };
+  checkModel('L',0,'M14 17 V83 H63');
+  checkModel('M',1,'M11 17 L37 56 L63 17 V83');
+  checkModel('N',1,'M13 17 L62 83 V17');
+  checkModel('V',0,'M11 17 L37 83 L64 17');
+  checkModel('W',0,'M8 17 L21 83 L37 40 L51 83 L66 17');
+  checkModel('Z',0,'M12 17 H63 L12 83 H64');
+  checkModel('K',1,'M63 17 L14 55 L65 83');
+  checkModel('k',1,'M19 68 L58 49 L19 68 L61 83');
+  say(w.ZitieFoundations.compose('B').strokes.length===2,'B bowl motions must stay in second pen-down');
+  say(w.ZitieFoundations.compose('G').strokes.length===2,'G interior turn is one contact');
+  say(w.ZitieFoundations.compose('R').strokes.length===2,'R leg is part of second contact');
+  say(w.ZitieFoundations.compose('f').strokes[0].d.startsWith('M42 47 C40 34'),
+      'f must first curve up from middle, not begin at upper right');
+  say(w.ZitieFoundations.compose('O').strokes[0].d.startsWith('M53 20'),
+      'O starts near upper right of rounded body');
+
   const caps=w.ZitieFoundations.compose('ABCDEFGHIJKLMNOPQRSTUVWXYZ').strokes.length;
   const lowercase=w.ZitieFoundations.compose('abcdefghijklmnopqrstuvwxyz').strokes.length;
   say(caps===capitals.reduce((a,b)=>a+b,0),'all capital parts match source scheme');

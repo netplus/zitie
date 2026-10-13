@@ -87,10 +87,10 @@ test('F2 samples ALL glyphs and keeps their vectors inside printable/canvas cell
       assert.equal(composition.width,expectedWidth,entry.id+' width changed');
     }
   }
-  // After the publisher-aligned letter formation change, repeated pen lifts
-  // are replaced with connected lowercase gestures (470 -> 383 source paths).
+  // F2.4 fixes falsely split capital movements as well as lowercase forms:
+  // source paths 470 (F2.1) -> 383 (F2.3) -> 369 (F2.4).
   // Fewer paths is expected and audited, not a loss of letter content.
-  assert.equal(strokes,383,'F2.3 exactly all published independent pen-down paths');
+  assert.equal(strokes,369,'F2.4 source-anchored independent pen-down paths');
 });
 test('F2 distinguish 4 pinyin tones, mark-less i, and ü two dots in source geometry',()=>{
   const tones=category('tones');
