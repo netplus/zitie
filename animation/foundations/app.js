@@ -46,10 +46,10 @@ window.addEventListener('DOMContentLoaded',()=>{
     if(kind==='squares'){
       for(let x=0;x<comp.width;x+=76){
         const ox=offset+x;
-        root.append(node('rect',{x:ox+6,y:11,width:64,height:97,
+        root.append(node('rect',{x:ox+6,y:17,width:64,height:66,
           fill:'none',stroke:'#dfc6cb','stroke-width':1.3,opacity}));
-        root.append(node('path',{d:'M'+(ox+6)+' 59.5 H'+(ox+70)+
-          ' M'+(ox+38)+' 11 V108',stroke:'#d5d5d5',
+        root.append(node('path',{d:'M'+(ox+6)+' 50 H'+(ox+70)+
+          ' M'+(ox+38)+' 17 V83',stroke:'#d5d5d5',
           'stroke-width':1,'stroke-dasharray':'3 4',opacity}));
       }
     }else{
@@ -60,8 +60,7 @@ window.addEventListener('DOMContentLoaded',()=>{
     }
   }
   function path(stroke,offset,kind,attrs={}){
-    const trans='translate('+(offset+stroke.x)+' 0)'+
-       (kind==='squares'?' translate(0 -5) scale(1 1.25)':'');
+    const trans='translate('+(offset+stroke.x)+' 0)';
     return node('path',{d:stroke.d,transform:trans,fill:'none',
       'stroke-linecap':'round','stroke-linejoin':'round',...attrs});
   }
