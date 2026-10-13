@@ -1,0 +1,146 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<title>P2.2c writing tips first-screen visibility and original handwriting QA</title></head>
+<body><h1>PDF 同源书写提示、练字当前笔画、整字反馈真实浏览器验证</h1>
+<pre id="result">RUNNING</pre>
+<iframe id="demo" title="Original PDF animation and practice" src="../book.html?id=77"
+ style="display:block;width:1366px;height:768px;border:0"></iframe>
+<script>
+const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const check=(condition,message)=>{if(!condition)throw Error(message)};
+const bounds=e=>e.getBoundingClientRect();
+const frame=document.getElementById('demo'),out=document.getElementById('result');
+frame.addEventListener('load',async function initial(){
+ frame.removeEventListener('load',initial);
+ try{
+  const w=this.contentWindow,d=w.document,app=w.ZITIE_A3_BOOK,p=w.ZITIE_P22A;
+  check(d.documentElement.dataset.a3Ready==='201'&&app?.pack.glyphs.length===201&&p,
+    'PDF A3 renderer and P2.2a practice missing');
+  const before=JSON.stringify(app.pack.glyphs),pdfSha=app.pack.publication.sha256;
+  check(app.pack.glyphs.reduce((n,g)=>n+g.strokes.length,0)===1045&&
+        app.player.frontGuard===true,'Formal stroke sources or front guard changed');
+  app.selectGlyph(77);app.setPressureStyle('simulated');
+  const glyph=app.getGlyph(),tip=d.getElementById('writingTipJump');
+  const lead=d.getElementById('writingTipLead'),full=d.getElementById('tipText');
+  const section=d.getElementById('writingTipsDetail');
+  check(glyph.character==='水'&&glyph.tips.length>=2&&glyph.check&&
+    tip.getAttribute('href')==='#writingTipsDetail'&&
+    section.contains(full)&&lead.textContent===glyph.tips[0]&&
+    glyph.tips.every(s=>full.textContent.includes(s))&&
+    full.textContent.includes('写完检查：'+glyph.check),
+    'Promoted hint and full notes/check must match exact PDF-sourced glyph');
+  const paper=d.querySelector('.writingStage .paper');
+  const step=d.getElementById('stepLabel'),phase=d.getElementById('phase');
+  const buttons=[...d.querySelectorAll('.controls button')],mainLayout=[];
+  for(const v of [
+   {n:'desktop1366x768',w:1366,h:768,controls:true},
+   {n:'laptop1020x768',w:1020,h:768,controls:true},
+   {n:'tablet820x1180',w:820,h:1180,controls:true},
+   {n:'phone390x844',w:390,h:844,controls:true},
+   {n:'shortPhone390x667',w:390,h:667,controls:false}
+  ]){
+   frame.style.width=v.w+'px';frame.style.height=v.h+'px';w.scrollTo(0,0);
+   await wait(155);
+   const a=bounds(tip),b=bounds(paper),left=bounds(step),right=bounds(phase);
+   const btnBottom=Math.max(...buttons.map(x=>bounds(x).bottom));
+   check(w.innerWidth===v.w&&w.innerHeight===v.h,v.n+': bad viewport geometry');
+   check(a.width>=85&&a.height>=24&&a.top>=b.bottom-2&&a.bottom<=v.h-3,
+     v.n+': writing-tip preview not conspicuous beside the drawing controls');
+   check(a.left>=0&&a.right<=v.w+2&&left.right<=a.left+2&&a.right<=right.left+2,
+     v.n+': current step/tip/motion phase overlap');
+   check(bounds(lead).width>0&&lead.textContent===glyph.tips[0],
+     v.n+': visible writing advice is missing/stale');
+   check(d.documentElement.scrollWidth<=v.w+2,v.n+': horizontal page overflow');
+   if(v.controls)check(btnBottom<=v.h-3,
+     v.n+': writing tip pushed primary playback controls below first screen: '+btnBottom);
+   mainLayout.push({viewport:v.n,sourceHintVisible:true,
+     hintWidth:Math.round(a.width),hintBottom:Math.round(a.bottom),
+     boardBottom:Math.round(b.bottom),buttonsBottom:Math.round(btnBottom)});
+  }
+  app.selectGlyph(200);
+  const complex=app.getGlyph();
+  check(complex.character==='鼻'&&lead.textContent===complex.tips[0]&&
+        complex.tips.every(x=>full.textContent.includes(x))&&
+        full.textContent.includes('写完检查：'+complex.check),
+        'Long complex glyph tips/check did not update from PDF source');
+  check(d.documentElement.scrollWidth<=w.innerWidth+2,
+    'Long hint text caused phone horizontal scrolling');
+  app.selectGlyph(77);
+  check(lead.textContent===glyph.tips[0],'Selecting Water back failed to update preview');
+  const expectedPressure=app.getPressureStyle();
+  check(p.open(),'Original continuous-writing overlay cannot open');
+  await p.whenReady();
+  const guide=d.querySelector('.practicePaperCard > .practiceActiveGuide');
+  const board=d.getElementById('practiceBoard'),ink=d.getElementById('practiceInk');
+  const sourceTip=d.getElementById('practiceBookTip');
+  const strokeTitle=d.getElementById('practiceStrokeTitle');
+  const verdict=d.getElementById('practiceOrderResult');
+  check(guide&&guide.nextElementSibling===board&&guide.contains(sourceTip)&&
+    guide.contains(strokeTitle)&&guide.contains(verdict)&&
+    sourceTip.textContent===glyph.tips[0],
+    'Author-sourced current writing hint/verdict must be above the real blue canvas');
+  const practiceLayout=[];
+  for(const v of [
+   {n:'padPortrait820x1180',w:820,h:1180},
+   {n:'padLandscape1180x820',w:1180,h:820},
+   {n:'phone390x844',w:390,h:844},
+   {n:'shortPhone390x667',w:390,h:667}
+  ]){
+   frame.style.width=v.w+'px';frame.style.height=v.h+'px';await wait(185);
+   w.dispatchEvent(new w.Event('resize'));await wait(65);
+   const g=bounds(guide),b=bounds(board),canvas=bounds(ink);
+   check(g.top>=0&&g.bottom<=b.top-2&&b.bottom<=v.h+2,
+     v.n+': instruction must precede visible writing board');
+   check(Math.abs(g.width-b.width)<3&&Math.abs(b.width-canvas.width)<3,
+     v.n+': source hint and writing pad widths should match');
+   check(bounds(strokeTitle).top>=g.top&&bounds(strokeTitle).bottom<=g.bottom&&
+     sourceTip.textContent===glyph.tips[0],v.n+': source hint not visible in guide');
+   check(d.documentElement.scrollWidth<=v.w+2,v.n+': practice overflow');
+   practiceLayout.push({viewport:v.n,guideAboveBoard:true,boardVisible:true,
+     boardPx:Math.round(b.width),guideBottom:Math.round(g.bottom),
+     boardBottom:Math.round(b.bottom)});
+  }
+  const sourceGroup=()=>d.querySelector('[data-practice-source-transform]');
+  function writeStroke(i){
+   const points=glyph.strokes[i].median,pointerId=i+603;
+   const send=(type,loc)=>{
+    const q=new w.DOMPoint(loc[0],loc[1]).matrixTransform(sourceGroup().getScreenCTM());
+    ink.dispatchEvent(new w.PointerEvent(type,{bubbles:true,cancelable:true,
+      isPrimary:true,button:0,pointerType:'pen',pointerId,
+      clientX:q.x,clientY:q.y,pressure:.67}));
+   };
+   send('pointerdown',points[0]);
+   for(const point of points.slice(1))send('pointermove',point);
+   send('pointerup',points.at(-1));
+  }
+  writeStroke(0);await p.whenSaved();
+  check(p.getState().progress.writtenStrokes===1&&
+    strokeTitle.textContent.includes('第 2 / 4')&&verdict.hidden,
+    'Current written stroke title did not refresh after natural lift');
+  for(const i of [1,2,3]){writeStroke(i);await p.whenSaved();}
+  check(p.getOrderCheck()?.status==='consistent'&&!verdict.hidden&&
+    verdict.textContent.includes('参考顺序一致')&&
+    bounds(verdict).bottom<=bounds(board).top-2,
+    'Completed cautious verdict must appear near the written character');
+  d.getElementById('practiceRestart').click();
+  check(p.getState().progress.writtenStrokes===0&&verdict.hidden&&
+    strokeTitle.textContent.includes('第 1 / 4')&&
+    !d.getElementById('practiceClearPrompt'),
+    'Instant whole-word restart or no-confirmation rule regressed');
+  await p.whenSaved();
+  check(p.getInkMetrics().confirmedStrokes===0&&p.close(),
+    'Restart and close should preserve cleared blue ink and local save contract');
+  check(JSON.stringify(app.pack.glyphs)===before&&
+    app.pack.publication.sha256===pdfSha&&
+    app.getGlyph().main_id===77&&app.getPressureStyle()===expectedPressure&&
+    app.player.frontGuard===true,'Original A3/PDF/pressure/ink source changed');
+  document.documentElement.dataset.result='PASS';
+  out.textContent=JSON.stringify({result:'PASS',characters:201,strokes:1045,
+    sourceHintsExact:true,fullCheckPreserved:true,currentHintAboveBoard:true,
+    completedVerdictAboveBoard:true,oneTapRestartPreserved:true,
+    originalA3Unmodified:true,mainLayout,practiceLayout},null,2);
+ }catch(error){
+  document.documentElement.dataset.result='FAIL';
+  out.textContent='FAIL: '+(error.stack||error);
+ }
+});
+</script></body></html>
