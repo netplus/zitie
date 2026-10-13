@@ -33,7 +33,7 @@ function audit(){
         const entry=group.entries[i];
         const paper=d.getElementById('board'),svg=d.getElementById('guide');
         const actual=[...svg.querySelectorAll('path[stroke="#b33b49"]')];
-        const expected=model.compose(entry.text,group.kind);
+        const expected=model.compose(entry.text,group.kind,group.script);
         check(actual.length===expected.strokes.length,
           view.name+'/'+entry.id+': independent SVG strokes');
         check(Math.abs(svg.viewBox.baseVal.width-expected.width-48)<.01,

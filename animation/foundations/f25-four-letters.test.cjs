@@ -75,11 +75,13 @@ test('F2.5 Pinyin b/q, other 113 entries, printing and saved trace keys remain v
  for(const letter of ['b','q']){
   const entry=initial.find(e=>e.text===letter);
   assert.ok(entry);
-  assert.deepEqual(data.compose(entry.text).strokes,data.compose(letter).strokes);
+  assert.equal(data.compose(entry.text,'lines','pinyin').strokes.length,2);
+  assert.equal(data.compose(letter,'lines','latin').strokes.length,1);
+  assert.notDeepEqual(data.compose(entry.text,'lines','pinyin').strokes,data.compose(letter).strokes);
  }
  const totals=data.groups.reduce((n,g)=>n+g.entries.reduce((m,e)=>
-  m+data.compose(e.text,g.kind).strokes.length,0),0);
- assert.equal(totals,366,'only 1/4/8 independent contacts updated in F2.6b');
+  m+data.compose(e.text,g.kind,g.script).strokes.length,0),0);
+ assert.equal(totals,447,'Pinyin classroom grouping restores school-specific pen contacts');
  const html=fs.readFileSync(path.join(__dirname,'index.html'),'utf8');
  const css=fs.readFileSync(path.join(__dirname,'style.css'),'utf8');
  const app=fs.readFileSync(path.join(__dirname,'app.js'),'utf8');

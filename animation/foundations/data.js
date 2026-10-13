@@ -64,6 +64,21 @@
     Y:'M10 17 L37 52;M64 17 L37 52 V83',
     Z:'M12 17 H63 L12 83 H64'
   };
+  // Grade-1 Chinese Pinyin classroom handwriting is a distinct pen-contact
+  // sequence from English manuscript. Independent model centerlines:
+  // sources are documented separately; other letters are explicitly pending.
+  const pinyinClassroom={
+    a:'M55 49 C39 45 18 47 16 63 C12 77 27 84 53 82;M56 49 V77 C56 82 58 83 62 81',
+    b:'M16 17 V83;M16 49 C37 43 61 48 61 65 C61 82 38 87 16 83',
+    d:'M56 49 C42 44 17 47 16 65 C14 81 34 86 56 83;M56 17 V83',
+    g:'M56 49 C42 44 17 47 16 65 C14 81 34 86 56 83;M56 49 V98 C56 111 39 113 28 105',
+    m:'M10 49 V83;M10 65 C12 45 35 45 35 65 V83;M35 65 C38 45 63 45 63 65 V83',
+    n:'M17 49 V83;M17 65 C19 45 58 45 58 65 V83',
+    p:'M16 49 V109;M16 49 C37 42 61 48 61 64 C61 82 37 87 16 83',
+    q:'M56 49 C42 44 17 47 16 65 C14 81 34 86 56 83;M56 49 V109',
+    u:'M17 49 V67 C17 84 43 88 54 76;M54 49 V83'
+  };
+  const PINYIN_VERIFIED=new Set(Object.keys(pinyinClassroom));
   const digits={
     0:'M37 17 C7 17 7 83 37 83 C67 83 67 17 37 17 Z',
     1:'M37 17 V83',
@@ -90,6 +105,7 @@
   ];
   const format=(group,values,hint,extra={})=>({
     key:group,name:extra.name||group,hint,kind:extra.kind||'lines',
+    script:group==='letters'?'latin':group==='numbers'?'numbers':'pinyin',
     entries:values.map((x,i)=>({
       id:group+'-'+i,text:typeof x==='string'?x:x.text,
       meaning:typeof x==='string'?'':x.meaning||''
@@ -135,14 +151,16 @@
     }
     return result;
   }
-  function compose(text,kind='lines'){
+  function compose(text,kind='lines',script='latin'){
+    if(!['latin','pinyin','numbers'].includes(script))throw Error('Unknown writing model: '+script);
     const result=[];
     let x=0;
     for(const part of parts(text)){
       if(part.base===' '){x+=33;continue;}
-      const table=kind==='squares'?digits:
-        Object.prototype.hasOwnProperty.call(upper,part.base)?upper:lower;
-      const ref=table[part.base];
+      const ref=kind==='squares'?digits[part.base]:
+        script==='pinyin'&&Object.prototype.hasOwnProperty.call(pinyinClassroom,part.base)?
+          pinyinClassroom[part.base]:
+          Object.prototype.hasOwnProperty.call(upper,part.base)?upper[part.base]:lower[part.base];
       if(!ref)throw Error('Missing path for '+part.base);
       const hasTone=part.marks.some(mark=>Object.prototype.hasOwnProperty.call(MARKS,mark));
       const strokes=ref.split(';').filter(Boolean);
@@ -165,11 +183,16 @@
     for(const group of groups)for(const item of group.entries){
       if(ids.has(item.id))throw Error('Duplicate ID: '+item.id);
       ids.add(item.id);
-      if(compose(item.text,group.kind).strokes.length===0)
+      if(compose(item.text,group.kind,group.script).strokes.length===0)
         throw Error('Empty vector for '+item.id);
     }
     return {groups:groups.length,items:ids.size};
   }
   validate();
-  return Object.freeze({groups,compose,parts,validate});
+  const verifiedPinyinLetters=Object.freeze([...PINYIN_VERIFIED].sort());
+  function modelInfo(letter,script='latin'){
+    return script==='pinyin'&&PINYIN_VERIFIED.has(letter)?'pinyin-classroom-source-mapped':
+      script==='pinyin'?'pinyin-pending-review':'latin-manuscript';
+  }
+  return Object.freeze({groups,compose,parts,validate,verifiedPinyinLetters,modelInfo});
 });

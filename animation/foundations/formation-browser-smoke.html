@@ -106,24 +106,30 @@ iframe.addEventListener('load',async function(){
   red=checkLetter(d,16);
   say(red[capitals[16]].getAttribute('d').endsWith('V106 C56 116 69 116 69 105'),
       'q descender must U-turn to the RIGHT, unlike g');
-  // Verify the same lowercase b and q are reused for Pinyin initials.
+  // F2.6c: the original English b/q are 1-contact LWT manuscript;
+  // Grade-1 Pinyin b/q must instead have two classroom pen-downs.
   api.selectGroup('initials');
   const initialButtons=[...d.querySelectorAll('#items button')];
   for(const letter of ['b','q']){
     const tile=initialButtons.find(button=>button.textContent===letter);
     say(Boolean(tile),'Missing Pinyin initial '+letter);
     tile?.click();
-    const lines=redPaths(d);
-    say(lines.length===1&&lines[0].getAttribute('d')===
-      w.ZitieFoundations.compose(letter).strokes[0].d,
-      'Pinyin initial '+letter+' must use corrected lowercase trajectory');
+    const paths=redPaths(d);
+    const pinyin=w.ZitieFoundations.compose(letter,'lines','pinyin').strokes;
+    const english=w.ZitieFoundations.compose(letter,'lines','latin').strokes;
+    say(paths.length===2&&english.length===1&&pinyin.length===2,
+      'Pinyin '+letter+' is two separate contacts, NOT English one');
+    say(paths.every((node,i)=>node.getAttribute('d')===pinyin[i].d),
+      'Pinyin '+letter+' rendered its separate source path');
   }
   say(api.getPrintedPageCount()===6,
-      'Pinyin initials retain six A4 pages and corrected SVG source');
+      'Pinyin initials retain six A4 pages with source-specific geometry');
   const printRed=[...d.querySelectorAll('#printRoot .printLine path[stroke="#b03a49"]')];
-  for(const letter of ['b','q'])say(printRed.some(p=>p.getAttribute('d')===
-    w.ZitieFoundations.compose(letter).strokes[0].d),
-    'Printed practice must reuse corrected '+letter+' geometry');
+  for(const letter of ['b','q']){
+    const pinyin=w.ZitieFoundations.compose(letter,'lines','pinyin').strokes;
+    for(const stroke of pinyin)say(printRed.some(path=>path.getAttribute('d')===stroke.d),
+      'Printed Pinyin '+letter+' must match every classroom contact');
+  }
   api.selectGroup('letters');
 
   const caps=w.ZitieFoundations.compose('ABCDEFGHIJKLMNOPQRSTUVWXYZ').strokes.length;

@@ -1,0 +1,116 @@
+{
+  "schema": "grade1-pinyin-classroom-source-v1",
+  "parent": "https://www.pep.com.cn/products/jc/jks/201608/t20160823_1369629.shtml",
+  "note": "PEP official catalogue confirms lesson grouping, but formation steps are supported by teacher-guide reposts and classroom lesson plans (not a newly issued uniform national stroke standard).",
+  "pedagogySources": [
+    {
+      "publisher": "PEP teacher's guide reprint",
+      "url": "https://www.szxuexiao.com/keben/html/3597.html",
+      "chapters": "a o e / i u ü / b p m f"
+    },
+    {
+      "publisher": "School teaching resource",
+      "url": "https://zy.21cnjy.com/24790162",
+      "chapters": "b p m f / d t n l / i u ü"
+    },
+    {
+      "publisher": "School teaching resource",
+      "url": "https://zy.21cnjy.com/24790173",
+      "chapters": "g k h"
+    },
+    {
+      "publisher": "Grade-1 classroom j q x",
+      "url": "https://zy.21cnjy.com/26373298",
+      "chapters": "q"
+    }
+  ],
+  "independentFromEnglish": true,
+  "status": "classroom-model engineering interpretation; explicit source alignment does not constitute teacher certification",
+  "overrides": {
+    "a": {
+      "contacts": 2,
+      "steps": [
+        "左半圆",
+        "竖右弯"
+      ],
+      "occupancy": "中格"
+    },
+    "b": {
+      "contacts": 2,
+      "steps": [
+        "先竖",
+        "右下半圆"
+      ],
+      "occupancy": "上中格"
+    },
+    "d": {
+      "contacts": 2,
+      "steps": [
+        "先左半圆",
+        "后右长竖"
+      ],
+      "occupancy": "上中格"
+    },
+    "g": {
+      "contacts": 2,
+      "steps": [
+        "先左半圆",
+        "后竖左弯"
+      ],
+      "occupancy": "中下格"
+    },
+    "m": {
+      "contacts": 3,
+      "steps": [
+        "先短竖",
+        "第一左弯竖",
+        "第二左弯竖"
+      ],
+      "occupancy": "中格"
+    },
+    "n": {
+      "contacts": 2,
+      "steps": [
+        "先短竖",
+        "再左弯竖"
+      ],
+      "occupancy": "中格"
+    },
+    "p": {
+      "contacts": 2,
+      "steps": [
+        "先长竖",
+        "右上半圆"
+      ],
+      "occupancy": "中下格"
+    },
+    "q": {
+      "contacts": 2,
+      "steps": [
+        "先左上半圆",
+        "再右长竖"
+      ],
+      "occupancy": "中下格"
+    },
+    "u": {
+      "contacts": 2,
+      "steps": [
+        "先竖右弯",
+        "后右竖"
+      ],
+      "occupancy": "中格"
+    }
+  },
+  "derived": {
+    "ü": {
+      "contacts": 4,
+      "recipe": "Pinyin u (2 contacts) + two separate dots (2 contacts)"
+    },
+    "ā": {
+      "contacts": 3,
+      "recipe": "Pinyin a (2 contacts) + tone (1 contact)"
+    }
+  },
+  "unreviewedPolicy": "All remaining Pinyin letters inherit original engineering Latin path as provisional fallback. Do not call them teacher-reviewed; audit per textbook before future changes.",
+  "compatibility": "Stable 113 item keys and source box width. Old saved traces retained, explicitly tagged legacy until user restarts."
+}
