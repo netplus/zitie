@@ -140,7 +140,7 @@ test('Practice UI offers immediate whole-word restart, safe exit, undo and no te
    assert.ok(html.includes('src="./practice/'+script+'"'));
  assert.match(bridge,/progress\.append\(session\.draft\)/);
  assert.match(bridge,/store\.save\(captured\)/);
- assert.match(bridge,/store\.load\(identity\(\)\)/);
+ assert.match(bridge,/store\.loadWithTimeout\(identity\(\)\)/);
  assert.match(bridge,/store\.remove\(identity\(\)\)/);
  assert.match(bridge,/noAutomaticScore:true,noPersistentWritingStorage:false/);
  assert.match(canvas,/getConfirmed/);

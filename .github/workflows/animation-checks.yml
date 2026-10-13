@@ -1172,6 +1172,42 @@ jobs:
               json.dumps(v,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
           print('PASS: 0.8x and simulated default, manual overrides, reload and 5 screens')
           PY
+      - name: Audit P2.2h Edge iOS touch resilience via native Chromium CDP
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check animation/practice/pointer-input.js
+          node --check animation/practice/storage.js
+          node --check animation/practice/practice-bridge.js
+          node --check animation/tests/p22h-edgios-cdp.mjs
+          node --test animation/tests/p22h-edgios-compat.test.cjs
+          test -s animation/book-pack.js
+          mkdir -p build/a1
+          python3 -m http.server 18794 --bind 127.0.0.1 > build/a1/p22h-edgios-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 60); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18794/animation/book.html?id=77',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          timeout 175 node animation/tests/p22h-edgios-cdp.mjs
+          python3 - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path('build/a1/p22h-edgios-touch-metrics.json')
+          assert p.is_file() and p.stat().st_size>200
+          data=json.loads(p.read_text(encoding='utf-8'))
+          assert data['result']=='PASS'
+          for k in ('nativeSingleTouch','preferredTouchWithoutDuplicates',
+                    'toolbarResizeSurvived','canceledStrokeNotCommitted',
+                    'blockedIndexedDBFailsOpen','actualBlueInk','sourceReadOnly'):
+              assert data[k] is True,k
+          assert data['sourceCount']==201 and data['strokeCount']==1045
+          assert data['browserSimulation'].endswith('NOT physical iPhone Edge')
+          print('PASS P2.2h native CDP touch under Edge-iOS UA emulation; not a device certification')
+          PY
       - name: Audit A3.5 PDF-immutable brush gesture retiming A/B in Chrome
         env:
           CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}

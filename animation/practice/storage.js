@@ -71,6 +71,20 @@
       const row=await requestAsPromise(tx.objectStore(STORE).get(key));
       return row?.snapshot||null;
     }
+    loadWithTimeout(identity,timeoutMs=3500){
+      // A WKWebView IndexedDB request can remain pending without an error.
+      // Never leave the learner's Canvas permanently disabled; callers
+      // degrade to an explicitly unsaved in-memory practice on timeout.
+      if(!Number.isFinite(timeoutMs)||timeoutMs<1||timeoutMs>30000)
+        return Promise.reject(Error('Invalid practice load timeout'));
+      let timer;
+      const pending=new Promise((_,reject)=>{
+        timer=setTimeout(()=>reject(Error('Practice storage load timed out')),
+          timeoutMs);
+      });
+      return Promise.race([this.load(identity),pending])
+        .finally(()=>clearTimeout(timer));
+    }
     save(snapshot){
       const key=makeKey(snapshot);
       if(!snapshot||

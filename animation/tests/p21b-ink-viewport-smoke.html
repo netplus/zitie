@@ -145,13 +145,23 @@ document.getElementById('demo').addEventListener('load',async function(){
     p.getState().input.acceptedStrokes===0&&
     p.getState().input.cancellations>=1,
     'Cancelled touch cannot be counted as a real written stroke');
-  // Pointer down during resize must abort; previous complete draft remains
-  // intact across resize only when no stroke is currently being written.
+  // A browser toolbar resize with unchanged Canvas geometry must NOT
+  // discard the learner's active stroke.
   ev('pointerdown',10,start,4);
   ev('pointermove',10,finish,5);
   w.dispatchEvent(new w.Event('resize'));await wait(90);
+  check(p.getState().input.phase==='drawing'&&p.getTrace().length>=2,
+    'Toolbar-only resize must not cancel unchanged source geometry');
+  // An actual source-board size change still cancels ordinary PointerEvents
+  // so the line cannot silently combine separate geometry regimes.
+  const boardElement=d.getElementById('practiceBoard');
+  const priorStyleWidth=boardElement.style.width;
+  boardElement.style.width=(boardElement.getBoundingClientRect().width-28)+'px';
+  w.dispatchEvent(new w.Event('resize'));await wait(90);
   check(p.getState().input.phase==='ready'&&p.getTrace().length===0,
-    'Resize while drawing must cancel the partial pen trace');
+    'Actual board resize must cancel partial pointer ink');
+  boardElement.style.width=priorStyleWidth;
+  w.dispatchEvent(new w.Event('resize'));await wait(70);
   ev('pointerdown',11,start,6,'touch');
   ev('pointermove',11,finish,7,'touch');
   ev('pointerup',11,finish,8,'touch');
