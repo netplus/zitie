@@ -51,6 +51,7 @@ jobs:
           node --test animation/foundations/f1.test.cjs
           node --test animation/foundations/f2-geometry.test.cjs
           node --test animation/foundations/formation.test.cjs
+          node --test animation/foundations/f25-four-letters.test.cjs
           node --check animation/experiments/brush-gesture-model.js
           node --check animation/experiments/brush-motion-lab.js
           node --test animation/tests/a3-book.test.cjs animation/tests/a35-brush-motion.test.cjs animation/tests/a36-front-guard.test.cjs animation/tests/a37-book-pressure.test.cjs animation/tests/a38-pressure-layout.test.cjs animation/tests/p21a-reference.test.cjs animation/tests/p21b-trace.test.cjs animation/tests/p21c-progress.test.cjs animation/tests/p22a-whole-writing.test.cjs
