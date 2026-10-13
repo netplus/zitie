@@ -314,21 +314,47 @@ window.addEventListener('DOMContentLoaded',()=>{
     }
   }
   function worksheetSvg(comp,kind,mode){
-    const perCell=comp.width+30;
-    const copies=comp.width>380?1:comp.width>200?2:comp.width>100?3:4;
-    const svg=node('svg',{viewBox:'0 0 '+(copies*perCell)+' 132',
+    // Fix 1600:132 artwork proportions to A4 printable width / 15-mm row.
+    // Subdivide the ENTIRE printable line; never center a short mini-SVG
+    // which would leave most of the A4 page unused.
+    const W=1600;
+    const copies=comp.width>380?2:comp.width>220?3:
+      comp.width>100?4:8;
+    const cellWidth=W/copies;
+    const svg=node('svg',{viewBox:'0 0 '+W+' 132',
       preserveAspectRatio:'xMidYMid meet',class:'printLine',
       'aria-label':mode+'：字帖练习格'});
     for(let i=0;i<copies;i++){
-      const x=i*perCell+14;
-      appendGrid(svg,comp,kind,x);
+      const left=i*cellWidth;
+      const x=left+(cellWidth-comp.width)/2;
+      if(kind==='squares'){
+        svg.append(node('rect',{x:left+2,y:11,width:cellWidth-4,
+          height:106,fill:'none',stroke:'#e1cbd0',
+          'stroke-width':1.1}));
+        svg.append(node('path',{d:'M'+(left+2)+' 64 H'+
+          (left+cellWidth-2)+' M'+(left+cellWidth/2)+
+          ' 11 V117',stroke:'#ded6d6','stroke-dasharray':'4 5',
+          'stroke-width':1}));
+        // Number writing is centred within the larger worksheet cell.
+        svg.append(node('rect',{x:x+6,y:17,width:64,height:66,
+          fill:'none',stroke:'#ccb0b5','stroke-width':1.2}));
+      }else{
+        const lines=[14,47,83,117];
+        for(let j=0;j<lines.length;j++)svg.append(node('path',{
+          d:'M'+left+' '+lines[j]+' H'+(left+cellWidth),
+          stroke:j===2?'#cda9b0':'#dfc7cb',
+          'stroke-width':j===2?1.6:1.05
+        }));
+        if(i)svg.append(node('path',{d:'M'+left+' 14 V117',
+          stroke:'#dedede','stroke-width':.8,
+          'stroke-dasharray':'3 5'}));
+      }
       if(mode==='blank')continue;
       for(const st of comp.strokes){
-        const p=path(st,x,kind,{
+        svg.append(path(st,x,kind,{
           stroke:mode==='red'?'#b03a49':'#999da2',
           'stroke-width':4.5,opacity:mode==='red'?.85:.35
-        });
-        svg.append(p);
+        }));
       }
     }
     return svg;
