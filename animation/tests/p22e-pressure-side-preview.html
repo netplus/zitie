@@ -1,0 +1,29 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>P2.2e · original pressure area + authored hints</title>
+<style>
+body{margin:0;background:#f4f2ef;font:12px system-ui,"Microsoft YaHei",sans-serif}
+h1{font-size:15px;margin:8px 12px 2px}p{margin:0 12px 6px}
+iframe{display:block;border:1px solid #ddd5d5;margin:auto;background:#fff}
+</style></head>
+<body><h1>P2.2e · Pressure-side spare space uses source notes</h1>
+<p>Original A3 page in a real Chromium iframe; Stable by default, Simulated with ?simulated.</p>
+<iframe id="demo" title="A3 source writing practice preview"
+ src="../book.html?id=77" style="width:1366px;height:768px"></iframe>
+<script>
+const query=new URLSearchParams(location.search),f=document.getElementById('demo');
+if(query.has('mobile')){f.style.width='390px';f.style.height='844px'}
+f.addEventListener('load',()=>{
+ try{
+  const w=f.contentWindow,a=w.ZITIE_A3_BOOK;
+  if(!a||w.document.documentElement.dataset.a3Ready!=='201')
+   throw Error('Player failed to initialize');
+  if(query.has('simulated')){
+   a.setPressureStyle('simulated');
+   const stroke=a.player.timeline.strokes[1];
+   a.player.seekElapsed(stroke.startMs+stroke.durationMs*.47);
+  }
+  document.documentElement.dataset.result='PASS';
+ }catch(_){document.documentElement.dataset.result='FAIL'}
+});
+</script></body></html>
