@@ -79,7 +79,7 @@ test('F2.5 Pinyin b/q, other 113 entries, printing and saved trace keys remain v
  }
  const totals=data.groups.reduce((n,g)=>n+g.entries.reduce((m,e)=>
   m+data.compose(e.text,g.kind).strokes.length,0),0);
- assert.equal(totals,369,'no unintended pen-down count change');
+ assert.equal(totals,366,'only 1/4/8 independent contacts updated in F2.6b');
  const html=fs.readFileSync(path.join(__dirname,'index.html'),'utf8');
  const css=fs.readFileSync(path.join(__dirname,'style.css'),'utf8');
  const app=fs.readFileSync(path.join(__dirname,'app.js'),'utf8');

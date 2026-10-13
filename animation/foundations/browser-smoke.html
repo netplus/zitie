@@ -122,6 +122,21 @@ function run(){
      'number guide remains square rather than stretched');
   ok(app.getPrintedPageCount()===3,'10 number items print to 3 A4 pages');
   ok([...d.querySelectorAll('#printRoot svg.printLine')].every(s=>s.viewBox.baseVal.width===1600),'all print rows use full A4 width');
+  // F2.6b: real Chromium verifies LWT number formation, not merely grid.
+  const numberTiles=[...d.querySelectorAll('#items button')];
+  for(const digit of ['1','4','8']){
+    numberTiles[Number(digit)].click();
+    const strokes=[...d.querySelectorAll('#guide path[stroke="#b33b49"]')];
+    const expected=w.ZitieFoundations.compose(digit,'squares').strokes;
+    ok(strokes.length===expected.length,'number '+digit+' pen-down count matches model');
+    ok(strokes.every((s,i)=>s.getAttribute('d')===expected[i].d),
+       'number '+digit+' instructional path rendered unmodified');
+    const printed=[...d.querySelectorAll('#printRoot svg.printLine path[stroke="#b03a49"]')];
+    ok(printed.some(el=>el.getAttribute('d')===expected[0].d),
+       'number '+digit+' A4 worksheet must use same instructional shape');
+  }
+  ok(w.ZitieFoundations.compose('8','squares').strokes.length===1,
+     '8 must never be two disconnected rings');
   app.selectGroup('initials');
   ok(app.getPrintedPageCount()===6,'23 initials to 6 A4 pages');
   ok(d.getElementById('printRoot').querySelectorAll('.printLine').length===69,'3 rows per initial');
