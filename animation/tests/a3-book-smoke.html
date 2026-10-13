@@ -8,8 +8,12 @@
 <script>
 const check=(x,m)=>{if(!x)throw Error(m);};
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-async function raster(svg,tip,dim=384){
- const saved=tip.style.display;tip.style.display='none';
+async function raster(svg,tip,ring=null,dim=384){
+ // Audit SOURCE PIGMENT only. Synthetic pressure's red ring is a UI
+ // indicator, not source ink, just like the animated nib marker.
+ const saved=tip.style.display,oldRing=ring?.style.display;
+ tip.style.display='none';
+ if(ring)ring.style.display='none';
  try{
   const image=new Image();
   const u=URL.createObjectURL(new Blob([
@@ -32,7 +36,10 @@ async function raster(svg,tip,dim=384){
    }
    return {red,count};
   }finally{URL.revokeObjectURL(u);}
- }finally{tip.style.display=saved;}
+ }finally{
+  tip.style.display=saved;
+  if(ring)ring.style.display=oldRing;
+ }
 }
 document.getElementById('demo').addEventListener('load',async function(){
  const out=document.getElementById('result');
@@ -100,7 +107,7 @@ document.getElementById('demo').addEventListener('load',async function(){
     let previous=new Uint8Array(384*384),previousFraction=0;
     for(const f of fractions){
       app.player.seekElapsed(segment.startMs+segment.durationMs*f);
-      const picture=await raster(app.player.svg,app.player.tip);
+      const picture=await raster(app.player.svg,app.player.tip,app.getPressureRing());
       let lostFrame=0,firstLost=null;
       for(let k=0;k<previous.length;k++){
         if(previous[k]&&!picture.red[k]){

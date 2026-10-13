@@ -9,8 +9,12 @@
 <script>
 const check=(x,m)=>{if(!x)throw Error(m);};
 const sleep=ms=>new Promise(r=>setTimeout(r,ms));
-async function raster(svg,tip,size=384){
- const saved=tip.style.display;tip.style.display='none';
+async function raster(svg,tip,size=384,ring=null){
+ // The A3.6 raster counts PDF-backed ink only, never visual nib pressure
+ // indicators, so simulated pressure cannot create fake vanishing pixels.
+ const saved=tip.style.display,oldRing=ring?.style.display;
+ tip.style.display='none';
+ if(ring)ring.style.display='none';
  try{
   const u=URL.createObjectURL(new Blob([
     new XMLSerializer().serializeToString(svg)],
@@ -33,7 +37,10 @@ async function raster(svg,tip,size=384){
    }
    return {red,count};
   }finally{URL.revokeObjectURL(u);}
- }finally{tip.style.display=saved;}
+ }finally{
+  tip.style.display=saved;
+  if(ring)ring.style.display=oldRing;
+ }
 }
 function redAt(pixels,x,y,size=384){
  const px=Math.round(x*size/1024),py=Math.round((900-y)*size/1024);
@@ -97,7 +104,7 @@ async function run(){
    // Real Chromium raster audit for EVERY SINGLE SOURCE STROKE, not
    // merely one representative stroke in each of the 201 glyphs.
    // We are still inside this stroke's unchanged original time interval.
-   const snapA=await raster(app.player.svg,app.player.tip);
+   const snapA=await raster(app.player.svg,app.player.tip,384,app.getPressureRing());
    const dA=brush.stateAt(row.profile,frame.progress).distance;
    const leadA=aheadInk(brush,snapA.red,row.profile,dA);
    maxFullStrokeRedLead=Math.max(maxFullStrokeRedLead,leadA);
@@ -108,7 +115,7 @@ async function run(){
    }
    app.player.seekElapsed(step.startMs+step.durationMs*.78);
    const frameB=app.player.getState();
-   const snapB=await raster(app.player.svg,app.player.tip);
+   const snapB=await raster(app.player.svg,app.player.tip,384,app.getPressureRing());
    const dB=brush.stateAt(row.profile,frameB.progress).distance;
    const leadB=aheadInk(brush,snapB.red,row.profile,dB);
    maxFullStrokeRedLead=Math.max(maxFullStrokeRedLead,leadB);
@@ -157,7 +164,7 @@ async function run(){
   for(const fraction of fractions){
    app.player.seekElapsed(part.startMs+part.durationMs*fraction);
    const motion=app.player.getState();
-   const img=await raster(app.player.svg,app.player.tip);
+   const img=await raster(app.player.svg,app.player.tip,384,app.getPressureRing());
    if(previous)lost+=inkLost(previous,img.red);
    previous=img.red;
    const sourceDistance=brush.stateAt(row.profile,motion.progress).distance;
@@ -184,7 +191,7 @@ async function run(){
   const segment=app.player.timeline.strokes[i],row=app.player.rows[i];
   for(const f of [.13,.37,.68,.9]){
    app.player.seekElapsed(segment.startMs+segment.durationMs*f);
-   const frame=app.player.getState(),img=await raster(app.player.svg,app.player.tip);
+   const frame=app.player.getState(),img=await raster(app.player.svg,app.player.tip,384,app.getPressureRing());
    const d=brush.stateAt(row.profile,frame.progress).distance;
    check(aheadInk(brush,img.red,row.profile,d)<=12,
      'Water stroke '+(i+1)+' red front outran source nib');

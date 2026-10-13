@@ -18,3 +18,7 @@ The user requested that the **main published 201-glyph A3 teaching page** open w
 - Update A3.7 pressure-raster/controls and A3.8 sticky panel browser expectations from old stable-default, without weakening the 12 frame ink identity checks. A3 book browser tests include the fifth speed; P2.2d 11 total playback/speed buttons and A3.9 first-screen visibility remain enforced.
 - Formal 299-page PDF, 201 glyphs/1045 source strokes, nib frontier, original practice capture and IndexedDB remain immutable.
 - Exact PR HEAD A1 real Chromium and Book integrity must complete/succeed before merging. After merging require actual same SHA GitHub Pages Configure/Upload/**Deploy** completed/success; real stylus hardware not certified.
+
+## Raster-audit adjustment for simulated startup
+
+A3.0 and A3.6 legacy Chromium tests previously hid the moving nib while pixel-counting **source ink**, but did not hide the separate simulated red **force-ring SVG circle**. With simulated pressure now the default, ring pixels could be mistaken for vanishing source pigment when the marker moves even though canonical masks/paths are unchanged. The raster helpers now **temporarily hide and restore both the nib and the simulated pressure ring** while measuring only source bitmap pixels; A3.7 independently continues to test the force ring and requires ink-identical stable/simulated output. No production rendering code or acceptance thresholds have been altered.
