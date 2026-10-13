@@ -87,7 +87,10 @@ test('F2 samples ALL glyphs and keeps their vectors inside printable/canvas cell
       assert.equal(composition.width,expectedWidth,entry.id+' width changed');
     }
   }
-  assert.ok(strokes>400,'audit should cover many hundreds of real paths');
+  // After the publisher-aligned letter formation change, repeated pen lifts
+  // are replaced with connected lowercase gestures (470 -> 383 source paths).
+  // Fewer paths is expected and audited, not a loss of letter content.
+  assert.equal(strokes,383,'F2.3 exactly all published independent pen-down paths');
 });
 test('F2 distinguish 4 pinyin tones, mark-less i, and ü two dots in source geometry',()=>{
   const tones=category('tones');
