@@ -67,6 +67,7 @@ jobs:
           node --test animation/foundations/f2-geometry.test.cjs
           node --test animation/foundations/formation.test.cjs
           node --test animation/foundations/f25-four-letters.test.cjs
+          node --test animation/foundations/legibility-audit.test.cjs
           node --check animation/practice/progress-controller.js
           node --check animation/practice/whole-progress.js
           node --check animation/practice/order-check.js
@@ -89,6 +90,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p build/f1
+          node animation/foundations/legibility-audit.cjs > build/f1/child-letter-geometry-audit.json
           python3 -m http.server 18781 --bind 127.0.0.1 > build/f1/server.log 2>&1 &
           server_pid=$!
           trap 'kill "$server_pid" 2>/dev/null || true' EXIT
