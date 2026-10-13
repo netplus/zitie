@@ -1,0 +1,903 @@
+{
+  "schema": "lwt-print-formation-2018-source-reviewed-v1",
+  "source": {
+    "publisher": "Learning Without Tears",
+    "title": "Capital and Lowercase Formation Charts",
+    "year": 2018,
+    "url": "https://www.lwtears.com/sites/default/files/2022-01/English_print_letterCharts.pdf",
+    "pageNumbers": {
+      "capitals": 1,
+      "lowercase_a_n": 2,
+      "lowercase_o_z": 3
+    },
+    "secondChart": "https://bartlettparks.org/wp-content/uploads/2019/03/Capital_Formation_Chart.pdf"
+  },
+  "independentPenDownDefinition": "Continuous contact may include multiple Big Line or Little Line movements; motions are NOT individual pen lifts.",
+  "coordinatePolicy": "Implementation SVG grid anchors independently authored; chart has arrow positions but does not provide these SVG coordinates.",
+  "status": "publisher-image comparison; not teacher endorsement or national mandatory Pinyin stroke order",
+  "glyphs": {
+    "A": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 3,
+      "starts": [
+        [
+          37,
+          17
+        ],
+        [
+          37,
+          17
+        ],
+        [
+          21,
+          58
+        ]
+      ],
+      "movementSummary": [
+        "顶点到左下",
+        "顶点到右下",
+        "中横向右"
+      ]
+    },
+    "B": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          14,
+          17
+        ],
+        [
+          14,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "先左竖向下",
+        "上弧连续接下弧，不抬笔"
+      ]
+    },
+    "C": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          63,
+          25
+        ]
+      ],
+      "movementSummary": [
+        "右上向左弧到右下"
+      ]
+    },
+    "D": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          14,
+          17
+        ],
+        [
+          14,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "左竖向下",
+        "左上沿外弧到左下"
+      ]
+    },
+    "E": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 4,
+      "starts": [
+        [
+          14,
+          17
+        ],
+        [
+          14,
+          17
+        ],
+        [
+          14,
+          50
+        ],
+        [
+          14,
+          83
+        ]
+      ],
+      "movementSummary": [
+        "左竖向下",
+        "顶横向右",
+        "中横向右",
+        "底横向右"
+      ]
+    },
+    "F": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 3,
+      "starts": [
+        [
+          14,
+          17
+        ],
+        [
+          14,
+          17
+        ],
+        [
+          14,
+          50
+        ]
+      ],
+      "movementSummary": [
+        "左竖向下",
+        "顶横向右",
+        "中横向右"
+      ]
+    },
+    "G": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          63,
+          25
+        ],
+        [
+          42,
+          54
+        ]
+      ],
+      "movementSummary": [
+        "从右上向左绕弧",
+        "中横向右后下折"
+      ]
+    },
+    "H": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 3,
+      "starts": [
+        [
+          14,
+          17
+        ],
+        [
+          62,
+          17
+        ],
+        [
+          14,
+          50
+        ]
+      ],
+      "movementSummary": [
+        "左竖向下",
+        "右竖向下",
+        "中横向右"
+      ]
+    },
+    "I": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 3,
+      "starts": [
+        [
+          38,
+          17
+        ],
+        [
+          20,
+          17
+        ],
+        [
+          20,
+          83
+        ]
+      ],
+      "movementSummary": [
+        "中心竖向下",
+        "顶横向右",
+        "底横向右"
+      ]
+    },
+    "J": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          58,
+          17
+        ],
+        [
+          20,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "竖向下并向左弯",
+        "顶横向右"
+      ]
+    },
+    "K": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          14,
+          17
+        ],
+        [
+          63,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "左竖向下",
+        "从右上斜向左连接点再向右下"
+      ]
+    },
+    "L": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          14,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "先向下再右转，笔尖不断开"
+      ]
+    },
+    "M": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          11,
+          17
+        ],
+        [
+          11,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "左竖向下",
+        "左上斜下、谷底斜上、右竖向下连续"
+      ]
+    },
+    "N": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          13,
+          17
+        ],
+        [
+          13,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "左竖向下",
+        "斜向右下之后沿右竖向上"
+      ]
+    },
+    "O": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          53,
+          20
+        ]
+      ],
+      "movementSummary": [
+        "右上起笔沿左弧绕圈"
+      ]
+    },
+    "P": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          14,
+          17
+        ],
+        [
+          14,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "左竖向下",
+        "上部圆弧"
+      ]
+    },
+    "Q": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          53,
+          20
+        ],
+        [
+          45,
+          68
+        ]
+      ],
+      "movementSummary": [
+        "右上起笔绕圆",
+        "右下短斜尾"
+      ]
+    },
+    "R": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          14,
+          17
+        ],
+        [
+          14,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "左竖向下",
+        "上弧连接斜向右下的腿"
+      ]
+    },
+    "S": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          62,
+          25
+        ]
+      ],
+      "movementSummary": [
+        "右上向左弯再回右下"
+      ]
+    },
+    "T": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          37,
+          17
+        ],
+        [
+          10,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "先中竖向下",
+        "后顶横向右"
+      ]
+    },
+    "U": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          14,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "左竖下行，底部转弯再沿右竖上行"
+      ]
+    },
+    "V": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          11,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "左上斜下到谷底，连续向右上"
+      ]
+    },
+    "W": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          8,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "向下、向上、向下、向上连续折转"
+      ]
+    },
+    "X": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          12,
+          17
+        ],
+        [
+          64,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "左上向右下",
+        "右上向左下"
+      ]
+    },
+    "Y": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          10,
+          17
+        ],
+        [
+          64,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "左上向中心",
+        "右上向中心后向下"
+      ]
+    },
+    "Z": {
+      "kind": "capital",
+      "page": 1,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          12,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "顶横向右、斜向左下、底横向右连续"
+      ]
+    },
+    "a": {
+      "kind": "lowercase",
+      "page": 2,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          56,
+          50
+        ]
+      ],
+      "movementSummary": [
+        "c形回绕、右侧上伸再下行"
+      ]
+    },
+    "b": {
+      "kind": "lowercase",
+      "page": 2,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          16,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "上部长竖下行、回上绕右圆"
+      ]
+    },
+    "c": {
+      "kind": "lowercase",
+      "page": 2,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          57,
+          51
+        ]
+      ],
+      "movementSummary": [
+        "右上向左弯再回右下"
+      ]
+    },
+    "d": {
+      "kind": "lowercase",
+      "page": 2,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          56,
+          50
+        ]
+      ],
+      "movementSummary": [
+        "先c形、右侧上伸、后下行"
+      ]
+    },
+    "e": {
+      "kind": "lowercase",
+      "page": 2,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          17,
+          65
+        ]
+      ],
+      "movementSummary": [
+        "中间短横向右、回环至右下"
+      ]
+    },
+    "f": {
+      "kind": "lowercase",
+      "page": 2,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          42,
+          47
+        ],
+        [
+          22,
+          49
+        ]
+      ],
+      "movementSummary": [
+        "从中线附近向上弯至顶再下行",
+        "补中横"
+      ]
+    },
+    "g": {
+      "kind": "lowercase",
+      "page": 2,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          56,
+          50
+        ]
+      ],
+      "movementSummary": [
+        "c形回绕、上伸、下行、底部回钩"
+      ]
+    },
+    "h": {
+      "kind": "lowercase",
+      "page": 2,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          17,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "顶竖向下、回上越拱后下行"
+      ]
+    },
+    "i": {
+      "kind": "lowercase",
+      "page": 2,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          35,
+          49
+        ],
+        [
+          35,
+          30
+        ]
+      ],
+      "movementSummary": [
+        "先竖向下",
+        "后点"
+      ]
+    },
+    "j": {
+      "kind": "lowercase",
+      "page": 2,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          50,
+          49
+        ],
+        [
+          50,
+          30
+        ]
+      ],
+      "movementSummary": [
+        "先向下带弯钩",
+        "后点"
+      ]
+    },
+    "k": {
+      "kind": "lowercase",
+      "page": 2,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          17,
+          17
+        ],
+        [
+          19,
+          68
+        ]
+      ],
+      "movementSummary": [
+        "顶竖向下",
+        "从连接点向右上踢，折回后向右下"
+      ]
+    },
+    "l": {
+      "kind": "lowercase",
+      "page": 2,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          35,
+          17
+        ]
+      ],
+      "movementSummary": [
+        "上竖直接下行"
+      ]
+    },
+    "m": {
+      "kind": "lowercase",
+      "page": 2,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          10,
+          49
+        ]
+      ],
+      "movementSummary": [
+        "直下、回上，连续两个拱"
+      ]
+    },
+    "n": {
+      "kind": "lowercase",
+      "page": 2,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          17,
+          49
+        ]
+      ],
+      "movementSummary": [
+        "直下、回上形成一个拱"
+      ]
+    },
+    "o": {
+      "kind": "lowercase",
+      "page": 3,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          56,
+          53
+        ]
+      ],
+      "movementSummary": [
+        "c形沿原弧闭合圆"
+      ]
+    },
+    "p": {
+      "kind": "lowercase",
+      "page": 3,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          16,
+          49
+        ]
+      ],
+      "movementSummary": [
+        "中竖向下延伸、回上绕右圆"
+      ]
+    },
+    "q": {
+      "kind": "lowercase",
+      "page": 3,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          56,
+          50
+        ]
+      ],
+      "movementSummary": [
+        "c形后沿右竖下伸再回钩"
+      ]
+    },
+    "r": {
+      "kind": "lowercase",
+      "page": 3,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          18,
+          49
+        ]
+      ],
+      "movementSummary": [
+        "直下、回上形成小拱"
+      ]
+    },
+    "s": {
+      "kind": "lowercase",
+      "page": 3,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          57,
+          52
+        ]
+      ],
+      "movementSummary": [
+        "向左弯后转向右下"
+      ]
+    },
+    "t": {
+      "kind": "lowercase",
+      "page": 3,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          37,
+          20
+        ],
+        [
+          22,
+          49
+        ]
+      ],
+      "movementSummary": [
+        "从上向下",
+        "补横"
+      ]
+    },
+    "u": {
+      "kind": "lowercase",
+      "page": 3,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          17,
+          49
+        ]
+      ],
+      "movementSummary": [
+        "先下行、底部向右、上行后再向下"
+      ]
+    },
+    "v": {
+      "kind": "lowercase",
+      "page": 3,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          15,
+          49
+        ]
+      ],
+      "movementSummary": [
+        "左上斜下再向右上"
+      ]
+    },
+    "w": {
+      "kind": "lowercase",
+      "page": 3,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          9,
+          49
+        ]
+      ],
+      "movementSummary": [
+        "下上、下上连续"
+      ]
+    },
+    "x": {
+      "kind": "lowercase",
+      "page": 3,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          15,
+          49
+        ],
+        [
+          61,
+          49
+        ]
+      ],
+      "movementSummary": [
+        "左上向右下",
+        "右上向左下"
+      ]
+    },
+    "y": {
+      "kind": "lowercase",
+      "page": 3,
+      "numberedPenDown": 2,
+      "starts": [
+        [
+          13,
+          49
+        ],
+        [
+          61,
+          49
+        ]
+      ],
+      "movementSummary": [
+        "左上斜下",
+        "右上斜下延至下格"
+      ]
+    },
+    "z": {
+      "kind": "lowercase",
+      "page": 3,
+      "numberedPenDown": 1,
+      "starts": [
+        [
+          16,
+          49
+        ]
+      ],
+      "movementSummary": [
+        "顶横向右、斜下左、底横向右"
+      ]
+    }
+  }
+}
