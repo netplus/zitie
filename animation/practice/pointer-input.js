@@ -202,8 +202,14 @@
         this.touchIdentifier=touch.identifier;
         this.touchHandoffs++;
         this.release(id);
-        try{this.session.append(id,point);}
-        catch(_){this.abort('invalid-coordinate');return;}
+        try{
+          const last=this.session.active.points.at(-1);
+          // Some engines emit pointerdown and touchstart at the identical
+          // contact position with different timestamps: one real contact,
+          // not two separate ink samples.
+          if(!last||Math.hypot(last.x-point.x,last.y-point.y)>0.25)
+            this.session.append(id,point);
+        }catch(_){this.abort('invalid-coordinate');return;}
         if(e.cancelable)e.preventDefault();
         this.onChange('move');
         return;
