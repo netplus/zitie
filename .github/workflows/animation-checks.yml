@@ -1202,7 +1202,8 @@ jobs:
           assert data['result']=='PASS'
           for k in ('nativeSingleTouch','preferredTouchWithoutDuplicates',
                     'toolbarResizeSurvived','canceledStrokeNotCommitted',
-                    'blockedIndexedDBFailsOpen','actualBlueInk','sourceReadOnly'):
+                    'blockedIndexedDBFailsOpen','actualBlueInk','sourceReadOnly',
+                    'pointerOnlyFallbackRecovered'):
               assert data[k] is True,k
           assert data['sourceCount']==201 and data['strokeCount']==1045
           assert data['browserSimulation'].endswith('NOT physical iPhone Edge')
