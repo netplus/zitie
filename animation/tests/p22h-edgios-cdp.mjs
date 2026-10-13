@@ -198,6 +198,45 @@ try{
   pointerOnly.handoffs===0,
   'EdgiOS pointer-only channel was silently discarded: '+
     JSON.stringify(pointerOnly));
+ // Deliberately incomplete WebKit delivery: pointerdown, then native
+ // touchmove/touchend WITHOUT touchstart and WITHOUT a usable pointerup.
+ // These are synthetic DOM events; the preceding native CDP sequence is
+ // kept as a separate physical-touch simulation.
+ const lateTouch=await onPage(async()=>{
+  const practice=ZITIE_P22A,book=ZITIE_A3_BOOK;
+  if(!practice.restart())throw Error('Cannot reset after pointer-only QA');
+  await practice.whenSaved();
+  const before=practice.getState().input;
+  const g=document.querySelector('[data-practice-source-transform]');
+  const m=g.getScreenCTM(),canvas=document.getElementById('practiceInk');
+  const pts=book.getGlyph().strokes[0].median.map(([x,y])=>({
+   x:m.a*x+m.c*y+m.e,y:m.b*x+m.d*y+m.f
+  }));
+  const dispatchPointer=(type,pt)=>canvas.dispatchEvent(new PointerEvent(type,{
+   bubbles:true,cancelable:true,pointerType:'touch',pointerId:923,
+   isPrimary:true,button:0,clientX:pt.x,clientY:pt.y
+  }));
+  const dispatchNative=(type,pt,touches)=>{
+   const event=new Event(type,{bubbles:true,cancelable:true});
+   const finger={identifier:41,clientX:pt.x,clientY:pt.y};
+   Object.defineProperty(event,'changedTouches',{value:[finger]});
+   Object.defineProperty(event,'touches',{value:touches?[finger]:[]});
+   canvas.dispatchEvent(event);
+  };
+  dispatchPointer('pointerdown',pts[0]);
+  dispatchNative('touchmove',pts[Math.floor(pts.length/2)],true);
+  dispatchPointer('pointerup',pts.at(-1)); // obsolete channel must be ignored
+  dispatchNative('touchend',pts.at(-1),false);
+  await practice.whenSaved();
+  const state=practice.getState(),written=practice.getWritten();
+  return {written:state.progress.writtenStrokes,
+    handoffs:state.input.touchHandoffs-before.touchHandoffs,
+    samples:written[0]?.samples.length,
+    ink:practice.getInkMetrics().confirmedStrokes};
+ });
+ check(lateTouch.written===1&&lateTouch.handoffs===1&&
+   lateTouch.ink===1&&lateTouch.samples>=2,
+   'EdgiOS lost-touchstart stream did not recover: '+JSON.stringify(lateTouch));
  // Simulate Edge InPrivate/blocked IndexedDB *without fake pen data*. The
  // loader must report no persistence but keep the drawing Canvas usable.
  const failedStorage=await onPage(async()=>{
@@ -231,8 +270,9 @@ try{
   toolbarResizeSurvived:true,canceledStrokeNotCommitted:true,
   blockedIndexedDBFailsOpen:true,actualBlueInk:true,
   pointerOnlyFallbackRecovered:true,
+  missingTouchStartRecovered:true,
   sourceReadOnly:true,sourceCount:201,strokeCount:1045,
-  initial,began,firstStroke:result,canceled,pointerOnly,failedStorage};
+  initial,began,firstStroke:result,canceled,pointerOnly,lateTouch,failedStorage};
  mkdirSync(resolve('build/a1'),{recursive:true});
  writeFileSync(resolve('build/a1/p22h-edgios-touch-metrics.json'),
   JSON.stringify(metrics,null,2)+'\n');
