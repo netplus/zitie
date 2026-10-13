@@ -115,7 +115,8 @@
        (storageMessage?' · '+storageMessage:'');
    }
    function hidePrompts(){
-     $('practiceClearPrompt').hidden=true;
+     // Exiting while a pen stroke is unfinished may still warn; restarting
+     // the whole character is an immediate action without a dialog.
      $('practiceLeavePrompt').hidden=true;
    }
    function invalidateVerdict(){cachedVerdict=null;cachedRevision=-1;}
@@ -252,7 +253,6 @@
      if(!active)return false;
      if(!discardDraft&&closeWarning()){
        $('practiceLeavePrompt').hidden=false;
-       $('practiceClearPrompt').hidden=true;
        $('practiceLeavePrompt').querySelector('p').textContent=
          !storageUsable&&progress?.currentIndex?
          '本机保存失败，退出将丢失已经写过的笔迹，确定离开吗？':
@@ -290,12 +290,6 @@
      lastFeedback='已撤销上一笔，可以直接重新写；无需确认按钮。';
      renderCurrent();persist();return true;
    }
-   function requestRestart(){
-     if(!active||!ready)return false;
-     $('practiceClearPrompt').hidden=false;
-     $('practiceLeavePrompt').hidden=true;
-     $('practiceClearNo').focus();return true;
-   }
    function restartAll(){
      if(!active||!ready)return false;
      hidePrompts();input.reset();progress.restart();invalidateVerdict();
@@ -331,12 +325,8 @@
    prev.addEventListener('click',()=>referenceTo(stage.currentIndex-1));
    next.addEventListener('click',()=>referenceTo(stage.currentIndex+1));
    undo.addEventListener('click',undoStroke);
-   restart.addEventListener('click',requestRestart);
+   restart.addEventListener('click',restartAll);
    returnCurrent.addEventListener('click',returnToCurrent);
-   $('practiceClearYes').addEventListener('click',restartAll);
-   $('practiceClearNo').addEventListener('click',()=>{
-     $('practiceClearPrompt').hidden=true;restart.focus();
-   });
    $('practiceLeaveYes').addEventListener('click',()=>{
      $('practiceLeavePrompt').hidden=true;close({discardDraft:true});
    });
@@ -349,8 +339,6 @@
        e.preventDefault();e.stopPropagation();
        if(!$('practiceLeavePrompt').hidden){
          $('practiceLeavePrompt').hidden=true;exit.focus();
-       }else if(!$('practiceClearPrompt').hidden){
-         $('practiceClearPrompt').hidden=true;restart.focus();
        }else close();
        return;
      }
