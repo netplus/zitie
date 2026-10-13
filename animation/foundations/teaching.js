@@ -92,7 +92,8 @@
       '作为一个音节整体认读；不要简单拆成若干独立拼读部分。',
       'recognition');
     if(key==='tones'){
-      const base=text.normalize('NFD').charAt(0);
+      const normalized=text.normalize('NFD');
+      const base=normalized.startsWith('u\u0308')?'ü':normalized.charAt(0);
       const parts=tones[base];
       if(!parts)throw Error('Unlisted four-tone family');
       return build(parts[0],parts[1],'spelling');
