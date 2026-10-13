@@ -203,7 +203,13 @@ window.addEventListener('DOMContentLoaded', function(){
       const count=document.createElement('small');
       count.textContent=g.expected_stroke_count+'画';
       btn.append(sym,count);
-      btn.addEventListener('click',()=>selectGlyph(g));
+      btn.addEventListener('click',()=>{
+        selectGlyph(g);
+        // On narrow viewports the catalog is below the lesson. Return to
+        // the newly selected source-backed glyph without extra navigation.
+        if(window.matchMedia('(max-width: 860px)').matches)
+          $('lessonHero').scrollIntoView({block:'start',behavior:'auto'});
+      });
       fragment.append(btn);
     }
     $tiles.replaceChildren(fragment);
