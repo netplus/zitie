@@ -171,6 +171,7 @@ try{
   const practice=ZITIE_P22A,book=ZITIE_A3_BOOK;
   if(!practice.restart())throw Error('Cannot reset after native touch QA');
   await practice.whenSaved();
+  const countersBefore=practice.getState().input;
   const g=document.querySelector('[data-practice-source-transform]');
   const m=g.getScreenCTM(),canvas=document.getElementById('practiceInk');
   const pts=book.getGlyph().strokes[0].median.map(([x,y])=>({
@@ -186,8 +187,9 @@ try{
   await practice.whenSaved();
   const s=practice.getState(),written=practice.getWritten();
   return {written:s.progress.writtenStrokes,
-   starts:s.input.edgePointerFallbackStarts,
-   handoffs:s.input.touchHandoffs,
+   starts:s.input.edgePointerFallbackStarts-
+     countersBefore.edgePointerFallbackStarts,
+   handoffs:s.input.touchHandoffs-countersBefore.touchHandoffs,
    samples:written[0]?.samples.length,
    ink:practice.getInkMetrics().confirmedStrokes};
  });
