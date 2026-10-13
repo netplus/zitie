@@ -31,7 +31,7 @@ test('P2.2d: main lesson and library are visible, accessible, and source-preserv
 });
 test('P2.2d: book glyph source/tip/scroll navigation is the original data model',()=>{
  assert.match(logic,/\$\('writingTipLead'\)\.textContent=g\.tips\[0\]/);
- assert.match(logic,/const notes=\[\.\.\.g\.tips,'写完检查：'\+g\.check\]/);
+ assert.match(logic,/const notes=\[\.\.\.g\.tips\.slice\(1\),'写完检查：'\+g\.check\]/);
  assert.match(logic,/btn\.addEventListener\('click',\(\)=>\{\s*selectGlyph\(g\);/);
  assert.match(logic,/\$\('lessonHero'\)\.scrollIntoView\(\{block:'start',behavior:'auto'\}\)/);
  assert.match(logic,/window\.history\.replaceState\(null/);

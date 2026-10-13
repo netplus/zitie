@@ -229,13 +229,12 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
         </div>
       </section>
       <section class="pressureStudy" aria-labelledby="pressureStudyHeading">
-        <h2 id="pressureStudyHeading">本字书写要点</h2>
+        <h2 id="pressureStudyHeading">补充书写要点</h2>
         <p id="pressureStudyTip"></p>
         <div class="pressureStudyCheck">
           <strong>写完检查</strong>
           <p id="pressureStudyCheck"></p>
         </div>
-        <a class="pressureStudyLink" href="#writingTipsDetail">查看完整字帖提示 ↓</a>
       </section>
       </div>
       <!-- A3.8 handwriting stage end -->
@@ -250,7 +249,7 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
            aria-label="查看本字书写提示与写完检查">
           <span class="writingTipLabel">✎ 书写提示</span>
           <span id="writingTipLead">正在读取本字书写要点…</span>
-          <span class="writingTipArrow" aria-hidden="true">⌄</span>
+          <span class="writingTipArrow" aria-hidden="true">›</span>
         </a>
         <span id="phase">待播放</span>
       </div>
@@ -275,17 +274,18 @@ a{color:#962d3a;text-decoration-thickness:1px;text-underline-offset:3px}
         </div>
       </div>
       <div class="block">
-        <h2>01 看笔顺 · 点按笔画跳转</h2>
+        <h2>逐笔示范 · 点按笔画跳转</h2>
         <div id="steps"></div>
         <div class="pdfline">
           <a id="pdfLink" href="../book/zitie-v0.5.1-A4.pdf#page=6" target="_blank" rel="noopener">在 PDF 打开对应字帖页 ↗</a>
           <span id="pdfPage">第 1 页</span>
         </div>
       </div>
-      <div class="block" id="writingTipsDetail" tabindex="-1">
-        <h2>02 字帖原有书写提示</h2>
+      <section class="block writingContinuation" id="writingTipsDetail" tabindex="-1"
+               aria-label="补充书写要点和写完检查">
+        <h2>补充要点 · 写完检查</h2>
         <div id="tipText"></div>
-      </div>
+      </section>
       <div class="source">
         <p><strong>字形一致性：</strong>使用与正式 PDF 相同的源笔画 SVG、审定的字形覆写和 B01–B21 教学笔顺；PDF 页面和动画步骤可以互相定位。</p>
         <p><strong>动作证据边界：</strong>逐笔先后与名称按书中已核证据展示；运笔中线、笔速和笔尖位置属于工程推演，不是实测书写动作或教师认可的运笔轨迹。模拟笔压只改变笔尖标记及其力度辅助指示，不改变 PDF 字形或原始墨迹。</p>

@@ -18,17 +18,17 @@ test('P2.2e preserves original sticky pressure and adds one read-only companion'
     'pressureValue','pressureStudyHeading','pressureStudyTip','pressureStudyCheck',
     'paperSvg','writingTipLead','tipText','practiceOverlay'])
   assert.equal((html.match(new RegExp('id="'+id+'"','g'))||[]).length,1,id);
- assert.match(html,/class="pressureStudyLink" href="#writingTipsDetail"/);
+ assert.doesNotMatch(html,/class="pressureStudyLink"/,'Remove redundant full-tip link');
  assert.match(css,/\.writingStage>\.pressureBox\{grid-column:2;grid-row:1\}/);
  assert.match(css,/\.writingStage>\.pressureStudy\{grid-column:2;grid-row:2/);
  assert.match(css,/\.writingStage\{grid-template-rows:max-content minmax\(0,1fr\);height:var\(--board-size\)\}/);
- assert.match(css,/@media\(max-width:720px\), \(max-height:699px\)\{\.pressureStudy\{display:none\}\}/);
+ assert.match(css,/@media\(max-width:720px\), \(max-height:699px\)\{/);
 });
 test('P2.2e displays ONLY immutable second source tip and original completion check',()=>{
  assert.match(ui,/\$\('pressureStudyTip'\)\.textContent=g\.tips\.slice\(1\)\.join\('；'\)/);
  assert.match(ui,/\$\('pressureStudyCheck'\)\.textContent=g\.check/);
  assert.match(ui,/\$\('writingTipLead'\)\.textContent=g\.tips\[0\]/);
- assert.match(ui,/const notes=\[\.\.\.g\.tips,'写完检查：'\+g\.check\]/);
+ assert.match(ui,/const notes=\[\.\.\.g\.tips\.slice\(1\),'写完检查：'\+g\.check\]/);
  assert.match(ui,/new window\.ZitiePressureStyle\.StyleController\(\)/);
  assert.match(ui,/frontGuard:true/);
  assert.doesNotMatch(css,/@font-face|fonts\.googleapis|unpkg\.com|cdn\./);

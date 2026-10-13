@@ -22,20 +22,21 @@ iframe.addEventListener('load',async function(){
     study=stage.querySelector(':scope > .pressureStudy'),
     note=d.getElementById('pressureStudyTip'),
     checkText=d.getElementById('pressureStudyCheck'),
-    link=study.querySelector('a[href="#writingTipsDetail"]'),
+    continuation=d.getElementById('writingTipsDetail'),
     details=d.getElementById('pressureDetails'),
     chart=d.getElementById('pressureCurve'),
     originalHint=d.getElementById('writingTipLead'),
     full=d.getElementById('tipText');
   check(stage.children.length===3&&paper.nextElementSibling===pressure&&
-        pressure.nextElementSibling===study&&link,
+        pressure.nextElementSibling===study&&continuation,
     'Expected one authentic pressure controller and one separate read-only source guide');
   const glyph=a.getGlyph();
   check(glyph.main_id===77&&glyph.tips.length===2&&
     originalHint.textContent===glyph.tips[0]&&
     note.textContent===glyph.tips[1]&&
     checkText.textContent===glyph.check&&
-    glyph.tips.every(s=>full.textContent.includes(s)),
+    glyph.tips.slice(1).every(s=>full.textContent.includes(s))&&
+    !full.textContent.includes(glyph.tips[0]),
     'Study guide text must come verbatim from the PDF-backed glyph');
   const rows=[];
   for(const v of [
@@ -51,6 +52,17 @@ iframe.addEventListener('load',async function(){
    for(const mode of ['stable','simulated']){
     a.setPressureStyle(mode);await sleep(85);
     const p=rect(paper),s=rect(pressure),g=rect(study);
+    const link=d.getElementById('writingTipJump');
+    const inSide=v.wide&&mode==='stable';
+    check(link.getAttribute('href')===(inSide?'#pressureStudyHeading':'#writingTipsDetail')&&
+      (w.getComputedStyle(study).display!=='none')===inSide&&
+      (w.getComputedStyle(continuation).display!=='none')!==inSide,
+      v.name+' / '+mode+': there must be only one visible source complement and valid link');
+    check(continuation.querySelectorAll('#tipText p').length===2&&
+      !full.textContent.includes(glyph.tips[0])&&
+      full.textContent.includes(glyph.tips[1])&&
+      full.textContent.includes('写完检查：'+glyph.check),
+      v.name+' / '+mode+': complementary notes repeated the first tip or lost a source check');
     const buttons=[...d.querySelectorAll('.controls button')];
     const controlBottom=Math.max(...buttons.map(b=>rect(b).bottom));
     check(w.innerWidth===v.w&&w.innerHeight===v.h,v.name+': viewport mismatch');
@@ -60,26 +72,32 @@ iframe.addEventListener('load',async function(){
     if(v.controls)check(controlBottom<=v.h-3,
       v.name+' / '+mode+': source-note sidecar pushed playback buttons off screen');
     if(v.wide){
-     check(w.getComputedStyle(study).display!=='none'&&
-       s.left>=p.right+5&&Math.abs(s.top-p.top)<16,
+     check(s.left>=p.right+5&&Math.abs(s.top-p.top)<16,
        v.name+' / '+mode+': pressure controls not beside source paper');
-     check(g.height>=15&&g.top>=s.bottom-2&&g.bottom<=p.bottom+2&&
-       Math.abs(g.width-s.width)<2,
-       v.name+' / '+mode+': guide should occupy ONLY the unused paper-side height');
+     if(mode==='stable')check(g.height>=75&&g.top>=s.bottom-2&&
+       g.bottom<=p.bottom+2&&Math.abs(g.width-s.width)<2,
+       v.name+': original source guide should occupy available side height');
      check(note.textContent===glyph.tips[1]&&checkText.textContent===glyph.check,
        v.name+': source study note changed on resizing');
      if(mode==='stable'){
-      check(details.hidden&&g.height>=75,
+      check(details.hidden&&
+        w.getComputedStyle(study).display!=='none'&&
+        w.getComputedStyle(continuation).display==='none'&&
+        w.getComputedStyle(study).justifyContent==='flex-start'&&
+        w.getComputedStyle(study).overflowY==='auto',
         v.name+': stable mode must use the large former blank space');
       check(w.getComputedStyle(study.querySelector('.pressureStudyCheck')).display!=='none',
         v.name+': original completion check should be visible beside stable pressure');
      }else{
       check(!details.hidden&&rect(chart).bottom<=s.bottom+2&&
-        w.getComputedStyle(study.querySelector('.pressureStudyCheck')).display==='none',
-        v.name+': retain full measured-pressure *simulation* with compact notes');
+        w.getComputedStyle(study).display==='none'&&
+        w.getComputedStyle(continuation).display!=='none'&&
+        full.textContent.includes(glyph.check),
+        v.name+': show full source check below stroke navigation, keep entire pressure curve');
      }
     }else{
      check(w.getComputedStyle(study).display==='none'&&
+       w.getComputedStyle(continuation).display!=='none'&&
        s.bottom<=p.top+2&&Math.abs(p.width-s.width)<2,
        v.name+': mobile pressure band must remain unchanged above paper');
      if(mode==='simulated')check(!details.hidden&&rect(chart).width>90,
@@ -118,7 +136,8 @@ iframe.addEventListener('load',async function(){
     'PDF source or canonical vector glyph data changed');
   document.documentElement.dataset.result='PASS';
   out.textContent=JSON.stringify({result:'PASS',glyphs:201,strokes:1045,
-    exactBookNotes:true,stickyPressurePreserved:true,
+    exactBookNotes:true,uniqueVisibleGuidance:true,liveHintDestination:true,
+    stickyPressurePreserved:true,
     fixedSideSpace:true,mobileOriginalLayout:true,
     a3SourceImmutable:true,layout:rows},null,2);
  }catch(error){

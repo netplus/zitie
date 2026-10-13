@@ -1081,6 +1081,7 @@ jobs:
           set -euo pipefail
           node --check animation/book-ui.js
           node --test animation/tests/p22e-pressure-side.test.cjs
+          node --test animation/tests/p22f-unique-writing-guidance.test.cjs
           test -s animation/book-pack.js
           mkdir -p build/a1
           python3 -m http.server 18792 --bind 127.0.0.1 > build/a1/p22e-side-server.log 2>&1 &
@@ -1107,7 +1108,8 @@ jobs:
           j=json.loads(html.unescape(m.group(1)))
           assert j['result']=='PASS' and j['glyphs']==201 and j['strokes']==1045
           assert all(j[k] is True for k in ('exactBookNotes','stickyPressurePreserved',
-                  'fixedSideSpace','mobileOriginalLayout','a3SourceImmutable'))
+                  'fixedSideSpace','mobileOriginalLayout','a3SourceImmutable',
+                  'uniqueVisibleGuidance','liveHintDestination'))
           assert len(j['layout'])==12
           assert all(item['gapFilled'] for item in j['layout'] if
                   item['viewport'] not in ('phone390x844','shortPhone390x667'))

@@ -108,6 +108,13 @@ window.addEventListener('DOMContentLoaded', function(){
     $('pressurePhase').textContent=pressurePhaseLabels[force.phase]||force.phase;
     drawPressureTrace(force);
   }
+  // Source guidance is split exactly once across the two visible regions.
+  // The native link always targets the ACTUALLY visible complementary text.
+  function updateTipTarget(){
+    const narrow=window.matchMedia('(max-width:720px), (max-height:699px)').matches;
+    $('writingTipJump').setAttribute('href',
+      narrow||penStyle.mode==='simulated'?'#writingTipsDetail':'#pressureStudyHeading');
+  }
   function setPressureStyle(mode){
     const next=penStyle.setMode(mode);
     $('pressureStyleOptions').querySelectorAll('button[data-pen-style]')
@@ -115,6 +122,7 @@ window.addEventListener('DOMContentLoaded', function(){
         String(button.dataset.penStyle===next)));
     // Render the same millisecond frame; never pause/seek/change the mask.
     if(player.timeline)player.render();
+    updateTipTarget();
     return next;
   }
   function formatTime(ms){
@@ -163,11 +171,14 @@ window.addEventListener('DOMContentLoaded', function(){
     $('pressureStudyCheck').textContent=g.check;
     $('writingTipJump').title='本字书写提示：'+g.tips.join('；')+'；写完检查：'+g.check;
     $('tipText').replaceChildren();
-    const notes=[...g.tips,'写完检查：'+g.check];
+    // Tip 1 is already in the high-visibility card under the paper.
+    // Do not duplicate it in the responsive continuation.
+    const notes=[...g.tips.slice(1),'写完检查：'+g.check];
     for(const tip of notes){
       const p=document.createElement('p');
       p.textContent=tip;$('tipText').append(p);
     }
+    updateTipTarget();
     renderSteps(g);
     document.title=g.character+' · v0.5.1 字帖笔顺动画';
     player.setGlyph(g);
@@ -285,6 +296,7 @@ window.addEventListener('DOMContentLoaded', function(){
     if(e.code==='Space'){e.preventDefault();player.playing?player.pause():player.play();}
     else if(e.key.toLowerCase()==='r'){e.preventDefault();player.restart();}
   });
+  window.addEventListener('resize',updateTipTarget);
   renderFilters();
   applyFilter();
   const id=+(new URLSearchParams(window.location.search).get('id')||1);
