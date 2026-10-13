@@ -1,0 +1,26 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>P2.2c · 201 字实际书写提示可见性验收</title>
+<style>
+body{margin:0;background:#f4f2ef;color:#243139;font:12px/1.4 system-ui,"Microsoft YaHei",sans-serif}
+h1{font-size:15px;margin:8px 12px 2px}p{margin:0 12px 5px}
+iframe{display:block;border:1px solid #dbd4d3;background:white;margin:0 auto}
+</style></head><body>
+<h1>P2.2c · 字格附近即可阅读书写提示</h1>
+<p>正式发布页真实 iframe；提示文字源自字帖数据，不改笔迹或动画。</p>
+<iframe id="demo" title="PDF同源主播放器／整字临摹"
+ src="../book.html?id=77" style="width:1366px;height:768px"></iframe>
+<script>
+const args=new URLSearchParams(location.search),frame=document.getElementById('demo');
+if(args.has('mobile')){frame.style.width='390px';frame.style.height='844px';}
+frame.addEventListener('load',async()=>{
+ try{
+  const w=frame.contentWindow,app=w.ZITIE_A3_BOOK,practice=w.ZITIE_P22A;
+  if(w.document.documentElement.dataset.a3Ready!=='201'||!app||!practice)
+    throw Error('Not initialized');
+  app.setPressureStyle('simulated');
+  if(args.has('practice')){practice.open();await practice.whenReady();}
+  document.documentElement.dataset.result='PASS';
+ }catch(_){document.documentElement.dataset.result='FAIL';}
+});
+</script></body></html>
