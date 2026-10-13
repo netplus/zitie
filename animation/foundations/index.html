@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>基础书写字帖 · 字母 数字 拼音</title>
+<link rel="stylesheet" href="./style.css">
+<script defer src="./data.js"></script>
+<script defer src="./app.js"></script>
+</head>
+<body>
+<main class="app">
+  <header class="topbar">
+    <div><p class="eyebrow">循序渐进 · 第二套字帖</p>
+      <h1>基础书写字帖</h1>
+      <p class="summary">字母 · 数字 · 拼音声母韵母 · 整体认读 · 声调与词语</p>
+    </div>
+    <nav class="topnav" aria-label="字帖导航">
+      <a href="../book.html">汉字部首字帖 ↗</a>
+      <a href="#catalog">选择练习内容</a>
+    </nav>
+  </header>
+  <div class="columns">
+    <section class="lesson" aria-labelledby="lessonHeading">
+      <header class="lessonHead">
+        <div>
+          <p class="eyebrow" id="groupLabel">字帖教学</p>
+          <h2 id="lessonHeading">Aa</h2>
+          <p id="lessonHint" class="hint">选择左侧或下方分类开始练习。</p>
+        </div>
+        <div class="pager" aria-label="相邻练习">
+          <button type="button" id="prev" aria-label="上一项">← 上一项</button>
+          <button type="button" id="next" aria-label="下一项">下一项 →</button>
+        </div>
+      </header>
+      <div class="studyTip" aria-live="polite">
+        <strong>✎ 书写提示</strong>
+        <span id="tipText">四线三格：先观察位置，再描摹，最后独立写。</span>
+      </div>
+      <div class="boardBox">
+        <div class="board" id="board">
+          <svg id="guide" xmlns="http://www.w3.org/2000/svg"
+             viewBox="-24 0 124 132" role="img"
+             aria-label="基础字帖工程书写轨迹及占格示范"></svg>
+          <canvas id="ink" aria-label="用手指、手写笔或鼠标书写；蓝色为实际笔迹"></canvas>
+        </div>
+      </div>
+      <p class="boardCaption">红色：轨迹示范　灰色：待描字形　蓝色：你的真实笔迹</p>
+      <div class="toolbar">
+        <button type="button" class="primary" id="demo">▶ 逐笔示范</button>
+        <button type="button" id="replay">↻ 重播</button>
+        <div class="speed" role="group" aria-label="逐笔示范速度" id="speedButtons">
+          <span>速度</span>
+          <button type="button" data-rate="0.5" aria-pressed="false">0.5×</button>
+          <button type="button" data-rate="0.8" aria-pressed="true">0.8×</button>
+          <button type="button" data-rate="1" aria-pressed="false">1×</button>
+          <button type="button" data-rate="1.5" aria-pressed="false">1.5×</button>
+        </div>
+      </div>
+      <div class="practiceBar">
+        <div><strong>触屏临摹</strong>
+          <p id="writeStatus" role="status" aria-live="polite">在字格中直接书写；每次自然提笔记录一笔。</p>
+        </div>
+        <div class="practiceActions">
+          <button type="button" id="undo">撤销上一笔</button>
+          <button type="button" id="clear">重新练习</button>
+        </div>
+      </div>
+      <p class="disclosure">字形和运笔方向为独立绘制的工程教学草稿，尚未经过书法教师逐项复核；不自动评分或宣称笔顺正确。蓝色笔迹仅在本机浏览器保存，不上传，也不写入原汉字字帖的练习记录。</p>
+    </section>
+    <aside class="catalog" id="catalog" aria-label="基础书写内容目录">
+      <div class="catalogTop">
+        <div><p class="eyebrow">学习目录</p><h2>选择练习内容</h2></div>
+        <span id="groupCount" class="count">加载中…</span>
+      </div>
+      <div class="tabs" id="tabs" role="group" aria-label="字帖分类"></div>
+      <p id="catalogHint" class="hint"></p>
+      <div class="items" id="items" role="group" aria-label="可选练习项"></div>
+      <div class="printCard">
+        <strong>打印 A4 专项字帖</strong>
+        <p>当前分类一次生成完整练习页：示范、描淡和空白书写。可在系统打印对话框选择“另存为 PDF”。</p>
+        <button type="button" id="print" class="printButton">打印当前分类 / 保存 PDF ↗</button>
+      </div>
+    </aside>
+  </div>
+  <footer class="footer">
+    <span>F1 · 基础书写字帖工程版</span>
+    <span>原 201 字毛笔动画、正式 v0.5.1 299 页 PDF 均保持独立、不作修改。</span>
+  </footer>
+</main>
+<section id="printRoot" aria-label="A4可打印分类字帖"></section>
+</body>
+</html>
