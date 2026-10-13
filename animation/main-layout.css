@@ -129,12 +129,15 @@ body{background:#f6f4f1;color:#27343c}
  .tile strong{font-size:26px}
 }
 
-/* Keep the first source-stroke jump chip in view on 1440×900 desktop.
-   Reclaim spacing, NOT writing-tip content or paper area. */
-@media(min-width:1100px) and (min-height:850px){
+/* The classroom first screen retains the A3.9 laptop playback gates.
+   Reclaim whitespace; keep the enlarged paper and complete source hint. */
+@media(min-width:900px){
  .writingStage{margin-top:7px}
  .legend{padding-top:4px}
- .block{margin-top:7px;padding-top:7px}
  .controls .speed{padding-top:0}
  .top{margin-bottom:9px}
+}
+/* Keep the first source stroke-jump chip within 1440x900 as before. */
+@media(min-width:1100px) and (min-height:850px){
+ .block{margin-top:7px;padding-top:7px}
 }
