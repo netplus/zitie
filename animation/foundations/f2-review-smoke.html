@@ -12,7 +12,8 @@ const errors=[];
 const check=(cond,msg)=>{if(!cond)errors.push(msg);};
 function audit(){
   const w=frame.contentWindow,d=w.document;
-  const api=w.ZITIE_FOUNDATIONS,model=w.ZitieFoundations;
+  const api=w.ZITIE_FOUNDATIONS,model=w.ZitieFoundations,
+    tutoring=w.ZitieFoundationTeaching;
   check(Boolean(api&&model),'Foundations API must load');
   if(!api||!model)return finish();
   const views=[{name:'desktop',width:1200,height:850},
@@ -31,6 +32,12 @@ function audit(){
       for(let i=0;i<tiles.length;i++){
         tiles[i].click();
         const entry=group.entries[i];
+        const cue=tutoring.tipFor(group,entry);
+        check(d.getElementById('tipText').textContent.includes(cue.headline)&&
+          d.getElementById('tipText').textContent.includes(cue.detail),
+          view.name+'/'+entry.id+': teaching cue and detail');
+        check(d.getElementById('tipBasis').textContent===cue.label,
+          view.name+'/'+entry.id+': evidence classification visible');
         const paper=d.getElementById('board'),svg=d.getElementById('guide');
         const actual=[...svg.querySelectorAll('path[stroke="#b33b49"]')];
         const expected=model.compose(entry.text,group.kind);
@@ -56,6 +63,10 @@ function audit(){
         view.name+'/'+group.key+': print pagination');
       check(rows.length===group.entries.length*3,
         view.name+'/'+group.key+': every print item must have 3 practice rows');
+      const printCues=[...d.querySelectorAll('#printRoot .printItem header small')].map(x=>x.textContent);
+      for(const entry of group.entries)
+        check(printCues.includes(tutoring.tipFor(group,entry).headline),
+          view.name+'/'+entry.id+': A4 printable cue missing');
       check(rows.every(svg=>svg.viewBox.baseVal.width===1600),
         view.name+'/'+group.key+': printed rows must fill A4 width');
       byGroup.push({group:group.key,entries:tiles.length,printedPages:pageCount});
