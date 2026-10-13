@@ -26,8 +26,8 @@ button.primary:hover,.printButton:hover{background:#913440}
 button:disabled{opacity:.5;cursor:default}
 .studyTip{border:1px solid #e7bdc2;background:#fff2f3;border-radius:11px;display:flex;align-items:start;gap:10px;padding:9px 12px;margin:13px 0 11px;font-size:13px}
 .studyTip strong{white-space:nowrap;color:#9a3341}
-.boardBox{width:100%;display:grid;place-items:center;min-height:190px}
-.board{position:relative;width:min(100%,280px);height:270px;max-width:100%;border:1px solid #ecdadd;border-radius:12px;background:#fff;overflow:hidden;isolation:isolate}
+.boardBox{width:100%;min-width:0;display:grid;grid-template-columns:minmax(0,1fr);place-items:center;min-height:190px}
+.board{position:relative;min-width:0;width:min(100%,280px);height:270px;max-width:100%;border:1px solid #ecdadd;border-radius:12px;background:#fff;overflow:hidden;isolation:isolate}
 #guide,#ink{position:absolute;display:block;inset:0;width:100%;height:100%}
 #ink{touch-action:none;cursor:crosshair;user-select:none;-webkit-user-select:none}
 .boardCaption{text-align:center;margin:9px 0 12px;font-size:12px;color:#69747b}
