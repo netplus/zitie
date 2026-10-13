@@ -80,10 +80,13 @@ frame.addEventListener('load',async function initial(){
       v.n+': start-tracing button too narrow');
     check(d.documentElement.scrollWidth<=v.w+2,
       v.n+': horizontal overflow');
-    check(bounds(progress).bottom<=v.h-3,
-      v.n+': animated progress hidden');
-    if(v.controls)check(bottom<=v.h-3,
-      v.n+': first-screen playback/stroke controls lost: '+bottom);
+    // A3.9 explicitly permits scrolling on short 390x667 phones.
+    if(v.controls){
+      check(bounds(progress).bottom<=v.h-3,
+        v.n+': animated progress hidden');
+      check(bottom<=v.h-3,
+        v.n+': first-screen playback/stroke controls lost: '+bottom);
+    }
     if(v.w<=510){
       check(bounds(chooser).width>=40&&bounds(chooser).bottom<=v.h&&
         practiceButton.textContent.includes('开始临摹'),
@@ -109,6 +112,7 @@ frame.addEventListener('load',async function initial(){
   tile.click();await wait(120);
   check(app.getGlyph().main_id===200&&
     noteText.textContent===app.getGlyph().tips[0]&&
+    w.location.hash===''&&
     bounds(heading).top>=-4&&bounds(heading).top<120,
     'Choosing a mobile glyph should restore its lesson at the top');
   check(d.getElementById('pdfLink').getAttribute('href').includes('#page='),
