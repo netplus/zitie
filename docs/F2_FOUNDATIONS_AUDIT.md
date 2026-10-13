@@ -18,6 +18,7 @@ The 23/24/16 primary-school teaching groupings do not override the wording of th
 - Four-line guide coordinates are `14 / 47 / 83 / 117` on a 132-unit board. Engineering geometry uses up to 2.5 units tolerance near top/bottom; digital lettering overshoots are not interpreted as correct pedagogy. Numeral practice uses an approximately square 64-by-66 source grid; the separate A4 print grid spreads cells across the actual printable width.
 - The F2 real Chromium review iterates all **113 entries at 1200px, 800px, and 390px**, checks ink path and canvas sizes, and builds every category's A4 rows. This is *automated rendering evidence*, not measured penmanship.
 - Expected A4 classification: letters 7, numbers 3, initials 6, finals 6, syllables 4, tones 2, words 2 pages. Each item has three exercise rows; no user data is needed to print.
+- **Discovered F2 regression gap**: original 390px F1 smoke covered short initials but not long word shapes. The F2 full-catalogue Chromium run recorded `#board` at **760px** and `document.scrollWidth=781px` inside a 390px view after opening long words. Root cause: `.boardBox` used an implicit auto-sized CSS grid track, allowing the inline 760px canvas width to become the grid track's min-content size. F2 fixes the *track sizing* with `grid-template-columns:minmax(0,1fr)` and `min-width:0` rather than hiding page overflow. The 390px all-entry browser gate now protects this case.
 
 ## Upcoming pedagogical review checklist
 
