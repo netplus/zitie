@@ -64,6 +64,7 @@ jobs:
           node --check animation/foundations/data.js
           node --check animation/foundations/app.js
           node --test animation/foundations/f1.test.cjs
+          node --test animation/foundations/f2-geometry.test.cjs
           node --check animation/practice/progress-controller.js
           node --check animation/practice/whole-progress.js
           node --check animation/practice/order-check.js
@@ -98,6 +99,20 @@ jobs:
             timeout 65 "$CHROME_BIN" --headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --window-size="$size" --virtual-time-budget=13000 --dump-dom "http://127.0.0.1:18781/animation/foundations/browser-smoke.html" > "$result"
             grep -q 'data-result="PASS"' "$result" || { grep -E 'FAIL|timeout' "$result" | tail -10; exit 1; }
           done
+          # Real Chromium: every vector in all 113 items and all seven printed categories.
+          timeout 90 "$CHROME_BIN" --headless=new --no-sandbox --disable-dev-shm-usage --disable-gpu --window-size=1450,1080 --virtual-time-budget=28000 --dump-dom "http://127.0.0.1:18781/animation/foundations/f2-review-smoke.html" > build/f1/f2-review-browser.html
+          if ! grep -q 'data-result="PASS"' build/f1/f2-review-browser.html; then
+            echo "F2 all-item print/geometry browser audit failed" >&2
+            python3 - <<'PY'
+          import html,re
+          from pathlib import Path
+          data=Path('build/f1/f2-review-browser.html').read_text(encoding='utf-8')
+          match=re.search(r'<pre id="result">(.*?)</pre>',data,re.S)
+          if match:print(html.unescape(match.group(1))[-14000:])
+          else:print('No browser report available; last document characters:',data[-2500:])
+          PY
+            exit 1
+          fi
       - name: Exercise true animated reveal and controller in a browser
         env:
           CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
@@ -1545,6 +1560,7 @@ jobs:
           name: a1-motion-frame-qa
           path: |
             build/a1/
+            build/f1/
             animation/
             data/B01.json
             data/B02.json

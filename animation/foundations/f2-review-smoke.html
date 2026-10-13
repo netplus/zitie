@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<title>F2 full foundations geometry and print audit</title>
+<style>html,body{margin:0} iframe{display:block;width:100%;height:780px;border:0}pre{white-space:pre-wrap}</style>
+</head><body>
+<iframe id="f2" title="Original F1 foundations lesson" src="./index.html"></iframe>
+<pre id="result">RUNNING</pre>
+<script>
+const frame=document.getElementById('f2');
+const result=document.getElementById('result');
+const errors=[];
+const check=(cond,msg)=>{if(!cond)errors.push(msg);};
+function audit(){
+  const w=frame.contentWindow,d=w.document;
+  const api=w.ZITIE_FOUNDATIONS,model=w.ZitieFoundations;
+  check(Boolean(api&&model),'Foundations API must load');
+  if(!api||!model)return finish();
+  const views=[{name:'desktop',width:1200,height:850},
+               {name:'tablet',width:800,height:950},
+               {name:'phone',width:390,height:844}];
+  const recorded=[];
+  for(const view of views){
+    frame.style.width=view.width+'px';
+    frame.style.height=view.height+'px';
+    const byGroup=[];
+    for(const group of model.groups){
+      api.selectGroup(group.key);
+      const tiles=[...d.querySelectorAll('#items button')];
+      check(tiles.length===group.entries.length,
+        view.name+'/'+group.key+': category count');
+      for(let i=0;i<tiles.length;i++){
+        tiles[i].click();
+        const entry=group.entries[i];
+        const paper=d.getElementById('board'),svg=d.getElementById('guide');
+        const actual=[...svg.querySelectorAll('path[stroke="#b33b49"]')];
+        const expected=model.compose(entry.text,group.kind);
+        check(actual.length===expected.strokes.length,
+          view.name+'/'+entry.id+': independent SVG strokes');
+        check(Math.abs(svg.viewBox.baseVal.width-expected.width-48)<.01,
+          view.name+'/'+entry.id+': viewBox width');
+        const rect=svg.getBoundingClientRect(),board=paper.getBoundingClientRect();
+        check(rect.width>0&&board.width>0&&board.height>=90,
+          view.name+'/'+entry.id+': visible learning board');
+        for(const path of actual){
+          const b=path.getBoundingClientRect();
+          // The physical nib is wider than the vector line, so allow 5px.
+          check(b.left>=rect.left-5&&b.right<=rect.right+5&&
+                b.top>=rect.top-5&&b.bottom<=rect.bottom+5,
+                view.name+'/'+entry.id+': paint outside vector viewport');
+        }
+      }
+      const pageCount=api.getPrintedPageCount();
+      const pages=[...d.querySelectorAll('#printRoot .printPage')];
+      const rows=[...d.querySelectorAll('#printRoot svg.printLine')];
+      check(pageCount===Math.ceil(group.entries.length/4)&&pages.length===pageCount,
+        view.name+'/'+group.key+': print pagination');
+      check(rows.length===group.entries.length*3,
+        view.name+'/'+group.key+': every print item must have 3 practice rows');
+      check(rows.every(svg=>svg.viewBox.baseVal.width===1600),
+        view.name+'/'+group.key+': printed rows must fill A4 width');
+      byGroup.push({group:group.key,entries:tiles.length,printedPages:pageCount});
+    }
+    const actualScrollWidth=d.documentElement.scrollWidth;
+    const outliers=[...d.body.querySelectorAll('*')].filter(el=>{
+      const r=el.getBoundingClientRect();
+      return r.width>0&&r.right>view.width+2;
+    }).slice(0,20).map(el=>{
+      const r=el.getBoundingClientRect();
+      return {tag:el.tagName,id:el.id||'',className:String(el.className?.baseVal||el.className||'').slice(0,60),
+        right:Math.round(r.right),width:Math.round(r.width),
+        scrollWidth:el.scrollWidth};
+    });
+    check(actualScrollWidth<=view.width+2,
+      view.name+': horizontal overflow');
+    recorded.push({view:view.name,viewportWidth:view.width,
+      documentWidth:actualScrollWidth,
+      overflowElements:outliers,
+      boardWidth:Math.round(d.getElementById('board').getBoundingClientRect().width),
+      groups:byGroup});
+  }
+  finish(recorded);
+}
+function finish(metrics=[]){
+  document.documentElement.dataset.result=errors.length?'FAIL':'PASS';
+  result.textContent=JSON.stringify({
+    result:errors.length?'FAIL':'PASS',source:'F2 engineering visual + print audit',
+    verification:'Chromium only; no claims of teacher-reviewed stroke order',
+    totalEntries:113,viewports:metrics,errors
+  },null,2);
+}
+frame.addEventListener('load',()=>{try{audit();}catch(e){errors.push(String(e.stack||e));finish();}});
+setTimeout(()=>{if(!document.documentElement.dataset.result){
+ errors.push('F2 browser QA timed out');finish();}},30000);
+</script></body></html>
