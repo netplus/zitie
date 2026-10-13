@@ -87,7 +87,7 @@ try{
   while(Date.now()-start<deadline){
     const frame=await evaluate('(()=>{const f=document.getElementById("demo");'+
       'const w=f?.contentWindow;const d=f?.contentDocument;'+
-      'return {result:document.documentElement.dataset.result||null,'+
+      'return {result:document.documentElement?.dataset?.result||null,'+
       'report:document.getElementById("result")?.textContent||null,'+
       'title:document.title,childReady:d?.documentElement?.dataset.p21cReady||null,'+
       'inputPhase:w?.ZITIE_P21C?.getState()?.input?.phase||null,'+

@@ -21,9 +21,9 @@ function run(){
   const board=d.getElementById('board'),canvas=d.getElementById('ink');
   ok(board.getBoundingClientRect().width>0,'visible practice grid');
   const r=canvas.getBoundingClientRect(),x=r.left+r.width*.45,y=r.top+r.height*.5;
-  function p(type,px,py){const e=new w.PointerEvent(type,{
-    bubbles:true,cancelable:true,pointerId:73,pointerType:'pen',isPrimary:true,
-    button:0,buttons:type==='pointerup'?0:1,clientX:px,clientY:py
+  function p(type,px,py,id=73,pointerType='pen',primary=true){const e=new w.PointerEvent(type,{
+    bubbles:true,cancelable:true,pointerId:id,pointerType,isPrimary:primary,
+    button:0,buttons:type==='pointerup'||type==='pointercancel'?0:1,clientX:px,clientY:py
   });(type==='pointerdown'?canvas:w).dispatchEvent(e);}
   p('pointerdown',x,y);p('pointermove',x+9,y+7);p('pointerup',x+17,y+12);
   ok(app.getSavedStrokeCount()===1,'pen stroke saved on natural up');
@@ -31,9 +31,10 @@ function run(){
   d.getElementById('undo').click();
   ok(app.getSavedStrokeCount()===0,'undo works');
   // Touch Events are a fallback for iOS engines that lack usable pointerdown.
-  const event=(name,changed)=>{
+  const event=(name,changed,touches)=>{
     const e=new w.Event(name,{bubbles:true,cancelable:true});
     Object.defineProperty(e,'changedTouches',{value:changed});
+    if(touches)Object.defineProperty(e,'touches',{value:touches});
     canvas.dispatchEvent(e);
   };
   event('touchstart',[{identifier:19,clientX:x,clientY:y}]);
@@ -42,6 +43,54 @@ function run(){
   ok(app.getSavedStrokeCount()===1,'touch fallback commits one trace');
   d.getElementById('clear').click();
   ok(app.getSavedStrokeCount()===0,'restart without confirmation');
+  const touch=(id,dx=0,dy=0)=>({identifier:id,clientX:x+dx,clientY:y+dy});
+  // A Chromium event-order simulation, NOT an actual iPhone/Edge test.
+  const existingUA=Object.getOwnPropertyDescriptor(w.navigator,'userAgent');
+  Object.defineProperty(w.navigator,'userAgent',{
+    configurable:true,value:'Mozilla/5.0 (iPhone) EdgiOS/135.0.0'
+  });
+  // 1: EdgiOS Pointer Events only: no touchstart must not block the stroke.
+  p('pointerdown',x,y,91,'touch');
+  p('pointermove',x+7,y+5,91,'touch');
+  p('pointerup',x+15,y+10,91,'touch');
+  ok(app.getSavedStrokeCount()===1,'Edge pointer-only stroke survives');
+  d.getElementById('clear').click();
+  // 2: pointerdown then touchstart: handoff, and delayed pointerup ignored.
+  p('pointerdown',x,y,92,'touch');
+  event('touchstart',[touch(29)],[touch(29)]);
+  p('pointermove',x+4,y+3,92,'touch');
+  event('touchmove',[touch(29,9,6)],[touch(29,9,6)]);
+  p('pointerup',x+17,y+11,92,'touch');
+  event('touchend',[touch(29,17,11)],[]);
+  ok(app.getSavedStrokeCount()===1,'Edge pointer-to-touch handoff commits once');
+  d.getElementById('clear').click();
+  // 3: Touch Events arrive first, then a pointer: never create two traces.
+  event('touchstart',[touch(30)],[touch(30)]);
+  p('pointerdown',x,y,93,'touch');
+  p('pointerup',x+5,y+4,93,'touch');
+  event('touchmove',[touch(30,7,6)],[touch(30,7,6)]);
+  event('touchend',[touch(30,15,11)],[]);
+  ok(app.getSavedStrokeCount()===1,'Edge touch-first has no duplicate pointer stroke');
+  d.getElementById('clear').click();
+  // 4: A second finger aborts rather than recording a ghost stroke.
+  event('touchstart',[touch(31)],[touch(31)]);
+  event('touchstart',[touch(32,8,4)],[touch(31),touch(32,8,4)]);
+  event('touchend',[touch(31,10,7)],[touch(32,8,4)]);
+  ok(app.getSavedStrokeCount()===0,'multitouch aborts without ink');
+  // 5: An unrelated Touch cancel cannot abort the active finger.
+  event('touchstart',[touch(33)],[touch(33)]);
+  event('touchcancel',[touch(34)],[touch(33)]);
+  event('touchend',[touch(33,10,6)],[]);
+  ok(app.getSavedStrokeCount()===1,'unrelated touchcancel ignored');
+  d.getElementById('clear').click();
+  if(existingUA)Object.defineProperty(w.navigator,'userAgent',existingUA);
+  else delete w.navigator.userAgent;
+  // 6: Browser toolbar resize without board geometry change keeps the stroke.
+  p('pointerdown',x,y,94,'pen');
+  w.dispatchEvent(new w.Event('resize'));
+  p('pointerup',x+10,y+7,94,'pen');
+  ok(app.getSavedStrokeCount()===1,'unchanged-size resize preserves ink');
+  d.getElementById('clear').click();
   const tab=[...d.querySelectorAll('#tabs button')].find(b=>b.dataset.group==='numbers');
   tab.click();
   ok(app.getCategory()==='numbers','switch category');
