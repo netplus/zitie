@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="zh-CN"><head><meta charset="utf-8">
+<title>F2.3 publisher-aligned Latin letter formation regression</title>
+<style>body{margin:0;font:14px system-ui}
+iframe{width:100%;height:800px;border:0}
+pre{white-space:pre-wrap}</style></head>
+<body>
+<iframe id="book" src="./index.html?group=letters&amp;item=letters-0"
+ title="52 letter source and animation browser test"></iframe>
+<pre id="result">RUNNING</pre>
+<script>
+const iframe=document.getElementById('book'),out=document.getElementById('result'),errors=[];
+const capitals=[3,3,1,2,4,3,3,3,3,2,3,2,4,3,1,2,2,3,1,2,1,2,4,2,2,3];
+const lower=[1,1,1,1,1,2,1,1,2,2,2,1,1,1,1,1,1,1,1,2,1,1,1,2,2,1];
+const say=(ok,message)=>{if(!ok)errors.push(message)};
+const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+const redPaths=d=>[...d.querySelectorAll('#guide path[stroke="#b33b49"]')];
+function checkLetter(d,entryIndex){
+ const buttons=[...d.querySelectorAll('#items button')];
+ buttons[entryIndex].click();
+ const real=redPaths(d),total=capitals[entryIndex]+lower[entryIndex];
+ say(real.length===total,'letter '+entryIndex+' expected pen-down count '+total+' actual '+real.length);
+ for(const [i,node] of real.entries()){
+   let length=0;
+   try{length=node.getTotalLength();}
+   catch(error){errors.push('invalid SVG geometry at '+entryIndex+'/'+i+': '+error);}
+   const dash=Number(node.getAttribute('stroke-dasharray'));
+   const offset=Number(node.getAttribute('stroke-dashoffset'));
+   say(length>0&&Number.isFinite(length)&&Math.abs(length-dash)<.1,
+       'invalid SVG stroke length '+entryIndex+'/'+i);
+   say(Math.abs(offset-length)<.1,
+       'new letter must reset to blank pen-down '+entryIndex+'/'+i);
+ }
+ return real;
+}
+iframe.addEventListener('load',async function(){
+ try{
+  const w=iframe.contentWindow,d=w.document,api=w.ZITIE_FOUNDATIONS;
+  say(d.documentElement.dataset.foundationsReady==='f1','F1 loaded');
+  say(api?.getCategory()==='letters','letter category loaded');
+  say(Boolean(w.ZitieFoundations),'source-backed full-letter model loaded');
+  if(!api||!w.ZitieFoundations)throw Error('F2.3 missing source module');
+  for(let i=0;i<26;i++)checkLetter(d,i);
+  // The visible A example must start at the top apex and use 3 pen-downs
+  // before the following lowercase a; prove first animated dash progresses
+  // without revealing later pen-down paths ahead of the tip.
+  let red=checkLetter(d,0);
+  say(red[0].getAttribute('d')==='M37 17 L9 83','A starting path must go down from top');
+  say(red[1].getAttribute('d')==='M37 17 L65 83','A second downstroke top to right');
+  say(red[2].getAttribute('d')==='M21 58 H53','A crossbar is last');
+  const start=Number(red[0].getAttribute('stroke-dasharray'));
+  d.getElementById('demo').click();
+  await sleep(420);
+  const offset=Number(red[0].getAttribute('stroke-dashoffset'));
+  say(offset<start&&offset>=0,'A first stroke is actually animating from its own start');
+  say(red.slice(1).every(p=>Math.abs(Number(p.getAttribute('stroke-dashoffset'))-
+      Number(p.getAttribute('stroke-dasharray')))<.1),
+      'A future strokes must remain blank until first pen-down is complete');
+  d.getElementById('replay').click();
+  say(api.getRate()===.8,'demo kept 0.8x default');
+  // Verify direction after selecting T; it must begin with vertical stroke.
+  red=checkLetter(d,19);
+  say(red[0].getAttribute('d')==='M37 17 V83','T requires vertical first');
+  say(red[1].getAttribute('d')==='M10 17 H64','T crossbar second');
+  // Verify lowercase d comes AFTER capital D and starts around mid-line.
+  red=checkLetter(d,3);
+  say(red[capitals[3]].getAttribute('d').startsWith('M56 50 C'),
+      'lowercase d must start circle before ascender');
+  const caps=w.ZitieFoundations.compose('ABCDEFGHIJKLMNOPQRSTUVWXYZ').strokes.length;
+  const lowercase=w.ZitieFoundations.compose('abcdefghijklmnopqrstuvwxyz').strokes.length;
+  say(caps===capitals.reduce((a,b)=>a+b,0),'all capital parts match source scheme');
+  say(lowercase===lower.reduce((a,b)=>a+b,0),'all lowercase parts match source scheme');
+  finish({caps,lowercase,items:26,letterforms:52,checks:'start/ordering/dash-ink'});
+ }catch(error){errors.push(String(error.stack||error));finish();}
+});
+function finish(metrics={}){
+ document.documentElement.dataset.result=errors.length?'FAIL':'PASS';
+ out.textContent=JSON.stringify({result:errors.length?'FAIL':'PASS',
+   scope:'manuscript formation preview only; no national Pinyin stroke-order claim',
+   metrics,errors},null,2);
+}
+setTimeout(()=>{if(!document.documentElement.dataset.result){
+ errors.push('timeout');finish();
+}},15000);
+</script></body></html>
