@@ -901,6 +901,7 @@ jobs:
           assert x['result']=='PASS' and x['characters']==201 and x['sourceStrokes']==1045
           for k in ('continuousNoConfirmation','genuineStrokeAutoCapture',
                     'restoredFullWord','undoClearsVerdict','cancelSafe',
+                    'instantRestartNoDialog','localRestartDeletion',
                     'noRemoteStorage','exactSourcePreserved'):
               assert x[k] is True,k
           assert x['correctOrder']=='consistent'
