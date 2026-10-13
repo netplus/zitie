@@ -30,14 +30,14 @@ test('P2.2h: Edge iOS touch preference is scoped (Safari, CriOS, Edge Android ex
  assert.equal(edgeIOSPreferredTouch('Mozilla/5.0 (iPad) EdgiOS/140.0',false),false);
 });
 function fixture(preferTouchInput){
- const w=global.window,d=global.document,n=global.navigator;
+ const w=global.window,d=global.document;
  const hooks=[],pressed=new Set();
  global.window={TouchEvent:class TouchEvent{},
   addEventListener:(name,handler)=>hooks.push(['window',name,handler]),
   removeEventListener:()=>{}};
  global.document={visibilityState:'visible',addEventListener:()=>{},
   removeEventListener:()=>{}};
- global.navigator={userAgent:'fake'};
+
  let rect={left:0,top:0,right:300,bottom:300,width:300,height:300};
  let changes=[],layoutCalls=0;
  const surface={
@@ -52,8 +52,7 @@ function fixture(preferTouchInput){
  const group={getScreenCTM:()=>({a:1,b:0,c:0,d:1,e:0,f:0})};
  const input=new PointerInput({surface,group,session,preferTouchInput,
   onChange:x=>changes.push(x),onLayout:()=>layoutCalls++});
- const restore=()=>{input.destroy();global.window=w;global.document=d;
-  global.navigator=n;};
+ const restore=()=>{input.destroy();global.window=w;global.document=d;};
  const ev=(identifier,x,y,timeStamp,type='single')=>({
   touches:type==='multi'?[{identifier},{identifier:identifier+1}]:
     [{identifier}],
