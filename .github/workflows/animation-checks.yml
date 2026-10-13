@@ -1258,6 +1258,63 @@ jobs:
             'http://127.0.0.1:18781/animation/tests/a37-book-pressure-preview.html' >/dev/null
           test -s build/a1/a37-book-pressure-stable.png
           test -s build/a1/a37-book-pressure-simulated.png
+      - name: Audit P2.2e source teaching guide below original sticky pressure styles
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        shell: bash
+        run: |
+          set -euo pipefail
+          node --check animation/book-ui.js
+          node --test animation/tests/p22e-pressure-side.test.cjs
+          test -s animation/book-pack.js
+          mkdir -p build/a1
+          python3 -m http.server 18792 --bind 127.0.0.1 > build/a1/p22e-side-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 50); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18792/animation/book.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep .2
+          done
+          timeout 175 node animation/tests/cdp-wait-result.mjs \
+            'http://127.0.0.1:18792/animation/tests/p22e-pressure-side-space-smoke.html' \
+            build/a1/p22e-pressure-side-dom.html 125000
+          if ! grep -q 'data-result="PASS"' build/a1/p22e-pressure-side-dom.html; then
+            echo 'FAIL P2.2e source-backed pressure side guide, sticky mode or responsive layout' >&2
+            grep -o 'FAIL:[^<]*' build/a1/p22e-pressure-side-dom.html | head -n 12 >&2 || true
+            exit 1
+          fi
+          python3 - <<'PY'
+          import html,json,re
+          from pathlib import Path
+          raw=Path('build/a1/p22e-pressure-side-dom.html').read_text(encoding='utf-8')
+          m=re.search(r'<pre id="result">(\{.*?\})</pre>',raw,re.S)
+          if not m:raise SystemExit('Missing P2.2e Chromium report')
+          j=json.loads(html.unescape(m.group(1)))
+          assert j['result']=='PASS' and j['glyphs']==201 and j['strokes']==1045
+          assert all(j[k] is True for k in ('exactBookNotes','stickyPressurePreserved',
+                  'fixedSideSpace','mobileOriginalLayout','a3SourceImmutable'))
+          assert len(j['layout'])==12
+          assert all(item['gapFilled'] for item in j['layout'] if
+                  item['viewport'] not in ('phone390x844','shortPhone390x667'))
+          Path('build/a1/p22e-pressure-side-metrics.json').write_text(
+              json.dumps(j,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('PASS P2.2e: PDF-authored side guide in 4 widescreens and compact original mobiles')
+          PY
+          options=(--headless=new --no-sandbox --disable-dev-shm-usage
+            --disable-gpu --disable-background-timer-throttling
+            --virtual-time-budget=20000)
+          timeout 90 "$CHROME_BIN" "${options[@]}" --window-size=1460,950 \
+            --screenshot="$(pwd)/build/a1/p22e-stable-laptop.png" \
+            'http://127.0.0.1:18792/animation/tests/p22e-pressure-side-preview.html' >/dev/null
+          timeout 90 "$CHROME_BIN" "${options[@]}" --window-size=1460,950 \
+            --screenshot="$(pwd)/build/a1/p22e-simulated-laptop.png" \
+            'http://127.0.0.1:18792/animation/tests/p22e-pressure-side-preview.html?simulated=1' >/dev/null
+          timeout 90 "$CHROME_BIN" "${options[@]}" --window-size=490,980 \
+            --screenshot="$(pwd)/build/a1/p22e-simulated-mobile.png" \
+            'http://127.0.0.1:18792/animation/tests/p22e-pressure-side-preview.html?mobile=1&simulated=1' >/dev/null
+          test -s build/a1/p22e-stable-laptop.png
+          test -s build/a1/p22e-simulated-laptop.png
+          test -s build/a1/p22e-simulated-mobile.png
       - name: Audit A3.8 pressure telemetry visible during handwriting, desktop to 390px
         env:
           CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
