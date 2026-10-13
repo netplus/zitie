@@ -115,7 +115,8 @@
        (storageMessage?' · '+storageMessage:'');
    }
    function hidePrompts(){
-     $('practiceClearPrompt').hidden=true;
+     // Exiting while a pen stroke is unfinished may still warn; restarting
+     // the whole character is an immediate action without a dialog.
      $('practiceLeavePrompt').hidden=true;
    }
    function invalidateVerdict(){cachedVerdict=null;cachedRevision=-1;}
@@ -252,7 +253,6 @@
      if(!active)return false;
      if(!discardDraft&&closeWarning()){
        $('practiceLeavePrompt').hidden=false;
-       $('practiceClearPrompt').hidden=true;
        $('practiceLeavePrompt').querySelector('p').textContent=
          !storageUsable&&progress?.currentIndex?
          '本机保存失败，退出将丢失已经写过的笔迹，确定离开吗？':
@@ -290,23 +290,22 @@
      lastFeedback='已撤销上一笔，可以直接重新写；无需确认按钮。';
      renderCurrent();persist();return true;
    }
-   function requestRestart(){
-     if(!active||!ready)return false;
-     $('practiceClearPrompt').hidden=false;
-     $('practiceLeavePrompt').hidden=true;
-     $('practiceClearNo').focus();return true;
-   }
    function restartAll(){
      if(!active||!ready)return false;
      hidePrompts();input.reset();progress.restart();invalidateVerdict();
      lastFeedback='已清空整字，请从第一笔重新连续书写。';
      renderCurrent();
-     const g=generation;
+     // The visual reset is immediate. IndexedDB deletion follows through
+     // the repository's serialized queue, ahead of any new pen-up save.
+     // If another stroke arrives before deletion completes, do not let
+     // this older completion overwrite the newer "saving/saved" status.
+     const g=generation,resetRevision=progress.revision;
      saveStatus='saving';update();
      savingPromise=store.remove(identity()).then(()=>{
        if(active&&g===generation){
-         saveStatus='cleared';storageUsable=true;
-         storageMessage='';restoreBlocked=false;update();
+         storageUsable=true;storageMessage='';restoreBlocked=false;
+         if(progress.revision===resetRevision)saveStatus='cleared';
+         update();
        }
        return true;
      }).catch(()=>{
@@ -331,12 +330,8 @@
    prev.addEventListener('click',()=>referenceTo(stage.currentIndex-1));
    next.addEventListener('click',()=>referenceTo(stage.currentIndex+1));
    undo.addEventListener('click',undoStroke);
-   restart.addEventListener('click',requestRestart);
+   restart.addEventListener('click',restartAll);
    returnCurrent.addEventListener('click',returnToCurrent);
-   $('practiceClearYes').addEventListener('click',restartAll);
-   $('practiceClearNo').addEventListener('click',()=>{
-     $('practiceClearPrompt').hidden=true;restart.focus();
-   });
    $('practiceLeaveYes').addEventListener('click',()=>{
      $('practiceLeavePrompt').hidden=true;close({discardDraft:true});
    });
@@ -349,8 +344,6 @@
        e.preventDefault();e.stopPropagation();
        if(!$('practiceLeavePrompt').hidden){
          $('practiceLeavePrompt').hidden=true;exit.focus();
-       }else if(!$('practiceClearPrompt').hidden){
-         $('practiceClearPrompt').hidden=true;restart.focus();
        }else close();
        return;
      }

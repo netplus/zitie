@@ -138,17 +138,30 @@ iframe.addEventListener('load',async function initial(){
     p2.getInkMetrics().confirmedStrokes===3,
     'Undo must remove last real stroke and clear old verdict');
   const d2=w2.document;
+  // One tap instantly restarts the whole glyph; there is NO confirmation
+  // popup and no second click, even after a completed 4-stroke session.
+  check(!d2.getElementById('practiceClearPrompt')&&
+    !d2.getElementById('practiceClearYes')&&
+    !d2.getElementById('practiceClearNo'),
+    'Restart confirmation DOM must be absent from the shipped practice UI');
   d2.getElementById('practiceRestart').click();
-  check(!d2.getElementById('practiceClearPrompt').hidden,
-    'Whole-character restart must require destructive confirmation');
-  d2.getElementById('practiceClearNo').click();
-  check(p2.getState().progress.writtenStrokes===3,
-    'Canceling deletion must preserve learner ink');
-  d2.getElementById('practiceRestart').click();
-  d2.getElementById('practiceClearYes').click();
-  await p2.whenSaved();
   check(p2.getState().progress.currentIndex===0&&
-    p2.getInkMetrics().confirmedStrokes===0,'Restart must clear recorded strokes');
+    p2.getState().progress.writtenStrokes===0&&
+    p2.getOrderCheck()===null&&
+    p2.getInkMetrics().confirmedStrokes===0&&
+    d2.getElementById('practiceCompletion').hidden&&
+    d2.getElementById('practiceOrderResult').hidden&&
+    d2.getElementById('practiceLeavePrompt').hidden,
+    'A SINGLE restart click must synchronously clear user ink and old verdict without a dialog');
+  await p2.whenSaved();
+  check(p2.getState().saveStatus==='cleared',
+    'Instant reset must remove the source-locked local record');
+  check(p2.close()&&p2.open(),'Could not reopen after instant restart');
+  await p2.whenReady();
+  check(p2.getState().saveStatus==='new'&&
+    p2.getState().progress.currentIndex===0&&
+    p2.getInkMetrics().confirmedStrokes===0,
+    'Reopened glyph must not resurrect strokes deleted by instant restart');
   // Wrong order: exact water reference strokes in swapped input sequence.
   const g2=b2.getGlyph(),can=d2.getElementById('practiceInk'),
     srcg=()=>d2.querySelector('[data-practice-source-transform]');
@@ -181,7 +194,8 @@ iframe.addEventListener('load',async function initial(){
     sourceStrokes:1045,continuousNoConfirmation:true,
     genuineStrokeAutoCapture:true,correctOrder:'consistent',
     swappedOrder:'reordered',restoredFullWord:true,
-    undoClearsVerdict:true,cancelSafe:true,noRemoteStorage:true,
+    undoClearsVerdict:true,instantRestartNoDialog:true,
+    localRestartDeletion:true,cancelSafe:true,noRemoteStorage:true,
     exactSourcePreserved:true,layout:viewports},null,2);
  }catch(error){
   document.documentElement.dataset.result='FAIL';

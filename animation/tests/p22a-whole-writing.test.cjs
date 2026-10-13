@@ -160,6 +160,12 @@ test('P2.2a HTML has no per-stroke confirmation and preserves read-only source/U
  const bridge=fs.readFileSync(path.join(ROOT,'animation/practice/practice-bridge.js'),'utf8');
  assert.doesNotMatch(html,/id="practiceAccept"/);
  assert.doesNotMatch(html,/确认这一笔/);
+ for(const removed of ['practiceClearPrompt','practiceClearYes','practiceClearNo']){
+   assert.doesNotMatch(html,new RegExp('id="'+removed+'"'),
+     'No confirmation UI for immediate whole-character restart');
+ }
+ assert.match(bridge,/restart\.addEventListener\('click',restartAll\)/);
+ assert.doesNotMatch(bridge,/requestRestart\s*\(/);
  assert.match(html,/id="practiceOrderResult"/);
  assert.match(html,/src="\.\/practice\/order-check\.js"/);
  assert.match(html,/src="\.\/practice\/whole-progress\.js"/);
