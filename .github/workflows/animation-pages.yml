@@ -56,7 +56,7 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p _site/animation _site/data/artwork _site/book
-          cp animation/index.html animation/book.html animation/book-ui.js animation/player.js animation/timeline.js animation/motion.js animation/samples.js animation/brush-union.js animation/ink-front-guard.js animation/pressure-style.js animation/hardpen-ink-union.js animation/hardpen-stage.js animation/gallery.js animation/ui.js animation/NOTICE.md _site/animation/
+          cp animation/index.html animation/book.html animation/book-ui.js animation/main-layout.css animation/player.js animation/timeline.js animation/motion.js animation/samples.js animation/brush-union.js animation/ink-front-guard.js animation/pressure-style.js animation/hardpen-ink-union.js animation/hardpen-stage.js animation/gallery.js animation/ui.js animation/NOTICE.md _site/animation/
           cp build/a3/book-pack.js _site/animation/book-pack.js
           mkdir -p _site/animation/practice
           cp animation/practice/reference-stage.js animation/practice/practice-bridge.js animation/practice/practice.css animation/practice/trace-session.js animation/practice/trace-canvas.js animation/practice/pointer-input.js animation/practice/progress-controller.js animation/practice/whole-progress.js animation/practice/order-check.js animation/practice/storage.js _site/animation/practice/
@@ -79,6 +79,8 @@ jobs:
           test -s _site/animation/index.html
           test -s _site/animation/book.html
           test -s _site/animation/book-ui.js
+          test -s _site/animation/main-layout.css
+          grep -q 'href="./main-layout.css"' _site/animation/book.html
           test -s _site/animation/book-pack.js
           test -s _site/animation/practice/reference-stage.js
           test -s _site/animation/practice/practice-bridge.js
