@@ -295,12 +295,17 @@
      hidePrompts();input.reset();progress.restart();invalidateVerdict();
      lastFeedback='已清空整字，请从第一笔重新连续书写。';
      renderCurrent();
-     const g=generation;
+     // The visual reset is immediate. IndexedDB deletion follows through
+     // the repository's serialized queue, ahead of any new pen-up save.
+     // If another stroke arrives before deletion completes, do not let
+     // this older completion overwrite the newer "saving/saved" status.
+     const g=generation,resetRevision=progress.revision;
      saveStatus='saving';update();
      savingPromise=store.remove(identity()).then(()=>{
        if(active&&g===generation){
-         saveStatus='cleared';storageUsable=true;
-         storageMessage='';restoreBlocked=false;update();
+         storageUsable=true;storageMessage='';restoreBlocked=false;
+         if(progress.revision===resetRevision)saveStatus='cleared';
+         update();
        }
        return true;
      }).catch(()=>{
