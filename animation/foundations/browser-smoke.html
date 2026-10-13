@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"><title>F1 independent browser smoke</title>
+<style>body{margin:0}iframe{width:100%;height:700px;border:0}</style></head>
+<body><iframe id="app" src="./index.html?group=tones&amp;item=tones-5"></iframe>
+<pre id="result">RUNNING</pre>
+<script>
+const report=document.getElementById('result');
+const frame=document.getElementById('app');
+const errors=[];
+function ok(condition,message){if(!condition)errors.push(message);}
+function run(){
+  const w=frame.contentWindow,d=w.document,app=w.ZITIE_FOUNDATIONS;
+  ok(d.documentElement.dataset.foundationsReady==='f1','page ready');
+  ok(Boolean(app),'test API');
+  if(!app){finish();return;}
+  ok(app.getCategory()==='tones'&&app.getEntry()==='tones-5','deep link works');
+  ok(w.ZitieFoundations.validate().items===113,'all 113 printable items');
+  ok(app.getRate()===.8,'default speed 0.8');
+  ok(d.getElementById('tipText').textContent.includes('ü'),'tone hint');
+  const board=d.getElementById('board'),canvas=d.getElementById('ink');
+  ok(board.getBoundingClientRect().width>0,'visible practice grid');
+  const r=canvas.getBoundingClientRect(),x=r.left+r.width*.45,y=r.top+r.height*.5;
+  function p(type,px,py){const e=new w.PointerEvent(type,{
+    bubbles:true,cancelable:true,pointerId:73,pointerType:'pen',isPrimary:true,
+    button:0,buttons:type==='pointerup'?0:1,clientX:px,clientY:py
+  });(type==='pointerdown'?canvas:w).dispatchEvent(e);}
+  p('pointerdown',x,y);p('pointermove',x+9,y+7);p('pointerup',x+17,y+12);
+  ok(app.getSavedStrokeCount()===1,'pen stroke saved on natural up');
+  ok(d.getElementById('writeStatus').textContent.includes('已保存在本机'),'local storage status');
+  d.getElementById('undo').click();
+  ok(app.getSavedStrokeCount()===0,'undo works');
+  // Touch Events are a fallback for iOS engines that lack usable pointerdown.
+  const event=(name,changed)=>{
+    const e=new w.Event(name,{bubbles:true,cancelable:true});
+    Object.defineProperty(e,'changedTouches',{value:changed});
+    canvas.dispatchEvent(e);
+  };
+  event('touchstart',[{identifier:19,clientX:x,clientY:y}]);
+  event('touchmove',[{identifier:19,clientX:x+8,clientY:y+6}]);
+  event('touchend',[{identifier:19,clientX:x+15,clientY:y+11}]);
+  ok(app.getSavedStrokeCount()===1,'touch fallback commits one trace');
+  d.getElementById('clear').click();
+  ok(app.getSavedStrokeCount()===0,'restart without confirmation');
+  const tab=[...d.querySelectorAll('#tabs button')].find(b=>b.dataset.group==='numbers');
+  tab.click();
+  ok(app.getCategory()==='numbers','switch category');
+  ok(d.getElementById('guide').querySelector('rect')!==null,'number square grid');
+  ok(app.getPrintedPageCount()===3,'10 number items print to 3 A4 pages');
+  app.selectGroup('initials');
+  ok(app.getPrintedPageCount()===6,'23 initials to 6 A4 pages');
+  ok(d.getElementById('printRoot').querySelectorAll('.printLine').length===69,'3 rows per initial');
+  ok(d.documentElement.scrollWidth<=d.documentElement.clientWidth+2,'no horizontal overflow');
+  finish();
+}
+function finish(){
+  document.documentElement.dataset.result=errors.length?'FAIL':'PASS';
+  report.textContent=errors.length?'FAIL: '+errors.join('; '):'PASS: F1 Latin/Pinyin, touch and A4 print';
+}
+frame.addEventListener('load',()=>{try{run();}catch(e){errors.push(String(e.stack||e));finish();}});
+setTimeout(()=>{if(!document.documentElement.dataset.result){errors.push('timeout');finish();}},12000);
+</script></body></html>
