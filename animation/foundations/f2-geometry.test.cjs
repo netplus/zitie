@@ -115,6 +115,7 @@ test('F2 printed worksheet keeps four parallel lines, square digit grids and A4 
   assert.match(app,/const W=1600/);
   assert.match(app,/cellWidth=W\/copies/);
   assert.match(app,/width:64,height:66/);
+  assert.match(css,/\.boardBox\{[^}]*grid-template-columns:minmax\(0,1fr\)/);
   assert.match(css,/@page\{size:A4 portrait/);
   assert.match(css,/\.printLine\{width:100%;height:15mm/);
   assert.doesNotMatch(app,/(?:XMLHttpRequest|sendBeacon|fetch\s*\()/);
