@@ -32,8 +32,10 @@ window.addEventListener('DOMContentLoaded',()=>{
     return state.group.script==='pinyin'?'pinyin-classroom-v1':
       state.group.script==='numbers'?'lwt-numerals-v2':'latin-manuscript-v1';
   }
-  function hasLegacyPinyinInk(entry){
-    if(state.group.script!=='pinyin')return false;
+  function hasLegacyLessonInk(entry){
+    const affected=state.group.script==='pinyin'||
+      (state.group.script==='numbers'&&['1','4','8'].includes(entry.text));
+    if(!affected)return false;
     try{
       const old=JSON.parse(localStorage.getItem(storagePrefix+entry.id)||'null');
       return !!(old&&Array.isArray(old.strokes)&&old.strokes.length&&
@@ -329,7 +331,7 @@ window.addEventListener('DOMContentLoaded',()=>{
     stopAnimation();cancel();
     state.entry=item;
     state.strokes=loadStrokes(item);
-    state.legacyInk=hasLegacyPinyinInk(item);
+    state.legacyInk=hasLegacyLessonInk(item);
     $('lessonHeading').textContent=item.text;
     $('groupLabel').textContent=state.group.name;
     $('lessonHint').textContent=(item.meaning?item.meaning+' · ':'')+state.group.hint+(state.group.script==='pinyin'?' · 小学拼音独立书写模型，未核对字母仍待教材复核':'');
@@ -352,7 +354,7 @@ window.addEventListener('DOMContentLoaded',()=>{
     $('tipText').textContent=tip;
     stage(item);
     setStatus(state.legacyInk?
-      '已保留旧版拼音练习笔迹；新版笔顺已调整，建议点击重新练习。旧笔迹不会自动清除。':
+      '已保留旧版练习笔迹；新版范字可能使用不同笔顺，建议点击重新练习。旧笔迹不会自动清除。':
       state.strokes.length?
         '已恢复本机 '+state.strokes.length+' 笔 · 可以继续写或重新练习。':
         '在字格中直接书写；每次自然提笔记录一笔。');

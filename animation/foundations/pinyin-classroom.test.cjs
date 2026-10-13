@@ -84,8 +84,8 @@ test('F2.6c previous blue learner marks remain under original keys and labelled'
  assert.match(app,/storagePrefix='zitie-foundations-f1:'/);
  assert.match(app,/version:1,strokes:state\.strokes,model:sourceVersion\(\),legacyInk:state\.legacyInk/);
  assert.match(app,/sourceVersion\(\)/);
- assert.match(app,/hasLegacyPinyinInk\(item\)/);
- assert.match(app,/已保留旧版拼音练习笔迹/);
+ assert.match(app,/hasLegacyLessonInk\(item\)/);
+ assert.match(app,/已保留旧版练习笔迹/);
  assert.match(app,/state\.legacyInk=false/);
  assert.match(app,/model\.compose\(item\.text,state\.group\.kind,state\.group\.script\)/);
  assert.match(app,/model\.compose\(entry\.text,state\.group\.kind,state\.group\.script\)/);
