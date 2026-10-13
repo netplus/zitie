@@ -191,7 +191,7 @@
   validate();
   const verifiedPinyinLetters=Object.freeze([...PINYIN_VERIFIED].sort());
   function modelInfo(letter,script='latin'){
-    return script==='pinyin'&&PINYIN_VERIFIED.has(letter)?'pinyin-classroom-reviewed':
+    return script==='pinyin'&&PINYIN_VERIFIED.has(letter)?'pinyin-classroom-source-mapped':
       script==='pinyin'?'pinyin-pending-review':'latin-manuscript';
   }
   return Object.freeze({groups,compose,parts,validate,verifiedPinyinLetters,modelInfo});
