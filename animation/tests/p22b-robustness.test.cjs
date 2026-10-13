@@ -18,6 +18,7 @@ const PACK_PATH=path.join(ROOT,'build/a3/book-pack.js');
 const SUITE_VERSION='p22b-synthetic-robustness-v1';
 const STATUSES=['consistent','reordered','uncertain','incomplete','count_mismatch'];
 const PREFIX='window.ZITIE_BOOK_PACK = ';
+const FORMAL_PDF_SHA256='7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90';
 
 function readPack(){
   const raw=fs.readFileSync(PACK_PATH,'utf8');
@@ -26,7 +27,16 @@ function readPack(){
   const pack=JSON.parse(raw.slice(PREFIX.length,-2));
   assert.equal(pack.glyphs.length,201);
   assert.equal(pack.glyphs.reduce((n,g)=>n+g.strokes.length,0),1045);
-  assert.match(pack.publication.sha256,/^[0-9a-f]{64}$/);
+  assert.equal(pack.publication.sha256,FORMAL_PDF_SHA256,
+    'Audit must use the published, immutable v0.5.1 PDF source');
+  assert.equal(new Set(pack.glyphs.map(g=>g.main_id)).size,201,
+    'Each canonical glyph must have a unique main ID');
+  for(const glyph of pack.glyphs){
+    assert.match(glyph.source_sha256,/^[0-9a-f]{64}$/,
+      'Missing glyph/source fingerprint');
+    assert.equal(glyph.strokes.length,glyph.expected_stroke_count,
+      'Unexpected stroke total for glyph '+glyph.character);
+  }
   return pack;
 }
 
