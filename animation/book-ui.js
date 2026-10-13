@@ -9,7 +9,8 @@ window.addEventListener('DOMContentLoaded', function(){
   const required=['paperSvg','status','search','tiles','steps','pdfLink',
     'pressureStyleOptions','pressureDetails','pressureCurve','pressureValue',
     'pressureFill','pressurePhase','pressureStyleHint',
-    'writingTipLead','writingTipJump','tipText'];
+    'writingTipLead','writingTipJump','tipText',
+    'pressureStudyTip','pressureStudyCheck'];
   if(!pack||pack.schema_version!==1||
      pack.publication?.version!=='0.5.1'||
      pack.publication?.pages!==299||
@@ -156,6 +157,10 @@ window.addEventListener('DOMContentLoaded', function(){
     // Surface the exact book-authored hint alongside live stroke progress.
     // The unabridged tips/check remain in #tipText below; no advice is inferred.
     $('writingTipLead').textContent=g.tips[0];
+    // Place only already-authored PDF advice in the otherwise unused
+    // pressure-side column; no new coaching or inferred correctness.
+    $('pressureStudyTip').textContent=g.tips.slice(1).join('；');
+    $('pressureStudyCheck').textContent=g.check;
     $('writingTipJump').title='本字书写提示：'+g.tips.join('；')+'；写完检查：'+g.check;
     $('tipText').replaceChildren();
     const notes=[...g.tips,'写完检查：'+g.check];
