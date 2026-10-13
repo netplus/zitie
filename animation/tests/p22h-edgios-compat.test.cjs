@@ -54,8 +54,8 @@ function fixture(preferTouchInput){
   onChange:x=>changes.push(x),onLayout:()=>layoutCalls++});
  const restore=()=>{input.destroy();global.window=w;global.document=d;};
  const ev=(identifier,x,y,timeStamp,type='single')=>({
-  touches:type==='multi'?[{identifier},{identifier:identifier+1}]:
-    [{identifier}],
+  touches:type==='end'?[]:type==='multi'?
+    [{identifier},{identifier:identifier+1}]:[{identifier}],
   changedTouches:[{identifier,clientX:x,clientY:y}],
   timeStamp,cancelable:true,
   prevented:false,preventDefault(){this.prevented=true;}
@@ -106,7 +106,7 @@ test('P2.2i: Edge pointerdown then touchstart hands off exactly once',()=>{
   const move=f.ev(1,20,24,114);f.input.touchMove(move);
   assert.ok(move.prevented);
   f.input.up(f.pe('touch',20,24,116,8)); // duplicate pointerup ignored
-  const end=f.ev(1,40,44,120);
+  const end=f.ev(1,40,44,120,'end');
   f.input.touchEnd(end);
   assert.ok(end.prevented);
   assert.ok(f.session.draft);
@@ -126,7 +126,7 @@ test('P2.2i: Touch Events arriving first remain authoritative in Edge',()=>{
   assert.equal(f.input.getState().inputSource,'touch');
   f.input.down(f.pe('touch',10,12,102,8)); // duplicate pointerdown ignored
   f.input.touchMove(f.ev(2,20,24,110));
-  f.input.touchEnd(f.ev(2,40,44,140));
+  f.input.touchEnd(f.ev(2,40,44,140,'end'));
   assert.equal(f.session.draft.samples.length,3);
   assert.equal(f.input.getState().touchFallbackStarts,1);
   assert.equal(f.input.getState().touchHandoffs,0);
@@ -177,7 +177,7 @@ test('P2.2h: Safari pointer path remains authoritative; fallback can start if po
   f.input.reset();
   f.input.touchStart(f.ev(0,10,10,40));
   f.input.touchMove(f.ev(0,15,15,50));
-  f.input.touchEnd(f.ev(0,20,20,60));
+  f.input.touchEnd(f.ev(0,20,20,60,'end'));
   assert.equal(f.session.draft.pointerType,'touch');
   assert.equal(f.input.getState().touchFallbackStarts,1);
  }finally{f.restore();}
@@ -192,7 +192,7 @@ test('P2.2h: viewport-only resize does not discard active touch; real desktop re
   assert.equal(e.session.getState().phase,'drawing',
     'EdgiOS dynamic toolbar resize should not cancel real touch');
   assert.equal(e.layout(),2);
-  e.input.touchEnd(e.ev(1,50,60,160));
+  e.input.touchEnd(e.ev(1,50,60,160,'end'));
   assert.equal(e.session.draft.samples.length,2);
  }finally{e.restore();}
  const ordinary=fixture(false);
@@ -204,6 +204,57 @@ test('P2.2h: viewport-only resize does not discard active touch; real desktop re
   assert.equal(ordinary.session.getState().phase,'ready');
   assert.equal(ordinary.session.draft,null);
  }finally{ordinary.restore();}
+});
+test('P2.2j: Edge pointerdown -> touchmove -> touchend commits without touchstart or pointerup',()=>{
+ const f=fixture(true);
+ try{
+  f.input.down(f.pe('touch',10,12,100,8));
+  f.input.touchMove(f.ev(6,20,24,110));
+  assert.equal(f.input.getState().inputSource,'touch');
+  assert.equal(f.input.getState().touchHandoffs,1);
+  assert.ok(!f.pressed.has(8));
+  f.input.move(f.pe('touch',35,38,115,8)); // stale pointer never draws
+  const end=f.ev(6,40,44,130,'end');
+  f.input.touchEnd(end);
+  f.input.up(f.pe('touch',40,44,140,8)); // stale pointer never finishes again
+  assert.ok(f.session.draft);
+  assert.equal(f.session.draft.samples.length,3);
+  assert.equal(f.session.draft.samples.at(-1).x,40);
+  assert.equal(f.session.cancellations,0);
+  assert.equal(f.changes.filter(x=>x==='up').length,1);
+ }finally{f.restore();}
+});
+test('P2.2j: Edge pointerdown -> touchend alone is a valid real finger lift',()=>{
+ const f=fixture(true);
+ try{
+  f.input.down(f.pe('touch',11,12,100,7));
+  f.input.touchEnd(f.ev(3,40,44,150,'end'));
+  assert.equal(f.input.getState().touchHandoffs,1);
+  assert.equal(f.session.draft.samples.length,2);
+  assert.equal(f.changes.filter(x=>x==='up').length,1);
+ }finally{f.restore();}
+});
+test('P2.2j: missing touchstart with native touchcancel never commits ink',()=>{
+ const f=fixture(true);
+ try{
+  f.input.down(f.pe('touch',10,12,100,8));
+  f.input.touchCancel(f.ev(6,10,12,120,'end'));
+  assert.equal(f.session.draft,null);
+  assert.equal(f.session.cancellations,1);
+  assert.equal(f.input.getState().lastCancel,'touchcancel');
+ }finally{f.restore();}
+});
+test('P2.2j: active finger lift during another live touch is not a stroke',()=>{
+ const f=fixture(true);
+ try{
+  f.input.touchStart(f.ev(1,10,10,100));
+  const end=f.ev(1,40,44,120);
+  end.touches=[{identifier:2}]; // another contact still on the screen
+  f.input.touchEnd(end);
+  assert.equal(f.session.draft,null);
+  assert.equal(f.session.cancellations,1);
+  assert.equal(f.input.getState().lastCancel,'multitouch');
+ }finally{f.restore();}
 });
 test('P2.2h: pending IndexedDB read fails open rather than disabling the canvas forever',async()=>{
  const store=new LocalPracticeStore();
