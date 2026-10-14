@@ -1,0 +1,60 @@
+name: Build 15mm practice PDF candidate
+
+on:
+  push:
+    branches:
+      - feat/pdf-standard-15mm-practice
+    paths:
+      - 'scripts/build_standard_practice_pdf.py'
+      - '.github/workflows/pdf-standard-grid.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - name: Checkout branch
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - name: Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install PDF engine
+        run: python -m pip install 'PyMuPDF==1.26.7'
+      - name: Generate source-locked candidate and geometry report
+        run: |
+          python scripts/build_standard_practice_pdf.py \
+            --previews deliverables/candidates/v0.5.2-15mm/previews
+      - name: Check source and candidate hashes and page count
+        run: |
+          python - <<'PY'
+          import fitz, hashlib, json, pathlib
+          p = pathlib.Path('deliverables/candidates/v0.5.2-15mm')
+          m = json.loads((p/'geometry.json').read_text())
+          pdf = p/'zitie-v0.5.2-A4-15mm-candidate.pdf'
+          assert hashlib.sha256(pdf.read_bytes()).hexdigest() == m['output_sha256']
+          assert m['preserved_original_v051'] and m['a4_pages'] == 299
+          assert m['guided_pages'] >= 258 and m['recall_pages'] >= 2
+          assert m['new_grid_mm'] == 15.0 and m['new_cells_per_practice_page'] == 40
+          with fitz.open(pdf) as doc:
+              assert len(doc) == 299
+              assert len(doc.get_toc()) == m['bookmarks']
+          print('15mm copybook candidate geometry and integrity PASS')
+          PY
+      - name: Commit candidate PDF to the feature branch
+        if: github.ref == 'refs/heads/feat/pdf-standard-15mm-practice'
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add deliverables/candidates/v0.5.2-15mm
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(pdf): archive generated 299-page 15mm practice candidate and measurements'
+            git push origin HEAD:feat/pdf-standard-15mm-practice
+          fi
