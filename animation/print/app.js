@@ -9,7 +9,7 @@ window.addEventListener('DOMContentLoaded',()=>{
   const NS='http://www.w3.org/2000/svg',MM_PX=96/25.4;
   const INPUTS=['kind','content','title','sizeMm','grid','columns','marginMm',
     'rowGapMm','rows','layout','traceCount','scale','opacity',
-    'gridColor','traceColor','showPinyin','showTitle'];
+    'gridColor','traceColor','showPinyin','showTitle','showStrokeOrder'];
   const state={plan:null,handle:null};
   function sayError(message){
     $('error').hidden=!message;
@@ -58,6 +58,7 @@ window.addEventListener('DOMContentLoaded',()=>{
     $('opacityValue').textContent=Math.round(fields.opacity*100)+'%';
     $('traceCountWrap').hidden=fields.layout!=='sample';
     $('showPinyin').disabled=fields.kind!=='hanzi';
+    $('showStrokeOrder').disabled=fields.kind!=='hanzi';
     $('contentHint').textContent=fields.kind==='pinyin'?
       '用空格隔开每个音节，如 zh ch sh ai ü':'逐字排版，每字或字母一组练习行';
   }
@@ -147,6 +148,63 @@ window.addEventListener('DOMContentLoaded',()=>{
     const categories={pinyin:'拼音',latin:'英文',numbers:'数字'};
     return block.token+' · '+categories[block.kind]+'工程示范';
   }
+  function addStrokeOrder(block,settings,plan,root){
+    const order=block.strokeOrder;
+    if(!order)return;
+    const area=el('section',{class:'strokeOrderPanel',
+      'data-stroke-order-item':block.token,
+      'data-stroke-order-kind':order.kind,
+      'aria-label':block.token+'的打印笔顺示范'});
+    area.style.left=plan.gridX+'mm';
+    area.style.top='7mm';
+    area.style.width=plan.gridWidth+'mm';
+    area.style.height=order.heightMm+'mm';
+    if(order.kind==='unavailable'){
+      area.append(el('p',{class:'strokeOrderUnavailable'},
+        '无已审核笔顺，仅打印练习格'));
+      root.append(area);
+      return;
+    }
+    const title=el('div',{class:'strokeOrderHeading'},
+      '逐笔笔顺 · 当前笔红色，此前笔灰色');
+    area.append(title);
+    for(let rowIndex=0;rowIndex<order.countRows;rowIndex++){
+      const row=el('div',{class:'strokeOrderRow','data-order-row':rowIndex});
+      row.style.top=(order.headingMm+
+        rowIndex*(order.cellMm+order.labelMm+order.rowGapMm))+'mm';
+      row.style.gap=order.gapMm+'mm';
+      for(let index=rowIndex*order.perRow;
+          index<Math.min(order.count,(rowIndex+1)*order.perRow);index++){
+        const stroke=block.glyph.strokes[index];
+        const label=stroke.name_status==='reviewed'&&stroke.name?
+          (index+1)+' '+stroke.name:'第'+(index+1)+'笔';
+        const item=el('div',{class:'strokeStep','data-stroke-order-step':index+1});
+        item.style.width=order.cellMm+'mm';
+        const caption=el('div',{class:'strokeStepLabel'},label);
+        caption.style.height=order.labelMm+'mm';
+        item.append(caption);
+        const drawing=svg('svg',{xmlns:NS,viewBox:'0 0 100 100',
+          class:'strokeStepSvg',
+          'aria-label':block.token+' '+label,
+          'data-pdf-stroke-step':index+1});
+        drawing.style.width=order.cellMm+'mm';
+        drawing.style.height=order.cellMm+'mm';
+        gridCell(drawing,settings);
+        const ink=svg('g',{transform:'translate(4 95) scale(0.102 -0.102)',
+          'data-stroke-source':'v0.5.1-pdf'});
+        for(let i=0;i<=index;i++)
+          ink.append(svg('path',{d:block.glyph.strokes[i].outline,
+            fill:i===index?'#bd3945':'#5c6269',
+            'data-current-stroke':String(i===index),
+            'data-source-stroke-index':i+1}));
+        drawing.append(ink);
+        item.append(drawing);
+        row.append(item);
+      }
+      area.append(row);
+    }
+    root.append(area);
+  }
   function makeSheet(page,plan){
     const c=plan.settings;
     const wrapper=el('div',{class:'paperFrame','data-paper-frame':page.index});
@@ -167,15 +225,17 @@ window.addEventListener('DOMContentLoaded',()=>{
     for(const block of page.blocks){
       const blockRoot=el('section',{class:'sheetBlock','data-worksheet-item':block.token});
       blockRoot.style.top=block.y+'mm';
+      blockRoot.style.height=block.heightMm+'mm';
       const caption=el('div',{class:'sheetBlockCaption'},labelFor(block,c));
       caption.style.left=plan.gridX+'mm';
       if(block.glyph&&c.kind==='hanzi'&&c.showPinyin&&block.glyph.pinyin)
         caption.append(el('span',{class:'reading'},block.glyph.pinyin));
       blockRoot.append(caption);
+      addStrokeOrder(block,c,plan,blockRoot);
       for(let ri=0;ri<block.rows.length;ri++){
         const line=el('div',{class:'sheetRow','data-row':ri});
         line.style.left=plan.gridX+'mm';
-        line.style.top=(7+ri*(c.sizeMm+c.rowGapMm))+'mm';
+        line.style.top=(block.practiceTopMm+ri*(c.sizeMm+c.rowGapMm))+'mm';
         line.style.gap=c.gapMm+'mm';
         for(let ci=0;ci<block.rows[ri].length;ci++)
           line.append(makeCell(block,c,block.rows[ri][ci],ci));
@@ -218,12 +278,14 @@ window.addEventListener('DOMContentLoaded',()=>{
       sayError('');
       $('stats').textContent=plan.pages.length+' 页 A4 · '+plan.items+' 项练习 · '+
         plan.columns+' 格/行 · '+c.sizeMm+' mm'+
-        (plan.sourceFallback?' · '+plan.sourceFallback+' 字使用系统字体':'');
+        (plan.sourceFallback?' · '+plan.sourceFallback+' 字使用系统字体':'')+
+        (c.showStrokeOrder?' · 含逐笔笔顺示范':'');
       $('traceCountValue').textContent=c.traceCount+' 格';
       $('scaleValue').textContent=Math.round(c.scale*100)+'%';
       $('opacityValue').textContent=Math.round(c.opacity*100)+'%';
       $('traceCountWrap').hidden=c.layout!=='sample';
       $('showPinyin').disabled=c.kind!=='hanzi';
+      $('showStrokeOrder').disabled=c.kind!=='hanzi';
       previewScale();
       document.documentElement.dataset.printReady='true';
     }catch(error){
@@ -247,6 +309,7 @@ window.addEventListener('DOMContentLoaded',()=>{
       numbers:'0 1 2 3 4 5 6 7 8 9',pinyin:'a o e i u ü zh ch sh'};
     $('content').value=presets[kind];
     $('grid').value=kind==='latin'||kind==='pinyin'?'four':'tian';
+    if(kind!=='hanzi')$('showStrokeOrder').checked=false;
     refresh();
   });
   for(const button of document.querySelectorAll('[data-preset]')){
@@ -282,7 +345,8 @@ window.addEventListener('DOMContentLoaded',()=>{
     render:paint,
     getPages:()=>$('printPages').querySelectorAll('.paperPage').length
   });
-  fillControls(C.DEFAULTS);
+  fillControls({...C.DEFAULTS,
+    showStrokeOrder:new URLSearchParams(location.search).get('strokeOrder')==='1'});
   paint();
 });
 })();
