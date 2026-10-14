@@ -44,8 +44,9 @@ def render_unchanged_outside(old, new, bounds=None):
     a = old.get_pixmap(matrix=fitz.Matrix(1, 1), alpha=False)
     b = new.get_pixmap(matrix=fitz.Matrix(1, 1), alpha=False)
     assert (a.width, a.height, a.n, a.stride) == (b.width, b.height, b.n, b.stride)
+    a_pixels, b_pixels = a.samples, b.samples
     if bounds is None:
-        assert a.samples == b.samples, f"Unexpected raster change on page {old.number+1}"
+        assert a_pixels == b_pixels, f"Unexpected raster change on page {old.number+1}"
         return
     # Outside the exercise region all vectors, text, navigation labels and page
     # furniture must render pixel-for-pixel as before.
@@ -55,7 +56,7 @@ def render_unchanged_outside(old, new, bounds=None):
             if x0 - 3 <= x <= x1 + 3 and y0 - 3 <= y <= y1 + 3:
                 continue
             i = y * a.stride + x * a.n
-            assert a.samples[i:i+3] == b.samples[i:i+3], (
+            assert a_pixels[i:i+3] == b_pixels[i:i+3], (
                 f"Page {old.number+1} changed outside exercise at {(x, y)}")
 
 
