@@ -10,7 +10,7 @@ import fitz
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf"
-DIR = ROOT / "deliverables/candidates/v0.5.2-15mm"
+DIR = ROOT / "deliverables/drafts/v0.5.2-15mm-rc1"
 NEW = DIR / "zitie-v0.5.2-A4-15mm-candidate.pdf"
 REPORT = DIR / "geometry.json"
 TARGET_PT = 15 * 72 / 25.4
@@ -27,17 +27,6 @@ def sha(path):
 def link_shapes(page):
     return sorted((x.get("kind"), tuple(round(v, 3) for v in x.get("from", ())),
                    x.get("page"), str(x.get("to")), x.get("uri")) for x in page.get_links())
-
-
-def count_new_squares(page):
-    found = []
-    for drawing in page.get_drawings():
-        for item in drawing["items"]:
-            if item[0] == "re":
-                r = fitz.Rect(item[1])
-                if abs(r.width - TARGET_PT) < 0.3 and abs(r.height - TARGET_PT) < 0.3:
-                    found.append(r)
-    return found
 
 
 def render_unchanged_outside(old, new, bounds=None):
@@ -92,14 +81,20 @@ def main():
         for n in samples:
             assert n in altered, n
             rec = altered[n]
-            squares = count_new_squares(candidate[n-1])
-            assert len(squares) >= 40, (n, len(squares))
-            left = min(x.x0 for x in squares)
-            right = max(x.x1 for x in squares)
-            top = min(x.y0 for x in squares)
-            bottom = max(x.y1 for x in squares)
-            assert left >= 35 and right <= 560 and top >= 150 and bottom <= 745, (
-                n, left, right, top, bottom)
+            # get_drawings() reports pre-transform nested XObject paths on some
+            # PyMuPDF versions (e.g. x=864 on a 595-pt page); those are NOT
+            # page-space visible rectangles. Validate the 40 destination
+            # placements recorded by the builder instead, then compare pixels.
+            left = rec["new_x_pt"]
+            top_rows = rec["new_y_pt"]
+            assert len(top_rows) == 4
+            right = left + 10 * TARGET_PT + 9 * 6
+            bottom = max(top_rows) + TARGET_PT
+            assert left >= 35 and right <= 560 and min(top_rows) >= 150 and bottom <= 745, (
+                n, left, right, min(top_rows), bottom)
+            assert all(top_rows[i+1] > top_rows[i] + TARGET_PT + 5
+                       for i in range(3))
+            assert rec["new_cells"] == 40 and rec["new_mm"] == 15
             render_unchanged_outside(source[n-1], candidate[n-1],
                 (35, rec["practice_top_pt"], 560, rec["practice_bottom_pt"]))
     print(json.dumps({

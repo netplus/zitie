@@ -454,6 +454,23 @@
       },
       "previous_release": "deliverables/releases/v0.5.0/zitie-v0.5.0-A4.pdf",
       "previous_sha256": "10f5177221ff4817ea412f9e5f187e68d59eabfce8f94e2ebf4179f4398f6880"
+    },
+    {
+      "path": "deliverables/drafts/v0.5.2-15mm-rc1/zitie-v0.5.2-A4-15mm-candidate.pdf",
+      "title": "《循序渐进汉字部首字帖》v0.5.2 15 mm 田字格独立候选版",
+      "version": "0.5.2-15mm-rc1",
+      "status": "release_candidate",
+      "batch": "B01-B21+M3",
+      "pages": 299,
+      "bytes": 11847089,
+      "sha256": "151ecc172b4ea86e967da504187f7cf6b37c2366083d62560f6388bf9c43c5bd",
+      "source_commit": "100d97805375fad48bdeb0e786f2a365ac4dcae7",
+      "provenance_kind": "source_locked_vector_layout_derivative",
+      "source_pdf": "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf",
+      "source_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+      "review_record": "docs/PRINT_GRID_15MM.md",
+      "release_eligible": false,
+      "variant_kind": "15mm_grid"
     }
   ]
 }

@@ -20,7 +20,7 @@ import fitz
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf"
 SOURCE_SHA256 = "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90"
-DEFAULT_DIR = ROOT / "deliverables/candidates/v0.5.2-15mm"
+DEFAULT_DIR = ROOT / "deliverables/drafts/v0.5.2-15mm-rc1"
 OUTPUT = DEFAULT_DIR / "zitie-v0.5.2-A4-15mm-candidate.pdf"
 REPORT = DEFAULT_DIR / "geometry.json"
 A4_PT = (595.2756, 841.8898)

@@ -24,7 +24,7 @@ python scripts/build_standard_practice_pdf.py
 python scripts/verify_standard_practice_pdf.py
 ```
 
-结果为 `deliverables/candidates/v0.5.2-15mm/zitie-v0.5.2-A4-15mm-candidate.pdf`。
+结果为 `deliverables/drafts/v0.5.2-15mm-rc1/zitie-v0.5.2-A4-15mm-candidate.pdf`。
 其 `geometry.json` 记录每页的原格与新格坐标、SHA256、目标尺寸和分类，三个实际渲染的页面样张位于 `previews/`。
 
 全书 **299页**；已处理 **268页描红/迁移教学练习+6页独立回忆**；其余 **25页**不触及；维持原 **238书签**及 PDF 页内链接。程序 fail-closed：输入文件 SHA、A4页数、旧格 32 个的尺寸/阵列位置、每页行距、布局容量或导航变化时即拒绝发布。新旧 PDF 不是字节一致，除格子以外的页面元素要求实际 PDF 渲染像素一致。
@@ -34,3 +34,6 @@ python scripts/verify_standard_practice_pdf.py
 参考（规格示例，并非国家强制标准）：
 - https://a4note.tuisitang.com/?p=384 — 田字格 12/15/18 mm 多规格。
 - https://www.zitie.pro/muban/tianzige-moban.html — 15 mm 中号 A4 田字格示例。
+
+归档说明：此版遵守仓库 `deliverables/manifest.json` 强制登记要求，
+独立存储在 `deliverables/drafts/` 中，状态仅为 `release_candidate`，不属于正式出版。
