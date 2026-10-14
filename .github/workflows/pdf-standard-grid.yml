@@ -6,6 +6,7 @@ on:
       - feat/pdf-standard-15mm-practice
     paths:
       - 'scripts/build_standard_practice_pdf.py'
+      - 'scripts/verify_standard_practice_pdf.py'
       - '.github/workflows/pdf-standard-grid.yml'
   workflow_dispatch:
 
