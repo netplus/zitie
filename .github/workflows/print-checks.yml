@@ -82,6 +82,11 @@ jobs:
           timeout 85 "$CHROME_BIN" "${opts[@]}" --window-size=1420,1100 \
             --virtual-time-budget=10000 --no-pdf-header-footer \
             --print-to-pdf="$(pwd)/build/print/worksheet-A4.pdf" "$url" >/dev/null
+          # Opt-in same A4 paper size, but with extra cumulative demonstrations.
+          timeout 85 "$CHROME_BIN" "${opts[@]}" --window-size=1420,1100 \
+            --virtual-time-budget=10000 --no-pdf-header-footer \
+            --print-to-pdf="$(pwd)/build/print/worksheet-with-stroke-order-A4.pdf" \
+            "$url?strokeOrder=1" >/dev/null
           python - <<'PY'
           import json, math, fitz
           from pathlib import Path
@@ -104,9 +109,31 @@ jobs:
                   assert page.get_text().strip(), f'Blank print page: {page.number+1}'
                   report.append({'page':page.number+1,'15mm_grid_boxes':len(boxes),
                       'a4_points':[round(page.rect.width,2),round(page.rect.height,2)]})
+          # Preserve the original 2-page default; opt-in adds enough physical
+          # height for the source-backed diagrams and must fit on 3 pages.
+          opt=Path('build/print/worksheet-with-stroke-order-A4.pdf')
+          assert opt.stat().st_size > 10000
+          with fitz.open(opt) as doc:
+              assert len(doc)==3, f'Opt-in teaching pages unexpectedly clipped: {len(doc)}'
+              printed='\n'.join(page.get_text() for page in doc)
+              assert '逐笔笔顺' in printed, 'No rendered stroke-order teaching headings in print PDF'
+              opt_pages=[]
+              for page in doc:
+                  assert abs(page.rect.width-595.28)<0.5
+                  assert abs(page.rect.height-841.89)<0.5
+                  squares=[]
+                  for stroke in page.get_drawings():
+                      for item in stroke['items']:
+                          if item[0]=='re':
+                              rect=fitz.Rect(item[1])
+                              if abs(rect.width-15*72/25.4)<0.8 and abs(rect.height-15*72/25.4)<0.8:
+                                  squares.append(rect)
+                  assert len(squares)>=40, f'Practice cells missing after adding order: {page.number+1}'
+                  opt_pages.append({'page':page.number+1,'15mm_practice_cells':len(squares)})
           Path('build/print/pdf-geometry.json').write_text(
-              json.dumps({'result':'PASS','pages':report},ensure_ascii=False,indent=2)+'\n')
-          print('PASS: Chrome-generated A4 100% vector PDF has 15mm cells on exactly 2 pages')
+              json.dumps({'result':'PASS','default_pages':report,
+                'optional_stroke_order_pages':opt_pages},ensure_ascii=False,indent=2)+'\n')
+          print('PASS: A4 print toggle: 2 pages without teaching, 3 pages with order; all practice cells 15mm')
           PY
       - name: Upload desktop/mobile and A4 sample for review
         if: always()
