@@ -13,7 +13,7 @@
     sizeMm:15,marginMm:15,gapMm:1.5,rowGapMm:3,columns:10,
     rows:4,layout:'classic',traceCount:4,scale:0.8,
     gridColor:'#ccabb0',traceColor:'#c95160',opacity:0.55,
-    showPinyin:true,showTitle:true,title:'循序渐进 · 我的练字帖'
+    showPinyin:true,showTitle:true,showStrokeOrder:false,title:'循序渐进 · 我的练字帖'
   });
   const OPTIONS=Object.freeze({
     kind:['hanzi','latin','pinyin','numbers'],
@@ -55,6 +55,7 @@
       opacity:clamp(raw.opacity??d.opacity,0.15,0.95,0.01),
       showPinyin:raw.showPinyin!==false,
       showTitle:raw.showTitle!==false,
+      showStrokeOrder:kind==='hanzi'&&raw.showStrokeOrder===true,
       title:(typeof raw.title==='string'?raw.title:d.title).trim()
     };
   }
@@ -94,6 +95,26 @@
     if(row===1)return 'pale';
     return col===0?'sample':'blank';
   }
+  // Printed teaching cards re-use the ordered, released-book vector strokes.
+  // Never calculate a stroke order from a font or an unrelated character.
+  function strokeOrderLayout(glyph,c,gridWidth){
+    if(!c.showStrokeOrder||c.kind!=='hanzi')return null;
+    if(!glyph)return {kind:'unavailable',heightMm:13};
+    const n=glyph.expected_stroke_count;
+    if(!Number.isInteger(n)||n<1||n>64||
+       !Array.isArray(glyph.strokes)||glyph.strokes.length!==n||
+       glyph.strokes.some(stroke=>!stroke||typeof stroke.outline!=='string'||
+         !/^\\s*M\\s/i.test(stroke.outline)))
+      throw Error('笔顺数据不完整，无法打印：'+(glyph.character||'未知汉字'));
+    const cellMm=Math.min(22,Math.max(16,c.sizeMm+4));
+    const gapMm=2,headingMm=6,labelMm=7,rowGapMm=2;
+    const perRow=Math.max(1,Math.floor((gridWidth+gapMm+1e-8)/(cellMm+gapMm)));
+    const countRows=Math.ceil(n/perRow);
+    const heightMm=headingMm+countRows*(cellMm+labelMm)+
+      (countRows-1)*rowGapMm+3;
+    return {kind:'steps',count:n,cellMm,gapMm,headingMm,labelMm,
+      rowGapMm,perRow,countRows,heightMm};
+  }
   function paginate(settings,sourceMap){
     const c=normalize(settings);
     const items=parseItems(c.content,c.kind);
@@ -102,7 +123,6 @@
     const gridX=(PAPER.width-gridWidth)/2;
     const headerMm=c.showTitle?21:11;
     const footerMm=8;
-    const rowSpan=c.sizeMm+c.rowGapMm;
     const blockMm=7+c.rows*c.sizeMm+(c.rows-1)*c.rowGapMm+5;
     const top=c.marginMm+headerMm;
     // Keep a printer-safe footer area without reserving two full bottom margins.
@@ -114,18 +134,23 @@
     let fallback=0;
     const sources=sourceMap instanceof Map?sourceMap:new Map();
     for(const token of items){
-      if(page.blocks.length&&page.nextY+blockMm>bottom+1e-7){
+      const glyph=c.kind==='hanzi'?(sources.get(token)||null):null;
+      if(c.kind==='hanzi'&&!glyph)fallback++;
+      const order=strokeOrderLayout(glyph,c,gridWidth);
+      const heightMm=blockMm+(order?order.heightMm:0);
+      if(top+heightMm>bottom+1e-7)
+        throw Error('该字的笔顺示范和练习格无法完整放在一页，请减少练习行数、格子尺寸或行间距：'+token);
+      if(page.blocks.length&&page.nextY+heightMm>bottom+1e-7){
         pages.push(page);
         page={index:pages.length+1,blocks:[],nextY:top};
       }
-      const glyph=c.kind==='hanzi'?(sources.get(token)||null):null;
-      if(c.kind==='hanzi'&&!glyph)fallback++;
       const block={token,glyph,kind:c.kind,x:gridX,y:page.nextY,
+        strokeOrder:order,heightMm,practiceTopMm:7+(order?order.heightMm:0),
         rows:Array.from({length:c.rows},(_,r)=>
           Array.from({length:cols},(_,i)=>
             rowInk(c.layout,r,i,c.traceCount,cols)))};
       page.blocks.push(block);
-      page.nextY+=blockMm;
+      page.nextY+=heightMm;
     }
     if(page.blocks.length)pages.push(page);
     if(pages.length>60)throw Error('生成页面过多，请分批打印。');
@@ -133,5 +158,5 @@
       footerMm,printableBottom:bottom,blockMm,sourceFallback:fallback,items:items.length,
       paper:PAPER};
   }
-  return Object.freeze({PAPER,DEFAULTS,normalize,parseItems,columns,rowInk,paginate});
+  return Object.freeze({PAPER,DEFAULTS,normalize,parseItems,columns,rowInk,strokeOrderLayout,paginate});
 });
