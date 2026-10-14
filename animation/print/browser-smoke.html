@@ -34,6 +34,7 @@
       const target=doc.getElementById(id);
       target.value=value;
       target.dispatchEvent(new Event('input',{bubbles:true}));
+      target.dispatchEvent(new Event('change',{bubbles:true}));
     }
     change('sizeMm','20');
     await wait(()=>win.ZITIE_PRINT.getPlan()?.settings.sizeMm===20);
