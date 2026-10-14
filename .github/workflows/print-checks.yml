@@ -1,0 +1,118 @@
+name: Online print studio checks
+
+on:
+  push:
+    paths:
+      - 'animation/print/**'
+      - '.github/workflows/print-checks.yml'
+      - 'animation/book.html'
+      - 'animation/foundations/index.html'
+      - '.github/workflows/animation-pages.yml'
+  pull_request:
+    paths:
+      - 'animation/print/**'
+      - '.github/workflows/print-checks.yml'
+      - 'animation/book.html'
+      - 'animation/foundations/index.html'
+      - '.github/workflows/animation-pages.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  a4-print:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Prepare offline A3 source pack from frozen v0.5.1
+        run: |
+          python -m pip install -r requirements.txt
+          python -m pip install PyMuPDF==1.26.7
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-arphic-uming fontconfig
+          BATCHES="$(printf 'B%02d ' {1..21})"
+          python scripts/acquire_vectors.py --batches $BATCHES
+          python scripts/build_a3_animation.py --vectors build/vectors --output animation/book-pack.js
+      - name: Run source-independent planner contracts
+        run: |
+          node --check animation/print/core.js
+          node --check animation/print/app.js
+          node --test animation/print/core.test.cjs
+      - name: Prepare browser
+        id: chrome
+        uses: browser-actions/setup-chrome@v1
+      - name: Real Chromium interaction, A4 print, and PDF geometry
+        shell: bash
+        env:
+          CHROME_BIN: ${{ steps.chrome.outputs.chrome-path }}
+        run: |
+          set -euo pipefail
+          mkdir -p build/print
+          python3 -m http.server 18793 --bind 127.0.0.1 > build/print/server.log 2>&1 &
+          pid=$!
+          trap 'kill "$pid" 2>/dev/null || true' EXIT
+          for i in $(seq 1 45); do
+            if python3 -c "import urllib.request;urllib.request.urlopen('http://127.0.0.1:18793/animation/print/index.html',timeout=1)" >/dev/null 2>&1; then break; fi
+            sleep 0.2
+          done
+          url="http://127.0.0.1:18793/animation/print/index.html"
+          checks="http://127.0.0.1:18793/animation/print/browser-smoke.html"
+          opts=(--headless=new --no-sandbox --disable-gpu --disable-dev-shm-usage)
+          timeout 85 "$CHROME_BIN" "${opts[@]}" --window-size=1420,1100 \
+            --virtual-time-budget=26000 --dump-dom "$checks" > build/print/browser-desktop.html
+          if ! grep -q 'data-result="PASS"' build/print/browser-desktop.html; then
+            echo 'Online print interaction smoke failed (desktop)' >&2
+            grep -o 'FAIL[^<]*' build/print/browser-desktop.html | tail -6 || true
+            exit 1
+          fi
+          timeout 85 "$CHROME_BIN" "${opts[@]}" --window-size=390,844 \
+            --virtual-time-budget=26000 --dump-dom "$checks" > build/print/browser-mobile.html
+          grep -q 'data-result="PASS"' build/print/browser-mobile.html
+          timeout 45 "$CHROME_BIN" "${opts[@]}" --window-size=1420,1100 \
+            --virtual-time-budget=9000 --screenshot="$(pwd)/build/print/desktop.png" "$url" >/dev/null
+          timeout 45 "$CHROME_BIN" "${opts[@]}" --window-size=390,844 \
+            --virtual-time-budget=9000 --screenshot="$(pwd)/build/print/mobile.png" "$url" >/dev/null
+          timeout 85 "$CHROME_BIN" "${opts[@]}" --window-size=1420,1100 \
+            --virtual-time-budget=10000 --no-pdf-header-footer \
+            --print-to-pdf="$(pwd)/build/print/worksheet-A4.pdf" "$url" >/dev/null
+          python - <<'PY'
+          import json, math, fitz
+          from pathlib import Path
+          pdf=Path('build/print/worksheet-A4.pdf')
+          assert pdf.stat().st_size > 10000
+          with fitz.open(pdf) as doc:
+              assert len(doc)==3, f'Unexpected blank/overflow pages: {len(doc)}'
+              report=[]
+              for page in doc:
+                  assert abs(page.rect.width-595.28)<0.5
+                  assert abs(page.rect.height-841.89)<0.5
+                  boxes=[]
+                  for stroke in page.get_drawings():
+                      for item in stroke['items']:
+                          if item[0]=='re':
+                              rect=fitz.Rect(item[1])
+                              if abs(rect.width-15*72/25.4)<0.8 and abs(rect.height-15*72/25.4)<0.8:
+                                  boxes.append(rect)
+                  assert len(boxes)>=40, f'No 15mm vector grid detected on page {page.number+1}: {len(boxes)}'
+                  assert page.get_text().strip(), f'Blank print page: {page.number+1}'
+                  report.append({'page':page.number+1,'15mm_grid_boxes':len(boxes),
+                      'a4_points':[round(page.rect.width,2),round(page.rect.height,2)]})
+          Path('build/print/pdf-geometry.json').write_text(
+              json.dumps({'result':'PASS','pages':report},ensure_ascii=False,indent=2)+'\n')
+          print('PASS: Chrome-generated A4 100% vector PDF has 15mm cells on exactly 3 pages')
+          PY
+      - name: Upload desktop/mobile and A4 sample for review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: online-print-a4-chromium-evidence
+          path: build/print/
+          if-no-files-found: warn
+          retention-days: 14
