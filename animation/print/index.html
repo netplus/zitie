@@ -125,6 +125,10 @@
       <div class="field"><label for="gridColor">格线颜色</label><input id="gridColor" type="color" value="#ccabb0"></div>
       <div class="field"><label for="traceColor">描红颜色</label><input id="traceColor" type="color" value="#c95160"></div>
     </div>
+    <label class="check" for="showStrokeOrder">
+      <input type="checkbox" id="showStrokeOrder"> 打印逐笔笔顺示范
+    </label>
+    <p id="strokeOrderHint" class="fieldExplain">仅适用于汉字。依次显示累积笔画，当前笔红色、此前笔灰色；未收录的汉字不会编造笔顺。默认不打印。</p>
     <label class="check"><input type="checkbox" id="showPinyin" checked> 显示已有的汉字拼音</label>
     <label class="check"><input type="checkbox" id="showTitle" checked> 打印标题、姓名和日期栏</label>
     <div class="settingsActions">
