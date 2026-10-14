@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>在线字帖打印 · 自定义 A4 田字格</title>
+<link rel="stylesheet" href="./style.css">
+<script defer src="../book-pack.js"></script>
+<script defer src="../foundations/data.js"></script>
+<script defer src="./core.js"></script>
+<script defer src="./app.js"></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="brand"><a class="back" href="../book.html" aria-label="返回笔顺课堂">← 笔顺课堂</a>
+    <div><p class="eyebrow">ZITIE · PRINT STUDIO</p>
+      <h1>在线字帖打印</h1>
+      <p class="subtitle">调整练习格参数，实时预览 A4 纸张 · 所有输入仅在本机处理</p>
+    </div>
+  </div>
+  <nav class="toplinks" aria-label="其他字帖">
+    <a href="../book.html">汉字笔顺</a>
+    <a href="../foundations/index.html">基础书写</a>
+    <a href="../../book/zitie-v0.5.1-A4.pdf">原始 PDF</a>
+  </nav>
+</header>
+<div class="mobileDock" aria-label="手机快捷操作">
+ <a href="#previewTop">查看预览 ↓</a>
+ <button type="button" id="printMobile">打印 / 保存 PDF ↗</button>
+</div>
+<div class="workspace">
+  <aside class="settings" aria-label="字帖打印参数">
+    <div class="sectionHeading"><span class="stepCircle">1</span><h2>练习内容</h2></div>
+    <div class="field">
+      <label for="kind">练习类型</label>
+      <select id="kind">
+        <option value="hanzi">汉字／部首</option>
+        <option value="latin">英文字母</option>
+        <option value="numbers">数字 0–9</option>
+        <option value="pinyin">拼音／声母／韵母</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="content">要练习的内容 <span class="fieldHint" id="contentHint">逐字排版，每字一组练习行</span></label>
+      <textarea id="content" rows="3" spellcheck="false" autocomplete="off">水 火 木 日 月 田</textarea>
+      <div class="quickSets" aria-label="快捷练习内容">
+        <button type="button" data-preset="basic">基础部首</button>
+        <button type="button" data-preset="nature">自然相关</button>
+        <button type="button" data-preset="blank">只打印空格</button>
+      </div>
+    </div>
+    <div class="field">
+      <label for="title">纸张标题</label>
+      <input id="title" maxlength="36" value="循序渐进 · 我的练字帖">
+    </div>
+    <div class="sectionHeading"><span class="stepCircle">2</span><h2>A4 页面与格子</h2></div>
+    <div class="fieldPair">
+      <div class="field"><label for="sizeMm">方格边长</label>
+        <select id="sizeMm">
+          <option value="10">10 mm</option><option value="12">12 mm</option>
+          <option value="15" selected>15 mm · 推荐</option><option value="18">18 mm</option>
+          <option value="20">20 mm</option><option value="25">25 mm</option>
+        </select>
+      </div>
+      <div class="field"><label for="grid">方格类型</label>
+        <select id="grid">
+          <option value="tian" selected>田字格</option><option value="mi">米字格</option>
+          <option value="square">方框格</option><option value="four">四线三格</option>
+        </select>
+      </div>
+    </div>
+    <div class="fieldPair">
+      <div class="field"><label for="columns">每行格数</label>
+        <select id="columns">
+          <option value="0">自动铺满</option>
+          <option value="6">6 格</option><option value="8">8 格</option>
+          <option value="10" selected>10 格</option><option value="12">12 格</option>
+          <option value="14">14 格</option>
+        </select>
+      </div>
+      <div class="field"><label for="marginMm">页边距</label>
+        <select id="marginMm">
+          <option value="10">10 mm</option><option value="12">12 mm</option>
+          <option value="15" selected>15 mm</option><option value="18">18 mm</option>
+          <option value="20">20 mm</option><option value="25">25 mm</option>
+        </select>
+      </div>
+    </div>
+    <div class="fieldPair">
+      <div class="field"><label for="rowGapMm">行间距</label>
+        <select id="rowGapMm">
+          <option value="0">0 mm</option><option value="2">2 mm</option>
+          <option value="3" selected>3 mm</option><option value="5">5 mm</option>
+          <option value="8">8 mm</option><option value="10">10 mm</option>
+        </select>
+      </div>
+      <div class="field"><label for="rows">每字练习行数</label>
+        <select id="rows">
+          <option value="1">1 行</option><option value="2">2 行</option>
+          <option value="3">3 行</option><option value="4" selected>4 行</option>
+          <option value="5">5 行</option><option value="6">6 行</option>
+        </select>
+      </div>
+    </div>
+    <div class="sectionHeading"><span class="stepCircle">3</span><h2>描红与视觉</h2></div>
+    <div class="field"><label for="layout">练习方式</label>
+      <select id="layout">
+        <option value="classic" selected>描红 → 描淡 → 独立写</option>
+        <option value="sample">首字范写 + 部分描红</option>
+        <option value="trace">整行描红</option>
+        <option value="blank">空白练习格</option>
+      </select>
+    </div>
+    <div class="field" id="traceCountWrap"><label for="traceCount">部分描红数量 <output id="traceCountValue">4 格</output></label>
+      <input id="traceCount" type="range" min="0" max="12" step="1" value="4">
+    </div>
+    <div class="field"><label for="scale">字体在格内的比例 <output id="scaleValue">80%</output></label>
+      <input id="scale" type="range" min="0.5" max="0.95" step="0.05" value="0.8">
+    </div>
+    <div class="field"><label for="opacity">描红深浅 <output id="opacityValue">55%</output></label>
+      <input id="opacity" type="range" min="0.15" max="0.95" step="0.05" value="0.55">
+    </div>
+    <div class="fieldPair colors">
+      <div class="field"><label for="gridColor">格线颜色</label><input id="gridColor" type="color" value="#ccabb0"></div>
+      <div class="field"><label for="traceColor">描红颜色</label><input id="traceColor" type="color" value="#c95160"></div>
+    </div>
+    <label class="check"><input type="checkbox" id="showPinyin" checked> 显示已有的汉字拼音</label>
+    <label class="check"><input type="checkbox" id="showTitle" checked> 打印标题、姓名和日期栏</label>
+    <div class="settingsActions">
+      <button type="button" id="reset" class="secondary">恢复默认</button>
+      <button type="button" id="print" class="primary">打印 / 保存 PDF ↗</button>
+    </div>
+    <p class="privacy">离线排版，不上传输入内容。201 个已收录主部首采用与正式 PDF 同源的矢量字形；其他汉字使用设备系统字体，不能视为已审定笔顺。</p>
+  </aside>
+  <main class="previewColumn">
+    <div class="previewToolbar" id="previewTop">
+      <div><p class="eyebrow">LIVE PRINT PREVIEW</p><h2>A4 打印预览</h2>
+        <p id="stats" aria-live="polite">正在准备预览…</p>
+      </div>
+      <button id="printTop" type="button" class="primary">打印 / 保存 PDF ↗</button>
+    </div>
+    <div id="error" class="error" role="alert" hidden></div>
+    <p class="printHelp">打印时选择 A4、100% / 实际大小、关闭页眉页脚，并设置页边距为「无」。下方页面按物理毫米排版。</p>
+    <div id="printPages" aria-label="按 A4 实际尺寸制作的可打印练字页面"></div>
+  </main>
+</div>
+</body>
+</html>

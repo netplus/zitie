@@ -1,0 +1,73 @@
+<!doctype html><html lang="zh-CN"><head><meta charset="utf-8"><title>Online print real Chromium smoke</title>
+<style>body{font:14px system-ui;padding:16px}pre{white-space:pre-wrap}iframe{position:absolute;left:-6000px;top:0;width:1400px;height:1000px;border:0}</style></head>
+<body data-result="PENDING"><h1>Print studio Chromium smoke</h1><pre id="result">Running…</pre>
+<iframe id="target" src="./index.html" title="QA frame"></iframe>
+<script>
+(async()=>{
+  const $=id=>document.getElementById(id),logs=[];
+  const assert=(condition,message)=>{if(!condition)throw Error(message);logs.push('PASS '+message)};
+  const sleep=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+  async function wait(predicate,deadline=18000){
+    const at=Date.now()+deadline;
+    while(Date.now()<at){if(predicate())return;await sleep(110)}
+    throw Error('Timed out waiting for print studio');
+  }
+  try{
+    const iframe=$('target');
+    await wait(()=>iframe.contentDocument?.documentElement?.dataset?.printReady==='true');
+    const win=iframe.contentWindow,doc=iframe.contentDocument;
+    let plan=win.ZITIE_PRINT.getPlan();
+    assert(plan.paper.width===210&&plan.paper.height===297,'A4 physical pages');
+    assert(plan.settings.sizeMm===15&&plan.columns===10,'Default 15mm ten-cell grid');
+    assert(win.ZITIE_PRINT.getPages()===plan.pages.length,'Live preview sheet count');
+    assert(doc.querySelectorAll('.printCell').length===
+      plan.pages.reduce((n,p)=>n+p.blocks.length,0)*4*10,'40 practice cells per glyph');
+    const first=doc.querySelector('.printCell[data-ink=red]');
+    assert(first&&first.style.width==='15mm'&&first.style.height==='15mm',
+      'Physical width/height use mm not CSS px');
+    assert(first.querySelector('g[data-glyph-source="v0.5.1-pdf"] path'),
+      'Actual approved PDF-source vectors are used for contained radicals');
+    const b=doc.querySelector('.paperPage');
+    assert(b&&Math.abs(b.getBoundingClientRect().width-210*96/25.4)<2,
+      'A4 page preview has physical 210mm CSS layout before scaling');
+    function change(id,value){
+      const target=doc.getElementById(id);
+      target.value=value;
+      target.dispatchEvent(new Event('input',{bubbles:true}));
+      target.dispatchEvent(new Event('change',{bubbles:true}));
+    }
+    change('sizeMm','20');
+    await wait(()=>win.ZITIE_PRINT.getPlan()?.settings.sizeMm===20);
+    plan=win.ZITIE_PRINT.getPlan();
+    assert(plan.columns<=8,'20mm cells correctly reduce columns');
+    assert(doc.querySelector('.printCell').style.width==='20mm','Reflow actually updates square dimensions');
+    change('kind','pinyin');
+    await wait(()=>win.ZITIE_PRINT.getPlan()?.settings.kind==='pinyin');
+    plan=win.ZITIE_PRINT.getPlan();
+    assert(plan.settings.grid==='four','Pinyin defaults to four horizontal guide lines');
+    assert(doc.querySelector('g[data-glyph-source="foundations-pinyin"] path'),
+      'Pinyin is constructed from distinct existing Pinyin source model');
+    change('content','zh ch sh ǖ');
+    await wait(()=>win.ZITIE_PRINT.getPlan()?.items===4);
+    assert(doc.querySelectorAll('[data-worksheet-item]').length===4,
+      'Pinyin multi-letter tokens are parsed as separate printable items');
+    change('kind','hanzi');
+    await wait(()=>win.ZITIE_PRINT.getPlan()?.settings.kind==='hanzi');
+    change('content','水龘');
+    await wait(()=>win.ZITIE_PRINT.getPlan()?.sourceFallback===1);
+    assert(doc.querySelector('g[data-glyph-source="system-fallback"] text'),
+      'Unsupported ideograph uses disclosed system fallback rather than invented vectors');
+    change('content','水'.repeat(61));
+    await wait(()=>doc.documentElement.dataset.printReady==='error');
+    assert(doc.getElementById('error').textContent.includes('60'),
+      'Excessive pages fail closed with human-friendly feedback');
+    const planText=doc.getElementById('stats').textContent;
+    assert(planText.includes('请调整'),'Invalid preview is cleared');
+    $('result').textContent=logs.join('\n')+'\n'+logs.length+' checks passed';
+    document.body.dataset.result='PASS';
+  }catch(err){
+    document.body.dataset.result='FAIL';
+    $('result').textContent=logs.join('\n')+'\nFAIL '+(err.stack||err);
+  }
+})();
+</script></body></html>
