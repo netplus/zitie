@@ -10,8 +10,8 @@ import fitz
 
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf"
-DIR = ROOT / "deliverables/drafts/v0.5.2-15mm-rc1"
-NEW = DIR / "zitie-v0.5.2-A4-15mm-candidate.pdf"
+DIR = ROOT / "deliverables/drafts/v0.6.0-15mm-rc1"
+NEW = DIR / "zitie-v0.6.0-A4-15mm-candidate.pdf"
 REPORT = DIR / "geometry.json"
 TARGET_PT = 15 * 72 / 25.4
 

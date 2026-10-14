@@ -72,7 +72,7 @@
 
 新增 A1 动画研发阶段：已归档 [9个主部首的离线 SVG 动态书写原型](animation/index.html)、[动画控制与复核说明](animation/README.md)、[A1 技术设计和独立验收门槛](docs/A1_ANIMATION.md)。可以下载仓库并在浏览器直接打开 `animation/index.html`；不会联网。**这些 medians 仅为工程预览，尚未完成独立教学轨迹审定**，已有201主部首矢量笔顺审核不能视为动画方向审核。正式 PDF 仍是 v0.5.1，历史不变。A1任务见 [Issue #79](https://github.com/netplus/zitie/issues/79)。
 
-**[15 mm 中号田字格练习版（299页独立候选）](deliverables/drafts/v0.5.2-15mm-rc1/zitie-v0.5.2-A4-15mm-candidate.pdf)**：练习格从 21.22 mm 缩为 15 mm，每个练习区从 8×4 提升到 10×4；不改变原有笔顺示范、汉字造型或在线动画依赖的 v0.5.1 源 PDF。**此版待实物打印和教学验收，不替代当前正式版**。详见 [设计、构建与校验](docs/PRINT_GRID_15MM.md)。
+**[15 mm 中号田字格练习版（299页独立候选）](deliverables/drafts/v0.6.0-15mm-rc1/zitie-v0.6.0-A4-15mm-candidate.pdf)**：练习格从 21.22 mm 缩为 15 mm，每个练习区从 8×4 提升到 10×4；不改变原有笔顺示范、汉字造型或在线动画依赖的 v0.5.1 源 PDF。**此版待实物打印和教学验收，不替代当前正式版**。详见 [设计、构建与校验](docs/PRINT_GRID_15MM.md)。
 
 ---
 

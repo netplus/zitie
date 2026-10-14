@@ -32,14 +32,14 @@ jobs:
       - name: Generate source-locked candidate and geometry report
         run: |
           python scripts/build_standard_practice_pdf.py \
-            --previews deliverables/drafts/v0.5.2-15mm-rc1/previews
+            --previews deliverables/drafts/v0.6.0-15mm-rc1/previews
       - name: Check source and candidate hashes and page count
         run: |
           python - <<'PY'
           import fitz, hashlib, json, pathlib
-          p = pathlib.Path('deliverables/drafts/v0.5.2-15mm-rc1')
+          p = pathlib.Path('deliverables/drafts/v0.6.0-15mm-rc1')
           m = json.loads((p/'geometry.json').read_text())
-          pdf = p/'zitie-v0.5.2-A4-15mm-candidate.pdf'
+          pdf = p/'zitie-v0.6.0-A4-15mm-candidate.pdf'
           assert hashlib.sha256(pdf.read_bytes()).hexdigest() == m['output_sha256']
           assert m['preserved_original_v051'] and m['a4_pages'] == 299
           assert m['guided_pages'] >= 258 and m['recall_pages'] >= 2
@@ -56,7 +56,7 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add deliverables/drafts/v0.5.2-15mm-rc1
+          git add deliverables/drafts/v0.6.0-15mm-rc1
           if ! git diff --cached --quiet; then
             git commit -m 'build(pdf): archive generated 299-page 15mm practice candidate and measurements'
             git push origin HEAD:feat/pdf-standard-15mm-practice
