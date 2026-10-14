@@ -8,7 +8,7 @@ from fontTools.ttLib import TTFont
 from pathlib import Path
 from build_v051_punctuation import ROOT, SOURCE
 from fix_uming_cjk_punctuation import patch_ttf, fonts_to_correct, ORIGINAL_BBOX, PUNCT
-from verify_v051_punctuation import check_manifest_entry, EXPECTED_OUTLINES, EXPECTED_GLYPH_SUBSETS
+from verify_v051_punctuation import check_manifest_entry, EXPECTED_OUTLINES, EXPECTED_GLYPH_SUBSETS, REL
 import json
 
 class V051Tests(unittest.TestCase):
@@ -16,7 +16,11 @@ class V051Tests(unittest.TestCase):
     def setUpClass(cls):
         cls.doc=fitz.open(ROOT/SOURCE)
         cls.fonts=list(fonts_to_correct(cls.doc))
-        cls.entry=json.loads((ROOT/'deliverables/manifest.json').read_text())['artifacts'][-1]
+        items=json.loads((ROOT/'deliverables/manifest.json').read_text())['artifacts']
+        matches=[item for item in items if item.get('path') == REL]
+        if len(matches) != 1:
+            raise AssertionError('Exactly one original v0.5.1 release is required')
+        cls.entry=matches[0]
 
     @classmethod
     def tearDownClass(cls): cls.doc.close()
