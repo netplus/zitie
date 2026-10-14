@@ -43,6 +43,7 @@ a{color:var(--wine);text-decoration:none}a:hover{text-decoration:underline}
 .secondary{background:#faf8f6;border-color:#e5dddd;color:#665e62}
 .secondary:hover{background:#f0e8e8}
 .privacy{color:var(--muted);font-size:11px;line-height:1.72;border-top:1px solid #f0ebeb;padding-top:13px;margin:19px 0 0}
+.mobileDock{display:none}
 .previewColumn{min-width:0}
 .previewToolbar{padding:14px 19px;display:flex;justify-content:space-between;align-items:center;gap:14px}
 .previewToolbar h2{font-size:17px;margin:1px 0 1px}
@@ -72,6 +73,17 @@ a{color:var(--wine);text-decoration:none}a:hover{text-decoration:underline}
  .previewToolbar{position:relative}
 }
 @media(max-width:580px){
+ body{padding-bottom:70px}
+ .mobileDock{position:fixed;display:flex;align-items:center;gap:9px;
+   bottom:0;left:0;right:0;z-index:20;
+   padding:9px 12px calc(9px + env(safe-area-inset-bottom, 0px));
+   background:#fffffff2;border-top:1px solid #e6dddc;
+   box-shadow:0 -4px 18px #2e253013}
+ .mobileDock a,.mobileDock button{flex:1;text-align:center;border-radius:9px;padding:9px 7px;
+   border:1px solid #ddc6ca;font-size:12px;font-weight:750;text-decoration:none}
+ .mobileDock a{background:#fff;color:#8c3749}
+ .mobileDock button{background:#9f3646;color:#fff}
+ #previewTop{scroll-margin-top:13px}
  .topbar{align-items:flex-start;gap:12px;flex-direction:column;padding:10px 12px 12px}
  .brand{gap:8px}.brand h1{font-size:23px}
  .toplinks{gap:12px}
@@ -86,7 +98,7 @@ a{color:var(--wine);text-decoration:none}a:hover{text-decoration:underline}
 @page{size:A4 portrait;margin:0}
 @media print{
  html,body{margin:0!important;padding:0!important;background:#fff!important;color:#000!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
- .topbar,.settings,.previewToolbar,.printHelp,.error{display:none!important}
+ .topbar,.settings,.previewToolbar,.printHelp,.error,.mobileDock{display:none!important}
  .workspace,.previewColumn{display:block!important;max-width:none!important;margin:0!important;padding:0!important;background:white!important}
  #printPages{display:block!important;margin:0!important;padding:0!important;min-height:0!important}
  .paperFrame{width:210mm!important;height:297mm!important;margin:0!important;padding:0!important;break-inside:avoid!important;break-after:page!important;page-break-after:always!important}

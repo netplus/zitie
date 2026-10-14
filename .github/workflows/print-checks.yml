@@ -88,7 +88,7 @@ jobs:
           pdf=Path('build/print/worksheet-A4.pdf')
           assert pdf.stat().st_size > 10000
           with fitz.open(pdf) as doc:
-              assert len(doc)==3, f'Unexpected blank/overflow pages: {len(doc)}'
+              assert len(doc)==2, f'Unexpected blank/overflow pages: {len(doc)}'
               report=[]
               for page in doc:
                   assert abs(page.rect.width-595.28)<0.5
@@ -106,7 +106,7 @@ jobs:
                       'a4_points':[round(page.rect.width,2),round(page.rect.height,2)]})
           Path('build/print/pdf-geometry.json').write_text(
               json.dumps({'result':'PASS','pages':report},ensure_ascii=False,indent=2)+'\n')
-          print('PASS: Chrome-generated A4 100% vector PDF has 15mm cells on exactly 3 pages')
+          print('PASS: Chrome-generated A4 100% vector PDF has 15mm cells on exactly 2 pages')
           PY
       - name: Upload desktop/mobile and A4 sample for review
         if: always()

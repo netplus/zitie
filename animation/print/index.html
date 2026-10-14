@@ -25,6 +25,10 @@
     <a href="../../book/zitie-v0.5.1-A4.pdf">原始 PDF</a>
   </nav>
 </header>
+<div class="mobileDock" aria-label="手机快捷操作">
+ <a href="#previewTop">查看预览 ↓</a>
+ <button type="button" id="printMobile">打印 / 保存 PDF ↗</button>
+</div>
 <div class="workspace">
   <aside class="settings" aria-label="字帖打印参数">
     <div class="sectionHeading"><span class="stepCircle">1</span><h2>练习内容</h2></div>
@@ -130,7 +134,7 @@
     <p class="privacy">离线排版，不上传输入内容。201 个已收录主部首采用与正式 PDF 同源的矢量字形；其他汉字使用设备系统字体，不能视为已审定笔顺。</p>
   </aside>
   <main class="previewColumn">
-    <div class="previewToolbar">
+    <div class="previewToolbar" id="previewTop">
       <div><p class="eyebrow">LIVE PRINT PREVIEW</p><h2>A4 打印预览</h2>
         <p id="stats" aria-live="polite">正在准备预览…</p>
       </div>

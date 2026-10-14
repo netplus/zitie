@@ -39,7 +39,7 @@ test('multi-page pagination uses whole row groups and stays on paper',()=>{
   assert.ok(p.pages.length>10);
   assert.equal(p.pages.reduce((n,v)=>n+v.blocks.length,0),50);
   assert.ok(p.pages.every(page=>page.blocks.every(b=>
-    b.y+p.blockMm<=297-p.settings.marginMm-p.footerMm+1e-7)));
+    b.y+p.blockMm<=p.printableBottom+1e-7)));
 });
 test('custom Hanzi not in frozen 201 use native system-font fallback only',()=>{
   const p=C.paginate({content:'水龍',rows:1},lookup);

@@ -96,11 +96,12 @@
     const gridWidth=cols*c.sizeMm+(cols-1)*c.gapMm;
     const gridX=(PAPER.width-gridWidth)/2;
     const headerMm=c.showTitle?21:11;
-    const footerMm=10;
+    const footerMm=8;
     const rowSpan=c.sizeMm+c.rowGapMm;
     const blockMm=7+c.rows*c.sizeMm+(c.rows-1)*c.rowGapMm+5;
     const top=c.marginMm+headerMm;
-    const bottom=PAPER.height-c.marginMm-footerMm;
+    // Keep a printer-safe footer area without reserving two full bottom margins.
+    const bottom=PAPER.height-Math.max(8,c.marginMm/2)-footerMm;
     if(top+blockMm>bottom+0.001)
       throw Error('纸张空间不足：请减小格子、行数或页边距。');
     const pages=[];
@@ -124,7 +125,7 @@
     if(page.blocks.length)pages.push(page);
     if(pages.length>60)throw Error('生成页面过多，请分批打印。');
     return {pages,settings:c,columns:cols,gridX,gridWidth,headerMm,
-      footerMm,blockMm,sourceFallback:fallback,items:items.length,
+      footerMm,printableBottom:bottom,blockMm,sourceFallback:fallback,items:items.length,
       paper:PAPER};
   }
   return Object.freeze({PAPER,DEFAULTS,normalize,parseItems,columns,rowInk,paginate});

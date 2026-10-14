@@ -267,6 +267,7 @@ window.addEventListener('DOMContentLoaded',()=>{
   }
   $('print').addEventListener('click',doPrint);
   $('printTop').addEventListener('click',doPrint);
+  $('printMobile').addEventListener('click',doPrint);
   $('reset').addEventListener('click',()=>{
     fillControls(C.DEFAULTS);
     paint();
