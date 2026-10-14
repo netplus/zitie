@@ -104,7 +104,7 @@
     if(!Number.isInteger(n)||n<1||n>64||
        !Array.isArray(glyph.strokes)||glyph.strokes.length!==n||
        glyph.strokes.some(stroke=>!stroke||typeof stroke.outline!=='string'||
-         !/^\\s*M\\s/i.test(stroke.outline)))
+         !/^ *M +/i.test(stroke.outline)))
       throw Error('笔顺数据不完整，无法打印：'+(glyph.character||'未知汉字'));
     const cellMm=Math.min(22,Math.max(16,c.sizeMm+4));
     const gapMm=2,headingMm=6,labelMm=7,rowGapMm=2;
