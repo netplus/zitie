@@ -303,19 +303,27 @@ window.addEventListener('DOMContentLoaded',()=>{
     $(id).addEventListener('input',refresh);
     $(id).addEventListener('change',refresh);
   }
+  // Keep the last deliberate Hanzi choice while non-Hanzi types disable
+  // this teaching-only control. No persistent settings or user data.
+  let hanziStrokeOrderChoice=C.DEFAULTS.showStrokeOrder;
+  $('showStrokeOrder').addEventListener('change',()=>{
+    if($('kind').value==='hanzi')
+      hanziStrokeOrderChoice=$('showStrokeOrder').checked;
+  });
   $('kind').addEventListener('change',()=>{
     const kind=$('kind').value;
     const presets={hanzi:'水 火 木 日 月 田',latin:'A B C D E F G',
       numbers:'0 1 2 3 4 5 6 7 8 9',pinyin:'a o e i u ü zh ch sh'};
     $('content').value=presets[kind];
     $('grid').value=kind==='latin'||kind==='pinyin'?'four':'tian';
-    if(kind!=='hanzi')$('showStrokeOrder').checked=false;
+    $('showStrokeOrder').checked=kind==='hanzi'?hanziStrokeOrderChoice:false;
     refresh();
   });
   for(const button of document.querySelectorAll('[data-preset]')){
     button.addEventListener('click',()=>{
       const preset=button.dataset.preset;
       $('kind').value='hanzi';$('grid').value='tian';
+      $('showStrokeOrder').checked=hanziStrokeOrderChoice;
       const words={basic:'一 十 人 八 大 工 土 口 山 巾',
         nature:'水 火 木 日 月 山 石 田',blank:'田'};
       $('content').value=words[preset]||words.basic;
@@ -332,6 +340,7 @@ window.addEventListener('DOMContentLoaded',()=>{
   $('printTop').addEventListener('click',doPrint);
   $('printMobile').addEventListener('click',doPrint);
   $('reset').addEventListener('click',()=>{
+    hanziStrokeOrderChoice=C.DEFAULTS.showStrokeOrder;
     fillControls(C.DEFAULTS);
     paint();
   });
@@ -345,8 +354,11 @@ window.addEventListener('DOMContentLoaded',()=>{
     render:paint,
     getPages:()=>$('printPages').querySelectorAll('.paperPage').length
   });
-  fillControls({...C.DEFAULTS,
-    showStrokeOrder:new URLSearchParams(location.search).get('strokeOrder')==='1'});
+  // ?strokeOrder=0 remains an explicit no-guides deep link; otherwise use
+  // the public default (checked) and preserve ?strokeOrder=1 compatibility.
+  hanziStrokeOrderChoice=new URLSearchParams(location.search).get('strokeOrder')==='0'?
+    false:C.DEFAULTS.showStrokeOrder;
+  fillControls({...C.DEFAULTS,showStrokeOrder:hanziStrokeOrderChoice});
   paint();
 });
 })();

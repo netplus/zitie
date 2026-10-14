@@ -13,7 +13,7 @@
     sizeMm:15,marginMm:15,gapMm:1.5,rowGapMm:3,columns:10,
     rows:4,layout:'classic',traceCount:4,scale:0.8,
     gridColor:'#ccabb0',traceColor:'#c95160',opacity:0.55,
-    showPinyin:true,showTitle:true,showStrokeOrder:false,title:'循序渐进 · 我的练字帖'
+    showPinyin:true,showTitle:true,showStrokeOrder:true,title:'循序渐进 · 我的练字帖'
   });
   const OPTIONS=Object.freeze({
     kind:['hanzi','latin','pinyin','numbers'],
@@ -55,7 +55,7 @@
       opacity:clamp(raw.opacity??d.opacity,0.15,0.95,0.01),
       showPinyin:raw.showPinyin!==false,
       showTitle:raw.showTitle!==false,
-      showStrokeOrder:kind==='hanzi'&&raw.showStrokeOrder===true,
+      showStrokeOrder:kind==='hanzi'&&(raw.showStrokeOrder??d.showStrokeOrder)===true,
       title:(typeof raw.title==='string'?raw.title:d.title).trim()
     };
   }

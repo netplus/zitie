@@ -79,14 +79,15 @@ jobs:
             --virtual-time-budget=9000 --screenshot="$(pwd)/build/print/desktop.png" "$url" >/dev/null
           timeout 45 "$CHROME_BIN" "${opts[@]}" --window-size=390,844 \
             --virtual-time-budget=9000 --screenshot="$(pwd)/build/print/mobile.png" "$url" >/dev/null
+          # An explicit URL override keeps the old compact 2-page edition.
           timeout 85 "$CHROME_BIN" "${opts[@]}" --window-size=1420,1100 \
             --virtual-time-budget=10000 --no-pdf-header-footer \
-            --print-to-pdf="$(pwd)/build/print/worksheet-A4.pdf" "$url" >/dev/null
-          # Opt-in same A4 paper size, but with extra cumulative demonstrations.
+            --print-to-pdf="$(pwd)/build/print/worksheet-A4.pdf" "$url?strokeOrder=0" >/dev/null
+          # First load (no parameter) now defaults to complete cumulative guides.
           timeout 85 "$CHROME_BIN" "${opts[@]}" --window-size=1420,1100 \
             --virtual-time-budget=10000 --no-pdf-header-footer \
             --print-to-pdf="$(pwd)/build/print/worksheet-with-stroke-order-A4.pdf" \
-            "$url?strokeOrder=1" >/dev/null
+            "$url" >/dev/null
           python - <<'PY'
           import json, math, fitz
           from pathlib import Path
@@ -94,6 +95,8 @@ jobs:
           assert pdf.stat().st_size > 10000
           with fitz.open(pdf) as doc:
               assert len(doc)==2, f'Unexpected blank/overflow pages: {len(doc)}'
+              assert '逐笔笔顺' not in '\n'.join(page.get_text() for page in doc), (
+                  'Explicit ?strokeOrder=0 did not suppress printed teaching panels')
               report=[]
               for page in doc:
                   assert abs(page.rect.width-595.28)<0.5
@@ -109,12 +112,12 @@ jobs:
                   assert page.get_text().strip(), f'Blank print page: {page.number+1}'
                   report.append({'page':page.number+1,'15mm_grid_boxes':len(boxes),
                       'a4_points':[round(page.rect.width,2),round(page.rect.height,2)]})
-          # Preserve the original 2-page default; opt-in adds enough physical
-          # height for the source-backed diagrams and must fit on 3 pages.
+          # First-load default teaches the source-backed order (3 pages);
+          # explicit query opt-out keeps the earlier 2-page compact layout.
           opt=Path('build/print/worksheet-with-stroke-order-A4.pdf')
           assert opt.stat().st_size > 10000
           with fitz.open(opt) as doc:
-              assert len(doc)==3, f'Opt-in teaching pages unexpectedly clipped: {len(doc)}'
+              assert len(doc)==3, f'Default teaching pages unexpectedly clipped: {len(doc)}'
               printed='\n'.join(page.get_text() for page in doc)
               assert '逐笔笔顺' in printed, 'No rendered stroke-order teaching headings in print PDF'
               opt_pages=[]
@@ -133,7 +136,7 @@ jobs:
           Path('build/print/pdf-geometry.json').write_text(
               json.dumps({'result':'PASS','default_pages':report,
                 'optional_stroke_order_pages':opt_pages},ensure_ascii=False,indent=2)+'\n')
-          print('PASS: A4 print toggle: 2 pages without teaching, 3 pages with order; all practice cells 15mm')
+          print('PASS: A4 default now includes 3 pages with stroke guides; ?strokeOrder=0 preserves 2 pages; 15mm physical practice cells')
           PY
       - name: Upload desktop/mobile and A4 sample for review
         if: always()
