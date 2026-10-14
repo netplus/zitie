@@ -31,11 +31,18 @@
     assert(b&&Math.abs(b.getBoundingClientRect().width-210*96/25.4)<2,
       'A4 page preview has physical 210mm CSS layout before scaling');
     const toggle=doc.getElementById('showStrokeOrder');
-    assert(toggle&&!toggle.checked&&!toggle.disabled,
-      'Printing cumulative stroke order is opt-in and defaults off');
+    assert(toggle&&toggle.checked&&!toggle.disabled&&plan.settings.showStrokeOrder,
+      'First-load Hanzi worksheets have stroke-order printing enabled');
+    assert(doc.querySelectorAll('[data-stroke-order-step]').length>0,
+      'Default preview includes the cumulative source-backed stroke guides');
+    const onPages=plan.pages.length;
+    toggle.checked=false;
+    toggle.dispatchEvent(new Event('change',{bubbles:true}));
+    await wait(()=>win.ZITIE_PRINT.getPlan()?.settings.showStrokeOrder===false);
     assert(doc.querySelectorAll('[data-stroke-order-step]').length===0,
-      'Default printed worksheet contains no stroke-order diagrams');
-    const offPages=plan.pages.length;
+      'Turning off the default removes the teaching diagrams');
+    const offPages=win.ZITIE_PRINT.getPlan().pages.length;
+    assert(onPages>offPages,'Opting out restores the more compact worksheet');
     toggle.checked=true;
     toggle.dispatchEvent(new Event('change',{bubbles:true}));
     await wait(()=>win.ZITIE_PRINT.getPlan()?.settings.showStrokeOrder===true);
@@ -124,6 +131,21 @@
       'Excessive pages fail closed with human-friendly feedback');
     const planText=doc.getElementById('stats').textContent;
     assert(planText.includes('请调整'),'Invalid preview is cleared');
+    doc.getElementById('reset').click();
+    await wait(()=>win.ZITIE_PRINT.getPlan()?.settings.showStrokeOrder===true&&
+      win.ZITIE_PRINT.getPlan()?.items===6);
+    assert(toggle.checked&&!toggle.disabled,
+      'Reset restores checked default after the user previously opted out');
+    change('kind','pinyin');
+    await wait(()=>win.ZITIE_PRINT.getPlan()?.settings.kind==='pinyin');
+    assert(!toggle.checked&&toggle.disabled&&
+      !win.ZITIE_PRINT.getPlan().settings.showStrokeOrder,
+      'Pinyin never enables the Hanzi stroke guide');
+    change('kind','hanzi');
+    await wait(()=>win.ZITIE_PRINT.getPlan()?.settings.kind==='hanzi');
+    assert(toggle.checked&&!toggle.disabled&&
+      win.ZITIE_PRINT.getPlan().settings.showStrokeOrder,
+      'Switching back to Hanzi restores the selected teaching default');
     $('result').textContent=logs.join('\n')+'\n'+logs.length+' checks passed';
     document.body.dataset.result='PASS';
   }catch(err){

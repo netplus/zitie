@@ -3,12 +3,17 @@ const test=require('node:test');
 const assert=require('node:assert/strict');
 const C=require('./core.js');
 const sample={main_id:4,character:'水',expected_stroke_count:4,pinyin:'shuǐ',
-  strokes:[{outline:'M 100 100 L 200 200 Z'}]};
+  strokes:Array.from({length:4},(_,i)=>({
+    outline:'M '+(100+i)+' 100 L '+(200+i)+' 200 Z',
+    name:'横',name_status:'reviewed'
+  }))};
 const lookup=new Map([['水',sample]]);
 test('15mm printable A4 always fits requested columns within the paper',()=>{
   const c=C.normalize({content:'水'});
   assert.equal(c.sizeMm,15);
+  assert.equal(c.showStrokeOrder,true);
   const p=C.paginate(c,lookup);
+  assert.equal(p.pages[0].blocks[0].strokeOrder.kind,'steps');
   assert.equal(p.columns,10);
   assert.equal(p.gridWidth,10*15+9*1.5);
   assert.ok(p.gridX>=c.marginMm);
@@ -29,7 +34,7 @@ test('large cells and page margins reduce the number of columns safely',()=>{
       assert.ok(p.gridX>=margin-1e-7);
       assert.ok(p.gridX+p.gridWidth<=210-margin+1e-7);
       for(const page of p.pages)for(const block of page.blocks)
-        assert.ok(block.y+p.blockMm<=297-margin-p.footerMm+1e-6);
+        assert.ok(block.y+block.heightMm<=p.printableBottom+1e-6);
     }
   }
 });
@@ -39,7 +44,7 @@ test('multi-page pagination uses whole row groups and stays on paper',()=>{
   assert.ok(p.pages.length>10);
   assert.equal(p.pages.reduce((n,v)=>n+v.blocks.length,0),50);
   assert.ok(p.pages.every(page=>page.blocks.every(b=>
-    b.y+p.blockMm<=p.printableBottom+1e-7)));
+    b.y+b.heightMm<=p.printableBottom+1e-7)));
 });
 test('custom Hanzi not in frozen 201 use native system-font fallback only',()=>{
   const p=C.paginate({content:'水龍',rows:1},lookup);
@@ -92,8 +97,11 @@ function reviewedGlyph(character,strokeCount){
       name:i%2?'竖钩':'横',name_status:i%2?'ordinal_only':'reviewed'
     }))};
 }
-test('stroke-order option defaults off and does not change the legacy A4 layout',()=>{
-  assert.equal(C.DEFAULTS.showStrokeOrder,false);
+test('Hanzi defaults to printing guides while explicit opt-out preserves legacy A4 layout',()=>{
+  assert.equal(C.DEFAULTS.showStrokeOrder,true);
+  assert.equal(C.normalize({content:'水'}).showStrokeOrder,true);
+  assert.equal(C.normalize({content:'水',showStrokeOrder:false}).showStrokeOrder,false);
+  assert.equal(C.normalize({kind:'numbers'}).showStrokeOrder,false);
   const source=new Map([['水',reviewedGlyph('水',4)]]);
   const p=C.paginate({content:'水水',showStrokeOrder:false},source);
   assert.equal(p.pages[0].blocks[0].strokeOrder,null);
@@ -155,4 +163,16 @@ test('invalid or incomplete stroke vectors fail closed only when printing orders
   assert.doesNotThrow(()=>C.paginate({content:'水',showStrokeOrder:false},source));
   assert.throws(()=>C.paginate({content:'水',showStrokeOrder:true},source),
     /笔顺数据不完整/);
+});
+
+test('fresh Hanzi plans print full steps, while non-Hanzi models never inherit them',()=>{
+  const source=new Map([['水',reviewedGlyph('水',4)]]);
+  const byDefault=C.paginate({content:'水水'},source);
+  assert.equal(byDefault.settings.showStrokeOrder,true);
+  assert.equal(byDefault.pages[0].blocks[0].strokeOrder.count,4);
+  const disabled=C.paginate({content:'水水',showStrokeOrder:false},source);
+  assert.equal(disabled.settings.showStrokeOrder,false);
+  assert.ok(disabled.pages[0].blocks.every(b=>b.strokeOrder===null));
+  const latin=C.paginate({kind:'latin',content:'a',showStrokeOrder:true},source);
+  assert.equal(latin.settings.showStrokeOrder,false);
 });
