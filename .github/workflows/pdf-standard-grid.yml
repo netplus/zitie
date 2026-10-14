@@ -48,6 +48,8 @@ jobs:
               assert len(doc.get_toc()) == m['bookmarks']
           print('15mm copybook candidate geometry and integrity PASS')
           PY
+      - name: Validate 15mm geometry, navigation and unmodified page pixels
+        run: python scripts/verify_standard_practice_pdf.py
       - name: Commit candidate PDF to the feature branch
         if: github.ref == 'refs/heads/feat/pdf-standard-15mm-practice'
         run: |
