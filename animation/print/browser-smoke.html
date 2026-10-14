@@ -30,6 +30,65 @@
     const b=doc.querySelector('.paperPage');
     assert(b&&Math.abs(b.getBoundingClientRect().width-210*96/25.4)<2,
       'A4 page preview has physical 210mm CSS layout before scaling');
+    const toggle=doc.getElementById('showStrokeOrder');
+    assert(toggle&&!toggle.checked&&!toggle.disabled,
+      'Printing cumulative stroke order is opt-in and defaults off');
+    assert(doc.querySelectorAll('[data-stroke-order-step]').length===0,
+      'Default printed worksheet contains no stroke-order diagrams');
+    const offPages=plan.pages.length;
+    toggle.checked=true;
+    toggle.dispatchEvent(new Event('change',{bubbles:true}));
+    await wait(()=>win.ZITIE_PRINT.getPlan()?.settings.showStrokeOrder===true);
+    plan=win.ZITIE_PRINT.getPlan();
+    const expected=plan.pages.flatMap(page=>page.blocks)
+      .reduce((sum,block)=>sum+block.glyph.expected_stroke_count,0);
+    assert(doc.querySelectorAll('[data-stroke-order-step]').length===expected,
+      'Every PDF-backed teaching stroke has its own cumulative vector step');
+    assert(plan.pages.length>offPages,'Adding stroke diagrams automatically repaginates');
+    const secondStep=doc.querySelector('[data-stroke-order-step="2"] .strokeStepSvg');
+    assert(secondStep&&secondStep.querySelectorAll('g[data-stroke-source="v0.5.1-pdf"] path').length===2,
+      'Step two accumulates the original first two outline paths');
+    assert(secondStep.querySelector('[data-current-stroke="true"]').getAttribute('fill')==='#bd3945'&&
+      secondStep.querySelector('[data-current-stroke="false"]').getAttribute('fill')==='#5c6269',
+      'Current stroke stays red while previous stroke is gray');
+    for(const page of plan.pages)for(const block of page.blocks)
+      assert(block.y+block.heightMm<=plan.printableBottom+0.001,
+        'Rendered stroke-order groups cannot overflow the physical A4 page');
+    const strokeArea=doc.querySelector('.strokeOrderPanel');
+    const practice=doc.querySelector('.sheetRow');
+    assert(strokeArea&&practice&&
+      practice.getBoundingClientRect().top>=strokeArea.getBoundingClientRect().bottom-2,
+      'Practice grids start below the actual printed stroke-order panel');
+    const complex=book=>book.glyphs.find(g=>g.character==='龠'); // canonical 17-stroke main radical
+    assert(complex(win.ZITIE_BOOK_PACK),'Complex 201-source radical available');
+    const changeContent=token=>{
+      const control=doc.getElementById('content');
+      control.value=token;
+      control.dispatchEvent(new Event('input',{bubbles:true}));
+    };
+    changeContent('龠');
+    await wait(()=>win.ZITIE_PRINT.getPlan()?.pages[0]?.blocks[0]?.token==='龠');
+    plan=win.ZITIE_PRINT.getPlan();
+    assert(plan.pages[0].blocks[0].strokeOrder.count===
+      complex(win.ZITIE_BOOK_PACK).strokes.length&&
+      plan.pages[0].blocks[0].strokeOrder.countRows>1,
+      '17-stroke radical wraps across multiple complete demonstration rows');
+    assert(doc.querySelectorAll('[data-stroke-order-item="龠"] [data-stroke-order-step]').length===
+      complex(win.ZITIE_BOOK_PACK).strokes.length,
+      'Complex radical never truncates its teaching steps');
+    changeContent('水龘');
+    await wait(()=>win.ZITIE_PRINT.getPlan()?.sourceFallback===1);
+    assert(doc.querySelectorAll('.strokeOrderUnavailable').length===1&&
+      doc.querySelector('[data-stroke-order-item="龘"]')?.querySelectorAll('[data-stroke-order-step]').length===0,
+      'Unknown glyph clearly explains missing reviewed order without inventing paths');
+    toggle.checked=false;
+    toggle.dispatchEvent(new Event('change',{bubbles:true}));
+    await wait(()=>win.ZITIE_PRINT.getPlan()?.settings.showStrokeOrder===false);
+    assert(!doc.querySelector('.strokeOrderPanel'),
+      'Switching off removes all printable order diagrams and restores practice layout');
+    changeContent('水 火 木 日 月 田');
+    await wait(()=>win.ZITIE_PRINT.getPlan()?.items===6);
+
     function change(id,value){
       const target=doc.getElementById(id);
       target.value=value;
@@ -45,6 +104,8 @@
     await wait(()=>win.ZITIE_PRINT.getPlan()?.settings.kind==='pinyin');
     plan=win.ZITIE_PRINT.getPlan();
     assert(plan.settings.grid==='four','Pinyin defaults to four horizontal guide lines');
+    assert(toggle.disabled&&!plan.settings.showStrokeOrder,
+      'Optional Chinese stroke teaching is disabled for Pinyin models');
     assert(doc.querySelector('g[data-glyph-source="foundations-pinyin"] path'),
       'Pinyin is constructed from distinct existing Pinyin source model');
     change('content','zh ch sh ǖ');

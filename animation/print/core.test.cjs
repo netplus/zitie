@@ -84,3 +84,75 @@ test('long content or page title is rejected rather than silently truncated',()=
   assert.throws(()=>C.normalize({title:'练'.repeat(27)}),/最多26/);
   assert.equal(C.normalize({title:'练'.repeat(26)}).title.length,26);
 });
+
+function reviewedGlyph(character,strokeCount){
+  return {character,expected_stroke_count:strokeCount,
+    strokes:Array.from({length:strokeCount},(_,i)=>({
+      outline:'M '+(i+1)+' 0 L 3 3 Z',
+      name:i%2?'竖钩':'横',name_status:i%2?'ordinal_only':'reviewed'
+    }))};
+}
+test('stroke-order option defaults off and does not change the legacy A4 layout',()=>{
+  assert.equal(C.DEFAULTS.showStrokeOrder,false);
+  const source=new Map([['水',reviewedGlyph('水',4)]]);
+  const p=C.paginate({content:'水水',showStrokeOrder:false},source);
+  assert.equal(p.pages[0].blocks[0].strokeOrder,null);
+  assert.equal(p.pages[0].blocks[0].heightMm,p.blockMm);
+  assert.equal(p.pages[0].blocks[1].y-p.pages[0].blocks[0].y,p.blockMm);
+});
+test('opt-in steps use the exact ordered source and reserve physical millimetres',()=>{
+  const source=new Map([['水',reviewedGlyph('水',4)]]);
+  const p=C.paginate({content:'水水水水水水',showStrokeOrder:true},source);
+  assert.equal(p.settings.showStrokeOrder,true);
+  assert.equal(p.pages.length,3);
+  for(const page of p.pages){
+    assert.equal(page.blocks.length,2);
+    for(const block of page.blocks){
+      assert.equal(block.strokeOrder.kind,'steps');
+      assert.equal(block.strokeOrder.count,4);
+      assert.equal(block.strokeOrder.countRows,1);
+      assert.ok(block.strokeOrder.cellMm>p.settings.sizeMm);
+      assert.equal(block.practiceTopMm,7+block.strokeOrder.heightMm);
+      assert.ok(block.y+block.heightMm<=p.printableBottom+1e-7);
+    }
+  }
+});
+test('complex Hanzi stroke order wraps without dropping any cumulative step',()=>{
+  const n=22,source=new Map([['龠',reviewedGlyph('龠',n)]]);
+  const p=C.paginate({content:'龠',showStrokeOrder:true},source);
+  const b=p.pages[0].blocks[0],seq=b.strokeOrder;
+  assert.equal(seq.count,n);
+  assert.ok(seq.countRows>=3);
+  assert.ok(seq.perRow*seq.countRows>=n);
+  assert.ok((seq.countRows-1)*seq.perRow<n);
+  assert.ok(b.y+b.heightMm<=p.printableBottom);
+});
+test('unknown Hanzi has an explicit missing-order warning but no invented strokes',()=>{
+  const p=C.paginate({content:'龘',showStrokeOrder:true},new Map());
+  assert.equal(p.sourceFallback,1);
+  const step=p.pages[0].blocks[0].strokeOrder;
+  assert.equal(step.kind,'unavailable');
+  assert.equal(step.count,undefined);
+  assert.equal(p.pages[0].blocks[0].practiceTopMm,7+step.heightMm);
+});
+test('only Hanzi can include the optional stroke sequence',()=>{
+  const p=C.paginate({kind:'pinyin',content:'zh ch',showStrokeOrder:true});
+  assert.equal(p.settings.showStrokeOrder,false);
+  assert.ok(p.pages.every(page=>page.blocks.every(b=>b.strokeOrder===null)));
+});
+test('impossible A4 combination fails instead of clipping complex order or practice',()=>{
+  const source=new Map([['龠',reviewedGlyph('龠',22)]]);
+  assert.throws(()=>C.paginate({content:'龠',sizeMm:25,rows:6,
+      rowGapMm:12,marginMm:25,showStrokeOrder:true},source),
+    /无法完整放在一页/);
+  const valid=C.paginate({content:'龠',sizeMm:15,showStrokeOrder:true},source);
+  assert.equal(valid.items,1);
+});
+test('invalid or incomplete stroke vectors fail closed only when printing orders',()=>{
+  const broken={character:'水',expected_stroke_count:2,
+    strokes:[{outline:'M 0 0 L 1 1 Z'}]};
+  const source=new Map([['水',broken]]);
+  assert.doesNotThrow(()=>C.paginate({content:'水',showStrokeOrder:false},source));
+  assert.throws(()=>C.paginate({content:'水',showStrokeOrder:true},source),
+    /笔顺数据不完整/);
+});
