@@ -32,9 +32,14 @@
   function normalize(raw={}){
     const d=DEFAULTS;
     const kind=OPTIONS.kind.includes(raw.kind)?raw.kind:d.kind;
+    // Do not silently omit a learner's last characters or clip a printed title.
+    if(typeof raw.content==='string'&&raw.content.length>500)
+      throw Error('练习内容最多500个字符，请分批排版。');
+    if(typeof raw.title==='string'&&raw.title.trim().length>26)
+      throw Error('打印标题最多26个字符，请缩短后重试。');
     return {
       kind,
-      content:typeof raw.content==='string'?raw.content.slice(0,500):d.content,
+      content:typeof raw.content==='string'?raw.content:d.content,
       grid:OPTIONS.grid.includes(raw.grid)?raw.grid:(kind==='latin'||kind==='pinyin'?'four':d.grid),
       sizeMm:clamp(raw.sizeMm??d.sizeMm,10,25),
       marginMm:clamp(raw.marginMm??d.marginMm,10,25),
@@ -50,7 +55,7 @@
       opacity:clamp(raw.opacity??d.opacity,0.15,0.95,0.01),
       showPinyin:raw.showPinyin!==false,
       showTitle:raw.showTitle!==false,
-      title:(typeof raw.title==='string'?raw.title:d.title).trim().slice(0,36)
+      title:(typeof raw.title==='string'?raw.title:d.title).trim()
     };
   }
   function parseItems(input,kind){

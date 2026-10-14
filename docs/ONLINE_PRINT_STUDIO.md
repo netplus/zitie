@@ -16,7 +16,7 @@
 
 ## 打印几何与测试
 
-`animation/print/core.js` 以毫米为单位决定纸张布局；可容纳列数为 `floor((210-2*margin+gap)/(cell+gap))`，每一字的练习行保持成组，自动分页，不拆开。印刷尺寸由SVG的CSS `mm` 属性与 `@page { size:A4 portrait; margin:0 }` 决定；屏幕缩放仅用于预览，不作用于打印。新版默认每页可放3组四行练习，因此6组共2页。输入超限、尺寸不允许排版时显式报错。
+`animation/print/core.js` 以毫米为单位决定纸张布局；可容纳列数为 `floor((210-2*margin+gap)/(cell+gap))`，每一字的练习行保持成组，自动分页，不拆开。印刷尺寸由SVG的CSS `mm` 属性与 `@page { size:A4 portrait; margin:0 }` 决定；屏幕缩放仅用于预览，不作用于打印。新版默认每页可放3组四行练习，因此6组共2页。输入超限（每次最多60项／500字符、标题最多26字符）或尺寸不允许排版时显式报错，不静默截掉尾部内容。
 
 `animation/print/core.test.cjs` 验证A4尺寸、组合排版、分页、回退与无HTML注入；`animation/print/browser-smoke.html` 在真实Chromium桌面/手机视口测试内容与选项；`.github/workflows/print-checks.yml` 实际打印PDF后用PyMuPDF确认纸张为A4、格线为15mm、没有分页异常，并归档PDF、截图和校验报告。
 

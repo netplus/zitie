@@ -78,3 +78,9 @@ test('malformed options never inject CSS tokens; sizes always stay in print-safe
   assert.match(p.gridColor,/^#[\da-f]{6}$/i);
   assert.match(p.traceColor,/^#[\da-f]{6}$/i);
 });
+
+test('long content or page title is rejected rather than silently truncated',()=>{
+  assert.throws(()=>C.normalize({content:'字'.repeat(501)}),/最多500/);
+  assert.throws(()=>C.normalize({title:'练'.repeat(27)}),/最多26/);
+  assert.equal(C.normalize({title:'练'.repeat(26)}).title.length,26);
+});
