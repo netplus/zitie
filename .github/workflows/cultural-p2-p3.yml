@@ -1,0 +1,193 @@
+name: Cultural P2 evidence and P3 distinct art proofs
+
+on:
+  push:
+    branches:
+      - feat/cultural-p2-p3-source-gates-20261024
+    paths:
+      - 'scripts/cultural_p2_source_audit.py'
+      - 'scripts/test_cultural_p2_source_audit.py'
+      - 'scripts/cultural_p3_artwork.py'
+      - 'scripts/build_cultural_p3_preview.py'
+      - 'scripts/test_cultural_p3_artwork.py'
+      - 'scripts/build_cultural_sample.py'
+      - 'data/cultural_edition/p2_direct_lexicon_evidence_20261024.json'
+      - 'data/cultural_edition/p3_artwork_draft_registry.json'
+      - 'data/cultural_edition/artwork/drafts/**'
+      - '.github/workflows/cultural-p2-p3.yml'
+  pull_request:
+    paths:
+      - 'scripts/cultural_p2_source_audit.py'
+      - 'scripts/test_cultural_p2_source_audit.py'
+      - 'scripts/cultural_p3_artwork.py'
+      - 'scripts/build_cultural_p3_preview.py'
+      - 'scripts/test_cultural_p3_artwork.py'
+      - 'scripts/build_cultural_sample.py'
+      - 'data/cultural_edition/p2_direct_lexicon_evidence_20261024.json'
+      - 'data/cultural_edition/p3_artwork_draft_registry.json'
+      - 'data/cultural_edition/artwork/drafts/**'
+      - '.github/workflows/cultural-p2-p3.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  evidence-and-four-distinct-scenes:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Setup offline vector/PDF dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install 'PyMuPDF==1.26.7' 'reportlab==4.4.9' \
+            'Pillow==12.3.0' 'numpy==2.3.5' 'svglib==1.6.0'
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-arphic-gkai00mp fonts-arphic-gbsn00lp fonts-dejavu-core
+      - name: Test safe P2 pronunciation evidence and contradictions
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-p2-p3
+          python scripts/test_cultural_p2_source_audit.py
+          python scripts/cultural_p2_source_audit.py \
+            --output build/cultural-p2-p3/p2-evidence-coverage.json
+      - name: Build frozen P1 source control and confirm no PDF drift
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_cultural_sample.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/first_batch_draft.json \
+            --output build/cultural-p2-p3/unchanged-P1-control.pdf \
+            --proof build/cultural-p2-p3/unchanged-P1-proof.json
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          path=Path('build/cultural-p2-p3/unchanged-P1-control.pdf')
+          name='deliverables/drafts/cultural-v0.1/cultural-4-character-source-locked-DRAFT.pdf'
+          manifest=json.loads(Path('deliverables/manifest.json').read_text())['artifacts']
+          row=next(x for x in manifest if x['path']==name)
+          assert hashlib.sha256(path.read_bytes()).hexdigest()==row['sha256'], 'Existing P1 proof changed'
+          print('PASS: old 4-page source-locked PDF byte-identical to registered P1 draft')
+          PY
+      - name: Render four registered P3 art scenes inside PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_cultural_p3_preview.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/first_batch_draft.json \
+            --artwork-registry data/cultural_edition/p3_artwork_draft_registry.json \
+            --output build/cultural-p2-p3/cultural-4-unique-artwork-P3-DRAFT.pdf \
+            --proof build/cultural-p2-p3/p3-page-provenance.json
+          python scripts/test_cultural_sample.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/first_batch_draft.json \
+            --sample build/cultural-p2-p3/cultural-4-unique-artwork-P3-DRAFT.pdf \
+            --proof build/cultural-p2-p3/p3-page-provenance.json
+          python scripts/test_cultural_p3_artwork.py \
+            --pdf build/cultural-p2-p3/cultural-4-unique-artwork-P3-DRAFT.pdf \
+            --proof build/cultural-p2-p3/p3-page-provenance.json \
+            --registry data/cultural_edition/p3_artwork_draft_registry.json \
+            --output build/cultural-p2-p3/p3-artwork-visual-check.json
+      - name: Verify unique artwork PDF is byte deterministic
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-p2-p3-second
+          python scripts/build_cultural_p3_preview.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/first_batch_draft.json \
+            --artwork-registry data/cultural_edition/p3_artwork_draft_registry.json \
+            --output build/cultural-p2-p3-second/identical.pdf \
+            --proof build/cultural-p2-p3-second/identical.json
+          cmp build/cultural-p2-p3/cultural-4-unique-artwork-P3-DRAFT.pdf \
+            build/cultural-p2-p3-second/identical.pdf
+      - name: Rasterize all four P3 pages for human visual inspection
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import fitz
+          out=Path('build/cultural-p2-p3')
+          with fitz.open(out/'cultural-4-unique-artwork-P3-DRAFT.pdf') as doc:
+              assert len(doc)==4
+              for i,page in enumerate(doc):
+                  page.get_pixmap(matrix=fitz.Matrix(1.6,1.6),alpha=False).save(out/f'p3-page-{i+1:02d}.png')
+          PY
+      - name: Archive P3 proof only as editorial draft
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feat/cultural-p2-p3-source-gates-20261024'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,os,shutil
+          from pathlib import Path
+          import fitz
+          root=Path('build/cultural-p2-p3')
+          dst=Path('deliverables/drafts/cultural-v0.3')
+          dst.mkdir(parents=True,exist_ok=True)
+          name='cultural-4-unique-artwork-P3-DRAFT.pdf'
+          shutil.copyfile(root/name,dst/name)
+          for aux in ('p3-page-provenance.json','p3-artwork-visual-check.json','p2-evidence-coverage.json'):
+              shutil.copyfile(root/aux,dst/aux)
+          pdf=dst/name
+          raw=pdf.read_bytes()
+          with fitz.open(pdf) as doc:assert len(doc)==4
+          manifest=Path('deliverables/manifest.json')
+          entries=json.loads(manifest.read_text())
+          paths=[x for x in entries['artifacts'] if x['path']==str(pdf)]
+          assert len(paths)<=1
+          record={'path':str(pdf),
+            'title':'水山月木四字独有主题SVG矢量插画文化阅读版审稿',
+            'version':'cultural-0.3-art-draft',
+            'status':'draft','batch':'P2/P3 source evidence and four unique artwork drafts',
+            'pages':4,'bytes':len(raw),
+            'sha256':hashlib.sha256(raw).hexdigest(),
+            'source_commit':os.environ['GITHUB_SHA'],
+            'provenance_kind':'source_locked_vector_layout_derivative',
+            'source_pdf':'deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf',
+            'source_pdf_sha256':'7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90',
+            'review_record':'reviews/cultural-edition/P2-P3-source-art-20261024.md',
+            'release_eligible':False,
+            'editorial_review_state':'artwork_vector_draft_not_final_review'}
+          if paths:
+              assert paths[0]['status']=='draft' and paths[0]['release_eligible'] is False
+              paths[0].update(record)
+          else:
+              entries['artifacts'].append(record)
+          manifest.write_text(json.dumps(entries,ensure_ascii=False,indent=2)+'\n')
+          print('P3 editorial draft registered:',record['sha256'])
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add deliverables/manifest.json deliverables/drafts/cultural-v0.3
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(P3): archive four separate vector artwork drafts and source-check report'
+            for attempt in 1 2 3; do
+              git fetch origin feat/cultural-p2-p3-source-gates-20261024
+              git rebase origin/feat/cultural-p2-p3-source-gates-20261024
+              if git push origin HEAD:feat/cultural-p2-p3-source-gates-20261024; then
+                exit 0
+              fi
+            done
+            echo 'Unable to push artifact/manifest atomically without rewriting history' >&2
+            exit 1
+          fi
+      - name: Store print and evidence artifacts
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultural-p2-p3-unique-artwork-and-pinyin-audit
+          path: build/cultural-p2-p3/
+          retention-days: 14
+          if-no-files-found: warn
