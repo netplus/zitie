@@ -129,7 +129,7 @@ def create(source_path,source_index,editorial,output,proof):
     mm=lambda x:PT_MM*x
     W,H=A4
     memory=io.BytesIO()
-    c=canvas.Canvas(memory,pagesize=A4,pageCompression=1)
+    c=canvas.Canvas(memory,pagesize=A4,pageCompression=1,invariant=1)
     c.setTitle('文化识字版 · 原PDF源笔顺样板 · 四字 P1')
     c.setAuthor('netplus/zitie - draft not for release')
     def line(x0,y0,x1,y1,col=PALE,width=.22):
@@ -229,7 +229,7 @@ def create(source_path,source_index,editorial,output,proof):
                                     clip=fitz.Rect(step['rect_pt']),
                                     keep_proportion=False,overlay=True)
     output.parent.mkdir(parents=True,exist_ok=True)
-    dest.save(output,garbage=4,deflate=True);dest.close();src.close()
+    dest.save(output,garbage=4,deflate=True,no_new_id=True);dest.close();src.close()
     report={'status':'editorial_draft_not_for_release',
             'source_pdf_sha256':source_index['source_pdf_sha256'],
             'candidate_pdf_sha256':hashlib.sha256(output.read_bytes()).hexdigest(),

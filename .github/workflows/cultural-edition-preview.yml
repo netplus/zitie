@@ -108,6 +108,27 @@ jobs:
                       folder/f'ID201-complex-source-atlas-page-{num}.png')
           PY
 
+      - name: Assert byte-stable independent rebuild of both PDF outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-rebuild-check
+          python scripts/build_cultural_sample.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/first_batch_draft.json \
+            --output build/cultural-rebuild-check/second-four.pdf \
+            --proof build/cultural-rebuild-check/second-four.json
+          cmp build/cultural-v0.1/cultural-4-character-source-locked-DRAFT.pdf \
+              build/cultural-rebuild-check/second-four.pdf
+          python scripts/build_cultural_stroke_atlas.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --output build/cultural-rebuild-check/second-atlas.pdf \
+            --proof build/cultural-rebuild-check/second-atlas.json
+          cmp build/cultural-v0.1/stroke-source-atlas-201-TECHNICAL.pdf \
+              build/cultural-rebuild-check/second-atlas.pdf
+          echo 'PASS: byte-for-byte deterministic 4-page preview and 202-page technical atlas'
       - name: Archive reproducible candidate on isolated feature branch
         if: github.event_name == 'push' && github.ref == 'refs/heads/feat/cultural-edition-rebuild-20261024'
         run: |
@@ -121,6 +142,41 @@ jobs:
           cp build/cultural-v0.1/stroke-source-atlas-201-TECHNICAL.pdf deliverables/drafts/cultural-v0.1/
           cp build/cultural-v0.1/atlas-source-provenance.json deliverables/drafts/cultural-v0.1/
           cp build/cultural-v0.1/atlas-qa-summary.json deliverables/drafts/cultural-v0.1/
+          # This branch contains only non-released editorial drafts. Keep the
+          # existing append-only record inventory, update exact draft bytes/hash
+          # and source-commit to match the regenerated PDF. Never promote status.
+          python - <<'PY'
+          import hashlib,json,os,pathlib
+          import fitz
+          folder=pathlib.Path('deliverables/drafts/cultural-v0.1')
+          manifest_file=pathlib.Path('deliverables/manifest.json')
+          manifest=json.loads(manifest_file.read_text(encoding='utf-8'))
+          selected={
+            'cultural-4-character-source-locked-DRAFT.pdf':4,
+            'stroke-source-atlas-201-TECHNICAL.pdf':202
+          }
+          updates=0
+          for name,expected_pages in selected.items():
+              relative=(folder/name).as_posix()
+              matches=[x for x in manifest['artifacts'] if x['path']==relative]
+              assert len(matches)==1,'One previously registered draft is required: '+relative
+              row=matches[0]
+              assert row['status']=='draft' and row['release_eligible'] is False
+              assert row['source_pdf_sha256']=='7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90'
+              pdf=folder/name
+              with fitz.open(pdf) as d:assert len(d)==expected_pages
+              raw=pdf.read_bytes()
+              sha=hashlib.sha256(raw).hexdigest()
+              for field,value in [('sha256',sha),('bytes',len(raw)),('pages',expected_pages)]:
+                  if row[field]!=value:row[field]=value;updates+=1
+              # The workflow source is the exact triggering revision; re-renders
+              # after editorial changes must not retain stale source provenance.
+              revision=os.environ['GITHUB_SHA']
+              if row['source_commit']!=revision:row['source_commit']=revision;updates+=1
+          manifest_file.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('PASS: synchronized immutable-source draft metadata',updates,'updated fields')
+          PY
+          git add deliverables/manifest.json
           git add deliverables/drafts/cultural-v0.1/
           if ! git diff --cached --quiet; then
             git commit -m "build(cultural): archive four-page source-locked editorial draft (not released)"

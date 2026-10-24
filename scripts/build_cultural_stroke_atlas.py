@@ -27,7 +27,7 @@ def build(source:Path,manifest:Path|None,output:Path,proof:Path,only_id:int|None
     original=fitz.open(source)
     items=[g for g in index['glyphs'] if only_id is None or g['main_id']==only_id]
     if not items:raise ValueError(f'ID {only_id} not in the official book')
-    memory=io.BytesIO();c=canvas.Canvas(memory,pagesize=A4)
+    memory=io.BytesIO();c=canvas.Canvas(memory,pagesize=A4,invariant=1)
     c.setTitle('源PDF全部笔顺图谱 · 自动分页技术验证 · 非出版稿')
     def draw(x,y,string,size=10,face='CultureKai'):
         c.setFont(face,size);c.drawString(x*MM,(297-y)*MM,string)
@@ -71,7 +71,7 @@ def build(source:Path,manifest:Path|None,output:Path,proof:Path,only_id:int|None
                 st['pdf_page']-1,clip=fitz.Rect(st['rect_pt']),
                 keep_proportion=False,overlay=True)
     output.parent.mkdir(parents=True,exist_ok=True)
-    rendered.save(output,garbage=4,deflate=True)
+    rendered.save(output,garbage=4,deflate=True,no_new_id=True)
     rendered.close();original.close()
     if total!=sum(g['stroke_count'] for g in items):
         raise ValueError('Lost source strokes during pagination')
