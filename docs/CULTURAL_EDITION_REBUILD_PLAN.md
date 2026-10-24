@@ -115,6 +115,6 @@
 
 - [36词语使用位置与词典来源覆盖表](../deliverables/drafts/cultural-v0.3/p2-evidence-coverage.json)：共35个不同词，19个有台湾教育部直接词条，另16个无直接词条，**“月亮”存在 `yuè liang` vs `yuè liàng` 差异**。外部“龠 yuè”词典字条仍不能提升为原PDF已审单字拼音。 [P2源数据](../data/cultural_edition/p2_direct_lexicon_evidence_20261024.json) 与 [自动反向门禁](../scripts/cultural_p2_source_audit.py) 明确阻止未经大陆规范审核的词音升级；词条不能用自动拼音代替人工核验。
 - [四字独立插图 P3 待审PDF](../deliverables/drafts/cultural-v0.3/cultural-4-unique-artwork-P3-DRAFT.pdf) 将水、山、月、木四个分别原创矢量 SVG 嵌入原有文化版，**15幅笔顺仍取 v0.5.1 正式PDF，不进入插图渲染器**。四种主题取水纹河石、云峰古松、月照屋檐、古木根叶；每张图都是独立源SVG。
-- [P3画面差异验证](../deliverables/drafts/cultural-v0.3/p3-artwork-visual-check.json)：不同字的右上角图像，两两 PDF 实际画面差异均大于22 RGB/255，四个源文件SHA互异；不使用外部图片/脚本或补全未审写字轨迹。
+- [P3画面差异验证](../deliverables/drafts/cultural-v0.3/p3-artwork-visual-check.json)：不同字的右上角图像，两两 PDF 实际画面差异均大于21 RGB/255，四个源文件SHA互异；不使用外部图片/脚本或补全未审写字轨迹。
 - GitHub Actions [#40085682283](https://github.com/netplus/zitie/actions/runs/40085682283) **completed/success**：P2 审计、原P1四字PDF**字节完全不变**、新P3四字PDF重新构建一致、源笔顺15张一致、四幅画面差异和安全检查通过。新增PDF仅登记为 `draft/release_eligible=false`，其他历史 PDF 不覆盖。
 - 仍待：词音中国大陆适用权威来源+人工签核、首次题材图审美/版权签核、全部201字独特画面与语义去重、附形偏旁真实教学源、P5全书页级视觉校验。

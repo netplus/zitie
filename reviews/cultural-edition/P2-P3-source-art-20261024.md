@@ -38,5 +38,5 @@
 
 - CI [Cultural P2 evidence and P3 distinct art proofs #40085682283](https://github.com/netplus/zitie/actions/runs/40085682283) **completed/success**；旧 P1 四字PDF重新生成 SHA 未变；新P3样稿两次字节级重建相等，四页15幅原PDF真实笔顺源图均一致。
 - P2审计报告：[35个不同词、19个直接词条、16个仍待直接资料、1个明确冲突](../../deliverables/drafts/cultural-v0.3/p2-evidence-coverage.json)。没有一个词可以由本审计自动提升为大陆正式规范读音。
-- P3审计报告：[SVG源哈希、场景ID及PDF右上角图像差异](../../deliverables/drafts/cultural-v0.3/p3-artwork-visual-check.json)：4幅源SVG互不相同、最小两图平均RGB绝对差异 **22.885/255**，确保不是直接复制同图；但图像相似度算法通过仍不代表人工美术审查。
+- P3审计报告：[SVG源哈希、场景ID及PDF右上角图像差异](../../deliverables/drafts/cultural-v0.3/p3-artwork-visual-check.json)：4幅源SVG互不相同、最小两图平均RGB绝对差异 **21.754/255**（已优化主题插画与“经典一隅”标题之间的留白），确保不是直接复制同图；但图像相似度算法通过仍不代表人工美术审查。
 - [P3原图 PDF](../../deliverables/drafts/cultural-v0.3/cultural-4-unique-artwork-P3-DRAFT.pdf) 在 `deliverables/manifest.json` 中 `status=draft, release_eligible=false`，原 v0.5.1 299页发布PDF及现有动画无改动。
