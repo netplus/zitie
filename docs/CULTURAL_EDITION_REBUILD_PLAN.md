@@ -59,7 +59,7 @@
 - [x] P1 **技术图册**实现 31mm 源笔顺格、每页最多3行×5列、长字续页，201项1045笔202页、龠17笔按15+2连续分页均通过原PDF比对；**未**与文化正文融合，四字文化页生成器仍故意拒绝 >4 笔（正式文化排版见 Issue #191）。
 - [~] P2 首批经典引文完成公开来源定位与一次原文纠错（《论语·雍也》改为“知者乐水，仁者乐山”）；其余拼音、经典版本/权威词条 **仍 review_pending**，参见 [P2首轮核对](../reviews/cultural-edition/P2-first-batch-quotes-initial-20261024.md)。
 - [ ] P3 首批四种主题唯一**正式插图**与来源/许可登记（目前仅有不同题材的程序矢量布局占位，不能算最终艺术审定）。
-- [ ] P4 其余 197 主字分批推进；附形独立源另行核定。
+- [~] P4 **5～17笔主字文化版分页引擎已完成首轮实测**：田5笔1页、鼻14笔2页（6+8）、龠17笔2页（6+11），真实文化内容与原PDF矢量36步统一排版；全201字内容及附形审核仍未完成，详见 [P4 QA](../reviews/cultural-edition/P4-multipage-source-QA-20261024.md) 与 Issue #191。
 - [ ] P5 全量版式/字体/文字/拼音/插图及打印质检。
 - [ ] P6 明确审定后独立发行；旧版保持不可变。
 
@@ -100,3 +100,13 @@
 - 完成新数据后的四字样本已自动更新：《论语》山字引文纠正为“**知者乐水，仁者乐山**”，其余引文附首轮来源 URL 但人工审定仍 pending。首轮 P2 来源见 [核对记录](../reviews/cultural-edition/P2-first-batch-quotes-initial-20261024.md)。
 - 最新稳定草稿实际哈希：`cultural-4-character-source-locked-DRAFT.pdf` = `8b30ae365472e51190739131f9edc4ad60e2573908a234aed3c5fa6378f31d04`；`stroke-source-atlas-201-TECHNICAL.pdf` = `6224bbfef4d42b1f9953b5b64a72b5fda0065767a55b553ed10f19b11e328b51`，并已与manifest两条草稿记录匹配。来源提交标记为 `a5f8d0b3138bcdd7878875523664177f6437b426`。
 - [CI #40055521161](https://github.com/netplus/zitie/actions/runs/40055521161) 完成两次比对和原PDF独立来源对照（completed/success）。合并前仍需 `Book integrity checks` 直接从最终 HEAD 成功执行，防止任何未登记PDF污染正式repo。
+
+### P4 文化阅读页长笔顺分页实测（2026-10-24）
+
+- **以前的202页笔顺技术图册已经能够分页，但不含实际文化内容**。本次 [5页文化版草稿](../deliverables/drafts/cultural-v0.2/cultural-5-14-17-stroke-P4-DRAFT.pdf) 将题句、字义、引文槽位、原PDF笔顺提示、相关词、文学短句、源PDF笔顺原图与正式续页放到同一版式。
+- [P4编辑数据](../data/cultural_edition/p4_multipage_prototypes.json) — 田ID106（5笔）、鼻ID200（14笔）、龠ID201（17笔）。每字先6个源步放在2行×3列中，其余按每页最多3行×5列；**31mm**不缩小，不漏笔，跨页编号连续。
+- [源图排版生成器](../scripts/build_cultural_multipage.py) + [逐幅真实PDF对照测试](../scripts/test_cultural_multipage.py)；[CI记录](https://github.com/netplus/zitie/actions/runs/40066375728) success，**5页共36幅原PDF步骤**全部原文位置/笔序及像素渲染通过，最大 RGB绝对误差平均值6.3425/255；双次构建PDF byte-identical。
+- 实际PDF、[provenance](../deliverables/drafts/cultural-v0.2/page-provenance.json)、[QA摘要](../deliverables/drafts/cultural-v0.2/qa-summary.json)已在 `deliverables/manifest.json` 中仅以 `draft/release_eligible=false` 登记；生成文件与哈希独立同步，不影响历史已发行版。人工看样后修复了笔顺提示孤立标点和主题占位图说明重叠。
+- `龠`原正式PDF未单列可信读音，仍打印“读音待审核”，后续只能用适用的中国大陆权威词典与正式审核补足；不自动抄外部词典音标。相关词拼音/经典目前仍待权威复核，插图仍属 P4 占位。
+- P2 新增[有来源的辅助核对记录](../data/cultural_edition/p2_lexicon_secondary_20261024.json)（水果、木头、田野、鼻子、龠），区分“鼻子”的具体词义，**非大陆权威出版签核**；见 [P2审核说明](../reviews/cultural-edition/P2-secondary-lexicon-20261024.md)。
+- 仍待：将生成器推广到全部201条目的真正文化文案、每字唯一的正式主题插图、词音/引文审核、附形专属来源，最终按 P5/P6 页页审核。
