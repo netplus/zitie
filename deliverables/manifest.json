@@ -524,6 +524,23 @@
       "review_record": "reviews/cultural-edition/P4-multipage-source-QA-20261024.md",
       "release_eligible": false,
       "editorial_review_state": "P4_source_locked_editorial_draft_not_for_release"
+    },
+    {
+      "path": "deliverables/drafts/cultural-v0.3/cultural-4-unique-artwork-P3-DRAFT.pdf",
+      "title": "水山月木四字独有主题SVG矢量插画文化阅读版审稿",
+      "version": "cultural-0.3-art-draft",
+      "status": "draft",
+      "batch": "P2/P3 source evidence and four unique artwork drafts",
+      "pages": 4,
+      "bytes": 3371125,
+      "sha256": "d9c7d577c3219f47aa3d05cd05acd1b5127c8fbef01373ddb40491055fd59fab",
+      "source_commit": "586827e1821eeddf9fad65ae9d62261a9bbe5521",
+      "provenance_kind": "source_locked_vector_layout_derivative",
+      "source_pdf": "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf",
+      "source_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+      "review_record": "reviews/cultural-edition/P2-P3-source-art-20261024.md",
+      "release_eligible": false,
+      "editorial_review_state": "artwork_vector_draft_not_final_review"
     }
   ]
 }

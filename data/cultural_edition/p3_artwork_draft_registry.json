@@ -1,0 +1,88 @@
+{
+  "schema_version": 1,
+  "edition": "cultural-v0.3-artwork-draft",
+  "review_state": "all_artwork_unique_subject_drafts_not_publication",
+  "source_policy": "No image, raster or words within SVG and no links/remote content. Main character and cumulative strokes are sourced ONLY from immutable v0.5.1 PDF.",
+  "entries": [
+    {
+      "main_character": "水",
+      "theme_key": "river-current",
+      "asset_id": "P3-001-river-current",
+      "relative_path": "data/cultural_edition/artwork/drafts/river-current.svg",
+      "expected_git_blob_sha": "3b287b90f73a9e1f7ddfa12c281d82fd8cdcbb33",
+      "source_medium": "original_repo_authored_vector_svg",
+      "intended_role": "non-teaching decorative illustration only",
+      "compositional_theme": "河谷清流",
+      "unique_motifs": [
+        "岩石",
+        "河流",
+        "水纹",
+        "岸边草"
+      ],
+      "alt_text": "山谷清流穿过石岸，水面形成连续波纹",
+      "license_review": "internal_authorship_review_pending",
+      "editorial_status": "draft_unapproved",
+      "illustrator_reviewed_at": null
+    },
+    {
+      "main_character": "山",
+      "theme_key": "peaks-and-clouds",
+      "asset_id": "P3-002-peaks-and-clouds",
+      "relative_path": "data/cultural_edition/artwork/drafts/peaks-and-clouds.svg",
+      "expected_git_blob_sha": "2569189225a58ac780ca4af8587bf76ccbec9273",
+      "source_medium": "original_repo_authored_vector_svg",
+      "intended_role": "non-teaching decorative illustration only",
+      "compositional_theme": "高岭云岚",
+      "unique_motifs": [
+        "高峰",
+        "峰脊",
+        "薄云",
+        "古松"
+      ],
+      "alt_text": "三层山峦高低错落，薄云掠过峰谷",
+      "license_review": "internal_authorship_review_pending",
+      "editorial_status": "draft_unapproved",
+      "illustrator_reviewed_at": null
+    },
+    {
+      "main_character": "月",
+      "theme_key": "moon-over-rooftops",
+      "asset_id": "P3-003-moon-over-rooftops",
+      "relative_path": "data/cultural_edition/artwork/drafts/moon-over-rooftops.svg",
+      "expected_git_blob_sha": "e60375b3af74ee2a8b77f6547c5098d775f48915",
+      "source_medium": "original_repo_authored_vector_svg",
+      "intended_role": "non-teaching decorative illustration only",
+      "compositional_theme": "月照屋檐",
+      "unique_motifs": [
+        "明月",
+        "屋檐",
+        "水巷倒影",
+        "星点"
+      ],
+      "alt_text": "明月悬在静夜屋檐上方，河面泛着细微月光",
+      "license_review": "internal_authorship_review_pending",
+      "editorial_status": "draft_unapproved",
+      "illustrator_reviewed_at": null
+    },
+    {
+      "main_character": "木",
+      "theme_key": "seasonal-rooted-tree",
+      "asset_id": "P3-004-seasonal-rooted-tree",
+      "relative_path": "data/cultural_edition/artwork/drafts/seasonal-rooted-tree.svg",
+      "expected_git_blob_sha": "53c74a2682a00908643d938167c5e80a7fd030fd",
+      "source_medium": "original_repo_authored_vector_svg",
+      "intended_role": "non-teaching decorative illustration only",
+      "compositional_theme": "古木春生",
+      "unique_motifs": [
+        "根脉",
+        "树干",
+        "枝杈",
+        "嫩叶"
+      ],
+      "alt_text": "老树盘根错节，枝杈向上舒展，嫩叶成荫",
+      "license_review": "internal_authorship_review_pending",
+      "editorial_status": "draft_unapproved",
+      "illustrator_reviewed_at": null
+    }
+  ]
+}

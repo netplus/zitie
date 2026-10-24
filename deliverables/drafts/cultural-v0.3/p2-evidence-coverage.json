@@ -1,0 +1,480 @@
+{
+  "result": "SECONDARY_CROSSCHECK_ONLY_NOT_RELEASE",
+  "official_mainland_word_pronunciations_approved": 0,
+  "source_jurisdiction": "Taiwan; target China mainland",
+  "counts": {
+    "manuscript_word_placements": 36,
+    "unique_candidate_words": 35,
+    "unique_words_with_secondary_direct_entry": 19,
+    "unique_words_without_direct_entry": 16,
+    "candidate_conflicts": 1,
+    "additional_char_entry_not_promoted": 1
+  },
+  "words": [
+    {
+      "word": "山川",
+      "used_by": [
+        "山"
+      ],
+      "draft_pinyin": "shān chuān",
+      "secondary_dictionary_pinyin": "shān chuān",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=34437&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "山林",
+      "used_by": [
+        "山"
+      ],
+      "draft_pinyin": "shān lín",
+      "secondary_dictionary_pinyin": "shān lín",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=34411&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "山路",
+      "used_by": [
+        "山"
+      ],
+      "draft_pinyin": "shān lù",
+      "secondary_dictionary_pinyin": null,
+      "secondary_direct_entry": false,
+      "evidence_url": null,
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_direct_entry_and_mainland_dictionary",
+      "release_eligible": false
+    },
+    {
+      "word": "火山",
+      "used_by": [
+        "山"
+      ],
+      "draft_pinyin": "huǒ shān",
+      "secondary_dictionary_pinyin": "huǒ shān",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=20338&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "远山",
+      "used_by": [
+        "山"
+      ],
+      "draft_pinyin": "yuǎn shān",
+      "secondary_dictionary_pinyin": null,
+      "secondary_direct_entry": false,
+      "evidence_url": null,
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_direct_entry_and_mainland_dictionary",
+      "release_eligible": false
+    },
+    {
+      "word": "高山",
+      "used_by": [
+        "山"
+      ],
+      "draft_pinyin": "gāo shān",
+      "secondary_dictionary_pinyin": "gāo shān",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=45517&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "岁月",
+      "used_by": [
+        "月"
+      ],
+      "draft_pinyin": "suì yuè",
+      "secondary_dictionary_pinyin": "suì yuè",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=39224&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "日月",
+      "used_by": [
+        "月"
+      ],
+      "draft_pinyin": "rì yuè",
+      "secondary_dictionary_pinyin": null,
+      "secondary_direct_entry": false,
+      "evidence_url": null,
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_direct_entry_and_mainland_dictionary",
+      "release_eligible": false
+    },
+    {
+      "word": "月亮",
+      "used_by": [
+        "月"
+      ],
+      "draft_pinyin": "yuè liang",
+      "secondary_dictionary_pinyin": "yuè liàng",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=44596&la=0&powerMode=0",
+      "tone_or_reading_conflict": true,
+      "editorial_action": "resolve_cross_region_conflict",
+      "release_eligible": false
+    },
+    {
+      "word": "月光",
+      "used_by": [
+        "月"
+      ],
+      "draft_pinyin": "yuè guāng",
+      "secondary_dictionary_pinyin": "yuè guāng",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=44598&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "月牙",
+      "used_by": [
+        "月"
+      ],
+      "draft_pinyin": "yuè yá",
+      "secondary_dictionary_pinyin": "yuè yá",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=44616&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "满月",
+      "used_by": [
+        "月"
+      ],
+      "draft_pinyin": "mǎn yuè",
+      "secondary_dictionary_pinyin": "mǎn yuè",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=4180&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "木头",
+      "used_by": [
+        "木"
+      ],
+      "draft_pinyin": "mù tou",
+      "secondary_dictionary_pinyin": "mù tou",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=5001&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "木桥",
+      "used_by": [
+        "木"
+      ],
+      "draft_pinyin": "mù qiáo",
+      "secondary_dictionary_pinyin": null,
+      "secondary_direct_entry": false,
+      "evidence_url": null,
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_direct_entry_and_mainland_dictionary",
+      "release_eligible": false
+    },
+    {
+      "word": "木船",
+      "used_by": [
+        "木"
+      ],
+      "draft_pinyin": "mù chuán",
+      "secondary_dictionary_pinyin": null,
+      "secondary_direct_entry": false,
+      "evidence_url": null,
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_direct_entry_and_mainland_dictionary",
+      "release_eligible": false
+    },
+    {
+      "word": "林木",
+      "used_by": [
+        "木"
+      ],
+      "draft_pinyin": "lín mù",
+      "secondary_dictionary_pinyin": "lín mù",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=14825&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "树木",
+      "used_by": [
+        "木"
+      ],
+      "draft_pinyin": "shù mù",
+      "secondary_dictionary_pinyin": "shù mù",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=35476&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "草木",
+      "used_by": [
+        "木"
+      ],
+      "draft_pinyin": "cǎo mù",
+      "secondary_dictionary_pinyin": "cǎo mù",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=38070&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "喝水",
+      "used_by": [
+        "水"
+      ],
+      "draft_pinyin": "hē shuǐ",
+      "secondary_dictionary_pinyin": null,
+      "secondary_direct_entry": false,
+      "evidence_url": null,
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_direct_entry_and_mainland_dictionary",
+      "release_eligible": false
+    },
+    {
+      "word": "山水",
+      "used_by": [
+        "水"
+      ],
+      "draft_pinyin": "shān shuǐ",
+      "secondary_dictionary_pinyin": "shān shuǐ",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=34440&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "水果",
+      "used_by": [
+        "水"
+      ],
+      "draft_pinyin": "shuǐ guǒ",
+      "secondary_dictionary_pinyin": "shuǐ guǒ",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=35642&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "水田",
+      "used_by": [
+        "水",
+        "田"
+      ],
+      "draft_pinyin": "shuǐ tián",
+      "secondary_dictionary_pinyin": "shuǐ tián",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=35619&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "河水",
+      "used_by": [
+        "水"
+      ],
+      "draft_pinyin": "hé shuǐ",
+      "secondary_dictionary_pinyin": null,
+      "secondary_direct_entry": false,
+      "evidence_url": null,
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_direct_entry_and_mainland_dictionary",
+      "release_eligible": false
+    },
+    {
+      "word": "雨水",
+      "used_by": [
+        "水"
+      ],
+      "draft_pinyin": "yǔ shuǐ",
+      "secondary_dictionary_pinyin": "yǔ shuǐ",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=44334&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "田园",
+      "used_by": [
+        "田"
+      ],
+      "draft_pinyin": "tián yuán",
+      "secondary_dictionary_pinyin": null,
+      "secondary_direct_entry": false,
+      "evidence_url": null,
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_direct_entry_and_mainland_dictionary",
+      "release_eligible": false
+    },
+    {
+      "word": "田地",
+      "used_by": [
+        "田"
+      ],
+      "draft_pinyin": "tián dì",
+      "secondary_dictionary_pinyin": null,
+      "secondary_direct_entry": false,
+      "evidence_url": null,
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_direct_entry_and_mainland_dictionary",
+      "release_eligible": false
+    },
+    {
+      "word": "田野",
+      "used_by": [
+        "田"
+      ],
+      "draft_pinyin": "tián yě",
+      "secondary_dictionary_pinyin": "tián yě",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=11262&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "稻田",
+      "used_by": [
+        "田"
+      ],
+      "draft_pinyin": "dào tián",
+      "secondary_dictionary_pinyin": null,
+      "secondary_direct_entry": false,
+      "evidence_url": null,
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_direct_entry_and_mainland_dictionary",
+      "release_eligible": false
+    },
+    {
+      "word": "耕田",
+      "used_by": [
+        "田"
+      ],
+      "draft_pinyin": "gēng tián",
+      "secondary_dictionary_pinyin": null,
+      "secondary_direct_entry": false,
+      "evidence_url": null,
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_direct_entry_and_mainland_dictionary",
+      "release_eligible": false
+    },
+    {
+      "word": "鼻子",
+      "used_by": [
+        "鼻"
+      ],
+      "draft_pinyin": "bí zi",
+      "secondary_dictionary_pinyin": "bí zi",
+      "secondary_direct_entry": true,
+      "evidence_url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=17461&la=0&powerMode=0",
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_mainland_dictionary_and_editor_signoff",
+      "release_eligible": false
+    },
+    {
+      "word": "鼻孔",
+      "used_by": [
+        "鼻"
+      ],
+      "draft_pinyin": "bí kǒng",
+      "secondary_dictionary_pinyin": null,
+      "secondary_direct_entry": false,
+      "evidence_url": null,
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_direct_entry_and_mainland_dictionary",
+      "release_eligible": false
+    },
+    {
+      "word": "鼻尖",
+      "used_by": [
+        "鼻"
+      ],
+      "draft_pinyin": "bí jiān",
+      "secondary_dictionary_pinyin": null,
+      "secondary_direct_entry": false,
+      "evidence_url": null,
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_direct_entry_and_mainland_dictionary",
+      "release_eligible": false
+    },
+    {
+      "word": "鼻息",
+      "used_by": [
+        "鼻"
+      ],
+      "draft_pinyin": "bí xī",
+      "secondary_dictionary_pinyin": null,
+      "secondary_direct_entry": false,
+      "evidence_url": null,
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_direct_entry_and_mainland_dictionary",
+      "release_eligible": false
+    },
+    {
+      "word": "鼻梁",
+      "used_by": [
+        "鼻"
+      ],
+      "draft_pinyin": "bí liáng",
+      "secondary_dictionary_pinyin": null,
+      "secondary_direct_entry": false,
+      "evidence_url": null,
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_direct_entry_and_mainland_dictionary",
+      "release_eligible": false
+    },
+    {
+      "word": "鼻音",
+      "used_by": [
+        "鼻"
+      ],
+      "draft_pinyin": "bí yīn",
+      "secondary_dictionary_pinyin": null,
+      "secondary_direct_entry": false,
+      "evidence_url": null,
+      "tone_or_reading_conflict": false,
+      "editorial_action": "find_direct_entry_and_mainland_dictionary",
+      "release_eligible": false
+    }
+  ],
+  "unpromoted_character_only": [
+    {
+      "character": "龠",
+      "proposed_pinyin": "yuè",
+      "source_url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11771&la=0&powerMode=0",
+      "reason": "Original PDF does not show adopted pinyin"
+    }
+  ],
+  "note": "Static source link inventory checked manually; CI does not fetch/endorse any dictionary page. Every item awaits applicable mainland standards and editorial review."
+}

@@ -1,0 +1,376 @@
+{
+  "schema_version": 1,
+  "source_note": "This is a independently checked SECONDARY source evidence table. Direct headword pages were opened or verified in web results on 2026-10-24; NOT a mainland Chinese pronunciation standard. Nothing in this record authorizes a release.",
+  "source_jurisdiction": "Taiwan",
+  "target_publication_jurisdiction": "Chinese mainland",
+  "canonical_mainland_review_complete": false,
+  "candidate_sets": [
+    "data/cultural_edition/first_batch_draft.json",
+    "data/cultural_edition/p4_multipage_prototypes.json"
+  ],
+  "primary_rule": "A learner-facing item must not be marked reviewed using this file alone. Need source-word sense, mainland edition and editorial signoff.",
+  "normalization": "NFC, spaces collapsed; simplified/traditional equivalence recorded explicitly rather than applied heuristically",
+  "entries": [
+    {
+      "word": "水果",
+      "source_headword": "水果",
+      "source_pinyin": "shuǐ guǒ",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=35642&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "can_be_eaten_fruit",
+      "sheet_characters": [
+        "水"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "雨水",
+      "source_headword": "雨水",
+      "source_pinyin": "yǔ shuǐ",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=44334&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "rainfall_not_just_solar_term",
+      "sheet_characters": [
+        "水"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "山水",
+      "source_headword": "山水",
+      "source_pinyin": "shān shuǐ",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=34440&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "landscape",
+      "sheet_characters": [
+        "水"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "水田",
+      "source_headword": "水田",
+      "source_pinyin": "shuǐ tián",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=35619&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "irrigated_field",
+      "sheet_characters": [
+        "水",
+        "田"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "高山",
+      "source_headword": "高山",
+      "source_pinyin": "gāo shān",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=45517&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "high_mountain",
+      "sheet_characters": [
+        "山"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "山林",
+      "source_headword": "山林",
+      "source_pinyin": "shān lín",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=34411&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "wooded_mountain",
+      "sheet_characters": [
+        "山"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "火山",
+      "source_headword": "火山",
+      "source_pinyin": "huǒ shān",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=20338&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "volcano",
+      "sheet_characters": [
+        "山"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "山川",
+      "source_headword": "山川",
+      "source_pinyin": "shān chuān",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=34437&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "mountains_and_rivers",
+      "sheet_characters": [
+        "山"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "月亮",
+      "source_headword": "月亮",
+      "source_pinyin": "yuè liàng",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=44596&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "moon",
+      "sheet_characters": [
+        "月"
+      ],
+      "comparison_to_current_sample": "disagrees_with_draft_neutral_tone",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "月光",
+      "source_headword": "月光",
+      "source_pinyin": "yuè guāng",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=44598&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "moonlight",
+      "sheet_characters": [
+        "月"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "岁月",
+      "source_headword": "歲月",
+      "source_pinyin": "suì yuè",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=39224&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "passing_years",
+      "sheet_characters": [
+        "月"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "月牙",
+      "source_headword": "月牙",
+      "source_pinyin": "yuè yá",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=44616&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "crescent_moon",
+      "sheet_characters": [
+        "月"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "满月",
+      "source_headword": "滿月",
+      "source_pinyin": "mǎn yuè",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=4180&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "full_moon",
+      "sheet_characters": [
+        "月"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "树木",
+      "source_headword": "樹木",
+      "source_pinyin": "shù mù",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=35476&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "trees",
+      "sheet_characters": [
+        "木"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "木头",
+      "source_headword": "木頭",
+      "source_pinyin": "mù tou",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=5001&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "timber_wood",
+      "sheet_characters": [
+        "木"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "草木",
+      "source_headword": "草木",
+      "source_pinyin": "cǎo mù",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=38070&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "plants_grasses_trees",
+      "sheet_characters": [
+        "木"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "林木",
+      "source_headword": "林木",
+      "source_pinyin": "lín mù",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=14825&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "woodland_trees",
+      "sheet_characters": [
+        "木"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "田野",
+      "source_headword": "田野",
+      "source_pinyin": "tián yě",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=11262&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Concised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "countryside",
+      "sheet_characters": [
+        "田"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "鼻子",
+      "source_headword": "鼻子",
+      "source_pinyin": "bí zi",
+      "source_url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=17461&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Revised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "direct_word_entry",
+      "sense_key": "breathing_and_smelling_organ",
+      "sheet_characters": [
+        "鼻"
+      ],
+      "comparison_to_current_sample": "aligned",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    },
+    {
+      "word": "龠",
+      "source_headword": "龠",
+      "source_pinyin": "yuè",
+      "source_url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11771&la=0&powerMode=0",
+      "source_organization": "Taiwan Ministry of Education",
+      "source_edition": "Revised Mandarin Chinese Dictionary (2021)",
+      "evidence_kind": "external_character_entry",
+      "sense_key": "ancient_wind_instrument_volume_measure",
+      "sheet_characters": [
+        "龠"
+      ],
+      "comparison_to_current_sample": "original_pdf_does_not_have_adopted_pinyin",
+      "publication_gate": "mainland_normative_source_and_human_editorial_review_required",
+      "pronunciation_status": "cross_region_reference_only",
+      "checked_on": "2026-10-24",
+      "reviewed_by": null
+    }
+  ]
+}
