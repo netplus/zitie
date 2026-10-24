@@ -1,0 +1,54 @@
+name: Extract frozen PDF water proof for sample
+on:
+  push:
+    branches: [sample/pdf-source-water-20261024]
+    paths:
+      - '.github/workflows/source-water-export.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  source-proof:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Verify official v0.5.1 release and extract source page anchors
+        run: |
+          pip install PyMuPDF==1.26.7
+          python - <<'PY'
+          import fitz, hashlib, json, pathlib, shutil
+          original=pathlib.Path('deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf')
+          expected='7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90'
+          observed=hashlib.sha256(original.read_bytes()).hexdigest()
+          assert observed==expected, f'Frozen release mismatch: {observed}'
+          out=pathlib.Path('build/source-audit');out.mkdir(parents=True,exist_ok=True)
+          shutil.copyfile(original,out/'zitie-v0.5.1-A4.pdf')
+          with fitz.open(original) as doc:
+            assert len(doc)==299
+            matches=[(level,title,page) for level,title,page in doc.get_toc()
+                if 'ID077' in title and '水' in title]
+            assert len(matches)==1, matches
+            level,title,pno=matches[0]
+            pages=[]
+            for n in range(pno,min(pno+4,len(doc)+1)):
+                pg=doc[n-1]
+                pages.append({'page':n,'text':pg.get_text()[:2200],
+                  'drawings':len(pg.get_drawings())})
+            (out/'water-anchor.json').write_text(json.dumps({
+              'source_sha256':observed,'source_pages':299,
+              'water_bookmark':{'level':level,'title':title,'page':pno},
+              'pages_near_water':pages},ensure_ascii=False,indent=2)+'\n')
+            with fitz.open() as excerpt:
+              excerpt.insert_pdf(doc,from_page=pno-1,to_page=min(pno+1,len(doc)-1))
+              excerpt.save(out/'water-source-excerpt.pdf',garbage=4,deflate=True)
+          print('PASS: exported byte-identical official PDF and water ID077 source excerpt')
+          PY
+      - uses: actions/upload-artifact@v4
+        with:
+          name: frozen-v051-water-source-for-review
+          path: build/source-audit/
+          retention-days: 1
