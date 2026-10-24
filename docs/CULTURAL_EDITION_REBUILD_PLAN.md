@@ -56,7 +56,7 @@
 - [x] P0 源文件 SHA256、299 页、目标水/山/月/木官方书签索引与源图 86pt 版式抽样完成。
 - [x] P0 严格 201 ID 全量源图审计脚本及 CI 完成（1045 笔、258 个教学页、原 86pt 裁剪框逐页对齐）。
 - [x] P1 可运行 A4 草稿生成器、四字样板（**水 ID077、山 ID039、月 ID088、木 ID064**）及 source-step provenance；每幅示范直接复制正式 PDF 矢量（15/15 幅通过像素差异门槛）。
-- [ ] P1 复杂字跨页拆分与无内容丢失的测试（保留；当前样板引擎 **明确拒绝 >4 笔**，不能将此引擎直接用于 201 字全量）。
+- [x] P1 **技术图册**实现 31mm 源笔顺格、每页最多3行×5列、长字续页，201项1045笔202页、龠17笔按15+2连续分页均通过原PDF比对；**未**与文化正文融合，四字文化页生成器仍故意拒绝 >4 笔（正式文化排版见 Issue #191）。
 - [ ] P2 首批字词、引文及拼音的逐条权威复核；目前不得把样稿文案的读音视为最终审定。
 - [ ] P3 首批四种主题唯一**正式插图**与来源/许可登记（目前仅有不同题材的程序矢量布局占位，不能算最终艺术审定）。
 - [ ] P4 其余 197 主字分批推进；附形独立源另行核定。
@@ -77,3 +77,18 @@
 - [四字 PDF 待审草稿](../deliverables/drafts/cultural-v0.1/cultural-4-character-source-locked-DRAFT.pdf)｜[逐幅原图溯源](../deliverables/drafts/cultural-v0.1/source-provenance.json)｜[QA 摘要](../deliverables/drafts/cultural-v0.1/qa-summary.json)。
 - GitHub Actions [Cultural PDF source-locked preview #40054585895](https://github.com/netplus/zitie/actions/runs/40054585895) **completed/success**，源 PDF SHA 匹配、201项1045笔258教学页全通过，4页15幅原图逐一对照均通过（平均RGB通道误差3.6/255、最大4.815/255，允许字体缩放引入轻微抗锯齿差异）。
 - 源 PDF 有部分主项**不单列拼音或明确未审核**；不能把无注音附形当成已审定单字拼音。词语注音、古文引文、最终独特插画还未获得P2/P3正式审定，新草稿页脚明确标“待审”；**整本新书尚未构建或发布**。
+
+### P1 全201字长字续页检验（2026-10-24）
+
+- 已由[完整技术图册生成器](../scripts/build_cultural_stroke_atlas.py)和[源图测试](../scripts/test_cultural_stroke_atlas.py)验证：**201主字、1045步、202张A4技术图册**；每个笔顺图边长 **31mm**，最多5列×3行。
+- [完整201字笔顺技术图册（只作工程核验，202页）](../deliverables/drafts/cultural-v0.1/stroke-source-atlas-201-TECHNICAL.pdf)、[逐步源PDF页码及矩形映射](../deliverables/drafts/cultural-v0.1/atlas-source-provenance.json)、[独立QA数据](../deliverables/drafts/cultural-v0.1/atlas-qa-summary.json)。
+- **龠(ID201) 17笔**按第一张15笔＋续张2笔分行与分页，所有原PDF步骤次序、笔画名、源图矩形完全匹配。33幅风险源步重新栅格化校验最大通道误差3.185/255。
+- [GitHub Actions #40054959004](https://github.com/netplus/zitie/actions/runs/40054959004) 为 completed/success。文化阅读页面的长字分页整合仍列 [Issue #191](https://github.com/netplus/zitie/issues/191)，不能将技术 atlas 冒称完整文化版。
+- 两份新增PDF均按仓库强制归档机制在 `deliverables/manifest.json` **仅追加** `status=draft`、`release_eligible=false`、源生成提交/页数/字节/hash 和 [P1审核记录](../reviews/cultural-edition/P1-source-preview-20261024.md)；历史文件及manifest条目字节不变。
+
+### 已登记后续任务
+
+- [P2 权威词音与经典引文审校 #189](https://github.com/netplus/zitie/issues/189)
+- [P3 逐字主题插画授权与全局去重 #190](https://github.com/netplus/zitie/issues/190)
+- [P4 将长字真实笔顺融入文化页而不是只做 atlas #191](https://github.com/netplus/zitie/issues/191)
+- [P5/P6 全书候选及发布验收 #192](https://github.com/netplus/zitie/issues/192)
