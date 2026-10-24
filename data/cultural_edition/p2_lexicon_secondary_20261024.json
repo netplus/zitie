@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "scope": "cultural_edition_p2_initial_crosscheck",
+  "checked_at": "2026-10-24",
+  "status": "secondary_lexical_evidence_only",
+  "canonical_mainland_publication_approved": false,
+  "policy": "Taiwan Ministry of Education dictionaries are useful secondary lexical crosschecks, not the final normative mainland source; retain pending until applicable official mainland standards and editorial review.",
+  "orthography_source": "https://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/13/20150113091717604.pdf",
+  "orthography_note": "GB/T 16159-2012 provides word-level Hanyu Pinyin orthography, while sample cards place one spoken syllable above each Hanzi; keep both representations separate.",
+  "entries": [
+    {
+      "term": "水果",
+      "pinyin_display": "shuǐ guǒ",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=35642&la=0&powerMode=0",
+      "source_title": "教育部《國語辭典簡編本》—水果",
+      "part_of": "水",
+      "sense": "可生食的果实",
+      "notes": "字典直接词条，与草稿候选读音一致",
+      "source_region": "Taiwan",
+      "status": "source_located_cross_region_needs_mainland_check",
+      "reviewed_by": null,
+      "approved_at": null
+    },
+    {
+      "term": "木头",
+      "pinyin_display": "mù tou",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=5001&la=0&powerMode=0",
+      "source_title": "教育部《國語辭典簡編本》—木頭",
+      "part_of": "木",
+      "sense": "木材",
+      "notes": "词典明确第二音节轻声",
+      "source_region": "Taiwan",
+      "status": "source_located_cross_region_needs_mainland_check",
+      "reviewed_by": null,
+      "approved_at": null
+    },
+    {
+      "term": "田野",
+      "pinyin_display": "tián yě",
+      "source_url": "https://dict.concised.moe.edu.tw/dictView.jsp?ID=11262&la=0&powerMode=0",
+      "source_title": "教育部《國語辭典簡編本》—田野",
+      "part_of": "田",
+      "sense": "乡间/田地与原野",
+      "notes": "直接词条，精确声调候选一致",
+      "source_region": "Taiwan",
+      "status": "source_located_cross_region_needs_mainland_check",
+      "reviewed_by": null,
+      "approved_at": null
+    },
+    {
+      "term": "鼻子",
+      "pinyin_display": "bí zi",
+      "source_url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=17461&la=0&powerMode=0",
+      "source_title": "教育部《重編國語辭典修訂本》—鼻子（呼吸嗅觉器官）",
+      "part_of": "鼻",
+      "sense": "呼吸、嗅觉器官",
+      "notes": "词义区分：鼻子作为初生儿特称可为 bí zǐ，此处器官词义才取轻声 bí zi",
+      "source_region": "Taiwan",
+      "status": "source_located_cross_region_needs_mainland_check",
+      "reviewed_by": null,
+      "approved_at": null
+    },
+    {
+      "term": "龠",
+      "pinyin_display": "yuè",
+      "source_url": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11771&la=0&powerMode=0",
+      "source_title": "教育部《重編國語辭典修訂本》—龠",
+      "part_of": "龠",
+      "sense": "古代竹制管乐器或容量单位",
+      "notes": "来源有外部读音，但正式v0.5.1主字没有采用单列拼音，候选仍禁止进入页面直至适用大陆标准核准",
+      "source_region": "Taiwan",
+      "status": "source_located_cross_region_needs_mainland_check",
+      "reviewed_by": null,
+      "approved_at": null
+    }
+  ]
+}
