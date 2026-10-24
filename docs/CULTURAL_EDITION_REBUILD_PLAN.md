@@ -54,11 +54,11 @@
 ## 4. 当前推进状态（持续更新）
 
 - [x] P0 源文件 SHA256、299 页、目标水/山/月/木官方书签索引与源图 86pt 版式抽样完成。
-- [ ] P0 建立严格 201 ID 全量源图审计脚本并进入 CI。
-- [ ] P1 可运行 A4 草稿生成器、四字样板及 source-step provenance。
-- [ ] P1 复杂字跨页拆分与无内容丢失的测试。
+- [x] P0 严格 201 ID 全量源图审计脚本及 CI 完成（1045 笔、258 个教学页、原 86pt 裁剪框逐页对齐）。
+- [x] P1 可运行 A4 草稿生成器、四字样板（**水 ID077、山 ID039、月 ID088、木 ID064**）及 source-step provenance；每幅示范直接复制正式 PDF 矢量（15/15 幅通过像素差异门槛）。
+- [ ] P1 复杂字跨页拆分与无内容丢失的测试（保留；当前样板引擎 **明确拒绝 >4 笔**，不能将此引擎直接用于 201 字全量）。
 - [ ] P2 首批字词、引文及拼音的逐条权威复核；目前不得把样稿文案的读音视为最终审定。
-- [ ] P3 首批四种主题唯一插图与来源/许可登记。
+- [ ] P3 首批四种主题唯一**正式插图**与来源/许可登记（目前仅有不同题材的程序矢量布局占位，不能算最终艺术审定）。
 - [ ] P4 其余 197 主字分批推进；附形独立源另行核定。
 - [ ] P5 全量版式/字体/文字/拼音/插图及打印质检。
 - [ ] P6 明确审定后独立发行；旧版保持不可变。
@@ -70,3 +70,10 @@
 - 新工程只能**新增** `scripts/cultural_edition_*.py`、`data/cultural_edition/`、`deliverables/drafts/cultural-v0.1/`、`reviews/cultural-edition/`、单独 CI；不得改变旧正式 PDF、其 SHA、manifest 的既有条目或线上练习与动画逻辑。
 - 当次实现结尾明确写出**完成了哪一阶段**和哪些仍阻塞，绝不以一份 P1 草稿宣称已完成全书。
 
+
+### P0/P1 第一批实测与文件（2026-10-24）
+
+- [生成器](../scripts/build_cultural_sample.py)｜[201 ID 全量审计](../scripts/cultural_source_audit.py)｜[独立源图QA](../scripts/test_cultural_sample.py)｜[首批内容数据](../data/cultural_edition/first_batch_draft.json)。
+- [四字 PDF 待审草稿](../deliverables/drafts/cultural-v0.1/cultural-4-character-source-locked-DRAFT.pdf)｜[逐幅原图溯源](../deliverables/drafts/cultural-v0.1/source-provenance.json)｜[QA 摘要](../deliverables/drafts/cultural-v0.1/qa-summary.json)。
+- GitHub Actions [Cultural PDF source-locked preview #40054585895](https://github.com/netplus/zitie/actions/runs/40054585895) **completed/success**，源 PDF SHA 匹配、201项1045笔258教学页全通过，4页15幅原图逐一对照均通过（平均RGB通道误差3.6/255、最大4.815/255，允许字体缩放引入轻微抗锯齿差异）。
+- 源 PDF 有部分主项**不单列拼音或明确未审核**；不能把无注音附形当成已审定单字拼音。词语注音、古文引文、最终独特插画还未获得P2/P3正式审定，新草稿页脚明确标“待审”；**整本新书尚未构建或发布**。
