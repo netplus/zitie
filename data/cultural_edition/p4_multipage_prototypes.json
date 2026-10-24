@@ -1,0 +1,136 @@
+{
+  "schema_version": 1,
+  "edition": "cultural-v0.2-p4-technical",
+  "review_state": "editorial_draft_not_for_release",
+  "note": "P4 layout and pagination prototype. Quotes absent and words unreviewed. Never release.",
+  "entries": [
+    {
+      "main_id": 106,
+      "character": "田",
+      "theme_key": "plowed-fields",
+      "title": "方寸田畴，收藏四时",
+      "subtitle": "春耕秋获，大地自有它的章法。",
+      "meaning": [
+        "田，是耕种作物的土地。",
+        "一畦畦田垄，记录着四时的节律。"
+      ],
+      "quote": {
+        "text": null,
+        "attribution": null,
+        "status": "blocked",
+        "source": null
+      },
+      "terms": [
+        {
+          "word": "田地",
+          "pinyin": "tián dì",
+          "status": "review_pending"
+        },
+        {
+          "word": "田野",
+          "pinyin": "tián yě",
+          "status": "review_pending"
+        },
+        {
+          "word": "水田",
+          "pinyin": "shuǐ tián",
+          "status": "review_pending"
+        },
+        {
+          "word": "稻田",
+          "pinyin": "dào tián",
+          "status": "review_pending"
+        },
+        {
+          "word": "耕田",
+          "pinyin": "gēng tián",
+          "status": "review_pending"
+        },
+        {
+          "word": "田园",
+          "pinyin": "tián yuán",
+          "status": "review_pending"
+        }
+      ],
+      "sentence": "田畴把一年的光阴写在泥土里，春天留白，秋天落款。",
+      "sentence_review_state": "editorial_draft"
+    },
+    {
+      "main_id": 200,
+      "character": "鼻",
+      "theme_key": "breath-and-scent",
+      "title": "一呼一吸，万物有香",
+      "subtitle": "气息无声，却能悄悄唤醒记忆。",
+      "meaning": [
+        "鼻，是呼吸和嗅觉器官。",
+        "它帮助我们感受花香与雨后泥土的气息。"
+      ],
+      "quote": {
+        "text": null,
+        "attribution": null,
+        "status": "blocked",
+        "source": null
+      },
+      "terms": [
+        {
+          "word": "鼻子",
+          "pinyin": "bí zi",
+          "status": "review_pending"
+        },
+        {
+          "word": "鼻梁",
+          "pinyin": "bí liáng",
+          "status": "review_pending"
+        },
+        {
+          "word": "鼻音",
+          "pinyin": "bí yīn",
+          "status": "review_pending"
+        },
+        {
+          "word": "鼻孔",
+          "pinyin": "bí kǒng",
+          "status": "review_pending"
+        },
+        {
+          "word": "鼻尖",
+          "pinyin": "bí jiān",
+          "status": "review_pending"
+        },
+        {
+          "word": "鼻息",
+          "pinyin": "bí xī",
+          "status": "review_pending"
+        }
+      ],
+      "sentence": "气息看不见，却替我们记住雨后的泥土与故乡的饭香。",
+      "sentence_review_state": "editorial_draft"
+    },
+    {
+      "main_id": 201,
+      "character": "龠",
+      "theme_key": "ancient-reed-pipes",
+      "title": "竹管藏声，古韵犹在",
+      "subtitle": "一个古老的字，留住了声音的形状。",
+      "meaning": [
+        "龠在古籍中可指一种竹制管乐器。",
+        "也曾用作古代的容量单位。"
+      ],
+      "quote": {
+        "text": null,
+        "attribution": null,
+        "status": "blocked",
+        "source": null
+      },
+      "terms": [],
+      "sentence": "古老的声音藏在字形深处，像穿过岁月的微风，等人再次听见。",
+      "sentence_review_state": "editorial_draft",
+      "reading_candidate": {
+        "pinyin": "yuè",
+        "source": "https://dict.revised.moe.edu.tw/dictView.jsp?ID=11771&la=0&powerMode=0",
+        "status": "external_dictionary_found_original_pdf_not_reviewed",
+        "display_in_page": false
+      }
+    }
+  ]
+}
