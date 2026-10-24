@@ -1,0 +1,178 @@
+name: Cultural P4 full-page long-stroke proof
+
+on:
+  push:
+    branches:
+      - feat/cultural-multipage-p4-20261024
+    paths:
+      - 'scripts/build_cultural_multipage.py'
+      - 'scripts/test_cultural_multipage.py'
+      - 'data/cultural_edition/p4_multipage_prototypes.json'
+      - '.github/workflows/cultural-multipage-p4.yml'
+  pull_request:
+    paths:
+      - 'scripts/build_cultural_multipage.py'
+      - 'scripts/test_cultural_multipage.py'
+      - 'data/cultural_edition/p4_multipage_prototypes.json'
+      - '.github/workflows/cultural-multipage-p4.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  render-original-pdf-cultural-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Prepare frozen source and rendering dependencies
+        run: |
+          set -euo pipefail
+          python -m pip install 'PyMuPDF==1.26.7' 'reportlab==4.4.9' 'Pillow==12.3.0' 'numpy==2.3.5'
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-arphic-gkai00mp fonts-arphic-gbsn00lp fonts-dejavu-core
+      - name: Build actual 5-page cultural layout from 36 released-PDF steps
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-p4
+          python scripts/build_cultural_multipage.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/p4_multipage_prototypes.json \
+            --output build/cultural-p4/cultural-5-14-17-stroke-P4-DRAFT.pdf \
+            --proof build/cultural-p4/page-provenance.json
+      - name: Verify every source tile, Pinyin and continuation
+        run: |
+          set -euo pipefail
+          python scripts/test_cultural_multipage.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/p4_multipage_prototypes.json \
+            --pdf build/cultural-p4/cultural-5-14-17-stroke-P4-DRAFT.pdf \
+            --proof build/cultural-p4/page-provenance.json \
+            | tee build/cultural-p4/qa-summary.json
+      - name: Render every cultural page for manual visual QA
+        run: |
+          python - <<'PY'
+          import fitz
+          from pathlib import Path
+          root=Path('build/cultural-p4')
+          with fitz.open(root/'cultural-5-14-17-stroke-P4-DRAFT.pdf') as doc:
+              for i,pg in enumerate(doc):
+                  pg.get_pixmap(matrix=fitz.Matrix(1.5,1.5),alpha=False).save(
+                      root/f'page-{i+1:02d}.png')
+          PY
+      - name: Confirm deterministic PDF and source mapping
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-p4-second
+          python scripts/build_cultural_multipage.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/p4_multipage_prototypes.json \
+            --output build/cultural-p4-second/identical.pdf \
+            --proof build/cultural-p4-second/identical.json
+          cmp build/cultural-p4/cultural-5-14-17-stroke-P4-DRAFT.pdf build/cultural-p4-second/identical.pdf
+          echo 'P4 exactly repeatable PDF bytes: PASS'
+      - name: Validate P2 secondary lexicon evidence remains unapproved
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          x=json.loads(Path('data/cultural_edition/p2_lexicon_secondary_20261024.json').read_text())
+          assert x['canonical_mainland_publication_approved'] is False
+          assert len(x['entries'])==5
+          for item in x['entries']:
+              assert item['source_region']=='Taiwan'
+              assert item['status']=='source_located_cross_region_needs_mainland_check'
+              assert item['reviewed_by'] is None and item['approved_at'] is None
+              assert item['source_url'].startswith('https://')
+          print('PASS: secondary dictionaries cannot silently authorize release')
+          PY
+      - name: Archive non-released P4 PDF and append-only manifest record
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feat/cultural-multipage-p4-20261024'
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,os,shutil
+          from pathlib import Path
+          import fitz
+          source=Path('build/cultural-p4')
+          dest=Path('deliverables/drafts/cultural-v0.2')
+          dest.mkdir(parents=True,exist_ok=True)
+          name='cultural-5-14-17-stroke-P4-DRAFT.pdf'
+          shutil.copyfile(source/name,dest/name)
+          for f in ('qa-summary.json','page-provenance.json'):
+              shutil.copyfile(source/f,dest/f)
+          pdf=dest/name
+          with fitz.open(pdf) as book:
+              assert len(book)==5
+          proof=json.loads((dest/'page-provenance.json').read_text())
+          assert proof['status']=='P4_source_locked_editorial_draft_not_for_release'
+          assert proof['total_source_strokes']==36
+          sha=hashlib.sha256(pdf.read_bytes()).hexdigest()
+          assert sha==proof['output_sha256']
+          key=pdf.as_posix()
+          manifest=Path('deliverables/manifest.json')
+          obj=json.loads(manifest.read_text())
+          candidates=[item for item in obj['artifacts'] if item['path']==key]
+          assert len(candidates)<=1
+          entry={
+              'path':key,
+              'title':'文化识字版 P4 三个5—17笔复杂主字文化阅读页技术草稿',
+              'version':'cultural-0.2-p4-draft',
+              'status':'draft',
+              'batch':'P4 田鼻龠 5-14-17 strokes',
+              'pages':5,
+              'bytes':pdf.stat().st_size,
+              'sha256':sha,
+              'source_commit':os.environ['GITHUB_SHA'],
+              'provenance_kind':'source_locked_vector_layout_derivative',
+              'source_pdf':'deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf',
+              'source_pdf_sha256':'7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90',
+              'review_record':'reviews/cultural-edition/P4-multipage-source-QA-20261024.md',
+              'release_eligible':False,
+              'editorial_review_state':'P4_source_locked_editorial_draft_not_for_release',
+          }
+          if candidates:
+              assert candidates[0]['status']=='draft'
+              assert candidates[0]['release_eligible'] is False
+              candidates[0].update(entry)
+          else:
+              obj['artifacts'].append(entry)
+          manifest.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n')
+          print('PASS: archived draft and synchronized its registered SHA',sha)
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add deliverables/manifest.json deliverables/drafts/cultural-v0.2/
+          if ! git diff --cached --quiet; then
+            git commit -m 'build(P4): archive source-locked 5-page long-stroke cultural draft'
+            # Other editorial/doc commits can land while long PDF QA runs.
+            # Rebase the generated *single atomic draft+manifest commit* before
+            # pushing; never force-push, discard history or overwrite releases.
+            for attempt in 1 2 3; do
+              git fetch origin feat/cultural-multipage-p4-20261024
+              git rebase origin/feat/cultural-multipage-p4-20261024
+              if git push origin HEAD:feat/cultural-multipage-p4-20261024; then
+                exit 0
+              fi
+              echo "New branch head appeared; retrying fast-forward push"
+            done
+            echo 'Unable to archive via safe fast-forward (no force push)' >&2
+            exit 1
+          fi
+
+      - name: Upload candidate, page previews and source proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultural-p4-multipage-unreviewed-A4
+          path: build/cultural-p4/
+          retention-days: 14
+          if-no-files-found: warn

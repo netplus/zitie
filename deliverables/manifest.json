@@ -507,6 +507,23 @@
       "bytes": 6922092,
       "sha256": "6224bbfef4d42b1f9953b5b64a72b5fda0065767a55b553ed10f19b11e328b51",
       "purpose": "source-only technical continuity atlas, not an editorial publication"
+    },
+    {
+      "path": "deliverables/drafts/cultural-v0.2/cultural-5-14-17-stroke-P4-DRAFT.pdf",
+      "title": "文化识字版 P4 三个5—17笔复杂主字文化阅读页技术草稿",
+      "version": "cultural-0.2-p4-draft",
+      "status": "draft",
+      "batch": "P4 田鼻龠 5-14-17 strokes",
+      "pages": 5,
+      "bytes": 3500295,
+      "sha256": "a75f7d197823502e412f207dd19cf7b5ae0f965b8439ab29fcc824c7a621b332",
+      "source_commit": "87d65c1828c07a64eed49df59d6e452fa11133dd",
+      "provenance_kind": "source_locked_vector_layout_derivative",
+      "source_pdf": "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf",
+      "source_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+      "review_record": "reviews/cultural-edition/P4-multipage-source-QA-20261024.md",
+      "release_eligible": false,
+      "editorial_review_state": "P4_source_locked_editorial_draft_not_for_release"
     }
   ]
 }

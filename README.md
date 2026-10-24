@@ -4,6 +4,12 @@
 
 ---
 
+## 文化版 P4：复杂字文化阅读页真实PDF分页（审稿阶段）
+
+已把原v0.5.1矢量笔顺在含主题句、字义、笔顺提示、关联词和短句的**实际文化版页面**中排版，修复仅有独立技术图册但无正文分页的问题。[新5页 P4 待审PDF](deliverables/drafts/cultural-v0.2/cultural-5-14-17-stroke-P4-DRAFT.pdf)：**田5笔1页、鼻14笔2页、龠17笔2页**，逐笔源图共36幅、最小31mm。由 [P4生成器](scripts/build_cultural_multipage.py)、[自动核验](scripts/test_cultural_multipage.py)、[审核记录](reviews/cultural-edition/P4-multipage-source-QA-20261024.md)保证源PDF正确，未审核读音不自动填入。词音和引文仍在[来源记录](reviews/cultural-edition/P2-secondary-lexicon-20261024.md)中逐条核查；**仍为draft，不替换正式PDF，也没有完成201字内容或正式插画**。
+
+---
+
 ## 在线字帖打印 · A4 自定义排版（P3）
 
 [在线打印页面](animation/print/index.html)：支持汉字、字母、数字、拼音四类练习，田字格／米字格／方框格／四线三格，方格尺寸10–25 mm，按A4实时预览、调节行列间距、描红方式与颜色并使用浏览器打印或保存PDF（推荐默认15 mm、10格/行）。201主部首使用正式v0.5.1 PDF同源矢量；未收录汉字明确提示系统字体回退，拼音沿用已有分源数据，不声称均获得教学认证。新增可选的「打印逐笔笔顺示范」（默认勾选，可手动取消，限已有原版201字的源矢量；当前笔红、此前笔灰，复杂字完整分页；未收录字只显示明确提示），不捏造笔画顺序。纯本机处理，无第三方字体/CDN；不触碰v0.5.1正式PDF与v0.6.0候选版，详见 [设计与测试](docs/ONLINE_PRINT_STUDIO.md)。
