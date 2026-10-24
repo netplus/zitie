@@ -7,6 +7,8 @@ on:
       - 'scripts/cultural_source_audit.py'
       - 'scripts/build_cultural_sample.py'
       - 'scripts/test_cultural_sample.py'
+      - 'scripts/build_cultural_stroke_atlas.py'
+      - 'scripts/test_cultural_stroke_atlas.py'
       - 'data/cultural_edition/**'
       - '.github/workflows/cultural-edition-preview.yml'
   pull_request:
@@ -78,6 +80,34 @@ jobs:
               for i,page in enumerate(pdf):
                   page.get_pixmap(matrix=fitz.Matrix(1.5,1.5),alpha=False).save(output/f'page-{i+1:02d}.png')
           PY
+      - name: Build 201-ID source-only technical atlas with safe continuations
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_cultural_stroke_atlas.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --output build/cultural-v0.1/stroke-source-atlas-201-TECHNICAL.pdf \
+            --proof build/cultural-v0.1/atlas-source-provenance.json
+          python scripts/test_cultural_stroke_atlas.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --atlas build/cultural-v0.1/stroke-source-atlas-201-TECHNICAL.pdf \
+            --proof build/cultural-v0.1/atlas-source-provenance.json \
+            | tee build/cultural-v0.1/atlas-qa-summary.json
+          python - <<'PY'
+          import json,fitz
+          from pathlib import Path
+          folder=Path('build/cultural-v0.1')
+          index=json.loads((folder/'atlas-source-provenance.json').read_text())
+          assert index['page_map'][-2]['main_id']==201
+          assert index['page_map'][-1]['main_id']==201
+          with fitz.open(folder/'stroke-source-atlas-201-TECHNICAL.pdf') as doc:
+              for num in (201,202):
+                  doc[num-1].get_pixmap(matrix=fitz.Matrix(1.3,1.3),alpha=False).save(
+                      folder/f'ID201-complex-source-atlas-page-{num}.png')
+          PY
+
       - name: Archive reproducible candidate on isolated feature branch
         if: github.event_name == 'push' && github.ref == 'refs/heads/feat/cultural-edition-rebuild-20261024'
         run: |
@@ -88,6 +118,9 @@ jobs:
           cp build/cultural-v0.1/cultural-4-character-source-locked-DRAFT.pdf deliverables/drafts/cultural-v0.1/
           cp build/cultural-v0.1/source-provenance.json deliverables/drafts/cultural-v0.1/
           cp build/cultural-v0.1/qa-summary.json deliverables/drafts/cultural-v0.1/
+          cp build/cultural-v0.1/stroke-source-atlas-201-TECHNICAL.pdf deliverables/drafts/cultural-v0.1/
+          cp build/cultural-v0.1/atlas-source-provenance.json deliverables/drafts/cultural-v0.1/
+          cp build/cultural-v0.1/atlas-qa-summary.json deliverables/drafts/cultural-v0.1/
           git add deliverables/drafts/cultural-v0.1/
           if ! git diff --cached --quiet; then
             git commit -m "build(cultural): archive four-page source-locked editorial draft (not released)"
