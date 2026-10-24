@@ -1,0 +1,693 @@
+{
+  "status": "P4_source_locked_editorial_draft_not_for_release",
+  "source_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+  "output_sha256": "a75f7d197823502e412f207dd19cf7b5ae0f965b8439ab29fcc824c7a621b332",
+  "pages": 5,
+  "main_ids": 3,
+  "total_source_strokes": 36,
+  "cover_max_steps": 6,
+  "continuation_max_steps": 15,
+  "tile_mm": 31,
+  "uses_only_original_source_pdf_tiles": true,
+  "quote_and_term_review": "blocked_or_pending",
+  "theme_art": "distinct vector placeholders, not final artwork",
+  "page_map": [
+    {
+      "main_id": 106,
+      "character": "田",
+      "part": 1,
+      "parts": 1,
+      "phase": "reading_page",
+      "stroke_count": 5,
+      "source_reading_state": "published_source",
+      "editorial_state": "draft_unreviewed",
+      "theme_key": "plowed-fields",
+      "source_steps": [
+        {
+          "index": 1,
+          "name": "竖",
+          "pdf_page": 21,
+          "rect_pt": [
+            36.0,
+            278.88977,
+            122.0,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            48.18898,
+            566.92913,
+            136.06299,
+            654.80315
+          ]
+        },
+        {
+          "index": 2,
+          "name": "横折",
+          "pdf_page": 21,
+          "rect_pt": [
+            145.31889,
+            278.88977,
+            231.31889,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            141.73228,
+            566.92913,
+            229.6063,
+            654.80315
+          ]
+        },
+        {
+          "index": 3,
+          "name": "横",
+          "pdf_page": 21,
+          "rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            235.27559,
+            566.92913,
+            323.14961,
+            654.80315
+          ]
+        },
+        {
+          "index": 4,
+          "name": "竖",
+          "pdf_page": 21,
+          "rect_pt": [
+            363.9567,
+            278.88977,
+            449.9567,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            48.18898,
+            694.48819,
+            136.06299,
+            782.3622
+          ]
+        },
+        {
+          "index": 5,
+          "name": "横",
+          "pdf_page": 21,
+          "rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            141.73228,
+            694.48819,
+            229.6063,
+            782.3622
+          ]
+        }
+      ]
+    },
+    {
+      "main_id": 200,
+      "character": "鼻",
+      "part": 1,
+      "parts": 2,
+      "phase": "reading_page",
+      "stroke_count": 14,
+      "source_reading_state": "published_source",
+      "editorial_state": "draft_unreviewed",
+      "theme_key": "breath-and-scent",
+      "source_steps": [
+        {
+          "index": 1,
+          "name": "撇",
+          "pdf_page": 258,
+          "rect_pt": [
+            36.0,
+            278.88977,
+            122.0,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            48.18898,
+            566.92913,
+            136.06299,
+            654.80315
+          ]
+        },
+        {
+          "index": 2,
+          "name": "竖",
+          "pdf_page": 258,
+          "rect_pt": [
+            123.4551,
+            278.88977,
+            209.45511,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            141.73228,
+            566.92913,
+            229.6063,
+            654.80315
+          ]
+        },
+        {
+          "index": 3,
+          "name": "横折",
+          "pdf_page": 258,
+          "rect_pt": [
+            210.9102,
+            278.88977,
+            296.91022,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            235.27559,
+            566.92913,
+            323.14961,
+            654.80315
+          ]
+        },
+        {
+          "index": 4,
+          "name": "横",
+          "pdf_page": 258,
+          "rect_pt": [
+            298.36539,
+            278.88977,
+            384.36539,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            48.18898,
+            694.48819,
+            136.06299,
+            782.3622
+          ]
+        },
+        {
+          "index": 5,
+          "name": "横",
+          "pdf_page": 258,
+          "rect_pt": [
+            385.8205,
+            278.88977,
+            471.8205,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            141.73228,
+            694.48819,
+            229.6063,
+            782.3622
+          ]
+        },
+        {
+          "index": 6,
+          "name": "横",
+          "pdf_page": 258,
+          "rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            235.27559,
+            694.48819,
+            323.14961,
+            782.3622
+          ]
+        }
+      ]
+    },
+    {
+      "main_id": 200,
+      "character": "鼻",
+      "part": 2,
+      "parts": 2,
+      "phase": "stroke_continuation",
+      "stroke_count": 14,
+      "source_reading_state": "published_source",
+      "editorial_state": "draft_unreviewed",
+      "theme_key": "breath-and-scent",
+      "source_steps": [
+        {
+          "index": 7,
+          "name": "竖",
+          "pdf_page": 259,
+          "rect_pt": [
+            36.0,
+            278.88977,
+            122.0,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            49.6063,
+            297.6378,
+            137.48031,
+            385.51181
+          ]
+        },
+        {
+          "index": 8,
+          "name": "横折",
+          "pdf_page": 259,
+          "rect_pt": [
+            123.4551,
+            278.88977,
+            209.45511,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            151.65354,
+            297.6378,
+            239.52756,
+            385.51181
+          ]
+        },
+        {
+          "index": 9,
+          "name": "横",
+          "pdf_page": 259,
+          "rect_pt": [
+            210.9102,
+            278.88977,
+            296.91022,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            253.70079,
+            297.6378,
+            341.5748,
+            385.51181
+          ]
+        },
+        {
+          "index": 10,
+          "name": "竖",
+          "pdf_page": 259,
+          "rect_pt": [
+            298.36539,
+            278.88977,
+            384.36539,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            355.74803,
+            297.6378,
+            443.62205,
+            385.51181
+          ]
+        },
+        {
+          "index": 11,
+          "name": "横",
+          "pdf_page": 259,
+          "rect_pt": [
+            385.8205,
+            278.88977,
+            471.8205,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            457.79528,
+            297.6378,
+            545.66929,
+            385.51181
+          ]
+        },
+        {
+          "index": 12,
+          "name": "横",
+          "pdf_page": 259,
+          "rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            49.6063,
+            456.37795,
+            137.48031,
+            544.25197
+          ]
+        },
+        {
+          "index": 13,
+          "name": "撇",
+          "pdf_page": 260,
+          "rect_pt": [
+            36.0,
+            278.88977,
+            122.0,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            151.65354,
+            456.37795,
+            239.52756,
+            544.25197
+          ]
+        },
+        {
+          "index": 14,
+          "name": "竖",
+          "pdf_page": 260,
+          "rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            253.70079,
+            456.37795,
+            341.5748,
+            544.25197
+          ]
+        }
+      ]
+    },
+    {
+      "main_id": 201,
+      "character": "龠",
+      "part": 1,
+      "parts": 2,
+      "phase": "reading_page",
+      "stroke_count": 17,
+      "source_reading_state": "blocked_no_source_pdf_reading",
+      "editorial_state": "draft_unreviewed",
+      "theme_key": "ancient-reed-pipes",
+      "source_steps": [
+        {
+          "index": 1,
+          "name": "撇",
+          "pdf_page": 261,
+          "rect_pt": [
+            36.0,
+            278.88977,
+            122.0,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            48.18898,
+            566.92913,
+            136.06299,
+            654.80315
+          ]
+        },
+        {
+          "index": 2,
+          "name": "捺",
+          "pdf_page": 261,
+          "rect_pt": [
+            123.4551,
+            278.88977,
+            209.45511,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            141.73228,
+            566.92913,
+            229.6063,
+            654.80315
+          ]
+        },
+        {
+          "index": 3,
+          "name": "横",
+          "pdf_page": 261,
+          "rect_pt": [
+            210.9102,
+            278.88977,
+            296.91022,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            235.27559,
+            566.92913,
+            323.14961,
+            654.80315
+          ]
+        },
+        {
+          "index": 4,
+          "name": "竖",
+          "pdf_page": 261,
+          "rect_pt": [
+            298.36539,
+            278.88977,
+            384.36539,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            48.18898,
+            694.48819,
+            136.06299,
+            782.3622
+          ]
+        },
+        {
+          "index": 5,
+          "name": "横折",
+          "pdf_page": 261,
+          "rect_pt": [
+            385.8205,
+            278.88977,
+            471.8205,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            141.73228,
+            694.48819,
+            229.6063,
+            782.3622
+          ]
+        },
+        {
+          "index": 6,
+          "name": "横",
+          "pdf_page": 261,
+          "rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            235.27559,
+            694.48819,
+            323.14961,
+            782.3622
+          ]
+        }
+      ]
+    },
+    {
+      "main_id": 201,
+      "character": "龠",
+      "part": 2,
+      "parts": 2,
+      "phase": "stroke_continuation",
+      "stroke_count": 17,
+      "source_reading_state": "blocked_no_source_pdf_reading",
+      "editorial_state": "draft_unreviewed",
+      "theme_key": "ancient-reed-pipes",
+      "source_steps": [
+        {
+          "index": 7,
+          "name": "竖",
+          "pdf_page": 262,
+          "rect_pt": [
+            36.0,
+            278.88977,
+            122.0,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            49.6063,
+            297.6378,
+            137.48031,
+            385.51181
+          ]
+        },
+        {
+          "index": 8,
+          "name": "横折",
+          "pdf_page": 262,
+          "rect_pt": [
+            123.4551,
+            278.88977,
+            209.45511,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            151.65354,
+            297.6378,
+            239.52756,
+            385.51181
+          ]
+        },
+        {
+          "index": 9,
+          "name": "横",
+          "pdf_page": 262,
+          "rect_pt": [
+            210.9102,
+            278.88977,
+            296.91022,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            253.70079,
+            297.6378,
+            341.5748,
+            385.51181
+          ]
+        },
+        {
+          "index": 10,
+          "name": "竖",
+          "pdf_page": 262,
+          "rect_pt": [
+            298.36539,
+            278.88977,
+            384.36539,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            355.74803,
+            297.6378,
+            443.62205,
+            385.51181
+          ]
+        },
+        {
+          "index": 11,
+          "name": "横折",
+          "pdf_page": 262,
+          "rect_pt": [
+            385.8205,
+            278.88977,
+            471.8205,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            457.79528,
+            297.6378,
+            545.66929,
+            385.51181
+          ]
+        },
+        {
+          "index": 12,
+          "name": "横",
+          "pdf_page": 262,
+          "rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            49.6063,
+            456.37795,
+            137.48031,
+            544.25197
+          ]
+        },
+        {
+          "index": 13,
+          "name": "竖",
+          "pdf_page": 263,
+          "rect_pt": [
+            36.0,
+            278.88977,
+            122.0,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            151.65354,
+            456.37795,
+            239.52756,
+            544.25197
+          ]
+        },
+        {
+          "index": 14,
+          "name": "横折",
+          "pdf_page": 263,
+          "rect_pt": [
+            145.31889,
+            278.88977,
+            231.31889,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            253.70079,
+            456.37795,
+            341.5748,
+            544.25197
+          ]
+        },
+        {
+          "index": 15,
+          "name": "横",
+          "pdf_page": 263,
+          "rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            355.74803,
+            456.37795,
+            443.62205,
+            544.25197
+          ]
+        },
+        {
+          "index": 16,
+          "name": "竖",
+          "pdf_page": 263,
+          "rect_pt": [
+            363.9567,
+            278.88977,
+            449.9567,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            457.79528,
+            456.37795,
+            545.66929,
+            544.25197
+          ]
+        },
+        {
+          "index": 17,
+          "name": "竖",
+          "pdf_page": 263,
+          "rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            49.6063,
+            615.11811,
+            137.48031,
+            702.99213
+          ]
+        }
+      ]
+    }
+  ]
+}
