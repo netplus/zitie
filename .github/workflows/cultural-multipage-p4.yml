@@ -1,0 +1,89 @@
+name: Cultural P4 full-page long-stroke proof
+
+on:
+  push:
+    branches:
+      - feat/cultural-multipage-p4-20261024
+    paths:
+      - 'scripts/build_cultural_multipage.py'
+      - 'scripts/test_cultural_multipage.py'
+      - 'data/cultural_edition/p4_multipage_prototypes.json'
+      - '.github/workflows/cultural-multipage-p4.yml'
+  pull_request:
+    paths:
+      - 'scripts/build_cultural_multipage.py'
+      - 'scripts/test_cultural_multipage.py'
+      - 'data/cultural_edition/p4_multipage_prototypes.json'
+      - '.github/workflows/cultural-multipage-p4.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render-original-pdf-cultural-pages:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Prepare frozen source and rendering dependencies
+        run: |
+          set -euo pipefail
+          python -m pip install 'PyMuPDF==1.26.7' 'reportlab==4.4.9' 'Pillow==12.3.0' 'numpy==2.3.5'
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-arphic-gkai00mp fonts-arphic-gbsn00lp fonts-dejavu-core
+      - name: Build actual 5-page cultural layout from 36 released-PDF steps
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-p4
+          python scripts/build_cultural_multipage.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/p4_multipage_prototypes.json \
+            --output build/cultural-p4/cultural-5-14-17-stroke-P4-DRAFT.pdf \
+            --proof build/cultural-p4/page-provenance.json
+      - name: Verify every source tile, Pinyin and continuation
+        run: |
+          set -euo pipefail
+          python scripts/test_cultural_multipage.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/p4_multipage_prototypes.json \
+            --pdf build/cultural-p4/cultural-5-14-17-stroke-P4-DRAFT.pdf \
+            --proof build/cultural-p4/page-provenance.json \
+            | tee build/cultural-p4/qa-summary.json
+      - name: Render every cultural page for manual visual QA
+        run: |
+          python - <<'PY'
+          import fitz
+          from pathlib import Path
+          root=Path('build/cultural-p4')
+          with fitz.open(root/'cultural-5-14-17-stroke-P4-DRAFT.pdf') as doc:
+              for i,pg in enumerate(doc):
+                  pg.get_pixmap(matrix=fitz.Matrix(1.5,1.5),alpha=False).save(
+                      root/f'page-{i+1:02d}.png')
+          PY
+      - name: Confirm deterministic PDF and source mapping
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-p4-second
+          python scripts/build_cultural_multipage.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/p4_multipage_prototypes.json \
+            --output build/cultural-p4-second/identical.pdf \
+            --proof build/cultural-p4-second/identical.json
+          cmp build/cultural-p4/cultural-5-14-17-stroke-P4-DRAFT.pdf build/cultural-p4-second/identical.pdf
+          echo 'P4 exactly repeatable PDF bytes: PASS'
+      - name: Upload candidate, page previews and source proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultural-p4-multipage-unreviewed-A4
+          path: build/cultural-p4/
+          retention-days: 14
+          if-no-files-found: warn
