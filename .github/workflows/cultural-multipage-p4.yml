@@ -153,7 +153,19 @@ jobs:
           git add deliverables/manifest.json deliverables/drafts/cultural-v0.2/
           if ! git diff --cached --quiet; then
             git commit -m 'build(P4): archive source-locked 5-page long-stroke cultural draft'
-            git push origin HEAD:feat/cultural-multipage-p4-20261024
+            # Other editorial/doc commits can land while long PDF QA runs.
+            # Rebase the generated *single atomic draft+manifest commit* before
+            # pushing; never force-push, discard history or overwrite releases.
+            for attempt in 1 2 3; do
+              git fetch origin feat/cultural-multipage-p4-20261024
+              git rebase origin/feat/cultural-multipage-p4-20261024
+              if git push origin HEAD:feat/cultural-multipage-p4-20261024; then
+                exit 0
+              fi
+              echo "New branch head appeared; retrying fast-forward push"
+            done
+            echo 'Unable to archive via safe fast-forward (no force push)' >&2
+            exit 1
           fi
 
       - name: Upload candidate, page previews and source proof
