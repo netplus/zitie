@@ -118,3 +118,10 @@
 - [P3画面差异验证](../deliverables/drafts/cultural-v0.3/p3-artwork-visual-check.json)：不同字的右上角图像，两两 PDF 实际画面差异均大于21 RGB/255，四个源文件SHA互异；不使用外部图片/脚本或补全未审写字轨迹。
 - GitHub Actions [#40085682283](https://github.com/netplus/zitie/actions/runs/40085682283) **completed/success**：P2 审计、原P1四字PDF**字节完全不变**、新P3四字PDF重新构建一致、源笔顺15张一致、四幅画面差异和安全检查通过。新增PDF仅登记为 `draft/release_eligible=false`，其他历史 PDF 不覆盖。
 - 仍待：词音中国大陆适用权威来源+人工签核、首次题材图审美/版权签核、全部201字独特画面与语义去重、附形偏旁真实教学源、P5全书页级视觉校验。
+
+### P2 中国大陆考试词汇旁证与201字总账（2026-10-24）
+
+- [21批201字编辑总账](../reviews/cultural-edition/P2-mainland-exam-coverage-20261024.md)已建立；4个P1字＋3个P4字有文化阅读草稿，其余**194字未开始正文写作**，4幅独立插图均未通过正式美术审核，绝不能将源笔顺核定状态推广成内容审定状态。
+- [HSK 中国大陆教学词表](../data/cultural_edition/p2_mainland_exam_evidence_20261024.json)证实候选“月亮” `yuèliang`、“水果” `shuǐguǒ` 在考试词表出现；这是**教学依据而非词典出版审音**。台湾词典“月亮 `yuè liàng`”差异仍待编辑判定，未篡改样板。
+- [现行GB/T 16159—2012](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=5645BD8DB9D8D73053AD3A2397E15E74)第7.1条允许儿童识字读物按字注音，符合我们拼音在汉字上方的排版；语音本身仍须逐词权威校验。
+- [源数据/P2失败即阻断审核器](../scripts/cultural_editorial_coverage.py)为每个 ID 核查旧 B01-B21 源身份、无遗漏/重复、未经批准不得发布；项目仍按 draft 推进。

@@ -1,3 +1,9 @@
+## 文化字帖 P2：201字审稿总账与汉考国际教学拼音旁证（未出版）
+
+已建立[B01–B07](data/cultural_edition/inventory/B01-B07.json)、[B08–B14](data/cultural_edition/inventory/B08-B14.json)、[B15–B21](data/cultural_edition/inventory/B15-B21.json)全部**201个主字**的审稿状态。已制作7字文化样板、剩余194字待写；4幅矢量主题画仍待审。新增中国大陆HSK考试词汇的“月亮/水果”拼音旁证，但非正式词典签核。[审核说明](reviews/cultural-edition/P2-mainland-exam-coverage-20261024.md)和[自动工作量报告脚本](scripts/cultural_editorial_coverage.py)；**旧v0.5.1正式PDF不变，文化新版尚未正式发行**。
+
+---
+
 ## P2/P3 文化字帖：词音审计与四种专属主题图（审稿）
 
 [四字独有矢量插画 PDF](deliverables/drafts/cultural-v0.3/cultural-4-unique-artwork-P3-DRAFT.pdf) · [词语拼音审计结果](deliverables/drafts/cultural-v0.3/p2-evidence-coverage.json) · [审稿记录](reviews/cultural-edition/P2-P3-source-art-20261024.md)。四字“水/山/月/木”的右上画面已分别使用独立SVG，不再复用同一张背景；**原v0.5.1 的15幅笔顺与原始P1文化PDF字节保持不变**。词语使用36处、不同词35个，19词有教育部门直接词条旁证、16词缺少直接词条，月亮 `yuè liang/yuè liàng` 存在地区差异；**所有新内容仍为draft，不是中国大陆适用审音/专业美术的出版批准**。
