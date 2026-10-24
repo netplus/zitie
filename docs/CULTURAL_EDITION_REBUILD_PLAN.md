@@ -1,0 +1,102 @@
+# 文化识字版 PDF 重建 · 执行计划（2026-10-24）
+
+> 状态：**实施中 / 草稿审核**。这是从既有《循序渐进汉字部首字帖》派生的**新文化阅读版**，不是替换 v0.5.1、不是重新进行旧版 PDF 勘误，也不是在线练习格系统改版。全量新书在完成内容、笔顺、拼音、引文、插图与打印质检之前，**禁止标注正式发布**。
+
+## 0. 基线与不可变条件
+
+- GitHub：`netplus/zitie`，主字源 **201 个主部首/字、1045 笔、21 批次**，正式 PDF `deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf`，**299 页**。
+- 原版 SHA256 必须为 `7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90`，与 `deliverables/manifest.json` 完全一致。前一版本 v0.6.0-15mm-rc1、正式版、原版教学元数据、A3 动画、Pages 打印网页均**只读**。
+- **关键的笔顺基线来自原正式 PDF 真实累计笔顺图**：每笔的 86pt 源矢量格（源PDF Form XObject，`show_pdf_page(clip=...)`），不采用生成图中的“仿笔顺”；连续折、撇、钩不能被拆分、替换或二次描画。所有 ID 必须和原书书签及逐页画面对应。
+- “正式版已核字段”不是“所有字段都已核”：原工程已因 GF0011—2022 若干单项数据源不可取得而明确 fail-closed；此处继续遵守已有 `teaching-source-policy.json`，不推断/补写缺失细笔名、读音或附形部件。
+- 彩色笔顺保留**已写灰、本笔红**；每步序号清楚。难字优先自动分行，仍放不下则分**连续教学页**，绝不裁切/压小为无法识读；笔画数与源图、页数、编号逐项一致。
+
+## 1. 用户已确定的编辑与视觉规范
+
+**统一版式，不重复内容**；A4 纵向、白底/暖白、朱红/墨灰、含传统水墨意象的清爽文化阅读页，**取消练习格**（练习转由 `animation/print/` 在线生成）。每一字/偏旁独立专属：
+
+1. 顶部**独有主题句**（不在正文每页重复“一字一世界”，这个名字只保留封面/系列）。
+2. 右上角**独有且与字义强相关的主题图**；不得拿同一张山水/舟/云反复顶替。为每项记录唯一 asset_id / SHA 与题材，另做人审相似度对照。
+3. 主字（或主部首）；**完整单字**拼音放在字**上方**。非独立读音的**偏旁附形**不强行注音；不可将偏旁俗称“sān diǎn shuǐ”误做“氵”单字正音。
+4. 字义/部义：准确简洁，不泛化字源/构形知识。
+5. 经典一隅：**逐条核对原文、作者、篇章来源**；无可核引文时空缺并打待审状态，不把自创短句标成名人名言。
+6. **笔顺提示在笔顺图之前**：优先复用原 PDF `tips`，尤其提示易错折笔、钩、合笔，必要时标明来源审定状态。
+7. 笔顺：原 PDF 中的每一幅真实累计示范，1～N 不缺页、不乱序，按内容空间动态 1/2/3 行或延展到连续页；不能为了固定美工模板损失笔顺教学。
+8. 相关字词/常见字例：**字词在下，带调拼音在上**，尽量一词一组 4～6 项。此栏的“拼音是逐字教学对齐”与 GB/T 16159 正词法词写法是不同表达，数据层同时记录，不能用机器转换结果冒充权威核对。
+9. **一字一句/一部一句**：有画面、哲思、灵气，简练不过度幼稚，不模仿套话；所有页面互不重复。
+10. 页脚 provenance（源版本、ID、是否待审、页码）小字号，不进入儿童正文重点区。
+
+## 2. 范围及任务拆解
+
+| 阶段 | 任务 | 本阶段可验收产物 | 强制放行条件 |
+|---|---|---|---|
+| P0 基线锁定 | 核对源PDF SHA、299页、201个 ID 书签、源笔顺图实际位置 | 自动源审计报告与冻结列表 | 不一致立即失败 |
+| P1 版式引擎 | 与装饰/编辑内容分离的 source-locked SVG/PDF 矢量笔顺裁剪；图前提示；智能分栏和分页 | **可重复生成** A4 草稿（先水/山/月/木） | 每幅图源页和 clip 有证据；无遗漏、无未来笔画，读字优先 |
+| P2 编辑数据 | 建逐字/逐偏旁内容清单：字义、主题句、短句、词、拼音、引文、审校来源 | 每项数据有 status、source refs、reviewer/date | **不可**用自动翻译/发音工具结果直接标 reviewed |
+| P3 视觉资产 | 给每个主字/偏旁策划一图一主题的图册，素材许可及唯一性检验 | `asset_id` + hash + theme + 设计图/权限 | 非法来源、缺件或高重复率一律阻断正式版 |
+| P4 分批合成 | 21 批主字逐步产出，偏旁**附形单设数据域** | 候选书/校验 JSON /页码映射 | 逐批词音/引用/主题图等内容校验全部通过 |
+| P5 质量门禁 | 渲染逐页看图、嵌字字体检查、PDF可搜、灰度/彩色、布局、字符OCR仅末选 | 批次统计、完整实测与打印建议 | 无截断/交叉、笔画数一致、无重复 theme/asset |
+| P6 发布 | 人工审批后一并合成封面/目录/字页/偏旁页及版本记录 | **新** release candidate，再审定发布 | 旧版不覆盖；manifest 按可核字段单独追加新条目 |
+
+**阶段 P1/P2 首批目标（当前迭代）**：从 v0.5.1 实际示范页建立 4 个文化阅读样板：`水(ID077)`、`山(ID039)`、`月(ID088)`、`木(ID064)`，覆盖横/折/钩、不同字义、三笔/四笔。第一批只作**待审样板**；相关词/引文未全部获权威词条核验时，不升级正式出版。随后复核复杂字 `龠(ID201,17笔)` 的跨源页采样与分页。
+
+**附形偏旁是单独阶段**：`氵`、`亻`、`扌`等不能直接拿主字 `水/人/手` 的已审定源笔顺替代；必须经附形源、位置迁移、字形/笔序和名称的逐项资料复核。资料不够时明确停在 `blocked`，不伪造。
+
+## 3. 数据契约、验收与不允许的捷径
+
+- 程序输入：源PDF + manifest + `data/B01-B21.json` + `data/teaching-source-policy.json` + **编辑审核 JSON** + 独立插图资产。运行环境和版本固定。
+- `editorial_status`：`draft` / `source_verified` / `reviewed` / `blocked`；`source_verified` 专指已有发布信息的复用，**不等于**词语/古诗/插图已审。记录 `review_evidence` 的可访问 URL/版本/页码及审核日期。
+- 词条每项：`hanzi`、`pinyin_display`、`pinyin_orthographic`、`dictionary_source`、`status`；无依据的词项只允许出现在明显标注的审稿样张，绝不准正式发行。
+- 每个源笔顺步骤：`main_id, source_pdf_sha256, source_page, source_crop_rect, step_index, stroke_name_status`，总数必须等于原数据声明笔画数，不能把一个折笔拆成两项。
+- 字词、短句、图：分别检查复用（精确文本与接近重复）。多音字、轻声、变调、儿化和方言差异按实际词义/规范单独复核。
+- 正式版中凡含“笔顺”教学图的 PDF 只能从原发布 PDF 真实剪裁矢量步骤生成；AI 图可做**非教学插图**，不得有任何机会进入笔顺图或替换范字。
+- 不能以 201 个单字已上线推断已覆盖 201 个附形偏旁或每个字的全部规范拼音。
+
+## 4. 当前推进状态（持续更新）
+
+- [x] P0 源文件 SHA256、299 页、目标水/山/月/木官方书签索引与源图 86pt 版式抽样完成。
+- [x] P0 严格 201 ID 全量源图审计脚本及 CI 完成（1045 笔、258 个教学页、原 86pt 裁剪框逐页对齐）。
+- [x] P1 可运行 A4 草稿生成器、四字样板（**水 ID077、山 ID039、月 ID088、木 ID064**）及 source-step provenance；每幅示范直接复制正式 PDF 矢量（15/15 幅通过像素差异门槛）。
+- [x] P1 **技术图册**实现 31mm 源笔顺格、每页最多3行×5列、长字续页，201项1045笔202页、龠17笔按15+2连续分页均通过原PDF比对；**未**与文化正文融合，四字文化页生成器仍故意拒绝 >4 笔（正式文化排版见 Issue #191）。
+- [~] P2 首批经典引文完成公开来源定位与一次原文纠错（《论语·雍也》改为“知者乐水，仁者乐山”）；其余拼音、经典版本/权威词条 **仍 review_pending**，参见 [P2首轮核对](../reviews/cultural-edition/P2-first-batch-quotes-initial-20261024.md)。
+- [ ] P3 首批四种主题唯一**正式插图**与来源/许可登记（目前仅有不同题材的程序矢量布局占位，不能算最终艺术审定）。
+- [ ] P4 其余 197 主字分批推进；附形独立源另行核定。
+- [ ] P5 全量版式/字体/文字/拼音/插图及打印质检。
+- [ ] P6 明确审定后独立发行；旧版保持不可变。
+
+## 5. 操作与交付约束
+
+- 先在独立 feature 分支提交计划与源引擎/草稿，建立 PR；用户能通过 PR 审核样板与 provenance。
+- 先输出可运行的**草稿 PDF 和源信息表**，一旦校验失败即报告，绝不通过剪裁错误或替换图像绕过门禁。
+- 新工程只能**新增** `scripts/cultural_edition_*.py`、`data/cultural_edition/`、`deliverables/drafts/cultural-v0.1/`、`reviews/cultural-edition/`、单独 CI；不得改变旧正式 PDF、其 SHA、manifest 的既有条目或线上练习与动画逻辑。
+- 当次实现结尾明确写出**完成了哪一阶段**和哪些仍阻塞，绝不以一份 P1 草稿宣称已完成全书。
+
+
+### P0/P1 第一批实测与文件（2026-10-24）
+
+- [生成器](../scripts/build_cultural_sample.py)｜[201 ID 全量审计](../scripts/cultural_source_audit.py)｜[独立源图QA](../scripts/test_cultural_sample.py)｜[首批内容数据](../data/cultural_edition/first_batch_draft.json)。
+- [四字 PDF 待审草稿](../deliverables/drafts/cultural-v0.1/cultural-4-character-source-locked-DRAFT.pdf)｜[逐幅原图溯源](../deliverables/drafts/cultural-v0.1/source-provenance.json)｜[QA 摘要](../deliverables/drafts/cultural-v0.1/qa-summary.json)。
+- GitHub Actions [Cultural PDF source-locked preview #40054585895](https://github.com/netplus/zitie/actions/runs/40054585895) **completed/success**，源 PDF SHA 匹配、201项1045笔258教学页全通过，4页15幅原图逐一对照均通过（平均RGB通道误差3.6/255、最大4.815/255，允许字体缩放引入轻微抗锯齿差异）。
+- 源 PDF 有部分主项**不单列拼音或明确未审核**；不能把无注音附形当成已审定单字拼音。词语注音、古文引文、最终独特插画还未获得P2/P3正式审定，新草稿页脚明确标“待审”；**整本新书尚未构建或发布**。
+
+### P1 全201字长字续页检验（2026-10-24）
+
+- 已由[完整技术图册生成器](../scripts/build_cultural_stroke_atlas.py)和[源图测试](../scripts/test_cultural_stroke_atlas.py)验证：**201主字、1045步、202张A4技术图册**；每个笔顺图边长 **31mm**，最多5列×3行。
+- [完整201字笔顺技术图册（只作工程核验，202页）](../deliverables/drafts/cultural-v0.1/stroke-source-atlas-201-TECHNICAL.pdf)、[逐步源PDF页码及矩形映射](../deliverables/drafts/cultural-v0.1/atlas-source-provenance.json)、[独立QA数据](../deliverables/drafts/cultural-v0.1/atlas-qa-summary.json)。
+- **龠(ID201) 17笔**按第一张15笔＋续张2笔分行与分页，所有原PDF步骤次序、笔画名、源图矩形完全匹配。33幅风险源步重新栅格化校验最大通道误差3.185/255。
+- [GitHub Actions #40054959004](https://github.com/netplus/zitie/actions/runs/40054959004) 为 completed/success。文化阅读页面的长字分页整合仍列 [Issue #191](https://github.com/netplus/zitie/issues/191)，不能将技术 atlas 冒称完整文化版。
+- 两份新增PDF均按仓库强制归档机制在 `deliverables/manifest.json` **仅追加** `status=draft`、`release_eligible=false`、源生成提交/页数/字节/hash 和 [P1审核记录](../reviews/cultural-edition/P1-source-preview-20261024.md)；历史文件及manifest条目字节不变。
+
+### 已登记后续任务
+
+- [P2 权威词音与经典引文审校 #189](https://github.com/netplus/zitie/issues/189)
+- [P3 逐字主题插画授权与全局去重 #190](https://github.com/netplus/zitie/issues/190)
+- [P4 将长字真实笔顺融入文化页而不是只做 atlas #191](https://github.com/netplus/zitie/issues/191)
+- [P5/P6 全书候选及发布验收 #192](https://github.com/netplus/zitie/issues/192)
+
+### P1 可重复构建及归档门禁（2026-10-24）
+
+- 使用 ReportLab `invariant=1` 与 PyMuPDF `no_new_id=True` 保证字节级可重复生成；CI 连续构建两遍样稿和完整 atlas，使用 `cmp` 证明完全一致。
+- 生成器发生改变时，GitHub Actions 仅针对这两个 **draft** 归档条目自动同步 `sha256/bytes/pages/source_commit`（`status=draft`, `release_eligible=false` 强校验），绝不更改已发行历史条目；示范页与书签冻结源依旧为 v0.5.1 原 299 页。
+- 完成新数据后的四字样本已自动更新：《论语》山字引文纠正为“**知者乐水，仁者乐山**”，其余引文附首轮来源 URL 但人工审定仍 pending。首轮 P2 来源见 [核对记录](../reviews/cultural-edition/P2-first-batch-quotes-initial-20261024.md)。
+- 最新稳定草稿实际哈希：`cultural-4-character-source-locked-DRAFT.pdf` = `8b30ae365472e51190739131f9edc4ad60e2573908a234aed3c5fa6378f31d04`；`stroke-source-atlas-201-TECHNICAL.pdf` = `6224bbfef4d42b1f9953b5b64a72b5fda0065767a55b553ed10f19b11e328b51`，并已与manifest两条草稿记录匹配。来源提交标记为 `a5f8d0b3138bcdd7878875523664177f6437b426`。
+- [CI #40055521161](https://github.com/netplus/zitie/actions/runs/40055521161) 完成两次比对和原PDF独立来源对照（completed/success）。合并前仍需 `Book integrity checks` 直接从最终 HEAD 成功执行，防止任何未登记PDF污染正式repo。

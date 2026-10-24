@@ -1,0 +1,192 @@
+name: Cultural PDF source-locked preview
+on:
+  push:
+    branches:
+      - feat/cultural-edition-rebuild-20261024
+    paths:
+      - 'scripts/cultural_source_audit.py'
+      - 'scripts/build_cultural_sample.py'
+      - 'scripts/test_cultural_sample.py'
+      - 'scripts/build_cultural_stroke_atlas.py'
+      - 'scripts/test_cultural_stroke_atlas.py'
+      - 'data/cultural_edition/**'
+      - '.github/workflows/cultural-edition-preview.yml'
+  pull_request:
+    paths:
+      - 'scripts/cultural_source_audit.py'
+      - 'scripts/build_cultural_sample.py'
+      - 'scripts/test_cultural_sample.py'
+      - 'data/cultural_edition/**'
+      - '.github/workflows/cultural-edition-preview.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate-and-build-source-locked-draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Dependencies (never bundled into PDF sources)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install 'PyMuPDF==1.26.7' 'reportlab==4.4.9' 'Pillow==12.3.0' 'numpy==2.3.5'
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-arphic-gkai00mp fonts-arphic-gbsn00lp fonts-dejavu-core
+          test -s /usr/share/fonts/truetype/arphic-gkai00mp/gkai00mp.ttf
+          test -s /usr/share/fonts/truetype/arphic-gbsn00lp/gbsn00lp.ttf
+      - name: Audit ALL 201 original PDF entries and 1045 strokes
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-v0.1
+          python scripts/cultural_source_audit.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --output build/cultural-v0.1/source-strokes-201.json
+      - name: Create four PDF-sourced draft culture pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_cultural_sample.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/first_batch_draft.json \
+            --output build/cultural-v0.1/cultural-4-character-source-locked-DRAFT.pdf \
+            --proof build/cultural-v0.1/source-provenance.json
+      - name: Independently compare actual source stroke tiles with draft
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/test_cultural_sample.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/first_batch_draft.json \
+            --sample build/cultural-v0.1/cultural-4-character-source-locked-DRAFT.pdf \
+            --proof build/cultural-v0.1/source-provenance.json \
+            | tee build/cultural-v0.1/qa-summary.json
+          python - <<'PY'
+          import fitz, pathlib
+          output=pathlib.Path('build/cultural-v0.1')
+          with fitz.open(output/'cultural-4-character-source-locked-DRAFT.pdf') as pdf:
+              for i,page in enumerate(pdf):
+                  page.get_pixmap(matrix=fitz.Matrix(1.5,1.5),alpha=False).save(output/f'page-{i+1:02d}.png')
+          PY
+      - name: Build 201-ID source-only technical atlas with safe continuations
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_cultural_stroke_atlas.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --output build/cultural-v0.1/stroke-source-atlas-201-TECHNICAL.pdf \
+            --proof build/cultural-v0.1/atlas-source-provenance.json
+          python scripts/test_cultural_stroke_atlas.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --atlas build/cultural-v0.1/stroke-source-atlas-201-TECHNICAL.pdf \
+            --proof build/cultural-v0.1/atlas-source-provenance.json \
+            | tee build/cultural-v0.1/atlas-qa-summary.json
+          python - <<'PY'
+          import json,fitz
+          from pathlib import Path
+          folder=Path('build/cultural-v0.1')
+          index=json.loads((folder/'atlas-source-provenance.json').read_text())
+          assert index['page_map'][-2]['main_id']==201
+          assert index['page_map'][-1]['main_id']==201
+          with fitz.open(folder/'stroke-source-atlas-201-TECHNICAL.pdf') as doc:
+              for num in (201,202):
+                  doc[num-1].get_pixmap(matrix=fitz.Matrix(1.3,1.3),alpha=False).save(
+                      folder/f'ID201-complex-source-atlas-page-{num}.png')
+          PY
+
+      - name: Assert byte-stable independent rebuild of both PDF outputs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-rebuild-check
+          python scripts/build_cultural_sample.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/first_batch_draft.json \
+            --output build/cultural-rebuild-check/second-four.pdf \
+            --proof build/cultural-rebuild-check/second-four.json
+          cmp build/cultural-v0.1/cultural-4-character-source-locked-DRAFT.pdf \
+              build/cultural-rebuild-check/second-four.pdf
+          python scripts/build_cultural_stroke_atlas.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --output build/cultural-rebuild-check/second-atlas.pdf \
+            --proof build/cultural-rebuild-check/second-atlas.json
+          cmp build/cultural-v0.1/stroke-source-atlas-201-TECHNICAL.pdf \
+              build/cultural-rebuild-check/second-atlas.pdf
+          echo 'PASS: byte-for-byte deterministic 4-page preview and 202-page technical atlas'
+      - name: Archive reproducible candidate on isolated feature branch
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feat/cultural-edition-rebuild-20261024'
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          mkdir -p deliverables/drafts/cultural-v0.1
+          cp build/cultural-v0.1/cultural-4-character-source-locked-DRAFT.pdf deliverables/drafts/cultural-v0.1/
+          cp build/cultural-v0.1/source-provenance.json deliverables/drafts/cultural-v0.1/
+          cp build/cultural-v0.1/qa-summary.json deliverables/drafts/cultural-v0.1/
+          cp build/cultural-v0.1/stroke-source-atlas-201-TECHNICAL.pdf deliverables/drafts/cultural-v0.1/
+          cp build/cultural-v0.1/atlas-source-provenance.json deliverables/drafts/cultural-v0.1/
+          cp build/cultural-v0.1/atlas-qa-summary.json deliverables/drafts/cultural-v0.1/
+          # This branch contains only non-released editorial drafts. Keep the
+          # existing append-only record inventory, update exact draft bytes/hash
+          # and source-commit to match the regenerated PDF. Never promote status.
+          python - <<'PY'
+          import hashlib,json,os,pathlib
+          import fitz
+          folder=pathlib.Path('deliverables/drafts/cultural-v0.1')
+          manifest_file=pathlib.Path('deliverables/manifest.json')
+          manifest=json.loads(manifest_file.read_text(encoding='utf-8'))
+          selected={
+            'cultural-4-character-source-locked-DRAFT.pdf':4,
+            'stroke-source-atlas-201-TECHNICAL.pdf':202
+          }
+          updates=0
+          for name,expected_pages in selected.items():
+              relative=(folder/name).as_posix()
+              matches=[x for x in manifest['artifacts'] if x['path']==relative]
+              assert len(matches)==1,'One previously registered draft is required: '+relative
+              row=matches[0]
+              assert row['status']=='draft' and row['release_eligible'] is False
+              assert row['source_pdf_sha256']=='7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90'
+              pdf=folder/name
+              with fitz.open(pdf) as d:assert len(d)==expected_pages
+              raw=pdf.read_bytes()
+              sha=hashlib.sha256(raw).hexdigest()
+              for field,value in [('sha256',sha),('bytes',len(raw)),('pages',expected_pages)]:
+                  if row[field]!=value:row[field]=value;updates+=1
+              # The workflow source is the exact triggering revision; re-renders
+              # after editorial changes must not retain stale source provenance.
+              revision=os.environ['GITHUB_SHA']
+              if row['source_commit']!=revision:row['source_commit']=revision;updates+=1
+          manifest_file.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('PASS: synchronized immutable-source draft metadata',updates,'updated fields')
+          PY
+          git add deliverables/manifest.json
+          git add deliverables/drafts/cultural-v0.1/
+          if ! git diff --cached --quiet; then
+            git commit -m "build(cultural): archive four-page source-locked editorial draft (not released)"
+            git push origin HEAD:feat/cultural-edition-rebuild-20261024
+          fi
+      - name: Upload 201-source audit and PDF + PNG review sample
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultural-source-locked-first-four-draft
+          path: build/cultural-v0.1/
+          if-no-files-found: warn
+          retention-days: 14

@@ -1,3 +1,9 @@
+## 文化识字版新书重建（实施中，非正式发行）
+
+按已确定的新版式（主题句+专属图、主字上方原书已核拼音、字义/经典、**笔顺提示先于笔顺**、源PDF逐笔累计步骤、相关词上方拼音、一字一句，**无练习格**）开始独立重建。已提交 [执行计划](docs/CULTURAL_EDITION_REBUILD_PLAN.md)、[全量201字源图审计](scripts/cultural_source_audit.py)、[首批四字待审 PDF](deliverables/drafts/cultural-v0.1/cultural-4-character-source-locked-DRAFT.pdf) 与 [逐幅溯源 QA](deliverables/drafts/cultural-v0.1/qa-summary.json)。**这只是四字 P1 排版草稿**（已校正山字《论语》引文原文，见 [P2首轮核对](reviews/cultural-edition/P2-first-batch-quotes-initial-20261024.md)；同源PDF字节可重复生成）：词语拼音、古文引文和正式插图仍待审核，复杂字跨页**技术核验**已完成：[201字1045笔、202页自动续页图册](deliverables/drafts/cultural-v0.1/stroke-source-atlas-201-TECHNICAL.pdf)（例如龠17笔15+2分布；仅工程图册）。但复杂字与文化页正文整合、其余字项内容/美术尚未完成；不替换旧 v0.5.1 299 页正式发行版。跟踪 Issue [#189](https://github.com/netplus/zitie/issues/189)、[#190](https://github.com/netplus/zitie/issues/190)、[#191](https://github.com/netplus/zitie/issues/191)、[#192](https://github.com/netplus/zitie/issues/192)。
+
+---
+
 ## 在线字帖打印 · A4 自定义排版（P3）
 
 [在线打印页面](animation/print/index.html)：支持汉字、字母、数字、拼音四类练习，田字格／米字格／方框格／四线三格，方格尺寸10–25 mm，按A4实时预览、调节行列间距、描红方式与颜色并使用浏览器打印或保存PDF（推荐默认15 mm、10格/行）。201主部首使用正式v0.5.1 PDF同源矢量；未收录汉字明确提示系统字体回退，拼音沿用已有分源数据，不声称均获得教学认证。新增可选的「打印逐笔笔顺示范」（默认勾选，可手动取消，限已有原版201字的源矢量；当前笔红、此前笔灰，复杂字完整分页；未收录字只显示明确提示），不捏造笔画顺序。纯本机处理，无第三方字体/CDN；不触碰v0.5.1正式PDF与v0.6.0候选版，详见 [设计与测试](docs/ONLINE_PRINT_STUDIO.md)。
