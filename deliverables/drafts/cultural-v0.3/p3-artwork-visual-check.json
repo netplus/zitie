@@ -1,0 +1,22 @@
+{
+  "status": "VISUAL_SOURCE_DRAFT_PASS_NOT_APPROVED",
+  "pages": 4,
+  "artworks": 4,
+  "original_stroke_tiles": 15,
+  "unique_registered_svg_shas": {
+    "水": "57dbbb63fe223da9b7a33b7d45ced29659d5197606d3e72903f56bf0bf2481d8",
+    "山": "e8065a85f6874535a3062dce29f30b929b0e3d3635b11e045d56862fdd9b25e6",
+    "月": "75fb266612f01be240eec6febc32414e4004c4ae4da59f0ecc40900257d4cf96",
+    "木": "99b6b9b81228d9f88fafb57490f9cfeebe921e420a4a9180e7693064999f1656"
+  },
+  "pairwise_mean_rgb_mae": {
+    "水 vs 山": 22.885,
+    "水 vs 月": 30.941,
+    "水 vs 木": 38.135,
+    "山 vs 月": 28.362,
+    "山 vs 木": 28.219,
+    "月 vs 木": 24.776
+  },
+  "minimum_difference": 22.885,
+  "source_material_status": "authorial SVG drafts; final editorial/art review pending"
+}
