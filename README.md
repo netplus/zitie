@@ -1,6 +1,12 @@
+## P2/P3 文化字帖：词音审计与四种专属主题图（审稿）
+
+[四字独有矢量插画 PDF](deliverables/drafts/cultural-v0.3/cultural-4-unique-artwork-P3-DRAFT.pdf) · [词语拼音审计结果](deliverables/drafts/cultural-v0.3/p2-evidence-coverage.json) · [审稿记录](reviews/cultural-edition/P2-P3-source-art-20261024.md)。四字“水/山/月/木”的右上画面已分别使用独立SVG，不再复用同一张背景；**原v0.5.1 的15幅笔顺与原始P1文化PDF字节保持不变**。词语使用36处、不同词35个，19词有教育部门直接词条旁证、16词缺少直接词条，月亮 `yuè liang/yuè liàng` 存在地区差异；**所有新内容仍为draft，不是中国大陆适用审音/专业美术的出版批准**。
+
+---
+
 ## 文化识字版新书重建（实施中，非正式发行）
 
-按已确定的新版式（主题句+专属图、主字上方原书已核拼音、字义/经典、**笔顺提示先于笔顺**、源PDF逐笔累计步骤、相关词上方拼音、一字一句，**无练习格**）开始独立重建。已提交 [执行计划](docs/CULTURAL_EDITION_REBUILD_PLAN.md)、[全量201字源图审计](scripts/cultural_source_audit.py)、[首批四字待审 PDF](deliverables/drafts/cultural-v0.1/cultural-4-character-source-locked-DRAFT.pdf) 与 [逐幅溯源 QA](deliverables/drafts/cultural-v0.1/qa-summary.json)。**这只是四字 P1 排版草稿**（已校正山字《论语》引文原文，见 [P2首轮核对](reviews/cultural-edition/P2-first-batch-quotes-initial-20261024.md)；同源PDF字节可重复生成）：词语拼音、古文引文和正式插图仍待审核，复杂字跨页**技术核验**已完成：[201字1045笔、202页自动续页图册](deliverables/drafts/cultural-v0.1/stroke-source-atlas-201-TECHNICAL.pdf)（例如龠17笔15+2分布；仅工程图册）。但复杂字与文化页正文整合、其余字项内容/美术尚未完成；不替换旧 v0.5.1 299 页正式发行版。跟踪 Issue [#189](https://github.com/netplus/zitie/issues/189)、[#190](https://github.com/netplus/zitie/issues/190)、[#191](https://github.com/netplus/zitie/issues/191)、[#192](https://github.com/netplus/zitie/issues/192)。
+按已确定的新版式（主题句+专属图、主字上方原书已核拼音、字义/经典、**笔顺提示先于笔顺**、源PDF逐笔累计步骤、相关词上方拼音、一字一句，**无练习格**）开始独立重建。已提交 [执行计划](docs/CULTURAL_EDITION_REBUILD_PLAN.md)、[全量201字源图审计](scripts/cultural_source_audit.py)、[首批四字待审 PDF](deliverables/drafts/cultural-v0.1/cultural-4-character-source-locked-DRAFT.pdf) 与 [逐幅溯源 QA](deliverables/drafts/cultural-v0.1/qa-summary.json)。**这只是四字 P1 排版草稿**（已校正山字《论语》引文原文，见 [P2首轮核对](reviews/cultural-edition/P2-first-batch-quotes-initial-20261024.md)；同源PDF字节可重复生成）：词语拼音、古文引文和正式插图仍待审核，复杂字跨页**技术核验**已完成：[201字1045笔、202页自动续页图册](deliverables/drafts/cultural-v0.1/stroke-source-atlas-201-TECHNICAL.pdf)（例如龠17笔15+2分布；仅工程图册）。复杂字已完成田/鼻/龠的文化页整合测试，但其余字项内容及最终美术尚未完成；不替换旧 v0.5.1 299 页正式发行版。跟踪 Issue [#189](https://github.com/netplus/zitie/issues/189)、[#190](https://github.com/netplus/zitie/issues/190)、[#191](https://github.com/netplus/zitie/issues/191)、[#192](https://github.com/netplus/zitie/issues/192)。
 
 ---
 

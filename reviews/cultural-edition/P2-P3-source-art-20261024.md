@@ -33,3 +33,10 @@
 2. 如果绘画源SHA变化或画面与字错配、PDF原笔顺发生改变、跨地区读音差异被隐藏，CI 必须失败。
 3. 此次新增四页 P3 PDF 只能是 `deliverables/drafts/cultural-v0.3/` 下 **draft / release_eligible=false**，不得替代已批准正式版本。
 4. 最终词音和古籍引用只在具备大陆适用权威资料、逐项语义和人工签核后才可升级为 reviewed。
+
+## P2/P3 已运行的质量门槛结果（2026-10-24）
+
+- CI [Cultural P2 evidence and P3 distinct art proofs #40085682283](https://github.com/netplus/zitie/actions/runs/40085682283) **completed/success**；旧 P1 四字PDF重新生成 SHA 未变；新P3样稿两次字节级重建相等，四页15幅原PDF真实笔顺源图均一致。
+- P2审计报告：[35个不同词、19个直接词条、16个仍待直接资料、1个明确冲突](../../deliverables/drafts/cultural-v0.3/p2-evidence-coverage.json)。没有一个词可以由本审计自动提升为大陆正式规范读音。
+- P3审计报告：[SVG源哈希、场景ID及PDF右上角图像差异](../../deliverables/drafts/cultural-v0.3/p3-artwork-visual-check.json)：4幅源SVG互不相同、最小两图平均RGB绝对差异 **22.885/255**，确保不是直接复制同图；但图像相似度算法通过仍不代表人工美术审查。
+- [P3原图 PDF](../../deliverables/drafts/cultural-v0.3/cultural-4-unique-artwork-P3-DRAFT.pdf) 在 `deliverables/manifest.json` 中 `status=draft, release_eligible=false`，原 v0.5.1 299页发布PDF及现有动画无改动。

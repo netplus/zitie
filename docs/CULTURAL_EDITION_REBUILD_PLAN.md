@@ -57,8 +57,8 @@
 - [x] P0 严格 201 ID 全量源图审计脚本及 CI 完成（1045 笔、258 个教学页、原 86pt 裁剪框逐页对齐）。
 - [x] P1 可运行 A4 草稿生成器、四字样板（**水 ID077、山 ID039、月 ID088、木 ID064**）及 source-step provenance；每幅示范直接复制正式 PDF 矢量（15/15 幅通过像素差异门槛）。
 - [x] P1 **技术图册**实现 31mm 源笔顺格、每页最多3行×5列、长字续页，201项1045笔202页、龠17笔按15+2连续分页均通过原PDF比对；**未**与文化正文融合，四字文化页生成器仍故意拒绝 >4 笔（正式文化排版见 Issue #191）。
-- [~] P2 首批经典引文完成公开来源定位与一次原文纠错（《论语·雍也》改为“知者乐水，仁者乐山”）；其余拼音、经典版本/权威词条 **仍 review_pending**，参见 [P2首轮核对](../reviews/cultural-edition/P2-first-batch-quotes-initial-20261024.md)。
-- [ ] P3 首批四种主题唯一**正式插图**与来源/许可登记（目前仅有不同题材的程序矢量布局占位，不能算最终艺术审定）。
+- [~] P2 首批引文已修正《论语·雍也》原文顺序；**36处词语使用/35不同词，19词取得教育部门词典直接词条、16词缺少直接词条、1处跨地区读音冲突（月亮）**。此为台湾词典辅助证据，不代表中国大陆发布已审核。详见 [P2/P3审计](../reviews/cultural-edition/P2-P3-source-art-20261024.md) 与 Issue #189。
+- [~] P3 **四幅独立的非教学矢量插图草稿**已按水流/山峦/月下屋檐/古木主题分别实现，source Git Blob SHA 锁定、离线渲染及可见差异验证通过，另存4页PDF草稿；**最终美术审定和201字插画仍未完成**。详见 [P3原SVG注册](../data/cultural_edition/p3_artwork_draft_registry.json) 与 Issue #190。
 - [~] P4 **5～17笔主字文化版分页引擎已完成首轮实测**：田5笔1页、鼻14笔2页（6+8）、龠17笔2页（6+11），真实文化内容与原PDF矢量36步统一排版；全201字内容及附形审核仍未完成，详见 [P4 QA](../reviews/cultural-edition/P4-multipage-source-QA-20261024.md) 与 Issue #191。
 - [ ] P5 全量版式/字体/文字/拼音/插图及打印质检。
 - [ ] P6 明确审定后独立发行；旧版保持不可变。
@@ -110,3 +110,11 @@
 - `龠`原正式PDF未单列可信读音，仍打印“读音待审核”，后续只能用适用的中国大陆权威词典与正式审核补足；不自动抄外部词典音标。相关词拼音/经典目前仍待权威复核，插图仍属 P4 占位。
 - P2 新增[有来源的辅助核对记录](../data/cultural_edition/p2_lexicon_secondary_20261024.json)（水果、木头、田野、鼻子、龠），区分“鼻子”的具体词义，**非大陆权威出版签核**；见 [P2审核说明](../reviews/cultural-edition/P2-secondary-lexicon-20261024.md)。
 - 仍待：将生成器推广到全部201条目的真正文化文案、每字唯一的正式主题插图、词音/引文审核、附形专属来源，最终按 P5/P6 页页审核。
+
+### P2/P3 字词与独立插图首批落地（2026-10-24）
+
+- [36词语使用位置与词典来源覆盖表](../deliverables/drafts/cultural-v0.3/p2-evidence-coverage.json)：共35个不同词，19个有台湾教育部直接词条，另16个无直接词条，**“月亮”存在 `yuè liang` vs `yuè liàng` 差异**。外部“龠 yuè”词典字条仍不能提升为原PDF已审单字拼音。 [P2源数据](../data/cultural_edition/p2_direct_lexicon_evidence_20261024.json) 与 [自动反向门禁](../scripts/cultural_p2_source_audit.py) 明确阻止未经大陆规范审核的词音升级；词条不能用自动拼音代替人工核验。
+- [四字独立插图 P3 待审PDF](../deliverables/drafts/cultural-v0.3/cultural-4-unique-artwork-P3-DRAFT.pdf) 将水、山、月、木四个分别原创矢量 SVG 嵌入原有文化版，**15幅笔顺仍取 v0.5.1 正式PDF，不进入插图渲染器**。四种主题取水纹河石、云峰古松、月照屋檐、古木根叶；每张图都是独立源SVG。
+- [P3画面差异验证](../deliverables/drafts/cultural-v0.3/p3-artwork-visual-check.json)：不同字的右上角图像，两两 PDF 实际画面差异均大于22 RGB/255，四个源文件SHA互异；不使用外部图片/脚本或补全未审写字轨迹。
+- GitHub Actions [#40085682283](https://github.com/netplus/zitie/actions/runs/40085682283) **completed/success**：P2 审计、原P1四字PDF**字节完全不变**、新P3四字PDF重新构建一致、源笔顺15张一致、四幅画面差异和安全检查通过。新增PDF仅登记为 `draft/release_eligible=false`，其他历史 PDF 不覆盖。
+- 仍待：词音中国大陆适用权威来源+人工签核、首次题材图审美/版权签核、全部201字独特画面与语义去重、附形偏旁真实教学源、P5全书页级视觉校验。
