@@ -1,0 +1,38 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="630" viewBox="0 0 820 630" role="img" aria-label="流动的河谷与水纹" data-scene="river-current">
+<title>流动的河谷与水纹</title>
+
+  <g opacity=".65" fill="none">
+    <path d="M35 340 Q125 145 240 215 Q335 92 465 170 Q600 80 770 236" stroke="#DDE3DF" stroke-width="35" stroke-linecap="round"/>
+    <path d="M0 345 Q100 220 200 263 Q345 120 450 226 Q625 125 820 290" stroke="#BBCFCB" stroke-width="14"/>
+    <path d="M-12 375 Q140 279 220 320 Q390 220 490 296" stroke="#AFC3C0" stroke-width="8"/>
+  </g>
+  <g fill="#C6D7D2" opacity=".65">
+    <path d="M-10 383 Q95 336 215 380 Q305 403 411 350 Q520 293 820 383 L820 650 L-10 650Z"/>
+    <path d="M-10 465 Q125 407 265 465 Q360 502 500 427 Q668 361 830 448 L830 650 L-10 650Z" fill="#A2BCB8"/>
+  </g>
+  <g fill="#798984" opacity=".68">
+    <path d="M20 486 Q80 448 147 472 L174 526 Q95 555 15 527Z"/>
+    <path d="M632 430 Q715 391 791 416 L839 483 Q729 510 651 474Z"/>
+    <path d="M470 540 Q535 514 577 543 L597 568 Q531 586 461 568Z"/>
+  </g>
+  <g fill="none" stroke-linecap="round">
+    <path d="M65 432 C204 406 287 469 398 429 S625 388 792 445" stroke="#EAF0EE" stroke-width="16" opacity=".9"/>
+    <path d="M38 471 C205 455 257 510 397 484 S628 455 797 508" stroke="#EDF3F1" stroke-width="10"/>
+    <path d="M-12 526 C137 509 256 545 400 531 S655 515 838 562" stroke="#F8FBF8" stroke-width="8"/>
+    <path d="M70 568 Q200 546 324 588 T640 576 Q722 570 825 595" stroke="#E6F1EE" stroke-width="6"/>
+    <path d="M185 426 Q239 402 278 414" stroke="#6E9997" stroke-width="3" opacity=".65"/>
+    <path d="M399 503 Q468 486 514 492" stroke="#6E9997" stroke-width="3" opacity=".65"/>
+    <path d="M628 549 Q681 537 718 545" stroke="#6E9997" stroke-width="3" opacity=".65"/>
+  </g>
+  <g fill="none" stroke="#94ACA4" stroke-width="3" opacity=".75">
+    <path d="M80 423 q30 -26 62 -18 q30 8 48 0"/>
+    <path d="M320 462 q25 -18 53 -12 q21 7 51 0"/>
+    <path d="M575 484 q40 -24 77 -11 q25 6 48 -2"/>
+    <path d="M450 573 q18 -15 49 -10 q27 7 46 -1"/>
+  </g>
+  <g opacity=".85" fill="#657B72">
+    <path d="M690 394 q-32 -83 -21 -148 q20 70 38 126Z"/>
+    <path d="M713 407 q-4 -105 39 -158 q-21 84 -14 155Z"/>
+    <path d="M675 400 q-58 -65 -61 -119 q46 43 84 95Z"/>
+  </g>
+</svg>
