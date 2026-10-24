@@ -1,0 +1,62 @@
+name: Cultural 201-glyph editorial inventory and Mainland Pinyin evidence
+
+on:
+  push:
+    branches:
+      - feat/cultural-mainland-p2-coverage-20261024
+    paths:
+      - 'data/cultural_edition/inventory/**'
+      - 'data/cultural_edition/p2_mainland_exam_evidence_20261024.json'
+      - 'scripts/cultural_editorial_coverage.py'
+      - 'scripts/test_cultural_editorial_coverage.py'
+      - '.github/workflows/cultural-editorial-coverage.yml'
+  pull_request:
+    paths:
+      - 'data/cultural_edition/inventory/**'
+      - 'data/cultural_edition/p2_mainland_exam_evidence_20261024.json'
+      - 'scripts/cultural_editorial_coverage.py'
+      - 'scripts/test_cultural_editorial_coverage.py'
+      - '.github/workflows/cultural-editorial-coverage.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  fail-closed-mainland-evidence-and-201-glyph-coverage:
+    runs-on: ubuntu-latest
+    timeout-minutes: 6
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Validate 201 source identities and educational Pinyin evidence
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-editorial
+          python scripts/cultural_editorial_coverage.py             --output build/cultural-editorial/201-editorial-work-queue.json
+          python scripts/test_cultural_editorial_coverage.py             | tee build/cultural-editorial/tests.txt
+      - name: Fail if a new book is falsely declared released
+        shell: bash
+        run: |
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          row=json.loads(Path('build/cultural-editorial/201-editorial-work-queue.json').read_text())
+          assert row['editorial_draft_only'] is True
+          assert row['counts']['mainland_dictionary_entries_signed_off']==0
+          assert row['counts']['published_new_cultural_characters']==0
+          assert row['counts']['not_started_glyph_content']==194
+          assert row['pronunciation_conflict']['not_final_normative_decision'] is True
+          print('PASS: 201-source work queue is NOT a published manuscript')
+          PY
+      - name: Upload auditable queue and unit results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultural-201-glyph-editorial-work-queue
+          path: build/cultural-editorial/
+          retention-days: 14
+          if-no-files-found: warn
