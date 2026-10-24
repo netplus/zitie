@@ -1,0 +1,50 @@
+{
+  "schema_version": 1,
+  "scope": "P2 mainland educational pinyin corroboration",
+  "checked_at": "2026-10-24",
+  "standard_reference": {
+    "standard_id": "GB/T 16159-2012",
+    "title": "汉语拼音正词法基本规则",
+    "standard_status": "current",
+    "status_reference": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=5645BD8DB9D8D73053AD3A2397E15E74",
+    "standard_7_1": "根据识字需要（如小学低年级和幼儿汉语识字读物），可按字注音。",
+    "source_for_7_1": "https://www.htu.edu.cn/yw/2018/1008/c14029a129573/page.htm",
+    "source_role": "Format authorization, not a source of individual word pronunciation"
+  },
+  "provider": {
+    "name": "汉考国际中文考试服务网",
+    "about_url": "https://admin.chinesetest.cn/goaboutus.do",
+    "role": "Mainland Chinese-language examination vocabulary listings",
+    "caveat": "Exam vocabulary corroboration is NOT a lexicographical normative approval"
+  },
+  "publication_approved": false,
+  "entries": [
+    {
+      "word": "月亮",
+      "draft_pinyin_display": "yuè liang",
+      "provider_pinyin_orthographic": "yuèliang",
+      "source_url": "https://admin.chinesetest.cn/standardsAction.do?leves=&means=getStandardWordsList&pager.offset=10050&pinyin=&words=&words_type=",
+      "row_no": 10057,
+      "level": "二级",
+      "word_class": "名",
+      "source_status": "mainland_exam_listing_verified_non_normative",
+      "compared_secondary": "yuè liàng",
+      "secondary_conflict_status": "region_specific_conflict_retained",
+      "editorial_status": "mainland_supports_neutral_tone_editorial_signoff_pending"
+    },
+    {
+      "word": "水果",
+      "draft_pinyin_display": "shuǐ guǒ",
+      "provider_pinyin_orthographic": "shuǐguǒ",
+      "source_url": "https://admin.chinesetest.cn/newhsk/standardsAction.do?leves=&means=getStandardWordsList&pager.offset=7540&pinyin=&words=&words_type=",
+      "row_no": 7543,
+      "level": "一级",
+      "word_class": "名",
+      "source_status": "mainland_exam_listing_verified_non_normative",
+      "compared_secondary": "shuǐ guǒ",
+      "secondary_conflict_status": "none",
+      "editorial_status": "mainland_supports_candidate_editorial_signoff_pending"
+    }
+  ],
+  "workflow_notes": "HSK exam word orthography removes spaces because units are lexical compounds; printable teaching cards are separately formatted per character under GB/T 16159-2012 variant 7.1. Never assert a word is final mainland dictionary approved without exact editor review."
+}
