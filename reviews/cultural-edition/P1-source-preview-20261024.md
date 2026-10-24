@@ -25,3 +25,8 @@
 4. Issue #192：全书发布门禁、字/偏旁附形独立审核、最后候选和正式发布。
 
 旧 v0.5.1 及 v0.6.0 15mm PDF 文件、SHA、既有 manifest 条目不动。本次只追加两个非正式草稿记录。
+
+## 更新：引文草稿纠错及确定性构建（2026-10-24）
+
+- 后续样稿改正山字引文，具体原文/出处见 [P2首轮复核](P2-first-batch-quotes-initial-20261024.md)。引文与词音未到签核状态，`review_pending` 仍为真。
+- 生成器引入确定性开关，连续双构建PDF逐字节相等；GH Action [#40055521161](https://github.com/netplus/zitie/actions/runs/40055521161) succeeded，自动同步这两个非发布draft的manifest，刷新为4页 SHA256 `8b30ae365472e51190739131f9edc4ad60e2573908a234aed3c5fa6378f31d04`、202页 SHA256 `6224bbfef4d42b1f9953b5b64a72b5fda0065767a55b553ed10f19b11e328b51`。v0.5.1原正式PDF及原历史归档不变。

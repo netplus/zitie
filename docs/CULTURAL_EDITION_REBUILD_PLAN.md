@@ -57,7 +57,7 @@
 - [x] P0 严格 201 ID 全量源图审计脚本及 CI 完成（1045 笔、258 个教学页、原 86pt 裁剪框逐页对齐）。
 - [x] P1 可运行 A4 草稿生成器、四字样板（**水 ID077、山 ID039、月 ID088、木 ID064**）及 source-step provenance；每幅示范直接复制正式 PDF 矢量（15/15 幅通过像素差异门槛）。
 - [x] P1 **技术图册**实现 31mm 源笔顺格、每页最多3行×5列、长字续页，201项1045笔202页、龠17笔按15+2连续分页均通过原PDF比对；**未**与文化正文融合，四字文化页生成器仍故意拒绝 >4 笔（正式文化排版见 Issue #191）。
-- [ ] P2 首批字词、引文及拼音的逐条权威复核；目前不得把样稿文案的读音视为最终审定。
+- [~] P2 首批经典引文完成公开来源定位与一次原文纠错（《论语·雍也》改为“知者乐水，仁者乐山”）；其余拼音、经典版本/权威词条 **仍 review_pending**，参见 [P2首轮核对](../reviews/cultural-edition/P2-first-batch-quotes-initial-20261024.md)。
 - [ ] P3 首批四种主题唯一**正式插图**与来源/许可登记（目前仅有不同题材的程序矢量布局占位，不能算最终艺术审定）。
 - [ ] P4 其余 197 主字分批推进；附形独立源另行核定。
 - [ ] P5 全量版式/字体/文字/拼音/插图及打印质检。
@@ -92,3 +92,11 @@
 - [P3 逐字主题插画授权与全局去重 #190](https://github.com/netplus/zitie/issues/190)
 - [P4 将长字真实笔顺融入文化页而不是只做 atlas #191](https://github.com/netplus/zitie/issues/191)
 - [P5/P6 全书候选及发布验收 #192](https://github.com/netplus/zitie/issues/192)
+
+### P1 可重复构建及归档门禁（2026-10-24）
+
+- 使用 ReportLab `invariant=1` 与 PyMuPDF `no_new_id=True` 保证字节级可重复生成；CI 连续构建两遍样稿和完整 atlas，使用 `cmp` 证明完全一致。
+- 生成器发生改变时，GitHub Actions 仅针对这两个 **draft** 归档条目自动同步 `sha256/bytes/pages/source_commit`（`status=draft`, `release_eligible=false` 强校验），绝不更改已发行历史条目；示范页与书签冻结源依旧为 v0.5.1 原 299 页。
+- 完成新数据后的四字样本已自动更新：《论语》山字引文纠正为“**知者乐水，仁者乐山**”，其余引文附首轮来源 URL 但人工审定仍 pending。首轮 P2 来源见 [核对记录](../reviews/cultural-edition/P2-first-batch-quotes-initial-20261024.md)。
+- 最新稳定草稿实际哈希：`cultural-4-character-source-locked-DRAFT.pdf` = `8b30ae365472e51190739131f9edc4ad60e2573908a234aed3c5fa6378f31d04`；`stroke-source-atlas-201-TECHNICAL.pdf` = `6224bbfef4d42b1f9953b5b64a72b5fda0065767a55b553ed10f19b11e328b51`，并已与manifest两条草稿记录匹配。来源提交标记为 `a5f8d0b3138bcdd7878875523664177f6437b426`。
+- [CI #40055521161](https://github.com/netplus/zitie/actions/runs/40055521161) 完成两次比对和原PDF独立来源对照（completed/success）。合并前仍需 `Book integrity checks` 直接从最终 HEAD 成功执行，防止任何未登记PDF污染正式repo。
