@@ -38,6 +38,7 @@ jobs:
           mkdir -p build/cultural-editorial
           python scripts/cultural_editorial_coverage.py             --output build/cultural-editorial/201-editorial-work-queue.json
           python scripts/test_cultural_editorial_coverage.py             | tee build/cultural-editorial/tests.txt
+          python scripts/test_cultural_p2_source_audit.py
       - name: Fail if a new book is falsely declared released
         shell: bash
         run: |
