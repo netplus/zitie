@@ -121,7 +121,7 @@ def verify_editorial(data,source_map):
             raise ValueError('Quote citations must not be auto-promoted')
     return entries
 
-def create(source_path,source_index,editorial,output,proof):
+def create(source_path,source_index,editorial,output,proof,theme_painter=None):
     fonts()
     src=fitz.open(source_path)
     glyphs={g['main_id']:g for g in source_index['glyphs']}
@@ -170,7 +170,10 @@ def create(source_path,source_index,editorial,output,proof):
         center(58,54,g['pinyin_from_pdf'],18,'Latin',VIN)
         c.drawImage(ImageReader(original_specimen(src[g['first_pdf_page']-1])),
                     mm(31),H-mm(111),mm(54),mm(54),mask='auto')
-        theme_art(c,e['theme_key'])
+        if theme_painter is None:
+            theme_art(c,e['theme_key'])
+        else:
+            theme_painter(c,e['theme_key'],e['character'])
         heading('字义',18,122,107);heading('经典一隅',115,122,191)
         for j,line_text in enumerate(e['meaning']):
             if pdfmetrics.stringWidth(line_text,'CultureKai',11)>mm(85):
@@ -235,7 +238,8 @@ def create(source_path,source_index,editorial,output,proof):
             'candidate_pdf_sha256':hashlib.sha256(output.read_bytes()).hexdigest(),
             'pages':len(records),'source_step_total':sum(r['stroke_count'] for r in records),
             'source_vector_method':'Page.show_pdf_page clip original source 86pt',
-            'illustrations':'P1 vector placeholders; P3 unique curated artwork pending',
+            'illustrations':('P1 vector placeholders; P3 unique curated artwork pending'
+              if theme_painter is None else 'P3 four independently sourced VECTOR theme drafts; editorial approval pending'),
             'records':records}
     proof.parent.mkdir(parents=True,exist_ok=True)
     proof.write_text(json.dumps(report,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
