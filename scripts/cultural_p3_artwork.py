@@ -103,8 +103,10 @@ def paint_scene(canvas,theme_key,character,root=ROOT,assets=None):
     if drawing is None or drawing.width<=0 or drawing.height<=0:
         raise ValueError('Invalid renderer output for P3 SVG')
     mm=72/25.4
-    x=111*mm;y=177*mm
-    w=82*mm;h=75*mm
+    # Reserve a clear gutter above the "经典一隅" header at 122mm.
+    # Physical artwork spans from 43mm to 113mm from the top, not to 120mm.
+    x=111*mm;y=184*mm
+    w=82*mm;h=70*mm
     canvas.saveState()
     canvas.translate(x,y)
     canvas.scale(w/drawing.width,h/drawing.height)
