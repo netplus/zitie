@@ -1,0 +1,103 @@
+name: Cultural PDF source-locked preview
+on:
+  push:
+    branches:
+      - feat/cultural-edition-rebuild-20261024
+    paths:
+      - 'scripts/cultural_source_audit.py'
+      - 'scripts/build_cultural_sample.py'
+      - 'scripts/test_cultural_sample.py'
+      - 'data/cultural_edition/**'
+      - '.github/workflows/cultural-edition-preview.yml'
+  pull_request:
+    paths:
+      - 'scripts/cultural_source_audit.py'
+      - 'scripts/build_cultural_sample.py'
+      - 'scripts/test_cultural_sample.py'
+      - 'data/cultural_edition/**'
+      - '.github/workflows/cultural-edition-preview.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  validate-and-build-source-locked-draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Dependencies (never bundled into PDF sources)
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install 'PyMuPDF==1.26.7' 'reportlab==4.4.9' 'Pillow==12.3.0' 'numpy==2.3.5'
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-arphic-gkai00mp fonts-arphic-gbsn00lp fonts-dejavu-core
+          test -s /usr/share/fonts/truetype/arphic-gkai00mp/gkai00mp.ttf
+          test -s /usr/share/fonts/truetype/arphic-gbsn00lp/gbsn00lp.ttf
+      - name: Audit ALL 201 original PDF entries and 1045 strokes
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-v0.1
+          python scripts/cultural_source_audit.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --output build/cultural-v0.1/source-strokes-201.json
+      - name: Create four PDF-sourced draft culture pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_cultural_sample.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/first_batch_draft.json \
+            --output build/cultural-v0.1/cultural-4-character-source-locked-DRAFT.pdf \
+            --proof build/cultural-v0.1/source-provenance.json
+      - name: Independently compare actual source stroke tiles with draft
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/test_cultural_sample.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/first_batch_draft.json \
+            --sample build/cultural-v0.1/cultural-4-character-source-locked-DRAFT.pdf \
+            --proof build/cultural-v0.1/source-provenance.json \
+            | tee build/cultural-v0.1/qa-summary.json
+          python - <<'PY'
+          import fitz, pathlib
+          output=pathlib.Path('build/cultural-v0.1')
+          with fitz.open(output/'cultural-4-character-source-locked-DRAFT.pdf') as pdf:
+              for i,page in enumerate(pdf):
+                  page.get_pixmap(matrix=fitz.Matrix(1.5,1.5),alpha=False).save(output/f'page-{i+1:02d}.png')
+          PY
+      - name: Archive reproducible candidate on isolated feature branch
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feat/cultural-edition-rebuild-20261024'
+        run: |
+          set -euo pipefail
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          mkdir -p deliverables/drafts/cultural-v0.1
+          cp build/cultural-v0.1/cultural-4-character-source-locked-DRAFT.pdf deliverables/drafts/cultural-v0.1/
+          cp build/cultural-v0.1/source-provenance.json deliverables/drafts/cultural-v0.1/
+          cp build/cultural-v0.1/qa-summary.json deliverables/drafts/cultural-v0.1/
+          git add deliverables/drafts/cultural-v0.1/
+          if ! git diff --cached --quiet; then
+            git commit -m "build(cultural): archive four-page source-locked editorial draft (not released)"
+            git push origin HEAD:feat/cultural-edition-rebuild-20261024
+          fi
+      - name: Upload 201-source audit and PDF + PNG review sample
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultural-source-locked-first-four-draft
+          path: build/cultural-v0.1/
+          if-no-files-found: warn
+          retention-days: 14
