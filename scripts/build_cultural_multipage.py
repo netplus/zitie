@@ -130,13 +130,13 @@ def render(source: Path, manifest: Path, content: Path, output: Path, proof: Pat
                 p.moveTo(x,y)
                 p.curveTo(x+mm(9),y+mm(20),x-mm(6),y+mm(31),x+mm(16),y+mm(38))
                 c.drawPath(p,fill=0,stroke=1)
-            t(137,55,'风与气息 · 占位示意',9,'Song',GRAY)
+            t(137,49,'风与气息 · 占位示意',9,'Song',GRAY)
         elif key=='ancient-reed-pipes':
             for i in range(7):
                 x=122+i*9
                 line(x,100,x,72-(i%3)*6,'#9CAB99',2.4)
                 line(x-2,101,x+2,101,'#A9B8A8',.6)
-            t(131,61,'古乐竹管 · 占位示意',9,'Song',GRAY)
+            t(131,53,'古乐竹管 · 占位示意',9,'Song',GRAY)
         else:
             raise ValueError('Unknown P4 unique illustration theme')
         c.restoreState()
@@ -183,10 +183,10 @@ def render(source: Path, manifest: Path, content: Path, output: Path, proof: Pat
         section(17,155,'笔顺提示',113)
         line_no=0
         for tip in glyph['tips_from_pdf'][:2]:
-            for row in wrap(tip,'Kai',9.2,95):
+            for row in wrap(tip,'Kai',8.7,95):
                 y=166+line_no*5.5
                 if y>180:raise ValueError('Source tips overflow cover')
-                t(18,y,row,9.2,'Kai',RED if line_no else INK)
+                t(18,y,row,8.7,'Kai',RED if line_no else INK)
                 line_no+=1
         section(17,184,'笔顺',113)
         section(121,155,'相关字词',193)
