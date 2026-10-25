@@ -19,6 +19,7 @@ import fitz
 from reportlab.lib.colors import HexColor
 from reportlab.lib.utils import ImageReader
 from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 from PIL import Image
 import numpy as np
@@ -73,12 +74,43 @@ class PageArtist:
         c=self.c;c.setStrokeColor(HexColor(color));c.setLineWidth(mm(width))
         c.line(mm(x0),H-mm(y0),mm(x1),H-mm(y1))
 
+    def runs(self,text,face):
+        """Use embedded original Kaishu except rare Hanzi absent from it.
+
+        Official 201 main radicals include U+4E5B and uncommon forms that
+        cannot be rendered by the legacy 7574-glyph Arphic simplified Kai font.
+        AR PL UMing fallback is also locally installed; never draw a tofu/null.
+        """
+        primary="Culture"+face
+        base=pdfmetrics.getFont(primary).face.charWidths
+        rare=pdfmetrics.getFont("CultureRare").face.charWidths
+        out=[]
+        for ch in str(text):
+            font=primary if ord(ch) in base else "CultureRare"
+            if ord(ch) not in rare and font=="CultureRare":
+                raise ValueError(f"No installed embeddable font covers U+{ord(ch):04X} {ch}")
+            if out and out[-1][0]==font:
+                out[-1]=(font,out[-1][1]+ch)
+            else:
+                out.append((font,ch))
+        return out
+
+    def text_width(self,text,face,size):
+        return sum(pdfmetrics.stringWidth(run,font,size)
+                   for font,run in self.runs(text,face))
+
     def label(self,x,y,text,size=10,face="Kai",color=INK,align="left"):
-        font="Culture"+face
-        self.c.setFont(font,size);self.c.setFillColor(HexColor(color))
-        if align=="center":self.c.drawCentredString(mm(x),H-mm(y),str(text))
-        elif align=="right":self.c.drawRightString(mm(x),H-mm(y),str(text))
-        else:self.c.drawString(mm(x),H-mm(y),str(text))
+        runs=self.runs(text,face)
+        if align!="left":
+            width=self.text_width(text,face,size)
+            if align=="center":x-=width/MM/2
+            elif align=="right":x-=width/MM
+        cursor=mm(x)
+        self.c.setFillColor(HexColor(color))
+        for font,run in runs:
+            self.c.setFont(font,size)
+            self.c.drawString(cursor,H-mm(y),run)
+            cursor+=pdfmetrics.stringWidth(run,font,size)
 
     def rows(self,text,width,size=9.2,face="Kai",max_lines=7):
         value=str(text or "")
@@ -87,7 +119,7 @@ class PageArtist:
         for source in value.splitlines():
             part=""
             for ch in source:
-                if pdfmetrics.stringWidth(part+ch,"Culture"+face,size)>mm(width):
+                if self.text_width(part+ch,face,size)>mm(width):
                     if not part:raise ValueError("One text glyph exceeds available width")
                     result.append(part);part=ch
                 else:part+=ch
@@ -98,16 +130,16 @@ class PageArtist:
 
     def fitted(self,x,y,text,maximum_mm,base=18,minimum=12,color=RED):
         size=base
-        while size>minimum and pdfmetrics.stringWidth(text,"CultureKai",size)>mm(maximum_mm):
+        while size>minimum and self.text_width(text,"Kai",size)>mm(maximum_mm):
             size-=.5
-        if pdfmetrics.stringWidth(text,"CultureKai",size)>mm(maximum_mm):
+        if self.text_width(text,"Kai",size)>mm(maximum_mm):
             raise ValueError("Cultural title cannot fit even at safe minimum: "+text)
         self.label(x,y,text,size,"Kai",color)
 
     def section(self,x,y,label,end):
         self.rect(x,y-1,1.1,5,RED)
         self.label(x+3,y+3,label,10.5,"Kai",RED)
-        width=pdfmetrics.stringWidth(label,"CultureKai",10.5)/MM
+        width=self.text_width(label,"Kai",10.5)/MM
         start=x+3+width+3
         if start<end-2:self.line(start,y+1.7,end,y+1.7)
 
@@ -135,7 +167,7 @@ def base_cover(a:PageArtist,plan):
     a.rect(26,154,157,58,FAINT,None,3)
     a.label(35,169,"201  主字 / 主部首",15,"Kai",RED)
     a.label(35,184,"1045  原书累计笔顺 · 21  批次",12,"Kai",INK)
-    a.label(35,198,"16  文化内容草稿 · 185  字仍待编辑",10.5,"Kai",GRAY)
+    a.label(35,198,"201  字独立文化文字初稿 · 内容均待审定",10.5,"Kai",GRAY)
     a.label(27,240,"稿件状态：仅供教学内容审读与排版验收",11,"Kai",RED)
     a.label(27,251,"正文、拼音、插图及引文未经全书审核，不得印作正式教材。",9.3,"Kai",GRAY)
     a.label(27,266,"原 v0.5.1 正式 PDF 不变；附形偏旁另行独立复核。",9.0,"Kai",GRAY)
@@ -148,8 +180,8 @@ def instructions(a:PageArtist,plan):
     blocks=[
         ("01  笔顺来源","每笔均取已发行 v0.5.1 的真实累计矢量图。先显示原书笔顺提示，再逐幅展示；既有笔灰色，当前笔红色。"),
         ("02  字音与字词","单字只沿用正式 PDF 已单列的读音。相关词的拼音属于草稿候选，不能当作经大陆权威词典核准的印刷内容。"),
-        ("03  文化内容","现有 16 个字有文化文稿；另 185 个字尚未编辑。空白内容明确标记待审，不根据字形擅造字源、名言或典故。"),
-        ("04  插图与版权","仅四幅已登记的主题 SVG 是可定位的待审资产。其余专属插图尚未获得设计、许可及人工审美签核。"),
+        ("03  文化内容","201个主字均已编写独立主题、释义、短句和相关字词草案；词音、出处和文稿仍需逐项审校，不将初稿当成定稿。"),
+        ("04  插图与版权","201字均有独特插图构想；仅4幅已登记SVG是可核来源的待审画稿。其余构想尚不是图像资产，须绘制并验收。"),
         ("05  偏旁附形","本工程只覆盖 201 个原书主字/主部首。氵、亻、扌等附形不得借用完整字源图冒名出版。"),
         ("06  页数与导航","页码按笔数动态生成。一个汉字笔画较多时自动连续续页；目录与书签直接跳转到该字的首页。"),
     ]
@@ -251,11 +283,16 @@ def draw_art_slot(a:PageArtist,row,art_assets,root):
         return "four_svg_draft_unreviewed"
     a.rect(118,51,75,56,"#FAF9F7","#D9D8D3",3)
     if e:
-        a.label(123,65,"专属文化图 · 待绘制",10.5,"Kai",RED)
-        a.label(123,75,"已有独立主题构想",9,"Kai",GRAY)
-        a.label(123,87,"尚无获准的正式配图",9,"Kai",GRAY)
-        a.label(123,100,f"ID{row['main_id']:03d}  仅预留艺术区域",8,"Kai",GRAY)
-        return "draft_brief_only_no_finished_asset"
+        a.label(123,63,"专属主题画构想",10,"Kai",RED)
+        brief=e.get("art_brief")
+        if brief:
+            lines=a.rows(brief,65,9.1,max_lines=4)
+            for i,value in enumerate(lines):
+                a.label(123,76+i*6.5,value,9.1,"Kai",INK)
+        else:
+            a.label(123,81,"原样稿构图待补充",9,"Kai",GRAY)
+        a.label(123,102,"原创美术/版权待审",7.5,"Kai",RED)
+        return "unique_illustration_concept_not_finished_asset"
     a.label(123,67,"专属插图留白",11,"Kai",GRAY)
     a.label(123,80,"题材、版权与画面待设计",8.7,"Kai",GRAY)
     a.label(123,99,f"ID{row['main_id']:03d}  请勿用通用山水补位",8,"Kai",GRAY)
@@ -320,12 +357,15 @@ def cover_page(a:PageArtist,row,page,src_doc,art_assets,root):
             x=121+(i%2)*36.8;y=164+(i//2)*21.2
             a.rect(x,y,34.6,18.2,"#F9F6F3",None,1.5)
             py=term["pinyin"]
-            size=7.7
-            while size>6.1 and pdfmetrics.stringWidth(py,"CultureLatin",size)>mm(33):
-                size-=.2
-            if pdfmetrics.stringWidth(py,"CultureLatin",size)>mm(33):
-                raise ValueError("Word Pinyin cannot fit: "+term["word"])
-            a.label(x+17.3,y+6.5,py,size,"Latin",RED,"center")
+            if py is None:
+                a.label(x+17.3,y+6.5,"读音待核",7.2,"Kai",RED,"center")
+            else:
+                size=7.7
+                while size>6.1 and pdfmetrics.stringWidth(py,"CultureLatin",size)>mm(33):
+                    size-=.2
+                if pdfmetrics.stringWidth(py,"CultureLatin",size)>mm(33):
+                    raise ValueError("Word Pinyin cannot fit: "+term["word"])
+                a.label(x+17.3,y+6.5,py,size,"Latin",RED,"center")
             a.label(x+17.3,y+14.8,term["word"],12.3,"Kai",INK,"center")
     else:
         a.label(122,169,"没有经过词典核实的候选词条",8.7,"Kai",GRAY)
@@ -377,6 +417,11 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
            root:Path=ROOT):
     root=Path(root)
     fonts()
+    font_path=Path("/usr/share/fonts/truetype/arphic/uming.ttc")
+    if not font_path.is_file():
+        raise ValueError("Missing packaged open font fallback for 201 rare radicals")
+    if "CultureRare" not in pdfmetrics.getRegisteredFontNames():
+        pdfmetrics.registerFont(TTFont("CultureRare",str(font_path),subfontIndex=0))
     source_index=audit(source,manifest)
     plan=paginate(make_plan(source_index,root))
     art=read_registry(root=root)
@@ -486,8 +531,10 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
         "continuation_pages":plan["expected_continuation_pages"],
         "cumulative_original_source_stroke_tiles":source_steps,
         "batch_count":21,
-        "cultural_draft_glyphs":16,
-        "missing_cultural_editorial_content":185,
+        "cultural_draft_glyphs":201,
+        "new_character_cultural_drafts":185,
+        "missing_cultural_editorial_content":0,
+        "unreviewed_related_word_or_character_examples":sum(len(r["manuscript"]["terms"]) for r in plan["entries"]),
         "unique_existing_svg_artwork_drafts":4,
         "illustration_art_approved":0,
         "word_readings_approved":0,
@@ -495,7 +542,7 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
         "attached_forms_included":0,
         "stroke_source_method":"PyMuPDF Page.show_pdf_page + original 86pt clipped vector Form XObject",
         "source_svg_strokes_generated":0,
-        "editorial_disclaimer":"Only original v0.5.1 PDF stroke content is source verified. New cultural text and art are all drafts or blank review slots.",
+        "editorial_disclaimer":"201 cultural articles drafted, ALL new phonetics, quotations, proposed scenes and literary text unreviewed; only original v0.5.1 PDF strokes verified.",
         "original_batch_main_ids":[{"batch_id":f"B{i:02d}",
             "main_ids":[g["main_id"] for g in plan["entries"] if g["batch_id"]==f"B{i:02d}"]}
             for i in range(1,22)],

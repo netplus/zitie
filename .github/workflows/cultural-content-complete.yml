@@ -1,0 +1,223 @@
+name: Cultural full-201 complete text draft and original stroke audit
+
+on:
+  pull_request:
+    paths:
+      - 'data/cultural_edition/fullbook_editorial/**'
+      - 'scripts/cultural_fullbook_model.py'
+      - 'scripts/build_cultural_fullbook.py'
+      - 'scripts/verify_cultural_fullbook.py'
+      - 'scripts/test_cultural_fullbook_model.py'
+      - '.github/workflows/cultural-content-complete.yml'
+      - 'deliverables/drafts/cultural-v0.6-all-text-201/**'
+  push:
+    branches:
+      - feat/cultural-fullbook-content-201-20261025
+    paths:
+      - 'data/cultural_edition/fullbook_editorial/**'
+      - 'scripts/cultural_fullbook_model.py'
+      - 'scripts/build_cultural_fullbook.py'
+      - 'scripts/verify_cultural_fullbook.py'
+      - 'scripts/test_cultural_fullbook_model.py'
+      - '.github/workflows/cultural-content-complete.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  source-locked-entire-201-cultural-text:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install source-locked offline PDF and art dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y libcairo2-dev libffi-dev pkg-config \
+            fonts-arphic-gkai00mp fonts-arphic-gbsn00lp fonts-arphic-uming fonts-dejavu-core
+          python -m pip install \
+            'PyMuPDF==1.26.7' 'reportlab==4.4.9' \
+            'Pillow==12.3.0' 'numpy==2.3.5' 'svglib==1.6.0'
+      - name: Verify every main ID has specific unreviewed cultural content
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-content-201
+          python scripts/test_cultural_fullbook_model.py \
+            2>&1 | tee build/cultural-content-201/fullbook-manuscript-tests.txt
+          python scripts/test_cultural_editorial_coverage.py \
+            2>&1 | tee build/cultural-content-201/legacy-source-ledger-tests.txt
+          python scripts/test_cultural_b01_editorial_audit.py \
+            2>&1 | tee build/cultural-content-201/b01-manuscript-tests.txt
+      - name: Generate complete 201-article cultural reading A4 PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_cultural_fullbook.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --output build/cultural-content-201/zitie-cultural-201-content-v0.6-UNREVIEWED.pdf \
+            --proof build/cultural-content-201/201-content-and-original-steps.json \
+            | tee build/cultural-content-201/build-summary.json
+      - name: All 1045 original stroke tiles and every authored page audit
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/verify_cultural_fullbook.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --pdf build/cultural-content-201/zitie-cultural-201-content-v0.6-UNREVIEWED.pdf \
+            --proof build/cultural-content-201/201-content-and-original-steps.json \
+            --output build/cultural-content-201/full-201-content-qa.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('build/cultural-content-201')
+          qa=json.loads((root/'full-201-content-qa.json').read_text())
+          m=json.loads((root/'201-content-and-original-steps.json').read_text())
+          assert qa['result']=='PASS_SOURCE_LOCKED_201_GLYPHS_1045_STROKES_DRAFT_ONLY'
+          assert m['content_glyphs']==201
+          assert m['cultural_draft_glyphs']==201 and m['missing_cultural_editorial_content']==0
+          assert m['new_character_cultural_drafts']==185
+          assert m['unreviewed_related_word_or_character_examples']==812
+          assert qa['original_source_vector_steps_pixel_compared']==1045
+          assert m['new_publication_approvals']==0
+          assert m['word_readings_approved']==0 and m['illustration_art_approved']==0
+          assert m['attached_forms_included']==0
+          print('PASS: 201 drafted articles, 812 word/example candidates, 1045 source strokes, no publication claims')
+          PY
+      - name: Render every page and 21 complete batch contact sheets
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,fitz
+          from pathlib import Path
+          from collections import defaultdict
+          from PIL import Image,ImageDraw
+          root=Path('build/cultural-content-201')
+          proof=json.loads((root/'201-content-and-original-steps.json').read_text())
+          batch_map=defaultdict(list)
+          for row in proof['page_map']:
+              batch_map[row['batch_id']].append(row['preview_pdf_page'])
+          pictures=root/'all-page-previews';pictures.mkdir(exist_ok=True)
+          gallery=root/'21-batch-contact-sheets';gallery.mkdir(exist_ok=True)
+          with fitz.open(root/'zitie-cultural-201-content-v0.6-UNREVIEWED.pdf') as pdf:
+              assert len(pdf)==proof['output_pdf_pages']
+              for i,p in enumerate(pdf,1):
+                  pix=p.get_pixmap(matrix=fitz.Matrix(1.0,1.0),alpha=False)
+                  image=Image.frombytes('RGB',(pix.width,pix.height),pix.samples)
+                  assert image.getbbox() is not None
+                  image.save(pictures/f'page-{i:03}.jpg',
+                             format='JPEG',quality=82,optimize=True)
+              for batch,pages in batch_map.items():
+                  columns=4;tw,th=210,298;gap=12;rows=(len(pages)+3)//4
+                  image=Image.new('RGB',(columns*(tw+gap)+gap,rows*(th+36)+gap),'#f3f2f0')
+                  draw=ImageDraw.Draw(image)
+                  for j,pn in enumerate(pages):
+                      with Image.open(pictures/f'page-{pn:03}.jpg') as original:
+                          thumb=original.resize((tw,th),Image.Resampling.BICUBIC)
+                          x=gap+(j%columns)*(tw+gap)
+                          y=gap+(j//columns)*(th+36)
+                          image.paste(thumb,(x,y))
+                          draw.text((x,y+th+4),f'{batch} / PDF p.{pn}',fill='#343434')
+                  image.save(gallery/f'{batch}-all-pages.png',optimize=True)
+              assert len(list(pictures.glob('page-*.jpg')))==len(pdf)
+              assert len(list(gallery.glob('B*.png')))==21
+          print('PASS: rendered every physical PDF page and all 21 batch contact sheets')
+          PY
+      - name: Bit-for-bit determinism of all-201 cultural content PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-content-repeat
+          python scripts/build_cultural_fullbook.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --output build/cultural-content-repeat/repeat.pdf \
+            --proof build/cultural-content-repeat/repeat-proof.json
+          cmp build/cultural-content-201/zitie-cultural-201-content-v0.6-UNREVIEWED.pdf \
+              build/cultural-content-repeat/repeat.pdf
+      - name: Append only new editorial draft under separate cultural-v0.6 directory
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feat/cultural-fullbook-content-201-20261025'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,os,shutil
+          from pathlib import Path
+          import fitz
+          out=Path('build/cultural-content-201')
+          dest=Path('deliverables/drafts/cultural-v0.6-all-text-201')
+          dest.mkdir(parents=True,exist_ok=True)
+          source=out/'zitie-cultural-201-content-v0.6-UNREVIEWED.pdf'
+          qa=json.loads((out/'full-201-content-qa.json').read_text())
+          proof=json.loads((out/'201-content-and-original-steps.json').read_text())
+          assert (qa['result']=='PASS_SOURCE_LOCKED_201_GLYPHS_1045_STROKES_DRAFT_ONLY'
+                  and proof['cultural_draft_glyphs']==201
+                  and proof['missing_cultural_editorial_content']==0
+                  and proof['new_publication_approvals']==0)
+          digest=hashlib.sha256(source.read_bytes()).hexdigest()
+          assert digest==proof['output_pdf_sha256']==qa['preview_pdf_sha256']
+          with fitz.open(source) as pdf:
+              assert len(pdf)==proof['output_pdf_pages']
+          manifest=Path('deliverables/manifest.json')
+          prev=manifest.read_text(encoding='utf8')
+          obj=json.loads(prev)
+          pdf=dest/source.name
+          if any(x['path']==pdf.as_posix() for x in obj['artifacts']):
+              raise ValueError('Do not overwrite any archived draft or previous PDF')
+          shutil.copyfile(source,pdf)
+          shutil.copyfile(out/'full-201-content-qa.json',dest/'full-201-content-qa.json')
+          shutil.copyfile(out/'201-content-and-original-steps.json',dest/'201-content-and-original-steps.json')
+          obj['artifacts'].append({
+              'path':pdf.as_posix(),
+              'title':'201字文化阅读版全量文字工程初稿：1045笔原PDF、812词/字例待审',
+              'version':'cultural-v0.6-all-content-draft',
+              'status':'draft',
+              'batch':'B01-B21 201 glyphs, 185 new editorial drafts',
+              'pages':proof['output_pdf_pages'],
+              'bytes':pdf.stat().st_size,
+              'sha256':digest,
+              'source_commit':os.environ['GITHUB_SHA'],
+              'provenance_kind':'source_locked_vector_layout_derivative',
+              'source_pdf':'deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf',
+              'source_pdf_sha256':'7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90',
+              'review_record':'reviews/cultural-edition/P4-3-full-201-text-20261025.md',
+              'release_eligible':False,
+              'editorial_review_state':'201_cultural_text_candidates_unreviewed'
+          })
+          assert obj['artifacts'][:-1]==json.loads(prev)['artifacts']
+          manifest.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n',
+                              encoding='utf8')
+          print('PASS: append-only archive',digest,proof['output_pdf_pages'])
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add deliverables/manifest.json deliverables/drafts/cultural-v0.6-all-text-201/
+          git diff --cached --quiet && { echo 'No new draft to archive'; exit 1; }
+          git commit -m "build(cultural): append all-201 content draft to archive, never formal release"
+          for i in 1 2 3; do
+            git fetch origin feat/cultural-fullbook-content-201-20261025
+            git rebase origin/feat/cultural-fullbook-content-201-20261025
+            if git push origin HEAD:feat/cultural-fullbook-content-201-20261025; then
+              exit 0
+            fi
+          done
+          exit 1
+      - name: Upload full book, all QA, every page preview, 21 contact sheets
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultural-201-full-text-UNREVIEWED
+          path: build/cultural-content-201/
+          retention-days: 14
+          if-no-files-found: warn

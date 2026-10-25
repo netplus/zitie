@@ -21,7 +21,9 @@ class FullBookScopeTests(unittest.TestCase):
         self.assertEqual(plan["source_stroke_total"],1045)
         self.assertEqual(plan["batch_count"],21)
         self.assertEqual(plan["existing_cultural_drafts"],16)
-        self.assertEqual(plan["without_new_cultural_content"],185)
+        self.assertEqual(plan["new_fullbook_content_drafts"],185)
+        self.assertEqual(plan["fullbook_content_drafts"],201)
+        self.assertEqual(plan["without_new_cultural_content"],0)
         self.assertEqual(sum(x["page_parts"] for x in plan["entries"]),
                          201+sum(x["stroke_count"]>6 for x in plan["entries"]))
         self.assertEqual(plan["new_cultural_release_approved"],0)
