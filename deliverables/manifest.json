@@ -541,6 +541,23 @@
       "review_record": "reviews/cultural-edition/P2-P3-source-art-20261024.md",
       "release_eligible": false,
       "editorial_review_state": "artwork_vector_draft_not_final_review"
+    },
+    {
+      "path": "deliverables/drafts/cultural-v0.4/B01-9-character-source-locked-UNREVIEWED.pdf",
+      "title": "文化识字版 B01 九字原始笔顺与独立构图技术草稿（待审，不发行）",
+      "version": "cultural-v0.4-b01-unreviewed",
+      "status": "draft",
+      "batch": "B01 9 glyphs, 22 original PDF cumulative stroke tiles",
+      "pages": 9,
+      "bytes": 3366297,
+      "sha256": "148792aa78f264db869ecc66c0c79eec57e3362153627b5c71c1c82d9461158b",
+      "source_commit": "7fd36844c53ddf0f331a2a6b43b9a3ffd714de7b",
+      "provenance_kind": "source_locked_vector_layout_derivative",
+      "source_pdf": "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf",
+      "source_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+      "review_record": "reviews/cultural-edition/P4-B01-nine-original-source-previews-20261025.md",
+      "release_eligible": false,
+      "editorial_review_state": "B01_source_locked_editorial_draft_not_for_release"
     }
   ]
 }
