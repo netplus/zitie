@@ -22,7 +22,7 @@ B01 已有 \`山(ID039)\` 的 P1 PDF 样张；本次为余下九字提供独立�
 
 - 生成器：[\`scripts/build_cultural_b01_preview.py\`](../../scripts/build_cultural_b01_preview.py)
 - 完全独立的22源图逐幅像素比对：[\`scripts/test_cultural_b01_preview.py\`](../../scripts/test_cultural_b01_preview.py)
-- 专用工作流：[\`cultural-b01-preview.yml\`](../../.github/workflows/cultural-b01-preview.yml)。产物暂存 Actions 14天artifact：未审PDF、9张逐页PNG、源页/裁剪框 provenance、QA JSON、审计阻断项与全套失败即阻断测试；**不写入任何正式版发行目录/manifest、不自动推送正式PDF**。
+- 专用工作流：[\`cultural-b01-preview.yml\`](../../.github/workflows/cultural-b01-preview.yml)。产物暂存 Actions 14天artifact：未审PDF、9张逐页PNG、源页/裁剪框 provenance、QA JSON、审计阻断项与全套失败即阻断测试；**已将独立的待审PDF追加归档到 `deliverables/drafts/cultural-v0.4/`，只在manifest增加 `draft/release_eligible=false` 的新条目；不写入正式发行目录、不改变历史条目**。
 - 九张右上角为与字义分别关联的**向量构图示意**，仅供验证阅读页布局及与原笔顺隔离的渲染架构；还不属于P3正式插图、没有审核通过的asset ID。由稿件编辑卡单独驱动，每页不复用同一种场景。下一步需要完成真正的美术质量复核。
 - 主字使用原PDF抠取真实范字图（不是重新生成教学字），左下所有1/2/3笔使用原PDF逐幅 \`show_pdf_page(clip=)\`；图上方明确先排原PDF笔顺提示。单字拼音只读取 \`pinyin_from_pdf\`，缺省则显示待核。
 - 相关词显示 **36条未核拼音候选**用于审读排版，页脚明确“内容/读音待审，非正式稿”；无任何B01引文获得原典审查，一律显示“经典引文待核验”。本次没有出版批准。
@@ -56,3 +56,10 @@ B01 已有 \`山(ID039)\` 的 P1 PDF 样张；本次为余下九字提供独立�
 4. 未审的词音和引文不能因为脚本成功而获批；真实的P3插图/许可/全局审美去重尚未结束；没有专业编辑人工过目不应合并正式出版。
 
 后续：先读 GitHub Actions QA 数值和页面实图，再改进视觉布局；通过工程门禁后仅可合并**构建能力**和证据，最终文化版本发行遵循 Issue #192 的独立放行门槛。
+
+## P4 B01 实际构建与逐页检查（2026-10-25）
+
+- 专用CI已完成且通过：9页 A4、22个原PDF累计笔顺、二次构建字节完全一致、原图/新图逐步独立像素对比最大RGB MAE **3.4054/255**；产物SHA256为 `148792aa78f264db869ecc66c0c79eec57e3362153627b5c71c1c82d9461158b`，大小3,366,297字节。
+- 人工查看全部九页后发现并修复“一”的大字范图被强行拉伸成正方形的错误（该错误**只影响大范字，不影响原PDF笔顺**）。现在根据原图非空像素长宽比缩放到48mm范围并居中；新回归检查禁止再次形变，修复后重新查看“一”的大范字正常。
+- [9页PDF待审稿](../../deliverables/drafts/cultural-v0.4/B01-9-character-source-locked-UNREVIEWED.pdf)、[原22笔逐步溯源表](../../deliverables/drafts/cultural-v0.4/B01-original-source-step-provenance.json)、[独立像素QA报告](../../deliverables/drafts/cultural-v0.4/B01-source-pixel-qa.json)均已在隔离分支归档；manifest仅追加该条草稿，`release_eligible=false`。
+- 此时已拥有 **16字文化阅读工程PDF样张**（此前7字 + B01九字），不是16字获得出版许可；其余185字文化稿仍待制作。36个新相关词候选、9幅专属正式美术与引文、全部201字以及附形偏旁、P5/P6审核发布仍待开展；文化正式版发行0。
