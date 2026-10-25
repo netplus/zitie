@@ -118,7 +118,9 @@ def verify(source:Path,manifest:Path,pdf:Path,proof:Path,root:Path=ROOT):
                         raise ValueError("Existing original cultural manuscript missing")
                     for term in target["manuscript"]["terms"]:
                         if term["word"] not in wording:
-                            raise ValueError("One related word or character example was omitted")
+                            raise ValueError(f"Missing PDF word/example: ID{mid:03d} {target['character']} "
+                                             f"page {expected_pageno} word={term['word']!r} "
+                                             f"extracted_sample={wording[-300:]!r}")
                         if term["pinyin"] is None and "读音待核" not in wording:
                             raise ValueError("Missing word phonetics were not clearly flagged as pending")
                         if term["pinyin"] is not None and term["pinyin"] not in wording:
