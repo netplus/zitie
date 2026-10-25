@@ -3,6 +3,7 @@ name: P4.2 all-201 original-PDF cultural book draft
 on:
   pull_request:
     paths:
+      - 'deliverables/drafts/cultural-v0.5-full-201/**'
       - 'scripts/cultural_fullbook_model.py'
       - 'scripts/build_cultural_fullbook.py'
       - 'scripts/verify_cultural_fullbook.py'
@@ -23,7 +24,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   render-entire-201-id-source-locked-candidate:
@@ -162,6 +163,79 @@ jobs:
           assert report['missing_cultural_editorial_content']==185
           print('PASS: all released original assets and publication gates remain frozen')
           PY
+      - name: Append-only archive of the QA-passed full-201 engineering PDF
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feat/cultural-fullbook-201-p42-20261025'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,os,shutil
+          from pathlib import Path
+          import fitz
+          source=Path('build/cultural-full-201')
+          dest=Path('deliverables/drafts/cultural-v0.5-full-201')
+          dest.mkdir(parents=True,exist_ok=True)
+          name='cultural-201-original-strokes-P42-UNREVIEWED.pdf'
+          origin=source/'cultural-201-all-strokes-P42-UNREVIEWED.pdf'
+          proof=json.loads((source/'201-original-source-page-map.json').read_text())
+          qa=json.loads((source/'full-201-source-qa.json').read_text())
+          assert proof['status']=='P4_2_201_GLYPH_FULL_BOOK_ENGINEERING_DRAFT_NOT_RELEASE'
+          assert (proof['content_glyphs'],proof['cumulative_original_source_stroke_tiles'],
+                  proof['missing_cultural_editorial_content'])==(201,1045,185)
+          assert qa['result']=='PASS_SOURCE_LOCKED_201_GLYPHS_1045_STROKES_DRAFT_ONLY'
+          assert qa['original_source_vector_steps_pixel_compared']==1045
+          assert qa['linked_index_targets']==201
+          digest=hashlib.sha256(origin.read_bytes()).hexdigest()
+          assert proof['output_pdf_sha256']==digest==qa['preview_pdf_sha256']
+          with fitz.open(origin) as book:
+              assert len(book)==proof['output_pdf_pages']
+          manifest=Path('deliverables/manifest.json')
+          previous=manifest.read_text(encoding='utf-8')
+          obj=json.loads(previous)
+          path=(dest/name).as_posix()
+          assert not any(e['path']==path for e in obj['artifacts']), \
+              'Never replace an existing registered PDF, even an editorial draft'
+          shutil.copyfile(origin,dest/name)
+          shutil.copyfile(source/'201-original-source-page-map.json',
+                          dest/'201-original-source-page-map.json')
+          shutil.copyfile(source/'full-201-source-qa.json',
+                          dest/'full-201-source-qa.json')
+          row={
+              'path':path,
+              'title':'文化识字版P4.2：201主字1045原PDF笔顺全量工程待审稿',
+              'version':'cultural-v0.5-201-full-draft',
+              'status':'draft',
+              'batch':'P4.2 all 21 batches, 201 main glyphs, 1045 strokes',
+              'pages':proof['output_pdf_pages'],
+              'bytes':(dest/name).stat().st_size,
+              'sha256':digest,
+              'source_commit':os.environ['GITHUB_SHA'],
+              'provenance_kind':'source_locked_vector_layout_derivative',
+              'source_pdf':'deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf',
+              'source_pdf_sha256':'7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90',
+              'review_record':'reviews/cultural-edition/P4-2-fullbook-201-20261025.md',
+              'release_eligible':False,
+              'editorial_review_state':'P4_2_all_source_complete_cultural_content_unreviewed'
+          }
+          obj['artifacts'].append(row)
+          assert obj['artifacts'][:-1]==json.loads(previous)['artifacts']
+          manifest.write_text(json.dumps(obj,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('PASS: appended ONLY an unreviewed full-201 draft',digest)
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add deliverables/manifest.json deliverables/drafts/cultural-v0.5-full-201/
+          git diff --cached --quiet && { echo 'No draft or append-only manifest change'; exit 1; }
+          git commit -m "build(P4.2): archive all-201 source-locked cultural engineering draft"
+          for attempt in 1 2 3; do
+            git fetch origin feat/cultural-fullbook-201-p42-20261025
+            git rebase origin/feat/cultural-fullbook-201-p42-20261025
+            if git push origin HEAD:feat/cultural-fullbook-201-p42-20261025; then
+              exit 0
+            fi
+          done
+          echo 'Safely refused non-fast-forward archive update' >&2
+          exit 1
       - name: Upload complete engineering PDF, original source proof and every page review
         if: always()
         uses: actions/upload-artifact@v4
