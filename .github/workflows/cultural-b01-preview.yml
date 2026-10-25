@@ -1,0 +1,118 @@
+name: Cultural B01 nine-page original-stroke PDF proof
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/build_cultural_b01_preview.py'
+      - 'scripts/test_cultural_b01_preview.py'
+      - 'scripts/test_cultural_b01_mainland_education_evidence.py'
+      - 'scripts/cultural_b01_editorial_audit.py'
+      - 'data/cultural_edition/p2_b01_editorial_briefs_20261025.json'
+      - 'data/cultural_edition/p2_b01_mainland_education_evidence_20261025.json'
+      - '.github/workflows/cultural-b01-preview.yml'
+  push:
+    branches:
+      - feat/cultural-b01-pdf-preview-and-pronunciation-20261025
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-nine-unreviewed-samples:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install reproducible PDF tools and glyph fonts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install 'PyMuPDF==1.26.7' 'reportlab==4.4.9' 'Pillow==12.3.0' 'numpy==2.3.5'
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-arphic-gkai00mp fonts-arphic-gbsn00lp fonts-dejavu-core
+      - name: Validate B01 editorial scope and Mainland HSK evidence tiers
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-b01
+          python scripts/test_cultural_b01_editorial_audit.py \
+            2>&1 | tee build/cultural-b01/editorial-negative-tests.txt
+          python scripts/test_cultural_b01_mainland_education_evidence.py \
+            2>&1 | tee build/cultural-b01/mainland-education-negative-tests.txt
+          python scripts/cultural_b01_editorial_audit.py \
+            --output build/cultural-b01/editorial-approval-blockers.json
+      - name: Generate nine A4 pages only with frozen source-PDF teaching tiles
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_cultural_b01_preview.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/p2_b01_editorial_briefs_20261025.json \
+            --output build/cultural-b01/B01-9-character-source-locked-UNREVIEWED.pdf \
+            --proof build/cultural-b01/original-source-step-provenance.json
+      - name: Independently verify all 22 published-PDF source tiles
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/test_cultural_b01_preview.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/p2_b01_editorial_briefs_20261025.json \
+            --pdf build/cultural-b01/B01-9-character-source-locked-UNREVIEWED.pdf \
+            --proof build/cultural-b01/original-source-step-provenance.json \
+            | tee build/cultural-b01/pdf-source-qa.json
+      - name: Render all nine technical preview pages for visual review
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import fitz
+          from pathlib import Path
+          p=Path('build/cultural-b01')
+          with fitz.open(p/'B01-9-character-source-locked-UNREVIEWED.pdf') as pdf:
+              assert len(pdf)==9
+              for i, page in enumerate(pdf):
+                  page.get_pixmap(matrix=fitz.Matrix(1.7,1.7),
+                                  alpha=False).save(p/f'page-{i+1:02d}.png')
+          print('PASS: nine page PNGs created for human visual review')
+          PY
+      - name: Require bitwise-stable technical PDF regeneration
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-b01-repeat
+          python scripts/build_cultural_b01_preview.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/p2_b01_editorial_briefs_20261025.json \
+            --output build/cultural-b01-repeat/identical.pdf \
+            --proof build/cultural-b01-repeat/identical.json
+          cmp build/cultural-b01/B01-9-character-source-locked-UNREVIEWED.pdf \
+              build/cultural-b01-repeat/identical.pdf
+          echo 'PASS: second original-PDF-source layout byte identical'
+      - name: Forbid changes to published assets and animations
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --exit-code -- deliverables/releases/ animation/
+          python - <<'PY'
+          import hashlib
+          from pathlib import Path
+          path=Path('deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf')
+          expected='7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90'
+          assert hashlib.sha256(path.read_bytes()).hexdigest()==expected
+          print('PASS: immutable original v0.5.1 PDF checksum preserved')
+          PY
+      - name: Upload draft PDF, page PNGs, source proof and regression results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultural-B01-nine-pages-UNREVIEWED
+          path: build/cultural-b01/
+          if-no-files-found: warn
+          retention-days: 14
