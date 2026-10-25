@@ -6,6 +6,9 @@ on:
       - feat/cultural-mainland-p2-coverage-20261024
     paths:
       - 'data/cultural_edition/inventory/**'
+      - 'data/cultural_edition/p2_b01_editorial_briefs_20261025.json'
+      - 'scripts/cultural_b01_editorial_audit.py'
+      - 'scripts/test_cultural_b01_editorial_audit.py'
       - 'data/cultural_edition/p2_mainland_exam_evidence_20261024.json'
       - 'scripts/cultural_editorial_coverage.py'
       - 'scripts/test_cultural_editorial_coverage.py'
@@ -13,6 +16,9 @@ on:
   pull_request:
     paths:
       - 'data/cultural_edition/inventory/**'
+      - 'data/cultural_edition/p2_b01_editorial_briefs_20261025.json'
+      - 'scripts/cultural_b01_editorial_audit.py'
+      - 'scripts/test_cultural_b01_editorial_audit.py'
       - 'data/cultural_edition/p2_mainland_exam_evidence_20261024.json'
       - 'scripts/cultural_editorial_coverage.py'
       - 'scripts/test_cultural_editorial_coverage.py'
@@ -37,6 +43,8 @@ jobs:
           set -euo pipefail
           mkdir -p build/cultural-editorial
           python scripts/cultural_editorial_coverage.py             --output build/cultural-editorial/201-editorial-work-queue.json
+          python scripts/test_cultural_b01_editorial_audit.py             | tee build/cultural-editorial/b01-tests.txt
+          python scripts/cultural_b01_editorial_audit.py --output build/cultural-editorial/b01-draft-audit.json
           python scripts/test_cultural_editorial_coverage.py             | tee build/cultural-editorial/tests.txt
           python scripts/test_cultural_p2_source_audit.py
       - name: Fail if a new book is falsely declared released
@@ -49,7 +57,10 @@ jobs:
           assert row['editorial_draft_only'] is True
           assert row['counts']['mainland_dictionary_entries_signed_off']==0
           assert row['counts']['published_new_cultural_characters']==0
-          assert row['counts']['not_started_glyph_content']==194
+          assert row['counts']['not_started_glyph_content']==185
+          assert row['counts']['not_rendered_reading_pages']==194
+          assert row['counts']['P2_new_B01_editorial_briefs_unreviewed']==9
+          assert row['counts']['P2_B01_word_candidates_unreviewed']==36
           assert row['pronunciation_conflict']['not_final_normative_decision'] is True
           print('PASS: 201-source work queue is NOT a published manuscript')
           PY

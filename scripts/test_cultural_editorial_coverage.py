@@ -32,7 +32,11 @@ class EditorialCoverageTests(unittest.TestCase):
         self.assertEqual(result['counts']['batches'],21)
         self.assertEqual(result['counts']['P1_sample_reading_pages'],4)
         self.assertEqual(result['counts']['P4_sample_reading_pages'],3)
-        self.assertEqual(result['counts']['not_started_glyph_content'],194)
+        self.assertEqual(result['counts']['not_started_glyph_content'],185)
+        self.assertEqual(result['counts']['not_rendered_reading_pages'],194)
+        self.assertEqual(result['counts']['P2_new_B01_editorial_briefs_unreviewed'],9)
+        self.assertEqual(result['counts']['P2_B01_word_candidates_unreviewed'],36)
+        self.assertEqual(result['counts']['glyphs_with_any_editorial_brief'],16)
         self.assertEqual(result['counts']['four_illustration_drafts_unreviewed'],4)
         self.assertEqual(result['counts']['published_new_cultural_characters'],0)
     def test_incomplete_main_id_is_rejected(self):
