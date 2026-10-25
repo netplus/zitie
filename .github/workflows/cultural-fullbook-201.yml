@@ -160,7 +160,8 @@ jobs:
           report=json.loads(Path('build/cultural-full-201/201-original-source-page-map.json').read_text())
           assert report['new_publication_approvals']==0
           assert report['attached_forms_included']==0
-          assert report['missing_cultural_editorial_content']==185
+          assert report['missing_cultural_editorial_content']==0
+          assert report['cultural_draft_glyphs']==201
           print('PASS: all released original assets and publication gates remain frozen')
           PY
       - name: Append-only archive of the QA-passed full-201 engineering PDF
