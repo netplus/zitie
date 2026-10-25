@@ -41,7 +41,7 @@ def verify(source:Path,manifest:Path,pdf:Path,proof:Path,root:Path=ROOT):
         report["batch_count"])!=(201,1045,21):
         raise ValueError("P4.2 201/1045/21 source coverage incomplete")
     if (report["front_matter_pages"],report["missing_cultural_editorial_content"],
-        report["cultural_draft_glyphs"],report["unique_existing_svg_artwork_drafts"])!=(6,185,16,4):
+        report["cultural_draft_glyphs"],report["unique_existing_svg_artwork_drafts"])!=(6,0,201,4):
         raise ValueError("Front matter or editorial provenance coverage changed")
     if (report["illustration_art_approved"]!=0 or
         report["word_readings_approved"]!=0 or
@@ -117,10 +117,14 @@ def verify(source:Path,manifest:Path,pdf:Path,proof:Path,root:Path=ROOT):
                     if target["manuscript"]["title"] not in wording:
                         raise ValueError("Existing original cultural manuscript missing")
                     for term in target["manuscript"]["terms"]:
-                        if term["word"] not in wording or term["pinyin"] not in wording:
-                            raise ValueError("Candidate terms missing explicit draft labels")
-                elif "文化主题待编" not in wording and "字义与文化主题待编" not in wording:
-                    raise ValueError("A missing cultural article lacks visible pending status")
+                        if term["word"] not in wording:
+                            raise ValueError("One related word or character example was omitted")
+                        if term["pinyin"] is None and "读音待核" not in wording:
+                            raise ValueError("Missing word phonetics were not clearly flagged as pending")
+                        if term["pinyin"] is not None and term["pinyin"] not in wording:
+                            raise ValueError("Previously drafted word Pinyin was lost")
+                else:
+                    raise ValueError("Every main glyph must now have its own authored cultural manuscript")
             else:
                 if rec["page_kind"]!="original_stroke_continuation" or "笔顺续页" not in wording:
                     raise ValueError("Original source step continuation missing")
@@ -176,8 +180,10 @@ def verify(source:Path,manifest:Path,pdf:Path,proof:Path,root:Path=ROOT):
         "max_normalized_rgb_mae_255":round(max(pixel_scores),4),
         "average_normalized_rgb_mae_255":round(float(np.mean(pixel_scores)),4),
         "source_pdf_pinyin_adoptions_reused":source_readings,
-        "pending_cultural_articles":185,
-        "unreviewed_cultural_drafts":16,
+        "pending_cultural_articles":0,
+        "unreviewed_cultural_drafts":201,
+        "new_fullbook_character_articles":185,
+        "unverified_related_word_examples":report["unreviewed_related_word_or_character_examples"],
         "linked_index_targets":len(report["index_links"]),
         "no_published_cultural_articles":True,
         "full_page_visual_editorial_review":"requires_human_editorial_review",
