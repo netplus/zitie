@@ -1,0 +1,172 @@
+name: P4.2 all-201 original-PDF cultural book draft
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/cultural_fullbook_model.py'
+      - 'scripts/build_cultural_fullbook.py'
+      - 'scripts/verify_cultural_fullbook.py'
+      - 'scripts/test_cultural_fullbook_model.py'
+      - 'docs/CULTURAL_EDITION_REBUILD_PLAN.md'
+      - 'reviews/cultural-edition/P4-2-fullbook-201-20261025.md'
+      - '.github/workflows/cultural-fullbook-201.yml'
+      - 'data/cultural_edition/**'
+  push:
+    branches:
+      - feat/cultural-fullbook-201-p42-20261025
+    paths:
+      - 'scripts/cultural_fullbook_model.py'
+      - 'scripts/build_cultural_fullbook.py'
+      - 'scripts/verify_cultural_fullbook.py'
+      - 'scripts/test_cultural_fullbook_model.py'
+      - '.github/workflows/cultural-fullbook-201.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  render-entire-201-id-source-locked-candidate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 28
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned PDF/vector QA stack and system fonts
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y libcairo2-dev libffi-dev pkg-config \
+            fonts-arphic-gkai00mp fonts-arphic-gbsn00lp fonts-dejavu-core
+          python -m pip install \
+            'PyMuPDF==1.26.7' 'reportlab==4.4.9' \
+            'Pillow==12.3.0' 'numpy==2.3.5' 'svglib==1.6.0'
+      - name: Validate all 21 original batches and 16 candidate manuscripts
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-full-201
+          python scripts/test_cultural_fullbook_model.py \
+            2>&1 | tee build/cultural-full-201/model-negative-tests.txt
+          python scripts/test_cultural_editorial_coverage.py \
+            2>&1 | tee build/cultural-full-201/editorial-coverage-tests.txt
+          python scripts/test_cultural_b01_editorial_audit.py \
+            2>&1 | tee build/cultural-full-201/b01-negative-tests.txt
+      - name: Generate whole original-PDF-sourced cultural reading manuscript
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_cultural_fullbook.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --output build/cultural-full-201/cultural-201-all-strokes-P42-UNREVIEWED.pdf \
+            --proof build/cultural-full-201/201-original-source-page-map.json \
+            | tee build/cultural-full-201/build-summary.json
+      - name: Independently compare every one of 1045 original vector strokes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/verify_cultural_fullbook.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --pdf build/cultural-full-201/cultural-201-all-strokes-P42-UNREVIEWED.pdf \
+            --proof build/cultural-full-201/201-original-source-page-map.json \
+            --output build/cultural-full-201/full-201-source-qa.json
+      - name: Render every PDF page and 21 visual batch contact sheets
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import fitz,json
+          from pathlib import Path
+          from collections import defaultdict
+          from PIL import Image,ImageDraw
+          from io import BytesIO
+          base=Path('build/cultural-full-201')
+          proof=json.loads((base/'201-original-source-page-map.json').read_text())
+          mapping=proof['page_map']
+          by_batch=defaultdict(list)
+          for item in mapping:
+              by_batch[item['batch_id']].append(item['preview_pdf_page'])
+          all_pngs=base/'every-page-jpg'
+          all_pngs.mkdir(parents=True,exist_ok=True)
+          review=base/'21-batch-visual-overviews'
+          review.mkdir(parents=True,exist_ok=True)
+          path=base/'cultural-201-all-strokes-P42-UNREVIEWED.pdf'
+          with fitz.open(path) as book:
+              assert len(book)==proof['output_pdf_pages']
+              for idx,p in enumerate(book):
+                  pixels=p.get_pixmap(matrix=fitz.Matrix(.9,.9),alpha=False)
+                  image=Image.frombytes('RGB',(pixels.width,pixels.height),pixels.samples)
+                  if image.getbbox() is None:
+                      raise AssertionError('Blank page '+str(idx+1))
+                  image.save(all_pngs/f'page-{idx+1:03d}.jpg',
+                             format='JPEG',quality=79,optimize=True)
+              for batch,pages in by_batch.items():
+                  columns=4;thumb=(210,298);pad=12
+                  rows=(len(pages)+columns-1)//columns
+                  sheet=Image.new('RGB',(columns*(thumb[0]+pad)+pad,
+                                          rows*(thumb[1]+40)+pad),'#eeeeea')
+                  d=ImageDraw.Draw(sheet)
+                  for i,number in enumerate(pages):
+                      with Image.open(all_pngs/f'page-{number:03d}.jpg') as original:
+                          image=original.resize(thumb,Image.Resampling.BICUBIC)
+                          x=pad+(i%columns)*(thumb[0]+pad)
+                          y=pad+(i//columns)*(thumb[1]+40)
+                          sheet.paste(image,(x,y))
+                          d.text((x,y+thumb[1]+7),f'{batch} / PDF {number}',
+                                 fill='#303030')
+                  sheet.save(review/f'{batch}-all-pages-contact.png',optimize=True)
+              for glyph_id in (1,39,77,106,200,201):
+                  rec=next(r for r in mapping if r['main_id']==glyph_id and r['part']==1)
+                  n=rec['preview_pdf_page']
+                  book[n-1].get_pixmap(matrix=fitz.Matrix(1.5,1.5),
+                                      alpha=False).save(base/f'ID{glyph_id:03d}-page-{n}.png')
+          assert len(list(all_pngs.glob('page-*.jpg')))==proof['output_pdf_pages']
+          assert len(list(review.glob('B*-all-pages-contact.png')))==21
+          print('PASS:',proof['output_pdf_pages'],'pages rasterized, 21 full-batch visual contact sheets')
+          PY
+      - name: Rebuild entire book and compare exact PDF bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-full-repeat
+          python scripts/build_cultural_fullbook.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --output build/cultural-full-repeat/identical.pdf \
+            --proof build/cultural-full-repeat/identical.json
+          cmp build/cultural-full-201/cultural-201-all-strokes-P42-UNREVIEWED.pdf \
+            build/cultural-full-repeat/identical.pdf
+          echo 'PASS: all-201 whole-book PDF repeat build is bit-for-bit identical'
+      - name: Protect original v0.5.1, artwork studies, animation and past releases
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          source=Path('deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf')
+          sha='7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90'
+          assert hashlib.sha256(source.read_bytes()).hexdigest()==sha
+          artifact=json.loads(Path('deliverables/manifest.json').read_text())['artifacts']
+          record=[x for x in artifact if x['path']==source.as_posix()]
+          assert len(record)==1 and record[0]['status']=='released'
+          assert record[0]['sha256']==sha
+          report=json.loads(Path('build/cultural-full-201/201-original-source-page-map.json').read_text())
+          assert report['new_publication_approvals']==0
+          assert report['attached_forms_included']==0
+          assert report['missing_cultural_editorial_content']==185
+          print('PASS: all released original assets and publication gates remain frozen')
+          PY
+      - name: Upload complete engineering PDF, original source proof and every page review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: P42-all-201-glyph-cultural-PDF-UNREVIEWED
+          path: build/cultural-full-201/
+          retention-days: 14
+          if-no-files-found: warn
