@@ -1,0 +1,59 @@
+{
+  "schema_version": 1,
+  "scope": "B01 Mainland educational source evidence - *not* mainland dictionary editorial approval",
+  "checked_date": "2026-10-25",
+  "jurisdiction": "Chinese mainland",
+  "release_eligible": false,
+  "source_policy": "Exact visible word rows on HSK provider listing are educational corroboration, not the Contemporary Chinese Dictionary or editor signoff. PEP teaching guidance about tone change does not certify word-by-word page pinyin.",
+  "direct_hsk_word_rows": [
+    {
+      "word": "土地",
+      "pinyin_orthographic": "tǔdì",
+      "number": 8156,
+      "level": "四级",
+      "source_url": "https://admin.chinesetest.cn/standardsAction.do?leves=&means=getStandardWordsList&pager.offset=8150&pinyin=&words=&words_type=",
+      "status": "mainland_exam_listing_verified_non_normative",
+      "reviewed_by": null,
+      "publication_approved": false
+    },
+    {
+      "word": "土壤",
+      "pinyin_orthographic": "tǔrǎng",
+      "number": 8159,
+      "level": "高等",
+      "source_url": "https://admin.chinesetest.cn/standardsAction.do?leves=&means=getStandardWordsList&pager.offset=8150&pinyin=&words=&words_type=",
+      "status": "mainland_exam_listing_verified_non_normative",
+      "reviewed_by": null,
+      "publication_approved": false
+    },
+    {
+      "word": "口水",
+      "pinyin_orthographic": "kǒushuǐ",
+      "number": 4787,
+      "level": "高等",
+      "source_url": "https://admin.chinesetest.cn/newhsk/standardsAction.do?leves=&means=getStandardWordsList&pager.offset=4780&pinyin=&words=&words_type=",
+      "status": "mainland_exam_listing_verified_non_normative",
+      "reviewed_by": null,
+      "publication_approved": false
+    }
+  ],
+  "yi_pinyin_policy": {
+    "subject": "一",
+    "standard_character_reading": "yī",
+    "educational_source": "https://dxs.moe.gov.cn/zx/a/jj/220422/1761400.shtml",
+    "source_note": "人民日报海外版刊文引述：字典读音 yī、语流可发生二/四声变调；该文章不逐词指定所有拼音卡音值",
+    "orthography_source": "https://www.htu.edu.cn/yw/2018/1008/c14029a129573/page.htm",
+    "orthography_standard": "GB/T 16159-2012",
+    "orthography_exact_example": {
+      "word": "第一",
+      "source": "dì-yī",
+      "section": "1.5.4 数词序数正词法",
+      "note": "Lexical orthography has hyphen; per-character learner pronunciation line is not identical to lexicographic whole-word spelling"
+    },
+    "review_warning": "The PEP updated Grade-1 teaching approach addresses 一 sandhi but does not itself settle each related word printing choice. 一 / 一个 / 一起 / 一年 need individual Mainland lexical and pedagogical review before publication.",
+    "sample_readings_status": "existing_unreviewed_candidates_must_remain_unreviewed",
+    "reviewed_by": null,
+    "approved_for_children": false
+  },
+  "future_required": "Find applicable Mainland dictionary exact headword and selected sense, compare neutral tone, orthography, oral sandhi and per-character teaching annotation; human editor signoff required before release."
+}
