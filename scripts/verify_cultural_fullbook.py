@@ -93,7 +93,7 @@ def verify(source:Path,manifest:Path,pdf:Path,proof:Path,root:Path=ROOT):
                 raise ValueError("Unverified quoted words must not be presented as approved")
             page=new[expected_pageno-1]
             wording=page.get_text()
-            if "\\x00" in wording or "\\ufffd" in wording:
+            if "\x00" in wording or "\ufffd" in wording:
                 raise ValueError(f"Missing embedded Unicode glyph on PDF page {expected_pageno} ID{mid:03d}")
             for fixed in ("笔顺","禁止作为正式教材发行"):
                 if fixed not in wording:
