@@ -125,3 +125,10 @@
 - [HSK 中国大陆教学词表](../data/cultural_edition/p2_mainland_exam_evidence_20261024.json)证实候选“月亮” `yuèliang`、“水果” `shuǐguǒ` 在考试词表出现；这是**教学依据而非词典出版审音**。台湾词典“月亮 `yuè liàng`”差异仍待编辑判定，未篡改样板。
 - [现行GB/T 16159—2012](https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=5645BD8DB9D8D73053AD3A2397E15E74)第7.1条允许儿童识字读物按字注音，符合我们拼音在汉字上方的排版；语音本身仍须逐词权威校验。
 - [源数据/P2失败即阻断审核器](../scripts/cultural_editorial_coverage.py)为每个 ID 核查旧 B01-B21 源身份、无遗漏/重复、未经批准不得发布；项目仍按 draft 推进。
+
+
+### P2 B01 九字编辑候选与分层状态（2026-10-25）
+
+- [九字编辑卡](../data/cultural_edition/p2_b01_editorial_briefs_20261025.json)：B01排除已出P1样板的山，对其余**一/十/人/八/大/工/土/口/巾**加入9个独有主题、36个未核词音、9份互异艺术创作说明。并**未**生成这九字的文化页或美术文件；“一”字变调、书面注音与轻声须独立审核，任何候选拼音不得升为正式出版。
+- [B01独立失败即阻断审计](../scripts/cultural_b01_editorial_audit.py)、[负面测试](../scripts/test_cultural_b01_editorial_audit.py)、[详查记录](../reviews/cultural-edition/P2-B01-editorial-briefs-20261025.md)并入原201字覆盖工作流。状态数应明确分层：**16字有内容草稿，仍仅7字有文化版PDF样本，185字尚无内容草稿，194字尚无PDF样本；正式批准=0**。
+- 以上不触碰原 v0.5.1 299页字帖、A3动画、旧版已发行记录与其它候选PDF；下一步按 [#189](https://github.com/netplus/zitie/issues/189) 补大陆权威词条与P2审核，[#190](https://github.com/netplus/zitie/issues/190) 将9张视觉构想转为带授权和人工复核的差异化艺术资产，再按P4/P5生成真正阅读页。
