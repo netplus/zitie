@@ -87,7 +87,85 @@ def checked_drafts(root:Path):
                 "release_eligible":False,
             }
     if set(result)!=DRAFT_IDS:
-        raise ValueError("Expected exactly 16 known original cultural manuscripts")
+        raise ValueError("Exactly sixteen pre-existing cultural manuscripts are required")
+    # All missing 185 characters are authored in one editorial pass. Their
+    # dictionary and image statuses remain pending, never auto-approved.
+    parts=("B02-B07","B08-B13","B14-B19","B20")
+    expected_all=set(range(1,202))
+    new_ids=set(); editorial_terms=0; artwork_briefs=set()
+    for part in parts:
+        doc=load(base/"fullbook_editorial"/(part+".json"))
+        if (doc.get("schema_version")!=1 or doc.get("part")!=part or
+            doc.get("review_state")!="candidate_not_editorially_approved" or
+            doc.get("source_pdf_sha256")!=SHA):
+            raise ValueError("Bulk editorial draft is not source-locked: "+part)
+        if (doc.get("terms_status")!="all_phonetics_pending_dictionary_or_textbook_evidence"
+            or doc.get("illustrations_status")!="unique_scene_briefs_not_drawn_assets"):
+            raise ValueError("Fullbook bulk text cannot claim approved pinyin or art")
+        for e in doc["entries"]:
+            mid=e["main_id"]
+            if mid in result or mid in new_ids or not 1<=mid<=201:
+                raise ValueError("Duplicate or invalid new fullbook manuscript main ID")
+            if not isinstance(e.get("character"),str) or len(e["character"])!=1:
+                raise ValueError("Expected one character per main ID")
+            if (e.get("editorial_status")!="fullbook_content_draft_unreviewed"
+                or e.get("release_eligible") is not False):
+                raise ValueError("No bulk candidate can be released without review")
+            if (e["quote"]["status"]!="blocked_unverified" or
+                e["quote"]["text"] is not None or
+                e["quote"]["attribution"] is not None or
+                e["quote"]["source"] is not None):
+                raise ValueError("Classic quotations without primary citations are prohibited")
+            art=e["artwork_brief"]
+            if (not isinstance(art.get("composition"),str) or
+                len(art["composition"].strip())<6 or
+                art["asset_id"] is not None or
+                art["license_review"]!="not_started" or
+                art["visual_review"]!="not_started" or
+                art["theme_key"]!=e["theme_key"]):
+                raise ValueError("An art concept is not a reviewed art asset")
+            if art["composition"] in artwork_briefs:
+                raise ValueError("Duplicate art scene description")
+            artwork_briefs.add(art["composition"])
+            if not (e["title"] and e["subtitle"] and e["meaning"] and e["sentence"]):
+                raise ValueError("Fullbook cultural prose cannot be left as generic placeholders")
+            if not (isinstance(e["meaning"],list) and
+                    all(isinstance(t,str) and len(t.strip())>=8 for t in e["meaning"])):
+                raise ValueError("Content must contain a character-specific meaning")
+            if len(e["terms"])!=4:
+                raise ValueError("All new content cards need four word/character examples")
+            words=set()
+            for term in e["terms"]:
+                word=term["word"]
+                if not word or word in words:raise ValueError("Repeated example in same entry")
+                words.add(word)
+                if (term["pinyin_display_candidate"] is not None or
+                    term["pronunciation_status"]!="review_pending" or
+                    term["dictionary_source"] is not None or
+                    term["source_sense"] is not None):
+                    raise ValueError("Unverified related words cannot be pre-approved")
+                editorial_terms+=1
+            new_ids.add(mid)
+            result[mid]={
+                "source_phase":"fullbook_185_one_pass",
+                "main_id":mid,"character":e["character"],
+                "batch_id":e["batch_id"],
+                "theme_key":e["theme_key"],"title":e["title"],
+                "subtitle":e["subtitle"],"meaning":e["meaning"],
+                "quote_candidate":None,
+                "quote_status":"blocked_unverified",
+                "terms":[{"word":v["word"],"pinyin":None,
+                          "review_status":"review_pending"} for v in e["terms"]],
+                "term_kind":e["term_kind"],
+                "art_brief":art["composition"],
+                "sentence":e["sentence"],
+                "artwork_stage":"unique_scene_brief_no_drawn_asset",
+                "editorial_status":"candidate_not_reviewed",
+                "release_eligible":False,
+            }
+    if (len(new_ids)!=185 or editorial_terms!=740 or
+        len(artwork_briefs)!=185 or set(result)!=expected_all):
+        raise ValueError("Whole-book content must cover exactly all remaining 185 source IDs")
     return result
 
 def make_plan(source_index:dict,root:Path=ROOT)->dict:
@@ -143,12 +221,12 @@ def make_plan(source_index:dict,root:Path=ROOT)->dict:
         raise ValueError("Exactly 201 original B01-B21 entries required")
     if sum(x["stroke_count"] for x in out)!=1045:
         raise ValueError("201 original-PDF strokes no longer sum to 1045")
-    if sum(bool(x["manuscript"]) for x in out)!=16:
-        raise ValueError("Manuscript content stages no longer sum to 16")
+    if sum(bool(x["manuscript"]) for x in out)!=201:
+        raise ValueError("Full-book cultural manuscript did not cover all 201 original glyphs")
     titles=[x["manuscript"]["title"] for x in out if x["manuscript"]]
     scenes=[x["manuscript"]["theme_key"] for x in out if x["manuscript"]]
     sentences=[x["manuscript"]["sentence"] for x in out if x["manuscript"]]
-    if (len(set(titles))!=16 or len(set(scenes))!=16 or len(set(sentences))!=16):
+    if (len(set(titles))!=201 or len(set(scenes))!=201 or len(set(sentences))!=201):
         raise ValueError("Existing cultural themes, titles or sentences collide")
     if any(x["manuscript"] and x["manuscript"]["release_eligible"] for x in out):
         raise ValueError("A draft was mistakenly marked releasable")
@@ -163,11 +241,13 @@ def make_plan(source_index:dict,root:Path=ROOT)->dict:
         "original_source_teaching_pages":258,
         "source_main_id_count":201,"source_stroke_total":1045,
         "batch_count":21,"existing_cultural_drafts":16,
-        "without_new_cultural_content":185,
+        "new_fullbook_content_drafts":185,
+        "fullbook_content_drafts":201,
+        "without_new_cultural_content":0,
         "reviewed_word_readings":0,
         "new_cultural_release_approved":0,
         "complete_artwork_approved":0,
         "attached_form_count_included":0,
-        "disclaimer":"Engineering coverage, not 201 approved cultural reading pages or attached forms",
+        "disclaimer":"All 201 have unique candidate cultural text; zero new terms, quotations or images have final human source approval",
         "entries":out,
     }
