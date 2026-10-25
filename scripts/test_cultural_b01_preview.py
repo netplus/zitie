@@ -85,7 +85,7 @@ def verify(source:Path,manifest:Path,content:Path,pdf:Path,proof:Path):
                 ink=np.where((a[:,:,0]<175)&(a[:,:,1]<175)&(a[:,:,2]<175))
                 assert len(ink[0])>100,'Original one-stroke main glyph missing'
                 glyph_ratio=(ink[1].max()-ink[1].min()+1)/(ink[0].max()-ink[0].min()+1)
-                assert abs(glyph_ratio/src_ratio)<.30,(src_ratio,glyph_ratio)
+                assert abs(glyph_ratio/src_ratio-1)<.30,(src_ratio,glyph_ratio)
             if glyph["pinyin_from_pdf"]:
                 assert glyph["pinyin_from_pdf"] in text
                 assert record["source_reading_state"] == "published_source"
