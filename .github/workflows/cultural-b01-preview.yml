@@ -81,6 +81,29 @@ jobs:
                                   alpha=False).save(p/f'page-{i+1:02d}.png')
           print('PASS: nine page PNGs created for human visual review')
           PY
+      - name: Export the exact nine original-PDF teaching pages for source-vs-large-glyph visual QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import fitz
+          from pathlib import Path
+          from sys import path as sys_path
+          sys_path.insert(0,'scripts')
+          from cultural_source_audit import audit
+          path=Path('deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf')
+          index=audit(path, Path('deliverables/manifest.json'))
+          ids={1,6,11,12,28,29,33,37,40}
+          folder=Path('build/cultural-b01/source-page-reference')
+          folder.mkdir(parents=True,exist_ok=True)
+          with fitz.open(path) as pdf:
+              for g in index['glyphs']:
+                  if g['main_id'] not in ids:continue
+                  p=pdf[g['first_pdf_page']-1]
+                  p.get_pixmap(matrix=fitz.Matrix(1.1,1.1),alpha=False).save(
+                      folder/f"source-main-ID{g['main_id']:03d}-{g['character']}.png")
+          print('PASS: captured nine pages from the frozen published source PDF')
+          PY
       - name: Require bitwise-stable technical PDF regeneration
         shell: bash
         run: |
