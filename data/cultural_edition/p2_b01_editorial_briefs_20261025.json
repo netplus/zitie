@@ -1,0 +1,713 @@
+{
+  "schema_version": 1,
+  "scope": "P2 B01 editorial briefs, not print-ready",
+  "batch_id": "B01",
+  "source_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+  "review_state": "draft_not_for_release",
+  "created_on": "2026-10-25",
+  "excluded_existing_cultural_sample": [
+    {
+      "main_id": 39,
+      "character": "山",
+      "reason": "Existing four-character P1 candidate; do not duplicate"
+    }
+  ],
+  "provenance_policy": "Existing published strokes and main-character readings must be taken from the released PDF separately. Original B01.json candidates alone are not publication proof.",
+  "spelling_policy": "Word Pinyin in this file is unverified candidate display text, not spelling or speech certification. Lexical spelling and oral surface sandhi require independent Mainland primary source and human review before rendering.",
+  "editorial_gate": "quotes blocked without directly located primary text; art plans are not artwork; no item can be printed or released from this data alone",
+  "entries": [
+    {
+      "main_id": 1,
+      "character": "一",
+      "batch_id": "B01",
+      "stage": "P2_editorial_brief_unreviewed",
+      "theme_key": "horizon-first-light",
+      "title": "一横开篇，万象初明",
+      "subtitle": "从第一道笔画开始，认识辽阔的世界",
+      "meaning": {
+        "lines": [
+          "一表示数字一。",
+          "也可表示次序的第一位。"
+        ],
+        "status": "review_pending"
+      },
+      "quote": {
+        "text": null,
+        "attribution": null,
+        "work": null,
+        "source_url": null,
+        "status": "blocked_no_checked_primary_quote"
+      },
+      "sentence": "清晨的天边泛起一线微光，像纸上的第一笔，把新的一天轻轻展开。",
+      "sentence_review_status": "review_pending",
+      "terms": [
+        {
+          "word": "一个",
+          "pinyin_display_candidate": "yí ge",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "yi_tone_sandhi_and_ge_neutral",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "一起",
+          "pinyin_display_candidate": "yì qǐ",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "yi_tone_sandhi",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "第一",
+          "pinyin_display_candidate": "dì yī",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "yi_sequence_original_tone",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "一年",
+          "pinyin_display_candidate": "yì nián",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "yi_tone_sandhi",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        }
+      ],
+      "artwork_brief": {
+        "theme_key": "horizon-first-light",
+        "unique_motif": "晨光与一条延伸到天边的地平线",
+        "composition": "single beam over a quiet horizon; no calligraphic imitation",
+        "asset_id": null,
+        "licensing_status": "not_started",
+        "visual_review_status": "not_started"
+      },
+      "original_pdf_pinyin_used_for_publication": false,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 6,
+      "character": "十",
+      "batch_id": "B01",
+      "stage": "P2_editorial_brief_unreviewed",
+      "theme_key": "ten-fingers-counting",
+      "title": "十指同心，岁月可数",
+      "subtitle": "数到十，便把一个小小世界握在掌心",
+      "meaning": {
+        "lines": [
+          "十是九加一所得的数。",
+          "十字形笔画交叉，书写先横后竖。"
+        ],
+        "status": "review_pending"
+      },
+      "quote": {
+        "text": null,
+        "attribution": null,
+        "work": null,
+        "source_url": null,
+        "status": "blocked_no_checked_primary_quote"
+      },
+      "sentence": "十根手指翻动书页，窗前的阳光也跟着，一寸一寸走向午后。",
+      "sentence_review_status": "review_pending",
+      "terms": [
+        {
+          "word": "十月",
+          "pinyin_display_candidate": "shí yuè",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "十分",
+          "pinyin_display_candidate": "shí fēn",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "polysemy_of_fen",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "十字",
+          "pinyin_display_candidate": "shí zì",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "十年",
+          "pinyin_display_candidate": "shí nián",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        }
+      ],
+      "artwork_brief": {
+        "theme_key": "ten-fingers-counting",
+        "unique_motif": "两只手的十根指尖与十颗木珠",
+        "composition": "counting fingers and small beads; avoid generic landscape",
+        "asset_id": null,
+        "licensing_status": "not_started",
+        "visual_review_status": "not_started"
+      },
+      "original_pdf_pinyin_used_for_publication": false,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 12,
+      "character": "人",
+      "batch_id": "B01",
+      "stage": "P2_editorial_brief_unreviewed",
+      "theme_key": "street-lantern-homecoming",
+      "title": "一人一灯，照见归途",
+      "subtitle": "人在天地之间，也在彼此的牵挂之中",
+      "meaning": {
+        "lines": [
+          "人指能够劳动、思考和交流的人。",
+          "人与人之间可以相互扶持。"
+        ],
+        "status": "review_pending"
+      },
+      "quote": {
+        "text": null,
+        "attribution": null,
+        "work": null,
+        "source_url": null,
+        "status": "blocked_no_checked_primary_quote"
+      },
+      "sentence": "暮色中的小巷亮起一盏灯，晚归的人循着微光，走向温暖的家门。",
+      "sentence_review_status": "review_pending",
+      "terms": [
+        {
+          "word": "家人",
+          "pinyin_display_candidate": "jiā rén",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "行人",
+          "pinyin_display_candidate": "xíng rén",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "xing_polyphone_context",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "人们",
+          "pinyin_display_candidate": "rén men",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "men_neutral",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "主人",
+          "pinyin_display_candidate": "zhǔ rén",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        }
+      ],
+      "artwork_brief": {
+        "theme_key": "street-lantern-homecoming",
+        "unique_motif": "黄昏巷口提灯而行的人与归家门扉",
+        "composition": "human figures and one paper lantern; avoid reproducing source teaching glyph",
+        "asset_id": null,
+        "licensing_status": "not_started",
+        "visual_review_status": "not_started"
+      },
+      "original_pdf_pinyin_used_for_publication": false,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 11,
+      "character": "八",
+      "batch_id": "B01",
+      "stage": "P2_editorial_brief_unreviewed",
+      "theme_key": "eight-point-window",
+      "title": "八方来风，心有远方",
+      "subtitle": "八个方向，各有不同的风景",
+      "meaning": {
+        "lines": [
+          "八是七加一所得的数。",
+          "八也用于表示方向的组合，如八方。"
+        ],
+        "status": "review_pending"
+      },
+      "quote": {
+        "text": null,
+        "attribution": null,
+        "work": null,
+        "source_url": null,
+        "status": "blocked_no_checked_primary_quote"
+      },
+      "sentence": "八角窗外，晨风从不同的方向吹来，把远处的鸟鸣送进书房。",
+      "sentence_review_status": "review_pending",
+      "terms": [
+        {
+          "word": "八方",
+          "pinyin_display_candidate": "bā fāng",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "八月",
+          "pinyin_display_candidate": "bā yuè",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "八角",
+          "pinyin_display_candidate": "bā jiǎo",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "polygon_or_spice_context",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "八宝",
+          "pinyin_display_candidate": "bā bǎo",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        }
+      ],
+      "artwork_brief": {
+        "theme_key": "eight-point-window",
+        "unique_motif": "八角窗棂向八个方向投下光影",
+        "composition": "octagonal window with eight light directions, not mountain art",
+        "asset_id": null,
+        "licensing_status": "not_started",
+        "visual_review_status": "not_started"
+      },
+      "original_pdf_pinyin_used_for_publication": false,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 33,
+      "character": "大",
+      "batch_id": "B01",
+      "stage": "P2_editorial_brief_unreviewed",
+      "theme_key": "open-arms-sky",
+      "title": "胸怀天地，自有宽广",
+      "subtitle": "从小小的脚步，走向更开阔的地方",
+      "meaning": {
+        "lines": [
+          "大可表示体积、面积或规模较大。",
+          "在不同词语中也有其他读音和意义。"
+        ],
+        "status": "review_pending"
+      },
+      "quote": {
+        "text": null,
+        "attribution": null,
+        "work": null,
+        "source_url": null,
+        "status": "blocked_no_checked_primary_quote"
+      },
+      "sentence": "站在辽阔的天空下，伸开双臂，才知道眼前的世界总有新的边界。",
+      "sentence_review_status": "review_pending",
+      "terms": [
+        {
+          "word": "大海",
+          "pinyin_display_candidate": "dà hǎi",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "大小",
+          "pinyin_display_candidate": "dà xiǎo",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "大地",
+          "pinyin_display_candidate": "dà dì",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "长大",
+          "pinyin_display_candidate": "zhǎng dà",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "zhang_polyphone_context",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        }
+      ],
+      "artwork_brief": {
+        "theme_key": "open-arms-sky",
+        "unique_motif": "开阔广场上张开双臂的背影与长空",
+        "composition": "open-armed child against sky; no repeated moon mountain or stream",
+        "asset_id": null,
+        "licensing_status": "not_started",
+        "visual_review_status": "not_started"
+      },
+      "original_pdf_pinyin_used_for_publication": false,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 28,
+      "character": "工",
+      "batch_id": "B01",
+      "stage": "P2_editorial_brief_unreviewed",
+      "theme_key": "craftsman-wood-rule",
+      "title": "巧手成器，寸心见功",
+      "subtitle": "一件器物里，藏着细致的心思",
+      "meaning": {
+        "lines": [
+          "工可指工作、劳动或技艺。",
+          "工也能表示手艺精巧。"
+        ],
+        "status": "review_pending"
+      },
+      "quote": {
+        "text": null,
+        "attribution": null,
+        "work": null,
+        "source_url": null,
+        "status": "blocked_no_checked_primary_quote"
+      },
+      "sentence": "木尺划下清晰的线，刨花在案上打个旋，一扇窗便有了最初的模样。",
+      "sentence_review_status": "review_pending",
+      "terms": [
+        {
+          "word": "工人",
+          "pinyin_display_candidate": "gōng rén",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "工作",
+          "pinyin_display_candidate": "gōng zuò",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "工厂",
+          "pinyin_display_candidate": "gōng chǎng",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "工艺",
+          "pinyin_display_candidate": "gōng yì",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        }
+      ],
+      "artwork_brief": {
+        "theme_key": "craftsman-wood-rule",
+        "unique_motif": "匠人的木尺、木刨和卷曲刨花",
+        "composition": "joinery workbench detail; not generic tree art",
+        "asset_id": null,
+        "licensing_status": "not_started",
+        "visual_review_status": "not_started"
+      },
+      "original_pdf_pinyin_used_for_publication": false,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 29,
+      "character": "土",
+      "batch_id": "B01",
+      "stage": "P2_editorial_brief_unreviewed",
+      "theme_key": "potter-wheel-clay",
+      "title": "泥土入手，百器有形",
+      "subtitle": "脚下的土地，也能在手中变成器皿",
+      "meaning": {
+        "lines": [
+          "土指地面上的泥土或土壤。",
+          "土也是植物生长所依托的材料。"
+        ],
+        "status": "review_pending"
+      },
+      "quote": {
+        "text": null,
+        "attribution": null,
+        "work": null,
+        "source_url": null,
+        "status": "blocked_no_checked_primary_quote"
+      },
+      "sentence": "一团湿润的泥土在陶轮上慢慢旋转，匠人的双手让它长成盛光的碗。",
+      "sentence_review_status": "review_pending",
+      "terms": [
+        {
+          "word": "土地",
+          "pinyin_display_candidate": "tǔ dì",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "泥土",
+          "pinyin_display_candidate": "ní tǔ",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "黄土",
+          "pinyin_display_candidate": "huáng tǔ",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "土壤",
+          "pinyin_display_candidate": "tǔ rǎng",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        }
+      ],
+      "artwork_brief": {
+        "theme_key": "potter-wheel-clay",
+        "unique_motif": "旋转陶轮与湿润陶泥的成形过程",
+        "composition": "potter hands with clay and vessel; not reused tree-root picture",
+        "asset_id": null,
+        "licensing_status": "not_started",
+        "visual_review_status": "not_started"
+      },
+      "original_pdf_pinyin_used_for_publication": false,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 37,
+      "character": "口",
+      "batch_id": "B01",
+      "stage": "P2_editorial_brief_unreviewed",
+      "theme_key": "courtyard-greeting",
+      "title": "一句问候，暖了清晨",
+      "subtitle": "口能发声，也能传递温暖与关怀",
+      "meaning": {
+        "lines": [
+          "口本指人和动物吃东西、发声的器官。",
+          "口也用于表示器物的开口。"
+        ],
+        "status": "review_pending"
+      },
+      "quote": {
+        "text": null,
+        "attribution": null,
+        "work": null,
+        "source_url": null,
+        "status": "blocked_no_checked_primary_quote"
+      },
+      "sentence": "一句轻轻的早安，从门前传到院里，连檐下的风铃都像在微笑。",
+      "sentence_review_status": "review_pending",
+      "terms": [
+        {
+          "word": "人口",
+          "pinyin_display_candidate": "rén kǒu",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "门口",
+          "pinyin_display_candidate": "mén kǒu",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "开口",
+          "pinyin_display_candidate": "kāi kǒu",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "口水",
+          "pinyin_display_candidate": "kǒu shuǐ",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        }
+      ],
+      "artwork_brief": {
+        "theme_key": "courtyard-greeting",
+        "unique_motif": "晨起院门一声问候与檐下风铃",
+        "composition": "courtyard threshold and wind chime with subtle speech arc",
+        "asset_id": null,
+        "licensing_status": "not_started",
+        "visual_review_status": "not_started"
+      },
+      "original_pdf_pinyin_used_for_publication": false,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 40,
+      "character": "巾",
+      "batch_id": "B01",
+      "stage": "P2_editorial_brief_unreviewed",
+      "theme_key": "linen-in-breeze",
+      "title": "一方素巾，拂去风尘",
+      "subtitle": "轻轻一块布，藏着日常的体贴",
+      "meaning": {
+        "lines": [
+          "巾指用来擦拭、包裹或佩戴的布。",
+          "巾常出现在毛巾、围巾等词语中。"
+        ],
+        "status": "review_pending"
+      },
+      "quote": {
+        "text": null,
+        "attribution": null,
+        "work": null,
+        "source_url": null,
+        "status": "blocked_no_checked_primary_quote"
+      },
+      "sentence": "清风经过檐下，晾着的小方巾轻轻扬起，仿佛向安静的午后挥手。",
+      "sentence_review_status": "review_pending",
+      "terms": [
+        {
+          "word": "毛巾",
+          "pinyin_display_candidate": "máo jīn",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "头巾",
+          "pinyin_display_candidate": "tóu jīn",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "围巾",
+          "pinyin_display_candidate": "wéi jīn",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        },
+        {
+          "word": "纸巾",
+          "pinyin_display_candidate": "zhǐ jīn",
+          "pinyin_orthographic_candidate": null,
+          "meaning_context": "待逐词核查",
+          "reading_risk": "none",
+          "source_url": null,
+          "pronunciation_status": "review_pending",
+          "reviewed_by": null
+        }
+      ],
+      "artwork_brief": {
+        "theme_key": "linen-in-breeze",
+        "unique_motif": "晾衣绳上迎风飘动的织物与经纬纹理",
+        "composition": "woven textile fluttering; no repeated P3 tree or water motifs",
+        "asset_id": null,
+        "licensing_status": "not_started",
+        "visual_review_status": "not_started"
+      },
+      "original_pdf_pinyin_used_for_publication": false,
+      "publication_eligible": false
+    }
+  ]
+}
