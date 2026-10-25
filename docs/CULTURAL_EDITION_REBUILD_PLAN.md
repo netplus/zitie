@@ -132,3 +132,17 @@
 - [九字编辑卡](../data/cultural_edition/p2_b01_editorial_briefs_20261025.json)：B01排除已出P1样板的山，对其余**一/十/人/八/大/工/土/口/巾**加入9个独有主题、36个未核词音、9份互异艺术创作说明。并**未**生成这九字的文化页或美术文件；“一”字变调、书面注音与轻声须独立审核，任何候选拼音不得升为正式出版。
 - [B01独立失败即阻断审计](../scripts/cultural_b01_editorial_audit.py)、[负面测试](../scripts/test_cultural_b01_editorial_audit.py)、[详查记录](../reviews/cultural-edition/P2-B01-editorial-briefs-20261025.md)并入原201字覆盖工作流。状态数应明确分层：**16字有内容草稿，仍仅7字有文化版PDF样本，185字尚无内容草稿，194字尚无PDF样本；正式批准=0**。
 - 以上不触碰原 v0.5.1 299页字帖、A3动画、旧版已发行记录与其它候选PDF；下一步按 [#189](https://github.com/netplus/zitie/issues/189) 补大陆权威词条与P2审核，[#190](https://github.com/netplus/zitie/issues/190) 将9张视觉构想转为带授权和人工复核的差异化艺术资产，再按P4/P5生成真正阅读页。
+
+
+### P4 B01 1～3笔真实源图样张与 P2 大陆证据（2026-10-25）
+
+- 前次P2初稿[PR #196](https://github.com/netplus/zitie/pull/196)已合并：九字文字编辑卡完成但先前**0页PDF**。现新增[独立B01文化页生成器](../scripts/build_cultural_b01_preview.py)、[全22步骤原PDF独立像素复核](../scripts/test_cultural_b01_preview.py)与[Actions出图工作流](../.github/workflows/cultural-b01-preview.yml)，目标**一/十/人/八/大/工/土/口/巾 9字、9张A4技术样张、22笔**。源图真实剪裁，不自行生成笔顺，主字拼音只复用原PDF已印字段，练字原版和动画不改。此为技术生成与测试流程，**不得在CI跑完之前宣称样张已经通过完整验证**。
+- [大陆教育词表3条直接行](../data/cultural_edition/p2_b01_mainland_education_evidence_20261025.json)：土地、土壤、口水；另据教育部平台及 GB/T 16159—2012明确区分“一”字单字本调、词组语流变调、词语正词法与儿童逐字注音。**全部未获出版审校批准**，已添加反向审计；没有词条的其余33个候选继续待审。
+- 9张右上主题画只提供独立、语义相关的工程构图占位，不属于完成的P3正式插图；需人工审美复核、授权和全局视觉去重，详见[项目记录](../reviews/cultural-edition/P4-B01-nine-original-source-previews-20261025.md)。
+- 稿件覆盖统计按阶段分别记录：**16个字已有文化文字草稿、7个字已经在仓库有文化PDF样本**；新增九字样本只有CI生成后才可称为候选草稿PDF（合计16项），此前发布的文化字帖页数依然0。即使CI成功，194/185的原统计也需注明是“尚无既有PDF页”或“尚无文字草稿”，**禁止把技术样稿算正式出版**。
+
+### P4 B01 九字文化工程PDF样张已完成并归档（2026-10-25）
+
+- B01除既有山字以外的 **一/十/人/八/大/工/土/口/巾** 共9页技术PDF已由 GitHub Actions 实际生成。严格沿用正式v0.5.1的**22幅原逐步累计笔顺图**和原PDF的范字与单字拼音；原PDF/manifest历史记录和动画均不修改。逐图相似度测量最高RGB MAE 3.4054/255，所有九页的源页、笔名、序号均核对，二次构建字节相同。
+- 完整人工浏览缩略图后修正“一”字大范字原裁剪图失真，今后必须按原始宽高比缩放；新增回归检查。当前[9页候选PDF](../deliverables/drafts/cultural-v0.4/B01-9-character-source-locked-UNREVIEWED.pdf)及[溯源报告](../deliverables/drafts/cultural-v0.4/B01-original-source-step-provenance.json)、[QA结果](../deliverables/drafts/cultural-v0.4/B01-source-pixel-qa.json)已经仅以`draft/release_eligible=false`、追加登记方式归档。MD5/SHA不得以重复编译外观来替代原始SHA256核验。
+- 分层统计现为：**16/201** 个字已有未审文化PDF工程样稿（早先7+新增9），**185/201** 尚无文化正文；正式审校批准/新文化正式发布仍为**0**。9份示意构图不是最终P3插图，36条词语/读音仍待中国大陆词典、教学规范及专业人审。版式与资产全书 P5/P6 均未完成。

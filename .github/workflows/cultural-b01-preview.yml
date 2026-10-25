@@ -1,0 +1,221 @@
+name: Cultural B01 nine-page original-stroke PDF proof
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/build_cultural_b01_preview.py'
+      - 'scripts/test_cultural_b01_preview.py'
+      - 'scripts/test_cultural_b01_mainland_education_evidence.py'
+      - 'scripts/cultural_b01_editorial_audit.py'
+      - 'data/cultural_edition/p2_b01_editorial_briefs_20261025.json'
+      - 'data/cultural_edition/p2_b01_mainland_education_evidence_20261025.json'
+      - '.github/workflows/cultural-b01-preview.yml'
+  push:
+    branches:
+      - feat/cultural-b01-pdf-preview-and-pronunciation-20261025
+    paths:
+      - 'scripts/build_cultural_b01_preview.py'
+      - 'scripts/test_cultural_b01_preview.py'
+      - 'scripts/test_cultural_b01_mainland_education_evidence.py'
+      - 'data/cultural_edition/p2_b01_editorial_briefs_20261025.json'
+      - 'data/cultural_edition/p2_b01_mainland_education_evidence_20261025.json'
+      - '.github/workflows/cultural-b01-preview.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build-nine-unreviewed-samples:
+    runs-on: ubuntu-latest
+    timeout-minutes: 16
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install reproducible PDF tools and glyph fonts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python -m pip install 'PyMuPDF==1.26.7' 'reportlab==4.4.9' 'Pillow==12.3.0' 'numpy==2.3.5'
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-arphic-gkai00mp fonts-arphic-gbsn00lp fonts-dejavu-core
+      - name: Validate B01 editorial scope and Mainland HSK evidence tiers
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-b01
+          python scripts/test_cultural_b01_editorial_audit.py \
+            2>&1 | tee build/cultural-b01/editorial-negative-tests.txt
+          python scripts/test_cultural_b01_mainland_education_evidence.py \
+            2>&1 | tee build/cultural-b01/mainland-education-negative-tests.txt
+          python scripts/cultural_b01_editorial_audit.py \
+            --output build/cultural-b01/editorial-approval-blockers.json
+      - name: Generate nine A4 pages only with frozen source-PDF teaching tiles
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_cultural_b01_preview.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/p2_b01_editorial_briefs_20261025.json \
+            --output build/cultural-b01/B01-9-character-source-locked-UNREVIEWED.pdf \
+            --proof build/cultural-b01/original-source-step-provenance.json
+      - name: Independently verify all 22 published-PDF source tiles
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/test_cultural_b01_preview.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/p2_b01_editorial_briefs_20261025.json \
+            --pdf build/cultural-b01/B01-9-character-source-locked-UNREVIEWED.pdf \
+            --proof build/cultural-b01/original-source-step-provenance.json \
+            | tee build/cultural-b01/pdf-source-qa.json
+      - name: Render all nine technical preview pages for visual review
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import fitz
+          from pathlib import Path
+          p=Path('build/cultural-b01')
+          with fitz.open(p/'B01-9-character-source-locked-UNREVIEWED.pdf') as pdf:
+              assert len(pdf)==9
+              for i, page in enumerate(pdf):
+                  page.get_pixmap(matrix=fitz.Matrix(1.7,1.7),
+                                  alpha=False).save(p/f'page-{i+1:02d}.png')
+          print('PASS: nine page PNGs created for human visual review')
+          PY
+      - name: Export the exact nine original-PDF teaching pages for source-vs-large-glyph visual QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import fitz
+          from pathlib import Path
+          from sys import path as sys_path
+          sys_path.insert(0,'scripts')
+          from cultural_source_audit import audit
+          path=Path('deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf')
+          index=audit(path, Path('deliverables/manifest.json'))
+          ids={1,6,11,12,28,29,33,37,40}
+          folder=Path('build/cultural-b01/source-page-reference')
+          folder.mkdir(parents=True,exist_ok=True)
+          with fitz.open(path) as pdf:
+              for g in index['glyphs']:
+                  if g['main_id'] not in ids:continue
+                  p=pdf[g['first_pdf_page']-1]
+                  p.get_pixmap(matrix=fitz.Matrix(1.1,1.1),alpha=False).save(
+                      folder/f"source-main-ID{g['main_id']:03d}-{g['character']}.png")
+          print('PASS: captured nine pages from the frozen published source PDF')
+          PY
+      - name: Require bitwise-stable technical PDF regeneration
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-b01-repeat
+          python scripts/build_cultural_b01_preview.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --content data/cultural_edition/p2_b01_editorial_briefs_20261025.json \
+            --output build/cultural-b01-repeat/identical.pdf \
+            --proof build/cultural-b01-repeat/identical.json
+          cmp build/cultural-b01/B01-9-character-source-locked-UNREVIEWED.pdf \
+              build/cultural-b01-repeat/identical.pdf
+          echo 'PASS: second original-PDF-source layout byte identical'
+      - name: Forbid changes to published assets and animations
+        shell: bash
+        run: |
+          set -euo pipefail
+          git diff --exit-code -- deliverables/releases/ animation/
+          python - <<'PY'
+          import hashlib
+          from pathlib import Path
+          path=Path('deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf')
+          expected='7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90'
+          assert hashlib.sha256(path.read_bytes()).hexdigest()==expected
+          print('PASS: immutable original v0.5.1 PDF checksum preserved')
+          PY
+      - name: Archive only this new UNREVIEWED draft with append-only manifest entry
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feat/cultural-b01-pdf-preview-and-pronunciation-20261025'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,os,shutil
+          from pathlib import Path
+          import fitz
+          output=Path('build/cultural-b01')
+          dest=Path('deliverables/drafts/cultural-v0.4')
+          dest.mkdir(parents=True,exist_ok=True)
+          name='B01-9-character-source-locked-UNREVIEWED.pdf'
+          shutil.copyfile(output/name,dest/name)
+          shutil.copyfile(output/'original-source-step-provenance.json',
+                          dest/'B01-original-source-step-provenance.json')
+          shutil.copyfile(output/'pdf-source-qa.json',dest/'B01-source-pixel-qa.json')
+          pdf=dest/name
+          with fitz.open(pdf) as sample:
+              assert len(sample)==9
+          meta=json.loads((dest/'B01-original-source-step-provenance.json').read_text())
+          qa=json.loads((dest/'B01-source-pixel-qa.json').read_text())
+          assert (meta['status']=='B01_source_locked_editorial_draft_not_for_release'
+                  and meta['total_source_strokes']==22 and meta['pages']==9)
+          assert qa['result']=='PASS' and qa['independent_original_source_steps_checked']==22
+          digest=hashlib.sha256(pdf.read_bytes()).hexdigest()
+          assert digest==meta['output_sha256']
+          key=pdf.as_posix()
+          manifest=Path('deliverables/manifest.json')
+          original=manifest.read_text(encoding='utf-8')
+          root=json.loads(original)
+          assert 'artifacts' in root
+          if any(row.get('path')==key for row in root['artifacts']):
+              raise ValueError('Do not silently overwrite or mutate any previously registered cultural draft')
+          row={
+              'path':key,
+              'title':'文化识字版 B01 九字原始笔顺与独立构图技术草稿（待审，不发行）',
+              'version':'cultural-v0.4-b01-unreviewed',
+              'status':'draft',
+              'batch':'B01 9 glyphs, 22 original PDF cumulative stroke tiles',
+              'pages':9,
+              'bytes':pdf.stat().st_size,
+              'sha256':digest,
+              'source_commit':os.environ['GITHUB_SHA'],
+              'provenance_kind':'source_locked_vector_layout_derivative',
+              'source_pdf':'deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf',
+              'source_pdf_sha256':'7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90',
+              'review_record':'reviews/cultural-edition/P4-B01-nine-original-source-previews-20261025.md',
+              'release_eligible':False,
+              'editorial_review_state':'B01_source_locked_editorial_draft_not_for_release',
+          }
+          root['artifacts'].append(row)
+          # Guard existing append-only rows against accidental mutation.
+          assert root['artifacts'][:-1]==json.loads(original)['artifacts']
+          manifest.write_text(json.dumps(root,ensure_ascii=False,indent=2)+'\n',
+                              encoding='utf-8')
+          print('PASS: nine-page draft appended; source and all previous records unchanged',digest)
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add deliverables/manifest.json deliverables/drafts/cultural-v0.4/
+          git diff --cached --quiet && { echo 'Expected a newly appended B01 draft record'; exit 1; }
+          git commit -m "build(cultural): archive B01 nine-page source-locked draft (not released)"
+          # Safe forward-only append: no force push, no replacing released artifacts.
+          for attempt in 1 2 3; do
+            git fetch origin feat/cultural-b01-pdf-preview-and-pronunciation-20261025
+            git rebase origin/feat/cultural-b01-pdf-preview-and-pronunciation-20261025
+            if git push origin HEAD:feat/cultural-b01-pdf-preview-and-pronunciation-20261025; then
+              exit 0
+            fi
+          done
+          echo 'Archive push failed without changing remote history' >&2
+          exit 1
+      - name: Upload draft PDF, page PNGs, source proof and regression results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultural-B01-nine-pages-UNREVIEWED
+          path: build/cultural-b01/
+          if-no-files-found: warn
+          retention-days: 14

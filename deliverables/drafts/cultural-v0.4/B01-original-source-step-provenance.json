@@ -1,0 +1,512 @@
+{
+  "status": "B01_source_locked_editorial_draft_not_for_release",
+  "source_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+  "output_sha256": "148792aa78f264db869ecc66c0c79eec57e3362153627b5c71c1c82d9461158b",
+  "pages": 9,
+  "main_ids": 9,
+  "total_source_strokes": 22,
+  "cover_max_steps": 6,
+  "continuation_max_steps": 15,
+  "tile_mm": 31,
+  "word_pinyin_candidates_not_for_release": 36,
+  "original_source_stroke_total_expected": 22,
+  "primary_dictionary_word_readings_approved": 0,
+  "actual_p3_artwork_finalized": 0,
+  "page_status": "technical_pdf_only_not_released",
+  "uses_only_original_source_pdf_tiles": true,
+  "quote_and_term_review": "all_b01_word_readings_unreviewed_and_quotes_blocked",
+  "theme_art": "nine unique vector composition sketches; NOT final artwork",
+  "page_map": [
+    {
+      "main_id": 1,
+      "character": "一",
+      "part": 1,
+      "parts": 1,
+      "phase": "reading_page",
+      "stroke_count": 1,
+      "source_reading_state": "published_source",
+      "editorial_state": "draft_unreviewed",
+      "theme_key": "horizon-first-light",
+      "source_steps": [
+        {
+          "index": 1,
+          "name": "横",
+          "pdf_page": 6,
+          "rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            141.73228,
+            617.95276,
+            229.6063,
+            705.82677
+          ]
+        }
+      ]
+    },
+    {
+      "main_id": 6,
+      "character": "十",
+      "part": 1,
+      "parts": 1,
+      "phase": "reading_page",
+      "stroke_count": 2,
+      "source_reading_state": "published_source",
+      "editorial_state": "draft_unreviewed",
+      "theme_key": "ten-fingers-counting",
+      "source_steps": [
+        {
+          "index": 1,
+          "name": "横",
+          "pdf_page": 7,
+          "rect_pt": [
+            36.0,
+            278.88977,
+            122.0,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            87.87402,
+            617.95276,
+            175.74803,
+            705.82677
+          ]
+        },
+        {
+          "index": 2,
+          "name": "竖",
+          "pdf_page": 7,
+          "rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            195.59055,
+            617.95276,
+            283.46457,
+            705.82677
+          ]
+        }
+      ]
+    },
+    {
+      "main_id": 12,
+      "character": "人",
+      "part": 1,
+      "parts": 1,
+      "phase": "reading_page",
+      "stroke_count": 2,
+      "source_reading_state": "published_source",
+      "editorial_state": "draft_unreviewed",
+      "theme_key": "street-lantern-homecoming",
+      "source_steps": [
+        {
+          "index": 1,
+          "name": "撇",
+          "pdf_page": 8,
+          "rect_pt": [
+            36.0,
+            278.88977,
+            122.0,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            87.87402,
+            617.95276,
+            175.74803,
+            705.82677
+          ]
+        },
+        {
+          "index": 2,
+          "name": "捺",
+          "pdf_page": 8,
+          "rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            195.59055,
+            617.95276,
+            283.46457,
+            705.82677
+          ]
+        }
+      ]
+    },
+    {
+      "main_id": 11,
+      "character": "八",
+      "part": 1,
+      "parts": 1,
+      "phase": "reading_page",
+      "stroke_count": 2,
+      "source_reading_state": "published_source",
+      "editorial_state": "draft_unreviewed",
+      "theme_key": "eight-point-window",
+      "source_steps": [
+        {
+          "index": 1,
+          "name": "撇",
+          "pdf_page": 9,
+          "rect_pt": [
+            36.0,
+            278.88977,
+            122.0,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            87.87402,
+            617.95276,
+            175.74803,
+            705.82677
+          ]
+        },
+        {
+          "index": 2,
+          "name": "捺",
+          "pdf_page": 9,
+          "rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            195.59055,
+            617.95276,
+            283.46457,
+            705.82677
+          ]
+        }
+      ]
+    },
+    {
+      "main_id": 33,
+      "character": "大",
+      "part": 1,
+      "parts": 1,
+      "phase": "reading_page",
+      "stroke_count": 3,
+      "source_reading_state": "published_source",
+      "editorial_state": "draft_unreviewed",
+      "theme_key": "open-arms-sky",
+      "source_steps": [
+        {
+          "index": 1,
+          "name": "横",
+          "pdf_page": 10,
+          "rect_pt": [
+            36.0,
+            278.88977,
+            122.0,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            48.18898,
+            617.95276,
+            136.06299,
+            705.82677
+          ]
+        },
+        {
+          "index": 2,
+          "name": "撇",
+          "pdf_page": 10,
+          "rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            141.73228,
+            617.95276,
+            229.6063,
+            705.82677
+          ]
+        },
+        {
+          "index": 3,
+          "name": "捺",
+          "pdf_page": 10,
+          "rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            235.27559,
+            617.95276,
+            323.14961,
+            705.82677
+          ]
+        }
+      ]
+    },
+    {
+      "main_id": 28,
+      "character": "工",
+      "part": 1,
+      "parts": 1,
+      "phase": "reading_page",
+      "stroke_count": 3,
+      "source_reading_state": "published_source",
+      "editorial_state": "draft_unreviewed",
+      "theme_key": "craftsman-wood-rule",
+      "source_steps": [
+        {
+          "index": 1,
+          "name": "横",
+          "pdf_page": 11,
+          "rect_pt": [
+            36.0,
+            278.88977,
+            122.0,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            48.18898,
+            617.95276,
+            136.06299,
+            705.82677
+          ]
+        },
+        {
+          "index": 2,
+          "name": "竖",
+          "pdf_page": 11,
+          "rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            141.73228,
+            617.95276,
+            229.6063,
+            705.82677
+          ]
+        },
+        {
+          "index": 3,
+          "name": "横",
+          "pdf_page": 11,
+          "rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            235.27559,
+            617.95276,
+            323.14961,
+            705.82677
+          ]
+        }
+      ]
+    },
+    {
+      "main_id": 29,
+      "character": "土",
+      "part": 1,
+      "parts": 1,
+      "phase": "reading_page",
+      "stroke_count": 3,
+      "source_reading_state": "published_source",
+      "editorial_state": "draft_unreviewed",
+      "theme_key": "potter-wheel-clay",
+      "source_steps": [
+        {
+          "index": 1,
+          "name": "横",
+          "pdf_page": 12,
+          "rect_pt": [
+            36.0,
+            278.88977,
+            122.0,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            48.18898,
+            617.95276,
+            136.06299,
+            705.82677
+          ]
+        },
+        {
+          "index": 2,
+          "name": "竖",
+          "pdf_page": 12,
+          "rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            141.73228,
+            617.95276,
+            229.6063,
+            705.82677
+          ]
+        },
+        {
+          "index": 3,
+          "name": "横",
+          "pdf_page": 12,
+          "rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            235.27559,
+            617.95276,
+            323.14961,
+            705.82677
+          ]
+        }
+      ]
+    },
+    {
+      "main_id": 37,
+      "character": "口",
+      "part": 1,
+      "parts": 1,
+      "phase": "reading_page",
+      "stroke_count": 3,
+      "source_reading_state": "published_source",
+      "editorial_state": "draft_unreviewed",
+      "theme_key": "courtyard-greeting",
+      "source_steps": [
+        {
+          "index": 1,
+          "name": "竖",
+          "pdf_page": 13,
+          "rect_pt": [
+            36.0,
+            278.88977,
+            122.0,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            48.18898,
+            617.95276,
+            136.06299,
+            705.82677
+          ]
+        },
+        {
+          "index": 2,
+          "name": "横折",
+          "pdf_page": 13,
+          "rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            141.73228,
+            617.95276,
+            229.6063,
+            705.82677
+          ]
+        },
+        {
+          "index": 3,
+          "name": "横",
+          "pdf_page": 13,
+          "rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            235.27559,
+            617.95276,
+            323.14961,
+            705.82677
+          ]
+        }
+      ]
+    },
+    {
+      "main_id": 40,
+      "character": "巾",
+      "part": 1,
+      "parts": 1,
+      "phase": "reading_page",
+      "stroke_count": 3,
+      "source_reading_state": "published_source",
+      "editorial_state": "draft_unreviewed",
+      "theme_key": "linen-in-breeze",
+      "source_steps": [
+        {
+          "index": 1,
+          "name": "竖",
+          "pdf_page": 15,
+          "rect_pt": [
+            36.0,
+            278.88977,
+            122.0,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            48.18898,
+            617.95276,
+            136.06299,
+            705.82677
+          ]
+        },
+        {
+          "index": 2,
+          "name": "横折钩",
+          "pdf_page": 15,
+          "rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            141.73228,
+            617.95276,
+            229.6063,
+            705.82677
+          ]
+        },
+        {
+          "index": 3,
+          "name": "竖",
+          "pdf_page": 15,
+          "rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ],
+          "preview_rect_pt": [
+            235.27559,
+            617.95276,
+            323.14961,
+            705.82677
+          ]
+        }
+      ]
+    }
+  ]
+}
