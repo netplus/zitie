@@ -61,6 +61,7 @@ def checked_drafts(root:Path):
                             or v["pronunciation_status"]!="review_pending"):
                         raise ValueError("B01 words are candidate readings only")
                 art="unique_scene_brief_no_drawn_asset"
+                art_brief=e["artwork_brief"]["unique_motif"]
                 meaning=e["meaning"]["lines"]
             else:
                 if e["quote"]["status"] not in ("review_pending","blocked"):
@@ -74,6 +75,8 @@ def checked_drafts(root:Path):
                      if e["character"] in SPECIAL_ART else
                      "not_drawn_only_technical_scene_placeholder")
                 meaning=e["meaning"]
+                scene_p4={106:"一排排田垄与四季耕作的原野",200:"一缕花香与空气中的呼吸气流",201:"古代竹管吹奏的乐器与竹音"}
+                art_brief=scene_p4.get(mid)
             if not isinstance(meaning,list) or not meaning:
                 raise ValueError("Empty candidate semantic draft")
             result[mid]={
@@ -83,6 +86,8 @@ def checked_drafts(root:Path):
                 "quote_candidate":e["quote"].get("text"),
                 "quote_status":e["quote"]["status"],"terms":terms,
                 "sentence":e["sentence"],"artwork_stage":art,
+                "art_brief":art_brief,
+                "term_kind":"related_word_candidates" if terms else "no_direct_word_evidence",
                 "editorial_status":"candidate_not_reviewed",
                 "release_eligible":False,
             }
@@ -203,6 +208,8 @@ def make_plan(source_index:dict,root:Path=ROOT)->dict:
             draft=drafts.get(mid)
             if draft and draft["character"]!=e["character"]:
                 raise ValueError("Editorial character does not match source PDF")
+            if draft and draft.get("batch_id") and draft["batch_id"]!=batch_id:
+                raise ValueError("Cultural manuscript batch cannot contradict source")
             row=dict(
                 main_id=mid,character=e["character"],batch_id=batch_id,
                 first_source_pdf_page=src["first_pdf_page"],
@@ -227,7 +234,10 @@ def make_plan(source_index:dict,root:Path=ROOT)->dict:
     scenes=[x["manuscript"]["theme_key"] for x in out if x["manuscript"]]
     sentences=[x["manuscript"]["sentence"] for x in out if x["manuscript"]]
     if (len(set(titles))!=201 or len(set(scenes))!=201 or len(set(sentences))!=201):
-        raise ValueError("Existing cultural themes, titles or sentences collide")
+        raise ValueError("Fullbook themes, titles or literary sentences collide")
+    related_count=sum(len(x["manuscript"]["terms"]) for x in out)
+    if related_count!=812:
+        raise ValueError("Unexpected fullbook related terms/character examples count")
     if any(x["manuscript"] and x["manuscript"]["release_eligible"] for x in out):
         raise ValueError("A draft was mistakenly marked releasable")
     if any(x["manuscript"] and x["manuscript"]["artwork_stage"]=="approved" for x in out):
@@ -244,6 +254,7 @@ def make_plan(source_index:dict,root:Path=ROOT)->dict:
         "new_fullbook_content_drafts":185,
         "fullbook_content_drafts":201,
         "without_new_cultural_content":0,
+        "unreviewed_term_or_component_examples":related_count,
         "reviewed_word_readings":0,
         "new_cultural_release_approved":0,
         "complete_artwork_approved":0,
