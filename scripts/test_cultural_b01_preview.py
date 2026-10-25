@@ -13,6 +13,7 @@ from PIL import Image
 
 from cultural_b01_editorial_audit import audit as audit_b01, ROOT
 from cultural_source_audit import audit as audit_original
+from build_cultural_sample import original_specimen
 
 EXPECTED = {1:1, 6:2, 11:2, 12:2, 28:3, 29:3, 33:3, 37:3, 40:3}
 CHECKSUM = "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90"
@@ -72,6 +73,19 @@ def verify(source:Path,manifest:Path,content:Path,pdf:Path,proof:Path):
                 assert term["pinyin_display_candidate"] in text, term["word"]
                 assert term["pronunciation_status"] == "review_pending"
             assert text.find("笔顺提示") < text.find("笔顺", text.find("笔顺提示")+1)
+            if e["character"] == "一":
+                # Regression: the old forced 48x48mm sizing stretched this
+                # original PDF single-stroke ink mask into a giant wedge.
+                sample = Image.open(original_specimen(original[glyph["first_pdf_page"]-1]))
+                src_ratio = sample.width / sample.height
+                crop = page.get_pixmap(matrix=fitz.Matrix(2,2),
+                    clip=fitz.Rect(34*72/25.4,62*72/25.4,
+                                   82*72/25.4,110*72/25.4),alpha=False)
+                a=np.asarray(Image.frombytes("RGB",(crop.width,crop.height),crop.samples))
+                ink=np.where((a[:,:,0]<175)&(a[:,:,1]<175)&(a[:,:,2]<175))
+                assert len(ink[0])>100,'Original one-stroke main glyph missing'
+                glyph_ratio=(ink[1].max()-ink[1].min()+1)/(ink[0].max()-ink[0].min()+1)
+                assert abs(glyph_ratio/src_ratio)<.30,(src_ratio,glyph_ratio)
             if glyph["pinyin_from_pdf"]:
                 assert glyph["pinyin_from_pdf"] in text
                 assert record["source_reading_state"] == "published_source"
