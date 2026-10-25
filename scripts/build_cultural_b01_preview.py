@@ -248,8 +248,20 @@ def render(source: Path, manifest: Path, content: Path, output: Path, proof: Pat
         else:
             center(57,54,'读音待审核',10,'Kai',RED)
             print_reading='blocked_no_source_pdf_reading'
-        c.drawImage(ImageReader(original_specimen(src[glyph['first_pdf_page']-1])),
-                    mm(34),H-mm(110),mm(48),mm(48),mask='auto')
+        # The original artwork mask is tightly cropped to the visible ink.
+        # Its aspect ratio MUST be preserved: a single horizontal 一 stroke is
+        # very wide and shallow, never a square-height trapezoid.
+        specimen=ImageReader(original_specimen(src[glyph['first_pdf_page']-1]))
+        native_w,native_h=specimen.getSize()
+        if native_w<=0 or native_h<=0:
+            raise ValueError('Invalid original PDF large specimen dimensions')
+        fit=min(48/native_w,48/native_h)
+        draw_w=native_w*fit; draw_h=native_h*fit
+        if abs(draw_w/draw_h-native_w/native_h)>1e-10:
+            raise ValueError('Original main glyph aspect ratio changed')
+        c.drawImage(specimen,
+                    mm(34+(48-draw_w)/2),H-mm(110)+mm((48-draw_h)/2),
+                    mm(draw_w),mm(draw_h),mask='auto')
         artwork(entry['theme_key'])
         section(17,118,'字义',112)
         for j,para in enumerate(entry['meaning']):
