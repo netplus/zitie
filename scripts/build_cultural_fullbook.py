@@ -19,6 +19,7 @@ import fitz
 from reportlab.lib.colors import HexColor
 from reportlab.lib.utils import ImageReader
 from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 from reportlab.pdfgen import canvas
 from PIL import Image
 import numpy as np
@@ -73,12 +74,43 @@ class PageArtist:
         c=self.c;c.setStrokeColor(HexColor(color));c.setLineWidth(mm(width))
         c.line(mm(x0),H-mm(y0),mm(x1),H-mm(y1))
 
+    def runs(self,text,face):
+        """Use embedded original Kaishu except rare Hanzi absent from it.
+
+        Official 201 main radicals include U+4E5B and uncommon forms that
+        cannot be rendered by the legacy 7574-glyph Arphic simplified Kai font.
+        AR PL UMing fallback is also locally installed; never draw a tofu/null.
+        """
+        primary="Culture"+face
+        base=pdfmetrics.getFont(primary).face.charWidths
+        rare=pdfmetrics.getFont("CultureRare").face.charWidths
+        out=[]
+        for ch in str(text):
+            font=primary if ord(ch) in base else "CultureRare"
+            if ord(ch) not in rare and font=="CultureRare":
+                raise ValueError(f"No installed embeddable font covers U+{ord(ch):04X} {ch}")
+            if out and out[-1][0]==font:
+                out[-1]=(font,out[-1][1]+ch)
+            else:
+                out.append((font,ch))
+        return out
+
+    def text_width(self,text,face,size):
+        return sum(pdfmetrics.stringWidth(run,font,size)
+                   for font,run in self.runs(text,face))
+
     def label(self,x,y,text,size=10,face="Kai",color=INK,align="left"):
-        font="Culture"+face
-        self.c.setFont(font,size);self.c.setFillColor(HexColor(color))
-        if align=="center":self.c.drawCentredString(mm(x),H-mm(y),str(text))
-        elif align=="right":self.c.drawRightString(mm(x),H-mm(y),str(text))
-        else:self.c.drawString(mm(x),H-mm(y),str(text))
+        runs=self.runs(text,face)
+        if align!="left":
+            width=self.text_width(text,face,size)
+            if align=="center":x-=width/MM/2
+            elif align=="right":x-=width/MM
+        cursor=mm(x)
+        self.c.setFillColor(HexColor(color))
+        for font,run in runs:
+            self.c.setFont(font,size)
+            self.c.drawString(cursor,H-mm(y),run)
+            cursor+=pdfmetrics.stringWidth(run,font,size)
 
     def rows(self,text,width,size=9.2,face="Kai",max_lines=7):
         value=str(text or "")
@@ -87,7 +119,7 @@ class PageArtist:
         for source in value.splitlines():
             part=""
             for ch in source:
-                if pdfmetrics.stringWidth(part+ch,"Culture"+face,size)>mm(width):
+                if self.text_width(part+ch,face,size)>mm(width):
                     if not part:raise ValueError("One text glyph exceeds available width")
                     result.append(part);part=ch
                 else:part+=ch
@@ -98,16 +130,16 @@ class PageArtist:
 
     def fitted(self,x,y,text,maximum_mm,base=18,minimum=12,color=RED):
         size=base
-        while size>minimum and pdfmetrics.stringWidth(text,"CultureKai",size)>mm(maximum_mm):
+        while size>minimum and self.text_width(text,"Kai",size)>mm(maximum_mm):
             size-=.5
-        if pdfmetrics.stringWidth(text,"CultureKai",size)>mm(maximum_mm):
+        if self.text_width(text,"Kai",size)>mm(maximum_mm):
             raise ValueError("Cultural title cannot fit even at safe minimum: "+text)
         self.label(x,y,text,size,"Kai",color)
 
     def section(self,x,y,label,end):
         self.rect(x,y-1,1.1,5,RED)
         self.label(x+3,y+3,label,10.5,"Kai",RED)
-        width=pdfmetrics.stringWidth(label,"CultureKai",10.5)/MM
+        width=self.text_width(label,"Kai",10.5)/MM
         start=x+3+width+3
         if start<end-2:self.line(start,y+1.7,end,y+1.7)
 
@@ -385,6 +417,11 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
            root:Path=ROOT):
     root=Path(root)
     fonts()
+    font_path=Path("/usr/share/fonts/truetype/arphic/uming.ttc")
+    if not font_path.is_file():
+        raise ValueError("Missing packaged open font fallback for 201 rare radicals")
+    if "CultureRare" not in pdfmetrics.getRegisteredFontNames():
+        pdfmetrics.registerFont(TTFont("CultureRare",str(font_path),subfontIndex=0))
     source_index=audit(source,manifest)
     plan=paginate(make_plan(source_index,root))
     art=read_registry(root=root)
