@@ -146,3 +146,11 @@
 - B01除既有山字以外的 **一/十/人/八/大/工/土/口/巾** 共9页技术PDF已由 GitHub Actions 实际生成。严格沿用正式v0.5.1的**22幅原逐步累计笔顺图**和原PDF的范字与单字拼音；原PDF/manifest历史记录和动画均不修改。逐图相似度测量最高RGB MAE 3.4054/255，所有九页的源页、笔名、序号均核对，二次构建字节相同。
 - 完整人工浏览缩略图后修正“一”字大范字原裁剪图失真，今后必须按原始宽高比缩放；新增回归检查。当前[9页候选PDF](../deliverables/drafts/cultural-v0.4/B01-9-character-source-locked-UNREVIEWED.pdf)及[溯源报告](../deliverables/drafts/cultural-v0.4/B01-original-source-step-provenance.json)、[QA结果](../deliverables/drafts/cultural-v0.4/B01-source-pixel-qa.json)已经仅以`draft/release_eligible=false`、追加登记方式归档。MD5/SHA不得以重复编译外观来替代原始SHA256核验。
 - 分层统计现为：**16/201** 个字已有未审文化PDF工程样稿（早先7+新增9），**185/201** 尚无文化正文；正式审校批准/新文化正式发布仍为**0**。9份示意构图不是最终P3插图，36条词语/读音仍待中国大陆词典、教学规范及专业人审。版式与资产全书 P5/P6 均未完成。
+
+
+### P4.2：全量201主字与1045源笔顺的整本文化阅读工程稿（2026-10-25）
+
+- 已从16字分散样本转入**整书一次性构建、21批逐批编审**。新引擎 [build_cultural_fullbook.py](../scripts/build_cultural_fullbook.py) 和 [cultural_fullbook_model.py](../scripts/cultural_fullbook_model.py) 遍历原 B01–B21全部201 ID；引用已发行v0.5.1 PDF每步真实86pt裁剪矢量，不重画，自动生成长字续页、目录、书签及页级来源表。独立 [verify_cultural_fullbook.py](../scripts/verify_cultural_fullbook.py) 强制对全部1045源图逐幅位置/顺序/像素核验，工作流额外渲染所有PDF页与21张批次缩略图。
+- 初稿只包含**16字已有文化候选**，另外 **185字的专属文化正文及插图还未编写或获批**，该字段作为明显的留白待审。仅水/山/月/木4份SVG是有来源的独立**未批准**艺术画稿。相关词拼音/经典引文/字形附形仍执行分立人工审核；不得将源笔顺技术完整视为文化内容审核全部通过。
+- 新的全书工程稿仅可存档为 `draft/release_eligible=false`。原 v0.5.1正式299页 PDF（SHA256 `7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90`）、A3动画、已有所有发行记录保持只读。正式发行依旧要求P5逐页内容/视觉/打印验收以及P6人工批准。
+- [P4.2专项记录](../reviews/cultural-edition/P4-2-fullbook-201-20261025.md) 汇总全书生成入口、源图核验、未审内容范围及后续21批次编审清单。全书实际总页数与1045幅原始笔顺像素QA，以GitHub Actions真实输出为准，不预先宣称通过。
