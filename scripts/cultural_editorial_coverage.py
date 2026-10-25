@@ -12,6 +12,7 @@ import unicodedata
 from collections import Counter
 from pathlib import Path
 from urllib.parse import urlsplit,parse_qs
+from cultural_b01_editorial_audit import audit as audit_b01
 
 ROOT=Path(__file__).resolve().parents[1]
 DATA=ROOT/'data/cultural_edition'
@@ -74,6 +75,9 @@ def audit(root=ROOT):
                 raise ValueError("Unjustified pinyin change: "+i["character"])
             if candidate: candidate_pinyin_count+=1
 
+    b01_report=audit_b01(root)
+    b01_briefs=load(base/"p2_b01_editorial_briefs_20261025.json")["entries"]
+    b01_brief_ids={e["main_id"] for e in b01_briefs}
     content=load(base/"first_batch_draft.json")["entries"]
     complex_=load(base/"p4_multipage_prototypes.json")["entries"]
     samples={x["main_id"]:"P1" for x in content}
@@ -88,6 +92,9 @@ def audit(root=ROOT):
         expected=samples.get(mid,"not_started")
         if item["reading_page_draft_phase"]!=expected:
             raise ValueError("Draft/page status is incorrect for "+str(mid))
+        brief_stage="P2_candidate_unreviewed" if mid in b01_brief_ids else "not_started"
+        if item.get("editorial_brief_stage", "not_started")!=brief_stage:
+            raise ValueError("Draft brief status is incorrect for "+str(mid))
         is_art=item["character"] in ART_CHARACTERS
         art_phase=("unique_vector_draft_editorially_unreviewed" if is_art else "not_started")
         if item["individual_artwork_stage"]!=art_phase:
@@ -138,7 +145,11 @@ def audit(root=ROOT):
         "canonical_glyphs":len(by_id),"batches":21,
         "P1_sample_reading_pages":coverage["P1"],
         "P4_sample_reading_pages":coverage["P4"],
-        "not_started_glyph_content":coverage["not_started"],
+        "not_started_glyph_content":coverage["not_started"]-b01_report["new_characters"],
+        "not_rendered_reading_pages":coverage["not_started"],
+        "P2_new_B01_editorial_briefs_unreviewed":b01_report["new_characters"],
+        "P2_B01_word_candidates_unreviewed":b01_report["unreviewed_word_candidates"],
+        "glyphs_with_any_editorial_brief":len(samples)+b01_report["new_characters"],
         "four_illustration_drafts_unreviewed":len(ART_CHARACTERS),
         "legacy_model_pinyin_candidates_not_publication_approved":candidate_pinyin_count,
         "mainland_exam_education_support_words":len(hsk["entries"]),
