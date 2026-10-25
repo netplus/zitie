@@ -558,6 +558,23 @@
       "review_record": "reviews/cultural-edition/P4-B01-nine-original-source-previews-20261025.md",
       "release_eligible": false,
       "editorial_review_state": "B01_source_locked_editorial_draft_not_for_release"
+    },
+    {
+      "path": "deliverables/drafts/cultural-v0.5-full-201/cultural-201-original-strokes-P42-UNREVIEWED.pdf",
+      "title": "文化识字版P4.2：201主字1045原PDF笔顺全量工程待审稿",
+      "version": "cultural-v0.5-201-full-draft",
+      "status": "draft",
+      "batch": "P4.2 all 21 batches, 201 main glyphs, 1045 strokes",
+      "pages": 260,
+      "bytes": 9308861,
+      "sha256": "51da5b468ff2a5f5e92483b404913f3c23b3cf456d925ff20ec9ffc4925000d5",
+      "source_commit": "869d001695cbcaaddedee5c4c44fe5728d8f235a",
+      "provenance_kind": "source_locked_vector_layout_derivative",
+      "source_pdf": "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf",
+      "source_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+      "review_record": "reviews/cultural-edition/P4-2-fullbook-201-20261025.md",
+      "release_eligible": false,
+      "editorial_review_state": "P4_2_all_source_complete_cultural_content_unreviewed"
     }
   ]
 }
