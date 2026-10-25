@@ -20,6 +20,8 @@ from reportlab.lib.colors import HexColor
 from reportlab.lib.utils import ImageReader
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfgen import canvas
+from PIL import Image
+import numpy as np
 
 from build_cultural_sample import fonts, original_specimen
 from cultural_fullbook_model import make_plan, CAPACITY_FIRST, CAPACITY_MORE, ROOT, SHA
@@ -196,7 +198,38 @@ def draw_specimen(a:PageArtist,src_doc:fitz.Document,row):
         a.label(57.5,58,pinyin,14,"Latin",RED,"center")
     else:
         a.label(57.5,58,"本页不单列读音",9,"Kai",RED,"center")
-    image=ImageReader(original_specimen(src_doc[row["first_source_pdf_page"]-1]))
+    source_page=src_doc[row["first_source_pdf_page"]-1]
+    try:
+        image=ImageReader(original_specimen(source_page))
+        specimen_mode="source_pdf_ink_clipped"
+    except ValueError as exc:
+        # The historical four-character sample extractor explicitly rejected
+        # ink bounding boxes narrower than 100 rendered pixels. It can reject
+        # real tiny radicals like 丶, even though the released PDF is valid.
+        # Reuse the EXACT SAME PDF page/crop and pigment mask but permit a
+        # narrow genuine glyph, never invent a replacement glyph/pen path.
+        if "Missing source specimen ink" not in str(exc):
+            raise
+        crop=fitz.Rect(37.3,107,128.6,198.6)
+        pixels=source_page.get_pixmap(matrix=fitz.Matrix(6,6),
+                                      clip=crop,alpha=False)
+        rgb=np.asarray(Image.frombytes("RGB",
+                         (pixels.width,pixels.height),pixels.samples))
+        alpha=np.clip((148-rgb[:,:,1].astype(float))*1.9,0,255).astype("uint8")
+        alpha[(rgb[:,:,0]>220)|(rgb[:,:,1]>153)|(rgb[:,:,2]>159)]=0
+        if np.count_nonzero(alpha)<5:
+            raise ValueError(f"ID{row['main_id']:03d} lacks actual source specimen pigment") from exc
+        rgba=np.empty((*alpha.shape,4),dtype="uint8")
+        rgba[:,:,:3]=(49,55,59);rgba[:,:,3]=alpha
+        ink=Image.fromarray(rgba,"RGBA")
+        bounds=ink.getbbox()
+        if bounds is None:
+            raise ValueError(f"ID{row['main_id']:03d} has no visible source ink") from exc
+        buffer=io.BytesIO();ink.crop(bounds).save(buffer,format="PNG")
+        buffer.seek(0)
+        image=ImageReader(buffer)
+        specimen_mode="narrow_ink_from_original_pdf_crop"
+        print(f"INFO: ID{row['main_id']:03d} {row['character']} source PDF very narrow real ink extracted")
     native_w,native_h=image.getSize()
     if native_w<1 or native_h<1:raise ValueError("Released source main glyph missing")
     scale=min(48/native_w,45/native_h)
@@ -205,6 +238,7 @@ def draw_specimen(a:PageArtist,src_doc:fitz.Document,row):
         raise ValueError("Source main glyph ratio was distorted")
     a.c.drawImage(image,mm(57.5-w/2),H-mm(109)+mm((45-h)/2),
                   width=mm(w),height=mm(h),mask="auto")
+    return specimen_mode
 
 def draw_art_slot(a:PageArtist,row,art_assets,root):
     e=row["manuscript"]
@@ -248,7 +282,7 @@ def cover_page(a:PageArtist,row,page,src_doc,art_assets,root):
         for i,s in enumerate(rows):a.label(18,40+i*5.3,s,9.5,"Kai",GRAY)
     else:
         a.label(18,42,"文化阅读内容尚未编审；下方笔顺示范完整保留。",9.5,"Kai",GRAY)
-    draw_specimen(a,src_doc,row)
+    specimen_state=draw_specimen(a,src_doc,row)
     art_state=draw_art_slot(a,row,art_assets,root)
     a.section(17,119,"字义 / 部义",113)
     if e:
@@ -312,7 +346,7 @@ def cover_page(a:PageArtist,row,page,src_doc,art_assets,root):
         tiles=[stroke_tile(a,st,COVER_X[i%3],215 if i<3 else 250)
                for i,st in enumerate(steps)]
     a.c.showPage()
-    return tiles,art_state
+    return tiles,art_state,specimen_state
 
 def continuation_page(a:PageArtist,row,page,part,steps):
     a.page_border(page,f"{row['batch_id']}  ·  ID{row['main_id']:03d}  {row['character']}  ·  笔顺续页")
@@ -361,13 +395,14 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
         for row in plan["entries"]:
             if row["first_preview_pdf_page"]!=page:
                 raise ValueError("Unexpected first-page number in full-book plan")
-            tiles,art_state=cover_page(a,row,page,source_pdf,art,root)
+            tiles,art_state,specimen_state=cover_page(a,row,page,source_pdf,art,root)
             page_map.append({
                 "preview_pdf_page":page,"page_kind":"source_main_cultural_reading",
                 "main_id":row["main_id"],"character":row["character"],
                 "batch_id":row["batch_id"],"part":1,
                 "parts":row["page_parts"],"theme_key":row["manuscript"]["theme_key"] if row["manuscript"] else None,
                 "content_status":row["content_review"],"artwork_status":art_state,
+                "source_specimen_render_mode":specimen_state,
                 "source_stroke_count":row["stroke_count"],
                 "source_first_pdf_page":row["first_source_pdf_page"],
                 "printed_pinyin_from_original_source":row["adopted_source_pinyin"],
