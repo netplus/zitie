@@ -180,9 +180,9 @@ def instructions(a:PageArtist,plan):
     a.line(20,35,190,35,PALE,.45)
     blocks=[
         ("01  笔顺来源","每笔均取已发行 v0.5.1 的真实累计矢量图。先显示原书笔顺提示，再逐幅展示；既有笔灰色，当前笔红色。"),
-        ("02  字音与字词","单字只沿用正式 PDF 已单列的读音。相关词的拼音属于草稿候选，不能当作经大陆权威词典核准的印刷内容。"),
+        ("02  字音与字词","主字只采用正式PDF的原有单字读音；812个词语或构字字例中804项显示候选拼音，8项多音仍待辨析，全部尚需人工审音。"),
         ("03  文化内容","201个主字均已编写独立主题、释义、短句和相关字词草案；词音、出处和文稿仍需逐项审校，不将初稿当成定稿。"),
-        ("04  插图与版权","201字均有独特插图构想；仅4幅已登记SVG是可核来源的待审画稿。其余构想尚不是图像资产，须绘制并验收。"),
+        ("04  插图与版权","全书已经绘入201张文化主题矢量画稿：保留原4幅，新增197幅有独立SVG和校验码。程序绘图非专业美术审定，题材与授权仍需人工复核。"),
         ("05  偏旁附形","本工程只覆盖 201 个原书主字/主部首。氵、亻、扌等附形不得借用完整字源图冒名出版。"),
         ("06  页数与导航","页码按笔数动态生成。一个汉字笔画较多时自动连续续页；目录与书签直接跳转到该字的首页。"),
     ]
@@ -442,7 +442,7 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
     full_scenes=checked_assets(art_registry,art_dir,root) if art_registry else None
     buf=io.BytesIO()
     writer=canvas.Canvas(buf,pagesize=(W,H),pageCompression=1,invariant=1)
-    writer.setTitle("循序渐进 文化识字版 P4.5 · 201字图文及拼音候选工程稿 · 未审定")
+    writer.setTitle("循序渐进 文化识字版 P4.5.1 · 201字图文及拼音候选工程稿 · 未审定")
     writer.setAuthor("netplus/zitie cultural full-book P4.2 source-locked engineering proof")
     a=PageArtist(writer)
     base_cover(a,plan)
@@ -523,7 +523,7 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
                     "from":fitz.Rect(link["rect_pt"]),
                     "page":link["target_pdf_page"]-1})
             result.set_metadata({
-                "title":"文化识字版 P4.2 全量201字工程稿（非正式发行）",
+                "title":"文化识字版 P4.5.1 201字插图与拼音候选工程稿（未审定）",
                 "author":"netplus/zitie",
                 "subject":"原PDF 1045笔源图溯源；文化内容待审",
                 "keywords":"201,1045,editorial draft,source locked",
