@@ -99,6 +99,8 @@ ICONS.update({
 "umbrella":ICONS["umbrella"],
 })
 
+ICONS["horizon"]='<path d="M3 70Q31 63 49 70T98 68" fill="none" stroke="#789A95" stroke-width="4"/><path d="M4 83Q27 75 49 83T97 82" fill="none" stroke="#AEC4BB" stroke-width="2"/><path d="M5 67L22 58L39 65M57 66L76 51L95 65" fill="none" stroke="#BEC9AE" stroke-width="3"/><circle cx="51" cy="36" r="14" fill="#E6CDA7" fill-opacity=".75" stroke="#D0AB81"/>'
+
 KEYWORDS=[
 ("竹","bamboo"),("稻","wheat"),("麦","wheat"),("禾","wheat"),("谷粒","wheat"),("穗","wheat"),("种子","seed"),("芽","seed"),
 ("木尺","ruler"),("刻度","ruler"),("尺","ruler"),("书","book"),("字典","book"),("图册","book"),("家谱","scroll"),
@@ -111,7 +113,7 @@ KEYWORDS=[
 ("鱼","fish"),("鸟","bird"),("燕","bird"),("羽","bird"),("鹿","deer"),("牛","cow"),("马","horse"),("羊","animal"),
 ("狗","animal"),("犬","animal"),("猫","cat"),("鼠","mouse"),("龟","turtle"),("虫","bug"),("蝶","butterfly"),
 ("山","mountain"),("峰","mountain"),("崖","mountain"),("丘","mountain"),("坡","mountain"),
-("太阳","sun"),("日轮","sun"),("晨光","sun"),("朝阳","sun"),("霞","sun"),("日","sun"),
+("太阳","sun"),("日轮","sun"),("晨光","sun"),("朝阳","sun"),("霞","sun"),("地平线","horizon"),("天边","horizon"),("日","sun"),
 ("月","moon"),("夜空","moon"),("星","star"),("灯笼","lantern"),("灯","lamp"),("火","flame"),("炉","flame"),
 ("雨","rain"),("冰","snow"),("雪","snow"),("风","wind"),("云","wind"),
 ("树","tree"),("根","tree"),("枝","tree"),("叶","leaf"),("草","grass"),("花","flower"),("果","fruit"),("瓜","fruit"),
@@ -135,9 +137,14 @@ def select_motifs(text,main_id):
         if word in text and kind not in choices:
             choices.append(kind)
     # These elements are thematically neutral framing only, not the core art.
-    framing=("sun","leaf","paper","wind","moon","grass","rope","wave")
     if not choices:
-        choices=["paper","ink"]  # non-common cases: chiefly abstract components
+        choices=["paper","brush"] if "字" in text else ["paper","ink"]
+    nature={"sun","moon","mountain","river","bamboo","tree","leaf","flower","grass","wheat","seed",
+            "boat","fish","bird","animal","cat","deer","cow","mouse","turtle","bug","horse","butterfly",
+            "horizon","wind","wave","rain","snow","flame"}
+    framing=(("horizon","wind","grass","leaf","sun","mountain","river","flower")
+             if choices[0] in nature
+             else ("paper","ruler","lamp","ink","scroll","needle","book","tool"))
     for offset in range(len(framing)):
         if len(choices)>=3:
             break
@@ -168,14 +175,14 @@ def make_svg(main_id,character,theme,brief):
     ]
     placement=layouts[main_id%len(layouts)]
     shapes=[]
-    for k in range(8):
+    for k in range(5):
         x=70+(k*93+main_id*17)%680
         y=90+(k*59+main_id*13)%450
         rx=28+(k*11)%60
         opacity=".07" if k%2 else ".045"
         shapes.append(f'<ellipse cx="{x}" cy="{y}" rx="{rx}" ry="{rx*.67:.1f}" fill="{muted}" opacity="{opacity}"/>')
-    for k in range(6):
-        sy=535+k*13+int(rng.random()*7)
+    for k in range(3):
+        sy=541+k*13+int(rng.random()*7)
         start=-25+rng.random()*35
         end=850-rng.random()*40
         shapes.append(f'<path d="M{start:.1f} {sy:.1f} Q{350+rng.random()*170:.1f} {sy-17-rng.random()*15:.1f} {end:.1f} {sy:.1f}" stroke="{muted}" stroke-opacity=".31" stroke-width="{1.2+(k%3):.1f}" fill="none"/>')
