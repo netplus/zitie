@@ -24,6 +24,9 @@ from cultural_fullbook_model import ROOT, SHA, checked_drafts
 # Ordered by specificity; two distinct physical motifs are chosen for every
 # scene, including uncommon radicals that require a cultural context card.
 MOTIFS = [
+ ("beads",r"木珠|珠串|珠子|十颗木珠"),("horizon",r"地平线|天边|远天"),
+ ("person",r"背影|张开双臂|并肩|身姿|提灯而行|人|孩|女孩|妇|父|归家|旅人|行人|老人|身影|面孔|笑脸"),
+ ("hand",r"手|指尖|掌心|手指|双手"),
  ("mouse", r"鼠|老鼠|田鼠"),("turtle",r"龟|甲纹|小龟"),
  ("deer",r"鹿|梅花鹿"),("cow",r"牛|耕牛"),("horse",r"马|马蹄"),
  ("sheep",r"羊|绵羊"),("dog",r"狗|犬"),("cat",r"猫|小猫"),
@@ -36,7 +39,7 @@ MOTIFS = [
  ("star",r"星空|星辰|星点|北斗|星"),
  ("rain",r"雨|滴水|水珠|露珠|晨露|雨线|檐滴|雨滴"),
  ("snow",r"雪|冰花|冰|结冰"),
- ("tree",r"树|林|松|根|木|树干|枝|叶脉|枫|银杏"),
+ ("tree",r"树|林|松|根|树干|枝|叶脉|枫|银杏|古木|树木"),
  ("bamboo",r"竹|竹林|竹笛|竹筒"),
  ("flower",r"花|桂|花香|梅花"),("grass",r"草|苔|苗|嫩芽|小芽"),
  ("grain",r"稻|麦|谷粒|穗|禾|粮|黍|菜畦|田埂|田垄"),
@@ -80,6 +83,8 @@ PALS=[
 # Every symbol is vector geometry, independent from original PDF writing ink.
 # Coordinates for each symbol are 0..100; a scene combines >=2 subjects.
 SYMBOLS={
+ "beads":'<path d="M5 50 Q50 22 95 50 M5 61 Q52 89 95 61" class="soft"/><circle cx="16" cy="47" r="8" class="p"/><circle cx="34" cy="42" r="8" class="p"/><circle cx="52" cy="41" r="8" class="p"/><circle cx="70" cy="43" r="8" class="p"/><circle cx="87" cy="49" r="8" class="p"/><circle cx="16" cy="65" r="7" class="a"/><circle cx="34" cy="69" r="7" class="a"/><circle cx="52" cy="71" r="7" class="a"/><circle cx="70" cy="68" r="7" class="a"/><circle cx="87" cy="62" r="7" class="a"/>',
+ "horizon":'<path d="M2 54 Q36 50 51 52 T98 49 M1 65 Q47 60 97 60 M10 77 Q30 73 44 76 T87 74" class="soft"/><path d="M30 48 Q52 17 74 46" class="p"/><path d="M48 37 V13 M40 38 L27 24 M62 37 L78 24" class="soft"/>',
  "mouse":'<ellipse cx="51" cy="62" rx="27" ry="19"/><circle cx="73" cy="45" r="12"/><circle cx="66" cy="31" r="8"/><circle cx="81" cy="32" r="8"/><circle cx="78" cy="44" r="2" class="a"/><path d="M26 64 Q6 49 4 67 M85 51 l9 2 M84 55 l9 5"/>',
  "turtle":'<ellipse cx="49" cy="61" rx="34" ry="20" class="p"/><path d="M20 61 L49 41 L79 62 L49 80 Z M49 41 V81 M20 61 H79" class="soft"/><circle cx="90" cy="62" r="9"/><circle cx="94" cy="61" r="2" class="a"/><path d="M25 79 l-10 8 M68 79 l10 8"/>',
  "deer":'<path d="M20 76 Q38 52 65 66 L71 87 M25 78 l-5 18 M49 76 l-3 19 M67 58 L73 31 M73 31 L62 19 M72 31 L84 13 M72 39 L89 29" /><ellipse cx="77" cy="56" rx="13" ry="10"/><circle cx="84" cy="55" r="2" class="a"/><circle cx="37" cy="67" r="3" class="a"/><circle cx="49" cy="68" r="3" class="a"/>',
@@ -160,12 +165,12 @@ def build_scene(glyph,brief,title,sentence):
     ink,accent,soft,paper=PALS[mid%len(PALS)]
     digest=hashlib.sha256((key+"|"+brief).encode()).digest()
     dy=digest[0]%47-24
-    x0=105+digest[1]%32
-    y0=185+digest[2]%35
-    x1=410+digest[3]%60
-    y1=222+digest[4]%36
-    sc0=2.49+digest[5]/1300
-    sc1=1.90+digest[6]/1680
+    x0=96+digest[1]%26
+    y0=158+digest[2]%35
+    x1=413+digest[3]%45
+    y1=184+digest[4]%34
+    sc0=2.69+digest[5]/900
+    sc1=2.23+digest[6]/1200
     waves=[
        (f'<path d="M-8 {532+dy} Q148 {487+dy} 310 {536+dy} T820 {519+dy}" fill="none" stroke="{soft}" stroke-width="6" opacity=".65"/>'),
        (f'<path d="M0 {554+dy} Q180 {521+dy} 346 {565+dy} T825 {532+dy}" fill="none" stroke="{ink}" stroke-width="3" opacity=".16"/>')
@@ -191,8 +196,8 @@ def build_scene(glyph,brief,title,sentence):
          f'<title>{html.escape(brief)}</title>'
          '<style>.p{fill:'+paper+'}.a{fill:'+accent+';stroke:'+accent+'}.soft{stroke:'+soft+';fill:none}</style>'
          f'<rect x="0" y="0" width="820" height="630" rx="28" fill="{paper}"/>'
-         f'<circle cx="{145+digest[1]%45}" cy="{145+digest[2]%45}" r="119" fill="{soft}" opacity=".10"/>'
-         f'<circle cx="{655-digest[3]%56}" cy="{155+digest[4]%40}" r="91" fill="{accent}" opacity=".05"/>'
+         f'<path d="M0 {155+dy} Q180 {99+dy} 350 {150+dy} Q560 {208+dy} 820 {128+dy} L820 0 H0 Z" fill="{soft}" opacity=".09"/>'
+         f'<path d="M0 {580+dy} Q205 {532+dy} 395 {579+dy} Q590 {616+dy} 820 {540+dy} L820 630 H0 Z" fill="{accent}" opacity=".055"/>'
          +''.join(ticks)+''.join(waves)+''.join(objects)
          +f'<path d="M26 605 H794" stroke="{ink}" stroke-width="3" opacity=".18"/>'
          +'</svg>\n')
