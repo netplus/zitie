@@ -1,0 +1,79 @@
+{
+  "result": "P8_1013_EVIDENCE_SLOTS_AUDITED_ZERO_EDUCATIONAL_PUBLICATION_APPROVALS",
+  "frozen_original_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+  "main_glyph_reading_slots": 201,
+  "main_source_pdf_pinyin_values": 158,
+  "source_main_radicals_without_independent_pinyin": 43,
+  "all_word_or_component_slots": 812,
+  "machine_or_unapproved_pinyin_candidates_quarantined": 804,
+  "source_polyphonic_candidate_gaps": 8,
+  "secondary_frequent_char_reading_conflicts": [
+    {
+      "main_id": 54,
+      "character": "子",
+      "original_pdf_reading": "zǐ",
+      "secondary_unofficial_most_common": "zi",
+      "status": "needs_exact_headword_sense_and_authoritative_adjudication"
+    },
+    {
+      "main_id": 27,
+      "character": "干",
+      "original_pdf_reading": "gān",
+      "secondary_unofficial_most_common": "gàn",
+      "status": "needs_exact_headword_sense_and_authoritative_adjudication"
+    },
+    {
+      "main_id": 9,
+      "character": "卜",
+      "original_pdf_reading": "bǔ",
+      "secondary_unofficial_most_common": "bo",
+      "status": "needs_exact_headword_sense_and_authoritative_adjudication"
+    },
+    {
+      "main_id": 83,
+      "character": "长",
+      "original_pdf_reading": "cháng",
+      "secondary_unofficial_most_common": "zhǎng",
+      "status": "needs_exact_headword_sense_and_authoritative_adjudication"
+    },
+    {
+      "main_id": 96,
+      "character": "斗",
+      "original_pdf_reading": "dǒu",
+      "secondary_unofficial_most_common": "dòu",
+      "status": "needs_exact_headword_sense_and_authoritative_adjudication"
+    },
+    {
+      "main_id": 146,
+      "character": "艮",
+      "original_pdf_reading": "gèn",
+      "secondary_unofficial_most_common": "gěn",
+      "status": "needs_exact_headword_sense_and_authoritative_adjudication"
+    }
+  ],
+  "unapproved_word_source_tiers": {
+    "legacy_unreviewed_candidate": 72,
+    "HSK_transcription_exact_headword": 351,
+    "algorithmic_per_character_draft": 309,
+    "multiple_standard_readings": 8,
+    "community_phrase_dictionary": 72
+  },
+  "priority_risks": {
+    "polyphonic_or_sense_dependent": 85,
+    "tone_sandhi_one_or_bu": 8,
+    "legacy_candidate_without_independent_signoff": 72,
+    "possible_neutral_tone_or_segmentation_issue": 8,
+    "known_legacy_vs_HSK_written_transcription_conflict": 1,
+    "component_example_not_word_headword": 240,
+    "HSK_third_party_transcription_not_primary_dictionary": 351,
+    "unreliable_character_by_character_join": 309,
+    "multiple_readings_unresolved": 8,
+    "alternate_reading_sense_required": 8,
+    "community_phrase_cannot_establish_normative_printing": 72
+  },
+  "approved_word_readings": 0,
+  "approved_main_glyph_readings": 0,
+  "authoritative_printing_state": "BLOCKED_UNTIL_INDEPENDENT_PRIMARY_EVIDENCE_AND_TWO_REVIEWER_SIGNATURES",
+  "phase_two_stroke_audit": "pending",
+  "phase_three_professional_artwork": "pending"
+}

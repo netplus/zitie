@@ -158,23 +158,23 @@ class PageArtist:
         self.label(193,290,f"{page}  ·  禁止作为正式教材发行",
                    6.9,"Song",RED,"right")
 
-def base_cover(a:PageArtist,plan):
+def base_cover(a:PageArtist,plan,strict_review=False):
     a.page_border(1,"循序渐进 · 文化识字版 P4.2")
     a.label(27,44,"循 序 渐 进",16,"Song",GRAY)
     a.line(26,52,185,52,PALE,.42)
     a.label(26,83,"文化识字",34,"Kai",RED)
-    a.label(26,104,"全量工程稿",28,"Kai",INK)
+    a.label(26,104,"审音校对母稿" if strict_review else "全量工程稿",28,"Kai",INK)
     a.label(27,129,"以原书真笔顺为骨，以文化阅读为翼",13,"Kai",GRAY)
     a.rect(26,154,157,58,FAINT,None,3)
     a.label(35,169,"201  主字 / 主部首",15,"Kai",RED)
     a.label(35,184,"1045  原书累计笔顺 · 21  批次",12,"Kai",INK)
-    a.label(35,198,"201  字独立文化文字初稿 · 内容均待审定",10.5,"Kai",GRAY)
+    a.label(35,198,"201主字+812词例读音待权威核准" if strict_review else "201  字独立文化文字初稿 · 内容均待审定",10.5,"Kai",GRAY)
     a.label(27,240,"稿件状态：仅供教学内容审读与排版验收",11,"Kai",RED)
     a.label(27,251,"正文、拼音、插图及引文未经全书审核，不得印作正式教材。",9.3,"Kai",GRAY)
     a.label(27,266,"原 v0.5.1 正式 PDF 不变；附形偏旁另行独立复核。",9.0,"Kai",GRAY)
     a.c.showPage()
 
-def instructions(a:PageArtist,plan):
+def instructions(a:PageArtist,plan,strict_review=False):
     a.page_border(2,"201 字全量工程版 · 阅读说明")
     a.label(20,30,"全书说明与审校边界",22,"Kai",RED)
     a.line(20,35,190,35,PALE,.45)
@@ -186,6 +186,9 @@ def instructions(a:PageArtist,plan):
         ("05  偏旁附形","本工程只覆盖 201 个原书主字/主部首。氵、亻、扌等附形不得借用完整字源图冒名出版。"),
         ("06  页数与导航","页码按笔数动态生成。一个汉字笔画较多时自动连续续页；目录与书签直接跳转到该字的首页。"),
     ]
+    if strict_review:
+        blocks[1]=("02  第一轮规范审音","201个主字及812个词语/构字字例都有审音台账。无权威单项依据及独立双审前，所有旧稿拼音均暂不印刷；本稿只保留原书字形与笔顺。")
+        blocks[3]=("04  第三轮插图重建","当前程序化SVG未达到成书美术标准，已从本校对母稿撤下；第二轮严格核对原笔顺，第三轮完成正式插画与整书图文验收。")
     y=49
     for head,desc in blocks:
         a.label(20,y,head,12,"Kai",RED)
@@ -224,9 +227,11 @@ def index_pages(a:PageArtist,plan):
         a.c.showPage()
     return links
 
-def draw_specimen(a:PageArtist,src_doc:fitz.Document,row):
+def draw_specimen(a:PageArtist,src_doc:fitz.Document,row,strict_review=False):
     a.rect(29,63,57,52,FAINT,None,4)
-    if row["adopted_source_pinyin"]:
+    if strict_review:
+        a.label(57.5,58,"主字读音待权威复核",8.3,"Kai",RED,"center")
+    elif row["adopted_source_pinyin"]:
         pinyin=row["adopted_source_pinyin"]
         a.label(57.5,58,pinyin,14,"Latin",RED,"center")
     else:
@@ -273,8 +278,13 @@ def draw_specimen(a:PageArtist,src_doc:fitz.Document,row):
                   width=mm(w),height=mm(h),mask="auto")
     return specimen_mode
 
-def draw_art_slot(a:PageArtist,row,art_assets,root,full_scenes=None):
+def draw_art_slot(a:PageArtist,row,art_assets,root,full_scenes=None,strict_review=False):
     e=row["manuscript"]
+    if strict_review:
+        a.rect(118,51,75,56,"#FDFCF9","#E5E0D9",3)
+        a.label(123,72,"文化插画撤下待重绘",10.0,"Kai",GRAY)
+        a.label(123,86,"第三轮逐幅专业美术审核",8.0,"Kai",GRAY)
+        return "withdrawn_unapproved_artwork_strict_review"
     if full_scenes is not None:
         generated,legacy=full_scenes
         info=paint_cultural_scene(a.c,row,generated,legacy,root)
@@ -312,7 +322,7 @@ def stroke_tile(a:PageArtist,step,x,y):
     return dict(step,preview_rect_pt=[round(mm(n),5)
                           for n in (x,y,x+TILE_MM,y+TILE_MM)])
 
-def cover_page(a:PageArtist,row,page,src_doc,art_assets,root,full_scenes=None):
+def cover_page(a:PageArtist,row,page,src_doc,art_assets,root,full_scenes=None,strict_review=False):
     main_id=row["main_id"];e=row["manuscript"]
     a.page_border(page,f"{row['batch_id']}  ·  ID{main_id:03d}  {row['character']}  ·  原PDF p.{row['first_source_pdf_page']}")
     a.label(18,16,f"{row['batch_id']}  ·  ID{main_id:03d}  /  共{row['stroke_count']}笔",
@@ -325,8 +335,8 @@ def cover_page(a:PageArtist,row,page,src_doc,art_assets,root,full_scenes=None):
         for i,s in enumerate(rows):a.label(18,40+i*5.3,s,9.5,"Kai",GRAY)
     else:
         a.label(18,42,"文化阅读内容尚未编审；下方笔顺示范完整保留。",9.5,"Kai",GRAY)
-    specimen_state=draw_specimen(a,src_doc,row)
-    art_state=draw_art_slot(a,row,art_assets,root,full_scenes)
+    specimen_state=draw_specimen(a,src_doc,row,strict_review)
+    art_state=draw_art_slot(a,row,art_assets,root,full_scenes,strict_review)
     a.section(17,119,"字义 / 部义",113)
     if e:
         parts=[]
@@ -360,7 +370,7 @@ def cover_page(a:PageArtist,row,page,src_doc,art_assets,root,full_scenes=None):
     for i,text in enumerate(tips):
         a.label(18,165+i*4.65,text,8.6,"Kai",INK if i==0 else RED)
     a.section(17,202,"原图逐笔示范",113)
-    a.section(121,155,"相关字词 · 拼音候选未审",193)
+    a.section(121,155,"相关字词 · 规范读音待核" if strict_review else "相关字词 · 拼音候选未审",193)
     terms=e["terms"] if e else []
     if terms:
         if len(terms)>6:raise ValueError("Too many word cards")
@@ -368,7 +378,9 @@ def cover_page(a:PageArtist,row,page,src_doc,art_assets,root,full_scenes=None):
             x=121+(i%2)*36.8;y=164+(i//2)*21.2
             a.rect(x,y,34.6,18.2,"#F9F6F3",None,1.5)
             py=term["pinyin"]
-            if py is None:
+            if strict_review:
+                a.label(x+17.3,y+6.5,"词音待核",7.1,"Kai",RED,"center")
+            elif py is None:
                 a.label(x+17.3,y+6.5,"多音待核",7.2,"Kai",RED,"center")
             else:
                 size=7.7
@@ -425,7 +437,8 @@ def continuation_page(a:PageArtist,row,page,part,steps):
     return tiles
 
 def render(source:Path,manifest:Path,output:Path,proof:Path,
-           root:Path=ROOT,art_registry:Path|None=None,art_dir:Path|None=None):
+           root:Path=ROOT,art_registry:Path|None=None,art_dir:Path|None=None,
+           strict_review=False):
     root=Path(root)
     fonts()
     font_path=Path("/usr/share/fonts/truetype/arphic/uming.ttc")
@@ -442,11 +455,11 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
     full_scenes=checked_assets(art_registry,art_dir,root) if art_registry else None
     buf=io.BytesIO()
     writer=canvas.Canvas(buf,pagesize=(W,H),pageCompression=1,invariant=1)
-    writer.setTitle("循序渐进 文化识字版 P4.5.1 · 201字图文及拼音候选工程稿 · 未审定")
+    writer.setTitle("循序渐进 文化识字版 P8审音校对母稿 · 非正式发行" if strict_review else "循序渐进 文化识字版 P4.5.1 · 201字图文及拼音候选工程稿 · 未审定")
     writer.setAuthor("netplus/zitie cultural full-book P4.2 source-locked engineering proof")
     a=PageArtist(writer)
-    base_cover(a,plan)
-    instructions(a,plan)
+    base_cover(a,plan,strict_review)
+    instructions(a,plan,strict_review)
     links=index_pages(a,plan)
     page_map=[];dest_targets=[]
     with fitz.open(source) as source_pdf:
@@ -454,7 +467,7 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
         for row in plan["entries"]:
             if row["first_preview_pdf_page"]!=page:
                 raise ValueError("Unexpected first-page number in full-book plan")
-            tiles,art_state,specimen_state=cover_page(a,row,page,source_pdf,art,root,full_scenes)
+            tiles,art_state,specimen_state=cover_page(a,row,page,source_pdf,art,root,full_scenes,strict_review)
             page_map.append({
                 "preview_pdf_page":page,"page_kind":"source_main_cultural_reading",
                 "main_id":row["main_id"],"character":row["character"],
@@ -466,7 +479,9 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
                 "source_specimen_render_mode":specimen_state,
                 "source_stroke_count":row["stroke_count"],
                 "source_first_pdf_page":row["first_source_pdf_page"],
-                "printed_pinyin_from_original_source":row["adopted_source_pinyin"],
+                "printed_pinyin_from_original_source":None if strict_review else row["adopted_source_pinyin"],
+                "frozen_unreviewed_main_source_pinyin":row["adopted_source_pinyin"],
+                "pinyin_review_printing_state":"all_1013_blocked_before_double_review" if strict_review else "legacy_unapproved_candidates_visible",
                 "all_word_candidates_unreviewed":True,
                 "quote_citation_approval":False,
                 "source_steps":tiles,
@@ -523,7 +538,7 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
                     "from":fitz.Rect(link["rect_pt"]),
                     "page":link["target_pdf_page"]-1})
             result.set_metadata({
-                "title":"文化识字版 P4.5.1 201字插图与拼音候选工程稿（未审定）",
+                "title":"文化识字版P8审音校对母稿（1013个字词读音均暂不印刷）" if strict_review else "文化识字版 P4.5.1 201字插图与拼音候选工程稿（未审定）",
                 "author":"netplus/zitie",
                 "subject":"原PDF 1045笔源图溯源；文化内容待审",
                 "keywords":"201,1045,editorial draft,source locked",
@@ -554,8 +569,14 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
         "unique_existing_svg_artwork_drafts":4,
         "generated_distinct_svg_artwork_drafts":197 if full_scenes else 0,
         "full_artwork_svg_drafts":201 if full_scenes else 4,
-        "reading_candidates_printed":plan["reading_candidates_displayable"],
-        "blocked_ambiguous_readings":plan["reading_ambiguities_not_displayable"],
+        "reading_candidates_printed":0 if strict_review else plan["reading_candidates_displayable"],
+        "blocked_ambiguous_readings":812 if strict_review else plan["reading_ambiguities_not_displayable"],
+        "strict_pinyin_review_mode":bool(strict_review),
+        "source_main_readings_printed":0 if strict_review else 158,
+        "word_examples_readings_printed":0 if strict_review else 804,
+        "all_pronunciation_review_slots":1013,
+        "actual_illustrations_printed":0 if strict_review else (201 if full_scenes else 4),
+        "unreviewed_artwork_omitted":bool(strict_review),
         "unreviewed_word_reading_examples":812,
         "illustration_art_approved":0,
         "word_readings_approved":0,
@@ -582,8 +603,11 @@ def main():
     cli.add_argument("--root",type=Path,default=ROOT)
     cli.add_argument("--art-registry",type=Path)
     cli.add_argument("--art-dir",type=Path)
+    cli.add_argument("--strict-pinyin-review",action="store_true",
+                     help="Hide all 201 original source Pinyin and 812 unreviewed word syllables, withdraw rough art")
     o=cli.parse_args()
-    render(o.source,o.manifest,o.output,o.proof,o.root,o.art_registry,o.art_dir)
+    render(o.source,o.manifest,o.output,o.proof,o.root,o.art_registry,o.art_dir,
+           strict_review=o.strict_pinyin_review)
 
 if __name__=="__main__":
     main()
