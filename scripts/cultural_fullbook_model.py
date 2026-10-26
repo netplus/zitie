@@ -171,6 +171,57 @@ def checked_drafts(root:Path):
     if (len(new_ids)!=185 or editorial_terms!=740 or
         len(artwork_briefs)!=185 or set(result)!=expected_all):
         raise ValueError("Whole-book content must cover exactly all remaining 185 source IDs")
+    ledger=load(base/"v07_all_201_reading_candidates.json")
+    if (ledger.get("schema_version")!=1 or
+        ledger.get("source_original_pdf_sha256")!=SHA or
+        ledger.get("document_kind")!="201_glyph_reading_candidates_not_authoritative"):
+        raise ValueError("Unreviewed pronunciation candidate evidence source is missing")
+    reading_entries=ledger["entries"]
+    if len(reading_entries)!=812:
+        raise ValueError("Every one of 812 word/example slots needs provenance")
+    accepted={
+      "legacy_unreviewed_candidate",
+      "HSK_transcription_exact_headword",
+      "community_phrase_dictionary",
+      "algorithmic_per_character_draft",
+      "multiple_standard_readings",
+      "blocked_polyphonic_or_missing"}
+    checked=set();with_candidate=0
+    for item in reading_entries:
+        mid=item["main_id"];idx=item["word_index"]
+        if (mid not in result or not isinstance(idx,int) or
+            idx<0 or idx>=len(result[mid]["terms"])):
+            raise ValueError("A pronunciation reference points to a nonexistent slot")
+        key=(mid,idx)
+        if key in checked:raise ValueError("Duplicate source reference for one term")
+        checked.add(key)
+        slot=result[mid]["terms"][idx]
+        if (item["character"]!=result[mid]["character"]
+            or item["word"]!=slot["word"]
+            or item["source_class"] not in accepted
+            or item["review_state"]!="unreviewed_candidate_not_for_child_publication"
+            or item["checked_by_human"] is not False
+            or item["approved_for_print"] is not False):
+            raise ValueError("Pronunciation candidate changed or claimed editorial approval")
+        proposed=item["pinyin_candidate"]
+        if proposed is not None:
+            if not isinstance(proposed,str) or not proposed.strip():
+                raise ValueError("Invalid printed candidate transcription")
+            if (slot["pinyin"] is not None and
+                slot["pinyin"].replace(" ","")!=proposed.replace(" ","")):
+                raise ValueError("Do not overwrite older user-reviewed manuscript candidate")
+            if item["source_class"]=="multiple_standard_readings":
+                raise ValueError("Ambiguous headwords must remain blocked")
+            with_candidate+=1
+        slot["pinyin"]=proposed
+        slot["reading_tier"]=item["source_class"]
+        slot["reading_review"]="unreviewed_candidate"
+        slot["source_trace"]=item["source_key"]
+        slot["alternates"]=item["alternate_readings"]
+    if len(checked)!=812:
+        raise ValueError("Uncatalogued word/example phonetics remain")
+    if with_candidate!=804:
+        raise ValueError("Expected 804 candidate phonetics plus 8 blocked polyphonic headwords")
     return result
 
 def make_plan(source_index:dict,root:Path=ROOT)->dict:
@@ -255,6 +306,8 @@ def make_plan(source_index:dict,root:Path=ROOT)->dict:
         "fullbook_content_drafts":201,
         "without_new_cultural_content":0,
         "unreviewed_term_or_component_examples":related_count,
+        "reading_candidates_displayable":804,
+        "reading_ambiguities_not_displayable":8,
         "reviewed_word_readings":0,
         "new_cultural_release_approved":0,
         "complete_artwork_approved":0,
