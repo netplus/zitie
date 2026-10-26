@@ -138,9 +138,14 @@ def select_motifs(text,main_id):
     framing=("sun","leaf","paper","wind","moon","grass","rope","wave")
     if not choices:
         choices=["paper","ink"]  # non-common cases: chiefly abstract components
-    while len(choices)<3:
-        k=framing[(main_id+len(choices)*3)%len(framing)]
-        if k not in choices:choices.append(k)
+    for offset in range(len(framing)):
+        if len(choices)>=3:
+            break
+        k=framing[(main_id+offset*3)%len(framing)]
+        if k not in choices:
+            choices.append(k)
+    if len(choices)<3:
+        raise ValueError("Could not choose three distinct scene motifs")
     return choices[:3]
 
 def make_svg(main_id,character,theme,brief):
