@@ -131,12 +131,27 @@ PALETTES=[
 ]
 
 def select_motifs(text,main_id):
-    """Human-authored noun phrase -> recognizable original vector subjects."""
+    """Match scene nouns by SPECIFICITY, not arbitrary keyword-list order.
+
+    The first rendering of "地平线" incorrectly included a rope since the
+    generic "线" keyword was matched first. Whole meaningful subject phrases
+    (like 地平线 / 甲虫 / 火焰) outrank single-character keyword fragments;
+    original illustration drawings remain separate from source teaching ink.
+    """
+    strong=(("地平线","horizon"),("晨光","sun"),("太阳","sun"),
+            ("火焰","flame"),("烛火","flame"),("炉火","flame"),
+            ("甲虫","bug"),("蝴蝶","butterfly"),("耕牛","cow"),
+            ("小鹿","deer"),("田鼠","mouse"),("乌龟","turtle"),
+            ("竹管","bamboo"),("古乐","music"),("云海","wave"))
+    keywords=[p for p in strong+tuple(KEYWORDS)
+              if p[0] in text and p[0]!="线"]
+    # Prefer longest recognized concrete subjects, then their order of
+    # appearance in the independently authored per-character art brief.
+    keywords.sort(key=lambda p:(-len(p[0]),text.find(p[0])))
     choices=[]
-    for word,kind in KEYWORDS:
-        if word in text and kind not in choices:
+    for word,kind in keywords:
+        if kind not in choices:
             choices.append(kind)
-    # These elements are thematically neutral framing only, not the core art.
     if not choices:
         choices=["paper","brush"] if "字" in text else ["paper","ink"]
     nature={"sun","moon","mountain","river","bamboo","tree","leaf","flower","grass","wheat","seed",
