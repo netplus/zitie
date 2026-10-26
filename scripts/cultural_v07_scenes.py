@@ -142,7 +142,7 @@ def select_motifs(text,main_id):
             ("火焰","flame"),("烛火","flame"),("炉火","flame"),
             ("甲虫","bug"),("蝴蝶","butterfly"),("耕牛","cow"),
             ("小鹿","deer"),("田鼠","mouse"),("乌龟","turtle"),
-            ("竹管","bamboo"),("古乐","music"),("云海","wave"))
+            ("古乐竹管","bamboo"),("竹管","bamboo"),("古乐","music"),("云海","wave"))
     keywords=[p for p in strong+tuple(KEYWORDS)
               if p[0] in text and p[0]!="线"]
     # Prefer longest recognized concrete subjects, then their order of
