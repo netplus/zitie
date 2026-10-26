@@ -43,6 +43,42 @@ def verify(source:Path,manifest:Path,pdf:Path,proof:Path,root:Path=ROOT):
     if (report["front_matter_pages"],report["missing_cultural_editorial_content"],
         report["cultural_draft_glyphs"],report["unique_existing_svg_artwork_drafts"])!=(6,0,201,4):
         raise ValueError("Front matter or editorial provenance coverage changed")
+    if (report.get("unique_new_svg_artwork_drafts")!=197 or
+        report.get("unique_total_svg_artwork_drafts")!=201 or
+        report.get("lexical_evidence_rows")!=812):
+        raise ValueError("Full cultural draft requires 201 actual SVG artwork and 812 lexical evidence rows")
+    if report.get("provisional_pinyin_candidates")!=plan["provisional_pinyin_candidates"]:
+        raise ValueError("Provisional pronunciation evidence was lost in PDF export")
+    generated=pdf.parent/"cultural-v07-svg-registry.json"
+    if not generated.is_file():
+        raise ValueError("197 SVG evidence registry missing from PDF build folder")
+    art_data=json.loads(generated.read_text(encoding="utf8"))
+    if (art_data.get("review_state")!="original_vector_drawings_unapproved_for_release" or
+        len(art_data.get("artworks",[]))!=197):
+        raise ValueError("Unreviewed scene provenance must contain 197 drawings")
+    import re
+    art_index={}
+    drawing_shas=set()
+    artwork_dir=pdf.parent/"cultural-v07-svg"
+    for v in art_data["artworks"]:
+        mid=v["main_id"]
+        if mid in art_index:
+            raise ValueError("Duplicate cultural art main ID")
+        if (v["professional_art_approval"] is not False or
+            v["editorial_status"]!="original_vector_draft_not_approved" or
+            not re.fullmatch(r"ID\d{3}\.svg",v["file"])):
+            raise ValueError("Scene artwork claims approval or unsafe path")
+        raw=(artwork_dir/v["file"]).read_bytes()
+        if hashlib.sha256(raw).hexdigest()!=v["artwork_sha256"]:
+            raise ValueError("Cultural illustration asset checksum mismatch")
+        if any(tag in raw.lower() for tag in (b"<script",b"<image",b"<text",b"href=",b"url(",b"https:")):
+            raise ValueError("SVG image includes unsafe external data or text")
+        if v["artwork_sha256"] in drawing_shas:
+            raise ValueError("Two supposedly independent art assets share exact bytes")
+        drawing_shas.add(v["artwork_sha256"])
+        art_index[mid]=v
+    if len(art_index)!=197:
+        raise ValueError("Only 197 new SVGs may substitute for four established drafts")
     if (report["illustration_art_approved"]!=0 or
         report["word_readings_approved"]!=0 or
         report["new_publication_approvals"]!=0 or
@@ -91,6 +127,14 @@ def verify(source:Path,manifest:Path,pdf:Path,proof:Path,root:Path=ROOT):
             if (rec["all_word_candidates_unreviewed"] is not True
                 or rec["quote_citation_approval"] is not False):
                 raise ValueError("Unverified quoted words must not be presented as approved")
+            if rec["part"]==1:
+                if mid in art_index:
+                    if rec.get("artwork_svg_sha256")!=art_index[mid]["artwork_sha256"]:
+                        raise ValueError("Printed scene SVG checksum and PDF source registry disagree")
+                    if rec["artwork_status"]!="unique_original_svg_draft_unreviewed":
+                        raise ValueError("New actual illustration was replaced with an art placeholder")
+                elif rec["artwork_status"]!="four_svg_draft_unreviewed":
+                    raise ValueError("Four original registered SVG illustrations must remain source-locked")
             page=new[expected_pageno-1]
             wording=page.get_text()
             if "\x00" in wording or "\ufffd" in wording:
@@ -116,6 +160,11 @@ def verify(source:Path,manifest:Path,pdf:Path,proof:Path,root:Path=ROOT):
                     if src["pinyin_from_pdf"] not in wording:
                         raise ValueError("Released PDF adopted pinyin missing")
                 if target["manuscript"]:
+                    if target["manuscript"]["quote_candidate"] is None:
+                        if "读字想一想" not in wording:
+                            raise ValueError("No authored reflection in place of unsupported quote")
+                    elif "经典一隅" not in wording:
+                        raise ValueError("Located classical quotation section vanished")
                     if target["manuscript"]["title"] not in wording:
                         raise ValueError("Existing original cultural manuscript missing")
                     for term in target["manuscript"]["terms"]:
@@ -189,6 +238,10 @@ def verify(source:Path,manifest:Path,pdf:Path,proof:Path,root:Path=ROOT):
         "new_fullbook_character_articles":185,
         "unverified_related_word_examples":report["unreviewed_related_word_or_character_examples"],
         "linked_index_targets":len(report["index_links"]),
+        "actual_svg_artwork_drafts":201,
+        "new_svg_artwork_drafts_with_sha_proof":197,
+        "provisional_word_or_example_pinyin_candidates":report["provisional_pinyin_candidates"],
+        "word_or_example_evidence_rows":812,
         "no_published_cultural_articles":True,
         "full_page_visual_editorial_review":"requires_human_editorial_review",
     }
