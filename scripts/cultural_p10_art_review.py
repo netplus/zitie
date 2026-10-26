@@ -84,7 +84,7 @@ def validate_svg(raw:bytes,scene:str,motifs:set[str])->dict:
             raise ValueError("Art SVG must not contain script, text, foreign objects or external media")
         if kind=="path":
             paths+=1
-            if not re.match(r"^\\s*[mM]",tag.attrib.get("d","")):
+            if not re.match(r"^\s*[mM]",tag.attrib.get("d","")):
                 raise ValueError("Illustration path must start with a move")
         if kind not in {"title","svg"} and tag.text and tag.text.strip():
             raise ValueError("Unreviewed SVG is not a place for Chinese teaching text")
@@ -92,7 +92,7 @@ def validate_svg(raw:bytes,scene:str,motifs:set[str])->dict:
         for k,v in tag.attrib.items():
             name=k.rsplit("}",1)[-1]
             if (name not in SAFE_ATTRIBUTES or name.startswith("on")
-                or re.search(r"url\\s*\\(|https?:|data:|javascript:|<",v,re.I)):
+                or re.search(r"url\s*\(|https?:|data:|javascript:|<",v,re.I)):
                 raise ValueError("Executable, foreign or unreviewed SVG resource")
     if paths<18 or not motifs.issubset(set(found)) or len(set(found))<5:
         raise ValueError("Too little physical story detail for a cultural art study")
