@@ -626,6 +626,23 @@
       "review_record": "reviews/cultural-edition/P4-5-source-backed-visuals-20261026.md",
       "release_eligible": false,
       "editorial_review_state": "unapproved_reading_candidates_and_vector_culture_drafts"
+    },
+    {
+      "path": "deliverables/drafts/cultural-v0.8-pinyin-review/zitie-201-P8-pinyin-safety-UNREVIEWED.pdf",
+      "title": "文化识字版P8 201主字812词例规范审音母稿：未审拼音和粗糙插图隔离",
+      "version": "cultural-v0.8-pinyin-pending-draft",
+      "status": "draft",
+      "batch": "201 glyphs, 812 word/component examples, 1045 original source strokes",
+      "pages": 260,
+      "bytes": 9694195,
+      "sha256": "2e305fd9a2922bc27d964c6c9e3de653e0e2e2a202389ec509884ed72e8e1290",
+      "source_commit": "dd094e40ad38572fd67006bf3aae40ccb2e726b0",
+      "provenance_kind": "source_locked_vector_layout_derivative",
+      "source_pdf": "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf",
+      "source_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+      "review_record": "reviews/cultural-edition/P8-pinyin-proofing-20261026.md",
+      "release_eligible": false,
+      "editorial_review_state": "1013_source_review_slots_pending_manual_double_review"
     }
   ]
 }

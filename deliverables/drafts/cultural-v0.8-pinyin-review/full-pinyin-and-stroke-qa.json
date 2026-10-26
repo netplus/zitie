@@ -1,0 +1,62 @@
+{
+  "result": "PASS_P8_ALL_1013_PENDING_PINYIN_BLOCKED_FROM_PDF_1045_SOURCE_STROKES_PRESERVED",
+  "source_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+  "new_draft_pdf_sha256": "2e305fd9a2922bc27d964c6c9e3de653e0e2e2a202389ec509884ed72e8e1290",
+  "total_pdf_pages": 260,
+  "main_glyphs": 201,
+  "related_terms_or_component_examples": 812,
+  "original_vector_stroke_tiles_pixel_checked": 1045,
+  "printable_main_pinyin": 0,
+  "printable_word_pinyin": 0,
+  "prior_candidate_pinyin_quarantined": 804,
+  "prior_unresolved_multireadings_quarantined": 8,
+  "substantive_secondary_conflicts": [
+    {
+      "main_id": 54,
+      "character": "子",
+      "original_pdf_reading": "zǐ",
+      "secondary_unofficial_most_common": "zi",
+      "status": "needs_exact_headword_sense_and_authoritative_adjudication"
+    },
+    {
+      "main_id": 27,
+      "character": "干",
+      "original_pdf_reading": "gān",
+      "secondary_unofficial_most_common": "gàn",
+      "status": "needs_exact_headword_sense_and_authoritative_adjudication"
+    },
+    {
+      "main_id": 9,
+      "character": "卜",
+      "original_pdf_reading": "bǔ",
+      "secondary_unofficial_most_common": "bo",
+      "status": "needs_exact_headword_sense_and_authoritative_adjudication"
+    },
+    {
+      "main_id": 83,
+      "character": "长",
+      "original_pdf_reading": "cháng",
+      "secondary_unofficial_most_common": "zhǎng",
+      "status": "needs_exact_headword_sense_and_authoritative_adjudication"
+    },
+    {
+      "main_id": 96,
+      "character": "斗",
+      "original_pdf_reading": "dǒu",
+      "secondary_unofficial_most_common": "dòu",
+      "status": "needs_exact_headword_sense_and_authoritative_adjudication"
+    },
+    {
+      "main_id": 146,
+      "character": "艮",
+      "original_pdf_reading": "gèn",
+      "secondary_unofficial_most_common": "gěn",
+      "status": "needs_exact_headword_sense_and_authoritative_adjudication"
+    }
+  ],
+  "copyrighted_artwork_prematurely_inserted": 0,
+  "formal_editorial_approval_count": 0,
+  "open_normative_and_human_double_review_cases": 1013,
+  "independent_source_and_page_QA": "passed_engineering_only",
+  "manual_print_and_lexicon_review": "pending"
+}
