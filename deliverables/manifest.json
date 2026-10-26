@@ -643,6 +643,23 @@
       "review_record": "reviews/cultural-edition/P8-pinyin-proofing-20261026.md",
       "release_eligible": false,
       "editorial_review_state": "1013_source_review_slots_pending_manual_double_review"
+    },
+    {
+      "path": "deliverables/drafts/cultural-v0.9-stroke-review/zitie-201-P9-normative-stroke-review-UNREVIEWED.pdf",
+      "title": "文化识字版P9规范笔顺复核母稿：201字1045源笔顺、83处笔名待核",
+      "version": "cultural-v0.9-stroke-review-draft",
+      "status": "draft",
+      "batch": "P9 201 main glyphs, 1045 original stroke diagrams",
+      "pages": 260,
+      "bytes": 9749892,
+      "sha256": "8178a8d7bdf5258625efa0b74e7b82c0146c24da802f006f2135f17705e7fd89",
+      "source_commit": "7a014599452fe3fed3fb1634e259752b80b4ba5c",
+      "provenance_kind": "source_locked_vector_layout_derivative",
+      "source_pdf": "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf",
+      "source_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+      "review_record": "reviews/cultural-edition/P9-201-stroke-normative-20261026.md",
+      "release_eligible": false,
+      "editorial_review_state": "normative_Gf0023_reference_pending_name_geometry_human_double_review"
     }
   ]
 }
