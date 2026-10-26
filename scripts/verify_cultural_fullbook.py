@@ -124,8 +124,11 @@ def verify(source:Path,manifest:Path,pdf:Path,proof:Path,root:Path=ROOT):
                         raise ValueError("P8 word print gate was lost")
                     if "主字读音待权威复核" not in wording:
                         raise ValueError("P8 main-glyph missing visible unverified-reading status")
-                    if rec.get("artwork_status")!="withdrawn_unapproved_artwork_strict_review":
-                        raise ValueError("Rough SVG illustration unexpectedly appeared in strict review book")
+                    expected_art_state=("P9_fullbook_stroke_normative_review_pending"
+                        if report.get("strict_P9_normative_stroke_review_mode") is True
+                        else "withdrawn_unapproved_artwork_strict_review")
+                    if rec.get("artwork_status")!=expected_art_state:
+                        raise ValueError("Unapproved art or missing strict normative review status appeared in proofing book")
                 else:
                     if rec["printed_pinyin_from_original_source"]!=src["pinyin_from_pdf"]:
                         raise ValueError("PDF print single-glyph pinyin was not source-locked")
