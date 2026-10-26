@@ -1,0 +1,266 @@
+name: Cultural P4.4 all 201 arts and 812 phonetic evidence
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/cultural_v07_scenes.py'
+      - 'scripts/test_cultural_v07_scenes.py'
+      - 'scripts/cultural_fullbook_model.py'
+      - 'scripts/build_cultural_fullbook.py'
+      - 'scripts/verify_cultural_fullbook.py'
+      - 'scripts/test_cultural_fullbook_model.py'
+      - 'data/cultural_edition/fullbook_editorial/pinyin_evidence_812_20261026.json'
+      - '.github/workflows/cultural-v07-all-missing.yml'
+      - 'reviews/cultural-edition/P4-4-all-remaining-pdf-content-20261026.md'
+      - 'deliverables/drafts/cultural-v0.7.1-201-full/**'
+  push:
+    branches:
+      - feat/cultural-v07-art-phonetics-20261026
+    paths:
+      - 'scripts/cultural_v07_scenes.py'
+      - 'scripts/test_cultural_v07_scenes.py'
+      - 'scripts/cultural_fullbook_model.py'
+      - 'scripts/build_cultural_fullbook.py'
+      - 'scripts/verify_cultural_fullbook.py'
+      - 'scripts/test_cultural_fullbook_model.py'
+      - 'data/cultural_edition/fullbook_editorial/pinyin_evidence_812_20261026.json'
+      - '.github/workflows/cultural-v07-all-missing.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  complete-201-visual-draft:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install pinned source-PDF vector and fonts
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y libcairo2-dev libffi-dev pkg-config \
+            fonts-arphic-gkai00mp fonts-arphic-gbsn00lp fonts-arphic-uming fonts-dejavu-core
+          python -m pip install 'PyMuPDF==1.26.7' 'reportlab==4.4.9' \
+            'Pillow==12.3.0' 'numpy==2.3.5' 'svglib==1.6.0'
+      - name: Validate 812 word/character evidence and all 197 generated art sources
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-v07
+          python scripts/test_cultural_fullbook_model.py \
+            2>&1 | tee build/cultural-v07/lexicon-scope-negative-tests.txt
+          python scripts/test_cultural_v07_scenes.py \
+            2>&1 | tee build/cultural-v07/vector-scenes-negative-tests.txt
+          python scripts/test_cultural_editorial_coverage.py \
+            2>&1 | tee build/cultural-v07/original-inventory-tests.txt
+          python scripts/test_cultural_b01_editorial_audit.py \
+            2>&1 | tee build/cultural-v07/b01-pinyin-negative-tests.txt
+      - name: Build full 201-glyph PDF with 201 real vector scenes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_cultural_fullbook.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --output build/cultural-v07/cultural-201-art-phonetics-P44-UNREVIEWED.pdf \
+            --proof build/cultural-v07/201-source-page-artwork-provenance.json \
+            | tee build/cultural-v07/build-summary.json
+      - name: Verify all original 1045 source strokes, SVG art and candidates
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/verify_cultural_fullbook.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --pdf build/cultural-v07/cultural-201-art-phonetics-P44-UNREVIEWED.pdf \
+            --proof build/cultural-v07/201-source-page-artwork-provenance.json \
+            --output build/cultural-v07/independent-full-201-qa.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('build/cultural-v07')
+          p=json.loads((root/'201-source-page-artwork-provenance.json').read_text())
+          qa=json.loads((root/'independent-full-201-qa.json').read_text())
+          assert p['cumulative_original_source_stroke_tiles']==1045
+          assert p['content_glyphs']==201
+          assert p['unique_new_svg_artwork_drafts']==197
+          assert p['unique_total_svg_artwork_drafts']==201
+          assert p['lexical_evidence_rows']==812
+          assert p['provisional_pinyin_candidates']>=700
+          assert p['word_readings_approved']==0
+          assert p['illustration_art_approved']==0
+          assert p['new_publication_approvals']==0
+          assert qa['original_source_vector_steps_pixel_compared']==1045
+          assert qa['actual_svg_artwork_drafts']==201
+          assert qa['new_svg_artwork_drafts_with_sha_proof']==197
+          assert qa['linked_index_targets']==201
+          print('PASS: all source, scene and candidate tiers present WITHOUT publication approval')
+          PY
+      - name: Render all PDF pages and 21 all-page editorial contact sheets
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import fitz,json
+          from pathlib import Path
+          from collections import defaultdict
+          from PIL import Image,ImageDraw
+          root=Path('build/cultural-v07')
+          proof=json.loads((root/'201-source-page-artwork-provenance.json').read_text())
+          all_pages=root/'every-page-jpeg';all_pages.mkdir(exist_ok=True)
+          contacts=root/'21-batch-review';contacts.mkdir(exist_ok=True)
+          groups=defaultdict(list)
+          for rec in proof['page_map']:groups[rec['batch_id']].append(rec['preview_pdf_page'])
+          pdfpath=root/'cultural-201-art-phonetics-P44-UNREVIEWED.pdf'
+          with fitz.open(pdfpath) as pdf:
+              assert len(pdf)==proof['output_pdf_pages']
+              for i,page in enumerate(pdf,1):
+                  img=page.get_pixmap(matrix=fitz.Matrix(1,1),alpha=False)
+                  canvas=Image.frombytes('RGB',(img.width,img.height),img.samples)
+                  assert canvas.getbbox() is not None
+                  canvas.save(all_pages/f'page-{i:03d}.jpg',format='JPEG',quality=83,optimize=True)
+              for batch,pages in groups.items():
+                  w,h=210,298;g=13;cols=4;rows=(len(pages)+cols-1)//cols
+                  sheet=Image.new('RGB',(g+cols*(w+g),g+rows*(h+37)),'#f2f2ee')
+                  draw=ImageDraw.Draw(sheet)
+                  for j,pageno in enumerate(pages):
+                      with Image.open(all_pages/f'page-{pageno:03d}.jpg') as raw:
+                          tile=raw.resize((w,h),Image.Resampling.LANCZOS)
+                          x=g+(j%cols)*(w+g);y=g+(j//cols)*(h+37)
+                          sheet.paste(tile,(x,y))
+                          draw.text((x,y+h+7),f'{batch}  page {pageno}',fill='#42423f')
+                  sheet.save(contacts/f'{batch}-all-pages.png',optimize=True)
+              for mid in (1,4,9,39,64,77,95,131,142,175,185,198,201):
+                  rec=next(x for x in proof['page_map'] if x['main_id']==mid and x['part']==1)
+                  pn=rec['preview_pdf_page']
+                  pdf[pn-1].get_pixmap(matrix=fitz.Matrix(1.55,1.55),alpha=False).save(
+                      root/f'ID{mid:03d}-page-{pn:03d}.png')
+              assert len(list(all_pages.glob('page-*.jpg')))==len(pdf)
+              assert len(list(contacts.glob('B*.png')))==21
+          print('PASS: all',proof['output_pdf_pages'],'pages rasterized, 21 batch review sheets created')
+          PY
+      - name: Rebuild whole book and all scene artwork byte-for-byte
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-v07-repeat
+          python scripts/build_cultural_fullbook.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --output build/cultural-v07-repeat/identical.pdf \
+            --proof build/cultural-v07-repeat/identical.json
+          cmp build/cultural-v07/cultural-201-art-phonetics-P44-UNREVIEWED.pdf \
+              build/cultural-v07-repeat/identical.pdf
+          cmp build/cultural-v07/cultural-v07-svg-registry.json \
+              build/cultural-v07-repeat/cultural-v07-svg-registry.json
+          python - <<'PY'
+          from pathlib import Path
+          import filecmp
+          a=Path('build/cultural-v07/cultural-v07-svg')
+          b=Path('build/cultural-v07-repeat/cultural-v07-svg')
+          assert len(list(a.glob('ID*.svg')))==197
+          assert all(filecmp.cmp(p,b/p.name,shallow=False) for p in a.glob('ID*.svg'))
+          print('PASS: exact repeatability of 201 cultural PDF and all 197 new SVGs')
+          PY
+      - name: Preserve original teaching PDF and all previous deliverable hashes
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          manifest=json.loads(Path('deliverables/manifest.json').read_text())['artifacts']
+          source=Path('deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf')
+          sha='7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90'
+          assert hashlib.sha256(source.read_bytes()).hexdigest()==sha
+          row=[r for r in manifest if r['path']==source.as_posix()]
+          assert len(row)==1 and row[0]['status']=='released' and row[0]['sha256']==sha
+          print('PASS: frozen original published teaching source intact')
+          PY
+      - name: Archive only new v0.7 unreviewed fullbook and 197 source SVGs
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feat/cultural-v07-art-phonetics-20261026'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,os,shutil
+          from pathlib import Path
+          import fitz
+          work=Path('build/cultural-v07')
+          dest=Path('deliverables/drafts/cultural-v0.7.1-201-full')
+          dest.mkdir(parents=True,exist_ok=True)
+          name='zitie-cultural-v0.7.1-all-201-with-art-phonetics-UNREVIEWED.pdf'
+          source=work/'cultural-201-art-phonetics-P44-UNREVIEWED.pdf'
+          meta=json.loads((work/'201-source-page-artwork-provenance.json').read_text())
+          qa=json.loads((work/'independent-full-201-qa.json').read_text())
+          digest=hashlib.sha256(source.read_bytes()).hexdigest()
+          assert digest==qa['preview_pdf_sha256']==meta['output_pdf_sha256']
+          assert meta['unique_total_svg_artwork_drafts']==201
+          assert meta['illustration_art_approved']==0
+          assert meta['new_publication_approvals']==0
+          assert qa['original_source_vector_steps_pixel_compared']==1045
+          with fitz.open(source) as pdf:
+              assert len(pdf)==meta['output_pdf_pages']
+          manifest=Path('deliverables/manifest.json')
+          old=manifest.read_text(encoding='utf8')
+          data=json.loads(old)
+          key=(dest/name).as_posix()
+          if any(x['path']==key for x in data['artifacts']):
+              raise ValueError('No overwriting any previously archived PDF, even an old draft')
+          shutil.copyfile(source,dest/name)
+          shutil.copyfile(work/'201-source-page-artwork-provenance.json',
+                          dest/'201-source-page-artwork-provenance.json')
+          shutil.copyfile(work/'independent-full-201-qa.json',dest/'independent-full-201-qa.json')
+          shutil.copyfile(work/'cultural-v07-svg-registry.json',dest/'201-art-source-registry.json')
+          shutil.copytree(work/'cultural-v07-svg',dest/'201-art-source-svg')
+          data['artifacts'].append({
+              'path':key,
+              'title':'201字文化版P4.4.1：修正主题关联画、201幅SVG、812词音参考分层，正式审校待办',
+              'version':'cultural-v0.7.1-theme-corrected-content-draft',
+              'status':'draft',
+              'batch':'B01-B21 201 main glyph cultural layout, 197 new SVG drafts',
+              'pages':meta['output_pdf_pages'],
+              'bytes':source.stat().st_size,
+              'sha256':digest,
+              'source_commit':os.environ['GITHUB_SHA'],
+              'provenance_kind':'source_locked_vector_layout_derivative',
+              'source_pdf':'deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf',
+              'source_pdf_sha256':'7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90',
+              'review_record':'reviews/cultural-edition/P4-4-all-remaining-pdf-content-20261026.md',
+              'release_eligible':False,
+              'editorial_review_state':'201_cultural_svg_and_812_candidate_word_readings_unreviewed',
+          })
+          assert data['artifacts'][:-1]==json.loads(old)['artifacts']
+          manifest.write_text(json.dumps(data,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
+          print('PASS: immutable v0.7.1 refined SVG PDF archive appended, 197 sources',digest)
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add deliverables/manifest.json deliverables/drafts/cultural-v0.7-201-full/
+          git diff --cached --quiet && { echo 'Expected new unreviewed draft archive'; exit 1; }
+          git commit -m 'build(P4.4.1): append scene-semantic refined 201-art cultural draft without altering old archives'
+          for attempt in 1 2 3; do
+            git fetch origin feat/cultural-v07-art-phonetics-20261026
+            git rebase origin/feat/cultural-v07-art-phonetics-20261026
+            if git push origin HEAD:feat/cultural-v07-art-phonetics-20261026; then
+              exit 0
+            fi
+          done
+          echo 'Archive push refused: branch head changed and safe retries exhausted' >&2
+          exit 1
+      - name: Upload full PDF, 197 SVGs, 260 previews, 21 contact sheets and QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: cultural-v07-full-201-SVG-PDF-UNREVIEWED
+          path: build/cultural-v07/
+          if-no-files-found: warn
+          retention-days: 14

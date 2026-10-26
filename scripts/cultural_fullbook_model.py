@@ -171,6 +171,45 @@ def checked_drafts(root:Path):
     if (len(new_ids)!=185 or editorial_terms!=740 or
         len(artwork_briefs)!=185 or set(result)!=expected_all):
         raise ValueError("Whole-book content must cover exactly all remaining 185 source IDs")
+    source_data=load(base/"fullbook_editorial"/"pinyin_evidence_812_20261026.json")
+    if (source_data.get("schema_version")!=1 or
+        source_data.get("source_pdf_sha256")!=SHA or
+        source_data.get("editorial_publication_eligible") is not False or
+        len(source_data.get("entries",[]))!=812):
+        raise ValueError("The 812-item pronunciation evidence file is incomplete or falsely approved")
+    seen=set()
+    for evidence in source_data["entries"]:
+        mid=evidence["main_id"];slot=evidence["slot"]
+        if mid not in result or not isinstance(slot,int) or not 1<=slot<=len(result[mid]["terms"]):
+            raise ValueError("Lexical evidence points outside the 201 character manuscript")
+        token=(mid,slot)
+        if token in seen:
+            raise ValueError("Duplicate lexical evidence for the same word/example")
+        seen.add(token)
+        original=result[mid]["terms"][slot-1]
+        if (original["word"]!=evidence["word"] or
+            evidence.get("human_review")!="not_done" or
+            evidence.get("release_approved") is not False or
+            evidence.get("printable_as_verified") is not False):
+            raise ValueError("Lexical evidence cannot silently certify children's pronunciation")
+        candidate=evidence["pinyin_candidate"]
+        if candidate is not None and (not isinstance(candidate,str) or len(candidate)>100):
+            raise ValueError("Invalid lexical candidate phonetics")
+        if evidence["source_status"] in ("hsk_homograph_ambiguity",
+                                         "single_character_polyphone_not_reviewed",
+                                         "single_character_source_disagreement",
+                                         "no_exact_lexical_evidence") and candidate is not None:
+            raise ValueError("Ambiguous or unsupported pronunciations are blocked")
+        if original["pinyin"] and original["pinyin"]!=candidate:
+            raise ValueError("Legacy unreviewed candidate reading was changed")
+        original["pinyin"]=candidate
+        original["reading_source_status"]=evidence["source_status"]
+        original["reading_evidence"]=evidence["source_evidence"]
+        original["source_conflict"]=evidence.get("source_conflict",False)
+        original["review_status"]="review_pending"
+        original["publication_approved"]=False
+    if len(seen)!=812:
+        raise ValueError("All 812 words/component examples need evidence status")
     return result
 
 def make_plan(source_index:dict,root:Path=ROOT)->dict:
@@ -255,6 +294,8 @@ def make_plan(source_index:dict,root:Path=ROOT)->dict:
         "fullbook_content_drafts":201,
         "without_new_cultural_content":0,
         "unreviewed_term_or_component_examples":related_count,
+        "provisional_pinyin_candidates":sum(t["pinyin"] is not None for e in out for t in e["manuscript"]["terms"]),
+        "lexical_evidence_rows":related_count,
         "reviewed_word_readings":0,
         "new_cultural_release_approved":0,
         "complete_artwork_approved":0,
