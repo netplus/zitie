@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'scripts/cultural_p9_stroke_audit.py'
+      - 'scripts/cultural_p9_primary_gf0023_audit.py'
       - 'scripts/test_cultural_p9_stroke_audit.py'
       - 'scripts/verify_cultural_p9_review_master.py'
       - 'scripts/build_cultural_fullbook.py'
@@ -54,10 +55,8 @@ jobs:
           mkdir -p build/cultural-p9
           python scripts/test_cultural_p9_stroke_audit.py \
             2>&1 | tee build/cultural-p9/stroke-order-source-negative-tests.txt
-          python scripts/cultural_p9_stroke_audit.py \
-            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
-            --manifest deliverables/manifest.json \
-            --output build/cultural-p9/full-201-1045-normative-scope-and-stroke-review.json
+          python scripts/cultural_p9_stroke_audit.py             --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf             --manifest deliverables/manifest.json             --output build/cultural-p9/full-201-1045-normative-scope-and-stroke-review.json
+          python scripts/cultural_p9_primary_gf0023_audit.py             --output build/cultural-p9/GF0023-primary-164-code-evidence-review.json
       - name: Generate 260-page P9 normatively unapproved stroke review mother PDF
         shell: bash
         run: |
@@ -137,6 +136,8 @@ jobs:
           qa=json.loads((root/'P9-201-source-and-normative-review-qa.json').read_text())
           assert qa['result']=='PASS_P9_201_STROKE_SOURCE_PAGES_AND_83_PLACEHOLDER_PEN_NAMES_QUARANTINED'
           assert qa['source_strokes_from_immutable_v051_pixel_compared']==1045
+          assert qa['GF0023_direct_164_UCS_numeric_rows']==164
+          assert qa['GF0023_primary_and_secondary_code_agreements']==164
           assert qa['strokes_exactly_confirmed_by_direct_official_row_and_human_second_review']==0
           official=Path('deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf')
           assert hashlib.sha256(official.read_bytes()).hexdigest()=='7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90'
@@ -171,6 +172,7 @@ jobs:
           shutil.copyfile(pdf,dest)
           for file in ('P9-201-source-and-normative-review-qa.json',
                        'full-201-1045-normative-scope-and-stroke-review.json',
+                       'GF0023-primary-164-code-evidence-review.json',
                        '201-main-1045-stroke-full-page-provenance.json'):
               shutil.copyfile(src/file,dst/file)
           doc['artifacts'].append({
