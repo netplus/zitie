@@ -20,6 +20,8 @@ from PIL import Image, ImageChops, ImageOps, ImageStat
 from reportlab.graphics import renderPDF
 from reportlab.lib.utils import ImageReader
 from reportlab.pdfgen import canvas
+from reportlab.pdfbase import pdfmetrics
+from reportlab.pdfbase.ttfonts import TTFont
 from svglib.svglib import svg2rlg
 
 from build_cultural_fullbook import PageArtist, W, H, MM, mm
@@ -195,6 +197,10 @@ def paint_svg(canvas_obj,path:Path,x:float,y:float,w:float,h:float):
 
 def create_review_pdf(pdf_path:Path,ledger:dict,root:Path=ROOT):
     fonts()
+    rare=Path("/usr/share/fonts/truetype/arphic/uming.ttc")
+    if not rare.is_file():raise ValueError("Missing rare-glyph CJK font for print proof")
+    if "CultureRare" not in pdfmetrics.getRegisteredFontNames():
+        pdfmetrics.registerFont(TTFont("CultureRare",str(rare),subfontIndex=0))
     pdf_path.parent.mkdir(parents=True,exist_ok=True)
     c=canvas.Canvas(str(pdf_path),pagesize=(W,H),pageCompression=1,invariant=1)
     c.setTitle("P10 文化插画审美方向 · 四幅样稿 · 未批准")
