@@ -56,7 +56,7 @@ jobs:
               --input build/P9-primary-review/GF0023-full-source.pdf \
               --output build/P9-primary-review/gf0023-primary-original-probe.json \
               --render-dir build/P9-primary-review/original-page-samples
-            rm build/P9-primary-review/GF0023-full-source.pdf
+            # Temporarily retain the primary PDF only in the short-lived private CI artifact for exact row extraction. Never commit it to the repository or link it to end users.
           else
             echo '{"status":"PRIMARY_GF0023_PDF_COULD_NOT_BE_FETCHED","number_of_verified_201_characters":0}' \
               > build/P9-primary-review/gf0023-primary-original-probe.json
