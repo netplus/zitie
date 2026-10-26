@@ -24,6 +24,10 @@ class FullBookScopeTests(unittest.TestCase):
         self.assertEqual(plan["new_fullbook_content_drafts"],185)
         self.assertEqual(plan["fullbook_content_drafts"],201)
         self.assertEqual(plan["without_new_cultural_content"],0)
+        self.assertEqual(plan["unreviewed_term_or_component_examples"],812)
+        self.assertEqual(plan["lexical_evidence_rows"],812)
+        self.assertGreaterEqual(plan["provisional_pinyin_candidates"],700)
+        self.assertEqual(plan["reviewed_word_readings"],0)
         self.assertEqual(sum(x["page_parts"] for x in plan["entries"]),
                          201+sum(x["stroke_count"]>6 for x in plan["entries"]))
         self.assertEqual(plan["new_cultural_release_approved"],0)
