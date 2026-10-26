@@ -393,7 +393,7 @@ def cover_page(a:PageArtist,row,page,src_doc,art_assets,root,full_scenes=None,st
         raise ValueError("Released PDF pen-order tips cannot fit: "+row["character"])
     for i,text in enumerate(tips):
         a.label(18,165+i*4.65,text,8.6,"Kai",INK if i==0 else RED)
-    a.section(17,202,"原图逐笔·待审" if strict_stroke_review else "原图逐笔示范",113)
+    a.section(17,202,"原图逐笔示范·待审" if strict_stroke_review else "原图逐笔示范",113)
     a.section(121,155,"相关字词 · 规范读音待核" if strict_review else "相关字词 · 拼音候选未审",193)
     terms=e["terms"] if e else []
     if terms:
