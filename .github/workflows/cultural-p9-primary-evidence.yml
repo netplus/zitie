@@ -1,0 +1,94 @@
+name: P9 primary GF0023 original PDF evidence probe
+
+on:
+  push:
+    branches: [feat/cultural-p9-normative-strokes-20261026]
+    paths:
+      - 'scripts/p9_official_pdf_probe.py'
+      - 'scripts/p9_GF0023_direct_extract.py'
+      - '.github/workflows/cultural-p9-primary-evidence.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  probe-official-standard:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install PDF renderer for source study
+        run: python -m pip install 'PyMuPDF==1.26.7'
+      - name: Download exact complete public original GF0023 PDF, never a screenshot substitute
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/P9-primary-review
+          STATUS=unavailable
+          for URL in \
+            'https://jw.beijing.gov.cn/language/bzgf/202105/P020210512414220837538.pdf' \
+            'https://www.fjbu.edu.cn/tpz/pdf/2022090902.pdf' \
+            'https://www.bjhdedu.cn/zt/tgpthxyesd/tgpthxgwj/202209/P020220909358101178059.pdf' \
+            'https://www.xjvu.edu.cn/__local/5/A1/58/CC87663FB035B83399511A69E59_3986037A_3107ECC.pdf'; do
+            echo "Official normative source candidate: $URL"
+            if curl -fLsS --connect-timeout 16 --max-time 180 --retry 1 \
+              -A 'Mozilla/5.0 PDF Verification Research' "$URL" \
+              -o build/P9-primary-review/GF0023-full-source.pdf; then
+              if python - <<'PY'
+          from pathlib import Path
+          import fitz
+          p=Path('build/P9-primary-review/GF0023-full-source.pdf')
+          doc=fitz.open(p)
+          assert len(doc)>100 and p.stat().st_size>1000000
+          print('PASS: acquired complete full official GF0023 PDF,',len(doc),'pages')
+          PY
+              then
+                STATUS=downloaded
+                break
+              fi
+            fi
+          done
+          echo "$STATUS" > build/P9-primary-review/download-status.txt
+          if [[ "$STATUS" == downloaded ]]; then
+            python scripts/p9_official_pdf_probe.py \
+              --input build/P9-primary-review/GF0023-full-source.pdf \
+              --output build/P9-primary-review/gf0023-primary-original-probe.json \
+              --render-dir build/P9-primary-review/original-page-samples
+            python scripts/p9_GF0023_direct_extract.py               --input build/P9-primary-review/GF0023-full-source.pdf               --output build/P9-primary-review/gf0023-direct-164-primary.json
+            rm build/P9-primary-review/GF0023-full-source.pdf
+          else
+            echo '{"status":"PRIMARY_GF0023_PDF_COULD_NOT_BE_FETCHED","number_of_verified_201_characters":0}' \
+              > build/P9-primary-review/gf0023-primary-original-probe.json
+            echo 'NO normative sequences can be marked directly verified.' >&2
+          fi
+      - name: Commit only the extracted 164-row official source evidence on this feature branch
+        if: github.event_name == 'push'
+        shell: bash
+        run: |
+          set -euo pipefail
+          install -m 0644 build/P9-primary-review/gf0023-direct-164-primary.json \
+            data/cultural_edition/p9_GF0023_direct_primary_164.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/cultural_edition/p9_GF0023_direct_primary_164.json
+          git diff --cached --quiet && { echo 'Direct GF source evidence is unchanged'; exit 0; }
+          git commit -m "data(P9): pin exact 164 GF0023 source codes, primary PDF SHA and source page numbers"
+          for attempt in 1 2 3; do
+            git fetch origin feat/cultural-p9-normative-strokes-20261026
+            git rebase origin/feat/cultural-p9-normative-strokes-20261026
+            if git push origin HEAD:feat/cultural-p9-normative-strokes-20261026; then exit 0; fi
+          done
+          echo 'No non-fast-forward overwrite permitted on P9 evidence branch' >&2
+          exit 1
+      - name: Upload short primary-source sample audit, no entire copyrighted PDF
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: P9-GF0023-primary-page-probe
+          path: build/P9-primary-review/
+          retention-days: 14
+          if-no-files-found: warn

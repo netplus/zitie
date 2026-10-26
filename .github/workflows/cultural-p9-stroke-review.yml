@@ -1,0 +1,216 @@
+name: P9 whole-201 source stroke normative REVIEW not publication
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/cultural_p9_stroke_audit.py'
+      - 'scripts/cultural_p9_primary_gf0023_audit.py'
+      - 'scripts/test_cultural_p9_stroke_audit.py'
+      - 'scripts/verify_cultural_p9_review_master.py'
+      - 'scripts/verify_cultural_fullbook.py'
+      - 'scripts/build_cultural_fullbook.py'
+      - 'scripts/p9_GF0023_direct_extract.py'
+      - 'data/cultural_edition/p9_201_original_stroke_crosscheck.json'
+      - 'data/cultural_edition/p9_GF0023_direct_primary_164.json'
+      - 'reviews/cultural-edition/P9-201-stroke-normative-20261026.md'
+      - '.github/workflows/cultural-p9-stroke-review.yml'
+  push:
+    branches:
+      - feat/cultural-p9-normative-strokes-20261026
+    paths:
+      - 'scripts/cultural_p9_stroke_audit.py'
+      - 'scripts/test_cultural_p9_stroke_audit.py'
+      - 'scripts/verify_cultural_p9_review_master.py'
+      - 'scripts/verify_cultural_fullbook.py'
+      - 'scripts/build_cultural_fullbook.py'
+      - 'data/cultural_edition/p9_201_original_stroke_crosscheck.json'
+      - 'data/cultural_edition/p9_GF0023_direct_primary_164.json'
+      - '.github/workflows/cultural-p9-stroke-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  audit-every-stroke-and-render-p9:
+    runs-on: ubuntu-latest
+    timeout-minutes: 31
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install pinned PDF inspection and native CJK rendering dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y libcairo2-dev libffi-dev pkg-config \
+            fonts-arphic-gkai00mp fonts-arphic-gbsn00lp fonts-arphic-uming fonts-dejavu-core
+          python -m pip install \
+            'PyMuPDF==1.26.7' 'reportlab==4.4.9' \
+            'Pillow==12.3.0' 'numpy==2.3.5' 'svglib==1.6.0'
+      - name: Fail-closed negative tests for 201 identities, 1045 source clips, 83 generic pen names
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-p9
+          python scripts/test_cultural_p9_stroke_audit.py \
+            2>&1 | tee build/cultural-p9/stroke-order-source-negative-tests.txt
+          python scripts/cultural_p9_stroke_audit.py             --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf             --manifest deliverables/manifest.json             --output build/cultural-p9/full-201-1045-normative-scope-and-stroke-review.json
+          python scripts/cultural_p9_primary_gf0023_audit.py             --output build/cultural-p9/GF0023-primary-164-code-evidence-review.json
+      - name: Generate 260-page P9 normatively unapproved stroke review mother PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_cultural_fullbook.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --strict-pinyin-review --strict-stroke-review \
+            --output build/cultural-p9/zitie-201-P9-normative-stroke-review-UNREVIEWED.pdf \
+            --proof build/cultural-p9/201-main-1045-stroke-full-page-provenance.json
+      - name: Independent P9/P8 1045 original vector pixels, all stroke name placeholders safely masked
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/verify_cultural_p9_review_master.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --pdf build/cultural-p9/zitie-201-P9-normative-stroke-review-UNREVIEWED.pdf \
+            --proof build/cultural-p9/201-main-1045-stroke-full-page-provenance.json \
+            --output build/cultural-p9/P9-201-source-and-normative-review-qa.json
+      - name: Render each physical page and 21 batch review contact sheets
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          from PIL import Image,ImageDraw
+          from collections import defaultdict
+          import json,fitz
+          root=Path('build/cultural-p9')
+          info=json.loads((root/'201-main-1045-stroke-full-page-provenance.json').read_text())
+          batches=defaultdict(list)
+          for rec in info['page_map']:
+              batches[rec['batch_id']].append(rec['preview_pdf_page'])
+          target=root/'all-P9-page-previews';target.mkdir(exist_ok=True)
+          thumbs=root/'P9-21-batch-review-overviews';thumbs.mkdir(exist_ok=True)
+          with fitz.open(root/'zitie-201-P9-normative-stroke-review-UNREVIEWED.pdf') as book:
+              assert len(book)==260
+              for page_index,page in enumerate(book,1):
+                  pix=page.get_pixmap(matrix=fitz.Matrix(.85,.85),alpha=False)
+                  image=Image.frombytes('RGB',(pix.width,pix.height),pix.samples)
+                  assert image.getbbox() is not None
+                  image.save(target/f'page-{page_index:03d}.jpg',quality=80,optimize=True)
+              for key,pages in batches.items():
+                  cw,ch=210,298;gap=12;ncol=4
+                  h=(len(pages)+ncol-1)//ncol
+                  sheet=Image.new('RGB',(gap+ncol*(cw+gap),gap+h*(ch+34)),'#f4f1ed')
+                  paint=ImageDraw.Draw(sheet)
+                  for j,num in enumerate(pages):
+                      with Image.open(target/f'page-{num:03d}.jpg') as source:
+                          image=source.resize((cw,ch),Image.Resampling.BICUBIC)
+                      x=gap+j%ncol*(cw+gap);y=gap+j//ncol*(ch+34)
+                      sheet.paste(image,(x,y))
+                      paint.text((x,y+ch+4),f'{key} source normative study - PDF {num}',fill='#303030')
+                  sheet.save(thumbs/f'{key}-all-stroke-issues.png',optimize=True)
+          assert len(list(target.glob('page-*.jpg')))==260
+          assert len(list(thumbs.glob('B*.png')))==21
+          print('PASS all 260 PDF page previews and 21 batch normative stroke review sheets')
+          PY
+      - name: Deterministic rebuild, source 299-page PDF immutable, no release approval
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-p9-repeat
+          python scripts/build_cultural_fullbook.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --strict-pinyin-review --strict-stroke-review \
+            --output build/cultural-p9-repeat/identical.pdf \
+            --proof build/cultural-p9-repeat/identical.json
+          cmp build/cultural-p9/zitie-201-P9-normative-stroke-review-UNREVIEWED.pdf \
+              build/cultural-p9-repeat/identical.pdf
+          python - <<'PY'
+          import hashlib,json
+          from pathlib import Path
+          root=Path('build/cultural-p9')
+          qa=json.loads((root/'P9-201-source-and-normative-review-qa.json').read_text())
+          assert qa['result']=='PASS_P9_201_STROKE_SOURCE_PAGES_AND_83_PLACEHOLDER_PEN_NAMES_QUARANTINED'
+          assert qa['source_strokes_from_immutable_v051_pixel_compared']==1045
+          assert qa['GF0023_direct_164_UCS_numeric_rows']==164
+          assert qa['GF0023_primary_and_secondary_code_agreements']==164
+          assert qa['strokes_exactly_confirmed_by_direct_official_row_and_human_second_review']==0
+          official=Path('deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf')
+          assert hashlib.sha256(official.read_bytes()).hexdigest()=='7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90'
+          print('PASS P9 no normative approval claims and immutable released original source')
+          PY
+      - name: Append only approved ENGINEERING review draft, not a formal Chinese character norm
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feat/cultural-p9-normative-strokes-20261026'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,os,shutil
+          from pathlib import Path
+          import fitz
+          src=Path('build/cultural-p9')
+          dst=Path('deliverables/drafts/cultural-v0.9-stroke-review')
+          dst.mkdir(parents=True,exist_ok=True)
+          pdf=src/'zitie-201-P9-normative-stroke-review-UNREVIEWED.pdf'
+          qa=json.loads((src/'P9-201-source-and-normative-review-qa.json').read_text())
+          proof=json.loads((src/'201-main-1045-stroke-full-page-provenance.json').read_text())
+          assert qa['result']=='PASS_P9_201_STROKE_SOURCE_PAGES_AND_83_PLACEHOLDER_PEN_NAMES_QUARANTINED'
+          assert (qa['source_main_glyphs'],qa['source_strokes_from_immutable_v051_pixel_compared'],
+                  qa['generic_stroke_labels_masked_but_not_auto_corrected'])==(201,1045,83)
+          manifest=Path('deliverables/manifest.json')
+          previous=manifest.read_text(encoding='utf-8')
+          doc=json.loads(previous)
+          dest=dst/pdf.name
+          assert not dest.exists() and all(r['path']!=dest.as_posix() for r in doc['artifacts'])
+          digest=hashlib.sha256(pdf.read_bytes()).hexdigest()
+          assert digest==qa['pdf_sha256']==proof['output_pdf_sha256']
+          with fitz.open(pdf) as book:assert len(book)==260
+          shutil.copyfile(pdf,dest)
+          for file in ('P9-201-source-and-normative-review-qa.json',
+                       'full-201-1045-normative-scope-and-stroke-review.json',
+                       'GF0023-primary-164-code-evidence-review.json',
+                       '201-main-1045-stroke-full-page-provenance.json'):
+              shutil.copyfile(src/file,dst/file)
+          doc['artifacts'].append({
+            'path':dest.as_posix(),
+            'title':'文化识字版P9规范笔顺复核母稿：201字1045源笔顺、83处笔名待核',
+            'version':'cultural-v0.9-stroke-review-draft',
+            'status':'draft',
+            'batch':'P9 201 main glyphs, 1045 original stroke diagrams',
+            'pages':260,'bytes':dest.stat().st_size,'sha256':digest,
+            'source_commit':os.environ['GITHUB_SHA'],
+            'provenance_kind':'source_locked_vector_layout_derivative',
+            'source_pdf':'deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf',
+            'source_pdf_sha256':'7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90',
+            'review_record':'reviews/cultural-edition/P9-201-stroke-normative-20261026.md',
+            'release_eligible':False,
+            'editorial_review_state':'normative_Gf0023_reference_pending_name_geometry_human_double_review'})
+          assert doc['artifacts'][:-1]==json.loads(previous)['artifacts']
+          manifest.write_text(json.dumps(doc,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('PASS Append-only P9 engineering draft',digest)
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add deliverables/manifest.json deliverables/drafts/cultural-v0.9-stroke-review/
+          git diff --cached --quiet && { echo 'No new P9 draft'; exit 1; }
+          git commit -m "build(P9): archive all-201 safe stroke normative review PDF as unapproved draft"
+          for attempt in 1 2 3; do
+            git fetch origin feat/cultural-p9-normative-strokes-20261026
+            git rebase origin/feat/cultural-p9-normative-strokes-20261026
+            if git push origin HEAD:feat/cultural-p9-normative-strokes-20261026; then exit 0; fi
+          done
+          exit 1
+      - name: Upload complete 260-page stroke review book and 21 batches of audit visuals
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: P9-201-1045-stroke-normative-review-UNAPPROVED
+          path: build/cultural-p9/
+          retention-days: 14
+          if-no-files-found: warn
