@@ -28,6 +28,7 @@ from build_cultural_sample import fonts, original_specimen
 from cultural_fullbook_model import make_plan, CAPACITY_FIRST, CAPACITY_MORE, ROOT, SHA
 from cultural_p3_artwork import read_registry, paint_scene
 from cultural_p45_asset_pack import checked_assets, paint as paint_cultural_scene
+from cultural_p9_stroke_audit import audit_registry as audit_P9, load as read_P9, REGISTRY as P9_REGISTRY
 from cultural_source_audit import audit
 
 MM=72.0/25.4
@@ -158,12 +159,12 @@ class PageArtist:
         self.label(193,290,f"{page}  ·  禁止作为正式教材发行",
                    6.9,"Song",RED,"right")
 
-def base_cover(a:PageArtist,plan,strict_review=False):
+def base_cover(a:PageArtist,plan,strict_review=False,strict_stroke_review=False):
     a.page_border(1,"循序渐进 · 文化识字版 P4.2")
     a.label(27,44,"循 序 渐 进",16,"Song",GRAY)
     a.line(26,52,185,52,PALE,.42)
     a.label(26,83,"文化识字",34,"Kai",RED)
-    a.label(26,104,"审音校对母稿" if strict_review else "全量工程稿",28,"Kai",INK)
+    a.label(26,104,"笔顺规范校对母稿" if strict_stroke_review else ("审音校对母稿" if strict_review else "全量工程稿"),24 if strict_stroke_review else 28,"Kai",INK)
     a.label(27,129,"以原书真笔顺为骨，以文化阅读为翼",13,"Kai",GRAY)
     a.rect(26,154,157,58,FAINT,None,3)
     a.label(35,169,"201  主字 / 主部首",15,"Kai",RED)
@@ -174,7 +175,7 @@ def base_cover(a:PageArtist,plan,strict_review=False):
     a.label(27,266,"原 v0.5.1 正式 PDF 不变；附形偏旁另行独立复核。",9.0,"Kai",GRAY)
     a.c.showPage()
 
-def instructions(a:PageArtist,plan,strict_review=False):
+def instructions(a:PageArtist,plan,strict_review=False,strict_stroke_review=False):
     a.page_border(2,"201 字全量工程版 · 阅读说明")
     a.label(20,30,"全书说明与审校边界",22,"Kai",RED)
     a.line(20,35,190,35,PALE,.45)
@@ -189,6 +190,9 @@ def instructions(a:PageArtist,plan,strict_review=False):
     if strict_review:
         blocks[1]=("02  第一轮规范审音","201个主字及812个词语/构字字例都有审音台账。无权威单项依据及独立双审前，所有旧稿拼音均暂不印刷；本稿只保留原书字形与笔顺。")
         blocks[3]=("04  第三轮插图重建","当前程序化SVG未达到成书美术标准，已从本校对母稿撤下；第二轮严格核对原笔顺，第三轮完成正式插画与整书图文验收。")
+    if strict_stroke_review:
+        blocks[0]=("01  第二轮笔顺规范审校","本书1045幅逐笔图均真实来源于旧正式PDF，但这只证明未改原笔画。83个细笔画名称缺失、1处五类编码差异和37个范围外部首必须另核。")
+        blocks[3]=("04  笔画审核边界","201字可与独立五类笔形序列对照；现代8105规范字与特殊部首分开处理。无官方源表逐字证据及人工双审，不将旧示范宣称标准笔顺。")
     y=49
     for head,desc in blocks:
         a.label(20,y,head,12,"Kai",RED)
@@ -278,8 +282,24 @@ def draw_specimen(a:PageArtist,src_doc:fitz.Document,row,strict_review=False):
                   width=mm(w),height=mm(h),mask="auto")
     return specimen_mode
 
-def draw_art_slot(a:PageArtist,row,art_assets,root,full_scenes=None,strict_review=False):
+def draw_art_slot(a:PageArtist,row,art_assets,root,full_scenes=None,strict_review=False,strict_stroke_review=False):
     e=row["manuscript"]
+    if strict_stroke_review:
+        evidence=row.get("p9_crosscheck")
+        if evidence is None:
+            raise ValueError("P9 each main character must have independent source evidence")
+        a.rect(118,51,75,56,"#FDFCF9","#DDC4C4",3)
+        a.label(123,62,"独立笔顺复核",11,"Kai",RED)
+        a.label(123,73,f"原书{row['stroke_count']}笔 · 仅供比对",8.4,"Kai",INK)
+        if evidence["generic_numbered_stroke_names"]:
+            a.label(123,82,f"{evidence['generic_numbered_stroke_names']}笔缺少具体笔名",8.2,"Kai",RED)
+        elif evidence["differing_main_stroke_indexes"]:
+            a.label(123,82,"五类编码有待核差异",8.1,"Kai",RED)
+        else:
+            a.label(123,82,"五类编码与独立参考一致",8.1,"Kai",GRAY)
+        a.label(123,91,"规范8105范围内·待校" if evidence["in_secondary_8105_character_list"] else "特殊部首·须另找规范",8.2,"Kai",GRAY)
+        a.label(123,102,"尚未完成权威源及独立二审",7.6,"Kai",RED)
+        return "P9_fullbook_stroke_normative_review_pending"
     if strict_review:
         a.rect(118,51,75,56,"#FDFCF9","#E5E0D9",3)
         a.label(123,72,"文化插画撤下待重绘",10.0,"Kai",GRAY)
@@ -314,19 +334,23 @@ def draw_art_slot(a:PageArtist,row,art_assets,root,full_scenes=None,strict_revie
     a.label(123,99,f"ID{row['main_id']:03d}  请勿用通用山水补位",8,"Kai",GRAY)
     return "missing_placeholder_not_an_image"
 
-def stroke_tile(a:PageArtist,step,x,y):
+def stroke_tile(a:PageArtist,step,x,y,strict_stroke_review=False):
     # ReportLab prints only a label, not the source image; a later immutable
     # PyMuPDF operation embeds the EXACT released-PDF vector Form XObject.
-    a.label(x+TILE_MM/2,y-3.0,f"{step['index']}  {step['name']}",
+    label=("笔形待核" if strict_stroke_review and step["name"].startswith("第") and step["name"].endswith("笔")
+           else step["name"])
+    a.label(x+TILE_MM/2,y-3.0,f"{step['index']}  {label}",
             8.1,"Kai",RED,"center")
     return dict(step,preview_rect_pt=[round(mm(n),5)
                           for n in (x,y,x+TILE_MM,y+TILE_MM)])
 
-def cover_page(a:PageArtist,row,page,src_doc,art_assets,root,full_scenes=None,strict_review=False):
+def cover_page(a:PageArtist,row,page,src_doc,art_assets,root,full_scenes=None,strict_review=False,strict_stroke_review=False):
     main_id=row["main_id"];e=row["manuscript"]
     a.page_border(page,f"{row['batch_id']}  ·  ID{main_id:03d}  {row['character']}  ·  原PDF p.{row['first_source_pdf_page']}")
     a.label(18,16,f"{row['batch_id']}  ·  ID{main_id:03d}  /  共{row['stroke_count']}笔",
             8,"Kai",GRAY)
+    if strict_stroke_review:
+        a.label(114,16,"笔画数、笔序与名称尚待规范审核",7.5,"Kai",RED)
     title=e["title"] if e else f"{row['character']} · 字义与文化主题待编"
     a.fitted(18,28,title,174,20,11,RED)
     a.line(18,32,192,32,PALE,.38)
@@ -336,7 +360,7 @@ def cover_page(a:PageArtist,row,page,src_doc,art_assets,root,full_scenes=None,st
     else:
         a.label(18,42,"文化阅读内容尚未编审；下方笔顺示范完整保留。",9.5,"Kai",GRAY)
     specimen_state=draw_specimen(a,src_doc,row,strict_review)
-    art_state=draw_art_slot(a,row,art_assets,root,full_scenes,strict_review)
+    art_state=draw_art_slot(a,row,art_assets,root,full_scenes,strict_review,strict_stroke_review)
     a.section(17,119,"字义 / 部义",113)
     if e:
         parts=[]
@@ -361,7 +385,7 @@ def cover_page(a:PageArtist,row,page,src_doc,art_assets,root,full_scenes=None,st
         for j,t in enumerate(lines):
             a.label(121,130+j*5.6,t,9.0,"Kai",GRAY)
     a.line(17,152,193,152,"#D6CDCD")
-    a.section(17,155,"笔顺提示",112)
+    a.section(17,155,"原PDF笔顺提示·未获规范批准" if strict_stroke_review else "笔顺提示",112)
     tips=[]
     for original_tip in row["source_tips"]:
         tips.extend(a.rows(original_tip,94,8.6,max_lines=5))
@@ -369,7 +393,7 @@ def cover_page(a:PageArtist,row,page,src_doc,art_assets,root,full_scenes=None,st
         raise ValueError("Released PDF pen-order tips cannot fit: "+row["character"])
     for i,text in enumerate(tips):
         a.label(18,165+i*4.65,text,8.6,"Kai",INK if i==0 else RED)
-    a.section(17,202,"原图逐笔示范",113)
+    a.section(17,202,"原图逐笔·待审" if strict_stroke_review else "原图逐笔示范",113)
     a.section(121,155,"相关字词 · 规范读音待核" if strict_review else "相关字词 · 拼音候选未审",193)
     terms=e["terms"] if e else []
     if terms:
@@ -404,14 +428,14 @@ def cover_page(a:PageArtist,row,page,src_doc,art_assets,root,full_scenes=None,st
     steps=row["steps"][:CAPACITY_FIRST]
     if len(steps)<=3:
         xs={1:(50,),2:(32,69),3:(17,50,83)}[len(steps)]
-        tiles=[stroke_tile(a,st,x,227) for st,x in zip(steps,xs)]
+        tiles=[stroke_tile(a,st,x,227,strict_stroke_review) for st,x in zip(steps,xs)]
     else:
-        tiles=[stroke_tile(a,st,COVER_X[i%3],215 if i<3 else 250)
+        tiles=[stroke_tile(a,st,COVER_X[i%3],215 if i<3 else 250,strict_stroke_review)
                for i,st in enumerate(steps)]
     a.c.showPage()
     return tiles,art_state,specimen_state
 
-def continuation_page(a:PageArtist,row,page,part,steps):
+def continuation_page(a:PageArtist,row,page,part,steps,strict_stroke_review=False):
     a.page_border(page,f"{row['batch_id']}  ·  ID{row['main_id']:03d}  {row['character']}  ·  笔顺续页")
     a.label(18,28,f"{row['character']} · 笔顺续页",21,"Kai",RED)
     a.line(18,33,192,33,PALE,.38)
@@ -419,17 +443,17 @@ def continuation_page(a:PageArtist,row,page,part,steps):
             f"共{row['stroke_count']}笔  /  第{part}/{row['page_parts']}页"
             f"  /  本页{steps[0]['index']}—{steps[-1]['index']}笔",10,"Kai",INK)
     a.label(18,60,"提示：依原书序号逐步完成，灰色为先前笔画，红色为当前笔画。",9.5,"Kai",GRAY)
-    a.section(18,67,"源 PDF 笔顺提示",192)
+    a.section(18,67,"原PDF笔顺提示·未获规范批准" if strict_stroke_review else "源 PDF 笔顺提示",192)
     tips=[]
     for source_tip in row["source_tips"]:
         tips.extend(a.rows(source_tip,168,8.6,max_lines=3))
     if len(tips)>4:raise ValueError("Continued source hints exceed reserved lines")
     for i,t in enumerate(tips):
         a.label(18,78+5*i,t,8.6)
-    a.section(18,96,"原书逐笔累计图（续）",192)
+    a.section(18,96,"原书逐笔累计源图（只用于规范对照）" if strict_stroke_review else "原书逐笔累计图（续）",192)
     tiles=[]
     for i,st in enumerate(steps):
-        tiles.append(stroke_tile(a,st,MORE_X[i%5],MORE_Y[i//5]))
+        tiles.append(stroke_tile(a,st,MORE_X[i%5],MORE_Y[i//5],strict_stroke_review))
     a.label(18,273,
             f"ID{row['main_id']:03d}  本页完整展示 {len(steps)} 笔，逐笔源矢量未修改。",
             8.4,"Kai",GRAY)
@@ -438,7 +462,7 @@ def continuation_page(a:PageArtist,row,page,part,steps):
 
 def render(source:Path,manifest:Path,output:Path,proof:Path,
            root:Path=ROOT,art_registry:Path|None=None,art_dir:Path|None=None,
-           strict_review=False):
+           strict_review=False,strict_stroke_review=False):
     root=Path(root)
     fonts()
     font_path=Path("/usr/share/fonts/truetype/arphic/uming.ttc")
@@ -448,6 +472,15 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
         pdfmetrics.registerFont(TTFont("CultureRare",str(font_path),subfontIndex=0))
     source_index=audit(source,manifest)
     plan=paginate(make_plan(source_index,root))
+    p9_audit=None
+    if strict_stroke_review:
+        if not strict_review:
+            raise ValueError("P9 normative review mode requires P8 suppress-unapproved-Pinyin mode")
+        p9_data=read_P9(P9_REGISTRY)
+        p9_audit=audit_P9(p9_data,source_index)
+        p9_by_id={r["main_id"]:r for r in p9_data["entries"]}
+        for row in plan["entries"]:
+            row["p9_crosscheck"]=p9_by_id[row["main_id"]]
     art=read_registry(root=root)
     if len(art)!=4:raise ValueError("Four original SVG drafts changed unexpectedly")
     if (art_registry is None)!=(art_dir is None):
@@ -455,11 +488,11 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
     full_scenes=checked_assets(art_registry,art_dir,root) if art_registry else None
     buf=io.BytesIO()
     writer=canvas.Canvas(buf,pagesize=(W,H),pageCompression=1,invariant=1)
-    writer.setTitle("循序渐进 文化识字版 P8审音校对母稿 · 非正式发行" if strict_review else "循序渐进 文化识字版 P4.5.1 · 201字图文及拼音候选工程稿 · 未审定")
+    writer.setTitle("循序渐进 P9笔顺规范审校母稿 · 1045幅原PDF笔画尚待独立权威审核" if strict_stroke_review else ("循序渐进 文化识字版 P8审音校对母稿 · 非正式发行" if strict_review else "循序渐进 文化识字版 P4.5.1 · 201字图文及拼音候选工程稿 · 未审定"))
     writer.setAuthor("netplus/zitie cultural full-book P4.2 source-locked engineering proof")
     a=PageArtist(writer)
-    base_cover(a,plan,strict_review)
-    instructions(a,plan,strict_review)
+    base_cover(a,plan,strict_review,strict_stroke_review)
+    instructions(a,plan,strict_review,strict_stroke_review)
     links=index_pages(a,plan)
     page_map=[];dest_targets=[]
     with fitz.open(source) as source_pdf:
@@ -467,7 +500,7 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
         for row in plan["entries"]:
             if row["first_preview_pdf_page"]!=page:
                 raise ValueError("Unexpected first-page number in full-book plan")
-            tiles,art_state,specimen_state=cover_page(a,row,page,source_pdf,art,root,full_scenes,strict_review)
+            tiles,art_state,specimen_state=cover_page(a,row,page,source_pdf,art,root,full_scenes,strict_review,strict_stroke_review)
             page_map.append({
                 "preview_pdf_page":page,"page_kind":"source_main_cultural_reading",
                 "main_id":row["main_id"],"character":row["character"],
@@ -477,6 +510,8 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
                 "artwork_status":art_state["art_state"] if isinstance(art_state,dict) else art_state,
                 "artwork_asset_sha256":art_state.get("asset_sha256") if isinstance(art_state,dict) else None,
                 "source_specimen_render_mode":specimen_state,
+                "P9_normative_review_status":row["p9_crosscheck"]["independent_reference_status"] if strict_stroke_review else None,
+                "P9_generic_stroke_labels":row["p9_crosscheck"]["generic_numbered_stroke_names"] if strict_stroke_review else None,
                 "source_stroke_count":row["stroke_count"],
                 "source_first_pdf_page":row["first_source_pdf_page"],
                 "printed_pinyin_from_original_source":None if strict_review else row["adopted_source_pinyin"],
@@ -491,7 +526,7 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
             for k in range(0,len(remaining),CAPACITY_MORE):
                 part=2+k//CAPACITY_MORE
                 substeps=remaining[k:k+CAPACITY_MORE]
-                tiles=continuation_page(a,row,page,part,substeps)
+                tiles=continuation_page(a,row,page,part,substeps,strict_stroke_review)
                 page_map.append({
                     "preview_pdf_page":page,"page_kind":"original_stroke_continuation",
                     "main_id":row["main_id"],"character":row["character"],
@@ -538,7 +573,7 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
                     "from":fitz.Rect(link["rect_pt"]),
                     "page":link["target_pdf_page"]-1})
             result.set_metadata({
-                "title":"文化识字版P8审音校对母稿（1013个字词读音均暂不印刷）" if strict_review else "文化识字版 P4.5.1 201字插图与拼音候选工程稿（未审定）",
+                "title":"P9笔顺规范校对母稿（原1045幅逐笔图非已审定规范）" if strict_stroke_review else ("文化识字版P8审音校对母稿（1013个字词读音均暂不印刷）" if strict_review else "文化识字版 P4.5.1 201字插图与拼音候选工程稿（未审定）"),
                 "author":"netplus/zitie",
                 "subject":"原PDF 1045笔源图溯源；文化内容待审",
                 "keywords":"201,1045,editorial draft,source locked",
@@ -577,6 +612,13 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
         "all_pronunciation_review_slots":1013,
         "actual_illustrations_printed":0 if strict_review else (201 if full_scenes else 4),
         "unreviewed_artwork_omitted":bool(strict_review),
+        "strict_P9_normative_stroke_review_mode":bool(strict_stroke_review),
+        "GF0023_direct_primary_201_rows_verified":0,
+        "P9_fine_stroke_names_generic_count":83 if strict_stroke_review else None,
+        "P9_secondary_code_consistent_glyphs":186 if strict_stroke_review else None,
+        "P9_secondary_code_discrepancy_glyphs":1 if strict_stroke_review else None,
+        "P9_beyond_8105_secondary_scope":37 if strict_stroke_review else None,
+        "P9_no_normatively_approved_stroke_sequence":bool(strict_stroke_review),
         "unreviewed_word_reading_examples":812,
         "illustration_art_approved":0,
         "word_readings_approved":0,
@@ -605,9 +647,11 @@ def main():
     cli.add_argument("--art-dir",type=Path)
     cli.add_argument("--strict-pinyin-review",action="store_true",
                      help="Hide all 201 original source Pinyin and 812 unreviewed word syllables, withdraw rough art")
+    cli.add_argument("--strict-stroke-review",action="store_true",
+                     help="Annotate all source stroke orders as UNAPPROVED; hide placeholder 第N笔 teaching names")
     o=cli.parse_args()
     render(o.source,o.manifest,o.output,o.proof,o.root,o.art_registry,o.art_dir,
-           strict_review=o.strict_pinyin_review)
+           strict_review=o.strict_pinyin_review,strict_stroke_review=o.strict_stroke_review)
 
 if __name__=="__main__":
     main()
