@@ -27,7 +27,8 @@
     "community_phrase_candidate": 251,
     "hsk_education_list_candidate": 351,
     "no_exact_lexical_evidence": 37,
-    "single_character_reference_for_component_example": 93,
+    "single_character_reference_for_component_example": 86,
+    "single_character_polyphone_not_reviewed": 7,
     "hsk_homograph_ambiguity": 8,
     "existing_unreviewed_candidate": 72
   },
@@ -2077,6 +2078,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -2776,6 +2782,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -3518,6 +3529,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -3591,6 +3607,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -3614,6 +3635,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -3637,6 +3663,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -3652,9 +3683,12 @@
       "word": "卜",
       "prior_candidate": null,
       "term_kind": "component_examples",
-      "pinyin_candidate": "bo",
-      "alternative_readings": [],
-      "source_status": "single_character_reference_for_component_example",
+      "pinyin_candidate": null,
+      "alternative_readings": [
+        "bo",
+        "bǔ"
+      ],
+      "source_status": "single_character_polyphone_not_reviewed",
       "source_evidence": [
         {
           "dataset": "kMandarin_8105_compilation",
@@ -3664,9 +3698,9 @@
       ],
       "human_review": "not_done",
       "release_approved": false,
-      "source_conflict": false,
+      "source_conflict": true,
       "printable_as_verified": false,
-      "display_policy": "show_labeled_provisional_pinyin"
+      "display_policy": "show_component_example_without_single_word_reading"
     },
     {
       "main_id": 9,
@@ -3733,6 +3767,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -3831,6 +3870,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -3954,6 +3998,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -4094,9 +4143,12 @@
       "word": "匙",
       "prior_candidate": null,
       "term_kind": "component_examples",
-      "pinyin_candidate": "shi",
-      "alternative_readings": [],
-      "source_status": "single_character_reference_for_component_example",
+      "pinyin_candidate": null,
+      "alternative_readings": [
+        "shi",
+        "chí"
+      ],
+      "source_status": "single_character_polyphone_not_reviewed",
       "source_evidence": [
         {
           "dataset": "kMandarin_8105_compilation",
@@ -4106,9 +4158,9 @@
       ],
       "human_review": "not_done",
       "release_approved": false,
-      "source_conflict": false,
+      "source_conflict": true,
       "printable_as_verified": false,
-      "display_policy": "show_labeled_provisional_pinyin"
+      "display_policy": "show_component_example_without_single_word_reading"
     },
     {
       "main_id": 15,
@@ -4238,6 +4290,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -4311,6 +4368,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -4459,6 +4521,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -4474,9 +4541,12 @@
       "word": "冠",
       "prior_candidate": null,
       "term_kind": "component_examples",
-      "pinyin_candidate": "guān",
-      "alternative_readings": [],
-      "source_status": "single_character_reference_for_component_example",
+      "pinyin_candidate": null,
+      "alternative_readings": [
+        "guān",
+        "guàn"
+      ],
+      "source_status": "single_character_polyphone_not_reviewed",
       "source_evidence": [
         {
           "dataset": "kMandarin_8105_compilation",
@@ -4486,9 +4556,9 @@
       ],
       "human_review": "not_done",
       "release_approved": false,
-      "source_conflict": false,
+      "source_conflict": true,
       "printable_as_verified": false,
-      "display_policy": "show_labeled_provisional_pinyin"
+      "display_policy": "show_component_example_without_single_word_reading"
     },
     {
       "main_id": 19,
@@ -4505,6 +4575,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -4603,6 +4678,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -4701,6 +4781,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -4724,6 +4809,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -4872,6 +4962,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -5065,6 +5160,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -5189,6 +5289,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -5437,6 +5542,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -5460,6 +5570,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -5558,6 +5673,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -5657,6 +5777,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -5680,6 +5805,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -5753,6 +5883,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -5801,6 +5936,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -5824,6 +5964,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -5847,6 +5992,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -5945,6 +6095,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -5968,6 +6123,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -6217,6 +6377,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -6240,6 +6405,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -6288,6 +6458,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -7327,6 +7502,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -7400,6 +7580,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -7423,6 +7608,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -7446,6 +7636,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -7469,6 +7664,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -7517,6 +7717,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -7540,6 +7745,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -9261,6 +9471,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -9284,6 +9499,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -9307,6 +9527,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -9372,6 +9597,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -9395,6 +9625,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -9698,6 +9933,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -9829,6 +10069,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -9852,6 +10097,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -9875,6 +10125,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -10017,6 +10272,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -10057,6 +10317,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -10169,6 +10434,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -10192,6 +10462,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -10207,9 +10482,12 @@
       "word": "耙",
       "prior_candidate": null,
       "term_kind": "component_examples",
-      "pinyin_candidate": "bà",
-      "alternative_readings": [],
-      "source_status": "single_character_reference_for_component_example",
+      "pinyin_candidate": null,
+      "alternative_readings": [
+        "bà",
+        "pá"
+      ],
+      "source_status": "single_character_polyphone_not_reviewed",
       "source_evidence": [
         {
           "dataset": "kMandarin_8105_compilation",
@@ -10219,9 +10497,9 @@
       ],
       "human_review": "not_done",
       "release_approved": false,
-      "source_conflict": false,
+      "source_conflict": true,
       "printable_as_verified": false,
-      "display_policy": "show_labeled_provisional_pinyin"
+      "display_policy": "show_component_example_without_single_word_reading"
     },
     {
       "main_id": 122,
@@ -10596,6 +10874,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -10611,9 +10894,12 @@
       "word": "贾",
       "prior_candidate": null,
       "term_kind": "component_examples",
-      "pinyin_candidate": "jiǎ",
-      "alternative_readings": [],
-      "source_status": "single_character_reference_for_component_example",
+      "pinyin_candidate": null,
+      "alternative_readings": [
+        "jiǎ",
+        "gǔ"
+      ],
+      "source_status": "single_character_polyphone_not_reviewed",
       "source_evidence": [
         {
           "dataset": "kMandarin_8105_compilation",
@@ -10623,9 +10909,9 @@
       ],
       "human_review": "not_done",
       "release_approved": false,
-      "source_conflict": false,
+      "source_conflict": true,
       "printable_as_verified": false,
-      "display_policy": "show_labeled_provisional_pinyin"
+      "display_policy": "show_component_example_without_single_word_reading"
     },
     {
       "main_id": 127,
@@ -10941,6 +11227,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -10989,6 +11280,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -12331,6 +12627,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -12354,6 +12655,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -12377,6 +12683,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -12613,6 +12924,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -12661,6 +12977,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -13088,6 +13409,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -13224,6 +13550,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -13273,6 +13604,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -13296,6 +13632,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -13831,6 +14172,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -13854,6 +14200,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -13996,6 +14347,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -14019,6 +14375,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -14042,6 +14403,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -14563,6 +14929,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -14586,6 +14957,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -14609,6 +14985,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -14912,6 +15293,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -14935,6 +15321,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -14958,6 +15349,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -14981,6 +15377,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -15021,9 +15422,13 @@
       "word": "雀",
       "prior_candidate": null,
       "term_kind": "component_examples",
-      "pinyin_candidate": "què",
-      "alternative_readings": [],
-      "source_status": "single_character_reference_for_component_example",
+      "pinyin_candidate": null,
+      "alternative_readings": [
+        "què",
+        "qiāo",
+        "qiǎo"
+      ],
+      "source_status": "single_character_polyphone_not_reviewed",
       "source_evidence": [
         {
           "dataset": "kMandarin_8105_compilation",
@@ -15033,9 +15438,9 @@
       ],
       "human_review": "not_done",
       "release_approved": false,
-      "source_conflict": false,
+      "source_conflict": true,
       "printable_as_verified": false,
-      "display_policy": "show_labeled_provisional_pinyin"
+      "display_policy": "show_component_example_without_single_word_reading"
     },
     {
       "main_id": 174,
@@ -15052,6 +15457,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -15075,6 +15485,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -15098,6 +15513,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -15146,6 +15566,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -16304,6 +16729,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -16327,6 +16757,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -16350,6 +16785,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -16373,6 +16813,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -16388,9 +16833,12 @@
       "word": "鬲",
       "prior_candidate": null,
       "term_kind": "component_examples",
-      "pinyin_candidate": "gé",
-      "alternative_readings": [],
-      "source_status": "single_character_reference_for_component_example",
+      "pinyin_candidate": null,
+      "alternative_readings": [
+        "gé",
+        "lì"
+      ],
+      "source_status": "single_character_polyphone_not_reviewed",
       "source_evidence": [
         {
           "dataset": "kMandarin_8105_compilation",
@@ -16400,9 +16848,9 @@
       ],
       "human_review": "not_done",
       "release_approved": false,
-      "source_conflict": false,
+      "source_conflict": true,
       "printable_as_verified": false,
-      "display_policy": "show_labeled_provisional_pinyin"
+      "display_policy": "show_component_example_without_single_word_reading"
     },
     {
       "main_id": 189,
@@ -16469,6 +16917,11 @@
           "dataset": "kMandarin_8105_compilation",
           "uri": "https://github.com/mozillazg/pinyin-data",
           "note": "Only a single-character customary reading; does not establish usage as independent word"
+        },
+        {
+          "dataset": "kTGHZ2013_check",
+          "uri": "https://github.com/mozillazg/pinyin-data",
+          "comparison": "single_reading_agrees"
         }
       ],
       "human_review": "not_done",
@@ -18934,5 +19387,6 @@
       "printable_as_verified": false,
       "display_policy": "show_labeled_provisional_pinyin"
     }
-  ]
+  ],
+  "addendum": "Cross-check against multiple-reading kTGHZ2013 to block ambiguous single-character phonetics (e.g. 卜, 匙)."
 }
