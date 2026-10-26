@@ -1,0 +1,3763 @@
+{
+  "schema_version": 1,
+  "status": "197_REAL_SVG_DRAFTS_WITH_SOURCE_LINKED_THEMES_NOT_RELEASED",
+  "source_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+  "total_glyphs": 201,
+  "existing_svg_artwork_not_replaced": 4,
+  "generated_unique_svg_scenes": 197,
+  "generated_png_raster_assets": 0,
+  "fake_teaching_strokes": 0,
+  "editorial_approved": 0,
+  "automated_svg_generator_version": "p45-vector-scene-1",
+  "motif_use_counts": {
+    "arrow": 4,
+    "bamboo": 9,
+    "bell": 13,
+    "bird": 9,
+    "boat": 2,
+    "book": 33,
+    "bridge": 2,
+    "brush": 21,
+    "cat": 2,
+    "clock": 3,
+    "cloth": 13,
+    "cloud": 22,
+    "cow": 2,
+    "deer": 1,
+    "dog": 1,
+    "door": 13,
+    "ear": 1,
+    "eye": 10,
+    "fire": 1,
+    "fish": 1,
+    "flower": 11,
+    "foot": 11,
+    "fruit": 5,
+    "grain": 9,
+    "grass": 12,
+    "hand": 16,
+    "heart": 9,
+    "horse": 1,
+    "insect": 1,
+    "lantern": 8,
+    "moon": 7,
+    "mountain": 15,
+    "mouse": 1,
+    "person": 30,
+    "pot": 24,
+    "puzzle": 19,
+    "rain": 12,
+    "road": 26,
+    "scroll": 6,
+    "sheep": 1,
+    "sign": 6,
+    "snow": 3,
+    "star": 3,
+    "stone": 14,
+    "stream": 14,
+    "sun": 8,
+    "tea": 3,
+    "tools": 10,
+    "tooth": 2,
+    "tree": 43,
+    "turtle": 1,
+    "umbrella": 1,
+    "wheel": 12,
+    "window": 34
+  },
+  "entries": [
+    {
+      "main_id": 1,
+      "character": "一",
+      "theme_key": "horizon-first-light",
+      "filename": "ID001-horizon-first-light.svg",
+      "art_asset_id": "p45-scene-001",
+      "source_illustration_brief": "晨光与一条延伸到天边的地平线",
+      "motifs": [
+        "sun",
+        "brush"
+      ],
+      "sha256": "2420a68590d36849cd1e03bd52835f81553486cc0c84f5925f6de42d90994f13",
+      "bytes": 2510,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 2,
+      "character": "丨",
+      "theme_key": "full-2-scene",
+      "filename": "ID002-full-2-scene.svg",
+      "art_asset_id": "p45-scene-002",
+      "source_illustration_brief": "挺直的细竹与一笔竖线并置",
+      "motifs": [
+        "bamboo",
+        "brush",
+        "stream"
+      ],
+      "sha256": "0912837e9cd3db7abe871a0dac6c95f782a67dd77cdace37aaa8836af194b084",
+      "bytes": 2945,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 3,
+      "character": "丿",
+      "theme_key": "full-3-scene",
+      "filename": "ID003-full-3-scene.svg",
+      "art_asset_id": "p45-scene-003",
+      "source_illustration_brief": "春燕掠过纸面的斜向动态",
+      "motifs": [
+        "bird",
+        "cloud"
+      ],
+      "sha256": "2afbe20f3c1c0fa00427b60dd5dffc15cebfbcc95ba10a07cd7eb0657884fa0b",
+      "bytes": 2532,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 4,
+      "character": "丶",
+      "theme_key": "full-4-scene",
+      "filename": "ID004-full-4-scene.svg",
+      "art_asset_id": "p45-scene-004",
+      "source_illustration_brief": "尖叶上的晨露与点画留白",
+      "motifs": [
+        "rain",
+        "cloud",
+        "grass"
+      ],
+      "sha256": "4e5533922eba32406414ae4cfcbdebf6af05fdcca60099391862e7846a99fe1b",
+      "bytes": 2825,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 5,
+      "character": "乛",
+      "theme_key": "full-5-scene",
+      "filename": "ID005-full-5-scene.svg",
+      "art_asset_id": "p45-scene-005",
+      "source_illustration_brief": "竹林折径与柔和转角",
+      "motifs": [
+        "tree",
+        "bamboo",
+        "road"
+      ],
+      "sha256": "38f2c56491d448bf2b2c63370ae7ddd040265e9139e5a0d3219780ca14362d1b",
+      "bytes": 2840,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 6,
+      "character": "十",
+      "theme_key": "ten-fingers-counting",
+      "filename": "ID006-ten-fingers-counting.svg",
+      "art_asset_id": "p45-scene-006",
+      "source_illustration_brief": "两只手的十根指尖与十颗木珠",
+      "motifs": [
+        "tree",
+        "hand",
+        "moon"
+      ],
+      "sha256": "240bc2de5a85e7b01f406735b74e9d5df15be321353c4f7d37a013bf50fae93e",
+      "bytes": 2849,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 7,
+      "character": "厂",
+      "theme_key": "full-7-scene",
+      "filename": "ID007-full-7-scene.svg",
+      "art_asset_id": "p45-scene-007",
+      "source_illustration_brief": "崖壁轮廓旁并列的检字示例",
+      "motifs": [
+        "mountain",
+        "wheel",
+        "puzzle"
+      ],
+      "sha256": "b3106adcd265526c13a18a355139166c766a665d64358d35fafcbb78f0c88634",
+      "bytes": 2828,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 8,
+      "character": "匚",
+      "theme_key": "full-8-scene",
+      "filename": "ID008-full-8-scene.svg",
+      "art_asset_id": "p45-scene-008",
+      "source_illustration_brief": "一侧开口的木匣和内置小工具",
+      "motifs": [
+        "tree",
+        "tools"
+      ],
+      "sha256": "8a0fb97436e4c7e6059a40d70eb1359c4fb2fede28320727de6e954a46430eb7",
+      "bytes": 2518,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 9,
+      "character": "卜",
+      "theme_key": "full-9-scene",
+      "filename": "ID009-full-9-scene.svg",
+      "art_asset_id": "p45-scene-009",
+      "source_illustration_brief": "宣纸上的点与竖笔顺练习",
+      "motifs": [
+        "book",
+        "brush",
+        "puzzle"
+      ],
+      "sha256": "a0b13ad64c9a05f30b61b6a2da1ca36f3984938ade540c1eb0b0f7fe9988d19d",
+      "bytes": 2854,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 10,
+      "character": "冂",
+      "theme_key": "full-10-scene",
+      "filename": "ID010-full-10-scene.svg",
+      "art_asset_id": "p45-scene-010",
+      "source_illustration_brief": "三边围合的窗洞与远处天空",
+      "motifs": [
+        "cloud",
+        "window"
+      ],
+      "sha256": "3a598e0ac1a348fff5881247157a6932d6b6bb9f7b7ffdcc11a658c7f80a94d3",
+      "bytes": 2446,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 11,
+      "character": "八",
+      "theme_key": "eight-point-window",
+      "filename": "ID011-eight-point-window.svg",
+      "art_asset_id": "p45-scene-011",
+      "source_illustration_brief": "八角窗棂向八个方向投下光影",
+      "motifs": [
+        "window",
+        "heart",
+        "bird"
+      ],
+      "sha256": "ac8896fe2f04b2366f1694d79a294e168b25e85c04a46aa235f1d78129e67af9",
+      "bytes": 2758,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 12,
+      "character": "人",
+      "theme_key": "street-lantern-homecoming",
+      "filename": "ID012-street-lantern-homecoming.svg",
+      "art_asset_id": "p45-scene-012",
+      "source_illustration_brief": "黄昏巷口提灯而行的人与归家门扉",
+      "motifs": [
+        "door",
+        "window",
+        "lantern"
+      ],
+      "sha256": "68c4ff49f6745fd884420a26bb41ab27f1335a77c91365605ac5ca76b3aa0c12",
+      "bytes": 2787,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 13,
+      "character": "勹",
+      "theme_key": "full-13-scene",
+      "filename": "ID013-full-13-scene.svg",
+      "art_asset_id": "p45-scene-013",
+      "source_illustration_brief": "卷叶环绕的一滴露珠",
+      "motifs": [
+        "rain",
+        "sun",
+        "tree"
+      ],
+      "sha256": "f8c3e67b99d4ff4f3268717cb47fcba0f9b42ad6c399f28e7905c233b9b19886",
+      "bytes": 2782,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 14,
+      "character": "儿",
+      "theme_key": "full-14-scene",
+      "filename": "ID014-full-14-scene.svg",
+      "art_asset_id": "p45-scene-014",
+      "source_illustration_brief": "台面上展开的两支木尺",
+      "motifs": [
+        "tree",
+        "tools",
+        "brush"
+      ],
+      "sha256": "88301166530a1b993e5c202d7789b6e0875a9cf03350fca2731a40f1026248b0",
+      "bytes": 2834,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 15,
+      "character": "匕",
+      "theme_key": "full-15-scene",
+      "filename": "ID015-full-15-scene.svg",
+      "art_asset_id": "p45-scene-015",
+      "source_illustration_brief": "木盘中的小匙与细纹",
+      "motifs": [
+        "tree",
+        "pot",
+        "moon"
+      ],
+      "sha256": "f03c7b1b4b45f3b1e8a3aeed0d28a337156668d3c6cabadc6b98792ebfbe58ea",
+      "bytes": 2833,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 16,
+      "character": "几",
+      "theme_key": "full-16-scene",
+      "filename": "ID016-full-16-scene.svg",
+      "art_asset_id": "p45-scene-016",
+      "source_illustration_brief": "临窗的小茶几与摊开的书",
+      "motifs": [
+        "book",
+        "window",
+        "tea"
+      ],
+      "sha256": "ea05f34f58a0718e06b7cce0bc13f98f8aca2b1af108dbd634ef4d127eda74db",
+      "bytes": 2804,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 17,
+      "character": "亠",
+      "theme_key": "full-17-scene",
+      "filename": "ID017-full-17-scene.svg",
+      "art_asset_id": "p45-scene-017",
+      "source_illustration_brief": "墨色点横上方的书页局部",
+      "motifs": [
+        "book",
+        "brush",
+        "puzzle"
+      ],
+      "sha256": "0f771f02eb3b2099e539b50c5fbfe7485def9e79b171f3e3505e59e7541e518c",
+      "bytes": 2855,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 18,
+      "character": "冫",
+      "theme_key": "full-18-scene",
+      "filename": "ID018-full-18-scene.svg",
+      "art_asset_id": "p45-scene-018",
+      "source_illustration_brief": "结冰的窗花与一缕暖光",
+      "motifs": [
+        "snow",
+        "flower",
+        "window"
+      ],
+      "sha256": "c7126814ba408d021686deb18ed6a1b194778cd423b62f99e3ea3ff4674fd4a8",
+      "bytes": 2922,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 19,
+      "character": "冖",
+      "theme_key": "full-19-scene",
+      "filename": "ID019-full-19-scene.svg",
+      "art_asset_id": "p45-scene-019",
+      "source_illustration_brief": "信封上方一片轻薄的盖布",
+      "motifs": [
+        "cloth",
+        "window",
+        "person"
+      ],
+      "sha256": "00b534c3c2060fcf714507b37f08a1b6a421af6610544b179071b3670b50b96c",
+      "bytes": 2742,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 20,
+      "character": "凵",
+      "theme_key": "full-20-scene",
+      "filename": "ID020-full-20-scene.svg",
+      "art_asset_id": "p45-scene-020",
+      "source_illustration_brief": "口朝上的竹篮与一只圆果",
+      "motifs": [
+        "bamboo",
+        "fruit",
+        "tree"
+      ],
+      "sha256": "7b6f457bb8fd614e9daeb7c7036c0aac6352b3652f67a7f164acddbbf7c25f7e",
+      "bytes": 2866,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 21,
+      "character": "卩",
+      "theme_key": "full-21-scene",
+      "filename": "ID021-full-21-scene.svg",
+      "art_asset_id": "p45-scene-021",
+      "source_illustration_brief": "古印边缘与纸上淡淡的印痕",
+      "motifs": [
+        "book",
+        "person"
+      ],
+      "sha256": "7c0418f44fb43226f297acdba737dcc50d73e85978c1a5c015c0eb554a00739e",
+      "bytes": 2502,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 22,
+      "character": "刀",
+      "theme_key": "full-22-scene",
+      "filename": "ID022-full-22-scene.svg",
+      "art_asset_id": "p45-scene-022",
+      "source_illustration_brief": "木工刀、木尺与削下的卷屑",
+      "motifs": [
+        "tree",
+        "tools",
+        "person"
+      ],
+      "sha256": "309e4614a238b2f4a412e22f9fd6cdfc3ed93a1021f2f47fd5f801c222024b23",
+      "bytes": 2816,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 23,
+      "character": "力",
+      "theme_key": "full-23-scene",
+      "filename": "ID023-full-23-scene.svg",
+      "art_asset_id": "p45-scene-023",
+      "source_illustration_brief": "孩子推开的木门与延展的光束",
+      "motifs": [
+        "tree",
+        "door",
+        "person"
+      ],
+      "sha256": "2537eac30e660272803c8d48b5130d61974341660ce321051957a4b489cc7fa3",
+      "bytes": 2799,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 24,
+      "character": "又",
+      "theme_key": "full-24-scene",
+      "filename": "ID024-full-24-scene.svg",
+      "art_asset_id": "p45-scene-024",
+      "source_illustration_brief": "翻开的日记与新生的一片叶",
+      "motifs": [
+        "book",
+        "brush",
+        "flower"
+      ],
+      "sha256": "37d4018aebd0abf55d7568a34b247aa88e9562fe4f58a89e9e8f285f3f2be145",
+      "bytes": 3021,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 25,
+      "character": "厶",
+      "theme_key": "full-25-scene",
+      "filename": "ID025-full-25-scene.svg",
+      "art_asset_id": "p45-scene-025",
+      "source_illustration_brief": "一根细绳打出的回环",
+      "motifs": [
+        "tree",
+        "cloth",
+        "brush"
+      ],
+      "sha256": "9b37b448abe7df5a307293f54caf68c0e92ab2111f6bad5eb6519e1275bdae71",
+      "bytes": 2814,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 26,
+      "character": "廴",
+      "theme_key": "full-26-scene",
+      "filename": "ID026-full-26-scene.svg",
+      "art_asset_id": "p45-scene-026",
+      "source_illustration_brief": "向远处伸展的阶道弯线",
+      "motifs": [
+        "door",
+        "road",
+        "stone"
+      ],
+      "sha256": "b0bfb331b137cdb4aebf93ccf68c7dc9a6c5c603291f50dbea26c1a5d11dbb18",
+      "bytes": 2743,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 27,
+      "character": "干",
+      "theme_key": "full-27-scene",
+      "filename": "ID027-full-27-scene.svg",
+      "art_asset_id": "p45-scene-027",
+      "source_illustration_brief": "古树树干的年轮与横生树枝",
+      "motifs": [
+        "tree",
+        "wheel",
+        "road"
+      ],
+      "sha256": "92808936e54b999a866fd201c05d7e5748d01675a65ffbf1c5676ef44c7442e0",
+      "bytes": 2862,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 28,
+      "character": "工",
+      "theme_key": "craftsman-wood-rule",
+      "filename": "ID028-craftsman-wood-rule.svg",
+      "art_asset_id": "p45-scene-028",
+      "source_illustration_brief": "匠人的木尺、木刨和卷曲刨花",
+      "motifs": [
+        "tree",
+        "flower",
+        "tools"
+      ],
+      "sha256": "cdb5724d2d85370ad1ca9c306aacac39ef3ae304401279f90c3cf40b3337baac",
+      "bytes": 3019,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 29,
+      "character": "土",
+      "theme_key": "potter-wheel-clay",
+      "filename": "ID029-potter-wheel-clay.svg",
+      "art_asset_id": "p45-scene-029",
+      "source_illustration_brief": "旋转陶轮与湿润陶泥的成形过程",
+      "motifs": [
+        "pot",
+        "wheel",
+        "hand"
+      ],
+      "sha256": "73c9827de1e3e25c864bee5942d857a7f89a7718035c9e093f1068179d469919",
+      "bytes": 2903,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 30,
+      "character": "艹",
+      "theme_key": "full-30-scene",
+      "filename": "ID030-full-30-scene.svg",
+      "art_asset_id": "p45-scene-030",
+      "source_illustration_brief": "雨后草芽、茶叶与露珠",
+      "motifs": [
+        "stream",
+        "rain",
+        "grass"
+      ],
+      "sha256": "6204b7d9724134863d88ea75958f8d982434a84fb62017c54dc9d97f6bbb4735",
+      "bytes": 2902,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 31,
+      "character": "寸",
+      "theme_key": "full-31-scene",
+      "filename": "ID031-full-31-scene.svg",
+      "art_asset_id": "p45-scene-031",
+      "source_illustration_brief": "木尺上精细刻度与一段绳线",
+      "motifs": [
+        "tree",
+        "clock",
+        "tools"
+      ],
+      "sha256": "0062562d75eb5e6251886157901be91af70d8c64775fb22fe3f6140ef29f057c",
+      "bytes": 2808,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 32,
+      "character": "廾",
+      "theme_key": "full-32-scene",
+      "filename": "ID032-full-32-scene.svg",
+      "art_asset_id": "p45-scene-032",
+      "source_illustration_brief": "双手托起木盘的剪影",
+      "motifs": [
+        "tree",
+        "pot",
+        "hand"
+      ],
+      "sha256": "5fa265134cf0cf0d57f4bef549129a69073e2302b8848f14d3b825bf56a66156",
+      "bytes": 2831,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 33,
+      "character": "大",
+      "theme_key": "open-arms-sky",
+      "filename": "ID033-open-arms-sky.svg",
+      "art_asset_id": "p45-scene-033",
+      "source_illustration_brief": "开阔广场上张开双臂的背影与长空",
+      "motifs": [
+        "cloud",
+        "eye"
+      ],
+      "sha256": "4e9b2417eab2743eefaef33d240830fb5f55c7c5d045c7575901bcdd7be23fa0",
+      "bytes": 2483,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 34,
+      "character": "尢",
+      "theme_key": "full-34-scene",
+      "filename": "ID034-full-34-scene.svg",
+      "art_asset_id": "p45-scene-034",
+      "source_illustration_brief": "几张字形描摹卡与辨形放大镜",
+      "motifs": [
+        "book",
+        "eye",
+        "puzzle"
+      ],
+      "sha256": "52f24cd88269eda071e5c4b427083e4fe22aa751c4c7c3c192adf4b1d1e83be6",
+      "bytes": 2839,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 35,
+      "character": "弋",
+      "theme_key": "full-35-scene",
+      "filename": "ID035-full-35-scene.svg",
+      "art_asset_id": "p45-scene-035",
+      "source_illustration_brief": "石案拓片与倾斜笔线",
+      "motifs": [
+        "scroll",
+        "brush",
+        "stone"
+      ],
+      "sha256": "641fedf01b4538648ca11f2a5277afc847a3cd2d5800946df3f0114fbe9ee448",
+      "bytes": 2819,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 36,
+      "character": "小",
+      "theme_key": "full-36-scene",
+      "filename": "ID036-full-36-scene.svg",
+      "art_asset_id": "p45-scene-036",
+      "source_illustration_brief": "手心里的圆石与细微纹理",
+      "motifs": [
+        "hand",
+        "heart",
+        "stone"
+      ],
+      "sha256": "fa9c0d1ec26c20b6217d7ac5f98752d46992fd817f2a53cece9c87a9b8444aef",
+      "bytes": 2691,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 37,
+      "character": "口",
+      "theme_key": "courtyard-greeting",
+      "filename": "ID037-courtyard-greeting.svg",
+      "art_asset_id": "p45-scene-037",
+      "source_illustration_brief": "晨起院门一声问候与檐下风铃",
+      "motifs": [
+        "door",
+        "window",
+        "bell"
+      ],
+      "sha256": "734c75074f5c12c10d3ee9a6b317dc96714b303c4d5569c5fc5b5312e99c6bf0",
+      "bytes": 2794,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 38,
+      "character": "囗",
+      "theme_key": "full-38-scene",
+      "filename": "ID038-full-38-scene.svg",
+      "art_asset_id": "p45-scene-038",
+      "source_illustration_brief": "围墙小院与入口小门",
+      "motifs": [
+        "door",
+        "flower",
+        "grass"
+      ],
+      "sha256": "a7820d070a40a665d35e87ceed2f8807f990f11ae559f9807bcab265ee20e207",
+      "bytes": 3001,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 40,
+      "character": "巾",
+      "theme_key": "linen-in-breeze",
+      "filename": "ID040-linen-in-breeze.svg",
+      "art_asset_id": "p45-scene-040",
+      "source_illustration_brief": "晾衣绳上迎风飘动的织物与经纬纹理",
+      "motifs": [
+        "cloth",
+        "window",
+        "hand"
+      ],
+      "sha256": "fd3022c667f3e9f160d996a899e6156622891dc1d1c9f2c44eaf6c06548785f0",
+      "bytes": 2809,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 41,
+      "character": "彳",
+      "theme_key": "full-41-scene",
+      "filename": "ID041-full-41-scene.svg",
+      "art_asset_id": "p45-scene-041",
+      "source_illustration_brief": "巷道石砖上的脚印",
+      "motifs": [
+        "road",
+        "foot",
+        "stone"
+      ],
+      "sha256": "b67af596d06bdae752809d85a13b74668d847d1881d130ccb0d4cfd6f1a1da80",
+      "bytes": 2764,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 42,
+      "character": "彡",
+      "theme_key": "full-42-scene",
+      "filename": "ID042-full-42-scene.svg",
+      "art_asset_id": "p45-scene-042",
+      "source_illustration_brief": "织物上的三道斜纹和光影",
+      "motifs": [
+        "cloth",
+        "cloud"
+      ],
+      "sha256": "ac23c339ae5f632b79cc7043405e05a22630c6e150132e2b314c2ffa49f00ced",
+      "bytes": 2484,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 43,
+      "character": "夕",
+      "theme_key": "full-43-scene",
+      "filename": "ID043-full-43-scene.svg",
+      "art_asset_id": "p45-scene-043",
+      "source_illustration_brief": "橙红天空中归巢的飞鸟",
+      "motifs": [
+        "bird",
+        "cloud",
+        "lantern"
+      ],
+      "sha256": "87331ef76de81e75a8d60438492a085ee27e678292cd7a4b0826b7ba276bf3ba",
+      "bytes": 2846,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 44,
+      "character": "夂",
+      "theme_key": "full-44-scene",
+      "filename": "ID044-full-44-scene.svg",
+      "art_asset_id": "p45-scene-044",
+      "source_illustration_brief": "曲折石阶与飘落黄叶",
+      "motifs": [
+        "road",
+        "stone",
+        "brush"
+      ],
+      "sha256": "358bce7a3e251954782c22c1b60322c4c827b0b6378222cd6c19228013f588e0",
+      "bytes": 2746,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 45,
+      "character": "丬",
+      "theme_key": "full-45-scene",
+      "filename": "ID045-full-45-scene.svg",
+      "art_asset_id": "p45-scene-045",
+      "source_illustration_brief": "构字拼图中位于左侧的部件",
+      "motifs": [
+        "puzzle",
+        "cloud"
+      ],
+      "sha256": "d33ee94bc6d8bf37930ea96e81c13d8436db1dd41921d098bf7cc3e07325d39e",
+      "bytes": 2488,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 46,
+      "character": "广",
+      "theme_key": "full-46-scene",
+      "filename": "ID046-full-46-scene.svg",
+      "art_asset_id": "p45-scene-046",
+      "source_illustration_brief": "延伸的屋檐与被遮住的雨线",
+      "motifs": [
+        "rain",
+        "window",
+        "person"
+      ],
+      "sha256": "bea7b8b91d1e3de2b9cf80a62a2e54fd3e435af43afc35af9cdbf1aced2173fd",
+      "bytes": 2721,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 47,
+      "character": "门",
+      "theme_key": "full-47-scene",
+      "filename": "ID047-full-47-scene.svg",
+      "art_asset_id": "p45-scene-047",
+      "source_illustration_brief": "一扇半掩的旧木门与庭院花影",
+      "motifs": [
+        "tree",
+        "flower",
+        "door"
+      ],
+      "sha256": "c663300c4d0e8b3b85fb401b0bba3cd9881b0e2db398f5ee8c3db2a1d347a970",
+      "bytes": 2989,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 48,
+      "character": "宀",
+      "theme_key": "full-48-scene",
+      "filename": "ID048-full-48-scene.svg",
+      "art_asset_id": "p45-scene-048",
+      "source_illustration_brief": "檐下归家的灯与门牌",
+      "motifs": [
+        "door",
+        "window",
+        "lantern"
+      ],
+      "sha256": "1fa954513491e3e7ff675d3a7cbc2f4f0fa0eaccfd36836c1f261063669c09c7",
+      "bytes": 2739,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 49,
+      "character": "辶",
+      "theme_key": "full-49-scene",
+      "filename": "ID049-full-49-scene.svg",
+      "art_asset_id": "p45-scene-049",
+      "source_illustration_brief": "蜿蜒小径与一枚路标",
+      "motifs": [
+        "road",
+        "sign",
+        "mountain"
+      ],
+      "sha256": "fc2b2159bb2a4bd072001d818739c0364209831101cd74cca40f304b3fc26160",
+      "bytes": 2713,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 50,
+      "character": "彐",
+      "theme_key": "full-50-scene",
+      "filename": "ID050-full-50-scene.svg",
+      "art_asset_id": "p45-scene-050",
+      "source_illustration_brief": "折叠的纸页与三条清晰笔线",
+      "motifs": [
+        "book",
+        "brush",
+        "puzzle"
+      ],
+      "sha256": "fa383433207f8cd5f5e2aea0bad133d9a868a643780182814390a58e2d4cb7dc",
+      "bytes": 2859,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 51,
+      "character": "尸",
+      "theme_key": "full-51-scene",
+      "filename": "ID051-full-51-scene.svg",
+      "art_asset_id": "p45-scene-051",
+      "source_illustration_brief": "展开的字典与同栏四个字例",
+      "motifs": [
+        "book",
+        "puzzle",
+        "person"
+      ],
+      "sha256": "2a04c88c0b700931cdca8d6d92e999de7500c4ae2de472e20d5c8948dd2f881c",
+      "bytes": 2832,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 52,
+      "character": "己",
+      "theme_key": "full-52-scene",
+      "filename": "ID052-full-52-scene.svg",
+      "art_asset_id": "p45-scene-052",
+      "source_illustration_brief": "小镜子与镜前写日记的孩子",
+      "motifs": [
+        "book",
+        "person",
+        "eye"
+      ],
+      "sha256": "7b17e32e5a45546c63dd10a9fd624a903b93fed9dc0d10503c7f7121b99c138d",
+      "bytes": 2801,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 53,
+      "character": "弓",
+      "theme_key": "full-53-scene",
+      "filename": "ID053-full-53-scene.svg",
+      "art_asset_id": "p45-scene-053",
+      "source_illustration_brief": "木弓与绷紧的弓弦",
+      "motifs": [
+        "tree",
+        "bell",
+        "arrow"
+      ],
+      "sha256": "c3007e8cc149f724b54a3200fc754ec5b3b1f4c7e199f950e95fdafb26b1c1f9",
+      "bytes": 2775,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 54,
+      "character": "子",
+      "theme_key": "full-54-scene",
+      "filename": "ID054-full-54-scene.svg",
+      "art_asset_id": "p45-scene-054",
+      "source_illustration_brief": "剖开的土层与萌芽种子",
+      "motifs": [
+        "heart",
+        "hand"
+      ],
+      "sha256": "87b7cd6d35c1ab7870258c6bb4dbf80068f9efc4f998ffd60d2836d0adec2349",
+      "bytes": 2406,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 55,
+      "character": "屮",
+      "theme_key": "full-55-scene",
+      "filename": "ID055-full-55-scene.svg",
+      "art_asset_id": "p45-scene-055",
+      "source_illustration_brief": "旧字书旁初发芽的草尖",
+      "motifs": [
+        "grass",
+        "book",
+        "puzzle"
+      ],
+      "sha256": "7d40c3fdbe98f218a6d61ae1c1b56cd5c950faa00daba001884be7f8e1c4bdb3",
+      "bytes": 2892,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 56,
+      "character": "女",
+      "theme_key": "full-56-scene",
+      "filename": "ID056-full-56-scene.svg",
+      "art_asset_id": "p45-scene-056",
+      "source_illustration_brief": "雨伞下并肩行走的两个人",
+      "motifs": [
+        "rain",
+        "umbrella",
+        "person"
+      ],
+      "sha256": "3759cd815cd8e0b9e760b443d8bbad9ed559399d41df0af0c57e97114ced87cd",
+      "bytes": 2724,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 57,
+      "character": "飞",
+      "theme_key": "full-57-scene",
+      "filename": "ID057-full-57-scene.svg",
+      "art_asset_id": "p45-scene-057",
+      "source_illustration_brief": "纸飞机划过天空的弧线",
+      "motifs": [
+        "cloud",
+        "person"
+      ],
+      "sha256": "2d2fae98a2e16c619a3b58374429e6c29fd1ec149baa0a58ba9bc6febb430814",
+      "bytes": 2450,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 58,
+      "character": "马",
+      "theme_key": "full-58-scene",
+      "filename": "ID058-full-58-scene.svg",
+      "art_asset_id": "p45-scene-058",
+      "source_illustration_brief": "石板路上的马蹄与小铃铛",
+      "motifs": [
+        "horse",
+        "road",
+        "bell"
+      ],
+      "sha256": "fd47be796d980fd15ef4fec418dedbf6001b5fd33d59eea56902d1c289e7485b",
+      "bytes": 2851,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 59,
+      "character": "幺",
+      "theme_key": "full-59-scene",
+      "filename": "ID059-full-59-scene.svg",
+      "art_asset_id": "p45-scene-059",
+      "source_illustration_brief": "丝轴上绕起的一根细线",
+      "motifs": [
+        "tree",
+        "bell",
+        "hand"
+      ],
+      "sha256": "320eb5e4a77a793dfc39ae77ec9f08e2026dd6c1ecbed270bfab4884726d1123",
+      "bytes": 2837,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 60,
+      "character": "巛",
+      "theme_key": "full-60-scene",
+      "filename": "ID060-full-60-scene.svg",
+      "art_asset_id": "p45-scene-060",
+      "source_illustration_brief": "三道细流分合的河道",
+      "motifs": [
+        "stream",
+        "stone"
+      ],
+      "sha256": "9e46a88f87ce2f3e50d270e57daaf38968b123ea4a1e84ed5223cd05748b6f49",
+      "bytes": 2507,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 61,
+      "character": "王",
+      "theme_key": "full-61-scene",
+      "filename": "ID061-full-61-scene.svg",
+      "art_asset_id": "p45-scene-061",
+      "source_illustration_brief": "棋盘与一枚落下的棋子",
+      "motifs": [
+        "pot",
+        "person",
+        "eye"
+      ],
+      "sha256": "453287e75acd8404da369d74353fb129fabcd1a99c2fd552ab7dafa2d0226ecc",
+      "bytes": 2772,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 62,
+      "character": "无",
+      "theme_key": "full-62-scene",
+      "filename": "ID062-full-62-scene.svg",
+      "art_asset_id": "p45-scene-062",
+      "source_illustration_brief": "空旷夜空与一枚远星",
+      "motifs": [
+        "star",
+        "person"
+      ],
+      "sha256": "7c1a33c88b0e7532074a7bc557a8d3e6a745fd0b98294e46e198b1dea65a76e4",
+      "bytes": 2453,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 63,
+      "character": "韦",
+      "theme_key": "full-63-scene",
+      "filename": "ID063-full-63-scene.svg",
+      "art_asset_id": "p45-scene-063",
+      "source_illustration_brief": "线装书封与结实的编绳",
+      "motifs": [
+        "book",
+        "cloth",
+        "moon"
+      ],
+      "sha256": "459b50f5c67979fc5ac53cb43e08e5753f2b3c661f228d81f68a9f1136070416",
+      "bytes": 2850,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 65,
+      "character": "支",
+      "theme_key": "full-65-scene",
+      "filename": "ID065-full-65-scene.svg",
+      "art_asset_id": "p45-scene-065",
+      "source_illustration_brief": "木柱支撑的屋檐与雨珠",
+      "motifs": [
+        "rain",
+        "tree",
+        "window"
+      ],
+      "sha256": "6df220cd39177b6f86a18b07ffc384dd73c0d0fdbc3239bbc4c2b0e216823150",
+      "bytes": 2742,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 66,
+      "character": "犬",
+      "theme_key": "full-66-scene",
+      "filename": "ID066-full-66-scene.svg",
+      "art_asset_id": "p45-scene-066",
+      "source_illustration_brief": "院门前守候的小狗和足印",
+      "motifs": [
+        "dog",
+        "door",
+        "foot"
+      ],
+      "sha256": "6e743c06d3a0a93cf8e54195cd3aa592b62ad9c4dff7645f5902476f3d7155cd",
+      "bytes": 2853,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 67,
+      "character": "歹",
+      "theme_key": "full-67-scene",
+      "filename": "ID067-full-67-scene.svg",
+      "art_asset_id": "p45-scene-067",
+      "source_illustration_brief": "旧式检字表中的四个归部字例",
+      "motifs": [
+        "puzzle",
+        "book"
+      ],
+      "sha256": "07701e9a7504f0e612821545aa7cdc28e1b2aed2957506529a75f86bc1e63b52",
+      "bytes": 2536,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 68,
+      "character": "车",
+      "theme_key": "full-68-scene",
+      "filename": "ID068-full-68-scene.svg",
+      "art_asset_id": "p45-scene-068",
+      "source_illustration_brief": "旧车轮和伸向远方的小路",
+      "motifs": [
+        "road",
+        "wheel"
+      ],
+      "sha256": "c68e42d0f33e57dfcea526d0bd29c84c2853ec90958b719b05d7f0f96d072f53",
+      "bytes": 2519,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 69,
+      "character": "牙",
+      "theme_key": "full-69-scene",
+      "filename": "ID069-full-69-scene.svg",
+      "art_asset_id": "p45-scene-069",
+      "source_illustration_brief": "牙刷、漱口杯与镜中微笑",
+      "motifs": [
+        "tooth",
+        "person",
+        "eye"
+      ],
+      "sha256": "6a2e3f58c6eb697217b9fd325a08a88d9c1e0bcc246ef1821330ae41a925eec3",
+      "bytes": 2717,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 70,
+      "character": "戈",
+      "theme_key": "full-70-scene",
+      "filename": "ID070-full-70-scene.svg",
+      "art_asset_id": "p45-scene-070",
+      "source_illustration_brief": "展柜中的古代青铜戈轮廓",
+      "motifs": [
+        "wheel",
+        "arrow",
+        "pot"
+      ],
+      "sha256": "ea2213572385ae6bcba90910a7b33d6e1d8cdbab905177a50cfdc01a4899288f",
+      "bytes": 2830,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 71,
+      "character": "比",
+      "theme_key": "full-71-scene",
+      "filename": "ID071-full-71-scene.svg",
+      "art_asset_id": "p45-scene-071",
+      "source_illustration_brief": "并排的两片不同树叶",
+      "motifs": [
+        "tree",
+        "cloud"
+      ],
+      "sha256": "9036f029bea68ac9275b578e8f3301e0438d339993c2cfcaf6ccc5f942cbe7f0",
+      "bytes": 2478,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 72,
+      "character": "瓦",
+      "theme_key": "full-72-scene",
+      "filename": "ID072-full-72-scene.svg",
+      "art_asset_id": "p45-scene-072",
+      "source_illustration_brief": "青瓦屋顶、檐滴与陶罐",
+      "motifs": [
+        "rain",
+        "window",
+        "pot"
+      ],
+      "sha256": "500231700ce5169de08ced5dfa652db03aa6a83618fb9b30095e7c3f7b812ee0",
+      "bytes": 2752,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 73,
+      "character": "止",
+      "theme_key": "full-73-scene",
+      "filename": "ID073-full-73-scene.svg",
+      "art_asset_id": "p45-scene-073",
+      "source_illustration_brief": "路口红灯前安静停住的脚步",
+      "motifs": [
+        "lantern",
+        "road",
+        "foot"
+      ],
+      "sha256": "b9356115b05816c8a616d078243bf7e5c62d045a3d949ada3acb959b4d426c60",
+      "bytes": 2825,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 74,
+      "character": "攴",
+      "theme_key": "full-74-scene",
+      "filename": "ID074-full-74-scene.svg",
+      "art_asset_id": "p45-scene-074",
+      "source_illustration_brief": "木槌轻触小钟的静态画面",
+      "motifs": [
+        "tree",
+        "pot",
+        "person"
+      ],
+      "sha256": "75962214df3fbf14dad2fcbae0c43066dda2467bf710c7139671f33263a52370",
+      "bytes": 2812,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 75,
+      "character": "日",
+      "theme_key": "full-75-scene",
+      "filename": "ID075-full-75-scene.svg",
+      "art_asset_id": "p45-scene-075",
+      "source_illustration_brief": "清晨日轮照亮一排瓦檐",
+      "motifs": [
+        "sun",
+        "window",
+        "wheel"
+      ],
+      "sha256": "5fe45460b8769d80cfdc3c9ae98f993d4c40008dfb0fc4499759952123cd99ec",
+      "bytes": 2803,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 76,
+      "character": "贝",
+      "theme_key": "full-76-scene",
+      "filename": "ID076-full-76-scene.svg",
+      "art_asset_id": "p45-scene-076",
+      "source_illustration_brief": "沙滩上的螺纹贝壳与潮痕",
+      "motifs": [
+        "stream",
+        "hand",
+        "heart"
+      ],
+      "sha256": "420e4fd22eb525f4d5cbc878bb68c9bccaa35720cb7073624c7546777c7c0c30",
+      "bytes": 2814,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 78,
+      "character": "见",
+      "theme_key": "full-78-scene",
+      "filename": "ID078-full-78-scene.svg",
+      "art_asset_id": "p45-scene-078",
+      "source_illustration_brief": "晨雾中渐显的石桥",
+      "motifs": [
+        "bridge",
+        "cloud",
+        "stone"
+      ],
+      "sha256": "64731cc1248223e1581c9444e4d65135b976a79e98799aac48b33e1aaa0dae64",
+      "bytes": 2722,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 79,
+      "character": "牛",
+      "theme_key": "full-79-scene",
+      "filename": "ID079-full-79-scene.svg",
+      "art_asset_id": "p45-scene-079",
+      "source_illustration_brief": "田埂边的耕牛、木犁与脚印",
+      "motifs": [
+        "cow",
+        "tree",
+        "grain"
+      ],
+      "sha256": "ad2bd98be9c3a7b1c7ed1d9fdac3bc70fac33be7016ff477d2c96e0fc3aeddef",
+      "bytes": 2873,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 80,
+      "character": "手",
+      "theme_key": "full-80-scene",
+      "filename": "ID080-full-80-scene.svg",
+      "art_asset_id": "p45-scene-080",
+      "source_illustration_brief": "桌上折纸船与正在折叠的双手",
+      "motifs": [
+        "boat",
+        "hand"
+      ],
+      "sha256": "c7b62fabd50dac01075b1c480f14417f39179620060a15e57472a9153cfa7a43",
+      "bytes": 2519,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 81,
+      "character": "气",
+      "theme_key": "full-81-scene",
+      "filename": "ID081-full-81-scene.svg",
+      "art_asset_id": "p45-scene-081",
+      "source_illustration_brief": "窗前茶杯上升的蒸汽",
+      "motifs": [
+        "window",
+        "tea",
+        "cloud"
+      ],
+      "sha256": "321c9d7384638463e99978a92f09d39cef777786a9f38a5d64dc9d2f2df94679",
+      "bytes": 2749,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 82,
+      "character": "毛",
+      "theme_key": "full-82-scene",
+      "filename": "ID082-full-82-scene.svg",
+      "art_asset_id": "p45-scene-082",
+      "source_illustration_brief": "毛线团、细软绒毛和编织针",
+      "motifs": [
+        "cloth",
+        "bird",
+        "tree"
+      ],
+      "sha256": "2754ff3f3cf1b3af23cf92563aa936194caeb895e95c1c72a2f95066e57cc9a6",
+      "bytes": 2882,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 83,
+      "character": "长",
+      "theme_key": "full-83-scene",
+      "filename": "ID083-full-83-scene.svg",
+      "art_asset_id": "p45-scene-083",
+      "source_illustration_brief": "小树身旁的成长刻度尺",
+      "motifs": [
+        "tree",
+        "clock",
+        "tools"
+      ],
+      "sha256": "cf1d48826f6fac59f67a31066ad969790dbf7aee0e449e1c8465d26aca612570",
+      "bytes": 2797,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 84,
+      "character": "片",
+      "theme_key": "full-84-scene",
+      "filename": "ID084-full-84-scene.svg",
+      "art_asset_id": "p45-scene-084",
+      "source_illustration_brief": "书页中压平的红枫叶",
+      "motifs": [
+        "tree",
+        "book"
+      ],
+      "sha256": "533c854127f05e75bc99051839d53862a8e2bd0ae0e3a7fe036d652aaeed1aa2",
+      "bytes": 2521,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 85,
+      "character": "斤",
+      "theme_key": "full-85-scene",
+      "filename": "ID085-full-85-scene.svg",
+      "art_asset_id": "p45-scene-085",
+      "source_illustration_brief": "市场秤盘和两枚砝码",
+      "motifs": [
+        "pot",
+        "tools"
+      ],
+      "sha256": "ce27dd3ca7dcd4c0d3fb574faa814a1fd7583cb17afe9ea95f2420eb908fb072",
+      "bytes": 2504,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 86,
+      "character": "爪",
+      "theme_key": "full-86-scene",
+      "filename": "ID086-full-86-scene.svg",
+      "art_asset_id": "p45-scene-086",
+      "source_illustration_brief": "泥地上的猫爪印与尾巴",
+      "motifs": [
+        "cat",
+        "road",
+        "foot"
+      ],
+      "sha256": "4cb373baa9ceff065ed6b8035ec753f526d271be9bd58a07a81a1733ed9703d7",
+      "bytes": 2917,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 87,
+      "character": "父",
+      "theme_key": "full-87-scene",
+      "filename": "ID087-full-87-scene.svg",
+      "art_asset_id": "p45-scene-087",
+      "source_illustration_brief": "黄昏学骑车的父子背影",
+      "motifs": [
+        "wheel",
+        "person"
+      ],
+      "sha256": "2341ceeec1af49708b57194242809c701d27b3d6a615b0e322fe60d781b41bd7",
+      "bytes": 2498,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 89,
+      "character": "氏",
+      "theme_key": "full-89-scene",
+      "filename": "ID089-full-89-scene.svg",
+      "art_asset_id": "p45-scene-089",
+      "source_illustration_brief": "家谱上的几代名字与旧印章",
+      "motifs": [
+        "window",
+        "brush",
+        "person"
+      ],
+      "sha256": "b4b0dadb2367cac281cacd560ec9504d8bf6ab3edf4398083b6e5fbb0e4dec59",
+      "bytes": 2749,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 90,
+      "character": "欠",
+      "theme_key": "full-90-scene",
+      "filename": "ID090-full-90-scene.svg",
+      "art_asset_id": "p45-scene-090",
+      "source_illustration_brief": "晨起伸懒腰与开窗的光",
+      "motifs": [
+        "window",
+        "sun"
+      ],
+      "sha256": "bc9ee8e3ec90dc169b5049337bc17cbd1c0ec711aeaba19ac59e0e2275059bd7",
+      "bytes": 2432,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 91,
+      "character": "风",
+      "theme_key": "full-91-scene",
+      "filename": "ID091-full-91-scene.svg",
+      "art_asset_id": "p45-scene-091",
+      "source_illustration_brief": "竹梢摆动与远处风筝",
+      "motifs": [
+        "bamboo",
+        "tree"
+      ],
+      "sha256": "b3f92c979f28eebfc8821b24d6e884fb284bf80e9477456c2ff722d00de601c8",
+      "bytes": 2527,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 92,
+      "character": "殳",
+      "theme_key": "full-92-scene",
+      "filename": "ID092-full-92-scene.svg",
+      "art_asset_id": "p45-scene-092",
+      "source_illustration_brief": "古器轮廓与展柜铭牌",
+      "motifs": [
+        "sign",
+        "pot",
+        "wheel"
+      ],
+      "sha256": "3443c50570b5b5e3ea00fbc60ce878c0a114291f4a01ab9e63f49321ff938bc0",
+      "bytes": 2820,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 93,
+      "character": "文",
+      "theme_key": "full-93-scene",
+      "filename": "ID093-full-93-scene.svg",
+      "art_asset_id": "p45-scene-093",
+      "source_illustration_brief": "手稿、竹简与一支笔",
+      "motifs": [
+        "bamboo",
+        "scroll",
+        "brush"
+      ],
+      "sha256": "00375e2b490e537752dd9cf0395b0659a78f0c97e42b82ca6d914cb2d4a201c5",
+      "bytes": 2911,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 94,
+      "character": "方",
+      "theme_key": "full-94-scene",
+      "filename": "ID094-full-94-scene.svg",
+      "art_asset_id": "p45-scene-094",
+      "source_illustration_brief": "岔路口的木质方向牌",
+      "motifs": [
+        "tree",
+        "road",
+        "sign"
+      ],
+      "sha256": "b65c1533251e97d1c76357a5e0f0edf2a56b225c9eed03b82449b24ca460d5d2",
+      "bytes": 2753,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 95,
+      "character": "火",
+      "theme_key": "full-95-scene",
+      "filename": "ID095-full-95-scene.svg",
+      "art_asset_id": "p45-scene-095",
+      "source_illustration_brief": "炉灶中安静的火焰与远处窗灯",
+      "motifs": [
+        "window",
+        "lantern",
+        "fire"
+      ],
+      "sha256": "9dc4c154c2196874d6de86f328e8efb842e5d88ef065d7e0ae19ead0c74dc511",
+      "bytes": 2793,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 96,
+      "character": "斗",
+      "theme_key": "full-96-scene",
+      "filename": "ID096-full-96-scene.svg",
+      "art_asset_id": "p45-scene-096",
+      "source_illustration_brief": "七星图与古代量斗对置",
+      "motifs": [
+        "star",
+        "pot",
+        "mountain"
+      ],
+      "sha256": "a54a5aef7fd4f9c9e175e9e1532c54fd02ceabea0b5e33f3cc8ffac6dcb8960c",
+      "bytes": 2797,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 97,
+      "character": "户",
+      "theme_key": "full-97-scene",
+      "filename": "ID097-full-97-scene.svg",
+      "art_asset_id": "p45-scene-097",
+      "source_illustration_brief": "街巷中相邻的两扇门窗",
+      "motifs": [
+        "door",
+        "window",
+        "road"
+      ],
+      "sha256": "5d882751b1ecf9b8842548a58ce426affc8e4c4266ee97ce5237fa41c1d1fbd4",
+      "bytes": 2743,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 98,
+      "character": "心",
+      "theme_key": "full-98-scene",
+      "filename": "ID098-full-98-scene.svg",
+      "art_asset_id": "p45-scene-098",
+      "source_illustration_brief": "双手递出的温水与心形光晕",
+      "motifs": [
+        "hand",
+        "heart",
+        "person"
+      ],
+      "sha256": "0f2546a29addb3ec36257f9fbbd3d5984cadf9e377418fbffa1436a7bc6b43c9",
+      "bytes": 2717,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 99,
+      "character": "毋",
+      "theme_key": "full-99-scene",
+      "filename": "ID099-full-99-scene.svg",
+      "art_asset_id": "p45-scene-099",
+      "source_illustration_brief": "写有温和提醒的便笺",
+      "motifs": [
+        "heart",
+        "door",
+        "road"
+      ],
+      "sha256": "9d624905718f6ad0b6327d5c23817d06b2ae96822d38cc27a9d18189f2572d0a",
+      "bytes": 2702,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 100,
+      "character": "示",
+      "theme_key": "full-100-scene",
+      "filename": "ID100-full-100-scene.svg",
+      "art_asset_id": "p45-scene-100",
+      "source_illustration_brief": "教室黑板上的示意图",
+      "motifs": [
+        "sign",
+        "wheel"
+      ],
+      "sha256": "79c1083f0eb0cd751575f45aecd0cabe3f948d27ed168e1b90e27b9a70ddb9c2",
+      "bytes": 2478,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 101,
+      "character": "甘",
+      "theme_key": "full-101-scene",
+      "filename": "ID101-full-101-scene.svg",
+      "art_asset_id": "p45-scene-101",
+      "source_illustration_brief": "枝头成熟果实与露珠",
+      "motifs": [
+        "rain",
+        "tree",
+        "fruit"
+      ],
+      "sha256": "d077cef8f29cf044a3e6f73ddcc21244ab15226a70173ec292342cd8e3988e86",
+      "bytes": 2781,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 102,
+      "character": "石",
+      "theme_key": "full-102-scene",
+      "filename": "ID102-full-102-scene.svg",
+      "art_asset_id": "p45-scene-102",
+      "source_illustration_brief": "石桥拱券和被磨圆的河石",
+      "motifs": [
+        "bridge",
+        "stream",
+        "stone"
+      ],
+      "sha256": "4a09732d89b45716e97f659654c8f7971dafa6d05d70a1e9d5d3284a2c333ff0",
+      "bytes": 2822,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 103,
+      "character": "龙",
+      "theme_key": "full-103-scene",
+      "filename": "ID103-full-103-scene.svg",
+      "art_asset_id": "p45-scene-103",
+      "source_illustration_brief": "节庆街巷的长龙彩灯",
+      "motifs": [
+        "lantern",
+        "road",
+        "cloud"
+      ],
+      "sha256": "a393a43de83dadfb362070199602e83620a478ec632b9c507131b5b0e1beee37",
+      "bytes": 2777,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 104,
+      "character": "业",
+      "theme_key": "full-104-scene",
+      "filename": "ID104-full-104-scene.svg",
+      "art_asset_id": "p45-scene-104",
+      "source_illustration_brief": "写满笔记的书桌与书册",
+      "motifs": [
+        "book",
+        "brush",
+        "moon"
+      ],
+      "sha256": "919d11ba8ab680a68441bbf85424a048991ebcde02191987508e47b548f4d34d",
+      "bytes": 2851,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 105,
+      "character": "目",
+      "theme_key": "full-105-scene",
+      "filename": "ID105-full-105-scene.svg",
+      "art_asset_id": "p45-scene-105",
+      "source_illustration_brief": "观察树叶脉络的眼睛与放大镜",
+      "motifs": [
+        "tree",
+        "eye",
+        "road"
+      ],
+      "sha256": "d3363ad4bccec69959b27244b3383e29d2ccb41d87b56a21c6feb405b2e392ba",
+      "bytes": 2798,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 106,
+      "character": "田",
+      "theme_key": "plowed-fields",
+      "filename": "ID106-plowed-fields.svg",
+      "art_asset_id": "p45-scene-106",
+      "source_illustration_brief": "一排排田垄与四季耕作的原野",
+      "motifs": [
+        "grain",
+        "cloud"
+      ],
+      "sha256": "8c1429d97cdfe625afd8e54e94e96ced9981675d579c4f92c8d3ff810ac503dd",
+      "bytes": 2474,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 107,
+      "character": "罒",
+      "theme_key": "full-107-scene",
+      "filename": "ID107-full-107-scene.svg",
+      "art_asset_id": "p45-scene-107",
+      "source_illustration_brief": "织网格与四个检字示例",
+      "motifs": [
+        "cloth",
+        "puzzle",
+        "eye"
+      ],
+      "sha256": "57db24962e83f96608cb24960191361dec50f5cd584540e329a2d57461fb9c10",
+      "bytes": 2787,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 108,
+      "character": "皿",
+      "theme_key": "full-108-scene",
+      "filename": "ID108-full-108-scene.svg",
+      "art_asset_id": "p45-scene-108",
+      "source_illustration_brief": "陶碗、浅盘与陶工手印",
+      "motifs": [
+        "pot",
+        "hand",
+        "window"
+      ],
+      "sha256": "29cfa3b38a6f6154fb47d33a90ad1b04894d0b89e0436366864334809f4ab05c",
+      "bytes": 2785,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 109,
+      "character": "生",
+      "theme_key": "full-109-scene",
+      "filename": "ID109-full-109-scene.svg",
+      "art_asset_id": "p45-scene-109",
+      "source_illustration_brief": "破土的幼苗与层层泥土",
+      "motifs": [
+        "grass",
+        "sun"
+      ],
+      "sha256": "873813ef902645918b459933111f2d2d6561b81558db98a238d600063c510851",
+      "bytes": 2523,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 110,
+      "character": "矢",
+      "theme_key": "full-110-scene",
+      "filename": "ID110-full-110-scene.svg",
+      "art_asset_id": "p45-scene-110",
+      "source_illustration_brief": "箭杆和细长箭羽的器物图",
+      "motifs": [
+        "bird",
+        "pot",
+        "arrow"
+      ],
+      "sha256": "03beca2555d038a0a6ab86b153b7b6b63855bb45d2b892655128f06e2082a2c1",
+      "bytes": 2836,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 111,
+      "character": "禾",
+      "theme_key": "full-111-scene",
+      "filename": "ID111-full-111-scene.svg",
+      "art_asset_id": "p45-scene-111",
+      "source_illustration_brief": "金黄谷穗与田垄剪影",
+      "motifs": [
+        "mountain",
+        "grain"
+      ],
+      "sha256": "36ed8cf27aa6f1e85d56ab9850374a3a6e763462b038de18d5cf6dada2e1372c",
+      "bytes": 2417,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 112,
+      "character": "白",
+      "theme_key": "full-112-scene",
+      "filename": "ID112-full-112-scene.svg",
+      "art_asset_id": "p45-scene-112",
+      "source_illustration_brief": "雪中瓦屋与一行浅脚印",
+      "motifs": [
+        "snow",
+        "window",
+        "foot"
+      ],
+      "sha256": "763ae109dd2e9c5a3f8d710c3f7c2a3b9aad0db434488713eea4d630bcddd163",
+      "bytes": 2786,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 113,
+      "character": "瓜",
+      "theme_key": "full-113-scene",
+      "filename": "ID113-full-113-scene.svg",
+      "art_asset_id": "p45-scene-113",
+      "source_illustration_brief": "竹架上缠绕的瓜藤与小果",
+      "motifs": [
+        "bamboo",
+        "fruit"
+      ],
+      "sha256": "2d078300bc4223a26f18c261a576ff945363840c0b8e42f280e2c21726a566e3",
+      "bytes": 2531,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 114,
+      "character": "鸟",
+      "theme_key": "full-114-scene",
+      "filename": "ID114-full-114-scene.svg",
+      "art_asset_id": "p45-scene-114",
+      "source_illustration_brief": "树枝上的小鸟与晚霞",
+      "motifs": [
+        "bird",
+        "cloud",
+        "tree"
+      ],
+      "sha256": "ddb7be704064036208e07f3b0753e4e2a4758bd3c9c041b164c9a543c070e4f8",
+      "bytes": 2859,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 115,
+      "character": "疒",
+      "theme_key": "full-115-scene",
+      "filename": "ID115-full-115-scene.svg",
+      "art_asset_id": "p45-scene-115",
+      "source_illustration_brief": "诊室窗前的药箱和花束",
+      "motifs": [
+        "flower",
+        "window",
+        "heart"
+      ],
+      "sha256": "d10609fb37f7b5fc26e867e5b35467fe1606b1699972a626d09876a8a0c765ad",
+      "bytes": 2847,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 116,
+      "character": "立",
+      "theme_key": "full-116-scene",
+      "filename": "ID116-full-116-scene.svg",
+      "art_asset_id": "p45-scene-116",
+      "source_illustration_brief": "山岗上笔直生长的一株幼树",
+      "motifs": [
+        "mountain",
+        "tree",
+        "brush"
+      ],
+      "sha256": "292652aaf6adf0d124953cf65be857176f3560effeae9f942627d17562d7a3cf",
+      "bytes": 2793,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 117,
+      "character": "穴",
+      "theme_key": "full-117-scene",
+      "filename": "ID117-full-117-scene.svg",
+      "art_asset_id": "p45-scene-117",
+      "source_illustration_brief": "岩壁洞穴与一束斜光",
+      "motifs": [
+        "mountain",
+        "cloud"
+      ],
+      "sha256": "687f58f545a45c022e0ab12f269921aa9b6b4291f688c1c19653ab3980dc189c",
+      "bytes": 2437,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 118,
+      "character": "疋",
+      "theme_key": "full-118-scene",
+      "filename": "ID118-full-118-scene.svg",
+      "art_asset_id": "p45-scene-118",
+      "source_illustration_brief": "旧检字册中的部首索引",
+      "motifs": [
+        "book",
+        "puzzle"
+      ],
+      "sha256": "2f76322eeae8f8500034dd3848e09c7e8c1ec8359e9544d58c54787a3f61c4cb",
+      "bytes": 2521,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 119,
+      "character": "皮",
+      "theme_key": "full-119-scene",
+      "filename": "ID119-full-119-scene.svg",
+      "art_asset_id": "p45-scene-119",
+      "source_illustration_brief": "老树的树皮纹理与新芽",
+      "motifs": [
+        "tree",
+        "cloth",
+        "rain"
+      ],
+      "sha256": "49a55de18c824c432745dab8681aa51d17c14c6b76c594ac1d76d62e5f45d921",
+      "bytes": 2790,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 120,
+      "character": "癶",
+      "theme_key": "full-120-scene",
+      "filename": "ID120-full-120-scene.svg",
+      "art_asset_id": "p45-scene-120",
+      "source_illustration_brief": "登高石阶与张开的几条线条",
+      "motifs": [
+        "road",
+        "stone",
+        "brush"
+      ],
+      "sha256": "de3fb7b7ff6bdb23786202a749f9156af697d745f53a9e11f2bc8b5170c839a0",
+      "bytes": 2766,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 121,
+      "character": "矛",
+      "theme_key": "full-121-scene",
+      "filename": "ID121-full-121-scene.svg",
+      "art_asset_id": "p45-scene-121",
+      "source_illustration_brief": "青铜矛头与木质器架",
+      "motifs": [
+        "tree",
+        "pot",
+        "arrow"
+      ],
+      "sha256": "4a61b8d80b57673d61b3a35f4a5a2c277fe6a75aa51835da8485f35658f9ff0a",
+      "bytes": 2780,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 122,
+      "character": "耒",
+      "theme_key": "full-122-scene",
+      "filename": "ID122-full-122-scene.svg",
+      "art_asset_id": "p45-scene-122",
+      "source_illustration_brief": "农具木柄与翻开的泥土",
+      "motifs": [
+        "tree",
+        "tools",
+        "mountain"
+      ],
+      "sha256": "f98c145d83f01a97cf73919ddea6ef8654966d1af78fc98d69953a6c0527b69c",
+      "bytes": 2792,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 123,
+      "character": "老",
+      "theme_key": "full-123-scene",
+      "filename": "ID123-full-123-scene.svg",
+      "art_asset_id": "p45-scene-123",
+      "source_illustration_brief": "桌边讲故事的祖孙剪影",
+      "motifs": [
+        "lantern",
+        "moon",
+        "window"
+      ],
+      "sha256": "efea60e994e29b48bd57a81770638ab7678d4b51c17988b23e2195bc455a6631",
+      "bytes": 2758,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 124,
+      "character": "耳",
+      "theme_key": "full-124-scene",
+      "filename": "ID124-full-124-scene.svg",
+      "art_asset_id": "p45-scene-124",
+      "source_illustration_brief": "海贝壳与倾听的侧脸",
+      "motifs": [
+        "stream",
+        "ear",
+        "person"
+      ],
+      "sha256": "711aab0f88b18fbc1d712a60043aee62f20bcc344ee7a5559703505fb4374060",
+      "bytes": 2830,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 125,
+      "character": "臣",
+      "theme_key": "full-125-scene",
+      "filename": "ID125-full-125-scene.svg",
+      "art_asset_id": "p45-scene-125",
+      "source_illustration_brief": "古卷边缘的人物印影",
+      "motifs": [
+        "scroll",
+        "person",
+        "book"
+      ],
+      "sha256": "ad55b007b178efa868fdab78b92f8a8bbb094f2c77c91ce80d73d0f751c31d41",
+      "bytes": 2871,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 126,
+      "character": "覀",
+      "theme_key": "full-126-scene",
+      "filename": "ID126-full-126-scene.svg",
+      "art_asset_id": "p45-scene-126",
+      "source_illustration_brief": "书页上被圈出的相近字头",
+      "motifs": [
+        "book",
+        "puzzle",
+        "brush"
+      ],
+      "sha256": "0c0c6b25e28725b58a231f71b8c75375725b8667a327268fb34fecdbb888b551",
+      "bytes": 2856,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 127,
+      "character": "而",
+      "theme_key": "full-127-scene",
+      "filename": "ID127-full-127-scene.svg",
+      "art_asset_id": "p45-scene-127",
+      "source_illustration_brief": "两页相连的笔记与细线",
+      "motifs": [
+        "brush",
+        "road",
+        "book"
+      ],
+      "sha256": "93bebb74299b69bb02ae5f752b4eb05bb82629470833642ab01e17ade9423b8c",
+      "bytes": 2835,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 128,
+      "character": "页",
+      "theme_key": "full-128-scene",
+      "filename": "ID128-full-128-scene.svg",
+      "art_asset_id": "p45-scene-128",
+      "source_illustration_brief": "翻动的一页书与书签",
+      "motifs": [
+        "book",
+        "cloud"
+      ],
+      "sha256": "f07a5207d60907d499ce79a2e8fee59bcc6edc9c5a0bf4a9996e91724f7996f2",
+      "bytes": 2510,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 129,
+      "character": "至",
+      "theme_key": "full-129-scene",
+      "filename": "ID129-full-129-scene.svg",
+      "art_asset_id": "p45-scene-129",
+      "source_illustration_brief": "山路终点与辽阔天际",
+      "motifs": [
+        "mountain",
+        "road",
+        "cloud"
+      ],
+      "sha256": "3ed05d19609753748dbe308016e63e0098eb98e7a3daa18a0d28132702518295",
+      "bytes": 2752,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 130,
+      "character": "虍",
+      "theme_key": "full-130-scene",
+      "filename": "ID130-full-130-scene.svg",
+      "art_asset_id": "p45-scene-130",
+      "source_illustration_brief": "虎纹、放大镜与书页",
+      "motifs": [
+        "book",
+        "eye",
+        "puzzle"
+      ],
+      "sha256": "5f5f21874b742421457f68525a22af57f6d0098ef0ec7be39906704262d42690",
+      "bytes": 2816,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 131,
+      "character": "虫",
+      "theme_key": "full-131-scene",
+      "filename": "ID131-full-131-scene.svg",
+      "art_asset_id": "p45-scene-131",
+      "source_illustration_brief": "草叶上的甲虫与放大镜",
+      "motifs": [
+        "insect",
+        "grass",
+        "eye"
+      ],
+      "sha256": "0f6113c40f265ef2ef38042502a811a9b2fb5b55d364b55555fc19b0f7bcfc8d",
+      "bytes": 2904,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 132,
+      "character": "肉",
+      "theme_key": "full-132-scene",
+      "filename": "ID132-full-132-scene.svg",
+      "art_asset_id": "p45-scene-132",
+      "source_illustration_brief": "陶碗里的热汤与餐桌",
+      "motifs": [
+        "pot",
+        "tea",
+        "window"
+      ],
+      "sha256": "4fc24761d4f313d786974a4899a8988343cbfe38ce1867693880732e53397fa5",
+      "bytes": 2770,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 133,
+      "character": "缶",
+      "theme_key": "full-133-scene",
+      "filename": "ID133-full-133-scene.svg",
+      "art_asset_id": "p45-scene-133",
+      "source_illustration_brief": "带纹饰的陶缶和小木槌",
+      "motifs": [
+        "tree",
+        "pot",
+        "bell"
+      ],
+      "sha256": "5e73b6a4abde4566d33831bd3bdd9773c806ff8aebe12ba989094914c526b497",
+      "bytes": 2847,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 134,
+      "character": "舌",
+      "theme_key": "full-134-scene",
+      "filename": "ID134-full-134-scene.svg",
+      "art_asset_id": "p45-scene-134",
+      "source_illustration_brief": "切开的橘瓣与味觉示意",
+      "motifs": [
+        "fruit",
+        "person",
+        "heart"
+      ],
+      "sha256": "6fce5e90f30b231f4a1eb208498d3517f897f5f57c0bb059e1bb7516568869a5",
+      "bytes": 2700,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 135,
+      "character": "竹",
+      "theme_key": "full-135-scene",
+      "filename": "ID135-full-135-scene.svg",
+      "art_asset_id": "p45-scene-135",
+      "source_illustration_brief": "竹节、竹叶与墙上竹影",
+      "motifs": [
+        "bamboo",
+        "moon"
+      ],
+      "sha256": "1d5822a5ddda45df75b40b4fa801fc247aab7a69cc8e26d1dcbaa0a6bcba6012",
+      "bytes": 2531,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 136,
+      "character": "臼",
+      "theme_key": "full-136-scene",
+      "filename": "ID136-full-136-scene.svg",
+      "art_asset_id": "p45-scene-136",
+      "source_illustration_brief": "石臼、木杵与散落谷粒",
+      "motifs": [
+        "mountain",
+        "tree",
+        "grain"
+      ],
+      "sha256": "15e7eea334867d8afb75d8f56b3565a6478bf2ee7dff5308488473218c93cebb",
+      "bytes": 2761,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 137,
+      "character": "自",
+      "theme_key": "full-137-scene",
+      "filename": "ID137-full-137-scene.svg",
+      "art_asset_id": "p45-scene-137",
+      "source_illustration_brief": "写着姓名的纸页与小手",
+      "motifs": [
+        "book",
+        "hand",
+        "person"
+      ],
+      "sha256": "7e5d0419dcb38862dc6b2a3feb4cb87911845a7992317a23658b2ac9883f6954",
+      "bytes": 2822,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 138,
+      "character": "血",
+      "theme_key": "full-138-scene",
+      "filename": "ID138-full-138-scene.svg",
+      "art_asset_id": "p45-scene-138",
+      "source_illustration_brief": "科学图册上的血管示意",
+      "motifs": [
+        "book",
+        "stream"
+      ],
+      "sha256": "3a0387f08ed4d10b017e059622049b4d27e6ef07a34590a26fd9b73309429cbe",
+      "bytes": 2591,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 139,
+      "character": "舟",
+      "theme_key": "full-139-scene",
+      "filename": "ID139-full-139-scene.svg",
+      "art_asset_id": "p45-scene-139",
+      "source_illustration_brief": "芦苇边的小舟与水中涟漪",
+      "motifs": [
+        "boat",
+        "stream",
+        "bird"
+      ],
+      "sha256": "44c0443dfaf1a34e12813aca4dc8d47962701c1fc615adc519e743e783dbcc2e",
+      "bytes": 2961,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 140,
+      "character": "色",
+      "theme_key": "full-140-scene",
+      "filename": "ID140-full-140-scene.svg",
+      "art_asset_id": "p45-scene-140",
+      "source_illustration_brief": "颜料碟和混合的新绿",
+      "motifs": [
+        "pot",
+        "person"
+      ],
+      "sha256": "b36043ff4083b3a446b41c09680af2a5d4d6f77246726375819c6a84b24150a9",
+      "bytes": 2463,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 141,
+      "character": "齐",
+      "theme_key": "full-141-scene",
+      "filename": "ID141-full-141-scene.svg",
+      "art_asset_id": "p45-scene-141",
+      "source_illustration_brief": "整齐排开的乐谱与合唱者",
+      "motifs": [
+        "bell",
+        "heart",
+        "window"
+      ],
+      "sha256": "876b2fcc278596495791a6e9acbcb6e934d8b0d3c616c3e5aa1a3c23fd63abea",
+      "bytes": 2705,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 142,
+      "character": "衣",
+      "theme_key": "full-142-scene",
+      "filename": "ID142-full-142-scene.svg",
+      "art_asset_id": "p45-scene-142",
+      "source_illustration_brief": "叠放的冬衣与毛线针",
+      "motifs": [
+        "cloth",
+        "snow",
+        "window"
+      ],
+      "sha256": "a0fa69c00f90ee5268bca81da75ae92e87d02c9f7df13ae475a1599c1940957e",
+      "bytes": 2754,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 143,
+      "character": "羊",
+      "theme_key": "full-143-scene",
+      "filename": "ID143-full-143-scene.svg",
+      "art_asset_id": "p45-scene-143",
+      "source_illustration_brief": "草坡上的羊群与小铜铃",
+      "motifs": [
+        "sheep",
+        "grass",
+        "bell"
+      ],
+      "sha256": "8625256b3663d10f08bb81dc8600bfa98af9b3652e374095dc52e26933e6b5a3",
+      "bytes": 2944,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 144,
+      "character": "米",
+      "theme_key": "full-144-scene",
+      "filename": "ID144-full-144-scene.svg",
+      "art_asset_id": "p45-scene-144",
+      "source_illustration_brief": "稻穗、米粒与竹饭碗",
+      "motifs": [
+        "bamboo",
+        "grain",
+        "pot"
+      ],
+      "sha256": "e233dca278b7437c2f1da354580cf677c8c96b4ef690caac3a9571befad13919",
+      "bytes": 2844,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 145,
+      "character": "聿",
+      "theme_key": "full-145-scene",
+      "filename": "ID145-full-145-scene.svg",
+      "art_asset_id": "p45-scene-145",
+      "source_illustration_brief": "古毛笔与字形部件放大图",
+      "motifs": [
+        "book",
+        "brush",
+        "puzzle"
+      ],
+      "sha256": "686d0c0aeeca959a4d4a56a45ce3477fa096e113c2428b13654dc60da92cd81e",
+      "bytes": 2852,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 146,
+      "character": "艮",
+      "theme_key": "full-146-scene",
+      "filename": "ID146-full-146-scene.svg",
+      "art_asset_id": "p45-scene-146",
+      "source_illustration_brief": "四张结构相近的字卡",
+      "motifs": [
+        "book",
+        "puzzle",
+        "tree"
+      ],
+      "sha256": "543b7ea5912c5a1ca0234d151d1f6a3c2e6e5a206b19b440050b3c4509d22256",
+      "bytes": 2850,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 147,
+      "character": "羽",
+      "theme_key": "full-147-scene",
+      "filename": "ID147-full-147-scene.svg",
+      "art_asset_id": "p45-scene-147",
+      "source_illustration_brief": "白羽毛停在手掌上",
+      "motifs": [
+        "bird",
+        "hand",
+        "tree"
+      ],
+      "sha256": "12493eb65e7232b72bdc595b07052fa37f3ed2683874f243e19adad221d74981",
+      "bytes": 2862,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 148,
+      "character": "糸",
+      "theme_key": "full-148-scene",
+      "filename": "ID148-full-148-scene.svg",
+      "art_asset_id": "p45-scene-148",
+      "source_illustration_brief": "织机的经纬丝线与线轴",
+      "motifs": [
+        "cloth",
+        "cloud"
+      ],
+      "sha256": "b7d7db4878593fed28fa842e4b91be73ef0e641e5fdf7765994d8500899c463c",
+      "bytes": 2478,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 149,
+      "character": "麦",
+      "theme_key": "full-149-scene",
+      "filename": "ID149-full-149-scene.svg",
+      "art_asset_id": "p45-scene-149",
+      "source_illustration_brief": "金色麦穗与田边小路",
+      "motifs": [
+        "grain",
+        "road",
+        "stream"
+      ],
+      "sha256": "302091ffa429ce0113ec2f6ed86eed9c47d7a8c7b157afbffe59b63701e3cdd4",
+      "bytes": 2848,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 150,
+      "character": "走",
+      "theme_key": "full-150-scene",
+      "filename": "ID150-full-150-scene.svg",
+      "art_asset_id": "p45-scene-150",
+      "source_illustration_brief": "鞋印与晨光中的石板路",
+      "motifs": [
+        "sun",
+        "road",
+        "foot"
+      ],
+      "sha256": "734d262f18ffef06a836d2e8cc72d4385257595593f454a6a955649a1b7410f4",
+      "bytes": 2824,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 151,
+      "character": "赤",
+      "theme_key": "full-151-scene",
+      "filename": "ID151-full-151-scene.svg",
+      "art_asset_id": "p45-scene-151",
+      "source_illustration_brief": "红霞映照的山脊轮廓",
+      "motifs": [
+        "mountain",
+        "cloud",
+        "wheel"
+      ],
+      "sha256": "5655b98adb510fe05da07a76d08e16e937b566c620bff8194185716666c423e6",
+      "bytes": 2810,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 152,
+      "character": "豆",
+      "theme_key": "full-152-scene",
+      "filename": "ID152-full-152-scene.svg",
+      "art_asset_id": "p45-scene-152",
+      "source_illustration_brief": "裂开的豆荚与萌发豆芽",
+      "motifs": [
+        "fruit",
+        "grass"
+      ],
+      "sha256": "ebc6f00029a81353196b750be9e0660909f99da95bdd3bf667108fa3b52bca3e",
+      "bytes": 2522,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 153,
+      "character": "酉",
+      "theme_key": "full-153-scene",
+      "filename": "ID153-full-153-scene.svg",
+      "art_asset_id": "p45-scene-153",
+      "source_illustration_brief": "古代陶酒器与装饰纹样",
+      "motifs": [
+        "pot",
+        "cloud"
+      ],
+      "sha256": "54ef097369a080998b7963da3e6b8a10623a61279a892fddb2b0637fb379fb19",
+      "bytes": 2494,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 154,
+      "character": "辰",
+      "theme_key": "full-154-scene",
+      "filename": "ID154-full-154-scene.svg",
+      "art_asset_id": "p45-scene-154",
+      "source_illustration_brief": "星空与窗边古钟",
+      "motifs": [
+        "star",
+        "window",
+        "clock"
+      ],
+      "sha256": "2205af77d423c86b4c0d19e1b228f10ece7baadc34bd72edc1597879d9aefceb",
+      "bytes": 2723,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 155,
+      "character": "豕",
+      "theme_key": "full-155-scene",
+      "filename": "ID155-full-155-scene.svg",
+      "art_asset_id": "p45-scene-155",
+      "source_illustration_brief": "古画中的家猪与田舍",
+      "motifs": [
+        "window",
+        "person"
+      ],
+      "sha256": "d4c4213d3e324198631d65d5220e191eca2e04ca29c1325396526922a9bf2b0c",
+      "bytes": 2403,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 156,
+      "character": "卤",
+      "theme_key": "full-156-scene",
+      "filename": "ID156-full-156-scene.svg",
+      "art_asset_id": "p45-scene-156",
+      "source_illustration_brief": "盐田方格与晶莹盐粒",
+      "motifs": [
+        "stream",
+        "sun"
+      ],
+      "sha256": "2cdebfbc2f22b605b567fbd56372edae4785f4858f7a61d9b8e2a3fd79e4136f",
+      "bytes": 2554,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 157,
+      "character": "里",
+      "theme_key": "full-157-scene",
+      "filename": "ID157-full-157-scene.svg",
+      "art_asset_id": "p45-scene-157",
+      "source_illustration_brief": "巷道深处的石门与邻里",
+      "motifs": [
+        "door",
+        "road",
+        "stone"
+      ],
+      "sha256": "b91f428120e7beedf53ed6d1465eec3390bbe96bdcf78c22c688f0afc5d8fc9f",
+      "bytes": 2743,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 158,
+      "character": "足",
+      "theme_key": "full-158-scene",
+      "filename": "ID158-full-158-scene.svg",
+      "art_asset_id": "p45-scene-158",
+      "source_illustration_brief": "球场边的运动鞋和球",
+      "motifs": [
+        "person",
+        "foot"
+      ],
+      "sha256": "eac30c328c2f12e0de121d779e11c90422cd0d7a6d7d343a0834d0b96dcf53c6",
+      "bytes": 2475,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 159,
+      "character": "邑",
+      "theme_key": "full-159-scene",
+      "filename": "ID159-full-159-scene.svg",
+      "art_asset_id": "p45-scene-159",
+      "source_illustration_brief": "古城门和远处街灯",
+      "motifs": [
+        "door",
+        "window",
+        "lantern"
+      ],
+      "sha256": "b6cdc90f562b20bb3c36771253e9cb12fd2508133a7afbd58c50b7c97a30a3bc",
+      "bytes": 2735,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 160,
+      "character": "身",
+      "theme_key": "full-160-scene",
+      "filename": "ID160-full-160-scene.svg",
+      "art_asset_id": "p45-scene-160",
+      "source_illustration_brief": "晨练者的身影与朝阳",
+      "motifs": [
+        "sun",
+        "person"
+      ],
+      "sha256": "d6bc36c544e39f6f7fef23f13cdf600f8858f6a19ef73ce610710c4c4ea5d9d7",
+      "bytes": 2447,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 161,
+      "character": "釆",
+      "theme_key": "full-161-scene",
+      "filename": "ID161-full-161-scene.svg",
+      "art_asset_id": "p45-scene-161",
+      "source_illustration_brief": "古字局部放大与检字卡",
+      "motifs": [
+        "book",
+        "puzzle",
+        "eye"
+      ],
+      "sha256": "17d4d8823a6bbe9bbe8a9111bb759f1cf21c9ed4ac588a5e98ff9b5a60ac61c0",
+      "bytes": 2820,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 162,
+      "character": "谷",
+      "theme_key": "full-162-scene",
+      "filename": "ID162-full-162-scene.svg",
+      "art_asset_id": "p45-scene-162",
+      "source_illustration_brief": "层叠山谷中的声波和小径",
+      "motifs": [
+        "mountain",
+        "bell",
+        "stream"
+      ],
+      "sha256": "201df39061a0bd11c6a59d02938870da73074e6c5753559f11921a5f573ff440",
+      "bytes": 2876,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 163,
+      "character": "豸",
+      "theme_key": "full-163-scene",
+      "filename": "ID163-full-163-scene.svg",
+      "art_asset_id": "p45-scene-163",
+      "source_illustration_brief": "古卷上的兽纹和展厅图册",
+      "motifs": [
+        "scroll",
+        "book",
+        "person"
+      ],
+      "sha256": "891f269ce880a96f0db3300ca0e3de7c618139a24baa664789bc6760f8ac614a",
+      "bytes": 2885,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 164,
+      "character": "龟",
+      "theme_key": "full-164-scene",
+      "filename": "ID164-full-164-scene.svg",
+      "art_asset_id": "p45-scene-164",
+      "source_illustration_brief": "池石上的小龟与背甲纹",
+      "motifs": [
+        "turtle",
+        "stream",
+        "stone"
+      ],
+      "sha256": "005a9fb2d3b18046704209a168ead899a23b9964673361e7e4c3bed1515538b4",
+      "bytes": 2918,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 165,
+      "character": "角",
+      "theme_key": "full-165-scene",
+      "filename": "ID165-full-165-scene.svg",
+      "art_asset_id": "p45-scene-165",
+      "source_illustration_brief": "两把交会木尺与牛角纹",
+      "motifs": [
+        "cow",
+        "tree",
+        "tools"
+      ],
+      "sha256": "77621ebe581376a2922292040317b1e099aea3663cb929e6720cf43caffd760b",
+      "bytes": 2895,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 166,
+      "character": "言",
+      "theme_key": "full-166-scene",
+      "filename": "ID166-full-166-scene.svg",
+      "art_asset_id": "p45-scene-166",
+      "source_illustration_brief": "两人交谈的纸上对话框",
+      "motifs": [
+        "person",
+        "bell",
+        "foot"
+      ],
+      "sha256": "7ed824f8ae08cd5f6274a86a175ca640ff98bfc5fc736a02d8c199f43ed5e840",
+      "bytes": 2825,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 167,
+      "character": "辛",
+      "theme_key": "full-167-scene",
+      "filename": "ID167-full-167-scene.svg",
+      "art_asset_id": "p45-scene-167",
+      "source_illustration_brief": "收工的草帽和水壶",
+      "motifs": [
+        "grass",
+        "pot",
+        "tree"
+      ],
+      "sha256": "722bb3a80d30f9e2176c23a1b486cb8a18ac69c6ea5081cbf27ad33a3acfc9c0",
+      "bytes": 2866,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 168,
+      "character": "青",
+      "theme_key": "full-168-scene",
+      "filename": "ID168-full-168-scene.svg",
+      "art_asset_id": "p45-scene-168",
+      "source_illustration_brief": "青苔石阶与小片新叶",
+      "motifs": [
+        "grass",
+        "road",
+        "stone"
+      ],
+      "sha256": "79c8eea5351dc31ceb0cb4734da7eeab2381b9454a4b21211640fce734338f67",
+      "bytes": 2792,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 169,
+      "character": "龺",
+      "theme_key": "full-169-scene",
+      "filename": "ID169-full-169-scene.svg",
+      "art_asset_id": "p45-scene-169",
+      "source_illustration_brief": "字卡中的相同部件标记",
+      "motifs": [
+        "book",
+        "sign",
+        "puzzle"
+      ],
+      "sha256": "4052ac88831e3ec33516bd275ecadf0168997e6ec788fcd5628300c926674f82",
+      "bytes": 2799,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 170,
+      "character": "雨",
+      "theme_key": "full-170-scene",
+      "filename": "ID170-full-170-scene.svg",
+      "art_asset_id": "p45-scene-170",
+      "source_illustration_brief": "瓦檐雨帘与小花",
+      "motifs": [
+        "rain",
+        "flower",
+        "window"
+      ],
+      "sha256": "04022e38862e9765360c3b21a00f0cf0cf8cb18d358a097ee335e9e2d1e62bb3",
+      "bytes": 2884,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 171,
+      "character": "非",
+      "theme_key": "full-171-scene",
+      "filename": "ID171-full-171-scene.svg",
+      "art_asset_id": "p45-scene-171",
+      "source_illustration_brief": "分岔道路上明暗两块路牌",
+      "motifs": [
+        "road",
+        "sign"
+      ],
+      "sha256": "131cd1dc0141d3e7e84f88edb0dc0d0272c0e56d16997654cbdc28a3c30d46ff",
+      "bytes": 2430,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 172,
+      "character": "齿",
+      "theme_key": "full-172-scene",
+      "filename": "ID172-full-172-scene.svg",
+      "art_asset_id": "p45-scene-172",
+      "source_illustration_brief": "整齐的齿轮与牙齿形线",
+      "motifs": [
+        "wheel",
+        "tooth"
+      ],
+      "sha256": "df25ff250d198d40f0a017dc154288bce240e645bc39f88400cfa7c958e774b9",
+      "bytes": 2483,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 173,
+      "character": "黾",
+      "theme_key": "full-173-scene",
+      "filename": "ID173-full-173-scene.svg",
+      "art_asset_id": "p45-scene-173",
+      "source_illustration_brief": "绳结与放大的古字部件",
+      "motifs": [
+        "cloth",
+        "puzzle",
+        "brush"
+      ],
+      "sha256": "8127841b4b0e90d3b3ce4fb7493fcf91b0ccc08acbe6a231adf3afc409feeee4",
+      "bytes": 2814,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 174,
+      "character": "隹",
+      "theme_key": "full-174-scene",
+      "filename": "ID174-full-174-scene.svg",
+      "art_asset_id": "p45-scene-174",
+      "source_illustration_brief": "小鸟停在枝头的侧面剪影",
+      "motifs": [
+        "bird",
+        "tree"
+      ],
+      "sha256": "0e478d464ea6fe46da7986191394839b80dbd01ec6c964ead1fb392477b59e19",
+      "bytes": 2546,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 175,
+      "character": "阜",
+      "theme_key": "full-175-scene",
+      "filename": "ID175-full-175-scene.svg",
+      "art_asset_id": "p45-scene-175",
+      "source_illustration_brief": "山丘轮廓与连续台阶",
+      "motifs": [
+        "mountain",
+        "wheel",
+        "road"
+      ],
+      "sha256": "893aa11b5ea5625d422483c22af15c1af2cb6c23dd7643532e62995833658b55",
+      "bytes": 2801,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 176,
+      "character": "金",
+      "theme_key": "full-176-scene",
+      "filename": "ID176-full-176-scene.svg",
+      "art_asset_id": "p45-scene-176",
+      "source_illustration_brief": "工坊金属小铃与锤纹",
+      "motifs": [
+        "bell",
+        "tools",
+        "person"
+      ],
+      "sha256": "23d57a4a5dfd33a80e6d3035b2cef1e04321a570b0a1bf6ab9bfa48d0ad2c2df",
+      "bytes": 2804,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 177,
+      "character": "鱼",
+      "theme_key": "full-177-scene",
+      "filename": "ID177-full-177-scene.svg",
+      "art_asset_id": "p45-scene-177",
+      "source_illustration_brief": "水草间的游鱼与水波",
+      "motifs": [
+        "fish",
+        "stream",
+        "grass"
+      ],
+      "sha256": "67ce0ca7a3ccde6077269e10cf7a67053587fe62d4b3e41c1b9ffbeb65419a11",
+      "bytes": 2946,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 178,
+      "character": "隶",
+      "theme_key": "full-178-scene",
+      "filename": "ID178-full-178-scene.svg",
+      "art_asset_id": "p45-scene-178",
+      "source_illustration_brief": "纸上的隶书横画与展柜",
+      "motifs": [
+        "book",
+        "brush",
+        "scroll"
+      ],
+      "sha256": "75bd3ea573cf66d12e6660bcc92b48ad1995d543b8530265fa3efb0dbb91103d",
+      "bytes": 2907,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 179,
+      "character": "革",
+      "theme_key": "full-179-scene",
+      "filename": "ID179-full-179-scene.svg",
+      "art_asset_id": "p45-scene-179",
+      "source_illustration_brief": "修补皮革的针线与旧包",
+      "motifs": [
+        "hand",
+        "cloud"
+      ],
+      "sha256": "4d84d7bdee9318f2d22c27e1f29400c5325b2dcb7491c7cd70e2a7f964a236c3",
+      "bytes": 2482,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 180,
+      "character": "面",
+      "theme_key": "full-180-scene",
+      "filename": "ID180-full-180-scene.svg",
+      "art_asset_id": "p45-scene-180",
+      "source_illustration_brief": "烤箱中的面包和店门",
+      "motifs": [
+        "door",
+        "road",
+        "stone"
+      ],
+      "sha256": "94a4146a0976076d4b2ee8a144f6fdc53862dfb19857ffefd2c944156af0dc3a",
+      "bytes": 2738,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 181,
+      "character": "韭",
+      "theme_key": "full-181-scene",
+      "filename": "ID181-full-181-scene.svg",
+      "art_asset_id": "p45-scene-181",
+      "source_illustration_brief": "菜畦里的韭叶和水珠",
+      "motifs": [
+        "rain",
+        "grain",
+        "book"
+      ],
+      "sha256": "ec5e16e78f294452a09e0d0a5d7c5866e302c6ebdf815de2ebb081b261a75a28",
+      "bytes": 2785,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 182,
+      "character": "骨",
+      "theme_key": "full-182-scene",
+      "filename": "ID182-full-182-scene.svg",
+      "art_asset_id": "p45-scene-182",
+      "source_illustration_brief": "科学模型的手骨和关节",
+      "motifs": [
+        "hand",
+        "person"
+      ],
+      "sha256": "d164633c2527cac05e1e436390346f8d94f8e9762ed7d1b4f4b788cf6f2e81af",
+      "bytes": 2459,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 183,
+      "character": "香",
+      "theme_key": "full-183-scene",
+      "filename": "ID183-full-183-scene.svg",
+      "art_asset_id": "p45-scene-183",
+      "source_illustration_brief": "桂花簇与一缕微风",
+      "motifs": [
+        "flower",
+        "window"
+      ],
+      "sha256": "03bbcaab1f56e7a097356264e73728f32314b02aca5974ce4b0af95e7ebf9a18",
+      "bytes": 2590,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 184,
+      "character": "鬼",
+      "theme_key": "full-184-scene",
+      "filename": "ID184-full-184-scene.svg",
+      "art_asset_id": "p45-scene-184",
+      "source_illustration_brief": "民间戏台面具与合上的故事书",
+      "motifs": [
+        "book",
+        "cat",
+        "window"
+      ],
+      "sha256": "b86a13e726144d7620de8bf62d1fca16258b38b478dac135ee2b59527962df7c",
+      "bytes": 2909,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 185,
+      "character": "食",
+      "theme_key": "full-185-scene",
+      "filename": "ID185-full-185-scene.svg",
+      "art_asset_id": "p45-scene-185",
+      "source_illustration_brief": "米饭碗、筷子与麦穗",
+      "motifs": [
+        "grain",
+        "pot"
+      ],
+      "sha256": "36a4844259a90f5649e2311fb92f950f4404e5d4676b17767ac88a8d34400923",
+      "bytes": 2471,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 186,
+      "character": "音",
+      "theme_key": "full-186-scene",
+      "filename": "ID186-full-186-scene.svg",
+      "art_asset_id": "p45-scene-186",
+      "source_illustration_brief": "琴键与升起的音符",
+      "motifs": [
+        "bell",
+        "window"
+      ],
+      "sha256": "e03d15d0460a2ad5a518ef007d53fe4bd0eafd845121239543459958cd32a1ad",
+      "bytes": 2440,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 187,
+      "character": "首",
+      "theme_key": "full-187-scene",
+      "filename": "ID187-full-187-scene.svg",
+      "art_asset_id": "p45-scene-187",
+      "source_illustration_brief": "书页开头的一枚朱红书签",
+      "motifs": [
+        "book",
+        "person"
+      ],
+      "sha256": "e4aeed71665f59e936b27e9fb5bb0dabe1c245f694cbd63b242f7318e73d5e16",
+      "bytes": 2492,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 188,
+      "character": "髟",
+      "theme_key": "full-188-scene",
+      "filename": "ID188-full-188-scene.svg",
+      "art_asset_id": "p45-scene-188",
+      "source_illustration_brief": "木梳与柔顺长发线条",
+      "motifs": [
+        "tree",
+        "cloth",
+        "book"
+      ],
+      "sha256": "382efb161b1241319410c28063d171c0399017d7700143f7dca0272ffc23785d",
+      "bytes": 2850,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 189,
+      "character": "鬲",
+      "theme_key": "full-189-scene",
+      "filename": "ID189-full-189-scene.svg",
+      "art_asset_id": "p45-scene-189",
+      "source_illustration_brief": "三足陶鬲与古灶炊烟",
+      "motifs": [
+        "pot",
+        "foot",
+        "moon"
+      ],
+      "sha256": "876f515239db1cf8585e5351d59bb29fea847dece1bb13c37b92c8acfeef9427",
+      "bytes": 2848,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "theme_key": "full-190-scene",
+      "filename": "ID190-full-190-scene.svg",
+      "art_asset_id": "p45-scene-190",
+      "source_illustration_brief": "古籍拓片上对称的部首形体",
+      "motifs": [
+        "scroll",
+        "puzzle",
+        "book"
+      ],
+      "sha256": "3d3098a5272f975515971dd51921b77521cc9258e867055f2b82d5ecd25accde",
+      "bytes": 2920,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 191,
+      "character": "高",
+      "theme_key": "full-191-scene",
+      "filename": "ID191-full-191-scene.svg",
+      "art_asset_id": "p45-scene-191",
+      "source_illustration_brief": "古城楼的层叠屋脊与远处高度对比",
+      "motifs": [
+        "window",
+        "foot",
+        "mountain"
+      ],
+      "sha256": "c80010b2d746d033fa02d361a89c810572b131a026e898447490e227896e0f52",
+      "bytes": 2789,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 192,
+      "character": "黄",
+      "theme_key": "full-192-scene",
+      "filename": "ID192-full-192-scene.svg",
+      "art_asset_id": "p45-scene-192",
+      "source_illustration_brief": "秋日银杏叶和铺满金色的石阶",
+      "motifs": [
+        "tree",
+        "road",
+        "stone"
+      ],
+      "sha256": "d6d3a2484cb1aff3256f54a38035ff96772d23130773424a1fd8d6fdfeeacb0a",
+      "bytes": 2776,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 193,
+      "character": "麻",
+      "theme_key": "full-193-scene",
+      "filename": "ID193-full-193-scene.svg",
+      "art_asset_id": "p45-scene-193",
+      "source_illustration_brief": "粗麻布织纹与整齐盘起的绳圈",
+      "motifs": [
+        "pot",
+        "cloth",
+        "window"
+      ],
+      "sha256": "d7f3d19ee25be132ad30a6e8307ec89f25387d654483628c0321bfa4ee49fcc1",
+      "bytes": 2804,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 194,
+      "character": "鹿",
+      "theme_key": "full-194-scene",
+      "filename": "ID194-full-194-scene.svg",
+      "art_asset_id": "p45-scene-194",
+      "source_illustration_brief": "林间梅花鹿斑纹与枝叶缝隙",
+      "motifs": [
+        "deer",
+        "tree",
+        "flower"
+      ],
+      "sha256": "2b4efc36a2830cb7a779ec7b2e62d1da0f9c0b7cbf32e4c17e8b6751e48c2744",
+      "bytes": 3117,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 195,
+      "character": "鼎",
+      "theme_key": "full-195-scene",
+      "filename": "ID195-full-195-scene.svg",
+      "art_asset_id": "p45-scene-195",
+      "source_illustration_brief": "青铜三足鼎与器壁铭文纹理",
+      "motifs": [
+        "pot",
+        "foot",
+        "flower"
+      ],
+      "sha256": "7c51ab24725dbb29414ae7ce660369caebecbb55faec11f8c402363653d71d15",
+      "bytes": 3032,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 196,
+      "character": "黑",
+      "theme_key": "full-196-scene",
+      "filename": "ID196-full-196-scene.svg",
+      "art_asset_id": "p45-scene-196",
+      "source_illustration_brief": "墨滴在宣纸上晕开的层次",
+      "motifs": [
+        "brush",
+        "cloud"
+      ],
+      "sha256": "531c32476a13e141dc7e26081e74d49672350a44f5771aa16f2ddd3288703e07",
+      "bytes": 2486,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 197,
+      "character": "黍",
+      "theme_key": "full-197-scene",
+      "filename": "ID197-full-197-scene.svg",
+      "art_asset_id": "p45-scene-197",
+      "source_illustration_brief": "谷仓边下垂的黍穗与细密籽粒",
+      "motifs": [
+        "mountain",
+        "grain"
+      ],
+      "sha256": "a148bbce3f143d12c84472ad688192eabbe2c0595996cc26e79317d1562ca20b",
+      "bytes": 2439,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 198,
+      "character": "鼓",
+      "theme_key": "full-198-scene",
+      "filename": "ID198-full-198-scene.svg",
+      "art_asset_id": "p45-scene-198",
+      "source_illustration_brief": "鼓面、鼓槌与喜庆彩带",
+      "motifs": [
+        "bell",
+        "hand",
+        "person"
+      ],
+      "sha256": "47fb38d848d5a7a13a99cbe16014d9f33511208d1bb96999c3e11d0c5bf9e1b5",
+      "bytes": 2797,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 199,
+      "character": "鼠",
+      "theme_key": "full-199-scene",
+      "filename": "ID199-full-199-scene.svg",
+      "art_asset_id": "p45-scene-199",
+      "source_illustration_brief": "草丛中抱着谷穗的小田鼠",
+      "motifs": [
+        "mouse",
+        "mountain",
+        "grass"
+      ],
+      "sha256": "e32c0fb89fa1b8e5f2068d88401f1d10aff6665143725e775fcd38a602631d12",
+      "bytes": 2892,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 200,
+      "character": "鼻",
+      "theme_key": "breath-and-scent",
+      "filename": "ID200-breath-and-scent.svg",
+      "art_asset_id": "p45-scene-200",
+      "source_illustration_brief": "一缕花香与空气中的呼吸气流",
+      "motifs": [
+        "flower",
+        "stream",
+        "rain"
+      ],
+      "sha256": "365098c73f1257e2f859460c3e8ec867cbe140af7f4f934c87fa4814e05a0e2b",
+      "bytes": 3043,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    },
+    {
+      "main_id": 201,
+      "character": "龠",
+      "theme_key": "ancient-reed-pipes",
+      "filename": "ID201-ancient-reed-pipes.svg",
+      "art_asset_id": "p45-scene-201",
+      "source_illustration_brief": "古代竹管吹奏的乐器与竹音",
+      "motifs": [
+        "bamboo",
+        "pot",
+        "bell"
+      ],
+      "sha256": "1ea381fdca64230d0c240795fd80015124b2bbd8db6e72fcd2b2fba476287f37",
+      "bytes": 2900,
+      "editorial_state": "vector_draft_unreviewed",
+      "license_review": "internally_generated_pending_art_review",
+      "human_visual_signoff": false,
+      "release_eligible": false
+    }
+  ]
+}

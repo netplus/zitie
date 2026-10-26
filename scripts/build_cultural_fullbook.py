@@ -27,6 +27,7 @@ import numpy as np
 from build_cultural_sample import fonts, original_specimen
 from cultural_fullbook_model import make_plan, CAPACITY_FIRST, CAPACITY_MORE, ROOT, SHA
 from cultural_p3_artwork import read_registry, paint_scene
+from cultural_p45_asset_pack import checked_assets, paint as paint_cultural_scene
 from cultural_source_audit import audit
 
 MM=72.0/25.4
@@ -179,9 +180,9 @@ def instructions(a:PageArtist,plan):
     a.line(20,35,190,35,PALE,.45)
     blocks=[
         ("01  笔顺来源","每笔均取已发行 v0.5.1 的真实累计矢量图。先显示原书笔顺提示，再逐幅展示；既有笔灰色，当前笔红色。"),
-        ("02  字音与字词","单字只沿用正式 PDF 已单列的读音。相关词的拼音属于草稿候选，不能当作经大陆权威词典核准的印刷内容。"),
+        ("02  字音与字词","主字只采用正式PDF的原有单字读音；812个词语或构字字例中804项显示候选拼音，8项多音仍待辨析，全部尚需人工审音。"),
         ("03  文化内容","201个主字均已编写独立主题、释义、短句和相关字词草案；词音、出处和文稿仍需逐项审校，不将初稿当成定稿。"),
-        ("04  插图与版权","201字均有独特插图构想；仅4幅已登记SVG是可核来源的待审画稿。其余构想尚不是图像资产，须绘制并验收。"),
+        ("04  插图与版权","全书已经绘入201张文化主题矢量画稿：保留原4幅，新增197幅有独立SVG和校验码。程序绘图非专业美术审定，题材与授权仍需人工复核。"),
         ("05  偏旁附形","本工程只覆盖 201 个原书主字/主部首。氵、亻、扌等附形不得借用完整字源图冒名出版。"),
         ("06  页数与导航","页码按笔数动态生成。一个汉字笔画较多时自动连续续页；目录与书签直接跳转到该字的首页。"),
     ]
@@ -272,8 +273,13 @@ def draw_specimen(a:PageArtist,src_doc:fitz.Document,row):
                   width=mm(w),height=mm(h),mask="auto")
     return specimen_mode
 
-def draw_art_slot(a:PageArtist,row,art_assets,root):
+def draw_art_slot(a:PageArtist,row,art_assets,root,full_scenes=None):
     e=row["manuscript"]
+    if full_scenes is not None:
+        generated,legacy=full_scenes
+        info=paint_cultural_scene(a.c,row,generated,legacy,root)
+        a.label(123,113,"文化主题矢量画稿 · 未经美术审定",7.0,"Kai",RED)
+        return info
     if e and e["artwork_stage"]=="four_unique_svg_drafts_not_approved":
         ref=art_assets.get(e["theme_key"])
         if not ref or ref["main_character"]!=row["character"]:
@@ -306,7 +312,7 @@ def stroke_tile(a:PageArtist,step,x,y):
     return dict(step,preview_rect_pt=[round(mm(n),5)
                           for n in (x,y,x+TILE_MM,y+TILE_MM)])
 
-def cover_page(a:PageArtist,row,page,src_doc,art_assets,root):
+def cover_page(a:PageArtist,row,page,src_doc,art_assets,root,full_scenes=None):
     main_id=row["main_id"];e=row["manuscript"]
     a.page_border(page,f"{row['batch_id']}  ·  ID{main_id:03d}  {row['character']}  ·  原PDF p.{row['first_source_pdf_page']}")
     a.label(18,16,f"{row['batch_id']}  ·  ID{main_id:03d}  /  共{row['stroke_count']}笔",
@@ -320,7 +326,7 @@ def cover_page(a:PageArtist,row,page,src_doc,art_assets,root):
     else:
         a.label(18,42,"文化阅读内容尚未编审；下方笔顺示范完整保留。",9.5,"Kai",GRAY)
     specimen_state=draw_specimen(a,src_doc,row)
-    art_state=draw_art_slot(a,row,art_assets,root)
+    art_state=draw_art_slot(a,row,art_assets,root,full_scenes)
     a.section(17,119,"字义 / 部义",113)
     if e:
         parts=[]
@@ -331,14 +337,19 @@ def cover_page(a:PageArtist,row,page,src_doc,art_assets,root):
             a.label(18,130+i*5.0,text,9.2)
     else:
         a.label(19,132,"字义及独立部义待按权威源审查",9,"Kai",GRAY)
-    a.section(120,119,"经典一隅",193)
     if e and e["quote_candidate"]:
-        a.label(121,129,"引文候选 · 待核原典",8.5,"Kai",RED)
-        pieces=a.rows(e["quote_candidate"],70,9.2,max_lines=2)
-        for i,t in enumerate(pieces):a.label(121,139+i*5.4,t,9.2)
+        a.section(120,119,"古句待核原典",193)
+        a.label(121,129,"引文候选 · 不得直接引用",8.3,"Kai",RED)
+        pieces=a.rows(e["quote_candidate"],70,9.1,max_lines=2)
+        for i,t in enumerate(pieces):a.label(121,139+i*5.4,t,9.1)
     else:
-        a.label(122,132,"经典引文待核验",9.4,"Kai",GRAY)
-        a.label(122,141,"未引用未经证实的出处",7.7,"Kai",GRAY)
+        # No fabricated classics. The scene-caption derives from this ID's
+        # own editor's idea and the actual drawn panel above.
+        a.section(120,119,"画意联想",193)
+        caption=(e.get("art_brief") if e else None) or "看图识字，读懂今天的故事"
+        lines=a.rows(caption,68,9.0,max_lines=4)
+        for j,t in enumerate(lines):
+            a.label(121,130+j*5.6,t,9.0,"Kai",GRAY)
     a.line(17,152,193,152,"#D6CDCD")
     a.section(17,155,"笔顺提示",112)
     tips=[]
@@ -349,7 +360,7 @@ def cover_page(a:PageArtist,row,page,src_doc,art_assets,root):
     for i,text in enumerate(tips):
         a.label(18,165+i*4.65,text,8.6,"Kai",INK if i==0 else RED)
     a.section(17,202,"原图逐笔示范",113)
-    a.section(121,155,"相关字词 · 待审",193)
+    a.section(121,155,"相关字词 · 拼音候选未审",193)
     terms=e["terms"] if e else []
     if terms:
         if len(terms)>6:raise ValueError("Too many word cards")
@@ -358,13 +369,13 @@ def cover_page(a:PageArtist,row,page,src_doc,art_assets,root):
             a.rect(x,y,34.6,18.2,"#F9F6F3",None,1.5)
             py=term["pinyin"]
             if py is None:
-                a.label(x+17.3,y+6.5,"读音待核",7.2,"Kai",RED,"center")
+                a.label(x+17.3,y+6.5,"多音待核",7.2,"Kai",RED,"center")
             else:
                 size=7.7
-                while size>6.1 and pdfmetrics.stringWidth(py,"CultureLatin",size)>mm(33):
+                while size>5.8 and pdfmetrics.stringWidth(py,"CultureLatin",size)>mm(33):
                     size-=.2
                 if pdfmetrics.stringWidth(py,"CultureLatin",size)>mm(33):
-                    raise ValueError("Word Pinyin cannot fit: "+term["word"])
+                    raise ValueError("Word Pinyin needs an editorial linebreak: "+term["word"])
                 a.label(x+17.3,y+6.5,py,size,"Latin",RED,"center")
             a.label(x+17.3,y+14.8,term["word"],12.3,"Kai",INK,"center")
     else:
@@ -414,7 +425,7 @@ def continuation_page(a:PageArtist,row,page,part,steps):
     return tiles
 
 def render(source:Path,manifest:Path,output:Path,proof:Path,
-           root:Path=ROOT):
+           root:Path=ROOT,art_registry:Path|None=None,art_dir:Path|None=None):
     root=Path(root)
     fonts()
     font_path=Path("/usr/share/fonts/truetype/arphic/uming.ttc")
@@ -425,10 +436,13 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
     source_index=audit(source,manifest)
     plan=paginate(make_plan(source_index,root))
     art=read_registry(root=root)
-    if len(art)!=4:raise ValueError("Four actual illustration drafts changed unexpectedly")
+    if len(art)!=4:raise ValueError("Four original SVG drafts changed unexpectedly")
+    if (art_registry is None)!=(art_dir is None):
+        raise ValueError("The art source registry and actual SVG dir are an inseparable pair")
+    full_scenes=checked_assets(art_registry,art_dir,root) if art_registry else None
     buf=io.BytesIO()
     writer=canvas.Canvas(buf,pagesize=(W,H),pageCompression=1,invariant=1)
-    writer.setTitle("循序渐进 文化识字版 P4.2 · 201主字全量工程稿 · 非正式发行")
+    writer.setTitle("循序渐进 文化识字版 P4.5.1 · 201字图文及拼音候选工程稿 · 未审定")
     writer.setAuthor("netplus/zitie cultural full-book P4.2 source-locked engineering proof")
     a=PageArtist(writer)
     base_cover(a,plan)
@@ -440,13 +454,15 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
         for row in plan["entries"]:
             if row["first_preview_pdf_page"]!=page:
                 raise ValueError("Unexpected first-page number in full-book plan")
-            tiles,art_state,specimen_state=cover_page(a,row,page,source_pdf,art,root)
+            tiles,art_state,specimen_state=cover_page(a,row,page,source_pdf,art,root,full_scenes)
             page_map.append({
                 "preview_pdf_page":page,"page_kind":"source_main_cultural_reading",
                 "main_id":row["main_id"],"character":row["character"],
                 "batch_id":row["batch_id"],"part":1,
                 "parts":row["page_parts"],"theme_key":row["manuscript"]["theme_key"] if row["manuscript"] else None,
-                "content_status":row["content_review"],"artwork_status":art_state,
+                "content_status":row["content_review"],
+                "artwork_status":art_state["art_state"] if isinstance(art_state,dict) else art_state,
+                "artwork_asset_sha256":art_state.get("asset_sha256") if isinstance(art_state,dict) else None,
                 "source_specimen_render_mode":specimen_state,
                 "source_stroke_count":row["stroke_count"],
                 "source_first_pdf_page":row["first_source_pdf_page"],
@@ -507,7 +523,7 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
                     "from":fitz.Rect(link["rect_pt"]),
                     "page":link["target_pdf_page"]-1})
             result.set_metadata({
-                "title":"文化识字版 P4.2 全量201字工程稿（非正式发行）",
+                "title":"文化识字版 P4.5.1 201字插图与拼音候选工程稿（未审定）",
                 "author":"netplus/zitie",
                 "subject":"原PDF 1045笔源图溯源；文化内容待审",
                 "keywords":"201,1045,editorial draft,source locked",
@@ -536,6 +552,11 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
         "missing_cultural_editorial_content":0,
         "unreviewed_related_word_or_character_examples":sum(len(r["manuscript"]["terms"]) for r in plan["entries"]),
         "unique_existing_svg_artwork_drafts":4,
+        "generated_distinct_svg_artwork_drafts":197 if full_scenes else 0,
+        "full_artwork_svg_drafts":201 if full_scenes else 4,
+        "reading_candidates_printed":plan["reading_candidates_displayable"],
+        "blocked_ambiguous_readings":plan["reading_ambiguities_not_displayable"],
+        "unreviewed_word_reading_examples":812,
         "illustration_art_approved":0,
         "word_readings_approved":0,
         "new_publication_approvals":0,
@@ -559,8 +580,10 @@ def main():
     for x in ("source","manifest","output","proof"):
         cli.add_argument("--"+x,type=Path,required=True)
     cli.add_argument("--root",type=Path,default=ROOT)
+    cli.add_argument("--art-registry",type=Path)
+    cli.add_argument("--art-dir",type=Path)
     o=cli.parse_args()
-    render(o.source,o.manifest,o.output,o.proof,o.root)
+    render(o.source,o.manifest,o.output,o.proof,o.root,o.art_registry,o.art_dir)
 
 if __name__=="__main__":
     main()

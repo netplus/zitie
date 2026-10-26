@@ -592,6 +592,40 @@
       "review_record": "reviews/cultural-edition/P4-3-full-201-text-20261025.md",
       "release_eligible": false,
       "editorial_review_state": "201_cultural_text_candidates_unreviewed"
+    },
+    {
+      "path": "deliverables/drafts/cultural-v0.7-visual-source-draft/zitie-cultural-201-vector-reading-v07-UNREVIEWED.pdf",
+      "title": "201字全书文化版v0.7：201幅矢量图稿+812项读音候选，非正式教材",
+      "version": "cultural-v0.7-source-visual-draft",
+      "status": "draft",
+      "batch": "B01-B21 all 201 main glyphs, original 1045 stroke tiles",
+      "pages": 260,
+      "bytes": 9940216,
+      "sha256": "b4b596e0a1160ca388d8c6021461b34466a39b1761bff061334eb7f3e26e0d00",
+      "source_commit": "38a6d300ad3e164897b012152ec82bd4a277bb51",
+      "provenance_kind": "source_locked_vector_layout_derivative",
+      "source_pdf": "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf",
+      "source_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+      "review_record": "reviews/cultural-edition/P4-5-source-backed-visuals-20261026.md",
+      "release_eligible": false,
+      "editorial_review_state": "unapproved_reading_candidates_and_vector_culture_drafts"
+    },
+    {
+      "path": "deliverables/drafts/cultural-v0.7.1-visual-source-draft/zitie-cultural-201-vector-reading-v07-UNREVIEWED.pdf",
+      "title": "201字全书文化版v0.7.1：201幅矢量画稿+812项读音候选，未审校草稿",
+      "version": "cultural-v0.7.1-source-visual-draft",
+      "status": "draft",
+      "batch": "B01-B21 all 201 main glyphs, original 1045 stroke tiles",
+      "pages": 260,
+      "bytes": 9927720,
+      "sha256": "c1af1bf547f26c6d1d8fd8c391dc52231b599ec27f766f47cea8c2e6921870ed",
+      "source_commit": "146af7a0a051dbcdc136150735ea5cc1b2140341",
+      "provenance_kind": "source_locked_vector_layout_derivative",
+      "source_pdf": "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf",
+      "source_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+      "review_record": "reviews/cultural-edition/P4-5-source-backed-visuals-20261026.md",
+      "release_eligible": false,
+      "editorial_review_state": "unapproved_reading_candidates_and_vector_culture_drafts"
     }
   ]
 }
