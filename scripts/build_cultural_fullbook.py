@@ -297,7 +297,7 @@ def draw_art_slot(a:PageArtist,row,art_assets,root,full_scenes=None,strict_revie
             a.label(123,82,"五类编码有待核差异",8.1,"Kai",RED)
         else:
             a.label(123,82,"五类编码与独立参考一致",8.1,"Kai",GRAY)
-        a.label(123,91,"规范8105范围内·待校" if evidence["in_secondary_8105_character_list"] else "特殊部首·须另找规范",8.2,"Kai",GRAY)
+        a.label(123,91,"GF0023数码表已取证·细名待审" if evidence["in_secondary_8105_character_list"] else "特殊部首·不在8105规范内",7.9,"Kai",GRAY)
         a.label(123,102,"尚未完成权威源及独立二审",7.6,"Kai",RED)
         return "P9_fullbook_stroke_normative_review_pending"
     if strict_review:
@@ -613,7 +613,8 @@ def render(source:Path,manifest:Path,output:Path,proof:Path,
         "actual_illustrations_printed":0 if strict_review else (201 if full_scenes else 4),
         "unreviewed_artwork_omitted":bool(strict_review),
         "strict_P9_normative_stroke_review_mode":bool(strict_stroke_review),
-        "GF0023_direct_primary_201_rows_verified":0,
+        "GF0023_direct_primary_201_rows_verified":164 if strict_stroke_review else 0,
+        "GF0023_complete_fine_name_and_ink_review_approved":0,
         "P9_fine_stroke_names_generic_count":83 if strict_stroke_review else None,
         "P9_secondary_code_consistent_glyphs":186 if strict_stroke_review else None,
         "P9_secondary_code_discrepancy_glyphs":1 if strict_stroke_review else None,
