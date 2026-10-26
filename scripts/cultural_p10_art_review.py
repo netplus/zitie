@@ -161,6 +161,44 @@ def make_ledger(root:Path=ROOT,art_dir:Path|None=None)->dict:
         "entries":records,
     }
 
+def audit_ledger(ledger:dict)->dict:
+    """Hard-block promotions while any illustration, copy or real print is unsigned."""
+    entries=ledger.get("entries",[])
+    if (ledger.get("immutable_v051_source_sha256")!=SHA
+        or ledger.get("unchanged_P9_draft_sha256")!=P9_SHA
+        or ledger.get("release_eligible") is not False
+        or ledger.get("professional_illustrations_approved")!=0
+        or len(entries)!=201
+        or [r.get("main_id") for r in entries]!=list(range(1,202))):
+        raise ValueError("P10 art audit cannot approve a modified or partial full book")
+    n=0;missing=0;digests=set();themes=set()
+    for row in entries:
+        if row["theme_key"] in themes or not row["character"]:
+            raise ValueError("Missing or duplicated character-specific artwork brief")
+        themes.add(row["theme_key"])
+        for key,value in PUBLISHED_SAFETY_FIELDS.items():
+            if row.get(key)!=value:
+                raise ValueError("Unauthorized human or publication signoff in P10")
+        if row["main_id"] in STUDIES:
+            n+=1
+            if (row["review_state"]!="art_direction_study_not_approved"
+                or row["p10_asset_type"]!="hand_composed_svg_art_direction_study"
+                or not row["p10_asset_sha256"]):
+                raise ValueError("Artwork study is not verified against its provenance")
+            if row["p10_asset_sha256"] in digests:
+                raise ValueError("Two P10 scenes have identical bytes")
+            digests.add(row["p10_asset_sha256"])
+        else:
+            missing+=1
+            if (row["review_state"]!="not_drawn"
+                or row["p10_art_asset"] is not None
+                or row["p10_asset_sha256"] is not None):
+                raise ValueError("Undrawn work must not be presented as an approved image")
+    if (n,missing)!=(4,197):
+        raise ValueError("P10 cannot claim 201 art pieces were redrawn")
+    return {"source_main_id_count":201,"reviewable_scene_studies":n,
+            "undrawn_remaining":missing,"publication_eligible":False}
+
 def raster_scene(path:Path)->Image.Image:
     drawing=svg2rlg(str(path))
     if drawing is None or drawing.width<=0 or drawing.height<=0:
@@ -243,6 +281,7 @@ def create_review_pdf(pdf_path:Path,ledger:dict,root:Path=ROOT):
 def run(output:Path,ledger_path:Path,qa_path:Path,root:Path=ROOT):
     root=Path(root)
     ledger=make_ledger(root)
+    audit_ledger(ledger)
     if hash_file(root/"deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf")!=SHA:
         raise ValueError("Historical released PDF was modified")
     if hash_file(root/"deliverables/drafts/cultural-v0.9-stroke-review/zitie-201-P9-normative-stroke-review-UNREVIEWED.pdf")!=P9_SHA:
