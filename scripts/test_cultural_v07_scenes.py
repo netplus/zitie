@@ -58,6 +58,14 @@ class VectorSceneTests(unittest.TestCase):
             self.assertEqual(raw,again)
             self.assertEqual(len(set(motif)),3)
 
+    def test_horizon_does_not_become_unrelated_rope(self):
+        motifs=select_motifs("晨光与一条延伸到天边的地平线",1)
+        self.assertEqual(motifs[0],"horizon")
+        self.assertIn("sun",motifs)
+        self.assertNotIn("rope",motifs)
+        self.assertEqual(select_motifs("草叶上的甲虫与放大镜",131)[0],"bug")
+        self.assertEqual(select_motifs("古乐竹管与竹音",201)[0],"bamboo")
+
     def test_semantic_render_keywords(self):
         for desc,expected in [
             ("林间梅花鹿斑纹与枝叶缝隙","deer"),
