@@ -5,11 +5,12 @@ on:
     branches: [feat/cultural-p9-normative-strokes-20261026]
     paths:
       - 'scripts/p9_official_pdf_probe.py'
+      - 'scripts/p9_GF0023_direct_extract.py'
       - '.github/workflows/cultural-p9-primary-evidence.yml'
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   probe-official-standard:
@@ -17,6 +18,7 @@ jobs:
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
       - uses: actions/setup-python@v5
         with: {python-version: '3.11'}
       - name: Install PDF renderer for source study
@@ -56,12 +58,32 @@ jobs:
               --input build/P9-primary-review/GF0023-full-source.pdf \
               --output build/P9-primary-review/gf0023-primary-original-probe.json \
               --render-dir build/P9-primary-review/original-page-samples
-            # Temporarily retain the primary PDF only in the short-lived private CI artifact for exact row extraction. Never commit it to the repository or link it to end users.
+            python scripts/p9_GF0023_direct_extract.py               --input build/P9-primary-review/GF0023-full-source.pdf               --output build/P9-primary-review/gf0023-direct-164-primary.json
+            rm build/P9-primary-review/GF0023-full-source.pdf
           else
             echo '{"status":"PRIMARY_GF0023_PDF_COULD_NOT_BE_FETCHED","number_of_verified_201_characters":0}' \
               > build/P9-primary-review/gf0023-primary-original-probe.json
             echo 'NO normative sequences can be marked directly verified.' >&2
           fi
+      - name: Commit only the extracted 164-row official source evidence on this feature branch
+        if: github.event_name == 'push'
+        shell: bash
+        run: |
+          set -euo pipefail
+          install -m 0644 build/P9-primary-review/gf0023-direct-164-primary.json \
+            data/cultural_edition/p9_GF0023_direct_primary_164.json
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add data/cultural_edition/p9_GF0023_direct_primary_164.json
+          git diff --cached --quiet && { echo 'Direct GF source evidence is unchanged'; exit 0; }
+          git commit -m "data(P9): pin exact 164 GF0023 source codes, primary PDF SHA and source page numbers"
+          for attempt in 1 2 3; do
+            git fetch origin feat/cultural-p9-normative-strokes-20261026
+            git rebase origin/feat/cultural-p9-normative-strokes-20261026
+            if git push origin HEAD:feat/cultural-p9-normative-strokes-20261026; then exit 0; fi
+          done
+          echo 'No non-fast-forward overwrite permitted on P9 evidence branch' >&2
+          exit 1
       - name: Upload short primary-source sample audit, no entire copyrighted PDF
         uses: actions/upload-artifact@v4
         if: always()
