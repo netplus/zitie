@@ -53,6 +53,15 @@ def verify(source:Path,manifest:Path,pdf:Path,proof:Path,root:Path=ROOT):
     expected_pages=6+sum(e["page_parts"] for e in plan["entries"])
     if report["output_pdf_pages"]!=expected_pages:
         raise ValueError("Unexpected total all-book PDF page count")
+    strict_review=report.get("strict_pinyin_review_mode",False) is True
+    if strict_review and (
+         report.get("all_pronunciation_review_slots")!=1013 or
+         report.get("source_main_readings_printed")!=0 or
+         report.get("word_examples_readings_printed")!=0 or
+         report.get("reading_candidates_printed")!=0 or
+         report.get("actual_illustrations_printed")!=0 or
+         report.get("unreviewed_artwork_omitted") is not True):
+        raise ValueError("P8 strict proofing copy has leaked unreviewed readings or artwork")
     records=report["page_map"]
     if len(records)!=expected_pages-6:
         raise ValueError("Physical book page map omits a cultural page")
@@ -106,27 +115,49 @@ def verify(source:Path,manifest:Path,pdf:Path,proof:Path,root:Path=ROOT):
                     raise ValueError("Teaching guide is not displayed before full stroke order")
                 if wording.index("笔顺提示")>=wording.index("原图逐笔示范"):
                     raise ValueError("Stroke teaching hints must precede cumulative steps")
-                if rec["printed_pinyin_from_original_source"]!=src["pinyin_from_pdf"]:
-                    raise ValueError("PDF print single-glyph pinyin was not source-locked")
-                if src["pinyin_from_pdf"] is None:
-                    if "本页不单列读音" not in wording:
-                        raise ValueError("Missing source pinyin was invented")
+                if strict_review:
+                    if rec["printed_pinyin_from_original_source"] is not None:
+                        raise ValueError("P8 may not print an unverified main-character reading")
+                    if rec.get("frozen_unreviewed_main_source_pinyin")!=src["pinyin_from_pdf"]:
+                        raise ValueError("Audit provenance may not erase original historical reading")
+                    if rec.get("pinyin_review_printing_state")!="all_1013_blocked_before_double_review":
+                        raise ValueError("P8 word print gate was lost")
+                    if "主字读音待权威复核" not in wording:
+                        raise ValueError("P8 main-glyph missing visible unverified-reading status")
+                    if rec.get("artwork_status")!="withdrawn_unapproved_artwork_strict_review":
+                        raise ValueError("Rough SVG illustration unexpectedly appeared in strict review book")
                 else:
-                    source_readings+=1
-                    if src["pinyin_from_pdf"] not in wording:
-                        raise ValueError("Released PDF adopted pinyin missing")
+                    if rec["printed_pinyin_from_original_source"]!=src["pinyin_from_pdf"]:
+                        raise ValueError("PDF print single-glyph pinyin was not source-locked")
+                    if src["pinyin_from_pdf"] is None:
+                        if "本页不单列读音" not in wording:
+                            raise ValueError("Missing source pinyin was invented")
+                    else:
+                        source_readings+=1
+                        if src["pinyin_from_pdf"] not in wording:
+                            raise ValueError("Released PDF adopted pinyin missing")
                 if target["manuscript"]:
                     if target["manuscript"]["title"] not in wording:
                         raise ValueError("Existing original cultural manuscript missing")
+                    if strict_review:
+                        terms_box=fitz.Rect(121*72/25.4,159*72/25.4,
+                                            193*72/25.4,230*72/25.4)
+                        just_terms=page.get_text(clip=terms_box)
+                        if just_terms.count("词音待核")!=len(target["manuscript"]["terms"]):
+                            raise ValueError(f"P8 Pinyin statuses not repeated for every word on ID{mid:03d}")
                     for term in target["manuscript"]["terms"]:
                         if term["word"] not in wording:
                             raise ValueError(f"Missing PDF word/example: ID{mid:03d} {target['character']} "
                                              f"page {expected_pageno} word={term['word']!r} "
                                              f"extracted_sample={wording[-300:]!r}")
-                        if term["pinyin"] is None and "多音待核" not in wording:
-                            raise ValueError("Genuinely ambiguous word pronunciation must be marked pending")
-                        if term["pinyin"] is not None and term["pinyin"] not in wording:
-                            raise ValueError("Previously drafted word Pinyin was lost")
+                        if strict_review:
+                            if term["pinyin"] is not None and term["pinyin"] in just_terms:
+                                raise ValueError(f"P8 leaked unapproved headword Pinyin: ID{mid:03d} {term['word']}")
+                        else:
+                            if term["pinyin"] is None and "多音待核" not in wording:
+                                raise ValueError("Genuinely ambiguous word pronunciation must be marked pending")
+                            if term["pinyin"] is not None and term["pinyin"] not in wording:
+                                raise ValueError("Previously drafted word Pinyin was lost")
                 else:
                     raise ValueError("Every main glyph must now have its own authored cultural manuscript")
             else:
@@ -184,6 +215,8 @@ def verify(source:Path,manifest:Path,pdf:Path,proof:Path,root:Path=ROOT):
         "max_normalized_rgb_mae_255":round(max(pixel_scores),4),
         "average_normalized_rgb_mae_255":round(float(np.mean(pixel_scores)),4),
         "source_pdf_pinyin_adoptions_reused":source_readings,
+        "source_main_reading_source_values_retained_for_review":158 if strict_review else source_readings,
+        "strict_pinyin_review_mode":strict_review,
         "pending_cultural_articles":0,
         "unreviewed_cultural_drafts":201,
         "new_fullbook_character_articles":185,
