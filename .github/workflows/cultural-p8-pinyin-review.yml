@@ -1,0 +1,209 @@
+name: P8 full-1013 Pinyin evidence and strict proofing master
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/cultural_p8_pinyin_audit.py'
+      - 'scripts/test_cultural_p8_pinyin_audit.py'
+      - 'scripts/verify_cultural_p8_review_master.py'
+      - 'scripts/build_cultural_fullbook.py'
+      - 'scripts/verify_cultural_fullbook.py'
+      - 'data/cultural_edition/p8_all_1013_pinyin_review_queue.json'
+      - '.github/workflows/cultural-p8-pinyin-review.yml'
+      - 'deliverables/drafts/cultural-v0.8-pinyin-review/**'
+  push:
+    branches:
+      - feat/cultural-p8-pinyin-audit-20261026
+    paths:
+      - 'scripts/cultural_p8_pinyin_audit.py'
+      - 'scripts/test_cultural_p8_pinyin_audit.py'
+      - 'scripts/verify_cultural_p8_review_master.py'
+      - 'scripts/build_cultural_fullbook.py'
+      - 'scripts/verify_cultural_fullbook.py'
+      - 'data/cultural_edition/p8_all_1013_pinyin_review_queue.json'
+      - '.github/workflows/cultural-p8-pinyin-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  all-pronunciation-source-audit-and-PDF:
+    runs-on: ubuntu-latest
+    timeout-minutes: 27
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install pinned PDF dependencies and text-safe CJK fonts
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y libcairo2-dev libffi-dev pkg-config \
+            fonts-arphic-gkai00mp fonts-arphic-gbsn00lp fonts-arphic-uming fonts-dejavu-core
+          python -m pip install \
+            'PyMuPDF==1.26.7' 'reportlab==4.4.9' \
+            'Pillow==12.3.0' 'numpy==2.3.5' 'svglib==1.6.0'
+      - name: All 1013 source identities and fake-approval negative tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-p8
+          python scripts/test_cultural_p8_pinyin_audit.py \
+            2>&1 | tee build/cultural-p8/p8-negative-tests.txt
+          python scripts/cultural_p8_pinyin_audit.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --output build/cultural-p8/all-1013-pinyin-source-audit.json
+      - name: Generate 260-page clean review master with ALL unapproved phonetics suppressed
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_cultural_fullbook.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --strict-pinyin-review \
+            --output build/cultural-p8/zitie-201-P8-pinyin-safety-UNREVIEWED.pdf \
+            --proof build/cultural-p8/201-source-stroke-provenance.json
+      - name: Independently check 201 source glyphs 812 words and 1045 original PDF vector tiles
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/verify_cultural_p8_review_master.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --pdf build/cultural-p8/zitie-201-P8-pinyin-safety-UNREVIEWED.pdf \
+            --proof build/cultural-p8/201-source-stroke-provenance.json \
+            --output build/cultural-p8/full-pinyin-and-stroke-qa.json
+      - name: Render every page and all 21 original batches for visual PDF preflight
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import fitz,json
+          from PIL import Image,ImageDraw
+          from pathlib import Path
+          from collections import defaultdict
+          folder=Path('build/cultural-p8')
+          proof=json.loads((folder/'201-source-stroke-provenance.json').read_text())
+          buckets=defaultdict(list)
+          for rec in proof['page_map']:buckets[rec['batch_id']].append(rec['preview_pdf_page'])
+          thumbs=folder/'all-260-page-review';thumbs.mkdir(exist_ok=True)
+          sheet_dir=folder/'21-batch-checks';sheet_dir.mkdir(exist_ok=True)
+          with fitz.open(folder/'zitie-201-P8-pinyin-safety-UNREVIEWED.pdf') as book:
+              assert len(book)==260
+              for i,p in enumerate(book,1):
+                  pix=p.get_pixmap(matrix=fitz.Matrix(.82,.82),alpha=False)
+                  im=Image.frombytes('RGB',(pix.width,pix.height),pix.samples)
+                  assert im.getbbox() is not None
+                  im.save(thumbs/f'page-{i:03d}.jpg',quality=80,optimize=True)
+              for batch,pages in buckets.items():
+                  cols=4;w,h=210,298;gap=12;rows=(len(pages)+cols-1)//cols
+                  overview=Image.new('RGB',(gap+cols*(w+gap),gap+rows*(h+34)),'#f2f1ec')
+                  draw=ImageDraw.Draw(overview)
+                  for n,page_num in enumerate(pages):
+                      with Image.open(thumbs/f'page-{page_num:03d}.jpg') as original:
+                          img=original.resize((w,h),Image.Resampling.BICUBIC)
+                      x=gap+(n%cols)*(w+gap);y=gap+(n//cols)*(h+34)
+                      overview.paste(img,(x,y))
+                      draw.text((x,y+h+4),f'{batch} : PDF {page_num}',fill='#373737')
+                  overview.save(sheet_dir/f'{batch}-clean-pinyin-review.png',optimize=True)
+              assert len(list(thumbs.glob('page-*.jpg')))==len(book)
+              assert len(list(sheet_dir.glob('B*.png')))==21
+          print('PASS: 260/260 A4 pages rendered and all 21 batch galleries created')
+          PY
+      - name: Require bitwise deterministic source PDF and zero candidate approval
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/cultural-p8-repeat
+          python scripts/build_cultural_fullbook.py \
+            --source deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf \
+            --manifest deliverables/manifest.json \
+            --strict-pinyin-review \
+            --output build/cultural-p8-repeat/identical.pdf \
+            --proof build/cultural-p8-repeat/identical.json
+          cmp build/cultural-p8/zitie-201-P8-pinyin-safety-UNREVIEWED.pdf \
+              build/cultural-p8-repeat/identical.pdf
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          base=Path('build/cultural-p8')
+          proof=json.loads((base/'201-source-stroke-provenance.json').read_text())
+          qa=json.loads((base/'full-pinyin-and-stroke-qa.json').read_text())
+          assert qa['result']=='PASS_P8_ALL_1013_PENDING_PINYIN_BLOCKED_FROM_PDF_1045_SOURCE_STROKES_PRESERVED'
+          assert proof['strict_pinyin_review_mode'] is True
+          assert (proof['source_main_readings_printed'],proof['word_examples_readings_printed'],
+                  proof['actual_illustrations_printed'])==(0,0,0)
+          assert proof['cumulative_original_source_stroke_tiles']==1045
+          release=Path('deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf')
+          assert hashlib.sha256(release.read_bytes()).hexdigest()=='7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90'
+          print('PASS: no unreviewed reading or rough art printed; 1045 immutable strokes')
+          PY
+      - name: Append-only archive of the explicitly UNREVIEWED P8 clean PDF
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feat/cultural-p8-pinyin-audit-20261026'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,os,shutil
+          from pathlib import Path
+          import fitz
+          root=Path('build/cultural-p8')
+          dest=Path('deliverables/drafts/cultural-v0.8-pinyin-review')
+          dest.mkdir(parents=True,exist_ok=True)
+          source=root/'zitie-201-P8-pinyin-safety-UNREVIEWED.pdf'
+          output=dest/source.name
+          old_manifest=Path('deliverables/manifest.json')
+          previous=old_manifest.read_text(encoding='utf-8')
+          manifest=json.loads(previous)
+          assert not output.exists() and not any(x['path']==output.as_posix() for x in manifest['artifacts'])
+          proof=json.loads((root/'201-source-stroke-provenance.json').read_text())
+          qa=json.loads((root/'full-pinyin-and-stroke-qa.json').read_text())
+          assert qa['result']=='PASS_P8_ALL_1013_PENDING_PINYIN_BLOCKED_FROM_PDF_1045_SOURCE_STROKES_PRESERVED'
+          assert (proof['source_main_readings_printed'],proof['word_examples_readings_printed'])==(0,0)
+          digest=hashlib.sha256(source.read_bytes()).hexdigest()
+          assert digest==proof['output_pdf_sha256']==qa['new_draft_pdf_sha256']
+          with fitz.open(source) as book:assert len(book)==260
+          shutil.copyfile(source,output)
+          for name in ('201-source-stroke-provenance.json','full-pinyin-and-stroke-qa.json','all-1013-pinyin-source-audit.json'):
+              shutil.copyfile(root/name,dest/name)
+          manifest['artifacts'].append({
+            'path':output.as_posix(),
+            'title':'文化识字版P8 201主字812词例规范审音母稿：未审拼音和粗糙插图隔离',
+            'version':'cultural-v0.8-pinyin-pending-draft',
+            'status':'draft',
+            'batch':'201 glyphs, 812 word/component examples, 1045 original source strokes',
+            'pages':260,'bytes':output.stat().st_size,'sha256':digest,
+            'source_commit':os.environ['GITHUB_SHA'],
+            'provenance_kind':'source_locked_vector_layout_derivative',
+            'source_pdf':'deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf',
+            'source_pdf_sha256':'7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90',
+            'review_record':'reviews/cultural-edition/P8-pinyin-proofing-20261026.md',
+            'release_eligible':False,
+            'editorial_review_state':'1013_source_review_slots_pending_manual_double_review'})
+          assert manifest['artifacts'][:-1]==json.loads(previous)['artifacts']
+          old_manifest.write_text(json.dumps(manifest,ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+          print('PASS: only a new unreviewed, unprintable P8 draft was appended',digest)
+          PY
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add deliverables/manifest.json deliverables/drafts/cultural-v0.8-pinyin-review/
+          git diff --cached --quiet && exit 1
+          git commit -m "build(P8): archive all-201 safe Pinyin proof master, no publication"
+          for retry in 1 2 3; do
+            git fetch origin feat/cultural-p8-pinyin-audit-20261026
+            git rebase origin/feat/cultural-p8-pinyin-audit-20261026
+            if git push origin HEAD:feat/cultural-p8-pinyin-audit-20261026; then exit 0; fi
+          done
+          exit 1
+      - name: Upload complete 1013 audit, 260-page PDF, 21 batch visuals
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: P8-1013-pinyin-review-safe-260-page-DRAFT
+          path: build/cultural-p8/
+          retention-days: 14
+          if-no-files-found: warn
