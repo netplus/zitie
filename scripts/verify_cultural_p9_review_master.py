@@ -7,6 +7,7 @@ from pathlib import Path
 import fitz
 
 from cultural_p9_stroke_audit import REGISTRY, load, audit_registry
+from cultural_p9_primary_gf0023_audit import check as check_GF0023_primary
 from cultural_source_audit import audit as audit_pdf
 from verify_cultural_p8_review_master import run as audit_P8
 
@@ -14,9 +15,11 @@ def verify(source,manifest,pdf,proof,registry=REGISTRY):
     p8=audit_P8(source,manifest,pdf,proof)
     source_index=audit_pdf(source,manifest)
     norm=audit_registry(load(registry),source_index)
+    gf0023=check_GF0023_primary(source_index=source_index,secondary=load(registry))
     page_map=json.loads(Path(proof).read_text(encoding="utf-8"))
     if (page_map.get("strict_P9_normative_stroke_review_mode") is not True
-        or page_map.get("GF0023_direct_primary_201_rows_verified")!=0
+        or page_map.get("GF0023_direct_primary_201_rows_verified")!=164
+        or page_map.get("GF0023_complete_fine_name_and_ink_review_approved")!=0
         or page_map.get("P9_fine_stroke_names_generic_count")!=83
         or page_map.get("P9_secondary_code_consistent_glyphs")!=186
         or page_map.get("P9_secondary_code_discrepancy_glyphs")!=1
@@ -66,6 +69,9 @@ def verify(source,manifest,pdf,proof,registry=REGISTRY):
       "generic_stroke_labels_masked_but_not_auto_corrected":hidden_generic,
       "all_main_glyph_status_cards":statuses,
       "GF0023_normative_8105_scope_secondary":norm["GF0023_in_scope_by_secondary_membership_only"],
+      "GF0023_official_original_pdf_sha256":gf0023["official_pdf_sha256"],
+      "GF0023_direct_164_UCS_numeric_rows":gf0023["exact_main_glyphs_with_real_GF0023_row_and_code"],
+      "GF0023_primary_and_secondary_code_agreements":gf0023["official_numeric_sequences_crosscheck_independent_reference"],
       "outside_8105_scope":norm["outside_8105_coverage_by_secondary_proxy"],
       "third_party_five_type_consistent_glyphs":norm["secondary_five_type_order_match_no_unknown"],
       "coarse_shape_conflict_pending":norm["secondary_five_type_conflict_requires_adjudication"],
