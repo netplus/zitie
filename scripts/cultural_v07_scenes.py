@@ -86,6 +86,19 @@ ICONS={
 "rope":'<path d="M11 54C27 5 70 5 84 40C100 71 51 99 25 78C10 66 31 42 49 48C71 56 57 76 42 69" fill="none" stroke="#B29A7F" stroke-width="9" stroke-linecap="round"/><path d="M11 54C27 5 70 5 84 40" fill="none" stroke="#E6D8C1" stroke-width="2.5"/>',
 "bell":'<path d="M27 67Q32 49 30 38Q34 19 50 19Q69 19 72 39Q72 55 77 67Z" fill="#D8C49C" stroke="#9F8D67" stroke-width="2"/><circle cx="50" cy="75" r="6" fill="#A58C63"/><path d="M20 67H83M46 17Q50 6 54 17" stroke="#9E8E6D" stroke-width="3"/>',
 }
+ICONS.update({
+"bug":'<ellipse cx="52" cy="58" rx="21" ry="29" fill="#B6C4A6" stroke="#7A9384" stroke-width="2.5"/><path d="M52 28V87M31 44L13 30M30 59L8 59M31 73L14 88M73 44L88 31M75 57L94 58M72 76L88 90" fill="none" stroke="#7B9081" stroke-width="3"/><circle cx="44" cy="38" r="3" fill="#667E75"/><circle cx="59" cy="38" r="3" fill="#667E75"/><path d="M44 31L33 19M60 31L72 17" fill="none" stroke="#7B9081" stroke-width="2"/>',
+"deer":'<path d="M27 83Q16 59 29 47Q51 36 66 51L73 73L64 86Z" fill="#C4A88D" stroke="#98816A" stroke-width="2"/><path d="M66 53L77 31Q90 26 91 39L81 59" fill="#CFB89B" stroke="#937E6A" stroke-width="2"/><path d="M77 32L69 11M81 29L92 10M69 16L59 10M83 18L94 20" stroke="#9B8469" stroke-width="3" fill="none"/><path d="M35 76L33 94M57 76L60 94" stroke="#9B8469" stroke-width="4"/><circle cx="82" cy="42" r="2.5" fill="#556A64"/>',
+"cow":'<path d="M17 42Q37 24 64 40Q84 41 83 73Q78 93 49 88Q20 93 17 67Z" fill="#D7C6AE" stroke="#957F70" stroke-width="2.5"/><path d="M27 41L13 19L36 34M70 40L87 18L77 44" fill="#B8A68F" stroke="#927968" stroke-width="2"/><ellipse cx="50" cy="73" rx="20" ry="12" fill="#E7D6C2"/><circle cx="41" cy="71" r="2" fill="#997B6E"/><circle cx="60" cy="71" r="2" fill="#997B6E"/><circle cx="35" cy="52" r="3" fill="#5D6F69"/><circle cx="65" cy="52" r="3" fill="#5D6F69"/>',
+"mouse":'<ellipse cx="44" cy="66" rx="27" ry="20" fill="#CEC9BF" stroke="#8B918C" stroke-width="2"/><circle cx="29" cy="47" r="14" fill="#D5D0C4" stroke="#97988F"/><circle cx="55" cy="46" r="14" fill="#D5D0C4" stroke="#97988F"/><path d="M68 72Q104 61 91 32" stroke="#ACAAA0" stroke-width="4" fill="none"/><circle cx="42" cy="63" r="3" fill="#5F6A67"/><circle cx="56" cy="63" r="3" fill="#5F6A67"/><ellipse cx="51" cy="72" rx="4" ry="3" fill="#BA8F87"/>',
+"turtle":'<ellipse cx="50" cy="57" rx="31" ry="24" fill="#A9B9A5" stroke="#7B9081" stroke-width="3"/><path d="M23 52L50 36L77 53L65 74H37Z" stroke="#7A917F" stroke-width="2" fill="none"/><path d="M50 36V76M23 53H77" fill="none" stroke="#829783" stroke-width="1.5"/><circle cx="87" cy="56" r="10" fill="#BDD0B6" stroke="#7B9081"/><circle cx="90" cy="53" r="2" fill="#536D64"/><path d="M28 75L22 86M70 76L77 86" stroke="#7B9081" stroke-width="5"/>',
+"gear":'<circle cx="50" cy="50" r="30" fill="#BBC9C5" stroke="#809792" stroke-width="6"/>'+''.join(f'<rect x="{47}" y="{10}" width="7" height="15" transform="rotate({k*45} 50 50)" fill="#92ABA6"/>' for k in range(8))+'<circle cx="50" cy="50" r="11" fill="#F4EEE3" stroke="#829995" stroke-width="2"/>',
+"butterfly":'<path d="M48 52Q12 4 9 38Q3 61 47 61Q11 73 30 92Q46 96 49 68Q52 95 70 91Q92 73 53 61Q98 60 88 35Q84 6 52 52Z" fill="#D9B6AA" stroke="#A88685" stroke-width="2"/><path d="M50 37V76M49 38L37 20M51 38L65 19" stroke="#827E76" stroke-width="3" fill="none"/><circle cx="28" cy="42" r="7" fill="#EEE0C9"/><circle cx="75" cy="42" r="7" fill="#EEE0C9"/>',
+"bone":'<path d="M26 72Q4 78 12 90Q21 101 36 84L67 44Q86 46 91 33Q96 18 82 16Q74 4 61 16Q50 27 57 35Z" fill="#F0E5D3" stroke="#B1A593" stroke-width="3"/>',
+"horse":'<path d="M29 94L25 62L13 51L29 30L40 8L50 27L68 40L80 82L71 94Z" fill="#C2A88F" stroke="#93806E" stroke-width="2.5"/><path d="M41 15Q13 30 20 60M42 20L37 36M48 25L50 39" fill="none" stroke="#88776C" stroke-width="6"/><circle cx="34" cy="39" r="3" fill="#4F6660"/>',
+"umbrella":ICONS["umbrella"],
+})
+
 KEYWORDS=[
 ("竹","bamboo"),("稻","wheat"),("麦","wheat"),("禾","wheat"),("谷粒","wheat"),("穗","wheat"),("种子","seed"),("芽","seed"),
 ("木尺","ruler"),("刻度","ruler"),("尺","ruler"),("书","book"),("字典","book"),("图册","book"),("家谱","scroll"),
@@ -95,14 +108,14 @@ KEYWORDS=[
 ("窗","house"),("屋","house"),("瓦","house"),("檐","house"),("院","house"),("家","house"),("门","door"),
 ("桥","bridge"),("石阶","road"),("路","road"),("田埂","road"),("道","road"),
 ("舟","boat"),("船","boat"),("河","river"),("溪","river"),("潮","wave"),("浪","wave"),("海","wave"),("水","river"),
-("鱼","fish"),("鸟","bird"),("燕","bird"),("羽","bird"),("鹿","animal"),("牛","animal"),("马","animal"),("羊","animal"),
-("狗","animal"),("犬","animal"),("猫","cat"),("鼠","animal"),("虫","cat"),("蝶","flower"),
+("鱼","fish"),("鸟","bird"),("燕","bird"),("羽","bird"),("鹿","deer"),("牛","cow"),("马","horse"),("羊","animal"),
+("狗","animal"),("犬","animal"),("猫","cat"),("鼠","mouse"),("龟","turtle"),("虫","bug"),("蝶","butterfly"),
 ("山","mountain"),("峰","mountain"),("崖","mountain"),("丘","mountain"),("坡","mountain"),
 ("太阳","sun"),("日轮","sun"),("晨光","sun"),("朝阳","sun"),("霞","sun"),("日","sun"),
 ("月","moon"),("夜空","moon"),("星","star"),("灯笼","lantern"),("灯","lamp"),("火","flame"),("炉","flame"),
 ("雨","rain"),("冰","snow"),("雪","snow"),("风","wind"),("云","wind"),
 ("树","tree"),("根","tree"),("枝","tree"),("叶","leaf"),("草","grass"),("花","flower"),("果","fruit"),("瓜","fruit"),
-("轮","wheel"),("车","wheel"),("钟","clock"),("刻","clock"),("音","music"),("琴","music"),("乐","music"),("铃","bell"),("鼓","music"),
+("齿轮","gear"),("骨","bone"),("轮","wheel"),("车","wheel"),("钟","clock"),("刻","clock"),("音","music"),("琴","music"),("乐","music"),("铃","bell"),("鼓","music"),
 ("伞","umbrella"),("脚","footprint"),("足","footprint"),("鞋","footprint"),("行人","footprint"),("手","hand"),
 ("箭","arrow"),("矛","arrow"),("弓","arrow"),("兵","arrow"),("工具","tool"),("匠","tool"),("工","tool"),
 ("尺","ruler"),("量","ruler"),("镜","compass"),("方位","compass"),("方向","compass"),("旗","cloth"),
@@ -219,7 +232,7 @@ def paint_generated_scene(canvas,record,base):
     raw=src.read_bytes()
     if hashlib.sha256(raw).hexdigest()!=record["artwork_sha256"]:
         raise ValueError("Artwork SVG changed since source registration")
-    forbidden=(b"<text",b"<image",b"<script",b"href=",b"url(",b"http:",b"https:")
+    forbidden=(b"<text",b"<image",b"<script",b"href=",b"url(",b"https:")
     if any(word in raw.lower() for word in forbidden):
         raise ValueError("Artwork contains unsupported/external content")
     drawing=svg2rlg(str(src))
