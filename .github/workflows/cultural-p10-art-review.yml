@@ -5,6 +5,7 @@ on:
     paths:
       - 'scripts/cultural_p10_art_review.py'
       - 'scripts/test_cultural_p10_art_review.py'
+      - 'scripts/cultural_p10_fullbook_p5_screening.py'
       - 'data/cultural_edition/artwork/p10_studies/**'
       - '.github/workflows/cultural-p10-art-review.yml'
       - 'reviews/cultural-edition/P10-art-direction-P5-20261026.md'
@@ -87,6 +88,11 @@ jobs:
             assert hashlib.sha256(Path(name).read_bytes()).hexdigest()==sha
           print('PASS: 4 original vector studies, 201 art slots, 5 printable pages, old P9+v051 byte-identical; ZERO publication approvals')
           PY
+      - name: P5 preliminary render and grayscale-screen every one of 260 P9 pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/cultural_p10_fullbook_p5_screening.py --output-dir build/p10-art-proof/fullbook-P5-electronic-screening
       - name: Upload only unapproved art studies and all P5 review evidence
         if: always()
         uses: actions/upload-artifact@v4
