@@ -1,0 +1,41 @@
+name: P9 rare radical and fine stroke primary-source review pending gates
+
+on:
+  pull_request:
+    paths:
+      - 'data/cultural_edition/p9_normative_open_cases_37_83.json'
+      - 'scripts/cultural_p9_primary_open_cases_audit.py'
+      - 'scripts/test_cultural_p9_primary_open_cases_audit.py'
+      - '.github/workflows/cultural-p9-risk-review.yml'
+  push:
+    branches:
+      - feat/cultural-p9-primary-scope-fine-name-risk-20261027
+    paths:
+      - 'data/cultural_edition/p9_normative_open_cases_37_83.json'
+      - 'scripts/cultural_p9_primary_open_cases_audit.py'
+      - 'scripts/test_cultural_p9_primary_open_cases_audit.py'
+      - '.github/workflows/cultural-p9-risk-review.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+
+jobs:
+  source-locked-P9-all-37-83-cases:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Independent original-P9-source and GF0023 direct-row consistency
+        run: python scripts/cultural_p9_primary_open_cases_audit.py
+      - name: Negative mutations must fail closed
+        run: python scripts/test_cultural_p9_primary_open_cases_audit.py
+      - name: Explicitly retain old edition source read-only
+        run: |
+          python - <<'PY'
+          import hashlib
+          from pathlib import Path
+          path=Path('deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf')
+          assert hashlib.sha256(path.read_bytes()).hexdigest()=='7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90'
+          PY
