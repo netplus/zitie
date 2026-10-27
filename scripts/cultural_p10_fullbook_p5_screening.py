@@ -20,16 +20,31 @@ P9=ROOT/"deliverables/drafts/cultural-v0.9-stroke-review/zitie-201-P9-normative-
 P9_PROOF=ROOT/"deliverables/drafts/cultural-v0.9-stroke-review/201-main-1045-stroke-full-page-provenance.json"
 SOURCE=ROOT/"deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf"
 
-def scan(output_dir:Path,root:Path=ROOT):
+def scan(output_dir:Path,root:Path=ROOT,preview_pdf:Path|None=None,preview_provenance:Path|None=None):
     root=Path(root)
-    assert audit_ledger(make_ledger(root))["undrawn_remaining"]==197
+    ledger_status=audit_ledger(make_ledger(root))
+    if (ledger_status["reviewable_scene_studies"]+ledger_status["undrawn_remaining"]!=201
+        or ledger_status["publication_eligible"] is not False):
+        raise ValueError("P5 requires 201 source-linked visual slots with no publication approval")
     source=root/SOURCE.relative_to(ROOT)
-    pdf=root/P9.relative_to(ROOT)
+    frozen=root/P9.relative_to(ROOT)
+    pdf=Path(preview_pdf) if preview_pdf else frozen
     provenance=root/P9_PROOF.relative_to(ROOT)
     if hashlib.sha256(source.read_bytes()).hexdigest()!=SHA:
         raise ValueError("Released 299-page v0.5.1 was touched")
-    if hashlib.sha256(pdf.read_bytes()).hexdigest()!=P9_SHA:
-        raise ValueError("P9 PDF changed while P10 art is under review")
+    if hashlib.sha256(frozen.read_bytes()).hexdigest()!=P9_SHA:
+        raise ValueError("P9 immutable PDF changed while P10 art is under review")
+    expected_inspected_sha=P9_SHA
+    if preview_pdf:
+        if preview_provenance is None:raise ValueError("P10 preview requires an exact PDF SHA provenance file")
+        p10=json.loads(Path(preview_provenance).read_text(encoding="utf8"))
+        expected_inspected_sha=p10["output_pdf_sha256"]
+        if (p10.get("source_P9_pdf_sha256")!=P9_SHA or
+            p10.get("source_stroke_tiles_expected_untouched")!=1045 or
+            p10.get("release_eligible") is not False):
+            raise ValueError("P10 integrated art preview cannot be treated as formal book")
+    if hashlib.sha256(pdf.read_bytes()).hexdigest()!=expected_inspected_sha:
+        raise ValueError("Preview PDF bytes differ from expected P9/P10 provenance")
     proof=json.loads(provenance.read_text(encoding="utf8"))
     pages=proof.get("page_map",[])
     if (proof.get("source_pdf_sha256")!=SHA
@@ -105,6 +120,8 @@ def scan(output_dir:Path,root:Path=ROOT):
     report={
        "result":"PASS_P10_P5_ELECTRONIC_ALL_260_PAGE_GRAYSCALE_AND_LAYOUT_PRE_SCREEN_ONLY",
        "source_pdf_sha256":SHA,"frozen_P9_pdf_sha256":P9_SHA,
+       "electronically_screened_pdf_sha256":expected_inspected_sha,
+       "P10_artwork_integrated_preview_screened":bool(preview_pdf),
        "a4_pages_electronically_rendered":260,
        "source_main_id_review_pages":201,"source_1045_strokes_retained":1045,
        "continuation_pages":53,"front_matter_pages":6,
@@ -128,5 +145,7 @@ def scan(output_dir:Path,root:Path=ROOT):
 if __name__=="__main__":
     ap=argparse.ArgumentParser()
     ap.add_argument("--output-dir",type=Path,required=True)
+    ap.add_argument("--preview-pdf",type=Path)
+    ap.add_argument("--preview-provenance",type=Path)
     args=ap.parse_args()
-    scan(args.output_dir)
+    scan(args.output_dir,preview_pdf=args.preview_pdf,preview_provenance=args.preview_provenance)

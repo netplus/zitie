@@ -33,16 +33,50 @@ SOURCE_PDF=ROOT/"deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf"
 P9_PDF=ROOT/"deliverables/drafts/cultural-v0.9-stroke-review/zitie-201-P9-normative-stroke-review-UNREVIEWED.pdf"
 P9_SHA="8178a8d7bdf5258625efa0b74e7b82c0146c24da802f006f2135f17705e7fd89"
 ART_DIR=ROOT/"data/cultural_edition/artwork/p10_studies"
-STUDIES={
-    39:("山","p10-mountain-clouds","ID039-mountain-cloud-sea.svg",
-        "高山峭壁、松树、云海和远峰",{"summits","cloud-sea","foreground-ridge","pine-on-rock","birds"}),
-    64:("木","p10-ancient-tree","ID064-tree-roots-canopy.svg",
-        "有树根、树干、分叉枝条、树冠及小鸟的古树",{"ancient-tree-roots","branch-architecture","unique-crown-foliage","forest-floor","robin"}),
-    77:("水","p10-river-crossing","ID077-water-river-crossing.svg",
-        "石桥跨越流动的河水，河岸芦苇与远处村庄",{"river","stone-bridge","riverbank","village","water-rings"}),
-    88:("月","p10-moon-river-town","ID088-moon-rooftop-canal.svg",
-        "满月照亮屋檐、街巷与河面波光",{"moonlight","roofline","canal-reflection","stone-arch","lantern"}),
-}
+INVENTORY=ROOT/"data/cultural_edition/p10_study_inventory.json"
+
+def load_studies_inventory(registry:Path=INVENTORY)->dict:
+    payload=json.loads(Path(registry).read_text(encoding="utf8"))
+    if (payload.get("schema_version")!=1
+        or payload.get("source_pdf_sha256")!=SHA
+        or payload.get("release_eligible") is not False
+        or payload.get("root_dir")!="data/cultural_edition/artwork/p10_studies"):
+        raise ValueError("P10 artwork study inventory cannot silently change its source or release status")
+    expected=("art_direction_status","semantic_review_status",
+              "visual_human_first_review","visual_human_second_review","publication_eligible")
+    out={}; filenames=set();scenes=set()
+    for item in payload.get("entries",[]):
+        mid=item.get("main_id")
+        if (not isinstance(mid,int) or not 1<=mid<=201 or mid in out
+            or not isinstance(item.get("character"),str) or len(item["character"])!=1):
+            raise ValueError("Duplicate or invalid frozen P10 main ID")
+        scene=item.get("scene");filename=item.get("filename")
+        if (not isinstance(scene,str) or not re.fullmatch(r"[a-z0-9-]{8,90}",scene)
+            or not isinstance(filename,str)
+            or not re.fullmatch(rf"ID{mid:03d}-[a-z0-9-]+\.svg",filename)
+            or scene in scenes or filename in filenames):
+            raise ValueError("Each P10 study must have a safe unique scene and filename")
+        if (item.get("art_direction_status")!="unreviewed"
+            or item.get("semantic_review_status")!="pending"
+            or item.get("license_origin")!="repo_composed_vectors_requires_human_rights_check"
+            or item.get("visual_human_first_review") is not None
+            or item.get("visual_human_second_review") is not None
+            or item.get("publication_eligible") is not False):
+            raise ValueError("No automatically approved artwork registry record is accepted")
+        motifs=item.get("motifs")
+        if (not isinstance(motifs,list) or len(motifs)<5
+            or any(not isinstance(x,str) or not re.fullmatch(r"[a-z0-9-]{3,80}",x) for x in motifs)
+            or len(set(motifs))!=len(motifs)
+            or not isinstance(item.get("description"),str) or len(item["description"])<8):
+            raise ValueError("P10 semantic scene needs five individually named physical motifs")
+        out[mid]=(item["character"],scene,filename,item["description"],set(motifs))
+        scenes.add(scene);filenames.add(filename)
+    if not {39,64,77,88}.issubset(out) or len(out)>201:
+        raise ValueError("P10 four authored baseline scenes must remain until superseded by reviewed replacements")
+    return out
+
+STUDIES=load_studies_inventory()
+
 SAFE_TAGS={"svg","title","rect","path","circle","ellipse","line","g"}
 SAFE_ATTRIBUTES={
     "width","height","viewBox","role","aria-label","data-scene","data-motif",
@@ -50,6 +84,7 @@ SAFE_ATTRIBUTES={
     "stroke","stroke-width","stroke-linejoin","stroke-linecap","stroke-dasharray",
     "fill","opacity","transform",
 }
+
 PUBLISHED_SAFETY_FIELDS={
     "art_director_approval":None,
     "semantic_review":None,
@@ -143,7 +178,7 @@ def make_ledger(root:Path=ROOT,art_dir:Path|None=None)->dict:
         elif mid not in STUDIES:
             record["missing_visual_illustration"]=True
         records.append(record)
-    assert len(records)==201 and len(shas)==4
+    assert len(records)==201 and len(shas)==len(STUDIES)
     return {
         "schema_version":1,
         "document_kind":"P10_ART_DIRECTION_REVIEW_REGISTRY_NOT_A_BOOK_RELEASE",
@@ -152,12 +187,12 @@ def make_ledger(root:Path=ROOT,art_dir:Path|None=None)->dict:
         "original_main_ids":201,
         "original_strokes_untouched":1045,
         "professional_illustrations_approved":0,
-        "art_direction_studies":4,
+        "art_direction_studies":len(STUDIES),
         "high_quality_illustrations_still_missing_or_not_approved":201,
-        "not_yet_redrawn":197,
+        "not_yet_redrawn":201-len(STUDIES),
         "manual_art_and_print_signoffs":0,
         "release_eligible":False,
-        "safety_note":"Old SVGs are never used as final paintings. Four detailed scene studies require artist, license, age, semantics, grayscale, paper and P8/P9 first/second reviews.",
+        "safety_note":"Old SVGs are never used as final paintings. Individually authored scene studies require artist, license, age, semantics, grayscale, paper and P8/P9 first/second reviews.",
         "entries":records,
     }
 
@@ -194,7 +229,7 @@ def audit_ledger(ledger:dict)->dict:
                 or row["p10_art_asset"] is not None
                 or row["p10_asset_sha256"] is not None):
                 raise ValueError("Undrawn work must not be presented as an approved image")
-    if (n,missing)!=(4,197):
+    if (n,missing)!=(len(STUDIES),201-len(STUDIES)):
         raise ValueError("P10 cannot claim 201 art pieces were redrawn")
     return {"source_main_id_count":201,"reviewable_scene_studies":n,
             "undrawn_remaining":missing,"publication_eligible":False}
@@ -248,12 +283,12 @@ def create_review_pdf(pdf_path:Path,ledger:dict,root:Path=ROOT):
     p.label(22,58,"第三次交付 / P10 · P5 美术与纸质质量检查",11,"Kai")
     p.line(22,68,188,68)
     p.label(22,88,"201个主字全部建档，旧197张程序草稿禁止入书。",12,"Kai")
-    p.label(22,103,"当前4张新图仅为绘画方向探索；201张均未获终审。",12,"Kai","#943E48")
+    p.label(22,103,f"当前{len(STUDIES)}张新图仅为绘画方向探索；201张均未获终审。",12,"Kai","#943E48")
     p.label(22,130,"审核重点：场景与字义相符、不是通用装饰、灰度可辨。",11,"Kai")
     p.label(22,144,"每张应检查：线条层次 / 适龄表达 / 源版权 / 印刷色差。",11,"Kai")
     p.label(22,169,"重要：本样本不是笔顺教学，也不批准任何拼音。",11,"Kai")
     p.label(22,189,"1045幅原PDF笔顺、P8/P9待审状态与旧版均不变。",11,"Kai")
-    p.label(22,222,"后续197字仍需逐幅专门创作，禁止模板批量补位。",10,"Kai","#943E48")
+    p.label(22,222,f"后续{201-len(STUDIES)}字仍需逐幅专门创作，禁止模板批量补位。",10,"Kai","#943E48")
     c.showPage()
     imgs=[]
     for number,mid in enumerate(sorted(STUDIES),2):
@@ -299,20 +334,20 @@ def run(output:Path,ledger_path:Path,qa_path:Path,root:Path=ROOT):
                 raise ValueError("P10 semantic scenes are too visually similar")
             similarities.append(round(rms,2))
     with fitz.open(output) as proof:
-        if len(proof)!=5 or any(len(p.get_pixmap(matrix=fitz.Matrix(1,1)).samples)<10000 for p in proof):
+        if len(proof)!=1+len(STUDIES) or any(len(p.get_pixmap(matrix=fitz.Matrix(1,1)).samples)<10000 for p in proof):
             raise ValueError("P10 art proof failed page rendering")
     ledger_path.parent.mkdir(parents=True,exist_ok=True)
     qa_path.parent.mkdir(parents=True,exist_ok=True)
     ledger_path.write_text(json.dumps(ledger,ensure_ascii=False,indent=2)+"\n",encoding="utf8")
     qa={
-        "result":"PASS_P10_FOUR_UNREVIEWED_ORIGINAL_ART_DIRECTION_STUDIES_AND_201_FAIL_CLOSED_LEDGERS",
+        "result":"PASS_P10_SOURCE_LOCKED_INDIVIDUALLY_AUTHORED_ART_STUDIES_AND_201_FAIL_CLOSED_LEDGERS",
         "glyphs_in_art_queue":201,"old_programmatic_P45_svg_blocked":197,
-        "old_P3_svg_blocked":4,"new_studies":4,"still_undrawn":197,
+        "old_P3_svg_blocked":4,"new_studies":len(STUDIES),"still_undrawn":201-len(STUDIES),
         "professional_picture_approvals":0,"editorial_double_signoffs":0,
         "publication_eligible":False,"original_stroke_steps_unmodified":1045,
         "gray_machine_check":checks,"pairwise_rms_differences":similarities,
         "print_hardware_checked":False,"p8_p9_child_release_allowed":False,
-        "pdf_pages":5,"pdf_sha256":hash_file(output)
+        "pdf_pages":1+len(STUDIES),"pdf_sha256":hash_file(output)
     }
     qa_path.write_text(json.dumps(qa,ensure_ascii=False,indent=2)+"\n",encoding="utf8")
     print(json.dumps(qa,ensure_ascii=False,indent=2))
