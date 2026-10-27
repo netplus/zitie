@@ -12,6 +12,7 @@ import fitz
 
 MIRROR_URL="https://raw.githubusercontent.com/zispace/hanzi-docs/main/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/2-GF-%E8%AF%AD%E8%A8%80%E6%96%87%E5%AD%97%E8%A7%84%E8%8C%83/19991001-GF%203002-1999%E3%80%8AGB13000.1%E5%AD%97%E7%AC%A6%E9%9B%86%E6%B1%89%E5%AD%97%E7%AC%94%E9%A1%BA%E8%A7%84%E8%8C%83%E3%80%8B.pdf"
 SRC_SHA="7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90"
+ARCHIVED_COPY_SHA="cb5cb74f108dafed41a3583bc8d33d8dd318d1a21d714923c0f1ced89443cf3e"
 
 def probe(source:Path,registry:Path,out:Path):
     r=json.loads(registry.read_text(encoding="utf8"))
@@ -25,10 +26,14 @@ def probe(source:Path,registry:Path,out:Path):
         raise ValueError("Not a usable PDF copy of GF3002")
     out.mkdir(parents=True,exist_ok=True)
     original_sha=hashlib.sha256(raw).hexdigest()
+    if original_sha!=ARCHIVED_COPY_SHA:
+        raise ValueError("Unverified archived copy changed: a fresh source review is necessary")
     found={k:[] for k in targets}
     stats=[]; most=Counter();samples={}
     with fitz.open(stream=raw,filetype="pdf") as book:
         n=len(book)
+        if n!=8:
+            raise ValueError("The frozen public archive is an eight-page excerpt: do not silently treat another file as the same source")
         for index,page in enumerate(book):
             text=page.get_text()
             words=page.get_text("words")
@@ -60,10 +65,14 @@ def probe(source:Path,registry:Path,out:Path):
             sampled.append({"physical_page":i+1,"file":dest.name})
         report={
            "schema_version":1,
-           "result":"GF3002_ARCHIVED_STANDARD_COPY_PROBE_UNVERIFIED_OFFICIAL_ORIGIN",
+           "result":"GF3002_ARCHIVE_IS_INCOMPLETE_EIGHT_PAGE_SCANNED_EXCERPT_NO_37_OFFICIAL_ROWS",
            "source_url":MIRROR_URL,
            "ministerial_official_attachment_url":"https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/201001/W020150902457900316281.pdf",
            "official_attachment_last_checked":"2026-10-27_HTTP_404",
+           "archived_copy_has_complete_20902_row_table":False,
+           "source_is_only_eight_page_scanned_excerpt":True,
+           "original_appendix_visual_has_truncation_mark":True,
+           "new_primary_37_stroke_sequence_approvals":0,
            "actual_source_kind":"independent_public_GitHub_archived_standard_copy_not_official_primary_byte_verified",
            "claimed_identical_to_current_ministry_pdf":False,
            "archive_copy_pdf_sha256":original_sha,
