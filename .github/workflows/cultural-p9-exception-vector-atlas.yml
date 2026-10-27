@@ -1,0 +1,122 @@
+name: P9.4 40 risky glyphs 146 original vector steps high-resolution review atlas
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/build_cultural_p9_exception_stroke_atlas.py'
+      - 'scripts/verify_cultural_p9_exception_stroke_atlas.py'
+      - '.github/workflows/cultural-p9-exception-vector-atlas.yml'
+      - 'reviews/cultural-edition/P9-4-40-glyph-vector-risk-atlas-20261028.md'
+  push:
+    branches:
+      - feat/cultural-p9-focused-40-glyph-vector-risk-atlas-20261028
+    paths:
+      - 'scripts/build_cultural_p9_exception_stroke_atlas.py'
+      - 'scripts/verify_cultural_p9_exception_stroke_atlas.py'
+      - '.github/workflows/cultural-p9-exception-vector-atlas.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  original-pen-vector-risk-review-atlas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 22
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Prepare exact CJK vectors and raster comparison
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-arphic-gkai00mp fonts-arphic-gbsn00lp \
+            fonts-arphic-uming fonts-dejavu-core libcairo2-dev libffi-dev pkg-config
+          python -m pip install 'PyMuPDF==1.26.7' 'Pillow==12.3.0' \
+            'numpy==2.3.5' 'reportlab==4.4.9' 'svglib==1.6.0'
+      - name: Construct risk atlas from unchanged original PDF cumulative forms
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/p9-40-review
+          python scripts/build_cultural_p9_exception_stroke_atlas.py \
+            --output build/p9-40-review/P9-40-exceptional-original-pen-vector-REVIEW-ONLY.pdf \
+            --qa build/p9-40-review/40-glyph-146-original-source-provenance.json
+      - name: Independent 146 source RGB pen tile comparisons against frozen P9 PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/verify_cultural_p9_exception_stroke_atlas.py \
+            --atlas-pdf build/p9-40-review/P9-40-exceptional-original-pen-vector-REVIEW-ONLY.pdf \
+            --qa-file build/p9-40-review/40-glyph-146-original-source-provenance.json \
+            --output build/p9-40-review/146-form-xobject-pixel-comparison.json
+      - name: All 41 A4 review pages can render; create browseable batches
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import fitz, json
+          from PIL import Image,ImageDraw
+          root=Path('build/p9-40-review')
+          d=json.loads((root/'40-glyph-146-original-source-provenance.json').read_text())
+          previews=root/'rendered-original-41'
+          previews.mkdir()
+          with fitz.open(root/'P9-40-exceptional-original-pen-vector-REVIEW-ONLY.pdf') as doc:
+            assert len(doc)==41
+            for i,page in enumerate(doc,1):
+              pix=page.get_pixmap(matrix=fitz.Matrix(1.25,1.25),alpha=False)
+              pix.save(previews/f'P9-40-p{i:02d}.png')
+          originals=d['entries']
+          gallery=root/'review-contact-sheets'
+          gallery.mkdir()
+          for offset in range(0,len(originals),10):
+            entries=originals[offset:offset+10]
+            cols=5;w,h=214,303;gap=10;rows=(len(entries)+cols-1)//cols
+            sheet=Image.new('RGB',(gap+cols*(w+gap),gap+rows*(h+24)),'#F4F1EE')
+            draw=ImageDraw.Draw(sheet)
+            for j,e in enumerate(entries):
+              with Image.open(previews/f"P9-40-p{e['art_review_pdf_page']:02d}.png") as file:
+                im=file.resize((w,h),Image.Resampling.BICUBIC)
+              x=gap+(j%cols)*(w+gap);y=gap+(j//cols)*(h+24)
+              sheet.paste(im,(x,y))
+              draw.text((x,y+h+3),f"ID{e['main_id']:03d} / p{e['art_review_pdf_page']}",fill='#303335')
+            sheet.save(gallery/f'P9-priority-{offset//10+1:02d}.png')
+          assert len(list(previews.glob('P9-40-p*.png')))==41
+          assert len(list(gallery.glob('P9-priority-*.png')))==4
+          print('PASS 41/41 A4 pages rendered and 4 full-resolution contact sheets')
+          PY
+      - name: Verify exact deterministic reconstructed atlas and frozen historical PDFs
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/p9-40-repeat
+          python scripts/build_cultural_p9_exception_stroke_atlas.py \
+            --output build/p9-40-repeat/atlas.pdf \
+            --qa build/p9-40-repeat/provenance.json
+          cmp build/p9-40-review/P9-40-exceptional-original-pen-vector-REVIEW-ONLY.pdf \
+            build/p9-40-repeat/atlas.pdf
+          cmp build/p9-40-review/40-glyph-146-original-source-provenance.json \
+            build/p9-40-repeat/provenance.json
+          python - <<'PY'
+          import hashlib
+          from pathlib import Path
+          src=Path('deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf')
+          p9=Path('deliverables/drafts/cultural-v0.9-stroke-review/zitie-201-P9-normative-stroke-review-UNREVIEWED.pdf')
+          assert hashlib.sha256(src.read_bytes()).hexdigest()== \
+           '7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90'
+          assert hashlib.sha256(p9.read_bytes()).hexdigest()== \
+           '8178a8d7bdf5258625efa0b74e7b82c0146c24da802f006f2135f17705e7fd89'
+          print('PASS source PDF/manifest historical edition byte-identical')
+          PY
+      - name: Upload 41-page original-vector step risk review atlas and all source QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: P9-40-priority-146-source-vector-strokes-HUMAN-REVIEW-NOT-RELEASE
+          path: build/p9-40-review/
+          retention-days: 30
+          if-no-files-found: warn
