@@ -33,6 +33,7 @@ def compare(source_pdf:Path,candidate_pdf:Path,metadata_path:Path,output_report:
         meta.get("release_eligible") is not False or
         meta.get("main_pinyin_approved_and_printed")!=0 or
         meta.get("candidate_terms_pinyin_printed")!=0 or
+        meta.get("disputed_stroke_tip_quarantines")!=1 or
         len(art)!=len(STUDIES) or
         meta.get("unillustrated_201_main_ids")!=201-len(STUDIES)):
         raise ValueError("P10 cannot bypass the independent stroke, Pinyin, art or book-release gates")
@@ -48,6 +49,20 @@ def compare(source_pdf:Path,candidate_pdf:Path,metadata_path:Path,output_report:
     glyphs={x["main_id"]:x for x in base["page_map"] if x["part"]==1}
     if set(glyphs)!=set(range(1,202)) or modified!={glyphs[mid]["preview_pdf_page"] for mid in STUDIES}:
         raise ValueError("P10 art placed on wrong character pages")
+    zi=meta.get("disputed_zi_second_stroke_quarantine",{})
+    zi_page=glyphs[54]["preview_pdf_page"]
+    if (zi.get("main_id")!=54 or zi.get("character")!="子"
+        or zi.get("preview_pdf_page")!=zi_page
+        or zi.get("legacy_tip_suppressed") is not True
+        or zi.get("legacy_second_step_caption_suppressed") is not True
+        or zi.get("source_original_cumulative_stroke_images_modified") is not False
+        or zi.get("child_facing_correction_approved") is not False
+        or zi.get("first_reviewer") is not None
+        or zi.get("independent_second_reviewer") is not None
+        or zi.get("release_eligible") is not False
+        or zi_page in modified):
+        raise ValueError("Unapproved 子 second-pen name and teaching tip must remain quarantined")
+    touched=modified|{zi_page}
     all_strokes=0; untouched_pages=0; pixel_differences=[]
     with fitz.open(source_pdf) as source,fitz.open(candidate_pdf) as candidate:
         if len(source)!=260 or len(candidate)!=260:
@@ -57,7 +72,7 @@ def compare(source_pdf:Path,candidate_pdf:Path,metadata_path:Path,output_report:
             if (abs(before.rect.width-after.rect.width)>.00001 or
                 abs(before.rect.height-after.rect.height)>.00001):
                 raise ValueError("A4 geometry changed")
-            if number not in modified:
+            if number not in touched:
                 # Same top-level document content and illustration absence on
                 # all non-P10 pages, not merely equal text/number of steps.
                 a=before.get_pixmap(matrix=fitz.Matrix(.65,.65),alpha=False)
@@ -65,6 +80,18 @@ def compare(source_pdf:Path,candidate_pdf:Path,metadata_path:Path,output_report:
                 if (a.width!=b.width or a.height!=b.height or a.samples!=b.samples):
                     raise ValueError(f"P10 modified a non-art A4 page {number}")
                 untouched_pages+=1
+            elif number==zi_page:
+                original=before.get_text()
+                text=after.get_text()
+                if ("第2笔是弯钩，不写成竖钩。" not in original
+                    or "先横撇，再弯钩，最后写横。" not in original
+                    or "第2笔是弯钩" in text
+                    or "先横撇，再弯钩" in text
+                    or "2  弯钩" in text
+                    or "笔名待核" not in text
+                    or "旧提示已暂停使用" not in text
+                    or "原PDF笔顺提示·未获规范批准" not in text):
+                    raise ValueError("子 disputed source name or old misleading tip remained visible")
             else:
                 text=after.get_text()
                 if ("独立笔顺复核" not in text or
@@ -99,7 +126,7 @@ def compare(source_pdf:Path,candidate_pdf:Path,metadata_path:Path,output_report:
                 if before.samples!=after.samples:
                     raise ValueError(f"Original PDF step ink changed: ID{rec['main_id']:03d} {step['index']}")
                 all_strokes+=1
-    if (all_strokes!=1045 or untouched_pages!=260-len(STUDIES)
+    if (all_strokes!=1045 or untouched_pages!=260-len(STUDIES)-1
         or len(pixel_differences)!=len(STUDIES)):
         raise ValueError("P10 full-book invariant broke")
     result={
@@ -109,6 +136,8 @@ def compare(source_pdf:Path,candidate_pdf:Path,metadata_path:Path,output_report:
         "all_pages_a4":260,
         "verified_source_original_stroke_tiles":all_strokes,
         "artist_studies_inserted":len(STUDIES),
+        "disputed_child_facing_pen_name_quarantines":1,
+        "zi_legacy_unsupported_stroke_two_tip_visible":False,
         "art_panels_mean_absolute_difference":pixel_differences,
         "p8_pending_readings_printed":0,
         "artwork_human_approved":0,
