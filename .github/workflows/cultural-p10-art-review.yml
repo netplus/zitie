@@ -91,7 +91,7 @@ jobs:
           }
           for name,sha in frozen.items():
             assert hashlib.sha256(Path(name).read_bytes()).hexdigest()==sha
-          print(f"PASS: {ledger['art_direction_studies']} unique studies, 201 art slots, {len(pdf)} printable pages, old P9+v051 byte-identical; ZERO publication approvals")
+          print(f"PASS: {ledger['art_direction_studies']} unique studies, 201 art slots, {qa['pdf_pages']} printable pages, old P9+v051 byte-identical; ZERO publication approvals")
           PY
       - name: P5 preliminary render and grayscale-screen every one of 260 P9 pages
         shell: bash
