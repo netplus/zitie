@@ -1,0 +1,167 @@
+{
+  "schema_version": 1,
+  "result": "P10_201_GLYPH_INTEGRATED_ART_DIRECTION_DRAFT_NOT_FOR_PUBLICATION",
+  "source_v051_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+  "source_P9_pdf_sha256": "8178a8d7bdf5258625efa0b74e7b82c0146c24da802f006f2135f17705e7fd89",
+  "source_P9_pdf_pages": 260,
+  "output_pdf_sha256": "fb2388fe0d5642b35fe3560ff5733c653335074cba9460003d5388d4f42a361f",
+  "output_pdf_bytes": 9823331,
+  "output_pdf_pages": 260,
+  "source_main_glyphs": 201,
+  "source_stroke_tiles_expected_untouched": 1045,
+  "source_batch_count": 21,
+  "main_pinyin_approved_and_printed": 0,
+  "candidate_terms_pinyin_printed": 0,
+  "P10_art_studies_integrated": 8,
+  "unillustrated_201_main_ids": 193,
+  "artwork_human_approvals": 0,
+  "original_source_modified": false,
+  "paper_print_approval": false,
+  "disputed_stroke_tip_quarantines": 1,
+  "disputed_zi_second_stroke_quarantine": {
+    "main_id": 54,
+    "character": "子",
+    "preview_pdf_page": 30,
+    "legacy_second_stroke_name": "弯钩",
+    "official_GF0023_code_from_prior_primary_evidence": "521",
+    "review_candidate_fine_name": "竖钩",
+    "child_facing_correction_approved": false,
+    "legacy_tip_suppressed": true,
+    "legacy_second_step_caption_suppressed": true,
+    "source_original_cumulative_stroke_images_modified": false,
+    "first_reviewer": null,
+    "independent_second_reviewer": null,
+    "release_eligible": false
+  },
+  "release_eligible": false,
+  "page_artwork_register": [
+    {
+      "main_id": 39,
+      "character": "山",
+      "replaced_card_pdf_page": 15,
+      "scene_key": "p10-mountain-clouds",
+      "scene_file": "ID039-mountain-cloud-sea.svg",
+      "scene_sha256": "24c7cdcb67986ea343f5f60a5ad6138f61e48f3afd8fa42d94da6b595dd1e465",
+      "inset_rect_mm": [
+        119,
+        52,
+        73,
+        53
+      ],
+      "P9_card_replaced_with_explicit_pending_notice": true,
+      "art_human_review_approved": false
+    },
+    {
+      "main_id": 64,
+      "character": "木",
+      "replaced_card_pdf_page": 19,
+      "scene_key": "p10-ancient-tree",
+      "scene_file": "ID064-tree-roots-canopy.svg",
+      "scene_sha256": "750eac543b5ced7b5a923c2f242852909540052d3b4f6276cf460baa27310a3a",
+      "inset_rect_mm": [
+        119,
+        52,
+        73,
+        53
+      ],
+      "P9_card_replaced_with_explicit_pending_notice": true,
+      "art_human_review_approved": false
+    },
+    {
+      "main_id": 75,
+      "character": "日",
+      "replaced_card_pdf_page": 20,
+      "scene_key": "p10-morning-village",
+      "scene_file": "ID075-sunrise-village.svg",
+      "scene_sha256": "ada644ffaef59540ee36cbcf727528cade2842cbf5a29168539635a101d3043d",
+      "inset_rect_mm": [
+        119,
+        52,
+        73,
+        53
+      ],
+      "P9_card_replaced_with_explicit_pending_notice": true,
+      "art_human_review_approved": false
+    },
+    {
+      "main_id": 77,
+      "character": "水",
+      "replaced_card_pdf_page": 17,
+      "scene_key": "p10-river-crossing",
+      "scene_file": "ID077-water-river-crossing.svg",
+      "scene_sha256": "618a94c3bb4e685f118a2a169d28ba910b00317caecaf219d7eb7052e9ee6ce7",
+      "inset_rect_mm": [
+        119,
+        52,
+        73,
+        53
+      ],
+      "P9_card_replaced_with_explicit_pending_notice": true,
+      "art_human_review_approved": false
+    },
+    {
+      "main_id": 80,
+      "character": "手",
+      "replaced_card_pdf_page": 24,
+      "scene_key": "p10-folded-paper-boat",
+      "scene_file": "ID080-hand-paper-boat.svg",
+      "scene_sha256": "b955a72857fc08e1d5b8771a874b6cea5d3cb2e9960d6eb584270f8f53577b38",
+      "inset_rect_mm": [
+        119,
+        52,
+        73,
+        53
+      ],
+      "P9_card_replaced_with_explicit_pending_notice": true,
+      "art_human_review_approved": false
+    },
+    {
+      "main_id": 88,
+      "character": "月",
+      "replaced_card_pdf_page": 21,
+      "scene_key": "p10-moon-river-town",
+      "scene_file": "ID088-moon-rooftop-canal.svg",
+      "scene_sha256": "fd23ccdf34ab00144a49acdad7f3bad70c3b9e3384afd315fe1eb11ca1010017",
+      "inset_rect_mm": [
+        119,
+        52,
+        73,
+        53
+      ],
+      "P9_card_replaced_with_explicit_pending_notice": true,
+      "art_human_review_approved": false
+    },
+    {
+      "main_id": 95,
+      "character": "火",
+      "replaced_card_pdf_page": 18,
+      "scene_key": "p10-hearth-window",
+      "scene_file": "ID095-fire-hearth-kitchen.svg",
+      "scene_sha256": "9f5da422e630687afef5fad80ee65c84ddc337b394de2b8ebb3fcf350510514b",
+      "inset_rect_mm": [
+        119,
+        52,
+        73,
+        53
+      ],
+      "P9_card_replaced_with_explicit_pending_notice": true,
+      "art_human_review_approved": false
+    },
+    {
+      "main_id": 105,
+      "character": "目",
+      "replaced_card_pdf_page": 23,
+      "scene_key": "p10-magnified-leaf",
+      "scene_file": "ID105-eye-magnifying-leaf.svg",
+      "scene_sha256": "86dd37671cdbf0cfb1b10c495acf9e8165c9e35ef64417c65905c9d8d7df60f6",
+      "inset_rect_mm": [
+        119,
+        52,
+        73,
+        53
+      ],
+      "P9_card_replaced_with_explicit_pending_notice": true,
+      "art_human_review_approved": false
+    }
+  ]
+}
