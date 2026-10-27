@@ -1,0 +1,73 @@
+name: P6 cultural 201-glyph all-gates publication readiness, fail closed
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/cultural_p6_prepublication_gate.py'
+      - 'scripts/test_cultural_p6_prepublication_gate.py'
+      - 'data/cultural_edition/p6_release_human_signoffs.json'
+      - '.github/workflows/cultural-p6-prepublication.yml'
+      - 'reviews/cultural-edition/P6-unified-blocked-publication-20261028.md'
+  push:
+    branches:
+      - feat/cultural-p6-unified-prepublication-gate-20261028
+    paths:
+      - 'scripts/cultural_p6_prepublication_gate.py'
+      - 'scripts/test_cultural_p6_prepublication_gate.py'
+      - 'data/cultural_edition/p6_release_human_signoffs.json'
+      - '.github/workflows/cultural-p6-prepublication.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  source-locked-201-1013-1045-and-not-approved:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Reconcile current archived PDF and ALL separate content approval ledgers
+        run: |
+          set -euo pipefail
+          python scripts/cultural_p6_prepublication_gate.py --output-dir build/cultural-p6
+      - name: Verify thirteen negative injection scenarios
+        run: |
+          set -euo pipefail
+          python scripts/test_cultural_p6_prepublication_gate.py
+      - name: Prove request for formal release is denied until real human evidence is present
+        run: |
+          set -euo pipefail
+          if python scripts/cultural_p6_prepublication_gate.py \
+               --output-dir build/cultural-p6/strict-negative-test \
+               --require-release-ready; then
+            echo 'ERROR: incomplete cultural book was automatically cleared for release' >&2
+            exit 1
+          fi
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          root=Path('build/cultural-p6')
+          ledger=json.loads((root/'P6-all-gates-201-review-matrix-BLOCKED.json').read_text())
+          assert ledger['release_eligible'] is False
+          assert ledger['total_P8_pronunciation_slots_pending']==1013
+          assert ledger['original_vector_stroke_steps_pixel_QA_passed']==1045
+          assert ledger['P9_out_of_GF0023_scope_require_other_authority']==37
+          assert ledger['P9_fine_stroke_labels_missing']==83
+          assert (ledger['P10_individual_scene_studies_unapproved'],ledger['P10_professional_illustrations_undrawn'])==(8,193)
+          assert ledger['P5_real_paper_print_approval'] is False
+          assert ledger['P6_explicit_user_publication_approval'] is False
+          assert len(ledger['per_glyph_reviews'])==201
+          print('PASS: 201-glyph audit complete, but formal publication correctly BLOCKED')
+          PY
+      - name: Upload editable 201-glyph reviewer queue and P6 outstanding gates
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: P6-unified-201-glyph-1013-Pinyin-1045-pen-review-NO-RELEASE
+          path: build/cultural-p6/
+          retention-days: 30
+          if-no-files-found: warn
