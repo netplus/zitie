@@ -1,0 +1,103 @@
+name: P10 professional-art direction and P5 print review gate
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/cultural_p10_art_review.py'
+      - 'scripts/test_cultural_p10_art_review.py'
+      - 'scripts/cultural_p10_fullbook_p5_screening.py'
+      - 'data/cultural_edition/artwork/p10_studies/**'
+      - '.github/workflows/cultural-p10-art-review.yml'
+      - 'reviews/cultural-edition/P10-art-direction-P5-20261026.md'
+  push:
+    branches:
+      - feat/cultural-p10-art-direction-p5-20261026
+    paths:
+      - 'scripts/cultural_p10_art_review.py'
+      - 'scripts/test_cultural_p10_art_review.py'
+      - 'data/cultural_edition/artwork/p10_studies/**'
+      - '.github/workflows/cultural-p10-art-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  four-original-scenes-and-201-fail-closed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Prepare pinned CJK and vector proof dependencies
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y libcairo2-dev libffi-dev pkg-config \
+            fonts-arphic-gkai00mp fonts-arphic-gbsn00lp fonts-arphic-uming fonts-dejavu-core
+          python -m pip install \
+            'PyMuPDF==1.26.7' 'reportlab==4.4.9' \
+            'Pillow==12.3.0' 'numpy==2.3.5' 'svglib==1.6.0'
+      - name: Fail-closed 201 storyboard and scene safety negative tests
+        run: python scripts/test_cultural_p10_art_review.py
+      - name: Build five-page A4 P10 color and grayscale art inspection proof
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/p10-art-proof
+          python scripts/cultural_p10_art_review.py \
+            --output build/p10-art-proof/201-source-4-art-studies-P10-UNREVIEWED.pdf \
+            --ledger build/p10-art-proof/201-art-review-ledger.json \
+            --qa build/p10-art-proof/art-safety-and-grayscale-qa.json
+      - name: Verify that the print proof and 201-state records are reproducible
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/p10-repeat
+          python scripts/cultural_p10_art_review.py \
+            --output build/p10-repeat/repeat.pdf \
+            --ledger build/p10-repeat/ledger.json \
+            --qa build/p10-repeat/qa.json
+          cmp build/p10-art-proof/201-source-4-art-studies-P10-UNREVIEWED.pdf build/p10-repeat/repeat.pdf
+          cmp build/p10-art-proof/201-art-review-ledger.json build/p10-repeat/ledger.json
+          python - <<'PY'
+          from pathlib import Path
+          import json,fitz,hashlib
+          out=Path('build/p10-art-proof')
+          ledger=json.loads((out/'201-art-review-ledger.json').read_text())
+          qa=json.loads((out/'art-safety-and-grayscale-qa.json').read_text())
+          assert (len(ledger['entries']),ledger['art_direction_studies'],
+                  ledger['not_yet_redrawn'])==(201,4,197)
+          assert (qa['professional_picture_approvals'],qa['publication_eligible'])==(0,False)
+          with fitz.open(out/'201-source-4-art-studies-P10-UNREVIEWED.pdf') as pdf:
+            assert len(pdf)==5
+            directory=out/'rendered-pages';directory.mkdir()
+            for i,page in enumerate(pdf):
+              png=page.get_pixmap(matrix=fitz.Matrix(1.45,1.45),alpha=False)
+              png.save(directory/f'P10-art-p{i+1:02d}.png')
+          frozen={
+           'deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf':
+            '7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90',
+           'deliverables/drafts/cultural-v0.9-stroke-review/zitie-201-P9-normative-stroke-review-UNREVIEWED.pdf':
+            '8178a8d7bdf5258625efa0b74e7b82c0146c24da802f006f2135f17705e7fd89'
+          }
+          for name,sha in frozen.items():
+            assert hashlib.sha256(Path(name).read_bytes()).hexdigest()==sha
+          print('PASS: 4 original vector studies, 201 art slots, 5 printable pages, old P9+v051 byte-identical; ZERO publication approvals')
+          PY
+      - name: P5 preliminary render and grayscale-screen every one of 260 P9 pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/cultural_p10_fullbook_p5_screening.py --output-dir build/p10-art-proof/fullbook-P5-electronic-screening
+      - name: Upload only unapproved art studies and all P5 review evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: P10-four-cultural-art-studies-and-201-review-ledger-UNREVIEWED
+          path: build/p10-art-proof/
+          retention-days: 14
+          if-no-files-found: warn
