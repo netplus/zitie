@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "document_kind": "P6_PHYSICAL_PRINT_AND_USER_EXPLICIT_RELEASE_APPROVAL_REQUIRED",
+  "source_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+  "target_draft_version": "cultural-v0.10-eight-art-source-review-draft",
+  "target_draft_sha256": "fb2388fe0d5642b35fe3560ff5733c653335074cba9460003d5388d4f42a361f",
+  "target_pdf_pages": 260,
+  "proof_note": "This is a form for future real reviewers; NO human or machine signature is asserted. Do not retroactively authorize unknown print QA.",
+  "physical_A4_color_and_grayscale_print_session": null,
+  "printer_and_paper_record": null,
+  "independent_print_reviewer": null,
+  "parental_age_appropriateness_approval": null,
+  "editorial_committee_approval": null,
+  "explicit_user_P6_release_decision": null,
+  "release_eligible": false,
+  "release_blockers": [
+    "P8: 201 main glyphs+812 related examples all require exact meaning-matched standard dictionary evidence and two human reviews",
+    "P9: 1045 original cumulative pen shapes not independently certified correct; 37 rare components beyond GF0023; 83 missing exact fine pen names; disputed 子 stroke 2",
+    "P10: 8 independent scene studies still art-review pending; 193 scenes undrawn; all 201 require copyright and quality signoff",
+    "P5: actual physical A4 color+grayscale print session, accessibility, page-level review and independent reviewer approval",
+    "P6: explicit authorization from the user for the new release after all above complete"
+  ]
+}
