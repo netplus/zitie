@@ -1,0 +1,4009 @@
+{
+  "schema_version": 1,
+  "document_kind": "P9_SOURCE_LOCKED_37_83_AND_COARSE_CONFLICT_ACTIONABLE_REVIEW_CASES_NOT_APPROVAL",
+  "source_v051_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+  "source_P9_secondary_kind": "P9_SECONDARY_STROKE_CROSSCHECK_NOT_AUTHORITY_PROOF",
+  "GF0023_full_original_sha256": "0ff0890afc34c5e486edeebafb05350dec69a7bf0d1d75044d7d3f7b722ec3d0",
+  "applicable_primary_standards": [
+    {
+      "code": "GF 0023—2020",
+      "source": "https://jw.beijing.gov.cn/language/bzgf/202105/P020210512414220837538.pdf",
+      "scope": "8105 general normative characters only",
+      "actual_main_rows_exactly_found": 164
+    },
+    {
+      "code": "GF 3002—1999",
+      "source": "https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/201001/W020150902457900316281.pdf",
+      "scope": "Extended GB13000.1 stroke-order reference: precise 37 primary rows NOT YET EXTRACTED",
+      "actual_main_rows_exactly_found": 0
+    },
+    {
+      "code": "GF 2001—2001",
+      "source": "https://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/12/20150112170016626.pdf",
+      "scope": "Detailed shape definitions for strokes and folds; not by itself full original 201 glyph stroke order",
+      "actual_main_rows_exactly_found": null
+    }
+  ],
+  "expected_source_glyphs": 201,
+  "expected_source_steps": 1045,
+  "expected_GF0023_primary_rows": 164,
+  "expected_outside_GF0023_scope": 37,
+  "expected_unknown_fine_name_steps": 83,
+  "expected_unknown_fine_name_main_glyphs": 14,
+  "expected_coarse_discrepancy_glyphs": 1,
+  "release_eligible": false,
+  "first_reviewer": null,
+  "independent_second_reviewer": null,
+  "warnings": [
+    "No third-party five-category code demonstrates all drawn pen geometries are normatively correct.",
+    "Formal human review and physical A4 print are still pending.",
+    "Existing released v0.5.1 PDF must remain byte-identical; approved corrections must derive a new source."
+  ],
+  "out_of_scope_characters": [
+    {
+      "main_id": 2,
+      "character": "丨",
+      "source_stroke_count": 1,
+      "secondary_five_category_reference": "2",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "竖",
+          "source_pdf_page": 76,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 3,
+      "character": "丿",
+      "source_stroke_count": 1,
+      "secondary_five_category_reference": "3",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "撇",
+          "source_pdf_page": 77,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 4,
+      "character": "丶",
+      "source_stroke_count": 1,
+      "secondary_five_category_reference": "4",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "点",
+          "source_pdf_page": 78,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 5,
+      "character": "乛",
+      "source_stroke_count": 1,
+      "secondary_five_category_reference": "5",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "横钩",
+          "source_pdf_page": 79,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 8,
+      "character": "匚",
+      "source_stroke_count": 2,
+      "secondary_five_category_reference": "15",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "横",
+          "source_pdf_page": 57,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "竖折",
+          "source_pdf_page": 57,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 10,
+      "character": "冂",
+      "source_stroke_count": 2,
+      "secondary_five_category_reference": "25",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "竖",
+          "source_pdf_page": 59,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "横折钩",
+          "source_pdf_page": 59,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 13,
+      "character": "勹",
+      "source_stroke_count": 2,
+      "secondary_five_category_reference": "35",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "撇",
+          "source_pdf_page": 60,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "横折钩",
+          "source_pdf_page": 60,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 17,
+      "character": "亠",
+      "source_stroke_count": 2,
+      "secondary_five_category_reference": "41",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "点",
+          "source_pdf_page": 64,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "横",
+          "source_pdf_page": 64,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 18,
+      "character": "冫",
+      "source_stroke_count": 2,
+      "secondary_five_category_reference": "41",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "点",
+          "source_pdf_page": 65,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "提",
+          "source_pdf_page": 65,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 19,
+      "character": "冖",
+      "source_stroke_count": 2,
+      "secondary_five_category_reference": "45",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "点",
+          "source_pdf_page": 66,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "横钩",
+          "source_pdf_page": 66,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 20,
+      "character": "凵",
+      "source_stroke_count": 2,
+      "secondary_five_category_reference": "52",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "竖折",
+          "source_pdf_page": 67,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "竖",
+          "source_pdf_page": 67,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 21,
+      "character": "卩",
+      "source_stroke_count": 2,
+      "secondary_five_category_reference": "52",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "横折钩",
+          "source_pdf_page": 68,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "竖",
+          "source_pdf_page": 68,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 25,
+      "character": "厶",
+      "source_stroke_count": 2,
+      "secondary_five_category_reference": "54",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "撇折",
+          "source_pdf_page": 69,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "点",
+          "source_pdf_page": 69,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 26,
+      "character": "廴",
+      "source_stroke_count": 2,
+      "secondary_five_category_reference": "54",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "横折折撇",
+          "source_pdf_page": 70,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "捺",
+          "source_pdf_page": 70,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 30,
+      "character": "艹",
+      "source_stroke_count": 3,
+      "secondary_five_category_reference": "122",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "横",
+          "source_pdf_page": 71,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "竖",
+          "source_pdf_page": 71,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "竖",
+          "source_pdf_page": 71,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 32,
+      "character": "廾",
+      "source_stroke_count": 3,
+      "secondary_five_category_reference": "132",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "横",
+          "source_pdf_page": 72,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "撇",
+          "source_pdf_page": 72,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "竖",
+          "source_pdf_page": 72,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 38,
+      "character": "囗",
+      "source_stroke_count": 3,
+      "secondary_five_category_reference": "251",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "竖",
+          "source_pdf_page": 82,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "横折",
+          "source_pdf_page": 82,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "横",
+          "source_pdf_page": 82,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 42,
+      "character": "彡",
+      "source_stroke_count": 3,
+      "secondary_five_category_reference": "333",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "撇",
+          "source_pdf_page": 84,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "撇",
+          "source_pdf_page": 84,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "撇",
+          "source_pdf_page": 84,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 44,
+      "character": "夂",
+      "source_stroke_count": 3,
+      "secondary_five_category_reference": "354",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "撇",
+          "source_pdf_page": 85,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "横撇",
+          "source_pdf_page": 85,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "捺",
+          "source_pdf_page": 85,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 45,
+      "character": "丬",
+      "source_stroke_count": 3,
+      "secondary_five_category_reference": "412",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "点",
+          "source_pdf_page": 96,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "提",
+          "source_pdf_page": 96,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "竖",
+          "source_pdf_page": 96,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 48,
+      "character": "宀",
+      "source_stroke_count": 3,
+      "secondary_five_category_reference": "445",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "点",
+          "source_pdf_page": 73,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "点",
+          "source_pdf_page": 73,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "横钩",
+          "source_pdf_page": 73,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 49,
+      "character": "辶",
+      "source_stroke_count": 3,
+      "secondary_five_category_reference": "454",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "点",
+          "source_pdf_page": 74,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "横折折撇",
+          "source_pdf_page": 74,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "捺",
+          "source_pdf_page": 74,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 50,
+      "character": "彐",
+      "source_stroke_count": 3,
+      "secondary_five_category_reference": "511",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "横折",
+          "source_pdf_page": 75,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "横",
+          "source_pdf_page": 75,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "横",
+          "source_pdf_page": 75,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 55,
+      "character": "屮",
+      "source_stroke_count": 3,
+      "secondary_five_category_reference": "522",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "第1笔",
+          "source_pdf_page": 116,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "第2笔",
+          "source_pdf_page": 116,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "第3笔",
+          "source_pdf_page": 116,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 60,
+      "character": "巛",
+      "source_stroke_count": 3,
+      "secondary_five_category_reference": "555",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "第1笔",
+          "source_pdf_page": 117,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "第2笔",
+          "source_pdf_page": 117,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "第3笔",
+          "source_pdf_page": 117,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 74,
+      "character": "攴",
+      "source_stroke_count": 4,
+      "secondary_five_category_reference": "2154",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "竖",
+          "source_pdf_page": 98,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "横",
+          "source_pdf_page": 98,
+          "source_rect_pt": [
+            181.7585,
+            278.88977,
+            267.75848,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "横撇",
+          "source_pdf_page": 98,
+          "source_rect_pt": [
+            327.51709,
+            278.88977,
+            413.51709,
+            364.88977
+          ]
+        },
+        {
+          "step": 4,
+          "original_name": "捺",
+          "source_pdf_page": 98,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 107,
+      "character": "罒",
+      "source_stroke_count": 5,
+      "secondary_five_category_reference": "25221",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "竖",
+          "source_pdf_page": 110,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "横折",
+          "source_pdf_page": 110,
+          "source_rect_pt": [
+            145.31889,
+            278.88977,
+            231.31889,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "竖",
+          "source_pdf_page": 110,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        },
+        {
+          "step": 4,
+          "original_name": "竖",
+          "source_pdf_page": 110,
+          "source_rect_pt": [
+            363.9567,
+            278.88977,
+            449.9567,
+            364.88977
+          ]
+        },
+        {
+          "step": 5,
+          "original_name": "横",
+          "source_pdf_page": 110,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 115,
+      "character": "疒",
+      "source_stroke_count": 5,
+      "secondary_five_category_reference": "41341",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "第1笔",
+          "source_pdf_page": 121,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "第2笔",
+          "source_pdf_page": 121,
+          "source_rect_pt": [
+            145.31889,
+            278.88977,
+            231.31889,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "第3笔",
+          "source_pdf_page": 121,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        },
+        {
+          "step": 4,
+          "original_name": "第4笔",
+          "source_pdf_page": 121,
+          "source_rect_pt": [
+            363.9567,
+            278.88977,
+            449.9567,
+            364.88977
+          ]
+        },
+        {
+          "step": 5,
+          "original_name": "第5笔",
+          "source_pdf_page": 121,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 118,
+      "character": "疋",
+      "source_stroke_count": 5,
+      "secondary_five_category_reference": "52134",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "第1笔",
+          "source_pdf_page": 123,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "第2笔",
+          "source_pdf_page": 123,
+          "source_rect_pt": [
+            145.31889,
+            278.88977,
+            231.31889,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "第3笔",
+          "source_pdf_page": 123,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        },
+        {
+          "step": 4,
+          "original_name": "第4笔",
+          "source_pdf_page": 123,
+          "source_rect_pt": [
+            363.9567,
+            278.88977,
+            449.9567,
+            364.88977
+          ]
+        },
+        {
+          "step": 5,
+          "original_name": "第5笔",
+          "source_pdf_page": 123,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 120,
+      "character": "癶",
+      "source_stroke_count": 5,
+      "secondary_five_category_reference": "54334",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "第1笔",
+          "source_pdf_page": 125,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "第2笔",
+          "source_pdf_page": 125,
+          "source_rect_pt": [
+            145.31889,
+            278.88977,
+            231.31889,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "第3笔",
+          "source_pdf_page": 125,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        },
+        {
+          "step": 4,
+          "original_name": "第4笔",
+          "source_pdf_page": 125,
+          "source_rect_pt": [
+            363.9567,
+            278.88977,
+            449.9567,
+            364.88977
+          ]
+        },
+        {
+          "step": 5,
+          "original_name": "第5笔",
+          "source_pdf_page": 125,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 126,
+      "character": "覀",
+      "source_stroke_count": 6,
+      "secondary_five_category_reference": "125221",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "第1笔",
+          "source_pdf_page": 131,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "第2笔",
+          "source_pdf_page": 131,
+          "source_rect_pt": [
+            123.4551,
+            278.88977,
+            209.45511,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "第3笔",
+          "source_pdf_page": 131,
+          "source_rect_pt": [
+            210.9102,
+            278.88977,
+            296.91022,
+            364.88977
+          ]
+        },
+        {
+          "step": 4,
+          "original_name": "第4笔",
+          "source_pdf_page": 131,
+          "source_rect_pt": [
+            298.36539,
+            278.88977,
+            384.36539,
+            364.88977
+          ]
+        },
+        {
+          "step": 5,
+          "original_name": "第5笔",
+          "source_pdf_page": 131,
+          "source_rect_pt": [
+            385.8205,
+            278.88977,
+            471.8205,
+            364.88977
+          ]
+        },
+        {
+          "step": 6,
+          "original_name": "第6笔",
+          "source_pdf_page": 131,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 130,
+      "character": "虍",
+      "source_stroke_count": 6,
+      "secondary_five_category_reference": "215315",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "第1笔",
+          "source_pdf_page": 135,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "第2笔",
+          "source_pdf_page": 135,
+          "source_rect_pt": [
+            123.4551,
+            278.88977,
+            209.45511,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "第3笔",
+          "source_pdf_page": 135,
+          "source_rect_pt": [
+            210.9102,
+            278.88977,
+            296.91022,
+            364.88977
+          ]
+        },
+        {
+          "step": 4,
+          "original_name": "第4笔",
+          "source_pdf_page": 135,
+          "source_rect_pt": [
+            298.36539,
+            278.88977,
+            384.36539,
+            364.88977
+          ]
+        },
+        {
+          "step": 5,
+          "original_name": "第5笔",
+          "source_pdf_page": 135,
+          "source_rect_pt": [
+            385.8205,
+            278.88977,
+            471.8205,
+            364.88977
+          ]
+        },
+        {
+          "step": 6,
+          "original_name": "第6笔",
+          "source_pdf_page": 135,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 148,
+      "character": "糸",
+      "source_stroke_count": 6,
+      "secondary_five_category_reference": "554234",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "第1笔",
+          "source_pdf_page": 153,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "第2笔",
+          "source_pdf_page": 153,
+          "source_rect_pt": [
+            123.4551,
+            278.88977,
+            209.45511,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "第3笔",
+          "source_pdf_page": 153,
+          "source_rect_pt": [
+            210.9102,
+            278.88977,
+            296.91022,
+            364.88977
+          ]
+        },
+        {
+          "step": 4,
+          "original_name": "第4笔",
+          "source_pdf_page": 153,
+          "source_rect_pt": [
+            298.36539,
+            278.88977,
+            384.36539,
+            364.88977
+          ]
+        },
+        {
+          "step": 5,
+          "original_name": "第5笔",
+          "source_pdf_page": 153,
+          "source_rect_pt": [
+            385.8205,
+            278.88977,
+            471.8205,
+            364.88977
+          ]
+        },
+        {
+          "step": 6,
+          "original_name": "第6笔",
+          "source_pdf_page": 153,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 161,
+      "character": "釆",
+      "source_stroke_count": 7,
+      "secondary_five_category_reference": "3431234",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "第1笔",
+          "source_pdf_page": 178,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "第2笔",
+          "source_pdf_page": 178,
+          "source_rect_pt": [
+            123.4551,
+            278.88977,
+            209.45511,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "第3笔",
+          "source_pdf_page": 178,
+          "source_rect_pt": [
+            210.9102,
+            278.88977,
+            296.91022,
+            364.88977
+          ]
+        },
+        {
+          "step": 4,
+          "original_name": "第4笔",
+          "source_pdf_page": 178,
+          "source_rect_pt": [
+            298.36539,
+            278.88977,
+            384.36539,
+            364.88977
+          ]
+        },
+        {
+          "step": 5,
+          "original_name": "第5笔",
+          "source_pdf_page": 178,
+          "source_rect_pt": [
+            385.8205,
+            278.88977,
+            471.8205,
+            364.88977
+          ]
+        },
+        {
+          "step": 6,
+          "original_name": "第6笔",
+          "source_pdf_page": 178,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        },
+        {
+          "step": 7,
+          "original_name": "第7笔",
+          "source_pdf_page": 179,
+          "source_rect_pt": [
+            254.6378,
+            278.88977,
+            340.63782,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 169,
+      "character": "龺",
+      "source_stroke_count": 8,
+      "secondary_five_category_reference": "12251112",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "第1笔",
+          "source_pdf_page": 194,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "第2笔",
+          "source_pdf_page": 194,
+          "source_rect_pt": [
+            123.4551,
+            278.88977,
+            209.45511,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "第3笔",
+          "source_pdf_page": 194,
+          "source_rect_pt": [
+            210.9102,
+            278.88977,
+            296.91022,
+            364.88977
+          ]
+        },
+        {
+          "step": 4,
+          "original_name": "第4笔",
+          "source_pdf_page": 194,
+          "source_rect_pt": [
+            298.36539,
+            278.88977,
+            384.36539,
+            364.88977
+          ]
+        },
+        {
+          "step": 5,
+          "original_name": "第5笔",
+          "source_pdf_page": 194,
+          "source_rect_pt": [
+            385.8205,
+            278.88977,
+            471.8205,
+            364.88977
+          ]
+        },
+        {
+          "step": 6,
+          "original_name": "第6笔",
+          "source_pdf_page": 194,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        },
+        {
+          "step": 7,
+          "original_name": "第7笔",
+          "source_pdf_page": 195,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 8,
+          "original_name": "第8笔",
+          "source_pdf_page": 195,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 188,
+      "character": "髟",
+      "source_stroke_count": 10,
+      "secondary_five_category_reference": "1211154333",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "第1笔",
+          "source_pdf_page": 232,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "第2笔",
+          "source_pdf_page": 232,
+          "source_rect_pt": [
+            123.4551,
+            278.88977,
+            209.45511,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "第3笔",
+          "source_pdf_page": 232,
+          "source_rect_pt": [
+            210.9102,
+            278.88977,
+            296.91022,
+            364.88977
+          ]
+        },
+        {
+          "step": 4,
+          "original_name": "第4笔",
+          "source_pdf_page": 232,
+          "source_rect_pt": [
+            298.36539,
+            278.88977,
+            384.36539,
+            364.88977
+          ]
+        },
+        {
+          "step": 5,
+          "original_name": "第5笔",
+          "source_pdf_page": 232,
+          "source_rect_pt": [
+            385.8205,
+            278.88977,
+            471.8205,
+            364.88977
+          ]
+        },
+        {
+          "step": 6,
+          "original_name": "第6笔",
+          "source_pdf_page": 232,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        },
+        {
+          "step": 7,
+          "original_name": "第7笔",
+          "source_pdf_page": 233,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 8,
+          "original_name": "第8笔",
+          "source_pdf_page": 233,
+          "source_rect_pt": [
+            181.7585,
+            278.88977,
+            267.75848,
+            364.88977
+          ]
+        },
+        {
+          "step": 9,
+          "original_name": "第9笔",
+          "source_pdf_page": 233,
+          "source_rect_pt": [
+            327.51709,
+            278.88977,
+            413.51709,
+            364.88977
+          ]
+        },
+        {
+          "step": 10,
+          "original_name": "第10笔",
+          "source_pdf_page": 233,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "source_stroke_count": 10,
+      "secondary_five_category_reference": "2112111212",
+      "GF0023_8105_scope": "outside_not_authorized",
+      "other_normative_primary_row_pdf_page": null,
+      "original_step_refs": [
+        {
+          "step": 1,
+          "original_name": "第1笔",
+          "source_pdf_page": 236,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 2,
+          "original_name": "第2笔",
+          "source_pdf_page": 236,
+          "source_rect_pt": [
+            123.4551,
+            278.88977,
+            209.45511,
+            364.88977
+          ]
+        },
+        {
+          "step": 3,
+          "original_name": "第3笔",
+          "source_pdf_page": 236,
+          "source_rect_pt": [
+            210.9102,
+            278.88977,
+            296.91022,
+            364.88977
+          ]
+        },
+        {
+          "step": 4,
+          "original_name": "第4笔",
+          "source_pdf_page": 236,
+          "source_rect_pt": [
+            298.36539,
+            278.88977,
+            384.36539,
+            364.88977
+          ]
+        },
+        {
+          "step": 5,
+          "original_name": "第5笔",
+          "source_pdf_page": 236,
+          "source_rect_pt": [
+            385.8205,
+            278.88977,
+            471.8205,
+            364.88977
+          ]
+        },
+        {
+          "step": 6,
+          "original_name": "第6笔",
+          "source_pdf_page": 236,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        },
+        {
+          "step": 7,
+          "original_name": "第7笔",
+          "source_pdf_page": 237,
+          "source_rect_pt": [
+            36,
+            278.88977,
+            122,
+            364.88977
+          ]
+        },
+        {
+          "step": 8,
+          "original_name": "第8笔",
+          "source_pdf_page": 237,
+          "source_rect_pt": [
+            181.7585,
+            278.88977,
+            267.75848,
+            364.88977
+          ]
+        },
+        {
+          "step": 9,
+          "original_name": "第9笔",
+          "source_pdf_page": 237,
+          "source_rect_pt": [
+            327.51709,
+            278.88977,
+            413.51709,
+            364.88977
+          ]
+        },
+        {
+          "step": 10,
+          "original_name": "第10笔",
+          "source_pdf_page": 237,
+          "source_rect_pt": [
+            473.2756,
+            278.88977,
+            559.27563,
+            364.88977
+          ]
+        }
+      ],
+      "next_action": "Locate exact GF3002 or other applicable primary standard ORIGINAL drawing/table row. If absent, mark BLOCKED and review with professional Chinese handwriting/education expert.",
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_primary_normative_original_row_missing",
+      "publication_eligible": false
+    }
+  ],
+  "unknown_fine_name_steps": [
+    {
+      "main_id": 55,
+      "character": "屮",
+      "step_index": 1,
+      "legacy_name": "第1笔",
+      "source_pdf_page": 116,
+      "source_rect_pt": [
+        36,
+        278.88977,
+        122,
+        364.88977
+      ],
+      "source_five_code_digit": "5",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 55,
+      "character": "屮",
+      "step_index": 2,
+      "legacy_name": "第2笔",
+      "source_pdf_page": 116,
+      "source_rect_pt": [
+        254.6378,
+        278.88977,
+        340.63782,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 55,
+      "character": "屮",
+      "step_index": 3,
+      "legacy_name": "第3笔",
+      "source_pdf_page": 116,
+      "source_rect_pt": [
+        473.2756,
+        278.88977,
+        559.27563,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 60,
+      "character": "巛",
+      "step_index": 1,
+      "legacy_name": "第1笔",
+      "source_pdf_page": 117,
+      "source_rect_pt": [
+        36,
+        278.88977,
+        122,
+        364.88977
+      ],
+      "source_five_code_digit": "5",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 60,
+      "character": "巛",
+      "step_index": 2,
+      "legacy_name": "第2笔",
+      "source_pdf_page": 117,
+      "source_rect_pt": [
+        254.6378,
+        278.88977,
+        340.63782,
+        364.88977
+      ],
+      "source_five_code_digit": "5",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 60,
+      "character": "巛",
+      "step_index": 3,
+      "legacy_name": "第3笔",
+      "source_pdf_page": 117,
+      "source_rect_pt": [
+        473.2756,
+        278.88977,
+        559.27563,
+        364.88977
+      ],
+      "source_five_code_digit": "5",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 69,
+      "character": "牙",
+      "step_index": 1,
+      "legacy_name": "第1笔",
+      "source_pdf_page": 50,
+      "source_rect_pt": [
+        36,
+        278.88977,
+        122,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 69,
+      "character": "牙",
+      "step_index": 2,
+      "legacy_name": "第2笔",
+      "source_pdf_page": 50,
+      "source_rect_pt": [
+        181.7585,
+        278.88977,
+        267.75848,
+        364.88977
+      ],
+      "source_five_code_digit": "5",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 69,
+      "character": "牙",
+      "step_index": 3,
+      "legacy_name": "第3笔",
+      "source_pdf_page": 50,
+      "source_rect_pt": [
+        327.51709,
+        278.88977,
+        413.51709,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 69,
+      "character": "牙",
+      "step_index": 4,
+      "legacy_name": "第4笔",
+      "source_pdf_page": 50,
+      "source_rect_pt": [
+        473.2756,
+        278.88977,
+        559.27563,
+        364.88977
+      ],
+      "source_five_code_digit": "3",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 115,
+      "character": "疒",
+      "step_index": 1,
+      "legacy_name": "第1笔",
+      "source_pdf_page": 121,
+      "source_rect_pt": [
+        36,
+        278.88977,
+        122,
+        364.88977
+      ],
+      "source_five_code_digit": "4",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 115,
+      "character": "疒",
+      "step_index": 2,
+      "legacy_name": "第2笔",
+      "source_pdf_page": 121,
+      "source_rect_pt": [
+        145.31889,
+        278.88977,
+        231.31889,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 115,
+      "character": "疒",
+      "step_index": 3,
+      "legacy_name": "第3笔",
+      "source_pdf_page": 121,
+      "source_rect_pt": [
+        254.6378,
+        278.88977,
+        340.63782,
+        364.88977
+      ],
+      "source_five_code_digit": "3",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 115,
+      "character": "疒",
+      "step_index": 4,
+      "legacy_name": "第4笔",
+      "source_pdf_page": 121,
+      "source_rect_pt": [
+        363.9567,
+        278.88977,
+        449.9567,
+        364.88977
+      ],
+      "source_five_code_digit": "4",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 115,
+      "character": "疒",
+      "step_index": 5,
+      "legacy_name": "第5笔",
+      "source_pdf_page": 121,
+      "source_rect_pt": [
+        473.2756,
+        278.88977,
+        559.27563,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 118,
+      "character": "疋",
+      "step_index": 1,
+      "legacy_name": "第1笔",
+      "source_pdf_page": 123,
+      "source_rect_pt": [
+        36,
+        278.88977,
+        122,
+        364.88977
+      ],
+      "source_five_code_digit": "5",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 118,
+      "character": "疋",
+      "step_index": 2,
+      "legacy_name": "第2笔",
+      "source_pdf_page": 123,
+      "source_rect_pt": [
+        145.31889,
+        278.88977,
+        231.31889,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 118,
+      "character": "疋",
+      "step_index": 3,
+      "legacy_name": "第3笔",
+      "source_pdf_page": 123,
+      "source_rect_pt": [
+        254.6378,
+        278.88977,
+        340.63782,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 118,
+      "character": "疋",
+      "step_index": 4,
+      "legacy_name": "第4笔",
+      "source_pdf_page": 123,
+      "source_rect_pt": [
+        363.9567,
+        278.88977,
+        449.9567,
+        364.88977
+      ],
+      "source_five_code_digit": "3",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 118,
+      "character": "疋",
+      "step_index": 5,
+      "legacy_name": "第5笔",
+      "source_pdf_page": 123,
+      "source_rect_pt": [
+        473.2756,
+        278.88977,
+        559.27563,
+        364.88977
+      ],
+      "source_five_code_digit": "4",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 120,
+      "character": "癶",
+      "step_index": 1,
+      "legacy_name": "第1笔",
+      "source_pdf_page": 125,
+      "source_rect_pt": [
+        36,
+        278.88977,
+        122,
+        364.88977
+      ],
+      "source_five_code_digit": "5",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 120,
+      "character": "癶",
+      "step_index": 2,
+      "legacy_name": "第2笔",
+      "source_pdf_page": 125,
+      "source_rect_pt": [
+        145.31889,
+        278.88977,
+        231.31889,
+        364.88977
+      ],
+      "source_five_code_digit": "4",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 120,
+      "character": "癶",
+      "step_index": 3,
+      "legacy_name": "第3笔",
+      "source_pdf_page": 125,
+      "source_rect_pt": [
+        254.6378,
+        278.88977,
+        340.63782,
+        364.88977
+      ],
+      "source_five_code_digit": "3",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 120,
+      "character": "癶",
+      "step_index": 4,
+      "legacy_name": "第4笔",
+      "source_pdf_page": 125,
+      "source_rect_pt": [
+        363.9567,
+        278.88977,
+        449.9567,
+        364.88977
+      ],
+      "source_five_code_digit": "3",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 120,
+      "character": "癶",
+      "step_index": 5,
+      "legacy_name": "第5笔",
+      "source_pdf_page": 125,
+      "source_rect_pt": [
+        473.2756,
+        278.88977,
+        559.27563,
+        364.88977
+      ],
+      "source_five_code_digit": "4",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 121,
+      "character": "矛",
+      "step_index": 1,
+      "legacy_name": "第1笔",
+      "source_pdf_page": 126,
+      "source_rect_pt": [
+        36,
+        278.88977,
+        122,
+        364.88977
+      ],
+      "source_five_code_digit": "5",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 121,
+      "character": "矛",
+      "step_index": 2,
+      "legacy_name": "第2笔",
+      "source_pdf_page": 126,
+      "source_rect_pt": [
+        145.31889,
+        278.88977,
+        231.31889,
+        364.88977
+      ],
+      "source_five_code_digit": "4",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 121,
+      "character": "矛",
+      "step_index": 3,
+      "legacy_name": "第3笔",
+      "source_pdf_page": 126,
+      "source_rect_pt": [
+        254.6378,
+        278.88977,
+        340.63782,
+        364.88977
+      ],
+      "source_five_code_digit": "5",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 121,
+      "character": "矛",
+      "step_index": 4,
+      "legacy_name": "第4笔",
+      "source_pdf_page": 126,
+      "source_rect_pt": [
+        363.9567,
+        278.88977,
+        449.9567,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 121,
+      "character": "矛",
+      "step_index": 5,
+      "legacy_name": "第5笔",
+      "source_pdf_page": 126,
+      "source_rect_pt": [
+        473.2756,
+        278.88977,
+        559.27563,
+        364.88977
+      ],
+      "source_five_code_digit": "3",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 126,
+      "character": "覀",
+      "step_index": 1,
+      "legacy_name": "第1笔",
+      "source_pdf_page": 131,
+      "source_rect_pt": [
+        36,
+        278.88977,
+        122,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 126,
+      "character": "覀",
+      "step_index": 2,
+      "legacy_name": "第2笔",
+      "source_pdf_page": 131,
+      "source_rect_pt": [
+        123.4551,
+        278.88977,
+        209.45511,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 126,
+      "character": "覀",
+      "step_index": 3,
+      "legacy_name": "第3笔",
+      "source_pdf_page": 131,
+      "source_rect_pt": [
+        210.9102,
+        278.88977,
+        296.91022,
+        364.88977
+      ],
+      "source_five_code_digit": "5",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 126,
+      "character": "覀",
+      "step_index": 4,
+      "legacy_name": "第4笔",
+      "source_pdf_page": 131,
+      "source_rect_pt": [
+        298.36539,
+        278.88977,
+        384.36539,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 126,
+      "character": "覀",
+      "step_index": 5,
+      "legacy_name": "第5笔",
+      "source_pdf_page": 131,
+      "source_rect_pt": [
+        385.8205,
+        278.88977,
+        471.8205,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 126,
+      "character": "覀",
+      "step_index": 6,
+      "legacy_name": "第6笔",
+      "source_pdf_page": 131,
+      "source_rect_pt": [
+        473.2756,
+        278.88977,
+        559.27563,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 130,
+      "character": "虍",
+      "step_index": 1,
+      "legacy_name": "第1笔",
+      "source_pdf_page": 135,
+      "source_rect_pt": [
+        36,
+        278.88977,
+        122,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 130,
+      "character": "虍",
+      "step_index": 2,
+      "legacy_name": "第2笔",
+      "source_pdf_page": 135,
+      "source_rect_pt": [
+        123.4551,
+        278.88977,
+        209.45511,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 130,
+      "character": "虍",
+      "step_index": 3,
+      "legacy_name": "第3笔",
+      "source_pdf_page": 135,
+      "source_rect_pt": [
+        210.9102,
+        278.88977,
+        296.91022,
+        364.88977
+      ],
+      "source_five_code_digit": "5",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 130,
+      "character": "虍",
+      "step_index": 4,
+      "legacy_name": "第4笔",
+      "source_pdf_page": 135,
+      "source_rect_pt": [
+        298.36539,
+        278.88977,
+        384.36539,
+        364.88977
+      ],
+      "source_five_code_digit": "3",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 130,
+      "character": "虍",
+      "step_index": 5,
+      "legacy_name": "第5笔",
+      "source_pdf_page": 135,
+      "source_rect_pt": [
+        385.8205,
+        278.88977,
+        471.8205,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 130,
+      "character": "虍",
+      "step_index": 6,
+      "legacy_name": "第6笔",
+      "source_pdf_page": 135,
+      "source_rect_pt": [
+        473.2756,
+        278.88977,
+        559.27563,
+        364.88977
+      ],
+      "source_five_code_digit": "5",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 148,
+      "character": "糸",
+      "step_index": 1,
+      "legacy_name": "第1笔",
+      "source_pdf_page": 153,
+      "source_rect_pt": [
+        36,
+        278.88977,
+        122,
+        364.88977
+      ],
+      "source_five_code_digit": "5",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 148,
+      "character": "糸",
+      "step_index": 2,
+      "legacy_name": "第2笔",
+      "source_pdf_page": 153,
+      "source_rect_pt": [
+        123.4551,
+        278.88977,
+        209.45511,
+        364.88977
+      ],
+      "source_five_code_digit": "5",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 148,
+      "character": "糸",
+      "step_index": 3,
+      "legacy_name": "第3笔",
+      "source_pdf_page": 153,
+      "source_rect_pt": [
+        210.9102,
+        278.88977,
+        296.91022,
+        364.88977
+      ],
+      "source_five_code_digit": "4",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 148,
+      "character": "糸",
+      "step_index": 4,
+      "legacy_name": "第4笔",
+      "source_pdf_page": 153,
+      "source_rect_pt": [
+        298.36539,
+        278.88977,
+        384.36539,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 148,
+      "character": "糸",
+      "step_index": 5,
+      "legacy_name": "第5笔",
+      "source_pdf_page": 153,
+      "source_rect_pt": [
+        385.8205,
+        278.88977,
+        471.8205,
+        364.88977
+      ],
+      "source_five_code_digit": "3",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 148,
+      "character": "糸",
+      "step_index": 6,
+      "legacy_name": "第6笔",
+      "source_pdf_page": 153,
+      "source_rect_pt": [
+        473.2756,
+        278.88977,
+        559.27563,
+        364.88977
+      ],
+      "source_five_code_digit": "4",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 161,
+      "character": "釆",
+      "step_index": 1,
+      "legacy_name": "第1笔",
+      "source_pdf_page": 178,
+      "source_rect_pt": [
+        36,
+        278.88977,
+        122,
+        364.88977
+      ],
+      "source_five_code_digit": "3",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 161,
+      "character": "釆",
+      "step_index": 2,
+      "legacy_name": "第2笔",
+      "source_pdf_page": 178,
+      "source_rect_pt": [
+        123.4551,
+        278.88977,
+        209.45511,
+        364.88977
+      ],
+      "source_five_code_digit": "4",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 161,
+      "character": "釆",
+      "step_index": 3,
+      "legacy_name": "第3笔",
+      "source_pdf_page": 178,
+      "source_rect_pt": [
+        210.9102,
+        278.88977,
+        296.91022,
+        364.88977
+      ],
+      "source_five_code_digit": "3",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 161,
+      "character": "釆",
+      "step_index": 4,
+      "legacy_name": "第4笔",
+      "source_pdf_page": 178,
+      "source_rect_pt": [
+        298.36539,
+        278.88977,
+        384.36539,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 161,
+      "character": "釆",
+      "step_index": 5,
+      "legacy_name": "第5笔",
+      "source_pdf_page": 178,
+      "source_rect_pt": [
+        385.8205,
+        278.88977,
+        471.8205,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 161,
+      "character": "釆",
+      "step_index": 6,
+      "legacy_name": "第6笔",
+      "source_pdf_page": 178,
+      "source_rect_pt": [
+        473.2756,
+        278.88977,
+        559.27563,
+        364.88977
+      ],
+      "source_five_code_digit": "3",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 161,
+      "character": "釆",
+      "step_index": 7,
+      "legacy_name": "第7笔",
+      "source_pdf_page": 179,
+      "source_rect_pt": [
+        254.6378,
+        278.88977,
+        340.63782,
+        364.88977
+      ],
+      "source_five_code_digit": "4",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 169,
+      "character": "龺",
+      "step_index": 1,
+      "legacy_name": "第1笔",
+      "source_pdf_page": 194,
+      "source_rect_pt": [
+        36,
+        278.88977,
+        122,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 169,
+      "character": "龺",
+      "step_index": 2,
+      "legacy_name": "第2笔",
+      "source_pdf_page": 194,
+      "source_rect_pt": [
+        123.4551,
+        278.88977,
+        209.45511,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 169,
+      "character": "龺",
+      "step_index": 3,
+      "legacy_name": "第3笔",
+      "source_pdf_page": 194,
+      "source_rect_pt": [
+        210.9102,
+        278.88977,
+        296.91022,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 169,
+      "character": "龺",
+      "step_index": 4,
+      "legacy_name": "第4笔",
+      "source_pdf_page": 194,
+      "source_rect_pt": [
+        298.36539,
+        278.88977,
+        384.36539,
+        364.88977
+      ],
+      "source_five_code_digit": "5",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 169,
+      "character": "龺",
+      "step_index": 5,
+      "legacy_name": "第5笔",
+      "source_pdf_page": 194,
+      "source_rect_pt": [
+        385.8205,
+        278.88977,
+        471.8205,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 169,
+      "character": "龺",
+      "step_index": 6,
+      "legacy_name": "第6笔",
+      "source_pdf_page": 194,
+      "source_rect_pt": [
+        473.2756,
+        278.88977,
+        559.27563,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 169,
+      "character": "龺",
+      "step_index": 7,
+      "legacy_name": "第7笔",
+      "source_pdf_page": 195,
+      "source_rect_pt": [
+        36,
+        278.88977,
+        122,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 169,
+      "character": "龺",
+      "step_index": 8,
+      "legacy_name": "第8笔",
+      "source_pdf_page": 195,
+      "source_rect_pt": [
+        473.2756,
+        278.88977,
+        559.27563,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 188,
+      "character": "髟",
+      "step_index": 1,
+      "legacy_name": "第1笔",
+      "source_pdf_page": 232,
+      "source_rect_pt": [
+        36,
+        278.88977,
+        122,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 188,
+      "character": "髟",
+      "step_index": 2,
+      "legacy_name": "第2笔",
+      "source_pdf_page": 232,
+      "source_rect_pt": [
+        123.4551,
+        278.88977,
+        209.45511,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 188,
+      "character": "髟",
+      "step_index": 3,
+      "legacy_name": "第3笔",
+      "source_pdf_page": 232,
+      "source_rect_pt": [
+        210.9102,
+        278.88977,
+        296.91022,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 188,
+      "character": "髟",
+      "step_index": 4,
+      "legacy_name": "第4笔",
+      "source_pdf_page": 232,
+      "source_rect_pt": [
+        298.36539,
+        278.88977,
+        384.36539,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 188,
+      "character": "髟",
+      "step_index": 5,
+      "legacy_name": "第5笔",
+      "source_pdf_page": 232,
+      "source_rect_pt": [
+        385.8205,
+        278.88977,
+        471.8205,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 188,
+      "character": "髟",
+      "step_index": 6,
+      "legacy_name": "第6笔",
+      "source_pdf_page": 232,
+      "source_rect_pt": [
+        473.2756,
+        278.88977,
+        559.27563,
+        364.88977
+      ],
+      "source_five_code_digit": "5",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 188,
+      "character": "髟",
+      "step_index": 7,
+      "legacy_name": "第7笔",
+      "source_pdf_page": 233,
+      "source_rect_pt": [
+        36,
+        278.88977,
+        122,
+        364.88977
+      ],
+      "source_five_code_digit": "4",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 188,
+      "character": "髟",
+      "step_index": 8,
+      "legacy_name": "第8笔",
+      "source_pdf_page": 233,
+      "source_rect_pt": [
+        181.7585,
+        278.88977,
+        267.75848,
+        364.88977
+      ],
+      "source_five_code_digit": "3",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 188,
+      "character": "髟",
+      "step_index": 9,
+      "legacy_name": "第9笔",
+      "source_pdf_page": 233,
+      "source_rect_pt": [
+        327.51709,
+        278.88977,
+        413.51709,
+        364.88977
+      ],
+      "source_five_code_digit": "3",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 188,
+      "character": "髟",
+      "step_index": 10,
+      "legacy_name": "第10笔",
+      "source_pdf_page": 233,
+      "source_rect_pt": [
+        473.2756,
+        278.88977,
+        559.27563,
+        364.88977
+      ],
+      "source_five_code_digit": "3",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "step_index": 1,
+      "legacy_name": "第1笔",
+      "source_pdf_page": 236,
+      "source_rect_pt": [
+        36,
+        278.88977,
+        122,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "step_index": 2,
+      "legacy_name": "第2笔",
+      "source_pdf_page": 236,
+      "source_rect_pt": [
+        123.4551,
+        278.88977,
+        209.45511,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "step_index": 3,
+      "legacy_name": "第3笔",
+      "source_pdf_page": 236,
+      "source_rect_pt": [
+        210.9102,
+        278.88977,
+        296.91022,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "step_index": 4,
+      "legacy_name": "第4笔",
+      "source_pdf_page": 236,
+      "source_rect_pt": [
+        298.36539,
+        278.88977,
+        384.36539,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "step_index": 5,
+      "legacy_name": "第5笔",
+      "source_pdf_page": 236,
+      "source_rect_pt": [
+        385.8205,
+        278.88977,
+        471.8205,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "step_index": 6,
+      "legacy_name": "第6笔",
+      "source_pdf_page": 236,
+      "source_rect_pt": [
+        473.2756,
+        278.88977,
+        559.27563,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "step_index": 7,
+      "legacy_name": "第7笔",
+      "source_pdf_page": 237,
+      "source_rect_pt": [
+        36,
+        278.88977,
+        122,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "step_index": 8,
+      "legacy_name": "第8笔",
+      "source_pdf_page": 237,
+      "source_rect_pt": [
+        181.7585,
+        278.88977,
+        267.75848,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "step_index": 9,
+      "legacy_name": "第9笔",
+      "source_pdf_page": 237,
+      "source_rect_pt": [
+        327.51709,
+        278.88977,
+        413.51709,
+        364.88977
+      ],
+      "source_five_code_digit": "1",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "step_index": 10,
+      "legacy_name": "第10笔",
+      "source_pdf_page": 237,
+      "source_rect_pt": [
+        473.2756,
+        278.88977,
+        559.27563,
+        364.88977
+      ],
+      "source_five_code_digit": "2",
+      "approved_fine_name": null,
+      "primary_fine_shape_standard_page": null,
+      "primary_textbook_page": null,
+      "source_vector_contact_shape_examined": false,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "next_action": "Compare actual old-PDF cumulative ink and step contact/tail geometry with relevant GF2001 fine-stroke shape plus physical teaching example; do not map five-type digits to fine names.",
+      "status": "blocked_unidentified_fine_name",
+      "publication_eligible": false
+    }
+  ],
+  "fine_name_vs_official_coarse_conflicts": [
+    {
+      "main_id": 54,
+      "character": "子",
+      "step_index": 2,
+      "legacy_name": "弯钩",
+      "legacy_five_type_by_old_names": "551",
+      "official_GF0023_five_type_sequence": "521",
+      "official_GF0023_primary_pdf_page": 11,
+      "source_pdf_page": 29,
+      "source_rect_pt": [
+        254.6378,
+        278.88977,
+        340.63782,
+        364.88977
+      ],
+      "candidate_correction_for_first_review": "竖钩",
+      "approved_new_label": null,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "status": "blocked_pending_authoritative_geometry_and_two_human_reviews",
+      "do_not_modify_issued_v051": true,
+      "publication_eligible": false
+    }
+  ]
+}
