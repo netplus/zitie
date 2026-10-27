@@ -1,0 +1,77 @@
+{
+  "schema_version": 1,
+  "document_kind": "P8_2026_MAINLAND_PRONUNCIATION_AUTHORITY_HIERARCHY_NOT_ANY_1013_ENTRY_SIGNOFF",
+  "verified_public_date": "2026-10-27",
+  "linked_book_source_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+  "total_review_slots": 1013,
+  "single_glyph_slots": 201,
+  "word_and_component_example_slots": 812,
+  "approved_lexical_pronunciations": 0,
+  "release_eligible": false,
+  "policy": "A standard's existence, draft, normative pinyin spelling format, or bulk language-level glossary cannot substitute an exact Mainland accepted headword, matching sense, page/entry source and independent human first/second reviewers.",
+  "authorities": [
+    {
+      "authority_id": "putonghua_yidu_1985",
+      "name": "普通话异读词审音表（1985年12月修订）",
+      "document_class": "promulgated_official_orthoepical_norm",
+      "publisher": "国家语言文字工作委员会、国家教育委员会、广播电视部",
+      "effective_status": "published_effective_within_declared_scope",
+      "source_url": "https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/201001/W020190416497956176438.pdf",
+      "scope": "Only listed orthoepical variants and meaning contexts, not a full dictionary of all 1013 words",
+      "allow_as_exact_pronunciation_evidence": "only_when_exact_entry_and_sense_verified_with_page",
+      "publication_automatically_approved": false
+    },
+    {
+      "authority_id": "putonghua_yidu_2016_consultation",
+      "name": "普通话异读词审音表（修订稿）2016年公开征求意见",
+      "document_class": "public_consultation_draft",
+      "effective_status": "DRAFT_NOT_PROMULGATED_AS_FINAL",
+      "source_url": "https://www.moe.gov.cn/jyb_xwfb/s248/201606/t20160606_248272.html",
+      "scope": "May generate review leads only, not a promulgated replacement for the official 1985 list",
+      "allow_as_exact_pronunciation_evidence": "never_as_promulgated_normative_final",
+      "publication_automatically_approved": false
+    },
+    {
+      "authority_id": "orthoepic_gb_plan_20180782_T_360",
+      "name": "普通话异读词审音表国家标准计划20180782-T-360",
+      "document_class": "national_standard_plan_pending",
+      "effective_status": "IN_APPROVAL_NOT_YET_AN_ISSUED_FINAL_STANDARD_AS_OF_CHECK",
+      "source_url": "https://std.samr.gov.cn/gb/search/gbDetailed?id=E116673EAD45A3B7E05397BE0A0AC6BF",
+      "scope": "The standard platform labels current plan 正在批准; monitor future publication separately",
+      "allow_as_exact_pronunciation_evidence": "never_until_a_published_standard_number_and_final_text_are_confirmed",
+      "publication_automatically_approved": false
+    },
+    {
+      "authority_id": "GB_T_16159_2012",
+      "name": "汉语拼音正词法基本规则 GB/T16159—2012",
+      "document_class": "national_spelling_orthography_rule",
+      "effective_status": "published_spelling_rule_not_word_sense_dictionary",
+      "source_url": "https://openstd.samr.gov.cn/bzgk/std/newGbInfo?hcno=5645BD8DB9D8D73053AD3A2397E15E74",
+      "scope": "Whole-word orthography, tones, capitalization and special teaching alignment; does not fix each word's actual dictionary pronunciation",
+      "allow_as_exact_pronunciation_evidence": "never_by_itself_for_any_single_headword",
+      "publication_automatically_approved": false
+    },
+    {
+      "authority_id": "national_language_law_2026",
+      "name": "中华人民共和国国家通用语言文字法（2025年修订，自2026-01-01起施行）",
+      "document_class": "enacted_law_general_policy",
+      "effective_status": "in_force_not_an_1013_word_lexicon",
+      "source_url": "https://www.moe.gov.cn/jyb_xwfb/gzdt_gzdt/s5987/202512/t20251227_1424750.html",
+      "scope": "School materials must conform to national norms and primary school Pinyin instruction; not per-character/word sound transcription",
+      "allow_as_exact_pronunciation_evidence": "never_by_itself_for_headword",
+      "publication_automatically_approved": false
+    }
+  ],
+  "blocked_six_source_conflicts": [
+    "子",
+    "干",
+    "卜",
+    "长",
+    "斗",
+    "艮"
+  ],
+  "unapproved_2016_draft_readings_applied_to_child_pages": 0,
+  "unapproved_new_gb_plan_readings_applied_to_child_pages": 0,
+  "human_first_reviewers_signed": 0,
+  "independent_second_reviewers_signed": 0
+}

@@ -1,0 +1,47 @@
+name: P8.1 official orthoepic evidence classes and 1013-slot no-false-approval policy
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/cultural_p8_authority_policy_audit.py'
+      - 'scripts/test_cultural_p8_authority_policy_audit.py'
+      - 'data/cultural_edition/p8_mainland_pronunciation_authority_20261027.json'
+      - '.github/workflows/cultural-p8-authority-check.yml'
+      - 'reviews/cultural-edition/P8-1-authority-hierarchy-20261027.md'
+  push:
+    branches:
+      - feat/p8-current-mainland-pronunciation-authority-20261027
+    paths:
+      - 'scripts/cultural_p8_authority_policy_audit.py'
+      - 'scripts/test_cultural_p8_authority_policy_audit.py'
+      - 'data/cultural_edition/p8_mainland_pronunciation_authority_20261027.json'
+      - '.github/workflows/cultural-p8-authority-check.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preserve-1013-blocked-mainland-pronunciation-slots:
+    runs-on: ubuntu-latest
+    timeout-minutes: 9
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Prove 1985 final versus 2016 draft and 2018 plan still pending
+        run: python scripts/cultural_p8_authority_policy_audit.py
+      - name: Ten fail-closed simulations must reject fake official authority and print approval
+        run: python scripts/test_cultural_p8_authority_policy_audit.py
+      - name: Check original source PDF byte-for-byte and no P8 slot released
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib
+          from pathlib import Path
+          path=Path('deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf')
+          assert hashlib.sha256(path.read_bytes()).hexdigest()== \
+            '7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90'
+          print('PASS 299-page original remains unchanged, all 1013 pronunciations withheld')
+          PY
