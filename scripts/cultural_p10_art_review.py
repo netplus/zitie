@@ -53,7 +53,7 @@ def load_studies_inventory(registry:Path=INVENTORY)->dict:
         scene=item.get("scene");filename=item.get("filename")
         if (not isinstance(scene,str) or not re.fullmatch(r"[a-z0-9-]{8,90}",scene)
             or not isinstance(filename,str)
-            or not re.fullmatch(rf"ID{mid:03d}-[a-z0-9-]+\\.svg",filename)
+            or not re.fullmatch(rf"ID{mid:03d}-[a-z0-9-]+\.svg",filename)
             or scene in scenes or filename in filenames):
             raise ValueError("Each P10 study must have a safe unique scene and filename")
         if (item.get("art_direction_status")!="unreviewed"
