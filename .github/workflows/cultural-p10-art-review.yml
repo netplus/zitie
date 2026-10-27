@@ -6,6 +6,8 @@ on:
       - 'scripts/cultural_p10_art_review.py'
       - 'scripts/test_cultural_p10_art_review.py'
       - 'scripts/cultural_p10_fullbook_p5_screening.py'
+      - 'scripts/build_cultural_p10_integrated.py'
+      - 'scripts/verify_cultural_p10_integrated.py'
       - 'data/cultural_edition/artwork/p10_studies/**'
       - 'data/cultural_edition/p10_study_inventory.json'
       - '.github/workflows/cultural-p10-art-review.yml'
@@ -96,6 +98,49 @@ jobs:
         run: |
           set -euo pipefail
           python scripts/cultural_p10_fullbook_p5_screening.py --output-dir build/p10-art-proof/fullbook-P5-electronic-screening
+      - name: Build integrated 260-page P10 culture and source-locked ink review draft
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_cultural_p10_integrated.py \
+            --output build/p10-art-proof/zitie-201-P10-art-integrated-source-UNREVIEWED.pdf \
+            --qa build/p10-art-proof/P10-integrated-201-asset-page-provenance.json
+          python scripts/verify_cultural_p10_integrated.py \
+            --candidate build/p10-art-proof/zitie-201-P10-art-integrated-source-UNREVIEWED.pdf \
+            --provenance build/p10-art-proof/P10-integrated-201-asset-page-provenance.json \
+            --output build/p10-art-proof/P10-original-1045-ink-pixel-QA.json
+      - name: P5 inspect all 260 P10 integrated pages and 21 grayscale batch sheets
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/cultural_p10_fullbook_p5_screening.py \
+            --output-dir build/p10-art-proof/P10-integrated-260-P5-electronic-screening \
+            --preview-pdf build/p10-art-proof/zitie-201-P10-art-integrated-source-UNREVIEWED.pdf \
+            --preview-provenance build/p10-art-proof/P10-integrated-201-asset-page-provenance.json
+      - name: Integrated PDF byte-for-byte reproducibility and four insets retained
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/build_cultural_p10_integrated.py \
+            --output build/p10-repeat/again-integrated-260.pdf \
+            --qa build/p10-repeat/again-integrated-provenance.json
+          cmp build/p10-art-proof/zitie-201-P10-art-integrated-source-UNREVIEWED.pdf \
+              build/p10-repeat/again-integrated-260.pdf
+          cmp build/p10-art-proof/P10-integrated-201-asset-page-provenance.json \
+              build/p10-repeat/again-integrated-provenance.json
+          python - <<'PY'
+          import json
+          from pathlib import Path
+          p=Path("build/p10-art-proof")
+          q=json.loads((p/"P10-original-1045-ink-pixel-QA.json").read_text())
+          z=json.loads((p/"P10-integrated-260-P5-electronic-screening/P5-all-260-electronic-screening-UNREVIEWED.json").read_text())
+          assert q['verified_source_original_stroke_tiles']==1045
+          assert q['all_pages_a4']==260
+          assert q['artist_studies_inserted']>=4
+          assert not q['publication_eligible']
+          assert z['P10_artwork_integrated_preview_screened'] and not z['P6_release_eligible']
+          print('PASS independent strict-review P10 260-page illustrated PDF, 1045 original ink pixels unchanged')
+          PY
       - name: Upload only unapproved art studies and all P5 review evidence
         if: always()
         uses: actions/upload-artifact@v4
