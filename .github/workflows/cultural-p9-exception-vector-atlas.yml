@@ -70,7 +70,7 @@ jobs:
             for i,page in enumerate(doc,1):
               pix=page.get_pixmap(matrix=fitz.Matrix(1.25,1.25),alpha=False)
               pix.save(previews/f'P9-40-p{i:02d}.png')
-          originals=d['entries']
+          originals=d['page_mapping']
           gallery=root/'review-contact-sheets'
           gallery.mkdir()
           for offset in range(0,len(originals),10):
