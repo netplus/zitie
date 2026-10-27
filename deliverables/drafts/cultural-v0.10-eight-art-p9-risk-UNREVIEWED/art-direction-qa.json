@@ -1,0 +1,88 @@
+{
+  "result": "PASS_P10_SOURCE_LOCKED_INDIVIDUALLY_AUTHORED_ART_STUDIES_AND_201_FAIL_CLOSED_LEDGERS",
+  "glyphs_in_art_queue": 201,
+  "old_programmatic_P45_svg_blocked": 197,
+  "old_P3_svg_blocked": 4,
+  "new_studies": 8,
+  "still_undrawn": 193,
+  "professional_picture_approvals": 0,
+  "editorial_double_signoffs": 0,
+  "publication_eligible": false,
+  "original_stroke_steps_unmodified": 1045,
+  "gray_machine_check": [
+    {
+      "gray_stddev": 47.91,
+      "gray_dark_pixel_fraction": 0.4565,
+      "assessment": "machine_gray_preview_only_paper_test_missing"
+    },
+    {
+      "gray_stddev": 41.15,
+      "gray_dark_pixel_fraction": 0.1639,
+      "assessment": "machine_gray_preview_only_paper_test_missing"
+    },
+    {
+      "gray_stddev": 29.35,
+      "gray_dark_pixel_fraction": 0.2554,
+      "assessment": "machine_gray_preview_only_paper_test_missing"
+    },
+    {
+      "gray_stddev": 27.71,
+      "gray_dark_pixel_fraction": 0.1044,
+      "assessment": "machine_gray_preview_only_paper_test_missing"
+    },
+    {
+      "gray_stddev": 28.95,
+      "gray_dark_pixel_fraction": 0.1298,
+      "assessment": "machine_gray_preview_only_paper_test_missing"
+    },
+    {
+      "gray_stddev": 42.44,
+      "gray_dark_pixel_fraction": 0.7495,
+      "assessment": "machine_gray_preview_only_paper_test_missing"
+    },
+    {
+      "gray_stddev": 55.01,
+      "gray_dark_pixel_fraction": 0.3297,
+      "assessment": "machine_gray_preview_only_paper_test_missing"
+    },
+    {
+      "gray_stddev": 35.93,
+      "gray_dark_pixel_fraction": 0.1609,
+      "assessment": "machine_gray_preview_only_paper_test_missing"
+    }
+  ],
+  "pairwise_rms_differences": [
+    59.03,
+    44.79,
+    48.15,
+    46.37,
+    58.65,
+    65.33,
+    55.99,
+    50.9,
+    47.6,
+    49.58,
+    71.19,
+    65.48,
+    50.99,
+    32.79,
+    33.92,
+    52.97,
+    55.01,
+    44.53,
+    33.28,
+    61.63,
+    53.44,
+    38.82,
+    55.45,
+    59.16,
+    41.08,
+    71.94,
+    66.54,
+    58.17
+  ],
+  "print_hardware_checked": false,
+  "p8_p9_child_release_allowed": false,
+  "pdf_pages": 9,
+  "pdf_sha256": "23d229a576959e668e9a8472e65786a9399a54635b2ec1851a67ccd036634077"
+}

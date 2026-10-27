@@ -15,6 +15,7 @@ on:
   push:
     branches:
       - feat/cultural-p10-art-direction-p5-20261026
+      - feat/cultural-p10-immutable-review-pdf-archive-20261027
     paths:
       - 'scripts/cultural_p10_art_review.py'
       - 'scripts/test_cultural_p10_art_review.py'
@@ -24,7 +25,7 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
+  contents: write
 
 jobs:
   four-original-scenes-and-201-fail-closed:
@@ -32,6 +33,7 @@ jobs:
     timeout-minutes: 18
     steps:
       - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
       - uses: actions/setup-python@v5
         with:
           python-version: '3.11'
@@ -141,11 +143,98 @@ jobs:
           assert z['P10_artwork_integrated_preview_screened'] and not z['P6_release_eligible']
           print('PASS independent strict-review P10 260-page illustrated PDF, 1045 original ink pixels unchanged')
           PY
+      - name: Append-only archive after complete all-1045 and all-260 QA, never publish
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feat/cultural-p10-immutable-review-pdf-archive-20261027'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import hashlib,json,os,shutil,fitz
+          out=Path('build/p10-art-proof')
+          src=out/'zitie-201-P10-art-integrated-source-UNREVIEWED.pdf'
+          proof=json.loads((out/'P10-integrated-201-asset-page-provenance.json').read_text())
+          qa=json.loads((out/'P10-original-1045-ink-pixel-QA.json').read_text())
+          art=json.loads((out/'201-art-review-ledger.json').read_text())
+          layout=json.loads((out/'P10-integrated-260-P5-electronic-screening/P5-all-260-electronic-screening-UNREVIEWED.json').read_text())
+          digest=hashlib.sha256(src.read_bytes()).hexdigest()
+          assert digest==proof['output_pdf_sha256']==qa['draft_pdf_sha256']
+          assert qa['result']=='PASS_P10_INTEGRATED_DRAFT_ALL_1045_ORIGINAL_PEN_IMAGES_PIXEL_IDENTICAL'
+          assert qa['verified_source_original_stroke_tiles']==1045
+          assert (qa['all_pages_a4'],qa['disputed_child_facing_pen_name_quarantines'])==(260,1)
+          assert (proof['P10_art_studies_integrated'],proof['unillustrated_201_main_ids'])==(8,193)
+          assert (art['art_direction_studies'],art['not_yet_redrawn'],art['professional_illustrations_approved'])==(8,193,0)
+          assert qa['publication_eligible'] is False and proof['release_eligible'] is False
+          assert not layout['P6_release_eligible'] and layout['a4_pages_electronically_rendered']==260
+          with fitz.open(src) as pdf:
+              assert len(pdf)==260
+          frozen={
+            'deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf':'7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90',
+            'deliverables/drafts/cultural-v0.9-stroke-review/zitie-201-P9-normative-stroke-review-UNREVIEWED.pdf':'8178a8d7bdf5258625efa0b74e7b82c0146c24da802f006f2135f17705e7fd89',
+          }
+          for name,sha in frozen.items():
+              assert hashlib.sha256(Path(name).read_bytes()).hexdigest()==sha
+          target_dir=Path('deliverables/drafts/cultural-v0.10-eight-art-p9-risk-UNREVIEWED')
+          target=target_dir/src.name
+          manifest_path=Path('deliverables/manifest.json')
+          original=manifest_path.read_text(encoding='utf8')
+          m=json.loads(original)
+          if target.exists():
+              assert hashlib.sha256(target.read_bytes()).hexdigest()==digest
+              assert any(x['path']==target.as_posix() and x['sha256']==digest and
+                         x['status']=='draft' and x['release_eligible'] is False
+                         for x in m['artifacts'])
+              print('PASS P10 archive already exists and is byte-identical:',digest)
+          else:
+              assert not any(x['path']==target.as_posix() for x in m['artifacts'])
+              target_dir.mkdir(parents=True,exist_ok=True)
+              shutil.copyfile(src,target)
+              for source,name in [
+                  ('P10-integrated-201-asset-page-provenance.json','page-provenance.json'),
+                  ('P10-original-1045-ink-pixel-QA.json','all-1045-source-ink-qa.json'),
+                  ('art-safety-and-grayscale-qa.json','art-direction-qa.json'),
+                  ('P5-integrated-260-P5-electronic-screening/P5-all-260-electronic-screening-UNREVIEWED.json','P5-electronic-260-screening.json'),
+              ]:
+                  candidate=out/source
+                  if not candidate.is_file() and source.startswith('P5-integrated'):
+                      candidate=out/'P10-integrated-260-P5-electronic-screening/P5-all-260-electronic-screening-UNREVIEWED.json'
+                  assert candidate.is_file(),str(candidate)
+                  shutil.copyfile(candidate,target_dir/name)
+              m['artifacts'].append({
+                'path':target.as_posix(),
+                'title':'P10文化识字201主字260页校对草稿：8幅未审场景插图、子字争议提示隔离、1045原始笔画不变',
+                'version':'cultural-v0.10-eight-art-source-review-draft',
+                'status':'draft','release_eligible':False,
+                'batch':'B01-B21, 201 source IDs, 1045 immutable cumulative stroke tiles',
+                'pages':260,'bytes':target.stat().st_size,'sha256':digest,
+                'source_commit':os.environ['GITHUB_SHA'],
+                'source_pdf':'deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf',
+                'source_pdf_sha256':'7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90',
+                'provenance_kind':'P9_strict_201_fullbook_with_8_unapproved_P10_art_studies_and_zi_name_quarantine',
+                'review_record':'reviews/cultural-edition/P10-2-archived-integrated-proof-20261027.md',
+                'editorial_review_state':'8_of_201_art_studies_only_193_missing_1013_pinyin_pending_37_83_P9_unapproved_P5_paper_pending',
+              })
+              assert m['artifacts'][:-1]==json.loads(original)['artifacts']
+              manifest_path.write_text(json.dumps(m,ensure_ascii=False,indent=2)+chr(10),encoding='utf8')
+              print('PASS: append-only P10.2 260-page DRAFT archived, release=false',digest)
+          PY
+          python -m json.tool deliverables/manifest.json >/dev/null
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add deliverables/manifest.json deliverables/drafts/cultural-v0.10-eight-art-p9-risk-UNREVIEWED/
+          git diff --cached --quiet && exit 0
+          git commit -m "build(P10.2): archive source-locked 260-page eight-study UNREVIEWED review PDF"
+          for attempt in 1 2 3; do
+            git fetch origin feat/cultural-p10-immutable-review-pdf-archive-20261027
+            git rebase origin/feat/cultural-p10-immutable-review-pdf-archive-20261027
+            if git push origin HEAD:feat/cultural-p10-immutable-review-pdf-archive-20261027; then exit 0; fi
+          done
+          exit 1
       - name: Upload only unapproved art studies and all P5 review evidence
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: P10-four-cultural-art-studies-and-201-review-ledger-UNREVIEWED
+          name: P10-eight-scene-260-page-source-locked-DRAFT
           path: build/p10-art-proof/
           retention-days: 14
           if-no-files-found: warn
