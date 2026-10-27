@@ -25,6 +25,7 @@ def compare(art_pdf:Path,qa_file:Path,root:Path=ROOT):
     report=json.loads(qa_file.read_text(encoding="utf8"))
     plan=index_records(root)
     if (report.get("release_eligible") is not False
+        or report.get("publication_eligible") is not False
         or report.get("human_approved_risk_glyphs")!=0
         or report.get("original_P9_260_page_pdf_sha256")!=P9_SHA
         or report.get("original_released_v051_pdf_sha256")!=SHA
