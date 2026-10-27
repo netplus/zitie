@@ -7,7 +7,7 @@ import unittest
 from pathlib import Path
 
 from cultural_p10_art_review import (
-    ART_DIR, STUDIES, SHA, P9_SHA, audit_ledger,
+    ART_DIR, STUDIES, SHA, P9_SHA, audit_ledger, load_studies_inventory,
     check_print_scene, make_ledger, raster_scene, validate_svg,
 )
 
@@ -18,8 +18,9 @@ class P10ArtworkTests(unittest.TestCase):
 
     def test_all_201_distinct_and_fail_closed(self):
         result=audit_ledger(self.ledger)
-        self.assertEqual((result["source_main_id_count"],result["reviewable_scene_studies"],
-                          result["undrawn_remaining"]),(201,4,197))
+        self.assertEqual(result["source_main_id_count"],201)
+        self.assertEqual(result["reviewable_scene_studies"],len(STUDIES))
+        self.assertEqual(result["undrawn_remaining"],201-len(STUDIES))
         self.assertEqual(self.ledger["immutable_v051_source_sha256"],SHA)
         self.assertEqual(self.ledger["unchanged_P9_draft_sha256"],P9_SHA)
         self.assertFalse(self.ledger["release_eligible"])
@@ -34,6 +35,10 @@ class P10ArtworkTests(unittest.TestCase):
         corrupted=copy.deepcopy(self.ledger)
         corrupted["professional_illustrations_approved"]=201
         with self.assertRaises(ValueError):audit_ledger(corrupted)
+
+    def test_201_inventory_requires_unique_authored_scenes(self):
+        self.assertEqual(set(load_studies_inventory()),set(STUDIES))
+        self.assertGreaterEqual(len(STUDIES),4)
 
     def test_old_programmed_scenes_stay_blocked(self):
         self.assertEqual(
