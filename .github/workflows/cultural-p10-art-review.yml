@@ -215,7 +215,7 @@ jobs:
                 'editorial_review_state':'8_of_201_art_studies_only_193_missing_1013_pinyin_pending_37_83_P9_unapproved_P5_paper_pending',
               })
               assert m['artifacts'][:-1]==json.loads(original)['artifacts']
-              manifest_path.write_text(json.dumps(m,ensure_ascii=False,indent=2)+'\\n',encoding='utf8')
+              manifest_path.write_text(json.dumps(m,ensure_ascii=False,indent=2)+'\n',encoding='utf8')
               print('PASS: append-only P10.2 260-page DRAFT archived, release=false',digest)
           PY
           git config user.name 'github-actions[bot]'
@@ -233,7 +233,7 @@ jobs:
         if: always()
         uses: actions/upload-artifact@v4
         with:
-          name: P10-four-cultural-art-studies-and-201-review-ledger-UNREVIEWED
+          name: P10-eight-scene-260-page-source-locked-DRAFT
           path: build/p10-art-proof/
           retention-days: 14
           if-no-files-found: warn
