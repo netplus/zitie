@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Probe Education Ministry GF3002-1999 original PDF without claiming norm approval.
+"""Probe independently archived GF3002-1999 standard copy; no claim of official byte identity.
 
 Report exact PDF bytes hash, page/text structure, candidate UCS anchor words,
 and 5 rasterized page samples. No OCR, no character approvals, no release.
@@ -10,7 +10,7 @@ from collections import Counter
 from pathlib import Path
 import fitz
 
-OFFICIAL_URL="https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/201001/W020150902457900316281.pdf"
+MIRROR_URL="https://raw.githubusercontent.com/zispace/hanzi-docs/main/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/2-GF-%E8%AF%AD%E8%A8%80%E6%96%87%E5%AD%97%E8%A7%84%E8%8C%83/19991001-GF%203002-1999%E3%80%8AGB13000.1%E5%AD%97%E7%AC%A6%E9%9B%86%E6%B1%89%E5%AD%97%E7%AC%94%E9%A1%BA%E8%A7%84%E8%8C%83%E3%80%8B.pdf"
 SRC_SHA="7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90"
 
 def probe(source:Path,registry:Path,out:Path):
@@ -22,7 +22,7 @@ def probe(source:Path,registry:Path,out:Path):
     targets=set(target)
     raw=source.read_bytes()
     if not raw.startswith(b"%PDF-") or len(raw)<20000:
-        raise ValueError("Not a real Ministry GF3002 PDF")
+        raise ValueError("Not a usable PDF copy of GF3002")
     out.mkdir(parents=True,exist_ok=True)
     original_sha=hashlib.sha256(raw).hexdigest()
     found={k:[] for k in targets}
@@ -60,10 +60,14 @@ def probe(source:Path,registry:Path,out:Path):
             sampled.append({"physical_page":i+1,"file":dest.name})
         report={
            "schema_version":1,
-           "result":"GF3002_OFFICIAL_ORIGINAL_PDF_PROBE_NOT_A_NORMATIVE_CHARACTER_APPROVAL",
-           "source_url":OFFICIAL_URL,
-           "official_pdf_sha256":original_sha,
-           "official_pdf_bytes":len(raw),"official_pdf_pages":n,
+           "result":"GF3002_ARCHIVED_STANDARD_COPY_PROBE_UNVERIFIED_OFFICIAL_ORIGIN",
+           "source_url":MIRROR_URL,
+           "ministerial_official_attachment_url":"https://www.moe.gov.cn/jyb_sjzl/ziliao/A19/201001/W020150902457900316281.pdf",
+           "official_attachment_last_checked":"2026-10-27_HTTP_404",
+           "actual_source_kind":"independent_public_GitHub_archived_standard_copy_not_official_primary_byte_verified",
+           "claimed_identical_to_current_ministry_pdf":False,
+           "archive_copy_pdf_sha256":original_sha,
+           "archive_copy_bytes":len(raw),"archive_copy_pdf_pages":n,
            "original_201_v051_sha256":SRC_SHA,
            "rare_radical_targets":37,
            "targets_with_word_level_UCS_anchors":sum(bool(x) for x in found.values()),
@@ -72,7 +76,7 @@ def probe(source:Path,registry:Path,out:Path):
                               "ucs_hex":k,"matches":found[k][:8]} for k,v in sorted(target.items(),key=lambda i:i[1]["main_id"])],
            "sample_native_page_text":stats,
            "rendered_primary_source_pages":sampled,
-           "limitation":"Do not treat matching characters or UCS anchors as verified original stroke sequences: coordinate-isolate row digits and have humans confirm drawn geometry/pen names.",
+           "limitation":"Archived PDF may not byte-match Ministry original, which returned HTTP404. Do not treat matching characters/UCS anchors as formally verified official pen sequences; cross-check original source and handwriting geometry.",
            "human_reviewers":[],"approved_normative_stroke_shapes":0,
            "release_eligible":False,
         }
