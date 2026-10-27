@@ -71,6 +71,69 @@ def make_overlay(mid:int,evidence:dict,root:Path=ROOT)->bytes:
     c.save()
     return content.getvalue()
 
+ZI_ID=54
+ZI_TIPS_RECT=fitz.Rect(mm(17.5),mm(161.0),mm(112),mm(177.5))
+ZI_SECOND_CAPTION_RECT=fitz.Rect(mm(50),mm(217.7),mm(81),mm(226.5))
+
+def quarantine_disputed_zi_label(book:fitz.Document,first:dict,p9_by_id:dict)->dict:
+    """Quarantine unsafe legacy 子 pen-2 text, NEVER touch original red/gray ink.
+
+    Old source states “第2笔是弯钩，不写成竖钩”, while the actual
+    GF0023 original 5-category code is 521. This is an unresolved source
+    classification disagreement, not an authorized correction to 竖钩.
+    """
+    zi=p9_by_id[ZI_ID]
+    if (zi["character"]!="子" or zi["source_five_type_code_candidate"]!="551"
+        or zi["secondary_reference_five_type_code"]!="521"
+        or zi["source_step_records"][1]["name"]!="弯钩"
+        or zi["differing_main_stroke_indexes"]!=[2]
+        or zi["individual_stroke_names_verified"] is not False
+        or zi["publication_eligible"] is not False):
+        raise ValueError("Cannot quarantine 子 without confirming exact P9 disputed original evidence")
+    number=first[ZI_ID]["preview_pdf_page"]
+    page=book[number-1]
+    original=page.get_text()
+    if ("第2笔是弯钩，不写成竖钩。" not in original
+        or "先横撇，再弯钩，最后写横。" not in original
+        or "2  弯钩" not in original):
+        raise ValueError("Original 子 disputed labels changed: do not redact using stale rectangles")
+    page.add_redact_annot(ZI_TIPS_RECT,fill=(1,1,1))
+    page.add_redact_annot(ZI_SECOND_CAPTION_RECT,fill=(1,1,1))
+    page.apply_redactions(images=0,graphics=0,text=0)
+    fonts()
+    fallback=Path("/usr/share/fonts/truetype/arphic/uming.ttc")
+    if not fallback.is_file():raise ValueError("Missing fallback CJK font")
+    if "CultureRare" not in pdfmetrics.getRegisteredFontNames():
+        pdfmetrics.registerFont(TTFont("CultureRare",str(fallback),subfontIndex=0))
+    out=io.BytesIO()
+    c=canvas.Canvas(out,pagesize=(W,H),pageCompression=1,invariant=1)
+    p=PageArtist(c)
+    p.rect(18,161.3,93,16,"#FFFEFC")
+    p.label(19,165.8,"子第二笔名称与现行笔顺五码存在疑点。",8.2,"Kai","#943E48")
+    p.label(19,171.5,"旧提示已暂停使用，具体笔形待规范复核。",8.2,"Kai","#943E48")
+    p.rect(50,218.4,31,8.0,"#FFFEFC")
+    p.label(65.5,224,"2  笔名待核",8.1,"Kai","#943E48","center")
+    c.save()
+    with fitz.open(stream=out.getvalue(),filetype="pdf") as overlay:
+        page.show_pdf_page(page.rect,overlay,0,overlay=True,keep_proportion=False)
+    final=page.get_text()
+    if ("第2笔是弯钩" in final or "先横撇，再弯钩" in final
+        or "2  弯钩" in final or "笔名待核" not in final
+        or "旧提示已暂停使用" not in final):
+        raise ValueError("Disputed original teaching line was not visibly quarantined")
+    return {
+        "main_id":ZI_ID,"character":"子","preview_pdf_page":number,
+        "legacy_second_stroke_name":"弯钩",
+        "official_GF0023_code_from_prior_primary_evidence":"521",
+        "review_candidate_fine_name":"竖钩",
+        "child_facing_correction_approved":False,
+        "legacy_tip_suppressed":True,
+        "legacy_second_step_caption_suppressed":True,
+        "source_original_cumulative_stroke_images_modified":False,
+        "first_reviewer":None,"independent_second_reviewer":None,
+        "release_eligible":False
+    }
+
 def generate(out_path:Path,metadata_path:Path,root:Path=ROOT)->dict:
     root=Path(root)
     if (hash_file(root/"deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf")!=SHA
@@ -106,6 +169,7 @@ def generate(out_path:Path,metadata_path:Path,root:Path=ROOT)->dict:
                 "P9_card_replaced_with_explicit_pending_notice":True,
                 "art_human_review_approved":False,
             })
+        zi_quarantine=quarantine_disputed_zi_label(book,first,p9_by_id)
         book.set_metadata({
            "title":"P10 文化识字插画融合试装校对母稿，未审勿印",
            "author":"netplus/zitie",
@@ -132,6 +196,8 @@ def generate(out_path:Path,metadata_path:Path,root:Path=ROOT)->dict:
         "artwork_human_approvals":0,
         "original_source_modified":False,
         "paper_print_approval":False,
+        "disputed_stroke_tip_quarantines":1,
+        "disputed_zi_second_stroke_quarantine":zi_quarantine,
         "release_eligible":False,
         "page_artwork_register":mapped,
     }
