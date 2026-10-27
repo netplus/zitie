@@ -77,6 +77,14 @@ def load_studies_inventory(registry:Path=INVENTORY)->dict:
 
 STUDIES=load_studies_inventory()
 
+SAFE_TAGS={"svg","title","rect","path","circle","ellipse","line","g"}
+SAFE_ATTRIBUTES={
+    "width","height","viewBox","role","aria-label","data-scene","data-motif",
+    "x","y","rx","ry","cx","cy","r","x1","x2","y1","y2","d",
+    "stroke","stroke-width","stroke-linejoin","stroke-linecap","stroke-dasharray",
+    "fill","opacity","transform",
+}
+
 PUBLISHED_SAFETY_FIELDS={
     "art_director_approval":None,
     "semantic_review":None,
