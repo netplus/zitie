@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - 'scripts/p9_GF3002_original_pdf_probe.py'
+      - 'scripts/test_p9_GF3002_archive_scope.py'
       - '.github/workflows/p9-gf3002-primary-probe.yml'
   push:
     branches:
@@ -42,6 +43,10 @@ jobs:
           python scripts/p9_GF3002_original_pdf_probe.py \
             --source build/p9-gf3002/GF3002-standard-copy.pdf \
             --out build/p9-gf3002/qa
+      - name: Fail if incomplete archived GF3002 is labeled primary evidence
+        run: |
+          python scripts/test_p9_GF3002_archive_scope.py \
+            build/p9-gf3002/qa/GF3002-original-PDF-source-structure-probe.json
       - name: Guard frozen original Chinese handwriting book
         run: |
           python - <<'PY'
