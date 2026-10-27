@@ -22,7 +22,10 @@ SOURCE=ROOT/"deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf"
 
 def scan(output_dir:Path,root:Path=ROOT,preview_pdf:Path|None=None,preview_provenance:Path|None=None):
     root=Path(root)
-    assert audit_ledger(make_ledger(root))["undrawn_remaining"]==197
+    ledger_status=audit_ledger(make_ledger(root))
+    if (ledger_status["reviewable_scene_studies"]+ledger_status["undrawn_remaining"]!=201
+        or ledger_status["publication_eligible"] is not False):
+        raise ValueError("P5 requires 201 source-linked visual slots with no publication approval")
     source=root/SOURCE.relative_to(ROOT)
     frozen=root/P9.relative_to(ROOT)
     pdf=Path(preview_pdf) if preview_pdf else frozen
