@@ -1,0 +1,65 @@
+name: P9 GF3002 archived standard PDF structural probe (official link 404)
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/p9_GF3002_original_pdf_probe.py'
+      - 'scripts/test_p9_GF3002_archive_scope.py'
+      - '.github/workflows/p9-gf3002-primary-probe.yml'
+  push:
+    branches:
+      - feat/p9-gf3002-primary-lookup-20261027
+    paths:
+      - 'scripts/p9_GF3002_original_pdf_probe.py'
+      - '.github/workflows/p9-gf3002-primary-probe.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+
+jobs:
+  probe-archived-gf3002:
+    runs-on: ubuntu-latest
+    timeout-minutes: 18
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install one locked original-PDF parser
+        run: python -m pip install 'PyMuPDF==1.26.7'
+      - name: Read frozen public archive copy after Ministry attachment returned HTTP 404
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/p9-gf3002
+          curl --fail --location --silent --show-error \
+            --retry 2 --retry-all-errors --connect-timeout 10 \
+            --max-time 110 \
+            'https://raw.githubusercontent.com/zispace/hanzi-docs/main/%E4%B8%AD%E5%9B%BD%E5%A4%A7%E9%99%86/2-GF-%E8%AF%AD%E8%A8%80%E6%96%87%E5%AD%97%E8%A7%84%E8%8C%83/19991001-GF%203002-1999%E3%80%8AGB13000.1%E5%AD%97%E7%AC%A6%E9%9B%86%E6%B1%89%E5%AD%97%E7%AC%94%E9%A1%BA%E8%A7%84%E8%8C%83%E3%80%8B.pdf' \
+            --output build/p9-gf3002/GF3002-standard-copy.pdf
+          test "$(head -c 5 build/p9-gf3002/GF3002-standard-copy.pdf)" = "%PDF-"
+          test "$(stat -c %s build/p9-gf3002/GF3002-standard-copy.pdf)" = "6730497"
+      - name: Inspect original table samples and 37 exact rare UCS rows
+        run: |
+          python scripts/p9_GF3002_original_pdf_probe.py \
+            --source build/p9-gf3002/GF3002-standard-copy.pdf \
+            --out build/p9-gf3002/qa
+      - name: Fail if incomplete archived GF3002 is labeled primary evidence
+        run: |
+          python scripts/test_p9_GF3002_archive_scope.py \
+            build/p9-gf3002/qa/GF3002-original-PDF-source-structure-probe.json
+      - name: Guard frozen original Chinese handwriting book
+        run: |
+          python - <<'PY'
+          import hashlib
+          from pathlib import Path
+          path=Path('deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf')
+          assert hashlib.sha256(path.read_bytes()).hexdigest()==             '7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90'
+          PY
+      - name: Upload original source-page samples and UCS mapping for independent review
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: P9-GF3002-ARCHIVE-COPY-37-UCS-probe-NOT-PRIMARY-APPROVED
+          path: build/p9-gf3002/qa
+          retention-days: 14
+          if-no-files-found: warn
