@@ -211,6 +211,7 @@ def build(pdf_path:Path,qa_path:Path,root:Path=ROOT):
       "risk_atlas_copied_source_cumulative_steps":len(tiles),
       "original_1045_stroke_source_modified":False,
       "human_approved_risk_glyphs":0,
+      "release_eligible":False,
       "publication_eligible":False,
       "page_mapping":plan["entries"],
       "individual_copied_steps":tiles,
