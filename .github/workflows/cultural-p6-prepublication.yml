@@ -1,21 +1,29 @@
 name: P6 cultural 201-glyph all-gates publication readiness, fail closed
 
 on:
+  # Any source content, artwork, normative evidence, build pipeline or
+  # release/manifest change MUST re-evaluate the 201/1013/1045 P6 ledger.
+  # This workflow checks safety, NEVER performs publishing.
   pull_request:
     paths:
-      - 'scripts/cultural_p6_prepublication_gate.py'
-      - 'scripts/test_cultural_p6_prepublication_gate.py'
-      - 'data/cultural_edition/p6_release_human_signoffs.json'
-      - '.github/workflows/cultural-p6-prepublication.yml'
-      - 'reviews/cultural-edition/P6-unified-blocked-publication-20261028.md'
+      - 'data/cultural_edition/**'
+      - 'scripts/cultural_*.py'
+      - 'scripts/build_cultural_*.py'
+      - 'scripts/verify_cultural_*.py'
+      - 'deliverables/**'
+      - '.github/workflows/cultural-*.yml'
+      - 'reviews/cultural-edition/**'
   push:
     branches:
-      - feat/cultural-p6-unified-prepublication-gate-20261028
+      - main
     paths:
-      - 'scripts/cultural_p6_prepublication_gate.py'
-      - 'scripts/test_cultural_p6_prepublication_gate.py'
-      - 'data/cultural_edition/p6_release_human_signoffs.json'
-      - '.github/workflows/cultural-p6-prepublication.yml'
+      - 'data/cultural_edition/**'
+      - 'scripts/cultural_*.py'
+      - 'scripts/build_cultural_*.py'
+      - 'scripts/verify_cultural_*.py'
+      - 'deliverables/**'
+      - '.github/workflows/cultural-*.yml'
+      - 'reviews/cultural-edition/**'
   workflow_dispatch:
 
 permissions:
