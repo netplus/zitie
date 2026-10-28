@@ -112,15 +112,19 @@ def draw_storyboard_card(page:fitz.Page,mid:int,row:dict,font:fitz.Font):
     page.draw_line((125*MM,64*MM),(188*MM,64*MM),color=(.78,.72,.67),width=.75)
     page.insert_text((125*MM,73*MM),f"ID{mid:03d} · 独立构思",
                      fontname="china-s",fontsize=8.3,color=(.40,.42,.43))
-    wrapped=lines_for(scene,font,9.1,63*MM)
-    if not 1<=len(wrapped)<=4:
-        raise ValueError(f"ID{mid:03d} storyboard is too long for legible 75mm panel")
+    size=9.1
+    wrapped=lines_for(scene,font,size,63*MM)
+    if len(wrapped)>3:
+        size=8.0
+        wrapped=lines_for(scene,font,size,63*MM)
+    if not 1<=len(wrapped)<=3:
+        raise ValueError(f"ID{mid:03d} storyboard is too long for the 75mm review panel")
     y=83
     for ln in wrapped:
-        page.insert_text((125*MM,y*MM),ln,fontname="china-s",fontsize=9.1,
+        page.insert_text((125*MM,y*MM),ln,fontname="china-s",fontsize=size,
                          color=(.25,.30,.31))
         y+=6.3
-    if y>108:
+    if y>102.1:
         raise ValueError("Storyboard text overlaps the source-review warning")
     page.insert_text((125*MM,102*MM),"题材说明 · 尚非完成插画",
                      fontname="china-s",fontsize=7.0,color=(.53,.45,.42))
