@@ -37,7 +37,8 @@
   "warnings": [
     "No third-party five-category code demonstrates all drawn pen geometries are normatively correct.",
     "Formal human review and physical A4 print are still pending.",
-    "Existing released v0.5.1 PDF must remain byte-identical; approved corrections must derive a new source."
+    "Existing released v0.5.1 PDF must remain byte-identical; approved corrections must derive a new source.",
+    "2026-10-28 reassessment: the prior proposed 子 '竖钩' correction was not supported; Ministry's printed calligraphy appendix and PEP textbook both list 弯钩 with 子 as example. Numeric code 521 is not a unique detailed teaching-name oracle."
   ],
   "out_of_scope_characters": [
     {
@@ -3997,13 +3998,23 @@
         340.63782,
         364.88977
       ],
-      "candidate_correction_for_first_review": "竖钩",
+      "candidate_correction_for_first_review": "弯钩",
       "approved_new_label": null,
       "first_reviewer": null,
       "second_reviewer": null,
       "status": "blocked_pending_authoritative_geometry_and_two_human_reviews",
       "do_not_modify_issued_v051": true,
-      "publication_eligible": false
+      "publication_eligible": false,
+      "prior_proposed_correction_now_refuted_by_published_pedagogical_examples": "竖钩",
+      "verified_ministry_teaching_fine_name": "弯钩",
+      "ministry_2013_guideline_appendix1_printed_page": 16,
+      "ministry_2013_guideline_source_url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web3429/site/oldpic/W0201708/W020170807/W020170807579575516345.pdf",
+      "PEP_2024_grade1_name_table_printed_page": 109,
+      "PEP_2024_textbook_stroke_example": "弯钩/子",
+      "coarse_five_category_difference_not_fine_name_disproof": true,
+      "new_evidence_ledger": "data/cultural_edition/p9_zi_wangou_primary_teaching_20261028.json",
+      "authoritative_picture_and_geometry_full_approval": false,
+      "recommendation": "Children's later draft may restore 弯钩 as the teaching name with cited Ministry example, but still label the old source ink geometry unapproved pending independent review."
     }
   ]
 }
