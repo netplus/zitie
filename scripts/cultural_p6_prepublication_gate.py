@@ -271,6 +271,42 @@ def load_and_audit(root:Path=ROOT):
         result["latest_two_pass_author_svg_unapproved"]=8
         result["latest_two_pass_P6_release_eligible"]=False
         result["latest_two_pass_fully_embedded_CJK"]=index==1
+    # v0.11.2 is a separate, source-reviewed correction of the previous
+    # unfounded 子 fine-name "竖钩" suspicion. It is NOT a P6 approval.
+    corrected_version="cultural-v0.11.2-MOE-zi-wangou-review-draft"
+    corrected=[x for x in inputs[4]["artifacts"] if x.get("version")==corrected_version]
+    if len(corrected)>1:
+        raise ValueError("Duplicate source-backed 子 naming candidate")
+    if corrected:
+        entry=corrected[0]
+        candidate=root/entry["path"]
+        src_name="data/cultural_edition/p9_zi_wangou_primary_teaching_20261028.json"
+        source=load(root,src_name)
+        qa=load(root,(candidate.parent/"zi-MOE-PEP-1045-source-ink-QA.json").relative_to(root).as_posix())
+        if (entry.get("status")!="draft"
+            or entry.get("release_eligible") is not False
+            or entry.get("pages")!=260
+            or file_sha(candidate)!=entry.get("sha256")
+            or entry.get("parent_draft_sha256")!="459e29ea0ae030453eaa20f5c4deff9a583f6a337aa532b11e83a74166c8b4f3"
+            or source.get("subject",{}).get("reassessed_fine_name")!="弯钩"
+            or source.get("release_eligible") is not False
+            or qa.get("result")!="PASS_MINISTRY_PEP_ZI_WANGOU_FINE_NAME_RESTORED_260_PAGES_1045_INK_PIXEL_IDENTICAL"
+            or qa.get("output_pdf_sha256")!=entry["sha256"]
+            or qa.get("output_A4_pages")!=260
+            or qa.get("old_pdf_1045_source_ink_tiles_pixel_identical")!=1045
+            or qa.get("unmodified_complete_A4_pages_pixel_equal")!=259
+            or qa.get("teacher_pedagogical_name_from_MOE")!="弯钩"
+            or qa.get("prior_unfounded_竖钩_guess_retracted") is not True
+            or qa.get("exact_201_1045_ink_geometry_human_double_review_complete") is not False
+            or qa.get("37_special_radicals_not_yet_normatively_approved") is not True
+            or qa.get("83_unknown_specific_pen_names_not_yet_approved") is not True
+            or qa.get("release_eligible") is not False
+            or qa.get("P6_user_release_approved") is not False):
+            raise ValueError("P6: source-based 子 弯钩 re-evaluation must remain fully traced and unreleased")
+        result["latest_primary_zi_name_corrected_draft_sha256"]=entry["sha256"]
+        result["latest_zi_fine_name_MOE_pedagogical_example"]="弯钩"
+        result["previous_zi_竖钩_guess_retracted"]=True
+        result["P9_all_ink_geometry_normative_approval"]=False
     return result
 
 def release_required(result:dict):
