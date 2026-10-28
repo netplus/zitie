@@ -9,7 +9,7 @@ on:
       - 'scripts/test_cultural_p6_prepublication_gate.py'
       - '.github/workflows/cultural-two-pass-stage2.yml'
       - 'reviews/cultural-edition/two-pass-stage2-20261028.md'
-      - 'deliverables/drafts/cultural-v0.11-two-pass-260-UNREVIEWED/**'
+      - 'deliverables/drafts/cultural-v0.11.1-two-pass-260-CJK-embedded-UNREVIEWED/**'
       - 'deliverables/manifest.json'
   push:
     branches:
@@ -32,10 +32,13 @@ jobs:
         with: {fetch-depth: 0}
       - uses: actions/setup-python@v5
         with: {python-version: '3.11'}
-      - name: Install pinned source-PDF raster tools
+      - name: Install source-PDF raster tools and an embeddable full CJK font
         shell: bash
         run: |
           set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-arphic-uming
+          test -f /usr/share/fonts/truetype/arphic/uming.ttc
           python -m pip install 'PyMuPDF==1.26.7' 'numpy==2.3.5' 'Pillow==12.3.0'
       - name: Stage 1 source-locked 260-page rebuild and all 114 pedagogical corrections
         shell: bash
@@ -89,6 +92,7 @@ jobs:
           assert qa['pass2_existing_author_svg_studies_unapproved']==8
           assert qa['pass2_professional_illustrations_completed_and_approved']==0
           assert qa['release_eligible'] is False
+          assert qa['portable_full_CJK_font_embedded'] is True
           assert len(qa['individual_201_glyph_page_art_registry'])==201
           assert hashlib.sha256(pdf.read_bytes()).hexdigest()==qa['phase_two_pdf_sha256']
           prev=root/'all-260-page-JPEG';prev.mkdir()
@@ -140,12 +144,13 @@ jobs:
           assert qa['A4_pages']==260 and qa['original_1045_stroke_tiles_pixel_identical']==1045
           assert (qa['pass2_novel_character_specific_storyboards'],qa['pass2_existing_author_svg_studies_unapproved'])==(193,8)
           assert qa['release_eligible'] is False and p1['release_eligible'] is False
-          directory=Path('deliverables/drafts/cultural-v0.11-two-pass-260-UNREVIEWED')
+          assert qa['portable_full_CJK_font_embedded'] is True
+          directory=Path('deliverables/drafts/cultural-v0.11.1-two-pass-260-CJK-embedded-UNREVIEWED')
           out=directory/src.name
           mpath=Path('deliverables/manifest.json')
           original=mpath.read_text(encoding='utf8')
           m=json.loads(original)
-          label='cultural-v0.11-two-pass-201-260-editorial-draft'
+          label='cultural-v0.11.1-two-pass-260-CJK-embedded-editorial-draft'
           prior=[e for e in m['artifacts'] if e.get('version')==label]
           if out.exists():
             assert hashlib.sha256(out.read_bytes()).hexdigest()==sha
@@ -179,7 +184,7 @@ jobs:
           python -m json.tool deliverables/manifest.json >/dev/null
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add deliverables/manifest.json deliverables/drafts/cultural-v0.11-two-pass-260-UNREVIEWED/
+          git add deliverables/manifest.json deliverables/drafts/cultural-v0.11.1-two-pass-260-CJK-embedded-UNREVIEWED/
           git diff --cached --quiet && exit 0
           git commit -m 'build(cultural): archive complete two-pass 260-page UNREVIEWED manuscript append-only'
           for attempt in 1 2 3; do
