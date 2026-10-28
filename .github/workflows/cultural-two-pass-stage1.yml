@@ -1,0 +1,105 @@
+name: Cultural two-pass stage 1 - correct unverified stroke-order claims on all 260 pages
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/cultural_two_pass_phase1_safety.py'
+      - '.github/workflows/cultural-two-pass-stage1.yml'
+      - 'reviews/cultural-edition/two-pass-stage1-20261028.md'
+  push:
+    branches:
+      - feat/cultural-two-pass-first-content-safety-20261028
+    paths:
+      - 'scripts/cultural_two_pass_phase1_safety.py'
+      - '.github/workflows/cultural-two-pass-stage1.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  correct-114-claims-source-locked-and-preflight-all-260:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install frozen PDF raster QA dependencies
+        run: python -m pip install 'PyMuPDF==1.26.7' 'numpy==2.3.5' 'Pillow==12.3.0'
+      - name: Reassemble stage-one full 260-page manuscript and verify every original step
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/two-pass-1
+          python scripts/cultural_two_pass_phase1_safety.py \
+            --output build/two-pass-1/zitie-201-PASS1-corrected-teaching-claims-UNREVIEWED.pdf \
+            --qa build/two-pass-1/114-claim-correction-and-1045-ink-QA.json
+      - name: Build twice and compare exact artifact bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/two-pass-repeat
+          python scripts/cultural_two_pass_phase1_safety.py \
+            --output build/two-pass-repeat/again.pdf \
+            --qa build/two-pass-repeat/again.json
+          cmp build/two-pass-1/zitie-201-PASS1-corrected-teaching-claims-UNREVIEWED.pdf build/two-pass-repeat/again.pdf
+          cmp build/two-pass-1/114-claim-correction-and-1045-ink-QA.json build/two-pass-repeat/again.json
+      - name: Render all 260 pages and 21 batches; block publication
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import json,hashlib
+          from pathlib import Path
+          import fitz
+          from PIL import Image,ImageDraw
+          root=Path("build/two-pass-1")
+          proof=json.loads((root/'114-claim-correction-and-1045-ink-QA.json').read_text())
+          assert proof["misleading_already_normative_verified_claims_removed"]==114
+          assert proof["original_cumulative_pen_tiles_exactly_unchanged"]==1045
+          assert proof["entire_unedited_pages_pixel_identical"]==146
+          assert proof["release_eligible"] is False
+          original=Path("deliverables/drafts/cultural-v0.10-eight-art-p9-risk-UNREVIEWED/zitie-201-P10-art-integrated-source-UNREVIEWED.pdf")
+          assert hashlib.sha256(original.read_bytes()).hexdigest()==proof["source_cultural_v010_draft_sha256"]
+          p=Path("deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf")
+          assert hashlib.sha256(p.read_bytes()).hexdigest()=="7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90"
+          src=root/"zitie-201-PASS1-corrected-teaching-claims-UNREVIEWED.pdf"
+          thumbs=root/'all-260-page-previews';thumbs.mkdir()
+          with fitz.open(src) as doc:
+            assert len(doc)==260
+            assert all(594<=x.rect.width<=597 and 840<=x.rect.height<=843 for x in doc)
+            assert sum('按已核规范笔顺逐笔书写' in x.get_text() for x in doc)==0
+            assert sum('原版笔顺待权威核验' in x.get_text() for x in doc)==114
+            for i,page in enumerate(doc,1):
+              pix=page.get_pixmap(matrix=fitz.Matrix(.60,.60),alpha=False)
+              pix.save(thumbs/f'page-{i:03d}.png')
+          source=json.loads(Path('deliverables/drafts/cultural-v0.9-stroke-review/201-main-1045-stroke-full-page-provenance.json').read_text())
+          from collections import defaultdict
+          by_batch=defaultdict(set)
+          for rec in source['page_map']:
+              by_batch[rec['batch_id']].add(rec['preview_pdf_page'])
+          gallery=root/'21-batch-contact-sheets';gallery.mkdir()
+          for bid,nums in sorted(by_batch.items()):
+              pages=sorted(nums)
+              cols=5;w,h=150,212;gap=9;rows=(len(pages)+cols-1)//cols
+              sheet=Image.new('RGB',(gap+cols*(w+gap),gap+rows*(h+23)),'#F0EDEA')
+              draw=ImageDraw.Draw(sheet)
+              for k,num in enumerate(pages):
+                  with Image.open(thumbs/f'page-{num:03d}.png') as im:
+                      thumb=im.resize((w,h),Image.Resampling.LANCZOS)
+                  x=gap+k%cols*(w+gap);y=gap+k//cols*(h+23)
+                  sheet.paste(thumb,(x,y))
+                  draw.text((x,y+h+3),f'{bid} / PDF {num}',fill='#444444')
+              sheet.save(gallery/f'{bid}-pass1-source-safe.png',optimize=True)
+          assert len(list(gallery.glob('B*-*.png')))==21
+          print("PASS phase-one: 260 pages, 201 canonical glyphs, 114 misleading claims removed, 1045 stroke tiles immutable, 21 contact sheets")
+          PY
+      - name: Upload phase-one 260-page document and exact editorial source proofs
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Cultural-PASS1-all-260-source-safe-114-corrections-NO-RELEASE
+          path: build/two-pass-1/
+          retention-days: 30
+          if-no-files-found: warn
