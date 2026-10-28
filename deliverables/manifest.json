@@ -711,6 +711,24 @@
       "provenance_kind": "two_review_passes_complete_source_locked_260page_193_storyboards_NOT_201_approved_illustrations",
       "review_record": "reviews/cultural-edition/two-pass-stage2-20261028.md",
       "editorial_review_state": "201_pages_content_present_1013_pinyin_unapproved_1045_pen_sources_114_false_hints_fixed_193_art_pending_P5P6_BLOCKED"
+    },
+    {
+      "path": "deliverables/drafts/cultural-v0.11.2-zi-wangou-MOE-UNREVIEWED/zitie-201-P9-zi-wangou-260-UNREVIEWED.pdf",
+      "title": "文化识字260页校对稿v0.11.2：恢复教基二2013书法附录支持的子第二笔弯钩，仍待墨迹/拼音/插画人审",
+      "version": "cultural-v0.11.2-MOE-zi-wangou-review-draft",
+      "status": "draft",
+      "release_eligible": false,
+      "pages": 260,
+      "bytes": 30265930,
+      "sha256": "c37ca8aa82de52e5792eb03c3bdde158060698b676af3d21d0dca2d3419e3455",
+      "batch": "B01-B21, 201 main glyphs, 1045 unchanged source stroke tiles",
+      "source_pdf": "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf",
+      "source_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+      "parent_draft_sha256": "459e29ea0ae030453eaa20f5c4deff9a583f6a337aa532b11e83a74166c8b4f3",
+      "provenance_kind": "Ministry_and_PEP_zi_wangou_primary_teaching_name_reassessment_not_full_pen_approval",
+      "review_record": "reviews/cultural-edition/P9-5-zi-wangou-ministry-PEP-20261028.md",
+      "source_commit": "9e98a3dbd2d828aa4477bb7a9322dec89a8df85c",
+      "editorial_review_state": "only_ZI_fine_name_supported_201_glyphs_1013_P8_pending_1045_ink_37_83_P10_P5_P6_BLOCKED"
     }
   ]
 }

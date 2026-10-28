@@ -1,0 +1,171 @@
+name: P9.5 Ministry+PEP teaching name 子弯钩 re-evaluation and 260-page full-ink QA
+
+on:
+  pull_request:
+    paths:
+      - 'data/cultural_edition/p9_normative_open_cases_37_83.json'
+      - 'data/cultural_edition/p9_zi_wangou_primary_teaching_20261028.json'
+      - 'scripts/cultural_p9_primary_open_cases_audit.py'
+      - 'scripts/test_cultural_p9_primary_open_cases_audit.py'
+      - 'scripts/cultural_p9_zi_wangou_MOE_restore.py'
+      - '.github/workflows/cultural-p9-zi-wangou-primary.yml'
+      - 'reviews/cultural-edition/P9-5-zi-wangou-ministry-PEP-20261028.md'
+  push:
+    branches:
+      - fix/cultural-zi-wangou-moe-pep-evidence-20261028
+    paths:
+      - 'data/cultural_edition/p9_normative_open_cases_37_83.json'
+      - 'data/cultural_edition/p9_zi_wangou_primary_teaching_20261028.json'
+      - 'scripts/cultural_p9_primary_open_cases_audit.py'
+      - 'scripts/test_cultural_p9_primary_open_cases_audit.py'
+      - 'scripts/cultural_p9_zi_wangou_MOE_restore.py'
+      - '.github/workflows/cultural-p9-zi-wangou-primary.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  new-primary-evidence-correct-old-guess-all-1045-steps:
+    runs-on: ubuntu-latest
+    timeout-minutes: 24
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install PDF pixel tools and embedded Chinese font
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-arphic-uming
+          test -f /usr/share/fonts/truetype/arphic/uming.ttc
+          python -m pip install 'PyMuPDF==1.26.7' 'numpy==2.3.5' 'Pillow==12.3.0'
+      - name: Reassess 37/83 cases and require Ministry+PEP source instead of inferred 竖钩
+        run: |
+          set -euo pipefail
+          python scripts/cultural_p9_primary_open_cases_audit.py
+          python scripts/test_cultural_p9_primary_open_cases_audit.py
+      - name: Rebuild separate complete 260-page v0.11.2 review PDF restoring 子 step 2 弯钩
+        run: |
+          set -euo pipefail
+          mkdir -p build/zi-p9.5
+          python scripts/cultural_p9_zi_wangou_MOE_restore.py \
+            --output build/zi-p9.5/zitie-201-P9-zi-wangou-260-UNREVIEWED.pdf \
+            --qa build/zi-p9.5/zi-MOE-PEP-1045-source-ink-QA.json
+      - name: Verify PDF byte-for-byte deterministic and all 1045 source tiles unaffected
+        run: |
+          set -euo pipefail
+          mkdir -p build/zi-repeat
+          python scripts/cultural_p9_zi_wangou_MOE_restore.py \
+            --output build/zi-repeat/rebuilt.pdf \
+            --qa build/zi-repeat/QA.json
+          cmp build/zi-p9.5/zitie-201-P9-zi-wangou-260-UNREVIEWED.pdf \
+            build/zi-repeat/rebuilt.pdf
+          cmp build/zi-p9.5/zi-MOE-PEP-1045-source-ink-QA.json \
+            build/zi-repeat/QA.json
+      - name: Check all 260 page dimensions; save actual page 30 and grayscale review
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          import fitz,hashlib,json
+          from PIL import Image,ImageOps
+          root=Path('build/zi-p9.5')
+          pdf=root/'zitie-201-P9-zi-wangou-260-UNREVIEWED.pdf'
+          qa=json.loads((root/'zi-MOE-PEP-1045-source-ink-QA.json').read_text())
+          assert qa['release_eligible'] is False and qa['output_A4_pages']==260
+          assert qa['unmodified_complete_A4_pages_pixel_equal']==259
+          assert qa['old_pdf_1045_source_ink_tiles_pixel_identical']==1045
+          assert qa['teacher_pedagogical_name_from_MOE']=='弯钩'
+          assert qa['GF0023_5category_code_521_still_logged'] is True
+          assert hashlib.sha256(pdf.read_bytes()).hexdigest()==qa['output_pdf_sha256']
+          with fitz.open(pdf) as book:
+            assert len(book)==260
+            for page in book:
+              assert 594<=page.rect.width<=597 and 840<=page.rect.height<=843
+            assert len(book.get_toc())>=201
+            p=book[29]
+            text=p.get_text()
+            assert '先横撇，再写弯钩，最后写横。' in text
+            assert '2  弯钩' in text
+            assert '原PDF笔顺提示·未获规范批准' in text
+            assert '禁止作为正式教材发行' in text
+            assert '子第二笔名称与现行笔顺五码存在疑点。' not in text
+            pix=p.get_pixmap(matrix=fitz.Matrix(1.6,1.6),alpha=False)
+            pix.save(root/'P9-zi-MOE-wangou-corrected-page-030.png')
+            im=Image.frombytes('RGB',(pix.width,pix.height),pix.samples)
+            ImageOps.grayscale(im).save(root/'P9-zi-gray-100percent-A4-preview.png')
+          print('PASS 260-page MOE/PEP fine-name review, zero source ink edits, still UNREVIEWED')
+          PY
+      - name: Append-only archive of separate v0.11.2 candidate and source evidence
+        if: github.event_name == 'push' && github.ref == 'refs/heads/fix/cultural-zi-wangou-moe-pep-evidence-20261028'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,shutil,json,os
+          from pathlib import Path
+          root=Path('build/zi-p9.5')
+          src=root/'zitie-201-P9-zi-wangou-260-UNREVIEWED.pdf'
+          qa=json.loads((root/'zi-MOE-PEP-1045-source-ink-QA.json').read_text())
+          digest=hashlib.sha256(src.read_bytes()).hexdigest()
+          assert digest==qa['output_pdf_sha256']
+          assert qa['release_eligible'] is False
+          assert qa['old_pdf_1045_source_ink_tiles_pixel_identical']==1045
+          dest=Path('deliverables/drafts/cultural-v0.11.2-zi-wangou-MOE-UNREVIEWED')
+          pdf=dest/src.name
+          manifest=Path('deliverables/manifest.json')
+          original=manifest.read_text(encoding='utf8')
+          data=json.loads(original)
+          version='cultural-v0.11.2-MOE-zi-wangou-review-draft'
+          existing=[x for x in data['artifacts'] if x.get('version')==version]
+          if pdf.exists():
+              assert hashlib.sha256(pdf.read_bytes()).hexdigest()==digest
+              assert len(existing)==1 and existing[0]['sha256']==digest
+              assert existing[0]['release_eligible'] is False
+          else:
+              assert not existing
+              dest.mkdir(parents=True,exist_ok=True)
+              shutil.copyfile(src,pdf)
+              shutil.copyfile(root/'zi-MOE-PEP-1045-source-ink-QA.json',dest/'zi-MOE-PEP-1045-source-ink-QA.json')
+              data['artifacts'].append({
+                 'path':pdf.as_posix(),
+                 'title':'文化识字260页校对稿v0.11.2：恢复教基二2013书法附录支持的子第二笔弯钩，仍待墨迹/拼音/插画人审',
+                 'version':version,
+                 'status':'draft','release_eligible':False,'pages':260,
+                 'bytes':pdf.stat().st_size,'sha256':digest,
+                 'batch':'B01-B21, 201 main glyphs, 1045 unchanged source stroke tiles',
+                 'source_pdf':'deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf',
+                 'source_pdf_sha256':'7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90',
+                 'parent_draft_sha256':'459e29ea0ae030453eaa20f5c4deff9a583f6a337aa532b11e83a74166c8b4f3',
+                 'provenance_kind':'Ministry_and_PEP_zi_wangou_primary_teaching_name_reassessment_not_full_pen_approval',
+                 'review_record':'reviews/cultural-edition/P9-5-zi-wangou-ministry-PEP-20261028.md',
+                 'source_commit':os.environ['GITHUB_SHA'],
+                 'editorial_review_state':'only_ZI_fine_name_supported_201_glyphs_1013_P8_pending_1045_ink_37_83_P10_P5_P6_BLOCKED'
+              })
+              assert data['artifacts'][:-1]==json.loads(original)['artifacts']
+              manifest.write_text(json.dumps(data,ensure_ascii=False,indent=2)+chr(10),encoding='utf8')
+              print('New v0.11.2 source-based fullbook DRAFT preserved, sha',digest)
+          PY
+          python -m json.tool deliverables/manifest.json >/dev/null
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add deliverables/manifest.json deliverables/drafts/cultural-v0.11.2-zi-wangou-MOE-UNREVIEWED/
+          git diff --cached --quiet && exit 0
+          git commit -m 'build(P9.5): archive 260-page Ministry-based 子弯钩 editorial draft, no release'
+          for retry in 1 2 3; do
+            git fetch origin fix/cultural-zi-wangou-moe-pep-evidence-20261028
+            git rebase origin/fix/cultural-zi-wangou-moe-pep-evidence-20261028
+            if git push origin HEAD:fix/cultural-zi-wangou-moe-pep-evidence-20261028; then exit 0; fi
+          done
+          exit 1
+      - name: Upload source evidence, corrected fullbook and page-level QA
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: P9-MOE-PEP-ZI-WANGOU-260PAGE-1045-INK-REVIEW-ONLY
+          path: build/zi-p9.5/
+          retention-days: 30
+          if-no-files-found: warn

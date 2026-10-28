@@ -67,6 +67,14 @@ class P6ReleaseSafetyTests(unittest.TestCase):
                           if e.get("version")=="cultural-v0.11-two-pass-201-260-editorial-draft")
                  .__setitem__("status","released"))
 
+    def test_zi_old_wrong_竖钩_replacement_candidate_rejected(self):
+        self.bad(2,lambda x:x["fine_name_vs_official_coarse_conflicts"][0]
+                 .__setitem__("candidate_correction_for_first_review","竖钩"))
+
+    def test_zi_primary_school_MOE_name_evidence_cannot_disappear(self):
+        self.bad(2,lambda x:x["fine_name_vs_official_coarse_conflicts"][0]
+                 .__setitem__("verified_ministry_teaching_fine_name",None))
+
     def test_1045_source_stroke_integrity_cannot_be_weakened(self):
         self.bad(6,lambda x:x.__setitem__("verified_source_original_stroke_tiles",1044))
 

@@ -1,0 +1,75 @@
+{
+  "schema_version": 1,
+  "document_kind": "P9_ZI_ID054_MOE_2013_AND_PEP_2024_FINE_STROKE_NAME_REASSESSMENT",
+  "frozen_v051_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+  "frozen_v0111_pdf_sha256": "459e29ea0ae030453eaa20f5c4deff9a583f6a337aa532b11e83a74166c8b4f3",
+  "subject": {
+    "main_id": 54,
+    "character": "子",
+    "step_index": 2,
+    "source_old_fine_name": "弯钩",
+    "prior_unsupported_replacement_hypothesis": "竖钩",
+    "reassessed_fine_name": "弯钩",
+    "original_source_pdf_physical_page": 29,
+    "review_v0111_physical_page": 30,
+    "GF0023_official_numeric_sequence": "521",
+    "name_heuristic_numeric_sequence": "551"
+  },
+  "sources": [
+    {
+      "tier": "ministry_of_education_formally_promulgated_calligraphy_guideline",
+      "title": "教育部《中小学书法教育指导纲要》（教基二〔2013〕1号），附录1《汉字笔画名称》",
+      "host": "浙江省教育厅官方网站转发教育部规范原件",
+      "url": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web3429/site/oldpic/W0201708/W020170807/W020170807579575516345.pdf",
+      "pdf_physical_page_1based": 16,
+      "printed_page_number": 16,
+      "first_example": {
+        "fine_name": "弯钩",
+        "character": "子"
+      },
+      "contrasting_example": {
+        "fine_name": "竖钩",
+        "character": "小"
+      },
+      "original_page_visually_checked": true,
+      "observed_method": "full_page_pdf_render_of_government_document_appendix",
+      "pdf_byte_sha256": null
+    },
+    {
+      "tier": "people_education_press_current_primary_school_language_textbook",
+      "title": "《义务教育教科书·语文·一年级上册》2024版，人民教育出版社《笔画名称表》",
+      "host": "国家中小学智慧教育平台资源CDN",
+      "url": "https://r2-ndr.ykt.cbern.com.cn/edu_product/esp/assets/1c73b348-e8b6-47d6-84b0-6dbacbe28268.pkg/%E4%B9%89%E5%8A%A1%E6%95%99%E8%82%B2%E6%95%99%E7%A7%91%E4%B9%A6%20%E8%AF%AD%E6%96%87%20%E4%B8%80%E5%B9%B4%E7%BA%A7%20%E4%B8%8A%E5%86%8C_1725097498841.pdf",
+      "printed_page_number": 109,
+      "first_example": {
+        "fine_name": "弯钩",
+        "character": "子"
+      },
+      "contrasting_example": {
+        "fine_name": "竖钩",
+        "character": "小"
+      },
+      "source_indexed_text_observed": true,
+      "independent_full_byte_download": false,
+      "pdf_byte_sha256": null
+    }
+  ],
+  "reasoning": {
+    "GF0023_original_5_category_code": "521",
+    "old_source_name_derived_candidate_code": "551",
+    "classification_gap": "Coarse numeric category cannot be reversed to a unique exact teaching stroke name. The numerical disagreement deserves separate research but is not evidence that 教育部/人教社 '弯钩·子' is false.",
+    "old_assumption_discarded": "Do NOT infer 竖钩 solely from GF0023 second digit 2.",
+    "new_teaching_name_with_direct_ministry_and_textbook_examples": "弯钩",
+    "old_source_step_count_and_order": "3 steps: 横撇,弯钩,横",
+    "geometry_as_printed_verified_against_all_normative_figures": false,
+    "human_first_reviewer": null,
+    "independent_human_second_reviewer": null,
+    "word_pronunciation_review_unaffected": true,
+    "all_other_strokes_untouched": true,
+    "other_37_out_of_scope_radicals_still_blocked": true,
+    "other_83_specific_stroke_names_still_missing": true
+  },
+  "frozen_original_strokes_not_replaced": true,
+  "publication_eligible": false,
+  "release_eligible": false
+}
