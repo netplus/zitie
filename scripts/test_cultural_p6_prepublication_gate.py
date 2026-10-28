@@ -57,6 +57,16 @@ class P6ReleaseSafetyTests(unittest.TestCase):
     def test_archived_draft_cannot_be_silently_published(self):
         self.bad(4,lambda x:x["artifacts"][-1].__setitem__("status","released"))
 
+    def test_earlier_unreviewed_cultural_draft_cannot_be_published(self):
+        self.bad(4,lambda x:next(e for e in x["artifacts"]
+                          if e.get("version")=="cultural-v0.7.1-source-visual-draft")
+                 .__setitem__("release_eligible",True))
+
+    def test_v011_two_pass_draft_cannot_be_published(self):
+        self.bad(4,lambda x:next(e for e in x["artifacts"]
+                          if e.get("version")=="cultural-v0.11-two-pass-201-260-editorial-draft")
+                 .__setitem__("status","released"))
+
     def test_1045_source_stroke_integrity_cannot_be_weakened(self):
         self.bad(6,lambda x:x.__setitem__("verified_source_original_stroke_tiles",1044))
 
