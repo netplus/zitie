@@ -1,0 +1,33 @@
+{
+  "schema_version": 1,
+  "result": "PASS_MINISTRY_PEP_ZI_WANGOU_FINE_NAME_RESTORED_260_PAGES_1045_INK_PIXEL_IDENTICAL",
+  "source_formal_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+  "input_v0111_pdf_sha256": "459e29ea0ae030453eaa20f5c4deff9a583f6a337aa532b11e83a74166c8b4f3",
+  "output_pdf_sha256": "c37ca8aa82de52e5792eb03c3bdde158060698b676af3d21d0dca2d3419e3455",
+  "output_pdf_bytes": 30265930,
+  "output_A4_pages": 260,
+  "unmodified_complete_A4_pages_pixel_equal": 259,
+  "old_pdf_1045_source_ink_tiles_pixel_identical": 1045,
+  "teacher_pedagogical_name_from_MOE": "弯钩",
+  "prior_unfounded_竖钩_guess_retracted": true,
+  "amended_main_glyph": "子",
+  "amended_main_id": 54,
+  "amended_physical_PDF_page": 30,
+  "changed_text_only_in_two_source_ink_free_rectangles": true,
+  "changed_rgb_pixels": 10579,
+  "changed_bbox_pt": [
+    48.75,
+    453.75,
+    320.0,
+    642.5
+  ],
+  "GF0023_5category_code_521_still_logged": true,
+  "37_special_radicals_not_yet_normatively_approved": true,
+  "83_unknown_specific_pen_names_not_yet_approved": true,
+  "exact_201_1045_ink_geometry_human_double_review_complete": false,
+  "201_final_professional_illustrations_approved": 0,
+  "P8_1013_lexical_pronunciations_approved": 0,
+  "P5_real_paper_print_completed": false,
+  "P6_user_release_approved": false,
+  "release_eligible": false
+}
