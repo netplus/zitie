@@ -21,6 +21,7 @@ from cultural_fullbook_model import ROOT, SHA, checked_drafts
 from cultural_two_pass_phase1_safety import (
     BASE_SHA, NEW as PASS1_NEW, OLD as PASS1_OLD,
     P9, SOURCE, SOURCE_SHA, digest, verified_proof,
+    EMBEDDED_CJK_FONT, EMBEDDED_CJK_NAME,
 )
 
 PANEL=fitz.Rect(118*72/25.4,51*72/25.4,193*72/25.4,106*72/25.4)
@@ -103,15 +104,16 @@ def draw_storyboard_card(page:fitz.Page,mid:int,row:dict,font:fitz.Font):
     raw_rect=PANEL
     page.add_redact_annot(raw_rect,fill=(1,1,1))
     page.apply_redactions(images=0,graphics=0,text=0)
+    page.insert_font(fontname=EMBEDDED_CJK_NAME,fontfile=str(EMBEDDED_CJK_FONT))
     # A warm fine-lined typographic storyboard, not a substitute drawing.
     page.draw_rect(raw_rect,color=(.83,.78,.72),fill=background,width=.65)
     page.draw_rect(fitz.Rect(121*MM,55*MM,122.2*MM,99*MM),
                    color=accent,fill=accent,width=0)
     page.insert_text((125*MM,61*MM),"画意分镜 · 插图待绘",
-                     fontname="china-s",fontsize=9.5,color=accent)
+                     fontname=EMBEDDED_CJK_NAME,fontsize=9.5,color=accent)
     page.draw_line((125*MM,64*MM),(188*MM,64*MM),color=(.78,.72,.67),width=.75)
     page.insert_text((125*MM,73*MM),f"ID{mid:03d} · 独立构思",
-                     fontname="china-s",fontsize=8.3,color=(.40,.42,.43))
+                     fontname=EMBEDDED_CJK_NAME,fontsize=8.3,color=(.40,.42,.43))
     size=9.1
     wrapped=lines_for(scene,font,size,63*MM)
     if len(wrapped)>3:
@@ -121,18 +123,18 @@ def draw_storyboard_card(page:fitz.Page,mid:int,row:dict,font:fitz.Font):
         raise ValueError(f"ID{mid:03d} storyboard is too long for the 75mm review panel")
     y=83
     for ln in wrapped:
-        page.insert_text((125*MM,y*MM),ln,fontname="china-s",fontsize=size,
+        page.insert_text((125*MM,y*MM),ln,fontname=EMBEDDED_CJK_NAME,fontsize=size,
                          color=(.25,.30,.31))
         y+=6.3
     if y>102.1:
         raise ValueError("Storyboard text overlaps the source-review warning")
     page.insert_text((125*MM,102*MM),"题材说明 · 尚非完成插画",
-                     fontname="china-s",fontsize=7.0,color=(.53,.45,.42))
+                     fontname=EMBEDDED_CJK_NAME,fontsize=7.0,color=(.53,.45,.42))
     # Preserve an explicit warning where the earlier P9 review-card label was.
     page.draw_rect(fitz.Rect(118*MM,106*MM,193*MM,117.5*MM),
                    color=None,fill=(.999,.995,.988),width=0)
     page.insert_text((120*MM,112*MM),"规范笔形、读音及插画均须独立审查",
-                     fontname="china-s",fontsize=7.2,color=(.57,.28,.32))
+                     fontname=EMBEDDED_CJK_NAME,fontsize=7.2,color=(.57,.28,.32))
     after=page.get_text()
     if ("画意分镜" not in after or "插图待绘" not in after
         or "规范笔形、读音及插画均须独立审查" not in after
@@ -149,8 +151,9 @@ def cover_upgrade(page:fitz.Page):
         raise ValueError("Cover title changed position, refusing blind erasure")
     page.add_redact_annot(rect,fill=(1,1,1))
     page.apply_redactions(images=0,graphics=0,text=0)
+    page.insert_font(fontname=EMBEDDED_CJK_NAME,fontfile=str(EMBEDDED_CJK_FONT))
     page.insert_text((74,296),"两轮修订 · 260页整书校对稿",
-                     fontname="china-s",fontsize=19.0,color=(.54,.28,.32))
+                     fontname=EMBEDDED_CJK_NAME,fontsize=19.0,color=(.54,.28,.32))
     if "两轮修订" not in page.get_text() or phrase in page.get_text():
         raise ValueError("Full-book cover version not updated")
 
@@ -170,7 +173,9 @@ def generate(stage1_pdf:Path,stage1_qa:Path,output:Path,qa:Path,root:Path=ROOT):
     if len(by_first)!=201 or set(by_first)!=set(range(1,202)):
         raise ValueError("All 201 original main-character page locations required")
     manuscripts,studies=load_cards(root)
-    font=fitz.Font("china-s")
+    font=fitz.Font(fontfile=str(EMBEDDED_CJK_FONT))
+    if not EMBEDDED_CJK_FONT.is_file():
+        raise ValueError("Portable PDF build requires the full embedded Chinese font")
     rows=[];touched={1};output.parent.mkdir(parents=True,exist_ok=True)
     with fitz.open(stage1_pdf) as book:
         if len(book)!=260:
@@ -247,6 +252,15 @@ def generate(stage1_pdf:Path,stage1_qa:Path,output:Path,qa:Path,root:Path=ROOT):
             raise ValueError("Full original source ink coverage incomplete")
         if len(final.get_toc())!=len(first.get_toc()):
             raise ValueError("201-character PDF bookmarks were lost")
+        # CJK Type0 fonts without actual embedded bytes are unreliable in
+        # mobile browsers and on disconnected printers. Helvetica Base14 is
+        # a standard font and is not treated as an unembedded Chinese face.
+        for page in final:
+            for desc in page.get_fonts(full=True):
+                if desc[2]=="Type0" and desc[1]=="n/a":
+                    raise ValueError("Portable PDF has an unembedded Chinese Type0 font")
+        if not any("CultureTwoPassCJK" in f[4] for f in final[6].get_fonts(full=True)):
+            raise ValueError("Actual independent CJK font was not embedded into scene pages")
     evidence={
       "schema_version":1,
       "result":"TWO_PASSES_COMPLETE_260_PAGE_A4_CULTURAL_EDITORIAL_DRAFT_201_STORYBOARD_LINKS_1045_ORIGINAL_PEN_TILES",
@@ -261,6 +275,7 @@ def generate(stage1_pdf:Path,stage1_qa:Path,output:Path,qa:Path,root:Path=ROOT):
       "pass2_existing_author_svg_studies_unapproved":8,
       "pass2_professional_illustrations_completed_and_approved":0,
       "pass2_pages_with_new_storyboard_or_cover":194,
+      "portable_full_CJK_font_embedded":True,
       "pass2_other_pages_entirely_unchanged":66,
       "original_misleading_zi_second_stroke_caption_still_blocked":True,
       "P8_pronunciations_authoritatively_double_reviewed":0,
