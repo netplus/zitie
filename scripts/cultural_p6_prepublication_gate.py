@@ -141,8 +141,8 @@ def audit_inputs(p8:dict,p9:dict,risk:dict,art:dict,manifest:dict,
         or matching[0].get("pages")!=260
         or matching[0].get("status")!="draft"
         or matching[0].get("release_eligible") is not False
-        or any(x.get("status") in ("released","published") and
-               str(x.get("version","")).startswith("cultural-v1.")
+        or any(str(x.get("version","")).startswith("cultural-")
+               and (x.get("status")!="draft" or x.get("release_eligible") is not False)
                for x in items)):
         raise ValueError("Candidate was silently released or its append-only manifest drifted")
     if (signoffs.get("schema_version")!=1
