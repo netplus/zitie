@@ -12,14 +12,16 @@ ROOT=Path(__file__).resolve().parents[1]
 CASES=ROOT/"data/cultural_edition/p9_normative_open_cases_37_83.json"
 SECONDARY=ROOT/"data/cultural_edition/p9_201_original_stroke_crosscheck.json"
 GF0023=ROOT/"data/cultural_edition/p9_GF0023_direct_primary_164.json"
+ZI_EVIDENCE=ROOT/"data/cultural_edition/p9_zi_wangou_primary_teaching_20261028.json"
 SRC_SHA="7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90"
 
 def read(path:Path): return json.loads(path.read_text(encoding="utf8"))
 
-def verify(reg=None,secondary=None,gf=None)->dict:
+def verify(reg=None,secondary=None,gf=None,zi_evidence=None)->dict:
     reg=reg if reg is not None else read(CASES)
     sec=secondary if secondary is not None else read(SECONDARY)
     gf=gf if gf is not None else read(GF0023)
+    zi_evidence=zi_evidence if zi_evidence is not None else read(ZI_EVIDENCE)
     if (reg.get("document_kind")!="P9_SOURCE_LOCKED_37_83_AND_COARSE_CONFLICT_ACTIONABLE_REVIEW_CASES_NOT_APPROVAL"
         or reg.get("schema_version")!=1
         or reg.get("source_v051_sha256")!=SRC_SHA
@@ -91,10 +93,31 @@ def verify(reg=None,secondary=None,gf=None)->dict:
         row["official_GF0023_primary_pdf_page"]!=digit["GF0023_original_pdf_page_1based"] or
         row["source_pdf_page"]!=old["source_step_records"][1]["source_pdf_page"] or
         row["source_rect_pt"]!=old["source_step_records"][1]["source_rect_pt"] or
-        row["candidate_correction_for_first_review"]!="竖钩" or
+        row["candidate_correction_for_first_review"]!="弯钩" or
         row["approved_new_label"] is not None or
         row["first_reviewer"] is not None or row["second_reviewer"] is not None or
         row["status"]!="blocked_pending_authoritative_geometry_and_two_human_reviews" or
+        row.get("prior_proposed_correction_now_refuted_by_published_pedagogical_examples")!="竖钩" or
+        row.get("verified_ministry_teaching_fine_name")!="弯钩" or
+        row.get("ministry_2013_guideline_appendix1_printed_page")!=16 or
+        row.get("ministry_2013_guideline_source_url")!=
+            "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web3429/site/oldpic/W0201708/W020170807/W020170807579575516345.pdf" or
+        row.get("PEP_2024_grade1_name_table_printed_page")!=109 or
+        row.get("PEP_2024_textbook_stroke_example")!="弯钩/子" or
+        row.get("coarse_five_category_difference_not_fine_name_disproof") is not True or
+        row.get("new_evidence_ledger")!="data/cultural_edition/p9_zi_wangou_primary_teaching_20261028.json" or
+        row.get("authoritative_picture_and_geometry_full_approval") is not False or
+        zi_evidence.get("document_kind")!="P9_ZI_ID054_MOE_2013_AND_PEP_2024_FINE_STROKE_NAME_REASSESSMENT" or
+        zi_evidence.get("frozen_v051_pdf_sha256")!=SRC_SHA or
+        zi_evidence.get("subject",{}).get("reassessed_fine_name")!="弯钩" or
+        zi_evidence.get("subject",{}).get("prior_unsupported_replacement_hypothesis")!="竖钩" or
+        zi_evidence.get("subject",{}).get("GF0023_official_numeric_sequence")!="521" or
+        zi_evidence.get("reasoning",{}).get("new_teaching_name_with_direct_ministry_and_textbook_examples")!="弯钩" or
+        zi_evidence.get("reasoning",{}).get("geometry_as_printed_verified_against_all_normative_figures") is not False or
+        zi_evidence.get("reasoning",{}).get("human_first_reviewer") is not None or
+        zi_evidence.get("reasoning",{}).get("independent_human_second_reviewer") is not None or
+        zi_evidence.get("release_eligible") is not False or
+        zi_evidence.get("publication_eligible") is not False or
         row["do_not_modify_issued_v051"] is not True or
         row["publication_eligible"] is not False):
         raise ValueError("子 stroke 2 source-label conflict requires authority and two humans")
@@ -104,6 +127,9 @@ def verify(reg=None,secondary=None,gf=None)->dict:
         "GF0023_direct_original_rows":164,"outside_8105_cases":37,
         "fine_stroke_names_missing":83,"affected_glyphs":14,
         "specific_name_vs_official_code_risks":1,"human_approved_corrections":0,
+        "zi_fine_name_supported_by_ministry_and_PEP":"弯钩",
+        "prior_zi_guess_竖钩_retracted":True,
+        "zi_original_ink_geometry_professionally_approved":False,
         "primary_GF3002_special_radical_rows_verified":0,
         "original_pdf_modified":False,"release_eligible":False,
     }
