@@ -95,6 +95,9 @@ def audit_inputs(p8:dict,p9:dict,risk:dict,art:dict,manifest:dict,
         or len(unknown)!=83
         or len({(r["main_id"],r["step_index"]) for r in unknown})!=83
         or len(conflicts)!=1 or conflicts[0].get("main_id")!=54
+        or conflicts[0].get("candidate_correction_for_first_review")!="弯钩"
+        or conflicts[0].get("verified_ministry_teaching_fine_name")!="弯钩"
+        or conflicts[0].get("prior_proposed_correction_now_refuted_by_published_pedagogical_examples")!="竖钩"
         or conflicts[0].get("approved_new_label") is not None):
         raise ValueError("P9 exception register missing 37/83/子 cases")
     if any(r.get("status")!="blocked_primary_normative_original_row_missing" or
@@ -201,6 +204,8 @@ def audit_inputs(p8:dict,p9:dict,risk:dict,art:dict,manifest:dict,
         "P9_out_of_GF0023_scope_require_other_authority":37,
         "P9_fine_stroke_labels_missing":83,
         "P9_zi_second_step_dispute_quarantined_in_candidate":True,
+        "P9_zi_second_step_MOE_fine_name_evidence":"弯钩",
+        "P9_zi_竖钩_candidate_retracted_from_current_review":True,
         "P10_individual_scene_studies_unapproved":8,
         "P10_professional_illustrations_undrawn":193,
         "P10_final_art_signoffs":0,
