@@ -37,6 +37,21 @@ class StrictP9Cases(unittest.TestCase):
         r=copy.deepcopy(self.base)
         r["fine_name_vs_official_coarse_conflicts"][0]["approved_new_label"]="竖钩"
         with self.assertRaises(ValueError):verify(r)
+    def test_zi_old_candidate_竖钩_cannot_reappear(self):
+        r=copy.deepcopy(self.base)
+        r["fine_name_vs_official_coarse_conflicts"][0]["candidate_correction_for_first_review"]="竖钩"
+        with self.assertRaises(ValueError):verify(r)
+
+    def test_zi_ministry_example_page_must_be_exact(self):
+        r=copy.deepcopy(self.base)
+        r["fine_name_vs_official_coarse_conflicts"][0]["ministry_2013_guideline_appendix1_printed_page"]=17
+        with self.assertRaises(ValueError):verify(r)
+
+    def test_zi_printed_examples_cannot_be_substituted_by_coarse_5_code(self):
+        r=copy.deepcopy(self.base)
+        r["fine_name_vs_official_coarse_conflicts"][0]["coarse_five_category_difference_not_fine_name_disproof"]=False
+        with self.assertRaises(ValueError):verify(r)
+
     def test_source_ink_coordinates_locked(self):
         r=copy.deepcopy(self.base)
         r["unknown_fine_name_steps"][0]["source_rect_pt"][0]+=1
