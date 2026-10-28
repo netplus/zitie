@@ -127,12 +127,12 @@ def build(output:Path,qa:Path,root:Path=ROOT):
                 "old_source_step_ink_changed":False,
                 "new_approval_granted":False
             })
-        old=book.metadata
-        meta=dict(old or {})
-        meta["title"]="文化识字201字 · 第一次整书教学校对 · 260页未审稿"
-        meta["subject"]="114处笔顺已核误述隔离；原书1045幅累计笔画未改；1013音未审；禁止正式发行"
-        meta["keywords"]="201,1045,1013,P8,P9,P10,pass1,review-only,NO-RELEASE"
-        book.set_metadata(meta)
+        book.set_metadata({
+            "title":"文化识字201字 · 第一次整书教学校对 · 260页未审稿",
+            "author":"netplus/zitie",
+            "subject":"114处笔顺已核误述隔离；原书1045幅累计笔画未改；1013音未审；禁止正式发行",
+            "keywords":"201,1045,1013,P8,P9,P10,pass1,review-only,NO-RELEASE",
+        })
         book.save(output,garbage=4,deflate=True,no_new_id=True)
 
     with fitz.open(base) as original,fitz.open(output) as candidate:
