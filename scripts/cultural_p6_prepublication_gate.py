@@ -228,7 +228,41 @@ def load_and_audit(root:Path=ROOT):
     candidate=root/next(x["path"] for x in inputs[4]["artifacts"]
                         if x.get("version")==DRAFT_VERSION)
     if file_sha(candidate)!=EXPECTED_DRAFT_SHA:
-        raise ValueError("Latest P10 draft bytes differ from immutable manifest")
+        raise ValueError("Frozen P10.2 source draft bytes differ from immutable manifest")
+    # Newer drafts are allowed ONLY when their page-level QA is itself frozen.
+    # They never inherit expert approval merely because v0.10 passed earlier.
+    final_version="cultural-v0.11-two-pass-201-260-editorial-draft"
+    newer=[x for x in inputs[4]["artifacts"] if x.get("version")==final_version]
+    if len(newer)>1:
+        raise ValueError("Duplicate two-pass 260-page archive entries")
+    if newer:
+        entry=newer[0]
+        candidate=root/entry["path"]
+        if (entry.get("status")!="draft" or
+            entry.get("release_eligible") is not False or
+            entry.get("pages")!=260 or
+            file_sha(candidate)!=entry.get("sha256")):
+            raise ValueError("Latest v0.11 260-page manuscript must remain immutable and UNREVIEWED")
+        folder=candidate.parent
+        detail=load(root,(folder/"source-201-art-1045-ink-QA.json").relative_to(root).as_posix())
+        p1=load(root,(folder/"phase1-114-tip-corrections-QA.json").relative_to(root).as_posix())
+        if (detail.get("phase_two_pdf_sha256")!=entry["sha256"] or
+            detail.get("A4_pages")!=260 or
+            detail.get("original_201_glyphs")!=201 or
+            detail.get("original_1045_stroke_tiles_pixel_identical")!=1045 or
+            detail.get("pass1_false_normative_approval_claims_quarantined")!=114 or
+            detail.get("pass2_novel_character_specific_storyboards")!=193 or
+            detail.get("pass2_existing_author_svg_studies_unapproved")!=8 or
+            detail.get("pass2_professional_illustrations_completed_and_approved")!=0 or
+            detail.get("release_eligible") is not False or
+            p1.get("output_draft_sha256")!=detail.get("phase_one_output_sha256") or
+            p1.get("release_eligible") is not False):
+            raise ValueError("The 260-page two-pass result cannot be promoted without its 201/1045/114/193 source QA")
+        result["latest_two_pass_fullbook_sha256"]=entry["sha256"]
+        result["latest_two_pass_A4_pages"]=260
+        result["latest_two_pass_character_specific_storyboard_slots"]=193
+        result["latest_two_pass_author_svg_unapproved"]=8
+        result["latest_two_pass_P6_release_eligible"]=False
     return result
 
 def release_required(result:dict):
