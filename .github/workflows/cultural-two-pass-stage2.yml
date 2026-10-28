@@ -5,6 +5,8 @@ on:
     paths:
       - 'scripts/cultural_two_pass_phase1_safety.py'
       - 'scripts/cultural_two_pass_phase2_reassemble.py'
+      - 'scripts/cultural_p6_prepublication_gate.py'
+      - 'scripts/test_cultural_p6_prepublication_gate.py'
       - '.github/workflows/cultural-two-pass-stage2.yml'
       - 'reviews/cultural-edition/two-pass-stage2-20261028.md'
       - 'deliverables/drafts/cultural-v0.11-two-pass-260-UNREVIEWED/**'
