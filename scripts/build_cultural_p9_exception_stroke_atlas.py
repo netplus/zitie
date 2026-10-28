@@ -95,7 +95,7 @@ def index_records(root:Path=ROOT)->dict:
         risk=[]
         if mid in out_of_scope:risk.append("超出GF0023适用范围")
         if mid in missing:risk.append("具体笔画名称缺失")
-        if mid in disputed:risk.append("子第二笔名称与五类码有争议")
+        if mid in disputed:risk.append("子第二笔教材名弯钩已证实；五类数码差异及几何仍待核")
         rows.append({
             "main_id":mid,"character":entry["character"],
             "batch_id":entry["batch_id"],"stroke_count":entry["stroke_count"],
@@ -167,7 +167,7 @@ def build(pdf_path:Path,qa_path:Path,root:Path=ROOT):
         for i,step in enumerate(row["source_vector_steps"]):
             x=X[i%4];y=Y[i//4];caption=step["name"]
             if caption.startswith("第") and caption.endswith("笔"):caption="具体笔名待核"
-            if row["main_id"]==54 and step["index"]==2:caption="第二笔名称有争议"
+            if row["main_id"]==54 and step["index"]==2:caption="弯钩·几何待核"
             p.label(x,y-5.4,f"第{step['index']}笔 · {caption}",8.4,"Kai","#943E48")
             dest=[x,y,x+CARD,y+CARD]
             tiles.append({
