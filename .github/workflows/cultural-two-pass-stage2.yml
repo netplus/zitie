@@ -1,0 +1,203 @@
+name: Cultural two-pass stage 2 - reassemble all 260 A4 cultural pages, 201 distinct character storyboards
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/cultural_two_pass_phase1_safety.py'
+      - 'scripts/cultural_two_pass_phase2_reassemble.py'
+      - 'scripts/cultural_p6_prepublication_gate.py'
+      - 'scripts/test_cultural_p6_prepublication_gate.py'
+      - '.github/workflows/cultural-two-pass-stage2.yml'
+      - 'reviews/cultural-edition/two-pass-stage2-20261028.md'
+      - 'deliverables/drafts/cultural-v0.11.1-two-pass-260-CJK-embedded-UNREVIEWED/**'
+      - 'deliverables/manifest.json'
+  push:
+    branches:
+      - feat/cultural-two-pass-second-reassemble-260-20261028
+    paths:
+      - 'scripts/cultural_two_pass_phase2_reassemble.py'
+      - '.github/workflows/cultural-two-pass-stage2.yml'
+      - 'reviews/cultural-edition/two-pass-stage2-20261028.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  rebuild-201-source-glyphs-all-260-pages-with-strict-P6-blocks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install source-PDF raster tools and an embeddable full CJK font
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-arphic-uming
+          test -f /usr/share/fonts/truetype/arphic/uming.ttc
+          python -m pip install 'PyMuPDF==1.26.7' 'numpy==2.3.5' 'Pillow==12.3.0'
+      - name: Stage 1 source-locked 260-page rebuild and all 114 pedagogical corrections
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/two-pass-final
+          python scripts/cultural_two_pass_phase1_safety.py \
+            --output build/two-pass-final/PASS1-260-source-safety.pdf \
+            --qa build/two-pass-final/PASS1-114-stroke-wording-source-QA.json
+      - name: Stage 2 reassemble exact 260-page manuscript with 201 distinct linked art concepts
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/cultural_two_pass_phase2_reassemble.py \
+            --pass1-pdf build/two-pass-final/PASS1-260-source-safety.pdf \
+            --pass1-qa build/two-pass-final/PASS1-114-stroke-wording-source-QA.json \
+            --output build/two-pass-final/zitie-cultural-201-two-pass-reassembled-260-UNREVIEWED.pdf \
+            --qa build/two-pass-final/PASS2-201-linked-scene-and-1045-ink-QA.json
+      - name: Build phase 2 twice and require deterministic complete PDF/QA
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/two-pass-repeat
+          python scripts/cultural_two_pass_phase2_reassemble.py \
+            --pass1-pdf build/two-pass-final/PASS1-260-source-safety.pdf \
+            --pass1-qa build/two-pass-final/PASS1-114-stroke-wording-source-QA.json \
+            --output build/two-pass-repeat/again-260.pdf \
+            --qa build/two-pass-repeat/again-qa.json
+          cmp build/two-pass-final/zitie-cultural-201-two-pass-reassembled-260-UNREVIEWED.pdf \
+              build/two-pass-repeat/again-260.pdf
+          cmp build/two-pass-final/PASS2-201-linked-scene-and-1045-ink-QA.json \
+              build/two-pass-repeat/again-qa.json
+      - name: Render all pages, all 21 source batches, and assert P6 remains BLOCKED
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          from pathlib import Path
+          from collections import defaultdict
+          import fitz,json,hashlib
+          from PIL import Image,ImageDraw
+          root=Path('build/two-pass-final')
+          pdf=root/'zitie-cultural-201-two-pass-reassembled-260-UNREVIEWED.pdf'
+          qa=json.loads((root/'PASS2-201-linked-scene-and-1045-ink-QA.json').read_text())
+          assert qa['A4_pages']==260
+          assert qa['original_201_glyphs']==201
+          assert qa['original_word_or_component_examples']==812
+          assert qa['original_1045_stroke_tiles_pixel_identical']==1045
+          assert qa['pass1_false_normative_approval_claims_quarantined']==114
+          assert qa['pass2_novel_character_specific_storyboards']==193
+          assert qa['pass2_existing_author_svg_studies_unapproved']==8
+          assert qa['pass2_professional_illustrations_completed_and_approved']==0
+          assert qa['release_eligible'] is False
+          assert qa['portable_full_CJK_font_embedded'] is True
+          assert len(qa['individual_201_glyph_page_art_registry'])==201
+          assert hashlib.sha256(pdf.read_bytes()).hexdigest()==qa['phase_two_pdf_sha256']
+          prev=root/'all-260-page-JPEG';prev.mkdir()
+          with fitz.open(pdf) as doc:
+            assert len(doc)==260
+            assert len(doc.get_toc())>=201
+            for i,p in enumerate(doc,1):
+              assert 594<=p.rect.width<=597 and 840<=p.rect.height<=843
+              pix=p.get_pixmap(matrix=fitz.Matrix(.64,.64),alpha=False)
+              img=Image.frombytes('RGB',(pix.width,pix.height),pix.samples)
+              img.save(prev/f'page-{i:03d}.jpg',quality=82,optimize=True)
+            assert all('禁止作为正式教材发行' in doc[i].get_text() for i in range(260))
+          source=json.loads(Path('deliverables/drafts/cultural-v0.9-stroke-review/201-main-1045-stroke-full-page-provenance.json').read_text())
+          batch=defaultdict(set)
+          for rec in source['page_map']:
+            batch[rec['batch_id']].add(rec['preview_pdf_page'])
+          assert len(batch)==21
+          out=root/'21-batch-print-previews';out.mkdir()
+          for key,nums in sorted(batch.items()):
+            col=5;w,h=155,219;gap=9;pages=sorted(nums)
+            rows=(len(pages)+col-1)//col
+            sheet=Image.new('RGB',(gap+col*(w+gap),gap+rows*(h+23)),'#F0ECE7')
+            draw=ImageDraw.Draw(sheet)
+            for idx,num in enumerate(pages):
+              with Image.open(prev/f'page-{num:03d}.jpg') as im:
+                resized=im.resize((w,h),Image.Resampling.LANCZOS)
+              x=gap+(idx%col)*(w+gap);y=gap+(idx//col)*(h+23)
+              sheet.paste(resized,(x,y))
+              draw.text((x,y+h+3),f'{key}  p.{num}',fill='#444444')
+            sheet.save(out/f'{key}-final-two-pass.png',optimize=True)
+          assert len(list(prev.glob('page-*.jpg')))==260
+          assert len(list(out.glob('B*.png')))==21
+          print('PASS: TWO content/layout passes, reassembled 260 A4 pages, 201 scenes linked, all 1045 source ink preserved; P6 release BLOCKED')
+          PY
+      - name: Archive complete v0.11 two-pass 260-page PDF and immutable QA append-only, NEVER release
+        if: github.event_name == 'push' && github.ref == 'refs/heads/feat/cultural-two-pass-second-reassemble-260-20261028'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,os,shutil
+          from pathlib import Path
+          root=Path('build/two-pass-final')
+          src=root/'zitie-cultural-201-two-pass-reassembled-260-UNREVIEWED.pdf'
+          qa=json.loads((root/'PASS2-201-linked-scene-and-1045-ink-QA.json').read_text())
+          p1=json.loads((root/'PASS1-114-stroke-wording-source-QA.json').read_text())
+          sha=hashlib.sha256(src.read_bytes()).hexdigest()
+          assert sha==qa['phase_two_pdf_sha256']
+          assert qa['A4_pages']==260 and qa['original_1045_stroke_tiles_pixel_identical']==1045
+          assert (qa['pass2_novel_character_specific_storyboards'],qa['pass2_existing_author_svg_studies_unapproved'])==(193,8)
+          assert qa['release_eligible'] is False and p1['release_eligible'] is False
+          assert qa['portable_full_CJK_font_embedded'] is True
+          directory=Path('deliverables/drafts/cultural-v0.11.1-two-pass-260-CJK-embedded-UNREVIEWED')
+          out=directory/src.name
+          mpath=Path('deliverables/manifest.json')
+          original=mpath.read_text(encoding='utf8')
+          m=json.loads(original)
+          label='cultural-v0.11.1-two-pass-260-CJK-embedded-editorial-draft'
+          prior=[e for e in m['artifacts'] if e.get('version')==label]
+          if out.exists():
+            assert hashlib.sha256(out.read_bytes()).hexdigest()==sha
+            assert len(prior)==1 and prior[0]['sha256']==sha and prior[0]['status']=='draft'
+            assert prior[0]['release_eligible'] is False
+            print('Archive already exists and was not overwritten',sha)
+          else:
+            assert not prior
+            directory.mkdir(parents=True,exist_ok=True)
+            shutil.copyfile(src,out)
+            shutil.copyfile(root/'PASS2-201-linked-scene-and-1045-ink-QA.json',directory/'source-201-art-1045-ink-QA.json')
+            shutil.copyfile(root/'PASS1-114-stroke-wording-source-QA.json',directory/'phase1-114-tip-corrections-QA.json')
+            m['artifacts'].append({
+              'path':out.as_posix(),
+              'title':'文化识字两轮更新后260页A4完整校对稿：114条教学风险文字已隔离、201字独立场景关联（8未审SVG+193待绘分镜）',
+              'version':label,
+              'status':'draft','release_eligible':False,'pages':260,
+              'bytes':out.stat().st_size,'sha256':sha,
+              'batch':'B01-B21: 201 main glyphs, 53 continuation pages, 1045 original vector ink steps',
+              'source_pdf':'deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf',
+              'source_pdf_sha256':'7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90',
+              'source_commit':os.environ['GITHUB_SHA'],
+              'provenance_kind':'two_review_passes_complete_source_locked_260page_193_storyboards_NOT_201_approved_illustrations',
+              'review_record':'reviews/cultural-edition/two-pass-stage2-20261028.md',
+              'editorial_review_state':'201_pages_content_present_1013_pinyin_unapproved_1045_pen_sources_114_false_hints_fixed_193_art_pending_P5P6_BLOCKED'
+            })
+            assert m['artifacts'][:-1]==json.loads(original)['artifacts']
+            mpath.write_text(json.dumps(m,ensure_ascii=False,indent=2)+chr(10),encoding='utf8')
+            print('Append-only 260 A4 draft archived, 201 IDs and 1045 source strokes',sha)
+          PY
+          python -m json.tool deliverables/manifest.json >/dev/null
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add deliverables/manifest.json deliverables/drafts/cultural-v0.11.1-two-pass-260-CJK-embedded-UNREVIEWED/
+          git diff --cached --quiet && exit 0
+          git commit -m 'build(cultural): archive complete two-pass 260-page UNREVIEWED manuscript append-only'
+          for attempt in 1 2 3; do
+            git fetch origin feat/cultural-two-pass-second-reassemble-260-20261028
+            git rebase origin/feat/cultural-two-pass-second-reassemble-260-20261028
+            if git push origin HEAD:feat/cultural-two-pass-second-reassemble-260-20261028; then exit 0; fi
+          done
+          exit 1
+      - name: Upload real two-pass full 260 A4 PDF and all page/21 batch proof
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: CULTURAL-TWO-PASSES-FINAL-260-A4-201-GLYPHS-1045-PEN-UNREVIEWED
+          path: build/two-pass-final/
+          retention-days: 30
+          if-no-files-found: warn

@@ -141,8 +141,8 @@ def audit_inputs(p8:dict,p9:dict,risk:dict,art:dict,manifest:dict,
         or matching[0].get("pages")!=260
         or matching[0].get("status")!="draft"
         or matching[0].get("release_eligible") is not False
-        or any(x.get("status") in ("released","published") and
-               str(x.get("version","")).startswith("cultural-v1.")
+        or any(str(x.get("version","")).startswith("cultural-")
+               and (x.get("status")!="draft" or x.get("release_eligible") is not False)
                for x in items)):
         raise ValueError("Candidate was silently released or its append-only manifest drifted")
     if (signoffs.get("schema_version")!=1
@@ -228,7 +228,49 @@ def load_and_audit(root:Path=ROOT):
     candidate=root/next(x["path"] for x in inputs[4]["artifacts"]
                         if x.get("version")==DRAFT_VERSION)
     if file_sha(candidate)!=EXPECTED_DRAFT_SHA:
-        raise ValueError("Latest P10 draft bytes differ from immutable manifest")
+        raise ValueError("Frozen P10.2 source draft bytes differ from immutable manifest")
+    # Newer drafts are allowed ONLY when their page-level QA is itself frozen.
+    # They never inherit expert approval merely because v0.10 passed earlier.
+    final_versions=(
+        "cultural-v0.11-two-pass-201-260-editorial-draft",
+        "cultural-v0.11.1-two-pass-260-CJK-embedded-editorial-draft",
+    )
+    for index,final_version in enumerate(final_versions):
+        newer=[x for x in inputs[4]["artifacts"] if x.get("version")==final_version]
+        if len(newer)>1:
+            raise ValueError("Duplicate two-pass 260-page archive entries")
+        if not newer:
+            continue
+        entry=newer[0]
+        candidate=root/entry["path"]
+        if (entry.get("status")!="draft" or
+            entry.get("release_eligible") is not False or
+            entry.get("pages")!=260 or
+            file_sha(candidate)!=entry.get("sha256")):
+            raise ValueError("Two-pass 260-page manuscript must remain immutable and UNREVIEWED")
+        folder=candidate.parent
+        detail=load(root,(folder/"source-201-art-1045-ink-QA.json").relative_to(root).as_posix())
+        p1=load(root,(folder/"phase1-114-tip-corrections-QA.json").relative_to(root).as_posix())
+        if (detail.get("phase_two_pdf_sha256")!=entry["sha256"] or
+            detail.get("A4_pages")!=260 or
+            detail.get("original_201_glyphs")!=201 or
+            detail.get("original_1045_stroke_tiles_pixel_identical")!=1045 or
+            detail.get("pass1_false_normative_approval_claims_quarantined")!=114 or
+            detail.get("pass2_novel_character_specific_storyboards")!=193 or
+            detail.get("pass2_existing_author_svg_studies_unapproved")!=8 or
+            detail.get("pass2_professional_illustrations_completed_and_approved")!=0 or
+            detail.get("release_eligible") is not False or
+            p1.get("output_draft_sha256")!=detail.get("phase_one_output_sha256") or
+            p1.get("release_eligible") is not False):
+            raise ValueError("Two-pass manuscript cannot be promoted without 201/1045/114/193 source QA")
+        if index==1 and detail.get("portable_full_CJK_font_embedded") is not True:
+            raise ValueError("Final v0.11.1 requires real embedded CJK fonts for cross-platform reading")
+        result["latest_two_pass_fullbook_sha256"]=entry["sha256"]
+        result["latest_two_pass_A4_pages"]=260
+        result["latest_two_pass_character_specific_storyboard_slots"]=193
+        result["latest_two_pass_author_svg_unapproved"]=8
+        result["latest_two_pass_P6_release_eligible"]=False
+        result["latest_two_pass_fully_embedded_CJK"]=index==1
     return result
 
 def release_required(result:dict):

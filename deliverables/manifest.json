@@ -677,6 +677,40 @@
       "provenance_kind": "P9_strict_201_fullbook_with_8_unapproved_P10_art_studies_and_zi_name_quarantine",
       "review_record": "reviews/cultural-edition/P10-2-archived-integrated-proof-20261027.md",
       "editorial_review_state": "8_of_201_art_studies_only_193_missing_1013_pinyin_pending_37_83_P9_unapproved_P5_paper_pending"
+    },
+    {
+      "path": "deliverables/drafts/cultural-v0.11-two-pass-260-UNREVIEWED/zitie-cultural-201-two-pass-reassembled-260-UNREVIEWED.pdf",
+      "title": "文化识字两轮更新后260页A4完整校对稿：114条教学风险文字已隔离、201字独立场景关联（8未审SVG+193待绘分镜）",
+      "version": "cultural-v0.11-two-pass-201-260-editorial-draft",
+      "status": "draft",
+      "release_eligible": false,
+      "pages": 260,
+      "bytes": 10145431,
+      "sha256": "813ab011b73991707359000940ac30f33c0a0a0ad0a700c634563b1ca342db88",
+      "batch": "B01-B21: 201 main glyphs, 53 continuation pages, 1045 original vector ink steps",
+      "source_pdf": "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf",
+      "source_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+      "source_commit": "a36bdb8a70f729d9a4d98314f848526224e1069a",
+      "provenance_kind": "two_review_passes_complete_source_locked_260page_193_storyboards_NOT_201_approved_illustrations",
+      "review_record": "reviews/cultural-edition/two-pass-stage2-20261028.md",
+      "editorial_review_state": "201_pages_content_present_1013_pinyin_unapproved_1045_pen_sources_114_false_hints_fixed_193_art_pending_P5P6_BLOCKED"
+    },
+    {
+      "path": "deliverables/drafts/cultural-v0.11.1-two-pass-260-CJK-embedded-UNREVIEWED/zitie-cultural-201-two-pass-reassembled-260-UNREVIEWED.pdf",
+      "title": "文化识字两轮更新后260页A4完整校对稿：114条教学风险文字已隔离、201字独立场景关联（8未审SVG+193待绘分镜）",
+      "version": "cultural-v0.11.1-two-pass-260-CJK-embedded-editorial-draft",
+      "status": "draft",
+      "release_eligible": false,
+      "pages": 260,
+      "bytes": 30265277,
+      "sha256": "459e29ea0ae030453eaa20f5c4deff9a583f6a337aa532b11e83a74166c8b4f3",
+      "batch": "B01-B21: 201 main glyphs, 53 continuation pages, 1045 original vector ink steps",
+      "source_pdf": "deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf",
+      "source_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+      "source_commit": "639a2833386d51bb0f6eec23b68773d893a9619f",
+      "provenance_kind": "two_review_passes_complete_source_locked_260page_193_storyboards_NOT_201_approved_illustrations",
+      "review_record": "reviews/cultural-edition/two-pass-stage2-20261028.md",
+      "editorial_review_state": "201_pages_content_present_1013_pinyin_unapproved_1045_pen_sources_114_false_hints_fixed_193_art_pending_P5P6_BLOCKED"
     }
   ]
 }

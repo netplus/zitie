@@ -27,6 +27,8 @@ SOURCE_SHA="7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90"
 OLD="按已核规范笔顺逐笔书写"
 NEW="原版笔顺待权威核验"
 REQUIRED_PAGES=114
+EMBEDDED_CJK_FONT=Path("/usr/share/fonts/truetype/arphic/uming.ttc")
+EMBEDDED_CJK_NAME="CultureTwoPassCJK"
 
 def digest(path:Path)->str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
@@ -83,6 +85,8 @@ def build(output:Path,qa:Path,root:Path=ROOT):
     base=root/BASE.relative_to(ROOT)
     if digest(base)!=BASE_SHA or digest(root/SOURCE.relative_to(ROOT))!=SOURCE_SHA:
         raise ValueError("Immutable previous cultural draft or formal old book was modified")
+    if not EMBEDDED_CJK_FONT.is_file():
+        raise ValueError("Embedded Chinese glyph font required for portable iOS/Edge/print PDF")
     proof,by_page=verified_proof(root)
     report=[]
     output.parent.mkdir(parents=True,exist_ok=True)
@@ -112,8 +116,9 @@ def build(output:Path,qa:Path,root:Path=ROOT):
             rect=regions[number]
             page.add_redact_annot(rect,fill=(1,1,1))
             page.apply_redactions(images=0,graphics=0,text=0)
+            page.insert_font(fontname=EMBEDDED_CJK_NAME,fontfile=str(EMBEDDED_CJK_FONT))
             page.insert_text((rect.x0,rect.y1-1.2),NEW,
-                             fontname="china-s",fontsize=8.1,color=(.51,.25,.30))
+                             fontname=EMBEDDED_CJK_NAME,fontsize=8.1,color=(.51,.25,.30))
             text=page.get_text()
             if OLD in text or NEW not in text or "未获规范批准" not in text:
                 raise ValueError(f"Unreviewed source teaching statement still printed on p{number}")
