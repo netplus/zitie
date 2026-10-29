@@ -7,7 +7,8 @@ import unittest
 
 from cultural_p6_prepublication_gate import (
     ART, ART_QA, MANIFEST, P6_SIGNOFF, P8, P9_RISK, P9_SOURCE, PROOF,
-    ROOT, audit_inputs, load, markdown, release_required
+    ROOT, audit_inputs, load, markdown, release_required,
+    P9_83_RESEARCH, audit_83_fine_name_research_unapproved
 )
 
 class P6ReleaseSafetyTests(unittest.TestCase):
@@ -86,6 +87,32 @@ class P6ReleaseSafetyTests(unittest.TestCase):
 
     def test_fake_user_publication_decision_cannot_release(self):
         self.bad(7,lambda x:x.__setitem__("explicit_user_P6_release_decision",True))
+
+    def test_p6_83_pending_names_and_two_source_order_conflicts_recorded(self):
+        pending=load(ROOT,P9_83_RESEARCH)
+        r=audit_83_fine_name_research_unapproved(pending,self.sources[2],self.sources[1])
+        self.assertEqual(r["P9_83_fine_pen_names_research_candidates"],83)
+        self.assertEqual(len(r["P9_extra_sequence_priority_risks"]),2)
+        self.assertFalse(r["P9_83_proposals_safe_to_print_in_child_learning_book"])
+
+    def test_p6_must_reject_missing_source_discrepancy_for_鬥(self):
+        pending=copy.deepcopy(load(ROOT,P9_83_RESEARCH))
+        pending["high_priority_sequence_discrepancies"].pop()
+        with self.assertRaises(ValueError):
+            audit_83_fine_name_research_unapproved(pending,self.sources[2],self.sources[1])
+
+    def test_p6_must_reject_fake_approval_of_fine_names(self):
+        pending=copy.deepcopy(load(ROOT,P9_83_RESEARCH))
+        pending["character_groups"][0]["approved_fine_names"]=3
+        with self.assertRaises(ValueError):
+            audit_83_fine_name_research_unapproved(pending,self.sources[2],self.sources[1])
+
+    def test_p6_must_reject_ignoring_屮_fine_name_digit_conflict(self):
+        pending=copy.deepcopy(load(ROOT,P9_83_RESEARCH))
+        next(x for x in pending["high_priority_sequence_discrepancies"]
+             if x["main_id"]==55)["coarse_code_from_secondary_written_labels"]="522"
+        with self.assertRaises(ValueError):
+            audit_83_fine_name_research_unapproved(pending,self.sources[2],self.sources[1])
 
     def test_strict_release_flag_must_be_rejected(self):
         with self.assertRaises(ValueError):
