@@ -155,6 +155,9 @@ def evidence(candidate:dict=None,risk:dict=None,proof:dict=None,root:Path=ROOT):
         raise ValueError("An unresolved stroke-order source disagreement was erased")
     primary=candidate.get("primary_documentary_evidence",[])
     special=[r for r in primary if r.get("original_main_id")==69 and r.get("step_index")==2]
+    ya_candidates=next((x["candidate_names"] for x in candidate["character_groups"] if x["main_id"]==69),None)
+    if ya_candidates is None or ya_candidates[1]!="竖折":
+        raise ValueError("Primary GF2001 5.4's direct 牙 stroke-two example must match its candidate label")
     if (len(special)!=1 or special[0]["proposed_name"]!="竖折"
         or special[0]["table_entry"]!="5.4 竖折横／竖折"
         or special[0]["direct_example"]!="牙"
