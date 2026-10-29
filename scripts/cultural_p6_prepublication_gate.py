@@ -224,12 +224,72 @@ def audit_inputs(p8:dict,p9:dict,risk:dict,art:dict,manifest:dict,
         "per_glyph_reviews":rows,
     }
 
+P9_83_RESEARCH="data/cultural_edition/p9_83_fine_pen_research_candidates_20261029.json"
+
+def audit_83_fine_name_research_unapproved(study:dict,risk:dict,original_p9:dict)->dict:
+    """Do not turn research proposals or secondary conflicts into children's verified strokes."""
+    if (study.get("document_kind")!="P9_83_REAL_ORIGINAL_STEP_FINE_NAME_RESEARCH_CANDIDATES_NOT_APPROVAL"
+        or study.get("source_v051_sha256")!=SOURCE_SHA
+        or study.get("source_P9_original_stroke_review_pdf_sha256")!=P9_SHA
+        or study.get("expected_missing_specific_names")!=83
+        or len(study.get("character_groups",[]))!=14
+        or study.get("safety",{}).get("release_eligible") is not False
+        or study.get("safety",{}).get("all_83_child_facing_print_eligible") is not False
+        or study.get("safety",{}).get("first_human_reviewer") is not None
+        or study.get("safety",{}).get("independent_second_human_reviewer") is not None):
+        raise ValueError("The all-83 pen-name research must remain a non-publishable first-pass review")
+    old=original_p9.get("entries",[])
+    by_id={x["main_id"]:x for x in old}
+    cases=risk.get("unknown_fine_name_steps",[])
+    old_ids={x["main_id"] for x in cases}
+    if len(cases)!=83 or len(old_ids)!=14 or len(by_id)!=201:
+        raise ValueError("Original 83 exact unnamed fine pen strokes lost")
+    seen=set();total=0
+    for g in study["character_groups"]:
+        mid=g["main_id"];names=g["candidate_names"]
+        if (mid in seen or mid not in old_ids or mid not in by_id
+            or g.get("character")!=by_id[mid]["character"]
+            or not isinstance(names,list) or len(names)!=by_id[mid]["stroke_count"]
+            or g.get("approved_fine_names")!=0 or g.get("candidate_only") is not True
+            or g.get("publication_eligible") is not False
+            or g.get("first_reviewer") is not None
+            or g.get("second_reviewer") is not None):
+            raise ValueError("One of 83 pen candidates was silently signed, dropped or applied to another glyph")
+        seen.add(mid);total+=len(names)
+    if seen!=old_ids or total!=83 or set(study["expected_ids"])!=old_ids:
+        raise ValueError("Original source IDs and 83 candidate slots do not fully match")
+    critical={x["main_id"]:x for x in study.get("high_priority_sequence_discrepancies",[])}
+    if (set(critical)!={55,190} or
+        critical[190].get("original_old_PDF_visual_and_registry_code")!="2112111212" or
+        critical[190].get("independent_lexicon_repeated_code")!="1121211212" or
+        critical[190].get("mismatch_step_indexes")!=[1,3,4,5] or
+        critical[190].get("status")!="blocked_normative_primary_GF3002_exact_UCS_row_and_geometry_required" or
+        critical[55].get("original_old_PDF_visual_and_registry_code")!="522" or
+        critical[55].get("secondary_source_digit_code")!="522" or
+        critical[55].get("coarse_code_from_secondary_written_labels")!="252" or
+        critical[55].get("status")!="blocked_GF3002_exact_row_and_original_pen_geometry_required" or
+        by_id[190]["secondary_reference_five_type_code"]!="2112111212" or
+        by_id[55]["secondary_reference_five_type_code"]!="522"):
+        raise ValueError("Current source/secondary mismatch for 鬥 or 屮 must not disappear before independent normative review")
+    return {
+        "P9_83_fine_pen_names_research_candidates":83,
+        "P9_83_fine_pen_names_human_approved":0,
+        "P9_14_candidate_glyphs":14,
+        "P9_extra_sequence_priority_risks":[
+            {"main_id":55,"character":"屮","status":"blocked_secondary_digit_vs_name"},
+            {"main_id":190,"character":"鬥","status":"blocked_external_vs_old_sequence"}
+        ],
+        "P9_83_proposals_safe_to_print_in_child_learning_book":False
+    }
+
 def load_and_audit(root:Path=ROOT):
     root=Path(root)
     if file_sha(root/SOURCE)!=SOURCE_SHA or file_sha(root/P9)!=P9_SHA:
         raise ValueError("Historical 299-page release/P9 review PDF modified")
     inputs=[load(root,x) for x in (P8,P9_SOURCE,P9_RISK,ART,MANIFEST,PROOF,ART_QA,P6_SIGNOFF)]
     result=audit_inputs(*inputs)
+    p9_study=load(root,P9_83_RESEARCH)
+    result.update(audit_83_fine_name_research_unapproved(p9_study,inputs[2],inputs[1]))
     candidate=root/next(x["path"] for x in inputs[4]["artifacts"]
                         if x.get("version")==DRAFT_VERSION)
     if file_sha(candidate)!=EXPECTED_DRAFT_SHA:
