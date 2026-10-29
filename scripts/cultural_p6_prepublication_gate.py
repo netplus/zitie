@@ -282,6 +282,46 @@ def audit_83_fine_name_research_unapproved(study:dict,risk:dict,original_p9:dict
         "P9_83_proposals_safe_to_print_in_child_learning_book":False
     }
 
+def audit_chu_dou_stop_tracing_260page(qa:dict,entry:dict)->dict:
+    """P9.7 PDF requires real stop-tracing text on source conflicts, never approval."""
+    if (entry.get("version")!="cultural-v0.11.3-dou-che-stop-tracing-research-draft"
+        or entry.get("status")!="draft"
+        or entry.get("release_eligible") is not False
+        or entry.get("pages")!=260
+        or entry.get("parent_draft_sha256")!="c37ca8aa82de52e5792eb03c3bdde158060698b676af3d21d0dca2d3419e3455"
+        or qa.get("result")!="P9_7_TWICE_VERIFIED_REAL_ORDER_DISAGREEMENTS_WARNED_AND_ORIGINAL_1045_SOURCE_PEN_TILES_IDENTICAL"
+        or qa.get("parent_260page_v0112_pdf_sha256")!=entry["parent_draft_sha256"]
+        or qa.get("candidate_260page_pdf_sha256")!=entry.get("sha256")
+        or qa.get("candidate_pdf_A4_pages")!=260
+        or qa.get("original_1045_source_stroke_tiles_pixel_identical")!=1045
+        or qa.get("untouched_full_A4_pages_pixel_identical")!=257
+        or qa.get("two_conflicting_source_orders_allowed_in_approved_child_learning_material") is not False
+        or qa.get("P9_original_normative_full_source_human_double_reviewed") is not False
+        or qa.get("P6_user_publication_approved") is not False
+        or qa.get("release_eligible") is not False):
+        raise ValueError("The 鬥/屮 two-source disagreement cannot be erased or published")
+    modified=qa.get("warning_pages_and_no_ink_touch",[])
+    if (len(modified)!=3
+        or {int(x["PDF_page"]) for x in modified}!={117,237,238}
+        or {(x["main_id"],x["character"]) for x in modified}!={(55,"屮"),(190,"鬥")}
+        or any(x["original_old_source_ink_modified"] is not False for x in modified)
+        or any(not any("暂停" in text or "暂勿" in text for text in x["new_stop_tracing_warnings"])
+               for x in modified)):
+        raise ValueError("Explicit source-order stop-tracing warnings and pristine original ink required")
+    source={x.get("id"):x for x in qa.get("current_source_sequence_discrepancies",[])}
+    if (set(source)!={55,190}
+        or source[55].get("old_source_five_type")!="522"
+        or source[55].get("lexicon_fine_written_coarse_equivalent")!="252"
+        or source[190].get("old_source_five_type")!="2112111212"
+        or source[190].get("other_repeated_dictionary_five_type")!="1121211212"):
+        raise ValueError("A genuine source-order difference was silently deleted")
+    return {
+        "P9_child_tracing_blocked_glyphs":["屮","鬥"],
+        "P9_warning_page_count":3,
+        "P9_original_1045_source_pen_tiles_retained":1045,
+        "P9_human_normative_order_approval_granted":False
+    }
+
 def load_and_audit(root:Path=ROOT):
     root=Path(root)
     if file_sha(root/SOURCE)!=SOURCE_SHA or file_sha(root/P9)!=P9_SHA:
@@ -372,6 +412,18 @@ def load_and_audit(root:Path=ROOT):
         result["latest_zi_fine_name_MOE_pedagogical_example"]="弯钩"
         result["previous_zi_竖钩_guess_retracted"]=True
         result["P9_all_ink_geometry_normative_approval"]=False
+    quarantine_version="cultural-v0.11.3-dou-che-stop-tracing-research-draft"
+    riskdocs=[x for x in inputs[4]["artifacts"] if x.get("version")==quarantine_version]
+    if len(riskdocs)>1:
+        raise ValueError("Duplicate P9 source-order quarantine proof cannot be accepted")
+    if riskdocs:
+        record=riskdocs[0]
+        candidate=root/record["path"]
+        qa=load(root,(candidate.parent/"all-1045-stroke-and-3-warning-page-QA.json").relative_to(root).as_posix())
+        result.update(audit_chu_dou_stop_tracing_260page(qa,record))
+        if file_sha(candidate)!=record.get("sha256"):
+            raise ValueError("The digitally archived 260page source-order safety PDF SHA differs from manifest")
+        result["latest_source_order_safety_review_260page_sha256"]=record["sha256"]
     return result
 
 def release_required(result:dict):
