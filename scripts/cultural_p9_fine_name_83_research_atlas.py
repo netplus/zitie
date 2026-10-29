@@ -242,6 +242,13 @@ def render_build(out:Path,report:Path,root:Path=ROOT):
             clip=fitz.Rect(record["P9_fullbook_tile_clip_pt"])
             page.show_pdf_page(rect,src_doc,record["P9_fullbook_pdf_page"]-1,
                                clip=clip,keep_proportion=False,overlay=True)
+            # The P9 source clip sometimes grazes a *neighboring caption*
+            # just below the red/gray original pen ink. Hide that clipped
+            # 8pt fringe in the review card only, not in source PDFs. The
+            # actual stroke geometry is higher in the crop; separately QA
+            # all 83 copied tiles against source RGB before accepting this.
+            page.draw_rect(fitz.Rect(x+1,y+TILE-8,x+TILE-1,y+TILE-1),
+                           color=None,fill=(1,1,1),width=0,overlay=True)
             label(page,f"源P9 第{record['P9_fullbook_pdf_page']}页",x,y+TILE+16,7.2,(.4,.47,.47))
             panels.append({**record,"atlas_page":ix+2,"atlas_tile_rect_pt":[x,y,x+TILE,y+TILE]})
             total+=1
