@@ -1,0 +1,362 @@
+{
+  "schema_version": 1,
+  "document_kind": "P9_83_REAL_ORIGINAL_STEP_FINE_NAME_RESEARCH_CANDIDATES_NOT_APPROVAL",
+  "source_v051_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+  "source_P9_original_stroke_review_pdf_sha256": "8178a8d7bdf5258625efa0b74e7b82c0146c24da802f006f2135f17705e7fd89",
+  "scope": "14 exact original main IDs and 83 original step placeholders - not 83 approved children-facing names",
+  "expected_ids": [
+    55,
+    60,
+    69,
+    115,
+    118,
+    120,
+    121,
+    126,
+    130,
+    148,
+    161,
+    169,
+    188,
+    190
+  ],
+  "expected_missing_specific_names": 83,
+  "character_groups": [
+    {
+      "main_id": 55,
+      "character": "屮",
+      "candidate_names": [
+        "竖折",
+        "竖",
+        "竖"
+      ],
+      "secondary_url": "https://m.cidianwang.com/bihua/u5c6e.htm",
+      "risk": "secondary_name_order_disagrees_with_source_522",
+      "candidate_only": true,
+      "approved_fine_names": 0,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 60,
+      "character": "巛",
+      "candidate_names": [
+        "撇点",
+        "撇点",
+        "撇点"
+      ],
+      "secondary_url": "https://m.cidianwang.com/bihua/u5ddb.htm",
+      "risk": "candidate_secondary_agrees_with_original_555",
+      "candidate_only": true,
+      "approved_fine_names": 0,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 69,
+      "character": "牙",
+      "candidate_names": [
+        "横",
+        "竖折",
+        "竖钩",
+        "撇"
+      ],
+      "secondary_url": "https://phys.cqu.edu.cn/info/1056/1555.htm",
+      "risk": "GF2001_5_4_example_牙_direct_specific_stroke2",
+      "candidate_only": true,
+      "approved_fine_names": 0,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 115,
+      "character": "疒",
+      "candidate_names": [
+        "点",
+        "横",
+        "撇",
+        "点",
+        "提"
+      ],
+      "secondary_url": "https://m.cidianwang.com/zd/bing/bing20845.htm",
+      "risk": "secondary_exact_character_sequence",
+      "candidate_only": true,
+      "approved_fine_names": 0,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 118,
+      "character": "疋",
+      "candidate_names": [
+        "横撇／横钩",
+        "竖",
+        "横",
+        "撇",
+        "捺"
+      ],
+      "secondary_url": "https://www.zidianwang.cn/zidian/758B.html",
+      "risk": "first_fine_name_ambiguous_variant",
+      "candidate_only": true,
+      "approved_fine_names": 0,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 120,
+      "character": "癶",
+      "candidate_names": [
+        "横撇／横钩",
+        "点",
+        "撇",
+        "撇",
+        "捺"
+      ],
+      "secondary_url": "https://www.zidianwang.cn/zidian/7676.html",
+      "risk": "first_fine_name_ambiguous_variant",
+      "candidate_only": true,
+      "approved_fine_names": 0,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 121,
+      "character": "矛",
+      "candidate_names": [
+        "横撇／横钩",
+        "点",
+        "横撇／横钩",
+        "竖钩",
+        "撇"
+      ],
+      "secondary_url": "https://www.zidianwang.cn/zidian/77DB.html",
+      "risk": "first_and_third_fine_names_ambiguous_variants",
+      "candidate_only": true,
+      "approved_fine_names": 0,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 126,
+      "character": "覀",
+      "candidate_names": [
+        "横",
+        "竖",
+        "横折",
+        "竖",
+        "竖",
+        "横"
+      ],
+      "secondary_url": "https://gushiju.net/zidian/%E8%A6%80",
+      "risk": "secondary_exact_character_sequence",
+      "candidate_only": true,
+      "approved_fine_names": 0,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 130,
+      "character": "虍",
+      "candidate_names": [
+        "竖",
+        "横",
+        "横钩",
+        "撇",
+        "横",
+        "竖弯钩"
+      ],
+      "secondary_url": "https://gushiju.net/zidian/%E8%99%8D",
+      "risk": "secondary_exact_character_sequence",
+      "candidate_only": true,
+      "approved_fine_names": 0,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 148,
+      "character": "糸",
+      "candidate_names": [
+        "撇折",
+        "撇折",
+        "点",
+        "竖钩",
+        "撇",
+        "点"
+      ],
+      "secondary_url": "https://www.dancihu.com/zidian/m6453.htm",
+      "risk": "secondary_exact_character_sequence",
+      "candidate_only": true,
+      "approved_fine_names": 0,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 161,
+      "character": "釆",
+      "candidate_names": [
+        "撇",
+        "点",
+        "撇",
+        "横",
+        "竖",
+        "撇",
+        "捺"
+      ],
+      "secondary_url": "https://gushiju.net/zidian/%E9%87%86",
+      "risk": "secondary_exact_character_sequence",
+      "candidate_only": true,
+      "approved_fine_names": 0,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 169,
+      "character": "龺",
+      "candidate_names": [
+        "横",
+        "竖",
+        "竖",
+        "横折",
+        "横",
+        "横",
+        "横",
+        "竖"
+      ],
+      "secondary_url": null,
+      "risk": "original_vector_and_five_category_only_NO_externally_verified_exact_headword",
+      "candidate_only": true,
+      "approved_fine_names": 0,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 188,
+      "character": "髟",
+      "candidate_names": [
+        "横",
+        "竖",
+        "横",
+        "横",
+        "横",
+        "撇折",
+        "点",
+        "撇",
+        "撇",
+        "撇"
+      ],
+      "secondary_url": "https://www.gushiju.net/zidian/%E9%AB%9F",
+      "risk": "secondary_exact_character_sequence",
+      "candidate_only": true,
+      "approved_fine_names": 0,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "publication_eligible": false
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "candidate_names": [
+        "竖",
+        "横",
+        "横",
+        "竖",
+        "横",
+        "横",
+        "横",
+        "竖",
+        "横",
+        "竖钩"
+      ],
+      "secondary_url": "https://zdic.net/hans/%E9%AC%A5",
+      "risk": "SOURCE_ORDER_DIFFERS_FROM_MULTIPLE_DICTIONARIES_1121211212",
+      "candidate_only": true,
+      "approved_fine_names": 0,
+      "first_reviewer": null,
+      "second_reviewer": null,
+      "publication_eligible": false
+    }
+  ],
+  "primary_documentary_evidence": [
+    {
+      "authority": "GF2001-2001 GB13000.1 字符集汉字折笔规范",
+      "original_moe_pdf": "https://www.moe.gov.cn/ewebeditor/uploadfile/2015/01/12/20150112170016626.pdf",
+      "printed_page": 6,
+      "table_entry": "5.4 竖折横／竖折",
+      "direct_example": "牙",
+      "original_main_id": 69,
+      "step_index": 2,
+      "proposed_name": "竖折",
+      "full_official_PDF_sha256": null,
+      "primary_full_pdf_visual_page_verified": false,
+      "meaning": "The official normative table text lists 牙 among the 5.4 竖折 subordinate examples; do not interpret this as all four original geometry steps signed"
+    },
+    {
+      "authority": "教育部2013《中小学书法教育指导纲要》附录《汉字笔画名称》",
+      "original_government_pdf": "https://zjjcmspublic.oss-cn-hangzhou-zwynet-d01-a.internet.cloud.zj.gov.cn/jcms_files/jcms1/web3429/site/oldpic/W0201708/W020170807/W020170807579575516345.pdf",
+      "physical_pdf_page": 16,
+      "scope": "Standard fine name categories (横/竖/提/点/撇/捺/竖钩); exact glyph source geometry still needs independently checked"
+    }
+  ],
+  "high_priority_sequence_discrepancies": [
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "original_old_PDF_visual_and_registry_code": "2112111212",
+      "independent_lexicon_repeated_code": "1121211212",
+      "mismatch_step_indexes": [
+        1,
+        3,
+        4,
+        5
+      ],
+      "source_example_urls": [
+        "https://zdic.net/hans/%E9%AC%A5",
+        "https://www.guoxuedashi.com/zidian/9B25.html",
+        "https://m.cidianwang.com/bihua/u9b25.htm"
+      ],
+      "kind": "likely_stroke_order_source_disagreement_not_just_fine_name",
+      "status": "blocked_normative_primary_GF3002_exact_UCS_row_and_geometry_required",
+      "suggested_correct_sequence_unapproved": true
+    },
+    {
+      "main_id": 55,
+      "character": "屮",
+      "original_old_PDF_visual_and_registry_code": "522",
+      "secondary_source_digit_code": "522",
+      "secondary_written_fine_name_sequence": "竖、竖折／竖弯、竖",
+      "coarse_code_from_secondary_written_labels": "252",
+      "mismatch_step_indexes": [
+        1,
+        2
+      ],
+      "source_example_urls": [
+        "https://m.cidianwang.com/bihua/u5c6e.htm",
+        "https://www.dancihu.com/zidian/c538.htm"
+      ],
+      "kind": "secondary_lexicon_internal_fine_name_vs_digit_inconsistency",
+      "status": "blocked_GF3002_exact_row_and_original_pen_geometry_required",
+      "suggested_correct_sequence_unapproved": true
+    }
+  ],
+  "safety": {
+    "legacy_source_1045_ink_must_remain_byte_unchanged": true,
+    "all_83_candidate_names_are_not_independently_human_approved": true,
+    "all_83_child_facing_print_eligible": false,
+    "must_not_replace_original_fullbook_labels_or_raster_without_separate_normative_and_human_review": true,
+    "first_human_reviewer": null,
+    "independent_second_human_reviewer": null,
+    "release_eligible": false
+  }
+}
