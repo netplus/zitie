@@ -1,0 +1,113 @@
+name: P9.6 14 glyphs 83 original stroke tiles and fine-name research atlas NOT RELEASED
+
+on:
+  pull_request:
+    paths:
+      - 'data/cultural_edition/p9_83_fine_pen_research_candidates_20261029.json'
+      - 'scripts/cultural_p9_fine_name_83_research_atlas.py'
+      - 'scripts/test_cultural_p9_fine_name_83_research_atlas.py'
+      - '.github/workflows/cultural-p9-83-fine-name-review.yml'
+      - 'reviews/cultural-edition/P9-6-83-fine-stroke-name-research-20261029.md'
+  push:
+    branches:
+      - feat/cultural-p9-fine-name-83-20261029
+    paths:
+      - 'data/cultural_edition/p9_83_fine_pen_research_candidates_20261029.json'
+      - 'scripts/cultural_p9_fine_name_83_research_atlas.py'
+      - 'scripts/test_cultural_p9_fine_name_83_research_atlas.py'
+      - '.github/workflows/cultural-p9-83-fine-name-review.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  all83-source-stroke-name-research-atlas:
+    runs-on: ubuntu-latest
+    timeout-minutes: 17
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install original-PDF renderer and full CJK font
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-arphic-uming
+          python -m pip install 'PyMuPDF==1.26.7' 'Pillow==12.3.0' 'numpy==2.3.5'
+          test -f /usr/share/fonts/truetype/arphic/uming.ttc
+      - name: Require all 83 step identities and 14 fail-closed mutation tests
+        shell: bash
+        run: |
+          set -euo pipefail
+          python scripts/test_cultural_p9_fine_name_83_research_atlas.py
+      - name: Build standalone 15-page A4 83-pen real-vector candidate atlas
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/P9-83
+          python scripts/cultural_p9_fine_name_83_research_atlas.py \
+            --output build/P9-83/P9-83-original-vector-provisional-stroke-names-UNAPPROVED.pdf \
+            --qa build/P9-83/83-source-clip-pen-label-candidates.json \
+            --verify-report build/P9-83/83-source-tile-pixel-comparison.json
+      - name: Require deterministic PDF and no silent normative approval
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/P9-83-repeat
+          python scripts/cultural_p9_fine_name_83_research_atlas.py \
+            --output build/P9-83-repeat/rebuilt.pdf \
+            --qa build/P9-83-repeat/qa.json \
+            --verify-report build/P9-83-repeat/pixels.json
+          cmp build/P9-83/P9-83-original-vector-provisional-stroke-names-UNAPPROVED.pdf \
+              build/P9-83-repeat/rebuilt.pdf
+          cmp build/P9-83/83-source-clip-pen-label-candidates.json build/P9-83-repeat/qa.json
+          cmp build/P9-83/83-source-tile-pixel-comparison.json build/P9-83-repeat/pixels.json
+          python - <<'PY'
+          import hashlib,json,fitz
+          from pathlib import Path
+          root=Path("build/P9-83")
+          qa=json.loads((root/"83-source-clip-pen-label-candidates.json").read_text())
+          pix=json.loads((root/"83-source-tile-pixel-comparison.json").read_text())
+          assert qa["source_unlabeled_strokes_documented"]==83
+          assert qa["source_glyphs_reviewed"]==14
+          assert qa["source_1045_cumulative_pen_steps_modified"] is False
+          assert qa["release_eligible"] is False
+          assert pix["source_pen_tiles_compared"]==83
+          assert pix["review_candidate_approval"] is False
+          p=Path('deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf')
+          assert hashlib.sha256(p.read_bytes()).hexdigest()== \
+            '7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90'
+          q=Path('deliverables/drafts/cultural-v0.9-stroke-review/zitie-201-P9-normative-stroke-review-UNREVIEWED.pdf')
+          assert hashlib.sha256(q.read_bytes()).hexdigest()== \
+            '8178a8d7bdf5258625efa0b74e7b82c0146c24da802f006f2135f17705e7fd89'
+          with fitz.open(root/'P9-83-original-vector-provisional-stroke-names-UNAPPROVED.pdf') as pdf:
+            assert len(pdf)==15
+          print("PASS: 14 glyphs, 83 exact original P9 source vector tiles; both parent PDFs unchanged, zero publication approvals")
+          PY
+      - name: Render all 15 review A4 pages and 14 exact per-char printable source pictures
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import fitz
+          from pathlib import Path
+          from PIL import Image
+          output=Path('build/P9-83')
+          d=output/'all-15-original-pen-review-pages';d.mkdir()
+          with fitz.open(output/'P9-83-original-vector-provisional-stroke-names-UNAPPROVED.pdf') as doc:
+            for i,p in enumerate(doc,1):
+              pix=p.get_pixmap(matrix=fitz.Matrix(1.5,1.5),alpha=False)
+              pix.save(d/f'P9-83-page-{i:02d}.png')
+          assert len(list(d.glob('P9-83-page-*.png')))==15
+          print('PASS 15/15 A4 pages visibly rendered for professional inspection')
+          PY
+      - name: Upload real original-vector 83-step research proof; NOT children's release
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: P9-83-REAL-STROKE-RESEARCH-ORIGINAL-VECTORS-PENDING
+          path: build/P9-83/
+          retention-days: 30
+          if-no-files-found: warn
