@@ -1,0 +1,166 @@
+name: P9.7 stop tracing disputed 屮/鬥 old stroke order on 260 source-safe pages
+
+on:
+  pull_request:
+    paths:
+      - 'scripts/cultural_p9_dou_che_stop_tracing.py'
+      - '.github/workflows/cultural-p9-dou-che-stop-tracing.yml'
+      - 'reviews/cultural-edition/P9-7-dou-che-original-sequence-safety-20261029.md'
+      - 'deliverables/drafts/cultural-v0.11.3-dou-che-stop-tracing-UNREVIEWED/**'
+      - 'deliverables/manifest.json'
+  push:
+    branches:
+      - fix/cultural-p9-dou-che-source-order-quarantine-20261029
+    paths:
+      - 'scripts/cultural_p9_dou_che_stop_tracing.py'
+      - '.github/workflows/cultural-p9-dou-che-stop-tracing.yml'
+      - 'reviews/cultural-edition/P9-7-dou-che-original-sequence-safety-20261029.md'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  human-safety-warnings-and-all-1045-source-pixels:
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    steps:
+      - uses: actions/checkout@v4
+        with: {fetch-depth: 0}
+      - uses: actions/setup-python@v5
+        with: {python-version: '3.11'}
+      - name: Install exact raster tools and embeddable CJK font
+        shell: bash
+        run: |
+          set -euo pipefail
+          sudo apt-get update -qq
+          sudo apt-get install -y fonts-arphic-uming
+          python -m pip install 'PyMuPDF==1.26.7' 'numpy==2.3.5' 'Pillow==12.3.0'
+      - name: Rebuild complete 260-page review PDF with three source-order stop-tracing warnings
+        run: |
+          set -euo pipefail
+          mkdir -p build/P9-stop-tracing
+          python scripts/cultural_p9_dou_che_stop_tracing.py \
+            --output build/P9-stop-tracing/zitie-201-P9-dou-che-stop-tracing-260-UNREVIEWED.pdf \
+            --qa build/P9-stop-tracing/all-1045-stroke-and-3-warning-page-QA.json
+      - name: Independently rebuild and compare exact PDF and QA bytes
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p build/P9-stop-tracing-repeat
+          python scripts/cultural_p9_dou_che_stop_tracing.py \
+            --output build/P9-stop-tracing-repeat/again.pdf \
+            --qa build/P9-stop-tracing-repeat/again.json
+          cmp build/P9-stop-tracing/zitie-201-P9-dou-che-stop-tracing-260-UNREVIEWED.pdf \
+            build/P9-stop-tracing-repeat/again.pdf
+          cmp build/P9-stop-tracing/all-1045-stroke-and-3-warning-page-QA.json \
+            build/P9-stop-tracing-repeat/again.json
+      - name: Confirm visible explicit anti-imitation text in precise 3 risk pages
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import fitz,json,hashlib
+          from pathlib import Path
+          root=Path('build/P9-stop-tracing')
+          pdf=root/'zitie-201-P9-dou-che-stop-tracing-260-UNREVIEWED.pdf'
+          qa=json.loads((root/'all-1045-stroke-and-3-warning-page-QA.json').read_text())
+          assert qa['candidate_pdf_A4_pages']==260
+          assert qa['original_1045_source_stroke_tiles_pixel_identical']==1045
+          assert qa['untouched_full_A4_pages_pixel_identical']==257
+          assert qa['two_conflicting_source_orders_allowed_in_approved_child_learning_material'] is False
+          assert qa['P9_original_normative_full_source_human_double_reviewed'] is False
+          assert qa['release_eligible'] is False
+          assert hashlib.sha256(pdf.read_bytes()).hexdigest()==qa['candidate_260page_pdf_sha256']
+          out=root/'three-risk-page-RGB';out.mkdir()
+          with fitz.open(pdf) as book:
+            assert len(book)==260 and len(book.get_toc())>=201
+            for p in book:
+              assert 594<p.rect.width<597 and 840<p.rect.height<843
+            for physical in (117,237,238):
+              p=book[physical-1]
+              text=p.get_text()
+              assert ('暂停' in text or '暂勿' in text)
+              assert '禁止作为正式教材发行' in text
+              assert '原PDF笔顺提示·未获规范批准' in text
+              assert '看清这一步新出现的红色笔画，再接着写。' not in text
+              assert '先按序号练习，不把待核实的笔画名称当作答案。' not in text
+              p.get_pixmap(matrix=fitz.Matrix(1.6,1.6),alpha=False).save(out/f'P9-stop-tracing-A4-p{physical}.png')
+            assert '提示：依原书序号逐步完成' not in book[237].get_text()
+          for name,hashv in {
+             'deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf':'7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90',
+             'deliverables/drafts/cultural-v0.11.2-zi-wangou-MOE-UNREVIEWED/zitie-201-P9-zi-wangou-260-UNREVIEWED.pdf':'c37ca8aa82de52e5792eb03c3bdde158060698b676af3d21d0dca2d3419e3455',
+          }.items():assert hashlib.sha256(Path(name).read_bytes()).hexdigest()==hashv
+          print('PASS: exact 260-page draft, three risk-page no-tracing warnings, 1045/1045 original vector ink, old formal PDF immutable, release still BLOCKED')
+          PY
+      - name: Append verified 260-page anti-imitation research draft only, never publish
+        if: github.event_name == 'push' && github.ref == 'refs/heads/fix/cultural-p9-dou-che-source-order-quarantine-20261029'
+        shell: bash
+        run: |
+          set -euo pipefail
+          python - <<'PY'
+          import hashlib,json,os,shutil
+          from pathlib import Path
+          root=Path('build/P9-stop-tracing')
+          source=root/'zitie-201-P9-dou-che-stop-tracing-260-UNREVIEWED.pdf'
+          qa=json.loads((root/'all-1045-stroke-and-3-warning-page-QA.json').read_text())
+          digest=hashlib.sha256(source.read_bytes()).hexdigest()
+          assert digest==qa['candidate_260page_pdf_sha256']
+          assert qa['original_1045_source_stroke_tiles_pixel_identical']==1045
+          assert qa['untouched_full_A4_pages_pixel_identical']==257
+          assert qa['release_eligible'] is False
+          base=Path('deliverables/drafts/cultural-v0.11.3-dou-che-stop-tracing-UNREVIEWED')
+          dest=base/source.name
+          manifest=Path('deliverables/manifest.json')
+          original=manifest.read_text(encoding='utf8')
+          m=json.loads(original)
+          version='cultural-v0.11.3-dou-che-stop-tracing-research-draft'
+          exists=[x for x in m['artifacts'] if x.get('version')==version]
+          if dest.exists():
+              assert hashlib.sha256(dest.read_bytes()).hexdigest()==digest
+              assert len(exists)==1 and exists[0]['sha256']==digest and exists[0]['release_eligible'] is False
+              print('Existing immutable research draft verified',digest)
+          else:
+              assert not exists
+              base.mkdir(parents=True,exist_ok=True)
+              shutil.copyfile(source,dest)
+              shutil.copyfile(root/'all-1045-stroke-and-3-warning-page-QA.json',
+                              base/'all-1045-stroke-and-3-warning-page-QA.json')
+              m['artifacts'].append({
+                'path':dest.as_posix(),
+                'title':'260页文化识字P9.7审稿PDF：屮和鬥的旧笔序风险禁临摹，不改变1045幅原书源笔迹',
+                'version':version,'status':'draft','release_eligible':False,'pages':260,
+                'bytes':dest.stat().st_size,'sha256':digest,
+                'batch':'B01-B21, 201 main glyphs, 1045 source stroke tiles, 3 warning pages',
+                'source_pdf':'deliverables/releases/v0.5.1/zitie-v0.5.1-A4.pdf',
+                'source_pdf_sha256':'7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90',
+                'parent_draft_sha256':'c37ca8aa82de52e5792eb03c3bdde158060698b676af3d21d0dca2d3419e3455',
+                'provenance_kind':'source_locked_not_yet_normatively_adjudicated_chu_dou_ink_no_imitation_warned',
+                'review_record':'reviews/cultural-edition/P9-7-dou-che-original-sequence-safety-20261029.md',
+                'editorial_review_state':'201_source_glyphs_P8_1013_pending_P9_83_pending_CHU_DOU_order_conflicts_blocked_P5_P6_no_release',
+                'source_commit':os.environ['GITHUB_SHA']
+              })
+              assert m['artifacts'][:-1]==json.loads(original)['artifacts']
+              manifest.write_text(json.dumps(m,ensure_ascii=False,indent=2)+chr(10),encoding='utf8')
+              print('PASS research-only append-only 260 A4 source-safe draft',digest)
+          PY
+          python -m json.tool deliverables/manifest.json >/dev/null
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add deliverables/manifest.json deliverables/drafts/cultural-v0.11.3-dou-che-stop-tracing-UNREVIEWED/
+          git diff --cached --quiet && exit 0
+          git commit -m 'build(P9.7): archive source-locked 260p anti-imitation review draft without publication'
+          for attempt in 1 2 3; do
+            git fetch origin fix/cultural-p9-dou-che-source-order-quarantine-20261029
+            git rebase origin/fix/cultural-p9-dou-che-source-order-quarantine-20261029
+            if git push origin HEAD:fix/cultural-p9-dou-che-source-order-quarantine-20261029; then exit 0; fi
+          done
+          exit 1
+      - name: Upload the 260-page PDF, all 1045 source-pixel QA, and 3 risk-page pictures
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: P9-7-DOU-CHE-STOP-TRACING-260-A4-1045-SOURCE-TILES-NO-RELEASE
+          path: build/P9-stop-tracing/
+          retention-days: 30
+          if-no-files-found: warn

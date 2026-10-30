@@ -8,6 +8,7 @@ import unittest
 from cultural_p6_prepublication_gate import (
     ART, ART_QA, MANIFEST, P6_SIGNOFF, P8, P9_RISK, P9_SOURCE, PROOF,
     ROOT, audit_inputs, load, markdown, release_required,
+    audit_chu_dou_stop_tracing_260page,
     P9_83_RESEARCH, audit_83_fine_name_research_unapproved
 )
 
@@ -113,6 +114,50 @@ class P6ReleaseSafetyTests(unittest.TestCase):
              if x["main_id"]==55)["coarse_code_from_secondary_written_labels"]="522"
         with self.assertRaises(ValueError):
             audit_83_fine_name_research_unapproved(pending,self.sources[2],self.sources[1])
+
+    def test_P9_source_order_warning_P6_cannot_be_falsely_signed(self):
+        qa={
+            "result":"P9_7_TWICE_VERIFIED_REAL_ORDER_DISAGREEMENTS_WARNED_AND_ORIGINAL_1045_SOURCE_PEN_TILES_IDENTICAL",
+            "parent_260page_v0112_pdf_sha256":"c37ca8aa82de52e5792eb03c3bdde158060698b676af3d21d0dca2d3419e3455",
+            "candidate_260page_pdf_sha256":"example-qa-file-hash",
+            "candidate_pdf_A4_pages":260,
+            "original_1045_source_stroke_tiles_pixel_identical":1045,
+            "untouched_full_A4_pages_pixel_identical":257,
+            "two_conflicting_source_orders_allowed_in_approved_child_learning_material":False,
+            "P9_original_normative_full_source_human_double_reviewed":False,
+            "P6_user_publication_approved":False,
+            "release_eligible":False,
+            "warning_pages_and_no_ink_touch":[
+                {"PDF_page":117,"main_id":55,"character":"屮","new_stop_tracing_warnings":["暂停模仿旧笔序"],"original_old_source_ink_modified":False},
+                {"PDF_page":237,"main_id":190,"character":"鬥","new_stop_tracing_warnings":["暂勿照旧顺序临摹"],"original_old_source_ink_modified":False},
+                {"PDF_page":238,"main_id":190,"character":"鬥","new_stop_tracing_warnings":["暂停模仿"],"original_old_source_ink_modified":False},
+            ],
+            "current_source_sequence_discrepancies":[
+                {"id":55,"old_source_five_type":"522","lexicon_fine_written_coarse_equivalent":"252"},
+                {"id":190,"old_source_five_type":"2112111212","other_repeated_dictionary_five_type":"1121211212"},
+            ],
+        }
+        entry={
+            "version":"cultural-v0.11.3-dou-che-stop-tracing-research-draft",
+            "status":"draft","release_eligible":False,"pages":260,
+            "parent_draft_sha256":"c37ca8aa82de52e5792eb03c3bdde158060698b676af3d21d0dca2d3419e3455",
+            "sha256":"example-qa-file-hash"
+        }
+        s=audit_chu_dou_stop_tracing_260page(qa,entry)
+        self.assertEqual(s["P9_warning_page_count"],3)
+        self.assertFalse(s["P9_human_normative_order_approval_granted"])
+        altered=copy.deepcopy(qa)
+        altered["warning_pages_and_no_ink_touch"].pop()
+        with self.assertRaises(ValueError):audit_chu_dou_stop_tracing_260page(altered,entry)
+        altered=copy.deepcopy(qa)
+        altered["current_source_sequence_discrepancies"].pop()
+        with self.assertRaises(ValueError):audit_chu_dou_stop_tracing_260page(altered,entry)
+        altered=copy.deepcopy(qa)
+        altered["P9_original_normative_full_source_human_double_reviewed"]=True
+        with self.assertRaises(ValueError):audit_chu_dou_stop_tracing_260page(altered,entry)
+        altered=copy.deepcopy(entry)
+        altered["status"]="released"
+        with self.assertRaises(ValueError):audit_chu_dou_stop_tracing_260page(qa,altered)
 
     def test_strict_release_flag_must_be_rejected(self):
         with self.assertRaises(ValueError):

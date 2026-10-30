@@ -1,0 +1,87 @@
+{
+  "schema_version": 1,
+  "result": "P9_7_TWICE_VERIFIED_REAL_ORDER_DISAGREEMENTS_WARNED_AND_ORIGINAL_1045_SOURCE_PEN_TILES_IDENTICAL",
+  "original_formal_299page_pdf_sha256": "7fb6c7227258903828098c29368f0412a7b8621260d3d5f8ad91f45beba5eb90",
+  "parent_260page_v0112_pdf_sha256": "c37ca8aa82de52e5792eb03c3bdde158060698b676af3d21d0dca2d3419e3455",
+  "candidate_260page_pdf_sha256": "425778c28abfa743b4a23a4fa4a29d4fa2e19c82c1971de13fd82e690081d051",
+  "candidate_pdf_bytes": 30289083,
+  "candidate_pdf_A4_pages": 260,
+  "P9_83_candidate_source_records_retained": 83,
+  "original_1045_source_stroke_tiles_pixel_identical": 1045,
+  "warning_pages_and_no_ink_touch": [
+    {
+      "main_id": 55,
+      "character": "屮",
+      "PDF_page": 117,
+      "new_stop_tracing_warnings": [
+        "“屮”原笔名与数码出处冲突，暂停临摹。",
+        "原图仅供规范审校，待逐笔原始证据核实。"
+      ],
+      "original_old_source_ink_modified": false,
+      "changed_rgb_pixels": 4800,
+      "changed_bbox_pt": [
+        47.5,
+        456.25,
+        297.5,
+        486.25
+      ]
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "PDF_page": 237,
+      "new_stop_tracing_warnings": [
+        "“鬥”原书起笔竖，多个字典记横，须核笔序。",
+        "此页旧序暂勿临摹；原图仅供专家对照。"
+      ],
+      "original_old_source_ink_modified": false,
+      "changed_rgb_pixels": 4872,
+      "changed_bbox_pt": [
+        47.5,
+        456.25,
+        301.25,
+        486.25
+      ]
+    },
+    {
+      "main_id": 190,
+      "character": "鬥",
+      "PDF_page": 238,
+      "new_stop_tracing_warnings": [
+        "“鬥”旧笔顺与多本字典冲突，暂勿临摹。",
+        "灰红原图仅供核对，待适用原规范与双审。",
+        "提示：原书“鬥”笔序存在争议，暂停按图书写。"
+      ],
+      "original_old_source_ink_modified": false,
+      "changed_rgb_pixels": 8729,
+      "changed_bbox_pt": [
+        47.5,
+        157.5,
+        365.0,
+        241.25
+      ]
+    }
+  ],
+  "untouched_full_A4_pages_pixel_identical": 257,
+  "current_source_sequence_discrepancies": [
+    {
+      "id": 55,
+      "character": "屮",
+      "old_source_five_type": "522",
+      "lexicon_fine_written_coarse_equivalent": "252"
+    },
+    {
+      "id": 190,
+      "character": "鬥",
+      "old_source_five_type": "2112111212",
+      "other_repeated_dictionary_five_type": "1121211212"
+    }
+  ],
+  "two_conflicting_source_orders_allowed_in_approved_child_learning_material": false,
+  "P9_original_normative_full_source_human_double_reviewed": false,
+  "P8_1013_children_pronunciations_approved": 0,
+  "P10_all_201_professional_illustrations_approved": 0,
+  "P5_paper_print_reviewed": false,
+  "P6_user_publication_approved": false,
+  "release_eligible": false
+}
